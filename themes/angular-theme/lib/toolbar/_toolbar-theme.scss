@@ -1,0 +1,18 @@
+@mixin uxg-toolbar-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  .uxg-toolbar {
+    .mat-icon-button {
+      color: mat-color($foreground, text, 0.75);
+    }
+
+    .uxg-toolbar-icon-menu {
+      color: mat-color($foreground, text, 0.38);
+    }
+
+    .uxg-toolbar-logo,
+    .uxg-toolbar-logo-small {
+      background: center / contain no-repeat url(map-get($foreground, logo));
+    }
+  }
+}

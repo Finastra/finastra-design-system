@@ -1,0 +1,25 @@
+@import 'palette';
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function uxg-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $uxg-light-theme-foreground,
+    background: $uxg-light-theme-background,
+  );
+}
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function uxg-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: $uxg-dark-theme-foreground,
+    background: $uxg-dark-theme-background,
+  );
+}

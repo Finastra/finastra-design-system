@@ -1,0 +1,226 @@
+@import '~@angular/material/theming';
+
+$uxg-charcoal: #414141;
+
+$uxg-violet: (
+  50: #f7f6fd,
+  100: #e9e5f9,
+  200: #d9d3f5,
+  300: #b4a6ea,
+  400: #8f7be1,
+  500: #694ed6,
+  600: #5836da,
+  700: #4a27cb,
+  800: #3e1db8,
+  900: #3315a4,
+  A100: green,
+  A200: green,
+  A400: green,
+  A700: green,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$uxg-fuchsia: (
+  50: #fbc9ee,
+  100: #f99ae0,
+  200: #f66cd4,
+  300: #e453bf,
+  400: #d648b2,
+  500: #c137a2,
+  600: #ac258d,
+  700: #9d1880,
+  800: #910d75,
+  900: #8d0073,
+  A100: orange,
+  A200: orange,
+  A400: orange,
+  A700: orange,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$uxg-crimson: (
+  50: #e40046,
+  100: #e40046,
+  200: #e40046,
+  300: #e40046,
+  400: #e40046,
+  500: #e40046,
+  600: #e40046,
+  700: #e40046,
+  800: #e40046,
+  900: #e40046,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$uxg-grass: (
+  25: #d4efda,
+  50: #a9e0b7,
+  75: #80d194,
+  100: #56c271,
+  contrast: (
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $dark-primary-text,
+    100: $dark-primary-text,
+  )
+);
+
+$uxg-amber: (
+  100: #ff8a3d,
+  contrast: (
+    100: $dark-primary-text,
+  )
+);
+
+$uxg-gold: (
+  100: #f0b323,
+  contrast: (
+    100: $dark-primary-text,
+  )
+);
+
+$uxg-lime: (
+  100: #d2d755,
+  contrast: (
+    100: $dark-primary-text,
+  )
+);
+
+$uxg-ocean: (
+  100: #5bc1d7,
+  contrast: (
+    100: $dark-primary-text,
+  )
+);
+
+$uxg-gradient: (
+  vertical: linear-gradient(#694ed6, #c137a2, #e40046),
+  vertical-hover: linear-gradient(#694ed6, #c137a2 70%, #e95247 90%, #e42d1a),
+  horizontal: linear-gradient(90deg, #694ed6, #c137a2 70%, #e95247 90%, #e42d1a),
+  diagonal: linear-gradient(45deg, #694ed6, #c137a2 70%, #e95247 90%, #e42d1a),
+  contrast: (
+    vertical: $light-primary-text,
+    vertical-hover: $light-primary-text,
+    horizontal: $light-primary-text,
+    diagonal: $light-primary-text,
+  )
+);
+
+// Background palette for light themes.
+$uxg-light-theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar:    white,
+  background: map_get($mat-grey, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map_get($mat-grey, 300),
+  selected-text: map_get($uxg-violet, 100),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 300),
+  disabled-list-option: map_get($mat-grey, 200),
+);
+
+// Background palette for dark themes.
+$uxg-dark-theme-background: (
+  status-bar: black,
+  app-bar:    #303030,
+  background: map_get($mat-grey, 900),
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       #303030,
+  dialog:     #303030,
+  disabled-button: rgba(white, 0.12),
+  raised-button: #303030,
+  focused-button: $light-focused,
+  selected-button: map_get($mat-grey, 900),
+  selected-text: map_get($uxg-violet, 900),
+  selected-disabled-button: #303030,
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+// Foreground palette for light themes.
+$uxg-light-theme-foreground: (
+  base:              $uxg-charcoal,
+  divider:           $dark-dividers,
+  dividers:          $dark-dividers,
+  disabled:          $dark-disabled-text,
+  disabled-button:   rgba(black, 0.25),
+  disabled-text:     $dark-disabled-text,
+  elevation:         map_get($mat-grey, 900),
+  hint-text:         $dark-disabled-text,
+  secondary-text:    $dark-secondary-text,
+  icon:              rgba(black, 0.5),
+  icons:             rgba(black, 0.5),
+  text:              $uxg-charcoal,
+  logo:              '/images/FINASTRA_LOGO_RGB_SMALL.png',
+  slider-min:        $uxg-charcoal,
+  slider-off:        rgba(black, 0.25),
+  slider-off-active: rgba(black, 0.38),
+);
+
+// Foreground palette for dark themes.
+$uxg-dark-theme-foreground: (
+  base:              white,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-disabled-text,
+  secondary-text:    $light-secondary-text,
+  icon:              white,
+  icons:             white,
+  text:              white,
+  logo:              '/images/FINASTRA_LOGO_BW_SMALL.png',
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);

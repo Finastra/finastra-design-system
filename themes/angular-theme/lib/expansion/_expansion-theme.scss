@@ -1,0 +1,22 @@
+@mixin uxg-expansion-theme($theme) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  .mat-action-row {
+    background-color: mat-color($background, background);
+  }
+
+  .uxg-contact {
+    .uxg-contact-header {
+      .mat-icon {
+        color: mat-color($primary, lighter);
+      }
+
+      .mat-icon-button {
+        .mat-icon {
+          color: mat-color($primary, default);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@mixin uxg-sidenav-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-nav {
+    background-color: map-get($background, background);
+
+    .mat-drawer {
+      background-color: map-get($background, card);
+
+      .uxg-nav-header {
+        background-color: map-get($background, background);
+      }
+    }
+
+    .mat-drawer-backdrop.mat-drawer-shown {
+      background-color: mat-color($foreground, base, 0.1);
+    }
+  }
+}

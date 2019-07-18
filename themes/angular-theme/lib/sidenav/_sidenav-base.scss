@@ -1,0 +1,18 @@
+$uxg-nav-width: 300px;
+$uxg-nav-default-margin: 12px;
+$uxg-nav-header-height: 210px;
+
+.uxg-nav {
+  .mat-drawer {
+    width: $uxg-nav-width;
+
+    .uxg-nav-header {
+      height: $uxg-nav-header-height;
+      margin-bottom: $uxg-nav-default-margin;
+    }
+  }
+
+  .mat-drawer-content {
+    z-index: auto;
+  }
+}

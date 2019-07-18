@@ -1,0 +1,11 @@
+.mat-form-field-prefix {
+  $c: &;
+
+  & + .mat-icon {
+    @at-root {
+      #{$c} {
+        align-self: flex-end;
+      }
+    }
+  }
+}

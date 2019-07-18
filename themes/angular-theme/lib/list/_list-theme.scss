@@ -1,0 +1,55 @@
+@mixin uxg-list-theme($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+
+  .mat-list-base.mat-nav-list {
+    &.uxg-link-list {
+      .mat-list-item {
+        color: mat-color($primary, default);
+      }
+    }
+
+    &.uxg-nav-list,
+    &.uxg-nav-list-level {
+      .mat-list-item {
+        border-left-color: transparent;
+
+        &:hover {
+          background-color: mat-color($primary, default, 0.04);
+          border-color: mat-color($primary, default, 0.2);
+        }
+
+        .mat-icon {
+          color: mat-color($foreground, text, 0.25);
+        }
+
+        .mat-ripple-element {
+          background-color: mat-color($primary, default, 0.1);
+        }
+
+        &.uxg-list-item-selected {
+          color: mat-color($primary, default);
+          border-color: mat-color($primary, default);
+
+          .mat-icon {
+            color: mat-color($primary, default, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin uxg-list-typography($config) {
+  .uxg-nav-list.mat-nav-list.mat-list-base {
+    & .mat-list-item > * {
+      @include mat-typography-level-to-styles($config, subtitle-3);
+    }
+  }
+
+  .mat-list-base.mat-nav-list.uxg-link-list {
+    & .mat-list-item > * {
+      @include mat-typography-level-to-styles($config, body-4);
+    }
+  }
+}

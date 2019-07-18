@@ -1,0 +1,30 @@
+@mixin uxg-breadcrumb-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-breadcrumb {
+    a {
+      color: map-get($foreground, text);
+      text-decoration: none;
+    }
+
+    &[color=primary] {
+      color: mat-color($primary, default);
+    }
+
+    &[color=accent] {
+      color: mat-color($accent, default);
+    }
+  }
+}
+
+@mixin uxg-breadcrumb-typography($config) {
+  .uxg-breadcrumb {
+    @include mat-typography-level-to-styles($config, body-3);
+  }
+
+  .uxg-breadcrumb[dense] {
+    @include mat-typography-level-to-styles($config, body-4);
+  }
+}

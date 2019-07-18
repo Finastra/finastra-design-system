@@ -1,0 +1,21 @@
+@mixin uxg-badge-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  .uxg-side-badge .mat-badge-content {
+    background-color: transparent;
+    border-color: mat-color($foreground, text, 0.15);
+    color: mat-color($foreground, text);
+  }
+}
+
+@mixin uxg-badge-typography($config) {
+  .uxg-side-badge.mat-badge-medium.mat-badge-after {
+    .mat-badge-content {
+      line-height: 16px;
+      font: {
+        size: 10px;
+        weight: 300;
+      }
+    }
+  }
+}

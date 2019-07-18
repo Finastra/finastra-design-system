@@ -1,0 +1,33 @@
+@mixin uxg-card-theme($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+
+  .uxg-card-product.mat-card {
+    background: white bottom left / 100% 30% no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="72"><defs><style>.a{fill:url(%23a);}</style><linearGradient id="a" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="%23694ed6"/><stop offset="0.698" stop-color="%23c137a2"/><stop offset="0.895" stop-color="%23e95247"/><stop offset="1" stop-color="%23e42d1a"/></linearGradient></defs><path class="a" d="M320,161.6V113.9c-2.8,2.1-5.665,4.178-8.645,6.217-57.06,39.116-131.993,15.1-180.525,3.3C114.2,119.358,65.28,101.675,0,89.6v72Z" transform="translate(0 -89.6)"/></svg>');
+    color: $uxg-charcoal;
+  }
+
+  .uxg-card-solution.mat-card {
+    background:
+      top left / 40% 30% no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="132.389" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M0,0V72C39.485,41.253,86.3,19,132.389,0Z"/></svg>'),
+      bottom right / 30% 30% no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100.288" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M320,240V168c-40.654,36.548-80.919,59.972-100.288,72Z" transform="translate(-219.712 -168)"/></svg>'),
+      top left / 100% 100% no-repeat mat-color($uxg-gradient, diagonal);
+    color: mat-color($primary, default-contrast);
+  }
+}
+
+@mixin uxg-card-typography($config) {
+  .mat-card[dense] {
+    .mat-card-title {
+      font-size: 14px;
+    }
+
+    .mat-card-subtitle {
+      font-size: 12px;
+    }
+
+    .mat-card-actions {
+      font-size: 18px;
+    }
+  }
+}

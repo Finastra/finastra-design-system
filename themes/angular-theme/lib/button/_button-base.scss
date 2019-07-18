@@ -1,0 +1,71 @@
+@import '../core/style/spacing';
+
+$button-radius-base: 18px;
+$button-radius-dense: 18px;
+$button-radius-large: 21px;
+
+$button-padding-large: 20px;
+
+$button-icon-size-large: $uxg-spacing-4;
+$button-icon-size-base: 18px;
+$button-icon-size-dense: 14px;
+
+$mat-icon-button-size-dense: 30px;
+
+@mixin button-base($radius) {
+  &.mat-button,
+  &.mat-raised-button,
+  &.mat-stroked-button,
+  &.mat-flat-button {
+    border-radius: $radius;
+  }
+}
+
+a,
+button {
+  @include button-base($button-radius-base);
+
+  &.mat-icon-button {
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+
+    .mat-button-wrapper {
+      display: flex;
+      margin: auto;
+      width: $button-icon-size-large;
+      height: $button-icon-size-large;
+    }
+  }
+}
+
+button[dense],
+a[dense],
+*[dense] button {
+  @include button-base($button-radius-dense);
+}
+
+button[large],
+a[large],
+*[large] button {
+  @include button-base($button-radius-large);
+
+  padding: 0 $button-padding-large;
+}
+
+*[dense] .mat-icon-button,
+.mat-icon-button[dense] {
+  width: $mat-icon-button-size-dense;
+  height: $mat-icon-button-size-dense;
+  line-height: $mat-icon-button-size-dense;
+
+  .mat-button-wrapper {
+    width: $button-icon-size-base;
+    height: $button-icon-size-base;
+
+    i,
+    .mat-icon {
+      line-height: $button-icon-size-base;
+    }
+  }
+}

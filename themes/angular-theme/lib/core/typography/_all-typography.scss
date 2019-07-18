@@ -1,0 +1,26 @@
+@import './typography';
+@import '../../avatar/avatar-theme';
+@import '../../badge/badge-theme';
+@import '../../button/button-theme';
+@import '../../button-toggle/button-toggle-theme';
+@import '../../breadcrumb/breadcrumb-theme';
+@import '../../card/card-theme';
+@import '../../chips/chips-theme';
+@import '../../list/list-theme';
+
+// Includes all of the typographic styles.
+@mixin uxg-material-typography($config: null) {
+  @if $config == null {
+    $config: uxg-typography-config();
+  }
+
+  @include uxg-avatar-typography($config);
+  @include uxg-badge-typography($config);
+  @include uxg-base-typography($config);
+  @include uxg-button-typography($config);
+  @include uxg-button-toggle-typography($config);
+  @include uxg-breadcrumb-typography($config);
+  @include uxg-card-typography($config);
+  @include uxg-chips-typography($config);
+  @include uxg-list-typography($config);
+}

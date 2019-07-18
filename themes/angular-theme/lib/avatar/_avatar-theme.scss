@@ -1,0 +1,91 @@
+@import '~@angular/material/theming';
+
+@mixin uxg-avatar-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-avatar {
+    color: mat-contrast($uxg-gradient, vertical);
+    background: mat-color($uxg-gradient, vertical);
+
+    &:empty:not(img) {
+      background:
+        center center / 120% 120% no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><style>.a{fill:white;}</style></defs><path class="a" d="M12 5.2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>'),
+        top left / 100% 100% no-repeat mat-color($uxg-gradient, vertical);
+    }
+  }
+
+  img {
+    &.uxg-avatar {
+      background: mat-color($background, background);
+    }
+  }
+
+  .uxg-avatar-list > li > .uxg-avatar {
+    border: 1px solid mat-color($background, background);
+  }
+
+  .uxg-avatar-number {
+    color: mat-color($foreground, text);
+  }
+}
+
+@mixin uxg-avatar-typography($config) {
+  .uxg-avatar {
+    font: {
+      family: mat-font-family($config, display-6);
+      size: mat-font-size($config, display-6);
+      weight: mat-font-weight($config, display-6);
+    }
+
+    &[large] {
+      font: {
+        family: mat-font-family($config, display-4);
+        size: mat-font-size($config, display-4);
+        weight: mat-font-weight($config, display-4);
+      }
+    }
+
+    &[dense] {
+      font: {
+        family: mat-font-family($config, body-3);
+        size: mat-font-size($config, body-3);
+        weight: mat-font-weight($config, body-3);
+      }
+    }
+  }
+
+  .uxg-avatar-number {
+    font: {
+      family: mat-font-family($config, subtitle-3);
+      size: mat-font-size($config, subtitle-3);
+    }
+  }
+
+  *[large] {
+    .uxg-avatar {
+      font: {
+        family: mat-font-family($config, display-4);
+        size: mat-font-size($config, display-4);
+        weight: mat-font-weight($config, display-4);
+      }
+    }
+  }
+
+  *[dense] {
+    .uxg-avatar {
+      font: {
+        family: mat-font-family($config, body-3);
+        size: mat-font-size($config, body-3);
+        weight: mat-font-weight($config, body-3);
+      }
+    }
+
+    .uxg-avatar-number {
+      font: {
+        family: mat-font-family($config, caption);
+        size: mat-font-size($config, caption);
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../core/style/spacing';
+
+$button-toggle-margin: $uxg-spacing-2;
+$button-toggle-dense-height: 30px;
+
+$filtering-button-toggle-radius: $uxg-spacing-1;
+$filtering-button-toggle-margin: 20px;
+$filtering-button-toggle-height: 64px;
+$filtering-button-font-size: 12px;
+
+.mat-button-toggle-group[dense] {
+  .mat-button-toggle-label-content {
+    line-height: $button-toggle-dense-height;
+    padding: 0 $button-toggle-margin;
+  }
+}
+
+.uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  padding-bottom: $button-toggle-margin + $filtering-button-font-size;
+
+  .mat-button-toggle {
+    border: 1px solid;
+    border-radius: $filtering-button-toggle-radius;
+  }
+
+  .mat-button-toggle-label-content {
+    line-height: $filtering-button-toggle-height;
+    padding: 0 ($filtering-button-toggle-height - $uxg-spacing-4)/2;
+
+    span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: -($filtering-button-toggle-height/2 + $filtering-button-font-size/2 + $button-toggle-margin);
+    }
+  }
+
+  .mat-button-toggle + .mat-button-toggle {
+    margin-left: $filtering-button-toggle-margin;
+  }
+}

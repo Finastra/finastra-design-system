@@ -1,0 +1,12 @@
+@mixin uxg-menu-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-menu-content {
+    color: mat-color($foreground, text);
+  }
+
+  .uxg-menu-header {
+    background-color: mat-color($background, background, 0.5);
+  }
+}

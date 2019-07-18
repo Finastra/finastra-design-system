@@ -1,0 +1,67 @@
+@import '../../avatar/avatar-theme';
+@import '../../badge/badge-theme';
+@import '../../button/button-theme';
+@import '../../button-toggle/button-toggle-theme';
+@import '../../breadcrumb/breadcrumb-theme';
+@import '../../card/card-theme';
+@import '../../chips/chips-theme';
+@import '../../expansion/expansion-theme';
+@import '../../link/link-theme';
+@import '../../list/list-theme';
+@import '../../menu/menu-theme';
+@import '../../sidenav/sidenav-theme';
+@import '../../toolbar/toolbar-theme';
+
+// Create a theme.
+@mixin uxg-material-theme($theme) {
+  @include mat-core-theme($theme);
+  @include mat-autocomplete-theme($theme);
+  @include mat-badge-theme($theme);
+  @include mat-bottom-sheet-theme($theme);
+  @include mat-button-theme($theme);
+  @include mat-button-toggle-theme($theme);
+  @include mat-card-theme($theme);
+  @include mat-checkbox-theme($theme);
+  @include mat-chips-theme($theme);
+  @include mat-table-theme($theme);
+  @include mat-datepicker-theme($theme);
+  @include mat-dialog-theme($theme);
+  @include mat-divider-theme($theme);
+  @include mat-expansion-panel-theme($theme);
+  @include mat-form-field-theme($theme);
+  @include mat-grid-list-theme($theme);
+  @include mat-icon-theme($theme);
+  @include mat-input-theme($theme);
+  @include mat-list-theme($theme);
+  @include mat-menu-theme($theme);
+  @include mat-paginator-theme($theme);
+  @include mat-progress-bar-theme($theme);
+  @include mat-progress-spinner-theme($theme);
+  @include mat-radio-theme($theme);
+  @include mat-select-theme($theme);
+  @include mat-sidenav-theme($theme);
+  @include mat-slide-toggle-theme($theme);
+  @include mat-slider-theme($theme);
+  @include mat-stepper-theme($theme);
+  @include mat-sort-theme($theme);
+  @include mat-tabs-theme($theme);
+  @include mat-toolbar-theme($theme);
+  @include mat-tooltip-theme($theme);
+  @include mat-tree-theme($theme);
+  @include mat-snack-bar-theme($theme);
+  // uxg themes
+  @include uxg-core-theme($theme);
+  @include uxg-avatar-theme($theme);
+  @include uxg-badge-theme($theme);
+  @include uxg-button-theme($theme);
+  @include uxg-button-toggle-theme($theme);
+  @include uxg-breadcrumb-theme($theme);
+  @include uxg-card-theme($theme);
+  @include uxg-chips-theme($theme);
+  @include uxg-expansion-theme($theme);
+  @include uxg-link-theme($theme);
+  @include uxg-list-theme($theme);
+  @include uxg-menu-theme($theme);
+  @include uxg-sidenav-theme($theme);
+  @include uxg-toolbar-theme($theme);
+}

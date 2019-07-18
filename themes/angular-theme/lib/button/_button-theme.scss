@@ -1,0 +1,63 @@
+@mixin uxg-button-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $finastra-gradient: linear-gradient(mat-color($primary, default), mat-color($accent, default), mat-color($uxg-crimson, 500));
+
+  .mat-stroked-button {
+    &.mat-primary {
+      border-color: mat-color($primary, default, 0.5);
+    }
+
+    &.mat-accent {
+      border-color: mat-color($accent, default, 0.5);
+    }
+
+    &[disabled] {
+      background-color: mat-color($foreground, text, 0.1);
+      border-color: mat-color($foreground, text, 0.25);
+    }
+  }
+
+  .mat-icon-button {
+    &.mat-neutral,
+    &.mat-gradient {
+      .mat-button-ripple {
+        color: mat-color($primary, default);
+      }
+    }
+
+    &.mat-neutral {
+      .mat-icon {
+        color: mat-color($foreground, text, 0.75);
+      }
+    }
+
+    &.mat-gradient {
+      .mat-icon {
+        background: mat-color($uxg-gradient, vertical);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .mat-fab.mat-gradient {
+    color: mat-color($primary, default-contrast);
+    background: mat-color($uxg-gradient, vertical);
+  }
+}
+
+@mixin uxg-button-typography($config) {
+  button[dense],
+  a[dense],
+  *[dense] button {
+    @include mat-typography-level-to-styles($config, button-3);
+  }
+
+  button[large],
+  a[large],
+  *[large] button {
+    @include mat-typography-level-to-styles($config, button-1);
+  }
+}

@@ -1,0 +1,30 @@
+.uxg-breadcrumb {
+  padding: 0;
+
+  li {
+    display: inline;
+
+    &::before {
+      content: '/';
+      margin: 0 10px;
+    }
+
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+
+    .mat-icon {
+      opacity: 0.5;
+    }
+  }
+}
+
+.uxg-breadcrumb[dense] {
+  li {
+    .mat-icon {
+      vertical-align: middle;
+    }
+  }
+}

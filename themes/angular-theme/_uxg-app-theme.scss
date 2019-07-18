@@ -1,0 +1,37 @@
+// Include components base overrides
+@import 'lib/core/core';
+@import 'lib/core/theming/palette';
+@import 'lib/core/theming/theming';
+
+@import 'lib/avatar/avatar-base';
+@import 'lib/badge/badge-base';
+@import 'lib/block/title-base';
+@import 'lib/button/button-base';
+@import 'lib/button-toggle/button-toggle-base';
+@import 'lib/breadcrumb/breadcrumb-base';
+@import 'lib/card/card-base';
+@import 'lib/chips/chips-base';
+@import 'lib/expansion/expansion-base';
+@import 'lib/icon/icon-base.scss';
+@import 'lib/input/input-base';
+@import 'lib/list/list-base';
+@import 'lib/menu/menu-base';
+@import 'lib/sidenav/sidenav-base';
+@import 'lib/toolbar/toolbar-base';
+
+@include uxg-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$uxg-light-primary: mat-palette($uxg-violet, 500, 100, 900);
+$uxg-dark-primary: mat-palette($uxg-violet, 400, 100, 900);
+$uxg-light-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
+$uxg-dark-accent:  mat-palette($uxg-fuchsia, 400, 100, 900);
+
+// The warn palette is optional (defaults to red).
+$uxg-light-warn:    mat-palette($uxg-crimson);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$uxg-light-theme: uxg-light-theme($uxg-light-primary, $uxg-light-accent, $uxg-light-warn);
+$uxg-dark-theme: uxg-dark-theme($uxg-dark-primary, $uxg-dark-accent, $uxg-light-warn);
