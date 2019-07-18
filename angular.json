@@ -10,28 +10,28 @@
           "style": "scss"
         }
       },
-      "root": "apps/test",
-      "sourceRoot": "apps/test/src",
+      "root": "apps/angular-test-app",
+      "sourceRoot": "apps/angular-test-app/src",
       "prefix": "ffdc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/test",
-            "index": "apps/test/src/index.html",
-            "main": "apps/test/src/main.ts",
-            "polyfills": "apps/test/src/polyfills.ts",
-            "tsConfig": "apps/test/tsconfig.app.json",
-            "assets": ["apps/test/src/favicon.ico", "apps/test/src/assets"],
-            "styles": ["apps/test/src/styles.scss"],
+            "outputPath": "dist/apps/angular-test-app",
+            "index": "apps/angular-test-app/src/index.html",
+            "main": "apps/angular-test-app/src/main.ts",
+            "polyfills": "apps/angular-test-app/src/polyfills.ts",
+            "tsConfig": "apps/angular-test-app/tsconfig.app.json",
+            "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
+            "styles": ["apps/angular-test-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/test/src/environments/environment.ts",
-                  "with": "apps/test/src/environments/environment.prod.ts"
+                  "replace": "apps/angular-test-app/src/environments/environment.ts",
+                  "with": "apps/angular-test-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -74,32 +74,32 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/test/tsconfig.app.json",
-              "apps/test/tsconfig.spec.json"
+              "apps/angular-test-app/tsconfig.app.json",
+              "apps/angular-test-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/test/**"]
+            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/test/jest.config.js",
-            "tsConfig": "apps/test/tsconfig.spec.json",
-            "setupFile": "apps/test/src/test-setup.ts"
+            "jestConfig": "apps/angular-test-app/jest.config.js",
+            "tsConfig": "apps/angular-test-app/tsconfig.spec.json",
+            "setupFile": "apps/angular-test-app/src/test-setup.ts"
           }
         }
       }
     },
     "test-e2e": {
-      "root": "apps/test-e2e",
-      "sourceRoot": "apps/test-e2e/src",
+      "root": "apps/angular-test-app-e2e",
+      "sourceRoot": "apps/angular-test-app-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/test-e2e/cypress.json",
-            "tsConfig": "apps/test-e2e/tsconfig.e2e.json",
+            "cypressConfig": "apps/angular-test-app-e2e/cypress.json",
+            "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
             "devServerTarget": "test:serve"
           },
           "configurations": {
@@ -111,41 +111,41 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/test-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/test-e2e/**"]
+            "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**"]
           }
         }
       }
     },
     "components": {
       "projectType": "library",
-      "root": "libs/components",
-      "sourceRoot": "libs/components/src",
+      "root": "libs/angular-components",
+      "sourceRoot": "libs/angular-components/src",
       "prefix": "ffdc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "libs/components/tsconfig.lib.json",
-            "project": "libs/components/ng-package.json"
+            "tsConfig": "libs/angular-components/tsconfig.lib.json",
+            "project": "libs/angular-components/ng-package.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/components/tsconfig.lib.json",
-              "libs/components/tsconfig.spec.json"
+              "libs/angular-components/tsconfig.lib.json",
+              "libs/angular-components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/components/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/components/jest.config.js",
-            "tsConfig": "libs/components/tsconfig.spec.json",
-            "setupFile": "libs/components/src/test-setup.ts"
+            "jestConfig": "libs/angular-components/jest.config.js",
+            "tsConfig": "libs/angular-components/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/src/test-setup.ts"
           }
         }
       },

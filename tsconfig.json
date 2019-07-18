@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ffdc/components": ["libs/components/src/index.ts"]
+      "@ffdc/components": ["libs/angular-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
