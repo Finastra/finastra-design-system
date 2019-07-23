@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/core": "^8.0.0",
+    "@angular/cdk": "^8.1.1",
+    "@angular/flex-layout": "^8.0.0-beta.26",
+    "elasticlunr": "^0.9.5",
+    "lodash-es": "^4.17.15"
   }
 }

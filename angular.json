@@ -117,7 +117,7 @@
         }
       }
     },
-    "components": {
+    "angular-components": {
       "projectType": "library",
       "root": "libs/angular-components",
       "sourceRoot": "libs/angular-components/src",
