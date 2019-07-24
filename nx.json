@@ -14,7 +14,7 @@
     "test": {
       "tags": []
     },
-    "components": {
+    "angular-components": {
       "tags": []
     }
   }
