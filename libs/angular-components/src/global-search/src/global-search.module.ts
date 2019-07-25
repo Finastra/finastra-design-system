@@ -10,6 +10,7 @@ import {
   MatListModule,
   MatCheckboxModule
 } from '@angular/material';
+import { GroupByPipe } from './pipes/group-by.pipe';
 
 @NgModule({
   imports: [
@@ -24,9 +25,9 @@ import {
   exports: [
     UxgGlobalSearch, GlobalSearchOverlayComponent
   ],
-  declarations: [UxgGlobalSearch, GlobalSearchOverlayComponent],
+  declarations: [UxgGlobalSearch, GlobalSearchOverlayComponent, GroupByPipe],
   entryComponents: [
     GlobalSearchOverlayComponent
   ]
 })
-export class GlobalSearchModule {}
+export class GlobalSearchModule { }

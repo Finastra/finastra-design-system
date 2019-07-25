@@ -1,1 +1,1 @@
-# FinastraDesignSystem
+# Finastra Design System

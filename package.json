@@ -1,6 +1,7 @@
 {
   "name": "@ffdc/finastra-design-system",
   "version": "1.0.0",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -24,9 +25,10 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "theme:lint": "stylelint '**/*.scss' '!/node_modules/**' '!/dist/**'",
+    "theme:build": "node-sass _all-theme.scss all-theme.css --importer=node_modules/node-sass-tilde-importer"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.1.1",
@@ -70,6 +72,17 @@
     "tslint": "~5.11.0",
     "typescript": "~3.4.5",
     "prettier": "1.16.4",
-    "@angular/cli": "8.1.1"
+    "@angular/cli": "8.1.1",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "node-sass": "^3.4.1",
+    "node-sass-tilde-importer": "^1.0.2",
+    "semantic-release": "^15.13.3",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.8.0"
   }
 }

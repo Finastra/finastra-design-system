@@ -1,20 +1,8 @@
 {
   "name": "@ffdc/uxg-angular-theme",
-  "version": "0.0.0",
-  "description": "Angular Material implementation of the UXG Design System.",
+  "version": "0.0.1",
+  "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
-  "scripts": {
-    "lint": "stylelint '**/*.scss' '!/node_modules/**' '!/dist/**'",
-    "build": "node-sass _all-theme.scss all-theme.css --importer=node_modules/node-sass-tilde-importer",
-    "release": "npx semantic-release"
-  },
-  "publishConfig": {
-    "registry": "https://alm-npmjs/nexus/repository/npm_internal/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://fusionfabric.visualstudio.com/FFDC/_git/design-system"
-  },
   "dependencies": {
     "@angular/animations": "^8.0.2",
     "@angular/cdk": "^8.0.1",
@@ -24,28 +12,5 @@
     "@angular/material": "8.0.1",
     "rxjs": "~6.5.2",
     "zone.js": "~0.9.1"
-  },
-  "devDependencies": {
-    "@semantic-release/changelog": "^3.0.2",
-    "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/npm": "^5.1.4",
-    "@semantic-release/release-notes-generator": "^7.1.4",
-    "node-sass": "^3.4.1",
-    "node-sass-tilde-importer": "^1.0.2",
-    "semantic-release": "^15.13.3",
-    "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.8.0"
-  },
-  "release": {
-    "branch": "develop",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
   }
 }
