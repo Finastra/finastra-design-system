@@ -26,8 +26,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "theme:lint": "stylelint '**/*.scss' '!/node_modules/**' '!/dist/**'",
-    "theme:build": "node-sass _all-theme.scss all-theme.css --importer=node_modules/node-sass-tilde-importer"
+    "lint:theme": "stylelint '**/*.scss' '!/node_modules/**' '!/dist/**'",
+    "build:theme": "node-sass _all-theme.scss all-theme.css --importer=node_modules/node-sass-tilde-importer"
   },
   "dependencies": {
     "@angular/animations": "^8.0.0",
