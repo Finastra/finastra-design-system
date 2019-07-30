@@ -74,7 +74,7 @@
     "jest": "24.1.0",
     "jest-preset-angular": "7.0.0",
     "ng-packagr": "^5.1.0",
-    "node-sass": "^3.13.1",
+    "node-sass": "^4.12.0",
     "node-sass-tilde-importer": "^1.0.2",
     "prettier": "1.16.4",
     "rimraf": "^2.6.3",
