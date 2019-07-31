@@ -154,6 +154,39 @@
           "styleext": "scss"
         }
       }
+    },
+    "angular-theme": {
+      "projectType": "library",
+      "root": "themes/angular-components",
+      "sourceRoot": "themes/angular-components/",
+      "prefix": "ffdc",
+      "architect": {
+        "build": {
+          "builder": "./dist/devkit:theme",
+          "options": {
+            "inputPath": "themes/angular-theme/",
+            "outputPath": "dist/themes/angular-theme",
+            "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
+            "sourceMap": true
+          },
+          "configurations": {
+            "production": {
+              "outputStyle": "compressed"
+            }
+          }
+        },
+        "lint": {
+          "builder": "./dist/devkit:theme-linter",
+          "options": {
+            "exclude": ["**/node_modules/**", "!themes/angular-theme/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

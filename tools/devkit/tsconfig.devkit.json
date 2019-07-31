@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "",
+    "importHelpers": true,
+    "strict": true,
+    "outDir": "../../dist/devkit",
+    "target": "es2015",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceRoot": ".",
+    "lib": ["es2015"],
+    "types": []
+  },
+  "include": ["**/*.ts"]
+}

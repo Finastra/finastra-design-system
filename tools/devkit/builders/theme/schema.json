@@ -1,0 +1,31 @@
+{
+  "id": "ThemeBuilder",
+  "title": "Theme Builder",
+  "description": "Builds or themes",
+  "properties": {
+    "inputPath": {
+      "type": "string",
+      "description": "Path to the input file"
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "Path to the input file"
+    },
+    "sourceMap": {
+      "type": "boolean",
+      "description": "Save the sourcemaps."
+    },
+    "outputStyle": {
+      "type": "string",
+      "description": "Determines the output format of the final CSS style, (compact | compressed | expanded | nested)"
+    },
+    "assets": {
+      "type": "array",
+      "description": "Array of paths to copy",
+      "items": {
+        "type": "string",
+        "description": "Path to copy"
+      }
+    }
+  }
+}

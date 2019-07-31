@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
+  "sass": "_all-theme.scss",
+  "css": "_all-theme.css",
   "dependencies": {
     "@angular/animations": "^8.0.2",
     "@angular/cdk": "^8.0.1",

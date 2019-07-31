@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "clean": "rimraf dist",
     "start": "ng serve",
     "build": "ng build",
+    "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/devkit"
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
@@ -25,9 +27,7 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "lint:theme": "stylelint '**/*.scss' '!/node_modules/**' '!/dist/**'",
-    "build:theme": "node-sass _all-theme.scss all-theme.css --importer=node_modules/node-sass-tilde-importer"
+    "help": "nx help"
   },
   "dependencies": {
     "@angular/animations": "^8.0.0",
@@ -42,8 +42,11 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "@nrwl/angular": "^8.2.0",
+    "@types/fs-extra": "^8.0.0",
     "core-js": "^2.5.4",
     "elasticlunr": "^0.9.5",
+    "fs-extra": "^8.1.0",
+    "globby": "^10.0.1",
     "lodash-es": "^4.17.15",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",

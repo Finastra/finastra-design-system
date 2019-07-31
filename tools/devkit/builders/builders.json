@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "theme": {
+      "implementation": "./theme/theme-builder.js",
+      "schema": "./theme/schema.json",
+      "description": "Build UXG  theme"
+    }
+  }
+}
