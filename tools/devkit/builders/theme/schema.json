@@ -22,6 +22,7 @@
     "assets": {
       "type": "array",
       "description": "Array of paths to copy",
+      "default": [],
       "items": {
         "type": "string",
         "description": "Path to copy"
