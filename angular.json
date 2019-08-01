@@ -157,8 +157,8 @@
     },
     "angular-theme": {
       "projectType": "library",
-      "root": "themes/angular-components",
-      "sourceRoot": "themes/angular-components/",
+      "root": "themes/angular-theme",
+      "sourceRoot": "themes/angular-theme/",
       "prefix": "ffdc",
       "architect": {
         "build": {
