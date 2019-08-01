@@ -16,6 +16,9 @@
     },
     "angular-components": {
       "tags": []
+    },
+    "angular-theme": {
+      "tags": []
     }
   }
 }
