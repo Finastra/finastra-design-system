@@ -1,0 +1,5 @@
+{
+  "name": "@ffdc/uxg-angular-components/<%= filename %>",
+  "version": "<%= version %>",
+  "author": "<%= author %>"
+}

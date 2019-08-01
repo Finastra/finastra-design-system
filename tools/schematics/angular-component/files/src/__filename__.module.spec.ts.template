@@ -1,0 +1,14 @@
+import { async, TestBed } from '@angular/core/testing';
+import { <%= className %>Module } from './<%= filename %>.module';
+
+describe('<%= className %>Module', () => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [<%= className %>Module]
+    }).compileComponents();
+  }));
+
+  it('should create', () => {
+    expect(<%= className %>Module).toBeDefined();
+  });
+});
