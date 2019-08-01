@@ -8,7 +8,7 @@
     "clean": "rimraf dist",
     "start": "ng serve",
     "build": "ng build",
-    "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/devkit"
+    "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/devkit",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
