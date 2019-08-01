@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
-  "builders": "./builders/builders.json",
+  "builders": "./builders.json",
   "devDependencies": {
       "@angular-devkit/architect": "0.800.1",
       "@angular-devkit/build-angular": "0.800.1",

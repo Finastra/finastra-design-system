@@ -84,6 +84,7 @@
     "semantic-release": "^15.13.3",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
+    "stylelint-formatter-pretty": "^1.1.2",
     "stylelint-scss": "^3.8.0",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",

@@ -1,0 +1,11 @@
+{
+  "id": "ThemeBuilder",
+  "title": "Theme Builder",
+  "description": "Builds or themes",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Project path"
+    }
+  }
+}

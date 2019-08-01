@@ -11,11 +11,10 @@ async function themeBuilder(
   options: Schema,
   context: BuilderContext,
 ): Promise<BuilderOutput> {
-  const logger = context.logger;
-
-  logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
-
   return new Promise<BuilderOutput>(async (resolve) => {
+    const logger = context.logger;
+
+    logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
     try {
       const dest = join(process.cwd(), options.outputPath);
       const src = join(process.cwd(), options.inputPath);
