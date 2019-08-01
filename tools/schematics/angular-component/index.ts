@@ -8,7 +8,6 @@ import {
   move,
   mergeWith,
   chain,
-  noop
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 
@@ -18,6 +17,9 @@ import gitPath from 'git-config-path';
 import { Schema } from './schema';
 import { join } from 'path';
 import { readFile } from 'fs-extra';
+
+// TODO: update global tsconfig with new component
+// TODO: add module to main angular components module
 
 export default function (schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
@@ -43,7 +45,6 @@ export default function (schema: Schema): Rule {
     ]);
     return chain([
       mergeWith(templateSource),
-      // updateTsConfig(options),
     ]);
   };
 }
