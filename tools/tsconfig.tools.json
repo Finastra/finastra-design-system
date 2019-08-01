@@ -1,11 +1,21 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../dist/out-tsc/tools",
-    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
     "module": "commonjs",
-    "target": "es5",
-    "types": ["node"]
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "../dist/tools",
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2015",
+    "types": [
+        "node"
+    ]
   },
   "include": ["**/*.ts"]
 }

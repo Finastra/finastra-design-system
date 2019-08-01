@@ -1,9 +1,9 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
 import { renderSync } from 'node-sass';
-import importer from 'node-sass-tilde-importer';
-import { readFile, writeFile, mkdirp, copy } from "fs-extra";
+import { readFile, writeFile, mkdirp, copy, remove } from "fs-extra";
 import { join, relative } from "path";
-import globby from "globby";
+import { sync as globby } from "globby";
+import importer from 'node-sass-tilde-importer';
 
 import { Schema } from './schema';
 
@@ -23,6 +23,8 @@ async function themeBuilder(
       const data = await readFile(join(src, 'package.json'));
       const pkg = JSON.parse(data.toString());
 
+      // cleanup
+      await remove(dest);
       await mkdirp(dest);
       if (!pkg.sass) {
         logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
@@ -32,7 +34,7 @@ async function themeBuilder(
       const result = renderSync({
         file: join(src, pkg.sass),
         outFile: join(dest, pkg.sass.replace('.scss', '.css')),
-        outputStyle: options.outputStyle,
+        outputStyle: options.outputStyle || "expanded",
         sourceMap: true,
         sourceMapRoot: src,
         importer
@@ -45,15 +47,13 @@ async function themeBuilder(
 
       await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
 
-      if (options.assets) {
-        for (const asset of await globby(options.assets)) {
-          const from = join(src, relative(src, asset));
-          let to = join(dest, relative(src, asset));
+      for (const asset of globby(options.assets)) {
+        const from = join(src, relative(src, asset));
+        let to = join(dest, relative(src, asset));
 
-          await copy(from, to, {
-            recursive: true
-          })
-        }
+        await copy(from, to, {
+          recursive: true
+        })
       }
 
       resolve({ success: true });

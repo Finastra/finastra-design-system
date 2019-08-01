@@ -162,7 +162,7 @@
       "prefix": "ffdc",
       "architect": {
         "build": {
-          "builder": "./dist/devkit:theme",
+          "builder": "./dist/tools/devkit:theme",
           "options": {
             "inputPath": "themes/angular-theme/",
             "outputPath": "dist/themes/angular-theme",
@@ -176,7 +176,7 @@
           }
         },
         "lint": {
-          "builder": "./dist/devkit:theme-linter",
+          "builder": "./dist/tools/devkit:theme-linter",
           "options": {
             "exclude": ["**/node_modules/**", "!themes/angular-theme/**"]
           }
