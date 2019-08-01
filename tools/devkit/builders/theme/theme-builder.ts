@@ -26,6 +26,9 @@ async function themeBuilder(
       // cleanup
       await remove(dest);
       await mkdirp(dest);
+
+      options.assets = [...options.assets, `${src}/LICENSE.md`];
+
       if (!pkg.sass) {
         logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
         return resolve({ success: false });
