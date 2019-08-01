@@ -43,7 +43,7 @@ async function themeBuilder(
         await writeFile(join(dest, pkg.sass.replace('.scss', '.map')), result.map.toString());
       }
 
-      await writeFile(join(dest, 'package.json'), JSON.stringify(pkg));
+      await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
 
       if (options.assets) {
         for (const asset of await globby(options.assets)) {
