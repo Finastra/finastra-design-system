@@ -6,7 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./<%= filename %>.component.scss']
 })
 export class <%= className %>Component implements OnInit, OnDestroy {
-  OnInit() {
+  ngOnInit() {
   }
   ngOnDestroy() {
   }
