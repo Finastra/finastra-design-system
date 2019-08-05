@@ -17,7 +17,7 @@ import gitPath from 'git-config-path';
 import { Schema } from './schema';
 import { join } from 'path';
 import { readFile } from 'fs-extra';
-import { registerLocalPackage } from '../../utils';
+import { registerLocalPackage, addToNgModule } from '../../utils';
 
 // TODO: add module to main angular components module
 
@@ -34,18 +34,25 @@ export default function (schema: Schema): Rule {
     const pkg = JSON.parse((await readFile(join(process.cwd(), './package.json'))).toString());
     const filename = strings.dasherize(schema.name);
     const dest = `libs/angular-components/src/${filename}`;
+    const classNamePrefix = strings.classify(schema.name);
 
     const templateSource = apply(url('./files'), [
       applyTemplates({
         ...strings,
-        className: strings.classify(schema.name),
+        className: classNamePrefix,
         filename,
         version: pkg.version,
         author: `${user.name} <${user.email}>`
       }),
       move(dest)
     ]);
+
     return chain([
+      addToNgModule({
+        modulePath: 'libs/angular-components/src/components.module.ts',
+        module: `${classNamePrefix}Module`,
+        filename: `${filename}/src/${filename}.module`
+      }),
       mergeWith(templateSource),
       registerLocalPackage(dest, `@ffdc/uxg-angular-components/${filename}`)
     ]);
