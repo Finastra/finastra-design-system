@@ -16,10 +16,10 @@ async function themeLinter(
       files: join(options.project, '/**/*.scss'),
       configFile: join(options.project, './.stylelintrc.json'),
       formatter
-    })
+    });
 
-    console.log(result.output);
-    resolve({ success: !result.errored })
+    logger.info(result.output);
+    resolve({ success: !result.errored });
   })
 }
 
