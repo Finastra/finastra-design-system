@@ -6,7 +6,6 @@ import { GlobalSearchService, Result, ResultGroup } from '../../services/global-
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
-import { GroupByPipe } from '../../pipes/group-by.pipe';
 
 const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 @Component({
@@ -14,7 +13,6 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
   templateUrl: './global-search-overlay.component.html',
   styleUrls: ['./global-search-overlay.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  providers: [GroupByPipe],
   animations: [
     trigger('slideContent', [
       state('void', style({ transform: 'translate3d(0, -30%, 0) scale(0.85)', opacity: 0 })),
@@ -30,7 +28,6 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     public searchService: GlobalSearchService,
     private readonly ref: SearchOverlayRef,
     @Inject(SEARCH_CONFIG) private config: SearchConfig,
-    private groupByPipe: GroupByPipe<Partial<Result>>
   ) { }
 
   animationState: 'void' | 'enter' | 'leave' = 'enter';
@@ -76,7 +73,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
           const results = this.searchService.search(value);
 
           this.resultsFound = this.resultsShown = results.length;
-          this.results = this.groupByPipe.transform(results.map(r => r.doc), this.groupBy);
+          this.results = this.groupByResults(results.map(r => r.doc), this.groupBy);
 
           this.filterSize = 0;
           this.results$.next(this.results);
@@ -110,5 +107,39 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
         this.resultsShown -= resultGroup.value.length;
       }
     }
+  }
+
+  private get(object, path, defaultVal?) {
+    const PATH = Array.isArray(path)
+      ? path
+      : path.split('.').filter(i => i.length);
+    if (!PATH.length) {
+      return object === undefined ? defaultVal : object;
+    }
+    if (object === null || object === undefined || typeof (object[PATH[0]]) === 'undefined') {
+      return defaultVal;
+    }
+    return this.get(object[PATH.shift()], PATH, defaultVal);
+  }
+
+  private groupByResults<T>(collection: Array<T>, property: string): Array<{ key: string; value: [T] }> {
+    if (!collection) {
+      return null;
+    }
+
+    const groupedCollection = collection.reduce((previous, current) => {
+      if (!previous[this.get(current, property)]) {
+        previous[this.get(current, property)] = [current];
+      } else {
+        previous[this.get(current, property)].push(current);
+      }
+
+      return previous;
+    }, {});
+
+    return Object.keys(groupedCollection).map(key => ({
+      key,
+      value: groupedCollection[key],
+    }));
   }
 }
