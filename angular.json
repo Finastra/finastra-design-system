@@ -121,7 +121,7 @@
       "projectType": "library",
       "root": "libs/angular-components",
       "sourceRoot": "libs/angular-components/src",
-      "prefix": "ffdc",
+      "prefix": "uxg",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -159,7 +159,7 @@
       "projectType": "library",
       "root": "themes/angular-theme",
       "sourceRoot": "themes/angular-theme/",
-      "prefix": "ffdc",
+      "prefix": "uxg",
       "architect": {
         "build": {
           "builder": "./dist/tools/devkit:theme-builder",
