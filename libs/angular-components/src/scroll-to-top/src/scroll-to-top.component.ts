@@ -2,7 +2,6 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, EventEmitter, Input, OnDestroy, Output, TemplateRef, AfterViewInit } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
-import smoothscroll from 'smoothscroll-polyfill';
 
 enum ShowStatus {
   show = 'show',
@@ -34,7 +33,6 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   constructor() { }
 
   ngAfterViewInit() {
-    smoothscroll.polyfill();
     this.scroll$ = fromEvent(window, 'scroll').pipe(
       throttleTime(10),
       map(() => window.pageYOffset),
