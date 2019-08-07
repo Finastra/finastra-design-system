@@ -183,7 +183,7 @@
         }
       },
       "schematics": {
-        "@nrwl/angular:component": {
+        "@ffdc/angular:theme": {
           "styleext": "scss"
         }
       }

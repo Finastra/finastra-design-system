@@ -6,6 +6,11 @@
     "project": {
       "type": "string",
       "description": "Project path"
+    },
+    "silent": {
+      "type": "boolean",
+      "description": "Show output text.",
+      "default": false
     }
   }
 }
