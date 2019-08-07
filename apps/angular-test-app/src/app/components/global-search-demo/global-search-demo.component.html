@@ -1,0 +1,14 @@
+<uxg-global-search #uxgGlobalSearch
+    [groupBy]="'accountType'"
+    [resultItemTemplate]="tmpl"
+    [showFilter]="true"
+    [itemDivider]="false"
+    [groupDivider]="true"
+    [maxItems]="5"
+    itemsLayout="row">
+</uxg-global-search>
+
+<ng-template #tmpl let-result>
+  {{result.nickname}}
+  {{result.balances[0].amount}} {{result.accountType}}
+</ng-template>
