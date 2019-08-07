@@ -12,7 +12,7 @@
       },
       "root": "apps/angular-test-app",
       "sourceRoot": "apps/angular-test-app/src",
-      "prefix": "uxg",
+      "prefix": "ffdc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
