@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef, AfterViewInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output, TemplateRef, AfterViewInit } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
 import smoothscroll from 'smoothscroll-polyfill';
@@ -24,11 +24,11 @@ enum ShowStatus {
 
 export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   @Input() customTemplate: TemplateRef<any>;
-  @Input() showAfter: number = 100;
+  @Input() showAfter = 100;
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Output() buttonPressed = new EventEmitter<Event>();
 
-  showButton: boolean = false;
+  showButton = false;
   scroll$: Subscription;
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
   constructor() { }
@@ -47,7 +47,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
       }),
       distinctUntilChanged(),
       share()
-    ).subscribe(state => this.state$.next(state))
+    ).subscribe(s => this.state$.next(s))
   }
 
   ngOnDestroy() {
@@ -56,7 +56,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
 
   handleClick(event) {
     this.scrollToTop();
-    this.onClick.emit(event);
+    this.buttonPressed.emit(event);
   }
 
   scrollToTop() {
