@@ -1,0 +1,13 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+@Component({
+  selector: 'uxg-<%= filename %>',
+  templateUrl: './<%= filename %>.component.html',
+  styleUrls: ['./<%= filename %>.component.scss']
+})
+export class <%= className %>Component implements OnInit, OnDestroy {
+  ngOnInit() {
+  }
+  ngOnDestroy() {
+  }
+}

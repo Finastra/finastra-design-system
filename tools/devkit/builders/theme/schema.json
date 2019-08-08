@@ -11,6 +11,11 @@
       "type": "string",
       "description": "Path to the input file"
     },
+    "silent": {
+      "type": "boolean",
+      "description": "Show output text.",
+      "default": false
+    },
     "sourceMap": {
       "type": "boolean",
       "description": "Save the sourcemaps."

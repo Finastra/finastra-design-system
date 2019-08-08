@@ -11,14 +11,13 @@ import { SearchOverlayRef } from './components/global-search-overlay/global-sear
 export class UxgGlobalSearch implements OnInit {
   @Input() groupBy: string;
   @Input() resultItemTemplate: TemplateRef<any>;
-  @Input() showFilter: boolean = true;
+  @Input() showFilter = true;
   @Input() maxItems: number;
-  @Input() itemDivider: boolean = true;
-  @Input() groupDivider: boolean = true;
+  @Input() itemDivider = true;
+  @Input() groupDivider = true;
   @Input() itemsLayout: 'row' | 'column' = 'column';
 
-  @Output()
-  onResultItemClick = new EventEmitter();
+  @Output() resultItemClick = new EventEmitter();
 
   constructor(private overlayService: GlobalSearchOverlayService,
               public searchService: GlobalSearchService) {
@@ -40,7 +39,7 @@ export class UxgGlobalSearch implements OnInit {
 
   ngOnInit() {
     this.searchService.itemClicked.subscribe(item => {
-      this.onResultItemClick.emit(item);
+      this.resultItemClick.emit(item);
       this.ref.close();
     })
   }

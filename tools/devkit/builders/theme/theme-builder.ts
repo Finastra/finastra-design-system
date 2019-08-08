@@ -11,60 +11,60 @@ async function themeBuilder(
   options: Schema,
   context: BuilderContext,
 ): Promise<BuilderOutput> {
-  return new Promise<BuilderOutput>(async (resolve) => {
-    const logger = context.logger;
+  const logger = context.logger;
+  const printInfo = !options.silent;
 
-    logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
-    try {
-      const dest = join(process.cwd(), options.outputPath);
-      const src = join(process.cwd(), options.inputPath);
+  context.reportStatus(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
+  if (printInfo) logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
 
-      const data = await readFile(join(src, 'package.json'));
-      const pkg = JSON.parse(data.toString());
+  try {
+    const dest = join(process.cwd(), options.outputPath);
+    const src = join(process.cwd(), options.inputPath);
+    context.reportProgress(0, 1);
 
-      // cleanup
-      await remove(dest);
-      await mkdirp(dest);
+    const data = await readFile(join(src, 'package.json'));
+    const pkg = JSON.parse(data.toString());
 
-      options.assets = [...options.assets, `${src}/LICENSE.md`];
+    // cleanup
+    await remove(dest);
+    await mkdirp(dest);
 
-      if (!pkg.sass) {
-        logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
-        return resolve({ success: false });
-      }
+    options.assets = [...options.assets, `${src}/LICENSE.md`];
 
-      const result = renderSync({
-        file: join(src, pkg.sass),
-        outFile: join(dest, pkg.sass.replace('.scss', '.css')),
-        outputStyle: options.outputStyle || "expanded",
-        sourceMap: true,
-        sourceMapRoot: src,
-        importer
-      });
-
-      await writeFile(join(dest, pkg.css), result.css.toString());
-      if (options.sourceMap === true) {
-        await writeFile(join(dest, pkg.sass.replace('.scss', '.map')), result.map.toString());
-      }
-
-      await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
-
-      for (const asset of globby(options.assets)) {
-        const from = join(src, relative(src, asset));
-        let to = join(dest, relative(src, asset));
-
-        await copy(from, to, {
-          recursive: true
-        })
-      }
-
-      resolve({ success: true });
-    } catch (err) {
-      logger.error(err.message, err);
-      console.error(err);
-      resolve({ success: false });
+    if (!pkg.sass) {
+      if (printInfo) logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
+      return { success: false };
     }
-  });
+
+    const result = renderSync({
+      file: join(src, pkg.sass),
+      outFile: join(dest, pkg.sass.replace('.scss', '.css')),
+      outputStyle: options.outputStyle || "expanded",
+      sourceMap: true,
+      sourceMapRoot: src,
+      importer
+    });
+
+    await writeFile(join(dest, pkg.css), result.css.toString());
+    if (options.sourceMap === true) {
+      await writeFile(join(dest, pkg.sass.replace('.scss', '.map')), result.map.toString());
+    }
+
+    await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
+
+    for (const asset of globby(options.assets)) {
+      const from = join(src, relative(src, asset));
+      const to = join(dest, relative(src, asset));
+
+      await copy(from, to, { recursive: true });
+    }
+    context.reportProgress(1, 1);
+
+    return { success: true };
+  } catch (err) {
+    if (printInfo) logger.error(err.message, err);
+    return { success: false }
+  }
 }
 
 export default createBuilder(themeBuilder);
