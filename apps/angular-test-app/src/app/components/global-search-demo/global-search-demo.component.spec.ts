@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GlobalSearchDemoComponent } from './global-search-demo.component';
+import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 
 describe('GlobalSearchDemoComponent', () => {
   let component: GlobalSearchDemoComponent;
@@ -8,6 +9,7 @@ describe('GlobalSearchDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ GlobalSearchModule ],
       declarations: [ GlobalSearchDemoComponent ]
     })
     .compileComponents();
