@@ -20,6 +20,7 @@
       "@ffdc/uxg-angular-components": ["libs/angular-components/src/index.ts"],
       "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/src/global-search/src/index.ts"],
       "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/src/scroll-to-top/src/index.ts"],
+      "@ffdc/uxg-angular-components/tooltip": ["libs/angular-components/src/tooltip/src/index.ts"],
       "@ffdc/uxg-angular-components/signpost": ["libs/angular-components/src/signpost/src/index.ts"]
     }
   },

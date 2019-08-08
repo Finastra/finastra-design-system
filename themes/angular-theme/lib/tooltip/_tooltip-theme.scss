@@ -1,0 +1,27 @@
+
+.tippy-popper {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+
+}
+
+.tippy-tooltip {
+  background-color: #694ed6;
+}
+
+.tippy-popper[x-placement^=bottom] .tippy-arrow {
+  border-bottom: 8px solid #694ed6;
+}
+
+.tippy-popper[x-placement^=top] .tippy-arrow {
+  border-top: 8px solid #694ed6;
+}
+
+.tippy-popper[x-placement^=right] .tippy-arrow {
+  border-right: 8px solid #694ed6;
+}
+
+.tippy-popper[x-placement^=left] .tippy-arrow {
+  border-left: 8px solid #694ed6;
+}
