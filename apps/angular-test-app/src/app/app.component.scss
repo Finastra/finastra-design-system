@@ -1,6 +1,7 @@
-@import '../../../../themes/angular-theme/all-theme';
-
-@include uxg-material-theme($uxg-light-theme);
+.main-container {
+    height: 100%;
+    width: 100%;
+}
 
 .uxg-nav-header {
     display: flex;
