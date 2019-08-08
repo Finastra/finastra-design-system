@@ -34,6 +34,7 @@ yarn-error.log
 testem.log
 /typings
 /.history
+junit.xml
 
 # System Files
 .DS_Store
