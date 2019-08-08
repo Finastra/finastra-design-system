@@ -49,6 +49,7 @@
     "lodash-es": "^4.17.15",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",
+    "tippy.js": "^4.3.5",
     "tslib": "^1.9.0",
     "zone.js": "^0.9.1"
   },

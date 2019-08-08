@@ -8,6 +8,7 @@
     "@angular/flex-layout": "^8.0.0-beta.26",
     "elasticlunr": "^0.9.5",
     "lodash-es": "^4.17.15",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "tippy.js": "^4.3.4"
   }
 }
