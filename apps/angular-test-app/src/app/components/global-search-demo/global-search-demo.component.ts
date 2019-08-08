@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UxgGlobalSearch } from '@ffdc/uxg-angular-components/global-search';
 
 @Component({
-  selector: 'uxg-global-search-demo',
+  selector: 'ffdc-global-search-demo',
   templateUrl: './global-search-demo.component.html',
   styleUrls: ['./global-search-demo.component.scss']
 })
