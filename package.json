@@ -23,8 +23,6 @@
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
-    "link:dependencies":"sh scripts/link-dependencies.sh",
-    "postinstall": "npm run link:dependencies",
     "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
