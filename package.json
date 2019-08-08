@@ -42,6 +42,7 @@
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
+    "@uxg/fonts": "^0.1.1",
     "core-js": "^2.5.4",
     "elasticlunr": "^0.9.5",
     "rxjs": "~6.4.0",
