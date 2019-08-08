@@ -1,6 +1,5 @@
 <uxg-global-search #uxgGlobalSearch
     [groupBy]="'accountType'"
-    [resultItemTemplate]="tmpl"
     [showFilter]="true"
     [itemDivider]="false"
     [groupDivider]="true"
@@ -9,6 +8,9 @@
 </uxg-global-search>
 
 <ng-template #tmpl let-result>
-  {{result.nickname}}
-  {{result.balances[0].amount}} {{result.accountType}}
+  <div>
+      {{result | json}}
+  </div>
+  <!-- {{result.nickname}}
+  {{result.balances[0].amount}} {{result.accountType}} -->
 </ng-template>

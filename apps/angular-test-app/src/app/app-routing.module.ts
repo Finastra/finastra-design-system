@@ -6,10 +6,7 @@ import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { HomeComponent } from './components/home/home.component';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
 
-const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'global-search', component: GlobalSearchDemoComponent}
-];
+import { routes } from './routes';
 
 @NgModule({
   imports: [
