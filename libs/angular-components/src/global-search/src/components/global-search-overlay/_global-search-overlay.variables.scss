@@ -1,0 +1,7 @@
+@import '~@ffdc/uxg-angular-theme/all-theme';
+
+$primary: map-get($uxg-light-theme, primary);
+$foreground: map-get($uxg-light-theme, foreground);
+
+$global-search-primary-color: mat-color($primary, default);
+$global-search-text-color: mat-color($foreground, text);
