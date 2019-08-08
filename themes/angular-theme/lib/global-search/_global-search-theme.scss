@@ -1,0 +1,31 @@
+@mixin uxg-global-search-theme($theme) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    $global-search-primary-color: mat-color($primary, default);
+    $global-search-text-color: mat-color($foreground, text);
+
+    .uxg-global-search-input-area {
+      .uxg-global-search-input {
+        // border: solid $global-search-primary-color;
+
+        &::-webkit-input-placeholder {
+          color: rgba($global-search-text-color, 0.4);
+        }
+        &::-moz-placeholder {
+          color: rgba($global-search-text-color, 0.4);
+        }
+        &:-moz-placeholder {
+          color: rgba($global-search-text-color, 0.4);
+        }
+        &:-ms-input-placeholder {
+          color: rgba($global-search-text-color, 0.4);
+        }
+      }
+
+      .uxg-global-search-icon {
+        // border-bottom: 2px solid $global-search-primary-color;
+      }
+    }
+  }
+  
