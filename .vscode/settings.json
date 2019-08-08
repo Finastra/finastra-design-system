@@ -1,15 +1,8 @@
 {
   "debug.node.autoAttach": "on",
   "workbench.colorCustomizations": {
-      "activityBar.background": "#661955",
-      "activityBar.foreground": "#ffffff",
-      "activityBar.inactiveForeground": "#270821",
-      "activityBar.border": "#c137a2",
-      "activityBarBadge.background": "#ff0000",
-      "activityBarBadge.foreground": "#e7e7e7",
-      "titleBar.activeBackground": "#661955",
-      "titleBar.activeForeground": "#f6c4eb",
-      "menubar.selectionForeground": "#ffffff",
-      "titleBar.border": "#c137a2"
+    "activityBar.border": "#c137a2",
+    "menubar.selectionForeground": "#ffffff",
+    "titleBar.border": "#c137a2"
   }
 }
