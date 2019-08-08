@@ -29,7 +29,7 @@ async function themeBuilder(
     await remove(dest);
     await mkdirp(dest);
 
-    options.assets = [...options.assets, `${src}/LICENSE.md`];
+    options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`];
 
     if (!pkg.sass) {
       if (printInfo) logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");

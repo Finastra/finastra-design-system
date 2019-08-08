@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist coverage junit.xml",
     "start": "ng serve",
     "build": "ng build",
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
