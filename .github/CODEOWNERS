@@ -1,0 +1,8 @@
+# Themes and style files should be reviewed by Studios' team.
+/themes/    @ttalbot
+*.scss      @ttalbot
+*.css       @ttalbot
+*.png       @ttalbot
+*.jpeg      @ttalbot
+*.jpg       @ttalbot
+*.svg       @ttalbot
