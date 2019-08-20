@@ -6,7 +6,6 @@
 @import '../../card/card-theme';
 @import '../../chips/chips-theme';
 @import '../../expansion/expansion-theme';
-@import '../../global-search/global-search-theme';
 @import '../../link/link-theme';
 @import '../../list/list-theme';
 @import '../../menu/menu-theme';
@@ -60,7 +59,6 @@
   @include uxg-card-theme($theme);
   @include uxg-chips-theme($theme);
   @include uxg-expansion-theme($theme);
-  @include uxg-global-search-theme($theme);
   @include uxg-link-theme($theme);
   @include uxg-list-theme($theme);
   @include uxg-menu-theme($theme);
