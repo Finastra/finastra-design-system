@@ -26,8 +26,8 @@ export default function (schema: Schema): Rule {
     const localGitConfig = gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
 
     const user = {
-      name: localGitConfig.user.name || globalGitConfig.user.name,
-      email: localGitConfig.user.email || globalGitConfig.user.email
+      name: (localGitConfig.user && localGitConfig.user.name) || globalGitConfig.user.name,
+      email: (localGitConfig.user && localGitConfig.user.email) || globalGitConfig.user.email
     };
 
     const pkg = JSON.parse((await readFile(join(process.cwd(), './package.json'))).toString());

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 import { GlobalSearchService } from './services/global-search.service';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
@@ -6,7 +6,8 @@ import { SearchOverlayRef } from './components/global-search-overlay/global-sear
 @Component({
   selector: 'uxg-global-search',
   templateUrl: './global-search.component.html',
-  styleUrls: ['./global-search.component.scss']
+  styleUrls: ['./global-search-base.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UxgGlobalSearch implements OnInit {
   @Input() groupBy: string;
@@ -19,8 +20,10 @@ export class UxgGlobalSearch implements OnInit {
 
   @Output() resultItemClick = new EventEmitter();
 
-  constructor(private overlayService: GlobalSearchOverlayService,
-              public searchService: GlobalSearchService) {
+  constructor(
+    private overlayService: GlobalSearchOverlayService,
+    public searchService: GlobalSearchService
+    ) {
   }
 
   private ref: SearchOverlayRef;
