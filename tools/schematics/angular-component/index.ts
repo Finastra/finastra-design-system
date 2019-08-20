@@ -17,9 +17,8 @@ import gitPath from 'git-config-path';
 import { Schema } from './schema';
 import { join } from 'path';
 import { readFile } from 'fs-extra';
-import { registerLocalPackage, addToNgModule } from '../../utils';
 
-// TODO: add module to main angular components module
+import { registerLocalPackage, addToNgModule } from '../../utils';
 
 export default function (schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {

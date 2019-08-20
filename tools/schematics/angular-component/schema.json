@@ -5,12 +5,6 @@
   "type": "object",
   "description": "Creates a new generic uxg angular component definition in the given or default project.",
   "properties": {
-    "path": {
-      "type": "string",
-      "format": "path",
-      "description": "The path at which to create the component file, relative to the current workspace. Default is a folder with the same name as the component in the project root.",
-      "visible": false
-    },
     "name": {
       "type": "string",
       "description": "The name of the component.",
@@ -19,13 +13,6 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use for the component?"
-    },
-    "changeDetection": {
-      "description": "The change detection strategy to use in the new component.",
-      "enum": ["Default", "OnPush"],
-      "type": "string",
-      "default": "Default",
-      "alias": "c"
     }
   },
   "required": [
