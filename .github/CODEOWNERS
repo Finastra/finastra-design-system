@@ -1,4 +1,12 @@
-# Themes and style files should be reviewed by Studios' team.
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence.
+@aifrim @bcldvd @ttalbot
+
+# Repository management
+/scripts/   @aifrim
+/tools/     @aifrim
+
+# Themes and style files
 /themes/    @ttalbot
 *.scss      @ttalbot
 *.css       @ttalbot
@@ -6,3 +14,7 @@
 *.jpeg      @ttalbot
 *.jpg       @ttalbot
 *.svg       @ttalbot
+
+# Per components owners
+/libs/angular-components/src/global-search/     @aifrim
+/libs/angular-components/src/scroll-to-top/     @aifrim
