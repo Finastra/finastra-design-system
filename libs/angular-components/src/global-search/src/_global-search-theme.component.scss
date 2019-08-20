@@ -66,7 +66,7 @@
 
     .uxg-global-search-icon {
       .mat-icon {
-        font-size: 60px;
+        font-size: mat-font-size($config, h1);
       }
     }
   }
@@ -75,7 +75,7 @@
     button {
       .mat-button-wrapper {
         .mat-icon {
-          font-size: 50px;
+          font-size: mat-font-size($config, h2);
         }
       }
     }
