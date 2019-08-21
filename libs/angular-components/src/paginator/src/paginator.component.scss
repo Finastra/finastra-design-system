@@ -1,0 +1,42 @@
+$uxg-paginator-height: 44px;
+$uxg-paginator-icon-height: 20px;
+
+uxg-paginator{
+    mat-paginator.mat-paginator{
+        height: $uxg-paginator-height;
+
+        .mat-paginator-container{
+            height: $uxg-paginator-height;
+            min-height: $uxg-paginator-height;
+
+            .mat-paginator-page-size{
+                height: $uxg-paginator-height;
+                margin-right: 16px;
+                .mat-paginator-page-size-select{
+                    margin: 0px 0px 0px 0px;
+                }
+            }
+            .mat-paginator-range-actions{
+                padding-right: 16px;
+                .mat-paginator-range-label{
+                    margin-left: 16px;
+                    margin-right: 52px;
+                }
+                .mat-icon-button{
+                    height: $uxg-paginator-height;
+                    width: $uxg-paginator-height;
+                    span{
+                        margin-left: 12px;
+                        margin-right: 12px;
+                    }
+                    .mat-paginator-icon{
+                        width: $uxg-paginator-icon-height;
+                        height: $uxg-paginator-icon-height;
+                    }
+                }
+    
+            }
+        }
+
+    }
+}

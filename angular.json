@@ -23,7 +23,9 @@
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
-            "styles": ["apps/angular-test-app/src/styles.scss"],
+            "styles": [
+              "apps/angular-test-app/src/styles.scss",
+              "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": []
           },
           "configurations": {

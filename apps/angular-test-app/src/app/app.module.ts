@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatIconModule, MatToolbarModule, MatButtonModule, MatListModule, MatSidenavModule, MatCardModule } from '@angular/material';
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
+
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
+import { TableModule } from '@ffdc/uxg-angular-components/table';
+import { PaginatorModule } from '@ffdc/uxg-angular-components/paginator';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     CommonModule,
-    BrowserModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -21,7 +22,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatSidenavModule,
     AppRoutingModule,
     MatCardModule,
-    GlobalSearchModule
+    GlobalSearchModule,
+    TableModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+@font-face{
+    font-family: Roboto-Medium;
+    src: url(./fonts/roboto/Roboto-Medium.ttf) format('opentype');
+}
+
+@font-face{
+    font-family: Roboto-Light;
+    src:  url(./fonts//roboto/Roboto-Light.ttf) format('opentype'); 
+}

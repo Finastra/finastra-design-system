@@ -1,13 +1,13 @@
 {
   "name": "@ffdc/devkit",
-  "version": "0.0.1",
+  "version": "0.12.0",
   "private": true,
   "main": "index.js",
   "builders": "./builders.json",
   "devDependencies": {
-      "@angular-devkit/architect": "0.800.1",
-      "@angular-devkit/build-angular": "0.800.1",
-      "@angular-devkit/core": "8.0.1",
-      "@angular-devkit/schematics": "8.0.1"
+    "@angular-devkit/architect": "0.800.1",
+    "@angular-devkit/build-angular": "0.800.1",
+    "@angular-devkit/core": "8.0.1",
+    "@angular-devkit/schematics": "8.0.1"
   }
 }
