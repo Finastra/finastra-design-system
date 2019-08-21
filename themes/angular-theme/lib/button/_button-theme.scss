@@ -2,7 +2,6 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
-  $finastra-gradient: linear-gradient(mat-color($primary, default), mat-color($accent, default), mat-color($uxg-crimson, 500));
 
   .mat-stroked-button {
     &.mat-primary {
