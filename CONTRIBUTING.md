@@ -23,9 +23,10 @@ Before submitting it, please consider the following steps:
 Then the process of reviewing, planning and hopefully fixing your issue will start.
 
 ## <a name="features"></a> Feature Requests
+You experienced frustation when trying to achieve some design using the theme?
+You identified some components that could help other developpers?
+Open a GitHub (feature request)[https://github.com/fusionfabric/finastra-design-system/issues/new?template=feature_request.md]
 
-### Theme Feature Requests
-
-### Component Feature Requests
+You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
 ## <a name="submit"></a> Submission Guidelines
