@@ -18,7 +18,7 @@ Before submitting it, please consider the following steps:
 - Make sure the bug is not already covered in the list of open issues
 - Reproduce the issue in a live editor like [StackBlitz](https://stackblitz.com/) or [CodePen](https://codepen.io/)
 - Take screenshots if it's a UI issue
-- Provide the informations requested in the [bug report template](https://github.com/fusionfabric/finastra-design-system/issues/new)
+- Provide the informations requested in the [bug report template](https://github.com/fusionfabric/finastra-design-system/issues/new?template=bug_report.md)
 
 Then the process of reviewing, planning and hopefully fixing your issue will start.
 
