@@ -30,3 +30,33 @@ Open a GitHub (feature request)[https://github.com/fusionfabric/finastra-design-
 You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
 ## <a name="submit"></a> Submission Guidelines
+Before creating a new pull request please make sure there is no related ongoing work by searching the GitHub issues.
+If you find something similar, join the discussion and consider contributing to it.
+If nothing match your search, then create a new issue accordingly ([Issues and Bugs](#issues), [Feature Requests](#features)).
+When your issue is validated and you are assigned to it, you can start with those simple steps:
+- Fork the repository by cliking the Fork button in the top right corner.
+- Go to your repository and clone your fork
+```sh
+> git clone git@github.com:[your_github_username]/finastra-design-system.git
+```
+- Add upstream remote for later updates
+```sh
+> git remote add upstream git@github.com:fusionfabric/finastra-design-system.git
+```
+- Create a feature or bugfix branch according to your needs
+```sh
+> git checkout -b bugfix/meaningful-name
+```
+- Write your code
+- Test your code, run linter
+- Commit your code, add a commit message following (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0-beta.4/] guidelines
+```sh
+> git commit -m <type>[scope]: <description>
+```
+- Push your branch to GitHub
+```sh
+> git push -u origin bugfix/meaningful-name
+```
+- In GitHub send a pull request to master
+
+That's it, thank you for your contribution!
