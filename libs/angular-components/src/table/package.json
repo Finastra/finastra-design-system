@@ -2,7 +2,7 @@
   "name": "@ffdc/uxg-angular-components/table",
   "version": "0.12.0",
   "author": "pingyuan <ping.yuan@finastra.com>",
-  "dependencies": {
+  "peer-dependencies": {
     "@ffdc/uxg-angular-theme": "0.12.0"
   }
 }

@@ -14,7 +14,7 @@ $uxg-paginator-icon-height: 20px;
       height: $uxg-paginator-height;
 
       .mat-paginator-page-size-select {
-        margin: 0 0 0 0;
+        margin: $uxg-spacing-0 $uxg-spacing-0 $uxg-spacing-0 $uxg-spacing-0;
       }
 
       .mat-paginator-page-size-label {
