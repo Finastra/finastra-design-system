@@ -35,9 +35,6 @@
       ],
       "@ffdc/uxg-angular-components/table": [
         "libs/angular-components/src/table/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/paginator": [
-        "libs/angular-components/src/paginator/src/index.ts"
       ]
     }
   },
