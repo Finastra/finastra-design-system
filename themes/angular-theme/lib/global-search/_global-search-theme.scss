@@ -7,8 +7,6 @@
 
   .uxg-global-search-input-area {
     .uxg-global-search-input {
-      // border: solid $global-search-primary-color;
-
       &::-webkit-input-placeholder {
         color: rgba($global-search-text-color, 0.4);
       }
@@ -24,10 +22,6 @@
       &:-ms-input-placeholder {
         color: rgba($global-search-text-color, 0.4);
       }
-    }
-
-    .uxg-global-search-icon {
-      // border-bottom: 2px solid $global-search-primary-color;
     }
   }
 }

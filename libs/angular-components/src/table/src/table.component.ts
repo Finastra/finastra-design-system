@@ -9,12 +9,12 @@ import { UxgColumn, UxgSort } from './utils';
   styleUrls: ['./table.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class TableComponent implements OnInit, OnDestroy, OnChanges{
+export class TableComponent implements OnInit, OnDestroy, OnChanges {
   
   @ViewChild(MatTable, {static: true}) table: MatTable<any>;
 
   @Input() data: Array<any> = [];
-  @Input() columns: Array<UxgColumn> = []; // columns definations
+  @Input() columns: Array<UxgColumn> = []; // columns definitions
   @Input() columnsToDisplay: Array<string> = []; 
 
   @Input() stickyHeader = true;
@@ -22,41 +22,41 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges{
   @Output() sortChange = new EventEmitter<UxgSort>();
 
 
-  constructor(){}
+  constructor() {}
 
   ngOnInit() {
 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if( changes.data && !changes.data.isFirstChange() ){
+    if( changes.data && !changes.data.isFirstChange() ) {
       this.table.renderRows();
     }
   }
 
-  sortData($event: UxgSort){
-    if( this.sortChange.observers.length > 0){
+  sortData($event: UxgSort) {
+    if( this.sortChange.observers.length > 0) {
       this.sortChange.emit($event);
     }else{
       this.data = this.localSort($event);
     }
   }
 
-  localSort(sort: UxgSort): any[]{
+  localSort(sort: UxgSort): any[] {
     return this.data.slice().sort( (a, b) => {
       let comparison = 0;
-      switch(this.getSortColumnType(sort.active)){
+      switch(this.getSortColumnType(sort.active)) {
         case 'number':
             comparison = a[sort.active] - b[sort.active];
             break;
         default:
-          if ( a[sort.active].toUpperCase() > b[sort.active].toUpperCase() ){
+          if ( a[sort.active].toUpperCase() > b[sort.active].toUpperCase() ) {
             comparison = 1;
           }else{
             comparison = -1;
           }
       } 
-      if( sort.direction === 'asc'){
+      if( sort.direction === 'asc') {
         return comparison;
       }else{
         return - comparison;
@@ -64,7 +64,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges{
     })
   }
 
-  getSortColumnType(columnName: string){
+  getSortColumnType(columnName: string) {
     return this.columns.find( column => { 
       return column.name === columnName}
       ).type;

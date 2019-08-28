@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { Sort } from '@angular/material';
 
 const ELEMENT_DATA: any[] = [
@@ -18,6 +18,11 @@ const ELEMENT_DATA: any[] = [
   templateUrl: './table-demo.component.html',
   styleUrls: ['./table-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  // tslint:disable-next-line: no-host-metadata-property
+  host: {
+    class: 'ffdc-table-demo'
+  }
 })
 export class TableDemoComponent implements OnInit {
 

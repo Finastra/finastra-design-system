@@ -1,5 +1,12 @@
-<uxg-table [data]="dataSource" 
-           [columns]="columns" 
-           [columnsToDisplay]="columnsToDisplay"
-           (sortChange) = "sortData($event)">
-</uxg-table>
+<div class="ffdc-table-demo-div">
+    <uxg-table [data]="dataSource" 
+        [columns]="columns" 
+        [columnsToDisplay]="columnsToDisplay"
+        (sortChange) = "sortData($event)">
+    </uxg-table>
+    <mat-paginator [length]="1000"
+        [pageSize]="10"
+        [showFirstLastButtons]="true" 
+        [pageSizeOptions]="[10, 20, 30, 100]">
+    </mat-paginator>
+</div>

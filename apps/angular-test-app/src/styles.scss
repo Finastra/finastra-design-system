@@ -1,10 +1,6 @@
 @import '../../../themes/angular-theme/all-theme';
 @import '../../../libs/angular-components/src/global-search/src/global-search-theme.component';
-@import '../../../libs/angular-components/src/table/src/table.theme';
 
-
-@include uxg-table-theme($uxg-light-theme);
-@include uxg-table-typography(null);
 @include uxg-global-search-theme($uxg-light-theme);
 
 html, body { height: 100%; }

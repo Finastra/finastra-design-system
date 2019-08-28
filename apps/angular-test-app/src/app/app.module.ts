@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { TableModule } from '@ffdc/uxg-angular-components/table';
-import { PaginatorModule } from '@ffdc/uxg-angular-components/paginator';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,8 +22,7 @@ import { PaginatorModule } from '@ffdc/uxg-angular-components/paginator';
     AppRoutingModule,
     MatCardModule,
     GlobalSearchModule,
-    TableModule,
-    PaginatorModule
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
