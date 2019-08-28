@@ -1,6 +1,24 @@
-.main-container {
+.uxg-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+}
+
+.uxg-nav {
+    flex: 1;
     height: 100%;
-    width: 100%;
+}
+
+.uxg-nav > .uxg-sidenav-content {
+    margin-top: 56px;
+    overflow-y: auto;
+}
+
+.uxg-sidenav {
+    margin-top: 56px;
+    width: 340px;
 }
 
 .uxg-nav-header {
@@ -14,10 +32,4 @@
         width: 45px;
         margin-bottom: 10px;
     }
-}
-
-.app-content {
-    height: 100%;
-    background: linear-gradient(180deg,#ebebeb 0,#fafafa 5%,#fafafa 100%);
-    padding: 2vw;
 }

@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule, MatToolbarModule, MatButtonModule, MatListModule, MatSidenavModule, MatCardModule } from '@angular/material';
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { AppRoutingModule } from './app-routing.module';
+import { FilterPanelModule } from '@ffdc/uxg-angular-components/filter-panel';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatSidenavModule,
     AppRoutingModule,
     MatCardModule,
-    GlobalSearchModule
+    GlobalSearchModule,
+    FilterPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

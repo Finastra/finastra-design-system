@@ -1,0 +1,26 @@
+<mat-drawer-container class="filter-panel-container" fullscreen>
+    <mat-drawer mode="side" #filterPanel opened>
+        <uxg-filter-panel [filterList]="sampleFilters" (filter)="updateFilter($event)"></uxg-filter-panel>
+    </mat-drawer>
+    <mat-drawer-content>
+        <button mat-icon-button aria-label="Toggle filter panel" (click)="filterPanel.toggle()">
+            <mat-icon>filter_list</mat-icon>
+        </button>
+        <mat-list>
+
+            <h3 mat-subheader>Tenants</h3>
+            <mat-list-item *ngFor="let tenant of filteredTenants">
+                <mat-icon mat-list-icon>streetview</mat-icon>
+                <h4 mat-line>{{tenant.name}}</h4>
+                <p mat-line> {{tenant.updated | date}} </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h3 mat-subheader>Companies</h3>
+            <mat-list-item *ngFor="let company of filteredCompanies">
+                <mat-icon mat-list-icon>storefront</mat-icon>
+                <h4 mat-line>{{company.name}}</h4>
+                <p mat-line> {{company.updated | date}} </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer-content>
+</mat-drawer-container>
