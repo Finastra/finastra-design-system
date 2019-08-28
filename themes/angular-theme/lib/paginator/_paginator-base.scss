@@ -3,35 +3,40 @@
 $uxg-paginator-height: 44px;
 $uxg-paginator-icon-height: 20px;
 
-mat-paginator.mat-paginator {
+.mat-paginator {
+  height: $uxg-paginator-height;
+
+  .mat-paginator-container {
     height: $uxg-paginator-height;
+    min-height: $uxg-paginator-height;
 
-    .mat-paginator-container {
-        height: $uxg-paginator-height;
-        min-height: $uxg-paginator-height;
+    .mat-paginator-page-size {
+      height: $uxg-paginator-height;
 
-        .mat-paginator-page-size {
-            height: $uxg-paginator-height;
-            .mat-paginator-page-size-select {
-                margin: 0 0 0 0;
-            }
-            .mat-paginator-page-size-label {
-                margin-right: $uxg-spacing-2;
-            }
-        }
-        .mat-paginator-range-actions {
-            .mat-icon-button {
-                height: $uxg-paginator-height;
-                width: $uxg-paginator-height;
-                span {
-                    margin-left: $uxg-spacing-2;
-                    margin-right: $uxg-spacing-2;
-                }
-                .mat-paginator-icon {
-                    width: $uxg-paginator-icon-height;
-                    height: $uxg-paginator-icon-height;
-                }
-            }
-        }
+      .mat-paginator-page-size-select {
+        margin: 0 0 0 0;
+      }
+
+      .mat-paginator-page-size-label {
+        margin-right: $uxg-spacing-2;
+      }
     }
+
+    .mat-paginator-range-actions {
+      .mat-icon-button {
+        height: $uxg-paginator-height;
+        width: $uxg-paginator-height;
+
+        span {
+          margin-left: $uxg-spacing-2;
+          margin-right: $uxg-spacing-2;
+        }
+
+        .mat-paginator-icon {
+          width: $uxg-paginator-icon-height;
+          height: $uxg-paginator-icon-height;
+        }
+      }
+    }
+  }
 }

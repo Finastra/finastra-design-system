@@ -5,36 +5,41 @@ $uxg-table-icons: $uxg-spacing-3;
 $uxg-table-cell-margin: $uxg-spacing-3;
 $uxg-table-row-height: 44px;
 
-
 .mat-table {
-    thead {
-        tr {
-            height: $uxg-table-row-height;
-            th {
-                padding-left: $uxg-table-cell-margin;
-                padding-right: $uxg-table-cell-margin;
-                div {
-                    display: flex;
-                }
-            }
+  thead {
+    tr {
+      height: $uxg-table-row-height;
+
+      th {
+        padding-left: $uxg-table-cell-margin;
+        padding-right: $uxg-table-cell-margin;
+
+        div {
+          display: flex;
         }
+      }
     }
-    tbody {
-        tr {
-            height: $uxg-table-row-height;
-            td {
-                padding-left: $uxg-table-cell-margin;
-                padding-right: $uxg-table-cell-margin;
-                div {
-                    display: flex;
-                    mat-icon.mat-icon {
-                        font-size: $uxg-table-icons;
-                        height: $uxg-table-icons;
-                        width: $uxg-table-icons;
-                        margin-right: $uxg-table-cell-icon-margin;
-                    }
-                }
-            }
+  }
+
+  tbody {
+    tr {
+      height: $uxg-table-row-height;
+
+      td {
+        padding-left: $uxg-table-cell-margin;
+        padding-right: $uxg-table-cell-margin;
+
+        div {
+          display: flex;
+
+          .mat-icon {
+            font-size: $uxg-table-icons;
+            height: $uxg-table-icons;
+            width: $uxg-table-icons;
+            margin-right: $uxg-table-cell-icon-margin;
+          }
         }
+      }
     }
+  }
 }

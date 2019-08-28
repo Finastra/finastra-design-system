@@ -1,30 +1,32 @@
 
 @mixin uxg-table-theme($theme) {
-    $primary: map-get($theme, primary);
+  $primary: map-get($theme, primary);
 
-    .mat-table {
-        tbody {
-            tr:nth-child(even) {
-                background-color: mat-color($primary, default, 0.06);
-            }
-        }
+  .mat-table {
+    tbody {
+      tr:nth-child(even) {
+        background-color: mat-color($primary, default, 0.06);
+      }
     }
+  }
 }
 
 @mixin uxg-table-typography($config: null) {
-    .mat-table {
-        tr {
-            @include mat-typography-level-to-styles($config, body-3);
-        }
-        thead {
-            tr {
-                font-family: mat-font-family($config, subtitle-3);
-            }
-        }
-        tbody {
-            tr {
-                font-family: mat-font-family($config, display-6);
-            }
-        }
+  .mat-table {
+    tr {
+      @include mat-typography-level-to-styles($config, body-3);
     }
+
+    thead {
+      tr {
+        font-family: mat-font-family($config, subtitle-3);
+      }
+    }
+
+    tbody {
+      tr {
+        font-family: mat-font-family($config, display-6);
+      }
+    }
+  }
 }

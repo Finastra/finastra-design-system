@@ -4,9 +4,10 @@
         [columnsToDisplay]="columnsToDisplay"
         (sortChange) = "sortData($event)">
     </uxg-table>
-    <mat-paginator [length]="1000"
-        [pageSize]="10"
+    <mat-paginator [length]="length"
+        [pageSize]="5"
         [showFirstLastButtons]="true" 
-        [pageSizeOptions]="[10, 20, 30, 100]">
+        [pageSizeOptions]="[5, 10]"
+        (page)="applyPaging($event)">
     </mat-paginator>
 </div>
