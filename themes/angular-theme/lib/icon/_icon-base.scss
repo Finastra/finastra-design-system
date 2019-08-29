@@ -34,6 +34,7 @@ button {
   &.mat-flat-button {
     .mat-icon {
       @include icon-size($icon-size-dense);
+
       padding-bottom: 2px;
     }
   }
