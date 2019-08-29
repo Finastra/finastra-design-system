@@ -10,7 +10,6 @@ $icon-size-dense: 18px;
   height: $icon-size !important;
   font-size: $icon-size !important;
   line-height: $icon-size !important;
-  padding-bottom: 2px;
 }
 
 .mat-icon[dense],
@@ -35,6 +34,7 @@ button {
   &.mat-flat-button {
     .mat-icon {
       @include icon-size($icon-size-dense);
+      padding-bottom: 2px;
     }
   }
 }
