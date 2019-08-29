@@ -9,33 +9,27 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
 // medium = 500
 // bold = 700
 @function uxg-typography-config(
-  $display-1:     mat-typography-level(72px, 93px, 300),
-  $display-2:     mat-typography-level(60px, 78px, 300),
-  $display-3:     mat-typography-level(48px, 62px, 300),
-  $display-4:     mat-typography-level(34px, 44px, 300),
-  $display-5:     mat-typography-level(28px, 36px, 300),
-  $display-6:     mat-typography-level(22px, 29px, 300),
+  $display-1:     mat-typography-level(72px, 108px, 300),
+  $display-2:     mat-typography-level(60px, 90px, 300),
+  $display-3:     mat-typography-level(48px, 72px, 300),
+  $display-4:     mat-typography-level(44px, 66px, 300),
+  $display-5:     mat-typography-level(28px, 42px, 300),
+  $display-6:     mat-typography-level(20px, 30px, 300),
   $h1:            mat-typography-level(60px, 72px, 700, $secondary-font),
   $h2:            mat-typography-level(48px, 57px, 700, $secondary-font),
   $h3:            mat-typography-level(32px, 38px, 700, $secondary-font),
   $h4:            mat-typography-level(24px, 28px, 700, $secondary-font),
   $h5:            mat-typography-level(18px, 21px, 700, $secondary-font),
   $h6:            mat-typography-level(14px, 16px, 700, $secondary-font),
-  $subtitle-1:    mat-typography-level(24px, 36px, 500),
-  $subtitle-2:    mat-typography-level(20px, 30px, 500),
-  $subtitle-3:    mat-typography-level(16px, 24px, 500),
-  $subtitle-4:    mat-typography-level(14px, 21px, 500),
-  $subtitle-5:    mat-typography-level(12px, 18px, 500),
-  $body-1:        mat-typography-level(20px, 30px, 300),
-  $body-2:        mat-typography-level(16px, 24px, 300),
-  $body-3:        mat-typography-level(14px, 21px, 300),
-  $body-4:        mat-typography-level(12px, 18px, 300),
-  $body-5:        mat-typography-level(10px, 15px, 300),
+  $subtitle-1:    mat-typography-level(16px, 24px, 500),
+  $subtitle-2:    mat-typography-level(14px, 21px, 500),
+  $body-1:        mat-typography-level(16px, 30px, 300),
+  $body-2:        mat-typography-level(14px, 21px, 300),
   $button-1:      mat-typography-level(16px, 42px, 500),
   $button-2:      mat-typography-level(14px, 36px, 500),
   $button-3:      mat-typography-level(12px, 30px, 500),
   $caption:       mat-typography-level(12px, 18px, 400),
-  $overline:      mat-typography-level(12px, 12px, 500)
+  $overline:      mat-typography-level(10px, 16px, 500)
 ) {
   // Declare an initial map with all of the levels.
   $config: (
@@ -53,14 +47,8 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
     h6:             $h6,
     subtitle-1:     $subtitle-1,
     subtitle-2:     $subtitle-2,
-    subtitle-3:     $subtitle-3,
-    subtitle-4:     $subtitle-4,
-    subtitle-5:     $subtitle-5,
     body-1:         $body-1,
     body-2:         $body-2,
-    body-3:         $body-3,
-    body-4:         $body-4,
-    body-5:         $body-5,
     button-1:       $button-1,
     button-2:       $button-2,
     button-3:       $button-3,
@@ -133,36 +121,12 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
     @include mat-typography-level-to-styles($config, subtitle-2);
   }
 
-  .uxg-subtitle-3 {
-    @include mat-typography-level-to-styles($config, subtitle-3);
-  }
-
-  .uxg-subtitle-4 {
-    @include mat-typography-level-to-styles($config, subtitle-4);
-  }
-
-  .uxg-subtitle-5 {
-    @include mat-typography-level-to-styles($config, subtitle-5);
-  }
-
   .uxg-body-1 {
     @include mat-typography-level-to-styles($config, body-1);
   }
 
   .uxg-body-2 {
     @include mat-typography-level-to-styles($config, body-2);
-  }
-
-  .uxg-body-3 {
-    @include mat-typography-level-to-styles($config, body-3);
-  }
-
-  .uxg-body-4 {
-    @include mat-typography-level-to-styles($config, body-4);
-  }
-
-  .uxg-body-5 {
-    @include mat-typography-level-to-styles($config, body-5);
   }
 
   .uxg-display-1 {
