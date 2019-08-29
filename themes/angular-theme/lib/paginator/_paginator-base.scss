@@ -23,6 +23,10 @@ $uxg-paginator-icon-height: 20px;
     }
 
     .mat-paginator-range-actions {
+      .mat-paginator-range-label {
+        margin-right: $uxg-spacing-5;
+      }
+
       .mat-icon-button {
         height: $uxg-paginator-height;
         width: $uxg-paginator-height;

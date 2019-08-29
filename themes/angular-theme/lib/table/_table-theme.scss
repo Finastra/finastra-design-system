@@ -13,19 +13,15 @@
 
 @mixin uxg-table-typography($config: null) {
   .mat-table {
-    tr {
-      @include mat-typography-level-to-styles($config, body-3);
-    }
-
     thead {
       tr {
-        font-family: mat-font-family($config, subtitle-3);
+        font-family: mat-font-family($config, subtitle-2);
       }
     }
 
     tbody {
       tr {
-        font-family: mat-font-family($config, display-6);
+        font-family: mat-font-family($config, body-2);
       }
     }
   }
