@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-export interface FilterList {
-  data: NodeFilter[]
+export interface FilterField {
   group: string,
+  options: Option[]
 }
 
-export interface NodeFilter {
-  name: string;
+export interface Option {
+  label: string;
 }
 
 @Component({
@@ -16,22 +16,28 @@ export interface NodeFilter {
 })
 export class FilterPanelComponent implements OnInit {
 
-  @Input() filterList: FilterList[];
-  @Output() filter = new EventEmitter<any[]>();
+  @Input() filterField: FilterField[];
+  // tslint:disable-next-line: no-output-native
+  @Output() change = new EventEmitter<any[]>();
+
   filterMap = [];
 
   constructor() {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.filterField.forEach(node => {
+      this.filterMap[node.group] = [] as string[];
+    });
+  }
 
-  updateFilter(group, filter) {
-    const index = this.filterMap.findIndex(function(e) { return (e.group === group && e.filter.name === filter.name ) });
-    if (index > -1) {
-      this.filterMap.splice(index, 1);
+  updateFilter(group, option) {
+    const index = this.filterMap[group].indexOf(option.label);
+    if (index === -1) {
+      this.filterMap[group].push(option.label)
     } else {
-      this.filterMap.push({ group: group, filter: filter });
+      this.filterMap[group].splice(index, 1);
     }
-    this.filter.emit(this.filterMap);
+    this.change.emit(this.filterMap);
   }
 }

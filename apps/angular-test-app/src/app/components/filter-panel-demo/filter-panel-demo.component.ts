@@ -17,21 +17,21 @@ export interface Tenant {
 })
 export class FilterPanelDemoComponent implements OnInit {
 
-  sampleFilters = [
+  sampleFilterFields = [
     {
       group: "Tenant",
-      data: [
-        { name: 'British Production' },
-        { name: 'British Sandbox' },
-        { name: 'British Development' }
+      options: [
+        { label: 'British Production' },
+        { label: 'British Sandbox' },
+        { label: 'British Development' }
       ]
     },
     {
       group: "Company",
-      data: [
-        { name: 'Kore.io' },
-        { name: 'Geezeo' },
-        { name: 'Sonect' }
+      options: [
+        { label: 'Kore.io' },
+        { label: 'Geezeo' },
+        { label: 'Sonect' }
       ]
     }
   ];
@@ -77,16 +77,16 @@ export class FilterPanelDemoComponent implements OnInit {
   }
 
   updateFilter(filterMap) {
-    this.updateCompanyList(filterMap);
-    this.updateTenantList(filterMap);
+    this.updateCompanyList(filterMap['Company']);
+    this.updateTenantList(filterMap['Tenant']);
   }
 
-  private updateCompanyList(filterMap) {
+  private updateCompanyList(fields: string[]) {
     this.filteredCompanies = [];
     
-    filterMap.forEach(element => {
+    fields.forEach(field => {
       this.companies.forEach(company => {
-        if (element.group === 'Company' && company.name === element.filter.name) {
+        if (company.name === field) {
           this.filteredCompanies.push(company);
         }
       });
@@ -97,12 +97,12 @@ export class FilterPanelDemoComponent implements OnInit {
     }
   }
 
-  private updateTenantList(filterMap) {
+  private updateTenantList(fields: string[]) {
     this.filteredTenants = [];
     
-    filterMap.forEach(element => {
+    fields.forEach(field => {
       this.tenants.forEach(tenant => {
-        if (element.group === 'Tenant' && tenant.name === element.filter.name) {
+        if (tenant.name === field) {
           this.filteredTenants.push(tenant);
         }
       });

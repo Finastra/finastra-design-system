@@ -7,11 +7,11 @@
         </mat-chip>
     </mat-chip-list>
 
-    <div *ngFor="let node of filterList">
+    <div *ngFor="let node of filterField">
         <p>{{ node.group }}</p>
         <div class="node-data-list">
-            <mat-checkbox (change)="updateFilter(node.group, filter)" *ngFor="let filter of node.data;">
-                {{filter.name}}
+            <mat-checkbox (change)="updateFilter(node.group, field)" *ngFor="let field of node.options;">
+                {{field.label}}
             </mat-checkbox>
         </div>
     </div>
