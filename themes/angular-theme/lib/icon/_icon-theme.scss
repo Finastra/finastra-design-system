@@ -1,0 +1,7 @@
+@mixin uxg-icon-theme($theme) {
+    .mat-icon[color=gradient] {
+        background: mat-color($uxg-gradient, vertical);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
