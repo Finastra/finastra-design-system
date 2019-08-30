@@ -1,4 +1,8 @@
-<div class="scroll-to-top-container" (click)="handleClick($event)" [@scrollAnimation]="state$ | async">
+<div
+  class="scroll-to-top-container"
+  (click)="handleClick($event)"
+  [@scrollAnimation]="state$ | async"
+>
   <ng-container *ngTemplateOutlet="customTemplate || defaultTemplate">
   </ng-container>
 </div>

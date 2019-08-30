@@ -22,7 +22,10 @@
             "main": "apps/angular-test-app/src/main.ts",
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
-            "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
+            "assets": [
+              "apps/angular-test-app/src/favicon.ico",
+              "apps/angular-test-app/src/assets"
+            ],
             "styles": ["apps/angular-test-app/src/styles.scss"],
             "scripts": []
           },
@@ -166,7 +169,11 @@
           "options": {
             "inputPath": "themes/angular-theme/",
             "outputPath": "dist/themes/angular-theme",
-            "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
+            "assets": [
+              "themes/angular-theme/lib",
+              "themes/angular-theme/assets",
+              "themes/angular-theme/*.scss"
+            ],
             "sourceMap": true
           },
           "configurations": {

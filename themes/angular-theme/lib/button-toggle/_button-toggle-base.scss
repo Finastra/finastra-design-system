@@ -36,7 +36,8 @@ $filtering-button-font-size: 12px;
       right: 0;
       margin-left: auto;
       margin-right: auto;
-      bottom: -($filtering-button-toggle-height/2 + $filtering-button-font-size/2 + $button-toggle-margin);
+      bottom: -($filtering-button-toggle-height/2 +
+            $filtering-button-font-size/2 + $button-toggle-margin);
     }
   }
 

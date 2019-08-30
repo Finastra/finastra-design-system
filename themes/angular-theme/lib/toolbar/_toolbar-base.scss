@@ -24,13 +24,19 @@ $uxg-toolbar-logo-height: 60px;
   padding: 0 $uxg-toolbar-margin;
 
   .uxg-toolbar-logo {
-    @include uxg-toolbar-logo($uxg-toolbar-logo-width, $uxg-toolbar-logo-height);
+    @include uxg-toolbar-logo(
+      $uxg-toolbar-logo-width,
+      $uxg-toolbar-logo-height
+    );
 
     margin-left: 70px;
   }
 
   .uxg-toolbar-logo-small {
-    @include uxg-toolbar-logo($uxg-toolbar-logo-width / 2, $uxg-toolbar-logo-height / 2);
+    @include uxg-toolbar-logo(
+      $uxg-toolbar-logo-width / 2,
+      $uxg-toolbar-logo-height / 2
+    );
 
     margin: 0 30px;
   }

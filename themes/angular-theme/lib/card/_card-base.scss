@@ -22,9 +22,11 @@ $mat-card-padding: $uxg-spacing-3;
 }
 
 @mixin uxg-card-size($width, $height: false) {
-  width: $width - ( $mat-card-padding * 2 );
+  width: $width - ($mat-card-padding * 2);
 
-  @if $height { height: $height - ( $mat-card-padding * 2 ); }
+  @if $height {
+    height: $height - ($mat-card-padding * 2);
+  }
 }
 
 .mat-card {
@@ -55,7 +57,7 @@ $mat-card-padding: $uxg-spacing-3;
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;

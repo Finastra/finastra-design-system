@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function (packagePath, version, scope) {
+module.exports = function(packagePath, version, scope) {
   let pkg = require(packagePath);
 
   // If package contains scope then bump it up as well
@@ -22,8 +22,8 @@ module.exports = function (packagePath, version, scope) {
     if (err) {
       console.log(err);
     }
-  })
-}
+  });
+};
 
 function bumpUpDependencies(dependencyObject, version, scope) {
   for (var dependency in dependencyObject) {
