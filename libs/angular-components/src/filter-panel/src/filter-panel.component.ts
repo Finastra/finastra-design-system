@@ -20,15 +20,25 @@ export class FilterPanelComponent implements OnInit {
   // tslint:disable-next-line: no-output-native
   @Output() change = new EventEmitter<any[]>();
 
-  filterMap = [];
+  filterMap: any[];
 
   constructor() {
   }
 
   ngOnInit() {
-    this.filterField.forEach(node => {
-      this.filterMap[node.group] = [] as string[];
-    });
+    this.initFilterMap();
+  }
+
+  initFilterMap() {
+    this.filterMap = [];
+    if(this.filterField && this.filterField.length > 0) {
+      this.filterField.forEach(node => {
+        node.options.forEach(option => {
+          option["selected"] = false;
+        });
+        this.filterMap[node.group] = [];
+      });
+    }
   }
 
   updateFilter(group, option) {
@@ -39,5 +49,17 @@ export class FilterPanelComponent implements OnInit {
       this.filterMap[group].splice(index, 1);
     }
     this.change.emit(this.filterMap);
+  }
+
+  clearFilter() {
+    this.initFilterMap();
+    if(this.filterField && this.filterField.length > 0) {
+      this.filterField.forEach(node => {
+        node.options.forEach(option => {
+          option["selected"] = false;
+        })
+      })
+      this.change.emit(this.filterMap);
+    }
   }
 }

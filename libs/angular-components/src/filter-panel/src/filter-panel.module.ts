@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterPanelComponent } from './filter-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCheckboxModule, MatChipsModule, MatIconModule } from '@angular/material';
+import { MatCheckboxModule, MatChipsModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -12,7 +12,8 @@ import { MatCheckboxModule, MatChipsModule, MatIconModule } from '@angular/mater
     ReactiveFormsModule,
     MatCheckboxModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [FilterPanelComponent],
   exports: [FilterPanelComponent]

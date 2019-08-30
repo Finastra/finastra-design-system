@@ -1,18 +1,17 @@
 <div class="filter-panel-container">
-    <h5 class="uxg-h5">Filter by</h5>
-    <mat-chip-list>
-        <mat-chip *ngFor="let filter of filterMap" removable dense selected>
-            <mat-icon matChipAvatar>cancel</mat-icon>
-            <span>{{ filter.filter.name }}</span>
-        </mat-chip>
-    </mat-chip-list>
-
+    <h3>Filter by</h3>
     <div *ngFor="let node of filterField">
         <p>{{ node.group }}</p>
         <div class="node-data-list">
-            <mat-checkbox (change)="updateFilter(node.group, field)" *ngFor="let field of node.options;">
+            <mat-checkbox [(ngModel)]="field.selected" (change)="updateFilter(node.group, field)" *ngFor="let field of node.options;" #filterField>
                 {{field.label}}
             </mat-checkbox>
         </div>
+    </div>
+    <div class="filter-panel-action">
+        <button mat-stroked-button color="primary" dense (click)="clearFilter()">
+            <mat-icon>delete_sweep</mat-icon>
+            Clear filters
+        </button>    
     </div>
 </div>
