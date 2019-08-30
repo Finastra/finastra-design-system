@@ -20,13 +20,19 @@ export class FilterPanelDemoComponent implements OnInit {
   }
 
   updateFilter(filterMap) {
-    this.updateCompanyList(filterMap['Company']);
-    this.updateTenantList(filterMap['Tenant']);
+    console.log(filterMap);
   }
+
+  // TODO
+  // - Refactor using new data model
+  // updateFilter(filterMap) {
+  //   this.updateCompanyList(filterMap['Company']);
+  //   this.updateTenantList(filterMap['Tenant']);
+  // }
 
   private updateCompanyList(fields: string[]) {
     this.filteredCompanies = [];
-    
+
     fields.forEach(field => {
       companies.forEach(company => {
         if (company.name === field) {
@@ -35,14 +41,14 @@ export class FilterPanelDemoComponent implements OnInit {
       });
     });
 
-    if(this.filteredCompanies.length === 0) {
+    if (this.filteredCompanies.length === 0) {
       this.filteredCompanies = companies;
     }
   }
 
   private updateTenantList(fields: string[]) {
     this.filteredTenants = [];
-    
+
     fields.forEach(field => {
       tenants.forEach(tenant => {
         if (tenant.name === field) {
@@ -51,8 +57,9 @@ export class FilterPanelDemoComponent implements OnInit {
       });
     });
 
-    if(this.filteredTenants.length === 0) {
+    if (this.filteredTenants.length === 0) {
       this.filteredTenants = tenants;
     }
   }
+  //
 }

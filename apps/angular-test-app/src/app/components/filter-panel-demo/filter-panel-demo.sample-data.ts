@@ -8,24 +8,34 @@ export interface Tenant {
     updated: Date;
 }
 
-export const sampleFilterFields = [
+export interface FieldNode {
+    label: string;
+    children?: FieldNode[];
+}
+
+export const sampleFilterFields: FieldNode[] = [
     {
-        group: "Tenant",
-        options: [
-            { label: 'British Production' },
-            { label: 'British Sandbox' },
-            { label: 'British Development' }
-        ]
-    },
-    {
-        group: "Company",
-        options: [
-            { label: 'Kore.io' },
-            { label: 'Geezeo' },
-            { label: 'Sonect' }
+        label: 'United Kingdom',
+        children: [
+            {
+                label: 'England',
+                children: [
+                    { label: 'England Production' },
+                    { label: 'England Development' },
+                    { label: 'England Sandbos' },
+                ]
+            },
+            {
+                label: 'Scotland',
+                children: [
+                    { label: 'Scotland Production' },
+                    { label: 'Scotland Development' },
+                    { label: 'Scotland Sandbos' },
+                ]
+            }
         ]
     }
-];
+]
 
 export const companies: Company[] = [
     {

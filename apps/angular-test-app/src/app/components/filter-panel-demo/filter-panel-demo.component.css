@@ -1,0 +1,5 @@
+.filter-panel-side {
+    width: auto !important;
+    min-width: 300px;
+    max-width: 450px;
+}
