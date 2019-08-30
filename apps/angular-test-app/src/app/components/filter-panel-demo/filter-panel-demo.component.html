@@ -1,4 +1,4 @@
-<mat-drawer-container class="filter-panel-container" autosize>
+<mat-drawer-container class="filter-panel-container" fullscreen>
     <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
         <uxg-filter-panel [fieldNode]="sampleData" (change)="updateFilter($event)"></uxg-filter-panel>
     </mat-drawer>
@@ -6,6 +6,7 @@
         <button mat-icon-button aria-label="Toggle filter panel" (click)="filterPanel.toggle()">
             <mat-icon>filter_list</mat-icon>
         </button>
+        (In progress)
         <mat-list>
 
             <h3 mat-subheader>Tenants</h3>

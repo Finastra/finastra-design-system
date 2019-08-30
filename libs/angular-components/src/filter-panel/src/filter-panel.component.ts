@@ -3,6 +3,11 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
 
+export interface FilterNode {
+  group: string;
+  options: FieldNode[];
+}
+
 export interface FieldNode {
   label: string;
   children?: FieldNode[];
@@ -41,7 +46,6 @@ export class FilterPanelComponent implements OnInit {
     };
   }
 
-
   // tslint:disable-next-line: member-ordering
   treeControl = new FlatTreeControl<FieldFlatNode>(
     node => node.level, node => node.expandable
@@ -66,6 +70,7 @@ export class FilterPanelComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.data = this.fieldNode;
+    this.treeControl.expandAll();
   }
 
   clearSelection() {
