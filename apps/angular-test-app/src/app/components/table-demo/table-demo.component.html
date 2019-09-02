@@ -2,12 +2,6 @@
     <uxg-table [data]="dataSource" 
         [columns]="columns" 
         [columnsToDisplay]="columnsToDisplay"
-        (sortChange) = "sortData($event)">
+        [paging]="paging">
     </uxg-table>
-    <mat-paginator [length]="length"
-        [pageSize]="5"
-        [showFirstLastButtons]="true" 
-        [pageSizeOptions]="[5, 10]"
-        (page)="applyPaging($event)">
-    </mat-paginator>
 </div>

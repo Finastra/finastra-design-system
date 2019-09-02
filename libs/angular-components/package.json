@@ -8,7 +8,6 @@
     "@angular/flex-layout": "^8.0.0-beta.26",
     "elasticlunr": "^0.9.5",
     "lodash-es": "^4.17.15",
-    "smoothscroll-polyfill": "^0.4.4",
-    "@ffdc/uxg-angular-theme": "0.12.0"
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }
