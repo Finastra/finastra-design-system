@@ -18,3 +18,4 @@
 # Per components owners
 /libs/angular-components/src/global-search/     @aifrim
 /libs/angular-components/src/scroll-to-top/     @aifrim
+/libs/angular-components/src/table/             @Ping-YUAN

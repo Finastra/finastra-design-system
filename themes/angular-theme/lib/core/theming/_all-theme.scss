@@ -10,6 +10,7 @@
 @import '../../list/list-theme';
 @import '../../menu/menu-theme';
 @import '../../sidenav/sidenav-theme';
+@import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
 
 // Create a theme.
@@ -63,5 +64,6 @@
   @include uxg-list-theme($theme);
   @include uxg-menu-theme($theme);
   @include uxg-sidenav-theme($theme);
+  @include uxg-table-theme($theme);
   @include uxg-toolbar-theme($theme);
 }
