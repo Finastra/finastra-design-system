@@ -30,7 +30,7 @@ Open a GitHub (feature request)[https://github.com/fusionfabric/finastra-design-
 You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
 ## <a name="submit"></a> Submission Guidelines
-Before creating a new pull request please make sure there is no related ongoing work by searching the GitHub issues.
+Before creating a new pull request please make sure there is no related ongoing work by searching the [GitHub issues](https://github.com/fusionfabric/finastra-design-system/issues) and [Github PRs](https://github.com/fusionfabric/finastra-design-system/pulls) as well.
 If you find something similar, join the discussion and consider contributing to it.
 If nothing match your search, then create a new issue accordingly ([Issues and Bugs](#issues), [Feature Requests](#features)).
 When your issue is validated and you are assigned to it, you can start with those simple steps:
