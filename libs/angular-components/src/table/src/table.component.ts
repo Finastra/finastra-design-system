@@ -41,11 +41,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.localPaging( {
-      pageIndex: this.paging.pageIndex,
-      pageSize: this.paging.pageSize,
-      length: this.data.length
-    });
+    if( this.paging ) {
+      this.localPaging( {
+        pageIndex: this.paging.pageIndex,
+        pageSize: this.paging.pageSize,
+        length: this.data.length
+      });
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
