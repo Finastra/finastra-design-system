@@ -47,6 +47,11 @@ When your issue is validated and you are assigned to it, you can start with thos
 ```sh
 > git checkout -b bugfix/meaningful-name
 ```
+- Install dependencies and build:devkit
+```sh
+> npm install
+> npm run build:devkit
+```
 - Write your code
 - Test your code, run linter
 - Commit your code, add a commit message following (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0-beta.4/] guidelines
