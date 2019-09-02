@@ -54,6 +54,12 @@ When your issue is validated and you are assigned to it, you can start with thos
 ```
 - Write your code
 - Test your code, run linter
+```sh
+> npm run format:check
+> npm run affected:test
+> npm run affected:e2e
+```
+- fix the presented errors / problems if any
 - Commit your code, add a commit message following (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0-beta.4/] guidelines
 ```sh
 > git commit -m <type>[scope]: <description>
