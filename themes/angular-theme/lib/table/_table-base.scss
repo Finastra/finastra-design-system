@@ -1,0 +1,57 @@
+@import "../core/style/spacing";
+
+$uxg-table-cell-icon-margin: $uxg-spacing-2;
+$uxg-table-icons: $uxg-spacing-3;
+$uxg-table-cell-margin: $uxg-spacing-3;
+$uxg-table-row-height: 44px;
+
+.mat-table {
+  thead {
+    tr {
+      height: $uxg-table-row-height;
+
+      th {
+        padding-left: $uxg-table-cell-margin;
+        padding-right: $uxg-table-cell-margin;
+
+        div {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      height: $uxg-table-row-height;
+
+      td {
+        padding-left: $uxg-table-cell-margin;
+        padding-right: $uxg-table-cell-margin;
+
+        div {
+          display: flex;
+
+          .mat-icon {
+            font-size: $uxg-table-icons;
+            height: $uxg-table-icons;
+            width: $uxg-table-icons;
+            margin-right: $uxg-table-cell-icon-margin;
+          }
+        }
+      }
+    }
+  }
+
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type,
+  th.mat-header-cell:first-of-type {
+    padding-left: $uxg-spacing-3;
+  }
+
+  td.mat-cell:last-of-type,
+  td.mat-footer-cell:last-of-type,
+  th.mat-header-cell:last-of-type {
+    padding-right: $uxg-spacing-3;
+  }
+}

@@ -21,10 +21,10 @@
 
 @mixin uxg-breadcrumb-typography($config) {
   .uxg-breadcrumb {
-    @include mat-typography-level-to-styles($config, body-3);
+    @include mat-typography-level-to-styles($config, body-2);
   }
 
   .uxg-breadcrumb[dense] {
-    @include mat-typography-level-to-styles($config, body-4);
+    @include mat-typography-level-to-styles($config, caption);
   }
 }
