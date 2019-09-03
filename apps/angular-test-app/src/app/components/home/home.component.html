@@ -1,38 +1,47 @@
 <div class="home-container">
-    <div class="home-title">
-        <div class="home-title-content">
-            <h1 class="uxg-h2">UXG <span class="uxg-display-3">Angular</span> Components</h1>
-        </div>
+  <div class="home-title">
+    <div class="home-title-content">
+      <h1 class="uxg-h2">UXG <span class="uxg-display-3">Angular</span> Components</h1>
     </div>
+  </div>
 
-    <div class="home-intro">
-        <h5 class="uxg-h5">Usage</h5>
-        <p class="uxg-body-2">Add the dependencies to your package.json</p>
-        <mat-card>
-          <pre><code>npm install @ffdc/finastra-design-system</code></pre>
-        </mat-card>
+  <div class="home-intro">
+    <h5 class="uxg-h5">Usage</h5>
+    <p class="uxg-body-2">Add the dependencies to your package.json</p>
+    <mat-card>
+      <pre><code>npm install @ffdc/finastra-design-system</code></pre>
+    </mat-card>
 
-        <p class="uxg-body-2">Import desired module into your app, example :</p>
-        <mat-card>
-          <pre><code>
+    <p class="uxg-body-2">Import desired module into your app, example :</p>
+    <mat-card>
+      <pre><code>
 imports: [
     GlobalSearchModule
 ],</code></pre>
-        </mat-card>
-    </div>
+    </mat-card>
+  </div>
 
-    <div class="home-list">
-        <h5 class="uxg-h5">Components</h5>
-        <div class="home-list-grid">
-            <mat-card routerLink="/global-search">
-                <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar">
-                <mat-card-title-group>
-                    <mat-card-title class="uxg-h4">Global Search</mat-card-title>
-                    <mat-card-subtitle class="uxg-overline">
-                        <mat-chip disabled dense>SEARCH</mat-chip>
-                    </mat-card-subtitle>
-                </mat-card-title-group>
-            </mat-card>
-        </div>
+  <div class="home-list">
+    <h5 class="uxg-h5">Components</h5>
+    <div class="home-list-grid">
+      <mat-card routerLink="/global-search">
+        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
+        <mat-card-title-group>
+          <mat-card-title class="uxg-h4">Global Search</mat-card-title>
+          <mat-card-subtitle class="uxg-overline">
+            <mat-chip disabled dense>SEARCH</mat-chip>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+      <mat-card routerLink="/table">
+        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
+        <mat-card-title-group>
+          <mat-card-title class="uxg-h4">Table</mat-card-title>
+          <mat-card-subtitle class="uxg-overline">
+            <mat-chip disabled dense>Table</mat-chip>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
     </div>
+  </div>
 </div>

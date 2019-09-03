@@ -68,10 +68,10 @@
 
 @mixin uxg-chips-typography($config) {
   .mat-chip {
-    @include mat-typography-level-to-styles($config, body-3);
+    @include mat-typography-level-to-styles($config, body-2);
   }
 
   .mat-chip[dense] {
-    @include mat-typography-level-to-styles($config, body-4);
+    @include mat-typography-level-to-styles($config, caption);
   }
 }

@@ -20,11 +20,7 @@ export class UxgGlobalSearch implements OnInit {
 
   @Output() resultItemClick = new EventEmitter();
 
-  constructor(
-    private overlayService: GlobalSearchOverlayService,
-    public searchService: GlobalSearchService
-    ) {
-  }
+  constructor(private overlayService: GlobalSearchOverlayService, public searchService: GlobalSearchService) {}
 
   private ref: SearchOverlayRef;
 
@@ -44,7 +40,6 @@ export class UxgGlobalSearch implements OnInit {
     this.searchService.itemClicked.subscribe(item => {
       this.resultItemClick.emit(item);
       this.ref.close();
-    })
+    });
   }
-
 }

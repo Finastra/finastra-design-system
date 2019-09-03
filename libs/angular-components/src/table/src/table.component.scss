@@ -1,0 +1,47 @@
+
+$uxp-table-extension-button-size: 20px;
+$uxp-table-extension-bar-height: 48px;
+uxg-table {
+    flex: 1;
+    .mat-table {
+
+        tr {
+            td {
+
+                &.right {
+                    text-align: right;
+                }
+
+                div {
+                    display: flex;
+                }
+                &.right div {
+                    float: right;
+                }
+                &.left div {
+                    float: left;
+                }
+                &.center div {
+                    float: center;
+                }
+            }
+        }
+
+        thead {
+            tr {
+                th {
+                    &.right div {
+                        .mat-sort-header-arrow{
+                            margin-left: 0px;
+                            margin-right: 6px;
+                        }
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

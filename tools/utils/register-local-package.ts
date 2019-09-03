@@ -8,7 +8,7 @@ interface TsConfigPartialType {
       [key: string]: string[];
     };
   };
-};
+}
 
 export function registerLocalPackage(dest: string, packageName: string) {
   return (host: Tree) => {
