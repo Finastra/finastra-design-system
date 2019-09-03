@@ -8,7 +8,7 @@ interface TsConfigPartialType {
       [key: string]: string[];
     };
   };
-}
+};
 
 export function registerLocalPackage(dest: string, packageName: string) {
   return (host: Tree) => {
@@ -16,27 +16,23 @@ export function registerLocalPackage(dest: string, packageName: string) {
       return host;
     }
 
-    return updateJsonFile(
-      host,
-      'tsconfig.json',
-      (tsconfig: TsConfigPartialType) => {
-        if (!tsconfig.compilerOptions.paths) {
-          tsconfig.compilerOptions.paths = {};
-        }
-
-        if (!tsconfig.compilerOptions.paths[packageName]) {
-          tsconfig.compilerOptions.paths[packageName] = [];
-        }
-
-        const paths = tsconfig.compilerOptions.paths[packageName];
-
-        const packages = new Set(paths);
-        packages.add(`${dest}/src/index.ts`);
-
-        if (packages.size !== paths.length) {
-          paths.push(`${dest}/src/index.ts`);
-        }
+    return updateJsonFile(host, 'tsconfig.json', (tsconfig: TsConfigPartialType) => {
+      if (!tsconfig.compilerOptions.paths) {
+        tsconfig.compilerOptions.paths = {};
       }
-    );
+
+      if (!tsconfig.compilerOptions.paths[packageName]) {
+        tsconfig.compilerOptions.paths[packageName] = [];
+      }
+
+      const paths = tsconfig.compilerOptions.paths[packageName];
+
+      const packages = new Set(paths);
+      packages.add(`${dest}/src/index.ts`);
+
+      if (packages.size !== paths.length) {
+        paths.push(`${dest}/src/index.ts`);
+      }
+    });
   };
 }

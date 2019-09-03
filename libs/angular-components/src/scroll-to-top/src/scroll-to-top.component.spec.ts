@@ -18,7 +18,8 @@ describe('ScrollToTopComponent', () => {
         MatIconModule
       ],
       declarations: [ScrollToTopComponent]
-    }).compileComponents();
+    })
+      .compileComponents();
   }));
 
   beforeEach(() => {

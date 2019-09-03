@@ -8,7 +8,7 @@
     warn: $warn,
     is-dark: false,
     foreground: $uxg-light-theme-foreground,
-    background: $uxg-light-theme-background
+    background: $uxg-light-theme-background,
   );
 }
 
@@ -20,6 +20,6 @@
     warn: $warn,
     is-dark: true,
     foreground: $uxg-dark-theme-foreground,
-    background: $uxg-dark-theme-background
+    background: $uxg-dark-theme-background,
   );
 }

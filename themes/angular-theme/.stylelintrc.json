@@ -1,16 +1,20 @@
 {
-  "extends": "stylelint-config-standard",
-  "plugins": ["stylelint-scss"],
-  "rules": {
-    "at-rule-no-unknown": null,
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "except": ["blockless-after-same-name-blockless", "first-nested"],
-        "ignore": ["after-comment", "blockless-after-blockless"]
-      }
+    "extends": "stylelint-config-standard",
+    "plugins": [
+        "stylelint-scss"
     ],
-    "selector-list-comma-newline-after": "always-multi-line",
-    "scss/at-rule-no-unknown": true
-  }
+    "rules": {
+        "at-rule-no-unknown": null,
+        "at-rule-empty-line-before": [ "always", {
+            "except": [
+                "blockless-after-same-name-blockless",
+                "first-nested"
+            ],
+            "ignore": [
+                "after-comment",
+                "blockless-after-blockless"]
+          } ],
+        "selector-list-comma-newline-after": "always-multi-line",
+        "scss/at-rule-no-unknown": true
+    }
 }

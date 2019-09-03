@@ -61,7 +61,7 @@
     .uxg-global-search-input {
       @include mat-typography-level-to-styles($config, h2);
       font-weight: bold;
-      font-feature-settings: 'liga' 0, 'clig' 0;
+      font-feature-settings: "liga" 0, "clig" 0;
     }
 
     .uxg-global-search-icon {

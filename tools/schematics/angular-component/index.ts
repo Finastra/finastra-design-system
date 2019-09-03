@@ -7,7 +7,7 @@ import {
   applyTemplates,
   move,
   mergeWith,
-  chain
+  chain,
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 
@@ -20,25 +20,17 @@ import { readFile } from 'fs-extra';
 
 import { registerLocalPackage, addToNgModule } from '../../utils';
 
-export default function(schema: Schema): Rule {
+export default function (schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
-    const globalGitConfig =
-      gitParse.sync({ path: gitPath({ type: 'global' }), cwd: '/' }) || {};
-    const localGitConfig =
-      gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
+    const globalGitConfig = gitParse.sync({ path: gitPath({ type: 'global' }), cwd: '/' }) || {};
+    const localGitConfig = gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
 
     const user = {
-      name:
-        (localGitConfig.user && localGitConfig.user.name) ||
-        globalGitConfig.user.name,
-      email:
-        (localGitConfig.user && localGitConfig.user.email) ||
-        globalGitConfig.user.email
+      name: (localGitConfig.user && localGitConfig.user.name) || globalGitConfig.user.name,
+      email: (localGitConfig.user && localGitConfig.user.email) || globalGitConfig.user.email
     };
 
-    const pkg = JSON.parse(
-      (await readFile(join(process.cwd(), './package.json'))).toString()
-    );
+    const pkg = JSON.parse((await readFile(join(process.cwd(), './package.json'))).toString());
     const filename = strings.dasherize(schema.name);
     const dest = `libs/angular-components/src/${filename}`;
     const classNamePrefix = strings.classify(schema.name);
@@ -65,3 +57,4 @@ export default function(schema: Schema): Rule {
     ]);
   };
 }
+

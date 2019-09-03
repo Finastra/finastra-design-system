@@ -15,5 +15,7 @@
       "x-prompt": "What name would you like to use for the component?"
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }

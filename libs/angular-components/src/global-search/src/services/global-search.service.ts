@@ -28,16 +28,16 @@ export class GlobalSearchService {
           this.index.setRef(ref || 'id');
 
           resolve();
-        });
+        })
       } else {
         resolve();
       }
-    });
+    })
   }
 
   addFields(fields?: string[]) {
     if (this.index && fields && fields.length) {
-      fields.forEach(field => {
+      fields.forEach((field) => {
         this.index.addField(field);
       });
     }
@@ -67,5 +67,5 @@ export class GlobalSearchService {
     this.itemClicked.next(item);
   }
 
-  constructor() {}
+  constructor() { }
 }

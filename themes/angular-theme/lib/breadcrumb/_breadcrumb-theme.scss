@@ -9,11 +9,11 @@
       text-decoration: none;
     }
 
-    &[color='primary'] {
+    &[color=primary] {
       color: mat-color($primary, default);
     }
 
-    &[color='accent'] {
+    &[color=accent] {
       color: mat-color($accent, default);
     }
   }

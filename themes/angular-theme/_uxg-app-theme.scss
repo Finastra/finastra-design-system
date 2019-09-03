@@ -26,20 +26,12 @@
 // hue. Available color palettes: https://material.io/design/color/
 $uxg-light-primary: mat-palette($uxg-violet, 500, 100, 900);
 $uxg-dark-primary: mat-palette($uxg-violet, 400, 100, 900);
-$uxg-light-accent: mat-palette($uxg-fuchsia, 500, 100, 900);
-$uxg-dark-accent: mat-palette($uxg-fuchsia, 400, 100, 900);
+$uxg-light-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
+$uxg-dark-accent:  mat-palette($uxg-fuchsia, 400, 100, 900);
 
 // The warn palette is optional (defaults to red).
-$uxg-light-warn: mat-palette($uxg-crimson);
+$uxg-light-warn:    mat-palette($uxg-crimson);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$uxg-light-theme: uxg-light-theme(
-  $uxg-light-primary,
-  $uxg-light-accent,
-  $uxg-light-warn
-);
-$uxg-dark-theme: uxg-dark-theme(
-  $uxg-dark-primary,
-  $uxg-dark-accent,
-  $uxg-light-warn
-);
+$uxg-light-theme: uxg-light-theme($uxg-light-primary, $uxg-light-accent, $uxg-light-warn);
+$uxg-dark-theme: uxg-dark-theme($uxg-dark-primary, $uxg-dark-accent, $uxg-light-warn);
