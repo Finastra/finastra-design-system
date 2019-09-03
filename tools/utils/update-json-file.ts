@@ -8,7 +8,7 @@ export function updateJsonFile<T>(host: Tree, path: string, callback: UpdateJson
   if (source) {
     const sourceText = source.toString('utf-8');
     const json = parseJson(sourceText, JsonParseMode.Loose);
-    callback(json as {} as T);
+    callback((json as {}) as T);
     host.overwrite(path, JSON.stringify(json, null, 2));
   }
   return host;

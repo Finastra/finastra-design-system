@@ -10,8 +10,7 @@ import { SEARCH_CONFIG } from '../components/global-search-overlay/global-search
   providedIn: 'root'
 })
 export class GlobalSearchOverlayService {
-
-  constructor(private overlay: Overlay, private parentInjector: Injector) { }
+  constructor(private overlay: Overlay, private parentInjector: Injector) {}
 
   open(config?: SearchConfig) {
     const overlayRef = this.overlay.create({
@@ -39,5 +38,5 @@ export class GlobalSearchOverlayService {
     tokens.set(SEARCH_CONFIG, config || {});
 
     return new PortalInjector(parentInjector, tokens);
-   }
+  }
 }

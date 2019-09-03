@@ -1,5 +1,14 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, ElementRef, HostListener, Inject, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  Input,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { ReplaySubject, fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { GlobalSearchService, Result, ResultGroup } from '../../services/global-search.service';
@@ -23,12 +32,11 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
   ]
 })
 export class GlobalSearchOverlayComponent implements AfterViewInit {
-
   constructor(
     public searchService: GlobalSearchService,
     private readonly ref: SearchOverlayRef,
-    @Inject(SEARCH_CONFIG) private config: SearchConfig,
-  ) { }
+    @Inject(SEARCH_CONFIG) private config: SearchConfig
+  ) {}
 
   animationState: 'void' | 'enter' | 'leave' = 'enter';
   private searchDebounce = 300;
@@ -110,13 +118,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   private get(object, path, defaultVal?) {
-    const PATH = Array.isArray(path)
-      ? path
-      : path.split('.').filter(i => i.length);
+    const PATH = Array.isArray(path) ? path : path.split('.').filter(i => i.length);
     if (!PATH.length) {
       return object === undefined ? defaultVal : object;
     }
-    if (object === null || object === undefined || typeof (object[PATH[0]]) === 'undefined') {
+    if (object === null || object === undefined || typeof object[PATH[0]] === 'undefined') {
       return defaultVal;
     }
     return this.get(object[PATH.shift()], PATH, defaultVal);
@@ -139,7 +145,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
     return Object.keys(groupedCollection).map(key => ({
       key,
-      value: groupedCollection[key],
+      value: groupedCollection[key]
     }));
   }
 }

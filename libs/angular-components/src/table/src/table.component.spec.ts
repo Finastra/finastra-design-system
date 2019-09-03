@@ -11,17 +11,9 @@ describe('TableModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ 
-        CommonModule,
-        MatTableModule,
-        MatPaginatorModule,
-        CdkTableModule,
-        MatSortModule,
-        MatIconModule
-      ],
-      declarations: [ TableComponent ]
-    })
-    .compileComponents();
+      imports: [CommonModule, MatTableModule, MatPaginatorModule, CdkTableModule, MatSortModule, MatIconModule],
+      declarations: [TableComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,7 +21,6 @@ describe('TableModule', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
 
   it('should create component', () => {
     expect(component).toBeTruthy();

@@ -12,38 +12,38 @@ export class GlobalSearchDemoComponent implements OnInit {
   ngOnInit() {
     const documents = [
       {
-        "accountType": "EUR",
-        "nickname": "Personnal",
-        "balances": [
+        accountType: 'EUR',
+        nickname: 'Personnal',
+        balances: [
           {
-            "type": "current",
-            "amount": 1000
+            type: 'current',
+            amount: 1000
           }
         ],
-        "id": "3658",
+        id: '3658'
       },
       {
-        "accountType": "EUR",
-        "nickname": "Savings",
-        "balances": [
+        accountType: 'EUR',
+        nickname: 'Savings',
+        balances: [
           {
-            "type": "current",
-            "amount": 22000
+            type: 'current',
+            amount: 22000
           }
         ],
-        "id": "5811",
+        id: '5811'
       }
     ];
 
     const searchService = this.globalSearch.searchService;
     searchService.initIndex(['nickname', 'id', 'accountType']).then(() => {
-      documents.forEach(function (item) {
-      searchService.addDoc(item);
+      documents.forEach(function(item) {
+        searchService.addDoc(item);
       });
     });
 
     this.globalSearch.resultItemClick.subscribe(item => {
-      console.log(item)
-    })
+      console.log(item);
+    });
   }
 }
