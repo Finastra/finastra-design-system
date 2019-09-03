@@ -1,16 +1,13 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
 import { renderSync } from 'node-sass';
-import { readFile, writeFile, mkdirp, copy, remove } from "fs-extra";
-import { join, relative } from "path";
-import { sync as globby } from "globby";
+import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
+import { join, relative } from 'path';
+import { sync as globby } from 'globby';
 import importer from 'node-sass-tilde-importer';
 
 import { Schema } from './schema';
 
-async function themeBuilder(
-  options: Schema,
-  context: BuilderContext,
-): Promise<BuilderOutput> {
+async function themeBuilder(options: Schema, context: BuilderContext): Promise<BuilderOutput> {
   const logger = context.logger;
   const printInfo = !options.silent;
 
@@ -32,14 +29,15 @@ async function themeBuilder(
     options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`];
 
     if (!pkg.sass) {
-      if (printInfo) logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
+      if (printInfo)
+        logger.error('Cannot find theme entry file. Please define the sass entry point in your package.json file');
       return { success: false };
     }
 
     const result = renderSync({
       file: join(src, pkg.sass),
       outFile: join(dest, pkg.sass.replace('.scss', '.css')),
-      outputStyle: options.outputStyle || "expanded",
+      outputStyle: options.outputStyle || 'expanded',
       sourceMap: true,
       sourceMapRoot: src,
       importer
@@ -63,7 +61,7 @@ async function themeBuilder(
     return { success: true };
   } catch (err) {
     if (printInfo) logger.error(err.message, err);
-    return { success: false }
+    return { success: false };
   }
 }
 

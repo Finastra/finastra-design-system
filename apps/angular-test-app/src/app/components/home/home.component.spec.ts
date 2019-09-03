@@ -9,10 +9,9 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MatCardModule, MatChipsModule ],
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      imports: [MatCardModule, MatChipsModule],
+      declarations: [HomeComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

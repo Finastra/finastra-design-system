@@ -9,10 +9,9 @@ describe('GlobalSearchDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ GlobalSearchModule ],
-      declarations: [ GlobalSearchDemoComponent ]
-    })
-    .compileComponents();
+      imports: [GlobalSearchModule],
+      declarations: [GlobalSearchDemoComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

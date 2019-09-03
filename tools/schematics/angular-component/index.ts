@@ -7,7 +7,7 @@ import {
   applyTemplates,
   move,
   mergeWith,
-  chain,
+  chain
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 
@@ -20,7 +20,7 @@ import { readFile } from 'fs-extra';
 
 import { registerLocalPackage, addToNgModule } from '../../utils';
 
-export default function (schema: Schema): Rule {
+export default function(schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
     const globalGitConfig = gitParse.sync({ path: gitPath({ type: 'global' }), cwd: '/' }) || {};
     const localGitConfig = gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
@@ -57,4 +57,3 @@ export default function (schema: Schema): Rule {
     ]);
   };
 }
-
