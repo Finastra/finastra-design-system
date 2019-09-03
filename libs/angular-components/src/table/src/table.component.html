@@ -1,14 +1,5 @@
-<table
-  mat-table
-  matSort
-  [dataSource]="dataToComponent"
-  (matSortChange)="sortData($event)"
-  class="mat-elevation-z8"
->
-  <ng-container
-    matColumnDef="{{ column.name }}"
-    *ngFor="let column of columns; let columnIndex = index"
-  >
+<table mat-table matSort [dataSource]="dataToComponent" (matSortChange)="sortData($event)" class="mat-elevation-z8">
+  <ng-container matColumnDef="{{ column.name }}" *ngFor="let column of columns; let columnIndex = index">
     <th
       mat-header-cell
       *matHeaderCellDef
@@ -52,15 +43,9 @@
     </td>
   </ng-container>
 
-  <tr
-    mat-header-row
-    *matHeaderRowDef="columnsToDisplay; sticky: stickyHeader"
-  ></tr>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: stickyHeader"></tr>
   <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
-  <tr
-    mat-footer-row
-    *matFooterRowDef="columnsToDisplay; sticky: stickyFooter"
-  ></tr>
+  <tr mat-footer-row *matFooterRowDef="columnsToDisplay; sticky: stickyFooter"></tr>
 </table>
 
 <mat-paginator

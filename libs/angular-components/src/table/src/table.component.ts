@@ -81,10 +81,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
   getTotalRowCell(column: UxgColumn): string {
     if (column.type === ColumnType.number) {
-      return this.dataToComponent.reduce(
-        (sum, current) => sum + current[column.name],
-        0
-      );
+      return this.dataToComponent.reduce((sum, current) => sum + current[column.name], 0);
     } else {
       return '';
     }

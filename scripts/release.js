@@ -8,15 +8,10 @@ const cwd = path.resolve(process.cwd());
 const rootPkg = require(path.join(cwd, 'package.json'));
 
 (async () => {
-  args
-    .option('-v, --version [string|number]', 'Version to change package to')
-    .parse(process.argv);
+  args.option('-v, --version [string|number]', 'Version to change package to').parse(process.argv);
 
   if (args.version && typeof args.version === 'string') {
-    const newVersion = releaseScripts.computeVersion(
-      args.version,
-      rootPkg.version
-    );
+    const newVersion = releaseScripts.computeVersion(args.version, rootPkg.version);
     const pkgScopes = ['@ffdc', '@uxg'];
 
     console.log(`Working dir is ${cwd}`);

@@ -11,9 +11,7 @@ describe('GlobalSearchOverlayService', () => {
   );
 
   it('should be created', () => {
-    const service: GlobalSearchOverlayService = TestBed.get(
-      GlobalSearchOverlayService
-    );
+    const service: GlobalSearchOverlayService = TestBed.get(GlobalSearchOverlayService);
     expect(service).toBeTruthy();
   });
 });

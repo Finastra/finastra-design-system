@@ -8,18 +8,10 @@
         <h6 class="uxg-h6">DESIGN SYSTEM</h6>
       </div>
       <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
-        <a
-          mat-list-item
-          routerLink="/global-search"
-          routerLinkActive="uxg-list-item-selected"
-        >
+        <a mat-list-item routerLink="/global-search" routerLinkActive="uxg-list-item-selected">
           <p>Global Search</p>
         </a>
-        <a
-          mat-list-item
-          routerLink="/table"
-          routerLinkActive="uxg-list-item-selected"
-        >
+        <a mat-list-item routerLink="/table" routerLinkActive="uxg-list-item-selected">
           <p>Table</p>
         </a>
       </mat-nav-list>
@@ -27,12 +19,7 @@
 
     <mat-sidenav-content>
       <mat-toolbar class="uxg-toolbar">
-        <button
-          class="uxg-nav-header-button"
-          mat-icon-button
-          color="primary"
-          (click)="sidenav.toggle()"
-        >
+        <button class="uxg-nav-header-button" mat-icon-button color="primary" (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <div class="uxg-toolbar-logo-small">

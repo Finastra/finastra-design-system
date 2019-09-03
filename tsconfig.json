@@ -18,15 +18,9 @@
     "paths": {
       "@ffdc/devkit": ["dist/devkit/"],
       "@ffdc/uxg-angular-components": ["libs/angular-components/src/index.ts"],
-      "@ffdc/uxg-angular-components/global-search": [
-        "libs/angular-components/src/global-search/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/scroll-to-top": [
-        "libs/angular-components/src/scroll-to-top/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/table": [
-        "libs/angular-components/src/table/src/index.ts"
-      ]
+      "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/src/global-search/src/index.ts"],
+      "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/src/scroll-to-top/src/index.ts"],
+      "@ffdc/uxg-angular-components/table": ["libs/angular-components/src/table/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

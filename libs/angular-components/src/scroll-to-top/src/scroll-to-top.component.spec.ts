@@ -11,12 +11,7 @@ describe('ScrollToTopComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        BrowserAnimationsModule,
-        CommonModule,
-        MatButtonModule,
-        MatIconModule
-      ],
+      imports: [BrowserAnimationsModule, CommonModule, MatButtonModule, MatIconModule],
       declarations: [ScrollToTopComponent]
     }).compileComponents();
   }));

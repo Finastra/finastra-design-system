@@ -1,11 +1,6 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
-import {
-  ComponentRef,
-  Injectable,
-  InjectionToken,
-  Injector
-} from '@angular/core';
+import { ComponentRef, Injectable, InjectionToken, Injector } from '@angular/core';
 
 import { SearchConfig } from '../components/global-search-overlay/global-search-overlay-config';
 import { SearchOverlayRef } from '../components/global-search-overlay/global-search-overlay-ref';
@@ -27,33 +22,17 @@ export class GlobalSearchOverlayService {
     });
 
     const searchOverlayRef = new SearchOverlayRef(overlayRef);
-    const injector = this.getInjector(
-      config,
-      searchOverlayRef,
-      this.parentInjector
-    );
-    const containerPortal = new ComponentPortal(
-      GlobalSearchOverlayComponent,
-      null,
-      injector
-    );
+    const injector = this.getInjector(config, searchOverlayRef, this.parentInjector);
+    const containerPortal = new ComponentPortal(GlobalSearchOverlayComponent, null, injector);
 
-    const componentRef: ComponentRef<
-      GlobalSearchOverlayComponent
-    > = overlayRef.attach(containerPortal);
-    const element: HTMLElement = <HTMLElement>(
-      componentRef.location.nativeElement
-    );
+    const componentRef: ComponentRef<GlobalSearchOverlayComponent> = overlayRef.attach(containerPortal);
+    const element: HTMLElement = <HTMLElement>componentRef.location.nativeElement;
     element.style.width = '100%';
 
     return searchOverlayRef;
   }
 
-  getInjector(
-    config: SearchConfig,
-    overlayRef: SearchOverlayRef,
-    parentInjector: Injector
-  ) {
+  getInjector(config: SearchConfig, overlayRef: SearchOverlayRef, parentInjector: Injector) {
     const tokens = new WeakMap();
     tokens.set(SearchOverlayRef, overlayRef);
     tokens.set(SEARCH_CONFIG, config || {});
