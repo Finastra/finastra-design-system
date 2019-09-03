@@ -34,6 +34,7 @@
   "dependencies": {
     "@angular/animations": "^8.2.4",
     "@angular/cdk": "^8.1.4",
+    "@angular/cdk-experimental": "^8.1.4",
     "@angular/common": "^8.2.4",
     "@angular/compiler": "^8.2.4",
     "@angular/core": "^8.2.4",

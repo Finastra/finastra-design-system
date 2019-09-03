@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { TableModule } from '@ffdc/uxg-angular-components/table';
+import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,7 +29,8 @@ import { TableModule } from '@ffdc/uxg-angular-components/table';
     AppRoutingModule,
     MatCardModule,
     GlobalSearchModule,
-    TableModule
+    TableModule,
+    RepeaterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
