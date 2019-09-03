@@ -84,17 +84,17 @@
   .uxg-global-search-results-area {
     .uxg-global-search-result-group-header {
       .uxg-global-search-result-group-counter {
-        @include mat-typography-level-to-styles($config, subtitle-2);
+        @include mat-typography-level-to-styles($config, subtitle-1);
       }
     }
   }
 
   .uxg-global-search-results-filter {
-    @include mat-typography-level-to-styles($config, subtitle-4);
+    @include mat-typography-level-to-styles($config, subtitle-2);
   }
 
   .uxg-global-search-results-counter {
-    @include mat-typography-level-to-styles($config, subtitle-4);
+    @include mat-typography-level-to-styles($config, subtitle-2);
   }
 }
 
