@@ -16,6 +16,6 @@
 *.svg       @ttalbot
 
 # Per components owners
-/libs/angular-components/src/global-search/     @aifrim
-/libs/angular-components/src/scroll-to-top/     @aifrim
-/libs/angular-components/src/table/             @Ping-YUAN
+/libs/angular-components/global-search/     @aifrim
+/libs/angular-components/scroll-to-top/     @aifrim
+/libs/angular-components/table/             @Ping-YUAN

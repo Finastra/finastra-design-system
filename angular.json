@@ -122,7 +122,7 @@
     "angular-components": {
       "projectType": "library",
       "root": "libs/angular-components",
-      "sourceRoot": "libs/angular-components/src",
+      "sourceRoot": "libs/angular-components/",
       "prefix": "uxg",
       "architect": {
         "build": {
@@ -147,7 +147,7 @@
           "options": {
             "jestConfig": "libs/angular-components/jest.config.js",
             "tsConfig": "libs/angular-components/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/src/test-setup.ts"
+            "setupFile": "libs/angular-components/test-setup.ts"
           }
         }
       },
