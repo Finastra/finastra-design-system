@@ -11,8 +11,7 @@ describe('GlobalSearchOverlayComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [GlobalSearchModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

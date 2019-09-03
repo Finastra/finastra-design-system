@@ -1,21 +1,30 @@
-import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
+import {
+  BuilderOutput,
+  createBuilder,
+  BuilderContext
+} from '@angular-devkit/architect';
 import { renderSync } from 'node-sass';
-import { readFile, writeFile, mkdirp, copy, remove } from "fs-extra";
-import { join, relative } from "path";
-import { sync as globby } from "globby";
+import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
+import { join, relative } from 'path';
+import { sync as globby } from 'globby';
 import importer from 'node-sass-tilde-importer';
 
 import { Schema } from './schema';
 
 async function themeBuilder(
   options: Schema,
-  context: BuilderContext,
+  context: BuilderContext
 ): Promise<BuilderOutput> {
   const logger = context.logger;
   const printInfo = !options.silent;
 
-  context.reportStatus(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
-  if (printInfo) logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
+  context.reportStatus(
+    `Compiling "${options.inputPath}" to "${options.outputPath}"...`
+  );
+  if (printInfo)
+    logger.info(
+      `Compiling "${options.inputPath}" to "${options.outputPath}"...`
+    );
 
   try {
     const dest = join(process.cwd(), options.outputPath);
@@ -32,14 +41,17 @@ async function themeBuilder(
     options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`];
 
     if (!pkg.sass) {
-      if (printInfo) logger.error("Cannot find theme entry file. Please define the sass entry point in your package.json file");
+      if (printInfo)
+        logger.error(
+          'Cannot find theme entry file. Please define the sass entry point in your package.json file'
+        );
       return { success: false };
     }
 
     const result = renderSync({
       file: join(src, pkg.sass),
       outFile: join(dest, pkg.sass.replace('.scss', '.css')),
-      outputStyle: options.outputStyle || "expanded",
+      outputStyle: options.outputStyle || 'expanded',
       sourceMap: true,
       sourceMapRoot: src,
       importer
@@ -47,7 +59,10 @@ async function themeBuilder(
 
     await writeFile(join(dest, pkg.css), result.css.toString());
     if (options.sourceMap === true) {
-      await writeFile(join(dest, pkg.sass.replace('.scss', '.map')), result.map.toString());
+      await writeFile(
+        join(dest, pkg.sass.replace('.scss', '.map')),
+        result.map.toString()
+      );
     }
 
     await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
@@ -63,7 +78,7 @@ async function themeBuilder(
     return { success: true };
   } catch (err) {
     if (printInfo) logger.error(err.message, err);
-    return { success: false }
+    return { success: false };
   }
 }
 

@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewEncapsulation
+} from '@angular/core';
 import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 import { GlobalSearchService } from './services/global-search.service';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
@@ -23,8 +31,7 @@ export class UxgGlobalSearch implements OnInit {
   constructor(
     private overlayService: GlobalSearchOverlayService,
     public searchService: GlobalSearchService
-    ) {
-  }
+  ) {}
 
   private ref: SearchOverlayRef;
 
@@ -44,7 +51,6 @@ export class UxgGlobalSearch implements OnInit {
     this.searchService.itemClicked.subscribe(item => {
       this.resultItemClick.emit(item);
       this.ref.close();
-    })
+    });
   }
-
 }

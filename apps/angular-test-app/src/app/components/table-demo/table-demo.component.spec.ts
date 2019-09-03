@@ -6,28 +6,23 @@ import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TableDemoComponent', () => {
-    let component: TableDemoComponent;
-    let fixture: ComponentFixture<TableDemoComponent>;
+  let component: TableDemoComponent;
+  let fixture: ComponentFixture<TableDemoComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [ 
-                TableModule,
-                MatPaginatorModule,
-                BrowserAnimationsModule
-            ],
-            declarations: [ TableDemoComponent ]
-        })
-        .compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [TableModule, MatPaginatorModule, BrowserAnimationsModule],
+      declarations: [TableDemoComponent]
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(TableDemoComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    })
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TableDemoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create demo table ', () => {
-        expect(component).toBeTruthy();
-    })
+  it('should create demo table ', () => {
+    expect(component).toBeTruthy();
+  });
 });

@@ -1,40 +1,51 @@
 <div class="main-container">
   <mat-sidenav-container class="uxg-nav">
+    <mat-sidenav #sidenav mode="over" fixedInViewport="true">
+      <div class="uxg-nav-header">
+        <mat-card class="uxg-card-product" extra-dense routerLink="/">
+          <span class="uxg-h5 uxg-card-product-name">DS</span>
+        </mat-card>
+        <h6 class="uxg-h6">DESIGN SYSTEM</h6>
+      </div>
+      <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
+        <a
+          mat-list-item
+          routerLink="/global-search"
+          routerLinkActive="uxg-list-item-selected"
+        >
+          <p>Global Search</p>
+        </a>
+        <a
+          mat-list-item
+          routerLink="/table"
+          routerLinkActive="uxg-list-item-selected"
+        >
+          <p>Table</p>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-      <mat-sidenav #sidenav mode="over" fixedInViewport="true">
-          <div class="uxg-nav-header">
-              <mat-card class="uxg-card-product" extra-dense routerLink="/">
-                  <span class="uxg-h5 uxg-card-product-name">DS</span>
-              </mat-card>
-              <h6 class="uxg-h6">DESIGN SYSTEM</h6>
-          </div>
-          <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
-              <a mat-list-item routerLink="/global-search" routerLinkActive="uxg-list-item-selected">
-                  <p>Global Search</p>
-              </a>
-              <a mat-list-item routerLink="/table" routerLinkActive="uxg-list-item-selected">
-                <p>Table</p>
-              </a>
-          </mat-nav-list>
-      </mat-sidenav>
-
-      <mat-sidenav-content>
-          <mat-toolbar class="uxg-toolbar">
-              <button class="uxg-nav-header-button" mat-icon-button color="primary" (click)="sidenav.toggle()">
-                  <mat-icon>menu</mat-icon>
-              </button>
-              <div class="uxg-toolbar-logo-small">
-                  <img src="assets/finastra-logo-small.png" />
-              </div>
-              <ul class="uxg-breadcrumb">
-                  <li class="uxg-h6"><a routerLink="/">ANGULAR THEME</a></li>
-              </ul>
-              <span class="fill-remaining-space"></span>
-          </mat-toolbar>
-          <div class="app-content">
-              <router-outlet></router-outlet>
-          </div>
-      </mat-sidenav-content>
-
+    <mat-sidenav-content>
+      <mat-toolbar class="uxg-toolbar">
+        <button
+          class="uxg-nav-header-button"
+          mat-icon-button
+          color="primary"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="uxg-toolbar-logo-small">
+          <img src="assets/finastra-logo-small.png" />
+        </div>
+        <ul class="uxg-breadcrumb">
+          <li class="uxg-h6"><a routerLink="/">ANGULAR THEME</a></li>
+        </ul>
+        <span class="fill-remaining-space"></span>
+      </mat-toolbar>
+      <div class="app-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

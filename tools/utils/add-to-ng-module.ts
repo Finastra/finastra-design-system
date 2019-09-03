@@ -1,4 +1,4 @@
-import { Tree } from "@angular-devkit/schematics/src/tree/interface";
+import { Tree } from '@angular-devkit/schematics/src/tree/interface';
 import { createSourceFile, ScriptTarget } from 'typescript';
 import { addExportToModule } from '@schematics/angular/utility/ast-utils';
 import { InsertChange } from '@schematics/angular/utility/change';
@@ -16,8 +16,18 @@ export function addToNgModule(options: ComponentOptions): Rule {
 
     if (text && text.length) {
       const exportRecorder = host.beginUpdate(options.modulePath);
-      const code = createSourceFile(options.modulePath, text.toString(), ScriptTarget.Latest, true);
-      const exportChanges = addExportToModule(code, options.modulePath, options.module, `./${options.filename}`);
+      const code = createSourceFile(
+        options.modulePath,
+        text.toString(),
+        ScriptTarget.Latest,
+        true
+      );
+      const exportChanges = addExportToModule(
+        code,
+        options.modulePath,
+        options.module,
+        `./${options.filename}`
+      );
 
       for (const change of exportChanges) {
         if (change instanceof InsertChange) {
@@ -28,5 +38,5 @@ export function addToNgModule(options: ComponentOptions): Rule {
     }
 
     return host;
-  }
+  };
 }

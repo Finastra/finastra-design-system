@@ -2,7 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableComponent } from './table.component';
 import { CommonModule } from '@angular/common';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule } from '@angular/material';
+import {
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatIconModule
+} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
 describe('TableModule', () => {
@@ -11,7 +16,7 @@ describe('TableModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ 
+      imports: [
         CommonModule,
         MatTableModule,
         MatPaginatorModule,
@@ -19,9 +24,8 @@ describe('TableModule', () => {
         MatSortModule,
         MatIconModule
       ],
-      declarations: [ TableComponent ]
-    })
-    .compileComponents();
+      declarations: [TableComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,7 +33,6 @@ describe('TableModule', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
 
   it('should create component', () => {
     expect(component).toBeTruthy();

@@ -22,12 +22,8 @@ import { GlobalSearchOverlayComponent } from './components/global-search-overlay
     OverlayModule,
     FlexLayoutModule.withConfig({ useColumnBasisZero: false })
   ],
-  exports: [
-    UxgGlobalSearch, GlobalSearchOverlayComponent
-  ],
+  exports: [UxgGlobalSearch, GlobalSearchOverlayComponent],
   declarations: [UxgGlobalSearch, GlobalSearchOverlayComponent],
-  entryComponents: [
-    GlobalSearchOverlayComponent
-  ]
+  entryComponents: [GlobalSearchOverlayComponent]
 })
-export class GlobalSearchModule { }
+export class GlobalSearchModule {}

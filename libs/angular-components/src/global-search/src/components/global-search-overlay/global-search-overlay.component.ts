@@ -1,8 +1,27 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, ElementRef, HostListener, Inject, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  Input,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { ReplaySubject, fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { GlobalSearchService, Result, ResultGroup } from '../../services/global-search.service';
+import {
+  GlobalSearchService,
+  Result,
+  ResultGroup
+} from '../../services/global-search.service';
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
@@ -15,20 +34,25 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('slideContent', [
-      state('void', style({ transform: 'translate3d(0, -30%, 0) scale(0.85)', opacity: 0 })),
+      state(
+        'void',
+        style({ transform: 'translate3d(0, -30%, 0) scale(0.85)', opacity: 0 })
+      ),
       state('enter', style({ transform: 'none', opacity: 1 })),
-      state('leave', style({ transform: 'translate3d(0, -30%, 0)', opacity: 0 })),
+      state(
+        'leave',
+        style({ transform: 'translate3d(0, -30%, 0)', opacity: 0 })
+      ),
       transition('* => *', animate(ANIMATION_TIMINGS))
     ])
   ]
 })
 export class GlobalSearchOverlayComponent implements AfterViewInit {
-
   constructor(
     public searchService: GlobalSearchService,
     private readonly ref: SearchOverlayRef,
-    @Inject(SEARCH_CONFIG) private config: SearchConfig,
-  ) { }
+    @Inject(SEARCH_CONFIG) private config: SearchConfig
+  ) {}
 
   animationState: 'void' | 'enter' | 'leave' = 'enter';
   private searchDebounce = 300;
@@ -55,7 +79,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   @ViewChild('searchInput', { static: true }) searchInput: ElementRef;
 
-  @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
+  @HostListener('document:keydown.escape', ['$event']) handleKeydown(
+    event: KeyboardEvent
+  ) {
     this.closeSearch();
   }
 
@@ -73,7 +99,10 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
           const results = this.searchService.search(value);
 
           this.resultsFound = this.resultsShown = results.length;
-          this.results = this.groupByResults(results.map(r => r.doc), this.groupBy);
+          this.results = this.groupByResults(
+            results.map(r => r.doc),
+            this.groupBy
+          );
 
           this.filterSize = 0;
           this.results$.next(this.results);
@@ -116,13 +145,20 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     if (!PATH.length) {
       return object === undefined ? defaultVal : object;
     }
-    if (object === null || object === undefined || typeof (object[PATH[0]]) === 'undefined') {
+    if (
+      object === null ||
+      object === undefined ||
+      typeof object[PATH[0]] === 'undefined'
+    ) {
       return defaultVal;
     }
     return this.get(object[PATH.shift()], PATH, defaultVal);
   }
 
-  private groupByResults<T>(collection: Array<T>, property: string): Array<{ key: string; value: [T] }> {
+  private groupByResults<T>(
+    collection: Array<T>,
+    property: string
+  ): Array<{ key: string; value: [T] }> {
     if (!collection) {
       return null;
     }
@@ -139,7 +175,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
     return Object.keys(groupedCollection).map(key => ({
       key,
-      value: groupedCollection[key],
+      value: groupedCollection[key]
     }));
   }
 }

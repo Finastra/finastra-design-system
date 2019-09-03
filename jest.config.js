@@ -6,5 +6,5 @@ module.exports = {
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageReporters: ['html'],
-  reporters: ["default", "jest-junit"]
+  reporters: ['default', 'jest-junit']
 };
