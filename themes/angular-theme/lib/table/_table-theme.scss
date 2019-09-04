@@ -3,9 +3,19 @@
   $primary: map-get($theme, primary);
 
   .mat-table {
-    tbody {
-      tr:nth-child(even) {
-        background-color: mat-color($primary, default, 0.06);
+    tr {
+      &:nth-child(even) {
+        background-color: mat-color($primary, default, 0.02);
+      }
+
+      &.selected {
+        background-color: mat-color($primary, default, 0.16);
+      }
+
+      .mat-checkbox-checked, .mat-checkbox-indeterminate {
+        .mat-checkbox-background {
+          background-color: mat-color($primary, default);
+        }
       }
     }
   }
