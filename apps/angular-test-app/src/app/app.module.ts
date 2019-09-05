@@ -16,8 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { TableModule } from '@ffdc/uxg-angular-components/table';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
+
+import { RepeaterCardExampleComponent } from './components/repeater-demo/repeater-card-example/repeater-card-example.component';
+import { RepeaterCardAdvancedExampleComponent } from './components/repeater-demo/repeater-card-advanced-example/repeater-card-advanced-example.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RepeaterCardExampleComponent, RepeaterCardAdvancedExampleComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -33,6 +36,8 @@ import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
     RepeaterModule
   ],
   providers: [],
+  exports: [RepeaterCardExampleComponent],
+  entryComponents: [RepeaterCardExampleComponent, RepeaterCardAdvancedExampleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

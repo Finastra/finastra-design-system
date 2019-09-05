@@ -1,11 +1,21 @@
 
 <cdk-virtual-scroll-viewport autosize class="viewport" [orientation]="vertical" *ngIf="orientation==='vertical'">
-    <div *cdkVirtualFor="let value of data; let odd = odd;" class="card-item" [class.alternate]="odd" (click)="selectionChanged(value)">
-        <uxp-component-repeater class="uxp-card-repeater" [factory]="componentFactory" [data]="value" [templateFieldsConfig]="templateFieldsConfig"></uxp-component-repeater>
+    <div *cdkVirtualFor="let value of data; let odd = odd;" class="repeater-item" [class.alternate]="odd" (click)="selectionChanged(value)">
+        <uxp-component-repeater
+          [factory]="componentFactory" 
+          [data]="value" 
+          [templateConfig]="templateConfig"
+          [ngStyle]="{'margin-bottom': templateConfig.space}" 
+        ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>  
   <cdk-virtual-scroll-viewport autosize class="viewport" orientation="horizontal"  *ngIf="orientation==='horizontal'">
-    <div *cdkVirtualFor="let value of data; let odd = odd;" class="card-item" [class.alternate]="odd" (click)="selectionChanged(value)">
-        <uxp-component-repeater class="uxp-card-repeater" [factory]="componentFactory" [data]="value" [templateFieldsConfig]="templateFieldsConfig"></uxp-component-repeater>
+    <div *cdkVirtualFor="let value of data; let odd = odd;"  class="repeater-item" [class.alternate]="odd" (click)="selectionChanged(value)">
+      <uxp-component-repeater
+        [factory]="componentFactory" 
+        [data]="value" 
+        [templateConfig]="templateConfig"
+        [ngStyle]="{'margin-right': templateConfig.space}"
+      ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>

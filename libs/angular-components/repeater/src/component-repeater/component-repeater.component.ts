@@ -1,4 +1,5 @@
 import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, ComponentRef } from '@angular/core';
+import { RepeaterTemplateConfig } from '../repeater.component';
 
 @Component({
   selector: 'uxp-component-repeater',
@@ -10,7 +11,7 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
 
   @Input() factory: ComponentFactory<any>;
   @Input() data: any;
-  @Input() templateFieldsConfig: any;
+  @Input() templateConfig: RepeaterTemplateConfig;
   
   ref:  ComponentRef<any>;
   
@@ -21,7 +22,6 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.updateComponent();  
-    console.log(this.data)  
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -29,12 +29,16 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
       this.updateComponent();
     }else if(changes.templateFieldsConfig && this.ref){
       this.ref.instance.templateFieldsConfig = changes.templateFieldsConfig.currentValue;
-      this.ref.instance.cd.detectChanges();    
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges(); 
+      }   
       console.log(changes.templateFieldsConfig.currentValue);
       
     }else if(changes.data && this.ref){
       this.ref.instance.data = changes.data.currentValue;
-      this.ref.instance.cd.detectChanges();
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+      }
       console.log(changes.data.currentValue);
     }
   }
@@ -46,10 +50,14 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
       }
       this.ref = this.extensionOutlet.createComponent(this.factory);
       this.ref.instance.data = this.data;
-      this.ref.instance.templateFieldsConfig = this.templateFieldsConfig;
-      this.ref.instance.cd.detectChanges();
+      this.ref.instance.config = this.templateConfig;
 
-      this.ref.instance.cd.markForCheck();
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+        this.ref.instance.cd.markForCheck();
+      }
+
+      
     }   
   }
 

@@ -1,5 +1,19 @@
 <div class="ffdc-repeater-demo-div">
-    <uxg-repeater [data]="dataSource" [columns]="columns">
+    <mat-card class="orientation">        
+        <mat-button-toggle-group [(ngModel)]="orientation" aria-label="Orientation">
+            <mat-button-toggle value="horizontal">Horizontal</mat-button-toggle>
+            <mat-button-toggle value="vertical">Vertical</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-select [(ngModel)]="currentTemplate" [value]="template" [compareWith]="compareWith" (selectionChange)="updateTemplate()">
+                <mat-option *ngFor="let template of templatesData" [value]="template">
+                    {{ template.displayName }}
+                </mat-option>
+        </mat-select>
+    </mat-card>
+    <uxg-repeater 
+        [data]="dataSource" 
+        [template]="templateExample" 
+        [templateConfig]="templateConfig"
+        [orientation]="orientation">
     </uxg-repeater>
-  </div>
-  
+</div>

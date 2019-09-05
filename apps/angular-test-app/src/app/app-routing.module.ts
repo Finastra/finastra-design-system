@@ -6,7 +6,9 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatInputModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatButtonToggleModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
@@ -18,10 +20,12 @@ import { GlobalSearchDemoComponent } from './components/global-search-demo/globa
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { HomeComponent } from './components/home/home.component';
 import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MatCardModule,
     GlobalSearchModule,
     TableModule,
@@ -30,7 +34,9 @@ import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonToggleModule,
+    MatSelectModule
   ],
   declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, RepeaterDemoComponent],
   exports: [RouterModule]
