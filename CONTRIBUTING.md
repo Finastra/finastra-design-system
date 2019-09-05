@@ -25,7 +25,7 @@ Then the process of reviewing, planning and hopefully fixing your issue will sta
 ## <a name="features"></a> Feature Requests
 You experienced frustation when trying to achieve some design using the theme?
 You identified some components that could help other developpers?
-Open a GitHub (feature request)[https://github.com/fusionfabric/finastra-design-system/issues/new?template=feature_request.md]
+Open a GitHub [feature request](https://github.com/fusionfabric/finastra-design-system/issues/new?template=feature_request.md)
 
 You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
@@ -60,7 +60,7 @@ When your issue is validated and you are assigned to it, you can start with thos
 > npm run affected:e2e
 ```
 - fix the presented errors / problems if any
-- Commit your code, add a commit message following (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0-beta.4/] guidelines
+- Commit your code, add a commit message following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) guidelines
 ```sh
 > git commit -m <type>[scope]: <description>
 ```
