@@ -82,6 +82,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   constructor() {}
 
   ngOnInit() {
+    if (this.singleSelect && this.multiSelect) {
+      this.multiSelect = false;
+    }
+
     if (this.multiSelect) {
       this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);
     }
@@ -99,6 +103,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (changes.pageEnable && !changes.pageEnable.isFirstChange()) {
       if (changes.pageEnable.currentValue === false) {
         this.dataToComponent = this.data;
+        this.paging = null;
       } else {
         if (!this.paging) {
           this.applyDefaultPaging();

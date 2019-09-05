@@ -1,0 +1,13 @@
+@mixin uxg-radio-button-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .mat-radio-button.mat-accent {
+    .mat-radio-inner-circle {
+      background-color: mat-color($primary, default);
+    }
+
+    &.mat-radio-checked .mat-radio-outer-circle {
+      border-color: mat-color($primary, default);
+    }
+  }
+}

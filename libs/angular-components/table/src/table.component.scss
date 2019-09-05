@@ -1,10 +1,14 @@
 
-$uxp-table-extension-button-size: 20px;
-$uxp-table-extension-bar-height: 48px;
+$uxg-table-max-height: 528px; // display maximum 10 rows 
+
 uxg-table {
     flex: 1;
+    .uxg-data-table{
+        max-height: $uxg-table-max-height;
+        overflow: auto;
+        flex: 1;
+    }
     .mat-table {
-
         tr {
             td {
 
@@ -45,6 +49,12 @@ uxg-table {
                 display: none;
             }
         }
+    }
+
+    .mat-paginator{
+        position: sticky;
+        bottom: 0px;
+        z-index: 10;
     }
 }
 

@@ -43,6 +43,28 @@ $uxg-table-row-height: 44px;
     }
   }
 
+  tfoot {
+    tr {
+      height: $uxg-table-row-height;
+
+      td {
+        padding-left: $uxg-table-cell-margin;
+        padding-right: $uxg-table-cell-margin;
+
+        div {
+          display: flex;
+
+          .mat-icon {
+            font-size: $uxg-table-icons;
+            height: $uxg-table-icons;
+            width: $uxg-table-icons;
+            margin-right: $uxg-table-cell-icon-margin;
+          }
+        }
+      }
+    }
+  }
+
   td.mat-cell:first-of-type,
   td.mat-footer-cell:first-of-type,
   th.mat-header-cell:first-of-type {

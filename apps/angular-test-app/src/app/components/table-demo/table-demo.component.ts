@@ -92,6 +92,36 @@ const ELEMENT_DATA: any[] = [
     'Status Code': '200',
     'Error Response': 'OK',
     'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
   }
 ];
 
@@ -136,7 +166,7 @@ export class TableDemoComponent implements OnInit {
     'No. of Calls'
   ];
   totalData = {
-    API: 'customized total'
+    'Status Code': '80% GOOD'
   };
   constructor() {}
 
@@ -199,9 +229,9 @@ export class TableDemoComponent implements OnInit {
     this.table.paging = {
       disabled: false,
       pageIndex: 0,
-      length: 9,
+      length: this.dataSource.length,
       hidePageSize: false,
-      pageSizeOptions: [5, 10],
+      pageSizeOptions: [5, 10, 20],
       pageSize: 5,
       showFirstLastButtons: true
     };

@@ -9,7 +9,8 @@ import {
   MatPaginatorModule,
   MatRadioModule,
   MatSliderModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatDividerModule
 } from '@angular/material';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     MatRadioModule,
     MatSlideToggleModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule
   ],
   declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent],
   exports: [RouterModule]
