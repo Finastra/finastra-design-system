@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sort, PageEvent } from '@angular/material';
-import { UxgTableSelectEvent, TableComponent } from '@ffdc/uxg-angular-components/table';
+import { UxgTableSelectEvent, TableComponent, UxgPage, UxgSort } from '@ffdc/uxg-angular-components/table';
 
 const ELEMENT_DATA: any[] = [
   {
@@ -137,9 +137,12 @@ export class TableDemoComponent implements OnInit {
 
   dataSource = ELEMENT_DATA; //data
   length = ELEMENT_DATA.length;
-  dragEnable = true;
+
+  dragEnable = false;
   totalEnable = false;
   pageEnable = false;
+  customizedPage = false;
+  stickyFooter = true;
   paging = null;
   actionDiscription = '';
   singleSelect = true;
@@ -172,7 +175,7 @@ export class TableDemoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sortData(sort: Sort) {
+  sortData(sort: UxgSort) {
     this.actionDiscription = 'customized sorting function excuted';
     this.dataSource = this.dataSource.slice().sort((obj1, obj2) => {
       switch (this.getSortColumnType(sort.active)) {
@@ -206,13 +209,13 @@ export class TableDemoComponent implements OnInit {
       return column.name === columnName;
     }).type;
   }
-  applyPaging($event: PageEvent) {
+  applyPaging($event: UxgPage) {
     this.actionDiscription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
     this.dataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
   }
   applyDefaultPaging() {
-    const defaultPaging: PageEvent = {
+    const defaultPaging: UxgPage = {
       length: this.length,
       pageIndex: 0,
       pageSize: 5
@@ -225,17 +228,21 @@ export class TableDemoComponent implements OnInit {
   enablePaging($event) {
     this.pageEnable = $event.checked;
   }
-  enableCustomizedPaging() {
-    this.table.paging = {
-      disabled: false,
-      pageIndex: 0,
-      length: this.dataSource.length,
-      hidePageSize: false,
-      pageSizeOptions: [5, 10, 20],
-      pageSize: 5,
-      showFirstLastButtons: true
-    };
-    this.table.pageChange.subscribe(page => this.applyPaging(page));
+  enableCustomizedPaging($event) {
+    if ($event.checked) {
+      this.table.paging = {
+        disabled: false,
+        pageIndex: 0,
+        length: this.length,
+        hidePageSize: false,
+        pageSizeOptions: [5, 10, 20],
+        pageSize: 5,
+        showFirstLastButtons: true
+      };
+      this.table.pageChange.subscribe(page => this.applyPaging(page));
+    } else {
+      this.paging = null;
+    }
   }
   selectChange($event: UxgTableSelectEvent) {
     this.actionDiscription = JSON.stringify($event.data);

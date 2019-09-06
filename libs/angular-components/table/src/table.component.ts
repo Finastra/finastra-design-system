@@ -111,6 +111,12 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
+    if (changes.paging && !changes.paging.isFirstChange()) {
+      if (changes.paging.currentValue === null) {
+        this.applyDefaultPaging();
+      }
+    }
+
     if (changes.multiSelect && !changes.multiSelect.isFirstChange()) {
       if (this.multiSelect) {
         this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);

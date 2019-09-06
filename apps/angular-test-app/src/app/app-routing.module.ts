@@ -8,7 +8,6 @@ import {
   MatInputModule,
   MatPaginatorModule,
   MatRadioModule,
-  MatSliderModule,
   MatSlideToggleModule,
   MatDividerModule
 } from '@angular/material';
@@ -20,7 +19,7 @@ import { routes } from './routes';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { HomeComponent } from './components/home/home.component';
-import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

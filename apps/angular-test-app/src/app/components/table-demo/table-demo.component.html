@@ -6,7 +6,7 @@
     [columnDragEnable]="dragEnable"
     [showTotalRows]="totalEnable"
     [totalData]="totalData"
-    [stickyFooter]="true"
+    [stickyFooter]="stickyFooter"
     [pageEnable]="pageEnable"
     (sortChange)="sortData($event)"
     [singleSelect]="singleSelect"
@@ -26,7 +26,7 @@
         >
         <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
         <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
-        <mat-slide-toggle *ngIf="pageEnable" (change)="enableCustomizedPaging()"
+        <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
           >Enable customized paging</mat-slide-toggle
         >
       </div>
