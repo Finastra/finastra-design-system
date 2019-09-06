@@ -1,0 +1,18 @@
+@mixin uxg-icon-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .mat-icon[color=gradient] {
+    background: mat-color($uxg-gradient, vertical);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  // graceful degradation targeting IE10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .mat-icon[color=gradient] {
+      background: none;
+      background-clip: unset;
+      color: mat-color($accent, default);
+    }
+  }
+}
