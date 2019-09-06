@@ -1,19 +1,35 @@
 <div class="ffdc-repeater-demo-div">
-    <mat-card class="orientation">        
-        <mat-button-toggle-group [(ngModel)]="orientation" aria-label="Orientation">
-            <mat-button-toggle value="horizontal">Horizontal</mat-button-toggle>
-            <mat-button-toggle value="vertical">Vertical</mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-select [(ngModel)]="currentTemplate" [value]="template" [compareWith]="compareWith" (selectionChange)="updateTemplate()">
-                <mat-option *ngFor="let template of templatesData" [value]="template">
-                    {{ template.displayName }}
-                </mat-option>
-        </mat-select>
-    </mat-card>
+
     <uxg-repeater 
         [data]="dataSource" 
-        [template]="templateExample" 
-        [templateConfig]="templateConfig"
-        [orientation]="orientation">
+        [component]="componentExample" 
+        [columnsMatcher]="columnsMatcherExample"
+        [space]="spaceExample"
+        [orientation]="orientationExample">
     </uxg-repeater>
 </div>
+
+<div fxLayout="row" fxLayoutAlign="start start" class="config-block">
+     
+        <div class="orientation-area" fxLayout="column" fxLayoutAlign="start start">
+          <h5>Orientation</h5>
+          <mat-radio-group fxLayout="column" [(ngModel)]="orientationExample">
+            <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
+            <mat-radio-button value="vertical">Vertical</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="component-area" fxLayout="column" fxLayoutAlign="start start">
+                <h5>Component</h5>
+                <mat-select fxLayout="column" [(ngModel)]="currentTemplate" [value]="template" [compareWith]="compareWith" (selectionChange)="updateTemplate()">
+                        <mat-option *ngFor="let template of templatesData" [value]="template">
+                            {{ template.displayName }}
+                        </mat-option>
+                </mat-select>
+        </div>
+      
+        <div fxLayout="column" *ngIf="actionDiscription" class="interaction-information">
+          <h4>Information:</h4>
+          {{ actionDiscription }}
+        </div>
+
+      </div>

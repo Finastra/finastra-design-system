@@ -1,5 +1,4 @@
 import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, ComponentRef } from '@angular/core';
-import { RepeaterTemplateConfig } from '../repeater.component';
 
 @Component({
   selector: 'uxp-component-repeater',
@@ -11,12 +10,12 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
 
   @Input() factory: ComponentFactory<any>;
   @Input() data: any;
-  @Input() templateConfig: RepeaterTemplateConfig;
+  @Input() columnsMatcher: Object;
   
   ref:  ComponentRef<any>;
   
-  @ViewChild('extensionOutlet', { read: ViewContainerRef, static: true })
-  extensionOutlet: ViewContainerRef;
+  @ViewChild('componentHolder', { read: ViewContainerRef, static: true })
+  componentHolder: ViewContainerRef;
 
   constructor() { }
 
@@ -27,19 +26,17 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.factory){
       this.updateComponent();
-    }else if(changes.templateFieldsConfig && this.ref){
-      this.ref.instance.templateFieldsConfig = changes.templateFieldsConfig.currentValue;
+    }else if(changes.columnsMatcher && this.ref){
+      this.ref.instance.columnsMatcher = changes.columnsMatcher.currentValue;
       if( this.ref.instance.cd ){
         this.ref.instance.cd.detectChanges(); 
       }   
-      console.log(changes.templateFieldsConfig.currentValue);
       
     }else if(changes.data && this.ref){
       this.ref.instance.data = changes.data.currentValue;
       if( this.ref.instance.cd ){
         this.ref.instance.cd.detectChanges();
       }
-      console.log(changes.data.currentValue);
     }
   }
 
@@ -48,9 +45,9 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
       if(this.ref){
         this.ref.destroy();
       }
-      this.ref = this.extensionOutlet.createComponent(this.factory);
+      this.ref = this.componentHolder.createComponent(this.factory);
       this.ref.instance.data = this.data;
-      this.ref.instance.config = this.templateConfig;
+      this.ref.instance.columnsMatcher = this.columnsMatcher;
 
       if( this.ref.instance.cd ){
         this.ref.instance.cd.detectChanges();

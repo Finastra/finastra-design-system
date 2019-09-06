@@ -1,19 +1,31 @@
 .ffdc-repeater-demo-div{
 
-    .orientation{
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
 
-        mat-select{
-            width: 182px;
-            margin-left: 20px;
-        }
-    }
     uxg-repeater{
-        .viewport{
+        margin-top: 10px;
+        display: block;
+         .viewport{
             width:100%;
             height:50vh;
         }
+    }
+}
+
+
+  
+.config-block{
+    div{
+        margin-bottom: 5px;
+        .mat-slide-toggle{
+            margin-right: 5px;
+        }
+    }
+    margin-left: 24px;
+    .component-area{
+        margin-left: 24px;
+        width: 130px;
+    }
+    .orientation-information{
+        margin-left: 24px;
     }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ComponentFactory, ComponentFactoryResolver, Type, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { RepeaterCardExampleComponent } from './repeater-card-example/repeater-card-example.component';
-import { RepeaterTemplateConfig } from '@ffdc/uxg-angular-components/repeater';
 import { RepeaterCardAdvancedExampleComponent } from './repeater-card-advanced-example/repeater-card-advanced-example.component';
 const ELEMENT_DATA: any[] = [
   {
@@ -188,26 +187,22 @@ const ELEMENT_DATA: any[] = [
 
 const TEMPLATES_DATA: any[] = [
   {
-    'template': RepeaterCardExampleComponent,
+    'component': RepeaterCardExampleComponent,
     'displayName': "Basic Card",
-    'templateConfig': {
-      fieldsMatcher : {
+    'columnsMatcher': {
         "title":"API",
-        "subtitle":"Status Code"
-      },
-      space: "10px"
-    }
+        "subtitle":"Status Code"      
+    },
+    'space': '10px'
   },
   {
-    'template': RepeaterCardAdvancedExampleComponent,
+    'component': RepeaterCardAdvancedExampleComponent,
     'displayName': "Advanced Card",
-    'templateConfig': {
-      fieldsMatcher : {
-        "title":"Date Time",
-        "subtitle":"Error Response"
-      },
-      space: "20px"
-    }
+    'columnsMatcher': {
+        "bankName":"Date Time",
+        "name":"Error Response"      
+    },
+    'space': '20px'
   }
 ]
 
@@ -222,10 +217,11 @@ export class RepeaterDemoComponent implements OnInit {
   dataSource = ELEMENT_DATA; //data
 
   templatesData= TEMPLATES_DATA;
-  templateExample: Type<any>;
-  templateConfig: RepeaterTemplateConfig;
-  
-  orientation: string = "vertical";
+
+  componentExample: Type<any>;
+  columnsMatcherExample: Object;  
+  orientationExample: string = "vertical";
+  spaceExample: string;
 
   currentTemplate: any = this.templatesData[0];
 
@@ -236,12 +232,12 @@ export class RepeaterDemoComponent implements OnInit {
 
   ngOnInit() {
     this.updateTemplate();
-    console.log(this.dataSource.length);
   }
 
   updateTemplate(){
-    this.templateExample = this.currentTemplate.template;
-    this.templateConfig = this.currentTemplate.templateConfig
+    this.componentExample = this.currentTemplate.component;
+    this.columnsMatcherExample = this.currentTemplate.columnsMatcher
+    this.spaceExample = this.currentTemplate.space
   }
 
   compareWith(o1: any, o2: any): boolean {

@@ -4,8 +4,8 @@
         <uxp-component-repeater
           [factory]="componentFactory" 
           [data]="value" 
-          [templateConfig]="templateConfig"
-          [ngStyle]="{'margin-bottom': templateConfig.space}" 
+          [columnsMatcher]="columnsMatcher"
+          [ngStyle]="{'margin-bottom': space}" 
         ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>  
@@ -14,8 +14,8 @@
       <uxp-component-repeater
         [factory]="componentFactory" 
         [data]="value" 
-        [templateConfig]="templateConfig"
-        [ngStyle]="{'margin-right': templateConfig.space}"
+        [columnsMatcher]="columnsMatcher"
+        [ngStyle]="{'margin-right': space}"
       ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>

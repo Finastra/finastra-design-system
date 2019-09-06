@@ -8,7 +8,9 @@ import {
   MatInputModule,
   MatPaginatorModule,
   MatButtonToggleModule,
-  MatSelectModule
+  MatSelectModule,
+  MatExpansionModule,
+  MatRadioModule
 } from '@angular/material';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
@@ -21,6 +23,7 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 import { HomeComponent } from './components/home/home.component';
 import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.component';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -36,7 +39,10 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatPaginatorModule,
     MatButtonToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule,
+    MatRadioModule,
+    FlexLayoutModule 
   ],
   declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, RepeaterDemoComponent],
   exports: [RouterModule]

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ChangeDetectorRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { RepeaterTemplateConfig } from '@ffdc/uxg-angular-components/repeater';
 
 @Component({
   selector: 'ffdc-repeater-card-example',
@@ -11,7 +10,7 @@ import { RepeaterTemplateConfig } from '@ffdc/uxg-angular-components/repeater';
 export class RepeaterCardExampleComponent implements OnInit {
 
   @Input() data: any;
-  @Input() config: RepeaterTemplateConfig;
+  @Input() columnsMatcher: Object = {};
   
   constructor(private cd: ChangeDetectorRef) { }
 

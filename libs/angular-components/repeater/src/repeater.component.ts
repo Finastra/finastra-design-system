@@ -1,9 +1,5 @@
 import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation } from '@angular/core';
 
-export interface RepeaterTemplateConfig {
-  fieldsMatcher?: any;
-  space?: string;
-}
 
 @Component({
   selector: 'uxg-repeater',
@@ -23,10 +19,11 @@ export class RepeaterComponent implements OnInit, OnChanges {
     this._data = data;
   }
   
-  @Input() template: Type<any> | ComponentFactory<any>;
+  @Input() component: Type<any> | ComponentFactory<any>;
 
-  @Input() orientation: string = "vertical"
-  @Input() templateConfig: RepeaterTemplateConfig;
+  @Input() orientation: string = "vertical";
+  @Input() space: string;
+  @Input() columnsMatcher: Object;
 
 
   componentFactory: ComponentFactory<any>;
@@ -36,8 +33,8 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if(this.template instanceof Type){
-      this.componentFactory = this.resolver.resolveComponentFactory(this.template);
+    if(this.component instanceof Type){
+      this.componentFactory = this.resolver.resolveComponentFactory(this.component);
     }
   }
 
@@ -49,8 +46,8 @@ export class RepeaterComponent implements OnInit, OnChanges {
       this.orientation = changes.orientation.currentValue;     
     }  
 
-    if(changes.template){
-      this.componentFactory = this.resolver.resolveComponentFactory(changes.template.currentValue);
+    if(changes.component){
+      this.componentFactory = this.resolver.resolveComponentFactory(changes.component.currentValue);
     }  
   }
 
