@@ -10,7 +10,7 @@ export class PopoverComponent {
   @Input() xPosition: MenuPositionX = 'after';
   @Input() yPosition: MenuPositionY = 'below';
   @Input() popoverContent: TemplateRef<any>;
-  @Input() popoverClass: string = '';
+  @Input() popoverClass: string;
 
   @ViewChild(MatMenuTrigger, { static: true }) private matMenuTrigger: MatMenuTrigger;
 
