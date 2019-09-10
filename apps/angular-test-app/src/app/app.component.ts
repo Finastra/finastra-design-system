@@ -9,13 +9,10 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 export class AppComponent {
   title: string;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.title = this.route.root.firstChild.snapshot.data['title']
+        this.title = this.route.root.firstChild.snapshot.data['title'];
       }
     });
   }
