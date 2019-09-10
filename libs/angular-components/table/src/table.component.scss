@@ -5,6 +5,7 @@ uxg-table {
     flex: 1;
     .uxg-data-table{
         max-height: $uxg-table-max-height;
+        max-width: inherit;
         overflow: auto;
         flex: 1;
     }

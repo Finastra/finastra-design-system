@@ -15,7 +15,7 @@ import {
 import { CdkTableModule } from '@angular/cdk/table';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
-describe('TableModule', () => {
+describe('UxgTableModule', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
 

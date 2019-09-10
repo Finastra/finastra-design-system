@@ -31,4 +31,4 @@ import { TableComponent } from './table.component';
   ],
   exports: [TableComponent]
 })
-export class TableModule {}
+export class UxgTableModule {}

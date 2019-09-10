@@ -14,7 +14,7 @@ import {
 } from '@angular/material';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { TableModule } from '@ffdc/uxg-angular-components/table';
+import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 
 import { routes } from './routes';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -28,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MatCardModule,
     GlobalSearchModule,
-    TableModule,
+    UxgTableModule,
     RouterModule.forRoot(routes),
     MatChipsModule,
     MatFormFieldModule,

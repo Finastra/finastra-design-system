@@ -6,6 +6,12 @@ $uxg-table-cell-margin: $uxg-spacing-3;
 $uxg-table-row-height: 44px;
 
 .mat-table {
+  tr {
+    th, td {
+      white-space: nowrap;
+    }
+  }
+
   thead {
     tr {
       height: $uxg-table-row-height;
