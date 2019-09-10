@@ -21,5 +21,4 @@ export class PopoverComponent {
   close() {
     this.matMenuTrigger.closeMenu();
   }
-
 }

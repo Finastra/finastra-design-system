@@ -9,7 +9,6 @@ import { PopoverDemoComponent } from './components/popover-demo/popover-demo.com
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { routes } from './routes';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -20,12 +19,7 @@ import { routes } from './routes';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [
-    HomeComponent,
-    GlobalSearchDemoComponent,
-    TableDemoComponent,
-    PopoverDemoComponent
-  ],
+  declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, PopoverDemoComponent],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
