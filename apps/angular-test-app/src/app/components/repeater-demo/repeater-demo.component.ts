@@ -222,6 +222,9 @@ export class RepeaterDemoComponent implements OnInit {
   columnsMatcherExample: Object;  
   orientationExample: string = "vertical";
   spaceExample: string;
+  multiselectExample: boolean = true;
+
+  actionDescription: string;
 
   currentTemplate: any = this.templatesData[0];
 
@@ -236,8 +239,12 @@ export class RepeaterDemoComponent implements OnInit {
 
   updateTemplate(){
     this.componentExample = this.currentTemplate.component;
-    this.columnsMatcherExample = this.currentTemplate.columnsMatcher
+    this.columnsMatcherExample = this.currentTemplate.columnsMatcher;
     this.spaceExample = this.currentTemplate.space
+  }
+
+  displaySelection(data:any){
+    this.actionDescription = JSON.stringify(data);
   }
 
   compareWith(o1: any, o2: any): boolean {

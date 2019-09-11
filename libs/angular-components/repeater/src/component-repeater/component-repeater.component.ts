@@ -1,16 +1,53 @@
-import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, ComponentRef } from '@angular/core';
+import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, ComponentRef, ViewEncapsulation } from '@angular/core';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'uxp-component-repeater',
   templateUrl: './component-repeater.component.html',
-  styleUrls: ['./component-repeater.component.css']
+  styleUrls: ['./component-repeater.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ComponentRepeaterComponent implements OnInit, OnChanges {
+export class ComponentRepeaterComponent implements OnInit {
  
 
-  @Input() factory: ComponentFactory<any>;
-  @Input() data: any;
-  @Input() columnsMatcher: Object;
+  _factory: any;
+  @Input() set factory(data: ComponentFactory<any>) {
+    this._factory = data;
+    this.updateComponent();  
+  }
+
+  _data: any;
+  @Input() set data(data: any) {
+    this._data = data;
+    if(this.ref){
+      this.ref.instance.data = this._data;
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+      }
+    }
+  }
+
+  _columnsMatcher: Object;
+  @Input() set columnsMatcher(data: Object) {
+    this._columnsMatcher = data;
+    if(this.ref){
+      this.ref.instance.columnsMatcher = this._columnsMatcher;
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+      }
+    }
+  }
+
+  _selected: boolean;
+  @Input() set selected(selected: boolean) {
+    this._selected = selected;
+    if(this.ref){
+       this.ref.instance.selected = this._selected;
+       if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+      }
+    }
+  }
   
   ref:  ComponentRef<any>;
   
@@ -23,37 +60,28 @@ export class ComponentRepeaterComponent implements OnInit, OnChanges {
     this.updateComponent();  
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes.factory){
-      this.updateComponent();
-    }else if(changes.columnsMatcher && this.ref){
-      this.ref.instance.columnsMatcher = changes.columnsMatcher.currentValue;
-      if( this.ref.instance.cd ){
-        this.ref.instance.cd.detectChanges(); 
-      }   
-      
-    }else if(changes.data && this.ref){
-      this.ref.instance.data = changes.data.currentValue;
-      if( this.ref.instance.cd ){
-        this.ref.instance.cd.detectChanges();
-      }
-    }
-  }
-
   updateComponent():void{
-    if(this.factory){
+    if(this._factory){
       if(this.ref){
         this.ref.destroy();
       }
-      this.ref = this.componentHolder.createComponent(this.factory);
-      this.ref.instance.data = this.data;
-      this.ref.instance.columnsMatcher = this.columnsMatcher;
-
-      if( this.ref.instance.cd ){
-        this.ref.instance.cd.detectChanges();
-        this.ref.instance.cd.markForCheck();
+      this.ref = this.componentHolder.createComponent(this._factory);
+      
+      if(this._data){
+        this.ref.instance.data = this._data;
       }
 
+      if(this._columnsMatcher){
+        this.ref.instance.columnsMatcher = this._columnsMatcher;
+      }
+
+      if(this._selected){
+        this.ref.instance.selected = this._selected;
+      }
+      
+      if( this.ref.instance.cd ){
+        this.ref.instance.cd.detectChanges();
+      }
       
     }   
   }

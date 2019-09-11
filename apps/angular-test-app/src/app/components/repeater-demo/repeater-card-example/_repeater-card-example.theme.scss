@@ -1,0 +1,12 @@
+
+
+@mixin theme-repeater-card-example($theme) {
+    $primary: map-get($theme, accent);
+    $border-primary-color: mat-color($primary, default);
+    .simple-card{
+        &.selected{
+            border-bottom: 2px solid $border-primary-color;
+        }
+    }
+  }
+  

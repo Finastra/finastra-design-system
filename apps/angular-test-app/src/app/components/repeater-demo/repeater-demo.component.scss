@@ -1,6 +1,4 @@
 .ffdc-repeater-demo-div{
-
-
     uxg-repeater{
         margin-top: 10px;
         display: block;
@@ -9,23 +7,22 @@
             height:50vh;
         }
     }
+
 }
-
-
   
 .config-block{
-    div{
+    >div{
         margin-bottom: 5px;
         .mat-slide-toggle{
             margin-right: 5px;
         }
-    }
-    margin-left: 24px;
-    .component-area{
         margin-left: 24px;
+    }
+   
+    .component-area{
         width: 130px;
     }
-    .orientation-information{
-        margin-left: 24px;
+    .interaction-information{
+        max-width: 400px;
     }
 }

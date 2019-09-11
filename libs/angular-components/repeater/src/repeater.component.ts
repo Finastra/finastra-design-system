@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { MatSelectChange } from '@angular/material';
 
 
 @Component({
@@ -20,13 +21,15 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
   
   @Input() component: Type<any> | ComponentFactory<any>;
-
   @Input() orientation: string = "vertical";
+  @Input() multiSelect: boolean = false;
   @Input() space: string;
   @Input() columnsMatcher: Object;
-
+  @Output() selectionChange:EventEmitter<any> =  new EventEmitter<any>();
 
   componentFactory: ComponentFactory<any>;
+
+  selectedItems:{ [k: string]: any };
 
   constructor(private resolver: ComponentFactoryResolver) { 
 
@@ -36,14 +39,32 @@ export class RepeaterComponent implements OnInit, OnChanges {
     if(this.component instanceof Type){
       this.componentFactory = this.resolver.resolveComponentFactory(this.component);
     }
+    this.selectedItems = {};
+    console.log(this.multiSelect);
   }
 
+  onClick(index:number, value: any){
+    if(!this.multiSelect){
+      this.selectedItems = {};
+    }
+    this.selectedItems[index] = value;
+    this.selectionChange.emit({'value':this.selectedItems});
+  }
   
-  ngOnChanges(changes: SimpleChanges): void {
+  isSelected(index){
+    return this.selectedItems[index]!==null && this.selectedItems[index]!==undefined;
+  }
   
+
+  ngOnChanges(changes: SimpleChanges): void {  
 
     if(changes.orientation){
       this.orientation = changes.orientation.currentValue;     
+    }  
+
+    if(changes.multiSelect){
+      this.multiSelect = changes.multiSelect.currentValue;    
+      this.selectedItems = {}; 
     }  
 
     if(changes.component){

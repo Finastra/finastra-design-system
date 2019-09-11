@@ -1,35 +1,47 @@
 <div class="ffdc-repeater-demo-div">
 
-    <uxg-repeater 
-        [data]="dataSource" 
-        [component]="componentExample" 
-        [columnsMatcher]="columnsMatcherExample"
-        [space]="spaceExample"
-        [orientation]="orientationExample">
-    </uxg-repeater>
+  <uxg-repeater 
+    [data]="dataSource" 
+    [component]="componentExample" 
+    [columnsMatcher]="columnsMatcherExample"
+    [space]="spaceExample" 
+    [orientation]="orientationExample" 
+    [multiSelect]="multiselectExample"
+    (selectionChange)="displaySelection($event.value)">
+  </uxg-repeater>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="start start" class="config-block">
-     
-        <div class="orientation-area" fxLayout="column" fxLayoutAlign="start start">
-          <h5>Orientation</h5>
-          <mat-radio-group fxLayout="column" [(ngModel)]="orientationExample">
-            <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
-            <mat-radio-button value="vertical">Vertical</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div class="component-area" fxLayout="column" fxLayoutAlign="start start">
-                <h5>Component</h5>
-                <mat-select fxLayout="column" [(ngModel)]="currentTemplate" [value]="template" [compareWith]="compareWith" (selectionChange)="updateTemplate()">
-                        <mat-option *ngFor="let template of templatesData" [value]="template">
-                            {{ template.displayName }}
-                        </mat-option>
-                </mat-select>
-        </div>
-      
-        <div fxLayout="column" *ngIf="actionDiscription" class="interaction-information">
-          <h4>Information:</h4>
-          {{ actionDiscription }}
-        </div>
 
-      </div>
+  <div class="orientation-area" fxLayout="column" fxLayoutAlign="start start">
+    <h5>Orientation</h5>
+    <mat-radio-group fxLayout="column" [(ngModel)]="orientationExample">
+      <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
+      <mat-radio-button value="vertical">Vertical</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="orientation-area" fxLayout="column" fxLayoutAlign="start start">
+    <h5>Selection</h5>
+    <mat-radio-group fxLayout="column" [(ngModel)]="multiselectExample">
+      <mat-radio-button [value]="false">Single select</mat-radio-button>
+      <mat-radio-button [value]="true">Multi select</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="component-area" fxLayout="column" fxLayoutAlign="start start">
+    <h5>Component</h5>
+    <mat-select fxLayout="column" [(ngModel)]="currentTemplate" [value]="template" [compareWith]="compareWith"
+      (selectionChange)="updateTemplate()">
+      <mat-option *ngFor="let template of templatesData" [value]="template">
+        {{ template.displayName }}
+      </mat-option>
+    </mat-select>
+  </div>
+
+  <div fxLayout="column" *ngIf="actionDescription" class="interaction-information">
+    <h4>Information:</h4>
+    {{ actionDescription }}
+  </div>
+
+</div>

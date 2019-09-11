@@ -1,7 +1,9 @@
 @import '../../../themes/angular-theme/all-theme';
 @import '../../../libs/angular-components/global-search/src/global-search-theme.component';
+@import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
 @include uxg-global-search-theme($uxg-light-theme);
+@include theme-repeater-card-example($uxg-light-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

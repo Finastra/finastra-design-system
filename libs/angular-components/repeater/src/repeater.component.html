@@ -1,21 +1,26 @@
 
 <cdk-virtual-scroll-viewport autosize class="viewport" [orientation]="vertical" *ngIf="orientation==='vertical'">
-    <div *cdkVirtualFor="let value of data; let odd = odd;" class="repeater-item" [class.alternate]="odd" (click)="selectionChanged(value)">
-        <uxp-component-repeater
+  <div *cdkVirtualFor="let value of data; let odd = odd;let index = index;"
+  class="repeater-item" [class.alternate]="odd" (click)="onClick(index,value)">
+  <uxp-component-repeater
           [factory]="componentFactory" 
           [data]="value" 
           [columnsMatcher]="columnsMatcher"
           [ngStyle]="{'margin-bottom': space}" 
-        ></uxp-component-repeater>
+          [selected]="isSelected(index)"
+          ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>  
   <cdk-virtual-scroll-viewport autosize class="viewport" orientation="horizontal"  *ngIf="orientation==='horizontal'">
-    <div *cdkVirtualFor="let value of data; let odd = odd;"  class="repeater-item" [class.alternate]="odd" (click)="selectionChanged(value)">
-      <uxp-component-repeater
-        [factory]="componentFactory" 
-        [data]="value" 
-        [columnsMatcher]="columnsMatcher"
-        [ngStyle]="{'margin-right': space}"
+    <div *cdkVirtualFor="let value of data; let odd = odd;let index = index;" 
+    class="repeater-item" [class.alternate]="odd" (click)="onClick(index,value)">
+         <uxp-component-repeater
+          [factory]="componentFactory" 
+          [data]="value" 
+          [columnsMatcher]="columnsMatcher"
+          [ngStyle]="{'margin-right': space}"     
+          [selected]="isSelected(index)"
+ 
       ></uxp-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>

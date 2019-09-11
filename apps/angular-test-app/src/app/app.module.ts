@@ -7,7 +7,8 @@ import {
   MatButtonModule,
   MatListModule,
   MatSidenavModule,
-  MatCardModule
+  MatCardModule,
+  MatMenuModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -33,7 +34,8 @@ import { RepeaterCardAdvancedExampleComponent } from './components/repeater-demo
     MatCardModule,
     GlobalSearchModule,
     TableModule,
-    RepeaterModule
+    RepeaterModule,
+    MatMenuModule
   ],
   providers: [],
   exports: [RepeaterCardExampleComponent],

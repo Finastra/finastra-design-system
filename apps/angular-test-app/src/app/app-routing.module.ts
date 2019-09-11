@@ -10,7 +10,8 @@ import {
   MatButtonToggleModule,
   MatSelectModule,
   MatExpansionModule,
-  MatRadioModule
+  MatRadioModule,
+  MatMenuModule
 } from '@angular/material';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
@@ -42,7 +43,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatExpansionModule,
     MatRadioModule,
-    FlexLayoutModule 
+    FlexLayoutModule
+    
   ],
   declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, RepeaterDemoComponent],
   exports: [RouterModule]

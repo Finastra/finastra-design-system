@@ -1,21 +1,22 @@
-import { Component, OnInit, Input, ChangeDetectorRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, ViewEncapsulation, ChangeDetectionStrategy, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'ffdc-repeater-card-example',
   templateUrl: './repeater-card-example.component.html',
-  styleUrls: ['./repeater-card-example.component.css'],  
+  styleUrls: ['./repeater-card-example.component.scss'],  
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RepeaterCardExampleComponent implements OnInit {
+ 
 
-  @Input() data: any;
+  @Input() data: any = {};
   @Input() columnsMatcher: Object = {};
+  @Input() selected: boolean = false;
   
   constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
-    console.log(this.data);
+    
   }
-
 }
