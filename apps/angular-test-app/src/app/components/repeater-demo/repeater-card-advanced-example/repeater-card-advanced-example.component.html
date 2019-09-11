@@ -23,7 +23,7 @@
                 <div class="section">0000</div>
                 <div class="section">0000</div>
               </div>
-              <div class="end"><span class="end-text">exp. end:</span><span class="end-date"> 11/22</span></div>
+              <div class="end"><span class="end-text">exp. end:</span><span class="end-date">{{data[columnsMatcher.date] || 'MM/YY'}}</span></div>
               <div class="card-holder">{{data[columnsMatcher.name] || 'name'}}</div>
               <div class="master">
                 <div class="circle master-red"></div>
@@ -34,7 +34,7 @@
               <div class="strip-black"></div>
               <div class="ccv">
                 <label>ccv</label>
-                <div>{{data[columnsMatcher.id] || 'id'}}</div>
+                <div>{{data[columnsMatcher.cid] || 'id'}}</div>
               </div>
               
             </div>

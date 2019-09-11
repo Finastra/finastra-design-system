@@ -188,7 +188,7 @@ const ELEMENT_DATA: any[] = [
 const TEMPLATES_DATA: any[] = [
   {
     'component': RepeaterCardExampleComponent,
-    'displayName': "Basic Card",
+    'displayName': "UXG Card",
     'columnsMatcher': {
         "title":"API",
         "subtitle":"Status Code"      
@@ -197,10 +197,12 @@ const TEMPLATES_DATA: any[] = [
   },
   {
     'component': RepeaterCardAdvancedExampleComponent,
-    'displayName': "Advanced Card",
+    'displayName': "Code Pen Card",
     'columnsMatcher': {
-        "bankName":"Date Time",
-        "name":"Error Response"      
+        "bankName":"End Point",
+        "name":"Error Response",
+        "date": "Date Time",
+        "cid": "Status Code"
     },
     'space': '20px'
   }
