@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sort, PageEvent } from '@angular/material';
+import { UxgTableSelectEvent, TableComponent, UxgPage, UxgSort } from '@ffdc/uxg-angular-components/table';
 
 const ELEMENT_DATA: any[] = [
   {
@@ -91,6 +92,36 @@ const ELEMENT_DATA: any[] = [
     'Status Code': '200',
     'Error Response': 'OK',
     'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3
   }
 ];
 
@@ -102,17 +133,19 @@ const ELEMENT_DATA: any[] = [
   encapsulation: ViewEncapsulation.None
 })
 export class TableDemoComponent implements OnInit {
+  @ViewChild(TableComponent, { static: false }) table: TableComponent;
+
   dataSource = ELEMENT_DATA; //data
   length = ELEMENT_DATA.length;
-  paging = {
-    disabled: false,
-    pageIndex: 0,
-    length: 9,
-    hidePageSize: false,
-    pageSizeOptions: [5, 10],
-    pageSize: 5,
-    showFirstLastButtons: true
-  };
+
+  dragEnable = false;
+  totalEnable = false;
+  pageEnable = false;
+  customizedPage = false;
+  stickyFooter = true;
+  paging = null;
+  actionDiscription = '';
+  singleSelect = true;
 
   // columns defination object
   columns: any[] = [
@@ -135,12 +168,15 @@ export class TableDemoComponent implements OnInit {
     'Error Response',
     'No. of Calls'
   ];
-
+  totalData = {
+    'Status Code': '80% GOOD'
+  };
   constructor() {}
 
   ngOnInit(): void {}
 
-  sortData(sort: Sort) {
+  sortData(sort: UxgSort) {
+    this.actionDiscription = 'customized sorting function excuted';
     this.dataSource = this.dataSource.slice().sort((obj1, obj2) => {
       switch (this.getSortColumnType(sort.active)) {
         case 'number':
@@ -173,16 +209,45 @@ export class TableDemoComponent implements OnInit {
       return column.name === columnName;
     }).type;
   }
-  applyPaging($event: PageEvent) {
+  applyPaging($event: UxgPage) {
+    this.actionDiscription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
     this.dataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
   }
   applyDefaultPaging() {
-    const defaultPaging: PageEvent = {
+    const defaultPaging: UxgPage = {
       length: this.length,
       pageIndex: 0,
       pageSize: 5
     };
     this.applyPaging(defaultPaging);
+  }
+  enableDrag($event) {
+    this.dragEnable = $event.checked;
+  }
+  enablePaging($event) {
+    this.pageEnable = $event.checked;
+  }
+  enableCustomizedPaging($event) {
+    if ($event.checked) {
+      this.table.paging = {
+        disabled: false,
+        pageIndex: 0,
+        length: this.length,
+        hidePageSize: false,
+        pageSizeOptions: [5, 10, 20],
+        pageSize: 5,
+        showFirstLastButtons: true
+      };
+      this.table.pageChange.subscribe(page => this.applyPaging(page));
+    } else {
+      this.paging = null;
+    }
+  }
+  selectChange($event: UxgTableSelectEvent) {
+    this.actionDiscription = JSON.stringify($event.data);
+  }
+  enableTotal($event) {
+    this.totalEnable = $event.checked;
   }
 }

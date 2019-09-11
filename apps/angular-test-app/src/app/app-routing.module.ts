@@ -8,17 +8,10 @@ import { HomeComponent } from './components/home/home.component';
 import { PopoverDemoComponent } from './components/popover-demo/popover-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { routes } from './routes';
+import { MaterialModule } from './material.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ComponentsModule,
-    RouterModule.forRoot(routes),
-    MatCardModule,
-    MatChipsModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+  imports: [CommonModule, MaterialModule, ComponentsModule, RouterModule.forRoot(routes)],
   declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, PopoverDemoComponent],
   exports: [RouterModule]
 })

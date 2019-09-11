@@ -7,15 +7,18 @@ import {
   MatIconModule,
   MatFormFieldModule,
   MatProgressSpinnerModule,
-  MatButtonModule
+  MatButtonModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TableComponent } from './table.component';
 
 @NgModule({
   declarations: [TableComponent],
   imports: [
     CommonModule,
+    DragDropModule,
     MatTableModule,
     MatPaginatorModule,
     CdkTableModule,
@@ -23,8 +26,9 @@ import { TableComponent } from './table.component';
     MatIconModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [TableComponent]
 })
-export class TableModule {}
+export class UxgTableModule {}

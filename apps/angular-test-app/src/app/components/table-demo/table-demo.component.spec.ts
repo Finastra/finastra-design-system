@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDemoComponent } from './table-demo.component';
-import { TableModule } from '@ffdc/uxg-angular-components/table';
-import { MatPaginatorModule } from '@angular/material';
+import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
+import { MatPaginatorModule, MatSlideToggleModule, MatRadioModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 describe('TableDemoComponent', () => {
   let component: TableDemoComponent;
@@ -11,7 +12,14 @@ describe('TableDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TableModule, MatPaginatorModule, BrowserAnimationsModule],
+      imports: [
+        UxgTableModule,
+        MatPaginatorModule,
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        MatRadioModule,
+        FormsModule
+      ],
       declarations: [TableDemoComponent]
     }).compileComponents();
   }));

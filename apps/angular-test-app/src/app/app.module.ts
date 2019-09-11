@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
@@ -8,26 +7,15 @@ import {
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { TableModule } from '@ffdc/uxg-angular-components/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatSidenavModule,
-    MatCardModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

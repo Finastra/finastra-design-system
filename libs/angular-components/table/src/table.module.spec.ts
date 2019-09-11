@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { TableModule } from './table.module';
+import { UxgTableModule } from './table.module';
 
-describe('TableModule', () => {
+describe('UxgTableModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TableModule]
+      imports: [UxgTableModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(TableModule).toBeDefined();
+    expect(UxgTableModule).toBeDefined();
   });
 });
