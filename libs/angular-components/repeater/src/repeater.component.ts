@@ -44,10 +44,17 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
 
   onClick(index:number, value: any){
-    if(!this.multiSelect){
+    if(!this.multiSelect && !this.selectedItems[index]){
       this.selectedItems = {};
+      this.selectedItems[index] = value;
+    }else if(!this.multiSelect && this.selectedItems[index]){
+      delete this.selectedItems[index];
+    }else if(this.multiSelect && this.selectedItems[index]){
+      delete this.selectedItems[index];
+    }else{
+      this.selectedItems[index] = value;
     }
-    this.selectedItems[index] = value;
+   
     this.selectionChange.emit({'value':this.selectedItems});
   }
   
