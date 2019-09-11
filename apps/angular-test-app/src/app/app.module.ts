@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { TableModule } from '@ffdc/uxg-angular-components/table';
+import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,7 +28,7 @@ import { TableModule } from '@ffdc/uxg-angular-components/table';
     AppRoutingModule,
     MatCardModule,
     GlobalSearchModule,
-    TableModule
+    UxgTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
