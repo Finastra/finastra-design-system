@@ -1,5 +1,6 @@
 @mixin uxg-toolbar-theme($theme) {
   $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
 
   .uxg-toolbar {
     .mat-icon-button {
@@ -8,6 +9,16 @@
 
     .uxg-toolbar-icon-menu {
       color: mat-color($foreground, text, 0.38);
+    }
+
+    &.mat-primary {
+      .mat-icon-button {
+        color: mat-color($primary, default-contrast);
+      }
+
+      .uxg-toolbar-icon-menu {
+        color: mat-color($primary, default-contrast, 0.38);
+      }
     }
 
     .uxg-toolbar-logo,
