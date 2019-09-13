@@ -1,35 +1,21 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import {
-  MatIconModule,
-  MatToolbarModule,
   MatButtonModule,
+  MatCardModule,
+  MatIconModule,
   MatListModule,
   MatSidenavModule,
-  MatCardModule
+  MatToolbarModule
 } from '@angular/material';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
 
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatListModule,
-    MatSidenavModule,
-    AppRoutingModule,
-    MatCardModule,
-    GlobalSearchModule,
-    UxgTableModule
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

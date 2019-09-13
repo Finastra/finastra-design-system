@@ -1,0 +1,10 @@
+<mat-menu #popover="matMenu" [xPosition]="xPosition" [yPosition]="yPosition" class="uxg-popover {{ popoverClass }}">
+  <ng-template matMenuContent>
+    <span mat-menu-item [disableRipple]="true" (click)="$event.stopPropagation()">
+      <ng-container *ngTemplateOutlet="popoverContent"></ng-container>
+    </span>
+  </ng-template>
+</mat-menu>
+<div [matMenuTriggerFor]="popover">
+  <ng-content></ng-content>
+</div>

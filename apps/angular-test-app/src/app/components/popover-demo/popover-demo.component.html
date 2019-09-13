@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <uxg-popover #popover [popoverContent]="popoverContent" popoverClass="popover">
+    <button mat-stroked-button color="accent">Click me to see a popover</button>
+  </uxg-popover>
+</div>
+
+<ng-template #popoverContent>
+  <div class="uxg-h5">Simple popover</div>
+  <div class="uxg-body-2">
+    This popover is pretty simple. It uses Material menu to work like a popover. The benefit of this approach is it's
+    super lightweight. And it is very flexible as well.
+  </div>
+  <div class="actions">
+    <button mat-button color="accent" (click)="popover.close()">Close</button>
+    <button mat-flat-button color="accent" (click)="popover.close()">Sounds good</button>
+  </div>
+</ng-template>

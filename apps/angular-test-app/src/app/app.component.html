@@ -1,6 +1,6 @@
 <div class="main-container">
   <mat-sidenav-container class="uxg-nav">
-    <mat-sidenav #sidenav mode="over" fixedInViewport="true">
+    <mat-sidenav #sidenav mode="over" fixedInViewport="true" [autoFocus]="false">
       <div class="uxg-nav-header">
         <mat-card class="uxg-card-product" extra-dense routerLink="/">
           <span class="uxg-h5 uxg-card-product-name">DS</span>
@@ -14,17 +14,21 @@
         <a mat-list-item routerLink="/table" routerLinkActive="uxg-list-item-selected">
           <p>Table</p>
         </a>
+        <a mat-list-item routerLink="/popover" routerLinkActive="uxg-list-item-selected">
+          <p>Popover</p>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <mat-toolbar class="uxg-toolbar">
+      <mat-toolbar class="uxg-toolbar uxg-toolbar-elevated">
         <button class="uxg-nav-header-button" mat-icon-button color="primary" (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <div class="uxg-toolbar-logo-small"></div>
         <ul class="uxg-breadcrumb">
-          <li class="uxg-h6"><a routerLink="/">ANGULAR THEME</a></li>
+          <li class="uxg-h6"><a routerLink="/">ANGULAR COMPONENTS</a></li>
+          <li *ngIf="title">{{ title }}</li>
         </ul>
         <span class="fill-remaining-space"></span>
       </mat-toolbar>

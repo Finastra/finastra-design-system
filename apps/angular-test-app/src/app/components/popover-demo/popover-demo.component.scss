@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  height: 100%;
+}
+
+.popover {
+  max-width: 400px !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  button {
+    margin-left: 10px;
+  }
+}
