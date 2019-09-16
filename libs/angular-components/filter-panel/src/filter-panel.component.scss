@@ -1,13 +1,16 @@
-.filter-panel-container {
-    padding: 24px 20px 24px 20px;
-}
 
-.node-data-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.filter-panel-action {
-    display: flex;
-    justify-content: center;
+.mat-tree-node {
+  min-height: 30px;
+  .mat-icon-button {
+    width: 30px;
+    height: 30px;
+  }
+  ::ng-deep .mat-checkbox {
+    .mat-checkbox-inner-container {
+      margin-right: 10px;
+      &:hover >.mat-checkbox-ripple {
+        opacity: 0;
+      }
+    }
+  }
 }

@@ -8,52 +8,10 @@ export interface Tenant {
     updated: Date;
 }
 
-export interface FilterNode {
-    group: string;
-    options: FieldNode[];
-}
-
 export interface FieldNode {
     label: string;
     children?: FieldNode[];
 }
-
-// export const sampleFilterFields: FilterNode[] = [
-//     {
-//         group: 'Tenant',
-//         options: [
-//             {
-//                 label: 'United Kingdom',
-//                 children: [
-//                     {
-//                         label: 'England',
-//                         children: [
-//                             { label: 'England Production' },
-//                             { label: 'England Development' },
-//                             { label: 'England Sandbos' },
-//                         ]
-//                     },
-//                     {
-//                         label: 'Scotland',
-//                         children: [
-//                             { label: 'Scotland Production' },
-//                             { label: 'Scotland Development' },
-//                             { label: 'Scotland Sandbos' },
-//                         ]
-//                     }
-//                 ]
-//             }
-//         ]
-//     },
-//     {
-//         group: 'Last update',
-//         options: [
-//             { label: 'Today' },
-//             { label: 'Week' },
-//             { label: 'Month' },
-//         ]
-//     }
-// ]
 
 export const sampleFilterFields: FieldNode[] = [
     {
@@ -78,6 +36,10 @@ export const sampleFilterFields: FieldNode[] = [
         ]
     }
 ]
+
+
+
+
 
 export const companies: Company[] = [
     {

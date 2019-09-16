@@ -1,25 +1,16 @@
-<div class="filter-panel-container">
-    <div class="filter-panel-action">
-        <button mat-stroked-button color="primary" dense (click)="clearSelection()">
-            <mat-icon>delete_sweep</mat-icon>
-            Clear filters
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="filter-tree">
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        <mat-checkbox class="checklist-leaf-node" [checked]="checklistSelection.isSelected(node)"
+            (change)="LeafItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+    </mat-tree-node>
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <mat-checkbox [checked]="descendantsAllSelected(node)" [indeterminate]="descendantsPartiallySelected(node)"
+            (change)="ItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.label">
+            <mat-icon class="mat-icon-rtl-mirror">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
         </button>
-    </div>
-    <h3>Filter by</h3>
-    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-            <button mat-icon-button disabled></button>
-            <mat-checkbox class="checklist-leaf-node" [checked]="checklistSelection.isSelected(node)"
-                (change)="LeafItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
-        </mat-tree-node>
-        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-            <mat-checkbox [checked]="descendantsAllSelected(node)" [indeterminate]="descendantsPartiallySelected(node)"
-                (change)="ItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
-            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.label">
-                <mat-icon class="mat-icon-rtl-mirror">
-                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-            </button>
-        </mat-tree-node>
-    </mat-tree>
-</div>
+    </mat-tree-node>
+</mat-tree>

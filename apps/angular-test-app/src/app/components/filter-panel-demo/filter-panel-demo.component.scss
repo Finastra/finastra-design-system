@@ -1,0 +1,23 @@
+.filter-panel-container {
+    height: calc(100% - 56px)
+}
+
+.filter-panel-side {
+    width: auto !important;
+    min-width: 325px;
+    max-width: 450px;
+}
+
+.filter-panel-side-header {
+    height: 142px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-panel-action {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}

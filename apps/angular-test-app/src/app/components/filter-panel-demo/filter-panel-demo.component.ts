@@ -4,7 +4,7 @@ import { Company, Tenant, sampleFilterFields, companies, tenants } from './filte
 @Component({
   selector: 'ffdc-filter-panel-demo',
   templateUrl: './filter-panel-demo.component.html',
-  styleUrls: ['./filter-panel-demo.component.css']
+  styleUrls: ['./filter-panel-demo.component.scss']
 })
 export class FilterPanelDemoComponent implements OnInit {
 

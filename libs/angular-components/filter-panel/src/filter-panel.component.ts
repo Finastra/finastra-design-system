@@ -3,11 +3,6 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
 
-export interface FilterNode {
-  group: string;
-  options: FieldNode[];
-}
-
 export interface FieldNode {
   label: string;
   children?: FieldNode[];
@@ -37,6 +32,7 @@ export class FilterPanelComponent implements OnInit {
   change = new EventEmitter<any>();
 
   filterMap = {};
+  groupList: string[] = [];
 
   private _transformer = (node: FieldNode, level: number) => {
     return {
@@ -150,7 +146,7 @@ export class FilterPanelComponent implements OnInit {
 
   private emitUpdate() {
     this.filterMap["keys"] = [];
-    this.checklistSelection.selected.map(_ => {
+    this.checklistSelection.selected.forEach(_ => {
       this.filterMap["keys"].push(_.label);
     })
     this.change.emit(this.filterMap);

@@ -1,14 +1,35 @@
-<mat-drawer-container class="filter-panel-container" fullscreen>
+<mat-drawer-container class="filter-panel-container">
     <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
-        <uxg-filter-panel [fieldNode]="sampleData" (change)="updateFilter($event)"></uxg-filter-panel>
+        <div class="filter-panel-side-header">
+            <mat-button-toggle-group class="uxg-filtering-toggle-group">
+                <mat-button-toggle value="public" checked="true">
+                    <mat-icon>public</mat-icon>
+                    <span>API</span>
+                </mat-button-toggle>
+                <mat-button-toggle value="public">
+                    <mat-icon>widgets</mat-icon>
+                    <span>Solution</span>
+                </mat-button-toggle>
+                <mat-button-toggle value="public">
+                    <mat-icon>dns</mat-icon>
+                    <span>Dataset</span>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+        <uxg-filter-panel [fieldNode]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-panel>
     </mat-drawer>
-    <mat-drawer-content>
-        <button mat-icon-button aria-label="Toggle filter panel" (click)="filterPanel.toggle()">
-            <mat-icon>filter_list</mat-icon>
-        </button>
-        (In progress)
-        <mat-list>
 
+    <mat-drawer-content>
+        <div class="filter-panel-action">
+            <button mat-stroked-button color="primary" dense (click)="filterPanel.toggle()">
+                <mat-icon>filter_list</mat-icon>
+                Filter
+            </button>
+            <button mat-icon-button aria-label="Toggle filter panel" (click)="demoFilter.clearSelection()">
+                <mat-icon>replay</mat-icon>
+            </button>
+        </div>
+        <mat-list>
             <h3 mat-subheader>Tenants</h3>
             <mat-list-item *ngFor="let tenant of filteredTenants">
                 <mat-icon mat-list-icon>streetview</mat-icon>
