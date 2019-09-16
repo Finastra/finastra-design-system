@@ -1,0 +1,105 @@
+<div class="uxg-data-table">
+  <table
+    mat-table
+    matSort
+    cdkDropListGroup
+    [dataSource]="dataToComponent"
+    (matSortChange)="sortData($event)"
+    class="mat-elevation-z8 main-data-table"
+  >
+    <ng-container matColumnDef="uxg-table-select-row" *ngIf="multiSelect">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox
+          (change)="multiSelectAllRows($event)"
+          [checked]="selections.length !== 0 && selections.length === this.dataToComponent.length"
+          [indeterminate]="selections.length !== 0 && selections.length !== this.dataToComponent.length"
+        >
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox
+          (click)="$event.stopPropagation()"
+          (change)="multiSelectRowClick(row)"
+          [checked]="selections.indexOf(row) > -1"
+        >
+        </mat-checkbox>
+      </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+    <ng-container matColumnDef="{{ column.name }}" *ngFor="let column of columns; let columnIndex = index">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        cdkDropList
+        cdkDropListLockAxis="x"
+        cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="columnDropped($event, columnIndex)"
+        cdkDrag
+        (cdkDragStarted)="columnDragStarted($event, columnIndex)"
+        [cdkDragDisabled]="!columnDragEnable"
+        [ngClass]="{
+          left: column.align === 'left',
+          center: column.align === 'center',
+          right: column.align === 'right'
+        }"
+      >
+        {{ column.name }}
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngClass]="{
+          left: column.align === 'left',
+          center: column.align === 'center',
+          right: column.align === 'right'
+        }"
+      >
+        <!-- display data cell according to the type -->
+        <div [ngSwitch]="column.type">
+          <div *ngSwitchCase="'date'">
+            <mat-icon>date_range</mat-icon>
+            {{ element[column.name] }}
+          </div>
+          <div *ngSwitchDefault>{{ element[column.name] }}</div>
+        </div>
+      </td>
+      <td
+        mat-footer-cell
+        *matFooterCellDef
+        [ngClass]="{
+          left: column.align === 'left',
+          center: column.align === 'center',
+          right: column.align === 'right'
+        }"
+      >
+        {{ getTotalRowCell(column) }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplayToComponent; sticky: stickyHeader"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: columnsToDisplayToComponent"
+      (click)="singleSelectRowClick(row)"
+      [ngClass]="selections.indexOf(row) >= 0 ? 'selected' : ''"
+    ></tr>
+    <tr
+      mat-footer-row
+      *matFooterRowDef="columnsToDisplayToComponent; sticky: stickyFooter"
+      [ngClass]="showTotalRows ? '' : 'hidden-total'"
+    ></tr>
+  </table>
+</div>
+
+<mat-paginator
+  *ngIf="pageEnable"
+  [disabled]="paging?.disabled"
+  [length]="paging?.length"
+  [hidePageSize]="paging?.hidePageSize"
+  [pageIndex]="paging?.pageIndex"
+  [pageSizeOptions]="paging?.pageSizeOptions"
+  [showFirstLastButtons]="paging?.showFirstLastButtons"
+  (page)="applyPageChanges($event)"
+>
+</mat-paginator>

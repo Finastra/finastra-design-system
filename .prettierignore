@@ -1,1 +1,4 @@
 # Add files here to ignore them from prettier formatting
+**/*.scss
+**/package-lock.json
+**/package.json

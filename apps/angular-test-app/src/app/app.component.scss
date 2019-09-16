@@ -1,35 +1,39 @@
-.uxg-toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 998;
+.main-container {
+  height: 100%;
+  width: 100%;
 }
-
-.uxg-nav {
-    flex: 1;
-    height: 100%;
-}
-
-.uxg-nav > .uxg-sidenav-content {
-    margin-top: 56px;
-    overflow-y: auto;
-}
-
-.uxg-sidenav {
-    margin-top: 56px;
-    width: 340px;
-}
-
-.uxg-nav-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .uxg-card-product {
-        cursor: pointer;
-        width: 45px;
-        margin-bottom: 10px;
+mat-sidenav-container {
+  height: 100%;
+  ::ng-deep {
+    .mat-drawer-backdrop {
+      z-index: 102;
     }
+  }
+}
+.mat-sidenav {
+  z-index: 102;
+}
+.uxg-toolbar {
+  position: fixed;
+  z-index: 101;
+}
+.uxg-nav-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .uxg-card-product {
+    cursor: pointer;
+    width: 45px;
+    margin-bottom: 10px;
+  }
+}
+.app-content {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
 }

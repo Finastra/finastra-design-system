@@ -12,11 +12,13 @@
 @import 'lib/card/card-base';
 @import 'lib/chips/chips-base';
 @import 'lib/expansion/expansion-base';
-@import 'lib/icon/icon-base.scss';
+@import 'lib/icon/icon-base';
 @import 'lib/input/input-base';
 @import 'lib/list/list-base';
 @import 'lib/menu/menu-base';
+@import 'lib/paginator/paginator-base';
 @import 'lib/sidenav/sidenav-base';
+@import 'lib/table/table-base';
 @import 'lib/toolbar/toolbar-base';
 
 @include uxg-core();

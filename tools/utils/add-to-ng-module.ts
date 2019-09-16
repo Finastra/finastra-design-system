@@ -1,4 +1,4 @@
-import { Tree } from "@angular-devkit/schematics/src/tree/interface";
+import { Tree } from '@angular-devkit/schematics/src/tree/interface';
 import { createSourceFile, ScriptTarget } from 'typescript';
 import { addExportToModule } from '@schematics/angular/utility/ast-utils';
 import { InsertChange } from '@schematics/angular/utility/change';
@@ -28,5 +28,5 @@ export function addToNgModule(options: ComponentOptions): Rule {
     }
 
     return host;
-  }
+  };
 }

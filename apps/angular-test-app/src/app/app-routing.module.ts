@@ -1,36 +1,32 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatCardModule, MatChipsModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
-import { HomeComponent } from './components/home/home.component';
+import { NgModule } from '@angular/core';
+import { MatCardModule, MatChipsModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from '@ffdc/uxg-angular-components';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
-import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
-
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { FilterPanelModule } from '@ffdc/uxg-angular-components/filter-panel';
-
+import { HomeComponent } from './components/home/home.component';
+import { PopoverDemoComponent } from './components/popover-demo/popover-demo.component';
+import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { routes } from './routes';
+import { MaterialModule } from './material.module';
+import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule,
-    GlobalSearchModule,
-    FilterPanelModule,
+    MaterialModule,
+    ComponentsModule,
     RouterModule.forRoot(routes),
-    MatChipsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule
   ],
   declarations: [
     HomeComponent,
     GlobalSearchDemoComponent,
-    FilterPanelDemoComponent
+    TableDemoComponent,
+    PopoverDemoComponent,
+    FilterPanelDemoComponent,
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+  ]
 })
 export class AppRoutingModule { }

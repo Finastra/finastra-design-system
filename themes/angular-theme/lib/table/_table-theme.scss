@@ -1,0 +1,38 @@
+
+@mixin uxg-table-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .mat-table {
+    tr {
+      &:nth-child(even) {
+        background-color: mat-color($primary, default, 0.02);
+      }
+
+      &.selected {
+        background-color: mat-color($primary, default, 0.16);
+      }
+
+      .mat-checkbox-checked, .mat-checkbox-indeterminate {
+        .mat-checkbox-background {
+          background-color: mat-color($primary, default);
+        }
+      }
+    }
+  }
+}
+
+@mixin uxg-table-typography($config: null) {
+  .mat-table {
+    thead {
+      tr {
+        font-family: mat-font-family($config, subtitle-2);
+      }
+    }
+
+    tbody {
+      tr {
+        font-family: mat-font-family($config, body-2);
+      }
+    }
+  }
+}

@@ -6,11 +6,15 @@
 @import '../../card/card-theme';
 @import '../../chips/chips-theme';
 @import '../../expansion/expansion-theme';
+@import '../../icon/icon-theme';
 @import '../../link/link-theme';
 @import '../../list/list-theme';
 @import '../../menu/menu-theme';
 @import '../../sidenav/sidenav-theme';
+@import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
+@import '../../slide-toggle/slide-toggle';
+@import '../../radio-button/radio-button-theme';
 
 // Create a theme.
 @mixin uxg-material-theme($theme) {
@@ -59,9 +63,13 @@
   @include uxg-card-theme($theme);
   @include uxg-chips-theme($theme);
   @include uxg-expansion-theme($theme);
+  @include uxg-icon-theme($theme);
   @include uxg-link-theme($theme);
   @include uxg-list-theme($theme);
   @include uxg-menu-theme($theme);
   @include uxg-sidenav-theme($theme);
+  @include uxg-table-theme($theme);
   @include uxg-toolbar-theme($theme);
+  @include uxg-slide-toggle-theme($theme);
+  @include uxg-radio-button-theme($theme);
 }

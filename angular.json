@@ -23,7 +23,7 @@
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
-            "styles": ["apps/angular-test-app/src/styles.scss"],
+            "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": []
           },
           "configurations": {
@@ -73,10 +73,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/angular-test-app/tsconfig.app.json",
-              "apps/angular-test-app/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/angular-test-app/tsconfig.app.json", "apps/angular-test-app/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/angular-test-app/**"]
           }
         },
@@ -120,7 +117,7 @@
     "angular-components": {
       "projectType": "library",
       "root": "libs/angular-components",
-      "sourceRoot": "libs/angular-components/src",
+      "sourceRoot": "libs/angular-components/",
       "prefix": "uxg",
       "architect": {
         "build": {
@@ -133,10 +130,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/tsconfig.lib.json",
-              "libs/angular-components/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
           }
         },
@@ -145,7 +139,7 @@
           "options": {
             "jestConfig": "libs/angular-components/jest.config.js",
             "tsConfig": "libs/angular-components/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/src/test-setup.ts"
+            "setupFile": "libs/angular-components/test-setup.ts"
           }
         }
       },

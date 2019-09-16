@@ -1,0 +1,46 @@
+<div class="ffdc-table-demo-div">
+  <uxg-table
+    [data]="dataSource"
+    [columns]="columns"
+    [columnsToDisplay]="columnsToDisplay"
+    [columnDragEnable]="dragEnable"
+    [showTotalRows]="totalEnable"
+    [totalData]="totalData"
+    [stickyFooter]="stickyFooter"
+    [pageEnable]="pageEnable"
+    (sortChange)="sortData($event)"
+    [singleSelect]="singleSelect"
+    [multiSelect]="!singleSelect"
+    (selectChange)="selectChange($event)"
+  >
+  </uxg-table>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start start" class="config-block">
+  <div fxLayout="column" fxLayoutAlign="start start">
+    <h4>Customized options</h4>
+    <div fxLayout="row">
+      <div fxLayout="column" fxLayoutAlign="space-between start">
+        <mat-slide-toggle [color]="" [checked]="dragEnable" (change)="enableDrag($event)"
+          >Enable Drag Columns</mat-slide-toggle
+        >
+        <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
+        <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
+        <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
+          >Enable customized paging</mat-slide-toggle
+        >
+      </div>
+    </div>
+  </div>
+  <div class="selection-area" fxLayout="column" fxLayoutAlign="start start">
+    <h5>Select Mode</h5>
+    <mat-radio-group fxLayout="column" [(ngModel)]="singleSelect">
+      <mat-radio-button [value]="true">single select</mat-radio-button>
+      <mat-radio-button [value]="false">multiple select</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div *ngIf="actionDiscription" class="interaction-information">
+    <h4>Information:</h4>
+    {{ actionDiscription }}
+  </div>
+</div>

@@ -1,7 +1,9 @@
 @import '../../../themes/angular-theme/all-theme';
-@import '../../../libs/angular-components/src/global-search/src/global-search-theme.component';
+@import '../../../libs/angular-components/global-search/src/global-search-theme.component';
+@import '../../../libs/angular-components/popover/src/popover.theme';
 
 @include uxg-global-search-theme($uxg-light-theme);
+@include uxg-popover-theme($uxg-light-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

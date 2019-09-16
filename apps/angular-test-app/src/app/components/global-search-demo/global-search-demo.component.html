@@ -1,15 +1,17 @@
-<uxg-global-search #uxgGlobalSearch
-    [groupBy]="'accountType'"
-    [showFilter]="true"
-    [itemDivider]="false"
-    [groupDivider]="true"
-    [maxItems]="5"
-    itemsLayout="row">
+<uxg-global-search
+  #uxgGlobalSearch
+  [groupBy]="'accountType'"
+  [showFilter]="true"
+  [itemDivider]="false"
+  [groupDivider]="true"
+  [maxItems]="5"
+  itemsLayout="row"
+>
 </uxg-global-search>
 
 <ng-template #tmpl let-result>
   <div>
-      {{result | json}}
+    {{ result | json }}
   </div>
   <!-- {{result.nickname}}
   {{result.balances[0].amount}} {{result.accountType}} -->

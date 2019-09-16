@@ -43,13 +43,13 @@
 @mixin uxg-list-typography($config) {
   .uxg-nav-list.mat-nav-list.mat-list-base {
     & .mat-list-item > * {
-      @include mat-typography-level-to-styles($config, subtitle-3);
+      @include mat-typography-level-to-styles($config, subtitle-1);
     }
   }
 
   .mat-list-base.mat-nav-list.uxg-link-list {
     & .mat-list-item > * {
-      @include mat-typography-level-to-styles($config, body-4);
+      @include mat-typography-level-to-styles($config, caption);
     }
   }
 }

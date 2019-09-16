@@ -1,0 +1,41 @@
+@import '../core/style/spacing';
+
+$icon-size-extra-large: $uxg-spacing-5;
+$icon-size-large: 36px;
+$icon-size-base: $uxg-spacing-4;
+$icon-size-dense: 18px;
+
+@mixin icon-size($icon-size) {
+  width: $icon-size !important;
+  height: $icon-size !important;
+  font-size: $icon-size !important;
+  line-height: $icon-size !important;
+}
+
+.mat-icon[dense],
+*[dense] .mat-icon {
+  @include icon-size($icon-size-dense);
+}
+
+.mat-icon[large],
+*[large] .mat-icon {
+  @include icon-size($icon-size-large);
+}
+
+.mat-icon[extra-large],
+*[extra-large] .mat-icon {
+  @include icon-size($icon-size-extra-large);
+}
+
+button {
+  &.mat-button,
+  &.mat-raised-button,
+  &.mat-stroked-button,
+  &.mat-flat-button {
+    .mat-icon {
+      @include icon-size($icon-size-dense);
+
+      padding-bottom: 2px;
+    }
+  }
+}

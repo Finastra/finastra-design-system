@@ -1,0 +1,25 @@
+ffdc-table-demo{
+
+    .ffdc-table-demo-div {
+        width: 800px;
+        uxg-table {
+            table {
+                width: 100%;
+            }
+        }
+    }
+    .config-block{
+        div{
+            margin-bottom: 5px;
+            .mat-slide-toggle{
+                margin-right: 5px;
+            }
+        }
+    }
+    .selection-area{
+        margin-left: 24px;
+    }
+    .interaction-information{
+        margin-left: 24px;
+    }
+}
