@@ -1,0 +1,19 @@
+@mixin uxg-popover-theme($theme) {
+  .uxg-popover {
+    .mat-menu-item {
+      height: auto;
+      white-space: normal;
+      line-height: inherit;
+      display: flex;
+      flex-direction: column;
+      padding: $uxg-spacing-3;
+      &.cdk-program-focused:not([disabled]),
+      &:hover:not([disabled]) {
+        background: inherit;
+      }
+    }
+    .mat-menu-content {
+      padding: 0 !important;
+    }
+  }
+}

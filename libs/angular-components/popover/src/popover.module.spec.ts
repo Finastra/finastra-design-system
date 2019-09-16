@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { UxgTableModule } from './table.module';
+import { PopoverModule } from './popover.module';
 
-describe('UxgTableModule', () => {
+describe('PopoverModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UxgTableModule]
+      imports: [PopoverModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(UxgTableModule).toBeDefined();
+    expect(PopoverModule).toBeDefined();
   });
 });

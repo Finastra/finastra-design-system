@@ -7,11 +7,11 @@ export class UxgSort implements Sort {
 export class UxgColumn {
   id?: string;
   name: string; // column name
-  type: ColumnType; // the data type of this column => can apply different template to this column
+  type: UxgColumnType; // the data type of this column => can apply different template to this column
   align: 'left' | 'right' | 'center'; // text align in cell
 }
 
-export enum ColumnType {
+export enum UxgColumnType {
   string = 'string',
   number = 'number',
   date = 'date',
@@ -19,7 +19,6 @@ export enum ColumnType {
 }
 
 export class UxgPage {
-  isPagingEnabled = true;
   disabled? = false;
   length?;
   hidePageSize? = false;
@@ -28,3 +27,18 @@ export class UxgPage {
   pageSize? = 5;
   pageSizeOptions? = [5, 10];
 }
+
+export class UxgTableSelectEvent {
+  singleSelect: true | false;
+  data: any[]; //selected row data
+}
+
+export const UxgDefaultPaging = {
+  disabled: false,
+  pageIndex: 0,
+  length: 0,
+  hidePageSize: false,
+  pageSizeOptions: [5, 10],
+  pageSize: 5,
+  showFirstLastButtons: true
+};
