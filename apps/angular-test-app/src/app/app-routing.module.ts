@@ -23,13 +23,25 @@ import { GlobalSearchDemoComponent } from './components/global-search-demo/globa
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { HomeComponent } from './components/home/home.component';
 import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FieldMatcherComponent } from './components/repeater-demo/field-matcher/field-matcher.component';
+import { HighlightModule } from 'ngx-highlightjs';
 
+import xml from 'highlight.js/lib/languages/xml';
+import javascript from 'highlight.js/lib/languages/javascript';
+
+export function hljsLanguages() {
+  return [
+    {name: 'javascript', func: javascript},
+    {name: 'xml', func: xml}
+  ];
+}
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     GlobalSearchModule,
     TableModule,
@@ -43,10 +55,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatExpansionModule,
     MatRadioModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    })
     
   ],
-  declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, RepeaterDemoComponent],
+  declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, RepeaterDemoComponent,FieldMatcherComponent],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

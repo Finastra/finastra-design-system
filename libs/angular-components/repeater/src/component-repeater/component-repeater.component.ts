@@ -1,8 +1,7 @@
-import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, OnChanges, SimpleChanges, ComponentRef, ViewEncapsulation } from '@angular/core';
-import { of } from 'rxjs';
+import { Component, OnInit, ComponentFactory, Input, ViewChild, ViewContainerRef, ComponentRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'uxp-component-repeater',
+  selector: 'uxg-component-repeater',
   templateUrl: './component-repeater.component.html',
   styleUrls: ['./component-repeater.component.scss'],
   encapsulation: ViewEncapsulation.None
@@ -27,7 +26,7 @@ export class ComponentRepeaterComponent implements OnInit {
     }
   }
 
-  _columnsMatcher: Object;
+  _columnsMatcher: Object = {};
   @Input() set columnsMatcher(data: Object) {
     this._columnsMatcher = data;
     if(this.ref){

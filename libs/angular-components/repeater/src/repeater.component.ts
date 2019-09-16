@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
-import { MatSelectChange } from '@angular/material';
-
 
 @Component({
   selector: 'uxg-repeater',
@@ -8,6 +6,7 @@ import { MatSelectChange } from '@angular/material';
   styleUrls: ['./repeater.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 
 export class RepeaterComponent implements OnInit, OnChanges {
 
@@ -24,7 +23,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
   @Input() orientation: string = "vertical";
   @Input() multiSelect: boolean = false;
   @Input() space: string;
-  @Input() columnsMatcher: Object;
+  @Input() columnsMatcher: { [k: string]: string } = {};
   @Output() selectionChange:EventEmitter<any> =  new EventEmitter<any>();
 
   componentFactory: ComponentFactory<any>;
@@ -40,7 +39,6 @@ export class RepeaterComponent implements OnInit, OnChanges {
       this.componentFactory = this.resolver.resolveComponentFactory(this.component);
     }
     this.selectedItems = {};
-    console.log(this.multiSelect);
   }
 
   onClick(index:number, value: any){

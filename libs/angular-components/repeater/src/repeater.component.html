@@ -2,25 +2,25 @@
 <cdk-virtual-scroll-viewport autosize class="viewport" [orientation]="vertical" *ngIf="orientation==='vertical'">
   <div *cdkVirtualFor="let value of data; let odd = odd;let index = index;"
   class="repeater-item" [class.alternate]="odd" (click)="onClick(index,value)">
-  <uxp-component-repeater
+  <uxg-component-repeater
           [factory]="componentFactory" 
           [data]="value" 
           [columnsMatcher]="columnsMatcher"
           [ngStyle]="{'margin-bottom': space}" 
           [selected]="isSelected(index)"
-          ></uxp-component-repeater>
+          ></uxg-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>  
   <cdk-virtual-scroll-viewport autosize class="viewport" orientation="horizontal"  *ngIf="orientation==='horizontal'">
     <div *cdkVirtualFor="let value of data; let odd = odd;let index = index;" 
     class="repeater-item" [class.alternate]="odd" (click)="onClick(index,value)">
-         <uxp-component-repeater
+         <uxg-component-repeater
           [factory]="componentFactory" 
           [data]="value" 
           [columnsMatcher]="columnsMatcher"
           [ngStyle]="{'margin-right': space}"     
           [selected]="isSelected(index)"
  
-      ></uxp-component-repeater>
+      ></uxg-component-repeater>
     </div>
   </cdk-virtual-scroll-viewport>
