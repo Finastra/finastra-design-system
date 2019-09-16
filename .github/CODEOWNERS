@@ -7,13 +7,13 @@
 /tools/     @aifrim
 
 # Themes and style files
-/themes/    @ttalbot
-*.scss      @ttalbot
-*.css       @ttalbot
-*.png       @ttalbot
-*.jpeg      @ttalbot
-*.jpg       @ttalbot
-*.svg       @ttalbot
+/themes/    @studios-team
+*.scss      @studios-team
+*.css       @studios-team
+*.png       @studios-team
+*.jpeg      @studios-team
+*.jpg       @studios-team
+*.svg       @studios-team
 
 # Per components owners
 /libs/angular-components/global-search/     @aifrim
