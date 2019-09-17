@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ComponentFactory, Type, ComponentFactoryResolver, SimpleChanges, OnChanges, ViewEncapsulation, Output, EventEmitter, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'uxg-repeater',
@@ -20,7 +20,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
   
   @Input() component: Type<any> | ComponentFactory<any>;
-  @Input() orientation: string = "vertical";
+  @Input() orientation: string = "horizontal";
   @Input() multiSelect: boolean = false;
   @Input() space: string;
   @Input() columnsMatcher: { [k: string]: string } = {};
@@ -75,6 +75,8 @@ export class RepeaterComponent implements OnInit, OnChanges {
     if(changes.component){
       this.componentFactory = this.resolver.resolveComponentFactory(changes.component.currentValue);
     }  
+
+    
   }
 
   
