@@ -1,48 +1,65 @@
 <mat-drawer-container class="filter-panel-container">
     <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
         <div class="filter-panel-side-header">
-            <mat-button-toggle-group class="uxg-filtering-toggle-group">
-                <mat-button-toggle value="public" checked="true">
-                    <mat-icon>public</mat-icon>
+            <div class="filter-panel-side-title">
+                <h3>View by</h3>
+                <button mat-button color="accent" dense>
+                    <mat-icon>replay</mat-icon>
+                    Reset
+                </button>
+            </div>
+            <mat-button-toggle-group #group="matButtonToggleGroup" [value]="groupValue"
+                (change)="onGroupChange(group.value)" class="uxg-filtering-toggle-group">
+                <mat-button-toggle value="api">
+                    <mat-icon fontSet="material-icons-outlined">public</mat-icon>
                     <span>API</span>
                 </mat-button-toggle>
-                <mat-button-toggle value="public">
-                    <mat-icon>widgets</mat-icon>
+                <mat-button-toggle value="solution">
+                    <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
                     <span>Solution</span>
                 </mat-button-toggle>
-                <mat-button-toggle value="public">
-                    <mat-icon>dns</mat-icon>
+                <mat-button-toggle value="dataset">
+                    <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
                     <span>Dataset</span>
                 </mat-button-toggle>
             </mat-button-toggle-group>
         </div>
-        <uxg-filter-panel [fieldNode]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-panel>
+
+        <div class="filter-panel-tags">
+            <div class="filter-panel-tags-title">
+                <h3>Tags</h3>
+                <button mat-button color="accent" dense>
+                    Clear All
+                </button>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label><mat-icon>search</mat-icon> Filter by tags</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="filter-panel-tree">
+            <div class="filter-panel-tree-title">
+                <h3>Category</h3>
+                <button mat-button (click)="demoFilter.clearSelection()" color="accent" dense>
+                    Clear All
+                </button>
+            </div>
+
+            <uxg-filter-panel [datasource]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-panel>
+        </div>
     </mat-drawer>
 
-    <mat-drawer-content>
+    <mat-drawer-content class="demo-container">
         <div class="filter-panel-action">
-            <button mat-stroked-button color="primary" dense (click)="filterPanel.toggle()">
+            <button mat-stroked-button color="primary" dense (click)="filterPanel.toggle()"
+                matBadge="{{filterArray?.length || null}}" matBadgePosition="before" matBadgeColor="primary">
                 <mat-icon>filter_list</mat-icon>
                 Filter
             </button>
-            <button mat-icon-button aria-label="Toggle filter panel" (click)="demoFilter.clearSelection()">
-                <mat-icon>replay</mat-icon>
-            </button>
         </div>
-        <mat-list>
-            <h3 mat-subheader>Tenants</h3>
-            <mat-list-item *ngFor="let tenant of filteredTenants">
-                <mat-icon mat-list-icon>streetview</mat-icon>
-                <h4 mat-line>{{tenant.name}}</h4>
-                <p mat-line> {{tenant.updated | date}} </p>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 mat-subheader>Companies</h3>
-            <mat-list-item *ngFor="let company of filteredCompanies">
-                <mat-icon mat-list-icon>storefront</mat-icon>
-                <h4 mat-line>{{company.name}}</h4>
-                <p mat-line> {{company.updated | date}} </p>
-            </mat-list-item>
-        </mat-list>
+
+        <pre>{{filterArray | json}}</pre>
     </mat-drawer-content>
 </mat-drawer-container>

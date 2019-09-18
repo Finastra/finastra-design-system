@@ -1,16 +1,7 @@
-
 .mat-tree-node {
-  min-height: 30px;
+  justify-content: space-between;
   .mat-icon-button {
     width: 30px;
     height: 30px;
-  }
-  ::ng-deep .mat-checkbox {
-    .mat-checkbox-inner-container {
-      margin-right: 10px;
-      &:hover >.mat-checkbox-ripple {
-        opacity: 0;
-      }
-    }
   }
 }

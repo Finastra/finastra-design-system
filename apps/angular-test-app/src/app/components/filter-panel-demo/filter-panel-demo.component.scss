@@ -1,5 +1,7 @@
 .filter-panel-container {
-    height: calc(100% - 56px)
+    height: 100%;
+    border: 1px solid rgba(0,0,0,.04);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
 }
 
 .filter-panel-side {
@@ -9,8 +11,21 @@
 }
 
 .filter-panel-side-header {
-    height: 142px;
+    min-height: 169px;
     background-color: #fafafa;
+}
+
+.filter-panel-side-title {
+    padding: 16px 0 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    h3 {
+        margin-top: 0px;
+    }
+}
+
+.uxg-filtering-toggle-group {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,5 +34,47 @@
 .filter-panel-action {
     display: flex;
     align-items: center;
-    margin-left: 8px;
+}
+
+.filter-panel-tree {
+    padding: 0 16px 0 16px;
+}
+
+.filter-panel-tree-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.demo-container {
+    padding: 32px;
+}
+
+.filter-panel-tags {
+    padding: 0 16px 0 16px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+:host ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0;
+}
+:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { 
+    padding: 0.4em 0px !important;
+}
+:host ::ng-deep .mat-form-field-label-wrapper { 
+    top: -1.5em;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+.filter-panel-tags-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }

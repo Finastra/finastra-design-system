@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
@@ -14,24 +14,29 @@ interface FieldFlatNode {
   level: number;
 }
 
-// TODO
-// - Clear as component input
-// - Emit filterMap
-// - Rework datamodel to accept grouped field
-
 @Component({
   selector: 'uxg-filter-panel',
   templateUrl: './filter-panel.component.html',
   styleUrls: ['./filter-panel.component.scss']
 })
-export class FilterPanelComponent implements OnInit {
+export class FilterPanelComponent implements OnInit, OnChanges {
+
+  private _datasource: FieldNode[];
+
+  get datasource(): FieldNode[] {
+    return this._datasource;
+  }
+
   @Input()
-  fieldNode: FieldNode[];
+  set datasource(datasource: FieldNode[]) {
+    this._datasource = datasource;
+  }
+
   // tslint:disable-next-line: no-output-native
   @Output()
   change = new EventEmitter<any>();
 
-  filterMap = {};
+  filterArray: string[] = [];
   groupList: string[] = [];
 
   private _transformer = (node: FieldNode, level: number) => {
@@ -65,8 +70,13 @@ export class FilterPanelComponent implements OnInit {
   hasChild = (_: number, node: FieldFlatNode) => node.expandable;
 
   ngOnInit() {
-    this.dataSource.data = this.fieldNode;
-    this.treeControl.expandAll();
+    this.dataSource.data = this._datasource;
+    //this.treeControl.expandAll();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.clearSelection();
+    this.dataSource.data = changes.datasource.currentValue;
   }
 
   clearSelection() {
@@ -145,10 +155,11 @@ export class FilterPanelComponent implements OnInit {
   }
 
   private emitUpdate() {
-    this.filterMap["keys"] = [];
+    this.filterArray = [];
     this.checklistSelection.selected.forEach(_ => {
-      this.filterMap["keys"].push(_.label);
+      //output string array with selected node
+      this.filterArray.push(_.label.replace(/\s/g, '').toLowerCase());
     })
-    this.change.emit(this.filterMap);
+    this.change.emit(this.filterArray);
   }
 }

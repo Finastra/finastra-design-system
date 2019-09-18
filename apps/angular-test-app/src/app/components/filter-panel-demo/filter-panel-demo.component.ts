@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Company, Tenant, sampleFilterFields, companies, tenants } from './filter-panel-demo.sample-data';
+import { sampleFilterFields } from './filter-panel-demo.sample-data';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',
@@ -8,58 +8,22 @@ import { Company, Tenant, sampleFilterFields, companies, tenants } from './filte
 })
 export class FilterPanelDemoComponent implements OnInit {
 
-  sampleData = sampleFilterFields;
-  filteredCompanies: Company[];
-  filteredTenants: Tenant[];
+  sampleData = [];
+  filterArray: string[] = [];
+  groupValue: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.filteredCompanies = companies;
-    this.filteredTenants = tenants;
+    this.groupValue = "api";
+    this.sampleData = sampleFilterFields[this.groupValue];
   }
 
-  updateFilter(filterMap) {
-    console.log(filterMap);
+  updateFilter(newFilterArray: string[]) {
+    this.filterArray = newFilterArray;
   }
 
-  // TODO
-  // - Refactor using new data model
-  // updateFilter(filterMap) {
-  //   this.updateCompanyList(filterMap['Company']);
-  //   this.updateTenantList(filterMap['Tenant']);
-  // }
-
-  private updateCompanyList(fields: string[]) {
-    this.filteredCompanies = [];
-
-    fields.forEach(field => {
-      companies.forEach(company => {
-        if (company.name === field) {
-          this.filteredCompanies.push(company);
-        }
-      });
-    });
-
-    if (this.filteredCompanies.length === 0) {
-      this.filteredCompanies = companies;
-    }
+  onGroupChange(val: string) {
+    this.sampleData = sampleFilterFields[val];
   }
-
-  private updateTenantList(fields: string[]) {
-    this.filteredTenants = [];
-
-    fields.forEach(field => {
-      tenants.forEach(tenant => {
-        if (tenant.name === field) {
-          this.filteredTenants.push(tenant);
-        }
-      });
-    });
-
-    if (this.filteredTenants.length === 0) {
-      this.filteredTenants = tenants;
-    }
-  }
-  //
 }
