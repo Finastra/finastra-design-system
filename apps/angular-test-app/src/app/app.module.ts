@@ -13,8 +13,9 @@ import {
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
+// import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,7 +28,7 @@ import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
     MatSidenavModule,
     AppRoutingModule,
     MatCardModule,
-    GlobalSearchModule,
+    // GlobalSearchModule,
     UxgTableModule
   ],
   providers: [],

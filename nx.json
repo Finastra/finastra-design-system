@@ -19,6 +19,12 @@
     },
     "angular-theme": {
       "tags": []
+    },
+    "angular-elements-e2e": {
+      "tags": []
+    },
+    "angular-elements": {
+      "tags": []
     }
   }
 }

@@ -13,11 +13,11 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
+// import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 
 import { routes } from './routes';
-import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
+// import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { HomeComponent } from './components/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MatCardModule,
-    GlobalSearchModule,
+    // GlobalSearchModule,
     UxgTableModule,
     RouterModule.forRoot(routes),
     MatChipsModule,
@@ -41,7 +41,7 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatCheckboxModule
   ],
-  declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent],
+  declarations: [HomeComponent, TableDemoComponent],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

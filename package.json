@@ -29,7 +29,10 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "nx": "nx",
-    "release": "node ./scripts/release.js"
+    "release": "node ./scripts/release.js",
+    "build:wc": "ng build angular-elements --prod --output-hashing=none",
+    "package": "cat dist/apps/angular-elements/{runtime-es2015,polyfills-es2015,scripts,main-es2015}.js | gzip > angular-elements.js.gz",
+    "serve": "http-server --gzip"
   },
   "dependencies": {
     "@angular/animations": "^8.2.4",
@@ -44,7 +47,9 @@
     "@angular/platform-browser-dynamic": "^8.2.4",
     "@angular/router": "^8.2.4",
     "core-js": "^2.5.4",
+    "document-register-element": "^1.7.2",
     "elasticlunr": "^0.9.5",
+    "ngx-build-plus": "^8.1.4",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^1.9.0",
