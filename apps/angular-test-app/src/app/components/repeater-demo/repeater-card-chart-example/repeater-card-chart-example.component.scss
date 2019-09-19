@@ -1,0 +1,21 @@
+.chart{
+    width: 150px;
+    height: 150px;
+
+    background-color: rgb(0, 74, 143);
+    position: relative;
+    svg{
+        position: absolute;
+        top:0;
+        left:0;
+    }
+  
+
+      .title{
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        color: white;
+        font-weight: bold;
+        display: block;
+        padding: 10px 15px 10px 20px;
+      }
+}

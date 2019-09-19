@@ -4,6 +4,7 @@ import { RepeaterCardAdvancedExampleComponent } from './repeater-card-advanced-e
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { RepeaterCardChartExampleComponent } from './repeater-card-chart-example/repeater-card-chart-example.component';
 const ELEMENT_DATA: any[] = [
   {
 
@@ -15,7 +16,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "4/25",
     "name": "Fred Weaver",
     "address": "St. Joseph's Street 9879",
-    "country": "Angola"
+    "country": "Angola",
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
   },
   {
     "network": "American Express",
@@ -26,7 +28,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "12/21",
     "name": "Roosevelt Fox",
     "address": "Borthwick Street 7058",
-    "country": "Sweden"
+    "country": "Sweden",
+    "historic": [556, 845, 1868, 3233, 4650, 5059, 5493, 7540, 8311, 9982]
   },
   {
     "network": "Mastercard",
@@ -37,7 +40,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "3/23",
     "name": "Emmett Wagner",
     "address": "Cavaye Place 5408",
-    "country": "Cameroon"
+    "country": "Cameroon",
+    "historic": [1426, 2488, 4414, 4801, 5003, 7143, 8063, 8250, 8948, 9432]
   },
   {
     "network": "Visa",
@@ -48,7 +52,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "5/21",
     "name": "Nylah Nash",
     "address": "Whichcote Street 5701",
-    "country": "Rwanda"
+    "country": "Rwanda",
+    "historic": [1735, 2065, 2426, 2864, 3181, 5072, 5224, 8112, 9410, 9813]
   },
   {
     "network": "Maestro",
@@ -59,7 +64,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "6/22",
     "name": "Jacqueline Stevenson",
     "address": "Plympton Place 3116",
-    "country": "Fiji"
+    "country": "Fiji",
+    "historic": [1298, 2101, 3019, 3962, 5237, 5675, 7554, 8618, 8906, 9023]
   },
   {
     "network": "Visa",
@@ -70,7 +76,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "11/26",
     "name": "Micah Morrison",
     "address": "Langford Close 5508",
-    "country": "Romania"
+    "country": "Romania",
+    "historic": [403, 652, 1008, 1698, 2267, 3654, 5205, 6861, 7974, 8413]
   },
   {
     "network": "Visa",
@@ -81,7 +88,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "4/21",
     "name": "Vince Stone",
     "address": "Chelsea Manor Gardens 5397",
-    "country": "Reunion"
+    "country": "Reunion",
+    "historic": [1, 369, 1281, 3618, 4230, 5059, 5138, 7838, 7906, 9655]
   },
   {
     "network": "American Express",
@@ -92,7 +100,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "10/19",
     "name": "Angelique Spencer",
     "address": "Connaught Close 4792",
-    "country": "Singapore"
+    "country": "Singapore",
+    "historic": [1515, 1923, 4204, 5451, 5579, 7416, 7537, 8356, 9132, 9673]
   },
   {
     "network": "Mastercard",
@@ -103,7 +112,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "8/20",
     "name": "Elisabeth Parrish",
     "address": "Union Walk 9851",
-    "country": "Malaysia"
+    "country": "Malaysia",
+    "historic": [608, 1089, 2136, 2405, 2677, 3395, 6527, 6869, 7695, 7772]
   },
   {
     "network": "American Express",
@@ -114,7 +124,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "1/24",
     "name": "Teagan Contreras",
     "address": "Chalcot Square 2175",
-    "country": "Azerbaijan"
+    "country": "Azerbaijan",
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
   },
   {
     "network": "Mastercard",
@@ -125,7 +136,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "2/22",
     "name": "Jean Sullivan",
     "address": "Somertrees Avenue 8292",
-    "country": "Kuwait"
+    "country": "Kuwait",
+    "historic": [5, 105, 1496, 2273, 3231, 5446, 6945, 7775, 8873, 9575]
   },
   {
     "network": "Mastercard",
@@ -136,7 +148,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "12/21",
     "name": "Darius Hurst",
     "address": "St. Edmunds Close 5167",
-    "country": "Luxembourg"
+    "country": "Luxembourg",
+    "historic": [1092, 1509, 1640, 1890, 1896, 2809, 3387, 4931, 6142, 8591]
   },
   {
     "network": "American Express",
@@ -147,7 +160,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "2/23",
     "name": "Silas Weaver",
     "address": "Highway, The 7446",
-    "country": "Sweden"
+    "country": "Sweden",
+    "historic": [1839, 3193, 3678, 4136, 4645, 4862, 5664, 8475, 8512, 9999]
   },
   {
     "network": "Maestro",
@@ -158,7 +172,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "7/22",
     "name": "Tad Norris",
     "address": "Broadbent Street 6737",
-    "country": "Western Sahara"
+    "country": "Western Sahara",
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
   },
   {
     "network": "Maestro",
@@ -169,7 +184,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "4/25",
     "name": "Porfirio Day",
     "address": "St. Peter's Way 1705",
-    "country": "Argentina"
+    "country": "Argentina",
+    "historic": [1762, 2372, 2865, 3007, 3032, 3881, 4622, 6915, 8038, 9400]
   },
   {
     "network": "American Express",
@@ -180,7 +196,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "2/23",
     "name": "Larry Burke",
     "address": "Priter Way 7026",
-    "country": "Thailand"
+    "country": "Thailand",
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
   },
   {
     "network": "American Express",
@@ -191,7 +208,8 @@ const ELEMENT_DATA: any[] = [
     "expiration-date": "9/18",
     "name": "Santos Davidson",
     "address": "Snowden Street 1428",
-    "country": "Pitcairn"
+    "country": "Pitcairn",
+    "historic": [450, 878, 1107, 1481, 2357, 5587, 6820, 7725, 8263, 9007]
   }
 ];
 
@@ -228,6 +246,14 @@ const TEMPLATES_DATA: any[] = [
       "number":"number"
     },
     'space': '20px'
+  },
+  {
+    'component': RepeaterCardChartExampleComponent,
+    'displayName': "D3 chart",
+    'columnsMatcher': {
+      "title": "name"
+    },
+    'space': '5px'
   }
 ]
 
