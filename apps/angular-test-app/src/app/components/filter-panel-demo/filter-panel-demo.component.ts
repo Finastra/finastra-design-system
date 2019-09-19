@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleFilterFields } from './filter-panel-demo.sample-data';
+import { sampleFilterTree } from './filter-panel-demo.sample-data';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',
@@ -16,7 +16,7 @@ export class FilterPanelDemoComponent implements OnInit {
 
   ngOnInit() {
     this.groupValue = "api";
-    this.sampleData = sampleFilterFields[this.groupValue];
+    this.sampleData = sampleFilterTree;
   }
 
   updateFilter(newFilterArray: string[]) {
@@ -24,6 +24,6 @@ export class FilterPanelDemoComponent implements OnInit {
   }
 
   onGroupChange(val: string) {
-    this.sampleData = sampleFilterFields[val];
+    this.groupValue = val;
   }
 }

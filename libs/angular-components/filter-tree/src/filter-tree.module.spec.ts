@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { FilterPanelModule } from './filter-panel.module';
+import { FilterTreeModule } from './filter-tree.module';
 
-describe('FilterPanelModule', () => {
+describe('FilterTreeModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FilterPanelModule]
+      imports: [FilterTreeModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(FilterPanelModule).toBeDefined();
+    expect(FilterTreeModule).toBeDefined();
   });
 });

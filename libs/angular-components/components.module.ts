@@ -5,10 +5,10 @@ import { GlobalSearchModule } from './global-search/src/global-search.module';
 import { ScrollToTopModule } from './scroll-to-top/src/scroll-to-top.module';
 import { UxgTableModule } from './table/src/table.module';
 import { PopoverModule } from './popover/src/popover.module';
-import { FilterPanelModule } from './filter-panel/src/filter-panel.module';
+import { FilterTreeModule } from './filter-tree/src/filter-tree.module';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule, FilterPanelModule]
+  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule, FilterTreeModule]
 })
 export class ComponentsModule {}

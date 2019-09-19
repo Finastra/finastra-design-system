@@ -1,101 +1,66 @@
-export interface FieldNode {
+export interface TreeNode {
     label: string;
-    children?: FieldNode[];
+    children?: TreeNode[];
 }
 
-export const sampleFilterFields: any =
-{
-    api: [
-        {
-            label: 'Consumer Banking',
-            children: [
-                {
-                    label: 'Alerts'
-                },
-                {
-                    label: 'Customer Management'
-                },
-                {
-                    label: 'Money Movement'
-                },
-            ]
-        },
-        {
-            label: 'Corporate Banking',
-            children: [
-                {
-                    label: 'Account Information'
-                },
-                {
-                    label: 'Back Office'
-                },
-                {
-                    label: 'Payments'
-                },
-            ]
-        },
-        {
-            label: 'Financial Toolbox'
-        },
-        {
-            label: 'Lending',
-            children: [
-                {
-                    label: 'Data Management'
-                },
-                {
-                    label: 'Integration'
-                },
-                {
-                    label: 'Lending Tools'
-                },
-            ]
-        },
-        {
-            label: 'Payment',
-            children: [
-                {
-                    label: 'Fees & Billings'
-                },
-                {
-                    label: 'Payment Initiation'
-                },
-                {
-                    label: 'Payment Request'
-                },
-            ]
-        },
-    ],
-    solution: [
-        {
-            label: 'Lending',
-            children: [
-                {
-                    label: 'Data Management'
-                },
-                {
-                    label: 'Integration'
-                },
-                {
-                    label: 'Lending Tools'
-                },
-            ]
-        },
-    ],
-    dataset: [
-        {
-            label: 'Payment',
-            children: [
-                {
-                    label: 'Fees & Billings'
-                },
-                {
-                    label: 'Payment Initiation'
-                },
-                {
-                    label: 'Payment Request'
-                },
-            ]
-        },
-    ]
-}
+export const sampleFilterTree: TreeNode[] = [
+    {
+        label: 'Consumer Banking',
+        children: [
+            {
+                label: 'Alerts'
+            },
+            {
+                label: 'Customer Management'
+            },
+            {
+                label: 'Money Movement'
+            },
+        ]
+    },
+    {
+        label: 'Corporate Banking',
+        children: [
+            {
+                label: 'Account Information'
+            },
+            {
+                label: 'Back Office'
+            },
+            {
+                label: 'Payments'
+            },
+        ]
+    },
+    {
+        label: 'Financial Toolbox'
+    },
+    {
+        label: 'Lending',
+        children: [
+            {
+                label: 'Data Management'
+            },
+            {
+                label: 'Integration'
+            },
+            {
+                label: 'Lending Tools'
+            },
+        ]
+    },
+    {
+        label: 'Payment',
+        children: [
+            {
+                label: 'Fees & Billings'
+            },
+            {
+                label: 'Payment Initiation'
+            },
+            {
+                label: 'Payment Request'
+            },
+        ]
+    },
+];
