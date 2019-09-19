@@ -280,16 +280,6 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
     this.updateTemplate();
-
-    this.code = '<uxg-repeater \n' ;
-    this.code +='   [data]="dataSource"\n';
-    this.code+='    [component]="componentExample" \n' ;
-    this.code+='    [columnsMatcher]="columnsMatcherExample"\n' ;
-    this.code+='    [space]="spaceExample"\n' ;
-    this.code+='    [orientation]="orientationExample"\n' ;
-    this.code+='    [multiSelect]="multiselectExample"\n' ;
-    this.code+='    (selectionChange)="displaySelection($event.value)">\n' ;
-    this.code+='</uxg-repeater>';
   }
 
   updateTemplate() {
