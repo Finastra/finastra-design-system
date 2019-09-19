@@ -257,9 +257,6 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   repeaterConfigurationForm: FormGroup;
   private destroyed$ = new Subject<void>();
 
-  api: string = "import {RepeaterModule} from '@ffdc/uxg-angular-components/repeater'";
-  code:string;
-
   get templateFieldsConfig() {
     return this.repeaterConfigurationForm.get('templateFieldsConfig');
   }
