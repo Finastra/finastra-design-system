@@ -1,6 +1,7 @@
 export interface TreeNode {
     label: string;
     children?: TreeNode[];
+    parent?: TreeNode;
 }
 
 export const sampleFilterTree: TreeNode[] = [

@@ -3,7 +3,7 @@
         <div class="filter-panel-side-header">
             <div class="filter-panel-side-title">
                 <h3>View by</h3>
-                <button mat-button color="accent" dense>
+                <button mat-button (click)="demoFilter.clearSelection();groupValue=initialGroupState;" color="accent" dense>
                     <mat-icon>replay</mat-icon>
                     Reset
                 </button>
@@ -28,7 +28,7 @@
         <div class="filter-panel-tags">
             <div class="filter-panel-tags-title">
                 <h3>Tags</h3>
-                <button mat-button color="accent" dense>
+                <button mat-button color="accent" *ngIf="false" dense>
                     Clear All
                 </button>
             </div>
@@ -42,7 +42,7 @@
         <div class="filter-panel-tree">
             <div class="filter-panel-tree-title">
                 <h3>Category</h3>
-                <button mat-button (click)="demoFilter.clearSelection()" color="accent" dense>
+                <button mat-button (click)="demoFilter.clearSelection()" *ngIf="filterMap?.length" color="accent" dense>
                     Clear All
                 </button>
             </div>
@@ -54,12 +54,12 @@
     <mat-drawer-content class="demo-container">
         <div class="filter-panel-action">
             <button mat-stroked-button color="primary" dense (click)="filterPanel.toggle()"
-                matBadge="{{filterArray?.length || null}}" matBadgePosition="before" matBadgeColor="primary">
+                matBadge="{{filterMap?.length || null}}" matBadgePosition="before" matBadgeColor="primary">
                 <mat-icon>filter_list</mat-icon>
                 Filter
             </button>
         </div>
 
-        <pre>{{filterArray | json}}</pre>
+        <pre>{{filterMap | json}}</pre>
     </mat-drawer-content>
 </mat-drawer-container>

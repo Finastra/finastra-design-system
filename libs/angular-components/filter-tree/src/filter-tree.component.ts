@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
@@ -6,6 +6,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 export interface TreeNode {
   label: string;
   children?: TreeNode[];
+  parent?: TreeNode;
   isSelected: boolean;
 }
 
@@ -14,11 +15,12 @@ export interface TreeNode {
   templateUrl: './filter-tree.component.html',
   styleUrls: ['./filter-tree.component.scss']
 })
-export class FilterTreeComponent implements OnInit, OnChanges {
+export class FilterTreeComponent {
 
-  private treeControl = new NestedTreeControl<TreeNode>(node => node.children);
-  private dataSource = new MatTreeNestedDataSource<TreeNode>();
+  public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
+  public dataSource = new MatTreeNestedDataSource<TreeNode>();
   private checklistSelection: SelectionModel<TreeNode>;
+  private filterTreeMap = [];
 
   get datasource(): TreeNode[] {
     return this.dataSource.data;
@@ -36,19 +38,17 @@ export class FilterTreeComponent implements OnInit, OnChanges {
   constructor() {
     this.checklistSelection = new SelectionModel<TreeNode>(true);
     this.checklistSelection.changed.subscribe((changes) => {
-      console.log(this.dataSource.data)
-      console.log(changes)
+      changes.added.forEach((node: TreeNode) => {
+        node.parent = this.getParentNode(node);
+      });
+      changes.removed.forEach((node: TreeNode) => {
+        node.parent = this.getParentNode(node);
+      });
       this.change.emit({
         added: changes.added,
         removed: changes.removed
       });
     })
-  }
-
-  ngOnInit() {
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
   }
 
   clearSelection() {
@@ -125,5 +125,5 @@ export class FilterTreeComponent implements OnInit, OnChanges {
     return this.getParentNode(node) ? true : false;
   }
 
-  private hasChild = (_: number, node: TreeNode) => (node.children && node.children.length);
+  hasChild = (_: number, node: TreeNode) => (node.children && node.children.length);
 }
