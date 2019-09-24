@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import * as d3 from 'd3';
 
 export interface DataModel {
@@ -11,7 +11,6 @@ export interface DataModel {
   templateUrl: './repeater-card-chart-example.component.html',
   styleUrls: ['./repeater-card-chart-example.component.scss'],
   encapsulation: ViewEncapsulation.None
-
 })
 export class RepeaterCardChartExampleComponent implements OnInit {
 
@@ -21,67 +20,114 @@ export class RepeaterCardChartExampleComponent implements OnInit {
   @Input() data: any;
   @Input() columnsMatcher: Object = {};
 
-  margin = {top: 20, right: 0, bottom: 0, left: 0};
+  margin = {top: 0, right: 0, bottom: 0, left: 10};
 
-  constructor() { }
+  isDown = Math.random() >= 0.5;
+  sell = this.randomIntFromInterval(1000,2000)
+  buy = this.randomIntFromInterval(1000,2000)
+
+  highest = this.randomIntFromInterval(1000,2000)
+  lowest = this.randomIntFromInterval(1000,2000)
+
+  element
+  line
+  dataNum1
+  dataNum2
+  dataNum3
+  constructor() {
+
+   }
 
   ngOnInit() {
   
+    
     let year =0;
     let historic: Array<DataModel> = [];
-    this.data.historic.forEach(element => {
-      historic.push({'year':year, amount: element});
+
+    for(let i=0; i<50; i++){
+      historic.push({'year':year, amount: this.randomIntFromInterval(0, 9999)});
       year++;
-    });
+    }
+    this.element = this.chartContainer.nativeElement;
+  
+    let svg = d3.select(this.element).select('svg')
+        .attr('width', 280)
+        .attr('height', 30);
 
-    const element = this.chartContainer.nativeElement;
-
-   
-    let svg = d3.select(element).select('svg')
-        .attr('width', 150)
-        .attr('height', 150);
-
-      var x = d3.scaleLinear().domain([0,9]).range([0, 150]);
-      var y = d3.scaleLinear().domain([0,9999]).range([130, 0]);
+      var x = d3.scaleLinear().domain([0,50]).range([0, 260]);
+      var y = d3.scaleLinear().domain([0,9999]).range([30, 0]);
 
 
-      var area = d3.area()
+      this.line = d3.line()
       .x(d =>{
         return x(d['year'])
       })
-      .y0(y(0))
-      .y1(d => y(d['amount']))
+      .y(d => y(d['amount']))
 
+    
+      this.dataNum1 = historic.filter(d=>d.year<=10);
+      this.dataNum2 = historic.filter(d=>d.year>=10);
+      this.dataNum3 = historic
 
-      
-      var gradient = svg.append("linearGradient")
-      .attr("id", "svgGradient")
-      .attr("y1", "0%")
-      .attr("y2", "100%");
-   gradient.append("stop")
-      .attr('class', 'start')
-      .attr("offset", "0%")
-      .attr("stop-color", "white")
-      .attr("stop-opacity", 0.5);
-   gradient.append("stop")
-      .attr('class', 'end')
-      .attr("offset", "100%")
-      .attr("stop-color", "rgb(15,85,159)")
-      .attr("stop-opacity", 1);
 
     const g = svg.append('g')
       .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')')
+     
       .append("path")
-      .data([historic])     
-      .attr("class", "area")
-      .attr("stroke", "#FFFFFF")      
-      .attr("fill", "url(#svgGradient)")
+      .datum(this.dataNum1)     
+      .attr("stroke", "#CCCCCC")   
+      .attr("class", "line1")   
+      .attr("fill", "rgba(0,0,0,0")
       .attr("stroke-width", 1.5)
-      .attr("d", <any>area);
+      .attr("d", <any>this.line)
+      .transition()
+      .duration(2000)
 
-
+      svg.select('g').append("path")
+      .datum(this.dataNum2)     
+      .attr("stroke", "#30c296")  
+      .attr("class", "line2")       
+      .attr("fill", "rgba(0,0,0,0")
+      .attr("stroke-width", 1.5)
+      .attr("d", <any>this.line)
+      .transition()
+      .duration(2000);
  
+      setInterval(() => {
+        this.updateData(); 
+        }, this.randomIntFromIntervalInt(1000, 5000));
+     
+}
+
+updateData(){
+
+  let dataNum1Bis = [];
+  this.dataNum1.forEach(element => {
+    element.amount = this.randomIntFromInterval(0, 9999);
+    dataNum1Bis.push(element);
+  });
+
+  let dataNum2Bis = [];
+  this.dataNum2.forEach(element => {
+    element.amount = this.randomIntFromInterval(0, 9999);
+    dataNum2Bis.push(element);
+  });
+
+  let svg = d3.select(this.element).select('svg').transition()
+      svg.select(".line1")       
+      .duration(750)
+      .attr("d", this.line(dataNum1Bis))
+      svg.select(".line2")       
+      .duration(750)
+      .attr("d", this.line(dataNum2Bis))
+
+}
+
+randomIntFromInterval(min, max) { // min and max included 
+  return (Math.random() * (max - min + 1) + min).toFixed(2);;
+}
+randomIntFromIntervalInt(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
   
-
 }

@@ -5,6 +5,58 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { RepeaterCardChartExampleComponent } from './repeater-card-chart-example/repeater-card-chart-example.component';
+
+const ELEMENT_DATA_TRADE: any[] = [
+  {
+
+    "forex": "Gold",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "German30",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "UK100",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "EUR/USD",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "USD/JPY",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "USD/CHF",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "USD/CHF",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  },
+  {
+
+    "forex": "USD/CHF",
+    "buy": "1497.89",
+    "sell": "1497.9"
+  }
+]
+
 const ELEMENT_DATA: any[] = [
   {
 
@@ -17,7 +69,8 @@ const ELEMENT_DATA: any[] = [
     "name": "Fred Weaver",
     "address": "St. Joseph's Street 9879",
     "country": "Angola",
-    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850],
+    "photo": "https://randomuser.me/api/portraits/men/1.jpg"
   },
   {
     "network": "American Express",
@@ -29,7 +82,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Roosevelt Fox",
     "address": "Borthwick Street 7058",
     "country": "Sweden",
-    "historic": [556, 845, 1868, 3233, 4650, 5059, 5493, 7540, 8311, 9982]
+    "historic": [556, 845, 1868, 3233, 4650, 5059, 5493, 7540, 8311, 9982],
+    "photo": "https://randomuser.me/api/portraits/men/2.jpg"
+
   },
   {
     "network": "Mastercard",
@@ -41,7 +96,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Emmett Wagner",
     "address": "Cavaye Place 5408",
     "country": "Cameroon",
-    "historic": [1426, 2488, 4414, 4801, 5003, 7143, 8063, 8250, 8948, 9432]
+    "historic": [1426, 2488, 4414, 4801, 5003, 7143, 8063, 8250, 8948, 9432],
+    "photo": "https://randomuser.me/api/portraits/men/3.jpg"
+
   },
   {
     "network": "Visa",
@@ -53,7 +110,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Nylah Nash",
     "address": "Whichcote Street 5701",
     "country": "Rwanda",
-    "historic": [1735, 2065, 2426, 2864, 3181, 5072, 5224, 8112, 9410, 9813]
+    "historic": [1735, 2065, 2426, 2864, 3181, 5072, 5224, 8112, 9410, 9813],
+    "photo": "https://randomuser.me/api/portraits/women/4.jpg"
+
   },
   {
     "network": "Maestro",
@@ -65,7 +124,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Jacqueline Stevenson",
     "address": "Plympton Place 3116",
     "country": "Fiji",
-    "historic": [1298, 2101, 3019, 3962, 5237, 5675, 7554, 8618, 8906, 9023]
+    "historic": [1298, 2101, 3019, 3962, 5237, 5675, 7554, 8618, 8906, 9023],
+    "photo": "https://randomuser.me/api/portraits/women/5.jpg"
+
   },
   {
     "network": "Visa",
@@ -77,7 +138,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Micah Morrison",
     "address": "Langford Close 5508",
     "country": "Romania",
-    "historic": [403, 652, 1008, 1698, 2267, 3654, 5205, 6861, 7974, 8413]
+    "historic": [403, 652, 1008, 1698, 2267, 3654, 5205, 6861, 7974, 8413],
+    "photo": "https://randomuser.me/api/portraits/men/6.jpg"
+
   },
   {
     "network": "Visa",
@@ -89,7 +152,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Vince Stone",
     "address": "Chelsea Manor Gardens 5397",
     "country": "Reunion",
-    "historic": [1, 369, 1281, 3618, 4230, 5059, 5138, 7838, 7906, 9655]
+    "historic": [1, 369, 1281, 3618, 4230, 5059, 5138, 7838, 7906, 9655],
+    "photo": "https://randomuser.me/api/portraits/men/7.jpg"
+
   },
   {
     "network": "American Express",
@@ -101,7 +166,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Angelique Spencer",
     "address": "Connaught Close 4792",
     "country": "Singapore",
-    "historic": [1515, 1923, 4204, 5451, 5579, 7416, 7537, 8356, 9132, 9673]
+    "historic": [1515, 1923, 4204, 5451, 5579, 7416, 7537, 8356, 9132, 9673],
+    "photo": "https://randomuser.me/api/portraits/women/8.jpg"
+
   },
   {
     "network": "Mastercard",
@@ -113,7 +180,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Elisabeth Parrish",
     "address": "Union Walk 9851",
     "country": "Malaysia",
-    "historic": [608, 1089, 2136, 2405, 2677, 3395, 6527, 6869, 7695, 7772]
+    "historic": [608, 1089, 2136, 2405, 2677, 3395, 6527, 6869, 7695, 7772],
+    "photo": "https://randomuser.me/api/portraits/women/9.jpg"
+
   },
   {
     "network": "American Express",
@@ -125,7 +194,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Teagan Contreras",
     "address": "Chalcot Square 2175",
     "country": "Azerbaijan",
-    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850],
+    "photo": "https://randomuser.me/api/portraits/men/10.jpg"
+
   },
   {
     "network": "Mastercard",
@@ -137,7 +208,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Jean Sullivan",
     "address": "Somertrees Avenue 8292",
     "country": "Kuwait",
-    "historic": [5, 105, 1496, 2273, 3231, 5446, 6945, 7775, 8873, 9575]
+    "historic": [5, 105, 1496, 2273, 3231, 5446, 6945, 7775, 8873, 9575],
+    "photo": "https://randomuser.me/api/portraits/men/11.jpg"
+
   },
   {
     "network": "Mastercard",
@@ -149,7 +222,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Darius Hurst",
     "address": "St. Edmunds Close 5167",
     "country": "Luxembourg",
-    "historic": [1092, 1509, 1640, 1890, 1896, 2809, 3387, 4931, 6142, 8591]
+    "historic": [1092, 1509, 1640, 1890, 1896, 2809, 3387, 4931, 6142, 8591],
+    "photo": "https://randomuser.me/api/portraits/men/12.jpg"
+
   },
   {
     "network": "American Express",
@@ -161,7 +236,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Silas Weaver",
     "address": "Highway, The 7446",
     "country": "Sweden",
-    "historic": [1839, 3193, 3678, 4136, 4645, 4862, 5664, 8475, 8512, 9999]
+    "historic": [1839, 3193, 3678, 4136, 4645, 4862, 5664, 8475, 8512, 9999],
+    "photo": "https://randomuser.me/api/portraits/men/13.jpg"
+
   },
   {
     "network": "Maestro",
@@ -173,7 +250,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Tad Norris",
     "address": "Broadbent Street 6737",
     "country": "Western Sahara",
-    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850],
+    "photo": "https://randomuser.me/api/portraits/men/14.jpg"
+
   },
   {
     "network": "Maestro",
@@ -185,7 +264,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Porfirio Day",
     "address": "St. Peter's Way 1705",
     "country": "Argentina",
-    "historic": [1762, 2372, 2865, 3007, 3032, 3881, 4622, 6915, 8038, 9400]
+    "historic": [1762, 2372, 2865, 3007, 3032, 3881, 4622, 6915, 8038, 9400],
+    "photo": "https://randomuser.me/api/portraits/men/15.jpg"
+
   },
   {
     "network": "American Express",
@@ -197,7 +278,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Larry Burke",
     "address": "Priter Way 7026",
     "country": "Thailand",
-    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850]
+    "historic": [1460, 1956, 2274, 5055, 5573, 6441, 6473, 7246, 7965, 9850],
+    "photo": "https://randomuser.me/api/portraits/men/16.jpg"
+
   },
   {
     "network": "American Express",
@@ -209,7 +292,9 @@ const ELEMENT_DATA: any[] = [
     "name": "Santos Davidson",
     "address": "Snowden Street 1428",
     "country": "Pitcairn",
-    "historic": [450, 878, 1107, 1481, 2357, 5587, 6820, 7725, 8263, 9007]
+    "historic": [450, 878, 1107, 1481, 2357, 5587, 6820, 7725, 8263, 9007],
+    "photo": "https://randomuser.me/api/portraits/men/17.jpg"
+
   }
 ];
 
@@ -225,15 +310,33 @@ const COLUMNS: any[] = [
   { name: 'country', type: 'number', align: 'right' }
 ];
 
+const COLUMNS2: any[] = [
+  { name: 'forex', type: 'string', align: 'left' },
+  { name: 'sell', type: 'string', align: 'left' },
+  { name: 'buy', type: 'string', align: 'left' }
+];
+
 const TEMPLATES_DATA: any[] = [
   {
     'component': RepeaterCardExampleComponent,
     'displayName': "UXG Card",
     'columnsMatcher': {
       "title": "name",
-      "subtitle": "address"
+      "subtitle": "address",
+      "photoPath": "photo"
     },
     'space': '10px'
+  },
+  {
+    'component': RepeaterCardChartExampleComponent,
+    'displayName': "D3 chart",
+    'columnsMatcher': {
+      "forex": "forex",
+      "buy": "buy",
+      "sell": "sell"
+    },
+    'space': '1px',
+    'datasource': '2'
   },
   {
     'component': RepeaterCardAdvancedExampleComponent,
@@ -246,14 +349,6 @@ const TEMPLATES_DATA: any[] = [
       "number":"number"
     },
     'space': '20px'
-  },
-  {
-    'component': RepeaterCardChartExampleComponent,
-    'displayName': "D3 chart",
-    'columnsMatcher': {
-      "title": "name"
-    },
-    'space': '5px'
   }
 ]
 
@@ -267,9 +362,13 @@ const TEMPLATES_DATA: any[] = [
 export class RepeaterDemoComponent implements OnInit, OnDestroy {
 
   dataSource = ELEMENT_DATA; //data
+  dataSource2 = ELEMENT_DATA_TRADE; //data
   columns = COLUMNS;
+  columns2 = COLUMNS2;
   templatesData = TEMPLATES_DATA;
 
+  columnsExample = this.columns;
+  dataSourceExample = this.dataSource;
   componentExample: Type<any>;
   columnsMatcherExample: Object;
   orientationExample: string = 'horizontal';
@@ -306,6 +405,14 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   }
 
   updateTemplate() {
+    if(this.currentTemplate.datasource=="2"){
+      this.dataSourceExample = this.dataSource2;
+      this.columnsExample = this.columns2;
+    }else{
+      this.dataSourceExample = this.dataSource;
+      this.columnsExample = this.columns;
+
+    }
     this.componentExample = this.currentTemplate.component;
     this.columnsMatcherExample = this.currentTemplate.columnsMatcher;
     this.spaceExample = this.currentTemplate.space;

@@ -1,8 +1,8 @@
-<mat-card class="simple-card" [ngClass]="{'selected': selected}">
+<mat-card class="card-demo simple-card" [ngClass]="{'selected': selected}">
     <div class="uxg-card-image-overlay">
-        <img src="assets/Financial_Market_Volatility.jpeg">
+        <img src="{{data[columnsMatcher.photoPath]}}">
     </div>
-    <mat-card-title>{{data[columnsMatcher.title] || 'title'}}</mat-card-title>
+    <mat-card-title> {{data[columnsMatcher.title] || 'title'}}</mat-card-title>
     <mat-card-subtitle>{{data[columnsMatcher.subtitle] || 'subtitle'}}</mat-card-subtitle>
     <mat-card-actions>
       <mat-icon>lock</mat-icon>
