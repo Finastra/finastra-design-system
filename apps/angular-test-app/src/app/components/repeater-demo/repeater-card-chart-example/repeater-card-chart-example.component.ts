@@ -77,7 +77,7 @@ export class RepeaterCardChartExampleComponent implements OnInit {
       .attr("stroke", "#FFFFFF")      
       .attr("fill", "url(#svgGradient)")
       .attr("stroke-width", 1.5)
-      .attr("d", area);
+      .attr("d", <any>area);
 
 
  
