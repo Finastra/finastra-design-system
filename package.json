@@ -48,8 +48,6 @@
     "@angular/platform-browser": "^8.2.4",
     "@angular/platform-browser-dynamic": "^8.2.4",
     "@angular/router": "^8.2.4",
-    "ngx-highlightjs": "3.0.3",
-    "highlight.js": "^9.13.1",
     "core-js": "^2.5.4",
     "d3": "5.12.0",
     "elasticlunr": "^0.9.5",

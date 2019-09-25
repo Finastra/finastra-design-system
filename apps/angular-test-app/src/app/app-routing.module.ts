@@ -23,20 +23,10 @@ import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FieldMatcherComponent } from './components/repeater-demo/field-matcher/field-matcher.component';
-import { HighlightModule } from 'ngx-highlightjs';
 import { PopoverDemoComponent } from './components/popover-demo/popover-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { routes } from './routes';
 
-import xml from 'highlight.js/lib/languages/xml';
-import javascript from 'highlight.js/lib/languages/javascript';
-
-export function hljsLanguages() {
-  return [
-    {name: 'javascript', func: javascript},
-    {name: 'xml', func: xml}
-  ];
-}
 @NgModule({
   imports: [
     CommonModule,
@@ -54,10 +44,7 @@ export function hljsLanguages() {
     MatSelectModule,
     MatExpansionModule,
     MatRadioModule,
-    FlexLayoutModule,
-    HighlightModule.forRoot({
-      languages: hljsLanguages
-    }),
+    FlexLayoutModule,   
     ComponentsModule,
     MatSlideToggleModule
     

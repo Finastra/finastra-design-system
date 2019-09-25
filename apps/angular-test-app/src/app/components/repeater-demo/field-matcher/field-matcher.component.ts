@@ -26,7 +26,6 @@ export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDe
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
 
   }
   ngOnDestroy(): void {
@@ -62,7 +61,6 @@ export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDe
   onTouched: any = () => {};
 
   ngOnInit() {
-    console.log(this.fields)
   }
 
 }

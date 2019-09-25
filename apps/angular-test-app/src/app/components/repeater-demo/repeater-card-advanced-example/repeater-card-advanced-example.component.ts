@@ -15,6 +15,5 @@ export class RepeaterCardAdvancedExampleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.data);
   }
 }
