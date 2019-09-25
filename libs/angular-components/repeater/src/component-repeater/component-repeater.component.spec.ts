@@ -5,7 +5,6 @@ import { Component, NgModule, Type, ComponentFactoryResolver, SimpleChange } fro
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
 
-
 @Component({
   selector: 'uxg-mock-card',
   template: '<p>Mock Card Component</p>'
@@ -19,25 +18,24 @@ class MockCardComponent {}
 })
 export class FakeMockCardNgModule {}
 
-
-
 describe('ComponentRepeaterComponent', () => {
   let component: ComponentRepeaterComponent;
   let fixture: ComponentFixture<ComponentRepeaterComponent>;
-  let componentFactoryResolver : ComponentFactoryResolver ;
+  let componentFactoryResolver: ComponentFactoryResolver;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComponentRepeaterComponent ],
-      imports: [FakeMockCardNgModule, CommonModule]    
-    })
-    .compileComponents();
+      declarations: [ComponentRepeaterComponent],
+      imports: [FakeMockCardNgModule, CommonModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ComponentRepeaterComponent);
     component = fixture.componentInstance;
-    componentFactoryResolver = fixture.debugElement.injector.get<ComponentFactoryResolver>(ComponentFactoryResolver as any);
+    componentFactoryResolver = fixture.debugElement.injector.get<ComponentFactoryResolver>(
+      ComponentFactoryResolver as any
+    );
 
     fixture.detectChanges();
   });
@@ -48,11 +46,10 @@ describe('ComponentRepeaterComponent', () => {
 
   it('should add MockCardComponent', () => {
     const componentR: Type<any> = MockCardComponent;
-    const factory = componentFactoryResolver.resolveComponentFactory(componentR);    
-    component.factory = factory;      
-    fixture.detectChanges();  
+    const factory = componentFactoryResolver.resolveComponentFactory(componentR);
+    component.factory = factory;
+    fixture.detectChanges();
 
-    expect(fixture.debugElement.query(By.css("uxg-mock-card"))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('uxg-mock-card'))).toBeTruthy();
   });
-
 });

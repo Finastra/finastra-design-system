@@ -7,13 +7,10 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class RepeaterCardAdvancedExampleComponent implements OnInit {
-
-  
   @Input() data: any;
   @Input() columnsMatcher: Object;
-  
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() {}
+
+  ngOnInit() {}
 }

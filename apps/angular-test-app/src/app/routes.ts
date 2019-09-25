@@ -11,5 +11,4 @@ export const routes: Routes = [
   { path: 'table', component: TableDemoComponent, data: { title: 'Table Demo' } },
   { path: 'popover', component: PopoverDemoComponent, data: { title: 'Popover Demo' } },
   { path: 'repeater', component: RepeaterDemoComponent }
-
 ];

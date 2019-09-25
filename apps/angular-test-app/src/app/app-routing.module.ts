@@ -44,13 +44,18 @@ import { routes } from './routes';
     MatSelectModule,
     MatExpansionModule,
     MatRadioModule,
-    FlexLayoutModule,   
+    FlexLayoutModule,
     ComponentsModule,
     MatSlideToggleModule
-    
-    
   ],
-  declarations: [HomeComponent, GlobalSearchDemoComponent, TableDemoComponent, PopoverDemoComponent, RepeaterDemoComponent,FieldMatcherComponent],
+  declarations: [
+    HomeComponent,
+    GlobalSearchDemoComponent,
+    TableDemoComponent,
+    PopoverDemoComponent,
+    RepeaterDemoComponent,
+    FieldMatcherComponent
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

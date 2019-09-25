@@ -1,29 +1,28 @@
-<mat-card class="card-demo simple-card" [ngClass]="{'selected': selected}">
-    <div class="uxg-card-image-overlay">
-        <img src="{{data[columnsMatcher.photoPath]}}">
-    </div>
-    <mat-card-title> {{data[columnsMatcher.title] || 'title'}}</mat-card-title>
-    <mat-card-subtitle>{{data[columnsMatcher.subtitle] || 'subtitle'}}</mat-card-subtitle>
-    <mat-card-actions>
-      <mat-icon>lock</mat-icon>
-      <span class="fill-remaining-space"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
+<mat-card class="card-demo simple-card" [ngClass]="{ selected: selected }">
+  <div class="uxg-card-image-overlay">
+    <img src="{{ data[columnsMatcher.photoPath] }}" />
+  </div>
+  <mat-card-title> {{ data[columnsMatcher.title] || 'title' }}</mat-card-title>
+  <mat-card-subtitle>{{ data[columnsMatcher.subtitle] || 'subtitle' }}</mat-card-subtitle>
+  <mat-card-actions>
+    <mat-icon>lock</mat-icon>
+    <span class="fill-remaining-space"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" overlapTrigger="true">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
       </button>
-      <mat-menu #menu="matMenu"
-                overlapTrigger="true">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voicemail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu>
-    </mat-card-actions>
-  </mat-card>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </mat-card-actions>
+</mat-card>
