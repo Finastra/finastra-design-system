@@ -12,7 +12,7 @@ export class RepeaterCardExampleComponent implements OnInit {
 
   @Input() data: any = {};
   @Input() columnsMatcher: Object = {};
-  @Input() selected: boolean = false;
+  @Input() selected = false;
   
   constructor(private cd: ChangeDetectorRef) { }
 

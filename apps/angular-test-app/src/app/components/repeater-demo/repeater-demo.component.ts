@@ -371,9 +371,9 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   dataSourceExample = this.dataSource;
   componentExample: Type<any>;
   columnsMatcherExample: Object;
-  orientationExample: string = 'horizontal';
+  orientationExample = 'horizontal';
   spaceExample: string;
-  multiselectExample: boolean = true;
+  multiselectExample = true;
 
   actionDescription: string;
 
@@ -405,7 +405,7 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   }
 
   updateTemplate() {
-    if(this.currentTemplate.datasource=="2"){
+    if(this.currentTemplate.datasource==="2"){
       this.dataSourceExample = this.dataSource2;
       this.columnsExample = this.columns2;
     }else{

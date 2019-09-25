@@ -11,7 +11,7 @@ import { By } from '@angular/platform-browser';
 import { RepeaterModule } from './repeater.module';
 
 @Component({
-  selector: 'mock-card',
+  selector: 'uxg-mock-card',
   template: '<p>Mock Card Component</p>'
 })
 class MockCardComponent {}
@@ -27,7 +27,7 @@ describe('RepeaterComponent', () => {
   let component: RepeaterComponent;
   let fixture: ComponentFixture<RepeaterComponent>;
 
-  let data= [
+  const data= [
     {
   
       "network": "Visa",
@@ -138,7 +138,7 @@ describe('RepeaterComponent', () => {
 
   it('should repeate MockCardComponent', () => {
     
-    let componentR: Type<any> = MockCardComponent;
+    const componentR: Type<any> = MockCardComponent;
     
     component.component = componentR;    
     component.ngOnChanges({
@@ -152,7 +152,7 @@ describe('RepeaterComponent', () => {
 
   it('should display MockCardComponent verticaly', () => {
     
-    let componentR: Type<any> = MockCardComponent;
+    const componentR: Type<any> = MockCardComponent;
 
     component.component = componentR;    
     component.orientation = "vertical";    
@@ -180,7 +180,7 @@ describe('RepeaterComponent', () => {
 
   it('should emit an event with one item when click is trigger and multiselect is false', () => {
     
-    let componentR: Type<any> = MockCardComponent;
+    const componentR: Type<any> = MockCardComponent;
     
     component.component = componentR;    
     component.ngOnChanges({
@@ -188,11 +188,11 @@ describe('RepeaterComponent', () => {
     })    
     fixture.detectChanges();
 
-    let button = fixture.debugElement.query(By.css('.repeater-item'));   
+    const button = fixture.debugElement.query(By.css('.repeater-item'));   
     spyOn(component.selectionChange, 'emit');   
     button.nativeElement.click();
 
-    let expectedObj = {"value": {"0":data[0]}};
+    const expectedObj = {"value": {"0":data[0]}};
     expect(component.selectionChange.emit).toHaveBeenCalledWith(expectedObj);
 
   });
@@ -200,7 +200,7 @@ describe('RepeaterComponent', () => {
 
   it('should emit an event with 2 item when click is trigger twice and multiselect is true', () => {
     
-    let componentR: Type<any> = MockCardComponent;
+    const componentR: Type<any> = MockCardComponent;
     
     component.component = componentR;    
     component.multiSelect = true;    
@@ -210,16 +210,16 @@ describe('RepeaterComponent', () => {
     })    
     fixture.detectChanges();
 
-    let buttons = fixture.debugElement.queryAll(By.css('.repeater-item'));
+    const buttons = fixture.debugElement.queryAll(By.css('.repeater-item'));
 
 
-    let button1 = buttons[0];   
-    let button2 = buttons[1];   
+    const button1 = buttons[0];   
+    const button2 = buttons[1];   
     spyOn(component.selectionChange, 'emit');   
     button1.nativeElement.click();
     button2.nativeElement.click();
 
-    let expectedObj = {"value": {"0":data[0], "1":data[1]}};
+    const expectedObj = {"value": {"0":data[0], "1":data[1]}};
     expect(component.selectionChange.emit).toHaveBeenCalledWith(expectedObj);
 
   });

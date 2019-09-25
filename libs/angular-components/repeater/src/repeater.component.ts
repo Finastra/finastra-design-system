@@ -20,8 +20,8 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
   
   @Input() component: Type<any> | ComponentFactory<any>;
-  @Input() orientation: string = "horizontal";
-  @Input() multiSelect: boolean = false;
+  @Input() orientation = "horizontal";
+  @Input() multiSelect = false;
   @Input() space: string;
   @Input() columnsMatcher: { [k: string]: string } = {};
   @Output() selectionChange:EventEmitter<any> =  new EventEmitter<any>();

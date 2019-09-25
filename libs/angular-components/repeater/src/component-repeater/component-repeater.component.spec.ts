@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'mock-card',
+  selector: 'uxg-mock-card',
   template: '<p>Mock Card Component</p>'
 })
 class MockCardComponent {}
@@ -37,7 +37,7 @@ describe('ComponentRepeaterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ComponentRepeaterComponent);
     component = fixture.componentInstance;
-    componentFactoryResolver =  fixture.debugElement.injector.get(ComponentFactoryResolver);
+    componentFactoryResolver = fixture.debugElement.injector.get<ComponentFactoryResolver>(ComponentFactoryResolver as any);
 
     fixture.detectChanges();
   });
@@ -47,12 +47,12 @@ describe('ComponentRepeaterComponent', () => {
   });
 
   it('should add MockCardComponent', () => {
-    let componentR: Type<any> = MockCardComponent;
-    let factory = componentFactoryResolver.resolveComponentFactory(componentR);    
+    const componentR: Type<any> = MockCardComponent;
+    const factory = componentFactoryResolver.resolveComponentFactory(componentR);    
     component.factory = factory;      
     fixture.detectChanges();  
 
-    expect(fixture.debugElement.query(By.css("mock-card"))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css("uxg-mock-card"))).toBeTruthy();
   });
 
 });

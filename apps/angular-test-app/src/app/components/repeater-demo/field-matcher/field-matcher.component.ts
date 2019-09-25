@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatSelectChange } from '@angular/material';
 
 @Component({
-  selector: 'uxp-field-matcher',
+  selector: 'ffdc-field-matcher',
   templateUrl: './field-matcher.component.html',
   styleUrls: ['./field-matcher.component.css'],
   providers: [
@@ -19,9 +19,6 @@ export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDe
 
   @Input() fields: any;
   @Input() templateFields: any;
-
-  @Output() change: EventEmitter<any[]> = new EventEmitter();
-
 
   constructor() { }
 
@@ -46,7 +43,7 @@ export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDe
   setDisabledState?(isDisabled: boolean): void {}
 
   onSelectionChange(changes: MatSelectChange, key: string) {    
-    let data  = {...this.templateFields};
+    const data  = {...this.templateFields};
     data[key] = changes.value.name;
     this.writeValue(data);
   }
