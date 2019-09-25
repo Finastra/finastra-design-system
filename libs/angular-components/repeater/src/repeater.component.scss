@@ -7,8 +7,5 @@ uxg-repeater{
     }
     .repeater-item{
         display: flex;
-        &.selected{
-            background-color: red;
-        }
     }
 }
