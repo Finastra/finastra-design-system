@@ -9,7 +9,6 @@ import {
   MatIconModule,
   MatButtonModule,
   MatTreeModule,
-  MatDividerModule,
 } from '@angular/material';
 
 @NgModule({
@@ -22,7 +21,6 @@ import {
     MatIconModule,
     MatButtonModule,
     MatTreeModule,
-    MatDividerModule,
   ],
   declarations: [FilterTreeComponent],
   exports: [FilterTreeComponent]

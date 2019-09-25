@@ -7,7 +7,7 @@ export interface TreeNode {
   label: string;
   children?: TreeNode[];
   parent?: TreeNode;
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 @Component({
@@ -19,7 +19,7 @@ export class FilterTreeComponent {
 
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
-  private checklistSelection: SelectionModel<TreeNode>;
+  public checklistSelection: SelectionModel<TreeNode>;
   private filterTreeMap = [];
 
   get datasource(): TreeNode[] {
