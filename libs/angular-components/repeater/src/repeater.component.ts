@@ -64,8 +64,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {  
 
     if(changes.orientation){
-      this.orientation = changes.orientation.currentValue;   
-      console.log(this.orientation)  
+      this.orientation = changes.orientation.currentValue; 
     }  
 
     if(changes.multiSelect){
