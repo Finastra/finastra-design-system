@@ -73,7 +73,7 @@ describe('FilterTreeModule', () => {
     let toReturn = [];
     for (let i in ob) {
       if (!ob.hasOwnProperty(i)) continue;
-      
+
       if ((typeof ob[i]) === 'object') {
         const flatObject = flattenObject(ob[i]);
         for (let x in flatObject) {
@@ -88,8 +88,8 @@ describe('FilterTreeModule', () => {
   };
 
   it('should contain mock items', () => {
-    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource).join("").replace(/\s/g,'').toLowerCase();
-    const treeElContent = filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g,'').toLowerCase();
+    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource).join("").replace(/\s/g, '').toLowerCase();
+    const treeElContent = filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g, '').toLowerCase();
     expect(treeElContent).toEqual(expectedTreeNodeItemsLabels);
   });
 

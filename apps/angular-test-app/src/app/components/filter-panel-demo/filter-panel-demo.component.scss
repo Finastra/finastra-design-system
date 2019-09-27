@@ -1,3 +1,7 @@
+.uxg-h5 {
+    margin: 22px 0 22px !important;
+}
+
 .filter-panel-container {
     height: 100%;
     border: 1px solid rgba(0,0,0,.04);
@@ -6,17 +10,17 @@
 
 .filter-panel-side {
     width: auto !important;
-    min-width: 325px;
+    min-width: 352px;
     max-width: 450px;
 }
 
 .filter-panel-side-header {
-    min-height: 169px;
+    min-height: 196px;
     background-color: #fafafa;
 }
 
 .filter-panel-side-title {
-    padding: 16px 0 0 16px;
+    padding: 25px 0 0 25px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -37,7 +41,7 @@
 }
 
 .filter-panel-tree {
-    padding: 0 16px 0 16px;
+    padding: 0 25px 0 25px;
 }
 
 .filter-panel-tree-title {
@@ -51,7 +55,7 @@
 }
 
 .filter-panel-tags {
-    padding: 0 16px 0 16px;
+    padding: 0 25px 0 25px;
 
     mat-form-field {
         width: 100%;
@@ -77,4 +81,24 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+}
+
+.documentation{
+    width: 50%;
+    border-collapse: collapse;
+    tr{
+        font-family: Roboto, sans-serif;
+        border-bottom: 1px solid #E6ECF1;
+        td{
+            padding: 8px;
+        }
+        &.header{
+            color: #9DAAB6;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            border-bottom: 2px solid #E6ECF1;
+            white-space: nowrap;
+        }
+    }
 }

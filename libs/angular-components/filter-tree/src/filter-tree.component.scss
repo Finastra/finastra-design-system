@@ -17,23 +17,19 @@
 .mat-tree-node {
   display: flex;
   justify-content: space-between;
-  //min-height: 30px;
+  //min-height: 42px;
   .mat-icon-button {
     width: 20px;
     height: 20px;
   }
   ::ng-deep .mat-checkbox {
     .mat-checkbox-inner-container {
+      width: 16px;
+      height: 16px;
       margin-right: 8px;
     }
   }
 }
-// .mat-nested-tree-node {
-//   & > li {
-//     border-bottom: 1px solid;
-//     border-bottom-color: rgba(0,0,0,.12);
-//   }
-// }
 .tree-divider {
   border-bottom: 1px solid;
   border-bottom-color: rgba(0,0,0,.12);

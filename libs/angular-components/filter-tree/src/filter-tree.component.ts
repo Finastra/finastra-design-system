@@ -20,7 +20,6 @@ export class FilterTreeComponent {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checklistSelection: SelectionModel<TreeNode>;
-  private filterTreeMap = [];
 
   get datasource(): TreeNode[] {
     return this.dataSource.data;
@@ -53,6 +52,10 @@ export class FilterTreeComponent {
 
   clearSelection() {
     this.checklistSelection.clear();
+  }
+
+  toggleAllNode() {
+    this.treeControl.collapseAll();
   }
 
   descendantsAllSelected(node: TreeNode): boolean {
@@ -122,7 +125,7 @@ export class FilterTreeComponent {
   }
 
   isRootNode(node: TreeNode): boolean {
-    return this.getParentNode(node) ? true : false;
+    return this.getParentNode(node) ? false : true;
   }
 
   hasChild = (_: number, node: TreeNode) => (node.children && node.children.length);
