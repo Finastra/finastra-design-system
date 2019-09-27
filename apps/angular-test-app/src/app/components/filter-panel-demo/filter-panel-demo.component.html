@@ -1,70 +1,78 @@
 <mat-drawer-container class="filter-panel-container">
-    <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
-        <div class="filter-panel-side-header">
-            <div class="filter-panel-side-title">
-                <h5 class="uxg-h5">View by (in progress)</h5>
-                <button mat-button (click)="demoFilter.clearSelection();groupValue=initialGroupState;" color="accent"
-                    dense>
-                    <mat-icon>replay</mat-icon>
-                    Reset
-                </button>
-            </div>
-            <mat-button-toggle-group #group="matButtonToggleGroup" [value]="groupValue"
-                (change)="onGroupChange(group.value)" class="uxg-filtering-toggle-group">
-                <mat-button-toggle value="api">
-                    <mat-icon fontSet="material-icons-outlined">public</mat-icon>
-                    <span>API</span>
-                </mat-button-toggle>
-                <mat-button-toggle value="solution">
-                    <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
-                    <span>Solution</span>
-                </mat-button-toggle>
-                <mat-button-toggle value="dataset">
-                    <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
-                    <span>Dataset</span>
-                </mat-button-toggle>
-            </mat-button-toggle-group>
-        </div>
+  <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
+    <div class="filter-panel-side-header">
+      <div class="filter-panel-side-title">
+        <h5 class="uxg-h5">View by (in progress)</h5>
+        <button mat-button (click)="demoFilter.clearSelection(); groupValue = initialGroupState" color="accent" dense>
+          <mat-icon>replay</mat-icon>
+          Reset
+        </button>
+      </div>
+      <mat-button-toggle-group
+        #group="matButtonToggleGroup"
+        [value]="groupValue"
+        (change)="onGroupChange(group.value)"
+        class="uxg-filtering-toggle-group"
+      >
+        <mat-button-toggle value="api">
+          <mat-icon fontSet="material-icons-outlined">public</mat-icon>
+          <span>API</span>
+        </mat-button-toggle>
+        <mat-button-toggle value="solution">
+          <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
+          <span>Solution</span>
+        </mat-button-toggle>
+        <mat-button-toggle value="dataset">
+          <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
+          <span>Dataset</span>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
 
-        <div class="filter-panel-tags">
-            <div class="filter-panel-tags-title">
-                <h5 class="uxg-h5">Tags (in progress)</h5>
-                <button mat-button color="accent" *ngIf="false" dense>
-                    Clear All
-                </button>
-            </div>
+    <div class="filter-panel-tags">
+      <div class="filter-panel-tags-title">
+        <h5 class="uxg-h5">Tags (in progress)</h5>
+        <button mat-button color="accent" *ngIf="false" dense>
+          Clear All
+        </button>
+      </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label>
-                    <mat-icon>search</mat-icon> Filter by tags
-                </mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
+      <mat-form-field appearance="outline">
+        <mat-label> <mat-icon>search</mat-icon> Filter by tags </mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
 
-        <div class="filter-panel-tree">
-            <div class="filter-panel-tree-title">
-                <h5 class="uxg-h5">Category</h5>
-                <button mat-button (click)="demoFilter.clearSelection()" *ngIf="filterMap?.length" color="accent" dense>
-                    Clear All
-                </button>
-            </div>
+    <div class="filter-panel-tree">
+      <div class="filter-panel-tree-title">
+        <h5 class="uxg-h5">Category</h5>
+        <button mat-button (click)="demoFilter.clearSelection()" *ngIf="filterMap?.length" color="accent" dense>
+          Clear All
+        </button>
+      </div>
 
-            <uxg-filter-tree [datasource]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-tree>
-        </div>
-    </mat-drawer>
+      <uxg-filter-tree [datasource]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-tree>
+    </div>
+  </mat-drawer>
 
-    <mat-drawer-content class="demo-container">
-        <div class="filter-panel-action">
-            <button mat-stroked-button color="primary" dense (click)="filterPanel.toggle()"
-                matBadge="{{filterMap?.length || null}}" matBadgePosition="before" matBadgeColor="primary">
-                <mat-icon>filter_list</mat-icon>
-                Filter
-            </button>
-        </div>
+  <mat-drawer-content class="demo-container">
+    <div class="filter-panel-action">
+      <button
+        mat-stroked-button
+        color="primary"
+        dense
+        (click)="filterPanel.toggle()"
+        matBadge="{{ filterMap?.length || null }}"
+        matBadgePosition="before"
+        matBadgeColor="primary"
+      >
+        <mat-icon>filter_list</mat-icon>
+        Filter
+      </button>
+    </div>
 
-        <pre>{{filterMap | json}}</pre>
-    </mat-drawer-content>
+    <pre>{{ filterMap | json }}</pre>
+  </mat-drawer-content>
 </mat-drawer-container>
 
 <h2>Description</h2>
@@ -79,60 +87,60 @@
 
 <h2>Properties</h2>
 <table class="documentation">
-    <tbody>
-        <tr class="header">
-            <td>Name</td>
-            <td>Description</td>
-        </tr>
-        <tr>
-            <td>@Input()<br>datasource:TreeNode[]</td>
-            <td>An array of tree node.</td>
-        </tr>
-        <tr>
-            <td>@Output()<br>change: EventEmitter&lt;any&gt;</td>
-            <td>Event emitted when the tree state change.</td>
-        </tr>
-    </tbody>
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>@Input()<br />datasource:TreeNode[]</td>
+      <td>An array of tree node.</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />change: EventEmitter&lt;any&gt;</td>
+      <td>Event emitted when the tree state change.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h3>TreeNode Interface</h3>
 <table class="documentation">
-    <tbody>
-        <tr class="header">
-            <td>Property</td>
-            <td>Type</td>
-            <td>Optional</td>
-            <td>Description</td>
-        </tr>
-        <tr>
-            <td>label</td>
-            <td>string</td>
-            <td>no</td>
-            <td>The display value for the node.</td>
-        </tr>
-        <tr>
-            <td>children</td>
-            <td>TreeNode[]</td>
-            <td>yes</td>
-            <td>The nested tree node.</td>
-        </tr>
-    </tbody>
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Optional</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>string</td>
+      <td>no</td>
+      <td>The display value for the node.</td>
+    </tr>
+    <tr>
+      <td>children</td>
+      <td>TreeNode[]</td>
+      <td>yes</td>
+      <td>The nested tree node.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Methods</h2>
 <table class="documentation">
-    <tbody>
-        <tr class="header">
-            <td>Name</td>
-            <td>Description</td>
-        </tr>
-        <tr>
-            <td>clearSelection</td>
-            <td>Clear selected node.</td>
-        </tr>
-        <tr>
-            <td>toggleAllNode</td>
-            <td>Collapse all node.</td>
-        </tr>
-    </tbody>
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>clearSelection</td>
+      <td>Clear selected node.</td>
+    </tr>
+    <tr>
+      <td>toggleAllNode</td>
+      <td>Collapse all node.</td>
+    </tr>
+  </tbody>
 </table>

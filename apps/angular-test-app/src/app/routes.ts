@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'global-search', component: GlobalSearchDemoComponent, data: { title: 'Global Search Demo' } },
   { path: 'table', component: TableDemoComponent, data: { title: 'Table Demo' } },
   { path: 'popover', component: PopoverDemoComponent, data: { title: 'Popover Demo' } },
-  { path: 'filter-panel', component: FilterPanelDemoComponent, data: { title: 'Filter Demo' } },
+  { path: 'filter-panel', component: FilterPanelDemoComponent, data: { title: 'Filter Demo' } }
 ];

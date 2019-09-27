@@ -16,7 +16,6 @@ export interface TreeNode {
   styleUrls: ['./filter-tree.component.scss']
 })
 export class FilterTreeComponent {
-
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checklistSelection: SelectionModel<TreeNode>;
@@ -36,7 +35,7 @@ export class FilterTreeComponent {
 
   constructor() {
     this.checklistSelection = new SelectionModel<TreeNode>(true);
-    this.checklistSelection.changed.subscribe((changes) => {
+    this.checklistSelection.changed.subscribe(changes => {
       changes.added.forEach((node: TreeNode) => {
         node.parent = this.getParentNode(node);
       });
@@ -47,7 +46,7 @@ export class FilterTreeComponent {
         added: changes.added,
         removed: changes.removed
       });
-    })
+    });
   }
 
   clearSelection() {
@@ -60,9 +59,7 @@ export class FilterTreeComponent {
 
   descendantsAllSelected(node: TreeNode): boolean {
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.every(child =>
-      this.checklistSelection.isSelected(child)
-    );
+    const descAllSelected = descendants.every(child => this.checklistSelection.isSelected(child));
     return descAllSelected;
   }
 
@@ -78,9 +75,7 @@ export class FilterTreeComponent {
     this.checklistSelection.isSelected(node)
       ? this.checklistSelection.select(...descendants)
       : this.checklistSelection.deselect(...descendants);
-    descendants.every(child =>
-      this.checklistSelection.isSelected(child)
-    );
+    descendants.every(child => this.checklistSelection.isSelected(child));
     this.checkAllParentsSelection(node);
   }
 
@@ -100,9 +95,7 @@ export class FilterTreeComponent {
   checkRootNodeSelection(node: TreeNode): void {
     const nodeSelected = this.checklistSelection.isSelected(node);
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.every(child =>
-      this.checklistSelection.isSelected(child)
-    );
+    const descAllSelected = descendants.every(child => this.checklistSelection.isSelected(child));
     if (nodeSelected && !descAllSelected) {
       this.checklistSelection.deselect(node);
     } else if (!nodeSelected && descAllSelected) {
@@ -120,7 +113,7 @@ export class FilterTreeComponent {
           }
         });
       }
-    })
+    });
     return parentNode;
   }
 
@@ -128,5 +121,5 @@ export class FilterTreeComponent {
     return this.getParentNode(node) ? false : true;
   }
 
-  hasChild = (_: number, node: TreeNode) => (node.children && node.children.length);
+  hasChild = (_: number, node: TreeNode) => node.children && node.children.length;
 }

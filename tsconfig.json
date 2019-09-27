@@ -10,42 +10,20 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ffdc/devkit": [
-        "dist/devkit/"
-      ],
-      "@ffdc/uxg-angular-components": [
-        "libs/angular-components/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/global-search": [
-        "libs/angular-components/global-search/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/scroll-to-top": [
-        "libs/angular-components/scroll-to-top/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/table": [
-        "libs/angular-components/table/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/popover": [
-        "libs/angular-components/popover/src/index.ts"
-      ],
-      "@ffdc/uxg-angular-components/filter-panel": [
-        "libs/angular-components/src/filter-panel/src/index.ts"
-      ]
+      "@ffdc/devkit": ["dist/devkit/"],
+      "@ffdc/uxg-angular-components": ["libs/angular-components/index.ts"],
+      "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/global-search/src/index.ts"],
+      "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top/src/index.ts"],
+      "@ffdc/uxg-angular-components/table": ["libs/angular-components/table/src/index.ts"],
+      "@ffdc/uxg-angular-components/popover": ["libs/angular-components/popover/src/index.ts"],
+      "@ffdc/uxg-angular-components/filter-panel": ["libs/angular-components/src/filter-panel/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

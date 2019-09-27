@@ -12,21 +12,14 @@ import { MaterialModule } from './material.module';
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MaterialModule,
-    ComponentsModule,
-    RouterModule.forRoot(routes),
-  ],
+  imports: [CommonModule, MaterialModule, ComponentsModule, RouterModule.forRoot(routes)],
   declarations: [
     HomeComponent,
     GlobalSearchDemoComponent,
     TableDemoComponent,
     PopoverDemoComponent,
-    FilterPanelDemoComponent,
+    FilterPanelDemoComponent
   ],
-  exports: [
-    RouterModule,
-  ]
+  exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

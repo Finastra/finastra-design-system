@@ -13,7 +13,7 @@ import {
   MatButtonToggleModule,
   MatBadgeModule,
   MatInputModule,
-  MatFormFieldModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -34,7 +34,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatButtonToggleModule,
     MatBadgeModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule {}

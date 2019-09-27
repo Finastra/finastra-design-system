@@ -25,7 +25,7 @@ describe('FilterTreeModule', () => {
         MatIconModule,
         MatButtonModule,
         MatTreeModule,
-        MatIconModule,
+        MatIconModule
       ],
       declarations: [FilterTreeComponent]
     }).compileComponents();
@@ -47,7 +47,7 @@ describe('FilterTreeModule', () => {
           },
           {
             label: 'Money Movement'
-          },
+          }
         ]
       }
     ];
@@ -74,7 +74,7 @@ describe('FilterTreeModule', () => {
     for (const i in ob) {
       if (!ob.hasOwnProperty(i)) continue;
 
-      if ((typeof ob[i]) === 'object') {
+      if (typeof ob[i] === 'object') {
         const flatObject = flattenObject(ob[i]);
         for (const x in flatObject) {
           if (!flatObject.hasOwnProperty(x)) continue;
@@ -85,11 +85,17 @@ describe('FilterTreeModule', () => {
       }
     }
     return toReturn;
-  };
+  }
 
   it('should contain mock items', () => {
-    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource).join("").replace(/\s/g, '').toLowerCase();
-    const treeElContent = filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g, '').toLowerCase();
+    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource)
+      .join('')
+      .replace(/\s/g, '')
+      .toLowerCase();
+    const treeElContent = filterTreeEl.textContent
+      .replace('expand_more', '')
+      .replace(/\s/g, '')
+      .toLowerCase();
     expect(treeElContent).toEqual(expectedTreeNodeItemsLabels);
   });
 
@@ -100,7 +106,7 @@ describe('FilterTreeModule', () => {
     });
     const treeNode = component.dataSource.data[0];
     component.checklistSelection.toggle(treeNode);
-    filterTreeDe.triggerEventHandler("click", null);
+    filterTreeDe.triggerEventHandler('click', null);
     expect(selectedNodeEvent.added[0].label).toEqual(treeNode.label);
   });
 });

@@ -2,13 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterTreeComponent } from './filter-tree.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatCheckboxModule,
-  MatChipsModule,
-  MatIconModule,
-  MatButtonModule,
-  MatTreeModule,
-} from '@angular/material';
+import { MatCheckboxModule, MatChipsModule, MatIconModule, MatButtonModule, MatTreeModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -19,9 +13,9 @@ import {
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
-    MatTreeModule,
+    MatTreeModule
   ],
   declarations: [FilterTreeComponent],
   exports: [FilterTreeComponent]
 })
-export class FilterTreeModule { }
+export class FilterTreeModule {}

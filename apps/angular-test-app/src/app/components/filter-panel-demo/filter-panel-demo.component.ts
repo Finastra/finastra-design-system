@@ -7,14 +7,13 @@ import { sampleFilterTree, TreeNode } from './filter-panel-demo.sample-data';
   styleUrls: ['./filter-panel-demo.component.scss']
 })
 export class FilterPanelDemoComponent implements OnInit {
-
   sampleData = [];
   filterArray: string[] = [];
   groupValue: string;
-  initialGroupState = "api";
+  initialGroupState = 'api';
   filterMap = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.groupValue = this.initialGroupState;
@@ -22,16 +21,20 @@ export class FilterPanelDemoComponent implements OnInit {
   }
 
   updateFilter(changes: any[]) {
-    changes["added"].forEach((node: TreeNode) => {
+    changes['added'].forEach((node: TreeNode) => {
       if (!node.children) {
-        const concatLabel = ((node.parent ? node.parent.label + "_" : "") + node.label).replace(/\s/g, "").toLowerCase();
+        const concatLabel = ((node.parent ? node.parent.label + '_' : '') + node.label)
+          .replace(/\s/g, '')
+          .toLowerCase();
         this.filterMap.push(concatLabel);
       }
     });
 
-    changes["removed"].forEach((node: TreeNode) => {
+    changes['removed'].forEach((node: TreeNode) => {
       if (!node.children) {
-        const concatLabel = ((node.parent ? node.parent.label + "_" : "") + node.label).replace(/\s/g, "").toLowerCase();
+        const concatLabel = ((node.parent ? node.parent.label + '_' : '') + node.label)
+          .replace(/\s/g, '')
+          .toLowerCase();
         for (let i = this.filterMap.length - 1; i >= 0; i--) {
           if (this.filterMap[i] === concatLabel) {
             this.filterMap.splice(i, 1);
