@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { FilterTreeComponent } from './filter-tree.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

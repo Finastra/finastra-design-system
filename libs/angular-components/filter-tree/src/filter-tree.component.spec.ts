@@ -70,13 +70,13 @@ describe('FilterTreeModule', () => {
   });
 
   function flattenObject(ob) {
-    let toReturn = [];
-    for (let i in ob) {
+    const toReturn = [];
+    for (const i in ob) {
       if (!ob.hasOwnProperty(i)) continue;
 
       if ((typeof ob[i]) === 'object') {
         const flatObject = flattenObject(ob[i]);
-        for (let x in flatObject) {
+        for (const x in flatObject) {
           if (!flatObject.hasOwnProperty(x)) continue;
           toReturn.push(flatObject[x]);
         }
