@@ -1,0 +1,73 @@
+@mixin uxg-global-search-colors($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  $global-search-primary-color: mat-color($primary, default);
+  $global-search-text-color: map-get($foreground, text);
+  $global-search-background: map-get($background, dialog);
+
+  .uxg-global-search-overlay-backdrop {
+    background: rgba($global-search-background, 0.95);
+  }
+
+  uxg-global-search-overlay {
+    .uxg-global-search-results-area {
+      .uxg-global-search-result-group-header {
+        .uxg-global-search-result-group-counter {
+          opacity: 0.4;
+        }
+      }
+    }
+    .uxg-global-search-results-counter {
+      opacity: 0.4;
+    }
+    .uxg-global-search-input-area {
+      .uxg-global-search-input {
+        .mat-form-field-label {
+          color: rgba($global-search-text-color, 0.4);
+        }
+      }
+    }
+  }
+}
+
+@mixin uxg-global-search-typography($config: null) {
+  @if $config == null {
+    $config: uxg-typography-config();
+  }
+
+  uxg-global-search-overlay {
+    .uxg-global-search-input-area {
+      .uxg-global-search-input {
+        @include mat-typography-level-to-styles($config, h2);
+        font-weight: bold;
+        font-feature-settings: "liga" 0, "clig" 0;
+        .mat-form-field-label {
+          @include mat-typography-level-to-styles($config, h2);
+        }
+      }
+      .uxg-global-search-icon {
+        font-size: mat-font-size($config, h1);
+      }
+    }
+    .uxg-global-search-results-area {
+      .uxg-global-search-result-group-header {
+        .uxg-global-search-result-group-counter {
+          @include mat-typography-level-to-styles($config, display-6);
+        }
+      }
+    }
+    .uxg-global-search-results-filter {
+      @include mat-typography-level-to-styles($config, body-1);
+    }
+    .uxg-global-search-results-counter {
+      @include mat-typography-level-to-styles($config, body-1);
+    }
+  }
+}
+
+@mixin uxg-global-search-theme($theme) {
+    @include uxg-global-search-colors($theme);
+    @include uxg-global-search-typography();
+}

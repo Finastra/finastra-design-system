@@ -1,0 +1,76 @@
+.uxg-global-search-overlay-pane {
+  width: 100%;
+  uxg-global-search-overlay {
+    .uxg-global-search-input-area {
+      justify-content: center;
+      align-items: center;
+      .uxg-global-search-input {
+        width: 50%;
+      }
+      .uxg-global-search-icon {
+        height: 99px;
+        display: flex;
+        align-items: center;
+        opacity: 0.4;
+        margin-right: 15px;
+      }
+    }
+    .uxg-global-search-close-overlay-button {
+      button {
+        float: right;
+        margin: 12px;
+        width: 60px;
+        height: 60px;
+        opacity: 0.4;
+        .mat-button-wrapper {
+          width: 48px;
+          height: 48px;
+          .mat-icon {
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 48px;
+          }
+        }
+      }
+    }
+    .uxg-global-search-results-area {
+      overflow: auto;
+      padding: 1rem 5rem 2rem;
+      .uxg-global-search-result-group-header {
+        display: flex;
+        padding-top: 20px;
+        .uxg-global-search-result-group-counter {
+          margin-left: 10px;
+          margin-top: -2px;
+        }
+      }
+      .uxg-global-search-result-group-container {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+        .uxg-global-search-result-item {
+          cursor: pointer;
+          margin: 10px 20px 10px 0;
+        }
+      }
+    }
+    .uxg-global-search-results-filter {
+      padding: 0 5rem;
+      overflow: auto;
+      .mat-checkbox {
+        padding: 5px 0;
+      }
+    }
+    .uxg-global-search-results-counter {
+      display: flex;
+      align-items: center;
+      padding-left: 5rem;
+    }
+    .cdk-global-scrollblock {
+      position: initial;
+      width: initial;
+      overflow: hidden;
+    }
+  }
+}
