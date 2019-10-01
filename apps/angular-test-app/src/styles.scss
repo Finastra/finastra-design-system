@@ -2,8 +2,6 @@
 @import '../../../libs/angular-components/global-search/src/global-search.theme';
 @import '../../../libs/angular-components/popover/src/popover.theme';
 
-@import '~@uxg/fonts/all';
-
 @include uxg-global-search-theme($uxg-light-theme);
 @include uxg-popover-theme($uxg-light-theme);
 
