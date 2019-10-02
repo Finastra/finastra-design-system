@@ -24,13 +24,11 @@ enum ShowStatus {
 })
 export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   @Input() customTemplate: TemplateRef<any>;
-  @Input() showAfter: number = 500;
+  @Input() showAfter = 500;
 
   @Input() parentElementSelector: string;
 
-  @Output() onClick = new EventEmitter<Event>();
-
-  showButton: boolean = false;
+  showButton = false;
   scroll$: Subscription;
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
   parent: any;
@@ -59,7 +57,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
         distinctUntilChanged(),
         share()
       )
-      .subscribe(state => this.state$.next(state));
+      .subscribe(s => this.state$.next(s));
   }
 
   ngOnDestroy() {
@@ -68,9 +66,8 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  handleClick(event) {
+  onClick(event) {
     this.scrollToTop();
-    this.onClick.emit(event);
   }
 
   scrollToTop() {

@@ -2,8 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ScrollToTopModule } from 'libs/angular-components/scroll-to-top/src/scroll-to-top.module';
 import { AppComponent } from './app.component';
+import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 
 describe('AppComponent', () => {
 
