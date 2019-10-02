@@ -29,6 +29,9 @@
         }
       }
     }
+    .uxg-global-search-close-overlay-button {
+      opacity: 0.4;
+    }
   }
 }
 
@@ -41,7 +44,6 @@
     .uxg-global-search-input-area {
       .uxg-global-search-input {
         @include mat-typography-level-to-styles($config, h2);
-        font-weight: bold;
         font-feature-settings: "liga" 0, "clig" 0;
         .mat-form-field-label {
           @include mat-typography-level-to-styles($config, h2);

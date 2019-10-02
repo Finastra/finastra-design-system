@@ -1,3 +1,5 @@
+$close-button-size: 48px;
+
 .uxg-global-search-overlay-pane {
   width: 100%;
   uxg-global-search-overlay {
@@ -6,6 +8,7 @@
       align-items: center;
       .uxg-global-search-input {
         width: 50%;
+        height: 200px;
       }
       .uxg-global-search-icon {
         height: 99px;
@@ -21,15 +24,14 @@
         margin: 12px;
         width: 60px;
         height: 60px;
-        opacity: 0.4;
         .mat-button-wrapper {
-          width: 48px;
-          height: 48px;
+          width: $close-button-size;
+          height: $close-button-size;
           .mat-icon {
-            width: 48px;
-            height: 48px;
-            line-height: 48px;
-            font-size: 48px;
+            width: $close-button-size;
+            height: $close-button-size;
+            line-height: $close-button-size;
+            font-size: $close-button-size;
           }
         }
       }
