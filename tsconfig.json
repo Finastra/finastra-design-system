@@ -4,7 +4,6 @@
     "rootDir": ".",
     "allowJs": true,
     "sourceMap": true,
-    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
