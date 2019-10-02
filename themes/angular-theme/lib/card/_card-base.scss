@@ -30,10 +30,6 @@ $mat-card-padding: $uxg-spacing-3;
 .mat-card {
   padding: $mat-card-padding;
 
-  & + .mat-card {
-    margin-left: $uxg-spacing-2;
-  }
-
   .uxg-card-image-overlay {
     position: relative;
     margin: 0 (-$mat-card-padding) $uxg-spacing-3 (-$mat-card-padding);
