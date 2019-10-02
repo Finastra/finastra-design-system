@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollToTopComponent } from './scroll-to-top.component';
 import { MatButtonModule, MatIconModule } from '@angular/material';
+import { WINDOW, _window } from './window.token';
 
 @NgModule({
-  imports: [BrowserAnimationsModule, CommonModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule],
   declarations: [ScrollToTopComponent],
-  exports: [ScrollToTopComponent]
+  exports: [ScrollToTopComponent],
+  providers: [{ provide: WINDOW, useFactory: _window }]
 })
 export class ScrollToTopModule {}

@@ -17,6 +17,6 @@
 
 # Per components owners
 /libs/angular-components/global-search/     @aifrim
-/libs/angular-components/scroll-to-top/     @aifrim
+/libs/angular-components/scroll-to-top/     @rbordeanu
 /libs/angular-components/table/             @Ping-YUAN
 /libs/angular-components/popover/           @rbordeanu

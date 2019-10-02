@@ -9,6 +9,6 @@ import { PopoverModule } from './popover/src/popover.module';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule]
+  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule, ScrollToTopModule]
 })
 export class ComponentsModule {}

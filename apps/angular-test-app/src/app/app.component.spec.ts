@@ -1,17 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import {
-  MatCardModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatButtonModule,
-  MatListModule
-} from '@angular/material';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ScrollToTopModule } from 'libs/angular-components/scroll-to-top/src/scroll-to-top.module';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -21,6 +16,7 @@ describe('AppComponent', () => {
         MatIconModule,
         MatButtonModule,
         MatListModule,
+        ScrollToTopModule,
         RouterTestingModule,
         NoopAnimationsModule
       ],

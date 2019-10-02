@@ -1,9 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ScrollToTopComponent } from './scroll-to-top.component';
-import { CommonModule } from '@angular/common';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { MatButtonModule, MatIconModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollToTopComponent } from './scroll-to-top.component';
+import { WINDOW, _window } from './window.token';
+
 
 describe('ScrollToTopComponent', () => {
   let component: ScrollToTopComponent;
@@ -11,8 +10,9 @@ describe('ScrollToTopComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, CommonModule, MatButtonModule, MatIconModule],
-      declarations: [ScrollToTopComponent]
+      imports: [MatButtonModule, MatIconModule],
+      declarations: [ScrollToTopComponent],
+      providers: [{ provide: WINDOW, useFactory: _window }]
     }).compileComponents();
   }));
 

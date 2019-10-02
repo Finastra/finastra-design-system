@@ -1,7 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnDestroy, Output, TemplateRef, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Inject, Input, OnDestroy, Output, TemplateRef } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
+import smoothscroll from 'smoothscroll-polyfill';
+import { WINDOW } from './window.token';
 
 enum ShowStatus {
   show = 'show',
@@ -22,20 +24,31 @@ enum ShowStatus {
 })
 export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   @Input() customTemplate: TemplateRef<any>;
-  @Input() showAfter = 100;
+  @Input() showAfter: number = 500;
 
-  @Output() buttonPressed = new EventEmitter<Event>();
+  @Input() parentElementSelector: string;
 
-  showButton = false;
+  @Output() onClick = new EventEmitter<Event>();
+
+  showButton: boolean = false;
   scroll$: Subscription;
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
-  constructor() {}
+  parent: any;
+
+  constructor(@Inject(WINDOW) private window: Window) {}
 
   ngAfterViewInit() {
-    this.scroll$ = fromEvent(window, 'scroll')
+    smoothscroll.polyfill();
+
+    if (this.parentElementSelector) {
+      this.parent = document.querySelector(this.parentElementSelector);
+    } else {
+      this.parent = this.window;
+    }
+    this.scroll$ = fromEvent(this.parent, 'scroll')
       .pipe(
         throttleTime(10),
-        map(() => window.pageYOffset),
+        map(() => this.parent.pageYOffset || this.parent.scrollTop),
         map(y => {
           if (y > this.showAfter) {
             return ShowStatus.show;
@@ -46,19 +59,21 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
         distinctUntilChanged(),
         share()
       )
-      .subscribe(s => this.state$.next(s));
+      .subscribe(state => this.state$.next(state));
   }
 
   ngOnDestroy() {
-    this.scroll$.unsubscribe();
+    if (this.scroll$) {
+      this.scroll$.unsubscribe();
+    }
   }
 
   handleClick(event) {
     this.scrollToTop();
-    this.buttonPressed.emit(event);
+    this.onClick.emit(event);
   }
 
   scrollToTop() {
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    this.parent.scroll({ top: 0, left: 0, behavior: 'smooth' });
   }
 }
