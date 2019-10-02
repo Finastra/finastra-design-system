@@ -7,6 +7,6 @@ import { UxgTableModule } from './table/src/table.module';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule]
+  exports: [GlobalSearchModule, ScrollToTopModule, UxgTableModule, PopoverModule, ScrollToTopModule]
 })
 export class ComponentsModule {}

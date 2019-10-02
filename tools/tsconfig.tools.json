@@ -2,6 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "allowJs": false,
     "declaration": true,
     "esModuleInterop": true,
     "importHelpers": true,
