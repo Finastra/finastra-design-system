@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material';
 export class GlobalSearchDemoComponent implements OnInit {
   @ViewChild('uxgGlobalSearch', { static: true }) globalSearch: UxgGlobalSearch;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     const documents = [
@@ -57,7 +57,7 @@ export class GlobalSearchDemoComponent implements OnInit {
     });
 
     this.globalSearch.resultItemClick.subscribe(item => {
-      this._snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
+      this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
     });
   }
 }
