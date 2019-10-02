@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatIconModule } from '@angular/material';
 import { ScrollToTopComponent } from './scroll-to-top.component';
-import { WINDOW, _window } from './window.token';
+import { WindowWrapper, getWindow } from './window.wrapper';
 
 describe('ScrollToTopComponent', () => {
   let component: ScrollToTopComponent;
@@ -12,7 +12,7 @@ describe('ScrollToTopComponent', () => {
     TestBed.configureTestingModule({
       imports: [MatButtonModule, MatIconModule, BrowserAnimationsModule],
       declarations: [ScrollToTopComponent],
-      providers: [{ provide: WINDOW, useFactory: _window }]
+      providers: [{ provide: WindowWrapper, useFactory: getWindow }]
     }).compileComponents();
   }));
 
