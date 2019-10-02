@@ -3,7 +3,6 @@ import { AfterViewInit, Component, Input, OnDestroy, TemplateRef } from '@angula
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
 import * as smoothscroll from 'smoothscroll-polyfill';
-import { WindowWrapper } from './window.wrapper';
 
 enum ShowStatus {
   show = 'show',
@@ -33,7 +32,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
   parent: any;
 
-  constructor(private window: WindowWrapper) {}
+  constructor() {}
 
   ngAfterViewInit() {
     smoothscroll.polyfill();
@@ -41,7 +40,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
     if (this.parentElementSelector) {
       this.parent = document.querySelector(this.parentElementSelector);
     } else {
-      this.parent = this.window;
+      this.parent = window;
     }
     this.scroll$ = fromEvent(this.parent, 'scroll')
       .pipe(
