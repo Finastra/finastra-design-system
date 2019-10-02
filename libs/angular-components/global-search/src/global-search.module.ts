@@ -1,11 +1,18 @@
-import { NgModule } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatIconModule, MatListModule, MatCheckboxModule } from '@angular/material';
-
-import { UxgGlobalSearch } from './global-search.component';
+import { FormsModule } from '@angular/forms';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatListModule,
+  MatInputModule
+} from '@angular/material';
 import { GlobalSearchOverlayComponent } from './components/global-search-overlay/global-search-overlay.component';
+import { UxgGlobalSearch } from './global-search.component';
 
 @NgModule({
   imports: [
@@ -14,6 +21,9 @@ import { GlobalSearchOverlayComponent } from './components/global-search-overlay
     MatIconModule,
     MatListModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
     OverlayModule,
     FlexLayoutModule.withConfig({ useColumnBasisZero: false })
   ],
