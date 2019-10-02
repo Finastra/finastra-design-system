@@ -1,21 +1,22 @@
 <div fxLayout="column" class="uxg-global-search-overlay" fxFlexFill>
   <div fxFlex="5" class="uxg-global-search-close-overlay-button">
-    <button mat-icon-button (click)="closeSearch()" large>
+    <button mat-icon-button (click)="closeSearch()" extra-large>
       <mat-icon>clear</mat-icon>
     </button>
   </div>
   <div fxFlex="30" fxFlex.xs="15" fxLayout="row" [@slideContent]="animationState" class="uxg-global-search-input-area">
-    <div class="uxg-global-search-icon">
-      <mat-icon color="primary">search</mat-icon>
-    </div>
-    <input
-      #searchInput
-      type="text"
-      autocomplete="off"
-      spellcheck="false"
-      class="uxg-global-search-input"
-      placeholder="Search"
-    />
+    <mat-form-field floatLabel="never" class="uxg-global-search-input">
+      <mat-icon color="primary" matPrefix class="uxg-global-search-icon">search</mat-icon>
+      <input
+        matInput
+        #searchInput
+        type="search"
+        placeholder="Search"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Global search"
+      />
+    </mat-form-field>
   </div>
   <ng-container *ngIf="(results$ | async) as results">
     <ng-container *ngIf="results.length; else empty">
@@ -74,8 +75,8 @@
 
 <ng-template #defaultTemplate let-result>
   <div fxLayout="column">
-    <h5 class="uxg-subtitle-3">{{ result.title }}</h5>
-    <div class="uxg-body-4 uxg-global-search-result-body">
+    <h5 class="uxg-subtitle-1">{{ result.title }}</h5>
+    <div class="uxg-caption">
       {{ result.body }}
     </div>
   </div>
