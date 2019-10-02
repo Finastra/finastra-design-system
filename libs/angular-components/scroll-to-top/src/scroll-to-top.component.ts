@@ -2,7 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { AfterViewInit, Component, EventEmitter, Inject, Input, OnDestroy, Output, TemplateRef } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
-import smoothscroll from 'smoothscroll-polyfill';
+import * as smoothscroll from 'smoothscroll-polyfill';
 import { WINDOW } from './window.token';
 
 enum ShowStatus {
