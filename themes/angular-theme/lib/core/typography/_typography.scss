@@ -29,7 +29,8 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
   $button-2:      mat-typography-level(14px, 36px, 500),
   $button-3:      mat-typography-level(12px, 30px, 500),
   $caption:       mat-typography-level(12px, 18px, 400),
-  $overline:      mat-typography-level(10px, 16px, 500)
+  $overline:      mat-typography-level(10px, 16px, 500),
+  $input:         mat-typography-level(inherit, 1.125, 400)
 ) {
   // Declare an initial map with all of the levels.
   $config: (
@@ -53,7 +54,8 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
     button-2:       $button-2,
     button-3:       $button-3,
     caption:        $caption,
-    overline:       $overline
+    overline:       $overline,
+    input:          $input
   );
 
   // Loop through the levels and set the `font-family` of the ones that don't have one to the base.
