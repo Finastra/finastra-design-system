@@ -1,0 +1,20 @@
+$uxg-logo-width: 122px;
+$uxg-logo-height: 60px;
+
+@mixin logo-size($width, $height) {
+  width: $width;
+  height: $height;
+
+  img {
+    max-width: $width;
+    max-height: $height;
+  }
+}
+
+.uxg-logo {
+  @include logo-size($uxg-logo-width, $uxg-logo-height);
+
+  &[dense] {
+    @include logo-size($uxg-logo-width / 2, $uxg-logo-height / 2);
+  }
+}
