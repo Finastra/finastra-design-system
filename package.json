@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -44,7 +44,7 @@
     "@angular/platform-browser-dynamic": "^8.2.4",
     "@angular/router": "^8.2.4",
     "core-js": "^2.5.4",
-    "elasticlunr": "^0.9.5",
+    "elasticlunr": "github:weixsong/elasticlunr.js",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^1.9.0",

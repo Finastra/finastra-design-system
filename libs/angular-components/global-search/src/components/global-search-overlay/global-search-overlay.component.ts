@@ -20,7 +20,6 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 @Component({
   selector: 'uxg-global-search-overlay',
   templateUrl: './global-search-overlay.component.html',
-  styleUrls: ['./global-search-overlay.component.scss'],
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('slideContent', [
@@ -68,7 +67,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.searchInput.nativeElement.focus();
+    setTimeout(() => this.searchInput.nativeElement.focus());
 
     fromEvent(this.searchInput.nativeElement, 'input')
       .pipe(

@@ -1,12 +1,12 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0",
     "@angular/cdk": "^8.1.1",
     "@angular/flex-layout": "^8.0.0-beta.26",
-    "elasticlunr": "^0.9.5",
+    "elasticlunr": "github:weixsong/elasticlunr.js",
     "lodash-es": "^4.17.15",
     "smoothscroll-polyfill": "^0.4.4"
   }
