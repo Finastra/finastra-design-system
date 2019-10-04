@@ -20,10 +20,5 @@
         color: mat-color($primary, default-contrast, 0.38);
       }
     }
-
-    .uxg-toolbar-logo,
-    .uxg-toolbar-logo-small {
-      background: center / contain no-repeat url(map-get($foreground, logo));
-    }
   }
 }

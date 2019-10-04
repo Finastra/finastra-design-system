@@ -3,12 +3,8 @@ $uxg-logo-height: 60px;
 
 @mixin logo-size($width, $height) {
   width: $width;
+  min-width: $width;
   height: $height;
-
-  img {
-    max-width: $width;
-    max-height: $height;
-  }
 }
 
 .uxg-logo {

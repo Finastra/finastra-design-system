@@ -3,19 +3,6 @@
 $uxg-toolbar-height: 56px;
 $uxg-toolbar-margin: $uxg-spacing-2;
 
-$uxg-toolbar-logo-width: 122px;
-$uxg-toolbar-logo-height: 60px;
-
-@mixin uxg-toolbar-logo($width, $height) {
-  width: $width;
-  height: $height;
-
-  img {
-    max-width: $width;
-    max-height: $height;
-  }
-}
-
 .uxg-toolbar.uxg-toolbar-elevated {
   @include mat-elevation(4);
 }
@@ -23,16 +10,16 @@ $uxg-toolbar-logo-height: 60px;
 .uxg-toolbar.mat-toolbar {
   padding: 0 $uxg-toolbar-margin;
 
-  .uxg-toolbar-logo {
-    @include uxg-toolbar-logo($uxg-toolbar-logo-width, $uxg-toolbar-logo-height);
+  .uxg-logo[dense] {
+    margin-left: 30px;
+  }
 
+  .uxg-logo {
     margin-left: 70px;
   }
 
-  .uxg-toolbar-logo-small {
-    @include uxg-toolbar-logo($uxg-toolbar-logo-width / 2, $uxg-toolbar-logo-height / 2);
-
-    margin: 0 30px;
+  .uxg-breadcrumb {
+    margin-left: 30px;
   }
 
   .mat-stroked-button {
