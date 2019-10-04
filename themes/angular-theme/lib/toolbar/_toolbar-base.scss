@@ -8,18 +8,15 @@ $uxg-toolbar-margin: $uxg-spacing-2;
 }
 
 .uxg-toolbar.mat-toolbar {
-  padding: 0 $uxg-toolbar-margin;
+  padding: $uxg-spacing-0 $uxg-toolbar-margin;
 
-  .uxg-logo[dense] {
-    margin-left: 30px;
+  .uxg-logo[dense],
+  .uxg-breadcrumb {
+    margin-left: $uxg-spacing-4;
   }
 
   .uxg-logo {
-    margin-left: 70px;
-  }
-
-  .uxg-breadcrumb {
-    margin-left: 30px;
+    margin-left: $uxg-spacing-5;
   }
 
   .mat-stroked-button {
@@ -27,15 +24,15 @@ $uxg-toolbar-margin: $uxg-spacing-2;
   }
 
   & > .mat-toolbar-row {
-    padding: 0;
+    padding: $uxg-spacing-0;
   }
 
   &.mat-toolbar-single-row {
     height: $uxg-toolbar-height;
 
     > * {
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: $uxg-spacing-0;
+      margin-bottom: $uxg-spacing-0;
     }
   }
 
