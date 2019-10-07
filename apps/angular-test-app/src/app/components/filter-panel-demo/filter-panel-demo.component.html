@@ -51,7 +51,7 @@
         </button>
       </div>
 
-      <uxg-filter-tree [datasource]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-tree>
+      <uxg-filter-tree [data]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-tree>
     </div>
   </mat-drawer>
 
@@ -139,8 +139,8 @@
       <td>Clear selected node.</td>
     </tr>
     <tr>
-      <td>toggleAllNode</td>
-      <td>Collapse all node.</td>
+      <td>toggleAllNodes</td>
+      <td>Collapse all nodes.</td>
     </tr>
   </tbody>
 </table>

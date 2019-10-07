@@ -4,7 +4,7 @@
       <mat-checkbox
         class="checklist-leaf-node"
         [checked]="checklistSelection.isSelected(node)"
-        (change)="LeafItemSelectionToggle(node)"
+        (change)="leafItemSelectionToggle(node)"
         color="primary"
         disableRipple="true"
       >
@@ -18,7 +18,7 @@
         <mat-checkbox
           [checked]="descendantsAllSelected(node)"
           [indeterminate]="descendantsPartiallySelected(node)"
-          (change)="ItemSelectionToggle(node)"
+          (change)="itemSelectionToggle(node)"
           color="primary"
           disableRipple="true"
         >

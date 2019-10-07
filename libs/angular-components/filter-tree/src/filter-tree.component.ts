@@ -20,13 +20,13 @@ export class FilterTreeComponent {
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checklistSelection: SelectionModel<TreeNode>;
 
-  get datasource(): TreeNode[] {
+  get data(): TreeNode[] {
     return this.dataSource.data;
   }
 
   @Input()
-  set datasource(datasource: TreeNode[]) {
-    this.dataSource.data = datasource;
+  set data(data: TreeNode[]) {
+    this.dataSource.data = data;
   }
 
   // tslint:disable-next-line: no-output-native
@@ -53,7 +53,7 @@ export class FilterTreeComponent {
     this.checklistSelection.clear();
   }
 
-  toggleAllNode() {
+  toggleAllNodes() {
     this.treeControl.collapseAll();
   }
 
@@ -69,7 +69,7 @@ export class FilterTreeComponent {
     return result && !this.descendantsAllSelected(node);
   }
 
-  ItemSelectionToggle(node: TreeNode): void {
+  itemSelectionToggle(node: TreeNode): void {
     this.checklistSelection.toggle(node);
     const descendants = this.treeControl.getDescendants(node);
     this.checklistSelection.isSelected(node)
@@ -79,7 +79,7 @@ export class FilterTreeComponent {
     this.checkAllParentsSelection(node);
   }
 
-  LeafItemSelectionToggle(node: TreeNode): void {
+  leafItemSelectionToggle(node: TreeNode): void {
     this.checklistSelection.toggle(node);
     this.checkAllParentsSelection(node);
   }
