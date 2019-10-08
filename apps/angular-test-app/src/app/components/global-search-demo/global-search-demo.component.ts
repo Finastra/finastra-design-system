@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UxgGlobalSearch } from '@ffdc/uxg-angular-components/global-search';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'ffdc-global-search-demo',
@@ -9,11 +10,13 @@ import { UxgGlobalSearch } from '@ffdc/uxg-angular-components/global-search';
 export class GlobalSearchDemoComponent implements OnInit {
   @ViewChild('uxgGlobalSearch', { static: true }) globalSearch: UxgGlobalSearch;
 
+  constructor(private snackBar: MatSnackBar) {}
+
   ngOnInit() {
     const documents = [
       {
         accountType: 'EUR',
-        nickname: 'Personnal',
+        nickname: 'Personal Account',
         balances: [
           {
             type: 'current',
@@ -24,7 +27,7 @@ export class GlobalSearchDemoComponent implements OnInit {
       },
       {
         accountType: 'EUR',
-        nickname: 'Savings',
+        nickname: 'Savings Account',
         balances: [
           {
             type: 'current',
@@ -32,6 +35,17 @@ export class GlobalSearchDemoComponent implements OnInit {
           }
         ],
         id: '5811'
+      },
+      {
+        accountType: 'USD',
+        nickname: 'Forex Account',
+        balances: [
+          {
+            type: 'current',
+            amount: 1500
+          }
+        ],
+        id: '4127'
       }
     ];
 
@@ -43,7 +57,7 @@ export class GlobalSearchDemoComponent implements OnInit {
     });
 
     this.globalSearch.resultItemClick.subscribe(item => {
-      console.log(item);
+      this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
     });
   }
 }

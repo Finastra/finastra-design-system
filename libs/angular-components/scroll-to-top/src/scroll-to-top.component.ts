@@ -1,7 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnDestroy, Output, TemplateRef, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy, TemplateRef } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
+import * as smoothscroll from 'smoothscroll-polyfill';
 
 enum ShowStatus {
   show = 'show',
@@ -22,20 +23,29 @@ enum ShowStatus {
 })
 export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   @Input() customTemplate: TemplateRef<any>;
-  @Input() showAfter = 100;
+  @Input() showAfter = 500;
 
-  @Output() buttonPressed = new EventEmitter<Event>();
+  @Input() parentElementSelector: string;
 
   showButton = false;
   scroll$: Subscription;
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
+  parent: any;
+
   constructor() {}
 
   ngAfterViewInit() {
-    this.scroll$ = fromEvent(window, 'scroll')
+    smoothscroll.polyfill();
+
+    if (this.parentElementSelector) {
+      this.parent = document.querySelector(this.parentElementSelector);
+    } else {
+      this.parent = window;
+    }
+    this.scroll$ = fromEvent(this.parent, 'scroll')
       .pipe(
         throttleTime(10),
-        map(() => window.pageYOffset),
+        map(() => this.parent.pageYOffset || this.parent.scrollTop),
         map(y => {
           if (y > this.showAfter) {
             return ShowStatus.show;
@@ -50,15 +60,16 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.scroll$.unsubscribe();
+    if (this.scroll$) {
+      this.scroll$.unsubscribe();
+    }
   }
 
-  handleClick(event) {
+  onClick(event) {
     this.scrollToTop();
-    this.buttonPressed.emit(event);
   }
 
   scrollToTop() {
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    this.parent.scroll({ top: 0, left: 0, behavior: 'smooth' });
   }
 }
