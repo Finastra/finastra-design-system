@@ -1,4 +1,5 @@
 @import '../core/style/spacing';
+@import '../core/layout/breakpoints';
 
 $uxg-toolbar-height: 56px;
 $uxg-toolbar-margin: $uxg-spacing-2;
@@ -12,11 +13,15 @@ $uxg-toolbar-margin: $uxg-spacing-2;
 
   .uxg-logo[dense],
   .uxg-breadcrumb {
-    margin-left: $uxg-spacing-4;
+    margin-left: $uxg-spacing-2;
   }
 
   .uxg-logo {
-    margin-left: $uxg-spacing-5;
+    display: none;
+  }
+
+  .uxg-toolbar-actions {
+    display: none;
   }
 
   .mat-stroked-button {
@@ -38,5 +43,58 @@ $uxg-toolbar-margin: $uxg-spacing-2;
 
   .fill-remaining-space {
     flex: 1 1 auto;
+  }
+}
+
+/* Small Tablet */
+@media only screen and (min-width: $small-tablet-size-down) and (max-width: $small-tablet-size-up) {
+  .uxg-toolbar.mat-toolbar {
+    .uxg-logo[dense],
+    .uxg-breadcrumb {
+      margin-left: $uxg-spacing-4;
+    }
+    
+    .uxg-logo {
+      display: none;
+    }
+  }
+}
+
+/* Large Tablet */
+@media only screen and (min-width: $large-tablet-size-down) and (max-width: $large-tablet-size-up) {
+  .uxg-toolbar.mat-toolbar {
+    .uxg-logo[dense],
+    .uxg-breadcrumb {
+      margin-left: $uxg-spacing-4;
+    }
+
+    .uxg-logo {
+      display: block;
+      margin-left: $uxg-spacing-5;
+    }
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: $desktop-size-down) {
+  .uxg-toolbar.mat-toolbar {
+    .uxg-logo[dense],
+    .uxg-breadcrumb {
+      margin-left: $uxg-spacing-4;
+    }
+
+    .uxg-logo {
+      display: block;
+      margin-left: $uxg-spacing-5;
+    }
+
+    .uxg-toolbar-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .uxg-toolbar-icon-menu {
+      display: none;
+    }
   }
 }

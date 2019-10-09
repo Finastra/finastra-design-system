@@ -1,8 +1,17 @@
+@import '../core/layout/breakpoints';
+
 .uxg-breadcrumb {
   padding: 0;
+  display: flex;
+  align-items: center;
+
+  .uxg-breadcrumb-back {
+    display: none;
+  }
 
   li {
     display: inline;
+    margin: 0;
 
     &::before {
       content: '/';
@@ -25,6 +34,33 @@
   li {
     .mat-icon {
       vertical-align: middle;
+    }
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: $mobile-size-up) {
+  .uxg-breadcrumb.uxg-breadcrumb-responsive {
+    li {
+      display: none;
+    }
+
+    li:not(:last-child) {
+      @at-root {
+        .uxg-breadcrumb{
+          .uxg-breadcrumb-back {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    li:last-child {
+      display: inline;
+
+      &::before {
+        content: none;
+      }
     }
   }
 }
