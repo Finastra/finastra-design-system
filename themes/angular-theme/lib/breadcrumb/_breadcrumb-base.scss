@@ -23,10 +23,6 @@
         content: none;
       }
     }
-
-    .mat-icon {
-      opacity: 0.5;
-    }
   }
 }
 
@@ -43,23 +39,19 @@
   .uxg-breadcrumb.uxg-breadcrumb-responsive {
     li {
       display: none;
-    }
-
-    li:not(:last-child) {
-      @at-root {
-        .uxg-breadcrumb {
-          .uxg-breadcrumb-back {
-            display: inline;
-          }
-        }
-      }
-    }
-
-    li:last-child {
-      display: inline;
 
       &::before {
         content: none;
+      }
+
+      &:nth-last-of-type(1) {
+        display: inline;
+      }
+    }
+
+    .uxg-breadcrumb-back {
+      &:not(:nth-last-child(2)) {
+        display: inline;
       }
     }
   }
