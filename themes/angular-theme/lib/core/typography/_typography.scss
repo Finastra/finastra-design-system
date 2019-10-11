@@ -123,7 +123,8 @@ $secondary-font: '"futura-pt", "Futura EF", Futura, "Arial Black", "Century Goth
     @include mat-typography-level-to-styles($config, subtitle-2);
   }
 
-  .uxg-body-1 {
+  .uxg-body-1,
+  #{$selector} p {
     @include mat-typography-level-to-styles($config, body-1);
   }
 
