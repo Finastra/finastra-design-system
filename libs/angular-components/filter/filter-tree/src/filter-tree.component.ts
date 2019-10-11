@@ -28,7 +28,7 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit {
       this.changes.emit({
         added: changes.added,
         removed: changes.removed
-      })
+      });
     });
   }
 
@@ -69,7 +69,6 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit {
   leafItemSelectionToggle(node: TreeNode): void {
     this.checkListSelection.toggle(node);
     this.checkAllParentsSelection(node);
-
   }
 
   checkAllParentsSelection(node: TreeNode): void {
