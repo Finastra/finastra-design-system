@@ -46,12 +46,12 @@
     <div class="filter-panel-tree">
       <div class="filter-panel-tree-title">
         <h5 class="uxg-h5">Category</h5>
-        <button mat-button (click)="demoFilter.clearSelection()" *ngIf="filterMap?.length" color="accent" dense>
+        <button mat-button (click)="demoFilter.clearSelection()" *ngIf="filterExpression?.length" color="accent" dense>
           Clear All
         </button>
       </div>
 
-      <uxg-filter-tree [data]="sampleData" (change)="updateFilter($event)" #demoFilter></uxg-filter-tree>
+      <uxg-filter-tree [data]="sampleData" (changes)="updateFilter($event)" #demoFilter></uxg-filter-tree>
     </div>
   </mat-drawer>
 
@@ -62,7 +62,7 @@
         color="primary"
         dense
         (click)="filterPanel.toggle()"
-        matBadge="{{ filterMap?.length || null }}"
+        matBadge="{{ filterExpression?.length || null }}"
         matBadgePosition="before"
         matBadgeColor="primary"
       >
@@ -71,7 +71,7 @@
       </button>
     </div>
 
-    <pre>{{ filterMap | json }}</pre>
+    <pre>{{ filterExpression | json }}</pre>
   </mat-drawer-content>
 </mat-drawer-container>
 

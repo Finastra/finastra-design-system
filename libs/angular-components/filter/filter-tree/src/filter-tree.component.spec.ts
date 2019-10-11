@@ -52,7 +52,7 @@ describe('FilterTreeModule', () => {
       }
     ];
 
-    component.datasource = expectedFilterTreeDataSource;
+    component.data = expectedFilterTreeDataSource;
 
     fixture.detectChanges();
   }));
@@ -60,7 +60,7 @@ describe('FilterTreeModule', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterTreeComponent);
     component = fixture.componentInstance;
-    component.datasource = expectedFilterTreeDataSource;
+    component.data = expectedFilterTreeDataSource;
     fixture.detectChanges();
   });
 
@@ -101,11 +101,11 @@ describe('FilterTreeModule', () => {
 
   it('should raise selected node when clicked (triggerEventHandler)', () => {
     let selectedNodeEvent: any;
-    component.change.subscribe((event: EventEmitter<any>) => {
+    component.changes.subscribe((event: EventEmitter<any>) => {
       selectedNodeEvent = event;
     });
     const treeNode = component.dataSource.data[0];
-    component.checklistSelection.toggle(treeNode);
+    component.checkListSelection.toggle(treeNode);
     filterTreeDe.triggerEventHandler('click', null);
     expect(selectedNodeEvent.added[0].label).toEqual(treeNode.label);
   });

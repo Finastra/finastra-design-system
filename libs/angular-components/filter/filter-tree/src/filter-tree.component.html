@@ -3,7 +3,7 @@
     <li class="mat-tree-node" [class.tree-divider]="isRootNode(node)">
       <mat-checkbox
         class="checklist-leaf-node"
-        [checked]="checklistSelection.isSelected(node)"
+        [checked]="checkListSelection.isSelected(node)"
         (change)="leafItemSelectionToggle(node)"
         color="primary"
         disableRipple="true"
