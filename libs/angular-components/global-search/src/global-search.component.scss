@@ -1,3 +1,8 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+
+@import './global-search.theme';
+@include uxg-global-search-theme($uxg-light-theme);
+
 $close-button-size: 48px;
 
 .uxg-global-search-overlay-pane {

@@ -1,0 +1,2 @@
+@mixin uxg-<%= filename %>-colors($theme) {
+}
