@@ -26,6 +26,8 @@
     "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
+    "add:component": "nx workspace-schematic angular-component",
+    "postadd:component": "nx format:write",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "nx": "nx",
