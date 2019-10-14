@@ -19,6 +19,18 @@
     },
     "angular-theme": {
       "tags": []
+    },
+    "global-search": {
+      "tags": []
+    },
+    "popover": {
+      "tags": []
+    },
+    "scroll-to-top": {
+      "tags": []
+    },
+    "table": {
+      "tags": []
     }
   }
 }

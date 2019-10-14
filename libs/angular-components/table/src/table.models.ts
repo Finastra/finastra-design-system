@@ -1,4 +1,5 @@
 import { Sort, SortDirection } from '@angular/material';
+
 export class UxgSort implements Sort {
   active: string;
   direction: SortDirection;

@@ -18,11 +18,10 @@
     "baseUrl": ".",
     "paths": {
       "@ffdc/devkit": ["dist/devkit/"],
-      "@ffdc/uxg-angular-components": ["libs/angular-components/index.ts"],
-      "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/global-search/src/index.ts"],
-      "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top/src/index.ts"],
-      "@ffdc/uxg-angular-components/table": ["libs/angular-components/table/src/index.ts"],
-      "@ffdc/uxg-angular-components/popover": ["libs/angular-components/popover/src/index.ts"]
+      "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/global-search"],
+      "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top"],
+      "@ffdc/uxg-angular-components/table": ["libs/angular-components/table"],
+      "@ffdc/uxg-angular-components/popover": ["libs/angular-components/popover"]
     }
   },
   "exclude": ["node_modules", "tmp"]
