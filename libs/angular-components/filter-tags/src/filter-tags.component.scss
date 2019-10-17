@@ -1,0 +1,32 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+@import './filter-tags.theme';
+@include uxg-filter-tags-theme($uxg-light-theme);
+
+.chip-list {
+  width: 100%;
+}
+
+.filter-tags-header {
+  width: 100%;
+}
+
+.filter-tags-body {
+  width: 100%
+}
+
+:host ::ng-deep .mat-form-field-infix {
+  padding-bottom: 0px !important;
+  border-top: 12px solid transparent !important;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+  height: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: transparent !important;
+}
+
+:host ::ng-deep .mat-form-field-ripple {
+  background-color: transparent !important;
+}

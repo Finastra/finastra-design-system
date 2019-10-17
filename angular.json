@@ -297,6 +297,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "filter-tags": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter-tags",
+      "sourceRoot": "libs/angular-components/filter-tags",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter-tags/tsconfig.lib.json",
+              "libs/angular-components/filter-tags/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter-tags/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter-tags/jest.config.js",
+            "tsConfig": "libs/angular-components/filter-tags/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter-tags/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

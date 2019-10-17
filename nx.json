@@ -31,6 +31,9 @@
     },
     "table": {
       "tags": []
+    },
+    "filter-tags": {
+      "tags": []
     }
   }
 }

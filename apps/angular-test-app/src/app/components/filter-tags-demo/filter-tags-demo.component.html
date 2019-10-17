@@ -1,0 +1,11 @@
+<div class="ffdc-filter-tags-demo-div">
+  <!-- <div class="ffdc-filter-tags-demo-title">Filter Tags Demo</div> -->
+
+  <uxg-filter-tags
+    [data]="dataDemo"
+    (change)="changeFilter($event)"
+  >
+  </uxg-filter-tags>
+
+  <pre>{{ chosenTags | json }}</pre>
+</div>
