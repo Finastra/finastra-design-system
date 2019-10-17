@@ -17,6 +17,9 @@
     "angular-components": {
       "tags": []
     },
+    "angular-core": {
+      "tags": []
+    },
     "angular-theme": {
       "tags": []
     },
