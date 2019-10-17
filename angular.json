@@ -141,6 +141,32 @@
         }
       }
     },
+    "angular-core": {
+      "projectType": "library",
+      "root": "libs/angular-components/core",
+      "sourceRoot": "libs/angular-components/core",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/core/tsconfig.lib.json",
+              "libs/angular-components/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/core/jest.config.js",
+            "tsConfig": "libs/angular-components/core/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/core/test-setup.ts"
+          }
+        }
+      }
+    },
     "angular-theme": {
       "projectType": "library",
       "root": "themes/angular-theme",
