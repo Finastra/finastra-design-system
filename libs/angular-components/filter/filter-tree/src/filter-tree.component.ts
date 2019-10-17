@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
-import { UXGFilter } from '../../uxg-filter';
+import { UXGFilter } from '@ffdc/uxg-angular-components/filter/models';
 
 export interface TreeNode {
   label: string;

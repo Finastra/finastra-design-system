@@ -9,6 +9,7 @@
 @import '../../icon/icon-theme';
 @import '../../link/link-theme';
 @import '../../list/list-theme';
+@import '../../logo/logo-theme';
 @import '../../menu/menu-theme';
 @import '../../sidenav/sidenav-theme';
 @import '../../table/table-theme';
@@ -66,6 +67,7 @@
   @include uxg-icon-theme($theme);
   @include uxg-link-theme($theme);
   @include uxg-list-theme($theme);
+  @include uxg-logo-theme($theme);
   @include uxg-menu-theme($theme);
   @include uxg-sidenav-theme($theme);
   @include uxg-table-theme($theme);

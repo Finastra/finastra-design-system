@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { MatTable, PageEvent, MatCheckbox } from '@angular/material';
 
-import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './utils';
+import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({

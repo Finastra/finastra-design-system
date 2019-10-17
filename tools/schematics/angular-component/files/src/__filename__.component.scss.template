@@ -1,0 +1,3 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+@import './<%= filename %>.theme';
+@include uxg-<%= filename %>-theme($uxg-light-theme);

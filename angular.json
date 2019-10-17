@@ -133,14 +133,6 @@
             "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
           }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/angular-components/jest.config.js",
-            "tsConfig": "libs/angular-components/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/test-setup.ts"
-          }
         }
       },
       "schematics": {
@@ -178,6 +170,161 @@
       },
       "schematics": {
         "@ffdc/angular:theme": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "global-search": {
+      "projectType": "library",
+      "root": "libs/angular-components/global-search",
+      "sourceRoot": "libs/angular-components/global-search",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/global-search/tsconfig.lib.json",
+              "libs/angular-components/global-search/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/global-search/jest.config.js",
+            "tsConfig": "libs/angular-components/global-search/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/global-search/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "popover": {
+      "projectType": "library",
+      "root": "libs/angular-components/popover",
+      "sourceRoot": "libs/angular-components/popover",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/popover/tsconfig.lib.json",
+              "libs/angular-components/popover/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/popover/jest.config.js",
+            "tsConfig": "libs/angular-components/popover/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/popover/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "scroll-to-top": {
+      "projectType": "library",
+      "root": "libs/angular-components/scroll-to-top",
+      "sourceRoot": "libs/angular-components/scroll-to-top",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/scroll-to-top/tsconfig.lib.json",
+              "libs/angular-components/scroll-to-top/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js",
+            "tsConfig": "libs/angular-components/scroll-to-top/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/scroll-to-top/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "table": {
+      "projectType": "library",
+      "root": "libs/angular-components/table",
+      "sourceRoot": "libs/angular-components/table",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/table/tsconfig.lib.json",
+              "libs/angular-components/table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/table/jest.config.js",
+            "tsConfig": "libs/angular-components/table/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/table/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "filter-tree": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter/filter-tree",
+      "sourceRoot": "libs/angular-components/filter/filter-tree",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
+              "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/filter-tree/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/filter-tree/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
           "styleext": "scss"
         }
       }

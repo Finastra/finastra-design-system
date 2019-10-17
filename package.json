@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.13.4",
+  "version": "0.13.6",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -26,6 +26,8 @@
     "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
+    "add:component": "nx workspace-schematic angular-component",
+    "postadd:component": "nx format:write",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "nx": "nx",
@@ -44,7 +46,7 @@
     "@angular/platform-browser-dynamic": "^8.2.4",
     "@angular/router": "^8.2.4",
     "core-js": "^2.5.4",
-    "elasticlunr": "github:weixsong/elasticlunr.js",
+    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^1.9.0",

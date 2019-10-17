@@ -28,10 +28,10 @@ export function registerLocalPackage(dest: string, packageName: string) {
       const paths = tsconfig.compilerOptions.paths[packageName];
 
       const packages = new Set(paths);
-      packages.add(`${dest}/src/index.ts`);
+      packages.add(dest);
 
       if (packages.size !== paths.length) {
-        paths.push(`${dest}/src/index.ts`);
+        paths.push(dest);
       }
     });
   };

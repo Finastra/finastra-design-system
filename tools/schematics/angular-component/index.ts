@@ -18,7 +18,8 @@ import { Schema } from './schema';
 import { join } from 'path';
 import { readFile } from 'fs-extra';
 
-import { registerLocalPackage, addToNgModule } from '../../utils';
+import { registerLocalPackage, addToIndex, addToNgJson } from '../../utils';
+import { updateJsonInTree } from '@nrwl/workspace';
 
 export default function(schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
@@ -40,6 +41,7 @@ export default function(schema: Schema): Rule {
         ...strings,
         className: classNamePrefix,
         filename,
+        scssFilename: `_${filename}`,
         version: pkg.version,
         author: `${user.name} <${user.email}>`
       }),
@@ -47,10 +49,21 @@ export default function(schema: Schema): Rule {
     ]);
 
     return chain([
-      addToNgModule({
-        modulePath: 'libs/angular-components/components.module.ts',
-        module: `${classNamePrefix}Module`,
-        filename: `${filename}/${filename}.module`
+      addToIndex({
+        indexPath: 'libs/angular-components/index.ts',
+        filename
+      }),
+      addToNgJson({
+        projectName: filename
+      }),
+      updateJsonInTree(`nx.json`, json => {
+        return {
+          ...json,
+          projects: {
+            ...json.projects,
+            [filename]: { tags: [] }
+          }
+        };
       }),
       mergeWith(templateSource),
       registerLocalPackage(dest, `@ffdc/uxg-angular-components/${filename}`)
