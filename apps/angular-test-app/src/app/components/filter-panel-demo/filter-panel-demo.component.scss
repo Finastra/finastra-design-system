@@ -1,0 +1,104 @@
+.uxg-h5 {
+    margin: 22px 0 22px !important;
+}
+
+.filter-panel-container {
+    height: 100%;
+    border: 1px solid rgba(0,0,0,.04);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+
+.filter-panel-side {
+    width: auto !important;
+    min-width: 352px;
+    max-width: 450px;
+}
+
+.filter-panel-side-header {
+    min-height: 196px;
+    background-color: #fafafa;
+}
+
+.filter-panel-side-title {
+    padding: 25px 0 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    h3 {
+        margin-top: 0px;
+    }
+}
+
+.uxg-filtering-toggle-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-panel-action {
+    display: flex;
+    align-items: center;
+}
+
+.filter-panel-tree {
+    padding: 0 25px 0 25px;
+}
+
+.filter-panel-tree-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.demo-container {
+    padding: 32px;
+}
+
+.filter-panel-tags {
+    padding: 0 25px 0 25px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+:host ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0;
+}
+:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { 
+    padding: 0.4em 0px !important;
+}
+:host ::ng-deep .mat-form-field-label-wrapper { 
+    top: -1.5em;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+.filter-panel-tags-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.documentation{
+    width: 50%;
+    border-collapse: collapse;
+    tr{
+        font-family: Roboto, sans-serif;
+        border-bottom: 1px solid #E6ECF1;
+        td{
+            padding: 8px;
+        }
+        &.header{
+            color: #9DAAB6;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            border-bottom: 2px solid #E6ECF1;
+            white-space: nowrap;
+        }
+    }
+}

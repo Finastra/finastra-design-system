@@ -1,6 +1,6 @@
 <div class="filter-tags-block">
   <div class="filter-tags-header">
-    <div class="filter-tags-title"><h5 class='uxg-h5'>Tags</h5></div>  
+    <div class="filter-tags-title"><h5 class="uxg-h5">Tags</h5></div>
     <button class="clear-filters" (click)="clearSelection()">
       Clear all
     </button>
@@ -8,13 +8,7 @@
   <div class="filter-tags-body">
     <mat-form-field class="chip-list" appearance="standard">
       <mat-chip-list #chipList aria-label="Tags selection">
-        <mat-chip
-          dense
-          selected
-          *ngFor="let tag of selectedData"
-          [removable]="removable"
-          (removed)="remove(tag)"
-        >
+        <mat-chip dense selected *ngFor="let tag of selectedData" [removable]="removable" (removed)="remove(tag)">
           {{ tag }}
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>

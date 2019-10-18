@@ -119,12 +119,12 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit, On
     this.trigger.openPanel();
   }
 
-  onOpen() {
+  onOpen($event) {
     this.inputPlaceholder = this.placeholder.placeholderOnFocus;
     this.cdr.detectChanges();
   }
 
-  onClose() {
+  onClose($event) {
     this.inputPlaceholder = this.placeholder.placeholderOnBlur;
     this.cdr.detectChanges();
   }

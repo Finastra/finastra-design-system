@@ -3,10 +3,6 @@
   $primary: map-get($theme, primary);
 
   .uxg-toolbar {
-    .mat-icon-button {
-      color: mat-color($foreground, text, 0.75);
-    }
-
     .uxg-toolbar-icon-menu {
       color: mat-color($foreground, text, 0.38);
     }

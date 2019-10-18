@@ -41,6 +41,7 @@ export default function(schema: Schema): Rule {
         ...strings,
         className: classNamePrefix,
         filename,
+        scssFilename: `_${filename}`,
         version: pkg.version,
         author: `${user.name} <${user.email}>`
       }),
