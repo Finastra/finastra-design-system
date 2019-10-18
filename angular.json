@@ -141,6 +141,32 @@
         }
       }
     },
+    "angular-core": {
+      "projectType": "library",
+      "root": "libs/angular-components/core",
+      "sourceRoot": "libs/angular-components/core",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/core/tsconfig.lib.json",
+              "libs/angular-components/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/core/jest.config.js",
+            "tsConfig": "libs/angular-components/core/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/core/test-setup.ts"
+          }
+        }
+      }
+    },
     "angular-theme": {
       "projectType": "library",
       "root": "themes/angular-theme",
@@ -289,6 +315,37 @@
             "jestConfig": "libs/angular-components/table/jest.config.js",
             "tsConfig": "libs/angular-components/table/tsconfig.spec.json",
             "setupFile": "libs/angular-components/table/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "filter-tree": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter/filter-tree",
+      "sourceRoot": "libs/angular-components/filter/filter-tree",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
+              "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/filter-tree/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/filter-tree/test-setup.ts"
           }
         }
       },
