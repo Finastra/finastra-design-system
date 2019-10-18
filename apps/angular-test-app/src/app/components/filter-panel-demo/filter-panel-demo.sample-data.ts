@@ -1,8 +1,4 @@
-export interface TreeNode {
-  label: string;
-  children?: TreeNode[];
-  parent?: TreeNode;
-}
+import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
 
 export const sampleFilterTree: TreeNode[] = [
   {
