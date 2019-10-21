@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core';
 
 import { FilterTagsComponent } from './filter-tags.component';
 import { CommonModule } from '@angular/common';
-import { MatAutocompleteModule, MatChipsModule, MatFormFieldModule, MatIconModule } from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule
+} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -13,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatChipsModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [FilterTagsComponent]
 })

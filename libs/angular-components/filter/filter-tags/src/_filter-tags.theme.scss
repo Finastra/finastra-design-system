@@ -1,0 +1,23 @@
+@mixin uxg-filter-tags-theme($theme) {
+  $primary: map-get($theme, primary);
+  $filter-tags-background-color: mat-color($primary, default, .15);
+
+  .chip-list {
+    width: 100%;
+  }
+  
+  .mat-chip.mat-standard-chip {
+    padding: 3px 8px 3px 12px;
+    margin: 0px 4px 16px 4px;
+  }
+
+  .mat-chip.mat-standard-chip .mat-chip-remove {
+    margin: 5px 0px 5px 8px;
+  }
+
+  .selected-option-highlight,
+  .selected-option-highlight.mat-selected {
+    background-color: $filter-tags-background-color !important;
+    font-weight: 400;
+  }
+}

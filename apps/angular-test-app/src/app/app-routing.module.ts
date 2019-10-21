@@ -6,7 +6,7 @@ import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 import { PopoverModule } from '@ffdc/uxg-angular-components/popover';
 import { FilterTreeModule } from '@ffdc/uxg-angular-components/filter/filter-tree';
-import { FilterTagsModule, FilterTagsComponent } from '@ffdc/uxg-angular-components/filter-tags';
+import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tags';
 
 import { routes } from './routes';
 import { MaterialModule } from './material.module';
@@ -15,7 +15,6 @@ import { HomeComponent } from './components/home/home.component';
 import { PopoverDemoComponent } from './components/popover-demo/popover-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 
-import { FilterTagsDemoComponent } from './components/filter-tags-demo/filter-tags-demo.component';
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 
 @NgModule({
@@ -35,8 +34,7 @@ import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-
     GlobalSearchDemoComponent,
     TableDemoComponent,
     PopoverDemoComponent,
-    FilterPanelDemoComponent,
-    FilterTagsDemoComponent
+    FilterPanelDemoComponent
   ],
   exports: [RouterModule]
 })

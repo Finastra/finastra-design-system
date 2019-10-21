@@ -3,7 +3,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterTagsComponent } from './filter-tags.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatChipsModule, MatAutocompleteModule, MatFormFieldModule } from '@angular/material';
+import {
+  MatIconModule,
+  MatChipsModule,
+  MatAutocompleteModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 describe('FilterTagsModule', () => {
   let component: FilterTagsComponent;
@@ -19,6 +25,7 @@ describe('FilterTagsModule', () => {
         MatChipsModule,
         MatAutocompleteModule,
         MatFormFieldModule,
+        MatInputModule,
         BrowserAnimationsModule
       ]
     }).compileComponents();

@@ -11,6 +11,8 @@ export class FilterPanelDemoComponent implements OnInit {
   filterExpression: string[] = [];
   groupValue: string;
   initialGroupState = 'api';
+  tagsSampleData = ['Malauzai', 'North America', 'Money Movement', 'Static Data'];
+  chosenTags: string[] = [];
 
   constructor() {}
 
@@ -25,5 +27,9 @@ export class FilterPanelDemoComponent implements OnInit {
 
   onGroupChange(val: string) {
     this.groupValue = val;
+  }
+
+  updateFilterTags(tags: string[]) {
+    this.chosenTags = tags;
   }
 }

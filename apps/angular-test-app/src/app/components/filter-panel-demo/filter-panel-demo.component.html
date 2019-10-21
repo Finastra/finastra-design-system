@@ -31,16 +31,12 @@
 
     <div class="filter-panel-tags">
       <div class="filter-panel-tags-title">
-        <h5 class="uxg-h5">Tags (in progress)</h5>
-        <button mat-button color="accent" *ngIf="false" dense>
-          Clear All
+        <h5 class="uxg-h5">Tags</h5>
+        <button mat-button (click)="demoFilterTags.clearSelectedTags()" color="accent" dense>
+          Clear all
         </button>
       </div>
-
-      <mat-form-field appearance="outline">
-        <mat-label> <mat-icon>search</mat-icon> Filter by tags </mat-label>
-        <input matInput />
-      </mat-form-field>
+      <uxg-filter-tags [data]="tagsSampleData" (changes)="updateFilterTags($event)" #demoFilterTags> </uxg-filter-tags>
     </div>
 
     <div class="filter-panel-tree">
@@ -71,6 +67,10 @@
       </button>
     </div>
 
+    <h5 class="uxg-h5">Filter Tags Results</h5>
+    <pre>{{ chosenTags | json }}</pre>
+
+    <h5 class="uxg-h5">Filter Tree Results</h5>
     <pre>{{ filterExpression | json }}</pre>
   </mat-drawer-content>
 </mat-drawer-container>

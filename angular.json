@@ -326,26 +326,26 @@
     },
     "filter-tags": {
       "projectType": "library",
-      "root": "libs/angular-components/filter-tags",
-      "sourceRoot": "libs/angular-components/filter-tags",
+      "root": "libs/angular-components/filter/filter-tags",
+      "sourceRoot": "libs/angular-components/filter/filter-tags",
       "prefix": "uxg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/angular-components/filter-tags/tsconfig.lib.json",
-              "libs/angular-components/filter-tags/tsconfig.spec.json"
+              "libs/angular-components/filter/filter-tags/tsconfig.lib.json",
+              "libs/angular-components/filter/filter-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter-tags/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter-tags/jest.config.js",
-            "tsConfig": "libs/angular-components/filter-tags/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter-tags/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/filter-tags/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/filter-tags/test-setup.ts"
           }
         }
       },
