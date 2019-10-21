@@ -26,7 +26,7 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   placeholder = 'Input text';
 
   @ViewChild('tagInput', { static: false }) input: ElementRef<HTMLInputElement>;
-  @ViewChild('auto', { static: false }) autocomplete: MatAutocomplete;
+  @ViewChild(MatAutocomplete, { static: false }) autocomplete: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: false }) trigger: MatAutocompleteTrigger;
 
   constructor() {
@@ -62,6 +62,7 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   }
 
   remove(tag: string) {
+    this.trigger.closePanel();
     const index = this.selectedData.indexOf(tag);
     if (index >= 0) {
       this.changes.emit({ added: [], removed: [this.selectedData[index]] });
@@ -69,7 +70,7 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
     }
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
+  onSelected(event: MatAutocompleteSelectedEvent) {
     if (this.selectedData.indexOf(event.option.viewValue) === -1) {
       this.selectedData.push(event.option.viewValue);
       this.changes.emit({ added: [event.option.viewValue], removed: [] });
@@ -79,7 +80,7 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
     this.formCtrl.setValue(null);
   }
 
-  clearSelectedTags() {
+  clearSelection() {
     this.changes.emit({ added: [], removed: [...this.selectedData] });
     this.selectedData.length = 0;
   }

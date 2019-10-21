@@ -11,10 +11,10 @@
     <input
       matInput
       type="text"
-      placeholder="{{ placeholder }}"
+      [placeholder]="placeholder"
       #tagInput
       [formControl]="formCtrl"
-      [matAutocomplete]="auto"
+      [matAutocomplete]="autocomplete"
       [matChipInputFor]="chipList"
       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
       [matChipInputAddOnBlur]="addOnBlur"
@@ -22,12 +22,12 @@
       (click)="onClick()"
     />
   </mat-form-field>
-  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+  <mat-autocomplete #autocomplete (optionSelected)="onSelected($event)">
     <mat-option
       *ngFor="let tag of (filteredTags$ | async)"
       [value]="tag"
       [ngClass]="{
-        'selected-option-highlight': selectedData.indexOf(tag.trim()) > -1
+        'selected-option-highlight': selectedData.includes(tag)
       }"
     >
       {{ tag }}
