@@ -12,12 +12,15 @@
 .uxg-side-badge {
   &.mat-badge-medium.mat-badge-after span.mat-badge-content {
     @include uxg-side-badge-base();
+
     border-radius: 12px;
     padding: 0 8px;
     margin: 0 8px;
   }
+
   &.mat-badge-large.mat-badge-after span.mat-badge-content {
     @include uxg-side-badge-base();
+
     border-radius: 14px;
     padding: 2px 12px;
     margin: 0 10px;
