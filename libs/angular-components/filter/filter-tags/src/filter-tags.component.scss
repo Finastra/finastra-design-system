@@ -1,0 +1,4 @@
+@import '../../../../../themes/angular-theme/uxg-app-theme';
+@import './filter-tags.theme';
+
+@include uxg-filter-tags-theme($uxg-light-theme);

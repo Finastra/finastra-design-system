@@ -31,16 +31,12 @@
 
     <div class="filter-panel-tags">
       <div class="filter-panel-tags-title">
-        <h5 class="uxg-h5">Tags (in progress)</h5>
-        <button mat-button color="accent" *ngIf="false" dense>
-          Clear All
+        <h5 class="uxg-h5">Tags</h5>
+        <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>
+          Clear all
         </button>
       </div>
-
-      <mat-form-field appearance="outline">
-        <mat-label> <mat-icon>search</mat-icon> Filter by tags </mat-label>
-        <input matInput />
-      </mat-form-field>
+      <uxg-filter-tags [data]="tagsSampleData" (changes)="updateFilterTags($event)" #demoFilterTags> </uxg-filter-tags>
     </div>
 
     <div class="filter-panel-tree">
@@ -71,6 +67,10 @@
       </button>
     </div>
 
+    <h5 class="uxg-h5">Filter Tags Results</h5>
+    <pre>{{ chosenTags | json }}</pre>
+
+    <h5 class="uxg-h5">Filter Tree Results</h5>
     <pre>{{ filterExpression | json }}</pre>
   </mat-drawer-content>
 </mat-drawer-container>
@@ -78,7 +78,10 @@
 <h2>Description</h2>
 <p>The filter panel is a composition of several filter components</p>
 <p>In this example we composed a filter using <code>uxg-filter-tree</code> component</p>
+and one using <code>uxg-filter-tags</code> component.
 <p>The idea is to have multiple filter component to allow the composition of complex filter</p>
+
+<hr />
 
 <h3>Filter tree</h3>
 <p>The <code>uxg-filter-tree</code> component is based on the <code>mat-tree</code> from angular material.</p>
@@ -141,6 +144,48 @@
     <tr>
       <td>toggleAllNodes</td>
       <td>Collapse all nodes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3>Filter tags</h3>
+<p>
+  The <code>uxg-filter-tags</code> component is based on <code>mat-autocomplete</code> and
+  <code>mat-chip-list</code> from angular material.
+</p>
+<p>It takes a <code>datasource</code> as input, this input is an Array of strings displayed in the select list.</p>
+<p>The output is the change object.</p>
+
+<h2>Properties</h2>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>@Input()<br />datasource:string[]</td>
+      <td>An array of strings.</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />changes: EventEmitter&lt;any&gt;</td>
+      <td>Event emitted when items are added or removed from the list of selected items.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Methods</h2>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>clearSelection</td>
+      <td>Clear selected items.</td>
     </tr>
   </tbody>
 </table>
