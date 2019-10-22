@@ -14,6 +14,10 @@
 
     .mat-icon {
       color: mat-color($foreground, text, 0.25);
+
+      &:hover {
+        color: mat-color($primary, default);
+      }
     }
 
     .mat-ripple-element {
@@ -45,6 +49,10 @@
 
         .mat-chip-remove {
           opacity: 0.75;
+
+          &:hover {
+            color: mat-color($primary, default, 0.5);
+          }
         }
       }
     }
