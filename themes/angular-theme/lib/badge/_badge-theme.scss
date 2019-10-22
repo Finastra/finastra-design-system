@@ -9,12 +9,23 @@
 }
 
 @mixin uxg-badge-typography($config) {
-  .uxg-side-badge.mat-badge-medium.mat-badge-after {
-    .mat-badge-content {
-      line-height: 16px;
-      font: {
-        size: 10px;
-        weight: 300;
+  .uxg-side-badge {
+    &.mat-badge-medium.mat-badge-after {
+      .mat-badge-content {
+        line-height: 16px;
+        font: {
+          size: 10px;
+          weight: 300;
+        }
+      }
+    }
+    &.mat-badge-large.mat-badge-after {
+      .mat-badge-content {
+        line-height: 22px;
+        font: {
+          size: 14px;
+          weight: 400;
+        }
       }
     }
   }
