@@ -1,21 +1,14 @@
+
 @mixin uxg-filter-tags-theme($theme) {
   $primary: map-get($theme, primary);
   $filter-tags-background-color: mat-color($primary, default, .12);
 
   mat-form-field {
-    margin-top: 4px;
+    margin-top: $uxg-spacing-1;
   }
+
   .chip-list {
     width: 100%;
-  }
-
-  .mat-chip.mat-standard-chip {
-    padding: 3px 8px 3px 12px;
-    margin: 0px 4px 12px 4px;
-  }
-
-  .mat-chip.mat-standard-chip .mat-chip-remove {
-    margin: 5px 0px 5px 8px;
   }
 
   .mat-option {
