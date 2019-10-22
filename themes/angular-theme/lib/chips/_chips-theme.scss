@@ -74,4 +74,12 @@
   .mat-chip[dense] {
     @include mat-typography-level-to-styles($config, caption);
   }
+
+  .mat-chip[extra-small] {
+    font: {
+      family: mat-font-family($config, overline);
+      size: mat-font-size($config, overline);
+      weight: mat-font-weight($config, caption);
+    }
+  }
 }

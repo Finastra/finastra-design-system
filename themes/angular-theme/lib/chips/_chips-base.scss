@@ -1,8 +1,17 @@
 $chip-min-height-dense: 25px;
 $chip-font-size-dense: 12px;
 
+$chip-min-height-extra-small: 20px;
+$chip-font-size-extra-small: 10px;
+
 .mat-chip[dense],
 *[dense] .mat-chip {
   min-height: $chip-min-height-dense;
   font-size: $chip-font-size-dense;
+}
+
+.mat-chip[extra-small],
+*[extra-small] .mat-chip {
+  min-height: $chip-min-height-extra-small;
+  font-size: $chip-font-size-extra-small;
 }
