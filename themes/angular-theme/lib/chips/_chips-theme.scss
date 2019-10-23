@@ -14,10 +14,6 @@
 
     .mat-icon {
       color: mat-color($foreground, text, 0.25);
-
-      &:hover {
-        color: mat-color($primary, default);
-      }
     }
 
     .mat-ripple-element {
