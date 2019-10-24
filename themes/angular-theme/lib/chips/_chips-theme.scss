@@ -72,6 +72,8 @@
   }
 
   .mat-chip[dense] {
-    @include mat-typography-level-to-styles($config, caption);
+    @include mat-typography-level-to-styles($config, overline);
+
+    font-weight: mat-font-weight($config, body-3);
   }
 }
