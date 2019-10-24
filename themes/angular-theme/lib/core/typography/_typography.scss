@@ -23,8 +23,10 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
   $h6:            mat-typography-level(14px, 16px, 700, $secondary-font),
   $subtitle-1:    mat-typography-level(16px, 24px, 500),
   $subtitle-2:    mat-typography-level(14px, 21px, 500),
+  $subtitle-3:    mat-typography-level(12px, 18px, 500),
   $body-1:        mat-typography-level(16px, 30px, 300),
   $body-2:        mat-typography-level(14px, 21px, 300),
+  $body-3:        mat-typography-level(12px, 18px, 300),
   $button-1:      mat-typography-level(16px, 42px, 500),
   $button-2:      mat-typography-level(14px, 36px, 500),
   $button-3:      mat-typography-level(12px, 30px, 500),
@@ -48,8 +50,10 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
     h6:             $h6,
     subtitle-1:     $subtitle-1,
     subtitle-2:     $subtitle-2,
+    subtitle-3:     $subtitle-3,
     body-1:         $body-1,
     body-2:         $body-2,
+    body-3:         $body-3,
     button-1:       $button-1,
     button-2:       $button-2,
     button-3:       $button-3,
@@ -123,6 +127,10 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
     @include mat-typography-level-to-styles($config, subtitle-2);
   }
 
+  .uxg-subtitle-3 {
+    @include mat-typography-level-to-styles($config, subtitle-3);
+  }
+
   .uxg-body-1,
   #{$selector} p {
     @include mat-typography-level-to-styles($config, body-1);
@@ -130,6 +138,10 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
 
   .uxg-body-2 {
     @include mat-typography-level-to-styles($config, body-2);
+  }
+
+  .uxg-body-3 {
+    @include mat-typography-level-to-styles($config, body-3);
   }
 
   .uxg-display-1 {
