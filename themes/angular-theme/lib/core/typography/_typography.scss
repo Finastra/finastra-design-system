@@ -131,8 +131,7 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
     @include mat-typography-level-to-styles($config, subtitle-3);
   }
 
-  .uxg-body-1,
-  #{$selector} p {
+  .uxg-body-1 {
     @include mat-typography-level-to-styles($config, body-1);
   }
 
