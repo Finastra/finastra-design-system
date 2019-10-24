@@ -23,6 +23,7 @@
       "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top"],
       "@ffdc/uxg-angular-components/table": ["libs/angular-components/table"],
       "@ffdc/uxg-angular-components/popover": ["libs/angular-components/popover"],
+      "@ffdc/uxg-angular-components/filter/filter-tags": ["libs/angular-components/filter/filter-tags"],
       "@ffdc/uxg-angular-components/filter/filter-tree": ["libs/angular-components/filter/filter-tree"]
     }
   },

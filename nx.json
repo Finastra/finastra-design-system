@@ -35,6 +35,9 @@
     "table": {
       "tags": []
     },
+    "filter-tags": {
+      "tags": []
+    },
     "filter-tree": {
       "tags": []
     }
