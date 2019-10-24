@@ -1,13 +1,35 @@
-.uxg-side-badge.mat-badge-medium.mat-badge-after span.mat-badge-content {
+@import '../core/style/spacing';
+
+$side-badge-border-width: 1px;
+$side-badge-radius-standard: 12px;
+$side-badge-radius-large: 14px;
+$side-badge-min-width-large: 14px;
+
+@mixin uxg-side-badge-base() {
   position: relative;
   border-style: solid;
-  border-width: 1px;
-  border-radius: 12px;
+  border-width: $side-badge-border-width;
   height: unset;
   width: unset;
   top: unset;
   right: unset;
-  padding: 0 8px;
   vertical-align: middle;
-  margin: 0 8px;
+  margin: 0 $uxg-spacing-2;
+}
+
+.uxg-side-badge {
+  &.mat-badge-medium.mat-badge-after span.mat-badge-content {
+    @include uxg-side-badge-base();
+
+    border-radius: $side-badge-radius-standard;
+    padding: 0 $uxg-spacing-2;
+  }
+
+  &.mat-badge-large.mat-badge-after span.mat-badge-content {
+    @include uxg-side-badge-base();
+
+    border-radius: $side-badge-radius-large;
+    padding: 2px 12px;
+    min-width: $side-badge-min-width-large;
+  }
 }
