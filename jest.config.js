@@ -4,11 +4,11 @@ module.exports = {
   verbose: true,
   testMatch: ['**/+(*.)+(spec|test).+ts'],
   moduleFileExtensions: ['ts', 'js', 'html'],
-  preset: "jest-preset-angular",
+  preset: 'jest-preset-angular',
   resolver: '@nrwl/jest/plugins/resolver',
   transform: {
     '^.+\\.(ts|js|html)$': 'ts-jest',
-    [`(${babelModules}).+\\.js$`]: 'babel-jest',
+    [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
   testEnvironment: 'jest-environment-jsdom-thirteen',
   reporters: [
@@ -22,7 +22,7 @@ module.exports = {
   },
   // Coverage
   collectCoverage: true,
-  coverageReporters: ['json', "html"],
+  coverageReporters: ['json', 'html'],
   coverageThreshold: {
     // global: {
     //   branches: 60,
@@ -31,4 +31,4 @@ module.exports = {
     //   statements: 80
     // }
   }
-}
+};
