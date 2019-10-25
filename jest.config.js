@@ -1,4 +1,3 @@
-const esModules = ['lodash-es', '@ngrx'].join('|');
 const babelModules = ['lodash-es'].join('|');
 
 module.exports = {
@@ -11,9 +10,6 @@ module.exports = {
     '^.+\\.(ts|js|html)$': 'ts-jest',
     [`(${babelModules}).+\\.js$`]: 'babel-jest',
   },
-  transformIgnorePatterns: [
-    `/node_modules/(?!${esModules})`
-  ],
   testEnvironment: 'jest-environment-jsdom-thirteen',
   reporters: [
     'default',

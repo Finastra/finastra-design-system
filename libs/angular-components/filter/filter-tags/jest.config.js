@@ -1,9 +1,12 @@
+const name = 'filter-tags';
+const suiteName = 'FilterTagsComponentModule';
+
 module.exports = {
-  name: 'filter-tags',
+  name,
   preset: '../../../../jest.config.js',
-  coverageDirectory: '../../../../coverage/libs/angular-components/filter-tags',
-  snapshotSerializers: [
-    'jest-preset-angular/AngularSnapshotSerializer.js',
-    'jest-preset-angular/HTMLCommentSerializer.js'
+  coverageDirectory: `../../../../coverage/libs/${name}`,
+    reporters: [
+    'default',
+    ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${name}.xml`, suiteName, classNameTemplate: '{classname}', titleTemplate: `${suiteName} › {classname} › {title}`, ancestorSeparator: ' › ' }]
   ]
 };
