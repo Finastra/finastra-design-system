@@ -1,9 +1,22 @@
+const name = 'popover';
+const suiteName = 'PopoverComponentModule';
+
 module.exports = {
-  name: 'popover',
+  name,
   preset: '../../../jest.config.js',
-  coverageDirectory: '../../../coverage/libs/angular-components/popover',
-  snapshotSerializers: [
-    'jest-preset-angular/AngularSnapshotSerializer.js',
-    'jest-preset-angular/HTMLCommentSerializer.js'
+  coverageDirectory: `../../../coverage/libs/${name}`,
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        outputDirectory: './testresults/',
+        outputName: `junit-${name}.xml`,
+        suiteName,
+        classNameTemplate: '{classname}',
+        titleTemplate: `${suiteName} › {classname} › {title}`,
+        ancestorSeparator: ' › '
+      }
+    ]
   ]
 };
