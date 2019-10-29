@@ -30,12 +30,12 @@ describe('ScrollToTopComponent', () => {
     fixture.detectChanges();
 
     expect(component.parent.scroll).toBeCalledWith({ top: 0, left: 0, behavior: 'smooth' });
-  })
+  });
 
   it('should be able to setup different parent than window', () => {
     component.parentElementSelector = 'mockedParent';
     component.ngAfterViewInit();
 
     expect(component.parent).not.toBe(window);
-  })
+  });
 });
