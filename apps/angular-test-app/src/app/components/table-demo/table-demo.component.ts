@@ -149,7 +149,7 @@ export class TableDemoComponent implements OnInit {
 
   // columns defination object
   columns: any[] = [
-    { name: 'API', type: 'string', align: 'left' },
+    { name: 'API', type: 'string', align: 'left', displayName: 'Display Api' },
     { name: 'End Point', type: 'string', align: 'left' },
     { name: 'Date Time', type: 'date', align: 'left' },
     { name: 'Day of Week', type: 'string', align: 'left' },

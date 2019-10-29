@@ -44,7 +44,7 @@
           right: column.align === 'right'
         }"
       >
-        {{ column.name }}
+        {{ column.displayName? column.displayName: column.name }}
       </th>
       <td
         mat-cell
@@ -60,6 +60,12 @@
           <div *ngSwitchCase="'date'">
             <mat-icon>date_range</mat-icon>
             {{ element[column.name] }}
+          </div>
+          <div *ngSwitchCase="'typedouble'">
+            <ng-container #typeDouble></ng-container>
+          </div>
+          <div *ngSwitchCase="'action_column'">
+            <ng-container #actionColumn></ng-container>
           </div>
           <div *ngSwitchDefault>{{ element[column.name] }}</div>
         </div>
@@ -80,9 +86,9 @@
     <tr mat-header-row *matHeaderRowDef="columnsToDisplayToComponent; sticky: stickyHeader"></tr>
     <tr
       mat-row
-      *matRowDef="let row; columns: columnsToDisplayToComponent"
-      (click)="singleSelectRowClick(row)"
-      [ngClass]="selections.indexOf(row) >= 0 ? 'selected' : ''"
+      *matRowDef="let row; columns: columnsToDisplayToComponent; let i"
+      (click)="singleSelectRowClick(row, i)"
+      [ngClass]=" row.uxg_table_select_status ? 'selected' : ''"
     ></tr>
     <tr
       mat-footer-row
