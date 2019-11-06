@@ -9,7 +9,6 @@ import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule, ScrollToTopModule],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

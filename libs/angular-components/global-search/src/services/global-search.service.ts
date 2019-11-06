@@ -26,7 +26,6 @@ export class GlobalSearchService {
           this.index = module.default();
           this.addFields(fields);
           this.index.setRef(ref || 'id');
-
           resolve();
         });
       } else {
