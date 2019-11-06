@@ -1,46 +1,302 @@
-<div class="ffdc-table-demo-div">
-  <uxg-table
-    [data]="dataSource"
-    [columns]="columns"
-    [columnsToDisplay]="columnsToDisplay"
-    [columnDragEnable]="dragEnable"
-    [showTotalRows]="totalEnable"
-    [totalData]="totalData"
-    [stickyFooter]="stickyFooter"
-    [pageEnable]="pageEnable"
-    (sortChange)="sortData($event)"
-    [singleSelect]="singleSelect"
-    [multiSelect]="!singleSelect"
-    (selectChange)="selectChange($event)"
-  >
-  </uxg-table>
-</div>
-
-<div fxLayout="row" fxLayoutAlign="start start" class="config-block">
-  <div fxLayout="column" fxLayoutAlign="start start">
-    <h4>Customized options</h4>
-    <div fxLayout="row">
-      <div fxLayout="column" fxLayoutAlign="space-between start">
-        <mat-slide-toggle [color]="" [checked]="dragEnable" (change)="enableDrag($event)"
-          >Enable Drag Columns</mat-slide-toggle
-        >
-        <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
-        <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
-        <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
-          >Enable customized paging</mat-slide-toggle
-        >
+<mat-drawer-container class="table-container ">
+  <div class="ffdc-table-demo-div">
+    <uxg-table
+      [data]="dataSource"
+      [columns]="columns"
+      [columnsToDisplay]="columnsToDisplay"
+      [columnDragEnable]="dragEnable"
+      [selectedKeys]="selectedIndex"
+      [showTotalRows]="totalEnable"
+      [totalData]="totalData"
+      [stickyFooter]="stickyFooter"
+      [pageEnable]="pageEnable"
+      (sortChange)="sortData($event)"
+      [singleSelect]="singleSelect"
+      [multiSelect]="!singleSelect"
+      (selectChange)="selectChange($event)"
+    >
+    </uxg-table>
+  </div>
+  
+  <div fxLayout="row" fxLayoutAlign="start start" class="config-block">
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <h4>Customized options</h4>
+      <div fxLayout="row">
+        <div fxLayout="column" fxLayoutAlign="space-between start">
+          <mat-slide-toggle [color]="" [checked]="dragEnable" (change)="enableDrag($event)"
+            >Enable Drag Columns</mat-slide-toggle
+          >
+          <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
+          <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
+          <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
+            >Enable customized paging</mat-slide-toggle
+          >
+        </div>
       </div>
     </div>
+    <div class="selection-area" fxLayout="column" fxLayoutAlign="start start">
+      <h5>Select Mode</h5>
+      <mat-radio-group fxLayout="column" [(ngModel)]="singleSelect">
+        <mat-radio-button [value]="true">single select</mat-radio-button>
+        <mat-radio-button [value]="false">multiple select</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div *ngIf="actionDiscription" class="interaction-information">
+      <h4>Information:</h4>
+      {{ actionDiscription }}
+    </div>
   </div>
-  <div class="selection-area" fxLayout="column" fxLayoutAlign="start start">
-    <h5>Select Mode</h5>
-    <mat-radio-group fxLayout="column" [(ngModel)]="singleSelect">
-      <mat-radio-button [value]="true">single select</mat-radio-button>
-      <mat-radio-button [value]="false">multiple select</mat-radio-button>
-    </mat-radio-group>
-  </div>
-  <div *ngIf="actionDiscription" class="interaction-information">
-    <h4>Information:</h4>
-    {{ actionDiscription }}
-  </div>
-</div>
+</mat-drawer-container>
+
+<h2>Description</h2>
+<p>The table component is used to display the data in table form.</p>
+<p>In this example, we compose a table using <code>uxg-table</code> component </p>
+<p>With table component, you can display data, sort data, select data, etc</p>
+
+<hr/>
+
+<h3>Table component</h3>
+<p>The <code>uxg-table</code> component is based on the <code>mat-table</code> from angular material and also integrated with finastra design system</p>
+<p>There are three necessary inputs: <code>data</code>/<code>columns</code>/<code>columnsToDisplay</code></p>
+<p>The <code>data</code> is a data array which contains the data to display in the table.</p>
+<p>The <code>columns</code> is an array which contains the configuration of each columns.</p>
+<p>The <code>columnsToDisplay</code> is an array which columns should display in the table.</p>
+
+<p>There are others input and output that you can use to control the dispay style of table and interact with the table component.</p>
+<p> See more below:</p>
+
+<h2>Properties</h2>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> data:Array&lt;any&gt;[]</td>
+      <td>An array of data.</td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> columns:Array&lt;UxgColumn&gt;[]</td>
+      <td>An array of column definiations.</td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> columnsToDisplay:Array&lt;string&gt;[]</td>
+      <td>An array of column name which indicate which column should be visable in table. </td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> totalData:any</td>
+      <td>This total input enable user customize the total cell.</td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> stickyHeader:boolean</td>
+      <td>If stick the header or not. Default <code>true</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> stickyFooter:boolean</td>
+      <td>If stick the footer or not. Defalut <code>false</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> showTotalRows:boolean</td>
+      <td>If total row should be visiable or not. Default <code>false</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> columnDragEnable:boolean</td>
+      <td>Enable column drag drop or not. Default <code>false</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> selectedKeys:number[]</td>
+      <td>The default selected rows index.</td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> singleSelect:boolean</td>
+      <td>If table enable single select or not. Default <code>true</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> multiSelect:boolean</td>
+      <td>If table enable multi select or not. Default <code>false</code><br/> single select mode has high priority than multi select mode.  </td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> pageEnable:boolean</td>
+      <td>If enable paging for the table or not. Default <code>false</code></td>
+    </tr>
+    <tr>
+      <td>@Input()<br /> paging: UxgPage</td>
+      <td>When pageEnable to table, if needed, user can pass customized paging to table component.</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />selectChange: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
+      <td>Event emitted when the selection of table changed.</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />sortChange: EventEmitter&lt;UxgSort&gt;</td>
+      <td>If customized sort needed, you can use this output to do it.</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />pageChange: EventEmitter&lt;PageEvent&gt;</td>
+      <td>If customized paging needed, you can use this ouput to do it.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Interfaces</h2>
+<h3>UxgSort</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Optional</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>active</td>
+      <td>string</td>
+      <td>no</td>
+      <td>The column name</td>
+    </tr>
+    <tr>
+      <td>direction</td>
+      <td>SortDirection</td>
+      <td>no</td>
+      <td>Angular material SortDirection interface</td>
+    </tr>
+  </tbody>
+</table>
+<h3>UxgColumn</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Optional</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>yes</td>
+      <td>the unique id of data item</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>no</td>
+      <td>Column name</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>UxgColumnType</td>
+      <td>no</td>
+      <td>Column data type refer UxgColumnType for more information</td>
+    </tr>
+    <tr>
+      <td>align</td>
+      <td>string</td>
+      <td>no</td>
+      <td>'left' | 'right' | 'center': string should be left align, number should be right align.</td>
+    </tr>
+  </tbody>
+</table>
+<h3>UxgColumnType</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>number</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>date</td>
+    </tr>
+    <tr>
+      <td>typedouble</td>
+      <td>typedouble</td>
+    </tr>
+  </tbody>
+</table>
+<h3>UxgPage</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Optional</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>boolean</td>
+      <td>yes</td>
+      <td>If paging action is disabled or not. Default <code>false</code></td>
+    </tr>
+    <tr>
+      <td>length</td>
+      <td>number</td>
+      <td>yes</td>
+      <td>the length of the data</td>
+    </tr>
+    <tr>
+      <td>hidePageSize</td>
+      <td>boolean</td>
+      <td>yes</td>
+      <td>Hide the page size or not. Default <code>false</code></td>
+    </tr>
+    <tr>
+      <td>showFirstLastButtons</td>
+      <td>boolean</td>
+      <td>yes</td>
+      <td>show first last button or not. Default <code>true</code></td>
+    </tr>
+    <tr>
+      <td>pageIndex</td>
+      <td>number</td>
+      <td>yes</td>
+      <td>Page index. Default <code>0</code></td>
+    </tr>
+    <tr>
+      <td>pageSize</td>
+      <td>number</td>
+      <td>yes</td>
+      <td>Page size. Default <code>5</code></td>
+    </tr>
+    <tr>
+      <td>pageSizeOptions</td>
+      <td>number[]</td>
+      <td>yes</td>
+      <td>Page size range. Default <code>[5, 10]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>UxgTableSelectEvent</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Optional</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>singleSelect</td>
+      <td>boolean</td>
+      <td>no</td>
+      <td>if single select mode or not. </td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>any[]</td>
+      <td>no</td>
+      <td>selected row data</td>
+    </tr>
+  </tbody>
+</table>
