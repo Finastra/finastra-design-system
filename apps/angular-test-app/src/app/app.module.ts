@@ -17,6 +17,11 @@ import { RepeaterCardChartExampleComponent } from './components/repeater-demo/re
     RepeaterCardChartExampleComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule, MatMenuModule],
+import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule, ScrollToTopModule],
   providers: [],
   exports: [RepeaterCardExampleComponent],
   entryComponents: [

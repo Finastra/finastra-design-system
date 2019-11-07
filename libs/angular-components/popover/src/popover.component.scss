@@ -1,0 +1,3 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+@import './popover.theme';
+@include uxg-popover-theme($uxg-light-theme);

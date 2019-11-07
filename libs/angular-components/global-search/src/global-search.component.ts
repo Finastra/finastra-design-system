@@ -6,7 +6,7 @@ import { SearchOverlayRef } from './components/global-search-overlay/global-sear
 @Component({
   selector: 'uxg-global-search',
   templateUrl: './global-search.component.html',
-  styleUrls: ['./global-search-base.component.scss'],
+  styleUrls: ['./global-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class UxgGlobalSearch implements OnInit {

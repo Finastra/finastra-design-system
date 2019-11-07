@@ -1,10 +1,16 @@
+[![@ffdc/uxg-angular-theme](https://img.shields.io/npm/v/@ffdc/uxg-angular-theme?label=uxg-angular-theme&style=flat-square)](https://www.npmjs.com/package/@ffdc/uxg-angular-theme)
+[![@ffdc/uxg-angular-components](https://img.shields.io/npm/v/@ffdc/uxg-angular-components?label=uxg-angular-components&style=flat-square)](https://www.npmjs.com/package/@ffdc/uxg-angular-components)
+[![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
+
 # Finastra Design System
+
+![](./.github/assets/design-kit-foundations.png)
 
 Following monorepo is composed of several assets :
 
 - Angular Material theme (Finastra branded)
 - Angular components
-- Angular Application showcasing the above
+- Test Angular Application showcasing the above
 
 ## Want to help ? 🤗❤️
 

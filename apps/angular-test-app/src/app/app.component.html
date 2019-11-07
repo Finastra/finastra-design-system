@@ -20,6 +20,9 @@
         <a mat-list-item routerLink="/popover" routerLinkActive="uxg-list-item-selected">
           <p>Popover</p>
         </a>
+        <a mat-list-item routerLink="/filter-panel" routerLinkActive="uxg-list-item-selected">
+          <p>Filter Panel</p>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -38,6 +41,7 @@
       <div class="app-content">
         <router-outlet></router-outlet>
       </div>
+      <uxg-scroll-to-top parentElementSelector="mat-sidenav-content" [showAfter]="100"></uxg-scroll-to-top>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
