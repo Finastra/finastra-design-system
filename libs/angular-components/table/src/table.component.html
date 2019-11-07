@@ -44,7 +44,7 @@
           right: column.align === 'right'
         }"
       >
-        {{ column.displayName? column.displayName: column.name }}
+        {{ column.displayName ? column.displayName : column.name }}
       </th>
       <td
         mat-cell
@@ -82,7 +82,7 @@
       mat-row
       *matRowDef="let row; columns: columnsToDisplayToComponent"
       (click)="singleSelectRowClick(row)"
-      [ngClass]=" selections.indexOf(row) > -1 ? 'selected' : ''"
+      [ngClass]="selections.indexOf(row) > -1 ? 'selected' : ''"
     ></tr>
     <tr
       mat-footer-row

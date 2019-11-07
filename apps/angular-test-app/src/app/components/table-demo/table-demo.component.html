@@ -17,7 +17,7 @@
     >
     </uxg-table>
   </div>
-  
+
   <div fxLayout="row" fxLayoutAlign="start start" class="config-block">
     <div fxLayout="column" fxLayoutAlign="start start">
       <h4>Customized options</h4>
@@ -50,20 +50,26 @@
 
 <h2>Description</h2>
 <p>The table component is used to display the data in table form.</p>
-<p>In this example, we compose a table using <code>uxg-table</code> component </p>
+<p>In this example, we compose a table using <code>uxg-table</code> component</p>
 <p>With table component, you can display data, sort data, select data, etc</p>
 
-<hr/>
+<hr />
 
 <h3>Table component</h3>
-<p>The <code>uxg-table</code> component is based on the <code>mat-table</code> from angular material and also integrated with finastra design system</p>
+<p>
+  The <code>uxg-table</code> component is based on the <code>mat-table</code> from angular material and also integrated
+  with finastra design system
+</p>
 <p>There are three necessary inputs: <code>data</code>/<code>columns</code>/<code>columnsToDisplay</code></p>
 <p>The <code>data</code> is a data array which contains the data to display in the table.</p>
 <p>The <code>columns</code> is an array which contains the configuration of each columns.</p>
 <p>The <code>columnsToDisplay</code> is an array which columns should display in the table.</p>
 
-<p>There are others input and output that you can use to control the dispay style of table and interact with the table component.</p>
-<p> See more below:</p>
+<p>
+  There are others input and output that you can use to control the dispay style of table and interact with the table
+  component.
+</p>
+<p>See more below:</p>
 
 <h2>Properties</h2>
 <table class="documentation">
@@ -73,55 +79,97 @@
       <td>Description</td>
     </tr>
     <tr>
-      <td>@Input()<br /> data:Array&lt;any&gt;[]</td>
+      <td>
+        @Input()<br />
+        data:Array&lt;any&gt;[]
+      </td>
       <td>An array of data.</td>
     </tr>
     <tr>
-      <td>@Input()<br /> columns:Array&lt;UxgColumn&gt;[]</td>
+      <td>
+        @Input()<br />
+        columns:Array&lt;UxgColumn&gt;[]
+      </td>
       <td>An array of column definiations.</td>
     </tr>
     <tr>
-      <td>@Input()<br /> columnsToDisplay:Array&lt;string&gt;[]</td>
-      <td>An array of column name which indicate which column should be visable in table. </td>
+      <td>
+        @Input()<br />
+        columnsToDisplay:Array&lt;string&gt;[]
+      </td>
+      <td>An array of column name which indicate which column should be visable in table.</td>
     </tr>
     <tr>
-      <td>@Input()<br /> totalData:any</td>
+      <td>
+        @Input()<br />
+        totalData:any
+      </td>
       <td>This total input enable user customize the total cell.</td>
     </tr>
     <tr>
-      <td>@Input()<br /> stickyHeader:boolean</td>
+      <td>
+        @Input()<br />
+        stickyHeader:boolean
+      </td>
       <td>If stick the header or not. Default <code>true</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> stickyFooter:boolean</td>
+      <td>
+        @Input()<br />
+        stickyFooter:boolean
+      </td>
       <td>If stick the footer or not. Defalut <code>false</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> showTotalRows:boolean</td>
+      <td>
+        @Input()<br />
+        showTotalRows:boolean
+      </td>
       <td>If total row should be visiable or not. Default <code>false</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> columnDragEnable:boolean</td>
+      <td>
+        @Input()<br />
+        columnDragEnable:boolean
+      </td>
       <td>Enable column drag drop or not. Default <code>false</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> selectedKeys:number[]</td>
+      <td>
+        @Input()<br />
+        selectedKeys:number[]
+      </td>
       <td>The default selected rows index.</td>
     </tr>
     <tr>
-      <td>@Input()<br /> singleSelect:boolean</td>
+      <td>
+        @Input()<br />
+        singleSelect:boolean
+      </td>
       <td>If table enable single select or not. Default <code>true</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> multiSelect:boolean</td>
-      <td>If table enable multi select or not. Default <code>false</code><br/> single select mode has high priority than multi select mode.  </td>
+      <td>
+        @Input()<br />
+        multiSelect:boolean
+      </td>
+      <td>
+        If table enable multi select or not. Default <code>false</code><br />
+        single select mode has high priority than multi select mode.
+      </td>
     </tr>
     <tr>
-      <td>@Input()<br /> pageEnable:boolean</td>
+      <td>
+        @Input()<br />
+        pageEnable:boolean
+      </td>
       <td>If enable paging for the table or not. Default <code>false</code></td>
     </tr>
     <tr>
-      <td>@Input()<br /> paging: UxgPage</td>
+      <td>
+        @Input()<br />
+        paging: UxgPage
+      </td>
       <td>When pageEnable to table, if needed, user can pass customized paging to table component.</td>
     </tr>
     <tr>
@@ -290,7 +338,7 @@
       <td>singleSelect</td>
       <td>boolean</td>
       <td>no</td>
-      <td>if single select mode or not. </td>
+      <td>if single select mode or not.</td>
     </tr>
     <tr>
       <td>data</td>

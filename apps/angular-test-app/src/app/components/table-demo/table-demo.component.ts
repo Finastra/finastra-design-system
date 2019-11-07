@@ -134,7 +134,7 @@ const ELEMENT_DATA: any[] = [
 export class TableDemoComponent implements OnInit {
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
 
-  selectedIndex = [1,2];
+  selectedIndex = [1, 2];
 
   dataSource = ELEMENT_DATA; //data
   length = ELEMENT_DATA.length;
