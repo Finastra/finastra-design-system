@@ -16,14 +16,12 @@ import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 import { PopoverModule } from '@ffdc/uxg-angular-components/popover';
 import { FilterTreeModule } from '@ffdc/uxg-angular-components/filter/filter-tree';
 import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tags';
 
-import { routes } from './routes';
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
 import { HomeComponent } from './components/home/home.component';
@@ -55,8 +53,7 @@ import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-
     MatExpansionModule,
     MatRadioModule,
     FlexLayoutModule,
-    ComponentsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
     MaterialModule,
     GlobalSearchModule,
     RouterModule.forRoot(routes),
@@ -72,7 +69,7 @@ import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-
     TableDemoComponent,
     PopoverDemoComponent,
     RepeaterDemoComponent,
-    FieldMatcherComponent
+    FieldMatcherComponent,
     FilterPanelDemoComponent
   ],
   exports: [RouterModule]

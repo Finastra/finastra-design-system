@@ -8,16 +8,8 @@ import { RepeaterCardExampleComponent } from './components/repeater-demo/repeate
 import { RepeaterCardAdvancedExampleComponent } from './components/repeater-demo/repeater-card-advanced-example/repeater-card-advanced-example.component';
 import { MatMenuModule } from '@angular/material';
 import { RepeaterCardChartExampleComponent } from './components/repeater-demo/repeater-card-chart-example/repeater-card-chart-example.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    RepeaterCardExampleComponent,
-    RepeaterCardAdvancedExampleComponent,
-    RepeaterCardChartExampleComponent
-  ],
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule, MatMenuModule],
 import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
+
 
 @NgModule({
   declarations: [AppComponent],

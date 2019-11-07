@@ -1,7 +1,6 @@
 @import '../../../themes/angular-theme/all-theme';
-@import '../../../libs/angular-components/global-search/src/global-search-theme.component';
+@import '../../../libs/angular-components/global-search/src/global-search.theme';
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
-@import '~highlight.js/styles/github.css';
 @import '../../../libs/angular-components/popover/src/popover.theme';
 
 @include uxg-global-search-theme($uxg-light-theme);
