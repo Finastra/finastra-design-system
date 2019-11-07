@@ -14,7 +14,8 @@ import {
   MatBadgeModule,
   MatInputModule,
   MatFormFieldModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatMenuModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -36,7 +37,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatBadgeModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {}
