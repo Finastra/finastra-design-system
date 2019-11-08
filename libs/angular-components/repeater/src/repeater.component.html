@@ -1,0 +1,19 @@
+<cdk-virtual-scroll-viewport autosize class="viewport" [orientation]="orientation">
+  <div
+    *cdkVirtualFor="let value of data; let odd = odd; let index = index"
+    class="repeater-item"
+    [class.alternate]="odd"
+    (click)="onClick(index, value)"
+  >
+    <uxg-component-repeater
+      [factory]="componentFactory"
+      [data]="value"
+      [columnsMatcher]="columnsMatcher"
+      [ngStyle]="{
+        'margin-right': orientation === 'horizontal' ? space : '0px',
+        'margin-bottom': orientation === 'vertical' ? space : '0px'
+      }"
+      [selected]="isSelected(index)"
+    ></uxg-component-repeater>
+  </div>
+</cdk-virtual-scroll-viewport>

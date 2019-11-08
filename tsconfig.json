@@ -18,6 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@ffdc/devkit": ["dist/devkit/"],
+      "@ffdc/uxg-angular-components": ["libs/angular-components/index.ts"],
+      "@ffdc/uxg-angular-components/repeater": ["libs/angular-components/repeater/src/index.ts"],
       "@ffdc/uxg-angular-components/core": ["libs/angular-components/core"],
       "@ffdc/uxg-angular-components/global-search": ["libs/angular-components/global-search"],
       "@ffdc/uxg-angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top"],
