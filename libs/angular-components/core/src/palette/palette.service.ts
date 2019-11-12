@@ -2,7 +2,6 @@ import { Injectable, Inject, OnDestroy } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 
 import { PaletteConfig, PALETTE_CONFIG } from './palette.models';
-import { Http2ServerRequest } from 'http2';
 
 @Injectable({
   providedIn: 'root'
