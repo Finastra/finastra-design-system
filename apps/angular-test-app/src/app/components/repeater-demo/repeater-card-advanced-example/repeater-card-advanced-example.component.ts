@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class RepeaterCardAdvancedExampleComponent implements OnInit {
   @Input() data: any;
-  @Input() columnsMatcher: Object;
+  @Input() columnsMatcher: any;
 
   constructor() {}
 
