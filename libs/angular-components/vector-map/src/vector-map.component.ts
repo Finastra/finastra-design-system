@@ -46,7 +46,9 @@ export class VectorMapComponent implements OnInit, OnDestroy {
 
   paletteConfig: PaletteConfig;
   legend: VectorMapLegend[] = [];
+
   viewId: string | null;
+  views: VectorMapView[];
 
   tooltipTop: string;
   tooltipLeft: string;
@@ -62,6 +64,7 @@ export class VectorMapComponent implements OnInit, OnDestroy {
 
     if (this.viewId) {
       this.viewChange = new EventEmitter<VectorMapView>();
+      this.views = (this.dataSource as VectorMapViewsDataSource).views;
     }
 
     this.layout = { ...DEFAULT_LAYOUT, height: this.height, width: this.width };

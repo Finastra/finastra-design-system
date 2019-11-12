@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { VectorMapDemoComponent } from './vector-map-demo.component';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 
 describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
@@ -21,6 +22,7 @@ describe('VectorMapDemoComponent', () => {
         MatSelectModule,
         MatFormFieldModule,
         MatInputModule,
+        PaletteModule,
         VectorMapModule,
         BrowserAnimationsModule
       ],
@@ -34,7 +36,7 @@ describe('VectorMapDemoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create demo table ', () => {
+  it('should create ', () => {
     expect(component).toBeTruthy();
   });
 });

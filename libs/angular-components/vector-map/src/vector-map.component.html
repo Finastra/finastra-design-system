@@ -17,10 +17,10 @@
     <div class="meta">
       <div class="meta-wrapper" fxLayout="column" fxLayoutAlign="center space-between">
         <div class="views">
-          <mat-form-field *ngIf="dataSource.views">
+          <mat-form-field *ngIf="views">
             <mat-label>View by</mat-label>
-            <mat-select (selectionChange)="onViewChange($event)" [value]="dataSource.views[0].id">
-              <mat-option *ngFor="let view of dataSource.views" [value]="view.id">
+            <mat-select (selectionChange)="onViewChange($event)" [value]="views[0].id">
+              <mat-option *ngFor="let view of views" [value]="view.id">
                 {{ view.text }}
               </mat-option>
             </mat-select>

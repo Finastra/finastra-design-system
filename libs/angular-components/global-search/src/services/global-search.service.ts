@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import * as elasticlunr from 'elasticlunr';
+import * as elasticlunrImp from 'elasticlunr';
+
+const elasticlunr = elasticlunrImp;
 
 export interface Result {
   doc: Object;

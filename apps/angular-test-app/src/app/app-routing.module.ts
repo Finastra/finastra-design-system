@@ -17,7 +17,7 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
-import { PALETTE_CONFIG } from '@ffdc/uxg-angular-components/core';
+import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 
 @NgModule({
   imports: [
@@ -25,6 +25,7 @@ import { PALETTE_CONFIG } from '@ffdc/uxg-angular-components/core';
     MaterialModule,
     GlobalSearchModule,
     RouterModule.forRoot(routes),
+    PaletteModule,
     ScrollToTopModule,
     PopoverModule,
     UxgTableModule,

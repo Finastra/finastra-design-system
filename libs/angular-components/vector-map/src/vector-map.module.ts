@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
-import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 
 import { VectorMapComponent } from './vector-map.component';
 
@@ -19,8 +18,7 @@ PlotlyModule.plotlyjs = plotlyjs;
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    PlotlyModule,
-    PaletteModule
+    PlotlyModule
   ],
   declarations: [VectorMapComponent],
   exports: [VectorMapComponent]

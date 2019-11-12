@@ -1,3 +1,4 @@
+export * from './core';
 export * from './global-search';
 export * from './popover';
 export * from './scroll-to-top';
