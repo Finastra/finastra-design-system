@@ -9,7 +9,7 @@ export const PALETTE_DEFAULT_CONFIG: PaletteConfig = {
     [0.5, 'rgb(143, 123, 225)'],
     [0.6, 'rgb(180, 166, 234)'],
     [0.7, 'rgb(217, 211, 245)'],
-    [1, 'rgb(210, 210, 210)']
+    [1, 'rgb(206, 206, 206)']
   ],
   vectorMap: {
     marker: {
