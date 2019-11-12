@@ -62,3 +62,4 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
  */
 const global = window;
 (window as any).global = global;
+(window as any).lunr = {};

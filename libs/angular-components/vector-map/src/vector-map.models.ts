@@ -13,7 +13,7 @@ export interface VectorMapViewsDataSource {
   views: VectorMapView[];
 }
 
-export type VectorMapDataSource = Partial<Country>[] | VectorMapViewsDataSource;
+export type VectorMapDataSource = (Partial<Country>[]) | VectorMapViewsDataSource;
 
 export const COUNTRIES: Country[] = [
   { name: 'Afghanistan', value: 0, code: 'AFG' },
