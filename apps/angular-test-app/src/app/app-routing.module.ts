@@ -31,9 +31,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FieldMatcherComponent } from './components/repeater-demo/field-matcher/field-matcher.component';
 import { PopoverDemoComponent } from './components/popover-demo/popover-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
-import { routes } from './routes';
 
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
+import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
+import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { PaletteModule } from '@ffdc/uxg-angular-components/core';
+import { routes } from './routes';
 
 @NgModule({
   imports: [
@@ -56,12 +59,13 @@ import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-
     MatSlideToggleModule,
     MaterialModule,
     GlobalSearchModule,
-    RouterModule.forRoot(routes),
+    PaletteModule,
     ScrollToTopModule,
     PopoverModule,
     UxgTableModule,
     FilterTagsModule,
-    FilterTreeModule
+    FilterTreeModule,
+    VectorMapModule
   ],
   declarations: [
     HomeComponent,
@@ -70,7 +74,8 @@ import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-
     PopoverDemoComponent,
     RepeaterDemoComponent,
     FieldMatcherComponent,
-    FilterPanelDemoComponent
+    FilterPanelDemoComponent,
+    VectorMapDemoComponent
   ],
   exports: [RouterModule]
 })

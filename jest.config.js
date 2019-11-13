@@ -1,4 +1,4 @@
-const babelModules = ['lodash-es'].join('|');
+const babelModules = ['lodash-es', 'plotly.js'].join('|');
 
 module.exports = {
   verbose: true,
