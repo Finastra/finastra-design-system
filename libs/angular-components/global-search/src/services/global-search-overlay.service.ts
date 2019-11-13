@@ -28,6 +28,9 @@ export class GlobalSearchOverlayService {
     const componentRef: ComponentRef<GlobalSearchOverlayComponent> = overlayRef.attach(containerPortal);
     const element: HTMLElement = <HTMLElement>componentRef.location.nativeElement;
     element.style.width = '100%';
+    componentRef.instance.searchTermChange.subscribe(value => {
+      config.searchTermChange(value);
+    });
 
     return searchOverlayRef;
   }

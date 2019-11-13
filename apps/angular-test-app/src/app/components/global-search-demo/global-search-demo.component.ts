@@ -60,4 +60,8 @@ export class GlobalSearchDemoComponent implements OnInit {
       this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
     });
   }
+
+  getEvent($event) {
+    console.log($event);
+  }
 }
