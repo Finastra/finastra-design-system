@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { SelectionModel } from '@angular/cdk/collections';
@@ -16,7 +16,7 @@ export interface TreeNode {
   templateUrl: './filter-tree.component.html',
   styleUrls: ['./filter-tree.component.scss']
 })
-export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit {
+export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checkListSelection: SelectionModel<TreeNode>;
@@ -34,6 +34,12 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit {
 
   ngOnInit() {
     this.dataSource.data = this.data;
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    if(changes){
+      this.dataSource.data = changes.data.currentValue;
+    }
   }
 
   clearSelection() {
