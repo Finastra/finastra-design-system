@@ -54,6 +54,18 @@ export class GlobalSearchService {
     }
   }
 
+  updateDoc(doc: any) {
+    if (this.index) {
+      this.index.updateDoc(doc);
+    }
+  }
+
+  removeDoc(doc: any) {
+    if (this.index) {
+      this.index.removeDoc(doc);
+    }
+  }
+
   search(query: string): any {
     if (this.index) {
       const fields = this.index.getFields().reduce((acc, item) => {
