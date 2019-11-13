@@ -6,6 +6,7 @@
   [itemDivider]="false"
   [groupDivider]="true"
   [maxItems]="5"
+  (searchTermChange)="getEvent($event)"
   itemsLayout="row"
 >
   <button mat-stroked-button type="button" (click)="uxgGlobalSearch.openSearch()" color="accent" large>

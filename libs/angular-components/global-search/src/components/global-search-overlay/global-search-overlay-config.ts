@@ -8,4 +8,5 @@ export interface SearchConfig {
   groupDivider?: boolean;
   maxItems?: number;
   itemsLayout?: 'row' | 'column';
+  searchTermChange: CallableFunction;
 }
