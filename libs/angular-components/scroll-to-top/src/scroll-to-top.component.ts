@@ -36,7 +36,6 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     smoothscroll.polyfill();
-
     if (this.parentElementSelector) {
       this.parent = document.querySelector(this.parentElementSelector);
     } else {
@@ -65,11 +64,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  onClick(event) {
-    this.scrollToTop();
-  }
-
-  scrollToTop() {
+  onClick() {
     this.parent.scroll({ top: 0, left: 0, behavior: 'smooth' });
   }
 }
