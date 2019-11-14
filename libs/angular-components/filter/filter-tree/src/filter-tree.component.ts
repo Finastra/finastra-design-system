@@ -36,8 +36,8 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, 
     this.dataSource.data = this.data;
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    if(changes){
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes) {
       this.dataSource.data = changes.data.currentValue;
     }
   }
