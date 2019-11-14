@@ -17,7 +17,7 @@ import {
 })
 export class RepeaterCardExampleComponent implements OnInit {
   @Input() data: any = {};
-  @Input() columnsMatcher: Object = {};
+  @Input() columnsMatcher: any = {};
   @Input() selected = false;
 
   constructor(private cd: ChangeDetectorRef) {}

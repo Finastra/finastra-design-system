@@ -26,7 +26,7 @@ export class RepeaterCardChartExampleComponent implements OnInit {
   private chartContainer: ElementRef;
 
   @Input() data: any;
-  @Input() columnsMatcher: Object = {};
+  @Input() columnsMatcher: any = {};
 
   margin = { top: 0, right: 0, bottom: 0, left: 10 };
 
