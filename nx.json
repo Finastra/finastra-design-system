@@ -43,6 +43,9 @@
     },
     "vector-map": {
       "tags": []
+    },
+    "repeater": {
+      "tags": []
     }
   }
 }
