@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDemoComponent } from './table-demo.component';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
-import { MatPaginatorModule, MatSlideToggleModule, MatRadioModule } from '@angular/material';
+import { MatPaginatorModule, MatSlideToggleModule, MatRadioModule, MatSidenavModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +17,7 @@ describe('TableDemoComponent', () => {
         MatPaginatorModule,
         BrowserAnimationsModule,
         MatSlideToggleModule,
+        MatSidenavModule,
         MatRadioModule,
         FormsModule
       ],
