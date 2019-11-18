@@ -15,10 +15,15 @@
 *.jpg       @studios-team
 *.svg       @studios-team
 
+# Palette service
+/libs/angular-components/core/src/palette/palette.defaults.ts   @studios-team
+
 # Per components owners
 /libs/angular-components/global-search/     @rbordeanu
 /libs/angular-components/scroll-to-top/     @rbordeanu
 /libs/angular-components/table/             @Ping-YUAN
 /libs/angular-components/popover/           @rbordeanu
+/libs/angular-components/repeater/           @xmonvoisin
 /libs/angular-components/filter-tags/       @adrian-apetrei
 /libs/angular-components/filter-tree/       @Pi5rr5
+/libs/angular-components/vector-map/        @aifrim

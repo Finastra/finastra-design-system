@@ -1,0 +1,114 @@
+.chart{
+    width: 280px;
+
+    position: relative;
+
+    .trade-chart{
+      padding: 25px 0;
+    }
+    
+    .trade-title{
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 20px;
+    }
+    svg{
+      padding: 5px 0;
+    }
+  
+    .label{
+      
+      font-weight: 600;
+       font-size: 10px;
+      text-transform: uppercase;
+      height: 20px;
+       line-height: 20px;
+       color: #747980;
+    }
+
+  
+     
+      .sell{
+        display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+        text-align: left;
+        padding: 6px 0 10px 20px;;
+        &:hover{
+          background-color: rgba(0,0,0,.1)
+        }
+        .label{
+          color: #e24c4f;
+        }
+      }
+      
+    .action{
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    .buy{
+      display: inline-block;
+      width: 50%;
+      box-sizing: border-box;
+      text-align: right;
+      padding: 6px 20px 10px 0;
+      &:hover{
+        background-color: rgba(0,0,0,.1)
+      }
+      .label{
+        color: #e24c4f;
+      }
+    }
+
+    .change{
+      position: relative;
+      margin-top: 5px;
+    }
+    .change-price{
+      display: inline-block;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 6px 0 10px 20px;
+      font-size: 14px;
+      &.right{
+        text-align: right;
+        padding: 6px 20px 10px 0;
+      }
+    }
+
+    .change-title{
+      position: absolute;
+      left: 50%;
+      top: 50%;    
+      span{
+        font-size: 12px;
+        margin-left: -50%;
+    margin-top: -8px;
+    display: block;
+      }
+    }
+    .spread{
+      position: absolute;
+      left: 50%;
+      top: 27px;
+      color: #30c296;
+      .mat-icon {
+        font-size: 52px;
+        height: 44px;
+        width: 52px;        
+        background-color: white;
+      }
+      &.down{
+        color : #e24c4f;
+      }
+      transform: translate(-50%,-50%);
+    }
+      .title{
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        color: white;
+        font-weight: bold;
+        display: block;
+        padding: 10px 15px 10px 20px;
+      }
+}

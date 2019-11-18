@@ -40,6 +40,9 @@
     },
     "filter-tree": {
       "tags": []
+    },
+    "vector-map": {
+      "tags": []
     }
   }
 }

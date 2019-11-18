@@ -7,7 +7,10 @@
     "allowJs": false,
     "inlineSources": true,
     "types": [],
-    "lib": ["dom", "es2018"]
+    "lib": ["dom", "es2018"],
+    "paths": {
+      "plotly.js": ["../node_modules/plotly.js/lib/"]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
