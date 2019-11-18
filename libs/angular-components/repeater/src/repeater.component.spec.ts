@@ -118,14 +118,11 @@ describe('RepeaterComponent', () => {
     }
   ];
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [RepeaterComponent, ComponentRepeaterComponent],
       imports: [FakeMockCardNgModule, CommonModule, MatTableModule, ScrollingModule, ExperimentalScrollingModule]
     }).compileComponents();
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(RepeaterComponent);
     component = fixture.componentInstance;
     component.data = data;

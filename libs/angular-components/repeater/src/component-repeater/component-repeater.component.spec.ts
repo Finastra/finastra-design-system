@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComponentRepeaterComponent } from './component-repeater.component';
-import { Component, NgModule, Type, ComponentFactoryResolver, SimpleChange } from '@angular/core';
+import { Component, NgModule, Type, ComponentFactoryResolver } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
 
@@ -23,14 +23,11 @@ describe('ComponentRepeaterComponent', () => {
   let fixture: ComponentFixture<ComponentRepeaterComponent>;
   let componentFactoryResolver: ComponentFactoryResolver;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ComponentRepeaterComponent],
       imports: [FakeMockCardNgModule, CommonModule]
     }).compileComponents();
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(ComponentRepeaterComponent);
     component = fixture.componentInstance;
     componentFactoryResolver = fixture.debugElement.injector.get<ComponentFactoryResolver>(
