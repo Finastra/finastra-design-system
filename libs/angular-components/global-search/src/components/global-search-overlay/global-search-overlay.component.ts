@@ -7,7 +7,9 @@ import {
   Inject,
   Input,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { ReplaySubject, fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -31,12 +33,6 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
   ]
 })
 export class GlobalSearchOverlayComponent implements AfterViewInit {
-  constructor(
-    public searchService: GlobalSearchService,
-    private readonly ref: SearchOverlayRef,
-    @Inject(SEARCH_CONFIG) private config: SearchConfig
-  ) {}
-
   animationState: 'void' | 'enter' | 'leave' = 'enter';
   private searchDebounce = 300;
   results$ = new ReplaySubject<ResultGroup[]>(1);
@@ -60,7 +56,17 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Input()
   itemsLayout = this.config.itemsLayout;
 
+  @Output() searchTermChange: EventEmitter<string>;
+
   @ViewChild('searchInput', { static: true }) searchInput: ElementRef;
+
+  constructor(
+    public searchService: GlobalSearchService,
+    private readonly ref: SearchOverlayRef,
+    @Inject(SEARCH_CONFIG) private config: SearchConfig
+  ) {
+    this.searchTermChange = new EventEmitter<string>();
+  }
 
   @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
     this.closeSearch();
@@ -78,6 +84,8 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
         const value = this.searchInput.nativeElement.value;
         if (value) {
           const results = this.searchService.search(value);
+
+          this.searchTermChange.emit(value);
 
           this.resultsFound = this.resultsShown = results.length;
           this.results = this.groupByResults(results.map(r => r.doc), this.groupBy);

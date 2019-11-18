@@ -385,6 +385,68 @@
           "styleext": "scss"
         }
       }
+    },
+    "repeater": {
+      "projectType": "library",
+      "root": "libs/angular-components/repeater",
+      "sourceRoot": "libs/angular-components/repeater",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/repeater/tsconfig.lib.json",
+              "libs/angular-components/repeater/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/repeater/jest.config.js",
+            "tsConfig": "libs/angular-components/repeater/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/repeater/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "vector-map": {
+      "projectType": "library",
+      "root": "libs/angular-components/vector-map",
+      "sourceRoot": "libs/angular-components/vector-map",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/vector-map/tsconfig.lib.json",
+              "libs/angular-components/vector-map/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/vector-map/jest.config.js",
+            "tsConfig": "libs/angular-components/vector-map/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/vector-map/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,67 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+
+.vector-map {
+  display: block;
+  position: relative;
+  height: 100%;
+
+  padding: $uxg-spacing-3;
+  background-color: #fff;
+}
+
+.wrapper,
+.map {
+  height: 100%;
+}
+
+.meta-wrapper {
+  display: inline-block;
+  padding-left: $uxg-spacing-3;
+
+  height: 100%;
+}
+
+.legend {
+  margin-top: auto;
+  margin-left: auto;
+
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ol {
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+    margin-bottom: $uxg-spacing-3;
+
+    @media only screen and (max-width: $mobile-size-up) {
+      display: inline-flex;
+      margin-right: $uxg-spacing-3;
+    }
+  }
+
+  .color {
+    border-radius: 50%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+  }
+
+  .text {
+    display: inline-block;
+    line-height: 20px;
+    margin-left: $uxg-spacing-2;
+  }
+}
+
+.tooltip-parent {
+  position: absolute;
+}

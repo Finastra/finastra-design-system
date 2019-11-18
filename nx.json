@@ -40,6 +40,12 @@
     },
     "filter-tree": {
       "tags": []
+    },
+    "vector-map": {
+      "tags": []
+    },
+    "repeater": {
+      "tags": []
     }
   }
 }

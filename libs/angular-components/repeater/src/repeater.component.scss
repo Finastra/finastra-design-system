@@ -1,0 +1,11 @@
+uxg-repeater{
+    .cdk-virtual-scroll-orientation-horizontal {
+        .cdk-virtual-scroll-content-wrapper{
+            flex-direction: row;
+            display: flex;
+        }
+    }
+    .repeater-item{
+        display: flex;
+    }
+}

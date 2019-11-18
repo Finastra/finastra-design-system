@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterTagsComponent } from './filter-tags.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ describe('FilterTagsModule', () => {
   let component: FilterTagsComponent;
   let fixture: ComponentFixture<FilterTagsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [FilterTagsComponent],
       imports: [
@@ -29,9 +29,6 @@ describe('FilterTagsModule', () => {
         BrowserAnimationsModule
       ]
     }).compileComponents();
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(FilterTagsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

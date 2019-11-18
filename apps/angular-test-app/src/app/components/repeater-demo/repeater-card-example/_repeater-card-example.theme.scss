@@ -1,0 +1,12 @@
+
+
+@mixin theme-repeater-card-example($theme) {
+    $accent: map-get($theme, accent);
+    $border-accent-color: mat-color($accent, default);
+    .simple-card{
+        &.selected{
+            border-bottom: 2px solid $border-accent-color;
+        }
+    }
+  }
+  

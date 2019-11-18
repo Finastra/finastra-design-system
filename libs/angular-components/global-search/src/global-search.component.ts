@@ -19,6 +19,7 @@ export class UxgGlobalSearch implements OnInit {
   @Input() itemsLayout: 'row' | 'column' = 'column';
 
   @Output() resultItemClick = new EventEmitter();
+  @Output() searchTermChange = new EventEmitter<string>();
 
   constructor(private overlayService: GlobalSearchOverlayService, public searchService: GlobalSearchService) {}
 
@@ -32,7 +33,8 @@ export class UxgGlobalSearch implements OnInit {
       itemDivider: this.itemDivider,
       groupDivider: this.groupDivider,
       maxItems: this.maxItems,
-      itemsLayout: this.itemsLayout
+      itemsLayout: this.itemsLayout,
+      searchTermChange: $event => this.searchTermChange.emit($event)
     });
   }
 
