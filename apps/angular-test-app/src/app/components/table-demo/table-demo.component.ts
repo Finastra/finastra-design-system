@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Sort, PageEvent } from '@angular/material';
 import { UxgTableSelectEvent, TableComponent, UxgPage, UxgSort } from '@ffdc/uxg-angular-components/table';
 
 const ELEMENT_DATA: any[] = [
@@ -135,6 +134,8 @@ const ELEMENT_DATA: any[] = [
 export class TableDemoComponent implements OnInit {
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
 
+  selectedIndex = [1, 2];
+
   dataSource = ELEMENT_DATA; //data
   length = ELEMENT_DATA.length;
 
@@ -149,7 +150,7 @@ export class TableDemoComponent implements OnInit {
 
   // columns defination object
   columns: any[] = [
-    { name: 'API', type: 'string', align: 'left' },
+    { name: 'API', type: 'string', align: 'left', displayName: 'Display Api' },
     { name: 'End Point', type: 'string', align: 'left' },
     { name: 'Date Time', type: 'date', align: 'left' },
     { name: 'Day of Week', type: 'string', align: 'left' },

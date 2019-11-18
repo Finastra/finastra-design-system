@@ -64,8 +64,27 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() stickyFooter = false;
   @Input() columnDragEnable = false;
 
+  selections = [];
+  private _selectedIndex = [];
+
+  @Input()
+  set selectedKeys(selectedIndex: number[]) {
+    this._selectedIndex = selectedIndex;
+    if (this.singleSelect && selectedIndex.length > 0) {
+      this.selections.push(this.data[selectedIndex[0]]);
+    }
+    if (!this.singleSelect && this.multiSelect) {
+      selectedIndex.forEach(selectionIndex => {
+        this.selections.push(this.data[selectionIndex]);
+      });
+    }
+  }
+  get selectedKeys(): number[] {
+    return this._selectedIndex;
+  }
+
+  @Input() singleSelect = true;
   @Input() multiSelect: boolean;
-  @Input() singleSelect: boolean;
 
   @Output() selectChange = new EventEmitter<UxgTableSelectEvent>();
   @Output() sortChange = new EventEmitter<UxgSort>();
@@ -75,10 +94,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() paging: UxgPage;
   @Output() pageChange = new EventEmitter<PageEvent>();
 
-  //component local data
-  selections = [];
-  previousIndex: number;
-
+  //local variable
+  previousIndex: number; // used for column drag drop
   constructor() {}
 
   ngOnInit() {

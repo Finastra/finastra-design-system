@@ -21,7 +21,7 @@ export enum UxgColumnType {
 
 export class UxgPage {
   disabled? = false;
-  length?;
+  length?: number;
   hidePageSize? = false;
   showFirstLastButtons? = true;
   pageIndex? = 0;
