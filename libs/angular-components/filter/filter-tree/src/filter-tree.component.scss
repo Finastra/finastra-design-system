@@ -1,6 +1,6 @@
 @import '../../../../../themes/angular-theme/uxg-app-theme';
 
-$row-height: 36px;
+$row-height: 34px;
 
 .filter-tree .child-tree,
 .filter-tree {
@@ -10,6 +10,10 @@ $row-height: 36px;
 }
 .filter-tree .child-tree {
   padding: $uxg-spacing-1 $uxg-spacing-4;
+  &.collapsed {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 .filter-tree {
   padding: $uxg-spacing-1 $uxg-spacing-3;

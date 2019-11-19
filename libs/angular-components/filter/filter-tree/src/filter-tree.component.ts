@@ -1,15 +1,18 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material';
-import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 
 export interface TreeNode {
   label: string;
   children?: TreeNode[];
   parent?: TreeNode;
   isSelected?: boolean;
+}
+interface UXGFilterChanges {
+  added: TreeNode[];
+  removed: TreeNode[];
 }
 
 @Component({
@@ -30,8 +33,6 @@ export interface TreeNode {
         style({
           opacity: '0',
           overflow: 'hidden',
-          'padding-top': '0',
-          'padding-bottom': '0',
           height: '0'
         })
       ),
@@ -40,13 +41,25 @@ export interface TreeNode {
     ])
   ]
 })
-export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, OnChanges {
+export class FilterTreeComponent implements OnInit, OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checkListSelection: SelectionModel<TreeNode>;
 
+  private _data: TreeNode[];
+
+  @Input()
+  set data(data: TreeNode[]) {
+    this._data = data;
+  }
+
+  get data(): TreeNode[] {
+    return this._data;
+  }
+
+  @Output() changes = new EventEmitter<UXGFilterChanges>();
+
   constructor() {
-    super();
     this.checkListSelection = new SelectionModel<TreeNode>(true);
     this.checkListSelection.changed.subscribe(changes => {
       this.changes.emit({
@@ -148,4 +161,16 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, 
   }
 
   hasChild = (_: number, node: TreeNode) => node.children && node.children.length;
+
+  expandStart(node: TreeNode, el: HTMLElement) {
+    if (this.treeControl.isExpanded(node)) {
+      el.classList.remove('collapsed');
+    }
+  }
+
+  expandEnd(node: TreeNode, el: HTMLElement) {
+    if (!this.treeControl.isExpanded(node)) {
+      el.classList.add('collapsed');
+    }
+  }
 }
