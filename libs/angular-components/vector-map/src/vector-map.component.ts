@@ -82,9 +82,40 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
 
         this.setPlotData();
 
-        if (this.plot) this.plot.revision++;
+        if (this.plot) this.refresh();
       })
     );
+  }
+
+  ngOnChanges({ dataSource, showLegend }: SimpleChanges) {
+    let refreshPlot = false;
+    let timedOutRefreshPlot = false;
+
+    if (dataSource && !dataSource.isFirstChange()) {
+      this.setView();
+      this.setLayout();
+      this.setPlotData();
+
+      if (this.showLegend) timedOutRefreshPlot = true;
+    }
+
+    if (showLegend && !showLegend.isFirstChange() && showLegend.currentValue !== showLegend.previousValue) {
+      timedOutRefreshPlot = true;
+    }
+
+    if (timedOutRefreshPlot) {
+      // passing check for next pass in browser event loop / angular lifecycle
+      // checks so that the legend is hidden / shown properly
+      setTimeout(() => {
+        this.refresh();
+      });
+
+      refreshPlot = false;
+    }
+
+    if (refreshPlot) {
+      this.refresh();
+    }
   }
 
   ngOnDestroy() {
