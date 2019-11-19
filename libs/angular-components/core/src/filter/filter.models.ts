@@ -24,4 +24,9 @@ export class UXGFilter<T> {
 
   @Output()
   changes: EventEmitter<UXGFilterChanges<T>>;
+
+  static metaData = {
+    inputs: ['data'],
+    outputs: ['changes']
+  };
 }

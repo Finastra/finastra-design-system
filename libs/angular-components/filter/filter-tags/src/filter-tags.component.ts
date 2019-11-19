@@ -8,13 +8,11 @@ import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-@Component({
+@Component(Object.assign({
   selector: 'uxg-filter-tags',
   templateUrl: './filter-tags.component.html',
-  styleUrls: ['./filter-tags.component.scss'],
-  inputs: ['data'],
-  outputs: ['changes']
-})
+  styleUrls: ['./filter-tags.component.scss']
+}, UXGFilter.metaData))
 export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   visible = true;
   removable = true;
