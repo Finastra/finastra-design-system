@@ -18,7 +18,4 @@ $row-height: 36px;
   justify-content: space-between;
   min-height: $row-height;
   overflow: visible;
-  &.root-node {
-    padding-left: $uxg-spacing-2;
-  }
 }
