@@ -11,7 +11,9 @@ import { map, startWith } from 'rxjs/operators';
 @Component({
   selector: 'uxg-filter-tags',
   templateUrl: './filter-tags.component.html',
-  styleUrls: ['./filter-tags.component.scss']
+  styleUrls: ['./filter-tags.component.scss'],
+  inputs: ['data'],
+  outputs: ['changes']
 })
 export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   visible = true;
