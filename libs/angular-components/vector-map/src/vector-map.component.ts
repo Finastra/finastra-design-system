@@ -33,6 +33,7 @@ export class VectorMapComponent implements OnInit, OnDestroy {
 
   @Input() height = '450px';
   @Input() width: string;
+  @Input() showLegend = true;
 
   // tslint:disable-next-line: no-output-native
   @Output() click: EventEmitter<Partial<Country>>;
@@ -101,11 +102,11 @@ export class VectorMapComponent implements OnInit, OnDestroy {
   }
 
   setPlotData() {
-    const data = this.getDataSource();
-    const max = Math.max(...[1, ...data.map(({ value }) => value)]);
+    const data = this.getData();
 
+    this.max = Math.max(...[0, ...data.map(({ value }) => value)]);
     this.setCountries(data);
-    this.setLegend(this.paletteConfig.colorScale, max);
+    this.setLegend(this.paletteConfig.colorScale);
 
     this.data = [
       {
@@ -120,7 +121,7 @@ export class VectorMapComponent implements OnInit, OnDestroy {
             width: this.paletteConfig.vectorMap.marker.line.width
           }
         },
-        zmax: max
+        zmax: this.max ? this.max : 1
       }
     ];
   }
@@ -134,7 +135,7 @@ export class VectorMapComponent implements OnInit, OnDestroy {
     });
   }
 
-  setLegend(colorScale: ColorScale, maxValue: number) {
+  setLegend(colorScale: ColorScale) {
     this.legend.length = 0;
 
     colorScale.forEach((color, i, arr) => {
@@ -143,16 +144,16 @@ export class VectorMapComponent implements OnInit, OnDestroy {
 
       switch (color[0]) {
         case 0.1:
-          v = this.getLegendValue(color[0], maxValue);
+          v = this.getLegendValue(color[0], this.max);
           text = `>= ${v}`;
           break;
         case 1:
-          v = this.getLegendValue(arr[i - 1][0], maxValue);
+          v = this.getLegendValue(arr[i - 1][0], this.max);
           text = `< ${v}`;
           break;
         default:
-          v1 = this.getLegendValue(color[0], maxValue);
-          v2 = this.getLegendValue(arr[i - 1][0], maxValue) - 1;
+          v1 = this.getLegendValue(color[0], this.max);
+          v2 = this.getLegendValue(arr[i - 1][0], this.max) - 1;
           text = `${v1} — ${v2}`;
       }
 
