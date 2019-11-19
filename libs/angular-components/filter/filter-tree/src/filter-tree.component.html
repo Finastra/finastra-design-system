@@ -25,7 +25,13 @@
         </mat-icon>
       </button>
     </div>
-    <div [@slideInOut]="treeControl.isExpanded(node) ? 'in' : 'out'" class="child-tree">
+    <div
+      class="child-tree"
+      #el
+      [@slideInOut]="treeControl.isExpanded(node) ? 'in' : 'out'"
+      (@slideInOut.start)="expandStart(node, el)"
+      (@slideInOut.done)="expandEnd(node, el)"
+    >
       <ng-container matTreeNodeOutlet></ng-container>
     </div>
   </mat-nested-tree-node>

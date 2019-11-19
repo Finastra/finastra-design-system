@@ -1,24 +1,23 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteTrigger } from '@angular/material';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+
+interface UXGFilterChanges {
+  added: string[];
+  removed: string[];
+}
 
 @Component({
   selector: 'uxg-filter-tags',
   templateUrl: './filter-tags.component.html',
-  styleUrls: ['./filter-tags.component.scss'],
-  // https://github.com/angular/angular/issues/25249
-  // tslint:disable-next-line: no-inputs-metadata-property
-  inputs: ['data'],
-  // tslint:disable-next-line: no-outputs-metadata-property
-  outputs: ['changes']
+  styleUrls: ['./filter-tags.component.scss']
 })
-export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
+export class FilterTagsComponent implements OnInit {
   visible = true;
   removable = true;
   addOnBlur = true;
@@ -29,13 +28,24 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
 
   selectedData: string[] = [];
 
+  private _data: string[];
+
+  @Input()
+  set data(data: string[]) {
+    this._data = data;
+  }
+
+  get data(): string[] {
+    return this._data;
+  }
+
+  @Output() changes = new EventEmitter<UXGFilterChanges>();
+
   @ViewChild('tagInput', { static: false }) input: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: false }) autocomplete: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: false }) trigger: MatAutocompleteTrigger;
 
-  constructor() {
-    super();
-  }
+  constructor() {}
 
   ngOnInit() {
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
