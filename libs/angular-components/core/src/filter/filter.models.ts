@@ -6,6 +6,12 @@ export interface UXGFilterChanges<T> {
 }
 
 export class UXGFilter<T> {
+
+  static metaData = {
+    inputs: ['data'],
+    outputs: ['changes']
+  };
+
   private _change: UXGFilterChanges<T>;
   private _data: T[];
 
@@ -24,9 +30,4 @@ export class UXGFilter<T> {
 
   @Output()
   changes: EventEmitter<UXGFilterChanges<T>>;
-
-  static metaData = {
-    inputs: ['data'],
-    outputs: ['changes']
-  };
 }
