@@ -18,17 +18,23 @@ export interface TreeNode {
   styleUrls: ['./filter-tree.component.scss'],
   animations: [
     trigger('slideInOut', [
-      state('in', style({
-        overflow: 'hidden',
-        height: '*'
-      })),
-      state('out', style({
-        opacity: '0',
-        overflow: 'hidden',
-        'padding-top': '0',
-        'padding-bottom': '0',
-        height: '0'
-      })),
+      state(
+        'in',
+        style({
+          overflow: 'hidden',
+          height: '*'
+        })
+      ),
+      state(
+        'out',
+        style({
+          opacity: '0',
+          overflow: 'hidden',
+          'padding-top': '0',
+          'padding-bottom': '0',
+          height: '0'
+        })
+      ),
       transition('in => out', animate('280ms ease-out')),
       transition('out => in', animate('280ms ease-in'))
     ])
