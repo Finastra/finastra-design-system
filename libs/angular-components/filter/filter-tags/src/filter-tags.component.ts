@@ -8,16 +8,16 @@ import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-@Component(
-  Object.assign(
-    {
-      selector: 'uxg-filter-tags',
-      templateUrl: './filter-tags.component.html',
-      styleUrls: ['./filter-tags.component.scss']
-    },
-    UXGFilter.metaData
-  )
-)
+@Component({
+  selector: 'uxg-filter-tags',
+  templateUrl: './filter-tags.component.html',
+  styleUrls: ['./filter-tags.component.scss'],
+  // https://github.com/angular/angular/issues/25249
+  // tslint:disable-next-line: no-inputs-metadata-property
+  inputs: ['data'],
+  // tslint:disable-next-line: no-outputs-metadata-property
+  outputs: ['changes']
+})
 export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   visible = true;
   removable = true;

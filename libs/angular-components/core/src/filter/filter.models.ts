@@ -6,11 +6,6 @@ export interface UXGFilterChanges<T> {
 }
 
 export class UXGFilter<T> {
-  static metaData = {
-    inputs: ['data'],
-    outputs: ['changes']
-  };
-
   private _change: UXGFilterChanges<T>;
   private _data: T[];
 
