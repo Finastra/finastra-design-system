@@ -1,7 +1,8 @@
-import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
-import { MatTreeNestedDataSource } from '@angular/material';
-import { NestedTreeControl } from '@angular/cdk/tree';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SelectionModel } from '@angular/cdk/collections';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { MatTreeNestedDataSource } from '@angular/material';
 import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 
 export interface TreeNode {
@@ -14,7 +15,24 @@ export interface TreeNode {
 @Component({
   selector: 'uxg-filter-tree',
   templateUrl: './filter-tree.component.html',
-  styleUrls: ['./filter-tree.component.scss']
+  styleUrls: ['./filter-tree.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        overflow: 'hidden',
+        height: '*'
+      })),
+      state('out', style({
+        opacity: '0',
+        overflow: 'hidden',
+        'padding-top': '0',
+        'padding-bottom': '0',
+        height: '0'
+      })),
+      transition('in => out', animate('280ms ease-out')),
+      transition('out => in', animate('280ms ease-in'))
+    ])
+  ]
 })
 export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
@@ -62,7 +80,7 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, 
     return result && !this.descendantsAllSelected(node);
   }
 
-  itemSelectionToggle(node: TreeNode): void {
+  itemSelectionToggle(node: TreeNode) {
     this.checkListSelection.toggle(node);
     const descendants = this.treeControl.getDescendants(node);
     this.checkListSelection.isSelected(node)
@@ -72,12 +90,12 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, 
     this.checkAllParentsSelection(node);
   }
 
-  leafItemSelectionToggle(node: TreeNode): void {
+  leafItemSelectionToggle(node: TreeNode) {
     this.checkListSelection.toggle(node);
     this.checkAllParentsSelection(node);
   }
 
-  checkAllParentsSelection(node: TreeNode): void {
+  checkAllParentsSelection(node: TreeNode) {
     let parent: TreeNode | null = this.getParentNode(node);
     while (parent) {
       this.checkRootNodeSelection(parent);
@@ -85,7 +103,7 @@ export class FilterTreeComponent extends UXGFilter<TreeNode> implements OnInit, 
     }
   }
 
-  checkRootNodeSelection(node: TreeNode): void {
+  checkRootNodeSelection(node: TreeNode) {
     const nodeSelected = this.checkListSelection.isSelected(node);
     const descendants = this.treeControl.getDescendants(node);
     const descAllSelected = descendants.every(child => this.checkListSelection.isSelected(child));

@@ -1,12 +1,12 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteTrigger } from '@angular/material';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MatAutocompleteTrigger } from '@angular/material';
-import { UXGFilter } from '@ffdc/uxg-angular-components/core';
 
 @Component({
   selector: 'uxg-filter-tags',
@@ -23,7 +23,6 @@ export class FilterTagsComponent extends UXGFilter<string> implements OnInit {
   filteredTags$: Observable<string[]>;
 
   selectedData: string[] = [];
-  placeholder = 'Input text';
 
   @ViewChild('tagInput', { static: false }) input: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: false }) autocomplete: MatAutocomplete;

@@ -1,36 +1,24 @@
-.filter-tree-invisible {
-  max-height: 0 !important;
-}
-.filter-tree ul,
-.filter-tree li {
+@import '../../../../../themes/angular-theme/uxg-app-theme';
+
+$row-height: 36px;
+
+.filter-tree .child-tree,
+.filter-tree {
   margin-top: 0;
   margin-bottom: 0;
   list-style-type: none;
-  transition: max-height 0.3s ease-in-out;
-  max-height: 100vh;
-  overflow: hidden;
-  will-change: max-height;
 }
-.filter-tree ul {
-  padding-inline-start: 25px;
+.filter-tree .child-tree {
+  padding: $uxg-spacing-1 $uxg-spacing-4;
+}
+.filter-tree {
+  padding: $uxg-spacing-1 $uxg-spacing-3;
 }
 .mat-tree-node {
-  display: flex;
   justify-content: space-between;
-  //min-height: 42px;
-  .mat-icon-button {
-    width: 20px;
-    height: 20px;
+  min-height: $row-height;
+  overflow: visible;
+  &.root-node {
+    padding-left: $uxg-spacing-2;
   }
-  ::ng-deep .mat-checkbox {
-    .mat-checkbox-inner-container {
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-    }
-  }
-}
-.tree-divider {
-  border-bottom: 1px solid;
-  border-bottom-color: rgba(0,0,0,.12);
 }

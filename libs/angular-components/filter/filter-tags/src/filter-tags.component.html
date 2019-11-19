@@ -7,12 +7,12 @@
   </mat-chip-list>
 
   <mat-form-field class="chip-list" appearance="outline">
-    <mat-label><mat-icon>search</mat-icon> Filter by tags</mat-label>
+    <mat-icon matPrefix dense class="search-icon" style="font-size: 1.2em">search</mat-icon>
     <input
       matInput
       type="text"
-      [placeholder]="placeholder"
       #tagInput
+      placeholder="Filter by tags"
       [formControl]="formCtrl"
       [matAutocomplete]="autocomplete"
       [matChipInputFor]="chipList"
