@@ -8,7 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { VectorMapComponent } from './vector-map.component';
-import { Country, COUNTRIES, VectorMapDataSource } from './vector-map.models';
+import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
 
 // Created PlotlyDemoComponent because of issues when Testing with the
 // PlotlyComponent
@@ -34,7 +34,7 @@ describe('VectorMapModule', () => {
   let component: VectorMapComponent;
   let fixture: ComponentFixture<VectorMapComponent>;
 
-  const simplePlot: Partial<Country>[] = [
+  const simplePlot: Partial<VectorMapCountry>[] = [
     {
       name: 'Romania',
       value: 1945
