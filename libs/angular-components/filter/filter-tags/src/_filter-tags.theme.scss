@@ -3,12 +3,23 @@
   $primary: map-get($theme, primary);
   $filter-tags-background-color: mat-color($primary, default, .12);
 
-  mat-form-field {
+  ::ng-deep uxg-filter-tags mat-form-field {
     margin-top: $uxg-spacing-1;
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-prefix {
+          top: 0;
+          align-self: auto;
+        }
+      }
+    }
   }
 
   .chip-list {
     width: 100%;
+    .search-icon {
+      color: mat-color($primary);
+    }
   }
 
   .mat-option {

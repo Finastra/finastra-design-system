@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FilterTreeComponent, TreeNode } from './filter-tree.component';
-import { MatTreeModule, MatCheckboxModule, MatChipsModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter } from '@angular/core';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatCheckboxModule, MatChipsModule, MatIconModule, MatTreeModule } from '@angular/material';
+import { By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterTreeComponent, TreeNode } from './filter-tree.component';
 
 describe('FilterTreeModule', () => {
   let component: FilterTreeComponent;
@@ -18,6 +18,7 @@ describe('FilterTreeModule', () => {
     TestBed.configureTestingModule({
       imports: [
         CommonModule,
+        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         MatCheckboxModule,
