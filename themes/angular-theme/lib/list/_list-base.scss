@@ -25,7 +25,7 @@ ol.uxg-ol {
       margin: $uxg-spacing-0;
     }
 
-    &:before {
+    &::before {
       display: inline-block;
       content: counter(ordered-list-counter);
       border-radius: 50%;
