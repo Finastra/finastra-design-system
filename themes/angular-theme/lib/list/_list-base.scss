@@ -1,3 +1,5 @@
+@import '../core/style/spacing';
+
 // uxg-link-list
 $uxg-link-list-item-height: 35px;
 $uxg-link-list-icon-size: 18px;
@@ -5,6 +7,36 @@ $uxg-link-list-icon-size: 18px;
 // uxg-nav-list
 $uxg-nav-list-level-icon-size: 18px;
 $uxg-nav-list-level-height: 48px;
+
+ol.uxg-ol {
+  counter-reset: ordered-list-counter;
+  list-style: none;
+
+  li {
+    counter-increment: ordered-list-counter;
+
+    & + li {
+      margin-top: $uxg-spacing-3;
+    }
+
+    *:first-child,
+    .uxg-ol-title {
+      display: inline-block;
+      margin: $uxg-spacing-0;
+    }
+
+    &:before {
+      display: inline-block;
+      content: counter(ordered-list-counter);
+      border-radius: 50%;
+      text-align: center;
+      line-height: $uxg-spacing-4;
+      width: $uxg-spacing-4;
+      height: $uxg-spacing-4;
+      margin-right: $uxg-spacing-3;
+    }
+  }
+}
 
 .uxg-nav-list-level.mat-nav-list.mat-list-base {
   & > .mat-list-item {
