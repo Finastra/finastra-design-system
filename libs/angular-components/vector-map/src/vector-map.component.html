@@ -14,10 +14,10 @@
       >
       </plotly-plot>
     </div>
-    <div class="meta">
+    <div class="meta" *ngIf="views || (max > 0 && showLegend === true)">
       <div class="meta-wrapper" fxLayout="column" fxLayoutAlign="center space-between">
-        <div class="views">
-          <mat-form-field *ngIf="views">
+        <div class="views" *ngIf="views">
+          <mat-form-field>
             <mat-label>View by</mat-label>
             <mat-select (selectionChange)="onViewChange($event)" [value]="views[0].id">
               <mat-option *ngFor="let view of views" [value]="view.id">
@@ -26,7 +26,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="legend">
+        <div class="legend" *ngIf="max > 0 && showLegend === true">
           <ol>
             <li *ngFor="let item of legend">
               <span class="color" [ngStyle]="{ background: item.color }"></span>

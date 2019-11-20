@@ -1,15 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { VectorMapComponent, VectorMapDataSource } from '@ffdc/uxg-angular-components/vector-map';
+import { Component } from '@angular/core';
+import { VectorMapDataSource } from '@ffdc/uxg-angular-components/vector-map';
 
 @Component({
   selector: 'ffdc-vector-map-demo',
   templateUrl: './vector-map-demo.component.html',
   styleUrls: ['./vector-map-demo.component.scss']
 })
-export class VectorMapDemoComponent implements OnInit {
-  @ViewChild('simpleMap', { static: false }) simpleMap: VectorMapComponent;
-  @ViewChild('simpleMapRef', { static: true }) simpleMapRef: ElementRef<HTMLDivElement>;
-
+export class VectorMapDemoComponent {
   viewMapDataSource: VectorMapDataSource = {
     data: {
       view1: [
@@ -47,8 +44,4 @@ export class VectorMapDemoComponent implements OnInit {
     { name: 'Russia', value: 500 },
     { name: 'Singapore', value: 6000 }
   ];
-
-  constructor() {}
-
-  ngOnInit() {}
 }

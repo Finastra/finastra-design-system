@@ -1,4 +1,4 @@
-export interface Country {
+export interface VectorMapCountry {
   value: number;
   name: string;
   code: string;
@@ -9,13 +9,13 @@ export interface VectorMapView {
   text: string;
 }
 export interface VectorMapViewsDataSource {
-  data: Record<string, Partial<Country>[]>;
+  data: Record<string, Partial<VectorMapCountry>[]>;
   views: VectorMapView[];
 }
 
-export type VectorMapDataSource = (Partial<Country>[]) | VectorMapViewsDataSource;
+export type VectorMapDataSource = (Partial<VectorMapCountry>[]) | VectorMapViewsDataSource;
 
-export const COUNTRIES: Country[] = [
+export const COUNTRIES: VectorMapCountry[] = [
   { name: 'Afghanistan', value: 0, code: 'AFG' },
   { name: 'Albania', value: 0, code: 'ALB' },
   { name: 'Algeria', value: 0, code: 'DZA' },

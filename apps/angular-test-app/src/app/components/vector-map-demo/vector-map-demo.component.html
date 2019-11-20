@@ -1,7 +1,12 @@
-<div class="demo">
-  <uxg-vector-map #categoryMap title="Vector map with views" [dataSource]="viewMapDataSource"></uxg-vector-map>
-</div>
-<hr />
-<div class="demo demo-1" #simpleMapRef>
-  <uxg-vector-map #simpleMap title="Simple vector map" [dataSource]="simpleMapDataSource"></uxg-vector-map>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+  <div fxFlex="49" fxFlex.xs="100">
+    <uxg-vector-map title="Vector Map with Views" [dataSource]="viewMapDataSource"></uxg-vector-map>
+  </div>
+  <div fxFlex="49" fxFlex.xs="100">
+    <uxg-vector-map
+      title="Simple vector map with no legend"
+      [dataSource]="simpleMapDataSource"
+      showLegend="false"
+    ></uxg-vector-map>
+  </div>
 </div>
