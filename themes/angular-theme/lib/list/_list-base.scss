@@ -13,7 +13,7 @@ $uxg-nav-list-level-height: 48px;
   padding: $uxg-spacing-0;
   counter-reset: ordered-list-counter;
   list-style: none;
-  
+
   & > li,
   & > section {
     display: list-item;
@@ -25,7 +25,6 @@ $uxg-nav-list-level-height: 48px;
     & + section {
       margin-top: $uxg-spacing-3;
     }
-
 
     *:first-child,
     .uxg-ol-title {
