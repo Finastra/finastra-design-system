@@ -2,7 +2,7 @@
   "name": "@ffdc/uxg-angular-components",
   "version": "0.13.14",
   "dependencies": {
-    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f"
   },
   "peerDependencies": {
     "@angular/common": "^8.0.0",
