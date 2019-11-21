@@ -21,6 +21,7 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class RepeaterComponent implements OnInit, OnChanges {
+
   private _data: Array<any> = [];
   @Input()
   get data() {
@@ -35,6 +36,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
   @Input() multiSelect = false;
   @Input() space: string;
   @Input() columnsMatcher: { [k: string]: string } = {};
+  @Input() selectedKeys: number[];
   @Output() selectionChange: EventEmitter<any> = new EventEmitter<any>();
 
   componentFactory: ComponentFactory<any>;
@@ -47,7 +49,6 @@ export class RepeaterComponent implements OnInit, OnChanges {
     if (this.component instanceof Type) {
       this.componentFactory = this.resolver.resolveComponentFactory(this.component);
     }
-    this.selectedItems = {};
   }
 
   onClick(index: number, value: any) {
@@ -59,14 +60,16 @@ export class RepeaterComponent implements OnInit, OnChanges {
     } else if (this.multiSelect && this.selectedItems[index]) {
       delete this.selectedItems[index];
     } else {
-      this.selectedItems[index] = value;
+      this.selectedItems = {
+        [index]: value
+      };
     }
 
     this.selectionChange.emit({ value: this.selectedItems });
   }
 
   isSelected(index) {
-    return this.selectedItems[index] !== null && this.selectedItems[index] !== undefined;
+    return this.selectedItems && this.selectedItems[index] !== null && this.selectedItems[index] !== undefined;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -81,6 +84,19 @@ export class RepeaterComponent implements OnInit, OnChanges {
 
     if (changes.component) {
       this.componentFactory = this.resolver.resolveComponentFactory(changes.component.currentValue);
+    }
+
+    if(changes.selectedKeys) {
+      this.selectedKeys = changes.selectedKeys.currentValue;
+      this.selectedItems = {};
+      if (!this.multiSelect && this.selectedKeys.length > 0) {
+        this.selectedItems[this.selectedKeys[0]] = this.data[this.selectedKeys[0]];
+      }
+      if (this.multiSelect && this.multiSelect) {
+        this.selectedKeys.forEach(selectionIndex => {
+          this.selectedItems[selectionIndex] = this.data[selectionIndex];
+        });
+      }
     }
   }
 }
