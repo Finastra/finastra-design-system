@@ -160,7 +160,7 @@ describe('RepeaterComponent', () => {
   });
 
   it('should switch from Single Select to Multi Select', () => {
-    component.selectedItems[0] = data[0];
+    component.selectedItems = {0: data[0]};
 
     component.multiSelect = true;
     component.ngOnChanges({
@@ -209,5 +209,22 @@ describe('RepeaterComponent', () => {
 
     const expectedObj = { value: { '0': data[0], '1': data[1] } };
     expect(component.selectionChange.emit).toHaveBeenCalledWith(expectedObj);
+  });
+
+  it('should set default selection', () => {
+    const componentR: Type<any> = MockCardComponent;
+
+    component.component = componentR;
+    component.selectedKeys = [0, 3];
+    component.multiSelect = true;
+    component.ngOnChanges({
+      component: new SimpleChange(null, component.component, true),
+      selectedKeys: new SimpleChange(null, component.selectedKeys, true)
+    });
+
+    fixture.detectChanges();
+    expect(component.selectedItems[0]).toBeTruthy();
+    expect(component.selectedItems[3]).toBeTruthy();
+    expect(Object.keys(component.selectedItems).length).toBe(2);
   });
 });
