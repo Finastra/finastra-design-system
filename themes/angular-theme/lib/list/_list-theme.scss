@@ -3,7 +3,7 @@
   $foreground: map-get($theme, foreground);
 
   .uxg-ol {
-    li::before {
+    *::before {
       color: map-get($primary, default-contrast);
       background: mat-color($primary, default);
     }
@@ -61,7 +61,7 @@
   }
 
   .uxg-ol {
-    li::before {
+    *::before {
       @include mat-typography-level-to-styles($config, h6);
     }
 

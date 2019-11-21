@@ -8,16 +8,24 @@ $uxg-link-list-icon-size: 18px;
 $uxg-nav-list-level-icon-size: 18px;
 $uxg-nav-list-level-height: 48px;
 
-ol.uxg-ol {
+.uxg-ol {
+  margin: $uxg-spacing-0;
+  padding: $uxg-spacing-0;
   counter-reset: ordered-list-counter;
   list-style: none;
-
-  li {
+  
+  & > li,
+  & > section {
+    display: list-item;
     counter-increment: ordered-list-counter;
+    margin: $uxg-spacing-0;
+    padding: $uxg-spacing-0;
 
-    & + li {
+    & + li,
+    & + section {
       margin-top: $uxg-spacing-3;
     }
+
 
     *:first-child,
     .uxg-ol-title {
