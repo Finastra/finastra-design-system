@@ -5,7 +5,5 @@
     "entryFile": "index.ts",
     "umdModuleIds": {}
   },
-  "whitelistedNonPeerDependencies": [
-    "elasticlunr"
-  ]
+  "whitelistedNonPeerDependencies": ["elasticlunr"]
 }
