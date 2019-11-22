@@ -7,6 +7,7 @@
     [columnsMatcher]="columnsMatcherExample"
     [space]="spaceExample"
     [multiSelect]="multiselectExample"
+    [selectedKeys]="[0, 3]"
     (selectionChange)="displaySelection($event.value)"
   >
   </uxg-repeater>
@@ -116,6 +117,12 @@
       <td>boolean</td>
       <td>false</td>
       <td>Define if the components can multi selected or not</td>
+    </tr>
+    <tr>
+      <td>selectedKeys</td>
+      <td>number[]</td>
+      <td></td>
+      <td>The default selected item index.</td>
     </tr>
   </tbody>
 </table>
