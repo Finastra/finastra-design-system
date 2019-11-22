@@ -2,6 +2,13 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
 
+  .uxg-ol {
+    *::before {
+      color: map-get($primary, default-contrast);
+      background: mat-color($primary, default);
+    }
+  }
+
   .mat-list-base.mat-nav-list {
     &.uxg-link-list {
       .mat-list-item {
@@ -50,6 +57,16 @@
   .mat-list-base.mat-nav-list.uxg-link-list {
     & .mat-list-item > * {
       @include mat-typography-level-to-styles($config, caption);
+    }
+  }
+
+  .uxg-ol {
+    *::before {
+      @include mat-typography-level-to-styles($config, h6);
+    }
+
+    .uxg-ol-title {
+      @include mat-typography-level-to-styles($config, subtitle-1);
     }
   }
 }
