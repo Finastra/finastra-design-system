@@ -160,7 +160,7 @@ describe('RepeaterComponent', () => {
   });
 
   it('should switch from Single Select to Multi Select', () => {
-    component.selectedItems = {0: data[0]};
+    component.selectedItems = { 0: data[0] };
 
     component.multiSelect = true;
     component.ngOnChanges({

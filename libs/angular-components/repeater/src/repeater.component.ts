@@ -21,7 +21,6 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class RepeaterComponent implements OnInit, OnChanges {
-
   private _data: Array<any> = [];
   @Input()
   get data() {
@@ -52,8 +51,8 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
 
   onClick(index: number, value: any) {
-    if(!this.selectedItems) {
-      this.selectedItems = {}
+    if (!this.selectedItems) {
+      this.selectedItems = {};
     }
     if (!this.multiSelect && !this.selectedItems[index]) {
       this.selectedItems[index] = value;
@@ -86,7 +85,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
       this.componentFactory = this.resolver.resolveComponentFactory(changes.component.currentValue);
     }
 
-    if(changes.selectedKeys) {
+    if (changes.selectedKeys) {
       this.selectedKeys = changes.selectedKeys.currentValue;
       this.selectedItems = {};
       if (!this.multiSelect && this.selectedKeys.length > 0) {
