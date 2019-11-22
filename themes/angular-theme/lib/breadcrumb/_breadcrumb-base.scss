@@ -13,6 +13,10 @@
     display: inline;
     margin: 0;
 
+    > * {
+      margin: 0;
+    }
+
     &::before {
       content: '/';
       margin: 0 10px;
