@@ -14,6 +14,11 @@
       [singleSelect]="singleSelect"
       [multiSelect]="!singleSelect"
       (selectChange)="selectChange($event)"
+      [enableEdit]="enableTableEdit"
+      [enableDelete]="enableTableRowDelete"
+      (rowRemoveEvent)="rowDeleteEvent($event)"
+      (rowUpdateEvent)="rowEditEvent($event)"
+      (rowClickUnderMutiSelectMode) = "rowClickUnderMutiSelectMode($event)"
     >
     </uxg-table>
   </div>
@@ -29,7 +34,14 @@
           <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
           <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
           <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
-            >Enable customized paging</mat-slide-toggle
+            >Enable customized paging
+          </mat-slide-toggle>
+
+          <mat-slide-toggle [checked]="enableTableEdit" (change)="enableTableEditChanged($event)"
+            >Enable table edit</mat-slide-toggle
+          >
+          <mat-slide-toggle [checked]="enableTableRowDelete" (change)="enableTableRowDeleteChanged($event)"
+            >Enable table remove</mat-slide-toggle
           >
         </div>
       </div>
@@ -41,9 +53,9 @@
         <mat-radio-button [value]="false">multiple select</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div *ngIf="actionDiscription" class="interaction-information">
+    <div *ngIf="actionDescription" class="interaction-information">
       <h4>Information:</h4>
-      {{ actionDiscription }}
+      {{ actionDescription }}
     </div>
   </div>
 </mat-drawer-container>
@@ -146,7 +158,7 @@
         @Input()<br />
         singleSelect:boolean
       </td>
-      <td>If table enable single select or not. Default <code>true</code></td>
+      <td>If table enable single select or not.</td>
     </tr>
     <tr>
       <td>
@@ -177,12 +189,32 @@
       <td>Event emitted when the selection of table changed.</td>
     </tr>
     <tr>
+      <td>@Output()<br />rowClickUnderMutiSelectMode: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
+      <td>Event emitted when you are in multi-select mode but you click on one row not check the checkbox.</td>
+    </tr>
+    <tr>
       <td>@Output()<br />sortChange: EventEmitter&lt;UxgSort&gt;</td>
       <td>If customized sort needed, you can use this output to do it.</td>
     </tr>
     <tr>
       <td>@Output()<br />pageChange: EventEmitter&lt;PageEvent&gt;</td>
       <td>If customized paging needed, you can use this ouput to do it.</td>
+    </tr>
+    <tr>
+      <td>@Input()<br />enableEdit</td>
+      <td>If you want to enable edit a row on the table, if yes, one new column will be added by default</td>
+    </tr>
+    <tr>
+      <td>@Input()<br />enableDelete</td>
+      <td>If you want to enable delete a row on the table, if yes, one new column will be added by default</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />rowRemoveEvent : EventEmitter&lt;aay&gt;</td>
+      <td>Emit the removed row, when you enable delete and click on the delete icon</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />rowUpdateEvent : EventEmitter&lt;aay&gt;</td>
+      <td>Emit the edited row, when you enable edit and click on the confirm icon</td>
     </tr>
   </tbody>
 </table>

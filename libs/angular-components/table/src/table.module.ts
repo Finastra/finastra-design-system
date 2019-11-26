@@ -8,11 +8,13 @@ import {
   MatFormFieldModule,
   MatProgressSpinnerModule,
   MatButtonModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatInputModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TableComponent } from './table.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TableComponent],
@@ -27,7 +29,9 @@ import { TableComponent } from './table.component';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule,
+    FormsModule
   ],
   exports: [TableComponent]
 })

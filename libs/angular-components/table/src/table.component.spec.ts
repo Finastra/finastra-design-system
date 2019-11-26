@@ -48,7 +48,3 @@ describe('UxgTableModule', () => {
     expect(component).toBeTruthy();
   });
 });
-
-describe('Table Sort', () => {
-  const table = new TableComponent();
-});
