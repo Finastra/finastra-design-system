@@ -150,6 +150,7 @@ export class TableDemoComponent implements OnInit {
   singleSelect = true;
   enableTableEdit = false;
   enableTableRowDelete = false;
+  enableTableSendEvent = false;
 
   // columns defination object
   columns: any[] = [
@@ -260,6 +261,9 @@ export class TableDemoComponent implements OnInit {
   enableTableRowDeleteChanged($event) {
     this.enableTableRowDelete = $event.checked;
   }
+  enableTableRowSendChanged($event) {
+    this.enableTableSendEvent = $event.checked;
+  }
   rowEditEvent($event) {
     this.updateActionsDescription($event.data);
   }
@@ -267,6 +271,9 @@ export class TableDemoComponent implements OnInit {
     this.updateActionsDescription($event.data);
   }
   rowClickUnderMutiSelectMode($event) {
+    this.updateActionsDescription($event.data);
+  }
+  rowSendClickEvent($event) {
     this.updateActionsDescription($event.data);
   }
   updateActionsDescription(data) {

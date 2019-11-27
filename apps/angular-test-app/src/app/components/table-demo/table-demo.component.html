@@ -19,6 +19,8 @@
       (rowRemoveEvent)="rowDeleteEvent($event)"
       (rowUpdateEvent)="rowEditEvent($event)"
       (rowClickUnderMutiSelectMode)="rowClickUnderMutiSelectMode($event)"
+      [enableSend]="enableTableSendEvent"
+      (rowSendEvent)="rowSendClickEvent($event)"
     >
     </uxg-table>
   </div>
@@ -42,6 +44,9 @@
           >
           <mat-slide-toggle [checked]="enableTableRowDelete" (change)="enableTableRowDeleteChanged($event)"
             >Enable table remove</mat-slide-toggle
+          >
+          <mat-slide-toggle [checked]="enableTableSendEvent" (change)="enableTableRowSendChanged($event)"
+            >Enable table row send</mat-slide-toggle
           >
         </div>
       </div>
@@ -209,12 +214,23 @@
       <td>If you want to enable delete a row on the table, if yes, one new column will be added by default</td>
     </tr>
     <tr>
-      <td>@Output()<br />rowRemoveEvent : EventEmitter&lt;aay&gt;</td>
+      <td>@Input()<br />enableSend</td>
+      <td>
+        If you want to apply a customized event to row that is not the same with click on the row. you can enable this
+        configuraiton and then use the output <code>rowSendEvent</code> to customized your own actions
+      </td>
+    </tr>
+    <tr>
+      <td>@Output()<br />rowRemoveEvent : EventEmitter&lt;any&gt;</td>
       <td>Emit the removed row, when you enable delete and click on the delete icon</td>
     </tr>
     <tr>
-      <td>@Output()<br />rowUpdateEvent : EventEmitter&lt;aay&gt;</td>
+      <td>@Output()<br />rowUpdateEvent : EventEmitter&lt;any&gt;</td>
       <td>Emit the edited row, when you enable edit and click on the confirm icon</td>
+    </tr>
+    <tr>
+      <td>@Output()<br />rowSendEvent : EventEmitter&lt;any&gt;</td>
+      <td>Emit the current row data, when you enableSend and click on the send icon</td>
     </tr>
   </tbody>
 </table>

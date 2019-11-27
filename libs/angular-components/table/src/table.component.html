@@ -89,7 +89,7 @@
         {{ getTotalRowCell(column) }}
       </td>
     </ng-container>
-    <ng-container matColumnDef="uxg-table-action-row" *ngIf="enableEdit || enableDelete">
+    <ng-container matColumnDef="uxg-table-action-row" *ngIf="enableEdit || enableDelete || enableSend">
       <th
         mat-header-cell
         *matHeaderCellDef
@@ -118,6 +118,13 @@
           (click)="rowDelete(row); $event.stopPropagation()"
         >
           <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button
+          *ngIf="!row.uxgTableEdit && enableSend"
+          mat-icon-button
+          (click)="rowSend(row); $event.stopPropagation()"
+        >
+          <mat-icon class="material-icons-outlined">send_outline</mat-icon>
         </button>
         <button *ngIf="row.uxgTableEdit" mat-icon-button (click)="rowEditConfirm(row); $event.stopPropagation()">
           <mat-icon>done</mat-icon>

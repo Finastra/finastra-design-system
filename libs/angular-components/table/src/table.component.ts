@@ -111,8 +111,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   private editRowOrigin;
   @Input() enableEdit: boolean;
   @Input() enableDelete: boolean;
+  @Input() enableSend: boolean;
   @Output() rowRemoveEvent = new EventEmitter<any>();
   @Output() rowUpdateEvent = new EventEmitter<any>();
+  @Output() rowSendEvent = new EventEmitter<any>();
 
   //local variable
   previousIndex: number; // used for column drag drop
@@ -180,35 +182,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     if (changes.enableEdit && !changes.enableEdit.isFirstChange()) {
-      if (
-        !changes.enableEdit.currentValue &&
-        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > 0
-      ) {
-        this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
-      }
-
-      if (
-        changes.enableEdit.currentValue &&
-        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
-      ) {
-        this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
-      }
+      this.resetActionRow();
     }
 
     if (changes.enableDelete && !changes.enableDelete.isFirstChange()) {
-      if (
-        !changes.enableDelete.currentValue &&
-        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > 0
-      ) {
-        this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
-      }
-
-      if (
-        changes.enableDelete.currentValue &&
-        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
-      ) {
-        this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
-      }
+      this.resetActionRow();
+    }
+    if (changes.enableSend && !changes.enableSend.isFirstChange()) {
+      this.resetActionRow();
     }
   }
 
@@ -318,6 +299,12 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     row.uxgTableEdit = true;
   }
 
+  rowSend(row) {
+    this.rowSendEvent.emit({
+      data: row
+    });
+  }
+
   rowEditConfirm(newRow) {
     delete newRow.uxgTableEdit;
     this.rowUpdateEvent.emit({
@@ -390,5 +377,23 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   resetIndexWithMultiSelectRow(index: number): number {
     return this.multiSelect ? index + 1 : index;
+  }
+
+  resetActionRow() {
+    if (
+      (this.enableDelete || this.enableEdit || this.enableSend) &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
+    ) {
+      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+    }
+
+    if (
+      !this.enableSend &&
+      !this.enableDelete &&
+      !this.enableEdit &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1
+    ) {
+      this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
+    }
   }
 }
