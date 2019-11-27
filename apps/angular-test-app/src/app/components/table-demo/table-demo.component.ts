@@ -266,7 +266,7 @@ export class TableDemoComponent implements OnInit {
   rowDeleteEvent($event) {
     this.updateActionsDescription($event.data);
   }
-  rowClickUnderMutiSelectMode($event){
+  rowClickUnderMutiSelectMode($event) {
     this.updateActionsDescription($event.data);
   }
   updateActionsDescription(data) {

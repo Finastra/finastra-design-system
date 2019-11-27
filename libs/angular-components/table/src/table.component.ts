@@ -222,7 +222,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   singleSelectRowClick(row: any) {
     this.dataToComponent.forEach(item => delete item.uxgTableEdit);
-    
+
     if (this.singleSelect) {
       if (this.selections.indexOf(row) < 0) {
         this.selections = [row];
