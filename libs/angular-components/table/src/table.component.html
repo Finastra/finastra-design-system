@@ -93,13 +93,6 @@
       <th
         mat-header-cell
         *matHeaderCellDef
-        cdkDropList
-        cdkDropListLockAxis="x"
-        cdkDropListOrientation="horizontal"
-        (cdkDropListDropped)="columnDropped($event, columnIndex)"
-        cdkDrag
-        (cdkDragStarted)="columnDragStarted($event, columnIndex)"
-        [cdkDragDisabled]="!columnDragEnable"
         class="uxg-table-action-column-header"
       >
         Actions
