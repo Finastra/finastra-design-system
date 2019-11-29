@@ -10,17 +10,17 @@
       [totalData]="totalData"
       [stickyFooter]="stickyFooter"
       [pageEnable]="pageEnable"
-      (sortChange)="sortData($event)"
+      (sortChanged)="sortData($event)"
       [singleSelect]="singleSelect"
       [multiSelect]="!singleSelect"
-      (selectChange)="selectChange($event)"
+      (selectChanged)="selectChange($event)"
       [enableEdit]="enableTableEdit"
       [enableDelete]="enableTableRowDelete"
-      (rowRemoveEvent)="rowDeleteEvent($event)"
-      (rowUpdateEvent)="rowEditEvent($event)"
-      (rowClickUnderMutiSelectMode)="rowClickUnderMutiSelectMode($event)"
+      (rowRemoved)="rowDeleteEvent($event)"
+      (rowUpdated)="rowEditEvent($event)"
+      (multiSelectSingleRowClicked)="rowClickUnderMutiSelectMode($event)"
       [enableSend]="enableTableSendEvent"
-      (rowSendEvent)="rowSendClickEvent($event)"
+      (rowSend)="rowSendClickEvent($event)"
     >
     </uxg-table>
   </div>
@@ -190,19 +190,19 @@
       <td>When pageEnable to table, if needed, user can pass customized paging to table component.</td>
     </tr>
     <tr>
-      <td>@Output()<br />selectChange: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
+      <td>@Output()<br />selectChanged: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
       <td>Event emitted when the selection of table changed.</td>
     </tr>
     <tr>
-      <td>@Output()<br />rowClickUnderMutiSelectMode: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
+      <td>@Output()<br />multiSelectSingleRowClicked: EventEmitter&lt;UxgTableSelectEvent&gt;</td>
       <td>Event emitted when you are in multi-select mode but you click on one row not check the checkbox.</td>
     </tr>
     <tr>
-      <td>@Output()<br />sortChange: EventEmitter&lt;UxgSort&gt;</td>
+      <td>@Output()<br />sortChanged: EventEmitter&lt;UxgSort&gt;</td>
       <td>If customized sort needed, you can use this output to do it.</td>
     </tr>
     <tr>
-      <td>@Output()<br />pageChange: EventEmitter&lt;PageEvent&gt;</td>
+      <td>@Output()<br />pageChanged: EventEmitter&lt;PageEvent&gt;</td>
       <td>If customized paging needed, you can use this ouput to do it.</td>
     </tr>
     <tr>
@@ -221,15 +221,15 @@
       </td>
     </tr>
     <tr>
-      <td>@Output()<br />rowRemoveEvent : EventEmitter&lt;any&gt;</td>
+      <td>@Output()<br />rowRemoved : EventEmitter&lt;any&gt;</td>
       <td>Emit the removed row, when you enable delete and click on the delete icon</td>
     </tr>
     <tr>
-      <td>@Output()<br />rowUpdateEvent : EventEmitter&lt;any&gt;</td>
+      <td>@Output()<br />rowUpdated : EventEmitter&lt;any&gt;</td>
       <td>Emit the edited row, when you enable edit and click on the confirm icon</td>
     </tr>
     <tr>
-      <td>@Output()<br />rowSendEvent : EventEmitter&lt;any&gt;</td>
+      <td>@Output()<br />rowSend : EventEmitter&lt;any&gt;</td>
       <td>Emit the current row data, when you enableSend and click on the send icon</td>
     </tr>
   </tbody>

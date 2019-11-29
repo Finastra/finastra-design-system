@@ -10,10 +10,12 @@ import {
   MatFormFieldModule,
   MatProgressSpinnerModule,
   MatButtonModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatInputModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 
 describe('UxgTableModule', () => {
   let component: TableComponent;
@@ -32,7 +34,9 @@ describe('UxgTableModule', () => {
         MatFormFieldModule,
         MatProgressSpinnerModule,
         MatButtonModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatInputModule,
+        FormsModule
       ],
       declarations: [TableComponent]
     }).compileComponents();

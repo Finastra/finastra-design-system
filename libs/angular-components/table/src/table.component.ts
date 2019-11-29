@@ -97,14 +97,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() singleSelect: boolean;
   @Input() multiSelect: boolean;
 
-  @Output() selectChange = new EventEmitter<UxgTableSelectEvent>();
-  @Output() rowClickUnderMutiSelectMode = new EventEmitter<any>();
-  @Output() sortChange = new EventEmitter<UxgSort>();
+  @Output() selectChanged = new EventEmitter<UxgTableSelectEvent>();
+  @Output() multiSelectSingleRowClicked = new EventEmitter<any>();
+  @Output() sortChanged = new EventEmitter<UxgSort>();
 
   //paginator data
   @Input() pageEnable = false;
   @Input() paging: UxgPage;
-  @Output() pageChange = new EventEmitter<PageEvent>();
+  @Output() pageChanged = new EventEmitter<PageEvent>();
 
   //edit part
   private uxgTableActionColumn = ['uxg-table-action-row'];
@@ -112,9 +112,9 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() enableEdit: boolean;
   @Input() enableDelete: boolean;
   @Input() enableSend: boolean;
-  @Output() rowRemoveEvent = new EventEmitter<any>();
-  @Output() rowUpdateEvent = new EventEmitter<any>();
-  @Output() rowSendEvent = new EventEmitter<any>();
+  @Output() rowRemoved = new EventEmitter<any>();
+  @Output() rowUpdated = new EventEmitter<any>();
+  @Output() rowSend = new EventEmitter<any>();
 
   //local variable
   previousIndex: number; // used for column drag drop
@@ -194,8 +194,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   sortData($event: UxgSort) {
-    if (this.sortChange.observers.length > 0) {
-      this.sortChange.emit($event);
+    if (this.sortChanged.observers.length > 0) {
+      this.sortChanged.emit($event);
     } else {
       this.dataToComponent = this.localSort($event);
     }
@@ -246,8 +246,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   applyPageChanges($event: PageEvent) {
-    if (this.pageChange.observers.length > 0) {
-      this.pageChange.emit($event);
+    if (this.pageChanged.observers.length > 0) {
+      this.pageChanged.emit($event);
     } else {
       this.localPaging($event);
     }
@@ -266,14 +266,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   emitSelectEvent() {
-    this.selectChange.emit({
+    this.selectChanged.emit({
       singleSelect: this.singleSelect ? true : false,
       data: this.selections
     });
   }
 
   emitClickEvent(data) {
-    this.rowClickUnderMutiSelectMode.emit({
+    this.multiSelectSingleRowClicked.emit({
       data: data
     });
   }
@@ -299,15 +299,15 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     row.uxgTableEdit = true;
   }
 
-  rowSend(row) {
-    this.rowSendEvent.emit({
+  rowSendTriggered(row) {
+    this.rowSend.emit({
       data: row
     });
   }
 
   rowEditConfirm(newRow) {
     delete newRow.uxgTableEdit;
-    this.rowUpdateEvent.emit({
+    this.rowUpdated.emit({
       data: newRow
     });
   }
@@ -323,7 +323,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     const rowIndex = this.dataToComponent.findIndex(item => item === row);
     this.dataToComponent.splice(rowIndex, 1);
     this.dataToComponent = this.dataToComponent.slice();
-    this.rowRemoveEvent.emit({
+    this.rowRemoved.emit({
       data: row
     });
   }

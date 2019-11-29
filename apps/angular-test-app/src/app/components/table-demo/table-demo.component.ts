@@ -244,7 +244,7 @@ export class TableDemoComponent implements OnInit {
         pageSize: 5,
         showFirstLastButtons: true
       };
-      this.table.pageChange.subscribe(page => this.applyPaging(page));
+      this.table.pageChanged.subscribe(page => this.applyPaging(page));
     } else {
       this.paging = null;
     }
