@@ -13,10 +13,6 @@ $uxg-violet: (
   700: #4a27cb,
   800: #3e1db8,
   900: #3315a4,
-  A100: green,
-  A200: green,
-  A400: green,
-  A700: green,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -27,11 +23,7 @@ $uxg-violet: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $light-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
+    900: $light-primary-text
   )
 );
 
@@ -46,10 +38,6 @@ $uxg-fuchsia: (
   700: #9d1880,
   800: #910d75,
   900: #8d0073,
-  A100: orange,
-  A200: orange,
-  A400: orange,
-  A700: orange,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -60,36 +48,20 @@ $uxg-fuchsia: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $light-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
+    900: $light-primary-text
   )
 );
 
 $uxg-crimson: (
-  50: #e40046,
+  25: #f8bdcf,
+  50: #f17fa2,
+  75: #ea3f74,
   100: #e40046,
-  200: #e40046,
-  300: #e40046,
-  400: #e40046,
-  500: #e40046,
-  600: #e40046,
-  700: #e40046,
-  800: #e40046,
-  900: #e40046,
   contrast: (
-    50: $light-primary-text,
-    100: $light-primary-text,
-    200: $light-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $light-primary-text,
+    100: $light-primary-text
   )
 );
 
@@ -102,35 +74,59 @@ $uxg-grass: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text,
+    100: $dark-primary-text
   )
 );
 
 $uxg-amber: (
+  25: #ffe1cd,
+  50: #ffc39c,
+  75: #ffa76d,
   100: #ff8a3d,
   contrast: (
-    100: $dark-primary-text,
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $dark-primary-text,
+    100: $dark-primary-text
   )
 );
 
 $uxg-gold: (
+  25: #fbebc7,
+  50: #f7d991,
+  75: #f3c65a,
   100: #f0b323,
   contrast: (
-    100: $dark-primary-text,
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $dark-primary-text,
+    100: $dark-primary-text
   )
 );
 
 $uxg-lime: (
+  25: #f3f4d3,
+  50: #e8eaa9,
+  75: #dde17f,
   100: #d2d755,
   contrast: (
-    100: $dark-primary-text,
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $dark-primary-text,
+    100: $dark-primary-text
   )
 );
 
 $uxg-ocean: (
+  25: #d6eff5,
+  50: #ade0eb,
+  75: #84d0e1,
   100: #5bc1d7,
   contrast: (
-    100: $dark-primary-text,
+    25: $dark-primary-text,
+    50: $dark-primary-text,
+    75: $dark-primary-text,
+    100: $dark-primary-text
   )
 );
 
