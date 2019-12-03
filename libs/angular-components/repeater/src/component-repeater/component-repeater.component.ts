@@ -16,13 +16,13 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class ComponentRepeaterComponent implements OnInit {
-  _factory: any;
+  private _factory: any;
   @Input() set factory(data: ComponentFactory<any>) {
     this._factory = data;
     this.updateComponent();
   }
 
-  _data: any;
+  private _data: any;
   @Input() set data(data: any) {
     this._data = data;
     if (this.ref) {
@@ -44,7 +44,7 @@ export class ComponentRepeaterComponent implements OnInit {
     }
   }
 
-  _selected: boolean;
+  private _selected = false;
   @Input() set selected(selected: boolean) {
     this._selected = selected;
     if (this.ref) {
@@ -55,10 +55,10 @@ export class ComponentRepeaterComponent implements OnInit {
     }
   }
 
-  ref: ComponentRef<any>;
+  ref!: ComponentRef<any>;
 
   @ViewChild('componentHolder', { read: ViewContainerRef, static: true })
-  componentHolder: ViewContainerRef;
+  componentHolder!: ViewContainerRef;
 
   constructor() {}
 

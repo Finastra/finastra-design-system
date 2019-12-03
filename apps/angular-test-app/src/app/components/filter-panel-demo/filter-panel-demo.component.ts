@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleFilterTree } from './filter-panel-demo.sample-data';
+import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',
@@ -7,9 +8,9 @@ import { sampleFilterTree } from './filter-panel-demo.sample-data';
   styleUrls: ['./filter-panel-demo.component.scss']
 })
 export class FilterPanelDemoComponent implements OnInit {
-  sampleData = [];
+  sampleData: TreeNode[] = [];
   filterExpression: string[] = [];
-  groupValue: string;
+  groupValue = 'api';
   initialGroupState = 'api';
   tagsSampleData = [
     { label: 'Malauzai', isSelected: true },

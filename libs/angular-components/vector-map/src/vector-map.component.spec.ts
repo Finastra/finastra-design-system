@@ -19,11 +19,11 @@ import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
   styles: ['']
 })
 class PlotComponent {
-  @Input() data: [];
-  @Input() layout: object;
-  @Input() config: object;
-  @Input() style: object;
-  @Input() useResizeHandler: boolean;
+  @Input() data: [] = [];
+  @Input() layout: object = {};
+  @Input() config: object = {};
+  @Input() style: object = {};
+  @Input() useResizeHandler = false;
 
   @Output() hover = new EventEmitter<any>();
   @Output() unhover = new EventEmitter<any>();

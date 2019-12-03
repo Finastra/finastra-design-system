@@ -40,10 +40,10 @@ export class UxgWizardPageComponent implements OnInit {
   ) {}
 
   @ContentChild(UxgWizardPageTitleComponent, { static: true })
-  public pageTitle: UxgWizardPageTitleComponent;
+  public pageTitle!: UxgWizardPageTitleComponent;
 
   @ContentChild(UxgWizardPageDescriptionComponent, { static: true })
-  public pageDescription: UxgWizardPageDescriptionComponent;
+  public pageDescription!: UxgWizardPageDescriptionComponent;
 
   private _disabled = false;
 

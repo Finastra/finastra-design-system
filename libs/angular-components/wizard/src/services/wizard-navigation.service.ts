@@ -18,7 +18,7 @@ export class WizardNavigationService implements OnDestroy {
 
   private _wizardDone = new Subject<boolean>();
 
-  private _currentPage: UxgWizardPageComponent;
+  private _currentPage: UxgWizardPageComponent | null = null;
 
   private _wizardCancel = new Subject<any>();
 
@@ -30,7 +30,7 @@ export class WizardNavigationService implements OnDestroy {
     return this._currentChange.asObservable();
   }
 
-  public get currentPageTitle(): TemplateRef<any> {
+  public get currentPageTitle(): TemplateRef<any> | null {
     if (!this.currentPage) {
       return null;
     }
@@ -45,15 +45,12 @@ export class WizardNavigationService implements OnDestroy {
     return this.pageCollection.lastPage === this.currentPage;
   }
 
-  get currentPage(): UxgWizardPageComponent {
-    if (!this._currentPage) {
-      return null;
-    }
+  get currentPage(): UxgWizardPageComponent | null {
     return this._currentPage;
   }
 
-  set currentPage(page: UxgWizardPageComponent) {
-    if (this._currentPage !== page) {
+  set currentPage(page: UxgWizardPageComponent | null) {
+    if (page && this._currentPage !== page) {
       this._currentPage = page;
       page.load.emit(page.id);
       this._currentChange.next(page);
@@ -79,7 +76,7 @@ export class WizardNavigationService implements OnDestroy {
   constructor(public pageCollection: PageCollectionService, public buttonService: ButtonHubService) {
     this.previousButtonSubscription = this.buttonService.previousButtonClicked.subscribe(() => {
       const currentPage = this.currentPage;
-      if (this.currentPageIsFirst || currentPage.previousStepDisabled) {
+      if (!currentPage || this.currentPageIsFirst || currentPage.previousStepDisabled) {
         return;
       }
       currentPage.previousButtonClicked.emit(currentPage);
@@ -119,8 +116,8 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public forceNext() {
-    const currentPage: UxgWizardPageComponent = this.currentPage;
-    const nextPage: UxgWizardPageComponent = this.pageCollection.getNextPage(currentPage);
+    const currentPage = this.currentPage;
+    const nextPage = this.pageCollection.getNextPage(currentPage);
 
     if (!nextPage) {
       throw new Error('The wizard has no next page to go to.');
@@ -130,8 +127,8 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public checkAndCommitCurrentPage(buttonType: string) {
-    const currentPage: UxgWizardPageComponent = this.currentPage;
-
+    const currentPage = this.currentPage;
+    if (!currentPage) return;
     const isNext: boolean = buttonType === 'next';
     const isDone: boolean = buttonType === 'done';
 
@@ -157,9 +154,9 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public previous() {
-    let previousPage: UxgWizardPageComponent;
+    let previousPage: UxgWizardPageComponent | null;
 
-    if (this.currentPageIsFirst) {
+    if (this.currentPageIsFirst || !this.currentPage) {
       return;
     }
 
@@ -185,6 +182,7 @@ export class WizardNavigationService implements OnDestroy {
 
     pages = this.pageCollection;
     pageToGoTo = typeof pageOrId === 'string' ? pages.getPageById(pageOrId) : pageOrId;
+    if (!this.currentPage) return;
     currentPage = this.currentPage;
 
     currentPageIndex = pages.getPageIndex(currentPage);

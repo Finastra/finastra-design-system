@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import { ReplaySubject, fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { GlobalSearchService, Result, ResultGroup } from '../../services/global-search.service';
+import { GlobalSearchService, ResultGroup } from '../../services/global-search.service';
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
@@ -34,11 +34,11 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 })
 export class GlobalSearchOverlayComponent implements AfterViewInit {
   animationState: 'void' | 'enter' | 'leave' = 'enter';
-  private searchDebounce = 300;
+
   results$ = new ReplaySubject<ResultGroup[]>(1);
-  results: ResultGroup[];
-  resultsShown: number;
-  resultsFound: number;
+  results: ResultGroup[] = [];
+  resultsShown = 0;
+  resultsFound = 0;
   filterSize = 0;
 
   @Input()
@@ -56,17 +56,16 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Input()
   itemsLayout = this.config.itemsLayout;
 
-  @Output() searchTermChange: EventEmitter<string>;
+  @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
 
-  @ViewChild('searchInput', { static: true }) searchInput: ElementRef;
+  private searchDebounce = 300;
 
   constructor(
     public searchService: GlobalSearchService,
     private readonly ref: SearchOverlayRef,
     @Inject(SEARCH_CONFIG) private config: SearchConfig
-  ) {
-    this.searchTermChange = new EventEmitter<string>();
-  }
+  ) {}
 
   @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
     this.closeSearch();
@@ -102,11 +101,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     this.ref.close();
   }
 
-  onItemClick(item) {
+  onItemClick(item: any) {
     this.searchService.onItemClick(item);
   }
 
-  toggleFilter(resultGroup) {
+  toggleFilter(resultGroup: ResultGroup) {
     resultGroup.selected = !resultGroup.selected;
     if (resultGroup.selected) {
       if (this.filterSize === 0) {
@@ -124,7 +123,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     }
   }
 
-  private get(object, path, defaultVal?) {
+  private get(object: any, path: string | string[], defaultVal?: any): any {
     const PATH = Array.isArray(path) ? path : path.split('.').filter(i => i.length);
     if (!PATH.length) {
       return object === undefined ? defaultVal : object;
@@ -132,16 +131,18 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     if (object === null || object === undefined || typeof object[PATH[0]] === 'undefined') {
       return defaultVal;
     }
-    return this.get(object[PATH.shift()], PATH, defaultVal);
+    const firstPathItem = PATH.shift();
+
+    return this.get(firstPathItem ? object[firstPathItem] : undefined, PATH, defaultVal);
   }
 
-  private groupByResults<T>(collection: Array<T>, property: string): Array<{ key: string; value: [T] }> {
+  private groupByResults<T>(collection: Array<T>, property: string = ''): ResultGroup[] {
     if (!collection) {
-      return null;
+      return [];
     }
 
-    const groupedCollection = collection.reduce((previous, current) => {
-      if (!previous[this.get(current, property)]) {
+    const groupedCollection = collection.reduce<any>((previous, current) => {
+      if (!previous[this.get(current, property || '')]) {
         previous[this.get(current, property)] = [current];
       } else {
         previous[this.get(current, property)].push(current);

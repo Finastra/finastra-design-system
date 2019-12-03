@@ -34,11 +34,11 @@ export interface UxgPage {
 }
 
 export interface UxgTableSelectEvent {
-  singleSelect: true | false;
+  singleSelect: boolean;
   data: any[]; //selected row data
 }
 
-export const UxgDefaultPaging = {
+export const UxgDefaultPaging: UxgPage = {
   disabled: false,
   pageIndex: 0,
   length: 0,

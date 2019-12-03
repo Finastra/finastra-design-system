@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import * as elasticlunrImp from 'elasticlunr';
 
-const elasticlunr = elasticlunrImp;
+declare var require: any;
+
+const elasticlunr = require('elasticlunr');
 
 export interface Result {
   doc: Object;
@@ -13,6 +14,7 @@ export interface Result {
 export interface ResultGroup {
   key: string;
   value: Partial<Result>[];
+  selected?: boolean;
 }
 
 @Injectable({
@@ -25,7 +27,7 @@ export class GlobalSearchService {
   initIndex(fields?: string[], ref?: string) {
     return new Promise((resolve, reject) => {
       if (!this.index) {
-        this.index = elasticlunr(function() {
+        this.index = elasticlunr(function(this: any) {
           if (fields && fields.length) {
             fields.forEach(field => {
               this.addField(field);
@@ -66,9 +68,9 @@ export class GlobalSearchService {
     }
   }
 
-  search(query: string): any {
+  search(query: string): Array<{ doc: any }> {
     if (this.index) {
-      const fields = this.index.getFields().reduce((acc, item) => {
+      const fields = this.index.getFields().reduce((acc: any, item: any) => {
         acc[item] = { boost: 1 };
         return acc;
       }, {});
@@ -78,6 +80,7 @@ export class GlobalSearchService {
         expand: true
       });
     }
+    return [];
   }
 
   onItemClick(item: Object) {

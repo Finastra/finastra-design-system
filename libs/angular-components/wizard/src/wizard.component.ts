@@ -28,11 +28,11 @@ import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
   animations: [wizardAnimation()]
 })
 export class UxgWizardComponent implements OnDestroy, AfterContentInit {
-  @ContentChildren(UxgWizardPageComponent) pages: QueryList<UxgWizardPageComponent>;
+  @ContentChildren(UxgWizardPageComponent) pages!: QueryList<UxgWizardPageComponent>;
 
   @Input('uxgWizardShowCloseButton') showCloseButton = true;
 
-  @Input('uxgWizardStartingPage') startingPage: number;
+  @Input('uxgWizardStartingPage') startingPage = 0;
 
   @Output('uxgWizardOnCancel') cancel = new EventEmitter<any>(false);
 
@@ -48,8 +48,8 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
     return this.navService.currentPage;
   }
 
-  public set currentPage(page: UxgWizardPageComponent) {
-    this.navService.goTo(page);
+  public set currentPage(page: UxgWizardPageComponent | null) {
+    if (page) this.navService.goTo(page);
   }
 
   public get isLast() {

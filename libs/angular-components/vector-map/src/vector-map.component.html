@@ -19,7 +19,7 @@
         <div class="views" *ngIf="views">
           <mat-form-field>
             <mat-label>View by</mat-label>
-            <mat-select (selectionChange)="onViewChange($event)" [value]="views[0].id">
+            <mat-select (selectionChange)="onViewChange($event)" [value]="views[0]?.id">
               <mat-option *ngFor="let view of views" [value]="view.id">
                 {{ view.text }}
               </mat-option>

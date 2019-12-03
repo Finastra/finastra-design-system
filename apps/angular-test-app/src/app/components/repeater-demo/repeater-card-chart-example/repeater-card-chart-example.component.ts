@@ -12,7 +12,7 @@ import * as d3 from 'd3';
 
 export interface DataModel {
   year: number;
-  amount: number;
+  amount: string;
 }
 
 @Component({
@@ -23,7 +23,7 @@ export interface DataModel {
 })
 export class RepeaterCardChartExampleComponent implements OnInit {
   @ViewChild('chart', { static: true })
-  private chartContainer: ElementRef;
+  private chartContainer!: ElementRef;
 
   @Input() data: any;
   @Input() columnsMatcher: any = {};
@@ -37,11 +37,12 @@ export class RepeaterCardChartExampleComponent implements OnInit {
   highest = this.randomIntFromInterval(1000, 2000);
   lowest = this.randomIntFromInterval(1000, 2000);
 
-  element;
-  line;
-  dataNum1;
-  dataNum2;
-  dataNum3;
+  element: any;
+  line: any;
+  dataNum1: any[] = [];
+  dataNum2: any[] = [];
+  dataNum3: any[] = [];
+
   constructor() {}
 
   ngOnInit() {
@@ -71,10 +72,10 @@ export class RepeaterCardChartExampleComponent implements OnInit {
 
     this.line = d3
       .line()
-      .x(d => {
-        return x(d['year']);
+      .x((d: any) => {
+        return x(d.year);
       })
-      .y(d => y(d['amount']));
+      .y((d: any) => y(d.amount));
 
     this.dataNum1 = historic.filter(d => d.year <= 10);
     this.dataNum2 = historic.filter(d => d.year >= 10);
@@ -112,13 +113,13 @@ export class RepeaterCardChartExampleComponent implements OnInit {
   }
 
   updateData() {
-    const dataNum1Bis = [];
+    const dataNum1Bis: any[] = [];
     this.dataNum1.forEach(element => {
       element.amount = this.randomIntFromInterval(0, 9999);
       dataNum1Bis.push(element);
     });
 
-    const dataNum2Bis = [];
+    const dataNum2Bis: any[] = [];
     this.dataNum2.forEach(element => {
       element.amount = this.randomIntFromInterval(0, 9999);
       dataNum2Bis.push(element);
@@ -138,11 +139,11 @@ export class RepeaterCardChartExampleComponent implements OnInit {
       .attr('d', this.line(dataNum2Bis));
   }
 
-  randomIntFromInterval(min, max) {
+  randomIntFromInterval(min: number, max: number) {
     // min and max included
     return (Math.random() * (max - min + 1) + min).toFixed(2);
   }
-  randomIntFromIntervalInt(min, max) {
+  randomIntFromIntervalInt(min: number, max: number) {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }

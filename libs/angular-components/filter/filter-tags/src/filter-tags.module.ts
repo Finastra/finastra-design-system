@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-
-import { FilterTagsComponent } from './filter-tags.component';
 import { CommonModule } from '@angular/common';
 import {
   MatAutocompleteModule,
@@ -10,6 +8,8 @@ import {
   MatInputModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { FilterTagsComponent } from './filter-tags.component';
 
 @NgModule({
   declarations: [FilterTagsComponent],

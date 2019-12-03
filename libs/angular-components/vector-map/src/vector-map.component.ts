@@ -16,7 +16,7 @@ import { TooltipComponent } from '@angular/material/tooltip';
 import { PlotComponent } from 'angular-plotly.js';
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
-import { PaletteService, ColorScale, PaletteConfig } from '@ffdc/uxg-angular-components/core';
+import { PaletteService, ColorScale, PaletteConfig, PALETTE_DEFAULT_CONFIG } from '@ffdc/uxg-angular-components/core';
 
 import {
   VectorMapCountry,
@@ -37,33 +37,30 @@ import {
   styleUrls: ['./vector-map.component.scss']
 })
 export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
-  @ViewChild(PlotComponent, { static: false }) plot: PlotComponent;
-  @ViewChild('tooltip', { static: true }) tooltip: TooltipComponent;
+  @ViewChild(PlotComponent, { static: true }) plot!: PlotComponent;
+  @ViewChild('tooltip', { static: true }) tooltip!: TooltipComponent;
 
   @Input() title = 'Vector Map';
   @Input() dataSource: VectorMapDataSource = [];
   @Input() showLegend = true;
 
   // tslint:disable-next-line: no-output-native
-  @Output() click: EventEmitter<Partial<VectorMapCountry>>;
-  @Output() viewChange: EventEmitter<VectorMapView>;
+  @Output() click = new EventEmitter<Partial<VectorMapCountry>>();
+  @Output() viewChange = new EventEmitter<VectorMapView>();
 
   countries: VectorMapCountry[] = [];
   data: Partial<Plotly.Data>[] = [];
-  layout: Partial<Plotly.Layout>;
-  config: Partial<Plotly.Config>;
-  style: Partial<CSSStyleDeclaration>;
-
-  paletteConfig: PaletteConfig;
+  layout: Partial<Plotly.Layout> = {};
+  config: Partial<Plotly.Config> = {};
+  style: Partial<CSSStyleDeclaration> = {};
+  paletteConfig: PaletteConfig = PALETTE_DEFAULT_CONFIG;
   legend: VectorMapLegend[] = [];
+  viewId: string | null = null;
+  views: VectorMapView[] = [];
+  tooltipTop = '';
+  tooltipLeft = '0px';
+  max = 1;
 
-  viewId: string | null;
-  views: VectorMapView[];
-
-  tooltipTop: string;
-  tooltipLeft: string;
-
-  max: number;
   subscriptions: Subscription[] = [];
 
   constructor(public paletteService: PaletteService) {
@@ -133,7 +130,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getData(): Partial<VectorMapCountry>[] {
-    return this.dataSource instanceof Array ? this.dataSource : this.dataSource.data[this.viewId];
+    return this.dataSource instanceof Array ? this.dataSource : this.viewId ? this.dataSource.data[this.viewId] : [];
   }
 
   setLayout(layout: Partial<Plotly.Layout> = {}) {
@@ -155,14 +152,14 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
       this.viewChange = this.viewChange || new EventEmitter<VectorMapView>();
       this.views = (this.dataSource as VectorMapViewsDataSource).views;
     } else {
-      this.views = null;
+      this.views = [];
     }
   }
 
   setPlotData() {
     const data = this.getData();
 
-    this.max = Math.max(...[0, ...data.map(({ value }) => value)]);
+    this.max = Math.max(...[0, ...data.map(({ value }) => value!)]);
     this.setCountries(data);
     this.setLegend(this.paletteConfig.colorScale);
 
@@ -186,9 +183,10 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
 
   setCountries(data: Partial<VectorMapCountry>[]) {
     this.countries = COUNTRIES.map(country => {
+      const countryData = data.find(({ name, code }) => name === country.name || code === country.code) || country;
       return {
         ...country,
-        value: (data.find(({ name, code }) => name === country.name || code === country.code) || country).value
+        ...{ value: countryData ? countryData.value || 0 : 0 }
       };
     });
   }
@@ -222,7 +220,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  onHover({ points: [point] }) {
+  onHover({ points: [point] }: { points: Array<any> }) {
     const box = (document.querySelectorAll('.choroplethlocation')[point.pointIndex] as SVGPathElement).getBBox();
 
     this.tooltipLeft = box.x + this.plot.plotEl.nativeElement.offsetLeft + box.width / 2 + 'px';
@@ -237,7 +235,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     this.tooltip.hide(200);
   }
 
-  onPlotClick({ points: [point] }) {
+  onPlotClick({ points: [point] }: { points: Array<any> }) {
     const clickedCountry = this.countries[point.pointIndex];
 
     this.click.emit(
@@ -245,7 +243,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     );
   }
 
-  onViewChange($event) {
+  onViewChange($event: any) {
     this.viewId = $event.value;
 
     this.setPlotData();

@@ -1,6 +1,6 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
-import { ComponentRef, Injectable, InjectionToken, Injector } from '@angular/core';
+import { ComponentRef, Injectable, Injector } from '@angular/core';
 
 import { SearchConfig } from '../components/global-search-overlay/global-search-overlay-config';
 import { SearchOverlayRef } from '../components/global-search-overlay/global-search-overlay-ref';
@@ -22,14 +22,14 @@ export class GlobalSearchOverlayService {
     });
 
     const searchOverlayRef = new SearchOverlayRef(overlayRef);
-    const injector = this.getInjector(config, searchOverlayRef, this.parentInjector);
+    const injector = config ? this.getInjector(config, searchOverlayRef, this.parentInjector) : this.parentInjector;
     const containerPortal = new ComponentPortal(GlobalSearchOverlayComponent, null, injector);
 
     const componentRef: ComponentRef<GlobalSearchOverlayComponent> = overlayRef.attach(containerPortal);
     const element: HTMLElement = <HTMLElement>componentRef.location.nativeElement;
     element.style.width = '100%';
-    componentRef.instance.searchTermChange.subscribe(value => {
-      config.searchTermChange(value);
+    componentRef.instance.searchTermChange.subscribe((value: any) => {
+      if (config) config.searchTermChange(value);
     });
 
     return searchOverlayRef;

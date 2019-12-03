@@ -7,12 +7,12 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string;
+  title = '';
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.title = this.route.root.firstChild.snapshot.data['title'];
+        this.title = this.route.root.firstChild ? this.route.root.firstChild.snapshot.data['title'] : '';
       }
     });
   }
