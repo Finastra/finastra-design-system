@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild } from '@angular/core';
 import { UxgTableSelectEvent, TableComponent, UxgPage, UxgSort } from '@ffdc/uxg-angular-components/table';
-import { json } from 'd3';
 
 const ELEMENT_DATA: any[] = [
   {
