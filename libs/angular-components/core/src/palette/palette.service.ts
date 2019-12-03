@@ -1,5 +1,5 @@
 import { Injectable, Inject, OnDestroy } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 import { PaletteConfig, PALETTE_CONFIG } from './palette.models';
 
@@ -8,23 +8,19 @@ import { PaletteConfig, PALETTE_CONFIG } from './palette.models';
 })
 export class PaletteService implements OnDestroy {
   paletteChange$: Observable<PaletteConfig>;
-  private subscriber: Subscriber<PaletteConfig>;
+  private internalSubject: BehaviorSubject<PaletteConfig>;
 
   constructor(@Inject(PALETTE_CONFIG) private config: PaletteConfig) {
-    this.paletteChange$ = new Observable(subscriber => {
-      this.subscriber = subscriber;
-
-      this.subscriber.next(this.config);
-    });
+    this.internalSubject = new BehaviorSubject(this.config);
+    this.paletteChange$ = this.internalSubject.asObservable();
   }
 
   ngOnDestroy() {
-    this.subscriber.complete();
+    this.internalSubject.complete();
   }
 
   changePalette(newPaletteConfig: PaletteConfig) {
     this.config = newPaletteConfig;
-
-    this.subscriber.next(this.config);
+    this.internalSubject.next(this.config);
   }
 }
