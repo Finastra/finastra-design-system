@@ -20,16 +20,17 @@ $uxg-nav-list-level-height: 48px;
     counter-increment: ordered-list-counter;
     margin: $uxg-spacing-0;
     padding: $uxg-spacing-0;
-
-    & + li,
-    & + section {
-      margin-top: $uxg-spacing-3;
-    }
+    margin-bottom: $uxg-spacing-5;
 
     *:first-child,
     .uxg-ol-title {
       display: inline-block;
       margin: $uxg-spacing-0;
+      margin-bottom: $uxg-spacing-4;
+
+      + * {
+        margin-top: $uxg-spacing-0;
+      }
     }
 
     &::before {
