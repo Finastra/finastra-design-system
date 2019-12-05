@@ -1,14 +1,23 @@
 $uxg-table-max-height: 528px; // display maximum 10 rows
 
 uxg-table {
+    display: flex;
+    -webkit-box-flex: 1;
     flex: 1;
-    .uxg-data-table{
-        max-height: $uxg-table-max-height;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    
+    .uxg-data-table {
+        max-height: none;
         max-width: inherit;
         overflow: auto;
-        flex: 1;
     }
+
     .mat-table {
+        width: 100%;
+
         tr {
             td {
                 position: relative;
@@ -92,13 +101,4 @@ uxg-table {
             }
         }
     }
-
-    .mat-paginator{
-        position: sticky;
-        bottom: 0px;
-        z-index: 10;
-    }
 }
-
-
-
