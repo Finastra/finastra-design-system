@@ -22,8 +22,6 @@ import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
   encapsulation: ViewEncapsulation.None
 })
 export class TableComponent implements OnInit, OnDestroy, OnChanges {
-  private uxgMultiSelectColumn = ['uxg-table-select-row'];
-
   @ViewChild(MatTable, { static: true }) table: MatTable<any>;
 
   //table data
@@ -48,10 +46,17 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
   set columnsToDisplay(columnsToDisplay: Array<string>) {
     this._columnsToDisplay = columnsToDisplay;
-    if (this.multiSelect) {
-      this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(columnsToDisplay);
-    } else {
-      this.columnsToDisplayToComponent = columnsToDisplay;
+    this.columnsToDisplayToComponent = columnsToDisplay;
+
+    if (this.multiSelect && this.columnsToDisplayToComponent.indexOf(this.uxgMultiSelectColumn[0]) < 0) {
+      this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplayToComponent);
+    }
+
+    if (
+      (this.enableEdit || this.enableDelete) &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
+    ) {
+      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
     }
   }
 
@@ -65,34 +70,51 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() columnDragEnable = false;
 
   selections = [];
+  private uxgMultiSelectColumn = ['uxg-table-select-row'];
   private _selectedIndex = [];
 
   @Input()
   set selectedKeys(selectedIndex: number[]) {
     this._selectedIndex = selectedIndex;
     if (this.singleSelect && selectedIndex.length > 0) {
-      this.selections.push(this.data[selectedIndex[0]]);
+      if (this.selections.indexOf(this.data[selectedIndex[0]]) < 0) {
+        this.selections.push(this.data[selectedIndex[0]]);
+      }
     }
     if (!this.singleSelect && this.multiSelect) {
       selectedIndex.forEach(selectionIndex => {
-        this.selections.push(this.data[selectionIndex]);
+        if (this.selections.indexOf(this.data[selectionIndex]) < 0) {
+          this.selections.push(this.data[selectionIndex]);
+        }
       });
     }
   }
+
   get selectedKeys(): number[] {
     return this._selectedIndex;
   }
 
-  @Input() singleSelect = true;
+  @Input() singleSelect: boolean;
   @Input() multiSelect: boolean;
 
-  @Output() selectChange = new EventEmitter<UxgTableSelectEvent>();
-  @Output() sortChange = new EventEmitter<UxgSort>();
+  @Output() selectChanged = new EventEmitter<UxgTableSelectEvent>();
+  @Output() multiSelectSingleRowClicked = new EventEmitter<any>();
+  @Output() sortChanged = new EventEmitter<UxgSort>();
 
   //paginator data
   @Input() pageEnable = false;
   @Input() paging: UxgPage;
-  @Output() pageChange = new EventEmitter<PageEvent>();
+  @Output() pageChanged = new EventEmitter<PageEvent>();
+
+  //edit part
+  private uxgTableActionColumn = ['uxg-table-action-row'];
+  private editRowOrigin;
+  @Input() enableEdit: boolean;
+  @Input() enableDelete: boolean;
+  @Input() enableSend: boolean;
+  @Output() rowRemoved = new EventEmitter<any>();
+  @Output() rowUpdated = new EventEmitter<any>();
+  @Output() rowSend = new EventEmitter<any>();
 
   //local variable
   previousIndex: number; // used for column drag drop
@@ -103,8 +125,15 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       this.multiSelect = false;
     }
 
-    if (this.multiSelect) {
+    if (this.multiSelect && this.columnsToDisplayToComponent.indexOf(this.uxgMultiSelectColumn[0]) < 0) {
       this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);
+    }
+
+    if (
+      (this.enableEdit || this.enableDelete) &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
+    ) {
+      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
     }
 
     if (this.pageEnable && !this.paging) {
@@ -135,11 +164,12 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     if (changes.multiSelect && !changes.multiSelect.isFirstChange()) {
+      this.columnsToDisplayToComponent = this.columnsToDisplay;
+
       if (this.multiSelect) {
         this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);
-      } else {
-        this.columnsToDisplayToComponent = this.columnsToDisplay;
       }
+
       this.emitSelectEvent();
     }
 
@@ -150,28 +180,44 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       }
       this.emitSelectEvent();
     }
+
+    if (changes.enableEdit && !changes.enableEdit.isFirstChange()) {
+      this.resetActionRow();
+    }
+
+    if (changes.enableDelete && !changes.enableDelete.isFirstChange()) {
+      this.resetActionRow();
+    }
+    if (changes.enableSend && !changes.enableSend.isFirstChange()) {
+      this.resetActionRow();
+    }
   }
 
   sortData($event: UxgSort) {
-    if (this.sortChange.observers.length > 0) {
-      this.sortChange.emit($event);
+    if (this.sortChanged.observers.length > 0) {
+      this.sortChanged.emit($event);
     } else {
       this.dataToComponent = this.localSort($event);
     }
   }
 
   singleSelectRowClick(row: any) {
-    if (!this.singleSelect) {
+    this.dataToComponent.forEach(item => delete item.uxgTableEdit);
+
+    if (this.singleSelect) {
+      if (this.selections.indexOf(row) < 0) {
+        this.selections = [row];
+      } else {
+        this.selections = [];
+      }
+      this.emitSelectEvent();
       return;
     }
 
-    if (this.selections.indexOf(row) < 0) {
-      this.selections = [row];
-    } else {
-      this.selections = [];
+    if (!this.singleSelect && this.multiSelect) {
+      this.emitClickEvent(row);
+      return;
     }
-
-    this.emitSelectEvent();
   }
 
   multiSelectRowClick(row: any) {
@@ -200,8 +246,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   applyPageChanges($event: PageEvent) {
-    if (this.pageChange.observers.length > 0) {
-      this.pageChange.emit($event);
+    if (this.pageChanged.observers.length > 0) {
+      this.pageChanged.emit($event);
     } else {
       this.localPaging($event);
     }
@@ -220,9 +266,15 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   emitSelectEvent() {
-    this.selectChange.emit({
+    this.selectChanged.emit({
       singleSelect: this.singleSelect ? true : false,
       data: this.selections
+    });
+  }
+
+  emitClickEvent(data) {
+    this.multiSelectSingleRowClicked.emit({
+      data: data
     });
   }
 
@@ -239,6 +291,43 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
+  rowEditClick(row) {
+    this.dataToComponent.forEach(item => {
+      delete item.uxgTableEdit;
+    });
+    this.editRowOrigin = { ...row };
+    row.uxgTableEdit = true;
+  }
+
+  rowSendTriggered(row) {
+    this.rowSend.emit({
+      data: row
+    });
+  }
+
+  rowEditConfirm(newRow) {
+    delete newRow.uxgTableEdit;
+    this.rowUpdated.emit({
+      data: newRow
+    });
+  }
+
+  rowEditCancel(row) {
+    delete row.uxgTableEdit;
+    Object.keys(row).forEach(key => {
+      row[key] = this.editRowOrigin[key];
+    });
+  }
+
+  rowDelete(row) {
+    const rowIndex = this.dataToComponent.findIndex(item => item === row);
+    this.dataToComponent.splice(rowIndex, 1);
+    this.dataToComponent = this.dataToComponent.slice();
+    this.rowRemoved.emit({
+      data: row
+    });
+  }
+
   ngOnDestroy() {}
 
   //local functions
@@ -251,6 +340,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       length: this.data.length
     });
   }
+
   localSort(sort: UxgSort): any[] {
     return this.dataToComponent.slice().sort((a, b) => {
       let comparison = 0;
@@ -287,5 +377,23 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   resetIndexWithMultiSelectRow(index: number): number {
     return this.multiSelect ? index + 1 : index;
+  }
+
+  resetActionRow() {
+    if (
+      (this.enableDelete || this.enableEdit || this.enableSend) &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
+    ) {
+      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+    }
+
+    if (
+      !this.enableSend &&
+      !this.enableDelete &&
+      !this.enableEdit &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1
+    ) {
+      this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
+    }
   }
 }

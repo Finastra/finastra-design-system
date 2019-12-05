@@ -145,8 +145,11 @@ export class TableDemoComponent implements OnInit {
   customizedPage = false;
   stickyFooter = true;
   paging = null;
-  actionDiscription = '';
+  actionDescription = '';
   singleSelect = true;
+  enableTableEdit = false;
+  enableTableRowDelete = false;
+  enableTableSendEvent = false;
 
   // columns defination object
   columns: any[] = [
@@ -177,7 +180,7 @@ export class TableDemoComponent implements OnInit {
   ngOnInit(): void {}
 
   sortData(sort: UxgSort) {
-    this.actionDiscription = 'customized sorting function excuted';
+    this.actionDescription = 'customized sorting function excuted';
     this.dataSource = this.dataSource.slice().sort((obj1, obj2) => {
       switch (this.getSortColumnType(sort.active)) {
         case 'number':
@@ -211,7 +214,7 @@ export class TableDemoComponent implements OnInit {
     }).type;
   }
   applyPaging($event: UxgPage) {
-    this.actionDiscription = 'customized paging applied';
+    this.actionDescription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
     this.dataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
   }
@@ -240,15 +243,39 @@ export class TableDemoComponent implements OnInit {
         pageSize: 5,
         showFirstLastButtons: true
       };
-      this.table.pageChange.subscribe(page => this.applyPaging(page));
+      this.table.pageChanged.subscribe(page => this.applyPaging(page));
     } else {
       this.paging = null;
     }
   }
   selectChange($event: UxgTableSelectEvent) {
-    this.actionDiscription = JSON.stringify($event.data);
+    this.updateActionsDescription($event.data);
   }
   enableTotal($event) {
     this.totalEnable = $event.checked;
+  }
+  enableTableEditChanged($event) {
+    this.enableTableEdit = $event.checked;
+  }
+  enableTableRowDeleteChanged($event) {
+    this.enableTableRowDelete = $event.checked;
+  }
+  enableTableRowSendChanged($event) {
+    this.enableTableSendEvent = $event.checked;
+  }
+  rowEditEvent($event) {
+    this.updateActionsDescription($event.data);
+  }
+  rowDeleteEvent($event) {
+    this.updateActionsDescription($event.data);
+  }
+  rowClickUnderMutiSelectMode($event) {
+    this.updateActionsDescription($event.data);
+  }
+  rowSendClickEvent($event) {
+    this.updateActionsDescription($event.data);
+  }
+  updateActionsDescription(data) {
+    this.actionDescription = JSON.stringify(data);
   }
 }

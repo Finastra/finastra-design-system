@@ -11,9 +11,47 @@ uxg-table {
     .mat-table {
         tr {
             td {
+                position: relative;
+                overflow: hidden;
+                box-sizing: border-box;
+                .uxg-cell-hidden{
+                    display: none;
+                    width: 0px;
+                    height: 0px;
+                }
+                .uxg-table-row-display{
+                    position: absolute;
+                }
+                .uxg-table-row-edit{
+                    position: absolute;
+                    top: 13%;
+                    bottom: 13%;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                    justify-content: center;
+                    height: 32px;
+                    &.uxg-table-row-edit{
+                        input{
+                            width: 100%;
+                            height: 24px;
+                        }
+                    }
+                }
 
+                &.uxg-table-action-column-cell{
+                    text-align: center;
+                }
+    
+                &.left {
+                    text-align: left;
+                }
                 &.right {
                     text-align: right;
+                }
+                &.center {
+                    text-align: center;
                 }
 
                 div {
@@ -34,8 +72,12 @@ uxg-table {
         thead {
             tr {
                 th {
+                    &.uxg-table-action-column-header {
+                        text-align: center;
+                    }
+
                     &.right div {
-                        .mat-sort-header-arrow{
+                        .mat-sort-header-arrow {
                             margin-left: 0px;
                             margin-right: 6px;
                         }
