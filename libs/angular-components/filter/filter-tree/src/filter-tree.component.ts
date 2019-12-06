@@ -45,6 +45,7 @@ export class FilterTreeComponent implements OnInit, OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checkListSelection: SelectionModel<TreeNode>;
+  selectedData: TreeNode[] = [];
 
   private _data: TreeNode[];
 
@@ -59,8 +60,12 @@ export class FilterTreeComponent implements OnInit, OnChanges {
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
-  constructor() {
-    this.checkListSelection = new SelectionModel<TreeNode>(true);
+  constructor() {}
+
+  ngOnInit() {
+    this.dataSource.data = this.data;
+    this.selectedData = this.getSelectedNodes(this.dataSource.data);
+    this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
     this.checkListSelection.changed.subscribe(changes => {
       this.changes.emit({
         added: changes.added,
@@ -69,13 +74,18 @@ export class FilterTreeComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnInit() {
-    this.dataSource.data = this.data;
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     if (changes) {
       this.dataSource.data = changes.data.currentValue;
+      this.selectedData = this.getSelectedNodes(this.dataSource.data);
+      this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
+      // tslint:disable-next-line: no-shadowed-variable
+      this.checkListSelection.changed.subscribe(changes => {
+        this.changes.emit({
+          added: changes.added,
+          removed: changes.removed
+        });
+      });
     }
   }
 
@@ -172,5 +182,21 @@ export class FilterTreeComponent implements OnInit, OnChanges {
     if (!this.treeControl.isExpanded(node)) {
       el.classList.add('collapsed');
     }
+  }
+
+  getSelectedNodes(data: TreeNode[]) {
+    let result: TreeNode[];
+    result = data.reduce((acc, node) => {
+      if (node.isSelected) acc.push(node);
+      if (node.children) {
+        const childNodes = node.children.reduce((accu, subNode) => {
+          if (subNode.isSelected) accu.push(subNode);
+          return accu;
+        }, []);
+        acc.push(...childNodes);
+      }
+      return acc;
+    }, []);
+    return result;
   }
 }

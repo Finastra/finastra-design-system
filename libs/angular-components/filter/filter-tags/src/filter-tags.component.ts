@@ -7,9 +7,14 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
+export interface Tag {
+  label: string;
+  isSelected?: boolean;
+}
+
 interface UXGFilterChanges {
-  added: string[];
-  removed: string[];
+  added: Tag[];
+  removed: Tag[];
 }
 
 @Component({
@@ -24,18 +29,18 @@ export class FilterTagsComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
   formCtrl = new FormControl();
-  filteredTags$: Observable<string[]>;
+  filteredTags$: Observable<Tag[]>;
 
-  selectedData: string[] = [];
+  selectedData: Tag[] = [];
 
-  private _data: string[];
+  private _data: Tag[];
 
   @Input()
-  set data(data: string[]) {
+  set data(data: Tag[]) {
     this._data = data;
   }
 
-  get data(): string[] {
+  get data(): Tag[] {
     return this._data;
   }
 
@@ -52,6 +57,7 @@ export class FilterTagsComponent implements OnInit {
       startWith(null),
       map((tag: string | null) => (tag ? this.filter(tag) : this.data.slice()))
     );
+    this.selectedData = this.data.filter(tag => tag.isSelected);
   }
 
   add(event: MatChipInputEvent) {
@@ -60,7 +66,7 @@ export class FilterTagsComponent implements OnInit {
       const value = event.value;
 
       if ((value || '').trim()) {
-        this.selectedData.push(value.trim());
+        this.selectedData.push({ label: value.trim() });
       }
 
       if (input) {
@@ -70,12 +76,12 @@ export class FilterTagsComponent implements OnInit {
       this.formCtrl.setValue(null);
 
       if (value) {
-        this.changes.emit({ added: [event.value], removed: [] });
+        this.changes.emit({ added: [{ label: event.value }], removed: [] });
       }
     }
   }
 
-  remove(tag: string) {
+  remove(tag: Tag) {
     this.trigger.closePanel();
     const index = this.selectedData.indexOf(tag);
     if (index >= 0) {
@@ -85,9 +91,9 @@ export class FilterTagsComponent implements OnInit {
   }
 
   onSelected(event: MatAutocompleteSelectedEvent) {
-    if (this.selectedData.indexOf(event.option.viewValue) === -1) {
-      this.selectedData.push(event.option.viewValue);
-      this.changes.emit({ added: [event.option.viewValue], removed: [] });
+    if (this.selectedData.indexOf(event.option.value) === -1) {
+      this.selectedData.push(event.option.value);
+      this.changes.emit({ added: [event.option.value], removed: [] });
     }
 
     this.input.nativeElement.value = '';
@@ -104,9 +110,13 @@ export class FilterTagsComponent implements OnInit {
     this.trigger.openPanel();
   }
 
-  private filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.data.filter(tag => tag.toLowerCase().indexOf(filterValue) === 0);
+  private filter(value: Tag | string): Tag[] {
+    let filterValue;
+    if (typeof value === 'object') {
+      filterValue = value.label.toLowerCase();
+    } else if (typeof value === 'string') {
+      filterValue = value.toLowerCase();
+    }
+    return this.data.filter(tag => tag.label.toLowerCase().indexOf(filterValue) === 0);
   }
 }
