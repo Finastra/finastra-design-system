@@ -50,7 +50,9 @@ export class FilterTagsComponent implements OnInit {
   @ViewChild(MatAutocomplete, { static: false }) autocomplete: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: false }) trigger: MatAutocompleteTrigger;
 
-  constructor() {}
+  constructor() {
+    this.data = [];
+  }
 
   ngOnInit() {
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
