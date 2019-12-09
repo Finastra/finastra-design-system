@@ -1,6 +1,6 @@
 @import '../../../../../themes/angular-theme/uxg-app-theme';
 
-$uxg-violet: mat-color($uxg-light-primary, 500);
+$primary: map-get($uxg-light-theme, primary);
 $row-height: 34px;
 
 .filter-tree .child-tree,
@@ -25,7 +25,7 @@ $row-height: 34px;
 mat-checkbox {
   &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
     .node-label {
-      color: $uxg-violet;
+      color: mat-color($primary, default);
     }
   }
 }
