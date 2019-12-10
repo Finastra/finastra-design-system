@@ -1,8 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material';
+import { Subscription } from 'rxjs';
 
 export interface TreeNode {
   label: string;
@@ -41,11 +42,12 @@ interface UXGFilterChanges {
     ])
   ]
 })
-export class FilterTreeComponent implements OnInit, OnChanges {
+export class FilterTreeComponent implements OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checkListSelection: SelectionModel<TreeNode>;
   selectedData: TreeNode[] = [];
+  subscription: Subscription;
 
   private _data: TreeNode[];
 
@@ -62,25 +64,16 @@ export class FilterTreeComponent implements OnInit, OnChanges {
 
   constructor() {}
 
-  ngOnInit() {
-    this.dataSource.data = this.data;
-    this.selectedData = this.getSelectedNodes(this.dataSource.data);
-    this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
-    this.checkListSelection.changed.subscribe(changes => {
-      this.changes.emit({
-        added: changes.added,
-        removed: changes.removed
-      });
-    });
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     if (changes) {
       this.dataSource.data = changes.data.currentValue;
       this.selectedData = this.getSelectedNodes(this.dataSource.data);
       this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
+      if (this.subscription) {
+        this.subscription.unsubscribe();
+      }
       // tslint:disable-next-line: no-shadowed-variable
-      this.checkListSelection.changed.subscribe(changes => {
+      this.subscription = this.checkListSelection.changed.subscribe(changes => {
         this.changes.emit({
           added: changes.added,
           removed: changes.removed
@@ -184,15 +177,11 @@ export class FilterTreeComponent implements OnInit, OnChanges {
     }
   }
 
-  getSelectedNodes(data: TreeNode[]) {
-    let result: TreeNode[];
-    result = data.reduce((acc, node) => {
+  getSelectedNodes(data: TreeNode[]): TreeNode[] {
+    const result = data.reduce((acc, node) => {
       if (node.isSelected) acc.push(node);
       if (node.children) {
-        const childNodes = node.children.reduce((accu, subNode) => {
-          if (subNode.isSelected) accu.push(subNode);
-          return accu;
-        }, []);
+        const childNodes = node.children.filter(childNode => childNode.isSelected);
         acc.push(...childNodes);
       }
       return acc;
