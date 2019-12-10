@@ -6,7 +6,8 @@ import {
   Input,
   OnDestroy,
   Output,
-  QueryList
+  QueryList,
+  ViewEncapsulation
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { wizardAnimation } from './animations';
@@ -20,6 +21,7 @@ import { UxgWizardPage } from './wizard-page/wizard-page.component';
   providers: [WizardNavigationService, PageCollectionService, ButtonHubService],
   templateUrl: './wizard.component.html',
   styleUrls: ['./wizard.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   host: {
     '[class.uxg-wizard]': 'true'
   },

@@ -142,34 +142,32 @@
     }
   }
 
-  ::ng-deep {
-    uxg-wizard-button {
-      &[aria-hidden='true'] {
-        display: none;
-      }
-      margin-right: 2rem;
-      margin-left: 1rem;
-      &.auto-margin {
-        margin-right: auto;
-      }
+  uxg-wizard-button {
+    &[aria-hidden='true'] {
+      display: none;
     }
+    margin-right: 2rem;
+    margin-left: 1rem;
+    &.auto-margin {
+      margin-right: auto;
+    }
+  }
 
-    uxg-wizard-page {
-      overflow-y: auto;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      bottom: 0;
-      top: 12vh;
-      right: 2rem;
-      left: 0;
-      &[aria-hidden='true'] {
-        z-index: 0;
-      }
-      &.active {
-        z-index: 1;
-      }
+  uxg-wizard-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    top: 12vh;
+    right: 2rem;
+    left: 0;
+    &[aria-hidden='true'] {
+      z-index: 0;
+    }
+    &.active {
+      z-index: 1;
     }
   }
 
