@@ -14,7 +14,7 @@ import { MatTable, PageEvent, MatCheckbox } from '@angular/material';
 
 import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-
+import { isEqual } from 'lodash'
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',
@@ -77,13 +77,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   set selectedKeys(selectedIndex: number[]) {
     this._selectedIndex = selectedIndex;
     if (this.singleSelect && selectedIndex.length > 0) {
-      if (this.selections.indexOf(this.data[selectedIndex[0]]) < 0) {
+      if ( this.isRowSelected(this.data[selectedIndex[0]]) ) {
         this.selections.push(this.data[selectedIndex[0]]);
       }
     }
     if (!this.singleSelect && this.multiSelect) {
       selectedIndex.forEach(selectionIndex => {
-        if (this.selections.indexOf(this.data[selectionIndex]) < 0) {
+        if ( this.isRowSelected(this.data[selectedIndex[0]]) ) {
           this.selections.push(this.data[selectionIndex]);
         }
       });
@@ -205,7 +205,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.dataToComponent.forEach(item => delete item.uxgTableEdit);
 
     if (this.singleSelect) {
-      if (this.selections.indexOf(row) < 0) {
+      if ( !this.isRowSelected(row) ) {
         this.selections = [row];
       } else {
         this.selections = [];
@@ -225,11 +225,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
 
-    const indexOfRow = this.selections.indexOf(row);
-    if (indexOfRow < 0) {
+    if (!this.isRowSelected(row)) {
       this.selections.push(row);
     } else {
-      this.selections.splice(indexOfRow, 1);
+      this.selections.splice(this.getSelectedIndex(row), 1);
     }
 
     this.emitSelectEvent();
@@ -395,5 +394,16 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     ) {
       this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
     }
+  }
+
+  isRowSelected(row){
+    return this.getSelectedIndex(row) > -1 ? true : false;
+  }
+
+  getSelectedIndex(row){
+    const rowIdx = this.selections.findIndex(item => {
+      return isEqual(item, row);
+    })
+    return rowIdx > -1 ? rowIdx: -1;
   }
 }
