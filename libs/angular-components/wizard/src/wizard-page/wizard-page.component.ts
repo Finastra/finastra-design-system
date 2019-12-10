@@ -18,7 +18,7 @@ import { UxgWizardPageTitle } from './wizard-page-title.directive';
   }
 })
 export class UxgWizardPage implements OnInit {
-  @Output('uxgWizardPageOnLoad') onLoad: EventEmitter<string> = new EventEmitter();
+  @Output('uxgWizardPageOnLoad') load: EventEmitter<string> = new EventEmitter();
 
   @Output('uxgWizardPageNext') nextButtonClicked: EventEmitter<UxgWizardPage> = new EventEmitter();
 
@@ -46,7 +46,7 @@ export class UxgWizardPage implements OnInit {
   @ContentChild(UxgWizardPageDescription, { static: true })
   public pageDescription: UxgWizardPageDescription;
 
-  private _disabled: boolean = false;
+  private _disabled = false;
 
   public get disabled(): boolean {
     return this._disabled;
@@ -63,7 +63,7 @@ export class UxgWizardPage implements OnInit {
 
   @Output('uxgWizardPageDisabledChange') pageDisabledChange: EventEmitter<boolean> = new EventEmitter();
 
-  private _nextStepDisabled: boolean = false;
+  private _nextStepDisabled = false;
 
   public get nextStepDisabled(): boolean {
     return this._nextStepDisabled;
@@ -80,7 +80,7 @@ export class UxgWizardPage implements OnInit {
 
   @Output('uxgWizardPageNextDisabledChange') nextStepDisabledChange: EventEmitter<boolean> = new EventEmitter();
 
-  private _previousStepDisabled: boolean = false;
+  private _previousStepDisabled = false;
 
   public get previousStepDisabled(): boolean {
     return this._previousStepDisabled;

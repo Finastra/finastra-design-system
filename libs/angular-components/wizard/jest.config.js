@@ -1,5 +1,5 @@
-const name = 'shared';
-const suiteName = 'SharedModule';
+const name = 'wizard';
+const suiteName = 'WizardModule';
 
 module.exports = {
   name: name,

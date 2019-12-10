@@ -28,17 +28,19 @@ import { UxgWizardPage } from './wizard-page/wizard-page.component';
 export class UxgWizard implements OnDestroy, AfterContentInit {
   @ContentChildren(UxgWizardPage) pages: QueryList<UxgWizardPage>;
 
-  @Input('uxgWizardShowCloseButton') showCloseButton: boolean = true;
+  @Input('uxgWizardShowCloseButton') showCloseButton = true;
 
   @Input('uxgWizardStartingPage') startingPage: number;
 
-  @Output('uxgWizardOnCancel') onCancel = new EventEmitter<any>(false);
+  @Output('uxgWizardOnCancel') cancel = new EventEmitter<any>(false);
 
-  @Output('uxgWizardOnDone') onDone = new EventEmitter<any>(false);
+  @Output('uxgWizardOnDone') done = new EventEmitter<any>(false);
 
   @Output('uxgWizardCurrentPageChange') currentPageChange = new EventEmitter<any>(false);
 
   currentPageId = -1;
+
+  private subscriptions: Subscription[] = [];
 
   public get currentPage() {
     return this.navService.currentPage;
@@ -70,8 +72,6 @@ export class UxgWizard implements OnDestroy, AfterContentInit {
     this.buttonService.buttonsReady = true;
   }
 
-  private subscriptions: Subscription[] = [];
-
   constructor(
     public navService: WizardNavigationService,
     public pageCollection: PageCollectionService,
@@ -89,11 +89,11 @@ export class UxgWizard implements OnDestroy, AfterContentInit {
   }
 
   private listenForCancelChanges(): Subscription {
-    return this.navService.wizardCancel.subscribe(() => this.onCancel.emit());
+    return this.navService.wizardCancel.subscribe(() => this.cancel.emit());
   }
 
   private listenForDoneChanges(): Subscription {
-    return this.navService.wizardDone.subscribe(() => this.onDone.emit());
+    return this.navService.wizardDone.subscribe(() => this.done.emit());
   }
 
   private listenForPageChanges(): Subscription {

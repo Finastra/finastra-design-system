@@ -16,6 +16,16 @@ export class WizardNavigationService implements OnDestroy {
 
   private _currentChange = new Subject<UxgWizardPage>();
 
+  private _wizardDone = new Subject<boolean>();
+
+  private _currentPage: UxgWizardPage;
+
+  private _wizardCancel = new Subject<any>();
+
+  private _movedToNextPage = new Subject<boolean>();
+
+  private _movedToPreviousPage = new Subject<boolean>();
+
   public get currentPageChange(): Observable<UxgWizardPage> {
     return this._currentChange.asObservable();
   }
@@ -35,8 +45,6 @@ export class WizardNavigationService implements OnDestroy {
     return this.pageCollection.lastPage === this.currentPage;
   }
 
-  private _currentPage: UxgWizardPage;
-
   get currentPage(): UxgWizardPage {
     if (!this._currentPage) {
       return null;
@@ -54,6 +62,18 @@ export class WizardNavigationService implements OnDestroy {
 
   public setFirstPageCurrent() {
     this.currentPage = this.pageCollection.pagesAsArray[0];
+  }
+
+  public get wizardDone(): Observable<boolean> {
+    return this._wizardDone.asObservable();
+  }
+
+  public get wizardCancel(): Observable<any> {
+    return this._wizardCancel.asObservable();
+  }
+
+  public cancel() {
+    this._wizardCancel.next();
   }
 
   constructor(public pageCollection: PageCollectionService, public buttonService: ButtonHubService) {
@@ -86,24 +106,6 @@ export class WizardNavigationService implements OnDestroy {
     this.cancelButtonSubscription.unsubscribe();
   }
 
-  private _wizardDone = new Subject<boolean>();
-
-  public get wizardDone(): Observable<boolean> {
-    return this._wizardDone.asObservable();
-  }
-
-  private _wizardCancel = new Subject<any>();
-
-  public get wizardCancel(): Observable<any> {
-    return this._wizardCancel.asObservable();
-  }
-
-  public cancel() {
-    this._wizardCancel.next();
-  }
-
-  private _movedToNextPage = new Subject<boolean>();
-
   public get movedToNextPage(): Observable<boolean> {
     return this._movedToNextPage.asObservable();
   }
@@ -130,8 +132,8 @@ export class WizardNavigationService implements OnDestroy {
   public checkAndCommitCurrentPage(buttonType: string) {
     const currentPage: UxgWizardPage = this.currentPage;
 
-    let isNext: boolean = buttonType === 'next';
-    let isDone: boolean = buttonType === 'done';
+    const isNext: boolean = buttonType === 'next';
+    const isDone: boolean = buttonType === 'done';
 
     if (isDone) {
       currentPage.doneButtonClicked.emit(currentPage);
@@ -151,8 +153,6 @@ export class WizardNavigationService implements OnDestroy {
 
     this._movedToNextPage.next(true);
   }
-
-  private _movedToPreviousPage = new Subject<boolean>();
 
   public get movedToPreviousPage(): Observable<boolean> {
     return this._movedToPreviousPage.asObservable();
@@ -203,7 +203,7 @@ export class WizardNavigationService implements OnDestroy {
       return;
     }
 
-    let canGo: boolean = true;
+    let canGo = true;
     pagesToCheck.forEach((page: UxgWizardPage) => {
       if (goingForward && !page.disabled && page.nextStepDisabled && page !== pageToGoTo) {
         canGo = false;

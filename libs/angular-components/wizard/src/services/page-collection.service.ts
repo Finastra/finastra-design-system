@@ -147,7 +147,7 @@ export class PageCollectionService {
     let nextPageIndex = myPageIndex + 1;
     let nextPage: UxgWizardPage;
 
-    let valid: boolean = false;
+    let valid = false;
     while (nextPageIndex < this.pagesAsArray.length) {
       nextPage = this.getPageByIndex(nextPageIndex);
       if (nextPage.disabled) {

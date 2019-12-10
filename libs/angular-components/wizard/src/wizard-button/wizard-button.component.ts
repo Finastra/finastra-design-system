@@ -20,13 +20,13 @@ export const DEFAULT_BUTTON_TYPES: any = {
   }
 })
 export class UxgWizardButton implements OnInit {
-  @Input('type') public type: string = '';
+  @Input('type') public type = '';
 
-  @Input('uxgWizardButtonDisabled') public disabled: boolean = false;
+  @Input('uxgWizardButtonDisabled') public disabled = false;
 
-  @Input('uxgWizardButtonHidden') public hidden: boolean = false;
+  @Input('uxgWizardButtonHidden') public hidden = false;
 
-  @Input('uxgWizardButtonAlwaysShow') alwaysShow: boolean = false;
+  @Input('uxgWizardButtonAlwaysShow') alwaysShow = false;
 
   @Output('uxgWizardButtonClicked') wasClicked = new EventEmitter<string>(false);
 
