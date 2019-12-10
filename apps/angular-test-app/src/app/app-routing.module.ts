@@ -35,8 +35,10 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 
 @NgModule({
   imports: [
@@ -65,7 +67,8 @@ import { routes } from './routes';
     UxgTableModule,
     FilterTagsModule,
     FilterTreeModule,
-    VectorMapModule
+    VectorMapModule,
+    ChartModule
   ],
   declarations: [
     HomeComponent,
@@ -75,7 +78,8 @@ import { routes } from './routes';
     RepeaterDemoComponent,
     FieldMatcherComponent,
     FilterPanelDemoComponent,
-    VectorMapDemoComponent
+    VectorMapDemoComponent,
+    ChartDemoComponent
   ],
   exports: [RouterModule]
 })

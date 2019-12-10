@@ -46,6 +46,9 @@
     },
     "repeater": {
       "tags": []
+    },
+    "chart": {
+      "tags": []
     }
   }
 }

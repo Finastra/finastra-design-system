@@ -1,0 +1,16 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+@import './chart.theme';
+
+@include uxg-chart-theme($uxg-light-theme);
+
+uxg-chart {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+
+    .js-plotly-plot {
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+    }
+}

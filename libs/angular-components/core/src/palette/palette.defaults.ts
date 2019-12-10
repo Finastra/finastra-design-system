@@ -1,6 +1,16 @@
 import { PaletteConfig } from './palette.models';
 
 export const PALETTE_DEFAULT_CONFIG: PaletteConfig = {
+  colorWay: [
+    '#694ED6',
+    '#C137A2',
+    '#E40046',
+    '#56C271',
+    '#FF8A3D',
+    '#D2D755',
+    '#F0B323',
+    '#5BC1D7',
+  ],
   colorScale: [
     // reversed due to a plotly bug
     [0, 'rgb(73, 54, 150)'],

@@ -7,3 +7,4 @@ export * from './filter/filter-tree';
 export * from './filter/filter-tags';
 export * from './vector-map';
 export * from './repeater';
+export * from './chart';

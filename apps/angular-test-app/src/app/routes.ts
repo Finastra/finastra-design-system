@@ -6,9 +6,11 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.component';
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'chart', component: ChartDemoComponent, data: { title: 'Chart' } },
   { path: 'global-search', component: GlobalSearchDemoComponent, data: { title: 'Global Search Demo' } },
   { path: 'table', component: TableDemoComponent, data: { title: 'Table Demo' } },
   { path: 'popover', component: PopoverDemoComponent, data: { title: 'Popover Demo' } },

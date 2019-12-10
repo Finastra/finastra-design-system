@@ -1,8 +1,9 @@
 export const PALETTE_CONFIG = 'PALETTE_CONFIG';
 
 export interface PaletteConfig {
-  colorScale: ColorScale;
-  vectorMap: {
+  colorScale?: ColorScale;
+  colorWay?: Array<string>;
+  vectorMap?: {
     marker: {
       line: {
         color: string;
