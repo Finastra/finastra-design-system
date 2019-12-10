@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UxgWizard } from './wizard.component';
+import { MatIconModule, MatDividerModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('UxgWizard', () => {
   let component: UxgWizard;
@@ -8,6 +10,7 @@ describe('UxgWizard', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
       declarations: [UxgWizard]
     }).compileComponents();
   }));

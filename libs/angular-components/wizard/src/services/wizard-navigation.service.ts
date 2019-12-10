@@ -55,7 +55,7 @@ export class WizardNavigationService implements OnDestroy {
   set currentPage(page: UxgWizardPage) {
     if (this._currentPage !== page) {
       this._currentPage = page;
-      page.onLoad.emit(page.id);
+      page.load.emit(page.id);
       this._currentChange.next(page);
     }
   }

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UxgWizardButton } from './wizard-button.component';
+import { WizardNavigationService } from '../services/wizard-navigation.service';
+import { PageCollectionService } from '../services/page-collection.service';
+import { ButtonHubService } from '../services/button-hub.service';
 
 describe('UxgWizardButton', () => {
   let component: UxgWizardButton;
@@ -8,7 +11,8 @@ describe('UxgWizardButton', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UxgWizardButton]
+      declarations: [UxgWizardButton],
+      providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
     }).compileComponents();
   }));
 
