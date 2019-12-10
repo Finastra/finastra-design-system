@@ -9,9 +9,11 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'chart', component: ChartDemoComponent, data: { title: 'Chart' } },
   { path: 'global-search', component: GlobalSearchDemoComponent, data: { title: 'Global Search Demo' } },
   { path: 'table', component: TableDemoComponent, data: { title: 'Table Demo' } },
   { path: 'popover', component: PopoverDemoComponent, data: { title: 'Popover Demo' } },

@@ -488,6 +488,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "chart": {
+      "projectType": "library",
+      "root": "libs/angular-components/chart",
+      "sourceRoot": "libs/angular-components/chart",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/chart/tsconfig.lib.json",
+              "libs/angular-components/chart/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/chart/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/chart/jest.config.js",
+            "tsConfig": "libs/angular-components/chart/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/chart/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
