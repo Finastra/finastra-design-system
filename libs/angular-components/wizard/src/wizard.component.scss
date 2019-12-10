@@ -1,0 +1,4 @@
+@import '../../../../themes/angular-theme/uxg-app-theme';
+@import './wizard.theme';
+
+@include uxg-wizard-theme($uxg-light-theme);

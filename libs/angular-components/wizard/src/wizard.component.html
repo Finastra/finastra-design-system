@@ -1,0 +1,73 @@
+<div fxFlexFill fxLayout="row" class="uxg-wizard">
+  <div fxFlex="66"></div>
+  <div fxFlex class="uxg-wizard-right-panel">
+    <div *ngIf="showCloseButton" class="close-button">
+      <button mat-icon-button (click)="navService.cancel()">
+        <mat-icon aria-hidden="false" aria-label="Close">clear</mat-icon>
+      </button>
+    </div>
+  </div>
+  <h4 class="uxg-wizard-title uxg-h4"><ng-content select="uxg-wizard-title"></ng-content></h4>
+  <div class="uxg-wizard-container" fxLayout="column">
+    <main [@wizardAnimation]="currentPageId" class="uxg-wizard-content" fxFlex>
+      <div class="uxg-wizard-page-title uxg-h3">
+        <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
+      </div>
+      <ng-content></ng-content>
+    </main>
+
+    <mat-divider></mat-divider>
+    <div class="uxg-wizard-footer" fxFlex="10">
+      <div class="uxg-wizard-footer-buttons-wrapper">
+        <ng-content select="uxg-wizard-button"></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row" class="uxg-wizard-timeline">
+    <div fxFlex="30" fxLayout="column" fxLayoutAlign="space-around center">
+      <div class="timeline-progress-bar" [ngStyle]="{ 'height.%': (100 * (pages.length - 1)) / pages.length }">
+        <span
+          id="dp-create-project-wizard-timeline-progress"
+          class="timeline-progress"
+          [ngStyle]="{ 'height.%': (100 * currentPageId) / (pages.length - 1) }"
+        ></span>
+      </div>
+      <ng-container *ngFor="let page of pages">
+        <div
+          class="step"
+          [ngClass]="{
+            done: pageCollection.getPageIndex(page) < currentPageId,
+            active: page.current,
+            disabled: page.disabled
+          }"
+          (click)="onStepClick(page)"
+        >
+          <ng-container *ngIf="pageCollection.getPageIndex(page) < currentPageId; else showIndex">
+            <mat-icon>checkmark</mat-icon>
+          </ng-container>
+          <ng-template #showIndex>
+            <div>{{ pageCollection.getPageIndex(page) + 1 }}</div>
+          </ng-template>
+        </div>
+      </ng-container>
+    </div>
+    <div fxFlex="70" fxLayout="column" fxLayoutAlign="space-around stretch">
+      <ng-container *ngFor="let page of pages">
+        <div
+          fxLayout="column"
+          class="step-info-container"
+          [ngClass]="{ disabled: page.disabled }"
+          (click)="onStepClick(page)"
+        >
+          <div class="step-title uxg-h4">
+            <ng-template [ngTemplateOutlet]="page.title"></ng-template>
+          </div>
+          <div class="step-description">
+            <ng-template [ngTemplateOutlet]="page.description"></ng-template>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

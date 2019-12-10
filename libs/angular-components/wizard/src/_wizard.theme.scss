@@ -1,0 +1,184 @@
+@mixin uxg-wizard-theme($theme) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+
+  $wizard-background-color: mat-color($background, background);
+  $wizard-step-active-color: mat-color($accent, default);
+  $wizard-step-done-color: map-get($uxg-grass, 100);
+  $wizard-timeline-color: map_get($mat-grey, 300);
+
+  $wizard-dark-blue: #060546;
+  $wizard-step-description-color: map-get($uxg-violet, 100);
+  $wizard-step-disabled-color: #404065;
+
+  $step-size: 48px;
+  $buttons-wrapper-size: 44px;
+
+  .uxg-wizard {
+    background: $wizard-background-color;
+    position: relative;
+
+    .uxg-wizard-container {
+      @include mat-elevation(4);
+      position: absolute;
+      background: white;
+      border-radius: 6px;
+      top: 8vh;
+      bottom: 5vh;
+      left: 5vw;
+      right: 25vw;
+    }
+    .uxg-wizard-content {
+      position: relative;
+    }
+    .uxg-wizard-right-panel {
+      background: $wizard-dark-blue;
+      .close-button {
+        color: white;
+        float: right;
+        padding: $uxg-spacing-3;
+      }
+    }
+    .uxg-wizard-title {
+      position: absolute;
+      top: 3vh;
+      left: 6vw;
+    }
+    .uxg-wizard-footer {
+      display: flex;
+      align-items: center;
+      margin: 0 $uxg-spacing-3;
+    }
+    .uxg-wizard-footer-buttons-wrapper {
+      display: flex;
+      width: 100%;
+      min-height: $buttons-wrapper-size;
+      height: $buttons-wrapper-size;
+    }
+    .uxg-wizard-page-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 12vh;
+    }
+    .uxg-wizard-timeline {
+      position: absolute;
+      top: 15vh;
+      right: 3vw;
+      bottom: 15vh;
+      width: 26vw;
+      .step {
+        width: $step-size;
+        height: $step-size;
+        background-color: white;
+        border: 5px solid;
+        border-radius: 50%;
+        color: $wizard-timeline-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        box-sizing: border-box;
+        user-select: none;
+        margin-left: 4px;
+        font-weight: 700;
+        font-size: 16px;
+        z-index: 2;
+        mat-icon {
+          font-weight: 700;
+        }
+        &.done {
+          background-color: $wizard-step-done-color;
+          border-color: $wizard-step-done-color;
+          color: white;
+          animation: pop 500ms;
+        }
+        &.active {
+          border-color: $wizard-step-active-color;
+          background-color: $wizard-step-active-color;
+          color: white;
+        }
+        &.disabled {
+          pointer-events: none;
+        }
+      }
+      .timeline-progress-bar {
+        position: absolute;
+        width: 5px;
+        margin-left: 2px;
+        background: $wizard-timeline-color;
+        z-index: 1;
+        .timeline-progress {
+          position: absolute;
+          background: $wizard-step-done-color;
+          width: 5px;
+          transition: 500ms;
+        }
+      }
+      .step-info-container {
+        cursor: pointer;
+        .step-title {
+          color: white;
+          transition: color 250ms ease-in;
+          margin-bottom: $uxg-spacing-2;
+        }
+        .step-description {
+          color: rgba($wizard-step-description-color, 0.8);
+          transition: color 250ms ease-in;
+          @include mat-typography-level-to-styles(uxg-typography-config(), body-2);
+
+          font-weight: mat-font-weight(uxg-typography-config(), caption);
+          letter-spacing: 0.02em;
+        }
+        &.disabled {
+          pointer-events: none;
+          .step-title,
+          .step-description {
+            color: $wizard-step-disabled-color;
+          }
+        }
+      }
+    }
+  }
+
+  ::ng-deep {
+    uxg-wizard-button {
+      &[aria-hidden='true'] {
+        display: none;
+      }
+      margin-right: 2rem;
+      margin-left: 1rem;
+      &.auto-margin {
+        margin-right: auto;
+      }
+    }
+
+    uxg-wizard-page {
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 0;
+      top: 12vh;
+      right: 2rem;
+      left: 0;
+      &[aria-hidden='true'] {
+        z-index: 0;
+      }
+      &.active {
+        z-index: 1;
+      }
+    }
+  }
+
+  @keyframes pop {
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
