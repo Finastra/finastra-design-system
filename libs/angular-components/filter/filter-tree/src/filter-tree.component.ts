@@ -65,7 +65,7 @@ export class FilterTreeComponent implements OnChanges {
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes) {
+    if (changes.data) {
       this.dataSource.data = changes.data.currentValue;
       this.selectedData = this.getSelectedNodes(this.dataSource.data);
       this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
