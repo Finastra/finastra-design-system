@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { DebugElement, EventEmitter } from '@angular/core';
+import { DebugElement, EventEmitter, SimpleChange } from '@angular/core';
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatCheckboxModule, MatChipsModule, MatIconModule, MatTreeModule } from '@angular/material';
@@ -54,7 +54,7 @@ describe('FilterTreeModule', () => {
     ];
 
     component.data = expectedFilterTreeDataSource;
-
+    component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
     fixture.detectChanges();
   }));
 
@@ -62,6 +62,7 @@ describe('FilterTreeModule', () => {
     fixture = TestBed.createComponent(FilterTreeComponent);
     component = fixture.componentInstance;
     component.data = expectedFilterTreeDataSource;
+    component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
     fixture.detectChanges();
   });
 
