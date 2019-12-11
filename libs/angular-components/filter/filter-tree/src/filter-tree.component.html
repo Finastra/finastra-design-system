@@ -6,7 +6,7 @@
       (change)="leafItemSelectionToggle(node)"
       color="primary"
     >
-      <span class="mat-tree-node uxg-body-2">{{ node.label }}</span>
+      <span class="mat-tree-node uxg-body-2 node-label">{{ node.label }}</span>
     </mat-checkbox>
   </mat-tree-node>
   <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
@@ -17,7 +17,7 @@
         (change)="itemSelectionToggle(node)"
         color="primary"
       >
-        <span class="uxg-body-2">{{ node.label }}</span>
+        <span class="uxg-body-2 node-label">{{ node.label }}</span>
       </mat-checkbox>
       <button mat-button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.label" dense>
         <mat-icon class="mat-icon-rtl-mirror">
