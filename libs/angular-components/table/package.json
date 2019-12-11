@@ -1,5 +1,8 @@
 {
   "name": "@ffdc/uxg-angular-components/table",
   "version": "0.13.20",
-  "author": "pingyuan <ping.yuan@finastra.com>"
+  "author": "pingyuan <ping.yuan@finastra.com>",
+  "peerDependencies": {
+    "lodash": "4.17.15"
+  }
 }
