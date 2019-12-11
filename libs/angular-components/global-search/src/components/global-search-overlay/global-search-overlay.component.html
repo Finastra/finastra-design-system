@@ -20,10 +20,10 @@
   </div>
   <ng-container *ngIf="(results$ | async) as results">
     <ng-container *ngIf="results.length; else empty">
-      <div fxFlex="5" class="uxg-global-search-results-counter">
-        Showing {{ resultsShown }} of {{ resultsFound }} results
-      </div>
-      <div fxFlex="60" fxLayout="row">
+      <div fxFlex="60" fxLayout="row" class="uxg-global-search-container-parent">
+        <div fxFlex="100" class="uxg-global-search-results-counter">
+          Showing {{ resultsShown }} of {{ resultsFound }} results
+        </div>
         <!-- results area -->
         <div fxFlex="showFilter ? 70 : 100" class="uxg-global-search-results-area">
           <ng-container *ngFor="let resultGroup of results">
@@ -53,7 +53,14 @@
         <!-- filter area -->
         <ng-container *ngIf="groupBy && showFilter">
           <mat-divider [vertical]="true"></mat-divider>
-          <div fxFlex="30" fxLayout="column" class="uxg-global-search-results-filter">
+          <div
+            fxFlex="30"
+            fxLayout="column"
+            fxLayout.xs="row; wrap"
+            fxFlex.xs="100"
+            fxFlexOrder.xs="-1"
+            class="uxg-global-search-results-filter"
+          >
             <h5 class="uxg-h5">Filter results by</h5>
             <ng-container *ngFor="let resultGroup of results">
               <mat-checkbox color="primary" [checked]="resultGroup.selected" (change)="toggleFilter(resultGroup)">
