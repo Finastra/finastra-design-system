@@ -402,7 +402,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   getSelectedIndex(row) {
     const rowIdx = this.selections.findIndex(item => {
-      return isEqual(item, row);
+      return item === row || isEqual(item, row);
     });
     return rowIdx > -1 ? rowIdx : -1;
   }
