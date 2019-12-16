@@ -14,7 +14,7 @@ import { MatTable, PageEvent, MatCheckbox } from '@angular/material';
 
 import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import * as isEqual from 'lodash/isEqual';
+import * as isEqual from 'lodash-es/isEqual';
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',
