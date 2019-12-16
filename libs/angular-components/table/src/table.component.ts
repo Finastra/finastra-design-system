@@ -14,7 +14,7 @@ import { MatTable, PageEvent, MatCheckbox } from '@angular/material';
 
 import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import { isEqual } from 'lodash/isEqual';
+import * as isEqual from 'lodash/isEqual';
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',
@@ -402,7 +402,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   getSelectedIndex(row) {
     const rowIdx = this.selections.findIndex(item => {
-      return item === row || isEqual(item, row);
+      return isEqual(item, row);
     });
     return rowIdx > -1 ? rowIdx : -1;
   }
