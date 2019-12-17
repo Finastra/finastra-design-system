@@ -1,36 +1,39 @@
 import { Sort, SortDirection } from '@angular/material';
 
-export class UxgSort implements Sort {
+export interface UxgSort extends Sort {
   active: string;
   direction: SortDirection;
 }
 
-export class UxgColumn {
-  id?: string;
-  name: string; // column name
-  type: UxgColumnType; // the data type of this column => can apply different template to this column
-  align: 'left' | 'right' | 'center'; // text align in cell
-  displayName: string;
+export interface UxgColumn {
+  id?: string,
+  name: string, // column name
+  type: UxgColumnType, // the data type of this column => can apply different template to this column
+  align?: 'left' | 'right' | 'center', // text align in cell
+  displayName?: string,
+  cellTemplate?: any,
+  cellEditTemplate?: any
 }
 
 export enum UxgColumnType {
   string = 'string',
   number = 'number',
   date = 'date',
-  typedouble = 'typedouble'
+  typedouble = 'typedouble',
+  cellTemplate = 'cellTemplate'
 }
 
-export class UxgPage {
-  disabled? = false;
-  length?: number;
-  hidePageSize? = false;
-  showFirstLastButtons? = true;
-  pageIndex? = 0;
-  pageSize? = 5;
-  pageSizeOptions? = [5, 10];
+export interface UxgPage {
+  disabled? : boolean,
+  length?: number,
+  hidePageSize? : boolean,
+  showFirstLastButtons? : boolean,
+  pageIndex? : number,
+  pageSize? : number,
+  pageSizeOptions? : number[]
 }
 
-export class UxgTableSelectEvent {
+export interface UxgTableSelectEvent {
   singleSelect: true | false;
   data: any[]; //selected row data
 }

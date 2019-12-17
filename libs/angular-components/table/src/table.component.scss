@@ -80,6 +80,10 @@ uxg-table {
 
         thead {
             tr {
+                &.uxg-table-no-header{
+                    display: none !important;
+                }
+
                 th {
                     &.uxg-table-action-column-header {
                         text-align: center;

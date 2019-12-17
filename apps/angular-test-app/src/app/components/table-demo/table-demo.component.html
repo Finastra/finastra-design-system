@@ -25,6 +25,24 @@
     </uxg-table>
   </div>
 
+  <ng-template #tableCellTypedCurrency let-element="element" let-column="column">
+      {{ element[column.name].amount}} {{element[column.name].currency}} 
+  </ng-template>
+
+  <ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column">
+      <!-- Edit cell -->
+    edit cell
+  </ng-template>
+
+  <ng-template #tableCellTable let-element="element" let-column="column">
+    <uxg-table
+      [data]="subData"
+      [columns]="subColumns"
+      [columnsToDisplay]="subColumnsToDisplay"
+      [showTableHeader]="false">
+    </uxg-table>
+  </ng-template>
+
   <div fxLayout="row" fxLayoutAlign="start start" class="config-block">
     <div fxLayout="column" fxLayoutAlign="start start">
       <h4>Customized options</h4>
