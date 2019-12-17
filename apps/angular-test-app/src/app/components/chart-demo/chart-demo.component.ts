@@ -32,14 +32,16 @@ export class ChartDemoComponent {
       dimensionName: "Industry",
       measure: [100, 50, 70],
       measureName: "PNL",
-      type: ChartType.bar
+      type: ChartType.bar,
+      orientation: 'horizontal'
     },
     {
       dimension: ["Banks", "Foods", "Energies"],
       dimensionName: "Industry",
       measure: [75, 10, 90],
       measureName: "Asset Values",
-      type: ChartType.bar
+      type: ChartType.bar,
+      orientation: 'horizontal'
     }
   ];
 
@@ -71,6 +73,10 @@ export class ChartDemoComponent {
   ];
 
   onClick(event) {
-    console.log(event);
+    console.log('simple click: ', event);
+  }
+
+  onDoubleClick(event) {
+    console.log('double click: ', event);
   }
 }

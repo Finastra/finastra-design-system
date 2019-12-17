@@ -1,5 +1,6 @@
 <uxg-chart
-  (onClick)="onClick($event)">
+  (onClick)="onClick($event)"
+  (onDoubleClick)="onDoubleClick($event)">
   <uxg-legend [position]="legendPosition"></uxg-legend>
   <uxg-group-traces columnPosition="0">
     <uxg-trace *ngFor="let trace of traces"
@@ -17,6 +18,7 @@
         [measure]="trace.measure"
         [measureName]="trace.measureName"
         [type]="trace.type"
+        [orientation]="trace.orientation"
         ></uxg-trace>
     </uxg-group-traces>
     <uxg-group-traces rowPosition="1">
