@@ -6,13 +6,13 @@ export interface UxgSort extends Sort {
 }
 
 export interface UxgColumn {
-  id?: string,
-  name: string, // column name
-  type: UxgColumnType, // the data type of this column => can apply different template to this column
-  align?: 'left' | 'right' | 'center', // text align in cell
-  displayName?: string,
-  cellTemplate?: any,
-  cellEditTemplate?: any
+  id?: string;
+  name: string; // column name
+  type: UxgColumnType; // the data type of this column => can apply different template to this column
+  align?: 'left' | 'right' | 'center'; // text align in cell
+  displayName?: string;
+  cellTemplate?: any;
+  cellEditTemplate?: any;
 }
 
 export enum UxgColumnType {
@@ -24,13 +24,13 @@ export enum UxgColumnType {
 }
 
 export interface UxgPage {
-  disabled? : boolean,
-  length?: number,
-  hidePageSize? : boolean,
-  showFirstLastButtons? : boolean,
-  pageIndex? : number,
-  pageSize? : number,
-  pageSizeOptions? : number[]
+  disabled?: boolean;
+  length?: number;
+  hidePageSize?: boolean;
+  showFirstLastButtons?: boolean;
+  pageIndex?: number;
+  pageSize?: number;
+  pageSizeOptions?: number[];
 }
 
 export interface UxgTableSelectEvent {

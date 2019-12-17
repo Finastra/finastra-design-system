@@ -1,5 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
-import { UxgTableSelectEvent, TableComponent, UxgPage, UxgSort, UxgColumnType, UxgColumn } from '@ffdc/uxg-angular-components/table';
+import {
+  UxgTableSelectEvent,
+  TableComponent,
+  UxgPage,
+  UxgSort,
+  UxgColumnType,
+  UxgColumn
+} from '@ffdc/uxg-angular-components/table';
 
 const ELEMENT_DATA: any[] = [
   {
@@ -11,165 +18,165 @@ const ELEMENT_DATA: any[] = [
     'Status Code': '200',
     'Error Response': 'OK',
     'No. of Calls': 3,
-    'Revenue': {
+    Revenue: {
       currency: 'EUR',
       amount: 3
     }
   },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '02-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '400',
-  //   'Error Response': 'Bad Request',
-  //   'No. of Calls': 2,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 2
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '03-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '17h-18h',
-  //   'Status Code': '500',
-  //   'Error Response': 'Server Error',
-  //   'No. of Calls': 4,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 4
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '04-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '17h-18h',
-  //   'Status Code': '500',
-  //   'Error Response': 'Bad Request',
-  //   'No. of Calls': 7,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 5
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '05-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '18h-19h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 6,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 6
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '06-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '18h-19h',
-  //   'Status Code': '400',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 8,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 5
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '07-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '500',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 1,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 1
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '08-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 3,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 6
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '09-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 3,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 7
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '09-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 3,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 9
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '09-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 3,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 3
-  //   }
-  // },
-  // {
-  //   API: 'Exchange Rates',
-  //   'End Point': 'End point 1',
-  //   'Date Time': '09-01-2019',
-  //   'Day of Week': 'Monday',
-  //   'Hour of Day': '16h-17h',
-  //   'Status Code': '200',
-  //   'Error Response': 'OK',
-  //   'No. of Calls': 3,
-  //   'Revenue': {
-  //     currency: 'EUR',
-  //     amount: 7
-  //   }
-  // }
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '02-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '400',
+    'Error Response': 'Bad Request',
+    'No. of Calls': 2,
+    Revenue: {
+      currency: 'EUR',
+      amount: 2
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '03-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '17h-18h',
+    'Status Code': '500',
+    'Error Response': 'Server Error',
+    'No. of Calls': 4,
+    Revenue: {
+      currency: 'EUR',
+      amount: 4
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '04-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '17h-18h',
+    'Status Code': '500',
+    'Error Response': 'Bad Request',
+    'No. of Calls': 7,
+    Revenue: {
+      currency: 'EUR',
+      amount: 5
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '05-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '18h-19h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 6,
+    Revenue: {
+      currency: 'EUR',
+      amount: 6
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '06-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '18h-19h',
+    'Status Code': '400',
+    'Error Response': 'OK',
+    'No. of Calls': 8,
+    Revenue: {
+      currency: 'EUR',
+      amount: 5
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '07-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '500',
+    'Error Response': 'OK',
+    'No. of Calls': 1,
+    Revenue: {
+      currency: 'EUR',
+      amount: 1
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '08-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3,
+    Revenue: {
+      currency: 'EUR',
+      amount: 6
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3,
+    Revenue: {
+      currency: 'EUR',
+      amount: 7
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3,
+    Revenue: {
+      currency: 'EUR',
+      amount: 9
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3,
+    Revenue: {
+      currency: 'EUR',
+      amount: 3
+    }
+  },
+  {
+    API: 'Exchange Rates',
+    'End Point': 'End point 1',
+    'Date Time': '09-01-2019',
+    'Day of Week': 'Monday',
+    'Hour of Day': '16h-17h',
+    'Status Code': '200',
+    'Error Response': 'OK',
+    'No. of Calls': 3,
+    Revenue: {
+      currency: 'EUR',
+      amount: 7
+    }
+  }
 ];
 
 @Component({
@@ -181,10 +188,10 @@ const ELEMENT_DATA: any[] = [
 })
 export class TableDemoComponent implements OnInit {
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
-  @ViewChild('tableCellTypedCurrency', {static: true}) typedCurrency: TemplateRef<any>;
-  @ViewChild('tableCellTypedCurrencyEdit', {static: true}) typedCurrencyEdit: TemplateRef<any>;
+  @ViewChild('tableCellTypedCurrency', { static: true }) typedCurrency: TemplateRef<any>;
+  @ViewChild('tableCellTypedCurrencyEdit', { static: true }) typedCurrencyEdit: TemplateRef<any>;
   // @ViewChild('tableCellTable', { static: false}) tableCellTable: TemplateRef<any>;
-  @ViewChild('tableCellTable', {static: true}) tableCellTable;
+  @ViewChild('tableCellTable', { static: true }) tableCellTable;
   selectedIndex = [1, 2];
 
   dataSource = ELEMENT_DATA; //data
@@ -203,41 +210,61 @@ export class TableDemoComponent implements OnInit {
   enableTableSendEvent = false;
 
   columns: UxgColumn[];
-  columnsToDisplay : string[];
+  columnsToDisplay: string[];
+
+  columnsCellTemplate: UxgColumn[];
+  columnsToDisplayCellTemplate: string[];
+
   totalData: any;
 
   subData: any[] = [
     {
-      API: "http://localhost"
+      API: 'http://localhost'
     },
     {
-      API: "http://www.google.com"
+      API: 'http://www.google.com'
     }
-  ]
-  subColumns: UxgColumn[] =[
-    { name: 'API', type: UxgColumnType.string }
   ];
-  subColumnsToDisplay = [
-    'API'
-  ]
+  subColumns: UxgColumn[] = [{ name: 'API', type: UxgColumnType.string }];
+  subColumnsToDisplay = ['API'];
 
   constructor() {}
 
   ngOnInit(): void {
-      // columns defination object
+    // columns defination object
     this.columns = [
-      // { name: 'API', type: UxgColumnType.string, align: 'left', displayName: 'Display Api' },
-      { name: 'API', type: UxgColumnType.cellTemplate, align: 'left', displayName: 'Display Api', cellTemplate: this.tableCellTable },
+      { name: 'API', type: UxgColumnType.string, align: 'left', displayName: 'Display Api' },
       { name: 'End Point', type: UxgColumnType.string, align: 'left' },
       { name: 'Date Time', type: UxgColumnType.date, align: 'left' },
       { name: 'Day of Week', type: UxgColumnType.string, align: 'left' },
       { name: 'Hour of Day', type: UxgColumnType.string, align: 'left' },
       { name: 'Status Code', type: UxgColumnType.string, align: 'left' },
       { name: 'Error Response', type: UxgColumnType.string, align: 'left' },
-      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' },
-      { name: 'Revenue', type: UxgColumnType.cellTemplate, cellTemplate: this.typedCurrency, cellEditTemplate: this.typedCurrencyEdit },
+      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' }
     ];
-    this.columnsToDisplay = [
+    this.columnsCellTemplate = [
+      {
+        name: 'Revenue',
+        type: UxgColumnType.cellTemplate,
+        cellTemplate: this.typedCurrency,
+        cellEditTemplate: this.typedCurrencyEdit
+      },
+      {
+        name: 'API',
+        type: UxgColumnType.cellTemplate,
+        align: 'left',
+        displayName: 'Display Api',
+        cellTemplate: this.tableCellTable
+      },
+      { name: 'End Point', type: UxgColumnType.string, align: 'left' },
+      { name: 'Date Time', type: UxgColumnType.date, align: 'left' },
+      { name: 'Day of Week', type: UxgColumnType.string, align: 'left' },
+      { name: 'Hour of Day', type: UxgColumnType.string, align: 'left' },
+      { name: 'Status Code', type: UxgColumnType.string, align: 'left' },
+      { name: 'Error Response', type: UxgColumnType.string, align: 'left' },
+      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' }
+    ];
+    this.columnsToDisplayCellTemplate = [
       'API',
       'End Point',
       'Date Time',
@@ -247,6 +274,16 @@ export class TableDemoComponent implements OnInit {
       'Error Response',
       'No. of Calls',
       'Revenue'
+    ];
+    this.columnsToDisplay = [
+      'API',
+      'End Point',
+      'Date Time',
+      'Day of Week',
+      'Hour of Day',
+      'Status Code',
+      'Error Response',
+      'No. of Calls'
     ];
     this.totalData = {
       'Status Code': '80% GOOD'
