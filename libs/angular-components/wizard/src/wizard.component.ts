@@ -14,7 +14,7 @@ import { wizardAnimation } from './animations';
 import { ButtonHubService } from './services/button-hub.service';
 import { PageCollectionService } from './services/page-collection.service';
 import { WizardNavigationService } from './services/wizard-navigation.service';
-import { UxgWizardPage } from './wizard-page/wizard-page.component';
+import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
 
 @Component({
   selector: 'uxg-wizard',
@@ -27,8 +27,8 @@ import { UxgWizardPage } from './wizard-page/wizard-page.component';
   },
   animations: [wizardAnimation()]
 })
-export class UxgWizard implements OnDestroy, AfterContentInit {
-  @ContentChildren(UxgWizardPage) pages: QueryList<UxgWizardPage>;
+export class UxgWizardComponent implements OnDestroy, AfterContentInit {
+  @ContentChildren(UxgWizardPageComponent) pages: QueryList<UxgWizardPageComponent>;
 
   @Input('uxgWizardShowCloseButton') showCloseButton = true;
 
@@ -48,7 +48,7 @@ export class UxgWizard implements OnDestroy, AfterContentInit {
     return this.navService.currentPage;
   }
 
-  public set currentPage(page: UxgWizardPage) {
+  public set currentPage(page: UxgWizardPageComponent) {
     this.navService.goTo(page);
   }
 
@@ -86,7 +86,7 @@ export class UxgWizard implements OnDestroy, AfterContentInit {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  onStepClick(page: UxgWizardPage) {
+  onStepClick(page: UxgWizardPageComponent) {
     this.currentPage = page;
   }
 
@@ -105,11 +105,3 @@ export class UxgWizard implements OnDestroy, AfterContentInit {
     });
   }
 }
-
-@Component({
-  selector: 'uxg-wizard-title',
-  template: `
-    <ng-content></ng-content>
-  `
-})
-export class UxgWizardTitle {}

@@ -2,13 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 import { WizardNavigationService } from '../services/wizard-navigation.service';
 import { ButtonHubService } from '../services/button-hub.service';
 
-export const DEFAULT_BUTTON_TYPES: any = {
-  cancel: 'cancel',
-  previous: 'previous',
-  next: 'next',
-  done: 'done',
-  custom: 'custom'
-};
+export type UxgWizardButtonType = 'cancel' | 'previous' | 'next' | 'done' | 'custom';
 
 @Component({
   selector: 'uxg-wizard-button',
@@ -19,8 +13,8 @@ export const DEFAULT_BUTTON_TYPES: any = {
     '[attr.aria-hidden]': 'isHidden'
   }
 })
-export class UxgWizardButton implements OnInit {
-  @Input('type') public type = '';
+export class UxgWizardButtonComponent {
+  @Input() public type: UxgWizardButtonType;
 
   @Input('uxgWizardButtonDisabled') public disabled = false;
 
@@ -32,11 +26,8 @@ export class UxgWizardButton implements OnInit {
 
   constructor(public navService: WizardNavigationService, public buttonService: ButtonHubService) {}
 
-  private checkDefaultType(value: string = '', type: string) {
-    if (DEFAULT_BUTTON_TYPES[type] === value) {
-      return true;
-    }
-    return false;
+  private checkDefaultType(value: UxgWizardButtonType, type: string) {
+    return value === type;
   }
 
   public get isNext(): boolean {
@@ -118,7 +109,7 @@ export class UxgWizardButton implements OnInit {
     return !hidden;
   }
 
-  public get _disabledAttribute(): string | null {
+  public get disabledAttribute(): string | null {
     if (this.isDisabled) {
       return '';
     }
@@ -133,6 +124,4 @@ export class UxgWizardButton implements OnInit {
     this.wasClicked.emit(this.type);
     this.buttonService.buttonClicked(this.type);
   }
-
-  ngOnInit() {}
 }

@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UxgWizard } from './wizard.component';
+import { UxgWizardComponent } from './wizard.component';
 import { MatIconModule, MatDividerModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('UxgWizard', () => {
-  let component: UxgWizard;
-  let fixture: ComponentFixture<UxgWizard>;
+describe('UxgWizardComponent', () => {
+  let component: UxgWizardComponent;
+  let fixture: ComponentFixture<UxgWizardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
-      declarations: [UxgWizard]
+      declarations: [UxgWizardComponent]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UxgWizard);
+    fixture = TestBed.createComponent(UxgWizardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

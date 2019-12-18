@@ -1,23 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UxgWizardButton } from './wizard-button.component';
+import { UxgWizardButtonComponent } from './wizard-button.component';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
 import { PageCollectionService } from '../services/page-collection.service';
 import { ButtonHubService } from '../services/button-hub.service';
 
-describe('UxgWizardButton', () => {
-  let component: UxgWizardButton;
-  let fixture: ComponentFixture<UxgWizardButton>;
+describe('UxgWizardButtonComponent', () => {
+  let component: UxgWizardButtonComponent;
+  let fixture: ComponentFixture<UxgWizardButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UxgWizardButton],
+      declarations: [UxgWizardButtonComponent],
       providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UxgWizardButton);
+    fixture = TestBed.createComponent(UxgWizardButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

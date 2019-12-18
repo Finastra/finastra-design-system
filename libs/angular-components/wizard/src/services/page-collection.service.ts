@@ -1,11 +1,11 @@
 import { Injectable, QueryList } from '@angular/core';
-import { UxgWizardPage } from '../wizard-page/wizard-page.component';
+import { UxgWizardPageComponent } from '../wizard-page/wizard-page.component';
 
 @Injectable()
 export class PageCollectionService {
-  public pages: QueryList<UxgWizardPage>;
+  public pages: QueryList<UxgWizardPageComponent>;
 
-  public get pagesAsArray(): UxgWizardPage[] {
+  public get pagesAsArray(): UxgWizardPageComponent[] {
     return this.pages ? this.pages.toArray() : [];
   }
 
@@ -13,7 +13,7 @@ export class PageCollectionService {
     return this.pages ? this.pages.length : 0;
   }
 
-  public get lastPage(): UxgWizardPage {
+  public get lastPage(): UxgWizardPageComponent {
     const pageCount = this.pagesCount;
 
     if (pageCount < 1) {
@@ -23,7 +23,7 @@ export class PageCollectionService {
     return this.pagesAsArray[pageCount - 1];
   }
 
-  public get firstPage(): UxgWizardPage {
+  public get firstPage(): UxgWizardPageComponent {
     if (!this.pagesCount) {
       return;
     }
@@ -31,12 +31,12 @@ export class PageCollectionService {
     return this.pagesAsArray[0];
   }
 
-  public getPageById(id: string): UxgWizardPage {
-    const foundPages: UxgWizardPage[] = this.pages.filter((page: UxgWizardPage) => id === page.id);
+  public getPageById(id: string): UxgWizardPageComponent {
+    const foundPages: UxgWizardPageComponent[] = this.pages.filter((page: UxgWizardPageComponent) => id === page.id);
     return this.checkResults(foundPages, id);
   }
 
-  public getPageByIndex(index: number): UxgWizardPage {
+  public getPageByIndex(index: number): UxgWizardPageComponent {
     const pageCount = this.pagesCount;
     const pagesLastIndex: number = pageCount > 1 ? pageCount - 1 : 0;
 
@@ -51,7 +51,7 @@ export class PageCollectionService {
     return this.pagesAsArray[index];
   }
 
-  public getPageIndex(page: UxgWizardPage): number {
+  public getPageIndex(page: UxgWizardPageComponent): number {
     const index = this.pagesAsArray.indexOf(page);
 
     if (index < 0) {
@@ -61,7 +61,7 @@ export class PageCollectionService {
     return index;
   }
 
-  private checkResults(results: UxgWizardPage[], requestedPageId: string) {
+  private checkResults(results: UxgWizardPageComponent[], requestedPageId: string) {
     const foundPagesCount: number = results.length || 0;
 
     if (foundPagesCount > 1) {
@@ -73,8 +73,8 @@ export class PageCollectionService {
     }
   }
 
-  public pageRange(start: number, end: number): UxgWizardPage[] {
-    let pages: UxgWizardPage[] = [];
+  public pageRange(start: number, end: number): UxgWizardPageComponent[] {
+    let pages: UxgWizardPageComponent[] = [];
 
     if (start < 0 || end < 0) {
       return [];
@@ -103,7 +103,10 @@ export class PageCollectionService {
     return pages.slice(start, end);
   }
 
-  public getPageRangeFromPages(page: UxgWizardPage, otherPage: UxgWizardPage): UxgWizardPage[] {
+  public getPageRangeFromPages(
+    page: UxgWizardPageComponent,
+    otherPage: UxgWizardPageComponent
+  ): UxgWizardPageComponent[] {
     const pageIndex = this.getPageIndex(page);
     const otherPageIndex = this.getPageIndex(otherPage);
     let startIndex: number;
@@ -119,10 +122,10 @@ export class PageCollectionService {
     return this.pageRange(startIndex, endIndex);
   }
 
-  public getPreviousPage(page: UxgWizardPage) {
+  public getPreviousPage(page: UxgWizardPageComponent) {
     const myPageIndex = this.getPageIndex(page);
     let previousPageIndex = myPageIndex - 1;
-    let previousPage: UxgWizardPage;
+    let previousPage: UxgWizardPageComponent;
 
     let valid = false;
     while (previousPageIndex >= 0) {
@@ -142,10 +145,10 @@ export class PageCollectionService {
     return previousPage;
   }
 
-  public getNextPage(page: UxgWizardPage) {
+  public getNextPage(page: UxgWizardPageComponent) {
     const myPageIndex = this.getPageIndex(page);
     let nextPageIndex = myPageIndex + 1;
-    let nextPage: UxgWizardPage;
+    let nextPage: UxgWizardPageComponent;
 
     let valid = false;
     while (nextPageIndex < this.pagesAsArray.length) {

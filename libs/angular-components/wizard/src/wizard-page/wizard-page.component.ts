@@ -2,8 +2,8 @@ import { Component, ContentChild, EventEmitter, OnInit, Output, TemplateRef, Inp
 import { ButtonHubService } from '../services/button-hub.service';
 import { PageCollectionService } from '../services/page-collection.service';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
-import { UxgWizardPageDescription } from './wizard-page-description.directive';
-import { UxgWizardPageTitle } from './wizard-page-title.directive';
+import { UxgWizardPageDescriptionComponent } from './wizard-page-description.directive';
+import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
 
 @Component({
   selector: 'uxg-wizard-page',
@@ -17,14 +17,14 @@ import { UxgWizardPageTitle } from './wizard-page-title.directive';
     '[class.uxg-wizard-page]': 'true'
   }
 })
-export class UxgWizardPage implements OnInit {
+export class UxgWizardPageComponent implements OnInit {
   @Output('uxgWizardPageOnLoad') load: EventEmitter<string> = new EventEmitter();
 
-  @Output('uxgWizardPageNext') nextButtonClicked: EventEmitter<UxgWizardPage> = new EventEmitter();
+  @Output('uxgWizardPageNext') nextButtonClicked: EventEmitter<UxgWizardPageComponent> = new EventEmitter();
 
-  @Output('uxgWizardPagePrevious') previousButtonClicked: EventEmitter<UxgWizardPage> = new EventEmitter();
+  @Output('uxgWizardPagePrevious') previousButtonClicked: EventEmitter<UxgWizardPageComponent> = new EventEmitter();
 
-  @Output('uxgWizardPageDone') doneButtonClicked: EventEmitter<UxgWizardPage> = new EventEmitter();
+  @Output('uxgWizardPageDone') doneButtonClicked: EventEmitter<UxgWizardPageComponent> = new EventEmitter();
 
   public get id() {
     return `uxg-wizard-page-${this.pageCollection.getPageIndex(this)}`;
@@ -40,11 +40,11 @@ export class UxgWizardPage implements OnInit {
     public buttonService: ButtonHubService
   ) {}
 
-  @ContentChild(UxgWizardPageTitle, { static: true })
-  public pageTitle: UxgWizardPageTitle;
+  @ContentChild(UxgWizardPageTitleComponent, { static: true })
+  public pageTitle: UxgWizardPageTitleComponent;
 
-  @ContentChild(UxgWizardPageDescription, { static: true })
-  public pageDescription: UxgWizardPageDescription;
+  @ContentChild(UxgWizardPageDescriptionComponent, { static: true })
+  public pageDescription: UxgWizardPageDescriptionComponent;
 
   private _disabled = false;
 
@@ -53,11 +53,10 @@ export class UxgWizardPage implements OnInit {
   }
 
   @Input('uxgWizardPageDisabled')
-  public set pageDisabled(val: boolean) {
-    const valBool = !!val;
-    if (valBool !== this._disabled) {
-      this._disabled = valBool;
-      this.pageDisabledChange.emit(valBool);
+  public set disabled(val: boolean) {
+    if (val !== this._disabled) {
+      this._disabled = val;
+      this.pageDisabledChange.emit(val);
     }
   }
 
@@ -71,10 +70,9 @@ export class UxgWizardPage implements OnInit {
 
   @Input('uxgWizardPageNextDisabled')
   public set nextStepDisabled(val: boolean) {
-    const valBool = !!val;
-    if (valBool !== this._nextStepDisabled) {
-      this._nextStepDisabled = valBool;
-      this.nextStepDisabledChange.emit(valBool);
+    if (val !== this._nextStepDisabled) {
+      this._nextStepDisabled = val;
+      this.nextStepDisabledChange.emit(val);
     }
   }
 
@@ -88,10 +86,9 @@ export class UxgWizardPage implements OnInit {
 
   @Input('uxgWizardPagePreviousDisabled')
   public set previousStepDisabled(val: boolean) {
-    const valBool = !!val;
-    if (valBool !== this._previousStepDisabled) {
-      this._previousStepDisabled = valBool;
-      this.previousStepDisabledChange.emit(valBool);
+    if (val !== this._previousStepDisabled) {
+      this._previousStepDisabled = val;
+      this.previousStepDisabledChange.emit(val);
     }
   }
 

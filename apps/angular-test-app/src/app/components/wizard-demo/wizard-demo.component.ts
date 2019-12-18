@@ -5,8 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './wizard-demo.component.html',
   styleUrls: ['./wizard-demo.component.scss']
 })
-export class WizardDemoComponent implements OnInit {
+export class WizardDemoComponent {
   constructor() {}
-
-  ngOnInit() {}
 }

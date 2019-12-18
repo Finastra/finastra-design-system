@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy, TemplateRef } from '@angular/core';
-import { UxgWizardPage } from '../wizard-page/wizard-page.component';
+import { UxgWizardPageComponent } from '../wizard-page/wizard-page.component';
 import { PageCollectionService } from './page-collection.service';
 import { Subject, Observable, Subscription } from 'rxjs';
 import { ButtonHubService } from './button-hub.service';
@@ -14,11 +14,11 @@ export class WizardNavigationService implements OnDestroy {
 
   public cancelButtonSubscription: Subscription;
 
-  private _currentChange = new Subject<UxgWizardPage>();
+  private _currentChange = new Subject<UxgWizardPageComponent>();
 
   private _wizardDone = new Subject<boolean>();
 
-  private _currentPage: UxgWizardPage;
+  private _currentPage: UxgWizardPageComponent;
 
   private _wizardCancel = new Subject<any>();
 
@@ -26,7 +26,7 @@ export class WizardNavigationService implements OnDestroy {
 
   private _movedToPreviousPage = new Subject<boolean>();
 
-  public get currentPageChange(): Observable<UxgWizardPage> {
+  public get currentPageChange(): Observable<UxgWizardPageComponent> {
     return this._currentChange.asObservable();
   }
 
@@ -45,14 +45,14 @@ export class WizardNavigationService implements OnDestroy {
     return this.pageCollection.lastPage === this.currentPage;
   }
 
-  get currentPage(): UxgWizardPage {
+  get currentPage(): UxgWizardPageComponent {
     if (!this._currentPage) {
       return null;
     }
     return this._currentPage;
   }
 
-  set currentPage(page: UxgWizardPage) {
+  set currentPage(page: UxgWizardPageComponent) {
     if (this._currentPage !== page) {
       this._currentPage = page;
       page.load.emit(page.id);
@@ -119,8 +119,8 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public forceNext() {
-    const currentPage: UxgWizardPage = this.currentPage;
-    const nextPage: UxgWizardPage = this.pageCollection.getNextPage(currentPage);
+    const currentPage: UxgWizardPageComponent = this.currentPage;
+    const nextPage: UxgWizardPageComponent = this.pageCollection.getNextPage(currentPage);
 
     if (!nextPage) {
       throw new Error('The wizard has no next page to go to.');
@@ -130,7 +130,7 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public checkAndCommitCurrentPage(buttonType: string) {
-    const currentPage: UxgWizardPage = this.currentPage;
+    const currentPage: UxgWizardPageComponent = this.currentPage;
 
     const isNext: boolean = buttonType === 'next';
     const isDone: boolean = buttonType === 'done';
@@ -140,8 +140,6 @@ export class WizardNavigationService implements OnDestroy {
     } else if (isNext) {
       currentPage.nextButtonClicked.emit();
     }
-
-    //TODO: stuff
 
     if (isDone) {
       this._wizardDone.next();
@@ -159,7 +157,7 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public previous() {
-    let previousPage: UxgWizardPage;
+    let previousPage: UxgWizardPageComponent;
 
     if (this.currentPageIsFirst) {
       return;
@@ -176,11 +174,11 @@ export class WizardNavigationService implements OnDestroy {
     this.currentPage = previousPage;
   }
 
-  public goTo(pageOrId: any) {
-    let pageToGoTo: UxgWizardPage;
-    let currentPage: UxgWizardPage;
+  public goTo(pageOrId: UxgWizardPageComponent | string) {
+    let pageToGoTo: UxgWizardPageComponent;
+    let currentPage: UxgWizardPageComponent;
     let pages: PageCollectionService;
-    let pagesToCheck: UxgWizardPage[];
+    let pagesToCheck: UxgWizardPageComponent[];
     let currentPageIndex: number;
     let goToPageIndex: number;
     let goingForward: boolean;
@@ -204,7 +202,7 @@ export class WizardNavigationService implements OnDestroy {
     }
 
     let canGo = true;
-    pagesToCheck.forEach((page: UxgWizardPage) => {
+    pagesToCheck.forEach((page: UxgWizardPageComponent) => {
       if (goingForward && !page.disabled && page.nextStepDisabled && page !== pageToGoTo) {
         canGo = false;
       } else if (!goingForward && !page.disabled && page.previousStepDisabled && page !== pageToGoTo) {

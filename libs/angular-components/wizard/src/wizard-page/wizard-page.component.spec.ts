@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { UxgWizardPage } from './wizard-page.component';
+import { UxgWizardPageComponent } from './wizard-page.component';
 import { ButtonHubService } from '../services/button-hub.service';
 import { PageCollectionService } from '../services/page-collection.service';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
 
-describe('UxgWizardPage', () => {
-  let component: UxgWizardPage;
-  let fixture: ComponentFixture<UxgWizardPage>;
+describe('UxgWizardPageComponent', () => {
+  let component: UxgWizardPageComponent;
+  let fixture: ComponentFixture<UxgWizardPageComponent>;
 
   const mockPageCollection = {
     getPageIndex: jest.fn()
@@ -14,7 +14,7 @@ describe('UxgWizardPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UxgWizardPage],
+      declarations: [UxgWizardPageComponent],
       providers: [
         ButtonHubService,
         { provide: PageCollectionService, useValue: mockPageCollection },
@@ -24,7 +24,7 @@ describe('UxgWizardPage', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UxgWizardPage);
+    fixture = TestBed.createComponent(UxgWizardPageComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();

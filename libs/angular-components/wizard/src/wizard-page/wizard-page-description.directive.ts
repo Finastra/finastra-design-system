@@ -1,6 +1,6 @@
 import { Directive, TemplateRef } from '@angular/core';
 
 @Directive({ selector: '[uxgWizardPageDescription]' })
-export class UxgWizardPageDescription {
+export class UxgWizardPageDescriptionComponent {
   constructor(public pageDescriptionTemplateRef: TemplateRef<any>) {}
 }
