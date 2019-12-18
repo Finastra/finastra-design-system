@@ -10,6 +10,7 @@ export class UxgColumn {
   name: string; // column name
   type: UxgColumnType; // the data type of this column => can apply different template to this column
   align: 'left' | 'right' | 'center'; // text align in cell
+  displayName: string;
 }
 
 export enum UxgColumnType {

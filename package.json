@@ -57,6 +57,7 @@
     "core-js": "^2.5.4",
     "d3": "5.12.0",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "lodash": "4.17.15",
     "plotly.js": "^1.50.1",
     "rxjs": "~6.4.0",
     "smoothscroll-polyfill": "^0.4.4",
