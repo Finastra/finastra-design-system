@@ -9,7 +9,7 @@
     "@angular/forms": "^8.2.4",
     "angular-plotly.js": "1.4.2",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
-    "lodash-es": "^4.17.15",
+    "lodash": "4.17.15",
     "plotly.js": "^1.50.1",
     "smoothscroll-polyfill": "^0.4.4"
   }
