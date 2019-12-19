@@ -53,7 +53,7 @@ a[dense],
 
   &.mat-icon-button {
     .mat-icon {
-      @include icon-size($button-icon-size-base)
+      @include icon-size($button-icon-size-base);
     }
   }
 }
