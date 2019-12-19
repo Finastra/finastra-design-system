@@ -11,17 +11,7 @@ PlotlyModule.plotlyjs = plotlyjs;
 
 @NgModule({
   imports: [CommonModule, PlotlyModule],
-  declarations: [
-    ChartComponent, 
-    GroupTraces,
-    Legend,
-    Trace
-  ],
-  exports: [
-    ChartComponent, 
-    GroupTraces,
-    Legend,
-    Trace
-  ]
+  declarations: [ChartComponent, GroupTraces, Legend, Trace],
+  exports: [ChartComponent, GroupTraces, Legend, Trace]
 })
 export class ChartModule {}
