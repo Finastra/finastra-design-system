@@ -1,10 +1,28 @@
-
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit, ViewChild, Input, Inject, OnDestroy, ContentChild, QueryList, ContentChildren, Output, EventEmitter, OnChanges, SimpleChanges, AfterViewInit, ChangeDetectorRef, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  OnInit,
+  ViewChild,
+  Input,
+  Inject,
+  OnDestroy,
+  ContentChild,
+  QueryList,
+  ContentChildren,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+  ChangeDetectorRef,
+  AfterContentInit
+} from '@angular/core';
 import { PlotComponent } from 'angular-plotly.js';
 import { DOCUMENT } from '@angular/common';
 import { Trace } from './directives/trace.directive';
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
-import { DEFAULT_CONFIG, } from './chart.models';
+import { DEFAULT_CONFIG } from './chart.models';
 import { GroupTraces } from './directives/groupTrace.directive';
 import { Legend } from './directives/legend.directive';
 import { PaletteService, PaletteConfig } from '@ffdc/uxg-angular-components/core';
@@ -15,7 +33,7 @@ import { Subscription, merge } from 'rxjs';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterContentInit {
   @ViewChild(PlotComponent, { static: false }) plot: PlotComponent;
@@ -68,7 +86,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   constructor(
     @Inject(DOCUMENT) private document: any,
     private paletteService: PaletteService,
-    private cd: ChangeDetectorRef) {
+    private cd: ChangeDetectorRef
+  ) {
     this.onClick = new EventEmitter<Partial<Array<Object>>>();
     this.onDoubleClick = new EventEmitter<Partial<Array<Object>>>();
   }
@@ -84,13 +103,9 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
   ngAfterContentInit(): void {
     this.refresh();
-    merge(
-      this.groupTraces.changes,
-      this.traces.changes
-    )
-    .subscribe(value => {
+    merge(this.groupTraces.changes, this.traces.changes).subscribe(value => {
       this.refresh();
-    })
+    });
   }
 
   ngOnDestroy(): void {
@@ -152,11 +167,17 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
     for (const attrname in obj1) {
       if (obj1.hasOwnProperty(attrname))
-        obj3[attrname] = typeof obj1[attrname] === 'object' && !Array.isArray(obj1[attrname]) ? this.merge_options(obj1[attrname], obj2[attrname]) : obj1[attrname];
+        obj3[attrname] =
+          typeof obj1[attrname] === 'object' && !Array.isArray(obj1[attrname])
+            ? this.merge_options(obj1[attrname], obj2[attrname])
+            : obj1[attrname];
     }
     for (const attrname in obj2) {
       if (obj2.hasOwnProperty(attrname))
-        obj3[attrname] = typeof obj2[attrname] === 'object' && !Array.isArray(obj2[attrname]) ? this.merge_options(obj1[attrname], obj2[attrname]) : obj2[attrname];
+        obj3[attrname] =
+          typeof obj2[attrname] === 'object' && !Array.isArray(obj2[attrname])
+            ? this.merge_options(obj1[attrname], obj2[attrname])
+            : obj2[attrname];
     }
     return obj3;
   }
@@ -168,11 +189,17 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     tmpContent.style.display = 'none';
     themeContent.appendChild(tmpContent);
 
-    const globalStyled: CSSStyleDeclaration = window.getComputedStyle(this.document.body.getElementsByTagName('chart-font')[0]);
+    const globalStyled: CSSStyleDeclaration = window.getComputedStyle(
+      this.document.body.getElementsByTagName('chart-font')[0]
+    );
     tmpContent.className = 'chart-font-legend';
-    const legendStyled: CSSStyleDeclaration = window.getComputedStyle(this.document.body.getElementsByTagName('chart-font')[0]);
+    const legendStyled: CSSStyleDeclaration = window.getComputedStyle(
+      this.document.body.getElementsByTagName('chart-font')[0]
+    );
     tmpContent.className = 'chart-font-axis';
-    const axisStyled: CSSStyleDeclaration = window.getComputedStyle(this.document.body.getElementsByTagName('chart-font')[0]);
+    const axisStyled: CSSStyleDeclaration = window.getComputedStyle(
+      this.document.body.getElementsByTagName('chart-font')[0]
+    );
     this._defaultLayout = {
       hovermode: 'closest',
       clickmode: 'event+select',
@@ -235,7 +262,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   private setLayout(layout?: Partial<Plotly.Layout>): void {
     if (!this._layout) this._layout = this._defaultLayout;
     if (this.groupTraces && !this._layout.grid) {
-      let row = 0, column = 0;
+      let row = 0,
+        column = 0;
       this.groupTraces.forEach(grpTraces => {
         row = row < grpTraces.rowPosition ? grpTraces.rowPosition : row;
         column = column < grpTraces.columnPosition ? grpTraces.columnPosition : column;
@@ -257,9 +285,11 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
   private setData(): void {
     if (this.traces && this.traces.length) {
-      this.data = this.traces.map(trace => {
-        return trace.getPlotlyTrace();
-      }).filter(trace => !!trace);
+      this.data = this.traces
+        .map(trace => {
+          return trace.getPlotlyTrace();
+        })
+        .filter(trace => !!trace);
     } else if (this.groupTraces && this.groupTraces.length) {
       let datas = [];
       let nbGrp = 1;

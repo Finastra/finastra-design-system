@@ -7,39 +7,39 @@ import { LegendPosition, ChartType } from '@ffdc/uxg-angular-components/chart';
   styleUrls: ['./chart-demo.component.scss']
 })
 export class ChartDemoComponent {
+  legendPosition = LegendPosition.horizontalBottomCenter;
+
   traces = [
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [100, 50, 70],
-      measureName: "PNL",
+      measureName: 'PNL',
       type: ChartType.line
     },
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [75, 10, 90],
-      measureName: "Asset Values",
+      measureName: 'Asset Values',
       type: ChartType.line
     }
   ];
-  
-  legendPosition = LegendPosition.horizontalBottomCenter;
 
   traces2 = [
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [100, 50, 70],
-      measureName: "PNL",
+      measureName: 'PNL',
       type: ChartType.bar,
       orientation: 'horizontal'
     },
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [75, 10, 90],
-      measureName: "Asset Values",
+      measureName: 'Asset Values',
       type: ChartType.bar,
       orientation: 'horizontal'
     }
@@ -47,27 +47,27 @@ export class ChartDemoComponent {
 
   traces3 = [
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [100, 50, 70],
-      measureName: "PNL",
+      measureName: 'PNL',
       type: ChartType.fullStackedArea
     },
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [75, 10, 90],
-      measureName: "Asset Values",
+      measureName: 'Asset Values',
       type: ChartType.fullStackedArea
     }
   ];
 
   traces4 = [
     {
-      dimension: ["Banks", "Foods", "Energies"],
-      dimensionName: "Industry",
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
       measure: [100, 50, 70],
-      measureName: "PNL",
+      measureName: 'PNL',
       type: ChartType.pie
     }
   ];
