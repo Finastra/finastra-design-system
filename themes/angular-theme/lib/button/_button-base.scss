@@ -53,10 +53,7 @@ a[dense],
 
   &.mat-icon-button {
     .mat-icon {
-      width: 18px;
-      height: 18px;
-      font-size: 18px;
-      line-height: 18px;
+      @include icon-size($button-icon-size-base)
     }
   }
 }
