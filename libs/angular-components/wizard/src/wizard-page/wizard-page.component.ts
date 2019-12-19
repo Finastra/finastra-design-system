@@ -8,7 +8,6 @@ import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
 @Component({
   selector: 'uxg-wizard-page',
   template: '<ng-content *ngIf="current"></ng-content>',
-  styleUrls: ['./wizard-page.component.scss'],
   host: {
     '[id]': 'id',
     role: 'tabpanel',
