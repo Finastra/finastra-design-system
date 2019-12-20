@@ -20,7 +20,7 @@
         <mat-checkbox
           (click)="$event.stopPropagation()"
           (change)="multiSelectRowClick(row)"
-          [checked]="selections.indexOf(row) > -1"
+          [checked]="isRowSelected(row)"
         >
         </mat-checkbox>
       </td>
@@ -130,7 +130,7 @@
       mat-row
       *matRowDef="let row; columns: columnsToDisplayToComponent"
       (click)="singleSelectRowClick(row)"
-      [ngClass]="selections.indexOf(row) > -1 ? 'selected' : ''"
+      [ngClass]="isRowSelected(row) ? 'selected' : ''"
     ></tr>
     <tr
       mat-footer-row

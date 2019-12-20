@@ -1,0 +1,40 @@
+<ng-container [ngSwitch]="type">
+  <button
+    *ngSwitchDefault
+    mat-button
+    color="accent"
+    large
+    [disabled]="disabledAttribute"
+    [class.disabled]="isDisabled"
+    (click)="click()"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </button>
+  <button
+    *ngSwitchCase="'next'"
+    mat-stroked-button
+    color="accent"
+    large
+    [disabled]="disabledAttribute"
+    [class.disabled]="isDisabled"
+    (click)="click()"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </button>
+  <button
+    *ngSwitchCase="'done'"
+    mat-flat-button
+    color="accent"
+    large
+    [disabled]="disabledAttribute"
+    [class.disabled]="isDisabled"
+    (click)="click()"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </button>
+  <div *ngSwitchCase="'custom'">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </div>
+</ng-container>
+
+<ng-template #contentTpl><ng-content></ng-content></ng-template>

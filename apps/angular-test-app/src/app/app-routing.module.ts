@@ -21,6 +21,7 @@ import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
 import { PopoverModule } from '@ffdc/uxg-angular-components/popover';
 import { FilterTreeModule } from '@ffdc/uxg-angular-components/filter/filter-tree';
 import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tags';
+import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -39,6 +40,7 @@ import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
+import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 
 @NgModule({
   imports: [
@@ -68,7 +70,8 @@ import { ChartDemoComponent } from './components/chart-demo/chart-demo.component
     FilterTagsModule,
     FilterTreeModule,
     VectorMapModule,
-    ChartModule
+    ChartModule,
+    WizardModule
   ],
   declarations: [
     HomeComponent,
@@ -79,7 +82,8 @@ import { ChartDemoComponent } from './components/chart-demo/chart-demo.component
     FieldMatcherComponent,
     FilterPanelDemoComponent,
     VectorMapDemoComponent,
-    ChartDemoComponent
+    ChartDemoComponent,
+    WizardDemoComponent
   ],
   exports: [RouterModule]
 })

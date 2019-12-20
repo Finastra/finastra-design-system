@@ -49,6 +49,9 @@
     },
     "chart": {
       "tags": []
+    },
+    "wizard": {
+      "tags": []
     }
   }
 }

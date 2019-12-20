@@ -45,9 +45,10 @@
               "buildOptimizer": true,
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "type": "all",
+                  "baseline": "8mb",
+                  "maximumError": "20%",
+                  "maximumWarning": "10%"
                 }
               ]
             }
@@ -475,6 +476,37 @@
             "jestConfig": "libs/angular-components/chart/jest.config.js",
             "tsConfig": "libs/angular-components/chart/tsconfig.spec.json",
             "setupFile": "libs/angular-components/chart/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "wizard": {
+      "projectType": "library",
+      "root": "libs/angular-components/wizard",
+      "sourceRoot": "libs/angular-components/wizard",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/wizard/tsconfig.lib.json",
+              "libs/angular-components/wizard/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/wizard/jest.config.js",
+            "tsConfig": "libs/angular-components/wizard/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/wizard/test-setup.ts"
           }
         }
       },

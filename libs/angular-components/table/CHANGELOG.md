@@ -1,14 +1,10 @@
 # Release notes
 
-## Next
-
 ### Features
 
 ### Breaking changes
 
-- Remove cookie-session
-
-#### 0.14.0
+#### 0.13.20
 
 - table componnet update ouput name:
 

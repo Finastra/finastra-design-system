@@ -11,7 +11,12 @@ export class FilterPanelDemoComponent implements OnInit {
   filterExpression: string[] = [];
   groupValue: string;
   initialGroupState = 'api';
-  tagsSampleData = ['Malauzai', 'North America', 'Money Movement', 'Static Data'];
+  tagsSampleData = [
+    { label: 'Malauzai', isSelected: true },
+    { label: 'North America' },
+    { label: 'Money Movement' },
+    { label: 'Static Data' }
+  ];
   chosenTags: string[] = [];
 
   constructor() {}
