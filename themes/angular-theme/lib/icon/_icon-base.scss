@@ -12,30 +12,14 @@ $icon-size-dense: 18px;
   line-height: $icon-size !important;
 }
 
-.mat-icon[dense],
-*[dense] .mat-icon {
+.mat-icon[dense] {
   @include icon-size($icon-size-dense);
 }
 
-.mat-icon[large],
-*[large] .mat-icon {
+.mat-icon[large] {
   @include icon-size($icon-size-large);
 }
 
-.mat-icon[extra-large],
-*[extra-large] .mat-icon {
+.mat-icon[extra-large] {
   @include icon-size($icon-size-extra-large);
-}
-
-button {
-  &.mat-button,
-  &.mat-raised-button,
-  &.mat-stroked-button,
-  &.mat-flat-button {
-    .mat-icon {
-      @include icon-size($icon-size-dense);
-
-      padding-bottom: 2px;
-    }
-  }
 }
