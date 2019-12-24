@@ -69,10 +69,4 @@ a[large] {
   @include button-base($button-radius-large, $button-icon-size-large);
 
   padding: $uxg-spacing-0 $button-padding-large;
-
-  // &.mat-icon-button {
-  //   .mat-icon {
-  //     @include icon-size($button-icon-size-large);
-  //   }
-  // }
 }
