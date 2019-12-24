@@ -70,9 +70,9 @@ a[large] {
 
   padding: $uxg-spacing-0 $button-padding-large;
 
-  &.mat-icon-button {
-    .mat-icon {
-      @include icon-size($button-icon-size-large);
-    }
-  }
+  // &.mat-icon-button {
+  //   .mat-icon {
+  //     @include icon-size($button-icon-size-large);
+  //   }
+  // }
 }
