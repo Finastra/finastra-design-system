@@ -174,9 +174,14 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     this.onEventClick(items);
   }
 
-  private onEventClick(items: { selectedItems: object[], clickedItems: object[] }) {
+  private onEventClick(items: { selectedItems: object[]; clickedItems: object[] }) {
     const clickTime = Date.now();
-    if (clickTime - this.lastClick.time < 250 && this.lastClick.item && this.lastClick.item.clickedItems && this.lastClick.item.clickedItems.length) {
+    if (
+      clickTime - this.lastClick.time < 250 &&
+      this.lastClick.item &&
+      this.lastClick.item.clickedItems &&
+      this.lastClick.item.clickedItems.length
+    ) {
       clearTimeout(this.clickTimer);
       this.clickTimer = null;
       this.onDoubleClick.emit(this.lastClick.item.clickedItems);
