@@ -1,5 +1,9 @@
 <div class="row">
-  <uxg-chart (onClick)="onClick($event)" (onDoubleClick)="onDoubleClick($event)">
+  <uxg-chart
+    (onClick)="onClick($event)"
+    (onSelected)="onSelected($event)"
+    (onDoubleClick)="onDoubleClick($event)"
+  >
     <uxg-legend [position]="legendPosition"></uxg-legend>
     <uxg-trace
       *ngFor="let trace of traces"
@@ -10,7 +14,11 @@
       [type]="trace.type"
     ></uxg-trace>
   </uxg-chart>
-  <uxg-chart (onClick)="onClick($event)" (onDoubleClick)="onDoubleClick($event)">
+  <uxg-chart
+    (onClick)="onClick($event)"
+    (onSelected)="onSelected($event)"
+    (onDoubleClick)="onDoubleClick($event)"
+  >
     <uxg-legend [position]="legendPosition"></uxg-legend>
     <uxg-trace
       *ngFor="let trace of traces2"
@@ -31,7 +39,11 @@
   </uxg-chart>
 </div>
 
-<uxg-chart (onClick)="onClick($event)" (onDoubleClick)="onDoubleClick($event)">
+<uxg-chart
+  (onClick)="onClick($event)"
+  (onSelected)="onSelected($event)"
+  (onDoubleClick)="onDoubleClick($event)"
+>
   <uxg-legend [position]="legendPosition"></uxg-legend>
   <uxg-group-traces columnPosition="0">
     <uxg-trace
@@ -51,6 +63,7 @@
       [measure]="trace.measure"
       [measureName]="trace.measureName"
       [type]="trace.type"
+      orientation="horizontal"
     ></uxg-trace>
   </uxg-group-traces>
   <uxg-group-traces rowPosition="1">
