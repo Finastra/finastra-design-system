@@ -1,11 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Input, Component } from '@angular/core';
 
-@Component({ selector: 'uxg-legend' })
-export class Legend {
+@Component({
+  selector: 'uxg-legend',
+  template: ''
+})
+export class LegendComponent {
   @Input() position: LegendPosition;
 
+  constructor() {
+    this.position = LegendPosition.verticalRightTop;
+  }
+
   getLegendPlotly() {
-    return legendPositionConvertion[this.position] ? legendPositionConvertion[this.position] : {};
+    return LegendPositionConvertion[this.position] ? LegendPositionConvertion[this.position] : {};
   }
 }
 
@@ -24,7 +31,7 @@ export enum LegendPosition {
   horizontalBottomRight = 'horizontalBottomRight'
 }
 
-export const legendPositionConvertion: Record<LegendPosition, {}> = {
+export const LegendPositionConvertion: Record<LegendPosition, {}> = {
   [LegendPosition.verticalLeftTop]: {
     label: 'Vertical left top',
     orientation: 'v',

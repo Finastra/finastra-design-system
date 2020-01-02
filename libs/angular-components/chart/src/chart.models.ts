@@ -1,6 +1,6 @@
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
-export const DEFAULT_LAYOUT: Partial<Plotly.Layout> = {
+export const CHART_DEFAULT_LAYOUT: Partial<Plotly.Layout> = {
   autosize: true,
   margin: {
     l: 0,
@@ -11,7 +11,7 @@ export const DEFAULT_LAYOUT: Partial<Plotly.Layout> = {
   }
 };
 
-export const DEFAULT_CONFIG: Partial<Plotly.Config> = {
+export const CHART_DEFAULT_CONFIG: Partial<Plotly.Config> = {
   displaylogo: false,
   responsive: true
 };
@@ -36,6 +36,11 @@ export enum ChartType {
   donut = 'donut'
 }
 
+export enum ChartOrientation {
+  horizontal = 'horizontal',
+  vertical = 'vertical'
+}
+
 export interface ChartTypeConvertion {
   name: string;
   group: string;
@@ -43,7 +48,7 @@ export interface ChartTypeConvertion {
   layout?: Plotly.Layout;
 }
 
-export const chartTypePlotly: Record<ChartType, ChartTypeConvertion> = {
+export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
   [ChartType.bar]: {
     name: 'bar',
     group: 'bar',

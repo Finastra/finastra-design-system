@@ -1,34 +1,37 @@
-import { Component, Input } from '@angular/core';
-import { ChartType, chartTypePlotly } from '../chart.models';
+import { Input, Component } from '@angular/core';
+import { ChartType, CHART_PLOLTLY_TYPE, ChartOrientation } from '../chart.models';
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
-@Component({ selector: 'uxg-trace' })
-export class Trace {
+@Component({
+  selector: 'uxg-trace',
+  template: ''
+})
+export class TraceComponent {
   @Input() dimension: Array<string | number>;
   @Input() dimensionName: string;
   @Input() measure: Array<string | number>;
   @Input() measureName: string;
   @Input() selectedPoints: Array<number>;
   @Input() type: ChartType;
-  @Input() orientation: 'horizontal' | 'vertical';
+  @Input() orientation: ChartOrientation;
   @Input() options: Object;
 
   constructor() {
-    this.orientation = 'vertical';
+    this.orientation = ChartOrientation.vertical;
   }
 
   getPlotlyTrace(): Partial<Plotly.Data> {
-    const plotlyType = chartTypePlotly[this.type];
+    const plotlyType = CHART_PLOLTLY_TYPE[this.type];
     if (plotlyType) {
       const trace = {
         dimensionName: this.dimensionName,
-        x: this.orientation === 'vertical' ? this.dimension : this.measure,
-        y: this.orientation === 'vertical' ? this.measure : this.dimension,
-        labels: this.orientation === 'vertical' ? this.dimension : this.measure,
-        values: this.orientation === 'vertical' ? this.measure : this.dimension,
+        x: this.orientation === ChartOrientation.vertical ? this.dimension : this.measure,
+        y: this.orientation === ChartOrientation.vertical ? this.measure : this.dimension,
+        labels: this.orientation === ChartOrientation.vertical ? this.dimension : this.measure,
+        values: this.orientation === ChartOrientation.vertical ? this.measure : this.dimension,
         name: this.measureName,
         ...(plotlyType ? plotlyType.trace : {}),
-        orientation: this.orientation === 'horizontal' ? 'h' : 'v',
+        orientation: this.orientation === ChartOrientation.horizontal ? 'h' : 'v',
         ...(this.options ? this.options : {})
       };
       if (this.selectedPoints) {
@@ -41,7 +44,7 @@ export class Trace {
   }
 
   getPlotlyTypeLayout(): Partial<Plotly.Layout> {
-    const plotlyType = chartTypePlotly[this.type];
+    const plotlyType = CHART_PLOLTLY_TYPE[this.type];
     return plotlyType && plotlyType.layout ? plotlyType.layout : {};
   }
 }

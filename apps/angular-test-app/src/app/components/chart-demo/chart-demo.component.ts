@@ -15,14 +15,7 @@ export class ChartDemoComponent {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
-    },
-    {
-      dimension: ['Banks', 'Foods', 'Energies'],
-      dimensionName: 'Industry',
-      measure: [75, 10, 90],
-      measureName: 'Asset Values',
-      type: ChartType.line
+      type: ChartType.bar
     }
   ];
 
@@ -74,6 +67,10 @@ export class ChartDemoComponent {
 
   onClick(event) {
     console.log('simple click: ', event);
+  }
+
+  onSelected(event) {
+    console.log('simple click list items selected: ', event);
   }
 
   onDoubleClick(event) {
