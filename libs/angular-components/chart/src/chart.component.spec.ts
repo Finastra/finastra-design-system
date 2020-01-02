@@ -30,7 +30,7 @@ class TestContainerComponent implements AfterViewInit {
   rowPosition2 = undefined;
   legendPosition = LegendPosition.verticalRightTop;
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() {}
 }
 
 describe('Chart Component', () => {
@@ -84,7 +84,7 @@ describe('Chart Component', () => {
         values: trace.measure,
         name: trace.measureName,
         ...CHART_PLOLTLY_TYPE[trace.type].trace,
-        orientation: 'v',
+        orientation: 'v'
       }
     ];
 
@@ -154,9 +154,9 @@ describe('Chart Component', () => {
         name: trace.measureName,
         ...CHART_PLOLTLY_TYPE[trace.type].trace,
         orientation: 'v',
-        legendgroup: "group1",
-        xaxis: "x1",
-        yaxis: "y1"
+        legendgroup: 'group1',
+        xaxis: 'x1',
+        yaxis: 'y1'
       },
       {
         dimensionName: trace.dimensionName,
@@ -167,9 +167,9 @@ describe('Chart Component', () => {
         name: trace.measureName,
         ...CHART_PLOLTLY_TYPE[trace2.type].trace,
         orientation: 'v',
-        legendgroup: "group2",
-        xaxis: "x2",
-        yaxis: "y2"
+        legendgroup: 'group2',
+        xaxis: 'x2',
+        yaxis: 'y2'
       }
     ];
 
@@ -311,7 +311,9 @@ describe('Chart Component', () => {
     component.ngAfterViewInit();
     component.chart.ngAfterContentInit();
     fixture.detectChanges();
-    expect(component.chart.layout.legend).toStrictEqual(LegendPositionConvertion[LegendPosition.horizontalBottomCenter]);
+    expect(component.chart.layout.legend).toStrictEqual(
+      LegendPositionConvertion[LegendPosition.horizontalBottomCenter]
+    );
   });
 
   it('should change revision', fakeAsync(() => {
@@ -349,7 +351,7 @@ describe('Chart Component', () => {
     component.chart.ngOnInit();
     fixture.detectChanges();
     spyOn(component.chart.plot, 'updatePlot');
-    
+
     component.chart.revision = component.chart.revision++;
     fixture.detectChanges();
     expect(component.chart.plot.updatePlot).toBeCalled();
@@ -384,20 +386,22 @@ describe('Chart Component', () => {
     };
 
     const dummyPoint = {
-      points: [{
-        data: {
-          x: ['Banks', 'Foods', 'Energies'],
-          y: [100, 50, 70],
-          labels: ['Banks', 'Foods', 'Energies'],
-          values: [100, 50, 70],
-          dimensionName: 'Industry',
+      points: [
+        {
+          data: {
+            x: ['Banks', 'Foods', 'Energies'],
+            y: [100, 50, 70],
+            labels: ['Banks', 'Foods', 'Energies'],
+            values: [100, 50, 70],
+            dimensionName: 'Industry',
+            name: 'PNL',
+            type: ChartType.bar,
+            orientation: 'v'
+          },
           name: 'PNL',
-          type: ChartType.bar,
-          orientation: 'v'
-        },
-        name: 'PNL',
-        pointIndex: 0
-      }]
+          pointIndex: 0
+        }
+      ]
     };
 
     const selectedObject = [
@@ -453,20 +457,22 @@ describe('Chart Component', () => {
     };
 
     const dummyPoint = {
-      points: [{
-        data: {
-          x: ['Banks', 'Foods', 'Energies'],
-          y: [100, 50, 70],
-          labels: ['Banks', 'Foods', 'Energies'],
-          values: [100, 50, 70],
-          dimensionName: 'Industry',
+      points: [
+        {
+          data: {
+            x: ['Banks', 'Foods', 'Energies'],
+            y: [100, 50, 70],
+            labels: ['Banks', 'Foods', 'Energies'],
+            values: [100, 50, 70],
+            dimensionName: 'Industry',
+            name: 'PNL',
+            type: ChartType.pie,
+            orientation: 'v'
+          },
           name: 'PNL',
-          type: ChartType.pie,
-          orientation: 'v'
-        },
-        name: 'PNL',
-        pointNumber: 0
-      }]
+          pointNumber: 0
+        }
+      ]
     };
 
     const selectedObject = [
@@ -522,21 +528,23 @@ describe('Chart Component', () => {
     };
 
     const dummyPoint = {
-      points: [{
-        data: {
-          x: ['Banks', 'Foods', 'Energies'],
-          y: [100, 50, 70],
-          labels: ['Banks', 'Foods', 'Energies'],
-          values: [100, 50, 70],
-          dimensionName: 'Industry',
+      points: [
+        {
+          data: {
+            x: ['Banks', 'Foods', 'Energies'],
+            y: [100, 50, 70],
+            labels: ['Banks', 'Foods', 'Energies'],
+            values: [100, 50, 70],
+            dimensionName: 'Industry',
+            name: 'PNL',
+            type: ChartType.bar,
+            orientation: 'v',
+            selectedoints: 0
+          },
           name: 'PNL',
-          type: ChartType.bar,
-          orientation: 'v',
-          selectedoints: 0
-        },
-        name: 'PNL',
-        pointIndex: 0
-      }]
+          pointIndex: 0
+        }
+      ]
     };
 
     const selectedObject = [
@@ -595,20 +603,22 @@ describe('Chart Component', () => {
     };
 
     const dummyPoint = {
-      points: [{
-        data: {
-          x: ['Banks', 'Foods', 'Energies'],
-          y: [100, 50, 70],
-          labels: ['Banks', 'Foods', 'Energies'],
-          values: [100, 50, 70],
-          dimensionName: 'Industry',
+      points: [
+        {
+          data: {
+            x: ['Banks', 'Foods', 'Energies'],
+            y: [100, 50, 70],
+            labels: ['Banks', 'Foods', 'Energies'],
+            values: [100, 50, 70],
+            dimensionName: 'Industry',
+            name: 'PNL',
+            type: ChartType.bar,
+            orientation: 'v'
+          },
           name: 'PNL',
-          type: ChartType.bar,
-          orientation: 'v'
-        },
-        name: 'PNL',
-        pointIndex: 0
-      }]
+          pointIndex: 0
+        }
+      ]
     };
 
     const selectedObject = [
@@ -640,7 +650,6 @@ describe('Chart Component', () => {
 
     expect(component.chart.onDoubleClick.emit).toBeCalledWith(selectedObject);
   }));
-  
 
   it('should multiselect', fakeAsync(() => {
     TestBed.overrideComponent(TestContainerComponent, {
@@ -667,20 +676,22 @@ describe('Chart Component', () => {
     };
 
     const dummyPoint = {
-      points: [{
-        data: {
-          x: ['Banks', 'Foods', 'Energies'],
-          y: [100, 50, 70],
-          labels: ['Banks', 'Foods', 'Energies'],
-          values: [100, 50, 70],
-          dimensionName: 'Industry',
+      points: [
+        {
+          data: {
+            x: ['Banks', 'Foods', 'Energies'],
+            y: [100, 50, 70],
+            labels: ['Banks', 'Foods', 'Energies'],
+            values: [100, 50, 70],
+            dimensionName: 'Industry',
+            name: 'PNL',
+            type: ChartType.bar,
+            orientation: 'v'
+          },
           name: 'PNL',
-          type: ChartType.bar,
-          orientation: 'v'
-        },
-        name: 'PNL',
-        pointIndex: 0
-      }]
+          pointIndex: 0
+        }
+      ]
     };
 
     const selectedObject = [
