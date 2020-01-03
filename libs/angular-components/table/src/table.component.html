@@ -93,6 +93,7 @@
             <div *ngSwitchDefault>
               <input
                 matInput
+                [attr.aria-label]="'Input ' + element[column.name]"
                 placeholder="{{ element[column.name] }}"
                 (click)="$event.stopPropagation()"
                 [(ngModel)]="element[column.name]"
