@@ -1,4 +1,5 @@
 @import '../core/style/spacing';
+@import '../icon/icon-base';
 
 $button-radius-base: 18px;
 $button-radius-dense: 18px;
@@ -18,6 +19,12 @@ $mat-icon-button-size-dense: 30px;
   &.mat-stroked-button,
   &.mat-flat-button {
     border-radius: $radius;
+
+    .mat-icon {
+      @include icon-size($icon-size-dense);
+
+      padding-bottom: 2px;
+    }
   }
 }
 
@@ -43,6 +50,12 @@ button[dense],
 a[dense],
 *[dense] button {
   @include button-base($button-radius-dense);
+
+  &.mat-icon-button {
+    .mat-icon {
+      @include icon-size($button-icon-size-base);
+    }
+  }
 }
 
 button[large],

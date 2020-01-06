@@ -32,6 +32,7 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
   $button-3:      mat-typography-level(12px, 30px, 500),
   $caption:       mat-typography-level(12px, 18px, 400),
   $overline:      mat-typography-level(10px, 16px, 500),
+  $legend:        mat-typography-level(10px, 15px, 300),
   $input:         mat-typography-level(inherit, 1.125, 400)
 ) {
   // Declare an initial map with all of the levels.
@@ -59,6 +60,7 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
     button-3:       $button-3,
     caption:        $caption,
     overline:       $overline,
+    legend:         $legend,
     input:          $input
   );
 
@@ -173,5 +175,9 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
 
   .uxg-overline {
     @include mat-typography-level-to-styles($config, overline);
+  }
+
+  .uxg-legend {
+    @include mat-typography-level-to-styles($config, legend);
   }
 }
