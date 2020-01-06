@@ -6,6 +6,6 @@
   "sass": "_all-theme.scss",
   "css": "_all-theme.css",
   "dependencies": {
-    "@angular/material": "8.0.1"
+    "@angular/material": "8.2.3"
   }
 }
