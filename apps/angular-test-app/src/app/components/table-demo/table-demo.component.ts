@@ -190,7 +190,6 @@ export class TableDemoComponent implements OnInit {
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
   @ViewChild('tableCellTypedCurrency', { static: true }) typedCurrency: TemplateRef<any>;
   @ViewChild('tableCellTypedCurrencyEdit', { static: true }) typedCurrencyEdit: TemplateRef<any>;
-  // @ViewChild('tableCellTable', { static: false}) tableCellTable: TemplateRef<any>;
   @ViewChild('tableCellTable', { static: true }) tableCellTable;
   selectedIndex = [1, 2];
 
