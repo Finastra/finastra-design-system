@@ -7,19 +7,19 @@
   <mat-card-actions>
     <mat-icon>lock</mat-icon>
     <span class="fill-remaining-space"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Card Menu btn">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Card Menu button">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu" overlapTrigger="true">
-      <button mat-menu-item aria-label="Redial btn">
+      <button mat-menu-item aria-label="Redial button">
         <mat-icon>dialpad</mat-icon>
         <span>Redial</span>
       </button>
-      <button mat-menu-item disabled aria-label="Check voicemail btn">
+      <button mat-menu-item disabled aria-label="Check voicemail button">
         <mat-icon>voicemail</mat-icon>
         <span>Check voicemail</span>
       </button>
-      <button mat-menu-item aria-label="Disable alerts btn">
+      <button mat-menu-item aria-label="Disable alerts button">
         <mat-icon>notifications_off</mat-icon>
         <span>Disable alerts</span>
       </button>
