@@ -62,6 +62,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() columns: Array<UxgColumn> = []; // columns definitions
   @Input() showTotalRows = false;
+  @Input() showTableHeader = true;
   @Input() totalData: any = null;
 
   // table config
@@ -118,6 +119,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   //local variable
   previousIndex: number; // used for column drag drop
+  private uxgTableEdit = false;
+
   constructor() {}
 
   ngOnInit() {
@@ -202,6 +205,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   singleSelectRowClick(row: any) {
+    if (this.uxgTableEdit) return;
     this.dataToComponent.forEach(item => delete item.uxgTableEdit);
 
     if (this.singleSelect) {
@@ -221,6 +225,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   multiSelectRowClick(row: any) {
+    if (this.uxgTableEdit) return;
+
     if (!this.multiSelect) {
       return;
     }
@@ -296,6 +302,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
     this.editRowOrigin = { ...row };
     row.uxgTableEdit = true;
+    this.uxgTableEdit = true;
   }
 
   rowSendTriggered(row) {
@@ -306,6 +313,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   rowEditConfirm(newRow) {
     delete newRow.uxgTableEdit;
+    this.uxgTableEdit = false;
     this.rowUpdated.emit({
       data: newRow
     });
@@ -313,6 +321,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   rowEditCancel(row) {
     delete row.uxgTableEdit;
+    this.uxgTableEdit = false;
     Object.keys(row).forEach(key => {
       row[key] = this.editRowOrigin[key];
     });

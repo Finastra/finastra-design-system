@@ -147,6 +147,13 @@
     <tr>
       <td>
         @Input()<br />
+        showTableHeader: boolean
+      </td>
+      <td>If you want to show table headers, Default <code>true</code>.</td>
+    </tr>
+    <tr>
+      <td>
+        @Input()<br />
         columnDragEnable:boolean
       </td>
       <td>Enable column drag drop or not. Default <code>false</code></td>
@@ -289,12 +296,34 @@
     <tr>
       <td>align</td>
       <td>string</td>
-      <td>no</td>
+      <td>yes</td>
       <td>'left' | 'right' | 'center': string should be left align, number should be right align.</td>
+    </tr>
+    <tr>
+      <td>displayName</td>
+      <td>string</td>
+      <td>yes</td>
+      <td>Add a new label to display in the header row</td>
+    </tr>
+    <tr>
+      <td>cellTemplate</td>
+      <td>Object</td>
+      <td>yes</td>
+      <td>The view template to display your customized cell.</td>
+    </tr>
+    <tr>
+      <td>cellEditTemplate</td>
+      <td>Object</td>
+      <td>yes</td>
+      <td>The edit template to display your customized edit cell.When you enable edit to table</td>
     </tr>
   </tbody>
 </table>
 <h3>UxgColumnType</h3>
+<p>
+  With the type you can specify the disply type and predefined align. For type <code>cellTemplate</code> You can used to
+  add new template to customize your own cell. See more in advanced section
+</p>
 <table class="documentation">
   <tbody>
     <tr class="header">
@@ -316,6 +345,10 @@
     <tr>
       <td>typedouble</td>
       <td>typedouble</td>
+    </tr>
+    <tr>
+      <td>cellTemplate</td>
+      <td>cellTemplate</td>
     </tr>
   </tbody>
 </table>
@@ -396,3 +429,75 @@
     </tr>
   </tbody>
 </table>
+
+<h2>Advanced tips</h2>
+<h3>Table cell template</h3>
+<p>In table component, you can create your own customized cell template to customize your cell.</p>
+
+<p>As you have ever read before, we have <code>UxgColumnType</code> definiations</p>
+<p>There are properties: <code>cellTemplate</code>/<code>cellEditTemplate</code></p>
+<p>And also there is a property in <code>UxgColumnType</code> called <code>cellTemplate</code></p>
+
+<p>
+  With those properties, you can add your own cell template. When you specify that the column type is
+  <code>cellTemplate</code>, UxgTable will know that you want to use your own template for this column
+</p>
+<p>And the <code>cellTemplate</code> property means the template you want to use to display this column.</p>
+
+<p>From table component, we will provide two paramters to your template <code>element</code> <code>column</code></p>
+<p>
+  With those two object, you can do what you want, <code>element</code> contains row data. <code>column</code> contains
+  column definiation
+</p>
+<p>Here is an template exmaple, we want to display the revenue with currency.</p>
+
+<p>With the element and column object we can access the data and display it.</p>
+
+<pre>
+    <code contenteditable spellcheck="false">
+      &lt; ng-template #tableCellTypedCurrency let-element="element" let-column="column" &gt;
+          <span>{{</span>element[column.name].amount <span>}} {{</span>element[column.name].currency <span>}}</span>
+        cell template here 
+      &lt;/ng-template &gt;
+  </code>
+</pre>
+<ng-template #tableCellTypedCurrency let-element="element" let-column="column">
+  {{ element[column.name].amount }} {{ element[column.name].currency }}
+</ng-template>
+
+<ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column">
+  edit cell
+</ng-template>
+
+<ng-template #tableCellTable let-element="element" let-column="column">
+  <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false">
+  </uxg-table>
+</ng-template>
+
+<mat-drawer-container class="table-container ">
+  <div class="ffdc-table-demo-div">
+    <uxg-table
+      [data]="dataSource"
+      [columns]="columnsCellTemplate"
+      [columnsToDisplay]="columnsToDisplay"
+      [columnDragEnable]="dragEnable"
+      [selectedKeys]="selectedIndex"
+      [showTotalRows]="totalEnable"
+      [totalData]="totalData"
+      [stickyFooter]="stickyFooter"
+      [pageEnable]="pageEnable"
+      (sortChanged)="sortData($event)"
+      [singleSelect]="singleSelect"
+      [multiSelect]="!singleSelect"
+      (selectChanged)="selectChange($event)"
+      [enableEdit]="enableTableEdit"
+      [enableDelete]="enableTableRowDelete"
+      (rowRemoved)="rowDeleteEvent($event)"
+      (rowUpdated)="rowEditEvent($event)"
+      (multiSelectSingleRowClicked)="rowClickUnderMutiSelectMode($event)"
+      [enableSend]="enableTableSendEvent"
+      (rowSend)="rowSendClickEvent($event)"
+    >
+    </uxg-table>
+  </div>
+</mat-drawer-container>
