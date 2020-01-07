@@ -343,7 +343,7 @@ export class TableDemoComponent implements OnInit {
     this.pageEnable = $event.checked;
   }
 
-  setSelectedKeys($event){
+  setSelectedKeys($event) {
     this.selectedIndex = $event.value;
   }
   enableCustomizedPaging($event) {

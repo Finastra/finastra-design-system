@@ -63,7 +63,7 @@
       <mat-form-field>
         <mat-label>Selection</mat-label>
         <mat-select (selectionChange)="setSelectedKeys($event)" multiple>
-          <mat-option *ngFor="let data of dataSource; let i = index" [value]="i">{{data.API}}</mat-option>
+          <mat-option *ngFor="let data of dataSource; let i = index" [value]="i">{{ data.API }}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
