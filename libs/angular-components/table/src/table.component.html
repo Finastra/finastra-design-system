@@ -65,16 +65,41 @@
             <mat-icon>date_range</mat-icon>
             {{ element[column.name] }}
           </div>
+          <div *ngSwitchCase="'cellTemplate'">
+            <ng-template
+              [ngTemplateOutletContext]="{
+                element: element,
+                column: column
+              }"
+              [ngTemplateOutlet]="column.cellTemplate"
+            >
+            </ng-template>
+          </div>
           <div *ngSwitchDefault>{{ element[column.name] }}</div>
         </div>
         <!-- edit cell -->
         <div class="uxg-table-row-edit" [ngClass]="{ 'uxg-cell-hidden': !element.uxgTableEdit }">
-          <input
-            matInput
-            placeholder="{{ element[column.name] }}"
-            (click)="$event.stopPropagation()"
-            [(ngModel)]="element[column.name]"
-          />
+          <div [ngSwitch]="column.type">
+            <div *ngSwitchCase="'cellTemplate'">
+              <ng-template
+                [ngTemplateOutletContext]="{
+                  element: element,
+                  column: column
+                }"
+                [ngTemplateOutlet]="column.cellEditTemplate"
+              >
+              </ng-template>
+            </div>
+            <div *ngSwitchDefault>
+              <input
+                matInput
+                [attr.aria-label]="'Input ' + element[column.name]"
+                placeholder="{{ element[column.name] }}"
+                (click)="$event.stopPropagation()"
+                [(ngModel)]="element[column.name]"
+              />
+            </div>
+          </div>
         </div>
       </td>
       <td
@@ -125,7 +150,11 @@
       <td mat-footer-cell *matFooterCellDef></td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplayToComponent; sticky: stickyHeader"></tr>
+    <tr
+      mat-header-row
+      *matHeaderRowDef="columnsToDisplayToComponent; sticky: stickyHeader"
+      [ngClass]="showTableHeader ? '' : 'uxg-table-no-header'"
+    ></tr>
     <tr
       mat-row
       *matRowDef="let row; columns: columnsToDisplayToComponent"

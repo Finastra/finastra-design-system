@@ -15,7 +15,6 @@
 @import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
 @import '../../slide-toggle/slide-toggle';
-@import '../../radio-button/radio-button-theme';
 
 // Create a theme.
 @mixin uxg-material-theme($theme) {
@@ -73,5 +72,4 @@
   @include uxg-table-theme($theme);
   @include uxg-toolbar-theme($theme);
   @include uxg-slide-toggle-theme($theme);
-  @include uxg-radio-button-theme($theme);
 }
