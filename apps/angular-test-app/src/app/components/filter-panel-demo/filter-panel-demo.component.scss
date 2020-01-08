@@ -15,7 +15,7 @@
 }
 
 .filter-panel-side-header {
-    min-height: 196px;
+    min-height: 166px;
     background-color: #fafafa;
 }
 
@@ -27,12 +27,6 @@
     h3 {
         margin-top: 0px;
     }
-}
-
-.uxg-filtering-toggle-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .filter-panel-action {
@@ -105,4 +99,7 @@
 
 .filter-panel-button-toggle {
     padding: 0 25px;
+    mat-button-toggle-group {
+        width: 100%;
+    }
 }
