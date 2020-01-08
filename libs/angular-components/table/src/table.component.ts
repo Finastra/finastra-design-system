@@ -79,9 +79,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
     if (!this.singleSelect && this.multiSelect) {
-      selectedIndex.forEach(selectionIndex => {
-        if (this.isRowSelected(this.data[selectedIndex[0]])) {
-          this.selections.push(this.data[selectionIndex]);
+      this.selections.length = 0;
+      selectedIndex.forEach(sIndex => {
+        if (!this.isRowSelected(this.data[sIndex])) {
+          this.selections.push(this.data[sIndex]);
         }
       });
     }

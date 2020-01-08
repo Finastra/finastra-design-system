@@ -138,7 +138,7 @@ const ELEMENT_DATA: any[] = [
   {
     API: 'Exchange Rates',
     'End Point': 'End point 1',
-    'Date Time': '09-01-2019',
+    'Date Time': '10-01-2019',
     'Day of Week': 'Monday',
     'Hour of Day': '16h-17h',
     'Status Code': '200',
@@ -152,7 +152,7 @@ const ELEMENT_DATA: any[] = [
   {
     API: 'Exchange Rates',
     'End Point': 'End point 1',
-    'Date Time': '09-01-2019',
+    'Date Time': '11-01-2019',
     'Day of Week': 'Monday',
     'Hour of Day': '16h-17h',
     'Status Code': '200',
@@ -166,7 +166,7 @@ const ELEMENT_DATA: any[] = [
   {
     API: 'Exchange Rates',
     'End Point': 'End point 1',
-    'Date Time': '09-01-2019',
+    'Date Time': '12-01-2019',
     'Day of Week': 'Monday',
     'Hour of Day': '16h-17h',
     'Status Code': '200',
@@ -347,6 +347,10 @@ export class TableDemoComponent implements OnInit {
 
   enablePaging($event: any) {
     this.pageEnable = $event.checked;
+  }
+
+  setSelectedKeys($event: any) {
+    this.selectedIndex = $event.value;
   }
 
   enableCustomizedPaging($event: any) {
