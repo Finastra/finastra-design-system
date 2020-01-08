@@ -22,14 +22,17 @@ $filtering-button-toggle-radius-v: $uxg-spacing-3;
 .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
   overflow: hidden;
   border-radius: $filtering-button-toggle-radius;
+
   .mat-button-toggle {
     flex-grow: 1;
   }
+
   .mat-button-toggle-label-content {
     .mat-icon {
       margin-right: $uxg-spacing-1;
     }
   }
+
   &.mat-button-toggle-vertical {
     display: inline-flex;
     border-radius: $filtering-button-toggle-radius-v;
@@ -37,6 +40,7 @@ $filtering-button-toggle-radius-v: $uxg-spacing-3;
     .mat-button-toggle {
       width: 100%;
       border-radius: 0;
+
       .mat-button-toggle-ripple {
         border-radius: 0;
       }
