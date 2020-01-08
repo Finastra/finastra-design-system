@@ -1,9 +1,7 @@
-import { getGreeting } from '../support/app.po';
-
-describe('test', () => {
+describe('Application', () => {
   beforeEach(() => cy.visit('/'));
-
   it('should display welcome message', () => {
-    getGreeting().contains('Welcome to test!');
+    console.log(cy.get('mat-toolbar mat-icon:first'));
+    cy.get('mat-toolbar mat-icon:first').contains('menu');
   });
 });
