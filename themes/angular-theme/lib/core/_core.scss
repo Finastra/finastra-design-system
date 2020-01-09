@@ -1,6 +1,25 @@
 @import 'typography/all-typography';
 @import 'style/elevation';
 
+@import '../avatar/avatar-base';
+@import '../badge/badge-base';
+@import '../block/title-base';
+@import '../button/button-base';
+@import '../button-toggle/button-toggle-base';
+@import '../breadcrumb/breadcrumb-base';
+@import '../card/card-base';
+@import '../chips/chips-base';
+@import '../expansion/expansion-base';
+@import '../icon/icon-base';
+@import '../input/input-base';
+@import '../list/list-base';
+@import '../logo/logo-base';
+@import '../menu/menu-base';
+@import '../paginator/paginator-base';
+@import '../sidenav/sidenav-base';
+@import '../table/table-base';
+@import '../toolbar/toolbar-base';
+
 @mixin uxg-core($typography-config: null) {
   @include mat-core($typography-config);
   @include uxg-material-typography($typography-config);

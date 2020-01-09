@@ -1,7 +1,5 @@
-@import '../../../../themes/angular-theme/uxg-app-theme';
-@import './wizard.theme';
-
-@include uxg-wizard-theme($uxg-light-theme);
+@import '~@angular/material/theming';
+@import '../../../../themes/angular-theme/lib/core/style/spacing';
 
 $buttons-wrapper-size: 44px;
 

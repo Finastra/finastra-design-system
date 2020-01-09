@@ -1,11 +1,36 @@
-@import '../../../themes/angular-theme/all-theme';
-@import '../../../libs/angular-components/global-search/src/global-search.theme';
-@import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
-@import '../../../libs/angular-components/popover/src/popover.theme';
+@import '../../../themes/angular-theme/lib/core/core';
+@import '../../../themes/angular-theme/lib/core/typography/typography';
+@import '../../../themes/angular-theme/theme-variables';
 
-@include uxg-global-search-theme($uxg-light-theme);
-@include theme-repeater-card-example($uxg-light-theme);
-@include uxg-popover-theme($uxg-light-theme);
+@import '../../../libs/angular-components/global-search/src/global-search.theme';
+@import '../../../libs/angular-components/filter/filter-tags/src/filter-tags.theme';
+@import '../../../libs/angular-components/filter/filter-tree/src/filter-tree.theme';
+@import '../../../libs/angular-components/wizard/src/wizard.theme';
+
+@import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
+
+$uxg-typography: uxg-typography-config();
+
+@include uxg-core();
+
+@include uxg-filter-tags-typography($uxg-typography);
+@include uxg-global-search-typography($uxg-typography);
+
+@mixin app-theme($theme) {
+    @include uxg-material-theme($theme);
+
+    @include uxg-filter-tags-theme($theme);
+    @include uxg-filter-tree-theme($theme);
+    @include uxg-global-search-theme($theme);
+    @include uxg-wizard-theme($theme);
+    @include theme-repeater-card-example($theme);
+}
+
+@include app-theme($uxg-light-theme);
+
+.uxg-dark-theme {
+  @include app-theme($uxg-dark-theme);
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

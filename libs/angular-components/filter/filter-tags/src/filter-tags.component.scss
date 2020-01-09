@@ -1,4 +1,21 @@
-@import '../../../../../themes/angular-theme/uxg-app-theme';
-@import './filter-tags.theme';
+@import '../../../../../themes/angular-theme/lib/core/style/spacing';
 
-@include uxg-filter-tags-theme($uxg-light-theme);
+::ng-deep uxg-filter-tags mat-form-field {
+    margin-top: $uxg-spacing-1;
+    .mat-form-field-wrapper {
+        .mat-form-field-flex {
+            .mat-form-field-prefix {
+                top: 0;
+                align-self: auto;
+            }
+        }
+    }
+}
+
+.chip-list {
+    width: 100%;
+}
+
+.mat-option {
+    height: 32px;
+}

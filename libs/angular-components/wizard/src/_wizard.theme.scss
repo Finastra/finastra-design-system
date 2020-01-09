@@ -1,4 +1,6 @@
-@mixin uxg-wizard-colors($theme) {
+@import '../../../../themes/angular-theme/lib/core/typography/typography';
+
+@mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
 
@@ -61,9 +63,7 @@
   }
 }
 
-@mixin uxg-wizard-typography() {
-  $config: uxg-typography-config();
-
+@mixin uxg-wizard-typography($config) {
   .uxg-wizard {
     .uxg-wizard-timeline {
       .step {
@@ -86,7 +86,4 @@
   }
 }
 
-@mixin uxg-wizard-theme($theme) {
-  @include uxg-wizard-colors($theme);
-  @include uxg-wizard-typography();
-}
+@include uxg-wizard-typography(uxg-typography-config());

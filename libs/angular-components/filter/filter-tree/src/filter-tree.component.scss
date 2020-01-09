@@ -1,6 +1,5 @@
-@import '../../../../../themes/angular-theme/uxg-app-theme';
+@import '../../../../../themes/angular-theme/lib/core/style/spacing';
 
-$primary: map-get($uxg-light-theme, primary);
 $row-height: 34px;
 
 .filter-tree .child-tree,
@@ -9,6 +8,7 @@ $row-height: 34px;
   margin-bottom: 0;
   list-style-type: none;
 }
+
 .filter-tree .child-tree {
   padding: $uxg-spacing-1 $uxg-spacing-4;
   &.collapsed {
@@ -16,16 +16,9 @@ $row-height: 34px;
     padding-bottom: 0;
   }
 }
+
 .mat-tree-node {
   justify-content: space-between;
   min-height: $row-height;
   overflow: visible;
-}
-
-mat-checkbox {
-  &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
-    .node-label {
-      color: mat-color($primary, default);
-    }
-  }
 }

@@ -1,34 +1,26 @@
-
 @mixin uxg-filter-tags-theme($theme) {
   $primary: map-get($theme, primary);
   $filter-tags-background-color: mat-color($primary, default, .12);
 
-  ::ng-deep uxg-filter-tags mat-form-field {
-    margin-top: $uxg-spacing-1;
-    .mat-form-field-wrapper {
-      .mat-form-field-flex {
-        .mat-form-field-prefix {
-          top: 0;
-          align-self: auto;
-        }
-      }
-    }
-  }
-
   .chip-list {
-    width: 100%;
     .search-icon {
       color: mat-color($primary);
     }
   }
 
-  .mat-option {
-    height: 32px;
-    @include mat-typography-level-to-styles(uxg-typography-config(), body-2);
-  }
   .selected-option-highlight,
   .selected-option-highlight.mat-selected {
     background-color: $filter-tags-background-color !important;
-    @include mat-typography-level-to-styles(uxg-typography-config(), subtitle-2);
+  }
+}
+
+@mixin uxg-filter-tags-typography($config) {
+  .mat-option {
+    @include mat-typography-level-to-styles($config, body-2);
+  }
+
+  .selected-option-highlight,
+  .selected-option-highlight.mat-selected {
+    @include mat-typography-level-to-styles($config, subtitle-2);
   }
 }

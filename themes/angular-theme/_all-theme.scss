@@ -1,9 +1,11 @@
-@import 'uxg-app-theme';
+@import 'lib/core/core';
+@import 'lib/core/theming/palette';
+@import 'lib/core/theming/theming';
 @import 'lib/core/theming/all-theme';
+@import 'theme-variables';
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+@include uxg-core();
+
 @include uxg-material-theme($uxg-light-theme);
 
 .uxg-dark-theme {
