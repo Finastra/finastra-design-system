@@ -1,7 +1,7 @@
 @mixin uxg-chart-theme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
-    $background: map-get($theme, 'background');
+    $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
     $config: mat-typography-config();
     
