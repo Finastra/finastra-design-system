@@ -2,7 +2,7 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
 
-  .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+  .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       border-color: mat-color($foreground, text, 0.25);
 
@@ -12,7 +12,7 @@
 
       &.mat-button-toggle-checked {
         background-color: mat-color($primary, lighter);
-        border-color: mat-color($primary, default);
+        border-color: mat-color($primary, lighter);
 
         .mat-icon {
           color: mat-color($primary, default);
@@ -24,16 +24,32 @@
       }
     }
   }
+
+  .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+    .mat-button-toggle {
+      border-color: mat-color($foreground, text, 0.25);
+
+      &.mat-button-toggle-checked {
+        border-color: mat-color($primary, default);
+      }
+    }
+  }
 }
 
 @mixin uxg-button-toggle-typography($config) {
-  .uxg-filtering-toggle-group.mat-button-toggle-group {
+  .mat-button-toggle-group {
     .mat-button-toggle {
       span {
-        font: {
-          family: mat-font-family($config, body-2);
-          size: mat-font-size($config, body-2);
-          weight: mat-font-weight($config, body-2);
+        @include mat-typography-level-to-styles($config, body-2);
+
+        line-height: inherit;
+      }
+    }
+
+    &[dense] {
+      .mat-button-toggle {
+        span {
+          @include mat-typography-level-to-styles($config, body-3);
         }
       }
     }

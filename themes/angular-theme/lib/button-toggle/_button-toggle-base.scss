@@ -10,6 +10,9 @@ $filtering-button-toggle-margin: 20px;
 $filtering-button-toggle-height: 64px;
 $filtering-button-font-size: 12px;
 
+$button-toggle-radius: $uxg-spacing-5;
+$button-toggle-radius-v: $uxg-spacing-3;
+
 .mat-button-toggle-group[dense] {
   .mat-button-toggle-label-content {
     line-height: $button-toggle-dense-height;
@@ -17,6 +20,35 @@ $filtering-button-font-size: 12px;
 
     .mat-icon {
       @include icon-size($button-toggle-icon-dense);
+    }
+  }
+}
+
+.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+  overflow: hidden;
+  border-radius: $button-toggle-radius;
+
+  .mat-button-toggle {
+    flex-grow: 1;
+  }
+
+  .mat-button-toggle-label-content {
+    .mat-icon {
+      margin-right: $uxg-spacing-1;
+    }
+  }
+
+  &.mat-button-toggle-vertical {
+    display: inline-flex;
+    border-radius: $button-toggle-radius-v;
+
+    .mat-button-toggle {
+      width: 100%;
+      border-radius: 0;
+
+      .mat-button-toggle-ripple {
+        border-radius: 0;
+      }
     }
   }
 }

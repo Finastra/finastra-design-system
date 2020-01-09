@@ -8,25 +8,26 @@
           Reset
         </button>
       </div>
-      <mat-button-toggle-group
-        #group="matButtonToggleGroup"
-        [value]="groupValue"
-        (change)="onGroupChange(group.value)"
-        class="uxg-filtering-toggle-group"
-      >
-        <mat-button-toggle value="api">
-          <mat-icon fontSet="material-icons-outlined">public</mat-icon>
-          <span>API</span>
-        </mat-button-toggle>
-        <mat-button-toggle value="solution">
-          <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
-          <span>Solution</span>
-        </mat-button-toggle>
-        <mat-button-toggle value="dataset">
-          <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
-          <span>Dataset</span>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <div class="filter-panel-button-toggle">
+        <mat-button-toggle-group
+          #group="matButtonToggleGroup"
+          [value]="groupValue"
+          (change)="onGroupChange(group.value)"
+        >
+          <mat-button-toggle value="api">
+            <mat-icon fontSet="material-icons-outlined">public</mat-icon>
+            <span>API</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="solution">
+            <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
+            <span>Solution</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="dataset">
+            <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
+            <span>Dataset</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
     </div>
 
     <div class="filter-panel-tags">
