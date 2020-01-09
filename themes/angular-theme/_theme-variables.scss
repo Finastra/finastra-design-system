@@ -1,5 +1,5 @@
 @import 'lib/core/theming/theming';
-@import 'lib/core/theming/all-theme';
+@import 'lib/core/theming/palette';
 
 $uxg-light-primary: mat-palette($uxg-violet, 500, 100, 900);
 $uxg-light-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
