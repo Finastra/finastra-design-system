@@ -16,6 +16,19 @@
 @import '../../toolbar/toolbar-theme';
 @import '../../slide-toggle/slide-toggle';
 
+@mixin uxg-core-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  body {
+    color: mat-color($foreground, text);
+
+    *::selection {
+      background: mat-color($background, selected-text);
+    }
+  }
+}
+
 // Create a theme.
 @mixin uxg-material-theme($theme) {
   @include mat-core-theme($theme);
