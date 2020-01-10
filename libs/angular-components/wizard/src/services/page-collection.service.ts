@@ -3,7 +3,7 @@ import { UxgWizardPageComponent } from '../wizard-page/wizard-page.component';
 
 @Injectable()
 export class PageCollectionService {
-  public pages: QueryList<UxgWizardPageComponent>;
+  public pages?: QueryList<UxgWizardPageComponent>;
 
   public get pagesAsArray(): UxgWizardPageComponent[] {
     return this.pages ? this.pages.toArray() : [];
@@ -13,26 +13,28 @@ export class PageCollectionService {
     return this.pages ? this.pages.length : 0;
   }
 
-  public get lastPage(): UxgWizardPageComponent {
+  public get lastPage(): UxgWizardPageComponent | null {
     const pageCount = this.pagesCount;
 
     if (pageCount < 1) {
-      return;
+      return null;
     }
 
     return this.pagesAsArray[pageCount - 1];
   }
 
-  public get firstPage(): UxgWizardPageComponent {
+  public get firstPage(): UxgWizardPageComponent | null {
     if (!this.pagesCount) {
-      return;
+      return null;
     }
 
     return this.pagesAsArray[0];
   }
 
   public getPageById(id: string): UxgWizardPageComponent {
-    const foundPages: UxgWizardPageComponent[] = this.pages.filter((page: UxgWizardPageComponent) => id === page.id);
+    const foundPages: UxgWizardPageComponent[] = this.pages
+      ? this.pages.filter((page: UxgWizardPageComponent) => id === page.id)
+      : [];
     return this.checkResults(foundPages, id);
   }
 
@@ -122,10 +124,10 @@ export class PageCollectionService {
     return this.pageRange(startIndex, endIndex);
   }
 
-  public getPreviousPage(page: UxgWizardPageComponent) {
+  public getPreviousPage(page: UxgWizardPageComponent): UxgWizardPageComponent | null {
     const myPageIndex = this.getPageIndex(page);
     let previousPageIndex = myPageIndex - 1;
-    let previousPage: UxgWizardPageComponent;
+    let previousPage: UxgWizardPageComponent | null = null;
 
     let valid = false;
     while (previousPageIndex >= 0) {
@@ -145,10 +147,11 @@ export class PageCollectionService {
     return previousPage;
   }
 
-  public getNextPage(page: UxgWizardPageComponent) {
+  public getNextPage(page: UxgWizardPageComponent | null): UxgWizardPageComponent | null {
+    if (!page) return null;
     const myPageIndex = this.getPageIndex(page);
     let nextPageIndex = myPageIndex + 1;
-    let nextPage: UxgWizardPageComponent;
+    let nextPage: UxgWizardPageComponent | null = null;
 
     let valid = false;
     while (nextPageIndex < this.pagesAsArray.length) {

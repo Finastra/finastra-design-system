@@ -14,7 +14,7 @@ export type UxgWizardButtonType = 'cancel' | 'previous' | 'next' | 'done' | 'cus
   }
 })
 export class UxgWizardButtonComponent {
-  @Input() public type: UxgWizardButtonType;
+  @Input() public type!: UxgWizardButtonType;
 
   @Input('uxgWizardButtonDisabled') public disabled = false;
 

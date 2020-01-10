@@ -10,10 +10,10 @@ import { MatMenuTrigger, MenuPositionX, MenuPositionY } from '@angular/material'
 export class PopoverComponent {
   @Input() xPosition: MenuPositionX = 'after';
   @Input() yPosition: MenuPositionY = 'below';
-  @Input() popoverContent: TemplateRef<any>;
-  @Input() popoverClass: string;
+  @Input() popoverContent!: TemplateRef<any>;
+  @Input() popoverClass!: string;
 
-  @ViewChild(MatMenuTrigger, { static: true }) private matMenuTrigger: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger, { static: true }) private matMenuTrigger!: MatMenuTrigger;
 
   open() {
     this.matMenuTrigger.openMenu();

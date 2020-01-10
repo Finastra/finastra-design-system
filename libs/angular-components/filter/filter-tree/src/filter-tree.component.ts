@@ -45,11 +45,11 @@ interface UXGFilterChanges {
 export class FilterTreeComponent implements OnChanges {
   public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
-  public checkListSelection: SelectionModel<TreeNode>;
+  public checkListSelection!: SelectionModel<TreeNode>;
   selectedData: TreeNode[] = [];
-  subscription: Subscription;
+  subscription?: Subscription;
 
-  private _data: TreeNode[];
+  private _data: TreeNode[] = [];
 
   @Input()
   set data(data: TreeNode[]) {
@@ -137,7 +137,7 @@ export class FilterTreeComponent implements OnChanges {
   }
 
   getParentNode(currentNode: TreeNode): TreeNode | null {
-    let parentNode: TreeNode = null;
+    let parentNode: TreeNode | null = null;
     this.dataSource.data.forEach(node => {
       if (node.children && node.children.length > 0) {
         node.children.forEach(child => {
@@ -151,12 +151,11 @@ export class FilterTreeComponent implements OnChanges {
   }
 
   getRootNode(currentNode: TreeNode): TreeNode {
-    if (this.isRootNode(currentNode)) return currentNode;
-    return this.getRootNode(this.getParentNode(currentNode));
-  }
-
-  isRootNode(node: TreeNode): boolean {
-    return this.getParentNode(node) ? false : true;
+    const parentNode = this.getParentNode(currentNode);
+    if (parentNode) {
+      return this.getRootNode(parentNode);
+    }
+    return currentNode;
   }
 
   isRootNodeSelected(node: TreeNode): boolean {
@@ -185,7 +184,7 @@ export class FilterTreeComponent implements OnChanges {
         acc.push(...childNodes);
       }
       return acc;
-    }, []);
+    }, new Array<TreeNode>());
     return result;
   }
 }

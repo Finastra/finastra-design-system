@@ -71,7 +71,7 @@ describe('FilterTreeModule', () => {
     expect(component).toBeTruthy();
   });
 
-  function flattenObject(ob) {
+  function flattenObject(ob: any): any {
     const toReturn = [];
     for (const i in ob) {
       if (!ob.hasOwnProperty(i)) continue;
@@ -95,9 +95,11 @@ describe('FilterTreeModule', () => {
       .replace(/\s/g, '')
       .toLowerCase();
     const treeElContent = filterTreeEl.textContent
-      .replace('expand_more', '')
-      .replace(/\s/g, '')
-      .toLowerCase();
+      ? filterTreeEl.textContent
+          .replace('expand_more', '')
+          .replace(/\s/g, '')
+          .toLowerCase()
+      : '';
     expect(treeElContent).toEqual(expectedTreeNodeItemsLabels);
   });
 

@@ -1,16 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  ViewEncapsulation,
-  ComponentFactory,
-  ComponentFactoryResolver,
-  Type,
-  OnChanges,
-  SimpleChanges,
-  Input,
-  OnDestroy
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, Type, OnDestroy } from '@angular/core';
 import { RepeaterCardExampleComponent } from './repeater-card-example/repeater-card-example.component';
 import { RepeaterCardAdvancedExampleComponent } from './repeater-card-advanced-example/repeater-card-advanced-example.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -355,13 +343,13 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
 
   columnsExample = this.columns;
   dataSourceExample = this.dataSource;
-  componentExample: Type<any>;
-  columnsMatcherExample: Object;
+  componentExample!: Type<any>;
+  columnsMatcherExample!: Object;
   orientationExample = 'horizontal';
-  spaceExample: string;
+  spaceExample!: string;
   multiselectExample = true;
 
-  actionDescription: string;
+  actionDescription!: string;
 
   currentTemplate: any = this.templatesData[0];
 
@@ -369,7 +357,7 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
 
   get templateFieldsConfig() {
-    return this.repeaterConfigurationForm.get('templateFieldsConfig');
+    return this.repeaterConfigurationForm.get('templateFieldsConfig')!;
   }
 
   constructor(private fb: FormBuilder) {

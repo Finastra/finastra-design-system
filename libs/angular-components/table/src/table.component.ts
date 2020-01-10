@@ -22,14 +22,7 @@ import isEqual from 'lodash/isEqual';
   encapsulation: ViewEncapsulation.None
 })
 export class TableComponent implements OnInit, OnDestroy, OnChanges {
-  @ViewChild(MatTable, { static: true }) table: MatTable<any>;
-
-  //table data
-  private _data: Array<any> = [];
-  private _columnsToDisplay: Array<string> = [];
-
-  dataToComponent: Array<any> = [];
-  columnsToDisplayToComponent: Array<string> = [];
+  @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
 
   @Input()
   get data() {
@@ -70,11 +63,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() stickyFooter = false;
   @Input() columnDragEnable = false;
 
-  selections = [];
   private uxgMultiSelectColumn = ['uxg-table-select-row'];
-  private _selectedIndex = [];
+  private _selectedIndex: number[] = [];
 
   @Input()
+  get selectedKeys(): number[] {
+    return this._selectedIndex;
+  }
+
   set selectedKeys(selectedIndex: number[]) {
     this._selectedIndex = selectedIndex;
     if (this.singleSelect && selectedIndex.length > 0) {
@@ -92,12 +88,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  get selectedKeys(): number[] {
-    return this._selectedIndex;
-  }
-
-  @Input() singleSelect: boolean;
-  @Input() multiSelect: boolean;
+  @Input() singleSelect = true;
+  @Input() multiSelect = false;
 
   @Output() selectChanged = new EventEmitter<UxgTableSelectEvent>();
   @Output() multiSelectSingleRowClicked = new EventEmitter<any>();
@@ -105,22 +97,33 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   //paginator data
   @Input() pageEnable = false;
-  @Input() paging: UxgPage;
+  @Input() paging?: UxgPage;
   @Output() pageChanged = new EventEmitter<PageEvent>();
 
-  //edit part
-  private uxgTableActionColumn = ['uxg-table-action-row'];
-  private editRowOrigin;
-  @Input() enableEdit: boolean;
-  @Input() enableDelete: boolean;
-  @Input() enableSend: boolean;
+  @Input() enableEdit = false;
+  @Input() enableDelete = false;
+  @Input() enableSend = false;
+
   @Output() rowRemoved = new EventEmitter<any>();
   @Output() rowUpdated = new EventEmitter<any>();
   @Output() rowSend = new EventEmitter<any>();
 
+  selections: any[] = [];
+  dataToComponent: Array<any> = [];
+  columnsToDisplayToComponent: Array<string> = [];
+
   //local variable
-  previousIndex: number; // used for column drag drop
+  previousIndex = -1; // used for column drag drop
+
+  //table data
+  private _data: Array<any> = [];
+  private _columnsToDisplay: Array<string> = [];
+
   private uxgTableEdit = false;
+
+  //edit part
+  private uxgTableActionColumn = ['uxg-table-action-row'];
+  private editRowOrigin: any;
 
   constructor() {}
 
@@ -156,7 +159,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (changes.pageEnable && !changes.pageEnable.isFirstChange()) {
       if (changes.pageEnable.currentValue === false) {
         this.dataToComponent = this.data;
-        this.paging = null;
+        this.paging = undefined;
       } else {
         if (!this.paging) {
           this.applyDefaultPaging();
@@ -269,7 +272,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       if (column.type === UxgColumnType.number) {
         return this.dataToComponent.reduce((sum, current) => sum + current[column.name], 0);
       } else {
-        return;
+        return '';
       }
     }
   }
@@ -281,7 +284,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  emitClickEvent(data) {
+  emitClickEvent(data: any) {
     this.multiSelectSingleRowClicked.emit({
       data: data
     });
@@ -300,7 +303,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  rowEditClick(row) {
+  rowEditClick(row: any) {
     this.dataToComponent.forEach(item => {
       delete item.uxgTableEdit;
     });
@@ -309,13 +312,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.uxgTableEdit = true;
   }
 
-  rowSendTriggered(row) {
+  rowSendTriggered(row: any) {
     this.rowSend.emit({
       data: row
     });
   }
 
-  rowEditConfirm(newRow) {
+  rowEditConfirm(newRow: any) {
     delete newRow.uxgTableEdit;
     this.uxgTableEdit = false;
     this.rowUpdated.emit({
@@ -323,7 +326,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  rowEditCancel(row) {
+  rowEditCancel(row: any) {
     delete row.uxgTableEdit;
     this.uxgTableEdit = false;
     Object.keys(row).forEach(key => {
@@ -331,7 +334,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  rowDelete(row) {
+  rowDelete(row: any) {
     const rowIndex = this.dataToComponent.findIndex(item => item === row);
     this.dataToComponent.splice(rowIndex, 1);
     this.dataToComponent = this.dataToComponent.slice();
@@ -347,8 +350,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     const defaultPaging = { ...UxgDefaultPaging, ...{ length: this.dataToComponent.length } };
     this.paging = defaultPaging;
     this.localPaging({
-      pageIndex: this.paging.pageIndex,
-      pageSize: this.paging.pageSize,
+      pageIndex: this.paging.pageIndex || 0,
+      pageSize: this.paging.pageSize || 5,
       length: this.data.length
     });
   }
@@ -375,10 +378,12 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  getSortColumnType(columnName: string) {
-    return this.columns.find(column => {
-      return column.name === columnName;
-    }).type;
+  getSortColumnType(columnName: string): string | undefined {
+    const column = this.columns.find(item => {
+      return item.name === columnName;
+    });
+
+    return column ? column.type : undefined;
   }
 
   localPaging(page: PageEvent) {
@@ -409,11 +414,11 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  isRowSelected(row) {
+  isRowSelected(row: any) {
     return this.getSelectedIndex(row) > -1 ? true : false;
   }
 
-  getSelectedIndex(row) {
+  getSelectedIndex(row: any) {
     const rowIdx = this.selections.findIndex(item => {
       return isEqual(item, row);
     });

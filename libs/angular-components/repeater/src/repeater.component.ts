@@ -9,9 +9,7 @@ import {
   OnChanges,
   ViewEncapsulation,
   Output,
-  EventEmitter,
-  ChangeDetectorRef,
-  ChangeDetectionStrategy
+  EventEmitter
 } from '@angular/core';
 
 @Component({
@@ -30,17 +28,16 @@ export class RepeaterComponent implements OnInit, OnChanges {
     this._data = data;
   }
 
-  @Input() component: Type<any> | ComponentFactory<any>;
+  @Input() component!: Type<any> | ComponentFactory<any>;
   @Input() orientation = 'horizontal';
   @Input() multiSelect = false;
-  @Input() space: string;
+  @Input() space = '0px';
   @Input() columnsMatcher: { [k: string]: string } = {};
-  @Input() selectedKeys: number[];
+  @Input() selectedKeys: number[] = [];
   @Output() selectionChange: EventEmitter<any> = new EventEmitter<any>();
 
-  componentFactory: ComponentFactory<any>;
-
-  selectedItems: { [k: string]: any };
+  selectedItems: { [k: string]: any } = {};
+  componentFactory?: ComponentFactory<any>;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 
@@ -67,7 +64,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
     this.selectionChange.emit({ value: this.selectedItems });
   }
 
-  isSelected(index) {
+  isSelected(index: number) {
     return this.selectedItems && this.selectedItems[index] !== null && this.selectedItems[index] !== undefined;
   }
 

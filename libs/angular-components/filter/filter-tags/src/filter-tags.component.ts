@@ -29,11 +29,11 @@ export class FilterTagsComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
   formCtrl = new FormControl();
-  filteredTags$: Observable<Tag[]>;
+  filteredTags$!: Observable<Tag[]>;
 
   selectedData: Tag[] = [];
 
-  private _data: Tag[];
+  private _data: Tag[] = [];
 
   @Input()
   set data(data: Tag[]) {
@@ -46,9 +46,9 @@ export class FilterTagsComponent implements OnInit {
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
-  @ViewChild('tagInput', { static: false }) input: ElementRef<HTMLInputElement>;
-  @ViewChild(MatAutocomplete, { static: false }) autocomplete: MatAutocomplete;
-  @ViewChild(MatAutocompleteTrigger, { static: false }) trigger: MatAutocompleteTrigger;
+  @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
+  @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
+  @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
   constructor() {
     this.data = [];
@@ -113,7 +113,7 @@ export class FilterTagsComponent implements OnInit {
   }
 
   private filter(value: Tag | string): Tag[] {
-    let filterValue;
+    let filterValue: string;
     if (typeof value === 'object') {
       filterValue = value.label.toLowerCase();
     } else if (typeof value === 'string') {

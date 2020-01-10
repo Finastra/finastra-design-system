@@ -2,11 +2,11 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChil
 import {
   UxgTableSelectEvent,
   TableComponent,
-  UxgPage,
   UxgSort,
   UxgColumnType,
   UxgColumn
 } from '@ffdc/uxg-angular-components/table';
+import { PageEvent } from '@angular/material';
 
 const ELEMENT_DATA: any[] = [
   {
@@ -187,10 +187,11 @@ const ELEMENT_DATA: any[] = [
   encapsulation: ViewEncapsulation.None
 })
 export class TableDemoComponent implements OnInit {
-  @ViewChild(TableComponent, { static: false }) table: TableComponent;
-  @ViewChild('tableCellTypedCurrency', { static: true }) typedCurrency: TemplateRef<any>;
-  @ViewChild('tableCellTypedCurrencyEdit', { static: true }) typedCurrencyEdit: TemplateRef<any>;
-  @ViewChild('tableCellTable', { static: true }) tableCellTable;
+  @ViewChild(TableComponent, { static: true }) table!: TableComponent;
+  @ViewChild('tableCellTypedCurrency', { static: true }) typedCurrency!: TemplateRef<any>;
+  @ViewChild('tableCellTypedCurrencyEdit', { static: true }) typedCurrencyEdit!: TemplateRef<any>;
+  @ViewChild('tableCellTable', { static: true }) tableCellTable!: TemplateRef<any>;
+
   selectedIndex = [1, 2];
 
   dataSource = ELEMENT_DATA; //data
@@ -208,11 +209,11 @@ export class TableDemoComponent implements OnInit {
   enableTableRowDelete = false;
   enableTableSendEvent = false;
 
-  columns: UxgColumn[];
-  columnsToDisplay: string[];
+  columns: UxgColumn[] = [];
+  columnsToDisplay: string[] = [];
 
-  columnsCellTemplate: UxgColumn[];
-  columnsToDisplayCellTemplate: string[];
+  columnsCellTemplate: UxgColumn[] = [];
+  columnsToDisplayCellTemplate: string[] = [];
 
   totalData: any;
 
@@ -319,34 +320,40 @@ export class TableDemoComponent implements OnInit {
     });
   }
   getSortColumnType(columnName: string) {
-    return this.columns.find(column => {
-      return column.name === columnName;
-    }).type;
+    const column = this.columns.find(item => {
+      return item.name === columnName;
+    });
+    return column ? column.type : '';
   }
-  applyPaging($event: UxgPage) {
+
+  applyPaging($event: PageEvent) {
     this.actionDescription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
     this.dataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
   }
+
   applyDefaultPaging() {
-    const defaultPaging: UxgPage = {
+    const defaultPaging: PageEvent = {
       length: this.length,
       pageIndex: 0,
       pageSize: 5
     };
     this.applyPaging(defaultPaging);
   }
-  enableDrag($event) {
+
+  enableDrag($event: any) {
     this.dragEnable = $event.checked;
   }
-  enablePaging($event) {
+
+  enablePaging($event: any) {
     this.pageEnable = $event.checked;
   }
 
-  setSelectedKeys($event) {
+  setSelectedKeys($event: any) {
     this.selectedIndex = $event.value;
   }
-  enableCustomizedPaging($event) {
+
+  enableCustomizedPaging($event: any) {
     if ($event.checked) {
       this.table.paging = {
         disabled: false,
@@ -357,39 +364,49 @@ export class TableDemoComponent implements OnInit {
         pageSize: 5,
         showFirstLastButtons: true
       };
-      this.table.pageChanged.subscribe(page => this.applyPaging(page));
+      this.table.pageChanged.subscribe((page: PageEvent) => this.applyPaging(page));
     } else {
       this.paging = null;
     }
   }
+
   selectChange($event: UxgTableSelectEvent) {
     this.updateActionsDescription($event.data);
   }
-  enableTotal($event) {
+
+  enableTotal($event: any) {
     this.totalEnable = $event.checked;
   }
-  enableTableEditChanged($event) {
+
+  enableTableEditChanged($event: any) {
     this.enableTableEdit = $event.checked;
   }
-  enableTableRowDeleteChanged($event) {
+
+  enableTableRowDeleteChanged($event: any) {
     this.enableTableRowDelete = $event.checked;
   }
-  enableTableRowSendChanged($event) {
+
+  enableTableRowSendChanged($event: any) {
     this.enableTableSendEvent = $event.checked;
   }
-  rowEditEvent($event) {
+
+  rowEditEvent($event: any) {
     this.updateActionsDescription($event.data);
   }
-  rowDeleteEvent($event) {
+
+  rowDeleteEvent($event: any) {
     this.updateActionsDescription($event.data);
   }
-  rowClickUnderMutiSelectMode($event) {
+
+  rowClickUnderMutiSelectMode($event: any) {
     this.updateActionsDescription($event.data);
   }
-  rowSendClickEvent($event) {
+
+  rowSendClickEvent($event: any) {
     this.updateActionsDescription($event.data);
   }
-  updateActionsDescription(data) {
+
+  updateActionsDescription(data: any) {
     this.actionDescription = JSON.stringify(data);
   }
 }

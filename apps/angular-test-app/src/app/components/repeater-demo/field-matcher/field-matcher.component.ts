@@ -53,10 +53,11 @@ export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDe
     this.writeValue(data);
   }
 
-  compareWith(o1: Object, o2: string): boolean {
-    if (o1['name'] && o2) {
-      return o1['name'] === o2;
+  compareWith(o1: any, o2: string): boolean {
+    if (o1.name && o2) {
+      return o1.name === o2;
     }
+    return false;
   }
 
   onChange: any = () => {};

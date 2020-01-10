@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./global-search-demo.component.scss']
 })
 export class GlobalSearchDemoComponent implements OnInit {
-  @ViewChild('uxgGlobalSearch', { static: true }) globalSearch: UxgGlobalSearch;
+  @ViewChild('uxgGlobalSearch', { static: true }) globalSearch!: UxgGlobalSearch;
 
   constructor(private snackBar: MatSnackBar) {}
 
@@ -56,12 +56,12 @@ export class GlobalSearchDemoComponent implements OnInit {
       });
     });
 
-    this.globalSearch.resultItemClick.subscribe(item => {
+    this.globalSearch.resultItemClick.subscribe((item: any) => {
       this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
     });
   }
 
-  getEvent($event) {
+  getEvent($event: any) {
     console.log($event);
   }
 }
