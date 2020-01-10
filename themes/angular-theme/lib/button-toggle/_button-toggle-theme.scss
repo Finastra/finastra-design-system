@@ -4,6 +4,7 @@
 
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
+      color: mat-color($foreground, text, 0.6);;
       border-color: mat-color($foreground, text, 0.25);
 
       .mat-icon {
@@ -11,6 +12,7 @@
       }
 
       &.mat-button-toggle-checked {
+        color: mat-color($primary, default);
         background-color: mat-color($primary, lighter);
         border-color: mat-color($primary, lighter);
 
@@ -38,6 +40,12 @@
 
 @mixin uxg-button-toggle-typography($config) {
   .mat-button-toggle-group {
+    .mat-button-toggle {
+      @include mat-typography-level-to-styles($config, subtitle-2);
+    }
+  }
+
+  .uxg-filtering-toggle-group.mat-button-toggle-group {
     .mat-button-toggle {
       span {
         @include mat-typography-level-to-styles($config, body-2);

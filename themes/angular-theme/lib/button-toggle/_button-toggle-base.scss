@@ -32,13 +32,8 @@ $button-toggle-radius-v: $uxg-spacing-3;
     flex-grow: 1;
   }
 
-  .mat-button-toggle-label-content {
-    .mat-icon {
-      margin-right: $uxg-spacing-1;
-    }
-  }
-
   &.mat-button-toggle-vertical {
+    text-align: left;
     display: inline-flex;
     border-radius: $button-toggle-radius-v;
 
