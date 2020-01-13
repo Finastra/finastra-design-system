@@ -20,6 +20,12 @@ $button-toggle-radius-v: $uxg-spacing-3;
       @include icon-size($button-toggle-icon-dense);
     }
   }
+
+  &.mat-button-toggle-vertical {
+    .mat-button-toggle-label-content {
+      margin: $uxg-spacing-2 0;
+    }
+  }
 }
 
 .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
