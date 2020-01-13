@@ -22,7 +22,7 @@ $uxg-nav-list-level-height: 48px;
     padding: $uxg-spacing-0;
     margin-bottom: $uxg-spacing-5;
 
-    *:first-child,
+    & > *:first-child,
     .uxg-ol-title {
       display: inline-block;
       margin: $uxg-spacing-0;
