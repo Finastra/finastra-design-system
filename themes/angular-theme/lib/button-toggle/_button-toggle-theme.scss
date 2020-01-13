@@ -7,6 +7,10 @@
       color: mat-color($foreground, text, 0.6);
       border-color: mat-color($foreground, text, 0.25);
 
+      &.mat-button-toggle-disabled {
+        color: mat-color($foreground, text, 0.38);
+      }
+
       .mat-icon {
         color: mat-color($foreground, text, 0.25);
       }
