@@ -2,7 +2,6 @@
 @import '../icon/icon-base';
 
 $button-toggle-margin: $uxg-spacing-2;
-$button-toggle-dense-height: 30px;
 $button-toggle-icon-dense: 18px;
 
 $filtering-button-toggle-radius: $uxg-spacing-1;
@@ -15,7 +14,6 @@ $button-toggle-radius-v: $uxg-spacing-3;
 
 .mat-button-toggle-group[dense] {
   .mat-button-toggle-label-content {
-    line-height: $button-toggle-dense-height;
     padding: 0 $button-toggle-margin;
 
     .mat-icon {

@@ -19,10 +19,6 @@
         .mat-icon {
           color: mat-color($primary, default);
         }
-
-        span {
-          color: mat-color($primary, default);
-        }
       }
     }
   }
@@ -41,24 +37,28 @@
 @mixin uxg-button-toggle-typography($config) {
   .mat-button-toggle-group {
     .mat-button-toggle {
-      @include mat-typography-level-to-styles($config, subtitle-2);
-    }
-  }
-
-  .uxg-filtering-toggle-group.mat-button-toggle-group {
-    .mat-button-toggle {
-      span {
-        @include mat-typography-level-to-styles($config, body-2);
-
-        line-height: inherit;
+      .mat-button-toggle-label-content {
+        font-family: mat-font-family($config, subtitle-2);
+        font-size: mat-font-size($config, subtitle-2);
+        font-weight: mat-font-weight($config, subtitle-2);
       }
     }
 
     &[dense] {
       .mat-button-toggle {
-        span {
-          @include mat-typography-level-to-styles($config, body-3);
+        .mat-button-toggle-label-content {
+          @include mat-typography-level-to-styles($config, subtitle-3);
         }
+      }
+    }
+  }
+
+  .uxg-filtering-toggle-group.mat-button-toggle-group {
+    .mat-button-toggle {
+      .mat-button-toggle-label-content {
+        font-family: mat-font-family($config, body-2);
+        font-size: mat-font-size($config, body-2);
+        font-weight: mat-font-weight($config, body-2);
       }
     }
   }
