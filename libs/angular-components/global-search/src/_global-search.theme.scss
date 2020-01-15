@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+@import '../../../../themes/angular-theme/lib/core/layout/breakpoints';
+
 $breakpoints: ('small' : $mobile-size-up);
 
 @mixin uxg-global-search-breakpoint($breakpoint) {
@@ -129,5 +132,4 @@ $breakpoints: ('small' : $mobile-size-up);
 
 @mixin uxg-global-search-theme($theme) {
   @include uxg-global-search-colors($theme);
-  @include uxg-global-search-typography();
 }
