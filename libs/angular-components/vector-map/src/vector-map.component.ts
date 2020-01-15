@@ -43,7 +43,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   @Input() title = 'Vector Map';
   @Input() dataSource: VectorMapDataSource = [];
   @Input() showLegend = true;
-
+  @Input() autoResize = true;
   // tslint:disable-next-line: no-output-native
   @Output() click = new EventEmitter<Partial<VectorMapCountry>>();
   @Output() viewChange = new EventEmitter<VectorMapView>();
@@ -120,9 +120,19 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   @HostListener('window:resize')
+  onWindowResize() {
+    if (this.autoResize) {
+      this.refresh();
+    }
+  }
+
   refresh() {
-    this.plot.revision++;
-    this.plot.updatePlot();
+    try {
+      this.plot.revision++;
+      this.plot.updatePlot();
+    } catch {
+      this.plot.revision--;
+    }
   }
 
   getLegendValue(value: number, max: number): number {
