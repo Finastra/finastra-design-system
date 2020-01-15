@@ -163,7 +163,6 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
           });
         }
       } else if (item.pointNumber !== undefined) {
-        console.log(item);
         items.selectedItems.push({
           [item.data.dimensionName]: item.data.labels[item.pointNumber],
           [item.data.name]: item.data.values[item.pointNumber]
