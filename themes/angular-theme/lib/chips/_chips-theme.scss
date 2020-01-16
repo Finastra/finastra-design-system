@@ -76,6 +76,8 @@
 
     &[dense] {
       @include mat-typography-level-to-styles($config, legend);
+
+      font-weight: mat-font-weight($config, caption);
     }
 
     &[large] {
