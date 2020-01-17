@@ -33,7 +33,7 @@ $button-toggle-radius-v: $uxg-spacing-3;
   border-radius: $button-toggle-radius;
 
   .mat-button-toggle {
-    flex-grow: 1;
+    flex: 1;
   }
 
   &.mat-button-toggle-vertical {
