@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
-@import '../../../../themes/angular-theme/lib/core/layout/breakpoints';
+@import 'angular-theme/lib/core/layout/breakpoints';
 
 $breakpoints: ('small' : $mobile-size-up);
 

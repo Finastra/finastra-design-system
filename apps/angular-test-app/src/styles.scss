@@ -1,12 +1,12 @@
-@import '../../../themes/angular-theme/lib/core/core';
-@import '../../../themes/angular-theme/lib/core/theming/all-theme';
-@import '../../../themes/angular-theme/lib/core/typography/typography';
-@import '../../../themes/angular-theme/theme-variables';
+@import 'angular-theme/lib/core/core';
+@import 'angular-theme/lib/core/theming/all-theme';
+@import 'angular-theme/lib/core/typography/typography';
+@import 'angular-theme/theme-variables';
 
-@import '../../../libs/angular-components/global-search/src/global-search.theme';
-@import '../../../libs/angular-components/filter/filter-tags/src/filter-tags.theme';
-@import '../../../libs/angular-components/filter/filter-tree/src/filter-tree.theme';
-@import '../../../libs/angular-components/wizard/src/wizard.theme';
+@import 'global-search/src/global-search.theme';
+@import 'filter/filter-tags/src/filter-tags.theme';
+@import 'filter/filter-tree/src/filter-tree.theme';
+@import 'wizard/src/wizard.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
