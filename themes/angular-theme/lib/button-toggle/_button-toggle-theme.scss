@@ -5,21 +5,23 @@
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       color: mat-color($foreground, text, 0.6);
-      border-color: mat-color($foreground, text, 0.25);
-
-      &.mat-button-toggle-disabled {
-        color: mat-color($foreground, text, 0.38);
-      }
+      border-color: lighten(mat-color($foreground, text), 60);
 
       .mat-icon {
         color: mat-color($foreground, text, 0.25);
       }
 
-      &.mat-button-toggle-checked {
-        color: mat-color($primary, default);
-        background-color: mat-color($primary, lighter);
-        border-color: mat-color($primary, lighter);
+      &.mat-button-toggle-disabled {
+        color: mat-color($foreground, text, 0.25);
+        .mat-icon {
+          color: mat-color($foreground, text, 0.12);
+        }
+      }
 
+      &.mat-button-toggle-checked {
+        background-color: mat-color($primary, lighter);
+
+        .mat-button-toggle-button,
         .mat-icon {
           color: mat-color($primary, default);
         }
