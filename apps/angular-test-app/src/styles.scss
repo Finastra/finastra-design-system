@@ -8,6 +8,7 @@
 @import 'chart/src/chart.theme';
 @import 'filter/filter-tags/src/filter-tags.theme';
 @import 'filter/filter-tree/src/filter-tree.theme';
+@import 'filter/filter-group/src/filter-group.theme';
 @import 'wizard/src/wizard.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
@@ -17,12 +18,13 @@ $uxg-typography: uxg-typography-config();
 @include uxg-core();
 
 @include uxg-filter-tags-typography($uxg-typography);
+@include uxg-filter-group-typography($uxg-typography);
 @include uxg-global-search-typography($uxg-typography);
 @include uxg-chart-typography($uxg-typography);
 
 @mixin app-theme($theme) {
     @include uxg-material-theme($theme);
-
+    @include uxg-filter-group-theme($theme);
     @include uxg-filter-tags-theme($theme);
     @include uxg-filter-tree-theme($theme);
     @include uxg-global-search-theme($theme);

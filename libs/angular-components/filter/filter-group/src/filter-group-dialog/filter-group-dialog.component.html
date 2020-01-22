@@ -1,0 +1,11 @@
+<h1 mat-dialog-title class="filter-group-dialog-header">Name of Filter</h1>
+<div mat-dialog-content>
+  <p>Create and save your choice</p>
+  <mat-form-field class="filter-group-dialog-form">
+    <input matInput maxlength="10" [formControl]="filterName" />
+    <mat-error *ngIf="filterName.invalid">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="filter-group-dialog-actions">
+  <button mat-stroked-button color="accent" (click)="save()" [disabled]="filterName.invalid">Save</button>
+</div>

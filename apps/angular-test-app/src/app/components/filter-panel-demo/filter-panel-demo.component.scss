@@ -97,9 +97,25 @@
     }
 }
 
-.filter-panel-button-toggle {
-    padding: 0 25px;
-    mat-button-toggle-group {
-        width: 100%;
-    }
+:host ::ng-deep .mat-tab-body {
+    min-height: calc(100vh - 160px);
+}
+
+.filter-group-container {
+    padding: 25px;
+}
+
+.filter-instance {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    min-width: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-panel-toggle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

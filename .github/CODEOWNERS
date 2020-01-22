@@ -28,3 +28,5 @@
 /libs/angular-components/filter/filter-tree/       @Pi5rr5
 /libs/angular-components/vector-map/               @aifrim
 /libs/angular-components/wizard/                   @rbordeanu
+/libs/angular-components/filter/filter-group/       @adrian-apetrei
+/libs/angular-components/filter/filter-toggle/       @adrian-apetrei

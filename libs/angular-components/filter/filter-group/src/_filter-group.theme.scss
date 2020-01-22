@@ -1,0 +1,53 @@
+@mixin uxg-filter-group-theme($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-side-badge .mat-badge-content {
+    color: mat-color($primary, default);
+    background-color: mat-color($primary, lighter);
+    border-color: mat-color($primary, default, 0.15);
+  }
+
+  .uxg-filter-group.mat-expansion-panel {
+    .mat-expansion-panel-header {
+      border-color: map_get($mat-grey, 100);
+
+      .uxg-filter-group-header {
+        color: mat-color($foreground, text, 0.6);
+
+        .filter-value {
+          color: mat-color($primary, default);
+        }
+      }
+    }
+
+    &.active {
+      .mat-expansion-panel-header {
+        border-color: mat-color($primary, default);
+      }
+    }
+  }
+
+  .expansion-panel-header {
+    background-color: map_get($mat-grey, 100);
+  }
+}
+
+@mixin uxg-filter-group-typography($config) {
+  .mat-expansion-panel-header {
+    .uxg-filter-group-header {
+      .selectedFilters {
+        @include mat-typography-level-to-styles($config, h6);
+
+        font-size: mat-font-size($config, subtitle-3);
+        letter-spacing: 1.1px;
+      }
+    }
+  }
+
+  .expansion-panel-header {
+    .header-title {
+      @include mat-typography-level-to-styles($config, h6);
+    }
+  }
+}

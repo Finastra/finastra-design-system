@@ -519,6 +519,68 @@
           "styleext": "scss"
         }
       }
+    },
+    "filter-group": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter/filter-group",
+      "sourceRoot": "libs/angular-components/filter/filter-group",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter/filter-group/tsconfig.lib.json",
+              "libs/angular-components/filter/filter-group/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-group/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/filter-group/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/filter-group/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "filter-toggle": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter/filter-toggle",
+      "sourceRoot": "libs/angular-components/filter/filter-toggle",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter/filter-toggle/tsconfig.lib.json",
+              "libs/angular-components/filter/filter-toggle/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-toggle/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/filter-toggle/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/filter-toggle/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
