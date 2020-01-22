@@ -32,10 +32,6 @@ $button-toggle-radius-v: $uxg-spacing-3;
   overflow: hidden;
   border-radius: $button-toggle-radius;
 
-  .mat-button-toggle {
-    flex: 1;
-  }
-
   &.mat-button-toggle-vertical {
     display: inline-flex;
     border-radius: $button-toggle-radius-v;
