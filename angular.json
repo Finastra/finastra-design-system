@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": ["./themes/", "./libs/angular-components"]
+            },
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
             "main": "apps/angular-test-app/src/main.ts",
@@ -122,7 +125,7 @@
       "prefix": "uxg",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "./dist/tools/devkit:components-builder",
           "options": {
             "tsConfig": "libs/angular-components/tsconfig.lib.json",
             "project": "libs/angular-components/ng-package.json"

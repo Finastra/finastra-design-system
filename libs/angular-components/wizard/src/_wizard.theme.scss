@@ -1,4 +1,4 @@
-@import '../../../../themes/angular-theme/lib/core/typography/typography';
+@import 'angular-theme/lib/core/typography/typography';
 
 @mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
