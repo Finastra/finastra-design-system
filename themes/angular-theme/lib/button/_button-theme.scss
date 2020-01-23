@@ -60,3 +60,13 @@
     @include mat-typography-level-to-styles($config, button-1);
   }
 }
+  // graceful degradation targeting IE10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .mat-icon-button {
+      &.mat-gradient {
+        .mat-icon {
+          background: none; 
+        }
+      }
+    }
+  }
