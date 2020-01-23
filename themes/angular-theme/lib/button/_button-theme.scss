@@ -61,12 +61,13 @@
   }
 }
   // graceful degradation targeting IE10+
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .mat-icon-button {
-      &.mat-gradient {
-        .mat-icon {
-          background: none; 
-        }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .mat-icon-button {
+    &.mat-gradient {
+      .mat-icon {
+        background: none !important;
+        color: mat-color($accent, default);
       }
     }
   }
+}
