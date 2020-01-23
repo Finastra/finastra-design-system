@@ -188,7 +188,8 @@
             "inputPath": "themes/angular-theme/",
             "outputPath": "dist/themes/angular-theme",
             "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
-            "sourceMap": true
+            "sourceMap": true,
+            "outputStyle": "compressed"
           },
           "configurations": {
             "production": {
