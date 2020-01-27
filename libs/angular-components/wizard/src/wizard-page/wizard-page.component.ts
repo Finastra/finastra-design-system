@@ -15,7 +15,7 @@ import { MediaObserver } from '@angular/flex-layout';
     '[attr.aria-hidden]': '!current',
     '[class.active]': 'current',
     '[class.uxg-wizard-page]': 'true',
-    '[class.xs]':"media.isActive('xs')"
+    '[class.xs]': "media.isActive('xs')"
   }
 })
 export class UxgWizardPageComponent implements OnInit {
@@ -39,7 +39,7 @@ export class UxgWizardPageComponent implements OnInit {
     private navService: WizardNavigationService,
     public pageCollection: PageCollectionService,
     public buttonService: ButtonHubService,
-    public media: MediaObserver,
+    public media: MediaObserver
   ) {}
 
   @ContentChild(UxgWizardPageTitleComponent, { static: true })
