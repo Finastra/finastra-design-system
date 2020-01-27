@@ -25,6 +25,7 @@
           >
             {{ filter.title }}: <span class="filter-value">{{ filter.selectedData[0].label }}</span>
           </div>
+          <mat-divider *ngIf="checkDivider(i)" class="filter-divider" vertical></mat-divider>
         </ng-container>
       </div>
       <span class="fill-remaining-space"></span>
