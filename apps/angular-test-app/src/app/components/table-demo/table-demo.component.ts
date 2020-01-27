@@ -238,11 +238,11 @@ export class TableDemoComponent implements OnInit {
     // columns defination object
     this.cellTemplateEmiter.subscribe((event: any) => {
       this.actionInfo = 'Emiter define in cellTemplate has been fired\n\n';
-      this.actionInfo += 'Column name: '+event.column.name+'\n';
+      this.actionInfo += 'Column name: ' + event.column.name + '\n';
       this.actionInfo += 'Row data: \n';
-      Object.keys(event.element).forEach((key)=>{
-        this.actionInfo += '    '+key+'='+event.element[key]+'\n';
-      })
+      Object.keys(event.element).forEach(key => {
+        this.actionInfo += '    ' + key + '=' + event.element[key] + '\n';
+      });
       alert(this.actionInfo);
     });
 
