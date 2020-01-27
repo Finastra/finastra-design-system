@@ -490,7 +490,7 @@
 </ng-template>
 
 <ng-template #tableCellAction let-element="element" let-column="column" let-emiter="emiter">
-  <button (click)="$event.stopPropagation(); emiter.emit({column:column, element:element});">click</button>
+  <button (click)="$event.stopPropagation(); emiter.emit({ column: column, element: element })">click</button>
 </ng-template>
 
 <mat-drawer-container class="table-container ">
@@ -518,6 +518,5 @@
       (rowSend)="rowSendClickEvent($event)"
     >
     </uxg-table>
-
   </div>
 </mat-drawer-container>
