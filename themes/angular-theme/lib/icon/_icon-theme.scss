@@ -10,8 +10,7 @@
   // graceful degradation targeting IE10+
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .mat-icon[color=gradient] {
-      background: none;
-      background-clip: unset;
+      background: none !important;
       color: mat-color($accent, default);
     }
   }

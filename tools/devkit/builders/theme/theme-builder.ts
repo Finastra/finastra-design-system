@@ -3,20 +3,18 @@ import { renderSync } from 'node-sass';
 import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
 import { join, relative } from 'path';
 import { sync as globby } from 'globby';
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
 import importer from 'node-sass-tilde-importer';
-
 import { Schema } from './schema';
 
 async function themeBuilder(options: Schema, context: BuilderContext): Promise<BuilderOutput> {
   const logger = context.logger;
   const printInfo = !options.silent;
 
-  context.reportStatus(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
-  if (printInfo) logger.info(`Compiling "${options.inputPath}" to "${options.outputPath}"...`);
-
   try {
-    const dest = join(process.cwd(), options.outputPath);
-    const src = join(process.cwd(), options.inputPath);
+    const src = options.inputPath;
+    const dest = options.outputPath;
     context.reportProgress(0, 1);
 
     const data = await readFile(join(src, 'package.json'));
@@ -34,27 +32,37 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
       return { success: false };
     }
 
+    const from = join(dest, pkg.sass);
+    const to = join(dest, pkg.sass.replace('.scss', '.css'));
+    logger.info(`Compiling "${from}" to "${to}"...`);
+
     const result = renderSync({
       file: join(src, pkg.sass),
-      outFile: join(dest, pkg.sass.replace('.scss', '.css')),
+      outFile: to,
       outputStyle: options.outputStyle || 'expanded',
       sourceMap: true,
-      sourceMapRoot: src,
+      sourceMapRoot: dest,
+      sourceMapEmbed: true,
       importer
     });
 
-    await writeFile(join(dest, pkg.css), result.css.toString());
+    const finalCss = await postcss([autoprefixer]).process(result.css, {
+      from,
+      to,
+      map: {
+        inline: false
+      }
+    });
+
+    await writeFile(to, finalCss.css);
     if (options.sourceMap === true) {
-      await writeFile(join(dest, pkg.sass.replace('.scss', '.map')), result.map.toString());
+      await writeFile(to.replace('.css', '.map'), finalCss.map);
     }
 
     await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));
 
     for (const asset of globby(options.assets)) {
-      const from = join(src, relative(src, asset));
-      const to = join(dest, relative(src, asset));
-
-      await copy(from, to, { recursive: true });
+      await copy(join(src, relative(src, asset)), join(dest, relative(src, asset)), { recursive: true });
     }
     context.reportProgress(1, 1);
 

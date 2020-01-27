@@ -3,6 +3,6 @@
   "dest": "../../dist/libs/angular-components",
   "lib": {
     "entryFile": "index.ts",
-    "umdModuleIds": {}
+    "styleIncludePaths": ["../../themes"]
   }
 }

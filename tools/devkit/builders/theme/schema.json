@@ -1,7 +1,7 @@
 {
   "id": "ThemeBuilder",
   "title": "Theme Builder",
-  "description": "Builds or themes",
+  "description": "Builds the themes",
   "properties": {
     "inputPath": {
       "type": "string",

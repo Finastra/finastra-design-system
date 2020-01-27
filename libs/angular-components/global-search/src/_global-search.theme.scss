@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
-@import '../../../../themes/angular-theme/lib/core/layout/breakpoints';
+@import 'angular-theme/lib/core/layout/breakpoints';
 
-$breakpoints: ('small' : $mobile-size-up);
+$global-search-breakpoints: ('small' : $mobile-size-up);
 
 @mixin uxg-global-search-breakpoint($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
+  $value: map-get($global-search-breakpoints, $breakpoint);
 
   @media (max-width: $value) {
     @content;

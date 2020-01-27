@@ -1,4 +1,4 @@
-@import '../../../../../themes/angular-theme/lib/core/style/spacing';
+@import 'angular-theme/lib/core/style/spacing';
 
 ::ng-deep uxg-filter-tags mat-form-field {
     margin-top: $uxg-spacing-1;
@@ -7,6 +7,9 @@
             .mat-form-field-prefix {
                 top: 0;
                 align-self: auto;
+            }
+            .mat-form-field-infix {
+                border-top-width: 6px;
             }
         }
     }
