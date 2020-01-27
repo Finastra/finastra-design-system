@@ -4,6 +4,7 @@ import { PageCollectionService } from '../services/page-collection.service';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
 import { UxgWizardPageDescriptionComponent } from './wizard-page-description.directive';
 import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'uxg-wizard-page',
@@ -13,7 +14,8 @@ import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
     role: 'tabpanel',
     '[attr.aria-hidden]': '!current',
     '[class.active]': 'current',
-    '[class.uxg-wizard-page]': 'true'
+    '[class.uxg-wizard-page]': 'true',
+    '[class.xs]':"media.isActive('xs')"
   }
 })
 export class UxgWizardPageComponent implements OnInit {
@@ -36,7 +38,8 @@ export class UxgWizardPageComponent implements OnInit {
   constructor(
     private navService: WizardNavigationService,
     public pageCollection: PageCollectionService,
-    public buttonService: ButtonHubService
+    public buttonService: ButtonHubService,
+    public media: MediaObserver,
   ) {}
 
   @ContentChild(UxgWizardPageTitleComponent, { static: true })

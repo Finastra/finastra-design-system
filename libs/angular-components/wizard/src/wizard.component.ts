@@ -15,6 +15,7 @@ import { ButtonHubService } from './services/button-hub.service';
 import { PageCollectionService } from './services/page-collection.service';
 import { WizardNavigationService } from './services/wizard-navigation.service';
 import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
+import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'uxg-wizard',
@@ -77,7 +78,8 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   constructor(
     public navService: WizardNavigationService,
     public pageCollection: PageCollectionService,
-    public buttonService: ButtonHubService
+    public buttonService: ButtonHubService,
+    public media: MediaObserver
   ) {
     this.subscriptions.push(this.listenForCancelChanges(), this.listenForDoneChanges(), this.listenForPageChanges());
   }

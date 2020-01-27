@@ -1,16 +1,37 @@
-<div fxFlexFill fxLayout="row" class="uxg-wizard">
-  <div fxFlex="66"></div>
-  <div fxFlex class="uxg-wizard-right-panel">
+<div fxFlexFill fxLayout="row" fxLayout.xs="column" class="uxg-wizard">
+  <div fxFlex="66" fxFlex.xs="0"></div>
+  <div fxFlex fxFlex.xs="20" class="uxg-wizard-right-panel">
     <div *ngIf="showCloseButton" class="close-button">
       <button mat-icon-button (click)="navService.cancel()">
         <mat-icon aria-hidden="false" aria-label="Close">clear</mat-icon>
       </button>
     </div>
   </div>
-  <h4 class="uxg-wizard-title uxg-h4"><ng-content select="uxg-wizard-title"></ng-content></h4>
-  <div class="uxg-wizard-container" fxLayout="column">
+  <h4 *ngIf="!media.isActive('xs')" class="uxg-wizard-title uxg-h4">
+    <ng-content select="uxg-wizard-title"></ng-content>
+  </h4>
+
+  <div *ngIf="media.isActive('xs')" fxLayout="column" class="uxg-wizard-timeline-xs">
+    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-around center">
+      <div class="step active">
+        <div>{{ pageCollection.getPageIndex(navService.currentPage) + 1 }}</div>
+      </div>
+      <div fxFlex="70" fxLayout="column" fxLayoutAlign="space-around stretch">
+        <div class="step-info-container">
+          <div class="step-title uxg-huxg-wizard-page5">
+            <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
+          </div>
+          <div class="step-description">
+            <ng-template [ngTemplateOutlet]="navService.currentPageDescription"></ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uxg-wizard-container" fxLayout="column" fxFlex.xs="85" [ngClass.xs]="'xs'">
     <main [@wizardAnimation]="currentPageId" class="uxg-wizard-content" fxFlex>
-      <div class="uxg-wizard-page-title uxg-h3">
+      <div *ngIf="!media.isActive('xs')" class="uxg-wizard-page-title uxg-h3">
         <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
       </div>
       <ng-content></ng-content>
@@ -24,7 +45,7 @@
     </div>
   </div>
 
-  <div fxLayout="row" class="uxg-wizard-timeline">
+  <div *ngIf="!media.isActive('xs')" fxLayout="row" class="uxg-wizard-timeline">
     <div fxFlex="30" fxLayout="column" fxLayoutAlign="space-around center">
       <div class="timeline-progress-bar" [ngStyle]="{ 'height.%': (100 * (pages.length - 1)) / pages.length }">
         <span
