@@ -5,7 +5,7 @@
   "license": "MIT",
   "sass": "_all-theme.scss",
   "css": "_all-theme.css",
-  "dependencies": {
+  "peerDependencies": {
     "@angular/material": "8.2.3"
   }
 }
