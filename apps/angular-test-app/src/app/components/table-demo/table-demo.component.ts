@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import {
   UxgTableSelectEvent,
   TableComponent,
@@ -191,6 +191,7 @@ export class TableDemoComponent implements OnInit {
   @ViewChild('tableCellTypedCurrency', { static: true }) typedCurrency!: TemplateRef<any>;
   @ViewChild('tableCellTypedCurrencyEdit', { static: true }) typedCurrencyEdit!: TemplateRef<any>;
   @ViewChild('tableCellTable', { static: true }) tableCellTable!: TemplateRef<any>;
+  @ViewChild('tableCellAction', { static: true }) tableCellAction!: TemplateRef<any>;
 
   selectedIndex = [1, 2];
 
@@ -208,6 +209,9 @@ export class TableDemoComponent implements OnInit {
   enableTableEdit = false;
   enableTableRowDelete = false;
   enableTableSendEvent = false;
+
+  cellTemplateEmiter = new EventEmitter<any>();
+  actionInfo = '';
 
   columns: UxgColumn[] = [];
   columnsToDisplay: string[] = [];
@@ -232,6 +236,16 @@ export class TableDemoComponent implements OnInit {
 
   ngOnInit(): void {
     // columns defination object
+    this.cellTemplateEmiter.subscribe((event: any) => {
+      this.actionInfo = 'Emiter define in cellTemplate has been fired\n\n';
+      this.actionInfo += 'Column name: '+event.column.name+'\n';
+      this.actionInfo += 'Row data: \n';
+      Object.keys(event.element).forEach((key)=>{
+        this.actionInfo += '    '+key+'='+event.element[key]+'\n';
+      })
+      alert(this.actionInfo);
+    });
+
     this.columns = [
       { name: 'API', type: UxgColumnType.string, align: 'left', displayName: 'Display Api' },
       { name: 'End Point', type: UxgColumnType.string, align: 'left' },
@@ -256,6 +270,14 @@ export class TableDemoComponent implements OnInit {
         displayName: 'Display Api',
         cellTemplate: this.tableCellTable
       },
+      {
+        name: 'Action',
+        type: UxgColumnType.cellTemplate,
+        align: 'left',
+        displayName: 'Action',
+        cellTemplateEmiter: this.cellTemplateEmiter,
+        cellTemplate: this.tableCellAction
+      },
       { name: 'End Point', type: UxgColumnType.string, align: 'left' },
       { name: 'Date Time', type: UxgColumnType.date, align: 'left' },
       { name: 'Day of Week', type: UxgColumnType.string, align: 'left' },
@@ -266,6 +288,7 @@ export class TableDemoComponent implements OnInit {
     ];
     this.columnsToDisplayCellTemplate = [
       'API',
+      'Action',
       'End Point',
       'Date Time',
       'Day of Week',
