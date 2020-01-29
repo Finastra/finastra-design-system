@@ -70,3 +70,13 @@ a[large] {
 
   padding: $uxg-spacing-0 $button-padding-large;
 }
+
+// graceful degradation targeting IE10+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  a,
+  button {
+    &.mat-icon-button {
+    justify-content: flex-start
+  }
+}
+}
