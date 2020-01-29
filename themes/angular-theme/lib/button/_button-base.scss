@@ -22,7 +22,7 @@ $mat-icon-button-size-dense: 30px;
 
     .mat-icon {
       @include icon-size($icon-size);
-
+      
       padding-bottom: 2px;
     }
   }
@@ -36,13 +36,6 @@ button {
     display: inline-flex;
     align-content: center;
     justify-content: center;
-
-    .mat-button-wrapper {
-      display: flex;
-      margin: auto;
-      width: $button-icon-size-large;
-      height: $button-icon-size-large;
-    }
   }
 }
 
@@ -51,13 +44,6 @@ a[dense] {
   @include button-base($button-radius-dense, $button-icon-size-dense);
 
   &.mat-icon-button {
-    @include icon-size($mat-icon-button-size-dense);
-
-    .mat-button-wrapper {
-      width: $button-icon-size-base;
-      height: $button-icon-size-base;
-    }
-
     .mat-icon {
       @include icon-size($button-icon-size-base);
     }
@@ -69,14 +55,4 @@ a[large] {
   @include button-base($button-radius-large, $button-icon-size-large);
 
   padding: $uxg-spacing-0 $button-padding-large;
-}
-
-// graceful degradation targeting IE10+
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  a,
-  button {
-    &.mat-icon-button {
-      justify-content: flex-start
-    }
-  }
 }
