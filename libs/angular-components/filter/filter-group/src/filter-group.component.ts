@@ -38,8 +38,8 @@ export class FilterGroupComponent implements AfterViewInit {
       const instanceTitle = filterInstance.instance;
       const selected: any = {};
       selected[instanceTitle] = filterInstance.component.getState();
-      this.selectedData.push({ title: instanceTitle, selectedData: selected[instanceTitle] });
-      this.initialState.push({ title: instanceTitle, selectedData: selected[instanceTitle] });
+      this.selectedData.push({ title: instanceTitle, selectedData: [...selected[instanceTitle]] });
+      this.initialState.push({ title: instanceTitle, selectedData: [...selected[instanceTitle]] });
 
       filterInstance.component.changes.subscribe((change: UXGFilterChanges<any>) => {
         change.instance = instanceTitle;
@@ -86,15 +86,7 @@ export class FilterGroupComponent implements AfterViewInit {
         savedFilter.isSelected = false;
       }
     });
-
-    this.selectedData.forEach((selectedFilter: any) => {
-      selectedFilter.selectedData = filter.filterState[selectedFilter.title].selectedData;
-    });
-    this.filterInstances.forEach((instance: any) => {
-      if (instance.component.setState) {
-        instance.component.setState(filter.filterState[instance.instance].selectedData);
-      }
-    });
+    this.setState(filter.filterState);
   }
 
   applyFilters() {
@@ -126,23 +118,13 @@ export class FilterGroupComponent implements AfterViewInit {
     this.existingFilterNames = this.existingFilterNames.filter(items => items !== filter.filterName);
   }
 
-  clearFilter() {
-    this.filterInstances.forEach(filterInstance => {
-      filterInstance.component.clearSelection();
-    });
-
-    this.selectedData.forEach(instance => {
-      instance.selectedData = [];
-    });
-  }
-
   clearSelection() {
     this.filterInstances.forEach(filterInstance => {
       filterInstance.component.clearSelection();
     });
 
-    this.selectedData.forEach(filter => {
-      filter.selectedData = [];
+    this.selectedData.forEach(instance => {
+      instance.selectedData.length = 0;
     });
   }
 
@@ -151,13 +133,13 @@ export class FilterGroupComponent implements AfterViewInit {
   }
 
   getFilterStates() {
-    const groupState: any = {};
+    const groupState: any = [];
     this.filterInstances.forEach(instance => {
       if (instance.component.getState) {
-        groupState[instance.instance] = {
+        groupState.push({
           title: instance.instance,
           selectedData: instance.component.getState()
-        };
+        });
       }
     });
     return groupState;
@@ -171,13 +153,20 @@ export class FilterGroupComponent implements AfterViewInit {
     if (data.length) {
       this.filterInstances.forEach(filterInstance => {
         for (let i = 0; i < data.length; i++) {
-          if (filterInstance.instance === data[i].title) {
+          if (filterInstance.instance === data[i].title && filterInstance.component.setState) {
             filterInstance.component.setState(data[i].selectedData);
           }
         }
       });
 
-      this.selectedData = JSON.parse(JSON.stringify(data));
+      data.forEach(obj => {
+        this.selectedData.forEach(obj2 => {
+          if (obj.title === obj2.title) {
+            obj2.selectedData.length = 0;
+            obj2.selectedData.push(...obj.selectedData);
+          }
+        });
+      });
     }
   }
 
@@ -185,7 +174,14 @@ export class FilterGroupComponent implements AfterViewInit {
     if (this.activeFilter.length) {
       this.setState(this.activeFilter);
       if (this.savedFilters.length) {
-        this.savedFilters.forEach(filter => (filter.isSelected = false));
+        for (let i = 0; i < this.savedFilters.length; i++)
+          if (
+            this.savedFilters[i].isSelected === true &&
+            !this.checkListEquality(this.savedFilters[i].filterState, this.activeFilter)
+          ) {
+            this.savedFilters[i].isSelected = false;
+            break;
+          }
       }
     } else if (this.savedFilters.length) {
       this.setState(this.getSelectedFilterState());
@@ -216,14 +212,23 @@ export class FilterGroupComponent implements AfterViewInit {
 
   checkIsActive() {
     if (this.selectedData.length && this.activeFilter.length) {
-      const activeState = JSON.stringify(this.activeFilter);
-      const selectionState = JSON.stringify(this.selectedData);
-      if (activeState === selectionState) {
-        return true;
+      return this.checkListEquality(this.activeFilter, this.selectedData);
+    }
+  }
+
+  checkListEquality(listA: FilterGroupComponentData[], listB: FilterGroupComponentData[]) {
+    for (let i = 0; i < listA.length; i++) {
+      if (listA[i].title === listB[i].title && listA[i].selectedData.length === listB[i].selectedData.length) {
+        for (let j = 0; j < listA[i].selectedData.length; j++) {
+          if (listB[i].selectedData.indexOf(listA[i].selectedData[j]) === -1) {
+            return false;
+          }
+        }
       } else {
         return false;
       }
     }
+    return true;
   }
 
   checkDivider(index: number) {

@@ -60,8 +60,10 @@ export class FilterToggleComponent implements OnInit {
   }
 
   reset() {
-    this.selectedValue = this.initialValue;
-    this.changes.emit({ added: [this.initialValue], removed: [this.previousValue] });
+    if (this.initialValue) {
+      this.selectedValue = this.initialValue;
+      this.changes.emit({ added: [this.initialValue], removed: [this.previousValue] });
+    }
   }
 
   getState() {

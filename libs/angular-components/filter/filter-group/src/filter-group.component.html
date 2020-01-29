@@ -5,7 +5,7 @@
   [expanded]="expanded"
   [class.active]="checkIsActive()"
 >
-  <mat-expansion-panel-header [expandedHeight]="'48px'">
+  <mat-expansion-panel-header [expandedHeight]="'48px'" (click)="filterGroupPanel.toggle()">
     <div class="uxg-filter-group-header" (click)="$event.preventDefault(); $event.stopPropagation()">
       <div class="selectedFilters">
         <ng-container *ngFor="let filter of selectedData; let i = index">
@@ -74,7 +74,7 @@
     </div>
 
     <button *ngIf="savedFilters.length" mat-button color="accent" (click)="updateFilter()">Update</button>
-    <button *ngIf="savedFilters.length" mat-button color="accent" (click)="clearFilter()">Clear</button>
+    <button *ngIf="savedFilters.length" mat-button color="accent" (click)="clearSelection()">Clear</button>
     <mat-divider vertical="true"></mat-divider>
     <button mat-stroked-button color="accent" (click)="openDialog()">Save as</button>
     <button mat-stroked-button color="accent" (click)="filterGroupPanel.toggle(); close()">Cancel</button>

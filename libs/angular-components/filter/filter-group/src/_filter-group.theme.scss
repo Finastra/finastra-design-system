@@ -31,6 +31,10 @@
   .expansion-panel-header {
     background-color: map_get($mat-grey, 100);
   }
+
+  .filter-group-dialog-header {
+    background-color:  map_get($mat-grey, 100);
+  }
 }
 
 @mixin uxg-filter-group-typography($config) {

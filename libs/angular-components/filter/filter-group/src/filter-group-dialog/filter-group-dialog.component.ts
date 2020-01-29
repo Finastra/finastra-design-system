@@ -22,7 +22,7 @@ export class FilterGroupDialogComponent implements OnInit {
     this.dialogRef.close();
   }
   save(): void {
-    this.dialogRef.close(this.filterName.value);
+    if (!this.filterName.invalid) this.dialogRef.close(this.filterName.value);
   }
 
   ngOnInit() {

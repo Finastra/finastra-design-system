@@ -1,3 +1,13 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+.filter-group-dialog-header {
+    position: relative;
+    top: -$uxg-spacing-4;
+    .dialog-title {
+        margin-top: $uxg-spacing-3;
+    }
+}
+
 .filter-group-dialog-form {
     width: 100%;
 }
