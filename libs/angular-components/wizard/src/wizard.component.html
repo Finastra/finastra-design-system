@@ -1,6 +1,6 @@
 <div fxFlexFill fxLayout="row" fxLayout.xs="column" class="uxg-wizard">
   <div fxFlex="66" fxFlex.xs="0"></div>
-  <div fxFlex fxFlex.xs="20" class="uxg-wizard-right-panel">
+  <div *ngIf="!media.isActive('xs')" fxFlex class="uxg-wizard-right-panel">
     <div *ngIf="showCloseButton" class="close-button">
       <button mat-icon-button (click)="navService.cancel()">
         <mat-icon aria-hidden="false" aria-label="Close">clear</mat-icon>
@@ -12,11 +12,11 @@
   </h4>
 
   <div *ngIf="media.isActive('xs')" fxLayout="column" class="uxg-wizard-timeline-xs">
-    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxLayout="row" fxLayoutAlign="space-around">
       <div class="step active">
         <div>{{ pageCollection.getPageIndex(navService.currentPage) + 1 }}</div>
       </div>
-      <div fxFlex="70" fxLayout="column" fxLayoutAlign="space-around stretch">
+      <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around stretch">
         <div class="step-info-container">
           <div class="step-title uxg-huxg-wizard-page5">
             <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
@@ -26,10 +26,15 @@
           </div>
         </div>
       </div>
+      <div *ngIf="showCloseButton" class="close-button">
+        <button mat-icon-button (click)="navService.cancel()">
+          <mat-icon aria-hidden="false" aria-label="Close">clear</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="uxg-wizard-container" fxLayout="column" fxFlex.xs="85" [ngClass.xs]="'xs'">
+  <div class="uxg-wizard-container" fxLayout="column" fxFlex.xs="100" [ngClass.xs]="'xs'">
     <main [@wizardAnimation]="currentPageId" class="uxg-wizard-content" fxFlex>
       <div *ngIf="!media.isActive('xs')" class="uxg-wizard-page-title uxg-h3">
         <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>

@@ -74,6 +74,7 @@
     }
 
     .uxg-wizard-timeline-xs {
+      background: $wizard-dark-blue;
       .step {
         background-color: white;
         color: $wizard-timeline-color;
@@ -81,6 +82,7 @@
         &.active {
           border-color: $wizard-step-active-color;
           background-color: $wizard-step-active-color;
+          align-self: center;
           color: white;
         }
       }
