@@ -1,11 +1,9 @@
 @import 'angular-theme/lib/core/style/spacing';
 @import 'angular-theme/lib/core/layout/breakpoints';
-
 .vector-map {
   display: block;
   position: relative;
   height: 100%;
-
   padding: $uxg-spacing-3;
   background-color: #fff;
 }
@@ -18,36 +16,29 @@
 .meta-wrapper {
   display: inline-block;
   padding-left: $uxg-spacing-3;
-
   height: 100%;
 }
 
 .legend {
   margin-top: auto;
   margin-left: auto;
-
   ol,
   li {
     margin: 0;
     padding: 0;
   }
-
   ol {
     list-style: none;
   }
-
   li {
     position: relative;
     white-space: nowrap;
     display: flex;
-    margin-bottom: $uxg-spacing-3;
-
     @media only screen and (max-width: $mobile-size-up) {
       display: inline-flex;
       margin-right: $uxg-spacing-3;
     }
   }
-
   .color {
     border-radius: 50%;
     display: inline-block;
@@ -55,10 +46,10 @@
     height: 10px;
     margin-top: 5px;
   }
-
   .text {
     display: inline-block;
     line-height: 20px;
+    font-size: 12px;
     margin-left: $uxg-spacing-2;
   }
 }

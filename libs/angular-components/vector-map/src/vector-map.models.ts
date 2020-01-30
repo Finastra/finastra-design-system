@@ -265,7 +265,7 @@ export const DEFAULT_LAYOUT = {
     showframe: false,
     showcoastlines: false,
     projection: {
-      type: 'equirectangular'
+      type: 'miller'
     },
     center: {
       lat: 25,
