@@ -22,7 +22,7 @@ $mat-icon-button-size-dense: 30px;
 
     .mat-icon {
       @include icon-size($icon-size);
-      
+
       padding-bottom: 2px;
     }
   }
