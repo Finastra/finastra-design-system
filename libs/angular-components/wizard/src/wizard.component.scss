@@ -170,10 +170,13 @@ $wizard-title-left: 6vw;
       box-sizing: border-box;
       user-select: none;
       z-index: 2;
+
+      &.active {
+        align-self: center;
+      }
     }
 
     .close-button {
-      color: white;
       position: absolute;
       right: 0.5em;
       top: 0;

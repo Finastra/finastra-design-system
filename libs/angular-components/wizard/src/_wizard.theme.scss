@@ -82,7 +82,6 @@
         &.active {
           border-color: $wizard-step-active-color;
           background-color: $wizard-step-active-color;
-          align-self: center;
           color: white;
         }
       }
@@ -95,6 +94,10 @@
         .step-description {
           color: rgba($wizard-step-description-color, 0.8);
         }
+      }
+
+      .close-button {
+        color: white;
       }
     }
   }
