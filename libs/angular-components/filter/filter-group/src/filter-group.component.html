@@ -42,10 +42,7 @@
   </mat-expansion-panel-header>
 
   <div class="expansion-panel-header">
-    <div class="header-title">
-      <span>Filter by</span>
-    </div>
-
+    <h6 class="uxg-h6">Filter by</h6>
     <button mat-button color="accent" dense (click)="resetSelection()">
       <mat-icon>refresh</mat-icon>
       Reset
@@ -78,6 +75,6 @@
     <mat-divider vertical="true"></mat-divider>
     <button mat-stroked-button color="accent" (click)="openDialog()">Save as</button>
     <button mat-stroked-button color="accent" (click)="filterGroupPanel.toggle(); close()">Cancel</button>
-    <button mat-stroked-button color="accent" (click)="applyFilters()">Apply</button>
+    <button mat-flat-button color="accent" (click)="applyFilters()">Apply</button>
   </div>
 </mat-expansion-panel>

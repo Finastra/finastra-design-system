@@ -44,10 +44,4 @@
       }
     }
   }
-
-  .expansion-panel-header {
-    .header-title {
-      @include mat-typography-level-to-styles($config, h6);
-    }
-  }
 }
