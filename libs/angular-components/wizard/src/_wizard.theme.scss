@@ -75,6 +75,7 @@
 
     .uxg-wizard-timeline-xs {
       background: $wizard-dark-blue;
+
       .step {
         background-color: white;
         color: $wizard-timeline-color;
@@ -100,12 +101,24 @@
         color: white;
       }
     }
+
+    .uxg-wizard-footer {
+      .dot {
+        background-color: $wizard-timeline-color;
+
+        &.active {
+          background-color: $wizard-dark-blue;
+        }
+      }
+    }
   }
 }
 
 @mixin uxg-wizard-typography($config) {
   .uxg-wizard {
-    .uxg-wizard-timeline, .uxg-wizard-timeline-xs {
+
+    .uxg-wizard-timeline,
+    .uxg-wizard-timeline-xs {
       .step {
         font: {
           weight: mat-font-weight($config, h1);
