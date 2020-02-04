@@ -44,8 +44,12 @@ a[dense] {
   @include button-base($button-radius-dense, $button-icon-size-dense);
 
   &.mat-icon-button {
+    @include icon-size($mat-icon-button-size-dense);
+
     .mat-icon {
       @include icon-size($button-icon-size-base);
+
+      height: 22px;
     }
   }
 }
