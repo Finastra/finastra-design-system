@@ -1,8 +1,18 @@
-import { AfterViewInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ContentChildren,
+  EventEmitter,
+  Input,
+  Output,
+  QueryList,
+  OnDestroy
+} from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-dialog.component';
 import { UxgFilter } from './filter.directive';
 import { UXGFilterChanges } from './filter.models';
+import { Subscription } from 'rxjs';
 
 export interface FilterGroupComponentData {
   title: string;
@@ -19,12 +29,13 @@ export interface SavedFilter {
   templateUrl: './filter-group.component.html',
   styleUrls: ['./filter-group.component.scss']
 })
-export class FilterGroupComponent implements AfterViewInit {
+export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Output() changes = new EventEmitter<UXGFilterChanges<any>>();
   @ContentChildren(UxgFilter) filterInstances!: QueryList<UxgFilter>;
 
   @Input() expanded = false;
   @Input() divideAtIndex: number[] = [];
+  subscriptions: Subscription[] = [];
   selectedData: FilterGroupComponentData[] = [];
   savedFilters: SavedFilter[] = [];
   existingFilterNames: string[] = [];
@@ -41,16 +52,22 @@ export class FilterGroupComponent implements AfterViewInit {
       this.selectedData.push({ title: instanceTitle, selectedData: [...selected[instanceTitle]] });
       this.initialState.push({ title: instanceTitle, selectedData: [...selected[instanceTitle]] });
 
-      filterInstance.component.changes.subscribe((change: UXGFilterChanges<any>) => {
-        change.instance = instanceTitle;
-        this.selectedData.forEach(filter => {
-          if (filter.title === change.instance) {
-            filter.selectedData = filterInstance.component.getState();
-          }
-        });
-        this.changes.emit(change);
-      });
+      this.subscriptions.push(
+        filterInstance.component.changes.subscribe((change: UXGFilterChanges<any>) => {
+          change.instance = instanceTitle;
+          this.selectedData.forEach(filter => {
+            if (filter.title === change.instance) {
+              filter.selectedData = filterInstance.component.getState();
+            }
+          });
+          this.changes.emit(change);
+        })
+      );
     });
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 
   openDialog(): void {
