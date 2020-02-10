@@ -6,7 +6,7 @@ import {
   UxgColumnType,
   UxgColumn
 } from '@ffdc/uxg-angular-components/table';
-import { PageEvent } from '@angular/material';
+import { PageEvent } from '@angular/material/paginator';
 
 const ELEMENT_DATA: any[] = [
   {
