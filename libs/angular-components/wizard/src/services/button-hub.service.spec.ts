@@ -10,7 +10,7 @@ describe('ButtonHubService', () => {
   );
 
   it('should be created', () => {
-    const service: ButtonHubService = TestBed.get(ButtonHubService);
+    const service: ButtonHubService = TestBed.inject(ButtonHubService);
     expect(service).toBeTruthy();
   });
 });

@@ -18,7 +18,7 @@
       />
     </mat-form-field>
   </div>
-  <ng-container *ngIf="(results$ | async) as results">
+  <ng-container *ngIf="results$ | async as results">
     <ng-container *ngIf="results.length; else empty">
       <div fxFlex="60" fxLayout="row" class="uxg-global-search-container-parent">
         <div fxFlex="100" class="uxg-global-search-results-counter">

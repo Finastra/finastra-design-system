@@ -1,4 +1,4 @@
-<mat-form-field *ngFor="let field of (templateFields | keyvalue)">
+<mat-form-field *ngFor="let field of templateFields | keyvalue">
   <mat-label>{{ field.key }}</mat-label>
   <mat-select
     [compareWith]="compareWith"
