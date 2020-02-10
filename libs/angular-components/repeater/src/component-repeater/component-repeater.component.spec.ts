@@ -13,7 +13,8 @@ class MockCardComponent {}
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [MockCardComponent]
+  declarations: [MockCardComponent],
+  entryComponents: [MockCardComponent]
 })
 export class FakeMockCardNgModule {}
 

@@ -18,7 +18,8 @@ class MockCardComponent {}
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [MockCardComponent]
+  declarations: [MockCardComponent],
+  entryComponents: [MockCardComponent]
 })
 export class FakeMockCardNgModule {}
 
@@ -132,7 +133,7 @@ describe('RepeaterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should repeate MockCardComponent', () => {
+  it('should repeat MockCardComponent', () => {
     const componentR: Type<any> = MockCardComponent;
 
     component.component = componentR;

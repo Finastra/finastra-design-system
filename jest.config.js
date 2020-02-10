@@ -2,7 +2,7 @@ const babelModules = ['lodash-es', 'plotly.js'].join('|');
 
 module.exports = {
   verbose: true,
-  testMatch: ['**/+(*.)+(spec|test).+ts'],
+  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
   moduleFileExtensions: ['ts', 'js', 'html'],
   preset: 'jest-preset-angular',
   resolver: '@nrwl/jest/plugins/resolver',
@@ -10,7 +10,7 @@ module.exports = {
     '^.+\\.(ts|js|html)$': 'ts-jest',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
-  testEnvironment: 'jest-environment-jsdom-thirteen',
+  testEnvironment: 'jest-environment-jsdom-fifteen',
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
@@ -20,15 +20,6 @@ module.exports = {
       tsConfig: 'tsconfig.spec.json'
     }
   },
-  // Coverage
   collectCoverage: true,
-  coverageReporters: ['json', 'html'],
-  coverageThreshold: {
-    // global: {
-    //   branches: 60,
-    //   functions: 80,
-    //   lines: 80,
-    //   statements: 80
-    // }
-  }
+  coverageReporters: ['json', 'html']
 };
