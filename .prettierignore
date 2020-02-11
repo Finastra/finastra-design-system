@@ -6,3 +6,4 @@
 # additional ignores
 .history
 dist
+coverage
