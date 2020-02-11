@@ -2,6 +2,7 @@
 
 @mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
   $background: map-get($theme, background);
 
   $wizard-background-color: mat-color($background, background);
@@ -12,6 +13,9 @@
   $wizard-dark-blue: #060546;
   $wizard-step-description-color: map-get($uxg-violet, 100);
   $wizard-step-disabled-color: #404065;
+
+  $wizard-dot-color: map_get($mat-grey, 200);
+  $wizard-dot-active-color: mat-color($primary, default);
 
   .uxg-wizard {
     background: $wizard-background-color;
@@ -104,10 +108,10 @@
 
     .uxg-wizard-footer {
       .dot {
-        background-color: $wizard-timeline-color;
+        background-color: $wizard-dot-color;
 
         &.active {
-          background-color: $wizard-dark-blue;
+          background-color: $wizard-dot-active-color;
         }
       }
     }
@@ -117,8 +121,7 @@
 @mixin uxg-wizard-typography($config) {
   .uxg-wizard {
 
-    .uxg-wizard-timeline,
-    .uxg-wizard-timeline-xs {
+    .uxg-wizard-timeline {
       .step {
         font: {
           weight: mat-font-weight($config, h1);
@@ -133,6 +136,27 @@
       .step-info-container {
         .step-description {
           @include mat-typography-level-to-styles($config, body-2);
+
+          font-weight: mat-font-weight($config, caption);
+        }
+      }
+    }
+
+    .uxg-wizard-timeline-xs {
+      .step {
+        font: {
+          weight: mat-font-weight($config, h2);
+          size: mat-font-size($config, subtitle-2);
+        }
+
+        mat-icon {
+          font-weight: mat-font-weight($config, h2);
+        }
+      }
+
+      .step-info-container {
+        .step-description {
+          @include mat-typography-level-to-styles($config, body-3);
 
           font-weight: mat-font-weight($config, caption);
         }

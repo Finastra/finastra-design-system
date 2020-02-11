@@ -18,7 +18,7 @@
       </div>
       <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around stretch">
         <div class="step-info-container">
-          <div class="step-title uxg-h5">
+          <div class="step-title uxg-h6">
             <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
           </div>
           <div class="step-description">
@@ -54,15 +54,8 @@
       <div class="uxg-wizard-footer-buttons-wrapper">
         <ng-content select="uxg-wizard-button"></ng-content>
 
-        <div class="dot-navigation">
-          <div
-            fxHide
-            fxShow.xs
-            fxFlex="70"
-            fxLayout="row"
-            fxLayoutAlign="space-around center"
-            class="dot-navigation-flex"
-          >
+        <div fxHide fxShow.xs class="dot-navigation">
+          <div fxFlex="70" fxLayout="row" fxLayoutAlign="center" class="dot-navigation-flex">
             <ng-container *ngFor="let page of pages">
               <div
                 class="dot"

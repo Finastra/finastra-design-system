@@ -93,18 +93,24 @@ $wizard-title-left: 6vw;
           width: $dot-size-xs;
           height: $dot-size-xs;
           border-radius: 50%;
+          margin: $uxg-spacing-1;
         }
       }
     }
 
     &.xs {
+      margin-left: 0;
+
       uxg-wizard-button {
+        align-self: center;
+
         &[ng-reflect-type='cancel'] {
           display: none;
         }
 
         &[ng-reflect-type='previous'] {
-          margin-right: 0rem;
+          margin-right: 0;
+          margin-left: 0;
         }
 
         &[ng-reflect-type='previous'][aria-hidden='true'] {
@@ -115,6 +121,7 @@ $wizard-title-left: 6vw;
         &[ng-reflect-type='next'],
         &[ng-reflect-type='done'] {
           order: 3;
+          margin-right: 0;
           margin-left: auto;
         }
       }
@@ -215,7 +222,6 @@ $wizard-title-left: 6vw;
       overflow: hidden;
       box-sizing: border-box;
       user-select: none;
-      z-index: 2;
 
       &.active {
         align-self: center;
