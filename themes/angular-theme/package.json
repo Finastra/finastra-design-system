@@ -6,6 +6,6 @@
   "sass": "_all-theme.scss",
   "css": "_all-theme.css",
   "peerDependencies": {
-    "@angular/material": "8.2.3"
+    "@angular/material": "9.0.0"
   }
 }
