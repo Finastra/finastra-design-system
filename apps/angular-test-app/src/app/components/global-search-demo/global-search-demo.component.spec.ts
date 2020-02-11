@@ -2,7 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GlobalSearchDemoComponent } from './global-search-demo.component';
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
-import { MatIconModule, MatSnackBarModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('GlobalSearchDemoComponent', () => {
   let component: GlobalSearchDemoComponent;

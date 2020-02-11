@@ -75,10 +75,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     setTimeout(() => this.searchInput.nativeElement.focus());
 
     fromEvent(this.searchInput.nativeElement, 'input')
-      .pipe(
-        distinctUntilChanged(),
-        debounceTime(this.searchDebounce)
-      )
+      .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
         const value = this.searchInput.nativeElement.value;
         if (value) {
@@ -87,7 +84,10 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
           this.searchTermChange.emit(value);
 
           this.resultsFound = this.resultsShown = results.length;
-          this.results = this.groupByResults(results.map(r => r.doc), this.groupBy);
+          this.results = this.groupByResults(
+            results.map(r => r.doc),
+            this.groupBy
+          );
 
           this.filterSize = 0;
           this.results$.next(this.results);

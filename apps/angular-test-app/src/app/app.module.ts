@@ -19,11 +19,6 @@ import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, AppRoutingModule, ScrollToTopModule],
   providers: [],
   exports: [RepeaterCardExampleComponent],
-  entryComponents: [
-    RepeaterCardExampleComponent,
-    RepeaterCardAdvancedExampleComponent,
-    RepeaterCardChartExampleComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

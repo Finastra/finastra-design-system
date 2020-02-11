@@ -16,12 +16,12 @@ describe('PaletteService', () => {
   );
 
   it('should be created', () => {
-    const service: PaletteService = TestBed.get(PaletteService);
+    const service: PaletteService = TestBed.inject(PaletteService);
     expect(service).toBeTruthy();
   });
 
   it('should send updated configuration to all subscribers', () => {
-    const service: PaletteService = TestBed.get(PaletteService);
+    const service: PaletteService = TestBed.inject(PaletteService);
     const observer = jest.fn();
     const subscription = service.paletteChange$.subscribe(observer);
 
@@ -31,7 +31,7 @@ describe('PaletteService', () => {
   });
 
   it('should send updated configuration to all subscribers', () => {
-    const service: PaletteService = TestBed.get(PaletteService);
+    const service: PaletteService = TestBed.inject(PaletteService);
     const observer = jest.fn();
     const subscription = service.paletteChange$.subscribe(observer);
 

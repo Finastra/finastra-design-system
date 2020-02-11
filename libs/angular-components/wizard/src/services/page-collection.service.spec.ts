@@ -10,7 +10,7 @@ describe('PageCollectionService', () => {
   );
 
   it('should be created', () => {
-    const service: PageCollectionService = TestBed.get(PageCollectionService);
+    const service: PageCollectionService = TestBed.inject(PageCollectionService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatDividerModule, MatIconModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { UxgWizardButtonComponent } from './wizard-button/wizard-button.component';
 import { UxgWizardPageDescriptionComponent } from './wizard-page/wizard-page-description.directive';
 import { UxgWizardPageTitleComponent } from './wizard-page/wizard-page-title.directive';

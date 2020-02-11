@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PopoverComponent } from './popover.component';
-import { MatMenuModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 
 describe('PopoverModule', () => {

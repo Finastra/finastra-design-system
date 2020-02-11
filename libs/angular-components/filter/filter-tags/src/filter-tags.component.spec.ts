@@ -3,13 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterTagsComponent } from './filter-tags.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {
-  MatIconModule,
-  MatChipsModule,
-  MatAutocompleteModule,
-  MatFormFieldModule,
-  MatInputModule
-} from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 describe('FilterTagsModule', () => {
   let component: FilterTagsComponent;

@@ -4,7 +4,7 @@ import { RepeaterComponent } from './repeater.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
 import { ComponentRepeaterComponent } from './component-repeater/component-repeater.component';
 import { Component, DebugElement, Type, NgModule, SimpleChange } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -133,7 +133,7 @@ describe('RepeaterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should repeate MockCardComponent', () => {
+  it('should repeat MockCardComponent', () => {
     const componentR: Type<any> = MockCardComponent;
 
     component.component = componentR;
