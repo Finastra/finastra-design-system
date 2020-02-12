@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'foundations-demo',
+  selector: 'ffdc-foundations-demo',
   templateUrl: './foundations-demo.component.html',
   styleUrls: ['./foundations-demo.component.scss']
 })
