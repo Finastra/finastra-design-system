@@ -1,0 +1,20 @@
+.example-row {
+    margin-bottom: 24px;
+}
+
+.mat-button-base + .mat-button-base,
+.mat-icon + .mat-icon,
+.mat-card + .mat-card {
+    margin-left: 8px;
+}
+
+.uxg-logo {
+    display: block;
+    & + .uxg-logo {
+        margin-top: 8px;
+    }
+}
+
+.uxg-logo-link {
+    text-indent: -9999px;
+}

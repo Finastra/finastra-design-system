@@ -1,0 +1,22 @@
+.example-card {
+    width: 400px;
+}
+
+.example-row {
+    // display: flex;
+    margin-bottom: 24px;
+}
+
+.mat-button-base + .mat-button-base,
+.mat-icon + .mat-icon,
+.mat-card + .mat-card {
+    margin-left: 8px;
+}
+
+.uxg-card-product {
+    display: inline-block;
+}
+
+.uxg-card-solution {
+    display: inline-block;
+}
