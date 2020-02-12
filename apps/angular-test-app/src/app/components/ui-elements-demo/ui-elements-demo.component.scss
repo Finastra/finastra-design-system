@@ -1,16 +1,17 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 .example-card {
     width: 400px;
 }
 
 .example-row {
-    // display: flex;
-    margin-bottom: 24px;
+    margin-bottom: $uxg-spacing-4;
 }
 
 .mat-button-base + .mat-button-base,
 .mat-icon + .mat-icon,
 .mat-card + .mat-card {
-    margin-left: 8px;
+    margin-left: $uxg-spacing-2;
 }
 
 .uxg-card-product {
