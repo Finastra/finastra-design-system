@@ -2,7 +2,7 @@
   <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
     <div class="filter-panel-side-header">
       <div class="filter-panel-side-title">
-        <h5 class="uxg-h5">View by (in progress)</h5>
+        <h5 class="uxg-h5">View by</h5>
         <button mat-button (click)="demoFilter.clearSelection(); groupValue = initialGroupState" color="accent" dense>
           <mat-icon>replay</mat-icon>
           Reset
@@ -16,15 +16,15 @@
         >
           <mat-button-toggle value="api">
             <mat-icon fontSet="material-icons-outlined">public</mat-icon>
-            <span>API</span>
+            <span> API</span>
           </mat-button-toggle>
           <mat-button-toggle value="solution">
             <mat-icon fontSet="material-icons-outlined">widgets</mat-icon>
-            <span>Solution</span>
+            <span> Solution</span>
           </mat-button-toggle>
-          <mat-button-toggle value="dataset">
+          <mat-button-toggle value="dataset" disabled>
             <mat-icon fontSet="material-icons-outlined">dns</mat-icon>
-            <span>Dataset</span>
+            <span> Dataset</span>
           </mat-button-toggle>
         </mat-button-toggle-group>
       </div>

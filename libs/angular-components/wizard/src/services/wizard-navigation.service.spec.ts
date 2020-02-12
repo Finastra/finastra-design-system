@@ -12,7 +12,7 @@ describe('WizardNavigationService', () => {
   );
 
   it('should be created', () => {
-    const service: WizardNavigationService = TestBed.get(WizardNavigationService);
+    const service: WizardNavigationService = TestBed.inject(WizardNavigationService);
     expect(service).toBeTruthy();
   });
 });

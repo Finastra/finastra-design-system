@@ -1,4 +1,4 @@
-import { Sort, SortDirection } from '@angular/material';
+import { Sort, SortDirection } from '@angular/material/sort';
 
 export interface UxgSort extends Sort {
   active: string;

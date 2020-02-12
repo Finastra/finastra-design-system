@@ -10,7 +10,9 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { MatTable, PageEvent, MatCheckbox } from '@angular/material';
+import { MatTable } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';

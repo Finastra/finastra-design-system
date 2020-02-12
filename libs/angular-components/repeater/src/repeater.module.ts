@@ -10,7 +10,6 @@ import { ComponentRepeaterComponent } from './component-repeater/component-repea
 @NgModule({
   declarations: [RepeaterComponent, ComponentRepeaterComponent],
   imports: [CommonModule, MatTableModule, ScrollingModule, ExperimentalScrollingModule],
-  exports: [RepeaterComponent],
-  entryComponents: [RepeaterComponent]
+  exports: [RepeaterComponent]
 })
 export class RepeaterModule {}

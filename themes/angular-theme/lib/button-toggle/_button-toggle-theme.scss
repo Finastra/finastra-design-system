@@ -4,22 +4,25 @@
 
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
-      color: mat-color($foreground, text, 0.6);
-      border-color: mat-color($foreground, text, 0.25);
-
-      &.mat-button-toggle-disabled {
-        color: mat-color($foreground, text, 0.38);
-      }
+      color: mat-color($foreground, secondary-text);
+      border-color: mat-color($foreground, divider);
 
       .mat-icon {
-        color: mat-color($foreground, text, 0.25);
+        color: mat-color($foreground, icon);
+      }
+
+      &.mat-button-toggle-disabled {
+        color: mat-color($foreground, secondary-text, 0.25);
+
+        .mat-icon {
+          color: mat-color($foreground, icon, 0.12);
+        }
       }
 
       &.mat-button-toggle-checked {
-        color: mat-color($primary, default);
         background-color: mat-color($primary, lighter);
-        border-color: mat-color($primary, lighter);
 
+        .mat-button-toggle-button,
         .mat-icon {
           color: mat-color($primary, default);
         }
@@ -29,7 +32,7 @@
 
   .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
-      border-color: mat-color($foreground, text, 0.25);
+      border-color: mat-color($foreground, divider);
 
       &.mat-button-toggle-checked {
         border-color: mat-color($primary, default);
@@ -45,6 +48,7 @@
         font-family: mat-font-family($config, subtitle-2);
         font-size: mat-font-size($config, subtitle-2);
         font-weight: mat-font-weight($config, subtitle-2);
+        line-height: mat-line-height($config, button-1);
       }
     }
 

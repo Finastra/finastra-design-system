@@ -2,3 +2,8 @@
 **/*.scss
 **/package-lock.json
 **/package.json
+
+# additional ignores
+.history
+dist
+coverage

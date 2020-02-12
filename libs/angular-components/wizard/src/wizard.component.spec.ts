@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UxgWizardComponent } from './wizard.component';
-import { MatIconModule, MatDividerModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('UxgWizardComponent', () => {
