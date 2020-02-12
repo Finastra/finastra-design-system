@@ -1,5 +1,7 @@
 @import 'angular-theme/lib/core/style/spacing';
 @import 'angular-theme/lib/core/layout/breakpoints';
+@import 'angular-theme/lib/core/typography/typography';
+$legend-bullet-size: 10px;
 .vector-map {
   display: block;
   position: relative;
@@ -42,14 +44,12 @@
   .color {
     border-radius: 50%;
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-top: 5px;
+    width: $legend-bullet-size;
+    height: $legend-bullet-size;
+    margin-top: $uxg-spacing-1;
   }
   .text {
     display: inline-block;
-    line-height: 20px;
-    font-size: 12px;
     margin-left: $uxg-spacing-2;
   }
 }
