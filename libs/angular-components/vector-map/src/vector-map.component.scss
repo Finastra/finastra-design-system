@@ -1,13 +1,14 @@
+@import '~@angular/material/theming';
 @import 'angular-theme/lib/core/style/spacing';
 @import 'angular-theme/lib/core/layout/breakpoints';
-@import 'angular-theme/lib/core/typography/typography';
+
 $legend-bullet-size: 10px;
+
 .vector-map {
   display: block;
   position: relative;
   height: 100%;
   padding: $uxg-spacing-3;
-  background-color: #fff;
 }
 
 .wrapper,
