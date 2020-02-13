@@ -37,6 +37,8 @@ import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
+import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
+import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 
 @NgModule({
   imports: [
@@ -77,7 +79,9 @@ import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.compon
     FieldMatcherComponent,
     FilterPanelDemoComponent,
     VectorMapDemoComponent,
-    WizardDemoComponent
+    WizardDemoComponent,
+    FoundationsDemoComponent,
+    UiElementsDemoComponent
   ],
   exports: [RouterModule]
 })

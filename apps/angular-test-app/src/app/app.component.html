@@ -8,6 +8,14 @@
         <h6 class="uxg-h6">DESIGN SYSTEM</h6>
       </div>
       <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
+        <h3 mat-subheader>Theme</h3>
+        <a mat-list-item routerLink="/foundations" routerLinkActive="uxg-list-item-selected">
+          <p>Foundations</p>
+        </a>
+        <a mat-list-item routerLink="/ui-elements" routerLinkActive="uxg-list-item-selected">
+          <p>UI Elements</p>
+        </a>
+        <h3 mat-subheader>Components</h3>
         <a mat-list-item routerLink="/global-search" routerLinkActive="uxg-list-item-selected">
           <p>Global Search</p>
         </a>
@@ -45,7 +53,7 @@
         </button>
         <div class="uxg-toolbar-logo-small"></div>
         <ul class="uxg-breadcrumb">
-          <li class="uxg-h6"><a routerLink="/">ANGULAR COMPONENTS</a></li>
+          <li class="uxg-h6"><a routerLink="/">DESIGN SYSTEM</a></li>
           <li *ngIf="title">{{ title }}</li>
         </ul>
         <span class="fill-remaining-space"></span>
