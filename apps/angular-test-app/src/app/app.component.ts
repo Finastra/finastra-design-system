@@ -11,7 +11,12 @@ export class AppComponent {
   title = '';
   dark = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private _element: ElementRef<HTMLElement>, private _overlayContainer: OverlayContainer) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private _element: ElementRef<HTMLElement>,
+    private _overlayContainer: OverlayContainer
+  ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.title = this.route.root.firstChild ? this.route.root.firstChild.snapshot.data['title'] : '';
