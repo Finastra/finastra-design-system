@@ -2,6 +2,7 @@ import { Component, Renderer2, Inject } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { nestedRoutes } from './nested-routes';
 
 @Component({
   selector: 'ffdc-root',
@@ -11,6 +12,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 export class AppComponent {
   title = '';
   dark = false;
+  nestedRoutes = nestedRoutes;
 
   constructor(
     private router: Router,
