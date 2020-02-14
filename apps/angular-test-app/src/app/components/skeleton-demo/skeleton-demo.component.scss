@@ -1,4 +1,8 @@
 :host {
+    mat-card {
+        width: 450px;
+    }
+
     ::ng-deep {
         .mat-card-header-text {
             width: 50%;
