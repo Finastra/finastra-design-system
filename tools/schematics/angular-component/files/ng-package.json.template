@@ -5,5 +5,4 @@
     "entryFile": "index.ts",
     "styleIncludePaths": ["../../../themes"]
   }
-  }
 }
