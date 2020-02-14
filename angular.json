@@ -488,6 +488,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "skeleton-text": {
+      "projectType": "library",
+      "root": "libs/angular-components/skeleton-text",
+      "sourceRoot": "libs/angular-components/skeleton-text",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/skeleton-text/tsconfig.lib.json",
+              "libs/angular-components/skeleton-text/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/skeleton-text/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/skeleton-text/jest.config.js",
+            "tsConfig": "libs/angular-components/skeleton-text/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/skeleton-text/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

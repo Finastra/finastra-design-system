@@ -1,0 +1,36 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+:host {
+  display: block;
+
+  width: 100%;
+  height: inherit;
+  line-height: 10px;
+
+  margin-top: $uxg-spacing-1;
+  margin-bottom: $uxg-spacing-1;
+
+  user-select: none;
+  pointer-events: none;
+
+  &[animated] {
+    position: relative;
+
+    background-size: 800px 104px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}

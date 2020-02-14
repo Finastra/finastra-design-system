@@ -39,6 +39,8 @@ import { routes } from './routes';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { SkeletonTextModule } from '@ffdc/uxg-angular-components';
+import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 
 @NgModule({
   imports: [
@@ -68,7 +70,8 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     FilterTagsModule,
     FilterTreeModule,
     VectorMapModule,
-    WizardModule
+    WizardModule,
+    SkeletonTextModule
   ],
   declarations: [
     HomeComponent,
@@ -81,7 +84,8 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     VectorMapDemoComponent,
     WizardDemoComponent,
     FoundationsDemoComponent,
-    UiElementsDemoComponent
+    UiElementsDemoComponent,
+    SkeletonDemoComponent
   ],
   exports: [RouterModule]
 })

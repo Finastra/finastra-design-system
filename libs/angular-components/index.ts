@@ -8,3 +8,4 @@ export * from './filter/filter-tags';
 export * from './vector-map';
 export * from './repeater';
 export * from './wizard';
+export * from './skeleton-text';

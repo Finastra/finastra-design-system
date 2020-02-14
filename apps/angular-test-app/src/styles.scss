@@ -6,6 +6,7 @@
 @import 'global-search/src/global-search.theme';
 @import 'filter/filter-tags/src/filter-tags.theme';
 @import 'filter/filter-tree/src/filter-tree.theme';
+@import 'skeleton-text/src/skeleton-text.theme';
 @import 'wizard/src/wizard.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
@@ -24,6 +25,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-filter-tree-theme($theme);
     @include uxg-global-search-theme($theme);
     @include uxg-wizard-theme($theme);
+    @include uxg-skeleton-text-colors($theme);
     @include theme-repeater-card-example($theme);
 }
 

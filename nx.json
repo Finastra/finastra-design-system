@@ -49,6 +49,9 @@
     },
     "wizard": {
       "tags": []
+    },
+    "skeleton-text": {
+      "tags": []
     }
   }
 }

@@ -9,6 +9,7 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'filter-panel', component: FilterPanelDemoComponent, data: { title: 'Filter Demo' } },
   { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
   { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
+  { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
   { path: 'foundations', component: FoundationsDemoComponent, data: { title: 'Foundations' } },
   { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } }
 ];
