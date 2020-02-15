@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skeleton-demo.component.scss']
 })
 export class SkeletonDemoComponent implements OnInit {
-
   constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 }
