@@ -39,12 +39,12 @@ export class AppComponent implements OnInit {
     this.dark = !darkTheme;
 
     localStorage.setItem(darkThemeLSName, this.dark.toString());
-    
+
     this.setTheme(this.dark);
   }
 
   getDarkThemeValue(): boolean {
-    return (localStorage.getItem(darkThemeLSName) === 'true');
+    return localStorage.getItem(darkThemeLSName) === 'true';
   }
 
   setTheme(dark: boolean) {
