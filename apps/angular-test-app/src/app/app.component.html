@@ -10,10 +10,10 @@
       </div>
       <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
         <ng-container *ngFor="let nestedRoute of nestedRoutes">
-          <h3 mat-subheader>{{nestedRoute.title}}</h3>
+          <h3 mat-subheader>{{ nestedRoute.title }}</h3>
           <ng-container *ngFor="let route of nestedRoute.routes">
             <a mat-list-item [routerLink]="route.path" routerLinkActive="uxg-list-item-selected">
-            <p>{{route.data?.title}}</p>
+              <p>{{ route.data?.title }}</p>
             </a>
           </ng-container>
         </ng-container>

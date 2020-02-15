@@ -23,22 +23,22 @@ imports: [
 
   <div class="home-list">
     <ng-container *ngFor="let nestedRoute of nestedRoutes">
-      <h5 class="uxg-h5">{{nestedRoute.title}}</h5>
+      <h5 class="uxg-h5">{{ nestedRoute.title }}</h5>
       <div class="home-list-grid">
-      <ng-container *ngFor="let route of nestedRoute.routes">
-        <mat-card [routerLink]="route.path">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of a {{route.data?.title}}" />
-          <mat-card-title-group>
-            <mat-card-title class="uxg-h4">{{route.data?.title}}</mat-card-title>
-            <mat-card-subtitle class="uxg-overline">
-              <mat-chip-list>
-                <mat-chip disabled dense>{{route.data?.title}}</mat-chip>
-              </mat-chip-list>
-            </mat-card-subtitle>
-          </mat-card-title-group>
-        </mat-card>
-      </ng-container>
-    </div>
+        <ng-container *ngFor="let route of nestedRoute.routes">
+          <mat-card [routerLink]="route.path">
+            <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of a {{ route.data?.title }}" />
+            <mat-card-title-group>
+              <mat-card-title class="uxg-h4">{{ route.data?.title }}</mat-card-title>
+              <mat-card-subtitle class="uxg-overline">
+                <mat-chip-list>
+                  <mat-chip disabled dense>{{ route.data?.title }}</mat-chip>
+                </mat-chip-list>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card>
+        </ng-container>
+      </div>
     </ng-container>
   </div>
 </div>
