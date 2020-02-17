@@ -14,4 +14,8 @@ window.matchMedia = jest.fn().mockImplementation(query => {
   };
 });
 
+import * as PlotlyJS from 'plotly.js';
+
+(global as any).Plotly = PlotlyJS;
+
 (window.URL as any).createObjectURL = jest.fn();
