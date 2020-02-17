@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  EventEmitter,
+  ViewEncapsulation,
+  ViewChild,
+  TemplateRef
+} from '@angular/core';
 import {
   UxgTableSelectEvent,
   TableComponent,
