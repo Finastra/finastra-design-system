@@ -14,7 +14,6 @@ import { Subscription } from 'rxjs';
 
 import { TooltipComponent } from '@angular/material/tooltip';
 import { PlotComponent } from 'angular-plotly.js';
-import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
 import { PaletteService, ColorScale, PaletteConfig, PALETTE_DEFAULT_CONFIG } from '@ffdc/uxg-angular-components/core';
 
@@ -49,9 +48,9 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   @Output() viewChange = new EventEmitter<VectorMapView>();
 
   countries: VectorMapCountry[] = [];
-  data: Partial<Plotly.Data>[] = [];
-  layout: Partial<Plotly.Layout> = {};
-  config: Partial<Plotly.Config> = {};
+  data: any[] = [];
+  layout: any = {};
+  config: any = {};
   style: Partial<CSSStyleDeclaration> = {};
   paletteConfig: PaletteConfig = PALETTE_DEFAULT_CONFIG;
   legend: VectorMapLegend[] = [];
@@ -143,11 +142,11 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     return this.dataSource instanceof Array ? this.dataSource : this.viewId ? this.dataSource.data[this.viewId] : [];
   }
 
-  setLayout(layout: Partial<Plotly.Layout> = {}) {
+  setLayout(layout: any = {}) {
     this.layout = { ...DEFAULT_LAYOUT, ...layout };
   }
 
-  setConfig(config: Partial<Plotly.Config> = {}) {
+  setConfig(config: any = {}) {
     this.config = { ...DEFAULT_CONFIG, ...config };
   }
 

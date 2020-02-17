@@ -27,7 +27,7 @@
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
-            "scripts": []
+            "scripts": ["node_modules/plotly.js/dist/plotly.min.js"]
           },
           "configurations": {
             "production": {
@@ -495,7 +495,8 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/angular:application": {

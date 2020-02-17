@@ -1,5 +1,5 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
-import { execute, NgPackagrBuilderOptions } from '@angular-devkit/build-ng-packagr';
+import { execute } from '@angular-devkit/build-ng-packagr';
 import { readFileSync, writeFileSync } from 'fs-extra';
 import { sync as globby } from 'globby';
 import { join, resolve } from 'path';
