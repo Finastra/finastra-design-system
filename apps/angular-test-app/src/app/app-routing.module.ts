@@ -22,6 +22,7 @@ import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tag
 import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 import { FilterGroupModule } from '@ffdc/uxg-angular-components/filter/filter-group';
 import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { MultiselectTagsModule } from '@ffdc/uxg-angular-components/filter/multiselect-tags';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -78,7 +79,8 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
     WizardModule,
     FilterGroupModule,
     FilterToggleModule,
-    SkeletonTextModule
+    SkeletonTextModule,
+    MultiselectTagsModule
   ],
   declarations: [
     HomeComponent,

@@ -10,6 +10,7 @@
 @import 'filter/filter-tree/src/filter-tree.theme';
 @import 'filter/filter-group/src/filter-group.theme';
 @import 'skeleton-text/src/skeleton-text.theme';
+@import 'filter/multiselect-tags/src/multiselect-tags.theme';
 @import 'wizard/src/wizard.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
@@ -22,12 +23,14 @@ $uxg-typography: uxg-typography-config();
 @include uxg-filter-group-typography($uxg-typography);
 @include uxg-global-search-typography($uxg-typography);
 @include uxg-chart-typography($uxg-typography);
+@include uxg-multiselect-tags-typography($uxg-typography);
 
 @mixin app-theme($theme) {
     @include uxg-material-theme($theme);
     @include uxg-filter-group-theme($theme);
     @include uxg-filter-tags-theme($theme);
     @include uxg-filter-tree-theme($theme);
+    @include uxg-multiselect-tags-theme($theme);
     @include uxg-global-search-theme($theme);
     @include uxg-vector-map-theme($theme);
     @include uxg-chart-theme($theme);

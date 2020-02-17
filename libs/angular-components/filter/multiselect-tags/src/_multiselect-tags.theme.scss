@@ -1,0 +1,19 @@
+@mixin uxg-multiselect-tags-theme($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+
+  .chip-text {
+    color: mat-color($foreground, secondary-text);
+
+    &.selected {
+      color: mat-color($primary);
+    }
+  }
+}
+
+@mixin uxg-multiselect-tags-typography($config) {
+
+  .chip-text {
+    @include mat-typography-level-to-styles($config, subtitle-2);
+  }
+}

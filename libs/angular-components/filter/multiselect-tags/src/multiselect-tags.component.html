@@ -1,0 +1,8 @@
+<div class="multiselect-tags-container">
+  <mat-chip-list #chipList aria-label="Multi tags selection" multiple="true">
+    <mat-chip dense *ngFor="let tag of data" class="mat-chip" [selected]="tag.isSelected" (click)="onTagSelection(tag)">
+      <mat-icon *ngIf="tag.isSelected" class="chip-icon">checkmark</mat-icon>
+      <span class="chip-text" [ngClass]="{ selected: tag.isSelected }">{{ tag.label }}</span>
+    </mat-chip>
+  </mat-chip-list>
+</div>
