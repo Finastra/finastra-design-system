@@ -1,4 +1,14 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewEncapsulation,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
 import { ResultGroup } from './global-search.model';
@@ -25,9 +35,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
 
   results$ = new Subject<any[]>();
 
-  constructor(
-    private overlayService: GlobalSearchOverlayService
-  ) {}
+  constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
 
@@ -42,7 +50,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
       itemsLayout: this.itemsLayout,
       searchTermChange: ($event: any) => this.searchTermChange.emit($event),
       itemClicked: ($event: any) => {
-        this.resultItemClick.emit($event)
+        this.resultItemClick.emit($event);
         if (this.ref) this.ref.close();
       },
       results: this.results$
@@ -50,12 +58,10 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes.hasOwnProperty('results') && !changes.results.firstChange) {
+    if (changes.hasOwnProperty('results') && !changes.results.firstChange) {
       this.results$.next(changes.results.currentValue);
     }
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 }

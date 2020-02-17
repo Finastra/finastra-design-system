@@ -16,7 +16,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
-import {ResultGroup} from '../../global-search.model';
+import { ResultGroup } from '../../global-search.model';
 
 const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 @Component({
@@ -55,7 +55,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Input()
   itemsLayout = this.config.itemsLayout;
 
-  @Input() results: Observable<ResultGroup[]>  = this.config.results;
+  @Input() results: Observable<ResultGroup[]> = this.config.results;
 
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
@@ -63,10 +63,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   private searchDebounce = 300;
 
-  constructor(
-    private readonly ref: SearchOverlayRef,
-    @Inject(SEARCH_CONFIG) private config: SearchConfig
-  ) {}
+  constructor(private readonly ref: SearchOverlayRef, @Inject(SEARCH_CONFIG) private config: SearchConfig) {}
 
   @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
     this.closeSearch();
@@ -82,16 +79,13 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
         this.searchTermChange.emit(value);
       });
 
-      this.results.subscribe(results => {
-        this.resultsFound = this.resultsShown = results.length;
-        const grouppedResults = this.groupByResults(
-          results,
-          this.groupBy
-        );
+    this.results.subscribe(results => {
+      this.resultsFound = this.resultsShown = results.length;
+      const grouppedResults = this.groupByResults(results, this.groupBy);
 
-        this.filterSize = 0;
-        this.results$.next(grouppedResults);
-      })
+      this.filterSize = 0;
+      this.results$.next(grouppedResults);
+    });
   }
 
   closeSearch() {

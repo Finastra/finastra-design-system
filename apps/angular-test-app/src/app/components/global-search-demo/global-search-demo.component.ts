@@ -10,10 +10,7 @@ import { ClientSideSearchService } from './client-side-search.service';
 export class GlobalSearchDemoComponent implements OnInit {
   results: any[] = [];
 
-  constructor(
-    private snackBar: MatSnackBar, 
-    public searchService: ClientSideSearchService
-    ) {}
+  constructor(private snackBar: MatSnackBar, public searchService: ClientSideSearchService) {}
 
   ngOnInit() {
     const documents = [
@@ -65,6 +62,6 @@ export class GlobalSearchDemoComponent implements OnInit {
 
   onSearchTermChange(value: string) {
     const results = this.searchService.search(value);
-    this.results = results.map(result => result.doc)
+    this.results = results.map(result => result.doc);
   }
 }
