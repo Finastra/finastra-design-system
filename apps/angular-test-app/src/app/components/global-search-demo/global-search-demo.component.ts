@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UxgGlobalSearch } from '@ffdc/uxg-angular-components/global-search';
+import { UxgGlobalSearch, ResultGroup } from '@ffdc/uxg-angular-components/global-search';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ClientSideSearchService } from './client-side-search.service';
 
 @Component({
   selector: 'ffdc-global-search-demo',
@@ -10,7 +11,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class GlobalSearchDemoComponent implements OnInit {
   @ViewChild('uxgGlobalSearch', { static: true }) globalSearch!: UxgGlobalSearch;
 
-  constructor(private snackBar: MatSnackBar) {}
+  results: ResultGroup[] = [];
+
+  constructor(
+    private snackBar: MatSnackBar, 
+    public searchService: ClientSideSearchService
+    ) {}
 
   ngOnInit() {
     const documents = [
@@ -49,10 +55,9 @@ export class GlobalSearchDemoComponent implements OnInit {
       }
     ];
 
-    const searchService = this.globalSearch.searchService;
-    searchService.initIndex(['nickname', 'id', 'accountType']).then(() => {
-      documents.forEach(function(item) {
-        searchService.addDoc(item);
+    this.searchService.initIndex(['nickname', 'id', 'accountType']).then(() => {
+      documents.forEach(item => {
+        this.searchService.addDoc(item);
       });
     });
 
@@ -61,7 +66,11 @@ export class GlobalSearchDemoComponent implements OnInit {
     });
   }
 
-  getEvent($event: any) {
-    console.log($event);
+  onSearchTermChange(value: string) {
+    const results = this.searchService.search(value);
+    this.results = results.map(result => ({
+      key: result.ref,
+      value: result.doc
+    }))
   }
 }

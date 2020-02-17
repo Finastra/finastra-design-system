@@ -6,8 +6,9 @@
   [itemDivider]="false"
   [groupDivider]="true"
   [maxItems]="5"
-  (searchTermChange)="getEvent($event)"
+  (searchTermChange)="onSearchTermChange($event)"
   itemsLayout="row"
+  [results]="results"
 >
   <button mat-stroked-button type="button" (click)="uxgGlobalSearch.openSearch()" color="accent" large>
     <mat-icon>search</mat-icon>&nbsp;Search
@@ -16,6 +17,9 @@
 
 <ng-template #tmpl let-result>
   <div>
-    {{ result | json }}
+    <mat-card class="mat-elevation-z3" dense>
+        <mat-card-title>{{result.nickname}}</mat-card-title>
+        <mat-card-subtitle>{{result.balances[0].amount}} {{result.accountType}}</mat-card-subtitle>
+    </mat-card>
   </div>
 </ng-template>

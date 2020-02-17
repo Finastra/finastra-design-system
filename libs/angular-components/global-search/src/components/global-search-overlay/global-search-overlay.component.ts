@@ -11,12 +11,12 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import { ReplaySubject, fromEvent } from 'rxjs';
+import { ReplaySubject, fromEvent, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { GlobalSearchService, ResultGroup } from '../../services/global-search.service';
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
+import {ResultGroup} from '../../global-search.model';
 
 const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 @Component({
@@ -36,7 +36,6 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   animationState: 'void' | 'enter' | 'leave' = 'enter';
 
   results$ = new ReplaySubject<ResultGroup[]>(1);
-  results: ResultGroup[] = [];
   resultsShown = 0;
   resultsFound = 0;
   filterSize = 0;
@@ -56,13 +55,15 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Input()
   itemsLayout = this.config.itemsLayout;
 
+  @Input() results: Observable<ResultGroup[]>  = this.config.results;
+
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
 
   private searchDebounce = 300;
 
   constructor(
-    public searchService: GlobalSearchService,
     private readonly ref: SearchOverlayRef,
     @Inject(SEARCH_CONFIG) private config: SearchConfig
   ) {}
@@ -78,23 +79,19 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
         const value = this.searchInput.nativeElement.value;
-        if (value) {
-          const results = this.searchService.search(value);
-
-          this.searchTermChange.emit(value);
-
-          this.resultsFound = this.resultsShown = results.length;
-          this.results = this.groupByResults(
-            results.map(r => r.doc),
-            this.groupBy
-          );
-
-          this.filterSize = 0;
-          this.results$.next(this.results);
-        } else {
-          this.results$.next();
-        }
+        this.searchTermChange.emit(value);
       });
+
+      this.results.subscribe(results => {
+        this.resultsFound = this.resultsShown = results.length;
+        const grouppedResults = this.groupByResults(
+          results.map(result => result.value),
+          this.groupBy
+        );
+
+        this.filterSize = 0;
+        this.results$.next(grouppedResults);
+      })
   }
 
   closeSearch() {
@@ -102,7 +99,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   onItemClick(item: any) {
-    this.searchService.onItemClick(item);
+    this.itemClicked.emit(item);
   }
 
   toggleFilter(resultGroup: ResultGroup) {
