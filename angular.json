@@ -18,15 +18,24 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": ["./themes/", "./libs/angular-components"]
+              "includePaths": [
+                "./themes/",
+                "./libs/angular-components"
+              ]
             },
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
             "main": "apps/angular-test-app/src/main.ts",
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
-            "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
-            "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
+            "assets": [
+              "apps/angular-test-app/src/favicon.ico",
+              "apps/angular-test-app/src/assets"
+            ],
+            "styles": [
+              "apps/angular-test-app/src/styles.scss",
+              "apps/angular-test-app/src/assets/fonts.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -77,8 +86,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/angular-test-app/tsconfig.app.json", "apps/angular-test-app/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**"]
+            "tsConfig": [
+              "apps/angular-test-app/tsconfig.app.json",
+              "apps/angular-test-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-test-app/**"
+            ]
           }
         },
         "test": {
@@ -113,7 +128,10 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-test-app-e2e/**"
+            ]
           }
         }
       }
@@ -134,8 +152,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
+            "tsConfig": [
+              "libs/angular-components/tsconfig.lib.json",
+              "libs/angular-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/**"
+            ]
           }
         }
       },
@@ -158,7 +182,10 @@
               "libs/angular-components/core/tsconfig.lib.json",
               "libs/angular-components/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/core/**"
+            ]
           }
         },
         "test": {
@@ -187,7 +214,11 @@
           "options": {
             "inputPath": "themes/angular-theme/",
             "outputPath": "dist/themes/angular-theme",
-            "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
+            "assets": [
+              "themes/angular-theme/lib",
+              "themes/angular-theme/assets",
+              "themes/angular-theme/*.scss"
+            ],
             "sourceMap": true,
             "outputStyle": "compressed"
           },
@@ -223,7 +254,10 @@
               "libs/angular-components/global-search/tsconfig.lib.json",
               "libs/angular-components/global-search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/global-search/**"
+            ]
           }
         },
         "test": {
@@ -254,7 +288,10 @@
               "libs/angular-components/popover/tsconfig.lib.json",
               "libs/angular-components/popover/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/popover/**"
+            ]
           }
         },
         "test": {
@@ -285,7 +322,10 @@
               "libs/angular-components/scroll-to-top/tsconfig.lib.json",
               "libs/angular-components/scroll-to-top/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/scroll-to-top/**"
+            ]
           }
         },
         "test": {
@@ -316,7 +356,10 @@
               "libs/angular-components/table/tsconfig.lib.json",
               "libs/angular-components/table/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/table/**"
+            ]
           }
         },
         "test": {
@@ -347,7 +390,10 @@
               "libs/angular-components/filter/filter-tags/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-tags/**"
+            ]
           }
         },
         "test": {
@@ -378,7 +424,10 @@
               "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-tree/**"
+            ]
           }
         },
         "test": {
@@ -409,7 +458,10 @@
               "libs/angular-components/repeater/tsconfig.lib.json",
               "libs/angular-components/repeater/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/repeater/**"
+            ]
           }
         },
         "test": {
@@ -440,7 +492,10 @@
               "libs/angular-components/vector-map/tsconfig.lib.json",
               "libs/angular-components/vector-map/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/vector-map/**"
+            ]
           }
         },
         "test": {
@@ -502,7 +557,10 @@
               "libs/angular-components/wizard/tsconfig.lib.json",
               "libs/angular-components/wizard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/wizard/**"
+            ]
           }
         },
         "test": {
@@ -557,7 +615,8 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/angular:application": {
