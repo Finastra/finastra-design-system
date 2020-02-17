@@ -21,7 +21,7 @@ import { PlotComponent } from 'angular-plotly.js';
 import { DOCUMENT } from '@angular/common';
 import { TraceComponent } from './directives/trace.component';
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
-import { CHART_DEFAULT_CONFIG } from './chart.models';
+import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
 import { PaletteService, PaletteConfig } from '@ffdc/uxg-angular-components/core';
@@ -35,31 +35,31 @@ import { Subscription, merge } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterContentInit {
-  @ViewChild(PlotComponent, { static: false }) plot: PlotComponent;
+  @ViewChild(PlotComponent, { static: false }) plot!: PlotComponent;
 
-  @ContentChildren(TraceComponent) traces: QueryList<TraceComponent>;
-  @ContentChild(LegendComponent, { static: false }) legend: LegendComponent;
-  @ContentChildren(GroupTracesComponent) groupTraces: QueryList<GroupTracesComponent>;
+  @ContentChildren(TraceComponent) traces?: QueryList<TraceComponent>;
+  @ContentChild(LegendComponent, { static: false }) legend?: LegendComponent;
+  @ContentChildren(GroupTracesComponent) groupTraces?: QueryList<GroupTracesComponent>;
 
   data: Partial<Plotly.Data>[] = [];
 
-  private _config: Partial<Plotly.Config>;
-  private _layout: Partial<Plotly.Layout>;
-  private _defaultLayout: Partial<Plotly.Layout>;
+  private _config?: Partial<Plotly.Config>;
+  private _layout?: Partial<Plotly.Layout>;
+  private _defaultLayout?: Partial<Plotly.Layout>;
   private paletteConfig: PaletteConfig = {};
   private subscriptions: Subscription[] = [];
 
   @Input()
   get config(): Partial<Plotly.Config> {
-    return !this._config ? CHART_DEFAULT_CONFIG : this._config;
+    return !this._config ? CHART_DEFAULT_PLOTLY_CONFIG : this._config;
   }
   set config(value: Partial<Plotly.Config>) {
-    this._config = this.merge_options(CHART_DEFAULT_CONFIG, value);
+    this._config = this.merge_options(CHART_DEFAULT_PLOTLY_CONFIG, value);
   }
 
   @Input()
   get layout(): Partial<Plotly.Layout> {
-    return this._layout;
+    return this._layout ? this._layout : {};
   }
   set layout(value: Partial<Plotly.Layout>) {
     if (!this._defaultLayout) this.setDefautLayout();
@@ -85,17 +85,20 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onDoubleClick: EventEmitter<Array<Object>>;
 
-  private lastClick = { time: null, item: null };
-  private clickTimer;
+  private lastClick = {
+    time: 0,
+    item: { selectedItems: [] as Array<Object>, clickedItems: [] as Array<Object> }
+  };
+  private clickTimer: any;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
     private paletteService: PaletteService,
     private cd: ChangeDetectorRef
   ) {
-    this.onClick = new EventEmitter<Partial<Array<Object>>>();
-    this.onSelected = new EventEmitter<Partial<Array<Object>>>();
-    this.onDoubleClick = new EventEmitter<Partial<Array<Object>>>();
+    this.onClick = new EventEmitter<Array<Object>>();
+    this.onSelected = new EventEmitter<Array<Object>>();
+    this.onDoubleClick = new EventEmitter<Array<Object>>();
   }
 
   ngOnInit(): void {
@@ -109,9 +112,19 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
   ngAfterContentInit(): void {
     this.refresh();
-    merge(this.groupTraces.changes, this.traces.changes).subscribe(value => {
-      this.refresh();
-    });
+    if (this.groupTraces && this.traces) {
+      merge(this.groupTraces.changes, this.traces.changes).subscribe(value => {
+        this.refresh();
+      });
+    } else if (this.traces) {
+      merge(this.traces.changes).subscribe(value => {
+        this.refresh();
+      });
+    } else if (this.groupTraces) {
+      merge(this.groupTraces.changes).subscribe(value => {
+        this.refresh();
+      });
+    }
   }
 
   ngOnDestroy(): void {
@@ -123,9 +136,10 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     this.setLayout();
   }
 
-  onSelect({ points: points }) {
+  onSelect(event: any) {
+    const points: any = event.points;
     const items = { selectedItems: new Array<object>(), clickedItems: new Array<object>() };
-    points.forEach(item => {
+    points.forEach((item: any) => {
       if (item.pointIndex !== undefined) {
         let dimension = item.data.orientation === 'v' ? item.data.x[item.pointIndex] : item.data.y[item.pointIndex];
         let measure = item.data.orientation === 'v' ? item.data.y[item.pointIndex] : item.data.x[item.pointIndex];
@@ -153,7 +167,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
         // Get items selected
         if (item.data.selectedpoints) {
-          item.data.selectedpoints.forEach(index => {
+          item.data.selectedpoints.forEach((index: any) => {
             dimension = item.data.orientation === 'v' ? item.data.x[index] : item.data.y[index];
             measure = item.data.orientation === 'v' ? item.data.y[index] : item.data.x[index];
             items.selectedItems.push({
@@ -188,7 +202,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
       this.lastClick.time = clickTime;
       this.lastClick.item = items;
       this.clickTimer = setTimeout(() => {
-        this.lastClick.item = null;
+        this.lastClick.item = { selectedItems: [], clickedItems: [] };
         this.onClick.emit(items.selectedItems.length ? items.clickedItems : []);
         this.onSelected.emit(items.selectedItems);
         clearTimeout(this.clickTimer);
@@ -202,8 +216,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     this.cd.markForCheck();
   }
 
-  private merge_options(obj1: object, obj2: object): object {
-    const obj3 = {};
+  private merge_options(obj1: { [key: string]: string } | any, obj2: { [key: string]: string } | any): object {
+    const obj3: { [key: string]: string } = {};
     if (typeof obj2 === 'undefined') {
       return obj1;
     }
@@ -307,21 +321,23 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
   private setLayout(layout?: Partial<Plotly.Layout>): void {
     if (!this._layout) this._layout = this._defaultLayout;
-    if (this.groupTraces && !this._layout.grid) {
-      let row = 0,
-        column = 0;
-      this.groupTraces.forEach(grpTraces => {
-        row = row < grpTraces.rowPosition ? grpTraces.rowPosition : row;
-        column = column < grpTraces.columnPosition ? grpTraces.columnPosition : column;
-      });
-      this._layout.grid = { rows: Number(row) + 1, columns: Number(column) + 1, pattern: 'independent' };
-    }
-    this._layout.legend = !!this.legend;
-    if (this.legend) {
-      this._layout.legend = { ...this._layout.legend, ...this.legend.getLegendPlotly() };
-    }
-    if (this.paletteConfig.colorWay) {
-      this._layout.colorway = this.paletteConfig.colorWay;
+    if (this._layout) {
+      if (this.groupTraces && !this._layout.grid) {
+        let row = 0,
+          column = 0;
+        this.groupTraces.forEach((grpTraces: any) => {
+          row = row < grpTraces.rowPosition ? grpTraces.rowPosition : row;
+          column = column < grpTraces.columnPosition ? grpTraces.columnPosition : column;
+        });
+        this._layout.grid = { rows: Number(row) + 1, columns: Number(column) + 1, pattern: 'independent' };
+      }
+      this._layout.legend = !!this.legend;
+      if (this.legend) {
+        this._layout.legend = { ...this._layout.legend, ...this.legend.getLegendPlotly() };
+      }
+      if (this.paletteConfig.colorWay) {
+        this._layout.colorway = this.paletteConfig.colorWay;
+      }
     }
 
     if (layout) {
@@ -337,7 +353,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
         })
         .filter(trace => !!trace);
     } else if (this.groupTraces && this.groupTraces.length) {
-      let datas = [];
+      let datas: Array<object> = [];
       let nbGrp = 1;
       this.groupTraces.forEach((grpTrace: GroupTracesComponent) => {
         datas = [

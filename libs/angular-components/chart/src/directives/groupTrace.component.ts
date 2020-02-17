@@ -7,10 +7,10 @@ import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
   template: ''
 })
 export class GroupTracesComponent {
-  @Input() columnPosition: number;
-  @Input() rowPosition: number;
+  @Input() columnPosition?: number;
+  @Input() rowPosition?: number;
 
-  @ContentChildren(TraceComponent) traces: QueryList<TraceComponent>;
+  @ContentChildren(TraceComponent) traces!: QueryList<TraceComponent>;
 
   getTraces(): Partial<Plotly.Data>[] {
     return this.traces

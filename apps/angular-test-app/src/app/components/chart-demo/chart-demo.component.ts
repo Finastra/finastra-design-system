@@ -65,15 +65,15 @@ export class ChartDemoComponent {
     }
   ];
 
-  onClick(event) {
+  onClick(event: Array<object>) {
     console.log('simple click: ', event);
   }
 
-  onSelected(event) {
+  onSelected(event: Array<object>) {
     console.log('simple click list items selected: ', event);
   }
 
-  onDoubleClick(event) {
+  onDoubleClick(event: Array<object>) {
     console.log('double click: ', event);
   }
 }

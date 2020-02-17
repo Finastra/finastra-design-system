@@ -5,6 +5,7 @@
 
 @import 'global-search/src/global-search.theme';
 @import 'vector-map/src/vector-map.theme';
+@import 'chart/src/chart.theme';
 @import 'filter/filter-tags/src/filter-tags.theme';
 @import 'filter/filter-tree/src/filter-tree.theme';
 @import 'wizard/src/wizard.theme';
@@ -25,6 +26,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-filter-tree-theme($theme);
     @include uxg-global-search-theme($theme);
     @include uxg-vector-map-theme($theme);
+    @include uxg-chart-theme($theme);
     @include uxg-wizard-theme($theme);
     @include theme-repeater-card-example($theme);
 }

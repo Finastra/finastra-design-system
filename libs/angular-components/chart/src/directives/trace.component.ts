@@ -7,14 +7,14 @@ import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
   template: ''
 })
 export class TraceComponent {
-  @Input() dimension: Array<string | number>;
-  @Input() dimensionName: string;
-  @Input() measure: Array<string | number>;
-  @Input() measureName: string;
-  @Input() selectedPoints: Array<number>;
-  @Input() type: ChartType;
+  @Input() dimension!: Array<string | number>;
+  @Input() dimensionName?: string;
+  @Input() measure!: Array<string | number>;
+  @Input() measureName?: string;
+  @Input() selectedPoints?: Array<number>;
+  @Input() type: ChartType = ChartType.bar;
   @Input() orientation: ChartOrientation;
-  @Input() options: Object;
+  @Input() options?: Object;
 
   constructor() {
     this.orientation = ChartOrientation.vertical;
@@ -40,7 +40,7 @@ export class TraceComponent {
       return trace;
     }
     console.error('Chart type: ' + this.type + " doesn't exist!");
-    return undefined;
+    return {};
   }
 
   getPlotlyTypeLayout(): Partial<Plotly.Layout> {

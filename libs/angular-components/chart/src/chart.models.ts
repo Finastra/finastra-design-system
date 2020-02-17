@@ -1,6 +1,6 @@
 import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
-export const CHART_DEFAULT_LAYOUT: Partial<Plotly.Layout> = {
+export const CHART_DEFAULT_PLOTLY_LAYOUT: Partial<Plotly.Layout> = {
   autosize: true,
   margin: {
     l: 0,
@@ -11,7 +11,7 @@ export const CHART_DEFAULT_LAYOUT: Partial<Plotly.Layout> = {
   }
 };
 
-export const CHART_DEFAULT_CONFIG: Partial<Plotly.Config> = {
+export const CHART_DEFAULT_PLOTLY_CONFIG: Partial<Plotly.Config> = {
   displaylogo: false,
   responsive: true
 };
