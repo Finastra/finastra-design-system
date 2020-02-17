@@ -20,7 +20,6 @@ import {
 import { PlotComponent } from 'angular-plotly.js';
 import { DOCUMENT } from '@angular/common';
 import { TraceComponent } from './directives/trace.component';
-import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
@@ -41,27 +40,27 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   @ContentChild(LegendComponent, { static: false }) legend?: LegendComponent;
   @ContentChildren(GroupTracesComponent) groupTraces?: QueryList<GroupTracesComponent>;
 
-  data: Partial<Plotly.Data>[] = [];
+  data: any[] = [];
 
-  private _config?: Partial<Plotly.Config>;
-  private _layout?: Partial<Plotly.Layout>;
-  private _defaultLayout?: Partial<Plotly.Layout>;
+  private _config?: any;
+  private _layout?: any;
+  private _defaultLayout?: any;
   private paletteConfig: PaletteConfig = {};
   private subscriptions: Subscription[] = [];
 
   @Input()
-  get config(): Partial<Plotly.Config> {
+  get config(): any {
     return !this._config ? CHART_DEFAULT_PLOTLY_CONFIG : this._config;
   }
-  set config(value: Partial<Plotly.Config>) {
+  set config(value: any) {
     this._config = this.merge_options(CHART_DEFAULT_PLOTLY_CONFIG, value);
   }
 
   @Input()
-  get layout(): Partial<Plotly.Layout> {
+  get layout(): any {
     return this._layout ? this._layout : {};
   }
-  set layout(value: Partial<Plotly.Layout>) {
+  set layout(value: any) {
     if (!this._defaultLayout) this.setDefautLayout();
     this._layout = this.merge_options(this.merge_options(this._defaultLayout, this._layout), value);
   }
@@ -319,7 +318,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     themeContent.removeChild(tmpContent);
   }
 
-  private setLayout(layout?: Partial<Plotly.Layout>): void {
+  private setLayout(layout?: any): void {
     if (!this._layout) this._layout = this._defaultLayout;
     if (this._layout) {
       if (this.groupTraces && !this._layout.grid) {
