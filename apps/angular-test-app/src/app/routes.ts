@@ -6,6 +6,7 @@ import { PopoverDemoComponent } from './components/popover-demo/popover-demo.com
 import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
