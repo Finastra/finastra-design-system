@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MatChipSelectionChange } from '@angular/material/chips';
 
 export interface MultiselectTag {
   label: string;
@@ -18,7 +17,8 @@ interface UXGMultiSelectFilterChanges {
 })
 export class MultiselectTagsComponent implements OnInit {
   private _data: MultiselectTag[] = [];
-
+  @Input('dense') dense = null;
+  @Input('large') large = null;
   @Input()
   set data(data: MultiselectTag[]) {
     this._data = data;

@@ -41,6 +41,20 @@
 
         <div class="filter-panel-tree">
           <div class="filter-panel-tree-title">
+            <h5 class="uxg-h5">Usage Type</h5>
+          </div>
+
+          <uxg-multiselect-tags
+            [data]="multiselectTagsSampleData"
+            (changes)="updateMultiselectTags($event)"
+            large
+            #demoMultiselectTags
+          >
+          </uxg-multiselect-tags>
+        </div>
+
+        <div class="filter-panel-tree">
+          <div class="filter-panel-tree-title">
             <h5 class="uxg-h5">Category</h5>
             <button mat-button (click)="demoFilter.clearSelection()" *ngIf="treeFilter?.length" color="accent" dense>
               Clear All
@@ -72,6 +86,9 @@
 
         <h5 class="uxg-h5">Filter Tags Results</h5>
         <pre>{{ tagFilter | json }}</pre>
+
+        <h5 class="uxg-h5">Filter Multiselect Tags Results</h5>
+        <pre>{{ chosenMultiselectTags | json }}</pre>
 
         <h5 class="uxg-h5">Filter Tree Results</h5>
         <pre>{{ treeFilter | json }}</pre>
