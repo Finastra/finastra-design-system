@@ -312,8 +312,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
         size: globalStyled.fontSize,
         color: globalStyled.color
       },
-      bargap: parseFloat(axisStyled.margin.replace('px', '')) / 100,
-      bargroupgap: parseFloat(axisStyled.padding.replace('px', '')) / 100
+      bargap: parseFloat(axisStyled.margin ? axisStyled.margin.replace('px', '') : '10') / 100,
+      bargroupgap: parseFloat(axisStyled.padding ? axisStyled.padding.replace('px', '') : '10') / 100
     };
     themeContent.removeChild(tmpContent);
   }
