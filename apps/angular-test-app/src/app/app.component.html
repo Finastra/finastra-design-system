@@ -6,7 +6,6 @@
           <span class="uxg-h5 uxg-card-product-name">DS</span>
         </mat-card>
         <h6 class="uxg-h6">DESIGN SYSTEM</h6>
-        <mat-slide-toggle class="theme-toggle" (change)="toggleTheme()">Dark</mat-slide-toggle>
       </div>
       <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
         <h3 mat-subheader>Theme</h3>
@@ -58,6 +57,7 @@
           <li *ngIf="title">{{ title }}</li>
         </ul>
         <span class="fill-remaining-space"></span>
+        <mat-slide-toggle class="theme-toggle" [checked]="dark" (change)="toggleTheme()">Dark</mat-slide-toggle>
       </mat-toolbar>
       <div class="app-content">
         <router-outlet></router-outlet>

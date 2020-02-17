@@ -1,14 +1,16 @@
-import { Component, Renderer2, Inject } from '@angular/core';
+import { Component, Renderer2, Inject, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { OverlayContainer } from '@angular/cdk/overlay';
+
+const darkThemeLSName = 'darkTheme';
 
 @Component({
   selector: 'ffdc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = '';
   dark = false;
 
@@ -26,12 +28,29 @@ export class AppComponent {
     });
   }
 
+  ngOnInit() {
+    const darkTheme = this.getDarkThemeValue();
+    this.dark = darkTheme;
+    this.setTheme(darkTheme);
+  }
+
   toggleTheme() {
+    const darkTheme = this.getDarkThemeValue();
+    this.dark = !darkTheme;
+
+    localStorage.setItem(darkThemeLSName, this.dark.toString());
+
+    this.setTheme(this.dark);
+  }
+
+  getDarkThemeValue(): boolean {
+    return localStorage.getItem(darkThemeLSName) === 'true';
+  }
+
+  setTheme(dark: boolean) {
     const darkThemeClass = 'uxg-dark-theme';
 
-    this.dark = !this.dark;
-
-    if (this.dark) {
+    if (dark) {
       this.renderer.addClass(this.document.body, darkThemeClass);
       this._overlayContainer.getContainerElement().classList.add(darkThemeClass);
     } else {
