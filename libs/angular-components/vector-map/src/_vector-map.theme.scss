@@ -1,0 +1,11 @@
+@mixin uxg-vector-map-colors($theme) {
+  $background: map-get($theme, background);
+
+  .vector-map {
+    background-color: map-get($background, card);
+  }
+}
+
+@mixin uxg-vector-map-theme($theme) {
+  @include uxg-vector-map-colors($theme);
+}
