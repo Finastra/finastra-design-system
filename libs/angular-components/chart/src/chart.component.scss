@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 uxg-chart {
     flex: auto;
     display: flex;
@@ -8,4 +10,9 @@ uxg-chart {
         flex-direction: column;
         flex: auto;
     }
+    
+}
+.chart-font-axis{
+    padding: $uxg-spacing-4;
+    margin: $uxg-spacing-5;
 }

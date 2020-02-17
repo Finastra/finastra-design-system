@@ -18,6 +18,7 @@ $uxg-typography: uxg-typography-config();
 
 @include uxg-filter-tags-typography($uxg-typography);
 @include uxg-global-search-typography($uxg-typography);
+@include uxg-chart-typography($uxg-typography);
 
 @mixin app-theme($theme) {
     @include uxg-material-theme($theme);

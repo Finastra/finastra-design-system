@@ -1,13 +1,22 @@
+@mixin uxg-chart-typography($config) {
+    .chart-font, .chart-font-axis, .chart-font-legend {
+        font: {
+            family: mat-font-family($config, body-1);
+            size: mat-font-size($config, body-1);
+            weight: mat-font-weight($config, body-1);
+        };
+    }
+}
+
 @mixin uxg-chart-theme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
-    $config: mat-typography-config();
     
     $palette: (
-        1: map-get($uxg-violet, 500),
-        2: map-get($uxg-fuchsia, 500),
+        1: mat-color($primary, default),
+        2: mat-color($accent, default),
         3: map-get($uxg-crimson, 500),
         4: map-get($uxg-grass, 100),
         5: map-get($uxg-amber, 100),
@@ -32,23 +41,13 @@
     }
     
     .chart-font, .chart-font-axis, .chart-font-legend {
-        font: {
-            family: mat-font-family($config, body-1);
-            size: mat-font-size($config, body-1);
-            weight: mat-font-weight($config, body-1);
-        };
         color: map-get($foreground, text);
         background-color: map-get($background, 'background');
     }
     
-    .chart-font-axis{
-        padding: 30px;
-        margin: 40px;
-    }
-    
     @each $level, $color in $palette {
         .palette-#{$level} {
-        background-color: $color;
+            background-color: $color;
         }
     }
 }
