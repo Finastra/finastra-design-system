@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UxgGlobalSearch, ResultGroup } from '@ffdc/uxg-angular-components/global-search';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientSideSearchService } from './client-side-search.service';
 
@@ -9,9 +8,7 @@ import { ClientSideSearchService } from './client-side-search.service';
   styleUrls: ['./global-search-demo.component.scss']
 })
 export class GlobalSearchDemoComponent implements OnInit {
-  @ViewChild('uxgGlobalSearch', { static: true }) globalSearch!: UxgGlobalSearch;
-
-  results: ResultGroup[] = [];
+  results: any[] = [];
 
   constructor(
     private snackBar: MatSnackBar, 
@@ -60,17 +57,14 @@ export class GlobalSearchDemoComponent implements OnInit {
         this.searchService.addDoc(item);
       });
     });
+  }
 
-    this.globalSearch.resultItemClick.subscribe((item: any) => {
-      this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
-    });
+  onResultItemClick(item: any) {
+    this.snackBar.open(`You clicked on '${item.nickname}'`, 'CONFIRM', { duration: 3000 });
   }
 
   onSearchTermChange(value: string) {
     const results = this.searchService.search(value);
-    this.results = results.map(result => ({
-      key: result.ref,
-      value: result.doc
-    }))
+    this.results = results.map(result => result.doc)
   }
 }

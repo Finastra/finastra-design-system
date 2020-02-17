@@ -26,15 +26,34 @@
         </div>
         <!-- results area -->
         <div fxFlex="showFilter ? 70 : 100" class="uxg-global-search-results-area">
-          <ng-container *ngFor="let resultGroup of results">
-            <ng-container *ngIf="filterSize === 0 || (resultGroup.selected && filterSize)">
-              <div
-                *ngIf="resultGroup.key !== 'undefined' && resultGroup.value.length"
-                class="uxg-global-search-result-group-header"
-              >
-                <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
-                <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
-              </div>
+          <ng-container *ngIf="groupBy">
+            <ng-container *ngFor="let resultGroup of results">
+              <ng-container *ngIf="filterSize === 0 || (resultGroup.selected && filterSize)">
+                <div
+                  *ngIf="resultGroup.key !== 'undefined' && resultGroup.value.length"
+                  class="uxg-global-search-result-group-header"
+                >
+                  <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
+                  <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
+                </div>
+                <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
+                  <div *ngFor="let result of resultGroup.value; let last = last">
+                    <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
+                      <ng-container
+                        *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
+                      >
+                      </ng-container>
+                    </div>
+                    <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
+                  </div>
+                </div>
+                <mat-divider *ngIf="groupDivider"></mat-divider>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="!groupBy">
+            <ng-container *ngFor="let resultGroup of results">
               <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
                 <div *ngFor="let result of resultGroup.value; let last = last">
                   <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
@@ -46,7 +65,6 @@
                   <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
                 </div>
               </div>
-              <mat-divider *ngIf="groupDivider"></mat-divider>
             </ng-container>
           </ng-container>
         </div>

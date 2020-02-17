@@ -15,15 +15,15 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
   @Input() resultItemTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
-  @Input() itemDivider = true;
-  @Input() groupDivider = true;
+  @Input() itemDivider = false;
+  @Input() groupDivider = false;
   @Input() itemsLayout: 'row' | 'column' = 'column';
-  @Input() results: ResultGroup[] = [];
+  @Input() results: any[] = [];
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
 
-  results$ = new Subject<ResultGroup[]>();
+  results$ = new Subject<any[]>();
 
   constructor(
     private overlayService: GlobalSearchOverlayService

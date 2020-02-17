@@ -1,17 +1,30 @@
 <uxg-global-search
   #uxgGlobalSearch
   [resultItemTemplate]="tmpl"
-  [groupBy]="'accountType'"
-  [showFilter]="true"
-  [itemDivider]="false"
-  [groupDivider]="true"
-  [maxItems]="5"
   (searchTermChange)="onSearchTermChange($event)"
-  itemsLayout="row"
   [results]="results"
+  (resultItemClick)="onResultItemClick($event)"
 >
   <button mat-stroked-button type="button" (click)="uxgGlobalSearch.openSearch()" color="accent" large>
     <mat-icon>search</mat-icon>&nbsp;Search
+  </button>
+</uxg-global-search>
+
+<br />
+<br />
+
+<uxg-global-search
+  #uxgGlobalSearchGroupped
+  [resultItemTemplate]="tmpl"
+  [groupBy]="'accountType'"
+  [showFilter]="true"
+  [groupDivider]="true"
+  (searchTermChange)="onSearchTermChange($event)"
+  [results]="results"
+  (resultItemClick)="onResultItemClick($event)"
+>
+  <button mat-stroked-button type="button" (click)="uxgGlobalSearchGroupped.openSearch()" color="accent" large>
+    <mat-icon>search</mat-icon>&nbsp;Search (groupped)
   </button>
 </uxg-global-search>
 

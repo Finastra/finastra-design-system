@@ -85,7 +85,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       this.results.subscribe(results => {
         this.resultsFound = this.resultsShown = results.length;
         const grouppedResults = this.groupByResults(
-          results.map(result => result.value),
+          results,
           this.groupBy
         );
 
