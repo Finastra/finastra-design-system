@@ -22,74 +22,23 @@ imports: [
   </div>
 
   <div class="home-list">
-    <h5 class="uxg-h5">Components</h5>
-    <div class="home-list-grid">
-      <mat-card routerLink="/global-search">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Global Search</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>Search</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-      <mat-card routerLink="/table">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Table</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>Table</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-      <mat-card routerLink="/popover">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Popover</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>Popover</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-      <mat-card routerLink="/repeater">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Repeater</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>Repeater</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-      <mat-card routerLink="/filter-panel">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Filter panel</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>Filter</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-      <mat-card routerLink="/vector-map">
-        <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of an avatar" />
-        <mat-card-title-group>
-          <mat-card-title class="uxg-h4">Vector Map</mat-card-title>
-          <mat-card-subtitle class="uxg-overline">
-            <mat-chip-list>
-              <mat-chip disabled dense>vector-map</mat-chip>
-            </mat-chip-list>
-          </mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card>
-    </div>
+    <ng-container *ngFor="let nestedRoute of nestedRoutes">
+      <h5 class="uxg-h5">{{ nestedRoute.title }}</h5>
+      <div class="home-list-grid">
+        <ng-container *ngFor="let route of nestedRoute.routes">
+          <mat-card [routerLink]="route.path">
+            <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of a {{ route.data?.title }}" />
+            <mat-card-title-group>
+              <mat-card-title class="uxg-h4">{{ route.data?.title }}</mat-card-title>
+              <mat-card-subtitle class="uxg-overline">
+                <mat-chip-list>
+                  <mat-chip disabled dense>{{ route.data?.title }}</mat-chip>
+                </mat-chip-list>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>
