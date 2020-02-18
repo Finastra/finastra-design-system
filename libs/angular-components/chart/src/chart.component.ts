@@ -45,7 +45,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   private _config?: any;
   private _layout?: any;
   private _defaultLayout?: any;
-  private paletteConfig: PaletteConfig = {};
+  private paletteConfig?: PaletteConfig;
   private subscriptions: Subscription[] = [];
 
   @Input()
@@ -334,7 +334,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
       if (this.legend) {
         this._layout.legend = { ...this._layout.legend, ...this.legend.getLegendPlotly() };
       }
-      if (this.paletteConfig.colorWay) {
+      if (this.paletteConfig && this.paletteConfig.colorWay) {
         this._layout.colorway = this.paletteConfig.colorWay;
       }
     }
