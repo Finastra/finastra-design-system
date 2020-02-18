@@ -20,15 +20,15 @@ import { ChartType, CHART_PLOLTLY_TYPE } from './chart.models';
   template: ``
 })
 class TestContainerComponent implements AfterViewInit {
-  @ViewChild('chart', { static: false }) chart: ChartComponent;
+  @ViewChild('chart', { static: false }) chart!: ChartComponent;
 
-  traces = [];
-  traces2 = [];
-  columnPosition = undefined;
-  rowPosition = undefined;
-  columnPosition2 = undefined;
-  rowPosition2 = undefined;
-  legendPosition = LegendPosition.verticalRightTop;
+  traces: any[] = [];
+  traces2: any[] = [];
+  columnPosition: any = undefined;
+  rowPosition: any = undefined;
+  columnPosition2: any = undefined;
+  rowPosition2: any = undefined;
+  legendPosition: LegendPosition = LegendPosition.verticalRightTop;
 
   ngAfterViewInit() {}
 }
@@ -67,7 +67,7 @@ describe('Chart Component', () => {
           </uxg-chart>`
       }
     });
-    const trace = {
+    const trace: any = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
@@ -83,7 +83,7 @@ describe('Chart Component', () => {
         labels: trace.dimension,
         values: trace.measure,
         name: trace.measureName,
-        ...CHART_PLOLTLY_TYPE[trace.type].trace,
+        ...CHART_PLOLTLY_TYPE[trace.type as ChartType].trace,
         orientation: 'v'
       }
     ];

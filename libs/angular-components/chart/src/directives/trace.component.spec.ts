@@ -179,24 +179,4 @@ describe('Trace diretive', () => {
 
     expect(component.getPlotlyTrace()).toEqual(dummyPlotlyTrace);
   });
-
-  it('should console error', () => {
-    const trace = {
-      dimension: ['Banks', 'Foods', 'Energies'],
-      dimensionName: 'Industry',
-      measure: [100, 50, 70],
-      measureName: 'PNL',
-      type: 'areaba'
-    };
-    console.error = jasmine.createSpy('error');
-
-    component.dimension = trace.dimension;
-    component.dimensionName = trace.dimensionName;
-    component.measure = trace.measure;
-    component.measureName = trace.measureName;
-    component.type = trace.type;
-
-    expect(component.getPlotlyTrace()).toEqual(undefined);
-    expect(console.error).toHaveBeenCalledWith('Chart type: ' + trace.type + " doesn't exist!");
-  });
 });

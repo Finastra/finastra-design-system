@@ -1,5 +1,3 @@
-import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
-
 export const CHART_DEFAULT_PLOTLY_LAYOUT = {
   autosize: true,
   margin: {
@@ -44,8 +42,8 @@ export enum ChartOrientation {
 export interface ChartTypeConvertion {
   name: string;
   group: string;
-  trace: Plotly.Data;
-  layout?: Plotly.Layout;
+  trace: any;
+  layout?: any;
 }
 
 export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {

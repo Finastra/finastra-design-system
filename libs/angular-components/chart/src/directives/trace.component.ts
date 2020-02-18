@@ -1,6 +1,5 @@
 import { Input, Component } from '@angular/core';
 import { ChartType, CHART_PLOLTLY_TYPE, ChartOrientation } from '../chart.models';
-import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
 @Component({
   selector: 'uxg-trace',
@@ -20,7 +19,7 @@ export class TraceComponent {
     this.orientation = ChartOrientation.vertical;
   }
 
-  getPlotlyTrace(): Partial<Plotly.Data> {
+  getPlotlyTrace(): any {
     const plotlyType = CHART_PLOLTLY_TYPE[this.type];
     if (plotlyType) {
       const trace = {
@@ -43,7 +42,7 @@ export class TraceComponent {
     return {};
   }
 
-  getPlotlyTypeLayout(): Partial<Plotly.Layout> {
+  getPlotlyTypeLayout(): any {
     const plotlyType = CHART_PLOLTLY_TYPE[this.type];
     return plotlyType && plotlyType.layout ? plotlyType.layout : {};
   }

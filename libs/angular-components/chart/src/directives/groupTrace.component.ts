@@ -1,6 +1,5 @@
 import { Input, ContentChildren, QueryList, Component } from '@angular/core';
 import { TraceComponent } from './trace.component';
-import { Plotly } from 'angular-plotly.js/src/app/shared/plotly.interface';
 
 @Component({
   selector: 'uxg-group-traces',
@@ -12,7 +11,7 @@ export class GroupTracesComponent {
 
   @ContentChildren(TraceComponent) traces!: QueryList<TraceComponent>;
 
-  getTraces(): Partial<Plotly.Data>[] {
+  getTraces(): any[] {
     return this.traces
       .map(trace => {
         const t = trace.getPlotlyTrace();

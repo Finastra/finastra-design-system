@@ -20,11 +20,11 @@ import { ChartType, CHART_PLOLTLY_TYPE } from '../chart.models';
   `
 })
 class TestContainerComponent implements AfterViewInit {
-  @ViewChild('grpTrace', { static: false }) groupeTrace: GroupTracesComponent;
+  @ViewChild('grpTrace', { static: false }) groupeTrace!: GroupTracesComponent;
 
-  traces = [];
-  columnPosition = undefined;
-  rowPosition = undefined;
+  traces: any[] = [];
+  columnPosition: any = undefined;
+  rowPosition: any = undefined;
 
   ngAfterViewInit() {}
 }
