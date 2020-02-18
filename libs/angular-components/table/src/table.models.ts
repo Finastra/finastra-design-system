@@ -1,4 +1,5 @@
 import { Sort, SortDirection } from '@angular/material/sort';
+import { EventEmitter } from '@angular/core';
 
 export interface UxgSort extends Sort {
   active: string;
@@ -12,6 +13,7 @@ export interface UxgColumn {
   align?: 'left' | 'right' | 'center'; // text align in cell
   displayName?: string;
   cellTemplate?: any;
+  cellTemplateEmiter?: EventEmitter<any>;
   cellEditTemplate?: any;
 }
 
