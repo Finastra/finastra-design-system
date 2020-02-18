@@ -69,7 +69,8 @@
             <ng-template
               [ngTemplateOutletContext]="{
                 element: element,
-                column: column
+                column: column,
+                emiter: column.cellTemplateEmiter
               }"
               [ngTemplateOutlet]="column.cellTemplate"
             >
@@ -84,7 +85,8 @@
               <ng-template
                 [ngTemplateOutletContext]="{
                   element: element,
-                  column: column
+                  column: column,
+                  emiter: column.cellTemplateEmiter
                 }"
                 [ngTemplateOutlet]="column.cellEditTemplate"
               >
