@@ -10,6 +10,7 @@ import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.compon
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -22,6 +23,7 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
     title: 'Components',
     routes: [
+      { path: 'chart', component: ChartDemoComponent, data: { title: 'Chart' } },
       { path: 'filter-panel', component: FilterPanelDemoComponent, data: { title: 'Filter' } },
       { path: 'global-search', component: GlobalSearchDemoComponent, data: { title: 'Global Search' } },
       { path: 'popover', component: PopoverDemoComponent, data: { title: 'Popover' } },
