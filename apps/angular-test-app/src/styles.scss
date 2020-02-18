@@ -4,6 +4,7 @@
 @import 'angular-theme/theme-variables';
 
 @import 'global-search/src/global-search.theme';
+@import 'vector-map/src/vector-map.theme';
 @import 'filter/filter-tags/src/filter-tags.theme';
 @import 'filter/filter-tree/src/filter-tree.theme';
 @import 'skeleton-text/src/skeleton-text.theme';
@@ -24,6 +25,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-filter-tags-theme($theme);
     @include uxg-filter-tree-theme($theme);
     @include uxg-global-search-theme($theme);
+    @include uxg-vector-map-theme($theme);
     @include uxg-wizard-theme($theme);
     @include uxg-skeleton-text-colors($theme);
     @include theme-repeater-card-example($theme);
@@ -35,41 +37,44 @@ $uxg-typography: uxg-typography-config();
   @include app-theme($uxg-dark-theme);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 8px;
+  padding: 32px;
+  h1.mat-display-1 {
+    flex-grow: 1;
     margin: 8px;
-    padding: 32px;
-
-    h1.mat-display-1 {
-        flex-grow: 1;
-        margin: 8px;
-    }
-
+  }
+  code {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    flex-grow: 1;
+  }
+  pre {
+    margin: 8px;
+    color: #414141;
+    border-radius: 6px;
     code {
-        display: flex;
-        align-items: center;
-        margin-left: 8px;
-        flex-grow: 1;
+      display: block;
     }
-
-    pre {
-        margin: 8px;
-        color: #414141;
-        border-radius: 6px;
-
-        code {
-            display: block;
-        }
-    }
+  }
 }
 
 .uxg-wizard {
-    .uxg-wizard-right-panel {
-        background: linear-gradient(to right bottom, #0b0c3e 0, #1b1d5d 35%, #493696 85%, #694ed6 100%) !important;
-    }
+  .uxg-wizard-right-panel {
+    background: linear-gradient(to right bottom, #0b0c3e 0, #1b1d5d 35%, #493696 85%, #694ed6 100%) !important;
+  }
 }

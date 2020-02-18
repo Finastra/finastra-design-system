@@ -6,41 +6,16 @@
           <span class="uxg-h5 uxg-card-product-name">DS</span>
         </mat-card>
         <h6 class="uxg-h6">DESIGN SYSTEM</h6>
-        <mat-slide-toggle class="theme-toggle" (change)="toggleTheme()">Dark</mat-slide-toggle>
       </div>
       <mat-nav-list class="uxg-nav-list" (click)="sidenav.toggle()" dense>
-        <h3 mat-subheader>Theme</h3>
-        <a mat-list-item routerLink="/foundations" routerLinkActive="uxg-list-item-selected">
-          <p>Foundations</p>
-        </a>
-        <a mat-list-item routerLink="/ui-elements" routerLinkActive="uxg-list-item-selected">
-          <p>UI Elements</p>
-        </a>
-        <h3 mat-subheader>Components</h3>
-        <a mat-list-item routerLink="/filter-panel" routerLinkActive="uxg-list-item-selected">
-          <p>Filter Panel</p>
-        </a>
-        <a mat-list-item routerLink="/global-search" routerLinkActive="uxg-list-item-selected">
-          <p>Global Search</p>
-        </a>
-        <a mat-list-item routerLink="/popover" routerLinkActive="uxg-list-item-selected">
-          <p>Popover</p>
-        </a>
-        <a mat-list-item routerLink="/repeater" routerLinkActive="uxg-list-item-selected">
-          <p>Repeater</p>
-        </a>
-        <a mat-list-item routerLink="/skeleton" routerLinkActive="uxg-list-item-selected">
-          <p>Skeleton</p>
-        </a>
-        <a mat-list-item routerLink="/table" routerLinkActive="uxg-list-item-selected">
-          <p>Table</p>
-        </a>
-        <a mat-list-item routerLink="/vector-map" routerLinkActive="uxg-list-item-selected">
-          <p>Vector Map</p>
-        </a>
-        <a mat-list-item routerLink="/wizard" routerLinkActive="uxg-list-item-selected">
-          <p>Wizard</p>
-        </a>
+        <ng-container *ngFor="let nestedRoute of nestedRoutes">
+          <h3 mat-subheader>{{ nestedRoute.title }}</h3>
+          <ng-container *ngFor="let route of nestedRoute.routes">
+            <a mat-list-item [routerLink]="route.path" routerLinkActive="uxg-list-item-selected">
+              <p>{{ route.data?.title }}</p>
+            </a>
+          </ng-container>
+        </ng-container>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -61,6 +36,7 @@
           <li *ngIf="title">{{ title }}</li>
         </ul>
         <span class="fill-remaining-space"></span>
+        <mat-slide-toggle class="theme-toggle" [checked]="dark" (change)="toggleTheme()">Dark</mat-slide-toggle>
       </mat-toolbar>
       <div class="app-content">
         <router-outlet></router-outlet>
