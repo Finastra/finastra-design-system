@@ -5,37 +5,13 @@
     </div>
   </div>
 
-  <div class="home-intro">
-    <h5 class="uxg-h5">Usage</h5>
-    <p class="uxg-body-2">Add the dependencies to your package.json</p>
-    <mat-card>
-      <pre><code>npm install @ffdc/finastra-design-system</code></pre>
-    </mat-card>
-
-    <p class="uxg-body-2">Import desired module into your app, example :</p>
-    <mat-card>
-      <pre><code>
-imports: [
-    GlobalSearchModule
-],</code></pre>
-    </mat-card>
-  </div>
-
   <div class="home-list">
     <ng-container *ngFor="let nestedRoute of nestedRoutes">
       <h5 class="uxg-h5">{{ nestedRoute.title }}</h5>
       <div class="home-list-grid">
         <ng-container *ngFor="let route of nestedRoute.routes">
-          <mat-card [routerLink]="route.path">
-            <img mat-card-image src="assets/bar-chart.png" alt="Abstract illustration of a {{ route.data?.title }}" />
-            <mat-card-title-group>
-              <mat-card-title class="uxg-h4">{{ route.data?.title }}</mat-card-title>
-              <mat-card-subtitle class="uxg-overline">
-                <mat-chip-list>
-                  <mat-chip disabled dense>{{ route.data?.title }}</mat-chip>
-                </mat-chip-list>
-              </mat-card-subtitle>
-            </mat-card-title-group>
+          <mat-card [routerLink]="route.path" class="uxg-card-product">
+            <span class="uxg-h4 uxg-card-product-name">{{ route.data?.title }}</span>
           </mat-card>
         </ng-container>
       </div>
