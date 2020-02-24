@@ -31,7 +31,7 @@ export interface SavedFilter {
 })
 export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Output() changes = new EventEmitter<UXGFilterChanges<any>>();
-  @ContentChildren(UxgFilter) filterInstances!: QueryList<UxgFilter>;
+  @ContentChildren(UxgFilter, { descendants: true }) filterInstances!: QueryList<UxgFilter>;
 
   @Input() expanded = false;
   @Input() divideAtIndex: number[] = [];

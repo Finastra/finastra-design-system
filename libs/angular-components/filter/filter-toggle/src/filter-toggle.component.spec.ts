@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonToggleModule, MatExpansionModule, MatIconModule } from '@angular/material';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterToggleComponent } from './filter-toggle.component';
-import { STEP_STATE } from '@angular/cdk/stepper';
 
 describe('FilterToggleComponent', () => {
   let component: FilterToggleComponent;
