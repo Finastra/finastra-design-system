@@ -52,6 +52,9 @@
     },
     "chart": {
       "tags": []
+    },
+    "skeleton-text": {
+      "tags": []
     }
   }
 }

@@ -41,6 +41,8 @@ import { ChartDemoComponent } from './components/chart-demo/chart-demo.component
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
+import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 
 @NgModule({
   imports: [
@@ -70,8 +72,9 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     FilterTagsModule,
     FilterTreeModule,
     VectorMapModule,
-    ChartModule,
-    WizardModule
+    WizardModule,
+    SkeletonTextModule,
+    ChartModule
   ],
   declarations: [
     HomeComponent,
@@ -85,6 +88,7 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     WizardDemoComponent,
     FoundationsDemoComponent,
     UiElementsDemoComponent,
+    SkeletonDemoComponent,
     ChartDemoComponent
   ],
   exports: [RouterModule]

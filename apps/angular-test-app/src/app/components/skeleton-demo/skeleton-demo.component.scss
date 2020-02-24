@@ -1,0 +1,29 @@
+:host {
+    mat-card {
+        width: 450px;
+    }
+
+    ::ng-deep {
+        .mat-card-header-text {
+            width: 50%;
+        }
+
+        .mat-card-header .mat-card-title {
+            margin: 5px 0 10px;
+            height: 20px;
+        }
+
+        .mat-card-header .mat-card-subtitle:not(:first-child) {
+            margin-top: 0;
+        }
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+
+        uxg-skeleton-text {
+            margin-right: 8px;
+        }
+    }
+}
