@@ -27,6 +27,7 @@
     </div>
     <div
       class="child-tree"
+      [class.invisible-child-tree]="!treeControl.isExpanded(node)"
       #el
       [@slideInOut]="treeControl.isExpanded(node) ? 'in' : 'out'"
       (@slideInOut.start)="expandStart(node, el)"
