@@ -136,8 +136,6 @@
       .step-info-container {
         .step-description {
           @include mat-typography-level-to-styles($config, caption);
-
-          font-weight: mat-font-weight($config, caption);
         }
       }
     }
