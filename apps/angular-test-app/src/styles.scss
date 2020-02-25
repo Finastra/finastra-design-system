@@ -30,7 +30,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-vector-map-theme($theme);
     @include uxg-chart-theme($theme);
     @include uxg-wizard-theme($theme);
-    @include uxg-skeleton-text-colors($theme);
+    @include uxg-skeleton-text-theme($theme);
     @include theme-repeater-card-example($theme);
 }
 

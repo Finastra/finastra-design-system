@@ -1,4 +1,4 @@
-@mixin uxg-skeleton-text-colors($theme) {
+@mixin uxg-skeleton-text-theme($theme) {
     $foreground: map-get($theme, foreground);
     $skeleton-color: map-get($foreground, text);
 
