@@ -53,7 +53,10 @@ export class PageCollectionService {
     return this.pagesAsArray[index];
   }
 
-  public getPageIndex(page: UxgWizardPageComponent): number {
+  public getPageIndex(page: UxgWizardPageComponent | null): number {
+    if (!page) {
+      throw new Error('Requested page cannot be found in collection of pages.');
+    }
     const index = this.pagesAsArray.indexOf(page);
 
     if (index < 0) {
