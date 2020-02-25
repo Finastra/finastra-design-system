@@ -7,8 +7,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
 import { VectorMapComponent } from './vector-map.component';
-
-import { PlotlyViaWindowModule } from 'angular-plotly.js';
+import * as PlotlyJS from 'plotly.js';
+import { PlotlyModule } from 'angular-plotly.js';
+PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { PlotlyViaWindowModule } from 'angular-plotly.js';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    PlotlyViaWindowModule
+    PlotlyModule
   ],
   declarations: [VectorMapComponent],
   exports: [VectorMapComponent]

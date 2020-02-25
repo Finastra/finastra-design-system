@@ -5,10 +5,11 @@ import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
 import { ChartComponent } from './chart.component';
 
-import { PlotlyViaWindowModule } from 'angular-plotly.js';
-
+import * as PlotlyJS from 'plotly.js';
+import { PlotlyModule } from 'angular-plotly.js';
+PlotlyModule.plotlyjs = PlotlyJS;
 @NgModule({
-  imports: [CommonModule, PlotlyViaWindowModule],
+  imports: [CommonModule, PlotlyModule],
   declarations: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent],
   exports: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent]
 })

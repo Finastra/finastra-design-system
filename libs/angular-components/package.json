@@ -8,7 +8,7 @@
     "@angular/cdk": "^9.0.0",
     "@angular/flex-layout": "^9.0.0-beta.29",
     "lodash": "4.17.15",
-    "angular-plotly.js": "1.5.0",
+    "angular-plotly.js": "^1.6.0",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
     "plotly.js": "1.52.2",
     "smoothscroll-polyfill": "0.4.4"
