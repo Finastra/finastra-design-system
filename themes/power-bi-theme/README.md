@@ -4,7 +4,7 @@ Finastra Theme for Power BI is a JSON file used to adjust Power BI layout accord
 
 ## Usage
 
- This JSON file is supposed to be used following the steps presented in the official Power BI documentation.
+This JSON file is supposed to be used following the steps presented in the official Power BI documentation.
  More information can be found in this link: [Microsoft Power BI Docs](https://docs.microsoft.com/en-us/power-bi/desktop-report-themes#how-report-themes-work)
 
 ## Contributing
