@@ -1,10 +1,22 @@
 import { async, TestBed } from '@angular/core/testing';
 import { VectorMapModule } from './vector-map.module';
+import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { of } from 'rxjs';
 
 describe('VectorMapModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [VectorMapModule]
+      imports: [VectorMapModule],
+      providers: [
+        {
+          provide: LazyloadScriptService,
+          useValue: {
+            load: () => {
+              return of((global as any).Plotly);
+            }
+          }
+        }
+      ]
     }).compileComponents();
   }));
 
