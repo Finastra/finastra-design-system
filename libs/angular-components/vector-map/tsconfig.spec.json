@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "esnext",
-    "types": ["jest", "node", "plotly.js"]
+    "types": ["jest", "node"]
   },
   "files": ["test-setup.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]

@@ -3,11 +3,8 @@ import { ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testin
 import { ChartComponent } from './chart.component';
 
 import { PlotlyModule } from 'angular-plotly.js';
-import * as plotlyjs from 'plotly.js';
-PlotlyModule.plotlyjs = plotlyjs;
-
+PlotlyModule.plotlyjs = (global as any).Plotly;
 import { CommonModule } from '@angular/common';
-import { By } from '@angular/platform-browser';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent, LegendPosition, LegendPositionConvertion } from './directives/legend.component';
 import { TraceComponent } from './directives/trace.component';

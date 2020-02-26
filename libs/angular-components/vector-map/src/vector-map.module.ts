@@ -7,9 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
 import { VectorMapComponent } from './vector-map.component';
-import * as PlotlyJS from 'plotly.js';
-import { PlotlyModule } from 'angular-plotly.js';
-PlotlyModule.plotlyjs = PlotlyJS;
+import { PlotlyViaCDNModule, PlotlyService } from 'angular-plotly.js';
+import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
 
 @NgModule({
   imports: [
@@ -19,9 +18,15 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    PlotlyModule
+    PlotlyViaCDNModule
   ],
   declarations: [VectorMapComponent],
   exports: [VectorMapComponent]
 })
-export class VectorMapModule {}
+export class VectorMapModule {
+  constructor(layzyLoadScript: LazyloadScriptService) {
+    layzyLoadScript.load('plotly.js', 'Plotly').subscribe(plotly => {
+      PlotlyService.setPlotly(plotly);
+    });
+  }
+}

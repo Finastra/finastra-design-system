@@ -27,7 +27,7 @@
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
-            "scripts": []
+            "scripts": [{ "input": "node_modules/plotly.js/dist/plotly.js", "bundleName": "plotly", "lazy": true }]
           },
           "configurations": {
             "production": {
