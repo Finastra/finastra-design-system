@@ -4,13 +4,17 @@ import { TraceComponent } from './directives/trace.component';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
 import { ChartComponent } from './chart.component';
-
-import * as PlotlyJS from 'plotly.js';
-import { PlotlyModule } from 'angular-plotly.js';
-PlotlyModule.plotlyjs = PlotlyJS;
+import { PlotlyViaCDNModule, PlotlyService } from 'angular-plotly.js';
+import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
 @NgModule({
-  imports: [CommonModule, PlotlyModule],
+  imports: [CommonModule, PlotlyViaCDNModule],
   declarations: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent],
   exports: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent]
 })
-export class ChartModule {}
+export class ChartModule {
+  constructor(layzyLoadScript: LazyloadScriptService) {
+    layzyLoadScript.load('plotly.js', 'Plotly').subscribe(plotly => {
+      PlotlyService.setPlotly(plotly);
+    });
+  }
+}
