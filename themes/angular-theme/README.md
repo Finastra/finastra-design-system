@@ -10,11 +10,13 @@ The FINASTRA Angular Theme is the Angular implementation of the [FINASTRA Design
 You can get started in 2 simple steps:
 
 Install the dependency
+
 ```Bash
 npm install @ffdc/uxg-angular-theme
 ```
 
 Import the theme in your main stylesheet
+
 ```SCSS
 @import '~@ffdc/uxg-angular-theme/all-theme';
 ```

@@ -3,18 +3,20 @@
 
 # FINASTRA Angular Components
 
-The FINASTRA Angular components are the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of components (global search, data  visualization, repeater, filters...).
+The FINASTRA Angular components are the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of components (global search, data visualization, repeater, filters...).
 
 ## How to use it? 🤔
 
 You can get started in 3 simple steps:
 
 Install the dependency (Note that the Angular components require our [Angular Material theme](https://www.npmjs.com/package/@ffdc/uxg-angular-theme).
+
 ```Bash
 npm install @ffdc/uxg-angular-components
 ```
 
 Import the required component in your project
+
 ```Javascript
 import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 …
@@ -26,6 +28,7 @@ import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 ```
 
 Add the component in your HTML like so
+
 ```HTML
 <uxg-scroll-to-top></uxg-scroll-to-top>
 ```
