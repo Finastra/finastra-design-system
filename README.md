@@ -8,9 +8,10 @@
 
 Following monorepo is composed of several assets :
 
-- Angular Material theme (Finastra branded)
-- Angular components
-- Test Angular Application showcasing the above
+- [Angular Material theme (Finastra branded)](https://github.com/fusionfabric/finastra-design-system/tree/master/themes/angular-theme)
+- [Angular components](https://github.com/fusionfabric/finastra-design-system/tree/master/libs/angular-components)
+- [Test Angular Application showcasing the above](https://github.com/fusionfabric/finastra-design-system/tree/master/apps/angular-test-app)
+- [Power BI theme (Finastra branded)](ttps://github.com/fusionfabric/finastra-design-system/tree/master/themes/power-bi-theme)
 
 ## Want to help ? 🤗❤️
 
