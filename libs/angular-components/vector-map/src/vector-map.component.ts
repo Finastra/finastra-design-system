@@ -15,7 +15,13 @@ import { Subscription, Observable } from 'rxjs';
 import { TooltipComponent } from '@angular/material/tooltip';
 import { PlotComponent } from 'angular-plotly.js';
 
-import { PaletteService, ColorScale, PaletteConfig, PALETTE_DEFAULT_CONFIG, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import {
+  PaletteService,
+  ColorScale,
+  PaletteConfig,
+  PALETTE_DEFAULT_CONFIG,
+  LazyloadScriptService
+} from '@ffdc/uxg-angular-components/core';
 
 import {
   VectorMapCountry,
@@ -61,13 +67,10 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   max = 1;
 
   subscriptions: Subscription[] = [];
-  
+
   plotlyReady$: Observable<any>;
 
-  constructor(
-    public paletteService: PaletteService,
-    public layzyLoadScript: LazyloadScriptService
-  ) {
+  constructor(public paletteService: PaletteService, public layzyLoadScript: LazyloadScriptService) {
     this.click = new EventEmitter<Partial<VectorMapCountry>>();
     this.plotlyReady$ = layzyLoadScript.load('plotly.js', 'Plotly');
   }

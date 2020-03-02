@@ -150,7 +150,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
       if (this.traces) {
         trace = this.traces.find((t: TraceComponent) => {
           return t.dimensionName === item.data.dimensionName && t.measureName === item.data.name;
-        })
+        });
       } else if (this.groupTraces) {
         this.groupTraces.forEach((g: GroupTracesComponent) => {
           trace = g.traces.find((t: TraceComponent) => {
@@ -158,18 +158,18 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
           });
         });
       }
-      
+
       if (trace) {
         if (item.pointIndex !== undefined) {
           let dimension = item.data.orientation === 'v' ? item.data.x[item.pointIndex] : item.data.y[item.pointIndex];
           let measure = item.data.orientation === 'v' ? item.data.y[item.pointIndex] : item.data.x[item.pointIndex];
-  
+
           // Get item clicked
           items.clickedItems.push({
             [item.data.dimensionName]: dimension,
             [item.data.name]: measure
           });
-  
+
           // Update selectedpoints
           if (trace.selectedPoints && trace.selectedPoints.indexOf(item.pointIndex) !== -1) {
             if (trace.selectedPoints.length === 1) {
@@ -180,7 +180,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
           } else {
             trace.selectedPoints = [item.pointIndex];
           }
-  
+
           // Get items selected
           if (trace.selectedPoints) {
             trace.selectedPoints.forEach((index: any) => {
