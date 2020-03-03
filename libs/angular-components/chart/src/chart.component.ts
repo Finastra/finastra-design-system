@@ -177,25 +177,29 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
             if (!this.multiSelect) {
               // Set other trace selection to null
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t=> delete t.selectedPoints);
+                g.traces?.forEach(t => delete t.selectedPoints);
               });
-              this.traces?.forEach(t=> delete t.selectedPoints);
+              this.traces?.forEach(t => delete t.selectedPoints);
             } else {
               let someSelected = false;
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t=> { 
-                  if ((t.dimensionName !== trace?.dimensionName 
-                    || t.measureName !== trace?.measureName)
-                    && t.selectedPoints?.length && t.selectedPoints?.length > 0) 
+                g.traces?.forEach(t => {
+                  if (
+                    (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                    t.selectedPoints?.length &&
+                    t.selectedPoints?.length > 0
+                  )
                     someSelected = true;
                 });
               });
-              this.traces?.forEach(t=> { 
-                if ((t.dimensionName !== trace?.dimensionName 
-                  || t.measureName !== trace?.measureName)
-                  && t.selectedPoints?.length && t.selectedPoints?.length > 0) 
+              this.traces?.forEach(t => {
+                if (
+                  (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                  t.selectedPoints?.length &&
+                  t.selectedPoints?.length > 0
+                )
                   someSelected = true;
-                });
+              });
               if (trace.selectedPoints.length === 1 && !someSelected) {
                 delete trace.selectedPoints;
               } else {
@@ -203,19 +207,21 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
               }
               if (!someSelected) {
                 this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                  g.traces?.forEach(t=> { 
-                    if ((t.dimensionName !== trace?.dimensionName 
-                      || t.measureName !== trace?.measureName)
-                      && t.selectedPoints?.length === 0) 
+                  g.traces?.forEach(t => {
+                    if (
+                      (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                      t.selectedPoints?.length === 0
+                    )
                       delete t.selectedPoints;
                   });
                 });
-                this.traces?.forEach(t=> { 
-                  if ((t.dimensionName !== trace?.dimensionName 
-                    || t.measureName !== trace?.measureName)
-                    && t.selectedPoints?.length === 0) 
+                this.traces?.forEach(t => {
+                  if (
+                    (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                    t.selectedPoints?.length === 0
+                  )
                     delete t.selectedPoints;
-                  });
+                });
               }
             }
           } else {
@@ -224,9 +230,9 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
             } else {
               // Set other trace selection to empty
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t=>t.selectedPoints = []);
+                g.traces?.forEach(t => (t.selectedPoints = []));
               });
-              this.traces?.forEach(t=>t.selectedPoints = []);
+              this.traces?.forEach(t => (t.selectedPoints = []));
 
               trace.selectedPoints = [item.pointIndex];
             }
