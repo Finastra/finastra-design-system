@@ -34,7 +34,7 @@ export class TraceComponent {
         ...(this.options ? this.options : {})
       };
       if (this.selectedPoints) {
-        trace.selectedpoints = this.selectedPoints;
+        trace.selectedpoints = Array.from(this.selectedPoints);
       }
       return trace;
     }

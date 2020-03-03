@@ -3,6 +3,7 @@
   <div fxFlex="fill" class="wrapper" fxLayout="row" fxLayout.xs="column" #wrapper>
     <div class="map" fxFlex="fill" #map>
       <plotly-plot
+        *ngIf="plotlyReady$ | async"
         [data]="data"
         [layout]="layout"
         [config]="config"

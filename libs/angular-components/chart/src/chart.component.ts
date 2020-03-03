@@ -23,8 +23,8 @@ import { TraceComponent } from './directives/trace.component';
 import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
-import { PaletteService, PaletteConfig } from '@ffdc/uxg-angular-components/core';
-import { Subscription, merge } from 'rxjs';
+import { PaletteService, PaletteConfig, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { Subscription, merge, Observable } from 'rxjs';
 
 @Component({
   selector: 'uxg-chart',
@@ -48,6 +48,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   private paletteConfig?: PaletteConfig;
   private subscriptions: Subscription[] = [];
 
+  @Input() multiSelect = false;
+
   @Input()
   get config(): any {
     return !this._config ? CHART_DEFAULT_PLOTLY_CONFIG : this._config;
@@ -70,9 +72,12 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     return this.plot.revision;
   }
   set revision(value: number) {
-    this.plot.revision = value;
-    this.refresh();
-    this.plot.updatePlot();
+    if (this.plot) {
+      this.refresh();
+      this.plot.revision = value;
+      this.cd.markForCheck();
+      this.plot.updatePlot();
+    }
   }
 
   // tslint:disable-next-line: no-output-on-prefix
@@ -90,14 +95,18 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   };
   private clickTimer: any;
 
+  plotlyReady$: Observable<any>;
+
   constructor(
     @Inject(DOCUMENT) private document: any,
     private paletteService: PaletteService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    public layzyLoadScript: LazyloadScriptService
   ) {
     this.onClick = new EventEmitter<Array<Object>>();
     this.onSelected = new EventEmitter<Array<Object>>();
     this.onDoubleClick = new EventEmitter<Array<Object>>();
+    this.plotlyReady$ = layzyLoadScript.load('plotly.js', 'Plotly');
   }
 
   ngOnInit(): void {
@@ -138,49 +147,115 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   onSelect(event: any) {
     const points: any = event.points;
     const items = { selectedItems: new Array<object>(), clickedItems: new Array<object>() };
+    let trace: TraceComponent | undefined;
     points.forEach((item: any) => {
-      if (item.pointIndex !== undefined) {
-        let dimension = item.data.orientation === 'v' ? item.data.x[item.pointIndex] : item.data.y[item.pointIndex];
-        let measure = item.data.orientation === 'v' ? item.data.y[item.pointIndex] : item.data.x[item.pointIndex];
-
-        // Get item clicked
-        items.clickedItems.push({
-          [item.data.dimensionName]: dimension,
-          [item.data.name]: measure
+      if (this.traces) {
+        trace = this.traces.find((t: TraceComponent) => {
+          return t.dimensionName === item.data.dimensionName && t.measureName === item.data.name;
         });
-
-        // Update selectedpoints
-        if (item.data.selectedpoints && item.data.selectedpoints.indexOf(item.pointIndex) !== -1) {
-          if (item.data.selectedpoints.length === 1) {
-            delete item.data.selectedpoints;
-          } else {
-            item.data.selectedpoints.splice(item.data.selectedpoints.indexOf(item.pointIndex), 1);
-          }
-        } else {
-          if (!item.data.selectedpoints) {
-            item.data.selectedpoints = [item.pointIndex];
-          } else {
-            item.data.selectedpoints.push(item.pointIndex);
-          }
-        }
-
-        // Get items selected
-        if (item.data.selectedpoints) {
-          item.data.selectedpoints.forEach((index: any) => {
-            dimension = item.data.orientation === 'v' ? item.data.x[index] : item.data.y[index];
-            measure = item.data.orientation === 'v' ? item.data.y[index] : item.data.x[index];
-            items.selectedItems.push({
-              [item.data.dimensionName]: dimension,
-              [item.data.name]: measure
-            });
+      } else if (this.groupTraces) {
+        this.groupTraces.forEach((g: GroupTracesComponent) => {
+          trace = g.traces.find((t: TraceComponent) => {
+            return t.dimensionName === item.data.dimensionName && t.measureName === item.data.name;
           });
-        }
-      } else if (item.pointNumber !== undefined) {
-        items.selectedItems.push({
-          [item.data.dimensionName]: item.data.labels[item.pointNumber],
-          [item.data.name]: item.data.values[item.pointNumber]
         });
-        items.clickedItems = items.selectedItems;
+      }
+
+      if (trace) {
+        if (item.pointIndex !== undefined) {
+          let dimension = item.data.orientation === 'v' ? item.data.x[item.pointIndex] : item.data.y[item.pointIndex];
+          let measure = item.data.orientation === 'v' ? item.data.y[item.pointIndex] : item.data.x[item.pointIndex];
+
+          // Get item clicked
+          items.clickedItems.push({
+            [item.data.dimensionName]: dimension,
+            [item.data.name]: measure
+          });
+
+          // Update selectedpoints
+          if (trace.selectedPoints && trace.selectedPoints.indexOf(item.pointIndex) !== -1) {
+            if (!this.multiSelect) {
+              // Set other trace selection to null
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t => delete t.selectedPoints);
+              });
+              this.traces?.forEach(t => delete t.selectedPoints);
+            } else {
+              let someSelected = false;
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t => {
+                  if (
+                    (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                    t.selectedPoints?.length &&
+                    t.selectedPoints?.length > 0
+                  )
+                    someSelected = true;
+                });
+              });
+              this.traces?.forEach(t => {
+                if (
+                  (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                  t.selectedPoints?.length &&
+                  t.selectedPoints?.length > 0
+                )
+                  someSelected = true;
+              });
+              if (trace.selectedPoints.length === 1 && !someSelected) {
+                delete trace.selectedPoints;
+              } else {
+                trace.selectedPoints.splice(trace.selectedPoints.indexOf(item.pointIndex), 1);
+              }
+              if (!someSelected) {
+                this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                  g.traces?.forEach(t => {
+                    if (
+                      (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                      t.selectedPoints?.length === 0
+                    )
+                      delete t.selectedPoints;
+                  });
+                });
+                this.traces?.forEach(t => {
+                  if (
+                    (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
+                    t.selectedPoints?.length === 0
+                  )
+                    delete t.selectedPoints;
+                });
+              }
+            }
+          } else {
+            if (trace.selectedPoints && this.multiSelect) {
+              trace.selectedPoints.push(item.pointIndex);
+            } else {
+              // Set other trace selection to empty
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t => (t.selectedPoints = []));
+              });
+              this.traces?.forEach(t => (t.selectedPoints = []));
+
+              trace.selectedPoints = [item.pointIndex];
+            }
+          }
+
+          // Get items selected
+          if (trace.selectedPoints) {
+            trace.selectedPoints.forEach((index: any) => {
+              dimension = item.data.orientation === 'v' ? item.data.x[index] : item.data.y[index];
+              measure = item.data.orientation === 'v' ? item.data.y[index] : item.data.x[index];
+              items.selectedItems.push({
+                [item.data.dimensionName]: dimension,
+                [item.data.name]: measure
+              });
+            });
+          }
+        } else if (item.pointNumber !== undefined) {
+          items.selectedItems.push({
+            [item.data.dimensionName]: item.data.labels[item.pointNumber],
+            [item.data.name]: item.data.values[item.pointNumber]
+          });
+          items.clickedItems = items.selectedItems;
+        }
       }
     });
     this.onEventClick(items);
@@ -205,6 +280,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
         this.onClick.emit(items.selectedItems.length ? items.clickedItems : []);
         this.onSelected.emit(items.selectedItems);
         clearTimeout(this.clickTimer);
+        this.revision++;
       }, 300);
     }
   }

@@ -11,6 +11,7 @@ import { TraceComponent } from './directives/trace.component';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { AfterViewInit, ViewChild, Component, SimpleChange } from '@angular/core';
 import { ChartType, CHART_PLOLTLY_TYPE } from './chart.models';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'uxg-test-container-component',
@@ -88,6 +89,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
 
     component.traces = [trace];
 
@@ -173,6 +175,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
 
     component.traces = [trace];
     component.traces2 = [trace2];
@@ -211,6 +214,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
 
     component.traces = [trace];
     component.chart.layout = { title: 'Test chart' };
@@ -253,6 +257,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
 
     component.traces = [trace];
     component.chart.config = { scrollZoom: true };
@@ -292,6 +297,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
 
     component.traces = [trace];
 
@@ -340,6 +346,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();
@@ -411,6 +418,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();
@@ -482,6 +490,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();
@@ -554,6 +563,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();
@@ -628,6 +638,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();
@@ -651,7 +662,7 @@ describe('Chart Component', () => {
   it('should multiselect', fakeAsync(() => {
     TestBed.overrideComponent(TestContainerComponent, {
       set: {
-        template: `<uxg-chart #chart>
+        template: `<uxg-chart #chart [multiSelect]="true">
             <uxg-trace
               *ngFor="let trace of traces"
               [dimension]="trace.dimension"
@@ -705,6 +716,7 @@ describe('Chart Component', () => {
     fixture = TestBed.createComponent(TestContainerComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
+    component.chart.plotlyReady$ = of(true);
     component.traces = [trace];
 
     fixture.detectChanges();

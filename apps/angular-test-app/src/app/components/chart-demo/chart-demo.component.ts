@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LegendPosition, ChartType } from '@ffdc/uxg-angular-components/chart';
+import { LegendPosition, ChartType, ChartOrientation } from '@ffdc/uxg-angular-components/chart';
 
 @Component({
   selector: 'ffdc-chart-demo',
@@ -26,7 +26,7 @@ export class ChartDemoComponent {
       measure: [100, 50, 70],
       measureName: 'PNL',
       type: ChartType.bar,
-      orientation: 'horizontal'
+      orientation: ChartOrientation.horizontal
     },
     {
       dimension: ['Banks', 'Foods', 'Energies'],
@@ -34,7 +34,15 @@ export class ChartDemoComponent {
       measure: [75, 10, 90],
       measureName: 'Asset Values',
       type: ChartType.bar,
-      orientation: 'horizontal'
+      orientation: ChartOrientation.horizontal
+    },
+    {
+      dimension: ['Banks', 'Foods', 'Energies'],
+      dimensionName: 'Industry',
+      measure: [75, 10, 90],
+      measureName: 'Asset',
+      type: ChartType.bar,
+      orientation: ChartOrientation.horizontal
     }
   ];
 
