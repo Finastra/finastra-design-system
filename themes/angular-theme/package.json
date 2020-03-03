@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/uxg-angular-theme",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
   "sass": "_all-theme.scss",
