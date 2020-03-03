@@ -70,7 +70,7 @@ describe('Trace diretive', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.bar
     };
     const dummyPlotlyTraceLayout = CHART_PLOLTLY_TYPE[trace.type].layout;
 

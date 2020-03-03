@@ -9,9 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { PaletteModule } from '@ffdc/uxg-angular-components/core';
+import { PaletteModule, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
 import { VectorMapComponent } from './vector-map.component';
 import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
+import { of } from 'rxjs';
 
 // Created PlotlyDemoComponent because of issues when Testing with the
 // PlotlyComponent
@@ -81,6 +82,7 @@ describe('VectorMapModule', () => {
     fixture = TestBed.createComponent(VectorMapComponent);
     component = fixture.componentInstance;
     component.dataSource = simplePlot;
+    component.plotlyReady$ = of(true);
 
     fixture.detectChanges();
   });
