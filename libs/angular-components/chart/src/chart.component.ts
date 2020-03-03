@@ -48,6 +48,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   private paletteConfig?: PaletteConfig;
   private subscriptions: Subscription[] = [];
 
+  @Input() multiSelect = false;
+
   @Input()
   get config(): any {
     return !this._config ? CHART_DEFAULT_PLOTLY_CONFIG : this._config;
@@ -172,13 +174,62 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
           // Update selectedpoints
           if (trace.selectedPoints && trace.selectedPoints.indexOf(item.pointIndex) !== -1) {
-            if (trace.selectedPoints.length === 1) {
-              delete trace.selectedPoints;
+            if (!this.multiSelect) {
+              // Set other trace selection to null
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t=> delete t.selectedPoints);
+              });
+              this.traces?.forEach(t=> delete t.selectedPoints);
             } else {
-              trace.selectedPoints.splice(trace.selectedPoints.indexOf(item.pointIndex), 1);
+              let someSelected = false;
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t=> { 
+                  if ((t.dimensionName !== trace?.dimensionName 
+                    || t.measureName !== trace?.measureName)
+                    && t.selectedPoints?.length && t.selectedPoints?.length > 0) 
+                    someSelected = true;
+                });
+              });
+              this.traces?.forEach(t=> { 
+                if ((t.dimensionName !== trace?.dimensionName 
+                  || t.measureName !== trace?.measureName)
+                  && t.selectedPoints?.length && t.selectedPoints?.length > 0) 
+                  someSelected = true;
+                });
+              if (trace.selectedPoints.length === 1 && !someSelected) {
+                delete trace.selectedPoints;
+              } else {
+                trace.selectedPoints.splice(trace.selectedPoints.indexOf(item.pointIndex), 1);
+              }
+              if (!someSelected) {
+                this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                  g.traces?.forEach(t=> { 
+                    if ((t.dimensionName !== trace?.dimensionName 
+                      || t.measureName !== trace?.measureName)
+                      && t.selectedPoints?.length === 0) 
+                      delete t.selectedPoints;
+                  });
+                });
+                this.traces?.forEach(t=> { 
+                  if ((t.dimensionName !== trace?.dimensionName 
+                    || t.measureName !== trace?.measureName)
+                    && t.selectedPoints?.length === 0) 
+                    delete t.selectedPoints;
+                  });
+              }
             }
           } else {
-            trace.selectedPoints = [item.pointIndex];
+            if (trace.selectedPoints && this.multiSelect) {
+              trace.selectedPoints.push(item.pointIndex);
+            } else {
+              // Set other trace selection to empty
+              this.groupTraces?.forEach((g: GroupTracesComponent) => {
+                g.traces?.forEach(t=>t.selectedPoints = []);
+              });
+              this.traces?.forEach(t=>t.selectedPoints = []);
+
+              trace.selectedPoints = [item.pointIndex];
+            }
           }
 
           // Get items selected
