@@ -51,7 +51,7 @@
     "@angular/platform-browser": "9.0.2",
     "@angular/platform-browser-dynamic": "9.0.2",
     "@angular/router": "9.0.2",
-    "angular-plotly.js": "1.6.0",
+    "angular-plotly.js": "2.0.0",
     "core-js": "^2.5.4",
     "d3": "5.15.0",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
