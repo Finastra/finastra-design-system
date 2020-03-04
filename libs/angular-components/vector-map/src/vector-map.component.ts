@@ -42,7 +42,7 @@ import {
   styleUrls: ['./vector-map.component.scss']
 })
 export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
-  @ViewChild(PlotComponent, { static: true }) plot!: PlotComponent;
+  @ViewChild(PlotComponent, { static: false }) plot!: PlotComponent;
   @ViewChild('tooltip', { static: true }) tooltip!: TooltipComponent;
 
   @Input() title = 'Vector Map';
