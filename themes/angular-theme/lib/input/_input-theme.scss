@@ -1,9 +1,3 @@
-@mixin uxg-input-theme($theme) {
-  // $primary: map-get($theme, primary);
-
-
-}
-
 @mixin uxg-input-typography($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;

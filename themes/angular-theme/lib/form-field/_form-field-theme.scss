@@ -1,14 +1,14 @@
 @mixin uxg-form-field-fill-theme($theme) {
-    $primary: map-get($theme, primary);
-    $fill-background: mat-color($primary, default, 0.08);
-    
-    .mat-form-field-appearance-fill {
-        .mat-form-field-flex {
-          background-color: $fill-background;
-        }
+  $primary: map-get($theme, primary);
+  $fill-background: mat-color($primary, default, 0.08);
 
-        .mat-form-field-underline::before {
-          background-color: map-get($primary, default);
-        }
+  .mat-form-field-appearance-fill {
+    .mat-form-field-flex {
+      background-color: $fill-background;
     }
+
+    .mat-form-field-underline::before {
+      background-color: map-get($primary, default);
+    }
+  }
 }
