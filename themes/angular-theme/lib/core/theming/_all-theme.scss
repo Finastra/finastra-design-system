@@ -14,7 +14,6 @@
 @import '../../sidenav/sidenav-theme';
 @import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
-@import '../../slide-toggle/slide-toggle-theme';
 
 @mixin uxg-core-theme($theme) {
   $foreground: map-get($theme, foreground);
@@ -84,5 +83,4 @@
   @include uxg-sidenav-theme($theme);
   @include uxg-table-theme($theme);
   @include uxg-toolbar-theme($theme);
-  @include uxg-slide-toggle-theme($theme);
 }

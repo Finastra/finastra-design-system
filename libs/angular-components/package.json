@@ -1,15 +1,15 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.15.0",
+  "version": "0.16.2",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
+    "@angular/forms": "^9.0.0",
     "@angular/cdk": "^9.0.0",
     "@angular/flex-layout": "^9.0.0-beta.29",
-    "@angular/forms": "^9.0.0",
-    "angular-plotly.js": "1.4.2",
     "lodash": "4.17.15",
-    "plotly.js": "^1.50.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "angular-plotly.js": "^2.0.0",
+    "plotly.js": "1.52.2",
+    "smoothscroll-polyfill": "0.4.4"
   }
 }

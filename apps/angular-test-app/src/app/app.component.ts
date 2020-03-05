@@ -2,6 +2,7 @@ import { Component, Renderer2, Inject, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { nestedRoutes } from './nested-routes';
 
 const darkThemeLSName = 'darkTheme';
 
@@ -13,6 +14,7 @@ const darkThemeLSName = 'darkTheme';
 export class AppComponent implements OnInit {
   title = '';
   dark = false;
+  nestedRoutes = nestedRoutes;
 
   constructor(
     private router: Router,

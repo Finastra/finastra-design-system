@@ -1,0 +1,10 @@
+<plotly-plot
+  *ngIf="plotlyReady$ | async"
+  #plot
+  [data]="data"
+  [layout]="layout"
+  [config]="config"
+  [useResizeHandler]="true"
+  (plotly_click)="onSelect($event)"
+>
+</plotly-plot>

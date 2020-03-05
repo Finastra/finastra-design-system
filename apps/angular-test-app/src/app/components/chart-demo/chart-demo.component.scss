@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 48px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+}

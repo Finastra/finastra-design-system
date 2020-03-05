@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { VectorMapDemoComponent } from './vector-map-demo.component';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
+import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { of } from 'rxjs';
 
 describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
@@ -29,7 +31,17 @@ describe('VectorMapDemoComponent', () => {
         VectorMapModule,
         BrowserAnimationsModule
       ],
-      declarations: [VectorMapDemoComponent]
+      declarations: [VectorMapDemoComponent],
+      providers: [
+        {
+          provide: LazyloadScriptService,
+          useValue: {
+            load: () => {
+              return of((global as any).Plotly);
+            }
+          }
+        }
+      ]
     }).compileComponents();
   }));
 

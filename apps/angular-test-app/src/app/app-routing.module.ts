@@ -34,11 +34,15 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
+import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
+import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 
 @NgModule({
   imports: [
@@ -68,7 +72,9 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     FilterTagsModule,
     FilterTreeModule,
     VectorMapModule,
-    WizardModule
+    WizardModule,
+    SkeletonTextModule,
+    ChartModule
   ],
   declarations: [
     HomeComponent,
@@ -81,7 +87,9 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
     VectorMapDemoComponent,
     WizardDemoComponent,
     FoundationsDemoComponent,
-    UiElementsDemoComponent
+    UiElementsDemoComponent,
+    SkeletonDemoComponent,
+    ChartDemoComponent
   ],
   exports: [RouterModule]
 })

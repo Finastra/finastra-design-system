@@ -75,7 +75,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   set selectedKeys(selectedIndex: number[]) {
     this._selectedIndex = selectedIndex;
-    if (this.singleSelect && selectedIndex.length > 0) {
+    if (this.singleSelect && selectedIndex && selectedIndex.length > 0) {
       if (this.isRowSelected(this.data[selectedIndex[0]])) {
         this.selections.push(this.data[selectedIndex[0]]);
       }
