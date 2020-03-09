@@ -81,7 +81,12 @@
   <mat-tab label="Horizontal Filter" class="filter-panel-container">
     <mat-drawer-container class="filter-panel-container">
       <div class="filter-group-container">
-        <uxg-filter-group [expanded]="false" [divideAtIndex]="[0]" (changes)="updateFilterGroup($event)" [showActions]="true">
+        <uxg-filter-group
+          [expanded]="false"
+          [divideAtIndex]="[0]"
+          (changes)="updateFilterGroup($event)"
+          [showActions]="true"
+        >
           <div class="filter-instance">
             <div class="uxg-h6">Time Frame</div>
             <uxg-filter-toggle
@@ -105,8 +110,6 @@
             </uxg-filter-tags>
           </div>
         </uxg-filter-group>
-
-        
       </div>
       <div class="group-result">
         <h5 class="uxg-h5">Filter Group Results</h5>
