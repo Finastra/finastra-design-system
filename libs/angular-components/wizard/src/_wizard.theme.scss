@@ -2,6 +2,7 @@
 
 @mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
   $background: map-get($theme, background);
 
   $wizard-background-color: mat-color($background, background);
@@ -13,50 +14,104 @@
   $wizard-step-description-color: map-get($uxg-violet, 100);
   $wizard-step-disabled-color: #404065;
 
+  $wizard-dot-color: map_get($mat-grey, 200);
+  $wizard-dot-active-color: mat-color($primary, default);
+
   .uxg-wizard {
     background: $wizard-background-color;
+
     .uxg-wizard-container {
       background: white;
     }
+
     .uxg-wizard-right-panel {
       background: $wizard-dark-blue;
+
       .close-button {
         color: white;
       }
     }
+
     .uxg-wizard-timeline {
       .step {
         background-color: white;
         color: $wizard-timeline-color;
+
         &.done {
           background-color: $wizard-step-done-color;
           border-color: $wizard-step-done-color;
           color: white;
         }
+
         &.active {
           border-color: $wizard-step-active-color;
           background-color: $wizard-step-active-color;
           color: white;
         }
       }
+
       .timeline-progress-bar {
         background: $wizard-timeline-color;
+
         .timeline-progress {
           background: $wizard-step-done-color;
         }
       }
+
       .step-info-container {
         .step-title {
           color: white;
         }
+
         .step-description {
           color: rgba($wizard-step-description-color, 0.8);
         }
+
         &.disabled {
+
           .step-title,
           .step-description {
             color: $wizard-step-disabled-color;
           }
+        }
+      }
+    }
+
+    .uxg-wizard-timeline-xs {
+      background: $wizard-dark-blue;
+
+      .step {
+        background-color: white;
+        color: $wizard-timeline-color;
+
+        &.active {
+          border-color: $wizard-step-active-color;
+          background-color: $wizard-step-active-color;
+          color: white;
+        }
+      }
+
+      .step-info-container {
+        .step-title {
+          color: white;
+        }
+
+        .step-description {
+          color: rgba($wizard-step-description-color, 0.8);
+        }
+      }
+
+      .close-button {
+        color: white;
+      }
+    }
+
+    .uxg-wizard-footer {
+      .dot {
+        background-color: $wizard-dot-color;
+
+        &.active {
+          background-color: $wizard-dot-active-color;
         }
       }
     }
@@ -65,19 +120,41 @@
 
 @mixin uxg-wizard-typography($config) {
   .uxg-wizard {
+
     .uxg-wizard-timeline {
       .step {
         font: {
           weight: mat-font-weight($config, h1);
           size: mat-font-size($config, subtitle-1);
         }
+
         mat-icon {
           font-weight: mat-font-weight($config, h1);
         }
       }
+
       .step-info-container {
         .step-description {
-          @include mat-typography-level-to-styles($config, body-2);
+          @include mat-typography-level-to-styles($config, caption);
+        }
+      }
+    }
+
+    .uxg-wizard-timeline-xs {
+      .step {
+        font: {
+          weight: mat-font-weight($config, h2);
+          size: mat-font-size($config, subtitle-2);
+        }
+
+        mat-icon {
+          font-weight: mat-font-weight($config, h2);
+        }
+      }
+
+      .step-info-container {
+        .step-description {
+          @include mat-typography-level-to-styles($config, body-3);
 
           font-weight: mat-font-weight($config, caption);
         }

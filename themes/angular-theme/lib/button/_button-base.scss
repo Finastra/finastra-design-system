@@ -36,13 +36,6 @@ button {
     display: inline-flex;
     align-content: center;
     justify-content: center;
-
-    .mat-button-wrapper {
-      display: flex;
-      margin: auto;
-      width: $button-icon-size-large;
-      height: $button-icon-size-large;
-    }
   }
 }
 
@@ -53,13 +46,10 @@ a[dense] {
   &.mat-icon-button {
     @include icon-size($mat-icon-button-size-dense);
 
-    .mat-button-wrapper {
-      width: $button-icon-size-base;
-      height: $button-icon-size-base;
-    }
-
     .mat-icon {
       @include icon-size($button-icon-size-base);
+
+      height: 22px;
     }
   }
 }

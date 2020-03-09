@@ -1,0 +1,15 @@
+@mixin uxg-skeleton-text-theme($theme) {
+    $foreground: map-get($theme, foreground);
+    $skeleton-color: map-get($foreground, text);
+
+    $background-color: rgba($skeleton-color, 0.065);
+    $background-color-animated: rgba($skeleton-color, 0.135);
+    
+    uxg-skeleton-text {
+        background: $background-color;
+
+        &[animated] {
+            background: linear-gradient(to right, $background-color 8%, $background-color-animated 18%, $background-color 33%);
+        }
+    }
+}

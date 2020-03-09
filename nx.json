@@ -58,6 +58,9 @@
     },
     "filter-toggle": {
       "tags": []
+    },
+    "skeleton-text": {
+      "tags": []
     }
   }
 }
