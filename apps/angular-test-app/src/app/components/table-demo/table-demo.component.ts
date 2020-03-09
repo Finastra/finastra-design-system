@@ -12,7 +12,8 @@ import {
   TableComponent,
   UxgSort,
   UxgColumnType,
-  UxgColumn
+  UxgColumn,
+  UxgPage
 } from '@ffdc/uxg-angular-components/table';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -170,22 +171,19 @@ const ELEMENT_DATA: any[] = [
       currency: 'EUR',
       amount: 3
     }
-  },
-  {
-    API: 'Exchange Rates',
-    'End Point': 'End point 1',
-    'Date Time': '12-01-2019',
-    'Day of Week': 'Monday',
-    'Hour of Day': '16h-17h',
-    'Status Code': '200',
-    'Error Response': 'OK',
-    'No. of Calls': 3,
-    Revenue: {
-      currency: 'EUR',
-      amount: 7
-    }
   }
 ];
+
+
+const CUSTOM_PAGING:UxgPage = {
+  disabled: false,
+  pageIndex: 0,
+  length: ELEMENT_DATA.length,
+  hidePageSize: false,
+  pageSizeOptions: [3, 6, 12],
+  pageSize: 3,
+  showFirstLastButtons: true
+};
 
 @Component({
   selector: 'ffdc-table-demo',
@@ -204,6 +202,7 @@ export class TableDemoComponent implements OnInit {
   selectedIndex = [1, 2];
 
   dataSource = ELEMENT_DATA; //data
+  customDataSource = ELEMENT_DATA.slice(0, 3);
   length = ELEMENT_DATA.length;
 
   dragEnable = false;
@@ -212,6 +211,7 @@ export class TableDemoComponent implements OnInit {
   customizedPage = false;
   stickyFooter = true;
   paging = null;
+  customPaging = CUSTOM_PAGING;
   actionDescription = '';
   singleSelect = true;
   enableTableEdit = false;
@@ -357,6 +357,11 @@ export class TableDemoComponent implements OnInit {
     return column ? column.type : '';
   }
 
+  applyCustomPaging($event: PageEvent) {
+    const offset = $event.pageSize * $event.pageIndex;
+    this.customDataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
+  }
+  
   applyPaging($event: PageEvent) {
     this.actionDescription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
