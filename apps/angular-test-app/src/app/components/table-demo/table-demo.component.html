@@ -520,22 +520,18 @@
     </uxg-table>
   </div>
 </mat-drawer-container>
-  <h3>Table custom pagination</h3>
+<h3>Table custom pagination</h3>
 
-
-  <mat-drawer-container class="table-container ">
-    <div class="ffdc-table-demo-div">
-      <uxg-table
-        [data]="customDataSource"
-        [columns]="columnsCellTemplate"
-        [columnsToDisplay]="columnsToDisplayCellTemplate"
-        [pageEnable]="true"
-        [paging]="customPaging"
-        (pageChanged)="applyCustomPaging($event)"
-      >
-      </uxg-table>
-    </div>
-  </mat-drawer-container>
-
-
-
+<mat-drawer-container class="table-container ">
+  <div class="ffdc-table-demo-div">
+    <uxg-table
+      [data]="customDataSource"
+      [columns]="columnsCellTemplate"
+      [columnsToDisplay]="columnsToDisplayCellTemplate"
+      [pageEnable]="true"
+      [paging]="customPaging"
+      (pageChanged)="applyCustomPaging($event)"
+    >
+    </uxg-table>
+  </div>
+</mat-drawer-container>

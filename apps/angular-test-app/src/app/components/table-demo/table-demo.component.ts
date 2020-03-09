@@ -174,8 +174,7 @@ const ELEMENT_DATA: any[] = [
   }
 ];
 
-
-const CUSTOM_PAGING:UxgPage = {
+const CUSTOM_PAGING: UxgPage = {
   disabled: false,
   pageIndex: 0,
   length: ELEMENT_DATA.length,
@@ -361,7 +360,7 @@ export class TableDemoComponent implements OnInit {
     const offset = $event.pageSize * $event.pageIndex;
     this.customDataSource = ELEMENT_DATA.slice(offset, offset + $event.pageSize);
   }
-  
+
   applyPaging($event: PageEvent) {
     this.actionDescription = 'customized paging applied';
     const offset = $event.pageSize * $event.pageIndex;
