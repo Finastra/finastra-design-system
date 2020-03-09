@@ -35,6 +35,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   @Input() expanded = false;
   @Input() divideAtIndex: number[] = [];
+  @Input() showActions = false;
   subscriptions: Subscription[] = [];
   selectedData: FilterGroupComponentData[] = [];
   savedFilters: SavedFilter[] = [];

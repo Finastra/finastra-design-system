@@ -9,6 +9,10 @@
     border-color: mat-color($primary, default, 0.15);
   }
 
+  .mat-expansion-panel-body {
+    background-color: white;
+  }
+
   .uxg-filter-group.mat-expansion-panel {
     .mat-expansion-panel-header {
       border-color: mat-color($foreground, divider);

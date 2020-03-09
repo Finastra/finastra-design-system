@@ -52,8 +52,8 @@
   <div class="expansion-panel-content" fxLayout="row wrap" fxLayoutAlign="start">
     <ng-content> </ng-content>
   </div>
-  <mat-divider></mat-divider>
-  <div class="expansion-panel-actions" fxLayout="row wrap">
+  <mat-divider *ngIf="showActions"></mat-divider>
+  <div class="expansion-panel-actions" fxLayout="row wrap" *ngIf="showActions">
     <div class="saved-filters-container">
       <mat-chip-list #savedFiltersList>
         <mat-chip
