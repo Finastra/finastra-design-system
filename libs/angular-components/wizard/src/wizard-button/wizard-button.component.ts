@@ -11,7 +11,8 @@ export type UxgWizardButtonType = 'cancel' | 'previous' | 'next' | 'done' | 'cus
   host: {
     '[class.uxg-wizard-button]': 'true',
     '[class.auto-margin]': 'isCancel || isCustom',
-    '[attr.aria-hidden]': 'isHidden'
+    '[attr.aria-hidden]': 'isHidden',
+    '[attr.type]': 'type'
   }
 })
 export class UxgWizardButtonComponent {

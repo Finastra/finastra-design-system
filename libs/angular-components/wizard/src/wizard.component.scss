@@ -104,22 +104,22 @@ $wizard-title-left: 6vw;
       uxg-wizard-button {
         align-self: center;
 
-        &[ng-reflect-type='cancel'] {
+        &[type='cancel'] {
           display: none;
         }
 
-        &[ng-reflect-type='previous'] {
+        &[type='previous'] {
           margin-right: 0;
           margin-left: 0;
         }
 
-        &[ng-reflect-type='previous'][aria-hidden='true'] {
+        &[type='previous'][aria-hidden='true'] {
           display: initial;
           visibility: hidden;
         }
 
-        &[ng-reflect-type='next'],
-        &[ng-reflect-type='done'] {
+        &[type='next'],
+        &[type='done'] {
           order: 3;
           margin-right: 0;
           margin-left: auto;
@@ -226,6 +226,10 @@ $wizard-title-left: 6vw;
       &.active {
         align-self: center;
       }
+    }
+
+    .step-title {
+      margin-bottom: $uxg-spacing-2;
     }
 
     .close-button {
