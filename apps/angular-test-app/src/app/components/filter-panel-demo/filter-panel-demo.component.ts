@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleFilterTree } from './filter-panel-demo.sample-data';
+import { sampleFilterTree, sampleFilterTags, sampleToggleBtn, sampleTimeline } from './filter-panel-demo.sample-data';
 import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
+import { Tag } from '@ffdc/uxg-angular-components/filter/filter-tags';
+import { ToggleBtn } from '@ffdc/uxg-angular-components/filter/filter-toggle';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',
@@ -8,34 +10,45 @@ import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
   styleUrls: ['./filter-panel-demo.component.scss']
 })
 export class FilterPanelDemoComponent implements OnInit {
-  sampleData: TreeNode[] = [];
+  sampleDataTree: TreeNode[] = [];
+  sampleDataTags: Tag[] = [];
+  sampleDataToggle: ToggleBtn[] = [];
+  sampleDataTimeline: ToggleBtn[] = [];
   filterExpression: string[] = [];
   groupValue = 'api';
   initialGroupState = 'api';
-  tagsSampleData = [
-    { label: 'Malauzai', isSelected: true },
-    { label: 'North America' },
-    { label: 'Money Movement' },
-    { label: 'Static Data' }
-  ];
-  chosenTags: string[] = [];
 
+  treeFilter: string[] = [];
+  tagFilter: string[] = [];
+  groupFilter: string[] = [];
+  toggleFilter: string[] = [];
   constructor() {}
 
   ngOnInit() {
     this.groupValue = this.initialGroupState;
-    this.sampleData = sampleFilterTree;
+    this.sampleDataTree = sampleFilterTree;
+    this.sampleDataTags = sampleFilterTags;
+    this.sampleDataToggle = sampleToggleBtn;
+    this.sampleDataTimeline = sampleTimeline;
   }
 
-  updateFilter(changes: any[]) {
-    this.filterExpression = changes;
+  updateFilterTree(changes: any[]) {
+    this.treeFilter = changes;
   }
 
   onGroupChange(val: string) {
     this.groupValue = val;
   }
 
-  updateFilterTags(tags: string[]) {
-    this.chosenTags = tags;
+  updateFilterTags(changes: string[]) {
+    this.tagFilter = changes;
+  }
+
+  updateFilterToggle(changes: any[]) {
+    this.toggleFilter = changes;
+  }
+
+  updateFilterGroup(changes: any[]) {
+    this.groupFilter = changes;
   }
 }
