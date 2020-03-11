@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PaletteService } from './palette.service';
-import { PALETTE_CONFIG } from './palette.models';
+import { PALETTE_CONFIG, PaletteConfig } from './palette.models';
 import { PALETTE_DEFAULT_CONFIG } from './palette.defaults';
 
 describe('PaletteService', () => {
@@ -35,8 +35,9 @@ describe('PaletteService', () => {
     const observer = jest.fn();
     const subscription = service.paletteChange$.subscribe(observer);
 
-    const newConfig = {
+    const newConfig: PaletteConfig = {
       colorScale: [],
+      colorWay: [],
       vectorMap: {
         marker: {
           line: {

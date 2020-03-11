@@ -1,0 +1,81 @@
+@import 'angular-theme/lib/core/style/spacing';
+@import '~@angular/material/theming';
+
+.uxg-filter-group.mat-expansion-panel:not(.mat-expanded) {
+  &.active {
+    @include mat-elevation(0);
+  }
+}
+
+.mat-expansion-panel-header {
+  border-width: 1px;
+  border-style: solid;
+  cursor: default !important;
+
+  .uxg-filter-group-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: default;
+
+    .fill-remaining-space {
+      flex: 1 1 auto;
+    }
+
+    .selectedFilters {
+      overflow: hidden;
+      display: flex;
+
+      .uxg-group-filter {
+        flex: 0 0 auto; 
+        margin-right: $uxg-spacing-4;
+      }
+      
+      .filter-divider {
+        margin-right: $uxg-spacing-4;
+      }
+
+      .mat-standard-chip {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.expansion-panel-header {
+  display: flex;
+  padding: $uxg-spacing-3 $uxg-spacing-4;
+  box-sizing: border-box;
+  width: calc(100% + #{$uxg-spacing-5});
+  margin-left: -$uxg-spacing-4;
+  justify-content: space-between;
+  
+  .uxg-h6 {
+    align-self: center;
+    margin-bottom: 0;
+  }
+}
+
+.expansion-panel-content {
+  padding: $uxg-spacing-4 0;
+}
+
+.expansion-panel-actions {
+  padding: $uxg-spacing-3 $uxg-spacing-2 0 $uxg-spacing-2;
+
+  .saved-filters-container {
+    flex: 1;
+
+    .mat-chip {
+      cursor: pointer;
+    }
+  }
+
+  .mat-button-base {
+    margin-left: $uxg-spacing-2;
+  }
+}
+
+:host ::ng-deep .mat-expansion-panel-body {
+  z-index: 10 !important;
+}

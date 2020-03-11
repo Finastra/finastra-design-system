@@ -1,446 +1,455 @@
 <div>
-    <h3 class="uxg-display-3">Avatars</h3>
-    <h5 class="uxg-h5">Default Avatar</h5>
-    <div class="example-row">
-        <div class="uxg-avatar" large></div>
-        <div class="uxg-avatar"></div>
-        <div class="uxg-avatar" dense></div>
-    </div>
-        
-    <h5 class="uxg-h5">Avatar with Letter</h5>
-    <div class="example-row">
-        <div class="uxg-avatar" large>RH</div>
-        <!-- You can use both <div> or <span> -->
-        <span class="uxg-avatar">R</span>
-        <div class="uxg-avatar" dense>R</div>
-    </div>
-            
-    <h5 class="uxg-h5">Avatar with Image</h5>
-    <div class="example-row">
-        <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" large/>
-        <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar"/>
-        <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" dense/>
-    </div>
-            
-    <h5 class="uxg-h5">Avatar List</h5>
-    <div class="example-row">
-        <ul class="uxg-avatar-list">
-            <li><img src="https://randomuser.me/api/portraits/men/5.jpg" class="uxg-avatar"/></li>
-            <li><img src="https://randomuser.me/api/portraits/men/6.jpg" class="uxg-avatar"/></li>
-            <li><span class="uxg-avatar"></span></li>
-            <li class="uxg-avatar-number">+12</li>
-        </ul>
-    </div>
-            
-    <h5 class="uxg-h5">Avatar List Dense</h5>
-    <div class="example-row">
+  <h3 class="uxg-display-3">Avatars</h3>
+  <h5 class="uxg-h5">Default Avatar</h5>
+  <div class="example-row">
+    <div class="uxg-avatar" large></div>
+    <div class="uxg-avatar"></div>
+    <div class="uxg-avatar" dense></div>
+  </div>
+
+  <h5 class="uxg-h5">Avatar with Letter</h5>
+  <div class="example-row">
+    <div class="uxg-avatar" large>RH</div>
+    <!-- You can use both <div> or <span> -->
+    <span class="uxg-avatar">R</span>
+    <div class="uxg-avatar" dense>R</div>
+  </div>
+
+  <h5 class="uxg-h5">Avatar with Image</h5>
+  <div class="example-row">
+    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" large />
+    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" />
+    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" dense />
+  </div>
+
+  <h5 class="uxg-h5">Avatar List</h5>
+  <div class="example-row">
+    <ul class="uxg-avatar-list">
+      <li><img src="https://randomuser.me/api/portraits/men/5.jpg" class="uxg-avatar" /></li>
+      <li><img src="https://randomuser.me/api/portraits/men/6.jpg" class="uxg-avatar" /></li>
+      <li><span class="uxg-avatar"></span></li>
+      <li class="uxg-avatar-number">+12</li>
+    </ul>
+  </div>
+
+  <h5 class="uxg-h5">Avatar List Dense</h5>
+  <div class="example-row">
+    <ul class="uxg-avatar-list" dense>
+      <li><img src="https://randomuser.me/api/portraits/women/8.jpg" class="uxg-avatar" /></li>
+      <li><span class="uxg-avatar">S</span></li>
+      <li><img src="https://randomuser.me/api/portraits/men/9.jpg" class="uxg-avatar" /></li>
+      <li class="uxg-avatar-number">+6</li>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <h3 class="uxg-display-3">Badges</h3>
+  <h5 class="uxg-h5">Side Badge</h5>
+  <div class="example-row">
+    <h6 matBadge="4" class="uxg-subtitle-2 uxg-side-badge">Currencies</h6>
+    <h6 matBadge="18" class="uxg-subtitle-2 uxg-side-badge">Folders</h6>
+    <h6 matBadge="429" class="uxg-subtitle-2 uxg-side-badge">Portfolios</h6>
+  </div>
+</div>
+
+<div>
+  <h3 class="uxg-display-3">Breadcrumb</h3>
+</div>
+
+<div>
+  <h3 class="uxg-display-3">Buttons</h3>
+  <h5 class="uxg-h5">Basic Buttons</h5>
+  <div class="example-row">
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button disabled>Disabled</button>
+    <a mat-button routerLink=".">Link</a>
+  </div>
+
+  <h5 class="uxg-h5">Stroked Buttons</h5>
+  <div class="example-row">
+    <button mat-stroked-button>Basic</button>
+    <button mat-stroked-button color="primary">Primary</button>
+    <button mat-stroked-button color="accent">Accent</button>
+    <button mat-stroked-button disabled>Disabled</button>
+    <a mat-stroked-button routerLink=".">Link</a>
+  </div>
+
+  <h5 class="uxg-h5">Flat Buttons</h5>
+  <div class="example-row">
+    <button mat-flat-button>Basic</button>
+    <button mat-flat-button color="primary">Primary</button>
+    <button mat-flat-button color="accent">Accent</button>
+    <button mat-flat-button disabled>Disabled</button>
+    <a mat-flat-button routerLink=".">Link</a>
+  </div>
+
+  <h5 class="uxg-h5">Buttons with Icons</h5>
+  <div class="example-row">
+    <button mat-flat-button color="primary" dense>
+      <mat-icon>grade</mat-icon>
+      Primary
+    </button>
+    <button mat-stroked-button color="primary">
+      <mat-icon>account_circle</mat-icon>
+      Primary
+    </button>
+    <button mat-stroked-button color="primary" large>
+      <mat-icon>account_circle</mat-icon>
+      Primary
+    </button>
+  </div>
+
+  <h5 class="uxg-h5">Button Densities</h5>
+  <div class="example-row">
+    <button mat-flat-button color="primary" dense>Dense</button>
+    <button mat-flat-button color="primary">Normal</button>
+    <button mat-flat-button color="primary" large>Large</button>
+  </div>
+
+  <h5 class="uxg-h5">Icon Buttons</h5>
+  <div class="example-row">
+    <button mat-icon-button aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+
+  <h5 class="uxg-h5">Icon Buttons Dense</h5>
+  <div class="example-row">
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" dense>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon" dense>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon" dense>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button disabled aria-label="Example icon-button with a heart icon" dense>
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+
+  <h5 class="uxg-h5">Fab Buttons</h5>
+  <div class="example-row">
+    <button mat-fab color="primary">Primary</button>
+    <button mat-fab color="accent">Accent</button>
+    <button mat-fab color="gradient">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-fab disabled>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-fab aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <a mat-fab routerLink=".">Link</a>
+  </div>
+
+  <h5 class="uxg-h5">Mini Fab Buttons</h5>
+  <div class="example-row">
+    <button mat-mini-fab color="primary">P</button>
+    <button mat-mini-fab color="accent">A</button>
+    <button mat-mini-fab disabled>
+      <mat-icon>close</mat-icon>
+    </button>
+    <button mat-mini-fab aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <a mat-mini-fab routerLink=".">Link</a>
+  </div>
+</div>
+
+<div>
+  <h3 class="uxg-display-3">Button toggle</h3>
+  <h5 class="uxg-h5">Filter Toggle</h5>
+  <div class="example-row">
+    <mat-button-toggle-group class="uxg-filtering-toggle-group">
+      <mat-button-toggle value="public">
+        <mat-icon>public</mat-icon>
+        <span>Public</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="shared">
+        <mat-icon>group</mat-icon>
+        <span>Shared</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="private">
+        <mat-icon>lock</mat-icon>
+        <span>Private</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <h5 class="uxg-h5">Button Toggle Dense</h5>
+  <div class="example-row">
+    <mat-button-toggle-group dense>
+      <mat-button-toggle value="left">
+        <mat-icon>border_left</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="inner">
+        <mat-icon>border_inner</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="right">
+        <mat-icon>border_right</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <h5 class="uxg-h5">Button Toggle</h5>
+  <div class="example-row">
+    <mat-button-toggle-group>
+      <mat-button-toggle value="bold">Bold</mat-button-toggle>
+      <mat-button-toggle value="italic">Italic</mat-button-toggle>
+      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+
+<div>
+  <h3 class="uxg-display-3">Cards</h3>
+  <h5 class="uxg-h5">Card</h5>
+  <div class="example-row">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <img mat-card-avatar src="https://randomuser.me/api/portraits/women/36.jpg" class="uxg-avatar" />
+        <mat-card-title>Open Innovation</mat-card-title>
+        <mat-card-subtitle>Rachelle Ross</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://www.finextra.com/finextra-images/articles/di7a2406.jpg"
+        alt="Photo of Fusion ONE"
+      />
+      <mat-card-content>
+        <p>
+          To unlock the potential of people and businesses by creating a platform for open innovation in the world of
+          financial services.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="primary">Like</button>
+        <button mat-stroked-button color="primary">Share</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <h5 class="uxg-h5">Card dense</h5>
+  <div class="example-row">
+    <mat-card dense>
+      <div class="uxg-card-image-overlay">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAoGVRDsE54AMV1QYasu_H0M868g8fmS4_i9cz5G-U9JgYc96pwg"
+        />
+      </div>
+
+      <mat-card-title>New Age in Finance</mat-card-title>
+      <mat-card-subtitle>Risk Management</mat-card-subtitle>
+
+      <mat-card-actions>
         <ul class="uxg-avatar-list" dense>
-            <li><img src="https://randomuser.me/api/portraits/women/8.jpg" class="uxg-avatar"/></li>
-            <li><span class="uxg-avatar">S</span></li>
-            <li><img src="https://randomuser.me/api/portraits/men/9.jpg" class="uxg-avatar"/></li>
-            <li class="uxg-avatar-number">+6</li>
+          <li><img src="https://randomuser.me/api/portraits/men/36.jpg" class="uxg-avatar" /></li>
+          <li><div class="uxg-avatar"></div></li>
+          <li><img src="https://randomuser.me/api/portraits/women/37.jpg" class="uxg-avatar" /></li>
+          <li class="uxg-avatar-number">+6</li>
         </ul>
-    </div>
+        <span class="fill-remaining-space"></span>
+        <button dense mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" overlapTrigger="true">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voicemail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <h5 class="uxg-h5">Product Card</h5>
+  <div class="example-row">
+    <mat-card class="uxg-card-product" large>
+      <span class="uxg-h1 uxg-card-product-name">PRO</span>
+    </mat-card>
+    <mat-card class="uxg-card-product">
+      <span class="uxg-h3 uxg-card-product-name">PRO</span>
+    </mat-card>
+    <mat-card class="uxg-card-product" dense>
+      <span class="uxg-h4 uxg-card-product-name">PRO</span>
+    </mat-card>
+    <mat-card class="uxg-card-product" extra-dense>
+      <span class="uxg-h5 uxg-card-product-name">PRO</span>
+    </mat-card>
+  </div>
+
+  <h5 class="uxg-h5">Solution Card</h5>
+  <div class="example-row">
+    <mat-card class="uxg-card-solution" large>
+      <span class="uxg-h1 uxg-card-solution-name">SOL</span>
+    </mat-card>
+    <mat-card class="uxg-card-solution">
+      <span class="uxg-h3 uxg-card-solution-name">SOL</span>
+    </mat-card>
+    <mat-card class="uxg-card-solution" dense>
+      <span class="uxg-h4 uxg-card-solution-name">SOL</span>
+    </mat-card>
+    <mat-card class="uxg-card-solution" extra-dense>
+      <span class="uxg-h5 uxg-card-solution-name">SOL</span>
+    </mat-card>
+  </div>
 </div>
 
 <div>
-    <h3 class="uxg-display-3">Badges</h3>
-    <h5 class="uxg-h5">Side Badge</h5>
-    <div class="example-row">
-        <h6 matBadge="4" class="uxg-subtitle-2 uxg-side-badge">Currencies</h6>
-        <h6 matBadge="18" class="uxg-subtitle-2 uxg-side-badge">Folders</h6>
-        <h6 matBadge="429" class="uxg-subtitle-2 uxg-side-badge">Portfolios</h6>
-    </div>
+  <h3 class="uxg-display-3">Chips</h3>
+  <h5 class="uxg-h5">Simple chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip>Simple</mat-chip>
+      <mat-chip disabled>Disabled</mat-chip>
+      <mat-chip selected>Selected</mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Dense chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip dense>Dense</mat-chip>
+      <mat-chip disabled dense>Disabled</mat-chip>
+      <mat-chip selected dense>Selected</mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Icon chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip>
+        <mat-icon matChipAvatar>check</mat-icon>
+        Icon
+      </mat-chip>
+      <mat-chip>
+        After
+        <mat-icon matChipTrailingIcon>star</mat-icon>
+      </mat-chip>
+      <mat-chip disabled>
+        <mat-icon matChipAvatar>public</mat-icon>
+        Disabled
+      </mat-chip>
+      <mat-chip selected>
+        <mat-icon matChipAvatar>check</mat-icon>
+        Selected
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Dense icon chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip dense>
+        <mat-icon matChipAvatar>check</mat-icon>
+        Dense icon
+      </mat-chip>
+      <mat-chip dense disabled>
+        <mat-icon matChipAvatar>check</mat-icon>
+        Disabled
+      </mat-chip>
+      <mat-chip dense selected>
+        <mat-icon matChipAvatar>check</mat-icon>
+        Selected
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Removable chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip removable>
+        <span>Removable</span>
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <mat-chip removable selected>
+        Selected
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <mat-chip removable dense>
+        Dense
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <mat-chip removable dense selected>
+        <span>Dense selected</span>
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Avatar chips</h5>
+  <div class="example-row">
+    <mat-chip-list>
+      <mat-chip>
+        <mat-chip-avatar>C</mat-chip-avatar>
+        Chester Young
+      </mat-chip>
+      <mat-chip selected>
+        <img src="https://randomuser.me/api/portraits/men/5.jpg" matChipAvatar />
+        Jerry Gilmer
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <h5 class="uxg-h5">Toggle chips</h5>
+  <div class="example-row">
+    <mat-chip-list multiple="true">
+      <mat-chip (click)="chip1.selected ? chip1.deselect() : chip1.select()" #chip1="matChip">
+        <mat-icon matChipAvatar>language</mat-icon>
+        Public
+      </mat-chip>
+      <mat-chip (click)="chip2.selected ? chip2.deselect() : chip2.select()" #chip2="matChip">
+        <mat-icon matChipAvatar>group</mat-icon>
+        Shared
+      </mat-chip>
+    </mat-chip-list>
+  </div>
 </div>
 
 <div>
-    <h3 class="uxg-display-3">Buttons</h3>
-    <h5 class="uxg-h5">Basic Buttons</h5>
-    <div class="example-row">
-        <button mat-button>Basic</button>
-        <button mat-button color="primary">Primary</button>
-        <button mat-button color="accent">Accent</button>
-        <button mat-button disabled>Disabled</button>
-        <a mat-button routerLink=".">Link</a>
-    </div>
+  <h3 class="uxg-display-3">Input</h3>
+  <h5 class="uxg-h5">Text Input</h5>
+  <div class="example-row">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Favorite food" value="Pizza" />
+      </mat-form-field>
+    </form>
+  </div>
 
-    <h5 class="uxg-h5">Stroked Buttons</h5>
-    <div class="example-row">
-        <button mat-stroked-button>Basic</button>
-        <button mat-stroked-button color="primary">Primary</button>
-        <button mat-stroked-button color="accent">Accent</button>
-        <button mat-stroked-button disabled>Disabled</button>
-        <a mat-stroked-button routerLink=".">Link</a>
-    </div>
+  <h5 class="uxg-h5">Fill Input</h5>
+  <div class="example-row">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Favorite food" value="Pizza" />
+      </mat-form-field>
+    </form>
+  </div>
 
-    <h5 class="uxg-h5">Flat Buttons</h5>
-    <div class="example-row">
-        <button mat-flat-button>Basic</button>
-        <button mat-flat-button color="primary">Primary</button>
-        <button mat-flat-button color="accent">Accent</button>
-        <button mat-flat-button disabled>Disabled</button>
-        <a mat-flat-button routerLink=".">Link</a>
-    </div>
-            
-    <h5 class="uxg-h5">Buttons with Icons</h5>
-    <div class="example-row">
-        <button mat-flat-button color="primary" dense>
-            <mat-icon>grade</mat-icon>
-            Primary
-        </button>
-        <button mat-stroked-button color="primary">
-            <mat-icon>account_circle</mat-icon>
-            Primary
-        </button>
-        <button mat-stroked-button color="primary" large>
-            <mat-icon>account_circle</mat-icon>
-            Primary
-        </button>
-    </div>
-
-    <h5 class="uxg-h5">Button Densities</h5>
-    <div class="example-row">
-        <button mat-flat-button color="primary" dense>Dense</button>
-        <button mat-flat-button color="primary">Normal</button>
-        <button mat-flat-button color="primary" large>Large</button>
-    </div>
-
-    <h5 class="uxg-h5">Icon Buttons</h5>
-    <div class="example-row">
-        <button mat-icon-button aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </div>
-
-    <h5 class="uxg-h5">Icon Buttons Dense</h5>
-    <div class="example-row">
-        <button mat-icon-button aria-label="Example icon-button with a heart icon" dense>
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon" dense>
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon" dense>
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button disabled aria-label="Example icon-button with a heart icon" dense>
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </div>
-
-    <h5 class="uxg-h5">Fab Buttons</h5>
-    <div class="example-row">
-        <button mat-fab color="primary">Primary</button>
-        <button mat-fab color="accent">Accent</button>
-        <button mat-fab color="gradient">
-            <mat-icon>add</mat-icon>
-        </button>
-        <button mat-fab disabled>
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-fab aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <a mat-fab routerLink=".">Link</a>
-    </div>
-            
-    <h5 class="uxg-h5">Mini Fab Buttons</h5>
-    <div class="example-row">
-        <button mat-mini-fab color="primary">P</button>
-        <button mat-mini-fab color="accent">A</button>
-        <button mat-mini-fab disabled>
-            <mat-icon>close</mat-icon>
-        </button>
-        <button mat-mini-fab aria-label="Example icon-button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <a mat-mini-fab routerLink=".">Link</a>
-    </div>
-</div>
-
-<div>   
-    <h3 class="uxg-display-3">Button toggle</h3>
-    <h5 class="uxg-h5">Filter Toggle</h5>
-    <div class="example-row">
-        <mat-button-toggle-group class="uxg-filtering-toggle-group">
-            <mat-button-toggle value="public">
-                <mat-icon>public</mat-icon>
-                <span>Public</span>
-            </mat-button-toggle>
-            <mat-button-toggle value="shared">
-                <mat-icon>group</mat-icon>
-                <span>Shared</span>
-            </mat-button-toggle>
-            <mat-button-toggle value="private">
-                <mat-icon>lock</mat-icon>
-                <span>Private</span>
-            </mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
-            
-    <h5 class="uxg-h5">Button Toggle Dense</h5>
-    <div class="example-row">
-        <mat-button-toggle-group dense>
-            <mat-button-toggle value="left">
-                <mat-icon>border_left</mat-icon>
-            </mat-button-toggle>
-            <mat-button-toggle value="inner">
-                <mat-icon>border_inner</mat-icon>
-            </mat-button-toggle>
-            <mat-button-toggle value="right">
-                <mat-icon>border_right</mat-icon>
-            </mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
-
-    <h5 class="uxg-h5">Button Toggle</h5>
-    <div class="example-row">
-        <mat-button-toggle-group>
-            <mat-button-toggle value="bold">Bold</mat-button-toggle>
-            <mat-button-toggle value="italic">Italic</mat-button-toggle>
-            <mat-button-toggle value="underline">Underline</mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
-</div>
-
-<div>  
-    <h3 class="uxg-display-3">Cards</h3>
-    <h5 class="uxg-h5">Card</h5>
-    <div class="example-row">
-        <mat-card class="example-card">
-            <mat-card-header>
-                <img mat-card-avatar src="https://randomuser.me/api/portraits/women/36.jpg" class="uxg-avatar"/>
-                <mat-card-title>Open Innovation</mat-card-title>
-                <mat-card-subtitle>Rachelle Ross</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="https://www.finextra.com/finextra-images/articles/di7a2406.jpg" alt="Photo of Fusion ONE">
-            <mat-card-content>
-                <p>
-                    To unlock the potential of people and businesses by creating a platform for open innovation in the world of financial services.
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-stroked-button color="primary">Like</button>
-                <button mat-stroked-button color="primary">Share</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-            
-            
-    <h5 class="uxg-h5">Card dense</h5>
-    <div class="example-row">
-        <mat-card dense>
-            <div class="uxg-card-image-overlay">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAoGVRDsE54AMV1QYasu_H0M868g8fmS4_i9cz5G-U9JgYc96pwg">
-            </div>
-            
-            <mat-card-title>New Age in Finance</mat-card-title>
-            <mat-card-subtitle>Risk Management</mat-card-subtitle>
-            
-            <mat-card-actions>
-                <ul class="uxg-avatar-list" dense>
-                    <li><img src="https://randomuser.me/api/portraits/men/36.jpg" class="uxg-avatar"/></li>
-                    <li><div class="uxg-avatar"></div></li>
-                    <li><img src="https://randomuser.me/api/portraits/women/37.jpg" class="uxg-avatar"/></li>
-                    <li class="uxg-avatar-number">+6</li>
-                </ul>
-                <span class="fill-remaining-space"></span>
-                <button dense mat-icon-button [matMenuTriggerFor]="menu">
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu"
-                    overlapTrigger="true">
-                    <button mat-menu-item>
-                        <mat-icon>dialpad</mat-icon>
-                        <span>Redial</span>
-                    </button>
-                    <button mat-menu-item disabled>
-                        <mat-icon>voicemail</mat-icon>
-                        <span>Check voicemail</span>
-                    </button>
-                    <button mat-menu-item>
-                        <mat-icon>notifications_off</mat-icon>
-                        <span>Disable alerts</span>
-                    </button>
-                </mat-menu>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-        
-    <h5 class="uxg-h5">Product Card</h5>
-    <div class="example-row">
-        <mat-card class="uxg-card-product" large>
-            <span class="uxg-h1 uxg-card-product-name">PRO</span>
-        </mat-card>
-        <mat-card class="uxg-card-product">
-            <span class="uxg-h3 uxg-card-product-name">PRO</span>
-        </mat-card>
-        <mat-card class="uxg-card-product" dense>
-            <span class="uxg-h4 uxg-card-product-name">PRO</span>
-        </mat-card>
-        <mat-card class="uxg-card-product" extra-dense>
-            <span class="uxg-h5 uxg-card-product-name">PRO</span>
-        </mat-card>
-    </div>
-        
-    <h5 class="uxg-h5">Solution Card</h5>
-    <div class="example-row">
-        <mat-card class="uxg-card-solution" large>
-            <span class="uxg-h1 uxg-card-solution-name">SOL</span>
-        </mat-card>
-        <mat-card class="uxg-card-solution">
-            <span class="uxg-h3 uxg-card-solution-name">SOL</span>
-        </mat-card>
-        <mat-card class="uxg-card-solution" dense>
-            <span class="uxg-h4 uxg-card-solution-name">SOL</span>
-        </mat-card>
-        <mat-card class="uxg-card-solution" extra-dense>
-            <span class="uxg-h5 uxg-card-solution-name">SOL</span>
-        </mat-card>
-    </div>
-</div>
-
-<div>
-    <h3 class="uxg-display-3">Chips</h3>
-    <h5 class="uxg-h5">Simple chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip>Simple</mat-chip>
-            <mat-chip disabled>Disabled</mat-chip>
-            <mat-chip selected>Selected</mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Dense chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip dense>Dense</mat-chip>
-            <mat-chip disabled dense>Disabled</mat-chip>
-            <mat-chip selected dense>Selected</mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Icon chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip>
-                <mat-icon matChipAvatar>check</mat-icon>
-                Icon
-            </mat-chip>
-            <mat-chip>
-                After
-                <mat-icon matChipTrailingIcon>star</mat-icon>
-            </mat-chip>
-            <mat-chip disabled>
-                <mat-icon matChipAvatar>public</mat-icon>
-                Disabled
-            </mat-chip>
-            <mat-chip selected>
-                <mat-icon matChipAvatar>check</mat-icon>
-                Selected
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Dense icon chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip dense>
-                <mat-icon matChipAvatar>check</mat-icon>
-                Dense icon
-            </mat-chip>
-            <mat-chip dense disabled>
-                <mat-icon matChipAvatar>check</mat-icon>
-                Disabled
-            </mat-chip>
-            <mat-chip dense selected>
-                <mat-icon matChipAvatar>check</mat-icon>
-                Selected
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Removable chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip removable>
-                <span>Removable</span>
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-            <mat-chip removable selected>
-                Selected
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-            <mat-chip removable dense>
-                Dense
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-            <mat-chip removable dense selected>
-                <span>Dense selected</span>
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Avatar chips</h5>
-    <div class="example-row">
-        <mat-chip-list>
-            <mat-chip>
-                <mat-chip-avatar>C</mat-chip-avatar>
-                Chester Young
-            </mat-chip>
-            <mat-chip selected>
-                <img src="https://randomuser.me/api/portraits/men/5.jpg" matChipAvatar/>
-                Jerry Gilmer
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-    <h5 class="uxg-h5">Toggle chips</h5>
-    <div class="example-row">
-        <mat-chip-list multiple="true">
-            <mat-chip (click)="chip1.selected ? chip1.deselect() : chip1.select()" #chip1="matChip">
-                <mat-icon matChipAvatar>language</mat-icon>
-                Public
-            </mat-chip>
-            <mat-chip (click)="chip2.selected ? chip2.deselect() : chip2.select()" #chip2="matChip">
-                <mat-icon matChipAvatar>group</mat-icon>
-                Shared
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-</div>
-
-<div>
-    <h3 class="uxg-display-3">Input</h3>
-    <h5 class="uxg-h5">Text Input</h5>
-    <div class="example-row">
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Favorite food" value="Pizza">
-            </mat-form-field>
-        </form>
-    </div>
-    
-    <h5 class="uxg-h5">Fill Input</h5>
-    <div class="example-row">
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <input matInput placeholder="Favorite food" value="Pizza">
-            </mat-form-field>
-        </form>
-    </div>
-    
-    <h5 class="uxg-h5">Search Input</h5>
-    <div class="example-row">
-        <form class="example-form">
-            <mat-form-field floatLabel="never" class="example-full-width">
-                <mat-icon color="primary" matPrefix>search</mat-icon>
-                <input type="search" matInput placeholder="Search...">
-            </mat-form-field>
-        </form>
-    </div>
+  <h5 class="uxg-h5">Search Input</h5>
+  <div class="example-row">
+    <form class="example-form">
+      <mat-form-field floatLabel="never" class="example-full-width">
+        <mat-icon color="primary" matPrefix>search</mat-icon>
+        <input type="search" matInput placeholder="Search..." />
+      </mat-form-field>
+    </form>
+  </div>
 </div>

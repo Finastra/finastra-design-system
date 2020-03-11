@@ -1,11 +1,11 @@
 {
   "name": "@ffdc/uxg-angular-theme",
-  "version": "0.15.0",
+  "version": "0.16.3",
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
   "sass": "_all-theme.scss",
   "css": "_all-theme.css",
   "peerDependencies": {
-    "@angular/material": "9.0.0"
+    "@angular/material": "^9.0.0"
   }
 }

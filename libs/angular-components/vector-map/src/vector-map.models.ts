@@ -265,11 +265,11 @@ export const DEFAULT_LAYOUT = {
     showframe: false,
     showcoastlines: false,
     projection: {
-      type: 'mercator'
+      type: 'miller'
     },
     center: {
-      lat: 45,
-      lon: 10
+      lat: 25,
+      lon: 0
     }
   },
   margin: {

@@ -49,6 +49,18 @@
     },
     "wizard": {
       "tags": []
+    },
+    "chart": {
+      "tags": []
+    },
+    "filter-group": {
+      "tags": []
+    },
+    "filter-toggle": {
+      "tags": []
+    },
+    "skeleton-text": {
+      "tags": []
     }
   }
 }

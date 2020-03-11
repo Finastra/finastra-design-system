@@ -1,16 +1,16 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.15.0",
+  "version": "0.16.3",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
+    "@angular/forms": "^9.0.0",
     "@angular/cdk": "^9.0.0",
     "@angular/flex-layout": "^9.0.0-beta.29",
-    "@angular/forms": "^9.0.0",
-    "angular-plotly.js": "1.4.2",
-    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
     "lodash": "4.17.15",
-    "plotly.js": "^1.50.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "angular-plotly.js": "^2.0.0",
+    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "plotly.js": "1.52.2",
+    "smoothscroll-polyfill": "0.4.4"
   }
 }

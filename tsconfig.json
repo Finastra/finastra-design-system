@@ -2,14 +2,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "allowJs": true,
-    "declaration": false,
     "sourceMap": true,
+    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
+    "target": "es2015",
     "strict": true,
     "module": "esnext",
     "typeRoots": ["node_modules/@types"],
@@ -30,7 +29,11 @@
       "@ffdc/uxg-angular-components/filter/filter-tags": ["libs/angular-components/filter/filter-tags"],
       "@ffdc/uxg-angular-components/filter/filter-tree": ["libs/angular-components/filter/filter-tree"],
       "@ffdc/uxg-angular-components/vector-map": ["libs/angular-components/vector-map"],
-      "@ffdc/uxg-angular-components/wizard": ["libs/angular-components/wizard"]
+      "@ffdc/uxg-angular-components/filter/filter-group": ["libs/angular-components/filter/filter-group"],
+      "@ffdc/uxg-angular-components/filter/filter-toggle": ["libs/angular-components/filter/filter-toggle"],
+      "@ffdc/uxg-angular-components/wizard": ["libs/angular-components/wizard"],
+      "@ffdc/uxg-angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
+      "@ffdc/uxg-angular-components/chart": ["libs/angular-components/chart"]
     }
   },
   "exclude": ["node_modules", "tmp"]

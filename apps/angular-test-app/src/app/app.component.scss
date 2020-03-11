@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 .main-container {
   height: 100%;
   width: 100%;
@@ -36,4 +38,8 @@ mat-sidenav-container {
   bottom: 0;
   left: 0;
   padding: 2rem;
+}
+
+.theme-toggle {
+  margin-left: $uxg-spacing-3;
 }

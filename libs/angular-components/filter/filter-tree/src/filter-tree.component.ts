@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, SimpleChange } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Subscription } from 'rxjs';
 
@@ -65,9 +65,12 @@ export class FilterTreeComponent implements OnChanges {
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.data) {
-      this.dataSource.data = changes.data.currentValue;
-      this.selectedData = this.getSelectedNodes(this.dataSource.data);
+    if (changes.data || changes.selectedData) {
+      changes.data ? (this.dataSource.data = changes.data.currentValue) : (this.dataSource.data = this.data);
+      changes.selectedData
+        ? (this.selectedData = changes.selectedData.currentValue)
+        : (this.selectedData = this.getSelectedNodes(this.dataSource.data));
+
       this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
       if (this.subscription) {
         this.subscription.unsubscribe();
@@ -186,5 +189,13 @@ export class FilterTreeComponent implements OnChanges {
       return acc;
     }, new Array<TreeNode>());
     return result;
+  }
+
+  getState() {
+    return [...this.checkListSelection.selected];
+  }
+
+  setState(data: any[]) {
+    this.ngOnChanges({ selectedData: new SimpleChange(null, [...data], false) });
   }
 }

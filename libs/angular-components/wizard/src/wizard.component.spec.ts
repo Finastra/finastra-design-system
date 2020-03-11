@@ -4,6 +4,7 @@ import { UxgWizardComponent } from './wizard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('UxgWizardComponent', () => {
   let component: UxgWizardComponent;
@@ -12,7 +13,8 @@ describe('UxgWizardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
-      declarations: [UxgWizardComponent]
+      declarations: [UxgWizardComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 

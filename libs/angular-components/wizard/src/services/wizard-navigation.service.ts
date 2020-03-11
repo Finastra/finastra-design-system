@@ -37,6 +37,13 @@ export class WizardNavigationService implements OnDestroy {
     return this.currentPage.title;
   }
 
+  public get currentPageDescription(): TemplateRef<any> | null {
+    if (!this.currentPage) {
+      return null;
+    }
+    return this.currentPage.description;
+  }
+
   public get currentPageIsFirst(): boolean {
     return this.pageCollection.firstPage === this.currentPage;
   }

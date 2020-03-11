@@ -326,6 +326,12 @@
       <td>yes</td>
       <td>The edit template to display your customized edit cell.When you enable edit to table</td>
     </tr>
+    <tr>
+      <td>cellEditTemplateEmiter</td>
+      <td>Object</td>
+      <td>yes</td>
+      <td>The emiter you want to use in your template, if you need to trigger action on a click for example</td>
+    </tr>
   </tbody>
 </table>
 <h3>UxgColumnType</h3>
@@ -478,9 +484,13 @@
   edit cell
 </ng-template>
 
-<ng-template #tableCellTable let-element="element" let-column="column">
+<ng-template #tableCellTable let-element="element" let-column="column" let-emiter="emiter">
   <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false">
   </uxg-table>
+</ng-template>
+
+<ng-template #tableCellAction let-element="element" let-column="column" let-emiter="emiter">
+  <button (click)="$event.stopPropagation(); emiter.emit({ column: column, element: element })">click</button>
 </ng-template>
 
 <mat-drawer-container class="table-container ">
@@ -488,7 +498,7 @@
     <uxg-table
       [data]="dataSource"
       [columns]="columnsCellTemplate"
-      [columnsToDisplay]="columnsToDisplay"
+      [columnsToDisplay]="columnsToDisplayCellTemplate"
       [columnDragEnable]="dragEnable"
       [selectedKeys]="selectedIndex"
       [showTotalRows]="totalEnable"

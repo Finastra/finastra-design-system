@@ -1,2 +1,2 @@
-@mixin uxg-<%= filename %>-colors($theme) {
+@mixin uxg-<%= filename %>-theme($theme) {
 }
