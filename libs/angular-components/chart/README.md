@@ -1,4 +1,4 @@
-# Global Search
+# Chart
 
 ## Usage
 
