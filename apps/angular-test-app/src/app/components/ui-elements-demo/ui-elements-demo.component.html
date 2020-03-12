@@ -449,20 +449,26 @@
     </form>
   </div>
 
-  <h5 class="uxg-h5"> Input With Icon Button </h5>
+  <h5 class="uxg-h5">Input With Icon Button</h5>
   <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <input matInput [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" class="example-right-align">
+      <input matInput type="number" class="example-right-align" />
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
     </mat-form-field>
@@ -478,4 +484,3 @@
     </form>
   </div>
 </div>
-
