@@ -1,6 +1,6 @@
 @import 'angular-theme/lib/core/style/spacing';
 
-$row-height: 34px;
+$row-height: 32px;
 
 .filter-tree .child-tree,
 .filter-tree {
@@ -22,8 +22,4 @@ $row-height: 34px;
   justify-content: space-between;
   min-height: $row-height;
   overflow: visible;
-}
-
-.invisible-child-tree {
-  display: none;
 }
