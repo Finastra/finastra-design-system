@@ -1,7 +1,8 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 .wrapper {
   display: flex;
   justify-content: center;
-  //align-items: center;
   height: 100%;
 }
 
@@ -12,8 +13,8 @@
 .actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
+  margin-top: $uxg-spacing-4;
   button {
-    margin-left: 10px;
+    margin-left: $uxg-spacing-3;
   }
 }

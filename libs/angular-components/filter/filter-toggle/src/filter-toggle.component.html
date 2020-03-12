@@ -1,0 +1,17 @@
+<mat-button-toggle-group
+  #group="matButtonToggleGroup"
+  [value]="selectedValue"
+  (change)="onValueChange(group.value)"
+  [attr.dense]="dense || null"
+  [ngClass]="uxgClass"
+>
+  <ng-container *ngFor="let item of data">
+    <mat-button-toggle [value]="item">
+      <ng-container *ngIf="item.matIcon && showIcon">
+        <mat-icon fontSet="material-icons-outlined">{{ item.matIcon }}</mat-icon>
+      </ng-container>
+
+      <span *ngIf="showLabel">{{ item.label }}</span>
+    </mat-button-toggle>
+  </ng-container>
+</mat-button-toggle-group>
