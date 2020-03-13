@@ -6,10 +6,10 @@ $icon-size-base: $uxg-spacing-4;
 $icon-size-dense: 18px;
 
 @mixin icon-size($icon-size) {
-  width: $icon-size;
-  height: $icon-size;
-  font-size: $icon-size;
-  line-height: $icon-size;
+  width: $icon-size !important;
+  height: $icon-size !important;
+  font-size: $icon-size !important;
+  line-height: $icon-size !important;
 }
 
 .mat-icon[dense] {

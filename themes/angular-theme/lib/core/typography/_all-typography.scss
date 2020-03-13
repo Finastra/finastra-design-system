@@ -6,7 +6,6 @@
 @import '../../breadcrumb/breadcrumb-theme';
 @import '../../card/card-theme';
 @import '../../chips/chips-theme';
-@import '../../input/input-theme';
 @import '../../list/list-theme';
 @import '../../table/table-theme';
 
@@ -24,7 +23,6 @@
   @include uxg-breadcrumb-typography($config);
   @include uxg-card-typography($config);
   @include uxg-chips-typography($config);
-  @include uxg-input-typography($config);
   @include uxg-list-typography($config);
   @include uxg-table-typography($config);
 }

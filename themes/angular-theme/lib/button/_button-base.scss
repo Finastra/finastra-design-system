@@ -26,6 +26,14 @@ $mat-icon-button-size-dense: 30px;
       padding-bottom: 2px;
     }
   }
+
+  &.mat-icon-button {
+    .mat-button-wrapper {
+      display: flex;
+      align-self: center;
+      margin: auto;
+    }
+  }
 }
 
 a,
@@ -36,6 +44,11 @@ button {
     display: inline-flex;
     align-content: center;
     justify-content: center;
+
+    .mat-button-wrapper {
+      width: $button-icon-size-large;
+      height: $button-icon-size-large;
+    }
   }
 }
 
@@ -46,10 +59,13 @@ a[dense] {
   &.mat-icon-button {
     @include icon-size($mat-icon-button-size-dense);
 
+    .mat-button-wrapper {
+      width: $button-icon-size-base;
+      height: $button-icon-size-base;
+    }
+
     .mat-icon {
       @include icon-size($button-icon-size-base);
-
-      height: 22px;
     }
   }
 }

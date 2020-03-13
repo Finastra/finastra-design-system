@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./ui-elements-demo.component.scss']
 })
 export class UiElementsDemoComponent {
+  hide = true;
   constructor() {}
 }
