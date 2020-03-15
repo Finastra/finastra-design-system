@@ -1,5 +1,5 @@
 <mat-tab-group>
-  <!--<mat-tab label="Vertical Filter" class="filter-panel-container">
+  <mat-tab label="Vertical Filter" class="filter-panel-container">
     <mat-drawer-container class="filter-panel-container">
       <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
         <div class="filter-panel-side-header">
@@ -77,7 +77,7 @@
         <pre>{{ treeFilter | json }}</pre>
       </mat-drawer-content>
     </mat-drawer-container>
-  </mat-tab>-->
+  </mat-tab>
   <mat-tab label="Horizontal Filter" class="filter-panel-container">
     <mat-drawer-container class="filter-panel-container">
       <div class="filter-group-container">
@@ -85,8 +85,7 @@
           [expanded]="false"
           [divideAtIndex]="[0]"
           (changes)="updateFilterGroup($event)"
-          [autoApply]="true"
-          [showActions]="false"
+          [showActions]="true"
         >
           <div class="filter-instance">
             <div class="uxg-h6">Time Frame</div>
@@ -105,11 +104,13 @@
             <uxg-filter-tree uxgFilter="Category" [data]="sampleDataTree" (changes)="updateFilterTree($event)">
             </uxg-filter-tree>
           </div>
-          <div class="filter-instance">
-            <div class="uxg-h6">Tags</div>
-            <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
-            </uxg-filter-tags>
-          </div>
+          <ng-container>
+            <div class="filter-instance">
+              <div class="uxg-h6">Tags</div>
+              <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
+              </uxg-filter-tags>
+            </div>
+          </ng-container>
         </uxg-filter-group>
       </div>
       <div class="group-result">
