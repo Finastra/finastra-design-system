@@ -2,49 +2,74 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  
-  .uxg-side-badge .mat-badge-content {
-    color: mat-color($primary, default);
-    background-color: mat-color($primary, lighter);
-    border-color: mat-color($primary, default, 0.15);
-  }
+  $uxg-filter-group-border-radius: 4px;
 
-  .mat-expansion-panel-body {
-    background-color: white;
-  }
+  uxg-filter-group {
+    .uxg-side-badge .mat-badge-content {
+      color: mat-color($primary, default);
+      background-color: mat-color($primary, lighter);
+      border-color: mat-color($primary, default, 0.15);
+    }
 
-  .uxg-filter-group.mat-expansion-panel {
-    .mat-expansion-panel-header {
-      border-color: mat-color($foreground, divider);
+    .uxg-filter-group {
+      &.mat-expansion-panel {
+        background: transparent;
+        padding: 0 $uxg-spacing-2 $uxg-spacing-2;
 
-      .uxg-filter-group-header {
-        color: mat-color($foreground, text, 0.6);
+        .mat-expansion-panel-header {
+          border-color: mat-color($foreground, divider);
+          background: mat-color($background, card);
+          padding-right: 0;
 
-        .filter-value {
-          color: mat-color($primary, default);
+          .uxg-filter-group-header {
+            color: mat-color($foreground, text, 0.6);
+
+            .expand-button {
+              background-color: mat-color($primary, default, 0.15);
+              border-top-right-radius: $uxg-filter-group-border-radius - 1;
+              border-bottom-right-radius: $uxg-filter-group-border-radius - 1;
+            }
+
+            .filter-value {
+              padding: 0 $uxg-spacing-2;
+              color: mat-color($primary, default);
+            }
+          }
+        }
+        .mat-expansion-panel-content {
+          @include mat-elevation(2);
+          margin-top: $uxg-spacing-2;
+          border-radius: $uxg-filter-group-border-radius;
+
+          .mat-expansion-panel-body {
+            background: mat-color($background, card);
+            border-radius: $uxg-filter-group-border-radius;
+            z-index: 1;
+            overflow: hidden;
+          }
+        }
+      }
+
+      &.active {
+        .mat-expansion-panel-header {
+          border-color: mat-color($primary, default);
         }
       }
     }
 
-    &.active {
-      .mat-expansion-panel-header {
-        border-color: mat-color($primary, default);
-      }
+    .expansion-panel-header, .filter-group-dialog-header {
+      background-color: mat-color($background, status-bar, 0.5);
     }
-  }
-
-  .expansion-panel-header, .filter-group-dialog-header {
-    background-color: mat-color($background, status-bar, 0.5);
   }
 }
 
 @mixin uxg-filter-group-typography($config) {
-  .mat-expansion-panel-header {
-    .uxg-filter-group-header {
-      .selectedFilters {
-        @include mat-typography-level-to-styles($config, subtitle-3);
-
-        letter-spacing: 1.1px;
+  uxg-filter-group {
+    .mat-expansion-panel-header {
+      .uxg-filter-group-header {
+        .selectedFilters {
+          @include mat-typography-level-to-styles($config, subtitle-3);
+        }
       }
     }
   }

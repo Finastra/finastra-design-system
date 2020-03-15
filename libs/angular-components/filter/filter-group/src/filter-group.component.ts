@@ -43,6 +43,9 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   initialState: FilterGroupComponentData[] = [];
   activeFilter: FilterGroupComponentData[] = [];
   isActive = false;
+
+  headerHeight = '40px';
+
   constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit() {
