@@ -104,13 +104,11 @@
             <uxg-filter-tree uxgFilter="Category" [data]="sampleDataTree" (changes)="updateFilterTree($event)">
             </uxg-filter-tree>
           </div>
-          <ng-container>
-            <div class="filter-instance">
-              <div class="uxg-h6">Tags</div>
-              <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
-              </uxg-filter-tags>
-            </div>
-          </ng-container>
+          <div class="filter-instance">
+            <div class="uxg-h6">Tags</div>
+            <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
+            </uxg-filter-tags>
+          </div>
         </uxg-filter-group>
       </div>
       <div class="group-result">
