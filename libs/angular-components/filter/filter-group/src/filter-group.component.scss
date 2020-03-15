@@ -42,8 +42,6 @@ $uxg-filter-group-border-radius: 4px;
   display: flex;
   padding: $uxg-spacing-2 $uxg-spacing-4;
   box-sizing: border-box;
-  width: calc(100% + #{$uxg-spacing-5});
-  margin-left: -$uxg-spacing-4;
   justify-content: space-between;
   border-top-left-radius: $uxg-filter-group-border-radius;
   border-top-right-radius: $uxg-filter-group-border-radius;
@@ -55,7 +53,7 @@ $uxg-filter-group-border-radius: 4px;
 }
 
 .expansion-panel-content {
-  padding: $uxg-spacing-4 0;
+  padding: $uxg-spacing-4;
 }
 
 .expansion-panel-actions {

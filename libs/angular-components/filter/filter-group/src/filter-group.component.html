@@ -3,7 +3,7 @@
   class="uxg-filter-group mat-elevation-z0"
   hideToggle="true"
   [expanded]="expanded"
-  [class.active]="checkIsActive()"
+  [class.active]="isActive"
 >
   <mat-expansion-panel-header
     [expandedHeight]="headerHeight"
@@ -47,7 +47,7 @@
 
   <div class="expansion-panel-header">
     <h6 class="uxg-h6">Filter by</h6>
-    <button mat-button color="accent" dense (click)="resetSelection()">
+    <button mat-button color="accent" dense (click)="clearSelection()">
       <mat-icon>refresh</mat-icon>
       Reset
     </button>

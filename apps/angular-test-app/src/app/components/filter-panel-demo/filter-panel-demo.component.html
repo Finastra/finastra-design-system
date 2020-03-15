@@ -1,5 +1,5 @@
 <mat-tab-group>
-  <mat-tab label="Vertical Filter" class="filter-panel-container">
+  <!--<mat-tab label="Vertical Filter" class="filter-panel-container">
     <mat-drawer-container class="filter-panel-container">
       <mat-drawer class="filter-panel-side" mode="side" #filterPanel opened>
         <div class="filter-panel-side-header">
@@ -77,7 +77,7 @@
         <pre>{{ treeFilter | json }}</pre>
       </mat-drawer-content>
     </mat-drawer-container>
-  </mat-tab>
+  </mat-tab>-->
   <mat-tab label="Horizontal Filter" class="filter-panel-container">
     <mat-drawer-container class="filter-panel-container">
       <div class="filter-group-container">
@@ -85,7 +85,8 @@
           [expanded]="false"
           [divideAtIndex]="[0]"
           (changes)="updateFilterGroup($event)"
-          [showActions]="true"
+          [autoApply]="true"
+          [showActions]="false"
         >
           <div class="filter-instance">
             <div class="uxg-h6">Time Frame</div>
@@ -130,7 +131,7 @@ and one using <code>uxg-filter-tags</code> component.
 <h3>Filter tree</h3>
 <p>The <code>uxg-filter-tree</code> component is based on the <code>mat-tree</code> from angular material.</p>
 <p>It take a <code>datasource</code> as input, this input is a Nested tree node.</p>
-<p>The output is the fowarding of the change object</p>
+<p>The output is the forwarding of the change object</p>
 
 <h2>Properties</h2>
 <table class="documentation">

@@ -102,8 +102,9 @@ export class FilterTagsComponent implements OnInit {
   }
 
   clearSelection() {
-    this.changes.emit({ added: [], removed: [...this.selectedData] });
+    const removed = [...this.selectedData];
     this.selectedData.length = 0;
+    this.changes.emit({ added: [], removed });
   }
 
   onClick() {
