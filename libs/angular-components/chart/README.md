@@ -18,8 +18,7 @@ import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 In your `styles.scss` :
 
 ```scss
-@include  uxg-chart-typography($config)
-@include  uxg-chart-theme($theme)
+@include uxg-chart-typography($config) @include uxg-chart-theme($theme);
 ```
 
 In your html
@@ -51,10 +50,7 @@ In your html
 or
 
 ```html
-<uxg-chart 
-  (onClick)="onClick($event)" 
-  (onSelected)="onSelected($event)" 
-  (onDoubleClick)="onDoubleClick($event)">
+<uxg-chart (onClick)="onClick($event)" (onSelected)="onSelected($event)" (onDoubleClick)="onDoubleClick($event)">
   <uxg-legend [position]="legendPosition"></uxg-legend>
   <uxg-group-traces columnPosition="0">
     <uxg-trace
