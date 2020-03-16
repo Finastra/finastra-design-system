@@ -4,6 +4,7 @@
   height: 100%;
   width: 100%;
 }
+
 mat-sidenav-container {
   height: 100%;
   ::ng-deep {
@@ -12,13 +13,16 @@ mat-sidenav-container {
     }
   }
 }
+
 .mat-sidenav {
   z-index: 102;
 }
+
 .uxg-toolbar {
   position: fixed;
   z-index: 101;
 }
+
 .uxg-nav-header {
   display: flex;
   flex-direction: column;
@@ -31,13 +35,15 @@ mat-sidenav-container {
     margin-bottom: 10px;
   }
 }
+
 .app-content {
-  position: absolute;
+  position: fixed;
   top: 56px;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 2rem;
+  overflow: auto;
 }
 
 .theme-toggle {
