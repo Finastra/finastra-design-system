@@ -6,16 +6,16 @@
   .uxg-expansion-filter.mat-expansion-panel {
     background: transparent;
 
-    &.active {
-      .mat-expansion-panel-header {
-        border-color: mat-color($primary, default);
-      }
-    }
-
     .mat-expansion-panel-header {
       border-color: mat-color($foreground, divider);
       background: mat-color($background, card);
       color: mat-color($foreground, text, 0.6);
+    }
+
+    &.active {
+      .mat-expansion-panel-header {
+        border-color: mat-color($primary, default);
+      }
     }
 
     .mat-expansion-panel-content {
