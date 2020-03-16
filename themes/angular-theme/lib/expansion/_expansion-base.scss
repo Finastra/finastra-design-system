@@ -1,6 +1,35 @@
+$uxg-expansion-filter-border-radius: 4px;
+
 .mat-action-row {
   button + button {
     margin-left: 8px;
+  }
+}
+
+.uxg-expansion-filter.mat-expansion-panel {
+  // Todo: find better way to display elevation
+  padding: 0 $uxg-spacing-2 $uxg-spacing-2;
+
+  &:not([class*='mat-elevation-z']) {
+    @include mat-elevation(0);
+  }
+
+  .mat-expansion-panel-header {
+    border-width: 1px;
+    border-style: solid;
+    
+  }
+
+  .mat-expansion-panel-content {
+    margin-top: $uxg-spacing-2;
+
+    .mat-expansion-panel-body {
+      @include mat-elevation(2);
+      border-radius: $uxg-expansion-filter-border-radius;
+      z-index: 1;
+      overflow: hidden;
+      padding: 0;
+    }
   }
 }
 

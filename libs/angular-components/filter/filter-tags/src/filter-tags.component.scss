@@ -1,0 +1,27 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+uxg-filter-tags {
+	.filter-tags-container {
+		.chip-list {
+			width: 100%;
+			margin-top: $uxg-spacing-2;
+			
+			.search-icon {
+				margin-right: $uxg-spacing-2;
+			}
+
+			.mat-form-field-wrapper {
+				.mat-form-field-flex {
+					padding: .5em .75em;
+					align-items: center;
+				}
+				.mat-form-field-infix {
+					padding-top: 0;
+					input.mat-chip-input {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

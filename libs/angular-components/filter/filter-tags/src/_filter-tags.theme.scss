@@ -6,24 +6,8 @@
   uxg-filter-tags {
     .filter-tags-container {
       .chip-list {
-        width: 100%;
-        margin-top: $uxg-spacing-2;
         .search-icon {
           color: mat-color($primary);
-          margin-right: $uxg-spacing-2;
-        }
-
-        .mat-form-field-wrapper {
-          .mat-form-field-flex {
-            padding: .5em .75em;
-            align-items: center;
-          }
-          .mat-form-field-infix {
-            padding-top: 0;
-            input.mat-chip-input {
-              margin: 0;
-            }
-          }
         }
       }
     }
@@ -31,6 +15,7 @@
 
   .mat-autocomplete-panel {
     .mat-option {
+      // Todo: create dense version of mat-option
       height: $filter-tags-option-height;
     }
     .selected-option-highlight,

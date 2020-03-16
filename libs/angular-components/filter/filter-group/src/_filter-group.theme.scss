@@ -2,7 +2,7 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  $uxg-filter-group-border-radius: 4px;
+  
 
   uxg-filter-group {
     .uxg-side-badge .mat-badge-content {
@@ -11,50 +11,14 @@
       border-color: mat-color($primary, default, 0.15);
     }
 
-    .uxg-filter-group {
-      &.mat-expansion-panel {
-        background: transparent;
-        padding: 0 $uxg-spacing-2 $uxg-spacing-2;
-
-        .mat-expansion-panel-header {
-          border-color: mat-color($foreground, divider);
-          background: mat-color($background, card);
-          padding-right: 0;
-
-          .uxg-filter-group-header {
-            color: mat-color($foreground, text, 0.6);
-
-            .expand-button {
-              background-color: mat-color($primary, default, 0.15);
-              border-top-right-radius: $uxg-filter-group-border-radius - 1;
-              border-bottom-right-radius: $uxg-filter-group-border-radius - 1;
-            }
-
-            .filter-value {
-              padding: 0 $uxg-spacing-2;
-              color: mat-color($primary, default);
-            }
-          }
-        }
-        .mat-expansion-panel-content {
-          @include mat-elevation(2);
-          margin-top: $uxg-spacing-2;
-          border-radius: $uxg-filter-group-border-radius;
-
-          .mat-expansion-panel-body {
-            background: mat-color($background, card);
-            border-radius: $uxg-filter-group-border-radius;
-            z-index: 1;
-            overflow: hidden;
-            padding: 0;
-          }
-        }
+    .uxg-expansion-filter {
+      
+      .expand-button {
+        background-color: mat-color($primary, default, 0.15);
       }
 
-      &.active {
-        .mat-expansion-panel-header {
-          border-color: mat-color($primary, default);
-        }
+      .filter-value {
+        color: mat-color($primary, default);
       }
     }
 
