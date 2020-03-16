@@ -1,6 +1,29 @@
 @mixin uxg-expansion-theme($theme) {
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
   $primary: map-get($theme, primary);
+
+  .uxg-expansion-filter.mat-expansion-panel {
+    background: transparent;
+
+    .mat-expansion-panel-header {
+      border-color: mat-color($foreground, divider);
+      background: mat-color($background, card);
+      color: mat-color($foreground, text, 0.6);
+    }
+
+    &.active {
+      .mat-expansion-panel-header {
+        border-color: mat-color($primary, default);
+      }
+    }
+
+    .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        background: mat-color($background, card);
+      }
+    }
+  }
 
   .mat-action-row {
     background-color: mat-color($background, background);

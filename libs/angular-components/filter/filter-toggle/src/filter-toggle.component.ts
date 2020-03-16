@@ -14,7 +14,8 @@ interface UXGFilterChanges {
 
 @Component({
   selector: 'uxg-filter-toggle',
-  templateUrl: './filter-toggle.component.html'
+  templateUrl: './filter-toggle.component.html',
+  styleUrls: ['./filter-toggle.component.scss']
 })
 export class FilterToggleComponent implements OnInit {
   selectedValue: ToggleBtn | undefined;

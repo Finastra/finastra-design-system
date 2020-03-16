@@ -1,18 +1,20 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   EventEmitter,
   Input,
+  OnDestroy,
   Output,
   QueryList,
-  OnDestroy
+  ViewEncapsulation
 } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-dialog.component';
 import { UxgFilter } from './filter.directive';
 import { UXGFilterChanges } from './filter.models';
-import { Subscription } from 'rxjs';
 
 export interface FilterGroupComponentData {
   title: string;
@@ -27,7 +29,9 @@ export interface SavedFilter {
 @Component({
   selector: 'uxg-filter-group',
   templateUrl: './filter-group.component.html',
-  styleUrls: ['./filter-group.component.scss']
+  styleUrls: ['./filter-group.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Output() changes = new EventEmitter<UXGFilterChanges<any>>();
@@ -36,6 +40,8 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Input() expanded = false;
   @Input() divideAtIndex: number[] = [];
   @Input() showActions = false;
+  @Input() autoApply = false;
+
   subscriptions: Subscription[] = [];
   selectedData: FilterGroupComponentData[] = [];
   savedFilters: SavedFilter[] = [];
@@ -43,6 +49,9 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   initialState: FilterGroupComponentData[] = [];
   activeFilter: FilterGroupComponentData[] = [];
   isActive = false;
+
+  headerHeight = '40px';
+
   constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit() {
@@ -62,16 +71,22 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
             }
           });
           this.changes.emit(change);
+
+          if (this.autoApply) {
+            this.applyFilters();
+          }
         })
       );
     });
+
+    setTimeout(() => this.applyFilters());
   }
 
   ngOnDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  openDialog(): void {
+  openDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '300px';
     dialogConfig.data = {
@@ -109,10 +124,10 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   applyFilters() {
     let change: UXGFilterChanges<any>;
-    this.activeFilter = [];
+    const activeFilter: FilterGroupComponentData[] = [];
     this.filterInstances.forEach(filterInstance => {
       const data = filterInstance.component.getState();
-      this.activeFilter.push({ title: filterInstance.instance, selectedData: data });
+      activeFilter.push({ title: filterInstance.instance, selectedData: data });
       change = {
         instance: filterInstance.instance,
         added: data,
@@ -120,6 +135,9 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
       };
       this.changes.emit(change);
     });
+    this.activeFilter = activeFilter;
+
+    this.isActive = this.checkIsActive();
   }
 
   updateFilter() {
@@ -228,13 +246,17 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
     return stateArray;
   }
 
-  checkIsActive() {
-    if (this.selectedData.length && this.activeFilter.length) {
+  checkIsActive(): boolean {
+    if (
+      this.selectedData.some(data => data.selectedData.length) &&
+      this.activeFilter.some(data => data.selectedData.length)
+    ) {
       return this.checkListEquality(this.activeFilter, this.selectedData);
     }
+    return false;
   }
 
-  checkListEquality(listA: FilterGroupComponentData[], listB: FilterGroupComponentData[]) {
+  checkListEquality(listA: FilterGroupComponentData[], listB: FilterGroupComponentData[]): boolean {
     for (let i = 0; i < listA.length; i++) {
       if (listA[i].title === listB[i].title && listA[i].selectedData.length === listB[i].selectedData.length) {
         for (let j = 0; j < listA[i].selectedData.length; j++) {
@@ -249,7 +271,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
     return true;
   }
 
-  checkDivider(index: number) {
+  checkDivider(index: number): boolean {
     if (this.divideAtIndex.indexOf(index) >= 0) {
       return true;
     } else {

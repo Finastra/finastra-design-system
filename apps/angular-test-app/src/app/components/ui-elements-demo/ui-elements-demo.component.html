@@ -484,3 +484,30 @@
     </form>
   </div>
 </div>
+
+<div>
+  <h3 class="uxg-display-3">Expansion</h3>
+  <h5 class="uxg-h5">Expansion filter</h5>
+  <div class="example-row">
+    <mat-expansion-panel class="uxg-expansion-filter">
+      <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" min="1" />
+      </mat-form-field>
+    </mat-expansion-panel>
+  </div>
+</div>
