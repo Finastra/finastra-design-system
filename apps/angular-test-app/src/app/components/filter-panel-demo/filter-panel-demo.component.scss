@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 .uxg-h5 {
   margin: 22px 0 22px !important;
 }
@@ -56,21 +58,6 @@
   }
 }
 
-:host ::ng-deep .mat-form-field-wrapper{
-  padding-bottom: 0;
-}
-:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
-  padding: 0.4em 0px !important;
-}
-:host ::ng-deep .mat-form-field-label-wrapper {
-  top: -1.5em;
-}
-
-:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-  transform: translateY(-1.1em) scale(.75);
-  width: 133.33333%;
-}
-
 .filter-panel-tags-title {
   display: flex;
   justify-content: space-between;
@@ -121,6 +108,5 @@
 
 .filter-panel-toggle {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  padding: 0 $uxg-spacing-4;
 }
