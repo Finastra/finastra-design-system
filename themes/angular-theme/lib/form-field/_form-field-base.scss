@@ -3,3 +3,14 @@
     align-items: flex-end;
   }
 }
+
+label.mat-form-field-label{
+    left: 12px;
+  }
+
+.cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
+    padding-left: 12px;
+    width: 90%;
+}
+
+
