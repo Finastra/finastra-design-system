@@ -28,18 +28,21 @@ context('Foundations', () => {
   it('match logo nomal', () => {
     cy.get('.logo-normal-test')
       .scrollIntoView({offset: {top: "-50px"}})
+      .should('be.visible',{timeout:10000})
       .toMatchImageSnapshot()
   })
 
   it('match logo dense', () => {
     cy.get('.logo-dense-test')
       .scrollIntoView({offset: {top: "-50px"}})
+      .should('be.visible',{timeout:10000})
       .toMatchImageSnapshot()
   })
 
   it('match logo link', () => {
     cy.get('.logo-link-test')
       .scrollIntoView({offset: {top: "-50px"}})
+      .should('be.visible',{timeout:10000})
       .toMatchImageSnapshot()
   })
 

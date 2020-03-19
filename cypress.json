@@ -2,5 +2,6 @@
   "ignoreTestFiles": [
     "**/__snapshots__/*",
     "**/__image_snapshots__/*"
-  ]
+  ],
+  "chromeWebSecurity": false
 }
