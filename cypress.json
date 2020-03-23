@@ -3,5 +3,8 @@
     "**/__snapshots__/*",
     "**/__image_snapshots__/*"
   ],
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "video": false,
+  "viewportWidth": 900,
+  "viewportHeight": 1200
 }

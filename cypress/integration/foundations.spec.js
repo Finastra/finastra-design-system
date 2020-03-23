@@ -2,48 +2,87 @@
 
 context('Foundations', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4200')
-    cy.contains('menu').click()
-    cy.contains('Foundations').click()
+    cy.visit('http://localhost:4200');
+    cy.get('.app-content').invoke('css', 'position', 'relative');
+    cy.contains('menu').click();
+    cy.contains('Foundations').click();
   })
+
+  ////////
+  // ICONS
+  ////////
 
   it('match icons colors', () => {
     cy.get('.icon-colors-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
   
   it('match icons sizes', () => {
     cy.get('.icon-sizes-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
 
   it('match icon types', () => {
     cy.get('.icon-types-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
+
+  ////////
+  // LOGO
+  ////////
 
   it('match logo nomal', () => {
     cy.get('.logo-normal-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .should('be.visible',{timeout:10000})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
 
   it('match logo dense', () => {
     cy.get('.logo-dense-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .should('be.visible',{timeout:10000})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
 
   it('match logo link', () => {
     cy.get('.logo-link-test')
-      .scrollIntoView({offset: {top: "-50px"}})
-      .should('be.visible',{timeout:10000})
-      .toMatchImageSnapshot()
+      .scrollIntoView()
+      .toMatchImageSnapshot();
   })
 
+  ////////
+  // TYPO
+  ////////
+
+  it('match display scale', () => {
+    cy.get('.typo-display-test')
+      .scrollIntoView()
+      .toMatchImageSnapshot();
+  })
+
+  it('match headline scale', () => {
+    cy.get('.typo-headline-test')
+      .scrollIntoView()
+      .toMatchImageSnapshot();
+  })
+
+  it('match subtitle scale', () => {
+    cy.get('.typo-subtitle-test')
+      .scrollIntoView()
+      .toMatchImageSnapshot();
+  })
+
+  it('match body scale', () => {
+    cy.get('.typo-body-test')
+      .scrollIntoView()
+      .toMatchImageSnapshot();
+  })
+
+  it('match small scale', () => {
+    cy.get('.typo-small-test')
+      .scrollIntoView()
+      .toMatchImageSnapshot();
+  })
 })

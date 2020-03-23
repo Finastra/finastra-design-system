@@ -78,6 +78,19 @@ section {
   }
 }
 
+.example-row {
+  margin-top: $uxg-spacing-3;
+  margin-left: $uxg-spacing-5;
+  display: inline-block;
+}
+
+.block-test {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2 * $uxg-spacing-5;
+  align-items: flex-start;
+}
+
 .uxg-wizard {
     .uxg-wizard-right-panel, .uxg-wizard-timeline-xs {
         background: linear-gradient(to right bottom, #0b0c3e 0, #1b1d5d 35%, #493696 85%, #694ed6 100%) !important;

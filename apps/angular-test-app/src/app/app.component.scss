@@ -7,20 +7,6 @@
 
 mat-sidenav-container {
   height: 100%;
-  ::ng-deep {
-    .mat-drawer-backdrop {
-      z-index: 102;
-    }
-  }
-}
-
-.mat-sidenav {
-  z-index: 102;
-}
-
-.uxg-toolbar {
-  position: fixed;
-  z-index: 101;
 }
 
 .uxg-nav-header {
