@@ -1,0 +1,39 @@
+@import 'angular-theme/lib/core/style/spacing';
+.container-list {
+    max-width: 427px !important;
+  
+    .mat-menu-content {
+      margin: 25px;
+  
+      .products-title {
+        margin-left: 10px;
+      }
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+  
+        .product-item {
+          margin: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+  
+          .product-name {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100px;
+          }
+        }
+      }
+  
+      .view-all {
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+ }
+  
