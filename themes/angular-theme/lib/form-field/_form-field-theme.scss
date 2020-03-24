@@ -10,5 +10,9 @@
     .mat-form-field-underline::before {
       background-color: map-get($primary, default);
     }
+    
+    .mat-form-field-ripple {
+      background-color: map-get($primary, default);
+    }
   }
 }
