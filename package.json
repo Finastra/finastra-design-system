@@ -13,6 +13,7 @@
     "pretest": "rimraf ./coverage ./testresults",
     "posttest": "node ./scripts/jest-join-coverage.js",
     "test": "ng test",
+    "test:theme": "cypress run",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
