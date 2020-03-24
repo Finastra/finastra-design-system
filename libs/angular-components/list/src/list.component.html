@@ -2,13 +2,13 @@
   <mat-icon>apps</mat-icon>
 </button>
 <mat-menu #menu="matMenu" class="container-list">
-    <h6 class="uxg-h6 products-title">PRODUCTS</h6>
+    <h6 class="uxg-h6 products-title">{{title}}</h6>
     <div class="product-list">
-      <div *ngFor="let product of products" class="product-item">
+      <div *ngFor="let item of data" class="product-item">
         <mat-card class="uxg-card-product container-list-item" extra-dense>
-          <span class="uxg-h5 uxg-card-product-name">pro</span>
+          <span class="uxg-h5 uxg-card-product-name">{{formatItemName(item[columnsMatcher])}}</span>
         </mat-card>
-        <h5 class="uxg-subtitle-4 product-name">{{product.name}}</h5>
+        <h5 class="uxg-subtitle-4 product-name">{{item[columnsMatcher]}}</h5>
       </div>
     </div>
     <p class="uxg-body-3 view-all">View all</p>
