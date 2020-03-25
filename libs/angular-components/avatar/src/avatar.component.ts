@@ -1,7 +1,7 @@
 import { AfterContentInit, Attribute, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 export type UxgColor = 'primary' | 'accent' | 'gradient' | 'initials';
-const PALETTE_SIZE = 23;
+const PALETTE_SIZE = 16;
 @Component({
   selector: 'uxg-avatar',
   templateUrl: './avatar.component.html',
