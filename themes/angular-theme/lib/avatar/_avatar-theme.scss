@@ -22,6 +22,14 @@ $uxg-default-avatar: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/
     color: mat-contrast($uxg-gradient, vertical);
     background: mat-color($uxg-gradient, vertical);
 
+    &.uxg-primary-color {
+      background: mat-color($primary, default);
+    }
+
+    &.uxg-accent-color {
+      background: mat-color($accent, default);
+    }
+
     &:empty:not(img) {
       @include multiple-backgrounds($uxg-default-avatar, top left / 100% 100% no-repeat mat-color($uxg-gradient, vertical));
 
@@ -33,14 +41,6 @@ $uxg-default-avatar: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/
         @include multiple-backgrounds($uxg-default-avatar, mat-color($accent, default));
       }
     }
-
-    &.uxg-primary-color {
-      background: mat-color($primary, default);
-    }
-
-    &.uxg-accent-color {
-      background: mat-color($accent, default);
-    }
   }
 
   img {
@@ -49,8 +49,12 @@ $uxg-default-avatar: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/
     }
   }
 
-  .uxg-avatar-list > li > .uxg-avatar {
-    border: 1px solid mat-color($background, background);
+  .uxg-avatar-list {
+    > li, > uxg-avatar {
+      > .uxg-avatar {
+        border: 1px solid mat-color($background, background);
+      }
+    }
   }
 
   .uxg-avatar-number {

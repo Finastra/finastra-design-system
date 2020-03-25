@@ -22,7 +22,7 @@ export class AvatarListComponent implements AfterContentInit {
   extra!: number;
 
   constructor(
-    @Attribute('dense') public dense: string,
+    @Attribute('dense') public dense: any,
     @Attribute('large') public large: any,
     private renderer: Renderer2
   ) {}
