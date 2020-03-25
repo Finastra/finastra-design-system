@@ -1,1 +1,10 @@
-<uxg-list [title]="title" [data]="products" [columnsMatcher]="columnsMatcher" [abbreviationLength]="length"></uxg-list>
+
+<uxg-list
+ [title]=title
+ [data]="countries" 
+ [columnsMatcher]="columnsMatcher"
+ [abbreviationLength]="length"
+ [bottomLabel]="bottomLabel"
+ (bottomClick)="redirect()"
+ (selectionItem)="displayItem($event)">
+</uxg-list>

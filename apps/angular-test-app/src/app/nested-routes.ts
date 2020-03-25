@@ -33,7 +33,7 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
-      { path: 'list', component: ListDemoComponent, data: { title: 'list' } }
+      { path: 'list', component: ListDemoComponent, data: { title: 'List' } }
     ]
   }
 ];

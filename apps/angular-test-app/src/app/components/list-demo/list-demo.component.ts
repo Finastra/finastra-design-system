@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ffdc-list-demo',
@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-demo.component.scss']
 })
 export class ListDemoComponent {
-  title ="products"
-  columnsMatcher ="name"
+  title ="Countries"
+  columnsMatcher ="country"
   length =2;
+  bottomLabel="View All"
 
   countries: any[] = [
     {
@@ -77,4 +78,13 @@ export class ListDemoComponent {
       applications: []
     } 
   ];
+
+  redirect() {
+  }
+
+  displayItem(data: any) {
+    if(data)
+    console.log(data);
+  }
+
 }
