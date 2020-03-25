@@ -12,8 +12,7 @@ import { AvatarComponent } from './avatar.component';
 
 @Component({
   selector: 'uxg-avatar-list',
-  templateUrl: './avatar-list.component.html',
-  styleUrls: ['./avatar-list.component.css']
+  templateUrl: './avatar-list.component.html'
 })
 export class AvatarListComponent implements AfterContentInit {
   @Input() totalLength!: number;

@@ -1,12 +1,11 @@
 import { AfterContentInit, Attribute, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { BKDRHash } from './bkdr';
 
 export type UxgColor = 'primary' | 'accent' | 'gradient' | 'initials';
-
+const PALETTE_SIZE = 23;
 @Component({
   selector: 'uxg-avatar',
   templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.css']
+  styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent implements AfterContentInit {
   @ViewChild('avatar', { static: true }) avatar!: ElementRef<HTMLElement>;
@@ -18,9 +17,12 @@ export class AvatarComponent implements AfterContentInit {
     private renderer: Renderer2
   ) {}
 
-  strToHsl(str: string) {
-    const hash = BKDRHash(str);
-    return `hsl(${hash}, 30%, 60%)`;
+  getCode(str: string) {
+    const charCodes = str
+      .split('')
+      .map(char => char.charCodeAt(0))
+      .join('');
+    return parseInt(charCodes, 10);
   }
 
   ngAfterContentInit() {
@@ -43,8 +45,8 @@ export class AvatarComponent implements AfterContentInit {
           }
           el.innerText = initials;
           if (this.color === 'initials') {
-            const hsl = this.strToHsl(initials);
-            this.renderer.setStyle(this.avatar.nativeElement, 'background', hsl);
+            const color = (this.getCode(initials) % PALETTE_SIZE) + 1;
+            this.renderer.addClass(this.avatar.nativeElement, `uxg-avatar-color-${color}`);
           }
         }
       } else {
