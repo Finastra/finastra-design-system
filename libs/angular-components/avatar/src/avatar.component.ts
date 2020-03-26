@@ -1,4 +1,4 @@
-import { AfterContentInit, Attribute, Component, Directive, ElementRef, ViewChild } from '@angular/core';
+import { Attribute, Component, Directive, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 export type UxgColor = 'primary' | 'accent' | 'gradient' | 'initials';
 const PALETTE_SIZE = 16;
@@ -13,7 +13,7 @@ export class UxgImageAvatar {}
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss']
 })
-export class AvatarComponent implements AfterContentInit {
+export class AvatarComponent implements OnInit {
   @ViewChild('avatar', { static: true }) avatar!: ElementRef<HTMLElement>;
 
   paletteColor!: number;
@@ -33,7 +33,7 @@ export class AvatarComponent implements AfterContentInit {
     return parseInt(charCodes, 10);
   }
 
-  ngAfterContentInit() {
+  ngOnInit() {
     if (this.name && this.color === 'initials') {
       this.paletteColor = (this.getCode(this.name) % PALETTE_SIZE) + 1;
     }
