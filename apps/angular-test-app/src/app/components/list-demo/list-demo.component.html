@@ -1,8 +1,37 @@
 
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title> SELECT DATA </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+        <mat-label>select data</mat-label>
+        <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
+            <mat-option *ngFor="let template of templatesData" [value]="template">
+                 {{template.displayName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+        
+    <mat-form-field>
+        <mat-label>select field</mat-label>
+        <mat-select (selectionChange)="getColumn($event.value)" [(value)]="columnsMatcherExample">
+            <mat-option *ngFor="let column of columnsExample" [value]="column.title">
+                {{column.title}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div fxLayout="column" *ngIf="itemDescription">
+    <h3>Output:</h3>
+    {{ actionDescription }}
+    </div>
+</mat-expansion-panel>
+
 <uxg-list
  [title]=title
- [data]="countries" 
- [columnsMatcher]="columnsMatcher"
+ [data]="dataSourceExample" 
+ [columnsMatcher]="columnsMatcherExample"
  [abbreviationLength]="length"
  [bottomLabel]="bottomLabel"
  (bottomClick)="redirect()"
