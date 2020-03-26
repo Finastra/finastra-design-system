@@ -3,6 +3,7 @@
   class="uxg-avatar"
   [class.uxg-primary-color]="color === 'primary'"
   [class.uxg-accent-color]="color === 'accent'"
+  [ngClass]="color === 'initials' ? 'uxg-avatar-color-' + paletteColor : ''"
 >
-  <ng-content></ng-content>
+  <ng-content select="uxg-image-avatar, [uxg-image-avatar], [uxgImageAvatar]"></ng-content>
 </div>

@@ -1,7 +1,13 @@
-import { AfterContentInit, Attribute, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { AfterContentInit, Attribute, Component, Directive, ElementRef, ViewChild } from '@angular/core';
 
 export type UxgColor = 'primary' | 'accent' | 'gradient' | 'initials';
 const PALETTE_SIZE = 16;
+
+@Directive({
+  selector: 'uxg-image-avatar, [uxg-image-avatar], [uxgImageAvatar]'
+})
+export class UxgImageAvatar {}
+
 @Component({
   selector: 'uxg-avatar',
   templateUrl: './avatar.component.html',
@@ -10,11 +16,13 @@ const PALETTE_SIZE = 16;
 export class AvatarComponent implements AfterContentInit {
   @ViewChild('avatar', { static: true }) avatar!: ElementRef<HTMLElement>;
 
+  paletteColor!: number;
+
   constructor(
     @Attribute('color') public color: UxgColor = 'gradient',
     @Attribute('dense') public dense: any,
     @Attribute('large') public large: any,
-    private renderer: Renderer2
+    @Attribute('name') public name: string
   ) {}
 
   getCode(str: string) {
@@ -26,31 +34,19 @@ export class AvatarComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    const el = this.avatar.nativeElement;
-    if (el.childElementCount > 1) {
-      throw new Error('Only one element type is allowed as content');
-    } else {
-      const isTextNode = el.childNodes[0]?.nodeType === Node.TEXT_NODE;
-      const isImgNode = el.childNodes[0] instanceof HTMLImageElement;
-      if (isTextNode || isImgNode || !el.childNodes.length) {
-        if (isTextNode) {
-          const [name, surname] = el.innerText.split(' ');
-          let initials = name.charAt(0).toUpperCase();
-          if (this.dense === null) {
-            if (surname) {
-              initials += surname.charAt(0).toUpperCase();
-            } else if (el.innerText.length >= 2) {
-              initials += el.innerText.charAt(1).toUpperCase();
-            }
-          }
-          el.innerText = initials;
-          if (this.color === 'initials') {
-            const color = (this.getCode(initials) % PALETTE_SIZE) + 1;
-            this.renderer.addClass(this.avatar.nativeElement, `uxg-avatar-color-${color}`);
-          }
+    if (this.name) {
+      const [name, surname] = this.name.split(' ');
+      let initials = name.charAt(0).toUpperCase();
+      if (this.dense === null) {
+        if (surname) {
+          initials += surname.charAt(0).toUpperCase();
+        } else if (this.name.length >= 2) {
+          initials += this.name.charAt(1).toUpperCase();
         }
-      } else {
-        throw new Error('Only text or image is supported as content');
+      }
+      this.avatar.nativeElement.innerText = initials;
+      if (this.color === 'initials') {
+        this.paletteColor = (this.getCode(initials) % PALETTE_SIZE) + 1;
       }
     }
   }
