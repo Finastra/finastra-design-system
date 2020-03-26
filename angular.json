@@ -28,7 +28,13 @@
             "aot": true,
             "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
-            "scripts": [{ "input": "node_modules/plotly.js/dist/plotly.js", "bundleName": "plotly", "lazy": true }]
+            "scripts": [
+              {
+                "input": "node_modules/plotly.js/dist/plotly.js",
+                "bundleName": "plotly",
+                "lazy": true
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -604,6 +610,37 @@
             "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js",
             "tsConfig": "libs/angular-components/filter/filter-toggle/tsconfig.spec.json",
             "setupFile": "libs/angular-components/filter/filter-toggle/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "global-nav": {
+      "projectType": "library",
+      "root": "libs/angular-components/global-nav",
+      "sourceRoot": "libs/angular-components/global-nav",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/global-nav/tsconfig.lib.json",
+              "libs/angular-components/global-nav/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/global-nav/jest.config.js",
+            "tsConfig": "libs/angular-components/global-nav/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/global-nav/test-setup.ts"
           }
         }
       },

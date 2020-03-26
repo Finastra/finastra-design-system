@@ -45,6 +45,8 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
+import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 
 @NgModule({
   imports: [
@@ -78,7 +80,8 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
     WizardModule,
     FilterGroupModule,
     FilterToggleModule,
-    SkeletonTextModule
+    SkeletonTextModule,
+    GlobalNavModule
   ],
   declarations: [
     HomeComponent,
@@ -93,7 +96,8 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
     FoundationsDemoComponent,
     UiElementsDemoComponent,
     SkeletonDemoComponent,
-    ChartDemoComponent
+    ChartDemoComponent,
+    GlobalNavDemoComponent
   ],
   exports: [RouterModule]
 })

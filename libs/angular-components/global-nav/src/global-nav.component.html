@@ -1,0 +1,36 @@
+<!-- <uxg-navbar
+  (menuClick)="drawer.toggle()"
+  [currentNode]="currentNodes?.navBar"
+  (nodeChosen)="nodeChosen($event)"
+  (brandAction)="brandIconClick()"
+>
+  <uxg-navbar-action></uxg-navbar-action>
+</uxg-navbar> -->
+<mat-sidenav-container>
+  <mat-sidenav #globalNavDrawer mode="over">
+    <uxg-sidenav
+      [appName]="appName"
+      [navigationNodes]="navigationNodes"
+      [activeRoute]="activeRoute"
+      (nodeChosen)="nodeChosen.emit($event)"
+      (logout)="logout.emit()"
+    ></uxg-sidenav>
+    <!-- <uxg-sidenav
+      
+    ></uxg-sidenav> -->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <uxg-navbar
+      [currentNode]="currentNode"
+      [navbarAction]= "navbarAction"
+      (menuClick)="globalNavDrawer.toggle()"
+      (nodeChosen)="nodeChosen.emit($event)"
+      (brandAction)="brandAction.emit($event)"
+    >
+    </uxg-navbar>
+    <div class="app-content">
+      <ng-container *ngTemplateOutlet="appContent"></ng-container>
+      <!-- <router-outlet></router-outlet> -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
