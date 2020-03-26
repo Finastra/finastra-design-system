@@ -34,20 +34,8 @@ export class AvatarComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    if (this.name) {
-      const [name, surname] = this.name.split(' ');
-      let initials = name.charAt(0).toUpperCase();
-      if (this.dense === null) {
-        if (surname) {
-          initials += surname.charAt(0).toUpperCase();
-        } else if (this.name.length >= 2) {
-          initials += this.name.charAt(1).toUpperCase();
-        }
-      }
-      this.avatar.nativeElement.innerText = initials;
-      if (this.color === 'initials') {
-        this.paletteColor = (this.getCode(initials) % PALETTE_SIZE) + 1;
-      }
+    if (this.name && this.color === 'initials') {
+      this.paletteColor = this.getCode(this.name) % PALETTE_SIZE + 1;
     }
   }
 }
