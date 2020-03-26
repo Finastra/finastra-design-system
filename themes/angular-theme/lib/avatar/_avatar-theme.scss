@@ -30,6 +30,10 @@ $uxg-default-avatar: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/
       background: mat-color($accent, default);
     }
 
+    &.uxg-gravatar {
+      background: none;
+    }
+
     &:empty:not(img) {
       @include multiple-backgrounds($uxg-default-avatar, top left / 100% 100% no-repeat mat-color($uxg-gradient, vertical));
 
