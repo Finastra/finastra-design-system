@@ -35,7 +35,7 @@ export class AvatarComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     if (this.name && this.color === 'initials') {
-      this.paletteColor = this.getCode(this.name) % PALETTE_SIZE + 1;
+      this.paletteColor = (this.getCode(this.name) % PALETTE_SIZE) + 1;
     }
   }
 }
