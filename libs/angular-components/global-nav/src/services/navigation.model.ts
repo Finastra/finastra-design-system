@@ -7,10 +7,6 @@ export interface NavigationNode {
   title?: string;
   tooltip?: string;
   icon?: string;
-  //backMode?: boolean;
-  //children?: NavigationNode[];
-  //childrenCount?: number; // In case of Workspace-menu, children of workspaces but we don't want to increment nb of workspaces to show
-  //showOtherChildren?: boolean; // In case application/board, we should display other board at the same level of current board
   openInNewTab?: boolean;
 }
 

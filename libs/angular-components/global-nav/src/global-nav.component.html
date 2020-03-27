@@ -1,11 +1,3 @@
-<!-- <uxg-navbar
-  (menuClick)="drawer.toggle()"
-  [currentNode]="currentNodes?.navBar"
-  (nodeChosen)="nodeChosen($event)"
-  (brandAction)="brandIconClick()"
->
-  <uxg-navbar-action></uxg-navbar-action>
-</uxg-navbar> -->
 <mat-sidenav-container>
   <mat-sidenav #globalNavDrawer mode="over">
     <uxg-sidenav
@@ -15,9 +7,6 @@
       (nodeChosen)="nodeChosen.emit($event)"
       (logout)="logout.emit()"
     ></uxg-sidenav>
-    <!-- <uxg-sidenav
-      
-    ></uxg-sidenav> -->
   </mat-sidenav>
   <mat-sidenav-content>
     <uxg-navbar
@@ -30,7 +19,6 @@
     </uxg-navbar>
     <div class="app-content">
       <ng-container *ngTemplateOutlet="appContent"></ng-container>
-      <!-- <router-outlet></router-outlet> -->
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
