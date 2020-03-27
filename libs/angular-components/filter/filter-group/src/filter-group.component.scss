@@ -1,55 +1,59 @@
 @import 'angular-theme/lib/core/style/spacing';
 @import '~@angular/material/theming';
 
-.uxg-filter-group.mat-expansion-panel:not(.mat-expanded) {
-  &.active {
-    @include mat-elevation(0);
+$uxg-filter-group-border-radius: 4px;
+
+.uxg-expansion-filter {
+  .filter-value {
+    padding: 0 $uxg-spacing-2;
   }
-}
 
-.mat-expansion-panel-header {
-  border-width: 1px;
-  border-style: solid;
-  cursor: default !important;
-
-  .uxg-filter-group-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    cursor: default;
-
-    .fill-remaining-space {
-      flex: 1 1 auto;
-    }
-
-    .selectedFilters {
-      overflow: hidden;
+  .mat-expansion-panel-header {
+    border-width: 1px;
+    border-style: solid;
+    cursor: default !important;
+    padding-right: 0;
+  
+    .uxg-filter-group-header {
+      width: 100%;
       display: flex;
-
-      .uxg-group-filter {
-        flex: 0 0 auto; 
-        margin-right: $uxg-spacing-4;
+      align-items: center;
+      cursor: default;
+  
+      .fill-remaining-space {
+        flex: 1 1 auto;
       }
-      
-      .filter-divider {
-        margin-right: $uxg-spacing-4;
-      }
-
-      .mat-standard-chip {
-        cursor: pointer;
+  
+      .selectedFilters {
+        overflow: hidden;
+        display: flex;
+  
+        .uxg-group-filter {
+          flex: 0 0 auto;
+          margin-right: $uxg-spacing-4;
+        }
+  
+        .filter-divider {
+          margin-right: $uxg-spacing-4;
+        }
+  
+        .mat-standard-chip {
+          cursor: pointer;
+        }
       }
     }
   }
 }
+
 
 .expansion-panel-header {
   display: flex;
-  padding: $uxg-spacing-3 $uxg-spacing-4;
+  padding: $uxg-spacing-2 $uxg-spacing-4;
   box-sizing: border-box;
-  width: calc(100% + #{$uxg-spacing-5});
-  margin-left: -$uxg-spacing-4;
   justify-content: space-between;
-  
+  border-top-left-radius: $uxg-filter-group-border-radius;
+  border-top-right-radius: $uxg-filter-group-border-radius;
+
   .uxg-h6 {
     align-self: center;
     margin-bottom: 0;
@@ -57,11 +61,11 @@
 }
 
 .expansion-panel-content {
-  padding: $uxg-spacing-4 0;
+  padding: $uxg-spacing-4;
 }
 
 .expansion-panel-actions {
-  padding: $uxg-spacing-3 $uxg-spacing-2 0 $uxg-spacing-2;
+  padding: $uxg-spacing-3;
 
   .saved-filters-container {
     flex: 1;
@@ -72,10 +76,6 @@
   }
 
   .mat-button-base {
-    margin-left: $uxg-spacing-2;
+    margin-left: $uxg-spacing-3;
   }
-}
-
-:host ::ng-deep .mat-expansion-panel-body {
-  z-index: 10 !important;
 }

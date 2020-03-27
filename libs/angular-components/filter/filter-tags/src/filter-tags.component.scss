@@ -1,24 +1,27 @@
 @import 'angular-theme/lib/core/style/spacing';
 
-::ng-deep uxg-filter-tags mat-form-field {
-    margin-top: $uxg-spacing-1;
-    .mat-form-field-wrapper {
-        .mat-form-field-flex {
-            .mat-form-field-prefix {
-                top: 0;
-                align-self: auto;
-            }
-            .mat-form-field-infix {
-                border-top-width: 6px;
-            }
-        }
-    }
-}
+uxg-filter-tags {
+	.filter-tags-container {
+		.chip-list {
+			width: 100%;
+			margin-top: $uxg-spacing-2;
+			
+			.search-icon {
+				margin-right: $uxg-spacing-2;
+			}
 
-.chip-list {
-    width: 100%;
-}
-
-.mat-option {
-    height: 32px;
+			.mat-form-field-wrapper {
+				.mat-form-field-flex {
+					padding: .5em .75em;
+					align-items: center;
+				}
+				.mat-form-field-infix {
+					padding-top: 0;
+					input.mat-chip-input {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
 }
