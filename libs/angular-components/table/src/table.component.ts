@@ -153,7 +153,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data && !changes.data.isFirstChange()) {
       this.table.renderRows();
-      if (this.pageEnable) {
+      if (this.pageEnable && !this.paging) {
         this.applyDefaultPaging();
       }
     }

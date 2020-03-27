@@ -1,26 +1,39 @@
 @mixin uxg-filter-tags-theme($theme) {
   $primary: map-get($theme, primary);
   $filter-tags-background-color: mat-color($primary, default, .12);
+  $filter-tags-option-height: 32px;
 
-  .chip-list {
-    .search-icon {
-      color: mat-color($primary);
+  uxg-filter-tags {
+    .filter-tags-container {
+      .chip-list {
+        .search-icon {
+          color: mat-color($primary);
+        }
+      }
     }
   }
 
-  .selected-option-highlight,
-  .selected-option-highlight.mat-selected {
-    background-color: $filter-tags-background-color !important;
+  .mat-autocomplete-panel {
+    .mat-option {
+      // Todo: create dense version of mat-option
+      height: $filter-tags-option-height;
+    }
+    .selected-option-highlight,
+    .selected-option-highlight.mat-selected {
+      background-color: $filter-tags-background-color !important;
+    }
   }
 }
 
 @mixin uxg-filter-tags-typography($config) {
-  .mat-option {
-    @include mat-typography-level-to-styles($config, body-2);
-  }
+  .mat-autocomplete-panel {
+    .mat-option {
+      @include mat-typography-level-to-styles($config, body-2);
+    }
 
-  .selected-option-highlight,
-  .selected-option-highlight.mat-selected {
-    @include mat-typography-level-to-styles($config, subtitle-2);
+    .selected-option-highlight,
+    .selected-option-highlight.mat-selected {
+      @include mat-typography-level-to-styles($config, subtitle-2);
+    }
   }
 }

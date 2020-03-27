@@ -1,11 +1,11 @@
 @mixin uxg-filter-tree-theme($theme) {
-    $primary: map-get($theme, primary);
+  $primary: map-get($theme, primary);
 
-    mat-checkbox {
-        &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
-            .node-label {
-                color: mat-color($primary, default);
-            }
-        }
+  mat-checkbox {
+    &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
+      .node-label {
+        color: mat-color($primary, default);
+      }
     }
+  }
 }
