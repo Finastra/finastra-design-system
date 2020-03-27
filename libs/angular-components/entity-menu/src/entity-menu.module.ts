@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { ListComponent } from './list.component';
+import { EntityMenuComponent } from './entity-menu.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule} from '@angular/material/card';
@@ -8,7 +8,7 @@ import { MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [EntityMenuComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -16,6 +16,6 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatMenuModule
   ],
-  exports: [ListComponent],
+  exports: [EntityMenuComponent],
 })
-export class ListModule {}
+export class EntityMenuModule {}

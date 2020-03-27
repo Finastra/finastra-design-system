@@ -22,7 +22,7 @@ import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tag
 import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 import { FilterGroupModule } from '@ffdc/uxg-angular-components/filter/filter-group';
 import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-toggle';
-import { ListModule } from '@ffdc/uxg-angular-components/list';
+import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -46,7 +46,7 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
-import { ListDemoComponent } from './components/list-demo/list-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 
 
 @NgModule({
@@ -82,7 +82,7 @@ import { ListDemoComponent } from './components/list-demo/list-demo.component';
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
-    ListModule
+    EntityMenuModule
   ],
   declarations: [
     HomeComponent,
@@ -98,7 +98,7 @@ import { ListDemoComponent } from './components/list-demo/list-demo.component';
     UiElementsDemoComponent,
     SkeletonDemoComponent,
     ChartDemoComponent,
-    ListDemoComponent
+    EntityMenuDemoComponent
   ],
   exports: [RouterModule]
 })

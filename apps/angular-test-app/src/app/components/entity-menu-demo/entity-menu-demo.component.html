@@ -28,7 +28,7 @@
       </div>
   </mat-expansion-panel>
 
-  <uxg-list
+  <uxg-entity-menu
   [title]=title
   [data]="dataSourceExample" 
   [columnsMatcher]="columnsMatcherExample"
@@ -36,11 +36,11 @@
   [bottomLabel]="bottomLabel"
   (bottomClick)="redirect()"
   (selectionItem)="displayItem($event)">
-  </uxg-list>
+  </uxg-entity-menu>
 </div>
 
 <h2>Description</h2>
-The list component is a floating panel containing list of options.
+The entity-menu component is a floating panel containing list of options.
 <p>it takes mainly a <code>data</code> (datasource) and a <code>title</code> as input and displays the options in cards. </p>
 <p>If you want to : </p>
 <p> - Match a datasource column with one of your template data,
@@ -62,7 +62,7 @@ you should modify the <code>bottomLabel</code> input.</p>
       <td>title</td>
       <td>string</td>
       <td>Title</td>
-      <td>the list's title</td>
+      <td>the menu's title</td>
     </tr>
     <tr>
       <td>data</td>
@@ -73,7 +73,7 @@ you should modify the <code>bottomLabel</code> input.</p>
     <tr>
       <td>columnsMatcher</td>
       <td>string</td>
-      <td>Product Name</td>
+      <td></td>
       <td>
         A string representing the correspondance between a data column and the component's template data
       </td>
@@ -83,7 +83,7 @@ you should modify the <code>bottomLabel</code> input.</p>
       <td>number</td>
       <td>1</td>
       <td>
-        The number of initials we want to extract from the title
+        The number of initials you want to extract from the title
       </td>
     </tr>
     <tr>

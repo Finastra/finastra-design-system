@@ -11,7 +11,7 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
-import { ListDemoComponent } from './components/list-demo/list-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -33,7 +33,7 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
-      { path: 'list', component: ListDemoComponent, data: { title: 'List' } }
+      { path: 'entity-menu', component: EntityMenuDemoComponent, data: { title: 'Entity Menu' } }
     ]
   }
 ];

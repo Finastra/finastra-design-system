@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { ListModule } from './list.module';
+import { EntityMenuModule } from './entity-menu.module';
 
-describe('ListModule', () => {
+describe('EntityMenuModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ListModule]
+      imports: [EntityMenuModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(ListModule).toBeDefined();
+    expect(EntityMenuModule).toBeDefined();
   });
 });

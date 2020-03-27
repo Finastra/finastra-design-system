@@ -92,12 +92,12 @@ const PR_COLUMNS: any[] = [
 ];
 
 @Component({
-  selector: 'ffdc-list-demo',
-  templateUrl: './list-demo.component.html',
-  styleUrls: ['./list-demo.component.scss']
+  selector: 'ffdc-entity-menu-demo',
+  templateUrl: './entity-menu-demo.component.html',
+  styleUrls: ['./entity-menu-demo.component.scss']
 })
 
-export class ListDemoComponent implements OnInit {
+export class EntityMenuDemoComponent implements OnInit {
  
   columnsMatcher ="name"
   length =2;

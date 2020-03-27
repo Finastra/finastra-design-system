@@ -1,14 +1,14 @@
 import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'uxg-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  selector: 'uxg-entity-menu',
+  templateUrl: './entity-menu.component.html',
+  styleUrls: ['./entity-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 
 
-export class ListComponent implements OnInit,OnChanges{
+export class EntityMenuComponent implements OnInit,OnChanges{
   @Input() title ='';
   @Input() columnsMatcher =''
   @Input() abbreviationLength =0

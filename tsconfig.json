@@ -34,7 +34,7 @@
       "@ffdc/uxg-angular-components/wizard": ["libs/angular-components/wizard"],
       "@ffdc/uxg-angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
       "@ffdc/uxg-angular-components/chart": ["libs/angular-components/chart"],
-      "@ffdc/uxg-angular-components/list": ["libs/angular-components/list"]
+      "@ffdc/uxg-angular-components/entity-menu": ["libs/angular-components/entity-menu"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,5 +1,5 @@
-const name = 'list';
-const suiteName = 'ListModule';
+const name = 'entity-menu';
+const suiteName = 'EntityMenuModule';
 
 module.exports = {
   name,

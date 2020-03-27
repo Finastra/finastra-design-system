@@ -619,28 +619,28 @@
         }
       }
     },
-    "list": {
+    "entity-menu": {
       "projectType": "library",
-      "root": "libs/angular-components/list",
-      "sourceRoot": "libs/angular-components/list",
+      "root": "libs/angular-components/entity-menu",
+      "sourceRoot": "libs/angular-components/entity-menu",
       "prefix": "uxg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/angular-components/list/tsconfig.lib.json",
-              "libs/angular-components/list/tsconfig.spec.json"
+              "libs/angular-components/entity-menu/tsconfig.lib.json",
+              "libs/angular-components/entity-menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/list/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/list/jest.config.js",
-            "tsConfig": "libs/angular-components/list/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/list/test-setup.ts"
+            "jestConfig": "libs/angular-components/entity-menu/jest.config.js",
+            "tsConfig": "libs/angular-components/entity-menu/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/entity-menu/test-setup.ts"
           }
         }
       },
