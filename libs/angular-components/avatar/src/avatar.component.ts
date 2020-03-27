@@ -26,10 +26,7 @@ export class AvatarComponent implements OnInit {
   paletteColor!: number;
   gravatarUrl!: string;
 
-  constructor(
-    @Attribute('dense') public dense: any,
-    @Attribute('large') public large: any
-  ) {}
+  constructor(@Attribute('dense') public dense: any, @Attribute('large') public large: any) {}
 
   getCode(str: string) {
     const charCodes = str
