@@ -14,6 +14,6 @@
           <h5 class="uxg-subtitle-4 product-name">{{item[columnsMatcher] || "Product Name"}}</h5>
       </div>
     </div>
-    <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{bottomLabel}}</p>
+    <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{bottomLabel || "View All"}}</p>
 </mat-menu>
 

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'uxg-list',
@@ -8,7 +8,7 @@ import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit } fro
 })
 
 
-export class ListComponent implements OnInit{
+export class ListComponent implements OnInit,OnChanges{
   @Input() title ='';
   @Input() columnsMatcher =''
   @Input() abbreviationLength =0
@@ -29,6 +29,12 @@ export class ListComponent implements OnInit{
 
   ngOnInit() {
     if(this.data){
+      this.data=this.data.slice(0,9)
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.data) {
       this.data=this.data.slice(0,9)
     }
   }

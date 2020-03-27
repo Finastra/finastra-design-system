@@ -103,18 +103,18 @@ export class ListDemoComponent implements OnInit {
   length =2;
   bottomLabel="View All"
   templatesData = TEMPLATES_DATA;
-  currentTemplate: any = this.templatesData[0];
   dataSource = COUNTRIES;
   dataSource2 = PRODUCT_LIST;
   columns = CT_COLUMNS;
   columns2 = PR_COLUMNS;
 
+  currentTemplate: any = this.templatesData[0];
   title=this.currentTemplate.displayName;
   columnsExample = this.columns;
   dataSourceExample = this.dataSource;
   columnsMatcherExample=this.columnsMatcher;
 
-  itemDescription!: string;
+  actionDescription!: string;
 
  
   ngOnInit(): void {
@@ -122,11 +122,11 @@ export class ListDemoComponent implements OnInit {
   }
   
   redirect() {
+    this.actionDescription="Click on "+this.bottomLabel
   }
 
   displayItem(data: any) {
-    this.itemDescription=JSON.stringify(data)
-    console.log(this.itemDescription);
+    this.actionDescription=JSON.stringify(data)
   }
 
   updateTemplate() {
@@ -138,12 +138,12 @@ export class ListDemoComponent implements OnInit {
       this.columnsExample = this.columns2
     }
 
-    this.dataSourceExample=this.dataSourceExample.slice(0,6)
+    this.dataSourceExample=this.dataSourceExample
     this.columnsMatcherExample = this.currentTemplate.columnsMatcher;
     this.title= this.currentTemplate.displayName;
   }
 
-  getColumn(data :any) {
+  updateColumnMatcher(data :any) {
     this.columnsMatcherExample=data
   }
 }
