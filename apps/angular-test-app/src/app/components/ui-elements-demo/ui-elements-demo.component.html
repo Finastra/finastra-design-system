@@ -466,11 +466,11 @@
 
 <h5 class="uxg-h5">Error Message</h5>
 <div class="example-container">
-<mat-form-field appearance="fill">
+<mat-form-field #ff1 appearance="fill">
   <mat-icon matPrefix>lock_outlined</mat-icon>
   <mat-label>Enter your email</mat-label>
   <input matInput placeholder="pat@example.com" [formControl]="email" required>
-    <mat-icon matSuffix>error_outlined</mat-icon>
+    <mat-icon matSuffix [ngClass]="{'mat-warn':ff1._control.errorState}">error_outlined</mat-icon>
   <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>
 </div>
@@ -517,11 +517,11 @@
   </mat-form-field>
 </div>
 <div class="example-container">
-  <mat-form-field dense appearance="fill">
+  <mat-form-field #ff2 dense appearance="fill">
     <mat-icon matPrefix dense>lock_outlined</mat-icon>
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="pat@example.com" [formControl]="email" required>
-      <mat-icon matSuffix dense>error_outlined</mat-icon>
+      <mat-icon matSuffix dense [ngClass]="{'mat-warn':ff2._control.errorState}">error_outlined</mat-icon>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 </div>

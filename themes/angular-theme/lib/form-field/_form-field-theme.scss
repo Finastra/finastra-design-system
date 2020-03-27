@@ -22,18 +22,6 @@
     .mat-form-field-flex {
       background-color: $warn-background;
     }
-
-    .mat-form-field-label {
-      color: map-get($warn, default);
-    }
-
-    .mat-form-field-suffix {
-      color: map-get($warn, default);
-    }
-
-    .mat-error {
-      color: map-get($warn, default);
-    }
   }
 }
 
