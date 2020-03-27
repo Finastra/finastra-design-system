@@ -18,15 +18,15 @@ export class UxgImageAvatar {}
 export class AvatarComponent implements OnInit {
   @ViewChild('avatar', { static: true }) avatar!: ElementRef<HTMLElement>;
 
-  paletteColor!: number;
-  gravatarUrl!: string;
-
   @Input() name!: string;
   @Input() gravatarEmail!: string;
   @Input() defaultGravatar!: DefaultGravatar;
+  @Input() color: UxgColor = 'gradient';
+
+  paletteColor!: number;
+  gravatarUrl!: string;
 
   constructor(
-    @Attribute('color') public color: UxgColor = 'gradient',
     @Attribute('dense') public dense: any,
     @Attribute('large') public large: any
   ) {}
