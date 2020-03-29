@@ -15,7 +15,7 @@ export class GlobalSearchDemoComponent implements OnInit {
   ngOnInit() {
     const documents = [
       {
-        accountType: 'EUR',
+        accountType: 'EUR Accounts',
         nickname: 'Personal Account',
         balances: [
           {
@@ -26,7 +26,18 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '3658'
       },
       {
-        accountType: 'EUR',
+        accountType: 'GBP Accounts',
+        nickname: 'Personal Account 2',
+        balances: [
+          {
+            type: 'current',
+            amount: 1200
+          }
+        ],
+        id: '3659'
+      },
+      {
+        accountType: 'EUR Accounts',
         nickname: 'Savings Account',
         balances: [
           {
@@ -37,7 +48,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '5811'
       },
       {
-        accountType: 'USD',
+        accountType: 'USD Accounts',
         nickname: 'Forex Account',
         balances: [
           {
@@ -46,6 +57,28 @@ export class GlobalSearchDemoComponent implements OnInit {
           }
         ],
         id: '4127'
+      },
+      {
+        accountType: 'USD Accounts',
+        nickname: 'Forex Account 2',
+        balances: [
+          {
+            type: 'current',
+            amount: 2500
+          }
+        ],
+        id: '4128'
+      },
+      {
+        accountType: 'GBP Accounts',
+        nickname: 'Forex Account 3',
+        balances: [
+          {
+            type: 'current',
+            amount: 3500
+          }
+        ],
+        id: '4129'
       }
     ];
 

@@ -4,7 +4,7 @@
       <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <div fxFlex="30" fxFlex.xs="15" fxLayout="row" [@slideContent]="animationState" class="uxg-global-search-input-area">
+  <div fxFlex="30" fxFlex.lt-lg="20" fxFlex.xs="15" fxLayout="row" [@slideContent]="animationState" class="uxg-global-search-input-area">
     <mat-form-field floatLabel="never" class="uxg-global-search-input">
       <mat-icon color="primary" matPrefix class="uxg-global-search-icon">search</mat-icon>
       <input
@@ -20,40 +20,22 @@
   </div>
   <ng-container *ngIf="results$ | async as results">
     <ng-container *ngIf="results.length; else empty">
-      <div fxFlex="60" fxLayout="row" class="uxg-global-search-container-parent">
-        <div fxFlex="100" class="uxg-global-search-results-counter">
+      <div fxFlex="65" fxFlex.lt-lg="75" fxFlex.xs="80" fxLayout="row wrap" fxLayout.lt-lg="column" class="uxg-global-search-container-parent">
+        <!-- results counter -->
+        <div class="uxg-global-search-results-counter">
           Showing {{ resultsShown }} of {{ resultsFound }} results
         </div>
         <!-- results area -->
-        <div fxFlex="showFilter ? 70 : 100" class="uxg-global-search-results-area">
-          <ng-container *ngIf="groupBy">
-            <ng-container *ngFor="let resultGroup of results">
-              <ng-container *ngIf="filterSize === 0 || (resultGroup.selected && filterSize)">
-                <div
-                  *ngIf="resultGroup.key !== 'undefined' && resultGroup.value.length"
-                  class="uxg-global-search-result-group-header"
-                >
-                  <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
-                  <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
-                </div>
-                <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
-                  <div *ngFor="let result of resultGroup.value; let last = last">
-                    <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
-                      <ng-container
-                        *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
-                      >
-                      </ng-container>
-                    </div>
-                    <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
-                  </div>
-                </div>
-                <mat-divider *ngIf="groupDivider"></mat-divider>
-              </ng-container>
-            </ng-container>
-          </ng-container>
-
-          <ng-container *ngIf="!groupBy">
-            <ng-container *ngFor="let resultGroup of results">
+        <div fxFlex="{{ showFilter ? '70' : 'auto' }}" fxFlex.lt-lg="auto" class="uxg-global-search-results-area">
+          <ng-container *ngFor="let resultGroup of results">
+            <ng-container *ngIf="!groupBy || groupBy && (filterSize === 0 || (resultGroup.selected && filterSize))">
+              <div
+                *ngIf="groupBy && resultGroup.key !== 'undefined' && resultGroup.value.length"
+                class="uxg-global-search-result-group-header"
+              >
+                <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
+                <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
+              </div>
               <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
                 <div *ngFor="let result of resultGroup.value; let last = last">
                   <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
@@ -65,6 +47,7 @@
                   <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
                 </div>
               </div>
+              <mat-divider *ngIf="groupBy && groupDivider"></mat-divider>
             </ng-container>
           </ng-container>
         </div>
@@ -72,11 +55,9 @@
         <ng-container *ngIf="groupBy && showFilter">
           <mat-divider [vertical]="true"></mat-divider>
           <div
-            fxFlex="30"
             fxLayout="column"
-            fxLayout.xs="row; wrap"
-            fxFlex.xs="100"
-            fxFlexOrder.xs="-1"
+            fxLayout.lt-lg="row wrap"
+            fxFlexOrder.lt-lg="-1"
             class="uxg-global-search-results-filter"
           >
             <h5 class="uxg-h5">Filter results by</h5>

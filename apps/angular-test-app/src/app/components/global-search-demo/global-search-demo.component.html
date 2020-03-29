@@ -14,7 +14,7 @@
 <br />
 
 <uxg-global-search
-  #uxgGlobalSearchGroupped
+  #uxgGlobalSearchGrouped
   [resultItemTemplate]="tmpl"
   [groupBy]="'accountType'"
   [showFilter]="true"
@@ -23,8 +23,8 @@
   [results]="results"
   (resultItemClick)="onResultItemClick($event)"
 >
-  <button mat-stroked-button type="button" (click)="uxgGlobalSearchGroupped.openSearch()" color="accent" large>
-    <mat-icon>search</mat-icon>&nbsp;Search (groupped)
+  <button mat-stroked-button type="button" (click)="uxgGlobalSearchGrouped.openSearch()" color="accent" large>
+    <mat-icon>search</mat-icon>&nbsp;Search (grouped)
   </button>
 </uxg-global-search>
 
