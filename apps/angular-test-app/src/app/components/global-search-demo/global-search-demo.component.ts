@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClientSideSearchService } from './client-side-search.service';
 
@@ -15,7 +15,7 @@ export class GlobalSearchDemoComponent implements OnInit {
   ngOnInit() {
     const documents = [
       {
-        accountType: 'EUR Accounts',
+        accountType: 'EUR',
         nickname: 'Personal Account',
         balances: [
           {
@@ -26,7 +26,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '3658'
       },
       {
-        accountType: 'GBP Accounts',
+        accountType: 'GBP',
         nickname: 'Personal Account 2',
         balances: [
           {
@@ -37,7 +37,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '3659'
       },
       {
-        accountType: 'EUR Accounts',
+        accountType: 'EUR',
         nickname: 'Savings Account',
         balances: [
           {
@@ -48,7 +48,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '5811'
       },
       {
-        accountType: 'USD Accounts',
+        accountType: 'USD',
         nickname: 'Forex Account',
         balances: [
           {
@@ -59,7 +59,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '4127'
       },
       {
-        accountType: 'USD Accounts',
+        accountType: 'USD',
         nickname: 'Forex Account 2',
         balances: [
           {
@@ -70,7 +70,7 @@ export class GlobalSearchDemoComponent implements OnInit {
         id: '4128'
       },
       {
-        accountType: 'GBP Accounts',
+        accountType: 'GBP',
         nickname: 'Forex Account 3',
         balances: [
           {
