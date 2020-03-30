@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
 
 declare var require: any;
 
@@ -11,18 +10,11 @@ export interface Result {
   score: number;
 }
 
-export interface ResultGroup {
-  key: string;
-  value: Partial<Result>[];
-  selected?: boolean;
-}
-
 @Injectable({
   providedIn: 'root'
 })
-export class GlobalSearchService {
+export class ClientSideSearchService {
   private index: any;
-  itemClicked = new ReplaySubject<Object>(1);
 
   initIndex(fields?: string[], ref?: string) {
     return new Promise((resolve, reject) => {
@@ -68,7 +60,7 @@ export class GlobalSearchService {
     }
   }
 
-  search(query: string): Array<{ doc: any }> {
+  search(query: string): Result[] {
     if (this.index) {
       const fields = this.index.getFields().reduce((acc: any, item: any) => {
         acc[item] = { boost: 1 };
@@ -81,10 +73,6 @@ export class GlobalSearchService {
       });
     }
     return [];
-  }
-
-  onItemClick(item: Object) {
-    this.itemClicked.next(item);
   }
 
   constructor() {}

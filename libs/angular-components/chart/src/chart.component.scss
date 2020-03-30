@@ -1,18 +1,18 @@
 @import 'angular-theme/lib/core/style/spacing';
 
 uxg-chart {
-    flex: auto;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  plotly-plot,
+  .js-plotly-plot {
     display: flex;
     flex-direction: column;
-    plotly-plot, 
-    .js-plotly-plot {
-      display: flex;
-      flex-direction: column;
-      flex: auto;
-    }
+    flex: auto;
+  }
 }
 
 .chart-font-axis{
-    padding: $uxg-spacing-4;
-    margin: $uxg-spacing-5;
+  padding: $uxg-spacing-4;
+  margin: $uxg-spacing-5;
 }

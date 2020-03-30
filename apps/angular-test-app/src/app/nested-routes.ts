@@ -12,6 +12,7 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
+import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -33,7 +34,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
-      { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } }
+      { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
+      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } }
     ]
   }
 ];

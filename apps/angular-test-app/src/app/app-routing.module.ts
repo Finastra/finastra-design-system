@@ -22,6 +22,9 @@ import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tag
 import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 import { FilterGroupModule } from '@ffdc/uxg-angular-components/filter/filter-group';
 import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { ChartModule } from '@ffdc/uxg-angular-components/chart';
+import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -35,8 +38,6 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
-import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
-import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
@@ -48,6 +49,7 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
 import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 
+import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -81,7 +83,8 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
-    GlobalNavModule
+    GlobalNavModule,
+    AvatarModule
   ],
   declarations: [
     HomeComponent,
@@ -97,7 +100,8 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
     UiElementsDemoComponent,
     SkeletonDemoComponent,
     ChartDemoComponent,
-    GlobalNavDemoComponent
+    GlobalNavDemoComponent,
+    AvatarDemoComponent
   ],
   exports: [RouterModule]
 })
