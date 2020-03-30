@@ -20,10 +20,10 @@ $mat-form-field-fill-side-padding: 1em !default;
   }
 
   &:not(.mat-form-field-has-label) {
-    .mat-form-field-flex {
+    .mat-form-field-infix {
       // Here you can center form-field content when there's no label.
-      padding-top: 0.40em;
-      padding-bottom: 0.35em;
+      // Adapt according input height.
+      top: -0.3em;
     }
   }
 }
