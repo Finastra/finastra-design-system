@@ -3,17 +3,16 @@
 </button>
 
 <mat-menu #menu="matMenu" class="container-list">
-    <h6 class="uxg-h6 products-title">{{ title || "Title" }}</h6>
-    <div class="product-list">
-      <div *ngFor="let item of data"class="product-item" (click)="selectionItem.emit(item)">
-          <mat-card class="uxg-card-product container-list-item" extra-dense>
-            <span class="uxg-h5 uxg-card-product-name">
-              {{formatItemName(item[columnsMatcher]) || formatItemName("Product Name") }} 
-            </span>
-          </mat-card>
-          <h5 class="uxg-subtitle-4 product-name">{{item[columnsMatcher] || "Product Name"}}</h5>
-      </div>
+  <h6 class="uxg-h6 products-title">{{ title || 'Title' }}</h6>
+  <div class="product-list">
+    <div *ngFor="let item of data" class="product-item" (click)="selectionItem.emit(item)">
+      <mat-card class="uxg-card-product container-list-item" extra-dense>
+        <span class="uxg-h5 uxg-card-product-name">
+          {{ formatItemName(item[columnsMatcher]) || formatItemName('Product Name') }}
+        </span>
+      </mat-card>
+      <h5 class="uxg-subtitle-4 product-name">{{ item[columnsMatcher] || 'Product Name' }}</h5>
     </div>
-    <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{bottomLabel || "View All"}}</p>
+  </div>
+  <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{ bottomLabel || 'View All' }}</p>
 </mat-menu>
-

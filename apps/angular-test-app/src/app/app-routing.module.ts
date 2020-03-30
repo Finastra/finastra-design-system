@@ -27,7 +27,6 @@ import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
 
-
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
 import { HomeComponent } from './components/home/home.component';

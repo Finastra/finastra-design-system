@@ -1,54 +1,58 @@
 <div class="demo">
   <mat-expansion-panel>
-      <mat-expansion-panel-header>
-          <mat-panel-title> SELECT DATA </mat-panel-title>
-      </mat-expansion-panel-header>
+    <mat-expansion-panel-header>
+      <mat-panel-title> SELECT DATA </mat-panel-title>
+    </mat-expansion-panel-header>
 
-      <mat-form-field>
-          <mat-label>select data</mat-label>
-          <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
-              <mat-option *ngFor="let template of templatesData" [value]="template">
-                  {{template.displayName}}
-              </mat-option>
-          </mat-select>
-      </mat-form-field>
-          
-      <mat-form-field>
-          <mat-label>select field</mat-label>
-          <mat-select (selectionChange)="updateColumnMatcher($event.value)" [(value)]="columnsMatcherExample">
-              <mat-option *ngFor="let column of columnsExample" [value]="column.title">
-                  {{column.title}}
-              </mat-option>
-          </mat-select>
-      </mat-form-field>
+    <mat-form-field>
+      <mat-label>select data</mat-label>
+      <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
+        <mat-option *ngFor="let template of templatesData" [value]="template">
+          {{ template.displayName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <div class="description" fxLayout="column" *ngIf="actionDescription">
+    <mat-form-field>
+      <mat-label>select field</mat-label>
+      <mat-select (selectionChange)="updateColumnMatcher($event.value)" [(value)]="columnsMatcherExample">
+        <mat-option *ngFor="let column of columnsExample" [value]="column.title">
+          {{ column.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="description" fxLayout="column" *ngIf="actionDescription">
       <h3>Output:</h3>
       {{ actionDescription }}
-      </div>
+    </div>
   </mat-expansion-panel>
 
   <uxg-entity-menu
-  [title]=title
-  [data]="dataSourceExample" 
-  [columnsMatcher]="columnsMatcherExample"
-  [abbreviationLength]="length"
-  [bottomLabel]="bottomLabel"
-  (bottomClick)="redirect()"
-  (selectionItem)="displayItem($event)">
+    [title]="title"
+    [data]="dataSourceExample"
+    [columnsMatcher]="columnsMatcherExample"
+    [abbreviationLength]="length"
+    [bottomLabel]="bottomLabel"
+    (bottomClick)="redirect()"
+    (selectionItem)="displayItem($event)"
+  >
   </uxg-entity-menu>
 </div>
 
 <h2>Description</h2>
 The entity-menu component is a floating panel containing list of options.
-<p>it takes mainly a <code>data</code> (datasource) and a <code>title</code> as input and displays the options in cards. </p>
-<p>If you want to : </p>
-<p> - Match a datasource column with one of your template data,
-you should provide <code>columnsMatcher</code> input.</p>
-<p> - Change the label of the pararaph in the bottom of the menu,
-you should modify the <code>bottomLabel</code> input.</p>
-<p> - Change the abbreviation length of the options' title,
-  you should modify the <code>abbreviationLength</code> input.</p>
+<p>
+  it takes mainly a <code>data</code> (datasource) and a <code>title</code> as input and displays the options in cards.
+</p>
+<p>If you want to :</p>
+<p>- Match a datasource column with one of your template data, you should provide <code>columnsMatcher</code> input.</p>
+<p>
+  - Change the label of the pararaph in the bottom of the menu, you should modify the <code>bottomLabel</code> input.
+</p>
+<p>
+  - Change the abbreviation length of the options' title, you should modify the <code>abbreviationLength</code> input.
+</p>
 <h2>Inputs</h2>
 <table class="documentation">
   <tbody>
@@ -111,10 +115,10 @@ you should modify the <code>bottomLabel</code> input.</p>
       <td>Click Event</td>
     </tr>
     <tr>
-    <td>selectionItem</td>
-    <td>EventEmitter&lt;any&gt;</td>
-    <td></td>
-    <td>Click Event</td>
+      <td>selectionItem</td>
+      <td>EventEmitter&lt;any&gt;</td>
+      <td></td>
+      <td>Click Event</td>
     </tr>
   </tbody>
 </table>
