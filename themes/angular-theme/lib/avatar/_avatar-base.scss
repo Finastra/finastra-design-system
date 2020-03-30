@@ -16,6 +16,12 @@ $avatar-size-dense: $uxg-spacing-4;
   margin: $uxg-spacing-1;
   object-fit: cover;
   user-select: none;
+
+  img {
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+  }
 }
 
 div,
@@ -49,7 +55,7 @@ span {
     margin: 0;
   }
 
-  li {
+  li, uxg-avatar {
     display: inline-grid;
     margin: 0;
     position: relative;
@@ -69,13 +75,13 @@ span {
   }
 
   &[dense] {
-    li {
+    li, uxg-avatar {
       width: $avatar-size-dense / 1.5;
     }
   }
 
   &[large] {
-    li {
+    li, uxg-avatar {
       width: $avatar-size-large / 1.5;
     }
   }

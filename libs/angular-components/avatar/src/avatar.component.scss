@@ -1,0 +1,24 @@
+@import 'angular-theme/lib/core/theming/palette';
+
+@function build-palette($palette, $minTone, $maps...) {
+  $index: length($palette) + 1;
+
+  @each $map in $maps {
+    @each $tone, $color in $map {
+      @if type_of($tone) == number and $tone >= $minTone {
+        $palette: map-merge($palette, ( $index: $color ));
+        $index: $index + 1;
+      }
+    }
+  }
+  @return $palette;
+}
+
+$palette: build-palette((), 500, $uxg-violet, $uxg-fuchsia);
+$palette: build-palette($palette, 100, $uxg-crimson, $uxg-grass, $uxg-amber, $uxg-gold, $uxg-ocean, $uxg-lime);
+
+@each $level, $color in $palette {
+  .uxg-avatar-color-#{$level} {
+    background: $color;
+  }
+}
