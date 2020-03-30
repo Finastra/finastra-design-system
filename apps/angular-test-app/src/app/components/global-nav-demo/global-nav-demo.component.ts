@@ -9,35 +9,34 @@ import { NavigationNode } from '@ffdc/uxg-angular-components/global-nav';
     class: 'ffdc-global-nav-demo'
   }
 })
-
 export class GlobalNavDemoComponent {
-  appName = "Global Nav Demo";
+  appName = 'Global Nav Demo';
 
   demoAppList: NavigationNode[] = [
     {
-      url: "app1.com",
-      title: "app1",
-      tooltip: "app1",
-      icon: "dashboard"
+      url: 'app1.com',
+      title: 'app1',
+      tooltip: 'app1',
+      icon: 'dashboard'
     },
     {
-      url: "app2.com",
-      title: "app2",
-      tooltip: "app2",
-      icon: "dashboard"
+      url: 'app2.com',
+      title: 'app2',
+      tooltip: 'app2',
+      icon: 'dashboard'
     },
     {
-      url: "app3.com",
-      title: "app3",
-      tooltip: "app3",
-      icon: "dashboard"
+      url: 'app3.com',
+      title: 'app3',
+      tooltip: 'app3',
+      icon: 'dashboard'
     },
     {
-      url: "app4.com",
-      title: "app4",
-      tooltip: "app4",
-      icon: "dashboard"
-    },
+      url: 'app4.com',
+      title: 'app4',
+      tooltip: 'app4',
+      icon: 'dashboard'
+    }
   ];
 
   nodeChosen(node: any) {
@@ -49,6 +48,6 @@ export class GlobalNavDemoComponent {
   }
 
   logout() {
-    console.log("logout");
+    console.log('logout');
   }
 }

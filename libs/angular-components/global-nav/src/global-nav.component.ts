@@ -10,11 +10,10 @@ import { NavigationNode, CurrentNode } from './services/navigation.model';
   }
 })
 export class GlobalNavComponent implements OnInit, OnDestroy {
-
   @Input() appName!: string;
   @Input() navigationNodes!: NavigationNode[];
   @Input() activeRoute!: string;
-  @Input() brandIcon: string | undefined;  
+  @Input() brandIcon: string | undefined;
   @Input() currentNode: CurrentNode | undefined;
   @Input() appContent!: TemplateRef<any>;
   @Input() navbarAction!: TemplateRef<any>;
