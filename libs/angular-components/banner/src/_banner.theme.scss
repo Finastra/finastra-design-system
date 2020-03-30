@@ -1,0 +1,21 @@
+@mixin uxg-banner-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $text-primary: mat-color($primary, default);
+    $color-accent: mat-color($accent, default);
+    $foreground: map-get($theme, foreground);
+    $text-banner: mat-color($foreground, base);
+
+    .uxg-banner-container{
+        .uxg-boday-1{
+            color: $text-banner;
+        }
+        .uxg-display-3{
+            color:$text-primary;
+        }
+    
+        .spliter{
+            background:$color-accent;
+        }
+    }
+}

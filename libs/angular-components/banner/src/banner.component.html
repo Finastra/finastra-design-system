@@ -1,0 +1,7 @@
+<div *ngFor="let bannerItem of bannerData; last as islast" class="uxg-banner-container">
+  <div class="uxg-banner-item">
+    <span class="uxg-display-3" matTooltip="{{ bannerItem.tooltip }}">{{ bannerItem.value }}</span>
+    <span>{{ bannerItem.name }}</span>
+  </div>
+  <div class="spliter" [hidden]="islast"></div>
+</div>

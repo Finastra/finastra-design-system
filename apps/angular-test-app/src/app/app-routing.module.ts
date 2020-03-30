@@ -47,6 +47,8 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { BannerModule } from '../../../../libs/angular-components/banner';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -80,7 +82,8 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
-    AvatarModule
+    AvatarModule,
+    BannerModule
   ],
   declarations: [
     HomeComponent,
@@ -96,7 +99,8 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
     UiElementsDemoComponent,
     SkeletonDemoComponent,
     ChartDemoComponent,
-    AvatarDemoComponent
+    AvatarDemoComponent,
+    BannerDemoComponent
   ],
   exports: [RouterModule]
 })

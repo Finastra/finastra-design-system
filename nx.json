@@ -64,6 +64,9 @@
     },
     "avatar": {
       "tags": []
+    },
+    "banner": {
+      "tags": []
     }
   }
 }
