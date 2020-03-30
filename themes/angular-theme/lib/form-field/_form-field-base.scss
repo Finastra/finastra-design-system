@@ -6,7 +6,7 @@ $mat-form-field-fill-side-padding: 1em !default;
   }
 }
 
-.mat-form-field-appearance-fill{
+.mat-form-field-appearance-fill {
   .mat-form-field-wrapper {
     .mat-form-field-flex {
       padding-left: $mat-form-field-fill-side-padding;
@@ -16,6 +16,14 @@ $mat-form-field-fill-side-padding: 1em !default;
   .mat-form-field-prefix {
     .mat-icon {
       padding-right: 12px;
+    }
+  }
+
+  &:not(.mat-form-field-has-label) {
+    .mat-form-field-flex {
+      // Here you can center form-field content when there's no label.
+      padding-top: 0.40em;
+      padding-bottom: 0.35em;
     }
   }
 }
