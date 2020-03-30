@@ -99,7 +99,7 @@ const PR_COLUMNS: any[] = [
 
 export class EntityMenuDemoComponent implements OnInit {
  
-  columnsMatcher ="name"
+
   length =2;
   bottomLabel="View All"
   templatesData = TEMPLATES_DATA;
@@ -112,7 +112,7 @@ export class EntityMenuDemoComponent implements OnInit {
   title=this.currentTemplate.displayName;
   columnsExample = this.columns;
   dataSourceExample = this.dataSource;
-  columnsMatcherExample=this.columnsMatcher;
+  columnsMatcherExample=this.currentTemplate.columnsMatcher;
 
   actionDescription!: string;
 
@@ -138,7 +138,6 @@ export class EntityMenuDemoComponent implements OnInit {
       this.columnsExample = this.columns2
     }
 
-    this.dataSourceExample=this.dataSourceExample
     this.columnsMatcherExample = this.currentTemplate.columnsMatcher;
     this.title= this.currentTemplate.displayName;
   }
