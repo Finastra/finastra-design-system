@@ -17,7 +17,8 @@ describe('GlobalNavModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatToolbarModule,
+      imports: [
+        MatToolbarModule,
         MatButtonModule,
         MatIconModule,
         MatSidenavModule,
