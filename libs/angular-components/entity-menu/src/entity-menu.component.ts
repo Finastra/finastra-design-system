@@ -9,6 +9,8 @@ import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit, Simp
 
 
 export class EntityMenuComponent implements OnInit,OnChanges{
+  
+  @Input() data: Array<any> = [];
   @Input() title ='';
   @Input() columnsMatcher =''
   @Input() abbreviationLength =0
@@ -17,14 +19,6 @@ export class EntityMenuComponent implements OnInit,OnChanges{
   @Output() bottomClick :EventEmitter<any> = new EventEmitter<any>();
   @Output() selectionItem: EventEmitter<any> = new EventEmitter<any>();
 
-  private _data: Array<any> = [];
-  @Input()
-  get data() {
-    return this._data;
-  }
-  set data(data: Array<any>) {
-    this._data = data;
-  }
 
 
   ngOnInit() {
