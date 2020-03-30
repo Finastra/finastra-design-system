@@ -47,6 +47,7 @@ export class SidenavComponent implements OnInit, OnChanges {
   }
 
   private getIconName(name: string) {
+    if (!name) return name;
     const words = name.replace('-', ' ').split(' ');
     if (words.length === 1) return name;
     return words
