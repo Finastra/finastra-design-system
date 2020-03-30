@@ -619,6 +619,38 @@
         }
       }
     },
+    "avatar": {
+      "projectType": "library",
+      "root": "libs/angular-components/avatar",
+      "sourceRoot": "libs/angular-components/avatar/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/avatar/tsconfig.lib.json",
+              "libs/angular-components/avatar/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/avatar/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/avatar/jest.config.js",
+            "tsConfig": "libs/angular-components/avatar/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/angular-components/avatar/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
