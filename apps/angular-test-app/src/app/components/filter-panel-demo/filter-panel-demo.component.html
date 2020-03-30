@@ -7,7 +7,12 @@
             <h5 class="uxg-h5">View by</h5>
             <button
               mat-button
-              (click)="demoFilter.clearSelection(); demoFilterTags.clearSelection(); toggleBtnFilter.reset()"
+              (click)="
+                demoFilter.clearSelection();
+                demoFilterTags.clearSelection();
+                toggleBtnFilter.reset();
+                demoMultiselectTags.clearSelection()
+              "
               color="accent"
               dense
             >
@@ -125,6 +130,16 @@
             <div class="uxg-h6">Tags</div>
             <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
             </uxg-filter-tags>
+          </div>
+          <div class="filter-instance">
+            <div class="uxg-h6">Usage Type</div>
+            <uxg-multiselect-tags
+              uxgFilter="UsageType"
+              [data]="multiselectTagsSampleData"
+              (changes)="updateMultiselectTags($event)"
+              large
+            >
+            </uxg-multiselect-tags>
           </div>
         </uxg-filter-group>
       </div>

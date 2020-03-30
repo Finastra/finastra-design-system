@@ -59,4 +59,29 @@ export class MultiselectTagsComponent implements OnInit {
       this.changes.emit({ added: [], removed: [this.data[index]] });
     }
   }
+
+  clearSelection() {
+    this.changes.emit({ added: [], removed: [...this.data] });
+    this.data.forEach(tag => (tag.isSelected = false));
+  }
+
+  getState() {
+    const filteredMultiTags = this.data.filter(el => el.isSelected === true);
+    return [...filteredMultiTags];
+  }
+
+  setState(data: MultiselectTag[]) {
+    this.data.forEach(tag => {
+      let found = false;
+      data.forEach(el => {
+        if (el.label === tag.label) {
+          tag.isSelected = true;
+          found = true;
+        }
+      });
+      if (!found) {
+        delete tag.isSelected;
+      }
+    });
+  }
 }
