@@ -29,8 +29,16 @@
   .mat-form-field-appearance-fill {
     @include mat-typography-level-to-styles($config, subtitle-1);
 
+    .mat-form-field-label {
+      font-weight: mat-font-weight($config, body-1);
+    }
+
     &[dense] {
       @include mat-typography-level-to-styles($config, subtitle-2);
+      
+      .mat-form-field-label {
+        font-weight: mat-font-weight($config, caption);
+      }
     }
   }
 }

@@ -1,9 +1,17 @@
 $mat-form-field-fill-side-padding: 1em !default;
 $mat-form-field-fill-line-spacing: 7px !default;
-$mat-form-field-fill-line-spacing-dense: 0.12em;
-$infix-padding: 0.5em;
-$infix-padding-dense: 0.25em;
-$infix-top: -0.5em;
+$mat-form-field-fill-line-spacing-dense: 6.2px;
+
+$mat-form-field-subscript-margin-top: 2px;
+
+$infix-padding-bottom: 0.41em;
+
+$infix-padding-top-dense: 0.196em;
+$infix-padding-bottom-dense: 0.368em;
+$infix-border-top-dense: 0.661em;
+
+$infix-top-no-label: -0.35em;
+$infix-padding-bottom-no-label: 0.469em;
 
 .mat-form-field-appearance-legacy {
   .mat-form-field-flex {
@@ -13,8 +21,13 @@ $infix-top: -0.5em;
 
 .mat-form-field-appearance-fill {
   &:not(.mat-form-field-has-label) {
-    .mat-form-field-infix {
-      top: $infix-top;
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          top: $infix-top-no-label;
+          padding-bottom: $infix-padding-bottom-no-label;
+        }
+      }
     }
   }
 
@@ -24,17 +37,23 @@ $infix-top: -0.5em;
       padding-left: $mat-form-field-fill-side-padding;
 
       .mat-form-field-infix {
-        padding-bottom: $infix-padding;
+        padding-bottom: $infix-padding-bottom;
       }
+    }
+
+    .mat-form-field-subscript-wrapper {
+      margin-top: $mat-form-field-subscript-margin-top;
     }
   }
 
   &[dense] {
     .mat-form-field-wrapper {
       .mat-form-field-flex {
+        padding-top: $mat-form-field-fill-line-spacing-dense;
         .mat-form-field-infix {
-          padding-bottom: $infix-padding-dense;
-          padding-top: $mat-form-field-fill-line-spacing-dense;
+          border-top: $infix-border-top-dense solid transparent;
+          padding-top:  $infix-padding-top-dense;
+          padding-bottom: $infix-padding-bottom-dense;
         }
       }
     }
