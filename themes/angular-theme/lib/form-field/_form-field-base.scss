@@ -20,17 +20,6 @@ $infix-padding-bottom-no-label: 0.469em;
 }
 
 .mat-form-field-appearance-fill {
-  &:not(.mat-form-field-has-label) {
-    .mat-form-field-wrapper {
-      .mat-form-field-flex {
-        .mat-form-field-infix {
-          top: $infix-top-no-label;
-          padding-bottom: $infix-padding-bottom-no-label;
-        }
-      }
-    }
-  }
-
   .mat-form-field-wrapper {
     .mat-form-field-flex {
       padding-top: $mat-form-field-fill-line-spacing;
@@ -46,13 +35,25 @@ $infix-padding-bottom-no-label: 0.469em;
     }
   }
 
+  &:not(.mat-form-field-has-label) {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          top: $infix-top-no-label;
+          padding-bottom: $infix-padding-bottom-no-label;
+        }
+      }
+    }
+  }
+
   &[dense] {
     .mat-form-field-wrapper {
       .mat-form-field-flex {
         padding-top: $mat-form-field-fill-line-spacing-dense;
+
         .mat-form-field-infix {
           border-top: $infix-border-top-dense solid transparent;
-          padding-top:  $infix-padding-top-dense;
+          padding-top: $infix-padding-top-dense;
           padding-bottom: $infix-padding-bottom-dense;
         }
       }

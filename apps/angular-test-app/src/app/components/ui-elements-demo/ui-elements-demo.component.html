@@ -1,5 +1,5 @@
 <div>
-<h3 class="uxg-display-3">Avatars</h3>
+  <h3 class="uxg-display-3">Avatars</h3>
   <h5 class="uxg-h5">Default Avatar</h5>
   <div class="example-row">
     <div class="uxg-avatar" large></div>
@@ -422,18 +422,18 @@
     </mat-chip-list>
   </div>
 </div>
- 
+
 <h5 class="uxg-h5">Fill Input</h5>
 <div class="example-row">
   <mat-form-field floatLabel="false" appearance="fill">
     <mat-icon color="primary" matPrefix>favorite</mat-icon>
-    <input matInput placeholder="Placeholder"/>
+    <input matInput placeholder="Placeholder" />
     <mat-icon color="primary" matSuffix>favorite</mat-icon>
   </mat-form-field>
 </div>
 <div class="example-row">
   <mat-form-field floatLabel="false" appearance="fill">
-    <input matInput placeholder="Placeholder"/>
+    <input matInput placeholder="Placeholder" />
     <mat-hint>Helper text</mat-hint>
   </mat-form-field>
 </div>
@@ -472,26 +472,26 @@
 
 <h5 class="uxg-h5">Error Message</h5>
 <div class="example-container">
-<mat-form-field #ff1 appearance="fill">
-  <mat-icon matPrefix>lock_outlined</mat-icon>
-  <mat-label>Enter your email</mat-label>
-  <input matInput placeholder="pat@example.com" [formControl]="email" required>
-    <mat-icon matSuffix [ngClass]="{'mat-warn':ff1._control.errorState}">error_outlined</mat-icon>
-  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-</mat-form-field>
+  <mat-form-field #ff1 appearance="fill">
+    <mat-icon matPrefix>lock_outlined</mat-icon>
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required />
+    <mat-icon matSuffix [ngClass]="{ 'mat-warn': ff1._control.errorState }">error_outlined</mat-icon>
+    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
 </div>
-<br/>
+<br />
 <h5 class="uxg-h5">Dense Inputs</h5>
 <div class="example-container">
   <div class="example-row">
     <mat-form-field dense appearance="fill">
-      <input matInput value="this is value">
+      <input matInput value="this is value" />
     </mat-form-field>
   </div>
   <div class="example-row">
     <mat-form-field dense appearance="fill">
       <mat-label>Label</mat-label>
-      <input matInput>
+      <input matInput />
       <mat-hint>Helper text</mat-hint>
     </mat-form-field>
   </div>
@@ -534,13 +534,13 @@
   <mat-form-field #ff2 dense appearance="fill">
     <mat-icon matPrefix dense>lock_outlined</mat-icon>
     <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-    <mat-icon matSuffix dense [ngClass]="{'mat-warn':ff2._control.errorState}">error_outlined</mat-icon>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required />
+    <mat-icon matSuffix dense [ngClass]="{ 'mat-warn': ff2._control.errorState }">error_outlined</mat-icon>
+    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
   </mat-form-field>
 </div>
 
-<br/>
+<br />
 <h5 class="uxg-h5">Search Input (Legacy)</h5>
 <div class="example-row">
   <mat-form-field floatLabel="never" class="example-full-width">
@@ -549,30 +549,30 @@
   </mat-form-field>
 </div>
 <div>
+  <div>
+    <h3 class="uxg-display-3">Expansion</h3>
+    <h5 class="uxg-h5">Expansion filter</h5>
+    <div class="example-row">
+      <mat-expansion-panel class="uxg-expansion-filter">
+        <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
+          <mat-panel-title>
+            Personal data
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your name and age
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-<div>
-  <h3 class="uxg-display-3">Expansion</h3>
-  <h5 class="uxg-h5">Expansion filter</h5>
-  <div class="example-row">
-    <mat-expansion-panel class="uxg-expansion-filter">
-      <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>First name</mat-label>
+          <input matInput />
+        </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>First name</mat-label>
-        <input matInput />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Age</mat-label>
-        <input matInput type="number" min="1" />
-      </mat-form-field>
-    </mat-expansion-panel>
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input matInput type="number" min="1" />
+        </mat-form-field>
+      </mat-expansion-panel>
+    </div>
   </div>
 </div>

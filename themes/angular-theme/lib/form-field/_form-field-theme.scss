@@ -35,7 +35,7 @@
 
     &[dense] {
       @include mat-typography-level-to-styles($config, subtitle-2);
-      
+
       .mat-form-field-label {
         font-weight: mat-font-weight($config, caption);
       }

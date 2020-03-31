@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ffdc-ui-elements-demo',
@@ -24,7 +24,7 @@ export class UiElementsDemoComponent {
   constructor(fb: FormBuilder) {
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl,
+      floatLabel: this.floatLabelControl
     });
   }
 }
