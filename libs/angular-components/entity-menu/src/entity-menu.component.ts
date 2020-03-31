@@ -40,7 +40,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
       return {
         name: value,
         abbr: this.formatItemName(value)
-      }
+      };
     });
   }
 

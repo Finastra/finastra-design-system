@@ -25,13 +25,13 @@ In your html
 
 ```html
 <uxg-entity-menu
-    [title]="string"
-    [data]="any[]"
-    [proprty]="string"
-    [abbreviationLength]="number"
-    [bottomLabel]="string"
-    (bottomClick)="() => {}"
-    (itemClick)="($event) => {}"
-  >
+  [title]="string"
+  [data]="any[]"
+  [proprty]="string"
+  [abbreviationLength]="number"
+  [bottomLabel]="string"
+  (bottomClick)="() => {}"
+  (itemClick)="($event) => {}"
+>
 </uxg-entity-menu>
 ```
