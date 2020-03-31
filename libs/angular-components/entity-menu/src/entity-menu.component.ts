@@ -23,7 +23,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() bottomLabel = '';
 
   @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
-  @Output() selectionItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() itemClick: EventEmitter<any> = new EventEmitter<any>();
 
   ngOnInit() {
     if (this.data) {

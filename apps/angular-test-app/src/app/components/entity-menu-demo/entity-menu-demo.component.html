@@ -35,7 +35,7 @@
     [abbreviationLength]="length"
     [bottomLabel]="bottomLabel"
     (bottomClick)="redirect()"
-    (selectionItem)="displayItem($event)"
+    (itemClick)="displayItem($event)"
   >
   </uxg-entity-menu>
 </div>
@@ -115,7 +115,7 @@ The entity-menu component is a floating panel containing list of options.
       <td>Click Event</td>
     </tr>
     <tr>
-      <td>selectionItem</td>
+      <td>itemClick</td>
       <td>EventEmitter&lt;any&gt;</td>
       <td></td>
       <td>Click Event</td>

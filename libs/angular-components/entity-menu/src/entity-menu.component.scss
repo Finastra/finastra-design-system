@@ -5,14 +5,14 @@
     .mat-menu-content {
       margin: 25px;
   
-      .products-title {
+      .solutions-title {
         margin-left: 10px;
       }
-      .product-list {
+      .solution-list {
         display: flex;
         flex-wrap: wrap;
   
-        .product-item {
+        .solution-item {
           margin: 10px;
           display: flex;
           flex-direction: column;
@@ -20,7 +20,7 @@
           justify-content: center;
           cursor: pointer;
   
-          .product-name {
+          .solution-name {
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
