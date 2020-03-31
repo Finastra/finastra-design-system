@@ -1,4 +1,4 @@
-# Global Search
+# Global Navigation
 
 ## Usage
 
