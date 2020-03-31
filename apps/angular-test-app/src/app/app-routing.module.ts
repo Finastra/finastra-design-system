@@ -22,6 +22,9 @@ import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tag
 import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 import { FilterGroupModule } from '@ffdc/uxg-angular-components/filter/filter-group';
 import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
+import { ChartModule } from '@ffdc/uxg-angular-components/chart';
+import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -35,8 +38,6 @@ import { TableDemoComponent } from './components/table-demo/table-demo.component
 
 import { FilterPanelDemoComponent } from './components/filter-panel-demo/filter-panel-demo.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
-import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
-import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { routes } from './routes';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
@@ -45,7 +46,7 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
-
+import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -78,7 +79,8 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
     WizardModule,
     FilterGroupModule,
     FilterToggleModule,
-    SkeletonTextModule
+    SkeletonTextModule,
+    AvatarModule
   ],
   declarations: [
     HomeComponent,
@@ -93,7 +95,8 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
     FoundationsDemoComponent,
     UiElementsDemoComponent,
     SkeletonDemoComponent,
-    ChartDemoComponent
+    ChartDemoComponent,
+    AvatarDemoComponent
   ],
   exports: [RouterModule]
 })

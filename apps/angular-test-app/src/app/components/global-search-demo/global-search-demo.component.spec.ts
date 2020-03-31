@@ -4,6 +4,7 @@ import { GlobalSearchDemoComponent } from './global-search-demo.component';
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 describe('GlobalSearchDemoComponent', () => {
   let component: GlobalSearchDemoComponent;
@@ -11,7 +12,7 @@ describe('GlobalSearchDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatIconModule, MatSnackBarModule, GlobalSearchModule],
+      imports: [MatIconModule, MatSnackBarModule, GlobalSearchModule, MatCardModule],
       declarations: [GlobalSearchDemoComponent]
     }).compileComponents();
   }));
