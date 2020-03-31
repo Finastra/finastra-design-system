@@ -16,25 +16,32 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class EntityMenuComponent implements OnInit, OnChanges {
+  items: any[] = [];
   @Input() data: Array<any> = [];
   @Input() title = '';
-  @Input() columnsMatcher = '';
+  @Input() property?: string;
   @Input() abbreviationLength = 0;
   @Input() bottomLabel = '';
 
   @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() itemClick: EventEmitter<any> = new EventEmitter<any>();
 
-  ngOnInit() {
-    if (this.data) {
-      this.data = this.data.slice(0, 9);
+  ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data || changes.property) {
+      this.items = this.mapData(this.data.slice(0, 9), this.property);
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data) {
-      this.data = this.data.slice(0, 9);
-    }
+  private mapData(data: any[], property?: string) {
+    return data.map((item: any) => {
+      const value = property ? item[property] : item;
+      return {
+        name: value,
+        abbr: this.formatItemName(value)
+      }
+    });
   }
 
   formatItemName(name: string) {
@@ -44,7 +51,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
         .map(str => str.charAt(0))
         .join('')
         .toUpperCase()
-        .substring(0, this.abbreviationLength ? this.abbreviationLength : 1);
+        .substring(0, this.abbreviationLength || 1);
     }
     return name;
   }

@@ -5,13 +5,13 @@
 <mat-menu #menu="matMenu" class="container-list">
   <h6 class="uxg-h6 solutions-title">{{ title || 'Title' }}</h6>
   <div class="solution-list">
-    <div *ngFor="let item of data" class="solution-item" (click)="itemClick.emit(item)">
+    <div *ngFor="let item of items" class="solution-item" (click)="itemClick.emit(item)">
       <mat-card class="uxg-card-solution container-list-item" extra-dense>
         <span class="uxg-h5 uxg-card-solution-name">
-          {{ formatItemName(item[columnsMatcher]) || formatItemName('Solution Name') }}
+          {{ item.abbr || 'SN' }}
         </span>
       </mat-card>
-      <h5 class="uxg-subtitle-4 solution-name">{{ item[columnsMatcher] || 'Solution Name' }}</h5>
+      <h5 class="uxg-subtitle-4 solution-name">{{ item.name || 'Solution Name' }}</h5>
     </div>
   </div>
   <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{ bottomLabel || 'View All' }}</p>
