@@ -24,7 +24,7 @@ uxg-table {
                 overflow: hidden;
                 box-sizing: border-box;
                 .uxg-cell-hidden{
-                    display: none;
+                    display: none !important;
                     width: 0px;
                     height: 0px;
                 }
@@ -36,7 +36,7 @@ uxg-table {
                     top: 13%;
                     bottom: 13%;
                     overflow: hidden;
-                    display: flex;
+                    display: flex !important;
                     align-items: center;
                     overflow: hidden;
                     justify-content: center;
@@ -68,12 +68,15 @@ uxg-table {
                 }
                 &.right div {
                     float: right;
+                    display: block;
                 }
                 &.left div {
                     float: left;
+                    display: block;
                 }
                 &.center div {
                     float: center;
+                    display: block;
                 }
             }
         }
@@ -88,13 +91,25 @@ uxg-table {
                     &.uxg-table-action-column-header {
                         text-align: center;
                     }
-
                     &.right div {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        place-content: center flex-start;
+                        align-items: center;
                         .mat-sort-header-arrow {
                             margin-left: 0px;
                             margin-right: 6px;
                         }
-                        flex-direction: row-reverse;
+                    }
+                    &.left div {
+                        display: flex;
+                        place-content: center flex-start;
+                        align-items: center;
+                    }
+                    &.center div {
+                        display: flex;
+                        place-content: center;
+                        align-items: center;
                     }
                 }
             }
