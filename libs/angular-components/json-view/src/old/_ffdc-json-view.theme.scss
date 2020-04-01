@@ -1,7 +1,0 @@
-@mixin ffdc-json-view-theme($theme) {
-    $primary: map-get($theme, primary);
-
-    ffdc-json-view .jsoneditor {
-        border-color: mat-color($primary, default);
-    }
-}
