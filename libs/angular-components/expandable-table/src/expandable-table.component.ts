@@ -57,7 +57,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   _columns: any[];
   _dataSource: any[];
   selectionModel = new SelectionModel<any>(true, []);
-  primaryKey = "primaryKey";
+  primaryKey = 'primaryKey';
 
   @ViewChild(MatAccordion, { static: false }) accordion?: MatAccordion;
 
@@ -65,15 +65,14 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   @ContentChild('expandableTableButtonsTemplate', { static: false }) templateTableButtons!: TemplateRef<any>;
 
   constructor() {
-    this.dataSource =[];
-    this._dataSource =[];
+    this.dataSource = [];
+    this._dataSource = [];
     this.columns = [];
     this._columns = [];
     this.visibleColumns = [];
     this.selectable = false;
     this.rowClickable = false;
-    this.groupByKey = "id";
-
+    this.groupByKey = 'id';
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -91,11 +90,11 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     let primaryKeyValue = 0;
     this.dataSource.forEach(data => {
       data[this.primaryKey] = ++primaryKeyValue;
-    })
+    });
 
     //input selection
     if (this.selection) {
-      const initialSelection:any[] = [];
+      const initialSelection: any[] = [];
       this.selection.forEach(selectionData => {
         this.dataSource.forEach(data => {
           const rawData = cloneDeep(data);
@@ -117,15 +116,13 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   generateColumns() {
-
     this.groupInfo = find(this.columns, c => c.name === this.groupByKey);
     this._columns = reject(this.columns, c => c.name === this.groupByKey);
     this.visibleColumns = this._columns.map(c => c.name);
- 
   }
 
-  isInderterminate(){
-    return this.selectionModel.selected.length>0 && !this.isAllSelected();
+  isInderterminate() {
+    return this.selectionModel.selected.length > 0 && !this.isAllSelected();
   }
   groupBy(id: string, collection: any[]): GroupedValues[] {
     const dataSource: GroupedValues[] = chain(collection)
@@ -201,7 +198,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   collapseAll() {
-    if(!this.accordion) return;
+    if (!this.accordion) return;
     if (this._dataSource.some((row: GroupedValues) => row.expanded)) {
       this.accordion.closeAll();
     } else {
@@ -210,7 +207,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   getSelectedKeys(row: any) {
-    const keys:any[] = [];
+    const keys: any[] = [];
     const prediction: any = {};
     row.values.forEach((value: any, key: string) => {
       prediction[this.primaryKey] = value[this.primaryKey];
@@ -221,13 +218,13 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     return keys;
   }
 
-  onTableSelectionChange(tableSelectionEvent:any, row:any) {
+  onTableSelectionChange(tableSelectionEvent: any, row: any) {
     const rowSelection = this.getSelectionByRow(row);
     if (tableSelectionEvent.data) {
       rowSelection.forEach(selection => {
         this.selectionModel.toggle(selection);
       });
-      tableSelectionEvent.data.forEach( (selection: any) => {
+      tableSelectionEvent.data.forEach((selection: any) => {
         this.selectionModel.toggle(selection);
       });
       this.onSelectionChanged();
@@ -242,8 +239,8 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     this.selectionChange.emit(selectedItems);
   }
 
-  onRowClicked(event: any){
-    if(this.rowClick){
+  onRowClicked(event: any) {
+    if (this.rowClick) {
       this.rowClick.emit(event.data);
     }
   }

@@ -21,37 +21,34 @@ export const COLUMNS = [
 
 export const GROUP_BY_KEY = 'apiGroup';
 
-
 @Component({
   selector: 'ffdc-expandable-table-demo',
   templateUrl: './expandable-table-demo.component.html',
   styleUrls: ['./expandable-table-demo.component.scss']
 })
 export class ExpandableTableDemoComponent {
+  dataSource: any[];
+  columns: any[];
+  groupByKey: string;
+  selectable: boolean;
+  actionDescription: string;
 
-  dataSource:any[];
-  columns:any[]
-  groupByKey:string;
-  selectable:boolean;
-  actionDescription:string;
+  groupByList: any[];
 
-  groupByList:any[];
-
-  constructor(){
+  constructor() {
     this.dataSource = DATASOURCE;
-    this.columns = COLUMNS
-    this.groupByKey = 'apiGroup'
+    this.columns = COLUMNS;
+    this.groupByKey = 'apiGroup';
     this.selectable = false;
-    this.actionDescription = "";
+    this.actionDescription = '';
 
     this.groupByList = COLUMNS.map(col => col.name);
   }
 
-
-  updateGroupBy(event: any){
+  updateGroupBy(event: any) {
     this.groupByKey = event.value;
   }
-  onSelectionChange(event: any){
+  onSelectionChange(event: any) {
     this.actionDescription = JSON.stringify(event);
   }
 }
