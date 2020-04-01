@@ -1,6 +1,6 @@
-<div *ngFor="let bannerItem of bannerData; last as islast" class="uxg-banner-container">
+<div *ngFor="let bannerItem of banners; last as islast" class="uxg-banner-container">
   <div class="uxg-banner-item">
-    <span class="uxg-display-3" matTooltip="{{ bannerItem.tooltip }}">{{ bannerItem.value }}</span>
+    <span class="uxg-display-3" matTooltip="{{ bannerItem.tooltip }}">{{ bannerItem.text }}</span>
     <span>{{ bannerItem.name }}</span>
   </div>
   <div class="spliter" [hidden]="islast"></div>

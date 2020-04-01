@@ -7,13 +7,14 @@
     $text-banner: mat-color($foreground, base);
 
     .uxg-banner-container{
-        .uxg-boday-1{
+        .uxg-body-1{
             color: $text-banner;
         }
         .uxg-display-3{
             color:$text-primary;
+            font-weight: bold;
         }
-    
+        
         .spliter{
             background:$color-accent;
         }

@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { Banner } from '@ffdc/uxg-angular-components/banner';
-@Component({
-  selector: 'ffdc-banner-demo',
-  templateUrl: './banner-demo.component.html',
-  styleUrls: ['./banner-demo.component.scss']
-})
-export class BannerDemoComponent implements OnInit {
-  exampleBannerData: Banner[] = [];
-  constructor() {}
+# Banner
 
-  ngOnInit() {
+## Usage
+
+In your `app.module.ts` :
+
+```ts
+import { Banner } from '@ffdc/uxg-angular-components/banner';
+
+@NgModule({
+  imports: [
+    ...
+    BannerModule
+  ],
+})
+```
+
+In your `styles.scss` :
+
+```scss
+@include uxg-banner-theme($theme);
+```
+
+In your html
+
+```html
+<uxg-banner [bannerData]="exampleBannerData"></uxg-banner>
+```
+
+```ts
     this.exampleBannerData = [
       {
         name: 'App number',
@@ -34,5 +52,4 @@ export class BannerDemoComponent implements OnInit {
         tooltip: 'Income currency $'
       }
     ];
-  }
-}
+```
