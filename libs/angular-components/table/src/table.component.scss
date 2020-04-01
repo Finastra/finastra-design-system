@@ -93,13 +93,13 @@ uxg-table {
                     }
                     &.right div {
                         display: flex;
-                        place-content: center flex-end;
+                        flex-direction: row-reverse;
+                        place-content: center flex-start;
                         align-items: center;
                         .mat-sort-header-arrow {
                             margin-left: 0px;
                             margin-right: 6px;
                         }
-                        flex-direction: row-reverse;
                     }
                     &.left div {
                         display: flex;
