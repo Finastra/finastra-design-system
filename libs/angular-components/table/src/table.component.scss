@@ -24,7 +24,7 @@ uxg-table {
                 overflow: hidden;
                 box-sizing: border-box;
                 .uxg-cell-hidden{
-                    display: none;
+                    display: none !important;
                     width: 0px;
                     height: 0px;
                 }
@@ -36,7 +36,7 @@ uxg-table {
                     top: 13%;
                     bottom: 13%;
                     overflow: hidden;
-                    display: flex;
+                    display: flex !important;
                     align-items: center;
                     overflow: hidden;
                     justify-content: center;
@@ -68,12 +68,15 @@ uxg-table {
                 }
                 &.right div {
                     float: right;
+                    display: block;
                 }
                 &.left div {
                     float: left;
+                    display: block;
                 }
                 &.center div {
                     float: center;
+                    display: block;
                 }
             }
         }

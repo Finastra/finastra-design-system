@@ -1,0 +1,19 @@
+@import '~jsoneditor/dist/jsoneditor.min.css';
+@import '~@ffdc/uxg-angular-theme/lib/core/style/spacing';
+@import '~@ffdc/uxg-angular-theme/theme-variables';
+@import './ffdc-json-view.theme';
+@include ffdc-json-view-theme($uxg-light-theme);
+
+ffdc-json-view {
+  display: flex;
+  flex-direction: column;
+
+  json-editor {
+    height: 100%;
+    margin-top: $uxg-spacing-4;
+
+    > div {
+      height: 100%;
+    }
+  }
+}
