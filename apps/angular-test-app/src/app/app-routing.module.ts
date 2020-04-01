@@ -25,6 +25,7 @@ import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-t
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
+import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-table';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -47,6 +48,7 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -80,7 +82,8 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
-    AvatarModule
+    AvatarModule,
+    ExpandableTableModule
   ],
   declarations: [
     HomeComponent,
@@ -96,7 +99,8 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
     UiElementsDemoComponent,
     SkeletonDemoComponent,
     ChartDemoComponent,
-    AvatarDemoComponent
+    AvatarDemoComponent,
+    ExpandableTableDemoComponent
   ],
   exports: [RouterModule]
 })

@@ -64,6 +64,9 @@
     },
     "avatar": {
       "tags": []
+    },
+    "angular-components-expandable-table": {
+      "tags": []
     }
   }
 }
