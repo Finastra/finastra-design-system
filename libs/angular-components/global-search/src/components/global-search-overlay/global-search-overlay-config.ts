@@ -1,4 +1,5 @@
 import { TemplateRef } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface SearchConfig {
   resultItemTemplate?: TemplateRef<any>;
@@ -9,4 +10,6 @@ export interface SearchConfig {
   maxItems?: number;
   itemsLayout?: 'row' | 'column';
   searchTermChange: CallableFunction;
+  itemClicked: CallableFunction;
+  results: Observable<any[]>;
 }

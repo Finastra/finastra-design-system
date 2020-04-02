@@ -1,5 +1,14 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
@@ -19,7 +28,8 @@ interface UXGFilterChanges {
 @Component({
   selector: 'uxg-filter-tags',
   templateUrl: './filter-tags.component.html',
-  styleUrls: ['./filter-tags.component.scss']
+  styleUrls: ['./filter-tags.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FilterTagsComponent implements OnInit {
   visible = true;
@@ -102,8 +112,9 @@ export class FilterTagsComponent implements OnInit {
   }
 
   clearSelection() {
-    this.changes.emit({ added: [], removed: [...this.selectedData] });
+    const removed = [...this.selectedData];
     this.selectedData.length = 0;
+    this.changes.emit({ added: [], removed });
   }
 
   onClick() {

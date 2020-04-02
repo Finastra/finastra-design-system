@@ -6,6 +6,7 @@
 @import '../../card/card-theme';
 @import '../../chips/chips-theme';
 @import '../../expansion/expansion-theme';
+@import '../../form-field/form-field-theme';
 @import '../../icon/icon-theme';
 @import '../../link/link-theme';
 @import '../../list/list-theme';
@@ -47,7 +48,6 @@
   @include mat-form-field-theme($theme);
   @include mat-grid-list-theme($theme);
   @include mat-icon-theme($theme);
-  @include mat-input-theme($theme);
   @include mat-list-theme($theme);
   @include mat-menu-theme($theme);
   @include mat-paginator-theme($theme);
@@ -75,6 +75,7 @@
   @include uxg-card-theme($theme);
   @include uxg-chips-theme($theme);
   @include uxg-expansion-theme($theme);
+  @include uxg-form-field-fill-theme($theme);
   @include uxg-icon-theme($theme);
   @include uxg-link-theme($theme);
   @include uxg-list-theme($theme);

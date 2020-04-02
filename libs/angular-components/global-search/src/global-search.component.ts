@@ -1,7 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewEncapsulation,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
-import { GlobalSearchService } from './services/global-search.service';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
+import { ResultGroup } from './global-search.model';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'uxg-global-search',
@@ -9,19 +20,22 @@ import { SearchOverlayRef } from './components/global-search-overlay/global-sear
   styleUrls: ['./global-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class UxgGlobalSearch implements OnInit {
+export class UxgGlobalSearch implements OnInit, OnChanges {
   @Input() groupBy?: string;
   @Input() resultItemTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
-  @Input() itemDivider = true;
-  @Input() groupDivider = true;
+  @Input() itemDivider = false;
+  @Input() groupDivider = false;
   @Input() itemsLayout: 'row' | 'column' = 'column';
+  @Input() results: any[] = [];
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
 
-  constructor(private overlayService: GlobalSearchOverlayService, public searchService: GlobalSearchService) {}
+  results$ = new Subject<any[]>();
+
+  constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
 
@@ -34,14 +48,20 @@ export class UxgGlobalSearch implements OnInit {
       groupDivider: this.groupDivider,
       maxItems: this.maxItems,
       itemsLayout: this.itemsLayout,
-      searchTermChange: ($event: any) => this.searchTermChange.emit($event)
+      searchTermChange: ($event: any) => this.searchTermChange.emit($event),
+      itemClicked: ($event: any) => {
+        this.resultItemClick.emit($event);
+        if (this.ref) this.ref.close();
+      },
+      results: this.results$
     });
   }
 
-  ngOnInit() {
-    this.searchService.itemClicked.subscribe(item => {
-      this.resultItemClick.emit(item);
-      if (this.ref) this.ref.close();
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.hasOwnProperty('results') && !changes.results.firstChange) {
+      this.results$.next(changes.results.currentValue);
+    }
   }
+
+  ngOnInit() {}
 }

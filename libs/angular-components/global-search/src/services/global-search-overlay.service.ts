@@ -31,6 +31,9 @@ export class GlobalSearchOverlayService {
     componentRef.instance.searchTermChange.subscribe((value: any) => {
       if (config) config.searchTermChange(value);
     });
+    componentRef.instance.itemClicked.subscribe((value: any) => {
+      if (config) config.itemClicked(value);
+    });
 
     return searchOverlayRef;
   }

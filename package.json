@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.16.5",
+  "version": "0.16.8",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -119,6 +119,7 @@
     "stylelint-formatter-pretty": "^1.1.2",
     "stylelint-scss": "^3.10.0",
     "ts-jest": "24.0.0",
+    "ts-md5": "1.2.7",
     "ts-node": "~8.6.2",
     "tsickle": "0.38.0",
     "tslint": "5.20.1",
