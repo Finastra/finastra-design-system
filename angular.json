@@ -208,6 +208,9 @@
           "options": {
             "project": "themes/angular-theme"
           }
+        },
+        "snapshot-test": {
+          "builder": ""
         }
       },
       "schematics": {
