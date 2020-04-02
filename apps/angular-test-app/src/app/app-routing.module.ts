@@ -49,6 +49,7 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   imports: [
     CommonModule,
@@ -61,6 +62,7 @@ import { BannerDemoComponent } from './components/banner-demo/banner-demo.compon
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTooltipModule,
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSelectModule,

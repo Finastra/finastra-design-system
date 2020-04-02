@@ -65,6 +65,8 @@ export class BannerComponent implements OnInit, OnDestroy {
     }
     return banner.value;
   }
+  //prevent ui update to avoid tooltip doesn't work due to tooltip fresh
+  trackByFn = (index: number, item: BannerItem) => item.name;
   ngOnInit() {}
   ngOnDestroy() {}
 }

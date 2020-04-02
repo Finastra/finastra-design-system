@@ -14,24 +14,24 @@ export class BannerDemoComponent implements OnInit {
       {
         name: 'App number',
         value: 9435,
-        tooltip: 'Existing appss'
+        tooltip: 'How many apps'
       },
       {
         name: 'Income',
         value: 9435,
         prefix: '€',
-        tooltip: 'Existing appss'
+        tooltip: 'Income with prefix currency'
       },
       {
         name: 'Income',
         value: 9435,
         suffix: '€',
-        tooltip: 'incomes from the api '
+        tooltip: 'incomes with suffix currency'
       },
       {
-        name: 'Income',
-        value: 'non ',
-        tooltip: 'Income currency $'
+        name: 'Request Result',
+        value: 'In progress',
+        tooltip: 'Text banner example'
       }
     ];
   }
