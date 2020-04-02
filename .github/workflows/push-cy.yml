@@ -1,5 +1,5 @@
-name: pr ci
-on: pull_request
+name: push cy
+on: push
 
 jobs:
   init:
