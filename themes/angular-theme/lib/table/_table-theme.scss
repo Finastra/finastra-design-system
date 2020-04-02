@@ -11,12 +11,6 @@
       &.selected {
         background-color: mat-color($primary, default, 0.16);
       }
-
-      .mat-checkbox-checked, .mat-checkbox-indeterminate {
-        .mat-checkbox-background {
-          background-color: mat-color($primary, default);
-        }
-      }
     }
   }
 }

@@ -2,11 +2,11 @@
   <mat-checkbox
     class="check-box-header"
     (click)="$event.stopPropagation()"
-    color="primary"
     [checked]="selectionModel.selected.length > 0 && isAllSelected()"
     [indeterminate]="selectionModel.selected.length > 0 && !isAllSelected()"
     (change)="$event ? toggleAll() : null"
     *ngIf="selectable"
+    color="primary"
   >
   </mat-checkbox>
   <div class="title uxg-subtitle-1">{{ groupInfo?.displayName || groupInfo?.name }}</div>
@@ -30,11 +30,11 @@
         <mat-checkbox
           class="check-box-header"
           (click)="$event.stopPropagation()"
-          color="primary"
           [checked]="selectionHasRowValue(row) && isRowAllSelected(row)"
           [indeterminate]="selectionHasRowValue(row) && !isRowAllSelected(row)"
           (change)="$event ? toggleRow(row) : null"
           *ngIf="selectable"
+          color="primary"
         >
         </mat-checkbox>
         <div class="header-text">
