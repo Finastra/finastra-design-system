@@ -1,0 +1,11 @@
+name: pr ci
+on: pull_request
+
+jobs:
+  init:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
