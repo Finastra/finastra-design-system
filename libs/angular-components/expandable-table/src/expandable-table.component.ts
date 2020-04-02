@@ -113,6 +113,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     });
 
     this._dataSource = this.groupBy(this.groupByKey, this.dataSource);
+
   }
 
   generateColumns() {
