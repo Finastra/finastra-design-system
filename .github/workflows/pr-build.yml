@@ -44,8 +44,13 @@ jobs:
         run: npm run format:check -- --base=origin/master --parallel
       - name: Run affected unit tests
         run: npm run affected:test -- --base=origin/master --parallel
-      - name: Run Cypress snapshot tests
-        run: npm run affected:snapshot-test -- --base=origin/master --parallel
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        env:
+          CYPRESS_baseUrl: 'https://deploy-preview-${{ github.event.number }}--vigorous-joliot-c90dab.netlify.com'
+        with:
+          wait-on: 'https://deploy-preview-${{ github.event.number }}--vigorous-joliot-c90dab.netlify.com'
+          wait-on-timeout: 90
 
         # Build
       - name: Build Test App
