@@ -15,7 +15,15 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
-import { chain, filter, find, isEqual, reject, cloneDeep } from 'lodash';
+import filter from 'lodash/filter';
+import find from 'lodash/find';
+import isEqual from 'lodash/isEqual';
+import reject from 'lodash/reject';
+import cloneDeep from 'lodash/cloneDeep';
+import map from 'lodash/map';
+import groupBy from 'lodash/groupBy';
+
+import { createChain } from '@ffdc/uxg-angular-components/core';
 
 @Component({
   selector: 'uxg-expandable-table',
@@ -64,6 +72,8 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   @ContentChild('expandableHeaderButtonsTemplate', { static: false }) templateHeaderButtons!: TemplateRef<any>;
   @ContentChild('expandableTableButtonsTemplate', { static: false }) templateTableButtons!: TemplateRef<any>;
 
+  chain: (input: any) => any;
+
   constructor() {
     this.dataSource = [];
     this._dataSource = [];
@@ -73,6 +83,9 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     this.selectable = false;
     this.rowClickable = false;
     this.groupByKey = 'id';
+
+    this.chain = createChain({ map, groupBy, filter, find, isEqual, reject });
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -126,9 +139,9 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     return this.selectionModel.selected.length > 0 && !this.isAllSelected();
   }
   groupBy(id: string, collection: any[]): GroupedValues[] {
-    const dataSource: GroupedValues[] = chain(collection)
+    const dataSource: GroupedValues[] = this.chain(collection)
       .groupBy(id)
-      .map((values, id) => ({
+      .map((values: any, id: string) => ({
         id,
         label: this.groupByKey ? values[0][this.groupByKey] : id,
         values,

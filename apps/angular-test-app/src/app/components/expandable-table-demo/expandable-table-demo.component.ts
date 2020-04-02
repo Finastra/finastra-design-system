@@ -22,7 +22,7 @@ export const COLUMNS = [
 export const GROUP_BY_KEY = 'apiGroup';
 
 @Component({
-  selector: 'ffdc-expandable-table-demo',
+  selector: 'uxg-expandable-table-demo',
   templateUrl: './expandable-table-demo.component.html',
   styleUrls: ['./expandable-table-demo.component.scss']
 })
