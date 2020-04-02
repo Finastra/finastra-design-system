@@ -254,13 +254,13 @@ export class TableDemoComponent implements OnInit {
     });
 
     this.columns = [
-      { name: 'API', type: UxgColumnType.string, align: 'left', displayName: 'Display Api' },
+      { name: 'API', type: UxgColumnType.string, align: 'center', displayName: 'Display Api' },
       { name: 'End Point', type: UxgColumnType.string, align: 'left' },
       { name: 'Date Time', type: UxgColumnType.date, align: 'left' },
       { name: 'Day of Week', type: UxgColumnType.string, align: 'left' },
       { name: 'Hour of Day', type: UxgColumnType.string, align: 'left' },
       { name: 'Status Code', type: UxgColumnType.string, align: 'left' },
-      { name: 'Error Response', type: UxgColumnType.string, align: 'left' },
+      { name: 'Error Response', type: UxgColumnType.string, align: 'center' },
       { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' }
     ];
     this.columnsCellTemplate = [
