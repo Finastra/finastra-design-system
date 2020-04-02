@@ -210,7 +210,14 @@
           }
         },
         "snapshot-test": {
-          "builder": ""
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npm run test:theme"
+              }
+            ]
+          }
         }
       },
       "schematics": {

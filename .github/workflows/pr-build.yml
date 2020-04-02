@@ -45,7 +45,7 @@ jobs:
       - name: Run affected unit tests
         run: npm run affected:test -- --base=origin/master --parallel
       - name: Run Cypress snapshot tests
-        run: npm run test:theme
+        run: npm run affected:snapshot-test -- --base=origin/master --parallel
 
         # Build
       - name: Build Test App
