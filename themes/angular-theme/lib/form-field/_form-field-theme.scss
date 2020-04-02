@@ -1,6 +1,8 @@
 @mixin uxg-form-field-fill-theme($theme) {
   $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
   $fill-background: mat-color($primary, default, 0.08);
+  $warn-background: mat-color($warn, default, 0.08);
 
   .mat-form-field-appearance-fill {
     .mat-form-field-flex {
@@ -9,6 +11,34 @@
 
     .mat-form-field-underline::before {
       background-color: map-get($primary, default);
+    }
+
+    .mat-form-field-ripple {
+      background-color: map-get($primary, default);
+    }
+  }
+
+  .mat-form-field.mat-form-field-invalid {
+    .mat-form-field-flex {
+      background-color: $warn-background;
+    }
+  }
+}
+
+@mixin uxg-form-field-typography($config) {
+  .mat-form-field-appearance-fill {
+    @include mat-typography-level-to-styles($config, subtitle-1);
+
+    .mat-form-field-label {
+      font-weight: mat-font-weight($config, body-1);
+    }
+
+    &[dense] {
+      @include mat-typography-level-to-styles($config, subtitle-2);
+
+      .mat-form-field-label {
+        font-weight: mat-font-weight($config, caption);
+      }
     }
   }
 }

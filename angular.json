@@ -26,7 +26,11 @@
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
+            "assets": [
+              "apps/angular-test-app/src/favicon.ico",
+              "apps/angular-test-app/src/assets",
+              "apps/angular-test-app/src/_redirects"
+            ],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": [
               {

@@ -37,6 +37,6 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
     ]
   }
 ].map(groups => {
-  groups.routes = groups.routes.sort((a, b) => a.data.title.localeCompare(b.data.title));
+  groups.routes = groups.routes.sort((a: any, b: any) => a.data.title.localeCompare(b.data.title));
   return groups;
 });
