@@ -1,4 +1,4 @@
-name: push cy
+name: Cypress tests
 on: push
 
 jobs:
@@ -9,5 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        env:
+          CYPRESS_host: 'https://deploy-preview-${{ github.event.number }}--vigorous-joliot-c90dab.netlify.com'
         with:
           working-directory: ./

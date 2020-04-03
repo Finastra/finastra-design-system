@@ -2,7 +2,7 @@
 
 context('Foundations', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4200');
+    cy.visit(Cypress.env('CYPRESS_host'));
     cy.get('.app-content').invoke('css', 'position', 'relative');
     cy.contains('menu').click();
     cy.contains('Foundations').click();
