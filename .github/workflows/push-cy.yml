@@ -13,4 +13,4 @@ jobs:
           CYPRESS_BASE_URL: 'https://deploy-preview-${{ github.run_id }}--vigorous-joliot-c90dab.netlify.com'
         with:
           working-directory: ./
-          wait-on: 'https://deploy-preview-${{ github.run_number }}--vigorous-joliot-c90dab.netlify.com'
+          wait-on: 'https://deploy-preview-${{ github.run_id }}--vigorous-joliot-c90dab.netlify.com'
