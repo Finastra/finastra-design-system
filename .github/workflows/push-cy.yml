@@ -10,7 +10,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         env:
-          CYPRESS_BASE_URL: 'https://deploy-preview-${{ github.run_id }}--vigorous-joliot-c90dab.netlify.com'
+          CYPRESS_BASE_URL: 'https://deploy-preview-178--vigorous-joliot-c90dab.netlify.com'
         with:
           working-directory: ./
-          wait-on: 'https://deploy-preview-${{ github.run_id }}--vigorous-joliot-c90dab.netlify.com'
+          wait-on: 'https://deploy-preview-178--vigorous-joliot-c90dab.netlify.com'
