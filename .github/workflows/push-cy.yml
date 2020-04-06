@@ -14,3 +14,8 @@ jobs:
         with:
           working-directory: ./
           wait-on: 'https://deploy-preview-178--flamboyant-morse-c079f4.netlify.com'
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
