@@ -7,7 +7,12 @@
             <h5 class="uxg-h5">View by</h5>
             <button
               mat-button
-              (click)="demoFilter.clearSelection(); demoFilterTags.clearSelection(); toggleBtnFilter.reset()"
+              (click)="
+                demoFilter.clearSelection();
+                demoFilterTags.clearSelection();
+                toggleBtnFilter.reset();
+                demoMultiselectTags.clearSelection()
+              "
               color="accent"
               dense
             >
@@ -37,6 +42,20 @@
           </div>
           <uxg-filter-tags [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
           </uxg-filter-tags>
+        </div>
+
+        <div class="filter-panel-tree">
+          <div class="filter-panel-tree-title">
+            <h5 class="uxg-h5">Usage Type</h5>
+          </div>
+
+          <uxg-multiselect-tags
+            [data]="multiselectTagsSampleData"
+            (changes)="updateMultiselectTags($event)"
+            large
+            #demoMultiselectTags
+          >
+          </uxg-multiselect-tags>
         </div>
 
         <div class="filter-panel-tree">
@@ -73,6 +92,9 @@
         <h5 class="uxg-h5">Filter Tags Results</h5>
         <pre>{{ tagFilter | json }}</pre>
 
+        <h5 class="uxg-h5">Filter Multiselect Tags Results</h5>
+        <pre>{{ chosenMultiselectTags | json }}</pre>
+
         <h5 class="uxg-h5">Filter Tree Results</h5>
         <pre>{{ treeFilter | json }}</pre>
       </mat-drawer-content>
@@ -108,6 +130,16 @@
             <div class="uxg-h6">Tags</div>
             <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
             </uxg-filter-tags>
+          </div>
+          <div class="filter-instance">
+            <div class="uxg-h6">Usage Type</div>
+            <uxg-multiselect-tags
+              uxgFilter="UsageType"
+              [data]="multiselectTagsSampleData"
+              (changes)="updateMultiselectTags($event)"
+              large
+            >
+            </uxg-multiselect-tags>
           </div>
         </uxg-filter-group>
       </div>

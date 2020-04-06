@@ -22,6 +22,7 @@ import { FilterTagsModule } from '@ffdc/uxg-angular-components/filter/filter-tag
 import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
 import { FilterGroupModule } from '@ffdc/uxg-angular-components/filter/filter-group';
 import { FilterToggleModule } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { MultiselectTagsModule } from '@ffdc/uxg-angular-components/filter/multiselect-tags';
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
@@ -80,6 +81,7 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
+    MultiselectTagsModule,
     AvatarModule
   ],
   declarations: [

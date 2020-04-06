@@ -17,6 +17,16 @@ export class FilterPanelDemoComponent implements OnInit {
   filterExpression: string[] = [];
   groupValue = 'api';
   initialGroupState = 'api';
+  tagsSampleData = [
+    { label: 'Malauzai', isSelected: true },
+    { label: 'North America' },
+    { label: 'Money Movement' },
+    { label: 'Static Data' }
+  ];
+
+  multiselectTagsSampleData = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
+  chosenTags: string[] = [];
+  chosenMultiselectTags: string[] = [];
 
   treeFilter: string[] = [];
   tagFilter: string[] = [];
@@ -50,5 +60,9 @@ export class FilterPanelDemoComponent implements OnInit {
 
   updateFilterGroup(changes: any[]) {
     this.groupFilter = changes;
+  }
+
+  updateMultiselectTags(tags: string[]) {
+    this.chosenMultiselectTags = tags;
   }
 }
