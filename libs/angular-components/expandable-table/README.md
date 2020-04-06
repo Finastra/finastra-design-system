@@ -15,11 +15,6 @@ import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-t
 })
 ```
 
-In your `styles.scss` :
-
-```scss
-@include uxg-expandable-table-theme($theme);
-
 ```
 
 In your html
