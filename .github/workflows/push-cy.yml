@@ -9,11 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v1
-        env:
-          CYPRESS_BASE_URL: 'https://deploy-preview-178--flamboyant-morse-c079f4.netlify.com'
         with:
           working-directory: ./
-          wait-on: 'https://deploy-preview-178--flamboyant-morse-c079f4.netlify.com'
+          start: npm start
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
