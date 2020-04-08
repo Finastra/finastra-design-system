@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.16.9",
+  "version": "0.16.10",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
