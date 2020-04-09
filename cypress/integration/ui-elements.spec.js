@@ -135,7 +135,7 @@ context('UI Elements', () => {
   ////////
 
   it('match card basic', () => {
-    cy.get('.card-basic-test')
+    cy.get('.card-basic-test', { timeout: 5000 })
       .scrollIntoView()
       .toMatchImageSnapshot();
   })
