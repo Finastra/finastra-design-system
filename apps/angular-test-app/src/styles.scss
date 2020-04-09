@@ -60,20 +60,24 @@ section {
   justify-content: flex-start;
   margin: 8px;
   padding: 32px;
+
   h1.mat-display-1 {
     flex-grow: 1;
     margin: 8px;
   }
+
   code {
     display: flex;
     align-items: center;
     margin-left: 8px;
     flex-grow: 1;
   }
+
   pre {
     margin: 8px;
     color: #414141;
     border-radius: 6px;
+
     code {
       display: block;
     }
@@ -81,7 +85,9 @@ section {
 }
 
 .uxg-wizard {
-    .uxg-wizard-right-panel, .uxg-wizard-timeline-xs {
-        background: linear-gradient(to right bottom, #0b0c3e 0, #1b1d5d 35%, #493696 85%, #694ed6 100%) !important;
-    }
+
+  .uxg-wizard-right-panel,
+  .uxg-wizard-timeline-xs {
+    background: linear-gradient(to right bottom, #0b0c3e 0, #1b1d5d 35%, #493696 85%, #694ed6 100%) !important;
+  }
 }
