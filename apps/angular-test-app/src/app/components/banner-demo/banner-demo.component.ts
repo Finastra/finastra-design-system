@@ -13,7 +13,7 @@ export class BannerDemoComponent implements OnInit {
     this.exampleBannerData = [
       {
         name: 'App number',
-        value: 9435,
+        value: 935,
         tooltip: 'How many apps'
       },
       {
@@ -30,7 +30,7 @@ export class BannerDemoComponent implements OnInit {
       },
       {
         name: 'Request Result',
-        value: 'In progress',
+        value: 'Pending',
         tooltip: 'Text banner example'
       }
     ];

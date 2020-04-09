@@ -13,7 +13,7 @@ interface BannerItem {
   styleUrls: ['./banner.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BannerComponent implements OnInit, OnDestroy {
+export class BannerComponent {
   private _bannerData: Banner[] = [];
   @Input()
   set bannerData(data: Banner[]) {
@@ -67,6 +67,4 @@ export class BannerComponent implements OnInit, OnDestroy {
   }
   //prevent ui update to avoid tooltip doesn't work due to tooltip fresh
   trackByFn = (index: number, item: BannerItem) => item.name;
-  ngOnInit() {}
-  ngOnDestroy() {}
 }
