@@ -1,3 +1,13 @@
+.demonstration{
+  .optional-table-button{
+    margin: 5px;
+  }
+
+  .optional-header-button{
+    margin-right: 10px;
+  }
+}
+
 .configuration{
   >div{
     margin-top: 10px;
@@ -6,7 +16,7 @@
     .mat-slide-toggle{
       margin-right: 5px;
     }
-  }
+  }  
   .group-by{
     width: 150px;
   }
@@ -24,7 +34,6 @@
   }
 }
 .documentation{
-  width: 50%;
   border-collapse: collapse;
   tr{
     font-family: Roboto, sans-serif;

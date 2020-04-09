@@ -46,6 +46,8 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
 
   @Input() groupByKey: string;
 
+  @Input() subtitle?: string;
+
   @Input() selectable: boolean;
 
   @Input() rowClickable: boolean;
@@ -57,6 +59,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   @Output() rowClick = new EventEmitter<any>();
   @Output() selectionChange = new EventEmitter<any>();
   @Output() tableButtonsCallBack = new EventEmitter<any>();
+  @Output() tableHeaderCallBack = new EventEmitter<any>();
 
   dataLength = 0;
   groupInfo: any;
@@ -71,6 +74,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
 
   @ContentChild('expandableHeaderButtonsTemplate', { static: false }) templateHeaderButtons!: TemplateRef<any>;
   @ContentChild('expandableTableButtonsTemplate', { static: false }) templateTableButtons!: TemplateRef<any>;
+  @ContentChild('expandableTableSubtitleTemplate', { static: false }) templateHeaderSubtitle!: TemplateRef<any>;
 
   chain: (input: any) => any;
 
@@ -85,7 +89,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     this.groupByKey = 'id';
 
     this.chain = createChain({ map, groupBy, filter, find, isEqual, reject });
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -126,7 +129,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     });
 
     this._dataSource = this.groupBy(this.groupByKey, this.dataSource);
-
   }
 
   generateColumns() {

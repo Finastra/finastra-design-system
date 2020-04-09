@@ -101,14 +101,13 @@ fdescribe('ExpandableTableComponent', () => {
       columns: new SimpleChange(null, component.columns, true),
       groupByKey: new SimpleChange(null, component.groupByKey, true)
     });
-    
+
     fixture.detectChanges();
-    
+
     const checkboxes = fixture.debugElement.nativeElement.querySelectorAll('.mat-checkbox');
     expect(checkboxes.length).toEqual(11);
   });
 
-  
   it('should toggle all  and reuturn all the data', () => {
     component.dataSource = DATASOURCE;
     component.columns = COLUMNS;
@@ -141,9 +140,9 @@ fdescribe('ExpandableTableComponent', () => {
     });
     fixture.detectChanges();
 
-    const row = cloneDeep(component._dataSource[0])
-    
-    row.values.forEach( (val:any) =>{
+    const row = cloneDeep(component._dataSource[0]);
+
+    row.values.forEach((val: any) => {
       delete val.primaryKey;
     });
     spyOn(component.selectionChange, 'emit');

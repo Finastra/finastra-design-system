@@ -45,7 +45,9 @@
           </span>
         </div>
         <div class="header-buttons">
-          <ng-container *ngTemplateOutlet="templateHeaderButtons; context: { row: row }"></ng-container>
+          <ng-container
+            *ngTemplateOutlet="templateHeaderButtons; context: { row: row, emiter: tableHeaderCallBack }"
+          ></ng-container>
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>

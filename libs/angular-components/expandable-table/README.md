@@ -15,7 +15,7 @@ import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-t
 })
 ```
 
-```
+````
 
 In your html
 
@@ -28,4 +28,4 @@ In your html
   (selectionChange)="onSelectionChange($event)"
 >
   </uxg-expandable-table>
-```
+````

@@ -2,7 +2,7 @@
 import mapValues from 'lodash/mapValues';
 
 interface ChainableFunctions {
-  [key: string]: (...args:any[]) => any;
+  [key: string]: (...args: any[]) => any;
 }
 
 export function createChain(chainableFunctions: ChainableFunctions) {
@@ -10,7 +10,7 @@ export function createChain(chainableFunctions: ChainableFunctions) {
     let value = input;
 
     const wrapper = {
-      ...mapValues(chainableFunctions, f => (...args:any[]) => {
+      ...mapValues(chainableFunctions, f => (...args: any[]) => {
         // lodash always puts input as the first argument
         value = f(value, ...args);
         return wrapper;
