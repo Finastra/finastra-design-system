@@ -18,7 +18,7 @@
 
 .filter-panel-side-header {
   min-height: 166px;
-  background-color: #fafafa;
+  // background-color: #fafafa;
 }
 
 .filter-panel-side-title {
@@ -52,10 +52,6 @@
 
 .filter-panel-tags {
   padding: 0 25px 0 25px;
-
-  mat-form-field {
-    width: 100%;
-  }
 }
 
 .filter-panel-tags-title {
