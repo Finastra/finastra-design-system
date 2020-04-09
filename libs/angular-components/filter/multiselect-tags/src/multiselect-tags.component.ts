@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import cloneDeep from 'lodash/cloneDeep';
 
 export interface MultiselectTag {
   label: string;
@@ -21,7 +22,7 @@ export class MultiselectTagsComponent implements OnInit {
   @Input('large') large = null;
   @Input()
   set data(data: MultiselectTag[]) {
-    this._data = data;
+    this._data = cloneDeep(data);
   }
 
   get data(): MultiselectTag[] {
