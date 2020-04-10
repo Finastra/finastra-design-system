@@ -1,23 +1,32 @@
 @import 'angular-theme/lib/core/style/spacing';
 
 .example-card {
-    width: 400px;
+  width: 400px;
 }
 
 .example-row {
-    margin-bottom: $uxg-spacing-4;
+  margin-bottom: $uxg-spacing-4;
+}
+
+.example-textarea {
+  width: 50%;
+  max-width: 50%;
+  &:first-child {
+    padding-right: $uxg-spacing-4;
+    margin-bottom: $uxg-spacing-3;
+  }
 }
 
 .mat-button-base + .mat-button-base,
 .mat-icon + .mat-icon,
 .mat-card + .mat-card {
-    margin-left: $uxg-spacing-2;
+  margin-left: $uxg-spacing-2;
 }
 
 .uxg-card-product {
-    display: inline-block;
+  display: inline-block;
 }
 
 .uxg-card-solution {
-    display: inline-block;
+  display: inline-block;
 }

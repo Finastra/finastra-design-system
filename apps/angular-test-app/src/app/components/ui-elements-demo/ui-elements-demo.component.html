@@ -1,5 +1,5 @@
 <div>
-  <h3 class="uxg-display-3">Avatars</h3>
+  <!--<h3 class="uxg-display-3">Avatars</h3>
   <h5 class="uxg-h5">Default Avatar</h5>
   <div class="example-row">
     <div class="uxg-avatar" large></div>
@@ -10,7 +10,6 @@
   <h5 class="uxg-h5">Avatar with Letter</h5>
   <div class="example-row">
     <div class="uxg-avatar" large>RH</div>
-    <!-- You can use both <div> or <span> -->
     <span class="uxg-avatar">R</span>
     <div class="uxg-avatar" dense>R</div>
   </div>
@@ -421,98 +420,96 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-</div>
+</div>-->
 
-<h5 class="uxg-h5">Fill Input</h5>
-<div class="example-row">
-  <mat-form-field floatLabel="false" appearance="fill">
-    <mat-icon color="primary" matPrefix>favorite</mat-icon>
-    <input matInput placeholder="Placeholder" />
-    <mat-icon color="primary" matSuffix>favorite</mat-icon>
-  </mat-form-field>
-</div>
-<div class="example-row">
-  <mat-form-field floatLabel="false" appearance="fill">
-    <input matInput placeholder="Placeholder" />
-    <mat-hint>Helper text</mat-hint>
-  </mat-form-field>
-</div>
-<div class="example-row">
-  <mat-form-field floatLabel="never" class="example-full-width" appearance="fill">
-    <mat-icon color="primary" matPrefix>search</mat-icon>
-    <mat-label>Search...</mat-label>
-    <input type="search" matInput />
-  </mat-form-field>
-</div>
-
-<h5 class="uxg-h5">Input With Icon Button</h5>
-<div class="example-container" dense>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" />
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
-      <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label>Amount</mat-label>
-    <input matInput type="number" value="0" class="example-right-align" />
-    <span matPrefix>$&nbsp;</span>
-    <span matSuffix>.00</span>
-  </mat-form-field>
-</div>
-
-<h5 class="uxg-h5">Error Message</h5>
-<div class="example-container">
-  <mat-form-field #ff1 appearance="fill">
-    <mat-icon matPrefix>lock_outlined</mat-icon>
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required />
-    <mat-icon matSuffix [ngClass]="{ 'mat-warn': ff1._control.errorState }">error_outlined</mat-icon>
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-  </mat-form-field>
-</div>
-<br />
-<h5 class="uxg-h5">Dense Inputs</h5>
-<div class="example-container">
+  <h5 class="uxg-h5">Autosize Textarea</h5>
   <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <input matInput value="this is value" />
+    <mat-form-field class="example-textarea">
+      <mat-label>Classic appearance</mat-label>
+      <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+    </textarea
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="example-textarea">
+      <mat-label>Fill appearance (unexpected scroll?)</mat-label>
+      <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+    </textarea
+      >
+    </mat-form-field>
+  </div>
+
+  <h5 class="uxg-h5">Select (arrow not aligned)</h5>
+  <div class="example-row">
+    <mat-form-field>
+      <mat-label>Font size</mat-label>
+      <mat-select value="16px">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="12px">12px</mat-option>
+        <mat-option value="14px">14px</mat-option>
+        <mat-option value="16px">16px</mat-option>
+        <mat-option value="18px">18px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="example-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Font size</mat-label>
+      <mat-select value="16px">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="12px">12px</mat-option>
+        <mat-option value="14px">14px</mat-option>
+        <mat-option value="16px">16px</mat-option>
+        <mat-option value="18px">18px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="example-row">
+    <mat-form-field appearance="fill" dense>
+      <mat-label>Font size</mat-label>
+      <mat-select value="16px">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="12px">12px</mat-option>
+        <mat-option value="14px">14px</mat-option>
+        <mat-option value="16px">16px</mat-option>
+        <mat-option value="18px">18px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!--<h5 class="uxg-h5">Fill Input</h5>
+  <div class="example-row">
+    <mat-form-field floatLabel="false" appearance="fill">
+      <mat-icon color="primary" matPrefix>favorite</mat-icon>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon color="primary" matSuffix>favorite</mat-icon>
     </mat-form-field>
   </div>
   <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <mat-icon color="primary" matPrefix dense>search</mat-icon>
-      <input matInput value="this is value" />
-    </mat-form-field>
-  </div>
-  <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <mat-label>Label</mat-label>
-      <input matInput />
+    <mat-form-field floatLabel="false" appearance="fill">
+      <input matInput placeholder="Placeholder" />
       <mat-hint>Helper text</mat-hint>
     </mat-form-field>
   </div>
-  <div>
-    <form class="example-form">
-      <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
-        <mat-icon color="primary" matPrefix dense>search</mat-icon>
-        <mat-label>Search...</mat-label>
-        <input type="search" matInput />
-      </mat-form-field>
-    </form>
+  <div class="example-row">
+    <mat-form-field floatLabel="never" class="example-full-width" appearance="fill">
+      <mat-icon color="primary" matPrefix>search</mat-icon>
+      <mat-label>Search...</mat-label>
+      <input type="search" matInput />
+    </mat-form-field>
   </div>
 
-  <div>
-    <mat-form-field dense appearance="fill">
+  <h5 class="uxg-h5">Input With Icon Button</h5>
+  <div class="example-container" dense>
+    <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" />
       <button
@@ -522,63 +519,129 @@
         [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide"
       >
-        <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
     </mat-form-field>
   </div>
   <div>
-    <mat-form-field dense appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Amount</mat-label>
       <input matInput type="number" value="0" class="example-right-align" />
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
     </mat-form-field>
   </div>
-</div>
 
-<div class="example-container">
-  <mat-form-field #ff2 dense appearance="fill">
-    <mat-icon matPrefix dense>lock_outlined</mat-icon>
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required />
-    <mat-icon matSuffix dense [ngClass]="{ 'mat-warn': ff2._control.errorState }">error_outlined</mat-icon>
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-  </mat-form-field>
-</div>
-
-<br />
-<h5 class="uxg-h5">Search Input (Legacy)</h5>
-<div class="example-row">
-  <mat-form-field floatLabel="never" class="example-full-width">
-    <mat-icon color="primary" matPrefix>search</mat-icon>
-    <input type="search" matInput placeholder="Search..." />
-  </mat-form-field>
-</div>
-<div>
-  <div>
-    <h3 class="uxg-display-3">Expansion</h3>
-    <h5 class="uxg-h5">Expansion filter</h5>
+  <h5 class="uxg-h5">Error Message</h5>
+  <div class="example-container">
+    <mat-form-field #ff1 appearance="fill">
+      <mat-icon matPrefix>lock_outlined</mat-icon>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required />
+      <mat-icon matSuffix [ngClass]="{ 'mat-warn': ff1._control.errorState }">error_outlined</mat-icon>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <h5 class="uxg-h5">Dense Inputs</h5>
+  <div class="example-container">
     <div class="example-row">
-      <mat-expansion-panel class="uxg-expansion-filter">
-        <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
-          <mat-panel-title>
-            Personal data
-          </mat-panel-title>
-          <mat-panel-description>
-            Type your name and age
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-
-        <mat-form-field>
-          <mat-label>First name</mat-label>
-          <input matInput />
+      <mat-form-field dense appearance="fill">
+        <input matInput value="this is value" />
+      </mat-form-field>
+    </div>
+    <div class="example-row">
+      <mat-form-field dense appearance="fill">
+        <mat-icon color="primary" matPrefix dense>search</mat-icon>
+        <input matInput value="this is value" />
+      </mat-form-field>
+    </div>
+    <div class="example-row">
+      <mat-form-field dense appearance="fill">
+        <mat-label>Label</mat-label>
+        <input matInput />
+        <mat-hint>Helper text</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <form class="example-form">
+        <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
+          <mat-icon color="primary" matPrefix dense>search</mat-icon>
+          <mat-label>Search...</mat-label>
+          <input type="search" matInput />
         </mat-form-field>
+      </form>
+    </div>
 
-        <mat-form-field>
-          <mat-label>Age</mat-label>
-          <input matInput type="number" min="1" />
-        </mat-form-field>
-      </mat-expansion-panel>
+    <div>
+      <mat-form-field dense appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field dense appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" value="0" class="example-right-align" />
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
     </div>
   </div>
+
+  <div class="example-container">
+    <mat-form-field #ff2 dense appearance="fill">
+      <mat-icon matPrefix dense>lock_outlined</mat-icon>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required />
+      <mat-icon matSuffix dense [ngClass]="{ 'mat-warn': ff2._control.errorState }">error_outlined</mat-icon>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <br />
+  <h5 class="uxg-h5">Search Input (Legacy)</h5>
+  <div class="example-row">
+    <mat-form-field floatLabel="never" class="example-full-width">
+      <mat-icon color="primary" matPrefix>search</mat-icon>
+      <input type="search" matInput placeholder="Search..." />
+    </mat-form-field>
+  </div>
+  <div>
+    <div>
+      <h3 class="uxg-display-3">Expansion</h3>
+      <h5 class="uxg-h5">Expansion filter</h5>
+      <div class="example-row">
+        <mat-expansion-panel class="uxg-expansion-filter">
+          <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
+            <mat-panel-title>
+              Personal data
+            </mat-panel-title>
+            <mat-panel-description>
+              Type your name and age
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="1" />
+          </mat-form-field>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>-->
 </div>
