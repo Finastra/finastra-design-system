@@ -1,0 +1,9 @@
+{
+  "name": "@ffdc/uxg-angular-components/user-profile",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  },
+  "sideEffects": false
+}

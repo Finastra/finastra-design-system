@@ -1,0 +1,8 @@
+<span><uxg-avatar dense [name]="user.username" [matMenuTriggerFor]="menuUserProfile"></uxg-avatar></span>
+<mat-menu #menuUserProfile class="menu-user-profile">
+  <uxg-user-profile-panel [user]="user">
+    <ng-template uxgUserProfilePanelActions>
+      <ng-template [ngTemplateOutlet]="uxgUserProfilePanelActions"></ng-template>
+    </ng-template>
+  </uxg-user-profile-panel>
+</mat-menu>

@@ -1,0 +1,13 @@
+<div class="uxg-user-profile-panel-header" [ngClass]="{ hasContentLayout: hasContent }">
+  <uxg-avatar large [name]="user.username"></uxg-avatar>
+  <h6 class="uxg-h6">{{ user.username }}</h6>
+  <div class="uxg-caption">{{ user.email }}</div>
+</div>
+<div>
+  <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent"></ng-container>
+</div>
+
+<div class="uxg-user-profile-panel-footer">
+  <mat-divider></mat-divider>
+  <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions"></ng-container>
+</div>

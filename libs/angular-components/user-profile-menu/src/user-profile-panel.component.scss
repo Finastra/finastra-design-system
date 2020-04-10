@@ -1,0 +1,27 @@
+.uxg-user-profile-panel {
+  min-height: 240px;
+  min-width: 280px;
+  .uxg-user-profile-panel-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 16px 46px 16px;
+    uxg-avatar {
+      margin-bottom: 16px;
+    }
+    h6 {
+      margin: 0 0 4px 0;
+    }
+  }
+  .uxg-user-profile-panel-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding: 16px;
+  }
+}

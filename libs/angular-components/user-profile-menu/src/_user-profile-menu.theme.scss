@@ -1,0 +1,19 @@
+@mixin uxg-user-profile-menu-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-user-profile-panel {
+    display: block;
+    background: linear-gradient(
+      to bottom,
+      mat-color($background, status-bar, 0.5) 0,
+      mat-color($background, status-bar, 0.5) 72px,
+      mat-color($background, background) 54px,
+      mat-color($background, background) 100%
+    );
+
+    .uxg-user-profile-panel-footer {
+      border-top-color: mat-color($foreground, divider);
+    }
+  }
+}
