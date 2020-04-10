@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BannerComponent } from './banner.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 describe('BannerModule', () => {
   let component: BannerComponent;
@@ -8,6 +9,7 @@ describe('BannerModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatTooltipModule],
       declarations: [BannerComponent]
     }).compileComponents();
   }));
