@@ -3,5 +3,5 @@
     <span class="uxg-display-3" matTooltip="{{bannerItem.tooltip}}" #tooltip="matTooltip">{{ bannerItem.text }}</span>
     <span>{{ bannerItem.name }}</span>
   </div>
-  <div class="spliter" [hidden]="islast"></div>
+  <div class="spliter" *ngIf="!islast"></div>
 </div>

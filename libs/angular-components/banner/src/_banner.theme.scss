@@ -15,9 +15,9 @@
             color:$text-primary;
             font-weight: bold;
         }
-        
+
         .spliter{
-            background: $divider;
+          border-right-color: $divider;
         }
     }
 }
