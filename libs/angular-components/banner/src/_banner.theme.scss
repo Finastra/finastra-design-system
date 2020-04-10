@@ -7,16 +7,21 @@
     $text-banner: mat-color($foreground, base);
     $divider: mat-color($foreground, divider);
 
-    .uxg-banner-container{
+    .uxg-banner {
         .uxg-body-1{
             color: $text-banner;
         }
-        .uxg-display-3{
+        .uxg-display-3 {
             color:$text-primary;
             font-weight: bold;
         }
+        .uxg-display-5 {
+          color:$text-primary;
+          font-weight: bold;
+          line-height: 52px;
+        }
 
-        .spliter{
+        .uxg-banner-spliter{
           border-right-color: $divider;
         }
     }

@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Banner } from './model';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 interface BannerItem {
   name: string;
@@ -11,7 +12,12 @@ interface BannerItem {
   selector: 'uxg-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.Default,
+  host: {
+    'class': 'uxg-banner',
+    '[class.uxg-banner-small]': 'small',
+  }
 })
 export class BannerComponent {
   private _bannerData: Banner[] = [];
@@ -30,6 +36,12 @@ export class BannerComponent {
       };
     });
   }
+
+  @Input()
+  get small(): boolean { return this._small; }
+  set small(value: boolean) { this._small = coerceBooleanProperty(value); }
+
+  private _small = false;
 
   private abbreviateNumber(number: number) {
     const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E'];

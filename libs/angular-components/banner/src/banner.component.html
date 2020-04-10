@@ -1,7 +1,7 @@
-<div *ngFor="let bannerItem of banners; last as islast; trackBy: trackByFn" class="uxg-banner-container">
+<ng-container *ngFor="let bannerItem of banners; last as islast; trackBy: trackByFn">
   <div class="uxg-banner-item">
-    <span class="uxg-display-3" matTooltip="{{bannerItem.tooltip}}" #tooltip="matTooltip">{{ bannerItem.text }}</span>
+    <span [ngClass]="{'uxg-display-3': !small, 'uxg-display-5': small}" matTooltip="{{bannerItem.tooltip}}" #tooltip="matTooltip">{{ bannerItem.text }}</span>
     <span>{{ bannerItem.name }}</span>
   </div>
-  <div class="spliter" *ngIf="!islast"></div>
-</div>
+  <div class="uxg-banner-spliter"></div>
+</ng-container>
