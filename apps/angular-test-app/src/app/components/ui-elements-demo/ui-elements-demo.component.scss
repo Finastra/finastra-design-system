@@ -9,12 +9,7 @@
 }
 
 .example-textarea {
-  width: 50%;
-  max-width: 50%;
-  &:first-child {
-    padding-right: $uxg-spacing-4;
-    margin-bottom: $uxg-spacing-3;
-  }
+  width: 100%;
 }
 
 .mat-button-base + .mat-button-base,
@@ -29,4 +24,9 @@
 
 .uxg-card-solution {
   display: inline-block;
+}
+
+textarea[cdktextareaautosize].mat-input-element {
+  box-sizing: initial;
+  padding: 3px 0;
 }
