@@ -146,7 +146,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
       const dataSource: GroupedValues[] = this.chain(collection)
       .groupBy(groupId)
       .map((values: any, id: string) => ({
-        id:groupId,
+        id,
         label: this.groupByKeyLabel ? values[0][this.groupByKeyLabel] : groupId,
         values,
         expanded: this.startExpanded
