@@ -46,6 +46,8 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
 
   @Input() groupByKey: string;
 
+  @Input() groupByKeyLabel?: string;
+
   @Input() subtitle?: string;
 
   @Input() selectable: boolean;
@@ -132,17 +134,20 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   generateColumns() {
-    this.groupInfo = find(this.columns, c => c.name === this.groupByKey);
-    this._columns = reject(this.columns, c => c.name === this.groupByKey);
+    if (!this.groupByKeyLabel) {
+      this.groupByKeyLabel = this.groupByKey;
+    }
+    this.groupInfo = find(this.columns, c => c.name === this.groupByKeyLabel);
+    this._columns = reject(this.columns, c => c.name === this.groupByKeyLabel);
     this.visibleColumns = this._columns.map(c => c.name);
   }
 
   groupBy(groupId: string, collection: any[]): GroupedValues[] {
-    const dataSource: GroupedValues[] = this.chain(collection)
+      const dataSource: GroupedValues[] = this.chain(collection)
       .groupBy(groupId)
       .map((values: any, id: string) => ({
         id:groupId,
-        label: this.groupByKey ? values[0][this.groupByKey] : id,
+        label: this.groupByKeyLabel ? values[0][this.groupByKeyLabel] : groupId,
         values,
         expanded: this.startExpanded
       }))
