@@ -140,11 +140,11 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   isInderterminate() {
     return this.selectionModel.selected.length > 0 && !this.isAllSelected();
   }
-  groupBy(id: string, collection: any[]): GroupedValues[] {
+  groupBy(groupId: string, collection: any[]): GroupedValues[] {
     const dataSource: GroupedValues[] = this.chain(collection)
-      .groupBy(id)
+      .groupBy(groupId)
       .map((values: any, id: string) => ({
-        id,
+        id:groupId,
         label: this.groupByKey ? values[0][this.groupByKey] : id,
         values,
         expanded: this.startExpanded
