@@ -197,13 +197,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   getSelectionByRow(row: GroupedValues): any[] {
-    return filter(this.selectionModel.selected, { [this.groupByKey]: row.id } as any);
-  }
-
-  // Item level
-  toggleItem(item: any) {
-    this.selectionModel.toggle(item);
-    this.onSelectionChanged();
+    return filter(this.selectionModel.selected, { [this.groupByKey]: row.label } as any);
   }
 
   collapseAll() {
