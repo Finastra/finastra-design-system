@@ -137,9 +137,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     this.visibleColumns = this._columns.map(c => c.name);
   }
 
-  isInderterminate() {
-    return this.selectionModel.selected.length > 0 && !this.isAllSelected();
-  }
   groupBy(groupId: string, collection: any[]): GroupedValues[] {
     const dataSource: GroupedValues[] = this.chain(collection)
       .groupBy(groupId)
@@ -158,10 +155,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     });
 
     return dataSource;
-  }
-
-  isItemSelected(item: any) {
-    return this.selectionModel.isSelected(item);
   }
 
   // All
