@@ -76,8 +76,8 @@
       <div>Step 2 content</div>
     </uxg-wizard-page>
 
-    <uxg-wizard-page>
-      <ng-template uxgWizardPageTitle>Step 3</ng-template>
+    <uxg-wizard-page [uxgWizardPageDisabled]="true">
+      <ng-template uxgWizardPageTitle>Step 3 (disabled)</ng-template>
       <ng-template uxgWizardPageDescription>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum tincidunt urna, quis iaculis dui
         consequat sed.

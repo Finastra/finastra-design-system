@@ -13,6 +13,7 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -35,7 +36,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
       { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
-      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } }
+      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
+      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } }
     ]
   }
 ].map(groups => {

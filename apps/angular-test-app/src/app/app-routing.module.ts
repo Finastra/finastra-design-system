@@ -26,6 +26,7 @@ import { MultiselectTagsModule } from '@ffdc/uxg-angular-components/filter/multi
 import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
 import { ChartModule } from '@ffdc/uxg-angular-components/chart';
 import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
+import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-table';
 
 import { MaterialModule } from './material.module';
 import { GlobalSearchDemoComponent } from './components/global-search-demo/global-search-demo.component';
@@ -51,6 +52,7 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
 import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -87,6 +89,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     SkeletonTextModule,
     AvatarModule,
     BannerModule,
+    ExpandableTableModule,
     MultiselectTagsModule,
   ],
   declarations: [
@@ -104,7 +107,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     SkeletonDemoComponent,
     ChartDemoComponent,
     AvatarDemoComponent,
-    BannerDemoComponent
+    BannerDemoComponent,
+    ExpandableTableDemoComponent
   ],
   exports: [RouterModule]
 })

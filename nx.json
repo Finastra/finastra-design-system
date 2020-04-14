@@ -70,6 +70,9 @@
     },
     "banner": {
       "tags": []
+    },
+    "expandable-table": {
+      "tags": []
     }
   }
 }
