@@ -7,7 +7,6 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnInit,
   Output,
   SimpleChanges,
   TemplateRef,
@@ -39,7 +38,7 @@ import reject from 'lodash/reject';
     ])
   ]
 })
-export class ExpandableTableComponent implements OnInit, OnChanges {
+export class ExpandableTableComponent implements OnChanges {
   @Input() dataSource: any[];
 
   @Input() columns: any[];
@@ -100,8 +99,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
       this.generateData();
     }
   }
-
-  ngOnInit() {}
 
   generateData() {
     // add primaryKey
