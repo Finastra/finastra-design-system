@@ -46,13 +46,19 @@
 <h5 class="uxg-h5">Avatar with Image</h5>
 <div fxLayout class="example-row">
   <uxg-avatar large>
-    <img uxg-image-avatar src="https://randomuser.me/api/portraits/women/17.jpg" />
+    <ng-template uxg-image-avatar>
+      <img src="https://randomuser.me/api/portraits/women/17.jpg" />
+    </ng-template>
   </uxg-avatar>
   <uxg-avatar>
-    <img uxg-image-avatar src="https://randomuser.me/api/portraits/women/17.jpg" />
+    <ng-template uxg-image-avatar>
+      <img src="https://randomuser.me/api/portraits/women/17.jpg" />
+    </ng-template>
   </uxg-avatar>
   <uxg-avatar dense>
-    <img uxg-image-avatar src="https://randomuser.me/api/portraits/women/17.jpg" />
+    <ng-template uxg-image-avatar>
+      <img src="https://randomuser.me/api/portraits/women/17.jpg" />
+    </ng-template>
   </uxg-avatar>
 </div>
 
@@ -60,15 +66,21 @@
 <div class="example-row">
   <uxg-avatar-list totalLength="10">
     <uxg-avatar>
-      <img uxg-image-avatar src="https://randomuser.me/api/portraits/men/5.jpg" />
+      <ng-template uxg-image-avatar>
+        <img src="https://randomuser.me/api/portraits/men/5.jpg" />
+      </ng-template>
     </uxg-avatar>
     <uxg-avatar>
-      <img uxg-image-avatar src="https://randomuser.me/api/portraits/men/6.jpg" />
+      <ng-template uxg-image-avatar>
+        <img src="https://randomuser.me/api/portraits/men/6.jpg" />
+      </ng-template>
     </uxg-avatar>
     <uxg-avatar></uxg-avatar>
     <uxg-avatar color="initials" name="RB"></uxg-avatar>
     <uxg-avatar>
-      <img uxg-image-avatar src="https://randomuser.me/api/portraits/men/7.jpg" />
+      <ng-template uxg-image-avatar>
+        <img src="https://randomuser.me/api/portraits/men/7.jpg" />
+      </ng-template>
     </uxg-avatar>
     <uxg-avatar color="initials" name="TT"></uxg-avatar>
   </uxg-avatar-list>
@@ -78,10 +90,14 @@
 <div class="example-row">
   <uxg-avatar-list totalLength="10" dense>
     <uxg-avatar>
-      <img uxg-image-avatar src="https://randomuser.me/api/portraits/men/5.jpg" />
+      <ng-template uxg-image-avatar>
+        <img src="https://randomuser.me/api/portraits/men/5.jpg" />
+      </ng-template>
     </uxg-avatar>
     <uxg-avatar>
-      <img uxg-image-avatar src="https://randomuser.me/api/portraits/men/6.jpg" />
+      <ng-template uxg-image-avatar>
+        <img src="https://randomuser.me/api/portraits/men/6.jpg" />
+      </ng-template>
     </uxg-avatar>
     <uxg-avatar></uxg-avatar>
     <uxg-avatar color="initials" name="Raya" dense></uxg-avatar>
