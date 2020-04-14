@@ -685,6 +685,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "expandable-table": {
+      "projectType": "library",
+      "root": "libs/angular-components/expandable-table",
+      "sourceRoot": "libs/angular-components/expandable-table/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/expandable-table/tsconfig.lib.json",
+              "libs/angular-components/expandable-table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/expandable-table/jest.config.js",
+            "tsConfig": "libs/angular-components/expandable-table/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/expandable-table/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
