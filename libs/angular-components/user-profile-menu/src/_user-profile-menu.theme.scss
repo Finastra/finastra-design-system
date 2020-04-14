@@ -6,14 +6,29 @@
     display: block;
     background: linear-gradient(
       to bottom,
-      mat-color($background, status-bar, 0.5) 0,
-      mat-color($background, status-bar, 0.5) 72px,
-      mat-color($background, background) 54px,
+      mat-color($background, status-bar, 0.4) 0,
+      mat-color($background, status-bar, 0.4) 72px,
+      mat-color($foreground, divider) 72px,
+      mat-color($foreground, divider) 73px,
+      mat-color($background, background) 73px,
       mat-color($background, background) 100%
     );
 
     .uxg-user-profile-panel-footer {
       border-top-color: mat-color($foreground, divider);
     }
+    &.has-content{
+      background: linear-gradient(
+        to bottom,
+        mat-color($background, status-bar, 0.4) 0,
+        mat-color($background, status-bar, 0.4) 92px,
+        mat-color($foreground, divider) 92px,
+        mat-color($foreground, divider) 93px,
+        mat-color($background, background) 93px,
+        mat-color($background, background) 100%
+      );
+    }
   }
+
+
 }

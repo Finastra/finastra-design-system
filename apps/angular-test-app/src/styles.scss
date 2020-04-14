@@ -11,6 +11,7 @@
 @import 'filter/filter-group/src/filter-group.theme';
 @import 'skeleton-text/src/skeleton-text.theme';
 @import 'wizard/src/wizard.theme';
+@import 'user-profile-menu/src/user-profile-menu.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
@@ -34,6 +35,7 @@ $uxg-typography: uxg-typography-config();
   @include uxg-wizard-theme($theme);
   @include uxg-skeleton-text-theme($theme);
   @include theme-repeater-card-example($theme);
+  @include uxg-user-profile-menu-theme($theme)
 }
 
 @include app-theme($uxg-light-theme);

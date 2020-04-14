@@ -29,6 +29,7 @@ export class AvatarComponent implements OnInit {
   set dense(value: boolean) { this._dense = coerceBooleanProperty(value); }
   private _dense: boolean = false;
 
+  @Input() avatarImage: TemplateRef<any> | null = null;
   @ContentChild(UxgImageAvatar, { read: TemplateRef, static: true }) _explicitContent: TemplateRef<any> | undefined;
   @ViewChild('implicitContent', { static: true }) _implicitContent!: TemplateRef<any>;
 
@@ -69,6 +70,6 @@ export class AvatarComponent implements OnInit {
     if (this.gravatarEmail || this.defaultGravatar) {
       this.generateGravatar();
     }
-    this.avatarContent = this._explicitContent || this._implicitContent;
+    this.avatarContent = this._explicitContent || this.avatarImage || this._implicitContent;
   }
 }

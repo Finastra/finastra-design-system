@@ -1,6 +1,6 @@
 .uxg-user-profile-panel {
-  min-height: 240px;
-  min-width: 280px;
+  min-height: 220px;
+  min-width: 260px;
   .uxg-user-profile-panel-header {
     display: flex;
     justify-content: center;
@@ -13,7 +13,30 @@
     h6 {
       margin: 0 0 4px 0;
     }
+    .uxg-user-profile-panel__info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
+
+  .uxg-user-profile-panel-header.has-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 18px 16px 18px 16px;
+
+    uxg-avatar {
+      margin-bottom: 0px;
+    }
+    .uxg-user-profile-panel__info {
+      align-items: flex-start;
+      padding-left: 8px;
+    }
+  }
+
   .uxg-user-profile-panel-footer {
     display: flex;
     flex-direction: column;
@@ -23,5 +46,8 @@
     border-top-width: 1px;
     border-top-style: solid;
     padding: 16px;
+  }
+  .uxg-user-profile-panel-footer:empty {
+    display: none
   }
 }
