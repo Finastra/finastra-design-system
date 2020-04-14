@@ -1,0 +1,204 @@
+<h2>Expandable Table</h2>
+<div class="demonstration">
+  <uxg-expandable-table
+    [dataSource]="dataSource"
+    [columns]="columns"
+    [groupByKey]="groupByKey"
+    [selectable]="selectable"
+    (selectionChange)="onSelectionChange($event)"
+    [subtitle]="'Optional subtitle'"
+  >
+    <ng-template #expandableTableSubtitleTemplate let-row="row" let-subtitle="subtitle">
+      {{ subtitle }}
+    </ng-template>
+
+    <ng-template #expandableTableButtonsTemplate let-row="row" let-emiter="emiter">
+      <button mat-button color="accent" class="optional-table-button" (click)="emiter.emit(row)">
+        <mat-icon>add</mat-icon>
+        Optional Table Button
+      </button>
+    </ng-template>
+
+    <ng-template #expandableHeaderButtonsTemplate let-row="row" let-emiter="emiter">
+      <button
+        mat-icon-button
+        title="Optional Header Button"
+        (click)="emiter.emit(row); $event.stopPropagation()"
+        class="optional-header-button"
+      >
+        <mat-icon>description</mat-icon>
+      </button>
+    </ng-template>
+  </uxg-expandable-table>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start start" class="configuration">
+  <div class="orientation-area" fxLayout="column" fxLayoutAlign="start start">
+    <h3>Selection</h3>
+    <mat-slide-toggle [(ngModel)]="selectable">Selectable</mat-slide-toggle>
+  </div>
+  <div class="group-by" fxLayout="column" fxLayoutAlign="start start">
+    <h3>Group By</h3>
+    <mat-select fxLayout="column" [(ngModel)]="groupByKey" (selectionChange)="updateGroupBy($event)">
+      <mat-option *ngFor="let groupBy of groupByList" [value]="groupBy">
+        {{ groupBy }}
+      </mat-option>
+    </mat-select>
+  </div>
+</div>
+
+<div fxLayout="column" *ngIf="actionDescription && selectable" class="interaction-information">
+  <h3>Output:</h3>
+  {{ actionDescription }}
+</div>
+
+<h2>Inputs</h2>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Default Value</td>
+      <td>Description</td>
+      <td>Example</td>
+    </tr>
+    <tr>
+      <td>dataSource</td>
+      <td>any[]</td>
+      <td></td>
+      <td>An array of any data</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>columns</td>
+      <td>any[]</td>
+      <td></td>
+      <td>The columns for the expanded table</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>groupByKey</td>
+      <td>string</td>
+      <td></td>
+      <td>The column name we want to group data on</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>selectable</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Are the row selectable or not</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>rowClickable</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Is the row of a table clickable</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>selection</td>
+      <td>any[]</td>
+      <td></td>
+      <td>A selection we want to input</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>startExpanded</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Are the panel expanded from at initialization</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>expandableHeaderButtonsTemplate</td>
+      <td>Object</td>
+      <td></td>
+      <td>A template used to insert buttons in the expansion panel header</td>
+      <td>
+        <pre>
+        <code contenteditable spellcheck="false">
+          &lt;ng-template #expandableHeaderButtonsTemplate let-row="row" let-emiter="emiter"&gt;
+          &lt;button (click)="emiter.emit()"&gt;Do something&lt;/button&gt;
+          &lt;/ng-template&gt;
+      </code>
+      </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>expandableTableButtonsTemplate</td>
+      <td>Object</td>
+      <td></td>
+      <td>A template used to insert buttons at the bottom of the table</td>
+      <td>
+        <pre>
+        <code contenteditable spellcheck="false">
+          &lt;ng-template #expandableTableButtonsTemplate let-row="row" let-emiter="emiter"&gt;
+          &lt;button (click)="emiter.emit()"&gt;Do something&lt;/button&gt;
+          &lt;/ng-template&gt;
+      </code>
+      </pre>
+      </td>
+    </tr>
+    <tr>
+      <td>subtitle</td>
+      <td>string</td>
+      <td></td>
+      <td>A string you can inject in the subtitle template</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>expandableTableSubtitleTemplate</td>
+      <td>Object</td>
+      <td></td>
+      <td>A template used to insert a text as header subtitle</td>
+      <td>
+        <pre>
+        <code contenteditable spellcheck="false">
+          &lt;ng-template #expandableTableSubtitleTemplate let-row="row" let-subtitle="subtitle"&gt;
+              <span>{{</span>row <span>}} {{</span>subtitle <span>}}</span>
+            cell template here
+          &lt;/ng-template &gt;
+      </code>
+      </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Outputs</h2>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>Type</td>
+      <td>Default Value</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>selectionChange</td>
+      <td>EventEmitter&lt;any&gt;</td>
+      <td></td>
+      <td>Selection Event</td>
+    </tr>
+    <tr>
+      <td>rowClick</td>
+      <td>EventEmitter&lt;any&gt;</td>
+      <td></td>
+      <td>Click event on a row, sending the row</td>
+    </tr>
+    <tr>
+      <td>tableButtonsCallBack</td>
+      <td>EventEmitter&lt;any&gt;</td>
+      <td></td>
+      <td>Click event from the table buttons</td>
+    </tr>
+    <tr>
+      <td>tableHeaderCallBack</td>
+      <td>EventEmitter&lt;any&gt;</td>
+      <td></td>
+      <td>Click event from the header buttons</td>
+    </tr>
+  </tbody>
+</table>

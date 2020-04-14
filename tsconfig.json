@@ -36,7 +36,8 @@
       "@ffdc/uxg-angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
       "@ffdc/uxg-angular-components/chart": ["libs/angular-components/chart"],
       "@ffdc/uxg-angular-components/avatar": ["libs/angular-components/avatar"],
-      "@ffdc/uxg-angular-components/user-profile": ["libs/angular-components/user-profile"]
+      "@ffdc/uxg-angular-components/user-profile": ["libs/angular-components/user-profile"],
+      "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

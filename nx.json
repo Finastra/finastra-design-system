@@ -67,6 +67,9 @@
     },
     "avatar": {
       "tags": []
+    },
+    "expandable-table": {
+      "tags": []
     }
   }
 }
