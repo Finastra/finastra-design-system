@@ -20,7 +20,12 @@
     </ng-template>
 
     <ng-template #expandableHeaderButtonsTemplate let-row="row" let-emiter="emiter">
-      <button mat-icon-button title="Optional Header Button" (click)="emiter.emit(row)" class="optional-header-button">
+      <button
+        mat-icon-button
+        title="Optional Header Button"
+        (click)="emiter.emit(row); $event.stopPropagation()"
+        class="optional-header-button"
+      >
         <mat-icon>description</mat-icon>
       </button>
     </ng-template>
@@ -153,7 +158,7 @@
         <code contenteditable spellcheck="false">
           &lt;ng-template #expandableTableSubtitleTemplate let-row="row" let-subtitle="subtitle"&gt;
               <span>{{</span>row <span>}} {{</span>subtitle <span>}}</span>
-            cell template here 
+            cell template here
           &lt;/ng-template &gt;
       </code>
       </pre>
