@@ -15,13 +15,13 @@ import { UxgUserProfileMenuComponent } from './user-profile-menu.component';
     UxgUserProfileMenuComponent,
     UxgUserProfilePanelComponent,
     UxgUserProfilePanelActionsDirective,
-    UxgUserProfilePanelContentDirective,
+    UxgUserProfilePanelContentDirective
   ],
   declarations: [
     UxgUserProfilePanelComponent,
     UxgUserProfileMenuComponent,
     UxgUserProfilePanelActionsDirective,
-    UxgUserProfilePanelContentDirective,
-  ],
+    UxgUserProfilePanelContentDirective
+  ]
 })
 export class UxgUserProfileMenuModule {}

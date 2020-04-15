@@ -37,7 +37,11 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
       { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
       { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } },
-      { path: 'user-profile-menu', component: UserProfileMenuDemoComponentComponent, data: { title: 'User Profile Menu' } }
+      {
+        path: 'user-profile-menu',
+        component: UserProfileMenuDemoComponentComponent,
+        data: { title: 'User Profile Menu' }
+      }
     ]
   }
 ].map(groups => {

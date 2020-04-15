@@ -8,11 +8,8 @@ export const routes: Routes = [
   ...([] as Routes).concat(...nestedRoutes.map(nestedRoute => nestedRoute.routes))
 ];
 
-
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
   declarations: [],
   exports: [RouterModule]
 })

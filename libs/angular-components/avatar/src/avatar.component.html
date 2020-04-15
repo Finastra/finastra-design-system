@@ -5,11 +5,11 @@
   [ngClass]="color === 'initials' ? 'uxg-avatar-color-' + paletteColor : ''"
   [class.uxg-gravatar]="gravatarEmail || defaultGravatar"
 >
-    <ng-container *ngTemplateOutlet="avatarContent"></ng-container>
+  <ng-container *ngTemplateOutlet="avatarContent"></ng-container>
 </div>
 
 <ng-template #implicitContent>
-  <img *ngIf="gravatarEmail || defaultGravatar;else nameAvatar" [src]="gravatarUrl" />
+  <img *ngIf="gravatarEmail || defaultGravatar; else nameAvatar" [src]="gravatarUrl" />
   <ng-template #nameAvatar>
     <ng-container *ngIf="name">
       {{ name | initials: dense }}

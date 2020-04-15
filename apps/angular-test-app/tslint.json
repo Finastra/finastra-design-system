@@ -2,6 +2,6 @@
   "extends": "../../tslint.json",
   "rules": {
     "directive-selector": [true, "attribute", ["ffdc", "uxg"], "camelCase"],
-    "component-selector": [true, "element",  ["ffdc", "uxg"], "kebab-case"]
+    "component-selector": [true, "element", ["ffdc", "uxg"], "kebab-case"]
   }
 }

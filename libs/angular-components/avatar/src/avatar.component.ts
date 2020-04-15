@@ -1,5 +1,16 @@
-import { Attribute, Component, Directive, OnInit, Input, ViewEncapsulation, ChangeDetectionStrategy, ContentChild, TemplateRef, ViewChild } from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk/coercion';
+import {
+  Attribute,
+  Component,
+  Directive,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  ContentChild,
+  TemplateRef,
+  ViewChild
+} from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Md5 } from 'ts-md5/dist/md5';
 
 export type AvatarColor = 'primary' | 'accent' | 'gradient' | 'initials';
@@ -16,7 +27,7 @@ export class UxgImageAvatar {}
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarComponent implements OnInit {
   @Input() name: string | undefined;
@@ -25,8 +36,12 @@ export class AvatarComponent implements OnInit {
   @Input() color: AvatarColor = 'gradient';
 
   @Input()
-  get dense(): boolean { return this._dense; }
-  set dense(value: boolean) { this._dense = coerceBooleanProperty(value); }
+  get dense(): boolean {
+    return this._dense;
+  }
+  set dense(value: boolean) {
+    this._dense = coerceBooleanProperty(value);
+  }
   private _dense: boolean = false;
 
   @Input() avatarImage: TemplateRef<any> | null = null;
@@ -38,8 +53,7 @@ export class AvatarComponent implements OnInit {
   paletteColor!: number;
   gravatarUrl!: string;
 
-  constructor() {
-  }
+  constructor() {}
 
   getCode(str: string) {
     const charCodes = str

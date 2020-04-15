@@ -7,7 +7,7 @@ import {
   ContentChild,
   TemplateRef,
   AfterContentInit,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
 
@@ -22,17 +22,17 @@ import { UxgUserProfilePanelContentDirective } from './user-profile-panel-conten
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'uxg-user-profile-panel',
-    '[class.has-content]': 'hasContent',
-  },
+    class: 'uxg-user-profile-panel',
+    '[class.has-content]': 'hasContent'
+  }
 })
 export class UxgUserProfilePanelComponent implements OnInit, AfterContentInit {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
 
-  @Input() contentTemplate?: TemplateRef<any>
-  @Input() actionsTemplate?: TemplateRef<any>
+  @Input() contentTemplate?: TemplateRef<any>;
+  @Input() actionsTemplate?: TemplateRef<any>;
 
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;

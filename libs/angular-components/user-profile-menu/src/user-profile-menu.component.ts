@@ -31,15 +31,13 @@ export class UxgUserProfileMenuComponent implements OnInit {
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;
 
-
   @ContentChild(UxgUserProfilePanelContentDirective, { read: TemplateRef, static: true })
   uxgUserProfilePanelContent: TemplateRef<any> | undefined;
 
   @ContentChild(UxgUserProfilePanelActionsDirective, { read: TemplateRef, static: true })
   uxgUserProfilePanelActions: TemplateRef<any> | undefined;
 
-  constructor(@Attribute('dense') public dense: any) {
-  }
+  constructor(@Attribute('dense') public dense: any) {}
 
   ngOnInit() {}
 }
