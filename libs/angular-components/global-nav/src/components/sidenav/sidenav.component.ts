@@ -30,7 +30,7 @@ export class SidenavComponent implements OnInit, OnChanges {
 
   iconName!: string;
 
-  constructor(@Inject(forwardRef(() => MatSidenav)) private _host: MatSidenav, private cd: ChangeDetectorRef) {}
+  constructor(@Inject(forwardRef(() => MatSidenav)) private _host: MatSidenav, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.iconName = this.getIconName(this.appName);
@@ -48,12 +48,14 @@ export class SidenavComponent implements OnInit, OnChanges {
 
   private getIconName(name: string) {
     if (!name) return name;
-    const words = name.replace('-', ' ').split(' ');
-    if (words.length === 1) return name;
-    return words
-      .map(word => word.substring(0, 1))
-      .join('')
-      .substring(0, 3);
+    const words = name.replace('-', ' ').match("/\w+/g");
+    if (words && words.length === 1) return name;
+    return !words ?
+      "" :
+      words
+        .map(word => word.substring(0, 1))
+        .join('')
+        .substring(0, 3);
   }
 
   onClick(node: NavigationNode) {
