@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   ViewEncapsulation,
   ChangeDetectionStrategy,
   Input,
@@ -26,7 +25,7 @@ import { UxgUserProfilePanelContentDirective } from './user-profile-panel-conten
     '[class.has-content]': 'hasContent'
   }
 })
-export class UxgUserProfilePanelComponent implements OnInit, AfterContentInit {
+export class UxgUserProfilePanelComponent implements AfterContentInit {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
@@ -46,8 +45,6 @@ export class UxgUserProfilePanelComponent implements OnInit, AfterContentInit {
   hasContent = false;
 
   constructor() {}
-
-  ngOnInit() {}
 
   ngAfterContentInit() {
     this.hasContent = !!this.uxgUserProfilePanelContent || !!this.contentTemplate;
