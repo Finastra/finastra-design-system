@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   ViewEncapsulation,
   ChangeDetectionStrategy,
   Input,
@@ -23,7 +22,7 @@ import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avata
     class: 'uxg-user-profile-menu'
   }
 })
-export class UxgUserProfileMenuComponent implements OnInit {
+export class UxgUserProfileMenuComponent {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
@@ -38,6 +37,4 @@ export class UxgUserProfileMenuComponent implements OnInit {
   uxgUserProfilePanelActions: TemplateRef<any> | undefined;
 
   constructor(@Attribute('dense') public dense: any) {}
-
-  ngOnInit() {}
 }
