@@ -26,7 +26,11 @@
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/angular-test-app/src/favicon.ico", "apps/angular-test-app/src/assets"],
+            "assets": [
+              "apps/angular-test-app/src/favicon.ico",
+              "apps/angular-test-app/src/assets",
+              "apps/angular-test-app/src/_redirects"
+            ],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": [
               {
@@ -402,6 +406,37 @@
         }
       }
     },
+    "multiselect-tags": {
+      "projectType": "library",
+      "root": "libs/angular-components/filter/multiselect-tags",
+      "sourceRoot": "libs/angular-components/filter/multiselect-tags",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/filter/multiselect-tags/tsconfig.lib.json",
+              "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/multiselect-tags/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js",
+            "tsConfig": "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/filter/multiselect-tags/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "repeater": {
       "projectType": "library",
       "root": "libs/angular-components/repeater",
@@ -673,6 +708,37 @@
             "tsConfig": "libs/angular-components/avatar/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/angular-components/avatar/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "expandable-table": {
+      "projectType": "library",
+      "root": "libs/angular-components/expandable-table",
+      "sourceRoot": "libs/angular-components/expandable-table/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/expandable-table/tsconfig.lib.json",
+              "libs/angular-components/expandable-table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/expandable-table/jest.config.js",
+            "tsConfig": "libs/angular-components/expandable-table/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/expandable-table/src/test-setup.ts"
           }
         }
       },

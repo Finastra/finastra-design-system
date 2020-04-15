@@ -41,6 +41,9 @@
     "filter-tree": {
       "tags": []
     },
+    "multiselect-tags": {
+      "tags": []
+    },
     "vector-map": {
       "tags": []
     },
@@ -66,6 +69,9 @@
       "tags": []
     },
     "avatar": {
+      "tags": []
+    },
+    "expandable-table": {
       "tags": []
     }
   }

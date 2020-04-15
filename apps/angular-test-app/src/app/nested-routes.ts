@@ -13,6 +13,7 @@ import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -35,7 +36,11 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
       { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
-      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } }
+      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
+      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } }
     ]
   }
-];
+].map(groups => {
+  groups.routes = groups.routes.sort((a: any, b: any) => a.data.title.localeCompare(b.data.title));
+  return groups;
+});

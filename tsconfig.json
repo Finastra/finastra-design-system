@@ -28,6 +28,7 @@
       "@ffdc/uxg-angular-components/popover": ["libs/angular-components/popover"],
       "@ffdc/uxg-angular-components/filter/filter-tags": ["libs/angular-components/filter/filter-tags"],
       "@ffdc/uxg-angular-components/filter/filter-tree": ["libs/angular-components/filter/filter-tree"],
+      "@ffdc/uxg-angular-components/filter/multiselect-tags": ["libs/angular-components/filter/multiselect-tags"],
       "@ffdc/uxg-angular-components/vector-map": ["libs/angular-components/vector-map"],
       "@ffdc/uxg-angular-components/filter/filter-group": ["libs/angular-components/filter/filter-group"],
       "@ffdc/uxg-angular-components/filter/filter-toggle": ["libs/angular-components/filter/filter-toggle"],
@@ -35,7 +36,8 @@
       "@ffdc/uxg-angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
       "@ffdc/uxg-angular-components/chart": ["libs/angular-components/chart"],
       "@ffdc/uxg-angular-components/global-nav": ["libs/angular-components/global-nav"],
-      "@ffdc/uxg-angular-components/avatar": ["libs/angular-components/avatar"]
+      "@ffdc/uxg-angular-components/avatar": ["libs/angular-components/avatar"],
+      "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
