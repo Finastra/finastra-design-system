@@ -7,7 +7,6 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnInit,
   Output,
   SimpleChanges,
   TemplateRef,
@@ -15,15 +14,15 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
+import { createChain } from '@ffdc/uxg-angular-components/core';
+import cloneDeep from 'lodash/cloneDeep';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
-import isEqual from 'lodash/isEqual';
-import reject from 'lodash/reject';
-import cloneDeep from 'lodash/cloneDeep';
-import map from 'lodash/map';
 import groupBy from 'lodash/groupBy';
-
-import { createChain } from '@ffdc/uxg-angular-components/core';
+import isEqual from 'lodash/isEqual';
+import map from 'lodash/map';
+import omit from 'lodash/omit';
+import reject from 'lodash/reject';
 
 @Component({
   selector: 'uxg-expandable-table',
@@ -39,12 +38,14 @@ import { createChain } from '@ffdc/uxg-angular-components/core';
     ])
   ]
 })
-export class ExpandableTableComponent implements OnInit, OnChanges {
+export class ExpandableTableComponent implements OnChanges {
   @Input() dataSource: any[];
 
   @Input() columns: any[];
 
   @Input() groupByKey: string;
+
+  @Input() groupByKeyLabel?: string;
 
   @Input() subtitle?: string;
 
@@ -91,7 +92,7 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     this.chain = createChain({ map, groupBy, filter, find, isEqual, reject });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if (this.groupByKey && this.columns && this.dataSource) {
       this.selectionModel = new SelectionModel<any>(true, []);
       this.generateColumns();
@@ -99,23 +100,19 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit() {}
-
   generateData() {
-    //add primaryKey
+    // add primaryKey
     let primaryKeyValue = 0;
     this.dataSource.forEach(data => {
       data[this.primaryKey] = ++primaryKeyValue;
     });
 
-    //input selection
+    // input selection
     if (this.selection) {
       const initialSelection: any[] = [];
       this.selection.forEach(selectionData => {
         this.dataSource.forEach(data => {
-          const rawData = cloneDeep(data);
-          delete rawData.primaryKey;
-          if (isEqual(rawData, selectionData)) {
+          if (isEqual(omit(data, 'primaryKey'), omit(selectionData, 'primaryKey'))) {
             initialSelection.push(data);
           }
         });
@@ -132,20 +129,20 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
   }
 
   generateColumns() {
-    this.groupInfo = find(this.columns, c => c.name === this.groupByKey);
-    this._columns = reject(this.columns, c => c.name === this.groupByKey);
+    if (!this.groupByKeyLabel) {
+      this.groupByKeyLabel = this.groupByKey;
+    }
+    this.groupInfo = find(this.columns, c => c.name === this.groupByKeyLabel);
+    this._columns = reject(this.columns, c => c.name === this.groupByKeyLabel);
     this.visibleColumns = this._columns.map(c => c.name);
   }
 
-  isInderterminate() {
-    return this.selectionModel.selected.length > 0 && !this.isAllSelected();
-  }
-  groupBy(id: string, collection: any[]): GroupedValues[] {
+  groupBy(groupId: string, collection: any[]): GroupedValues[] {
     const dataSource: GroupedValues[] = this.chain(collection)
-      .groupBy(id)
+      .groupBy(groupId)
       .map((values: any, id: string) => ({
         id,
-        label: this.groupByKey ? values[0][this.groupByKey] : id,
+        label: this.groupByKeyLabel ? values[0][this.groupByKeyLabel] : groupId,
         values,
         expanded: this.startExpanded
       }))
@@ -158,10 +155,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
     });
 
     return dataSource;
-  }
-
-  isItemSelected(item: any) {
-    return this.selectionModel.isSelected(item);
   }
 
   // All
@@ -205,12 +198,6 @@ export class ExpandableTableComponent implements OnInit, OnChanges {
 
   getSelectionByRow(row: GroupedValues): any[] {
     return filter(this.selectionModel.selected, { [this.groupByKey]: row.id } as any);
-  }
-
-  // Item level
-  toggleItem(item: any) {
-    this.selectionModel.toggle(item);
-    this.onSelectionChanged();
   }
 
   collapseAll() {
