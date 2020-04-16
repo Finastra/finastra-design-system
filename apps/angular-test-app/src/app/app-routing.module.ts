@@ -49,6 +49,9 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { BannerModule } from '@ffdc/uxg-angular-components/banner';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 @NgModule({
   imports: [
@@ -62,6 +65,7 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTooltipModule,
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSelectModule,
@@ -83,9 +87,10 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     FilterGroupModule,
     FilterToggleModule,
     SkeletonTextModule,
+    AvatarModule,
+    BannerModule,
     ExpandableTableModule,
     MultiselectTagsModule,
-    AvatarModule
   ],
   declarations: [
     HomeComponent,
@@ -102,6 +107,7 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     SkeletonDemoComponent,
     ChartDemoComponent,
     AvatarDemoComponent,
+    BannerDemoComponent,
     ExpandableTableDemoComponent
   ],
   exports: [RouterModule]
