@@ -23,12 +23,11 @@ export const COLUMNS = [
 export const GROUP_BY_KEY = 'apiGroup';
 
 @Component({
-  selector: 'uxg-expandable-table-demo',
+  selector: 'ffdc-expandable-table-demo',
   templateUrl: './expandable-table-demo.component.html',
   styleUrls: ['./expandable-table-demo.component.scss']
 })
 export class ExpandableTableDemoComponent {
-
   @ViewChild(ExpandableTableComponent, { static: true }) table!: ExpandableTableComponent;
 
   dataSource: any[];
