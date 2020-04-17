@@ -7,6 +7,10 @@ $uxg-logo-height: 60px;
   height: $height;
 }
 
+a.uxg-logo {
+  cursor: pointer;
+}
+
 .uxg-logo {
   @include logo-size($uxg-logo-width, $uxg-logo-height);
 

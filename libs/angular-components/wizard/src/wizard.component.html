@@ -43,7 +43,7 @@
     (touchend)="swipe($event, 'end')"
   >
     <main [@wizardAnimation]="currentPageId" class="uxg-wizard-content" fxFlex>
-      <div fxHide.xs class="uxg-wizard-page-title uxg-h3">
+      <div fxHide.xs *ngIf="showPageTitles" class="uxg-wizard-page-title uxg-h3">
         <ng-template [ngTemplateOutlet]="navService.currentPageTitle"></ng-template>
       </div>
       <ng-content></ng-content>
@@ -72,7 +72,7 @@
   </div>
 
   <div fxHide.xs fxLayout="row" class="uxg-wizard-timeline">
-    <div fxFlex="30" fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxFlex="20" fxLayout="column" fxLayoutAlign="space-around center">
       <div class="timeline-progress-bar" [ngStyle]="{ 'height.%': (100 * (pages.length - 1)) / pages.length }">
         <span
           id="dp-create-project-wizard-timeline-progress"
@@ -99,12 +99,15 @@
         </div>
       </ng-container>
     </div>
-    <div fxFlex="70" fxLayout="column" fxLayoutAlign="space-around stretch">
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around stretch">
       <ng-container *ngFor="let page of pages">
         <div
           fxLayout="column"
           class="step-info-container"
-          [ngClass]="{ disabled: page.disabled }"
+          [ngClass]="{
+            active: page.current,
+            disabled: page.disabled
+          }"
           (click)="onStepClick(page)"
         >
           <div class="step-title uxg-h5">

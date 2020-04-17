@@ -1,0 +1,11 @@
+.chip-list {
+    width: 100%;
+}
+
+.mat-chip.mat-standard-chip::after {
+    background-color: white;
+}
+
+mat-chip {
+    cursor: pointer;
+}
