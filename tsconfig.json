@@ -35,6 +35,7 @@
       "@ffdc/uxg-angular-components/wizard": ["libs/angular-components/wizard"],
       "@ffdc/uxg-angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
       "@ffdc/uxg-angular-components/chart": ["libs/angular-components/chart"],
+      "@ffdc/uxg-angular-components/global-nav": ["libs/angular-components/global-nav"],
       "@ffdc/uxg-angular-components/avatar": ["libs/angular-components/avatar"],
       "@ffdc/uxg-angular-components/banner": ["libs/angular-components/banner"],
       "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"]
