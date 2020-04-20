@@ -717,6 +717,37 @@
         }
       }
     },
+    "banner": {
+      "projectType": "library",
+      "root": "libs/angular-components/banner",
+      "sourceRoot": "libs/angular-components/banner",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/banner/tsconfig.lib.json",
+              "libs/angular-components/banner/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/banner/jest.config.js",
+            "tsConfig": "libs/angular-components/banner/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/banner/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "expandable-table": {
       "projectType": "library",
       "root": "libs/angular-components/expandable-table",

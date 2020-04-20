@@ -52,6 +52,9 @@ import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { BannerModule } from '@ffdc/uxg-angular-components/banner';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 @NgModule({
   imports: [
@@ -65,6 +68,7 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTooltipModule,
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSelectModule,
@@ -87,9 +91,10 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     FilterToggleModule,
     SkeletonTextModule,
     GlobalNavModule,
+    AvatarModule,
+    BannerModule,
     ExpandableTableModule,
     MultiselectTagsModule,
-    AvatarModule
   ],
   declarations: [
     HomeComponent,
@@ -107,6 +112,7 @@ import { ExpandableTableDemoComponent } from './components/expandable-table-demo
     ChartDemoComponent,
     GlobalNavDemoComponent,
     AvatarDemoComponent,
+    BannerDemoComponent,
     ExpandableTableDemoComponent
   ],
   exports: [RouterModule]
