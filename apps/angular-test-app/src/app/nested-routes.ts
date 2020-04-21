@@ -15,6 +15,7 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
+import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -38,8 +39,13 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
       { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
       { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
-      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
-      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } }
+      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } },
+      {
+        path: 'user-profile-menu',
+        component: UserProfileMenuDemoComponentComponent,
+        data: { title: 'User Profile Menu' }
+      },
+      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } }
     ]
   }
 ].map(groups => {

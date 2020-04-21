@@ -15,8 +15,8 @@ interface BannerItem {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   host: {
-    'class': 'uxg-banner',
-    '[class.uxg-banner-small]': 'small',
+    class: 'uxg-banner',
+    '[class.uxg-banner-small]': 'small'
   }
 })
 export class BannerComponent {
@@ -38,8 +38,12 @@ export class BannerComponent {
   }
 
   @Input()
-  get small(): boolean { return this._small; }
-  set small(value: boolean) { this._small = coerceBooleanProperty(value); }
+  get small(): boolean {
+    return this._small;
+  }
+  set small(value: boolean) {
+    this._small = coerceBooleanProperty(value);
+  }
 
   private _small = false;
 
