@@ -778,6 +778,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "grid-layout": {
+      "projectType": "library",
+      "root": "libs/angular-components/grid-layout",
+      "sourceRoot": "libs/angular-components/grid-layout/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/grid-layout/tsconfig.lib.json",
+              "libs/angular-components/grid-layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/grid-layout/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/grid-layout/jest.config.js",
+            "tsConfig": "libs/angular-components/grid-layout/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/grid-layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

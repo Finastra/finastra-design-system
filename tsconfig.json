@@ -38,7 +38,8 @@
       "@ffdc/uxg-angular-components/global-nav": ["libs/angular-components/global-nav"],
       "@ffdc/uxg-angular-components/avatar": ["libs/angular-components/avatar"],
       "@ffdc/uxg-angular-components/banner": ["libs/angular-components/banner"],
-      "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"]
+      "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"],
+      "@ffdc/uxg-angular-components/grid-layout": ["libs/angular-components/grid-layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
