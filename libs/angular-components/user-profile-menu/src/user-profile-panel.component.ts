@@ -17,7 +17,6 @@ import { UxgUserProfilePanelContentDirective } from './user-profile-panel-conten
 @Component({
   selector: 'uxg-user-profile-panel',
   templateUrl: './user-profile-panel.component.html',
-  styleUrls: ['./user-profile-panel.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -43,10 +42,12 @@ export class UxgUserProfilePanelComponent implements AfterContentInit {
   uxgUserProfilePanelActions: TemplateRef<any> | undefined;
 
   hasContent = false;
+  hasFooter = false;
 
   constructor() {}
 
   ngAfterContentInit() {
     this.hasContent = !!this.uxgUserProfilePanelContent || !!this.contentTemplate;
+    this.hasFooter = !!this.uxgUserProfilePanelActions || !!this.actionsTemplate;
   }
 }

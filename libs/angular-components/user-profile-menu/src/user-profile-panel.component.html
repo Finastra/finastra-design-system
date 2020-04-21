@@ -1,24 +1,24 @@
-<div class="uxg-user-profile-panel-header" [ngClass]="{ 'has-content': hasContent }">
-  <uxg-avatar
-    [attr.large]="hasContent ? null : true"
-    [name]="user.username"
-    [defaultGravatar]="defaultGravatar"
-    [color]="color"
-    [gravatarEmail]="user.gravatarEmail"
-    [avatarImage]="user.photo ? avatarImage : null"
-  >
-  </uxg-avatar>
-
-  <div class="uxg-user-profile-panel__info">
+<div class="uxg-menu-header">
+  <div [ngClass]="{ 'uxg-avatar-hero-block': !hasContent, 'uxg-avatar-title-block': hasContent }">
+    <uxg-avatar
+      [attr.large]="hasContent ? null : true"
+      [name]="user.username"
+      [defaultGravatar]="defaultGravatar"
+      [color]="color"
+      [gravatarEmail]="user.gravatarEmail"
+      [avatarImage]="user.photo ? avatarImage : null"
+    >
+    </uxg-avatar>
     <h6 class="uxg-h6">{{ user.username }}</h6>
     <div class="uxg-caption">{{ user.email }}</div>
   </div>
 </div>
+<mat-divider *ngIf="hasFooter"></mat-divider>
 <div>
   <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent || contentTemplate"></ng-container>
 </div>
-
-<div class="uxg-user-profile-panel-footer">
+<mat-divider *ngIf="hasContent"></mat-divider>
+<div [ngClass]="{ 'uxg-menu-footer': hasFooter }">
   <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions || actionsTemplate"></ng-container>
 </div>
 
