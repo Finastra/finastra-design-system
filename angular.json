@@ -654,6 +654,37 @@
         }
       }
     },
+    "global-nav": {
+      "projectType": "library",
+      "root": "libs/angular-components/global-nav",
+      "sourceRoot": "libs/angular-components/global-nav",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/global-nav/tsconfig.lib.json",
+              "libs/angular-components/global-nav/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/global-nav/jest.config.js",
+            "tsConfig": "libs/angular-components/global-nav/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/global-nav/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "avatar": {
       "projectType": "library",
       "root": "libs/angular-components/avatar",
@@ -677,6 +708,37 @@
             "tsConfig": "libs/angular-components/avatar/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/angular-components/avatar/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "banner": {
+      "projectType": "library",
+      "root": "libs/angular-components/banner",
+      "sourceRoot": "libs/angular-components/banner",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/banner/tsconfig.lib.json",
+              "libs/angular-components/banner/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/banner/jest.config.js",
+            "tsConfig": "libs/angular-components/banner/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/banner/test-setup.ts"
           }
         }
       },

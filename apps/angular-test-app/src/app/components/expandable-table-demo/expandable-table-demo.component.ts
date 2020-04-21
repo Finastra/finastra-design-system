@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ExpandableTableComponent } from '@ffdc/uxg-angular-components/expandable-table';
 
 export const DATASOURCE = [
   { apiGroup: 'FX Rate', api: 'Rate Changed', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },
@@ -22,11 +23,13 @@ export const COLUMNS = [
 export const GROUP_BY_KEY = 'apiGroup';
 
 @Component({
-  selector: 'uxg-expandable-table-demo',
+  selector: 'ffdc-expandable-table-demo',
   templateUrl: './expandable-table-demo.component.html',
   styleUrls: ['./expandable-table-demo.component.scss']
 })
 export class ExpandableTableDemoComponent {
+  @ViewChild(ExpandableTableComponent, { static: true }) table!: ExpandableTableComponent;
+
   dataSource: any[];
   columns: any[];
   groupByKey: string;
@@ -46,6 +49,7 @@ export class ExpandableTableDemoComponent {
   }
 
   updateGroupBy(event: any) {
+    delete this.table.groupByKeyLabel;
     this.groupByKey = event.value;
   }
   onSelectionChange(event: any) {

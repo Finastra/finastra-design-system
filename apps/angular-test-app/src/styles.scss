@@ -11,6 +11,7 @@
 @import 'filter/filter-group/src/filter-group.theme';
 @import 'skeleton-text/src/skeleton-text.theme';
 @import 'wizard/src/wizard.theme';
+@import 'banner/src/banner.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
@@ -24,16 +25,17 @@ $uxg-typography: uxg-typography-config();
 @include uxg-chart-typography($uxg-typography);
 
 @mixin app-theme($theme) {
-  @include uxg-material-theme($theme);
-  @include uxg-filter-group-theme($theme);
-  @include uxg-filter-tags-theme($theme);
-  @include uxg-filter-tree-theme($theme);
-  @include uxg-global-search-theme($theme);
-  @include uxg-vector-map-theme($theme);
-  @include uxg-chart-theme($theme);
-  @include uxg-wizard-theme($theme);
-  @include uxg-skeleton-text-theme($theme);
-  @include theme-repeater-card-example($theme);
+    @include uxg-material-theme($theme);
+    @include uxg-filter-group-theme($theme);
+    @include uxg-filter-tags-theme($theme);
+    @include uxg-filter-tree-theme($theme);
+    @include uxg-global-search-theme($theme);
+    @include uxg-vector-map-theme($theme);
+    @include uxg-chart-theme($theme);
+    @include uxg-wizard-theme($theme);
+    @include uxg-banner-theme($theme);
+    @include uxg-skeleton-text-theme($theme);
+    @include theme-repeater-card-example($theme);
 }
 
 @include app-theme($uxg-light-theme);

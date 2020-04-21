@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,7 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -45,7 +46,9 @@ import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-t
 import { PaletteModule } from '@ffdc/uxg-angular-components/core';
 import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
-
+import { BannerModule } from '@ffdc/uxg-angular-components/banner';
+import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 @NgModule({
   declarations: [
     AvatarDemoComponent,
@@ -67,7 +70,9 @@ import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-prof
     UserProfileMenuDemoComponentComponent,
     VectorMapDemoComponent,
     WizardDemoComponent,
-    AppComponent
+    AppComponent,
+    BannerDemoComponent,
+    GlobalNavDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +102,9 @@ import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-prof
     ExpandableTableModule,
     MultiselectTagsModule,
     AvatarModule,
-    UxgUserProfileMenuModule
+    UxgUserProfileMenuModule,
+    BannerModule,
+    GlobalNavModule
   ],
   providers: [],
   exports: [],

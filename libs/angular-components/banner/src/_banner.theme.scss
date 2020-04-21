@@ -1,0 +1,28 @@
+@mixin uxg-banner-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $text-primary: mat-color($primary, default);
+    $color-accent: mat-color($accent, default);
+    $foreground: map-get($theme, foreground);
+    $text-banner: mat-color($foreground, base);
+    $divider: mat-color($foreground, divider);
+
+    .uxg-banner {
+        .uxg-body-1{
+            color: $text-banner;
+        }
+        .uxg-display-3 {
+            color:$text-primary;
+            font-weight: bold;
+        }
+        .uxg-banner-item--smal-label {
+          color:$text-primary;
+          font-weight: bold;
+          line-height: 36px;
+        }
+
+        .uxg-banner-spliter{
+          border-right-color: $divider;
+        }
+    }
+}

@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
@@ -32,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatListModule,
     MatButtonModule,
     MatButtonToggleModule,
