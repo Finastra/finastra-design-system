@@ -1,0 +1,84 @@
+<h5 class="uxg-h5">Default Avatar</h5>
+<div fxLayout class="example-row">
+  <uxg-user-profile-menu [user]="vinh"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="primary" [user]="vinh"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="accent" [user]="vinh"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="initials" [user]="user0"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="razvan"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="thomas"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="monsterid"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="mp"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="identicon"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="wavatar"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="retro"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="robohash"></uxg-user-profile-menu>
+
+  <uxg-user-profile-menu [user]="user1"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="user2" defaultGravatar="robohash"></uxg-user-profile-menu>
+</div>
+
+<h5 class="uxg-h5">Avatar with actions</h5>
+<div fxLayout class="example-row">
+  <uxg-user-profile-menu [user]="vinh">
+    <ng-template uxgUserProfilePanelActions>
+      <button mat-flat-button color="primary" dense>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </ng-template>
+  </uxg-user-profile-menu>
+  <uxg-user-profile-menu color="primary" [user]="user0">
+    <ng-template uxgUserProfilePanelActions>
+      <button mat-flat-button color="primary" dense>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+      <button mat-button color="primary" dense>
+        View profile
+      </button>
+    </ng-template>
+  </uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="user2" defaultGravatar="robohash">
+    <ng-template uxgUserProfilePanelActions>
+      <button mat-flat-button color="primary" dense>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+      <button mat-button color="primary" dense>
+        View profile
+      </button>
+    </ng-template>
+  </uxg-user-profile-menu>
+</div>
+
+<h5 class="uxg-h5">Avatar with contents and actions</h5>
+<div fxLayout class="example-row">
+  <uxg-user-profile-menu color="initials" [user]="vinh">
+    <ng-template uxgUserProfilePanelActions>
+      <button mat-flat-button color="primary" dense>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </ng-template>
+  </uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="user1">
+    <ng-template uxgUserProfilePanelContent>
+      <button mat-menu-item>
+        <mat-icon>dashboard</mat-icon>
+        Item one
+      </button>
+      <button mat-menu-item>
+        <mat-icon>dashboard</mat-icon>
+        Item two
+      </button>
+    </ng-template>
+
+    <ng-template uxgUserProfilePanelActions>
+      <button mat-flat-button color="primary" dense>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </ng-template>
+  </uxg-user-profile-menu>
+  <!-- <uxg-user-profile-menu [user]="user2" defaultGravatar="robohash"></uxg-user-profile-menu> -->
+</div>

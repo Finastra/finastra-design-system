@@ -1,7 +1,19 @@
-import { Attribute, Component, Directive, ElementRef, OnInit, ViewChild, Input } from '@angular/core';
+import {
+  Attribute,
+  Component,
+  Directive,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  ContentChild,
+  TemplateRef,
+  ViewChild
+} from '@angular/core';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Md5 } from 'ts-md5/dist/md5';
 
-export type UxgColor = 'primary' | 'accent' | 'gradient' | 'initials';
+export type AvatarColor = 'primary' | 'accent' | 'gradient' | 'initials';
 export type DefaultGravatar = 'mp' | 'identicon' | 'monsterid' | 'wavatar' | 'retro' | 'robohash';
 const PALETTE_SIZE = 16;
 
@@ -13,20 +25,35 @@ export class UxgImageAvatar {}
 @Component({
   selector: 'uxg-avatar',
   templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss']
+  styleUrls: ['./avatar.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarComponent implements OnInit {
-  @ViewChild('avatar', { static: true }) avatar!: ElementRef<HTMLElement>;
+  @Input() name: string | undefined;
+  @Input() gravatarEmail: string | undefined;
+  @Input() defaultGravatar: DefaultGravatar | undefined;
+  @Input() color: AvatarColor = 'gradient';
 
-  @Input() name!: string;
-  @Input() gravatarEmail!: string;
-  @Input() defaultGravatar!: DefaultGravatar;
-  @Input() color: UxgColor = 'gradient';
+  @Input()
+  get dense(): boolean {
+    return this._dense;
+  }
+  set dense(value: boolean) {
+    this._dense = coerceBooleanProperty(value);
+  }
+  private _dense: boolean = false;
+
+  @Input() avatarImage: TemplateRef<any> | null = null;
+  @ContentChild(UxgImageAvatar, { read: TemplateRef, static: true }) _explicitContent: TemplateRef<any> | undefined;
+  @ViewChild('implicitContent', { static: true }) _implicitContent!: TemplateRef<any>;
+
+  avatarContent!: TemplateRef<any>;
 
   paletteColor!: number;
   gravatarUrl!: string;
 
-  constructor(@Attribute('dense') public dense: any, @Attribute('large') public large: any) {}
+  constructor() {}
 
   getCode(str: string) {
     const charCodes = str
@@ -57,5 +84,6 @@ export class AvatarComponent implements OnInit {
     if (this.gravatarEmail || this.defaultGravatar) {
       this.generateGravatar();
     }
+    this.avatarContent = this._explicitContent || this.avatarImage || this._implicitContent;
   }
 }
