@@ -33,7 +33,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
     }
 
     const from = join(dest, pkg.sass);
-    const to = join(dest, pkg.sass.replace('.scss', '.css'));
+    const to = join(dest, pkg.css || pkg.sass.replace('.scss', '.css'));
     logger.info(`Compiling "${from}" to "${to}"...`);
 
     const result = renderSync({
