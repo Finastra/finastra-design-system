@@ -4,7 +4,7 @@
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
   "sass": "_all-theme.scss",
-  "css": "_all-theme.css",
+  "css": "all-theme.css",
   "peerDependencies": {
     "@angular/material": "^9.0.0"
   }
