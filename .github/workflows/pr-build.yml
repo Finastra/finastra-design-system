@@ -32,11 +32,11 @@ jobs:
 
         # Test
       - name: Lint affected files
-        run: npm run affected:lint -- --parallel
+        run: npm run affected:lint -- --base=origin/master --parallel
       - name: Check formatting
-        run: npm run format:check -- --parallel
+        run: npm run format:check -- --base=origin/master --parallel
       - name: Run affected unit tests
-        run: npm run affected:test -- --parallel
+        run: npm run affected:test -- --base=origin/master --parallel
 
         # Build
       - name: Build Test App
