@@ -1,7 +1,7 @@
 context('UI Elements', () => {
   beforeEach(() => {
     cy.visit('/ui-elements');
-    //cy.get('.app-content').invoke('css', 'position', 'relative');
+    cy.get('.app-content').invoke('css', 'position', 'relative');
     //cy.contains('menu').click();
     //cy.contains('UI Elements').click();
   })
