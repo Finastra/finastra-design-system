@@ -39,11 +39,11 @@ jobs:
       - name: Content list
         uses: enricomarino/actions@v2
       - name: Lint affected files
-        run: npm run affected:lint -- --base=origin/master --parallel
+        run: npm run affected:lint -- --parallel
       - name: Check formatting
-        run: npm run format:check -- --base=origin/master --parallel
+        run: npm run format:check -- --parallel
       - name: Run affected unit tests
-        run: npm run affected:test -- --base=origin/master --parallel
+        run: npm run affected:test -- --parallel
 
         # Build
       - name: Build Test App
