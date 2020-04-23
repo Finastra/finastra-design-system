@@ -1,9 +1,6 @@
 {
   "baseUrl": "http://localhost:4200",
-  "ignoreTestFiles": [
-    "**/__snapshots__/*",
-    "**/__image_snapshots__/*"
-  ],
+  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
   "chromeWebSecurity": false,
   "video": false,
   "viewportWidth": 900,
