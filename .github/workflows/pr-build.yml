@@ -23,6 +23,10 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
+      - name: NX Setup
+        shell: bash
+        run: |
+          git fetch origin master
 
       # Setup
       - name: Install Dependencies
