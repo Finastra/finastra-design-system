@@ -1,5 +1,8 @@
 name: Cypress tests
-on: push
+on:
+  push:
+    path:
+      - 'themes/angular-theme/**'
 
 jobs:
   init:
