@@ -2,10 +2,10 @@
 
 context('Foundations', () => {
   beforeEach(() => {
-    cy.visit('');
-    cy.get('.app-content').invoke('css', 'position', 'relative');
-    cy.contains('menu').click();
-    cy.contains('Foundations').click();
+    cy.visit('/foundations');
+    //cy.get('.app-content').invoke('css', 'position', 'relative');
+    //cy.contains('menu').click();
+    //cy.contains('Foundations').click();
   })
 
   ////////
