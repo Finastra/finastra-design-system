@@ -10,7 +10,7 @@
   <a
     mat-list-item
     (click)="onClick(node)"
-    [ngClass]="{ 'uxg-list-item-selected': isActive(node.url) }"
+    [ngClass]="{ 'uxg-list-item-selected': isActive(node.path) }"
     *ngFor="let node of navigationNodes"
   >
     <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
