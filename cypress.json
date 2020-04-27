@@ -8,7 +8,7 @@
   "env": {
     "cypress-plugin-snapshots": {
       "imageConfig": {
-        "threshold": 0.001
+        "threshold": 0.0001
       }
     }
   }
