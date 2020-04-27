@@ -4,5 +4,10 @@
   "chromeWebSecurity": false,
   "video": false,
   "viewportWidth": 900,
-  "viewportHeight": 1200
+  "viewportHeight": 1200,
+  "cypress-plugin-snapshots": {
+    "imageConfig": {
+      "thresholdType": "pixels"
+    }
+  }
 }
