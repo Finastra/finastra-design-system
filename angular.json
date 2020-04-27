@@ -212,16 +212,6 @@
           "options": {
             "project": "themes/angular-theme"
           }
-        },
-        "snapshot-test": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "commands": [
-              {
-                "command": "npm run test:theme"
-              }
-            ]
-          }
         }
       },
       "schematics": {
