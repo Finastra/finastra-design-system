@@ -15,8 +15,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   `
 })
 class WrapperComponent implements OnInit {
-  data = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
-  @ViewChild('demoMultiselectTags', { static: true }) multiSelectTagsFilter: any;
+  data: MultiselectTag[] = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
+  @ViewChild('demoMultiselectTags', { static: true }) component: any;
 
   ngOnInit() {}
 
@@ -24,7 +24,7 @@ class WrapperComponent implements OnInit {
 }
 
 describe('MultiselectTagsModule', () => {
-  let component: WrapperComponent;
+  let wrapper: WrapperComponent;
   let fixture: ComponentFixture<WrapperComponent>;
 
   beforeEach(() => {
@@ -33,33 +33,37 @@ describe('MultiselectTagsModule', () => {
       imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule, BrowserAnimationsModule]
     }).compileComponents();
     fixture = TestBed.createComponent(WrapperComponent);
-    component = fixture.componentInstance;
+    wrapper = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 
   it('should get data', () => {
-    const newData = component.multiSelectTagsFilter.data;
-    expect(newData.length).toBe(component.data.length);
+    const newData = wrapper.component.data;
+    expect(newData.length).toBe(wrapper.data.length);
   });
 
   it('should add tag', () => {
-    const spy = spyOn(component, 'updateMultiselectTags');
-    const tag: MultiselectTag = component.data[0];
-    component.multiSelectTagsFilter.onTagSelection(tag);
-    expect(component.data[0].isSelected).toBe(true);
-    expect(spy).toHaveBeenCalledWith({ added: [component.multiSelectTagsFilter.data[0]], removed: [] });
+    const spy = spyOn(wrapper, 'updateMultiselectTags');
+    const tag: MultiselectTag = wrapper.component.data[0];
+
+    wrapper.component.onTagSelection(tag);
+
+    expect(wrapper.component.data[0].isSelected).toBe(true);
+    expect(spy).toHaveBeenCalledWith({ added: [wrapper.component.data[0]], removed: [] });
   });
 
   it('should remove tag', () => {
-    const spy = spyOn(component, 'updateMultiselectTags');
-    const tag: MultiselectTag = component.data[0];
+    const spy = spyOn(wrapper, 'updateMultiselectTags');
+    const tag: MultiselectTag = wrapper.component.data[0];
+
     tag.isSelected = true;
-    component.multiSelectTagsFilter.onTagSelection(tag);
-    expect(component.data[0].isSelected).toBe(false);
-    expect(spy).toHaveBeenCalledWith({ added: [], removed: [component.multiSelectTagsFilter.data[0]] });
+    wrapper.component.onTagSelection(tag);
+
+    expect(wrapper.component.data[0].isSelected).toBe(false);
+    expect(spy).toHaveBeenCalledWith({ added: [], removed: [wrapper.component.data[0]] });
   });
 });
