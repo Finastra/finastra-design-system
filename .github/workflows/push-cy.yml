@@ -16,7 +16,6 @@ jobs:
           working-directory: ./
           start: npm start
       - uses: actions/upload-artifact@v1
-        if: failure()
         with:
           name: cypress-screenshots
           path: cypress/integration/__image_snapshots__
