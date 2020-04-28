@@ -50,7 +50,7 @@ import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
 import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
-import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu'
+import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 
 @NgModule({
   declarations: [
