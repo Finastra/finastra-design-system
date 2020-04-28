@@ -1,0 +1,53 @@
+.demonstration{
+  .optional-table-button{
+    margin: 5px;
+  }
+
+  .optional-header-button{
+    margin-right: 10px;
+  }
+}
+
+.configuration{
+  >div{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    .mat-slide-toggle{
+      margin-right: 5px;
+    }
+  }  
+  .group-by{
+    width: 150px;
+  }
+  .component-area{
+    width: 130px;
+  }
+  .interaction-information{
+    max-width: 400px;
+  }
+  .mat-form-field-infix{
+    border-top-width: 0;
+  }
+  mat-radio-button{
+    margin-bottom: 5px;
+  }
+}
+.documentation{
+  border-collapse: collapse;
+  tr{
+    font-family: Roboto, sans-serif;
+    border-bottom: 1px solid #E6ECF1;
+    td{
+      padding: 8px;
+    }
+    &.header{
+      color: #9DAAB6;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      border-bottom: 2px solid #E6ECF1;
+      white-space: nowrap;
+    }
+  }      
+}

@@ -1,0 +1,26 @@
+<div class="demo-container">
+  <uxg-global-nav
+    [appName]="appName"
+    [navigationNodes]="demoAppList"
+    [appContent]="appContent"
+    [navbarAction]="navbarAction"
+    (nodeChosen)="nodeChosen($event)"
+    (brandAction)="brandAction($event)"
+    (logout)="logout()"
+  >
+  </uxg-global-nav>
+</div>
+
+<ng-template #appContent>
+  <h2>Insert your router-outlet here</h2>
+</ng-template>
+
+<ng-template #navbarAction>
+  <button mat-icon-button color="neutral" aria-label="notifications" aria-expanded="true">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <button mat-icon-button color="gradient" aria-label="uxp-navbar-user-button">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</ng-template>

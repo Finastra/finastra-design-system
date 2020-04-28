@@ -2,7 +2,7 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  
+
 
   uxg-filter-group {
     .uxg-side-badge .mat-badge-content {
@@ -12,7 +12,7 @@
     }
 
     .uxg-expansion-filter {
-      
+
       .expand-button {
         background-color: mat-color($primary, default, 0.15);
       }
@@ -22,7 +22,8 @@
       }
     }
 
-    .expansion-panel-header, .filter-group-dialog-header {
+    .expansion-panel-header,
+    .filter-group-dialog-header {
       background-color: mat-color($background, status-bar, 0.5);
     }
   }

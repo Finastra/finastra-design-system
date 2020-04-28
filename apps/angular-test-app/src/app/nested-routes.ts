@@ -12,7 +12,11 @@ import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elemen
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
+import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -35,7 +39,18 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
       { path: 'entity-menu', component: EntityMenuDemoComponent, data: { title: 'Entity Menu' } },
-      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } }
+      { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
+      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
+      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } },
+      {
+        path: 'user-profile-menu',
+        component: UserProfileMenuDemoComponentComponent,
+        data: { title: 'User Profile Menu' }
+      },
+      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } }
     ]
   }
-];
+].map(groups => {
+  groups.routes = groups.routes.sort((a: any, b: any) => a.data.title.localeCompare(b.data.title));
+  return groups;
+});

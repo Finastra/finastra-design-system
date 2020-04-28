@@ -1,0 +1,69 @@
+name: pr ci
+on: pull_request
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: NX Setup
+        shell: bash
+        run: |
+          if [[ $GITHUB_BASE_REF ]]
+          then
+            export NX_BASE=remotes/origin/$GITHUB_BASE_REF
+          else
+            export NX_BASE=$(git rev-parse HEAD~1)
+          fi
+          echo "Base => $NX_BASE"
+          echo ::set-env name=NX_BASE::$NX_BASE
+
+      # Setup
+      - name: Install Dependencies
+        run: npm ci --loglevel=error
+      - name: Build DevKit
+        run: npm run build:devkit
+
+        # Test
+      - name: Lint affected files
+        run: npm run affected:lint -- --base=$NX_BASE --parallel
+      - name: Check formatting
+        run: npm run format:check -- --base=$NX_BASE --parallel
+      - name: Run affected unit tests
+        run: npm run affected:test -- --base=$NX_BASE --parallel
+
+        # Build
+      - name: Build Test App
+        run: npm run build -- --prod
+      - name: Build Angular Theme
+        run: npm run build angular-theme -- --prod
+      - name: Build Angular Components
+        run: npm run build angular-components
+      - name: Upload Angular Theme Artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: 'uxg-angular-theme'
+          path: './dist/themes/angular-theme'
+      - name: Upload Angular Components Artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: 'uxg-angular-components'
+          path: './dist/libs/angular-components'

@@ -1,0 +1,35 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+.uxg-banner {
+  margin: $uxg-spacing-2;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  .uxg-banner-spliter {
+    display: block;
+    border-right-width: 1px;
+    border-right-style: solid;
+    margin-top: $uxg-spacing-3;
+    margin-bottom: $uxg-spacing-3;
+  }
+  .uxg-banner-item {
+    min-width: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: $uxg-spacing-2;
+    margin-right: $uxg-spacing-2;
+    margin-top: $uxg-spacing-2;
+    margin-bottom: $uxg-spacing-2;
+  }
+  &.uxg-banner-small {
+    .uxg-banner-spliter {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .uxg-banner-spliter:last-of-type {
+    display: none;
+  }
+}

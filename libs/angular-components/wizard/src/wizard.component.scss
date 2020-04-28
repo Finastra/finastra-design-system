@@ -6,25 +6,28 @@ $buttons-wrapper-size: 44px;
 $wizard-border-radius: 6px;
 
 $step-left-margin: 4px;
-$step-border-width: 5px;
-$step-size: $uxg-spacing-5;
+$step-border-width: 4px;
+$step-size: 42px;
 $step-size-xs: 36px;
+
+$step-container-height: 115px;
+$step-container-border-radius: 4px;
 
 $dot-size-xs: 8px;
 
-$timeline-progress-width: 5px;
+$timeline-progress-width: 4px;
 $timeline-progress-left-margin: 2px;
 
 $timeline-top: 15vh;
-$timeline-right: 3vw;
+$timeline-right: 2vw;
 $timeline-bottom: 15vh;
-$timeline-width: 26vw;
+$timeline-width: calc(22vw + #{$uxg-spacing-1});
 $timeline-top-xs: 4vh;
 
 $wizard-container-top: 8vh;
 $wizard-container-bottom: 5vh;
 $wizard-container-left: 5vw;
-$wizard-container-right: 25vw;
+$wizard-container-right: 22vw;
 
 $wizard-page-height: 12vh;
 $wizard-page-bottom: 0;
@@ -34,7 +37,8 @@ $wizard-page-left: 0;
 $wizard-page-top-xs: 0;
 
 $wizard-title-top: 3vh;
-$wizard-title-left: 6vw;
+$wizard-title-width: 73vw;
+$wizard-title-left: 5vw;
 
 .uxg-wizard {
   position: relative;
@@ -72,7 +76,10 @@ $wizard-title-left: 6vw;
 
   .uxg-wizard-title {
     position: absolute;
+    display: flex;
+    justify-content: center;
     top: $wizard-title-top;
+    width: $wizard-title-width;
     left: $wizard-title-left;
   }
 
@@ -188,7 +195,9 @@ $wizard-title-left: 6vw;
 
     .step-info-container {
       cursor: pointer;
-      max-height: 4rem;
+      height: $step-container-height;
+      justify-content: center;
+      padding: $uxg-spacing-3;
 
       .step-title {
         transition: color 250ms ease-in;
@@ -201,6 +210,10 @@ $wizard-title-left: 6vw;
 
       &.disabled {
         pointer-events: none;
+      }
+
+      &.active {
+        border-radius: $step-container-border-radius;
       }
     }
   }
@@ -270,6 +283,10 @@ uxg-wizard-page {
 
   &.active {
     z-index: 1;
+  }
+
+  &.no-title {
+    top: 0;
   }
 }
 

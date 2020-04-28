@@ -5,14 +5,17 @@
   $primary: map-get($theme, primary);
   $background: map-get($theme, background);
 
+  $default-background-color: mat-color($background, card);
+
   $wizard-background-color: mat-color($background, background);
   $wizard-step-active-color: mat-color($accent, default);
   $wizard-step-done-color: map-get($uxg-grass, 100);
-  $wizard-timeline-color: map_get($mat-grey, 300);
+  $wizard-timeline-color: mat-color($background, status-bar);
 
   $wizard-dark-blue: #060546;
-  $wizard-step-description-color: map-get($uxg-violet, 100);
+  $wizard-step-description-color: mat-color($primary, lighter);
   $wizard-step-disabled-color: #404065;
+  $wizard-step-container-active-color: #4d4c7f;
 
   $wizard-dot-color: map_get($mat-grey, 200);
   $wizard-dot-active-color: mat-color($primary, default);
@@ -21,7 +24,7 @@
     background: $wizard-background-color;
 
     .uxg-wizard-container {
-      background: white;
+      background: $default-background-color;
     }
 
     .uxg-wizard-right-panel {
@@ -68,10 +71,17 @@
         }
 
         &.disabled {
-
           .step-title,
           .step-description {
             color: $wizard-step-disabled-color;
+          }
+        }
+
+        &.active {
+          background-color: $wizard-step-container-active-color;
+
+          .step-description {
+            color: white;
           }
         }
       }
@@ -112,6 +122,29 @@
 
         &.active {
           background-color: $wizard-dot-active-color;
+        }
+      }
+    }
+  }
+
+  .uxg-dark-theme {
+    .uxg-wizard {
+      .uxg-wizard-right-panel {
+        background: rgba(black, 0.38) !important;
+      }
+
+      .uxg-wizard-timeline {
+        .step-info-container {
+          &.active {
+            background: mat-color($primary, default, 0.38) !important;
+          }
+        }
+
+        .step {
+          &.active {
+            border-color: mat-color($accent, 900) !important;
+            background-color: mat-color($accent, 900) !important;
+          }
         }
       }
     }

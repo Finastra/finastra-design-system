@@ -30,6 +30,8 @@ import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
 export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   @ContentChildren(UxgWizardPageComponent) pages!: QueryList<UxgWizardPageComponent>;
 
+  @Input('uxgWizardShowPageTitles') showPageTitles = true;
+
   @Input('uxgWizardShowCloseButton') showCloseButton = true;
 
   @Input('uxgWizardStartingPage') startingPage = 0;
@@ -64,6 +66,8 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   ngAfterContentInit() {
+    this.pages.forEach(page => (page.showTitle = this.showPageTitles));
+
     this.pageCollection.pages = this.pages;
 
     if (!this.currentPage) {

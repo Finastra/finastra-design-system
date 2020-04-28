@@ -13,10 +13,11 @@ import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
     role: 'tabpanel',
     '[attr.aria-hidden]': '!current',
     '[class.active]': 'current',
+    '[class.no-title]': '!showTitle',
     '[class.uxg-wizard-page]': 'true'
   }
 })
-export class UxgWizardPageComponent implements OnInit {
+export class UxgWizardPageComponent {
   @Output('uxgWizardPageOnLoad') load: EventEmitter<string> = new EventEmitter();
 
   @Output('uxgWizardPageNext') nextButtonClicked: EventEmitter<UxgWizardPageComponent> = new EventEmitter();
@@ -102,5 +103,13 @@ export class UxgWizardPageComponent implements OnInit {
     return this.pageDescription.pageDescriptionTemplateRef;
   }
 
-  ngOnInit() {}
+  private _showTitle = true;
+
+  public get showTitle(): boolean {
+    return this._showTitle;
+  }
+
+  public set showTitle(val: boolean) {
+    this._showTitle = val;
+  }
 }

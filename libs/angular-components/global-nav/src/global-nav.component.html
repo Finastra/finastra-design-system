@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+  <mat-sidenav #globalNavDrawer mode="over">
+    <uxg-sidenav
+      [appName]="appName"
+      [navigationNodes]="navigationNodes"
+      [activeRoute]="activeRoute"
+      (nodeChosen)="nodeChosen.emit($event)"
+      (logout)="logout.emit()"
+    ></uxg-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <uxg-navbar
+      [currentNode]="currentNode"
+      [navbarAction]="navbarAction"
+      (menuClick)="globalNavDrawer.toggle()"
+      (nodeChosen)="nodeChosen.emit($event)"
+      (brandAction)="brandAction.emit($event)"
+    >
+    </uxg-navbar>
+    <div class="app-content">
+      <ng-container *ngTemplateOutlet="appContent"></ng-container>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

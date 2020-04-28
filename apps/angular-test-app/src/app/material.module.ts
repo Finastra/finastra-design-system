@@ -17,6 +17,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
@@ -30,6 +33,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatListModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -38,7 +42,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatFormFieldModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule {}
