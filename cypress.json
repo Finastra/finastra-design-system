@@ -1,15 +1,7 @@
 {
   "baseUrl": "http://localhost:4200",
-  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
   "chromeWebSecurity": false,
   "video": false,
   "viewportWidth": 900,
-  "viewportHeight": 1200,
-  "env": {
-    "cypress-plugin-snapshots": {
-      "imageConfig": {
-        "threshold": 0.0009
-      }
-    }
-  }
+  "viewportHeight": 1200
 }

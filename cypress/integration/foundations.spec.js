@@ -11,19 +11,19 @@ context('Foundations', () => {
   it('match icons colors', () => {
     cy.get('.icon-colors-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match icons sizes', () => {
     cy.get('.icon-sizes-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match icon types', () => {
     cy.get('.icon-types-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   ////////
@@ -33,19 +33,19 @@ context('Foundations', () => {
   it('match logo nomal', () => {
     cy.get('.logo-normal-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match logo dense', () => {
     cy.get('.logo-dense-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match logo link', () => {
     cy.get('.logo-link-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   ////////
@@ -55,30 +55,30 @@ context('Foundations', () => {
   it('match display scale', () => {
     cy.get('.typo-display-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match headline scale', () => {
     cy.get('.typo-headline-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match subtitle scale', () => {
     cy.get('.typo-subtitle-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match body scale', () => {
     cy.get('.typo-body-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 
   it('match small scale', () => {
     cy.get('.typo-small-test')
       .scrollIntoView()
-      .toMatchImageSnapshot();
+      .matchImageSnapshot();
   });
 });
