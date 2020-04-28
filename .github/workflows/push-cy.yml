@@ -27,4 +27,4 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/snapshots
+          path: cypress/snapshots/**/__diff_output__
