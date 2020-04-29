@@ -10,6 +10,8 @@ export class AccountCardComponent implements OnInit, OnDestroy {
   @Input() balance?: number;
   @Input() currency?: string;
   @Input() number?: string;
+  @Input() icon: string = 'credit_card';
+  @Input() iconAriaLabel: string = 'Credit Card';
 
   ngOnInit() {}
   ngOnDestroy() {}

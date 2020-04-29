@@ -1,11 +1,8 @@
 <mat-card>
   <mat-card-content>
-    <uxg-icon-category icon="credit_card" ariaLabel="Credit Card"> </uxg-icon-category>
+    <uxg-icon-category [icon]="icon" [ariaLabel]="iconAriaLabel"> </uxg-icon-category>
     <div class="uxg-body-1 account-name">{{ name }}</div>
     <div class="uxg-h5 account-balance">{{ balance | currency: currency }}</div>
-    <div class="dropdown-menu">
-      <mat-icon>more_vert</mat-icon>
-    </div>
   </mat-card-content>
   <mat-card-footer>
     <mat-divider></mat-divider>
