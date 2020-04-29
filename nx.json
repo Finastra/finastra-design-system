@@ -82,6 +82,9 @@
     },
     "account-card": {
       "tags": []
+    },
+    "account-detail-card": {
+      "tags": []
     }
   }
 }

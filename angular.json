@@ -840,6 +840,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "account-detail-card": {
+      "projectType": "library",
+      "root": "libs/angular-components/cards/account-detail-card",
+      "sourceRoot": "libs/angular-components/cards/account-detail-card",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/cards/account-detail-card/tsconfig.lib.json",
+              "libs/angular-components/cards/account-detail-card/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-detail-card/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/cards/account-detail-card/jest.config.js",
+            "tsConfig": "libs/angular-components/cards/account-detail-card/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/cards/account-detail-card/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

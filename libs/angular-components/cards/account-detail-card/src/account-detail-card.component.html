@@ -1,0 +1,59 @@
+<mat-card>
+    <mat-card-title>
+        <div>{{ accountDetail.nickname }}</div>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="account-card-detail-summary">
+            <div class="uxg-avatar"></div>
+            <div class="account-card-detail-summary-info">
+                <div class="uxg-body-1">Account Number</div>
+                <div class="uxg-subtitle-1">{{ accountDetail.accountNumber }}</div>
+            </div>
+        </div>
+        <div class="account-detail-card-content">
+            <div class="account-detail-card-content__static">
+                <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                        Card type
+                    </div>
+                    <div>
+                        {{ accountDetail.accountType || 'not available' }}
+                    </div>
+                </div>
+
+                <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                        Owner
+                    </div>
+                    <div>
+                        {{ accountDetail.ownerName || 'not available' }}
+                    </div>
+                </div>
+
+                <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                        Created date
+                    </div>
+                    <div>
+                        {{ accountDetail.openDate || 'not available' }}
+                    </div>
+                </div>
+                <div class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">
+                        Alternate account number
+                    </div>
+                    <div>
+                        {{ accountDetail.alternateAccountNumber || 'not available' }}
+                    </div>
+                </div>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <div class="account-detail-card-content__status">
+                <div *ngFor="let balance of accountDetail.balances" class="account-detail-card-content__line">
+                    <div class="uxg-subtitle-2 account-detail-card-content__line-title">{{ balance.type }}</div>
+                    <div>{{ balance.amount }}</div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
