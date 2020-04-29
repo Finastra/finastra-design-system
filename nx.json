@@ -79,6 +79,9 @@
     },
     "user-profile-menu": {
       "tags": []
+    },
+    "account-card": {
+      "tags": []
     }
   }
 }

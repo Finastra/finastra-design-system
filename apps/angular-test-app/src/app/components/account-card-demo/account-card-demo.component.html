@@ -1,0 +1,17 @@
+<ng-container *ngIf="accounts$ | async as accounts; else loading">
+  <div class="accounts-list">
+    <uxg-account-card
+      *ngFor="let account of accounts"
+      [name]="account.name"
+      [balance]="account.balance"
+      [currency]="account.currency"
+      [number]="account.number"
+    ></uxg-account-card>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="accounts-list">
+    <uxg-account-card-skeleton *ngFor="let skeleton of 4 | nbToArray"> </uxg-account-card-skeleton>
+  </div>
+</ng-template>

@@ -12,6 +12,7 @@
 @import 'skeleton-text/src/skeleton-text.theme';
 @import 'wizard/src/wizard.theme';
 @import 'banner/src/banner.theme';
+@import 'core/src/components/icon-category/icon-category.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
@@ -36,6 +37,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-banner-theme($theme);
     @include uxg-skeleton-text-theme($theme);
     @include theme-repeater-card-example($theme);
+    @include uxg-icon-category-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);
