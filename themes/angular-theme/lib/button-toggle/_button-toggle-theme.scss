@@ -1,6 +1,7 @@
 @mixin uxg-button-toggle-theme($theme) {
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
+  $fill-background: mat-color($primary, default, 0.15);
 
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
@@ -20,7 +21,7 @@
       }
 
       &.mat-button-toggle-checked {
-        background-color: mat-color($primary, lighter);
+        background-color: $fill-background;
 
         .mat-button-toggle-button,
         .mat-icon {
@@ -35,7 +36,7 @@
       border-color: mat-color($foreground, divider);
 
       &.mat-button-toggle-checked {
-        border-color: mat-color($primary, default);
+        border-color: $fill-background;
       }
     }
   }
