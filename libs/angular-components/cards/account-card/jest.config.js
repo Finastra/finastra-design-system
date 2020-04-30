@@ -3,7 +3,7 @@ const suiteName = 'AccountCardModule';
 
 module.exports = {
   name,
-  preset: '../../../jest.config.js',
+  preset: '../../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
