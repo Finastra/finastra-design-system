@@ -11,5 +11,8 @@
     "angular-plotly.js": "^2.0.0",
     "plotly.js": "1.52.2",
     "smoothscroll-polyfill": "0.4.4"
+  },
+  "dependencies": {
+    "@ffdc/uxg-angular-theme": "^0.18.0"
   }
 }
