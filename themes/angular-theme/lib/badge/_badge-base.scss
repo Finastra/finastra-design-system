@@ -9,10 +9,10 @@ $side-badge-min-width-large: 14px;
   position: relative;
   border-style: solid;
   border-width: $side-badge-border-width;
-  height: unset;
-  width: unset;
-  top: unset;
-  right: unset;
+  height: unset !important;
+  width: unset !important;
+  top: unset !important;
+  right: unset !important;
   vertical-align: middle;
   margin: 0 $uxg-spacing-2;
 }

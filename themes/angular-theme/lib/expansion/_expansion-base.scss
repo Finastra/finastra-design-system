@@ -33,6 +33,12 @@ $uxg-expansion-filter-border-radius: 4px;
   }
 }
 
+.uxg-dark-theme .uxg-expansion-filter.mat-expansion-panel {
+  &:not([class*='mat-elevation-z']) {
+    @include mat-elevation(0);
+  }
+}
+
 .uxg-contact {
   .uxg-contact-header {
     width: 100%;
