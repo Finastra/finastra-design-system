@@ -27,7 +27,7 @@ In your html
 <uxg-entity-menu
   [title]="string"
   [data]="any[]"
-  [proprty]="string"
+  [property]="string"
   [abbreviationLength]="number"
   [bottomLabel]="string"
   (bottomClick)="() => {}"

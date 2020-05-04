@@ -20,7 +20,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() data: Array<any> = [];
   @Input() title = '';
   @Input() property?: string;
-  @Input() abbreviationLength = 0;
+  @Input() abbreviationLength = 3;
   @Input() bottomLabel = '';
 
   @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
@@ -51,7 +51,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
         .map(str => str.charAt(0))
         .join('')
         .toUpperCase()
-        .substring(0, this.abbreviationLength || 1);
+        .substring(0, this.abbreviationLength);
     }
     return name;
   }
