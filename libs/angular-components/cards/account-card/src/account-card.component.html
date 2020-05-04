@@ -1,6 +1,8 @@
 <mat-card>
   <mat-card-content>
-    <uxg-icon-category [icon]="icon" [ariaLabel]="iconAriaLabel"> </uxg-icon-category>
+    <div class="uxg-icon-category">
+      <mat-icon aria-label="credit card icon">credit_card</mat-icon>
+    </div>
     <div class="uxg-body-1 account-name">{{ name }}</div>
     <div class="uxg-h5 account-balance">{{ balance | currency: currency }}</div>
   </mat-card-content>

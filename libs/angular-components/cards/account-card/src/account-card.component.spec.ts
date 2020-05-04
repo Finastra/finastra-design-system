@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AccountCardComponent } from './account-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-import { IconCategoryModule } from '@ffdc/uxg-angular-components/core';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AccountCardModule', () => {
   let component: AccountCardComponent;
@@ -11,7 +11,7 @@ describe('AccountCardModule', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule, MatDividerModule, IconCategoryModule],
+      imports: [MatCardModule, MatDividerModule, MatIconModule],
       declarations: [AccountCardComponent]
     }).compileComponents();
   }));

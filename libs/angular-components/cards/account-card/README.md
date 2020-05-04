@@ -15,11 +15,9 @@ export class AppModule {}
 
 ```scss
 @import '~@ffdc/uxg-angular-components/cards/account-card/account-card.theme';
-@import '~@ffdc/uxg-angular-components/core/src/components/icon-category/icon-category.theme';
 
 @mixin app-theme($theme) {
   @include uxg-account-card-theme($theme);
-  @include uxg-icon-category-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);
