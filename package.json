@@ -93,7 +93,7 @@
     "@types/autoprefixer": "^9.6.1",
     "@types/d3": "5.7.2",
     "@types/fs-extra": "^8.0.0",
-    "@types/jest": "25.1.2",
+    "@types/jest": "25.2.1",
     "@types/lodash": "4.14.149",
     "@types/node": "^10.14.17",
     "@types/node-sass": "^4.11.0",
