@@ -27,6 +27,8 @@ import { UserProfileMenuDemoComponentComponent } from './components/user-profile
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -48,7 +50,8 @@ import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
 import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
-import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
+import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+
 @NgModule({
   declarations: [
     AvatarDemoComponent,
@@ -72,7 +75,8 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
     WizardDemoComponent,
     AppComponent,
     BannerDemoComponent,
-    GlobalNavDemoComponent
+    GlobalNavDemoComponent,
+    EntityMenuDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,8 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
     AvatarModule,
     UxgUserProfileMenuModule,
     BannerModule,
-    GlobalNavModule
+    GlobalNavModule,
+    EntityMenuModule
   ],
   providers: [],
   exports: [],
