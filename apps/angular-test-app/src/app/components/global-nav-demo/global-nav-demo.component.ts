@@ -14,25 +14,25 @@ export class GlobalNavDemoComponent {
 
   demoAppList: NavigationNode[] = [
     {
-      url: 'app1.com',
+      path: 'app1.com',
       title: 'app1',
       tooltip: 'app1',
       icon: 'dashboard'
     },
     {
-      url: 'app2.com',
+      path: 'app2.com',
       title: 'app2',
       tooltip: 'app2',
       icon: 'dashboard'
     },
     {
-      url: 'app3.com',
+      path: 'app3.com',
       title: 'app3',
       tooltip: 'app3',
       icon: 'dashboard'
     },
     {
-      url: 'app4.com',
+      path: 'app4.com',
       title: 'app4',
       tooltip: 'app4',
       icon: 'dashboard'
@@ -41,6 +41,7 @@ export class GlobalNavDemoComponent {
 
   nodeChosen(node: any) {
     console.log(node);
+    // this.router.navigate([node.path]);
   }
 
   brandAction(event: any) {

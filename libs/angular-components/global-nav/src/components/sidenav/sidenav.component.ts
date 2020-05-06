@@ -48,7 +48,7 @@ export class SidenavComponent implements OnInit, OnChanges {
 
   private getIconName(name: string) {
     if (!name) return name;
-    const words = name.replace('-', ' ').match('/w+/g');
+    const words = name.replace('-', ' ').split(' ');
     if (words && words.length === 1) return name;
     return !words
       ? ''
@@ -63,7 +63,7 @@ export class SidenavComponent implements OnInit, OnChanges {
     this._host.close();
   }
 
-  isActive(url: string) {
-    if (this.activeRoute) return this.activeRoute.includes(url);
+  isActive(path: string) {
+    if (this.activeRoute) return this.activeRoute.includes(path);
   }
 }
