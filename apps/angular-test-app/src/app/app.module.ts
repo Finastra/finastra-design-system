@@ -51,7 +51,6 @@ import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
-import { NbToArrayModule } from '@ffdc/uxg-angular-components/core';
 
 @NgModule({
   declarations: [
@@ -111,7 +110,6 @@ import { NbToArrayModule } from '@ffdc/uxg-angular-components/core';
     BannerModule,
     GlobalNavModule,
     AccountCardModule,
-    NbToArrayModule
   ],
   providers: [],
   exports: [],
