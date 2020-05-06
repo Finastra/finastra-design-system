@@ -108,7 +108,7 @@
     "es-abstract": "1.14.2",
     "fs-extra": "^8.1.0",
     "git-config-path": "^2.0.0",
-    "globby": "^10.0.1",
+    "globby": "^11.0.0",
     "husky": "^4.2.5",
     "istanbul-api": "^2.1.6",
     "istanbul-lib-coverage": "^2.0.5",
