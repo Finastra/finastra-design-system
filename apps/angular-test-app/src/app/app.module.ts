@@ -113,7 +113,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerModule,
     GlobalNavModule,
     AccountCardModule,
-    EntityMenuModule,
+    EntityMenuModule
   ],
   providers: [],
   exports: [],
