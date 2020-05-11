@@ -1,0 +1,6 @@
+<div class="uxg-dashboard-item-content">
+  <div class="uxg-dashboard-item-content-wrapper" #scaler data-action="drag" [ngClass]="{ draggable: editable }">
+    <ng-content></ng-content>
+  </div>
+  <div #scaler data-action="move-bottom-right" class="uxg-dashboard-item-resize-handle" [hidden]="!editable"></div>
+</div>

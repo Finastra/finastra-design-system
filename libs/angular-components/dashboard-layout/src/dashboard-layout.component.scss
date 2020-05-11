@@ -1,0 +1,14 @@
+.uxg-dashboard-layout {
+  display: block;
+  position: relative;
+
+  .uxg-dashboard-layout__placeholder {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    transition: left .4s, margin-top .4s, width .4s, padding-top .4s;
+  }
+}
+
+

@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <button mat-raised-button (click)="addWidget()">Add widget</button>&nbsp;
+  <button mat-raised-button (click)="toggleEdit()">Edit</button>
+</mat-toolbar>
+<!-- <ng-container *ngTemplateOutlet="table"></ng-container> -->
+<br />
+<uxg-dashboard-layout [cols]="10" [editable]="edit">
+  <uxg-dashboard-item [editable]="edit" [cols]="6" [rows]="2">
+    <mat-card class="box">1</mat-card>
+  </uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">2</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit"><mat-card class="box">3</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">4</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">5</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">6</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">7</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="1" [rows]="1"><mat-card class="box">8</mat-card></uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="1" [rows]="1"><mat-card class="box">9</mat-card></uxg-dashboard-item>
+  <ng-container *ngFor="let item of widgets">
+    <uxg-dashboard-item [editable]="edit">
+      <mat-card>
+        <ng-container *ngTemplateOutlet="item"></ng-container>
+      </mat-card>
+    </uxg-dashboard-item>
+  </ng-container>
+</uxg-dashboard-layout>
+
+<ng-template #table>
+  <uxg-table [data]="dataSource" [columns]="columns" [columnsToDisplay]="columnsToDisplay"> </uxg-table>
+</ng-template>
+<ng-template #chart>
+  <uxg-chart [multiSelect]="true">
+    <uxg-trace
+      *ngFor="let trace of traces"
+      [dimension]="trace.dimension"
+      [dimensionName]="trace.dimensionName"
+      [measure]="trace.measure"
+      [measureName]="trace.measureName"
+      [type]="trace.type"
+    ></uxg-trace>
+  </uxg-chart>
+</ng-template>
+<ng-template #vectorMap>
+  <uxg-vector-map title="Vector Map" [dataSource]="viewMapDataSource"></uxg-vector-map>
+</ng-template>

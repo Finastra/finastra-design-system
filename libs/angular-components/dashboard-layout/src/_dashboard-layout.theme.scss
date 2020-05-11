@@ -1,0 +1,12 @@
+@mixin uxg-dashboard-layout-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .uxg-dashboard-layout {
+    .uxg-dashboard-layout__placeholder {
+      background-color: mat-color($primary, default, 0.5);
+    }
+  }
+}

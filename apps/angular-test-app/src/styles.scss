@@ -14,6 +14,7 @@
 @import 'banner/src/banner.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
+@import 'dashboard-layout/src/dashboard-layout.theme';
 
 $uxg-typography: uxg-typography-config();
 
@@ -36,6 +37,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-banner-theme($theme);
     @include uxg-skeleton-text-theme($theme);
     @include theme-repeater-card-example($theme);
+    @include uxg-dashboard-layout-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);
