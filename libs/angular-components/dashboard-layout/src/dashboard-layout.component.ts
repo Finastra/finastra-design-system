@@ -26,6 +26,7 @@ import { RatioGridStyler } from './styler';
 import { Subject, merge } from 'rxjs';
 import { takeUntil, startWith } from 'rxjs/operators';
 import { Point } from './draw.utils';
+import { DrawService } from './draw.service';
 
 type ContentItem = UxpDashboardItemComponent & {
   rect: Rect;
@@ -104,19 +105,20 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   private _orderedContentChildren: Array<ContentItem> = [];
   private _viewInitilized = false;
   private _removeEditMode$ = new Subject<void>();
-  private _elementRect!: ClientRect;
   private _element: HTMLElement;
   private _rowHeightRatio = 1;
-  private _gridColumnWidth = 1;
-  private _gridRowHeight = 1;
+  _elementRect!: ClientRect;
+  _gridColumnWidth = 1;
+  _gridRowHeight = 1;
   private _placeHolderElement?: HTMLElement;
   private _placeHolderElementRef: EmbeddedViewRef<any> | undefined;
   private _shiftTargetKeys: string[] = [];
   private _shiftTargets: Point[] = [];
   private _targetPosition: GridItemPosition = { columnStart: 0, columnEnd: 0, rowEnd: 0, rowStart: 0 };
 
-  constructor(elementRef: ElementRef, private _ngZone: NgZone) {
+  constructor(elementRef: ElementRef, private _ngZone: NgZone, private _drawService: DrawService) {
     this._element = elementRef.nativeElement;
+    _drawService.setBoundary(this);
   }
 
   ngOnInit() {
@@ -130,6 +132,7 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     this._orderedContentChildren = [];
     this._removeEditMode();
     this._removeEditMode$.complete();
+    this._drawService.removeBoundary();
   }
 
   ngAfterContentInit() {
@@ -202,7 +205,7 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     return {
       columnStart: oldPosition.columnStart + Math.round(offset.left / this._gridColumnWidth),
       rowStart: oldPosition.rowStart + Math.round(offset.top / this._gridRowHeight),
-      columnEnd: oldPosition.columnEnd + Math.round(offset.width / this._gridColumnWidth),
+      columnEnd: Math.min(oldPosition.columnEnd + Math.round(offset.width / this._gridColumnWidth), this.cols),
       rowEnd: oldPosition.rowEnd + Math.round(offset.height / this._gridRowHeight)
     };
   }

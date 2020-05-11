@@ -2,6 +2,7 @@ import { Injectable, Inject, NgZone, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs';
 import { activeCapturingEventOptions } from './draw.utils';
+import { UxgDashboardLayoutComponent } from './dashboard-layout.component';
 
 /**
  * Service manages global event listeners on the `document`
@@ -26,7 +27,28 @@ export class DrawService implements OnDestroy {
   readonly pointerUp: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
   readonly scroll: Subject<Event> = new Subject<Event>();
 
+  private _boundary!: UxgDashboardLayoutComponent;
   constructor(private _ngZone: NgZone, @Inject(DOCUMENT) private _document: any) {}
+
+  setBoundary(boundary: UxgDashboardLayoutComponent) {
+    this._boundary = boundary;
+  }
+
+  removeBoundary() {
+    delete this._boundary;
+  }
+
+  getBoundaryRect(): ClientRect {
+    return this._boundary._elementRect;
+  }
+
+  getGridColumnWith(): number {
+    return this._boundary._gridColumnWidth;
+  }
+
+  getGridRowHeight(): number {
+    return this._boundary._gridRowHeight;
+  }
 
   registerItem(item: any) {
     this._registredItems.add(item);

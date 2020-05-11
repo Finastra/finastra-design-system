@@ -83,9 +83,11 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
   private _stopMouseListener$ = new Subject<void>();
 
   private _elementRect!: ClientRect;
+  private _boundaryRect!: ClientRect;
   private _marginTop: number = 0;
   private _elementLeft: number = 0;
-
+  private _columnWidth = 1;
+  private _rowHeight = 0;
   private _activeTransform: Point = { x: 0, y: 0 };
   private _positionOffset: PosistionOffset = { target: this, width: 0, height: 0, top: 0, left: 0 };
 
@@ -138,6 +140,7 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
   private _removeEditMode() {
     this._stopMouseListener$.next();
     this._stopMouseListener$.complete();
+    this._drawItem?.dispose();
     this._drawItem = undefined;
   }
 
@@ -146,6 +149,9 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
       return;
     }
     this._elementRect = this._element.getBoundingClientRect();
+    this._boundaryRect = this.drawService.getBoundaryRect()!;
+    this._columnWidth = this.drawService.getGridColumnWith();
+    this._rowHeight = this.drawService.getGridRowHeight();
     this._positionOffset = { target: this, width: 0, height: 0, top: 0, left: 0 };
     const action = getElementDataAction(event.source);
     if (action === 'drag') {
@@ -179,15 +185,17 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
       case 'move-bottom-right': {
         const x = event.distance.x;
         const y = event.distance.y;
-        const height = this._elementRect.height + y;
-        const width = this._elementRect.width + x;
-        if (width < MIN_SIZE || height < MIN_SIZE) {
-          break;
+        const height = Math.max(this._elementRect.height + y, this._rowHeight);
+        let width = Math.max(this._elementRect.width + x, this._columnWidth);
+        console.log(width + this._elementRect.left, this._boundaryRect.right);
+        if (width + this._elementRect.left > this._boundaryRect.right - 1) {
+          width = this._boundaryRect.right - this._elementRect.left - 1;
         }
+
         this._element.style.paddingTop = getPixel(height);
         this._element.style.width = getPixel(width);
-        this._positionOffset.height = y;
-        this._positionOffset.width = x;
+        this._positionOffset.height = height - this._elementRect.height;
+        this._positionOffset.width = width - this._elementRect.width;
         this.changedSize.next({ ...this._positionOffset, phase: 'resizing' });
 
         break;
@@ -237,13 +245,14 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   private _validateTransform(activeTransform: Point) {
-    const boundaryTop = 0;
-    const boundaryLeft = 0;
-    if (activeTransform.y + this._elementRect.top < boundaryTop) {
-      activeTransform.y = boundaryTop - this._elementRect.top;
+    if (activeTransform.y + this._elementRect.top < this._boundaryRect.top) {
+      activeTransform.y = this._boundaryRect.top - this._elementRect.top;
     }
-    if (activeTransform.x + this._elementRect.left < boundaryLeft) {
-      activeTransform.x = boundaryLeft - this._elementRect.left;
+
+    if (activeTransform.x + this._elementRect.left < this._boundaryRect.left) {
+      activeTransform.x = this._boundaryRect.left - this._elementRect.left;
+    } else if (activeTransform.x + this._elementRect.left + this._elementRect.width > this._boundaryRect.right - 1) {
+      activeTransform.x = this._boundaryRect.right - this._elementRect.left - this._elementRect.width - 1;
     }
   }
 
