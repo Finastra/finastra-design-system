@@ -9,8 +9,10 @@
       [avatarImage]="user.photo ? avatarImage : null"
     >
     </uxg-avatar>
-    <h6 class="uxg-h6">{{ user.username }}</h6>
-    <div class="uxg-caption">{{ user.email }}</div>
+    <div>
+      <h6 class="uxg-h6">{{ user.username }}</h6>
+      <div class="uxg-caption">{{ user.email }}</div>
+    </div>
   </div>
 </div>
 <mat-divider *ngIf="hasFooter"></mat-divider>
