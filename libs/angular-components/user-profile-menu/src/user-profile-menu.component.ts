@@ -12,6 +12,8 @@ import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
 import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
+import { MatMenuTrigger } from '@angular/material/menu';
+
 @Component({
   selector: 'uxg-user-profile-menu',
   templateUrl: './user-profile-menu.component.html',
@@ -29,6 +31,9 @@ export class UxgUserProfileMenuComponent {
 
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;
+
+  @ViewChild(MatMenuTrigger, { static: true })
+  userMenuTrigger!: MatMenuTrigger;
 
   @ContentChild(UxgUserProfilePanelContentDirective, { read: TemplateRef, static: true })
   uxgUserProfilePanelContent: TemplateRef<any> | undefined;
