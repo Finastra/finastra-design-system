@@ -9,6 +9,7 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { ThemeBuilderComponent } from './components/theme-builder/theme-builder-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
@@ -23,7 +24,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
     title: 'Theme',
     routes: [
       { path: 'foundations', component: FoundationsDemoComponent, data: { title: 'Foundations' } },
-      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } }
+      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } },
+      { path: 'theme-builder', component: ThemeBuilderComponent, data: { title: 'Theme Builder' } }
     ]
   },
   {

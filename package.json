@@ -69,6 +69,7 @@
     "d3": "5.15.0",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
     "lodash": "4.17.15",
+    "ngx-color": "^5.1.2",
     "plotly.js": "1.54.1",
     "rxjs": "6.5.3",
     "smoothscroll-polyfill": "^0.4.4",

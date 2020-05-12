@@ -2,13 +2,18 @@
 
 $uxg-charcoal: #414141;
 
+:root {
+  --color-primary: rgb(105, 78, 214);
+  --color-primary-100: #e9e5f9;
+}
+
 $uxg-violet: (
   50: #f7f6fd,
-  100: #e9e5f9,
+  100: var(--color-primary-100),
   200: #d9d3f5,
   300: #b4a6ea,
   400: #8f7be1,
-  500: #694ed6,
+  500: var(--color-primary),
   600: #5836da,
   700: #4a27cb,
   800: #3e1db8,
