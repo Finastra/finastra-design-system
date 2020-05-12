@@ -654,6 +654,37 @@
         }
       }
     },
+    "global-nav": {
+      "projectType": "library",
+      "root": "libs/angular-components/global-nav",
+      "sourceRoot": "libs/angular-components/global-nav",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/global-nav/tsconfig.lib.json",
+              "libs/angular-components/global-nav/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/global-nav/jest.config.js",
+            "tsConfig": "libs/angular-components/global-nav/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/global-nav/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "avatar": {
       "projectType": "library",
       "root": "libs/angular-components/avatar",
@@ -677,6 +708,130 @@
             "tsConfig": "libs/angular-components/avatar/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/angular-components/avatar/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "banner": {
+      "projectType": "library",
+      "root": "libs/angular-components/banner",
+      "sourceRoot": "libs/angular-components/banner",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/banner/tsconfig.lib.json",
+              "libs/angular-components/banner/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/banner/jest.config.js",
+            "tsConfig": "libs/angular-components/banner/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/banner/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "user-profile-menu": {
+      "projectType": "library",
+      "root": "libs/angular-components/user-profile-menu",
+      "sourceRoot": "libs/angular-components/user-profile-menu",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/user-profile-menu/tsconfig.lib.json",
+              "libs/angular-components/user-profile-menu/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/user-profile-menu/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js",
+            "tsConfig": "libs/angular-components/user-profile-menu/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/user-profile-menu/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "expandable-table": {
+      "projectType": "library",
+      "root": "libs/angular-components/expandable-table",
+      "sourceRoot": "libs/angular-components/expandable-table/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/expandable-table/tsconfig.lib.json",
+              "libs/angular-components/expandable-table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/expandable-table/jest.config.js",
+            "tsConfig": "libs/angular-components/expandable-table/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/expandable-table/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "entity-menu": {
+      "projectType": "library",
+      "root": "libs/angular-components/entity-menu",
+      "sourceRoot": "libs/angular-components/entity-menu",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/entity-menu/tsconfig.lib.json",
+              "libs/angular-components/entity-menu/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/entity-menu/jest.config.js",
+            "tsConfig": "libs/angular-components/entity-menu/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/entity-menu/test-setup.ts"
           }
         }
       },

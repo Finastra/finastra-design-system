@@ -1,0 +1,10 @@
+{
+  "name": "@ffdc/uxg-angular-components/user-profile-menu",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  },
+  "sideEffects": false,
+  "version": "0.19.0"
+}

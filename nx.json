@@ -65,7 +65,22 @@
     "skeleton-text": {
       "tags": []
     },
+    "global-nav": {
+      "tags": []
+    },
     "avatar": {
+      "tags": []
+    },
+    "banner": {
+      "tags": []
+    },
+    "expandable-table": {
+      "tags": []
+    },
+    "user-profile-menu": {
+      "tags": []
+    },
+    "entity-menu": {
       "tags": []
     }
   }

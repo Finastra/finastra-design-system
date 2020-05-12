@@ -1,0 +1,40 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+mat-sidenav-container {
+    height: 100%;
+    ::ng-deep {
+        .mat-drawer-backdrop {
+            z-index: 102;
+        }
+    }
+}
+
+.mat-sidenav {
+    z-index: 102;
+}
+
+.uxg-toolbar {
+    position: fixed;
+    z-index: 101;
+}
+
+.uxg-nav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-content {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    overflow-x: auto;
+}
+
+.theme-toggle {
+    margin-left: $uxg-spacing-3;
+}

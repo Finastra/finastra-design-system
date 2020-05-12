@@ -1,0 +1,75 @@
+<div class="expandable-table-header">
+  <mat-checkbox
+    class="check-box-header"
+    (click)="$event.stopPropagation()"
+    [checked]="selectionModel.selected.length > 0 && isAllSelected()"
+    [indeterminate]="selectionModel.selected.length > 0 && !isAllSelected()"
+    (change)="$event ? toggleAll() : null"
+    *ngIf="selectable"
+    color="primary"
+  >
+  </mat-checkbox>
+  <div class="title uxg-subtitle-1" [ngClass]="{ selectable: selectable }">
+    {{ groupInfo?.displayName || groupInfo?.name }}
+  </div>
+
+  <div class="up-down">
+    <button mat-icon-button (click)="collapseAll(); $event.stopPropagation()" [disableRipple]="true">
+      <mat-icon>code</mat-icon>
+    </button>
+  </div>
+</div>
+
+<mat-accordion *ngIf="_dataSource && _dataSource.length > 0" multi="true">
+  <mat-expansion-panel
+    *ngFor="let row of _dataSource"
+    [expanded]="row.expanded"
+    (opened)="row.expanded = true"
+    (closed)="row.expanded = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-checkbox
+          class="check-box-header"
+          (click)="$event.stopPropagation()"
+          [checked]="selectionHasRowValue(row) && isRowAllSelected(row)"
+          [indeterminate]="selectionHasRowValue(row) && !isRowAllSelected(row)"
+          (change)="$event ? toggleRow(row) : null"
+          *ngIf="selectable"
+          color="primary"
+        >
+        </mat-checkbox>
+        <div class="header-text" [ngClass]="{ selectable: selectable }">
+          <span class="title uxg-subtitle-1">{{ row.label }}</span>
+          <span class="subtitle uxg-body-3">
+            <ng-container *ngTemplateOutlet="templateHeaderSubtitle; context: { row: row, subtitle: subtitle }">
+            </ng-container>
+          </span>
+        </div>
+        <div class="header-buttons">
+          <ng-container
+            *ngTemplateOutlet="templateHeaderButtons; context: { row: row, emiter: tableHeaderCallBack }"
+          ></ng-container>
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <uxg-table
+      id="{{ row.id }}"
+      class="sub-table"
+      [data]="row.values"
+      [columns]="_columns"
+      [columnsToDisplay]="visibleColumns"
+      (selectChanged)="onTableSelectionChange($event, row)"
+      [multiSelect]="selectable"
+      [singleSelect]="!selectable"
+      [selectedKeys]="getSelectedKeys(row)"
+      (multiSelectSingleRowClicked)="onRowClicked($event)"
+      *ngIf="row && row.values && _columns"
+    >
+    </uxg-table>
+    <div class="table-buttons">
+      <ng-container *ngTemplateOutlet="templateTableButtons; context: { row: row, emiter: tableButtonsCallBack }">
+      </ng-container>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

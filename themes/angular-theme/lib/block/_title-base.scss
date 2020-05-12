@@ -13,6 +13,7 @@ $title-block-margin-small: $uxg-spacing-1;
 
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    padding-top: $uxg-spacing-2;
   }
 }
 
@@ -26,5 +27,6 @@ $title-block-margin-small: $uxg-spacing-1;
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
     margin-top: $uxg-spacing-3;
+    padding-bottom: $uxg-spacing-1;
   }
 }

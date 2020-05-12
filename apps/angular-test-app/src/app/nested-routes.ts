@@ -11,7 +11,12 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
+import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
+import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
+import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -33,7 +38,16 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
-      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } }
+      { path: 'entity-menu', component: EntityMenuDemoComponent, data: { title: 'Entity Menu' } },
+      { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
+      { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
+      { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } },
+      {
+        path: 'user-profile-menu',
+        component: UserProfileMenuDemoComponentComponent,
+        data: { title: 'User Profile Menu' }
+      },
+      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } }
     ]
   }
 ].map(groups => {

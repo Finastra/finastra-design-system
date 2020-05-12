@@ -1,0 +1,26 @@
+<div class="uxg-nav-header">
+  <mat-card class="uxg-card-product" dense>
+    <span class="uxg-h4 uxg-card-product-name">{{ iconName | uppercase }}</span>
+  </mat-card>
+  <h6 class="uxg-h6">{{ appName | uppercase }}</h6>
+</div>
+
+<mat-nav-list class="uxg-nav-list-main uxg-nav-list">
+  <div mat-subheader>Applications</div>
+  <a
+    mat-list-item
+    (click)="onClick(node)"
+    [ngClass]="{ 'uxg-list-item-selected': isActive(node.path) }"
+    *ngFor="let node of navigationNodes"
+  >
+    <mat-icon mat-list-icon>{{ node.icon }}</mat-icon>
+    <p>{{ node.title }}</p>
+  </a>
+</mat-nav-list>
+
+<mat-nav-list class="uxg-link-list">
+  <a (click)="logout.emit()" mat-list-item>
+    <mat-icon mat-list-icon>power_settings_new</mat-icon>
+    <span class="uxg-body-2">Logout</span>
+  </a>
+</mat-nav-list>

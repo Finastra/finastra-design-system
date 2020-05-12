@@ -1,0 +1,12 @@
+<ng-container *ngFor="let bannerItem of banners; last as islast; trackBy: trackByFn">
+  <div class="uxg-banner-item">
+    <span
+      [ngClass]="{ 'uxg-display-3': !small, 'uxg-banner-item--smal-label': small }"
+      matTooltip="{{ bannerItem.tooltip }}"
+      #tooltip="matTooltip"
+      >{{ bannerItem.text }}</span
+    >
+    <span>{{ bannerItem.name }}</span>
+  </div>
+  <div class="uxg-banner-spliter"></div>
+</ng-container>
