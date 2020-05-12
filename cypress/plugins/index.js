@@ -11,9 +11,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const {
-  addMatchImageSnapshotPlugin,
-} = require('cypress-image-snapshot/plugin');
+const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 
 module.exports = (on, config) => {
   addMatchImageSnapshotPlugin(on, config);
@@ -21,7 +19,7 @@ module.exports = (on, config) => {
   // on('before:browser:launch', (browser = {}, launchOptions) => {
   //   if (browser.family === 'chromium') {
   //     //launchOptions.args['--force-color-profile'] = 'srgb';
-      
+
   //     return launchOptions;
   //   }
   // });
