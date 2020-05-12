@@ -1,5 +1,5 @@
 <div>
-  <!--<h3 class="uxg-display-3">Avatars</h3>
+  <h3 class="uxg-display-3">Avatars</h3>
   <h5 class="uxg-h5">Default Avatar</h5>
   <div class="example-row">
     <div class="uxg-avatar" large></div>
@@ -10,6 +10,7 @@
   <h5 class="uxg-h5">Avatar with Letter</h5>
   <div class="example-row">
     <div class="uxg-avatar" large>RH</div>
+    <!-- You can use both <div> or <span> -->
     <span class="uxg-avatar">R</span>
     <div class="uxg-avatar" dense>R</div>
   </div>
@@ -420,74 +421,11 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-</div>-->
-
-<h5 class="uxg-h5">Autosize Textarea</h5>
-<div class="example-row">
-  <mat-form-field class="example-textarea">
-    <mat-label>Classic appearance</mat-label>
-    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-  </textarea
-    >
-  </mat-form-field>
 </div>
-<div class="example-row">
-  <mat-form-field appearance="fill" class="example-textarea">
-    <mat-label>Fill appearance (unexpected scroll?)</mat-label>
-    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-  </textarea
-    >
-  </mat-form-field>
-</div>
-<div class="example-row">
-  <h5 class="uxg-h5">Select (arrow not aligned)</h5>
-  <div class="example-row">
-    <mat-form-field>
-      <mat-label>Font size</mat-label>
-      <mat-select value="16px">
-        <mat-option value="10px">10px</mat-option>
-        <mat-option value="12px">12px</mat-option>
-        <mat-option value="14px">14px</mat-option>
-        <mat-option value="16px">16px</mat-option>
-        <mat-option value="18px">18px</mat-option>
-        <mat-option value="20px">20px</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
 
-  <div class="example-row">
-    <mat-form-field appearance="fill">
-      <mat-label>Font size</mat-label>
-      <mat-select value="16px">
-        <mat-option value="10px">10px</mat-option>
-        <mat-option value="12px">12px</mat-option>
-        <mat-option value="14px">14px</mat-option>
-        <mat-option value="16px">16px</mat-option>
-        <mat-option value="18px">18px</mat-option>
-        <mat-option value="20px">20px</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div class="example-row">
-    <mat-form-field appearance="fill" dense>
-      <mat-label>Font size</mat-label>
-      <mat-select value="16px">
-        <mat-option value="10px">10px</mat-option>
-        <mat-option value="12px">12px</mat-option>
-        <mat-option value="14px">14px</mat-option>
-        <mat-option value="16px">16px</mat-option>
-        <mat-option value="18px">18px</mat-option>
-        <mat-option value="20px">20px</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <!--<h5 class="uxg-h5">Fill Input</h5>
+<div>
+  <h3 class="uxg-display-3">Inputs</h3>
+  <h5 class="uxg-h5">Fill Input</h5>
   <div class="example-row">
     <mat-form-field floatLabel="false" appearance="fill">
       <mat-icon color="primary" matPrefix>favorite</mat-icon>
@@ -611,6 +549,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   </div>
 
   <br />
+  <h5 class="uxg-h5">Select</h5>
+  <div class="example-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Font size</mat-label>
+      <mat-select value="16px">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="12px">12px</mat-option>
+        <mat-option value="14px">14px</mat-option>
+        <mat-option value="16px">16px</mat-option>
+        <mat-option value="18px">18px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <h5 class="uxg-h5">Dense select</h5>
+  <div class="example-row">
+    <mat-form-field appearance="fill" dense>
+      <mat-label>Font size</mat-label>
+      <mat-select value="16px">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="12px">12px</mat-option>
+        <mat-option value="14px">14px</mat-option>
+        <mat-option value="16px">16px</mat-option>
+        <mat-option value="18px">18px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <br />
   <h5 class="uxg-h5">Search Input (Legacy)</h5>
   <div class="example-row">
     <mat-form-field floatLabel="never" class="example-full-width">
@@ -618,32 +586,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       <input type="search" matInput placeholder="Search..." />
     </mat-form-field>
   </div>
+</div>
+
+<div>
   <div>
-    <div>
-      <h3 class="uxg-display-3">Expansion</h3>
-      <h5 class="uxg-h5">Expansion filter</h5>
-      <div class="example-row">
-        <mat-expansion-panel class="uxg-expansion-filter">
-          <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
-            <mat-panel-title>
-              Personal data
-            </mat-panel-title>
-            <mat-panel-description>
-              Type your name and age
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+    <h3 class="uxg-display-3">Expansion</h3>
+    <h5 class="uxg-h5">Expansion filter</h5>
+    <div class="example-row">
+      <mat-expansion-panel class="uxg-expansion-filter">
+        <mat-expansion-panel-header expandedHeight="40px" collapsedHeight="40px">
+          <mat-panel-title>
+            Personal data
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your name and age
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-          <mat-form-field>
-            <mat-label>First name</mat-label>
-            <input matInput />
-          </mat-form-field>
+        <mat-form-field>
+          <mat-label>First name</mat-label>
+          <input matInput />
+        </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Age</mat-label>
-            <input matInput type="number" min="1" />
-          </mat-form-field>
-        </mat-expansion-panel>
-      </div>
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input matInput type="number" min="1" />
+        </mat-form-field>
+      </mat-expansion-panel>
     </div>
-  </div>-->
+  </div>
 </div>
