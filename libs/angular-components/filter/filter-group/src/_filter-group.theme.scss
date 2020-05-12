@@ -7,7 +7,7 @@
   uxg-filter-group {
     .uxg-side-badge .mat-badge-content {
       color: mat-color($primary, default);
-      background-color: mat-color($primary, lighter);
+      background-color: mat-color($primary, default, 0.15);
       border-color: mat-color($primary, default, 0.15);
     }
 

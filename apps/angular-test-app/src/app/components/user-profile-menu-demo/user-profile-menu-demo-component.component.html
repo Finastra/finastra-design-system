@@ -1,13 +1,13 @@
 <h5 class="uxg-h5">Default Avatar</h5>
 <div fxLayout class="example-row">
-  <uxg-user-profile-menu [user]="vinh"></uxg-user-profile-menu>
-  <uxg-user-profile-menu color="primary" [user]="vinh"></uxg-user-profile-menu>
-  <uxg-user-profile-menu color="accent" [user]="vinh"></uxg-user-profile-menu>
-  <uxg-user-profile-menu color="initials" [user]="user0"></uxg-user-profile-menu>
-  <uxg-user-profile-menu [user]="razvan"></uxg-user-profile-menu>
-  <uxg-user-profile-menu [user]="thomas"></uxg-user-profile-menu>
-  <uxg-user-profile-menu [user]="vinh" defaultGravatar="monsterid"></uxg-user-profile-menu>
-  <uxg-user-profile-menu [user]="vinh" defaultGravatar="mp"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="primary" [user]="vinh" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="accent" [user]="vinh" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="initials" [user]="user0" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="razvan" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="thomas" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="monsterid" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" defaultGravatar="mp" headerType="title"></uxg-user-profile-menu>
   <uxg-user-profile-menu [user]="vinh" defaultGravatar="identicon"></uxg-user-profile-menu>
   <uxg-user-profile-menu [user]="vinh" defaultGravatar="wavatar"></uxg-user-profile-menu>
   <uxg-user-profile-menu [user]="vinh" defaultGravatar="retro"></uxg-user-profile-menu>
@@ -27,7 +27,7 @@
       </button>
     </ng-template>
   </uxg-user-profile-menu>
-  <uxg-user-profile-menu color="primary" [user]="user0">
+  <uxg-user-profile-menu color="primary" [user]="user0" headerType="hero">
     <ng-template uxgUserProfilePanelActions>
       <button mat-flat-button color="primary" dense>
         <mat-icon>exit_to_app</mat-icon>
@@ -38,7 +38,7 @@
       </button>
     </ng-template>
   </uxg-user-profile-menu>
-  <uxg-user-profile-menu [user]="user2" defaultGravatar="robohash">
+  <uxg-user-profile-menu [user]="user2" defaultGravatar="robohash" headerType="hero">
     <ng-template uxgUserProfilePanelActions>
       <button mat-flat-button color="primary" dense>
         <mat-icon>exit_to_app</mat-icon>
@@ -53,7 +53,7 @@
 
 <h5 class="uxg-h5">Avatar with contents and actions</h5>
 <div fxLayout class="example-row">
-  <uxg-user-profile-menu color="initials" [user]="vinh">
+  <uxg-user-profile-menu color="initials" [user]="vinh" headerType="hero">
     <ng-template uxgUserProfilePanelActions>
       <button mat-flat-button color="primary" dense>
         <mat-icon>exit_to_app</mat-icon>

@@ -20,7 +20,7 @@
       }
 
       &.mat-button-toggle-checked {
-        background-color: mat-color($primary, lighter);
+        background-color: mat-color($primary, default, 0.15);
 
         .mat-button-toggle-button,
         .mat-icon {

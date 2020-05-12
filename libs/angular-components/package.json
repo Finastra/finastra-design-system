@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
@@ -11,5 +11,8 @@
     "angular-plotly.js": "^2.0.0",
     "plotly.js": "1.52.2",
     "smoothscroll-polyfill": "0.4.4"
+  },
+  "dependencies": {
+    "@ffdc/uxg-angular-theme": "0.19.0"
   }
 }
