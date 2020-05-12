@@ -1,5 +1,10 @@
 <div class="uxg-menu-header">
-  <div [ngClass]="{ 'uxg-avatar-hero-block': headerType === 'hero' || (!headerType && !hasContent), 'uxg-avatar-title-block':  headerType === 'title' || (!headerType && hasContent) }">
+  <div
+    [ngClass]="{
+      'uxg-avatar-hero-block': headerType === 'hero' || (!headerType && !hasContent),
+      'uxg-avatar-title-block': headerType === 'title' || (!headerType && hasContent)
+    }"
+  >
     <uxg-avatar
       [attr.large]="headerType === 'title' || (!headerType && hasContent) ? null : true"
       [name]="user.username"
