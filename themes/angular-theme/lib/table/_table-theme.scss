@@ -4,12 +4,16 @@
 
   .mat-table {
     tr {
-      &:nth-child(even) {
-        background-color: mat-color($primary, default, 0.02);
-      }
-
       &.selected {
-        background-color: mat-color($primary, default, 0.16);
+        background-color: mat-color($primary, darker, 0.07);
+      }
+    }
+
+    &.uxg-table-alternate {
+      tr {
+        &:nth-child(even) {
+          background-color: mat-color($primary, default, 0.02);
+        }
       }
     }
   }
