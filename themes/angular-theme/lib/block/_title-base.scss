@@ -4,16 +4,16 @@ $title-block-margin-small: $uxg-spacing-1;
 
 .uxg-avatar-title-block {
   height: $uxg-spacing-5;
-  display: flex;
-  align-items: center;
 
   .uxg-avatar {
+    float: left;
     margin: 0;
     margin-right: $uxg-spacing-2;
   }
 
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    padding-top: $uxg-spacing-2;
   }
 }
 

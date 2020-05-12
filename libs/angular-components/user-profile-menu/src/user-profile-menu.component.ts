@@ -29,7 +29,7 @@ export class UxgUserProfileMenuComponent {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
-  @Input() headerType: HeaderType | undefined;
+  @Input() headerType: HeaderType = 'title';
 
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;

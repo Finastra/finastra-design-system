@@ -29,7 +29,7 @@ export class UxgUserProfilePanelComponent implements AfterContentInit {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
-  @Input() headerType: HeaderType | undefined;
+  @Input() headerType: HeaderType = 'title';
 
   @Input() contentTemplate?: TemplateRef<any>;
   @Input() actionsTemplate?: TemplateRef<any>;
