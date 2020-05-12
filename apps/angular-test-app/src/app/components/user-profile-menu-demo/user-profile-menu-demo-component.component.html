@@ -1,7 +1,7 @@
 <h5 class="uxg-h5">Default Avatar</h5>
 <div fxLayout class="example-row">
-  <uxg-user-profile-menu [user]="vinh"></uxg-user-profile-menu>
-  <uxg-user-profile-menu color="primary" [user]="vinh"></uxg-user-profile-menu>
+  <uxg-user-profile-menu [user]="vinh" headerType="hero"></uxg-user-profile-menu>
+  <uxg-user-profile-menu color="primary" [user]="vinh" headerType="title"></uxg-user-profile-menu>
   <uxg-user-profile-menu color="accent" [user]="vinh"></uxg-user-profile-menu>
   <uxg-user-profile-menu color="initials" [user]="user0"></uxg-user-profile-menu>
   <uxg-user-profile-menu [user]="razvan"></uxg-user-profile-menu>
@@ -27,7 +27,7 @@
       </button>
     </ng-template>
   </uxg-user-profile-menu>
-  <uxg-user-profile-menu color="primary" [user]="user0">
+  <uxg-user-profile-menu color="primary" [user]="user0" headerType="title">
     <ng-template uxgUserProfilePanelActions>
       <button mat-flat-button color="primary" dense>
         <mat-icon>exit_to_app</mat-icon>

@@ -13,6 +13,7 @@ import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-action
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
 import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
 import { MatMenuTrigger } from '@angular/material/menu';
+export type HeaderType = 'hero' | 'title';
 
 @Component({
   selector: 'uxg-user-profile-menu',
@@ -28,6 +29,7 @@ export class UxgUserProfileMenuComponent {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
+  @Input() headerType: HeaderType | undefined;
 
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;

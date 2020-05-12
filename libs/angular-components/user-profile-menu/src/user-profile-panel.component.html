@@ -1,7 +1,7 @@
 <div class="uxg-menu-header">
-  <div [ngClass]="{ 'uxg-avatar-hero-block': !hasContent, 'uxg-avatar-title-block': hasContent }">
+  <div [ngClass]="{ 'uxg-avatar-hero-block': headerType === 'hero' || (!headerType && !hasContent), 'uxg-avatar-title-block':  headerType === 'title' || (!headerType && hasContent) }">
     <uxg-avatar
-      [attr.large]="hasContent ? null : true"
+      [attr.large]="headerType === 'title' || (!headerType && hasContent) ? null : true"
       [name]="user.username"
       [defaultGravatar]="defaultGravatar"
       [color]="color"
