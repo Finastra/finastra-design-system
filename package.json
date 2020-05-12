@@ -85,7 +85,7 @@
     "@nrwl/cypress": "9.0.2",
     "@nrwl/jest": "9.0.2",
     "@nrwl/workspace": "9.0.2",
-    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/npm": "^5.1.15",
