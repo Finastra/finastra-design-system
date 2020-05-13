@@ -12,7 +12,7 @@
   $wizard-step-done-color: map-get($uxg-grass, 100);
   $wizard-timeline-color: mat-color($background, status-bar);
 
-  $wizard-dark-blue: #060546;
+  $wizard-dark-blue: mat-color($uxg-violet, 900);
   $wizard-step-description-color: mat-color($primary, lighter);
   $wizard-step-disabled-color: #404065;
   $wizard-step-container-active-color: #4d4c7f;
