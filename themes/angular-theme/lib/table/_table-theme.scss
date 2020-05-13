@@ -12,7 +12,7 @@
     &.uxg-table-alternate {
       tr {
         &:nth-child(even) {
-          background-color: mat-color($primary, default, 0.02);
+          background-color: mat-color($primary, default, 0.03);
         }
       }
     }
