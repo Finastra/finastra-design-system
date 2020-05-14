@@ -17,22 +17,6 @@ export interface NavigationViews {
   [view: string]: NavigationNode[];
 }
 
-export interface CurrentNode {
-  path: string; // path of navigationNode.
-  currentPath?: string; // path of router
-  view: string;
-  nodes: NavigationNode[];
-}
-
-/**
- * A map of current nodes by view.
- * This is needed because some paths map to nodes in more than one view.
- * If a view does not contain a node that matches the current path then the value will be undefined.
- */
-export interface CurrentNodes {
-  [view: string]: CurrentNode;
-}
-
 export interface ParamMapBuilder {
   [key: string]: () => Promise<string>;
 }

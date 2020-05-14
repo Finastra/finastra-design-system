@@ -8,8 +8,10 @@
       (logout)="logout.emit()"
     ></uxg-sidenav>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <uxg-navbar
+      [appName]="appName"
       [currentNode]="currentNode"
       [navbarAction]="navbarAction"
       (menuClick)="globalNavDrawer.toggle()"
@@ -17,8 +19,10 @@
       (brandAction)="brandAction.emit($event)"
     >
     </uxg-navbar>
+
     <div class="app-content">
       <ng-container *ngTemplateOutlet="appContent"></ng-container>
     </div>
+    
   </mat-sidenav-content>
 </mat-sidenav-container>

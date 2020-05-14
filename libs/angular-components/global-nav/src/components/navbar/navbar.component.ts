@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, TemplateRef } from '@angular/core';
-import { NavigationNode, CurrentNode } from '../../services/navigation.model';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, TemplateRef, OnChanges } from '@angular/core';
+import { NavigationNode } from '../../services/navigation.model';
 
 @Component({
   selector: 'uxg-navbar',
@@ -9,16 +9,24 @@ import { NavigationNode, CurrentNode } from '../../services/navigation.model';
     class: 'uxg-navbar'
   }
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit, OnDestroy, OnChanges {
   @Input() brandIcon: string | undefined;
-  @Input() currentNode: CurrentNode | undefined;
+  @Input() currentNode!: NavigationNode;
   @Input() navbarAction!: TemplateRef<any>;
+  @Input() appName!: string;
 
   @Output() menuClick = new EventEmitter<void>();
   @Output() brandAction = new EventEmitter<any>();
   @Output() nodeChosen = new EventEmitter<NavigationNode>();
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.currentNode)
+  }
+
+  ngOnChanges() {
+    console.log('changes', arguments)
+  }
+
   ngOnDestroy() {}
 
   onMenuClick() {

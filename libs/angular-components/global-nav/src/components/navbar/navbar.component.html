@@ -1,23 +1,32 @@
 <mat-toolbar class="uxg-toolbar uxg-toolbar-elevated">
-  <mat-toolbar-row>
-    <button
-      class="uxg-nav-header-button"
-      mat-icon-button
-      mat-primary
-      color="primary"
-      (click)="onMenuClick()"
-      aria-label="Menu"
-    >
-      <mat-icon>menu</mat-icon>
+  <button
+    class="uxg-nav-header-button"
+    mat-icon-button
+    mat-primary
+    color="primary"
+    (click)="onMenuClick()"
+    aria-label="Menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <a
+    href="javascript:void(0)"
+    (click)="brandAction.emit($event)"
+    aria-label="Go to Finastra website"
+    class="uxg-logo"
+    dense
+  ></a>
+  
+  <ul class="uxg-breadcrumb uxg-breadcrumb-responsive">
+		<button mat-icon-button color="accent" class="uxg-breadcrumb-back">
+      <mat-icon>chevron_left</mat-icon>
     </button>
-    <a
-      href="javascript:void(0)"
-      (click)="brandAction.emit($event)"
-      aria-label="Go to Finastra website"
-      class="uxg-logo"
-      dense
-    ></a>
-    <span class="fill-remaining-space"></span>
-    <ng-container *ngTemplateOutlet="navbarAction"></ng-container>
-  </mat-toolbar-row>
+    <li class="uxg-h6">{{appName}}</li>
+    <li *ngIf="currentNode">{{currentNode?.title}}</li>
+  </ul>
+  
+  <span class="fill-remaining-space"></span>
+
+  <ng-container *ngTemplateOutlet="navbarAction"></ng-container>
 </mat-toolbar>

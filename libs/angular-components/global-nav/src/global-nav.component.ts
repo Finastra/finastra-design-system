@@ -1,5 +1,7 @@
-import { Component, OnInit, OnDestroy, Input, EventEmitter, Output, TemplateRef } from '@angular/core';
-import { NavigationNode, CurrentNode } from './services/navigation.model';
+import { Component, OnInit, OnDestroy, Input, EventEmitter, Output, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import { NavigationNode } from './services/navigation.model';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'uxg-global-nav',
@@ -12,9 +14,9 @@ import { NavigationNode, CurrentNode } from './services/navigation.model';
 export class GlobalNavComponent implements OnInit, OnDestroy {
   @Input() appName!: string;
   @Input() navigationNodes!: NavigationNode[];
-  @Input() activeRoute!: string;
+  @Input() activeRoute: string | false = false;
+  @Input() currentNode: NavigationNode | false = false;
   @Input() brandIcon: string | undefined;
-  @Input() currentNode: CurrentNode | undefined;
   @Input() appContent!: TemplateRef<any>;
   @Input() navbarAction!: TemplateRef<any>;
 
@@ -23,6 +25,28 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   @Output() nodeChosen = new EventEmitter<NavigationNode>();
   @Output() logout = new EventEmitter<void>();
 
-  ngOnInit() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    if (!this.currentNode || !this.activeRoute) {
+      this.setCurrentNodeFromRouter();
+    }
+  }
+
   ngOnDestroy() {}
+
+  setCurrentNodeFromRouter() {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((currentRoute) => {
+        const route = (currentRoute as NavigationEnd).url
+        const currentNode = this.navigationNodes.find(
+          (node) => node.path && route.includes(node.path),
+        );
+        if (currentNode) {
+          this.currentNode = currentNode;
+          this.activeRoute = route;
+        }
+      });
+  }
 }
