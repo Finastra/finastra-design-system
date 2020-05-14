@@ -274,7 +274,7 @@ export class DashboardLayoutDemoComponent implements OnInit {
   }
   addWidget() {
     const widgetIndex = Math.round(Math.random() * 10) % 3;
-    this.widgets.push(this.templates.toArray()[0]);
+    this.widgets.push(this.templates.toArray()[widgetIndex]);
   }
   toggleEdit() {
     this.edit = !this.edit;

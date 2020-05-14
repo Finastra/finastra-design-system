@@ -6,6 +6,9 @@
 <br />
 <uxg-dashboard-layout [cols]="10" [editable]="edit">
   <uxg-dashboard-item [editable]="edit" [cols]="6" [rows]="2">
+    <ng-container *ngTemplateOutlet="chart"></ng-container>
+  </uxg-dashboard-item>
+  <uxg-dashboard-item [editable]="edit" [cols]="6" [rows]="2">
     <mat-card class="box">1</mat-card>
   </uxg-dashboard-item>
   <uxg-dashboard-item [editable]="edit" [cols]="2"><mat-card class="box">2</mat-card></uxg-dashboard-item>

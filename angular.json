@@ -840,6 +840,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "resize-observer": {
+      "projectType": "library",
+      "root": "libs/angular-components/resize-observer",
+      "sourceRoot": "libs/angular-components/resize-observer/src",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/resize-observer/tsconfig.lib.json",
+              "libs/angular-components/resize-observer/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/resize-observer/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/resize-observer/jest.config.js",
+            "tsConfig": "libs/angular-components/resize-observer/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/resize-observer/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

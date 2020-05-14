@@ -187,7 +187,6 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
         const y = event.distance.y;
         const height = Math.max(this._elementRect.height + y, this._rowHeight);
         let width = Math.max(this._elementRect.width + x, this._columnWidth);
-        console.log(width + this._elementRect.left, this._boundaryRect.right);
         if (width + this._elementRect.left > this._boundaryRect.right - 1) {
           width = this._boundaryRect.right - this._elementRect.left - 1;
         }

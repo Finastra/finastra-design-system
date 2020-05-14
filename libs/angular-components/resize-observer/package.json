@@ -1,0 +1,6 @@
+{
+  "name": "@ffdc/uxg-angular-components/resize-observer",
+  "peerDependencies": {
+    "@juggle/resize-observer": "^3.1.3"
+  }
+}

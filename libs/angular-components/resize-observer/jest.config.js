@@ -1,5 +1,5 @@
 const name = 'grid';
-const suiteName = 'DashboardLayoutModule';
+const suiteName = 'ResizeObserverModule';
 
 module.exports = {
   name,
