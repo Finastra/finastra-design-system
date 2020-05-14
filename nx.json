@@ -82,6 +82,9 @@
     },
     "entity-menu": {
       "tags": []
+    },
+    "account-card": {
+      "tags": []
     }
   }
 }

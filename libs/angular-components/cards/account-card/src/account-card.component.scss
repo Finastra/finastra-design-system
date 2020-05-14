@@ -1,0 +1,43 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+:host {
+    display: grid;
+
+    mat-card {
+        display: grid;
+        min-width: 200px;
+    }
+
+    mat-card-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: $uxg-spacing-2;
+        grid-template-areas:
+            "icon name name menu"
+            "icon balance balance balance";
+
+        .uxg-icon-category {
+            grid-area: icon;
+            margin-top: $uxg-spacing-1;
+            justify-self: center;
+        }
+
+        .account-name {
+            grid-area: name;
+            align-self: end;
+        }
+
+        .account-balance {
+            grid-area: balance;
+        }
+
+        .dropdown-menu {
+            grid-area: menu;
+            justify-self: end;
+        }
+    }
+
+    .account-number {
+        padding: $uxg-spacing-2 $uxg-spacing-3;
+    }
+}
