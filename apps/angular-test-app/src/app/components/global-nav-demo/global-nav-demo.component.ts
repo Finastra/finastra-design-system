@@ -14,7 +14,7 @@ export class GlobalNavDemoComponent {
 
   demoAppList: NavigationNode[] = [
     {
-      path: 'global-nav',
+      path: 'app1.com',
       title: 'app1',
       tooltip: 'app1',
       icon: 'dashboard'

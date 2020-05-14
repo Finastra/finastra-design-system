@@ -19,13 +19,9 @@ export class NavbarComponent implements OnInit, OnDestroy, OnChanges {
   @Output() brandAction = new EventEmitter<any>();
   @Output() nodeChosen = new EventEmitter<NavigationNode>();
 
-  ngOnInit() {
-    console.log(this.currentNode);
-  }
+  ngOnInit() {}
 
-  ngOnChanges() {
-    console.log('changes', arguments);
-  }
+  ngOnChanges() {}
 
   ngOnDestroy() {}
 

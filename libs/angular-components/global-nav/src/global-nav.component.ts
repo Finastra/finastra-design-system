@@ -27,8 +27,7 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {}
 }
