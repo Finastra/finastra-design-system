@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, Input, EventEmitter, Output, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Input,
+  EventEmitter,
+  Output,
+  TemplateRef
+} from '@angular/core';
 import { NavigationNode } from './services/navigation.model';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
@@ -36,17 +44,13 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   setCurrentNodeFromRouter() {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((currentRoute) => {
-        const route = (currentRoute as NavigationEnd).url
-        const currentNode = this.navigationNodes.find(
-          (node) => node.path && route.includes(node.path),
-        );
-        if (currentNode) {
-          this.currentNode = currentNode;
-          this.activeRoute = route;
-        }
-      });
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(currentRoute => {
+      const route = (currentRoute as NavigationEnd).url;
+      const currentNode = this.navigationNodes.find(node => node.path && route.includes(node.path));
+      if (currentNode) {
+        this.currentNode = currentNode;
+        this.activeRoute = route;
+      }
+    });
   }
 }

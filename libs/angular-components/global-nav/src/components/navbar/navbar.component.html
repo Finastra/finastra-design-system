@@ -9,7 +9,7 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-  
+
   <a
     href="javascript:void(0)"
     (click)="brandAction.emit($event)"
@@ -17,15 +17,15 @@
     class="uxg-logo"
     dense
   ></a>
-  
+
   <ul class="uxg-breadcrumb uxg-breadcrumb-responsive">
-		<button mat-icon-button color="accent" class="uxg-breadcrumb-back">
+    <button mat-icon-button color="accent" class="uxg-breadcrumb-back">
       <mat-icon>chevron_left</mat-icon>
     </button>
-    <li class="uxg-h6">{{appName}}</li>
-    <li *ngIf="currentNode">{{currentNode?.title}}</li>
+    <li class="uxg-h6">{{ appName }}</li>
+    <li *ngIf="currentNode">{{ currentNode?.title }}</li>
   </ul>
-  
+
   <span class="fill-remaining-space"></span>
 
   <ng-container *ngTemplateOutlet="navbarAction"></ng-container>

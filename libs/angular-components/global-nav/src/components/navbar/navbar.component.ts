@@ -20,11 +20,11 @@ export class NavbarComponent implements OnInit, OnDestroy, OnChanges {
   @Output() nodeChosen = new EventEmitter<NavigationNode>();
 
   ngOnInit() {
-    console.log(this.currentNode)
+    console.log(this.currentNode);
   }
 
   ngOnChanges() {
-    console.log('changes', arguments)
+    console.log('changes', arguments);
   }
 
   ngOnDestroy() {}
