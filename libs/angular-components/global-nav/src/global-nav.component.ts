@@ -14,8 +14,8 @@ import { filter, map } from 'rxjs/operators';
 export class GlobalNavComponent implements OnInit, OnDestroy {
   @Input() appName!: string;
   @Input() navigationNodes!: NavigationNode[];
-  @Input() activeRoute: string | false = false;
-  @Input() currentNode: NavigationNode | false = false;
+  @Input() activeRoute!: string;
+  @Input() currentNode!: NavigationNode;
   @Input() brandIcon: string | undefined;
   @Input() appContent!: TemplateRef<any>;
   @Input() navbarAction!: TemplateRef<any>;
@@ -28,21 +28,7 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    if (!this.currentNode || !this.activeRoute) {
-      this.setCurrentNodeFromRouter();
-    }
   }
 
   ngOnDestroy() {}
-
-  setCurrentNodeFromRouter() {
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(currentRoute => {
-      const route = (currentRoute as NavigationEnd).url;
-      const currentNode = this.navigationNodes.find(node => node.path && route.includes(node.path));
-      if (currentNode) {
-        this.currentNode = currentNode;
-        this.activeRoute = route;
-      }
-    });
-  }
 }
