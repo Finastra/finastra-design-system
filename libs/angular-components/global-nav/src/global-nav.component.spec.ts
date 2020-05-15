@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { GlobalNavComponent } from './global-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,7 +26,8 @@ describe('GlobalNavModule', () => {
         MatButtonModule,
         MatCardModule,
         MatListModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        RouterTestingModule
       ],
       declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
     }).compileComponents();
