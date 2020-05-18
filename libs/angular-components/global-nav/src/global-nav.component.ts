@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, Input, EventEmitter, Output, TemplateRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, EventEmitter, Output, TemplateRef, OnChanges, SimpleChanges } from '@angular/core';
 import { NavigationNode } from './services/navigation.model';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'uxg-global-nav',
@@ -25,9 +26,30 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   @Output() nodeChosen = new EventEmitter<NavigationNode>();
   @Output() logout = new EventEmitter<void>();
 
-  constructor(private router: Router) {}
+  currentRoute = new ReplaySubject<string>();
 
-  ngOnInit() {}
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((currentRoute) => {
+        const route = (currentRoute as NavigationEnd).url;
+        this.currentRoute.next(route);
+      });
+  }
+
+  ngOnInit() {
+    if (!this.currentNode) {
+      this.currentRoute.subscribe((currentRoute: string) => {
+        const currentNode = this.navigationNodes.find(
+          (node) => node.path === currentRoute.replace(/\//g, ''),
+        );
+        if (currentNode) {
+          this.currentNode = currentNode;
+          this.activeRoute = currentRoute;
+        }
+      });
+    }
+  }
 
   ngOnDestroy() {}
 }
