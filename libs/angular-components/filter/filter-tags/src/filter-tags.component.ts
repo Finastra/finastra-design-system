@@ -37,6 +37,7 @@ export class FilterTagsComponent implements OnInit {
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
+  toHighlight = '';
   formCtrl = new FormControl();
   filteredTags$!: Observable<Tag[]>;
 
@@ -66,7 +67,14 @@ export class FilterTagsComponent implements OnInit {
   ngOnInit() {
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
       startWith(null),
-      map((tag: string | null) => (tag ? this.filter(tag) : this.data.slice()))
+      map((tag: string | null) => {
+        if (tag) {
+          return this.filter(tag)
+        } else {
+          this.toHighlight = '';
+          return this.data.slice();
+        }
+      })
     );
     this.selectedData = this.data.filter(tag => tag.isSelected);
   }
@@ -74,10 +82,12 @@ export class FilterTagsComponent implements OnInit {
   add(event: MatChipInputEvent) {
     if (!this.autocomplete.isOpen) {
       const input = event.input;
-      const value = event.value;
+      const value = (event.value || '').trim();
 
-      if ((value || '').trim()) {
-        this.selectedData.push({ label: value.trim() });
+      const validValue = this.data.some(el => el.label === value);
+
+      if (validValue) {
+        this.selectedData.push({ label: value });
       }
 
       if (input) {
@@ -99,6 +109,7 @@ export class FilterTagsComponent implements OnInit {
       const tagAtIndex = this.selectedData.splice(index, 1);
       this.changes.emit({ added: [], removed: [...tagAtIndex] });
     }
+    this.toHighlight = '';
   }
 
   onSelected(event: MatAutocompleteSelectedEvent) {
@@ -107,6 +118,7 @@ export class FilterTagsComponent implements OnInit {
       this.changes.emit({ added: [event.option.value], removed: [] });
     }
 
+    this.toHighlight = '';
     this.input.nativeElement.value = '';
     this.formCtrl.setValue(null);
   }
@@ -115,6 +127,7 @@ export class FilterTagsComponent implements OnInit {
     const removed = [...this.selectedData];
     this.selectedData.length = 0;
     this.changes.emit({ added: [], removed });
+    this.toHighlight = '';
   }
 
   onClick() {
@@ -122,14 +135,21 @@ export class FilterTagsComponent implements OnInit {
     this.trigger.openPanel();
   }
 
+  private isTag(value: Tag | string): value is Tag {
+    return (value as Tag).label !== undefined;
+  }
+
   private filter(value: Tag | string): Tag[] {
     let filterValue: string;
-    if (typeof value === 'object') {
+    if (this.isTag(value)) {
       filterValue = value.label.toLowerCase();
-    } else if (typeof value === 'string') {
+    } else {
       filterValue = value.toLowerCase();
     }
-    return this.data.filter(tag => tag.label.toLowerCase().indexOf(filterValue) === 0);
+
+    this.toHighlight = filterValue;
+
+    return this.data.filter(tag => tag.label.toLowerCase().includes(filterValue));
   }
 
   getState() {
