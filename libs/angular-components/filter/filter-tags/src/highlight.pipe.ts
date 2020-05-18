@@ -4,7 +4,7 @@ import { PipeTransform, Pipe } from '@angular/core';
 export class HighlightPipe implements PipeTransform {
   transform(text: string, search: string): string {
     const pattern = search
-      .replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
+      .replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')
       .split(' ')
       .filter(t => t.length > 0)
       .join('|');

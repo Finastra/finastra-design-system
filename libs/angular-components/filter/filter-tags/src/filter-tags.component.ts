@@ -69,7 +69,7 @@ export class FilterTagsComponent implements OnInit {
       startWith(null),
       map((tag: string | null) => {
         if (tag) {
-          return this.filter(tag)
+          return this.filter(tag);
         } else {
           this.toHighlight = '';
           return this.data.slice();
