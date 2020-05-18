@@ -37,8 +37,9 @@ export class AppModule {}
 </ng-container>
 
 <ng-template #loading>
-  <uxg-account-card-skeleton *ngFor="let skeleton of 4 | nbToArray"> </uxg-account-card-skeleton>
+  <uxg-account-card-skeleton></uxg-account-card-skeleton>
+  <uxg-account-card-skeleton></uxg-account-card-skeleton>
+  <uxg-account-card-skeleton></uxg-account-card-skeleton>
+  <uxg-account-card-skeleton></uxg-account-card-skeleton>
 </ng-template>
 ```
-
-> Usage of `nbToArray` requires importing `NbToArrayModule` from `@ffdc/uxg-angular-components/core`
