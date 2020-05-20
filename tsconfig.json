@@ -40,6 +40,7 @@
       "@ffdc/uxg-angular-components/user-profile-menu": ["libs/angular-components/user-profile-menu"],
       "@ffdc/uxg-angular-components/banner": ["libs/angular-components/banner"],
       "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"],
+      "@ffdc/uxg-angular-components/cards/account-card": ["libs/angular-components/cards/account-card"],
       "@ffdc/uxg-angular-components/entity-menu": ["libs/angular-components/entity-menu"]
     }
   },

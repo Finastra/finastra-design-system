@@ -19,6 +19,7 @@
       height: $filter-tags-option-height;
     }
     .selected-option-highlight,
+    .search-term-highlight,
     .selected-option-highlight.mat-selected {
       background-color: $filter-tags-background-color !important;
     }
@@ -32,6 +33,7 @@
     }
 
     .selected-option-highlight,
+    .search-term-highlight,
     .selected-option-highlight.mat-selected {
       @include mat-typography-level-to-styles($config, subtitle-2);
     }

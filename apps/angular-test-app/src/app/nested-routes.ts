@@ -17,6 +17,7 @@ import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.compon
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
+import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -47,7 +48,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
         component: UserProfileMenuDemoComponentComponent,
         data: { title: 'User Profile Menu' }
       },
-      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } }
+      { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
+      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } }
     ]
   }
 ].map(groups => {

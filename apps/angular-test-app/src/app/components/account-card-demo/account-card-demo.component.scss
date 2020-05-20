@@ -1,0 +1,7 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+.accounts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-gap: $uxg-spacing-3;
+}

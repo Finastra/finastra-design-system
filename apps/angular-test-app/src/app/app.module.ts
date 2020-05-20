@@ -27,7 +27,6 @@ import { UserProfileMenuDemoComponentComponent } from './components/user-profile
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
-import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
@@ -50,6 +49,9 @@ import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
 import { UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
 import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
+import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
+import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 
 @NgModule({
@@ -76,6 +78,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     AppComponent,
     BannerDemoComponent,
     GlobalNavDemoComponent,
+    AccountCardDemoComponent,
     EntityMenuDemoComponent
   ],
   imports: [
@@ -109,6 +112,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     UxgUserProfileMenuModule,
     BannerModule,
     GlobalNavModule,
+    AccountCardModule,
     EntityMenuModule
   ],
   providers: [],
