@@ -1,5 +1,12 @@
+@import "../../variables";
+
 uxg-navbar {
   position: unset;
+}
+
+.uxg-toolbar {
+  z-index: map-get($z-index, NAVBAR);
+  position: relative;
 }
   
 .uxg-nav-list.mat-nav-list.mat-list-base > .mat-list-item:last-of-type, .uxg-nav-list-level.mat-nav-list.mat-list-base > .mat-list-item:last-of-type {
