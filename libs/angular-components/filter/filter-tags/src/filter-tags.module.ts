@@ -8,9 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { FilterTagsComponent } from './filter-tags.component';
+import { HighlightPipe } from './highlight.pipe';
 
 @NgModule({
-  declarations: [FilterTagsComponent],
+  declarations: [FilterTagsComponent, HighlightPipe],
   imports: [
     ReactiveFormsModule,
     CommonModule,
@@ -20,6 +21,6 @@ import { FilterTagsComponent } from './filter-tags.component';
     MatFormFieldModule,
     MatInputModule
   ],
-  exports: [FilterTagsComponent]
+  exports: [FilterTagsComponent, HighlightPipe]
 })
 export class FilterTagsModule {}
