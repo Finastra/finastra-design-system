@@ -10,7 +10,6 @@
   <h5 class="uxg-h5">Avatar with Letter</h5>
   <div class="example-row">
     <div class="uxg-avatar" large>RH</div>
-    <!-- You can use both <div> or <span> -->
     <span class="uxg-avatar">R</span>
     <div class="uxg-avatar" dense>R</div>
   </div>
@@ -551,31 +550,65 @@
   <br />
   <h5 class="uxg-h5">Select</h5>
   <div class="example-row">
-    <mat-form-field appearance="fill">
-      <mat-label>Font size</mat-label>
-      <mat-select value="16px">
-        <mat-option value="10px">10px</mat-option>
-        <mat-option value="12px">12px</mat-option>
-        <mat-option value="14px">14px</mat-option>
-        <mat-option value="16px">16px</mat-option>
-        <mat-option value="18px">18px</mat-option>
-        <mat-option value="20px">20px</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Font size</mat-label>
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <p class="uxg-body-3">No label</p>
+      <mat-form-field appearance="fill">
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
+
   <h5 class="uxg-h5">Dense select</h5>
   <div class="example-row">
-    <mat-form-field appearance="fill" dense>
-      <mat-label>Font size</mat-label>
-      <mat-select value="16px">
-        <mat-option value="10px">10px</mat-option>
-        <mat-option value="12px">12px</mat-option>
-        <mat-option value="14px">14px</mat-option>
-        <mat-option value="16px">16px</mat-option>
-        <mat-option value="18px">18px</mat-option>
-        <mat-option value="20px">20px</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div>
+      <mat-form-field appearance="fill" dense>
+        <mat-label>Font size</mat-label>
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <p class="uxg-body-3">Multi-select, no default value</p>
+      <mat-form-field appearance="fill" dense>
+        <mat-label>
+          Colors
+        </mat-label>
+        <mat-select multiple>
+          <mat-option value="Violet">Violet</mat-option>
+          <mat-option value="Fuchsia">Fuchsia</mat-option>
+          <mat-option value="Crimson">Crimson</mat-option>
+          <mat-option value="Grass">Grass</mat-option>
+          <mat-option value="Ocean">Ocean</mat-option>
+          <mat-option value="Gold">Gold</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 
   <br />
