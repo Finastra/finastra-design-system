@@ -8,6 +8,6 @@ import { MultiselectTagsComponent } from './multiselect-tags.component';
 @NgModule({
   declarations: [MultiselectTagsComponent],
   imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule],
-  exports: [MultiselectTagsComponent]
+  exports: [MultiselectTagsComponent],
 })
 export class MultiselectTagsModule {}

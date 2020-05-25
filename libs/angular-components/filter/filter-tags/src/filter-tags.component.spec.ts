@@ -25,8 +25,8 @@ describe('FilterTagsModule', () => {
         MatAutocompleteModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule
-      ]
+        BrowserAnimationsModule,
+      ],
     }).compileComponents();
     fixture = TestBed.createComponent(FilterTagsComponent);
     component = fixture.componentInstance;

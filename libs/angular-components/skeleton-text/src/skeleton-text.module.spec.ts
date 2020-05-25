@@ -4,7 +4,7 @@ import { SkeletonTextModule } from './skeleton-text.module';
 describe('SkeletonTextModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SkeletonTextModule]
+      imports: [SkeletonTextModule],
     }).compileComponents();
   }));
 

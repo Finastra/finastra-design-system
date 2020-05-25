@@ -4,7 +4,7 @@ import { UxgTableModule } from './table.module';
 describe('UxgTableModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UxgTableModule]
+      imports: [UxgTableModule],
     }).compileComponents();
   }));
 

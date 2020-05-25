@@ -9,9 +9,9 @@ describe('PaletteService', () => {
       providers: [
         {
           provide: PALETTE_CONFIG,
-          useValue: PALETTE_DEFAULT_CONFIG
-        }
-      ]
+          useValue: PALETTE_DEFAULT_CONFIG,
+        },
+      ],
     })
   );
 
@@ -42,10 +42,10 @@ describe('PaletteService', () => {
         marker: {
           line: {
             color: '#ff0000',
-            width: 1
-          }
-        }
-      }
+            width: 1,
+          },
+        },
+      },
     };
 
     service.changePalette(newConfig);

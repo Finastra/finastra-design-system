@@ -7,14 +7,14 @@ import { By } from '@angular/platform-browser';
 
 @Component({
   selector: 'uxg-mock-card',
-  template: '<p>Mock Card Component</p>'
+  template: '<p>Mock Card Component</p>',
 })
 class MockCardComponent {}
 
 @NgModule({
   imports: [CommonModule],
   declarations: [MockCardComponent],
-  entryComponents: [MockCardComponent]
+  entryComponents: [MockCardComponent],
 })
 export class FakeMockCardNgModule {}
 
@@ -26,7 +26,7 @@ describe('ComponentRepeaterComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ComponentRepeaterComponent],
-      imports: [FakeMockCardNgModule, CommonModule]
+      imports: [FakeMockCardNgModule, CommonModule],
     }).compileComponents();
     fixture = TestBed.createComponent(ComponentRepeaterComponent);
     component = fixture.componentInstance;

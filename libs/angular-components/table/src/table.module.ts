@@ -29,8 +29,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
-  exports: [TableComponent]
+  exports: [TableComponent],
 })
 export class UxgTableModule {}

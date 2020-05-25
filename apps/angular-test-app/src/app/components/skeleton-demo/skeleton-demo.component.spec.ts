@@ -10,7 +10,7 @@ describe('SkeletonDemoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SkeletonTextModule, MatCardModule],
-      declarations: [SkeletonDemoComponent]
+      declarations: [SkeletonDemoComponent],
     }).compileComponents();
   }));
 

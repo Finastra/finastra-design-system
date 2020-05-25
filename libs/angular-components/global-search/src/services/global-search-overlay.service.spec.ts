@@ -6,7 +6,7 @@ import { GlobalSearchModule } from '../global-search.module';
 describe('GlobalSearchOverlayService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [GlobalSearchModule]
+      imports: [GlobalSearchModule],
     })
   );
 

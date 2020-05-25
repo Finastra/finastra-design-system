@@ -10,7 +10,7 @@ describe('BannerModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatTooltipModule],
-      declarations: [BannerComponent]
+      declarations: [BannerComponent],
     }).compileComponents();
   }));
 
@@ -21,8 +21,8 @@ describe('BannerModule', () => {
       {
         name: 'Identity provider',
         value: 8,
-        tooltip: 'text'
-      }
+        tooltip: 'text',
+      },
     ];
     fixture.detectChanges();
   });

@@ -8,16 +8,16 @@ export const DATASOURCE = [
   {
     apiGroup: 'Countries',
     api: 'Located country',
-    description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit'
+    description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit',
   },
   { apiGroup: 'Countries', api: 'Nuke country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },
-  { apiGroup: 'Countries', api: 'Erase country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' }
+  { apiGroup: 'Countries', api: 'Erase country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },
 ];
 
 export const COLUMNS = [
   { displayName: 'API Group', name: 'apiGroup' },
   { displayName: 'API', name: 'api' },
-  { displayName: 'Description', name: 'description' }
+  { displayName: 'Description', name: 'description' },
 ];
 
 export const GROUP_BY_KEY = 'apiGroup';
@@ -25,7 +25,7 @@ export const GROUP_BY_KEY = 'apiGroup';
 @Component({
   selector: 'ffdc-expandable-table-demo',
   templateUrl: './expandable-table-demo.component.html',
-  styleUrls: ['./expandable-table-demo.component.scss']
+  styleUrls: ['./expandable-table-demo.component.scss'],
 })
 export class ExpandableTableDemoComponent {
   @ViewChild(ExpandableTableComponent, { static: true }) table!: ExpandableTableComponent;
@@ -45,7 +45,7 @@ export class ExpandableTableDemoComponent {
     this.selectable = false;
     this.actionDescription = '';
 
-    this.groupByList = COLUMNS.map(col => col.name);
+    this.groupByList = COLUMNS.map((col) => col.name);
   }
 
   updateGroupBy(event: any) {

@@ -14,7 +14,7 @@ describe('UxgWizardComponent', () => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
       declarations: [UxgWizardComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 

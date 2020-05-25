@@ -12,7 +12,7 @@ describe('ScrollToTopComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [MatButtonModule, MatIconModule, BrowserAnimationsModule],
-      declarations: [ScrollToTopComponent]
+      declarations: [ScrollToTopComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(ScrollToTopComponent);
     component = fixture.componentInstance;

@@ -18,9 +18,9 @@ const rootPkg = require(path.join(cwd, 'package.json'));
     console.log(`New version is ${newVersion} from ${rootPkg.version}`);
 
     const pkgs = await globby([`**/package*.json`, '!**/node_modules']);
-    pkgs.forEach(pkg => {
+    pkgs.forEach((pkg) => {
       console.log(`Updating package at ${pkg} to ${newVersion}`);
-      pkgScopes.forEach(scope => {
+      pkgScopes.forEach((scope) => {
         releaseScripts.bumpUpPackage(path.join(cwd, pkg), newVersion, scope);
       });
     });

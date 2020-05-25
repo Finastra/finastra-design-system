@@ -13,7 +13,7 @@ describe('GlobalSearchDemoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatIconModule, MatSnackBarModule, GlobalSearchModule, MatCardModule],
-      declarations: [GlobalSearchDemoComponent]
+      declarations: [GlobalSearchDemoComponent],
     }).compileComponents();
   }));
 

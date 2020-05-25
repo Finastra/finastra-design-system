@@ -15,7 +15,7 @@ interface UXGFilterChanges {
 @Component({
   selector: 'uxg-filter-toggle',
   templateUrl: './filter-toggle.component.html',
-  styleUrls: ['./filter-toggle.component.scss']
+  styleUrls: ['./filter-toggle.component.scss'],
 })
 export class FilterToggleComponent implements OnInit {
   selectedValue: ToggleBtn | undefined;
@@ -41,7 +41,7 @@ export class FilterToggleComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.data.forEach(toggleBtn => {
+    this.data.forEach((toggleBtn) => {
       if (toggleBtn.isSelected) {
         this.initialValue = toggleBtn;
         this.selectedValue = toggleBtn;

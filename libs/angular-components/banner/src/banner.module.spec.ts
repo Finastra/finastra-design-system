@@ -4,7 +4,7 @@ import { BannerModule } from './banner.module';
 describe('BannerModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BannerModule]
+      imports: [BannerModule],
     }).compileComponents();
   }));
 

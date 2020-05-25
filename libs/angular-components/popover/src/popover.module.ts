@@ -7,6 +7,6 @@ import { PopoverComponent } from './popover.component';
 @NgModule({
   imports: [CommonModule, MatMenuModule],
   declarations: [PopoverComponent],
-  exports: [PopoverComponent]
+  exports: [PopoverComponent],
 })
 export class PopoverModule {}

@@ -9,7 +9,7 @@ describe('Trace diretive', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TraceComponent]
+      declarations: [TraceComponent],
     }).compileComponents();
   }));
 
@@ -25,7 +25,7 @@ describe('Trace diretive', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
     component.dimension = trace.dimension;
     component.dimensionName = trace.dimensionName;
@@ -41,7 +41,7 @@ describe('Trace diretive', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -52,7 +52,7 @@ describe('Trace diretive', () => {
       values: trace.measure,
       name: trace.measureName,
       ...(plotlyType ? plotlyType.trace : {}),
-      orientation: 'v'
+      orientation: 'v',
     };
 
     component.dimension = trace.dimension;
@@ -70,7 +70,7 @@ describe('Trace diretive', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
     const dummyPlotlyTraceLayout = CHART_PLOLTLY_TYPE[trace.type].layout;
 
@@ -90,7 +90,7 @@ describe('Trace diretive', () => {
       measure: [100, 50, 70],
       measureName: 'PNL',
       type: ChartType.line,
-      orientation: ChartOrientation.horizontal
+      orientation: ChartOrientation.horizontal,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -101,7 +101,7 @@ describe('Trace diretive', () => {
       values: trace.dimension,
       name: trace.measureName,
       ...(plotlyType ? plotlyType.trace : {}),
-      orientation: 'h'
+      orientation: 'h',
     };
 
     component.dimension = trace.dimension;
@@ -121,7 +121,7 @@ describe('Trace diretive', () => {
       measure: [100, 50, 70],
       measureName: 'PNL',
       type: ChartType.line,
-      selectedPoints: [0, 2]
+      selectedPoints: [0, 2],
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -133,7 +133,7 @@ describe('Trace diretive', () => {
       name: trace.measureName,
       ...(plotlyType ? plotlyType.trace : {}),
       orientation: 'v',
-      selectedpoints: trace.selectedPoints
+      selectedpoints: trace.selectedPoints,
     };
 
     component.dimension = trace.dimension;
@@ -152,7 +152,7 @@ describe('Trace diretive', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -163,7 +163,7 @@ describe('Trace diretive', () => {
       labels: trace.dimension,
       name: trace.measureName,
       ...(plotlyType ? plotlyType.trace : {}),
-      orientation: 'v'
+      orientation: 'v',
     };
 
     component.dimension = trace.dimension;

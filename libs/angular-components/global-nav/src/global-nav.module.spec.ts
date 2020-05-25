@@ -4,7 +4,7 @@ import { GlobalNavModule } from './global-nav.module';
 describe('GlobalNavModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [GlobalNavModule]
+      imports: [GlobalNavModule],
     }).compileComponents();
   }));
 

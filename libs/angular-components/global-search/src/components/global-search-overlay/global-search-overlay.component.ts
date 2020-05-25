@@ -9,7 +9,7 @@ import {
   ViewChild,
   ViewEncapsulation,
   Output,
-  EventEmitter
+  EventEmitter,
 } from '@angular/core';
 import { ReplaySubject, fromEvent, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -28,9 +28,9 @@ const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
       state('void', style({ transform: 'translate3d(0, -30%, 0) scale(0.85)', opacity: 0 })),
       state('enter', style({ transform: 'none', opacity: 1 })),
       state('leave', style({ transform: 'translate3d(0, -30%, 0)', opacity: 0 })),
-      transition('* => *', animate(ANIMATION_TIMINGS))
-    ])
-  ]
+      transition('* => *', animate(ANIMATION_TIMINGS)),
+    ]),
+  ],
 })
 export class GlobalSearchOverlayComponent implements AfterViewInit {
   animationState: 'void' | 'enter' | 'leave' = 'enter';
@@ -79,7 +79,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
         this.searchTermChange.emit(value);
       });
 
-    this.results.subscribe(results => {
+    this.results.subscribe((results) => {
       this.resultsFound = this.resultsShown = results.length;
       const groupedResults = this.groupByResults(results, this.groupBy);
 
@@ -115,7 +115,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   private get(object: any, path: string | string[], defaultVal?: any): any {
-    const PATH = Array.isArray(path) ? path : path.split('.').filter(i => i.length);
+    const PATH = Array.isArray(path) ? path : path.split('.').filter((i) => i.length);
     if (!PATH.length) {
       return object === undefined ? defaultVal : object;
     }
@@ -142,9 +142,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       return previous;
     }, {});
 
-    return Object.keys(groupedCollection).map(key => ({
+    return Object.keys(groupedCollection).map((key) => ({
       key,
-      value: groupedCollection[key]
+      value: groupedCollection[key],
     }));
   }
 }

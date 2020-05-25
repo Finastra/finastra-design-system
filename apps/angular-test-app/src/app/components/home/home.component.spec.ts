@@ -12,7 +12,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatCardModule, MatChipsModule, RouterTestingModule],
-      declarations: [HomeComponent]
+      declarations: [HomeComponent],
     }).compileComponents();
   }));
 

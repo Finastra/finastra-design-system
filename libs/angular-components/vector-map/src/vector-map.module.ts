@@ -18,14 +18,14 @@ import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    PlotlyViaCDNModule
+    PlotlyViaCDNModule,
   ],
   declarations: [VectorMapComponent],
-  exports: [VectorMapComponent]
+  exports: [VectorMapComponent],
 })
 export class VectorMapModule {
   constructor(layzyLoadScript: LazyloadScriptService) {
-    layzyLoadScript.load('plotly.js', 'Plotly').subscribe(plotly => {
+    layzyLoadScript.load('plotly.js', 'Plotly').subscribe((plotly) => {
       PlotlyService.setPlotly(plotly);
     });
   }

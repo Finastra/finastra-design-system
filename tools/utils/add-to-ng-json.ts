@@ -50,25 +50,25 @@ export function addToNgJson(options: NgJsonOptions): Rule {
             options: {
               tsConfig: [
                 `libs/angular-components/${options.projectName}/tsconfig.lib.json`,
-                `libs/angular-components/${options.projectName}/tsconfig.spec.json`
+                `libs/angular-components/${options.projectName}/tsconfig.spec.json`,
               ],
-              exclude: ['**/node_modules/**', `!libs/angular-components/${options.projectName}/**`]
-            }
+              exclude: ['**/node_modules/**', `!libs/angular-components/${options.projectName}/**`],
+            },
           },
           test: {
             builder: '@nrwl/jest:jest',
             options: {
               jestConfig: `libs/angular-components/${options.projectName}/jest.config.js`,
               tsConfig: `libs/angular-components/${options.projectName}/tsconfig.spec.json`,
-              setupFile: `libs/angular-components/${options.projectName}/test-setup.ts`
-            }
-          }
+              setupFile: `libs/angular-components/${options.projectName}/test-setup.ts`,
+            },
+          },
         },
         schematics: {
           '@nrwl/angular:component': {
-            styleext: 'scss'
-          }
-        }
+            styleext: 'scss',
+          },
+        },
       };
 
       json.projects[options.projectName] = project;

@@ -9,7 +9,7 @@ describe('UxgWizardPageComponent', () => {
   let fixture: ComponentFixture<UxgWizardPageComponent>;
 
   const mockPageCollection = {
-    getPageIndex: jest.fn()
+    getPageIndex: jest.fn(),
   };
 
   beforeEach(async(() => {
@@ -18,8 +18,8 @@ describe('UxgWizardPageComponent', () => {
       providers: [
         ButtonHubService,
         { provide: PageCollectionService, useValue: mockPageCollection },
-        WizardNavigationService
-      ]
+        WizardNavigationService,
+      ],
     }).compileComponents();
   }));
 

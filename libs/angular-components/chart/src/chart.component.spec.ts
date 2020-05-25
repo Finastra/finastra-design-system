@@ -15,7 +15,7 @@ import { of } from 'rxjs';
 
 @Component({
   selector: 'uxg-test-container-component',
-  template: ``
+  template: ``,
 })
 class TestContainerComponent implements AfterViewInit {
   @ViewChild('chart', { static: false }) chart!: ChartComponent;
@@ -38,7 +38,7 @@ describe('Chart Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CommonModule, PlotlyModule, PaletteModule],
-      declarations: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent, TestContainerComponent]
+      declarations: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent, TestContainerComponent],
     });
   });
 
@@ -62,15 +62,15 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
     const trace: any = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
 
     const dummyPlotlyTraces = [
@@ -82,8 +82,8 @@ describe('Chart Component', () => {
         values: trace.measure,
         name: trace.measureName,
         ...CHART_PLOLTLY_TYPE[trace.type as ChartType].trace,
-        orientation: 'v'
-      }
+        orientation: 'v',
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -125,22 +125,22 @@ describe('Chart Component', () => {
                 [type]="trace.type"
               ></uxg-trace>
             </uxg-group-traces>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
     const trace = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const trace2 = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     const dummyPlotlyTraces = [
@@ -155,7 +155,7 @@ describe('Chart Component', () => {
         orientation: 'v',
         legendgroup: 'group1',
         xaxis: 'x1',
-        yaxis: 'y1'
+        yaxis: 'y1',
       },
       {
         dimensionName: trace.dimensionName,
@@ -168,8 +168,8 @@ describe('Chart Component', () => {
         orientation: 'v',
         legendgroup: 'group2',
         xaxis: 'x2',
-        yaxis: 'y2'
-      }
+        yaxis: 'y2',
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -200,15 +200,15 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
     const trace = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -243,15 +243,15 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
     const trace = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -283,15 +283,15 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
     const trace = {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -331,8 +331,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -340,7 +340,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -377,8 +377,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -386,7 +386,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     const dummyPoint = {
@@ -400,19 +400,19 @@ describe('Chart Component', () => {
             dimensionName: 'Industry',
             name: 'PNL',
             type: ChartType.bar,
-            orientation: 'v'
+            orientation: 'v',
           },
           name: 'PNL',
-          pointIndex: 0
-        }
-      ]
+          pointIndex: 0,
+        },
+      ],
     };
 
     const selectedObject = [
       {
         Industry: 'Banks',
-        PNL: 100
-      }
+        PNL: 100,
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -449,8 +449,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -458,7 +458,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.pie
+      type: ChartType.pie,
     };
 
     const dummyPoint = {
@@ -472,19 +472,19 @@ describe('Chart Component', () => {
             dimensionName: 'Industry',
             name: 'PNL',
             type: ChartType.pie,
-            orientation: 'v'
+            orientation: 'v',
           },
           name: 'PNL',
-          pointNumber: 0
-        }
-      ]
+          pointNumber: 0,
+        },
+      ],
     };
 
     const selectedObject = [
       {
         Industry: 'Banks',
-        PNL: 100
-      }
+        PNL: 100,
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -521,8 +521,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -530,7 +530,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     const dummyPoint = {
@@ -545,19 +545,19 @@ describe('Chart Component', () => {
             name: 'PNL',
             type: ChartType.bar,
             orientation: 'v',
-            selectedoints: 0
+            selectedoints: 0,
           },
           name: 'PNL',
-          pointIndex: 0
-        }
-      ]
+          pointIndex: 0,
+        },
+      ],
     };
 
     const selectedObject = [
       {
         Industry: 'Banks',
-        PNL: 100
-      }
+        PNL: 100,
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -597,8 +597,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -606,7 +606,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     const dummyPoint = {
@@ -620,19 +620,19 @@ describe('Chart Component', () => {
             dimensionName: 'Industry',
             name: 'PNL',
             type: ChartType.bar,
-            orientation: 'v'
+            orientation: 'v',
           },
           name: 'PNL',
-          pointIndex: 0
-        }
-      ]
+          pointIndex: 0,
+        },
+      ],
     };
 
     const selectedObject = [
       {
         Industry: 'Banks',
-        PNL: 100
-      }
+        PNL: 100,
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);
@@ -671,8 +671,8 @@ describe('Chart Component', () => {
               [measureName]="trace.measureName"
               [type]="trace.type"
             ></uxg-trace>
-          </uxg-chart>`
-      }
+          </uxg-chart>`,
+      },
     });
 
     const trace = {
@@ -680,7 +680,7 @@ describe('Chart Component', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
+      type: ChartType.bar,
     };
 
     const dummyPoint = {
@@ -694,23 +694,23 @@ describe('Chart Component', () => {
             dimensionName: 'Industry',
             name: 'PNL',
             type: ChartType.bar,
-            orientation: 'v'
+            orientation: 'v',
           },
           name: 'PNL',
-          pointIndex: 0
-        }
-      ]
+          pointIndex: 0,
+        },
+      ],
     };
 
     const selectedObject = [
       {
         Industry: 'Banks',
-        PNL: 100
+        PNL: 100,
       },
       {
         Industry: 'Foods',
-        PNL: 50
-      }
+        PNL: 50,
+      },
     ];
 
     fixture = TestBed.createComponent(TestContainerComponent);

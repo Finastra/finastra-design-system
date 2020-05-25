@@ -5,7 +5,7 @@ import { PageCollectionService } from './page-collection.service';
 describe('PageCollectionService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [PageCollectionService]
+      providers: [PageCollectionService],
     })
   );
 

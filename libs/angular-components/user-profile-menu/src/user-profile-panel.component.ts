@@ -6,7 +6,7 @@ import {
   ContentChild,
   TemplateRef,
   AfterContentInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
 
@@ -22,8 +22,8 @@ import { HeaderType } from './user-profile-menu.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'uxg-user-profile-panel',
-    '[class.has-content]': 'hasContent'
-  }
+    '[class.has-content]': 'hasContent',
+  },
 })
 export class UxgUserProfilePanelComponent implements AfterContentInit {
   @Input() user!: UserProfile;

@@ -4,7 +4,7 @@ import { GlobalSearchModule } from './global-search.module';
 describe('GlobalSearchModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [GlobalSearchModule]
+      imports: [GlobalSearchModule],
     }).compileComponents();
   }));
 

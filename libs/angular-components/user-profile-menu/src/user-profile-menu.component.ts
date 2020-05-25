@@ -6,7 +6,7 @@ import {
   ContentChild,
   TemplateRef,
   Attribute,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
@@ -22,8 +22,8 @@ export type HeaderType = 'hero' | 'title';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'uxg-user-profile-menu'
-  }
+    class: 'uxg-user-profile-menu',
+  },
 })
 export class UxgUserProfileMenuComponent {
   @Input() user!: UserProfile;

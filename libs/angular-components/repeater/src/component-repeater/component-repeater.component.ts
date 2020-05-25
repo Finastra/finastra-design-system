@@ -6,14 +6,14 @@ import {
   ViewChild,
   ViewContainerRef,
   ComponentRef,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 
 @Component({
   selector: 'uxg-component-repeater',
   templateUrl: './component-repeater.component.html',
   styleUrls: ['./component-repeater.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ComponentRepeaterComponent implements OnInit {
   private _factory: any;

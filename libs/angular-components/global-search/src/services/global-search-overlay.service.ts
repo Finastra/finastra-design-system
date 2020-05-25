@@ -7,7 +7,7 @@ import { SearchOverlayRef } from '../components/global-search-overlay/global-sea
 import { GlobalSearchOverlayComponent } from '../components/global-search-overlay/global-search-overlay.component';
 import { SEARCH_CONFIG } from '../components/global-search-overlay/global-search-overlay-token';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalSearchOverlayService {
   constructor(private overlay: Overlay, private parentInjector: Injector) {}
@@ -18,7 +18,7 @@ export class GlobalSearchOverlayService {
       scrollStrategy: this.overlay.scrollStrategies.block(),
       hasBackdrop: true,
       backdropClass: 'uxg-global-search-overlay-backdrop',
-      panelClass: 'uxg-global-search-overlay-pane'
+      panelClass: 'uxg-global-search-overlay-pane',
     });
 
     const searchOverlayRef = new SearchOverlayRef(overlayRef);

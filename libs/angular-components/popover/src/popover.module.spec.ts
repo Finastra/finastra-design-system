@@ -4,7 +4,7 @@ import { PopoverModule } from './popover.module';
 describe('PopoverModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [PopoverModule]
+      imports: [PopoverModule],
     }).compileComponents();
   }));
 

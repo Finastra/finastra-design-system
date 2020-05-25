@@ -4,7 +4,7 @@ import { MatMenuTrigger, MenuPositionX, MenuPositionY } from '@angular/material/
 @Component({
   selector: 'uxg-popover',
   templateUrl: './popover.component.html',
-  styleUrls: ['./popover.component.scss']
+  styleUrls: ['./popover.component.scss'],
 })
 export class PopoverComponent {
   @Input() xPosition: MenuPositionX = 'after';

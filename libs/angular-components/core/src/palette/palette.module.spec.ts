@@ -4,7 +4,7 @@ import { PaletteModule } from './palette.module';
 describe('PaletteModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [PaletteModule]
+      imports: [PaletteModule],
     }).compileComponents();
   }));
 

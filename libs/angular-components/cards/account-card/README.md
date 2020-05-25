@@ -6,7 +6,7 @@
 import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
 
 @NgModule({
-  imports: [AccountCardModule]
+  imports: [AccountCardModule],
 })
 export class AppModule {}
 ```

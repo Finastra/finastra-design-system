@@ -14,8 +14,8 @@ import { UxgWizardPageTitleComponent } from './wizard-page-title.directive';
     '[attr.aria-hidden]': '!current',
     '[class.active]': 'current',
     '[class.no-title]': '!showTitle',
-    '[class.uxg-wizard-page]': 'true'
-  }
+    '[class.uxg-wizard-page]': 'true',
+  },
 })
 export class UxgWizardPageComponent {
   @Output('uxgWizardPageOnLoad') load: EventEmitter<string> = new EventEmitter();

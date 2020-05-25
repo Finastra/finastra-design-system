@@ -12,7 +12,7 @@ describe('AccountCardModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatCardModule, MatDividerModule, MatIconModule],
-      declarations: [AccountCardComponent]
+      declarations: [AccountCardComponent],
     }).compileComponents();
   }));
 

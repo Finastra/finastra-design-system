@@ -18,7 +18,7 @@ async function themeLinter(options: Schema, context: BuilderContext): Promise<Bu
     files: join(options.project, '/**/*.scss'),
     configFile: join(options.project, './.stylelintrc.json'),
     fix: options.fix,
-    formatter
+    formatter,
   });
   context.reportProgress(1, 1);
 

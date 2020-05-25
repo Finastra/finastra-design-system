@@ -7,6 +7,6 @@ import { InitialsPipe } from './initials.pipe';
 @NgModule({
   imports: [CommonModule],
   declarations: [AvatarComponent, AvatarListComponent, UxgImageAvatar, InitialsPipe],
-  exports: [AvatarComponent, AvatarListComponent, UxgImageAvatar, InitialsPipe]
+  exports: [AvatarComponent, AvatarListComponent, UxgImageAvatar, InitialsPipe],
 })
 export class AvatarModule {}

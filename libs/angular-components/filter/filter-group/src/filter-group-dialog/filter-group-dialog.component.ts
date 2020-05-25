@@ -9,7 +9,7 @@ export interface FilterGroupDialogData {
 @Component({
   selector: 'uxg-filter-group-dialog',
   templateUrl: 'filter-group-dialog.component.html',
-  styleUrls: ['filter-group-dialog.component.scss']
+  styleUrls: ['filter-group-dialog.component.scss'],
 })
 export class FilterGroupDialogComponent implements OnInit {
   filterName!: FormControl;

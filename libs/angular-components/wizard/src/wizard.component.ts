@@ -7,7 +7,7 @@ import {
   OnDestroy,
   Output,
   QueryList,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { wizardAnimation } from './animations';
@@ -23,9 +23,9 @@ import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
   styleUrls: ['./wizard.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    '[class.uxg-wizard]': 'true'
+    '[class.uxg-wizard]': 'true',
   },
-  animations: [wizardAnimation()]
+  animations: [wizardAnimation()],
 })
 export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   @ContentChildren(UxgWizardPageComponent) pages!: QueryList<UxgWizardPageComponent>;
@@ -66,7 +66,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.pages.forEach(page => (page.showTitle = this.showPageTitles));
+    this.pages.forEach((page) => (page.showTitle = this.showPageTitles));
 
     this.pageCollection.pages = this.pages;
 
@@ -90,7 +90,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
   onStepClick(page: UxgWizardPageComponent) {
@@ -128,7 +128,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   private listenForPageChanges(): Subscription {
-    return this.navService.currentPageChange.subscribe(page => {
+    return this.navService.currentPageChange.subscribe((page) => {
       this.currentPageId = this.pageCollection.getPageIndex(page);
       this.currentPageChange.emit();
     });

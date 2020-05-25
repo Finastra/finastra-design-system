@@ -8,7 +8,7 @@ import {
   OnDestroy,
   Output,
   QueryList,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
@@ -31,7 +31,7 @@ export interface SavedFilter {
   templateUrl: './filter-group.component.html',
   styleUrls: ['./filter-group.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Output() changes = new EventEmitter<UXGFilterChanges<any>>();
@@ -55,7 +55,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit() {
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       const instanceTitle = filterInstance.instance;
       const selected: any = {};
       selected[instanceTitle] = filterInstance.component.getState();
@@ -65,7 +65,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
       this.subscriptions.push(
         filterInstance.component.changes.subscribe((change: UXGFilterChanges<any>) => {
           change.instance = instanceTitle;
-          this.selectedData.forEach(filter => {
+          this.selectedData.forEach((filter) => {
             if (filter.title === change.instance) {
               filter.selectedData = filterInstance.component.getState();
             }
@@ -83,36 +83,36 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '300px';
     dialogConfig.data = {
-      existingNames: this.existingFilterNames
+      existingNames: this.existingFilterNames,
     };
 
     const dialogRef = this.dialog.open(FilterGroupDialogComponent, dialogConfig);
     const state = this.getFilterStates();
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.savedFilters.forEach(filter => {
+        this.savedFilters.forEach((filter) => {
           filter.isSelected = false;
         });
         this.existingFilterNames.push(result.trim());
         this.savedFilters.push({
           filterName: result.trim(),
           filterState: state,
-          isSelected: true
+          isSelected: true,
         });
       }
     });
   }
 
   selectFilter(filter: SavedFilter) {
-    this.savedFilters.forEach(savedFilter => {
+    this.savedFilters.forEach((savedFilter) => {
       if (savedFilter.filterName === filter.filterName) {
         savedFilter.isSelected = true;
       } else {
@@ -125,13 +125,13 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   applyFilters() {
     let change: UXGFilterChanges<any>;
     const activeFilter: FilterGroupComponentData[] = [];
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       const data = filterInstance.component.getState();
       activeFilter.push({ title: filterInstance.instance, selectedData: data });
       change = {
         instance: filterInstance.instance,
         added: data,
-        removed: []
+        removed: [],
       };
       this.changes.emit(change);
     });
@@ -142,7 +142,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   updateFilter() {
     const state = this.getFilterStates();
-    this.savedFilters.forEach(filter => {
+    this.savedFilters.forEach((filter) => {
       if (filter.isSelected) {
         filter.filterState = state;
       }
@@ -150,16 +150,16 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   removeFilter(filter: any) {
-    this.savedFilters = this.savedFilters.filter(item => item !== filter);
-    this.existingFilterNames = this.existingFilterNames.filter(items => items !== filter.filterName);
+    this.savedFilters = this.savedFilters.filter((item) => item !== filter);
+    this.existingFilterNames = this.existingFilterNames.filter((items) => items !== filter.filterName);
   }
 
   clearSelection() {
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       filterInstance.component.clearSelection();
     });
 
-    this.selectedData.forEach(instance => {
+    this.selectedData.forEach((instance) => {
       instance.selectedData.length = 0;
     });
   }
@@ -170,11 +170,11 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   getFilterStates() {
     const groupState: any = [];
-    this.filterInstances.forEach(instance => {
+    this.filterInstances.forEach((instance) => {
       if (instance.component.getState) {
         groupState.push({
           title: instance.instance,
-          selectedData: instance.component.getState()
+          selectedData: instance.component.getState(),
         });
       }
     });
@@ -187,7 +187,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   setState(data: FilterGroupComponentData[]) {
     if (data.length) {
-      this.filterInstances.forEach(filterInstance => {
+      this.filterInstances.forEach((filterInstance) => {
         for (let i = 0; i < data.length; i++) {
           if (filterInstance.instance === data[i].title && filterInstance.component.setState) {
             filterInstance.component.setState(data[i].selectedData);
@@ -195,8 +195,8 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      data.forEach(obj => {
-        this.selectedData.forEach(obj2 => {
+      data.forEach((obj) => {
+        this.selectedData.forEach((obj2) => {
           if (obj.title === obj2.title) {
             obj2.selectedData.length = 0;
             obj2.selectedData.push(...obj.selectedData);
@@ -236,7 +236,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   getSelectedFilterState(): FilterGroupComponentData[] {
     const stateArray: FilterGroupComponentData[] = [];
-    this.savedFilters.forEach(filter => {
+    this.savedFilters.forEach((filter) => {
       if (filter.isSelected) {
         for (const key in filter.filterState) {
           if (filter.filterState.hasOwnProperty(key)) stateArray.push(filter.filterState[key]);
@@ -248,8 +248,8 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   checkIsActive(): boolean {
     if (
-      this.selectedData.some(data => data.selectedData.length) &&
-      this.activeFilter.some(data => data.selectedData.length)
+      this.selectedData.some((data) => data.selectedData.length) &&
+      this.activeFilter.some((data) => data.selectedData.length)
     ) {
       return this.checkListEquality(this.activeFilter, this.selectedData);
     }

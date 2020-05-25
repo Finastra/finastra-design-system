@@ -7,7 +7,7 @@ import {
   Inject,
   forwardRef,
   ChangeDetectorRef,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationNode } from '../../services/navigation.model';
@@ -16,7 +16,7 @@ import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'uxg-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit, OnChanges {
   @Input() appName!: string;
@@ -53,7 +53,7 @@ export class SidenavComponent implements OnInit, OnChanges {
     return !words
       ? ''
       : words
-          .map(word => word.substring(0, 1))
+          .map((word) => word.substring(0, 1))
           .join('')
           .substring(0, 3);
   }

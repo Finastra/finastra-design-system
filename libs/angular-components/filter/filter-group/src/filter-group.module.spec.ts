@@ -4,7 +4,7 @@ import { FilterGroupModule } from './filter-group.module';
 describe('FilterGroupModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FilterGroupModule]
+      imports: [FilterGroupModule],
     }).compileComponents();
   }));
 

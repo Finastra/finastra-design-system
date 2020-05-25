@@ -12,7 +12,7 @@ describe('UxgWizardButtonComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [UxgWizardButtonComponent],
-      providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
+      providers: [WizardNavigationService, PageCollectionService, ButtonHubService],
     }).compileComponents();
   }));
 

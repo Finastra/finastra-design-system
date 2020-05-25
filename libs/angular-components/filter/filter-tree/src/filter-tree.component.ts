@@ -26,7 +26,7 @@ interface UXGFilterChanges {
         'in',
         style({
           overflow: 'hidden',
-          height: '*'
+          height: '*',
         })
       ),
       state(
@@ -34,16 +34,16 @@ interface UXGFilterChanges {
         style({
           opacity: '0',
           overflow: 'hidden',
-          height: '0'
+          height: '0',
         })
       ),
       transition('in => out', animate('250ms ease-out')),
-      transition('out => in', animate('250ms ease-in'))
-    ])
-  ]
+      transition('out => in', animate('250ms ease-in')),
+    ]),
+  ],
 })
 export class FilterTreeComponent implements OnChanges {
-  public treeControl = new NestedTreeControl<TreeNode>(node => node.children);
+  public treeControl = new NestedTreeControl<TreeNode>((node) => node.children);
   public dataSource = new MatTreeNestedDataSource<TreeNode>();
   public checkListSelection!: SelectionModel<TreeNode>;
   selectedData: TreeNode[] = [];
@@ -76,10 +76,10 @@ export class FilterTreeComponent implements OnChanges {
         this.subscription.unsubscribe();
       }
       // tslint:disable-next-line: no-shadowed-variable
-      this.subscription = this.checkListSelection.changed.subscribe(changes => {
+      this.subscription = this.checkListSelection.changed.subscribe((changes) => {
         this.changes.emit({
           added: changes.added,
-          removed: changes.removed
+          removed: changes.removed,
         });
       });
     }
@@ -95,13 +95,13 @@ export class FilterTreeComponent implements OnChanges {
 
   descendantsAllSelected(node: TreeNode): boolean {
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.every(child => this.checkListSelection.isSelected(child));
+    const descAllSelected = descendants.every((child) => this.checkListSelection.isSelected(child));
     return descAllSelected;
   }
 
   descendantsPartiallySelected(node: TreeNode): boolean {
     const descendants = this.treeControl.getDescendants(node);
-    const result = descendants.some(child => this.checkListSelection.isSelected(child));
+    const result = descendants.some((child) => this.checkListSelection.isSelected(child));
     return result && !this.descendantsAllSelected(node);
   }
 
@@ -111,7 +111,7 @@ export class FilterTreeComponent implements OnChanges {
     this.checkListSelection.isSelected(node)
       ? this.checkListSelection.select(...descendants)
       : this.checkListSelection.deselect(...descendants);
-    descendants.every(child => this.checkListSelection.isSelected(child));
+    descendants.every((child) => this.checkListSelection.isSelected(child));
     this.checkAllParentsSelection(node);
   }
 
@@ -131,7 +131,7 @@ export class FilterTreeComponent implements OnChanges {
   checkRootNodeSelection(node: TreeNode) {
     const nodeSelected = this.checkListSelection.isSelected(node);
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.every(child => this.checkListSelection.isSelected(child));
+    const descAllSelected = descendants.every((child) => this.checkListSelection.isSelected(child));
     if (nodeSelected && !descAllSelected) {
       this.checkListSelection.deselect(node);
     } else if (!nodeSelected && descAllSelected) {
@@ -141,9 +141,9 @@ export class FilterTreeComponent implements OnChanges {
 
   getParentNode(currentNode: TreeNode): TreeNode | null {
     let parentNode: TreeNode | null = null;
-    this.dataSource.data.forEach(node => {
+    this.dataSource.data.forEach((node) => {
       if (node.children && node.children.length > 0) {
-        node.children.forEach(child => {
+        node.children.forEach((child) => {
           if (currentNode.label === child.label) {
             parentNode = node;
           }
@@ -183,7 +183,7 @@ export class FilterTreeComponent implements OnChanges {
     const result = data.reduce((acc, node) => {
       if (node.isSelected) acc.push(node);
       if (node.children) {
-        const childNodes = node.children.filter(childNode => childNode.isSelected);
+        const childNodes = node.children.filter((childNode) => childNode.isSelected);
         acc.push(...childNodes);
       }
       return acc;

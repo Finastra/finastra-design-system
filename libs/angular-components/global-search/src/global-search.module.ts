@@ -23,9 +23,9 @@ import { UxgGlobalSearch } from './global-search.component';
     FormsModule,
     MatInputModule,
     OverlayModule,
-    FlexLayoutModule.withConfig({ useColumnBasisZero: false })
+    FlexLayoutModule.withConfig({ useColumnBasisZero: false }),
   ],
   exports: [UxgGlobalSearch, GlobalSearchOverlayComponent],
-  declarations: [UxgGlobalSearch, GlobalSearchOverlayComponent]
+  declarations: [UxgGlobalSearch, GlobalSearchOverlayComponent],
 })
 export class GlobalSearchModule {}

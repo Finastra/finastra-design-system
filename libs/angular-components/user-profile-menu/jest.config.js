@@ -15,8 +15,8 @@ module.exports = {
         suiteName,
         classNameTemplate: '{classname}',
         titleTemplate: `${suiteName} › {classname} › {title}`,
-        ancestorSeparator: ' › '
-      }
-    ]
-  ]
+        ancestorSeparator: ' › ',
+      },
+    ],
+  ],
 };

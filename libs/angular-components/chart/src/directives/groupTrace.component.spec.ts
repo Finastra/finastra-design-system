@@ -17,7 +17,7 @@ import { ChartType, CHART_PLOLTLY_TYPE } from '../chart.models';
         [type]="trace.type"
       ></uxg-trace>
     </uxg-group-traces>
-  `
+  `,
 })
 class TestContainerComponent implements AfterViewInit {
   @ViewChild('grpTrace', { static: false }) groupeTrace!: GroupTracesComponent;
@@ -38,7 +38,7 @@ describe('GroupTrace', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [GroupTracesComponent, TraceComponent, TestContainerComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
 
     fixtureTest = TestBed.createComponent(TestContainerComponent);
@@ -60,7 +60,7 @@ describe('GroupTrace', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -71,7 +71,7 @@ describe('GroupTrace', () => {
       values: trace.measure,
       name: trace.measureName,
       ...(plotlyType ? plotlyType.trace : {}),
-      orientation: 'v'
+      orientation: 'v',
     };
 
     componentTest.traces = [trace];
@@ -89,7 +89,7 @@ describe('GroupTrace', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -103,8 +103,8 @@ describe('GroupTrace', () => {
       orientation: 'v',
       domain: {
         column: 0,
-        row: 0
-      }
+        row: 0,
+      },
     };
 
     componentTest.traces = [trace];
@@ -124,7 +124,7 @@ describe('GroupTrace', () => {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.line
+      type: ChartType.line,
     };
     const plotlyType = CHART_PLOLTLY_TYPE[trace.type];
     const dummyPlotlyTrace = {
@@ -138,8 +138,8 @@ describe('GroupTrace', () => {
       orientation: 'v',
       domain: {
         column: 0,
-        row: 0
-      }
+        row: 0,
+      },
     };
 
     componentTest.traces = [trace];

@@ -9,8 +9,8 @@ import { PALETTE_DEFAULT_CONFIG } from './palette.defaults';
     PaletteService,
     {
       provide: PALETTE_CONFIG,
-      useValue: PALETTE_DEFAULT_CONFIG
-    }
-  ]
+      useValue: PALETTE_DEFAULT_CONFIG,
+    },
+  ],
 })
 export class PaletteModule {}

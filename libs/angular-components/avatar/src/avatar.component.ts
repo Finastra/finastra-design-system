@@ -8,7 +8,7 @@ import {
   ChangeDetectionStrategy,
   ContentChild,
   TemplateRef,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -18,7 +18,7 @@ export type DefaultGravatar = 'mp' | 'identicon' | 'monsterid' | 'wavatar' | 're
 const PALETTE_SIZE = 16;
 
 @Directive({
-  selector: 'uxg-image-avatar, [uxg-image-avatar], [uxgImageAvatar]'
+  selector: 'uxg-image-avatar, [uxg-image-avatar], [uxgImageAvatar]',
 })
 export class UxgImageAvatar {}
 
@@ -27,7 +27,7 @@ export class UxgImageAvatar {}
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarComponent implements OnInit {
   @Input() name: string | undefined;
@@ -58,7 +58,7 @@ export class AvatarComponent implements OnInit {
   getCode(str: string) {
     const charCodes = str
       .split('')
-      .map(char => char.charCodeAt(0))
+      .map((char) => char.charCodeAt(0))
       .join('');
     return parseInt(charCodes, 10);
   }

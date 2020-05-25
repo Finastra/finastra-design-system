@@ -5,7 +5,7 @@ import { ClientSideSearchService } from './client-side-search.service';
 @Component({
   selector: 'ffdc-global-search-demo',
   templateUrl: './global-search-demo.component.html',
-  styleUrls: ['./global-search-demo.component.scss']
+  styleUrls: ['./global-search-demo.component.scss'],
 })
 export class GlobalSearchDemoComponent implements OnInit {
   results: any[] = [];
@@ -20,10 +20,10 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 1000
-          }
+            amount: 1000,
+          },
         ],
-        id: '3658'
+        id: '3658',
       },
       {
         accountType: 'GBP',
@@ -31,10 +31,10 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 1200
-          }
+            amount: 1200,
+          },
         ],
-        id: '3659'
+        id: '3659',
       },
       {
         accountType: 'EUR',
@@ -42,10 +42,10 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 22000
-          }
+            amount: 22000,
+          },
         ],
-        id: '5811'
+        id: '5811',
       },
       {
         accountType: 'USD',
@@ -53,10 +53,10 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 1500
-          }
+            amount: 1500,
+          },
         ],
-        id: '4127'
+        id: '4127',
       },
       {
         accountType: 'USD',
@@ -64,10 +64,10 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 2500
-          }
+            amount: 2500,
+          },
         ],
-        id: '4128'
+        id: '4128',
       },
       {
         accountType: 'GBP',
@@ -75,15 +75,15 @@ export class GlobalSearchDemoComponent implements OnInit {
         balances: [
           {
             type: 'current',
-            amount: 3500
-          }
+            amount: 3500,
+          },
         ],
-        id: '4129'
-      }
+        id: '4129',
+      },
     ];
 
     this.searchService.initIndex(['nickname', 'id', 'accountType']).then(() => {
-      documents.forEach(item => {
+      documents.forEach((item) => {
         this.searchService.addDoc(item);
       });
     });
@@ -95,6 +95,6 @@ export class GlobalSearchDemoComponent implements OnInit {
 
   onSearchTermChange(value: string) {
     const results = this.searchService.search(value);
-    this.results = results.map(result => result.doc);
+    this.results = results.map((result) => result.doc);
   }
 }

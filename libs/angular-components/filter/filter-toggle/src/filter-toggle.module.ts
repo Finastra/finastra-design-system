@@ -8,6 +8,6 @@ import { FilterToggleComponent } from './filter-toggle.component';
 @NgModule({
   declarations: [FilterToggleComponent],
   imports: [ReactiveFormsModule, CommonModule, MatButtonToggleModule, MatIconModule],
-  exports: [FilterToggleComponent]
+  exports: [FilterToggleComponent],
 })
 export class FilterToggleModule {}

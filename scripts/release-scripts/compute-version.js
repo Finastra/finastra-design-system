@@ -1,7 +1,7 @@
 const semver = require('semver');
 const keywords = ['major', 'minor', 'patch'];
 
-module.exports = function(version, rootPackageVersion) {
+module.exports = function (version, rootPackageVersion) {
   if (keywords.indexOf(version) > -1) {
     return semver.inc(rootPackageVersion, version);
   } else {

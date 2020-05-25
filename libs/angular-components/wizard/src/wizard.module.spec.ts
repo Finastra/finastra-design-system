@@ -4,7 +4,7 @@ import { WizardModule } from './wizard.module';
 describe('WizardModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [WizardModule]
+      imports: [WizardModule],
     }).compileComponents();
   }));
 

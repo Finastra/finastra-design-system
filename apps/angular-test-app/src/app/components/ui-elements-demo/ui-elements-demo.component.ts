@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'ffdc-ui-elements-demo',
   templateUrl: './ui-elements-demo.component.html',
-  styleUrls: ['./ui-elements-demo.component.scss']
+  styleUrls: ['./ui-elements-demo.component.scss'],
 })
 export class UiElementsDemoComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -24,7 +24,7 @@ export class UiElementsDemoComponent {
   constructor(fb: FormBuilder) {
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl
+      floatLabel: this.floatLabelControl,
     });
   }
 }

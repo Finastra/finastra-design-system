@@ -4,7 +4,7 @@ import { AvatarModule } from './avatar.module';
 describe('AvatarModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AvatarModule]
+      imports: [AvatarModule],
     }).compileComponents();
   }));
 

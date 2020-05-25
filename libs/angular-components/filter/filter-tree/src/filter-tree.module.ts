@@ -17,9 +17,9 @@ import { MatTreeModule } from '@angular/material/tree';
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
-    MatTreeModule
+    MatTreeModule,
   ],
   declarations: [FilterTreeComponent],
-  exports: [FilterTreeComponent]
+  exports: [FilterTreeComponent],
 })
 export class FilterTreeModule {}

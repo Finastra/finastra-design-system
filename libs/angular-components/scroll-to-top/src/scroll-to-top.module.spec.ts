@@ -4,7 +4,7 @@ import { ScrollToTopModule } from './scroll-to-top.module';
 describe('ScrollToTopModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ScrollToTopModule]
+      imports: [ScrollToTopModule],
     }).compileComponents();
   }));
 

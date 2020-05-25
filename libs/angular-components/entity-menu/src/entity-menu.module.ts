@@ -10,6 +10,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [EntityMenuComponent],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatMenuModule],
-  exports: [EntityMenuComponent]
+  exports: [EntityMenuComponent],
 })
 export class EntityMenuModule {}

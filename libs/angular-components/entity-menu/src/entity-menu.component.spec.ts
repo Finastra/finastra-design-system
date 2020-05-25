@@ -13,7 +13,7 @@ describe('EntityMenuModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatButtonModule, MatIconModule, MatCardModule, MatMenuModule],
-      declarations: [EntityMenuComponent]
+      declarations: [EntityMenuComponent],
     }).compileComponents();
   }));
 

@@ -4,7 +4,7 @@ import { LegendPosition, ChartType, ChartOrientation } from '@ffdc/uxg-angular-c
 @Component({
   selector: 'ffdc-chart-demo',
   templateUrl: './chart-demo.component.html',
-  styleUrls: ['./chart-demo.component.scss']
+  styleUrls: ['./chart-demo.component.scss'],
 })
 export class ChartDemoComponent {
   legendPosition = LegendPosition.horizontalBottomCenter;
@@ -15,8 +15,8 @@ export class ChartDemoComponent {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.bar
-    }
+      type: ChartType.bar,
+    },
   ];
 
   traces2 = [
@@ -26,7 +26,7 @@ export class ChartDemoComponent {
       measure: [100, 50, 70],
       measureName: 'PNL',
       type: ChartType.bar,
-      orientation: ChartOrientation.horizontal
+      orientation: ChartOrientation.horizontal,
     },
     {
       dimension: ['Banks', 'Foods', 'Energies'],
@@ -34,7 +34,7 @@ export class ChartDemoComponent {
       measure: [75, 10, 90],
       measureName: 'Asset Values',
       type: ChartType.bar,
-      orientation: ChartOrientation.horizontal
+      orientation: ChartOrientation.horizontal,
     },
     {
       dimension: ['Banks', 'Foods', 'Energies'],
@@ -42,8 +42,8 @@ export class ChartDemoComponent {
       measure: [75, 10, 90],
       measureName: 'Asset',
       type: ChartType.bar,
-      orientation: ChartOrientation.horizontal
-    }
+      orientation: ChartOrientation.horizontal,
+    },
   ];
 
   traces3 = [
@@ -52,15 +52,15 @@ export class ChartDemoComponent {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.fullStackedArea
+      type: ChartType.fullStackedArea,
     },
     {
       dimension: ['Banks', 'Foods', 'Energies'],
       dimensionName: 'Industry',
       measure: [75, 10, 90],
       measureName: 'Asset Values',
-      type: ChartType.fullStackedArea
-    }
+      type: ChartType.fullStackedArea,
+    },
   ];
 
   traces4 = [
@@ -69,8 +69,8 @@ export class ChartDemoComponent {
       dimensionName: 'Industry',
       measure: [100, 50, 70],
       measureName: 'PNL',
-      type: ChartType.pie
-    }
+      type: ChartType.pie,
+    },
   ];
 
   onClick(event: Array<object>) {

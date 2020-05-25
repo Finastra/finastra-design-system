@@ -11,7 +11,7 @@ describe('PopoverModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [CommonModule, MatMenuModule],
-      declarations: [PopoverComponent]
+      declarations: [PopoverComponent],
     }).compileComponents();
   }));
 

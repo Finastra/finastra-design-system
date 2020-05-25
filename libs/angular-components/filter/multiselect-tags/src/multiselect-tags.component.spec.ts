@@ -12,7 +12,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   template: `
     <uxg-multiselect-tags [data]="data" (changes)="updateMultiselectTags($event)" #demoMultiselectTags>
     </uxg-multiselect-tags>
-  `
+  `,
 })
 class WrapperComponent implements OnInit {
   data: MultiselectTag[] = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
@@ -30,7 +30,7 @@ describe('MultiselectTagsModule', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [WrapperComponent, MultiselectTagsComponent],
-      imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule, BrowserAnimationsModule]
+      imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule, BrowserAnimationsModule],
     }).compileComponents();
     fixture = TestBed.createComponent(WrapperComponent);
     wrapper = fixture.componentInstance;

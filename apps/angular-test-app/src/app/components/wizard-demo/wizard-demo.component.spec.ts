@@ -12,7 +12,7 @@ describe('WizardDemoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, MatIconModule, WizardModule],
-      declarations: [WizardDemoComponent]
+      declarations: [WizardDemoComponent],
     }).compileComponents();
   }));
 

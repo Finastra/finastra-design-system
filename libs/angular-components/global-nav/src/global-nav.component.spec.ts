@@ -27,9 +27,9 @@ describe('GlobalNavModule', () => {
         MatCardModule,
         MatListModule,
         NoopAnimationsModule,
-        RouterTestingModule
+        RouterTestingModule,
       ],
-      declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
+      declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent],
     }).compileComponents();
   }));
 
