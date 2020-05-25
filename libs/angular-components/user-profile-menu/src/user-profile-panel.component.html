@@ -18,14 +18,20 @@
     <div class="uxg-caption">{{ user.email }}</div>
   </div>
 </div>
-<mat-divider *ngIf="hasFooter"></mat-divider>
-<div>
-  <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent || contentTemplate"></ng-container>
-</div>
-<mat-divider *ngIf="hasContent"></mat-divider>
-<div [ngClass]="{ 'uxg-menu-footer': hasFooter }">
-  <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions || actionsTemplate"></ng-container>
-</div>
+
+<ng-container *ngIf="hasContent">
+  <mat-divider></mat-divider>
+  <div>
+    <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent || contentTemplate"></ng-container>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="hasFooter">
+  <mat-divider></mat-divider>
+  <div [ngClass]="{ 'uxg-menu-footer': hasFooter }">
+    <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions || actionsTemplate"></ng-container>
+  </div>
+</ng-container>
 
 <ng-template #avatarImage>
   <img [src]="user.photo" />
