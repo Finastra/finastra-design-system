@@ -204,18 +204,18 @@ export class TableDemoComponent implements OnInit {
   customDataSource = ELEMENT_DATA.slice(0, 3);
   length = ELEMENT_DATA.length;
 
-  dragEnable = false;
-  totalEnable = false;
-  pageEnable = false;
-  customizedPage = false;
+  dragEnable = true;
+  totalEnable = true;
+  pageEnable = true;
+  customizedPage = true;
   stickyFooter = true;
   paging = null;
   customPaging = CUSTOM_PAGING;
   actionDescription = '';
   singleSelect = true;
-  enableTableEdit = false;
-  enableTableRowDelete = false;
-  enableTableSendEvent = false;
+  enableTableEdit = true;
+  enableTableRowDelete = true;
+  enableTableSendEvent = true;
 
   cellTemplateEmiter = new EventEmitter<any>();
   actionInfo = '';

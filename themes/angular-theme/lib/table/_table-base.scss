@@ -1,7 +1,6 @@
 @import "../core/style/spacing";
 
 $uxg-table-cell-icon-margin: $uxg-spacing-2;
-$uxg-table-icons: $uxg-spacing-3;
 $uxg-table-cell-margin: $uxg-spacing-3;
 $uxg-table-row-height: 44px;
 
@@ -39,9 +38,7 @@ $uxg-table-row-height: 44px;
           display: flex;
 
           .mat-icon {
-            font-size: $uxg-table-icons;
-            height: $uxg-table-icons;
-            width: $uxg-table-icons;
+            transform: scale(0.66);
             margin-right: $uxg-table-cell-icon-margin;
           }
         }
@@ -61,9 +58,7 @@ $uxg-table-row-height: 44px;
           display: flex;
 
           .mat-icon {
-            font-size: $uxg-table-icons;
-            height: $uxg-table-icons;
-            width: $uxg-table-icons;
+            transform: scale(0.66);
             margin-right: $uxg-table-cell-icon-margin;
           }
         }
