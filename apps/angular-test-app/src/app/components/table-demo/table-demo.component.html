@@ -448,7 +448,9 @@
 <h2>Advanced tips</h2>
 <h3>Table cell template</h3>
 <p>In table component, you can create your own customized cell template to customize your cell.</p>
-
+<p style="color:red">
+  the table column defination should be put in the ngOnInit. so that you can pass the template into uxg table.
+</p>
 <p>As you have ever read before, we have <code>UxgColumnType</code> definiations</p>
 <p>There are properties: <code>cellTemplate</code>/<code>cellEditTemplate</code></p>
 <p>And also there is a property in <code>UxgColumnType</code> called <code>cellTemplate</code></p>
@@ -531,6 +533,23 @@
       [pageEnable]="true"
       [paging]="customPaging"
       (pageChanged)="applyCustomPaging($event)"
+    >
+    </uxg-table>
+  </div>
+</mat-drawer-container>
+
+<h3>Table multi selection without checkbox column</h3>
+
+<mat-drawer-container class="table-container ">
+  <div class="ffdc-table-demo-div">
+    <uxg-table
+      [data]="dataSource"
+      [columns]="columns"
+      [columnsToDisplay]="columnsToDisplay"
+      [singleSelect]="false"
+      [multiSelect]="true"
+      [showMultiSelectCheckbox]="false"
+      [selectedKeys]="[1, 3]"
     >
     </uxg-table>
   </div>

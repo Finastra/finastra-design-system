@@ -74,24 +74,22 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   set selectedKeys(selectedIndex: number[]) {
+    this.selections.length = 0;
     this._selectedIndex = selectedIndex;
     if (this.singleSelect && selectedIndex && selectedIndex.length > 0) {
-      if (this.isRowSelected(this.data[selectedIndex[0]])) {
-        this.selections.push(this.data[selectedIndex[0]]);
-      }
+      this.selections.push(this.data[selectedIndex[0]]);
     }
     if (!this.singleSelect && this.multiSelect) {
       this.selections.length = 0;
       selectedIndex.forEach(sIndex => {
-        if (!this.isRowSelected(this.data[sIndex])) {
-          this.selections.push(this.data[sIndex]);
-        }
+        this.selections.push(this.data[sIndex]);
       });
     }
   }
 
   @Input() singleSelect = true;
   @Input() multiSelect = false;
+  @Input() showMultiSelectCheckbox = true;
 
   @Output() selectChanged = new EventEmitter<UxgTableSelectEvent>();
   @Output() multiSelectSingleRowClicked = new EventEmitter<any>();
@@ -134,7 +132,11 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       this.multiSelect = false;
     }
 
-    if (this.multiSelect && this.columnsToDisplayToComponent.indexOf(this.uxgMultiSelectColumn[0]) < 0) {
+    if (
+      this.multiSelect &&
+      this.columnsToDisplayToComponent.indexOf(this.uxgMultiSelectColumn[0]) < 0 &&
+      this.showMultiSelectCheckbox
+    ) {
       this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);
     }
 
@@ -225,6 +227,16 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       }
       this.emitSelectEvent();
       return;
+    } else if (this.multiSelect) {
+      if (!this.isRowSelected(row)) {
+        this.selections.push(row);
+      } else {
+        const rowIdx = this.getSelectedIndex(row);
+        if (rowIdx > -1) {
+          this.selections.splice(rowIdx, 1);
+        }
+      }
+      this.emitSelectEvent();
     }
 
     if (!this.singleSelect && this.multiSelect) {
