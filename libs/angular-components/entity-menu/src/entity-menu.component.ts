@@ -8,6 +8,7 @@ import {
   SimpleChanges,
   OnChanges
 } from '@angular/core';
+import { IOnItemClick } from './entity-menu.interfaces';
 
 @Component({
   selector: 'uxg-entity-menu',
@@ -23,8 +24,8 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() abbreviationLength = 3;
   @Input() bottomLabel = 'View all';
 
-  @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
-  @Output() itemClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() bottomClick = new EventEmitter<Event>();
+  @Output() itemClick = new EventEmitter<IOnItemClick>();
 
   ngOnInit() {}
 
