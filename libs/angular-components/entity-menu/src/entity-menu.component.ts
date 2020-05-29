@@ -21,7 +21,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() title = '';
   @Input() property?: string;
   @Input() abbreviationLength = 3;
-  @Input() bottomLabel = '';
+  @Input() bottomLabel = 'View all';
 
   @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() itemClick: EventEmitter<any> = new EventEmitter<any>();
@@ -39,7 +39,8 @@ export class EntityMenuComponent implements OnInit, OnChanges {
       const value = property ? item[property] : item;
       return {
         name: value,
-        abbr: this.formatItemName(value)
+        abbr: this.formatItemName(value),
+        item
       };
     });
   }
