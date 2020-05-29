@@ -5,7 +5,7 @@
 <mat-menu #menu="matMenu" class="container-list">
   <h6 class="uxg-h6 solutions-title">{{ title || 'Title' }}</h6>
   <div class="solution-list">
-    <div *ngFor="let item of items" class="solution-item" (click)="itemClick.emit(item)">
+    <div *ngFor="let item of items" class="solution-item" (click)="itemClick.emit(item)" [title]="item.name">
       <mat-card class="uxg-card-solution container-list-item" extra-dense>
         <span class="uxg-h5 uxg-card-solution-name">
           {{ item.abbr || 'SN' }}
