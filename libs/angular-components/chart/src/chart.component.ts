@@ -15,7 +15,8 @@ import {
   OnChanges,
   SimpleChanges,
   ChangeDetectorRef,
-  AfterContentInit
+  AfterContentInit,
+  ElementRef
 } from '@angular/core';
 import { PlotComponent } from 'angular-plotly.js';
 import { DOCUMENT } from '@angular/common';
@@ -24,7 +25,9 @@ import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
 import { PaletteService, PaletteConfig, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
-import { Subscription, merge, Observable } from 'rxjs';
+import { Subscription, merge, Observable, Subject } from 'rxjs';
+import { resizeObserver } from '@ffdc/uxg-angular-components/resize-observer';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'uxg-chart',
@@ -69,7 +72,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
 
   @Input()
   get revision(): number {
-    return this.plot.revision;
+    return this.plot ? this.plot.revision : 0;
   }
   set revision(value: number) {
     if (this.plot) {
@@ -101,7 +104,8 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     @Inject(DOCUMENT) private document: any,
     private paletteService: PaletteService,
     private cd: ChangeDetectorRef,
-    public layzyLoadScript: LazyloadScriptService
+    public layzyLoadScript: LazyloadScriptService,
+    private elementRef: ElementRef
   ) {
     this.onClick = new EventEmitter<Array<Object>>();
     this.onSelected = new EventEmitter<Array<Object>>();
@@ -114,6 +118,16 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     this.subscriptions.push(
       this.paletteService.paletteChange$.subscribe(config => {
         this.paletteConfig = config;
+      })
+    );
+
+    this.subscriptions.push(
+      resizeObserver(this.elementRef.nativeElement).pipe(
+        debounceTime(400),
+        distinctUntilChanged((entryA: ResizeObserverEntry, entryB: ResizeObserverEntry) => {
+          return (entryA.contentRect.width === entryB.contentRect.width) && (entryA.contentRect.height === entryB.contentRect.height)
+        })).subscribe(() => {
+          this.revision++
       })
     );
   }
