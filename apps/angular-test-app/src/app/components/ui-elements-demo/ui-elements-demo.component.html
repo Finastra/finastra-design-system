@@ -174,7 +174,7 @@
   <h3 class="uxg-display-3">Button toggle</h3>
   <h5 class="uxg-h5">Filter Toggle</h5>
   <div class="example-row">
-    <mat-button-toggle-group class="uxg-filtering-toggle-group">
+    <mat-button-toggle-group class="uxg-filtering-toggle-group" value="public">
       <mat-button-toggle value="public">
         <mat-icon>public</mat-icon>
         <span>Public</span>
@@ -203,6 +203,17 @@
         <mat-icon>border_right</mat-icon>
       </mat-button-toggle>
     </mat-button-toggle-group>
+
+    <mat-button-toggle-group dense #group="matButtonToggleGroup" value="trend">
+      <mat-button-toggle value="trend">
+        <mat-icon>timeline</mat-icon>
+        Trend
+      </mat-button-toggle>
+      <mat-button-toggle value="list">
+        <mat-icon>view_list</mat-icon>
+        List
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 
   <h5 class="uxg-h5">Button Toggle</h5>
@@ -211,6 +222,11 @@
       <mat-button-toggle value="bold">Bold</mat-button-toggle>
       <mat-button-toggle value="italic">Italic</mat-button-toggle>
       <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-button-toggle-group value="chat">
+      <mat-button-toggle value="phone"><mat-icon>phone</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="chat"><mat-icon>chat</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="mail"><mat-icon>mail_outline</mat-icon></mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 </div>

@@ -10,7 +10,8 @@
 
 .mat-button-base + .mat-button-base,
 .mat-icon + .mat-icon,
-.mat-card + .mat-card {
+.mat-card + .mat-card,
+.mat-button-toggle-group + .mat-button-toggle-group {
   margin-left: $uxg-spacing-2;
 }
 
