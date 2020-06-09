@@ -1,6 +1,6 @@
-name: Cypress tests
+name: Cypress Theme Tests
 on:
-  push:
+  pull_request:
     path:
       - 'themes/angular-theme/**'
 
