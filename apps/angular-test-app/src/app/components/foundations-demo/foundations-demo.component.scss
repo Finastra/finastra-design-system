@@ -1,12 +1,6 @@
 @import 'angular-theme/lib/core/style/spacing';
 
-.example-row {
-    margin-bottom: $uxg-spacing-4;
-}
-
-.mat-button-base + .mat-button-base,
-.mat-icon + .mat-icon,
-.mat-card + .mat-card {
+.mat-icon + .mat-icon {
     margin-left: $uxg-spacing-2;
 }
 
@@ -19,4 +13,8 @@
 
 .uxg-logo-link {
     text-indent: -9999px;
+}
+
+.typography-test {
+    padding-bottom: 700px;
 }
