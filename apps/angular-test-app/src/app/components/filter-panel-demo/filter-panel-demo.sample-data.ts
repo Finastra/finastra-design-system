@@ -81,17 +81,17 @@ export const sampleFilterTags: Tag[] = [
 ];
 export const sampleToggleBtn: ToggleBtn[] = [
   {
-    label: 'API',
+    label: ' API',
     value: 'api',
     matIcon: 'public'
   },
   {
-    label: 'Solution',
+    label: ' Solution',
     value: 'solution',
     matIcon: 'widgets'
   },
   {
-    label: 'Dataset',
+    label: ' Dataset',
     value: 'dataset',
     isSelected: true,
     matIcon: 'dns'
