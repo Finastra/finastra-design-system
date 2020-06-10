@@ -83,3 +83,16 @@ section {
     }
   }
 }
+
+.example-row {
+  margin-top: $uxg-spacing-3;
+  margin-left: $uxg-spacing-5;
+  display: inline-block;
+}
+
+.block-test {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2 * $uxg-spacing-5;
+  align-items: flex-start;
+}
