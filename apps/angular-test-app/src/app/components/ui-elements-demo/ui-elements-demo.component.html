@@ -159,7 +159,7 @@
 <div class="block-test">
   <h3 class="uxg-h3">Button toggle</h3>
   <div class="example-row toggle-filter-test">
-    <mat-button-toggle-group class="uxg-filtering-toggle-group">
+    <mat-button-toggle-group class="uxg-filtering-toggle-group" value="public">
       <mat-button-toggle value="public">
         <mat-icon>public</mat-icon>
         <span>Public</span>
@@ -168,7 +168,7 @@
         <mat-icon>group</mat-icon>
         <span>Shared</span>
       </mat-button-toggle>
-      <mat-button-toggle value="private">
+      <mat-button-toggle value="private" disabled>
         <mat-icon>lock</mat-icon>
         <span>Private</span>
       </mat-button-toggle>
@@ -177,7 +177,7 @@
 
   <div class="example-row toggle-dense-test">
     <mat-button-toggle-group dense>
-      <mat-button-toggle value="left">
+      <mat-button-toggle value="left" disabled>
         <mat-icon>border_left</mat-icon>
       </mat-button-toggle>
       <mat-button-toggle value="inner">
@@ -187,13 +187,29 @@
         <mat-icon>border_right</mat-icon>
       </mat-button-toggle>
     </mat-button-toggle-group>
+
+    <mat-button-toggle-group dense #group="matButtonToggleGroup" value="trend">
+      <mat-button-toggle value="trend">
+        <mat-icon>timeline</mat-icon>
+        Trend
+      </mat-button-toggle>
+      <mat-button-toggle value="list">
+        <mat-icon>view_list</mat-icon>
+        List
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 
   <div class="example-row toggle-group-test">
     <mat-button-toggle-group>
       <mat-button-toggle value="bold">Bold</mat-button-toggle>
       <mat-button-toggle value="italic">Italic</mat-button-toggle>
-      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      <mat-button-toggle value="underline" disabled>Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-button-toggle-group value="chat">
+      <mat-button-toggle value="phone"><mat-icon>phone</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="chat"><mat-icon>chat</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="mail" disabled><mat-icon>mail_outline</mat-icon></mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 </div>
