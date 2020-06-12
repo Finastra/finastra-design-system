@@ -1,0 +1,14 @@
+$mat-slide-toggle-thumb-size: 18px !default;
+$mat-slide-toggle-thumb-border: 1px !default;
+
+.mat-slide-toggle-thumb-container {
+  width: $mat-slide-toggle-thumb-size + 2 * $mat-slide-toggle-thumb-border;
+  height: $mat-slide-toggle-thumb-size + 2 * $mat-slide-toggle-thumb-border;
+
+  .mat-slide-toggle-thumb {
+    height: $mat-slide-toggle-thumb-size;
+    width: $mat-slide-toggle-thumb-size;
+    border-width: $mat-slide-toggle-thumb-border;
+    border-style: inset;
+  }
+}
