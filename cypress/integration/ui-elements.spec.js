@@ -207,4 +207,14 @@ context('UI Elements', () => {
       .scrollIntoView()
       .matchImageSnapshot();
   });
+
+  ////////
+  // SLIDE-TOGGLE
+  ////////
+
+  it('match slide-toggle states', () => {
+    cy.get('.slide-toggle-states-test')
+      .scrollIntoView()
+      .matchImageSnapshot();
+  });
 });
