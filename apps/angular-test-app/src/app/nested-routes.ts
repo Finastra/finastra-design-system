@@ -11,12 +11,14 @@ import { FoundationsDemoComponent } from './components/foundations-demo/foundati
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { AvatarDemoComponent } from './components/avatar-demo/avatar-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 import { DashboardLayoutDemoComponent } from './components/dashboard-layout-demo/dashboard-layout-demo.component';
+import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -38,6 +40,7 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'skeleton', component: SkeletonDemoComponent, data: { title: 'Skeleton' } },
       { path: 'vector-map', component: VectorMapDemoComponent, data: { title: 'Vector Map' } },
       { path: 'wizard', component: WizardDemoComponent, data: { title: 'Wizard' } },
+      { path: 'entity-menu', component: EntityMenuDemoComponent, data: { title: 'Entity Menu' } },
       { path: 'global-nav', component: GlobalNavDemoComponent, data: { title: 'Global Nav' } },
       { path: 'avatar', component: AvatarDemoComponent, data: { title: 'Avatar' } },
       { path: 'expandable-table', component: ExpandableTableDemoComponent, data: { title: 'Expandable Table' } },
@@ -47,7 +50,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
         data: { title: 'User Profile Menu' }
       },
       { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
-      { path: 'dashboard-layout', component: DashboardLayoutDemoComponent, data: { title: 'Dashboard layout' } }
+      { path: 'dashboard-layout', component: DashboardLayoutDemoComponent, data: { title: 'Dashboard layout' } },
+      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } }
     ]
   }
 ].map(groups => {

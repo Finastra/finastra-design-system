@@ -42,7 +42,7 @@ export class AvatarComponent implements OnInit {
   set dense(value: boolean) {
     this._dense = coerceBooleanProperty(value);
   }
-  private _dense: boolean = false;
+  private _dense = false;
 
   @Input() avatarImage: TemplateRef<any> | null = null;
   @ContentChild(UxgImageAvatar, { read: TemplateRef, static: true }) _explicitContent: TemplateRef<any> | undefined;

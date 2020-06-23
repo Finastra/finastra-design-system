@@ -41,7 +41,9 @@
       "@ffdc/uxg-angular-components/banner": ["libs/angular-components/banner"],
       "@ffdc/uxg-angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"],
       "@ffdc/uxg-angular-components/dashboard-layout": ["libs/angular-components/dashboard-layout/src/index.ts"],
-      "@ffdc/uxg-angular-components/resize-observer": ["libs/angular-components/resize-observer/src/index.ts"]
+      "@ffdc/uxg-angular-components/resize-observer": ["libs/angular-components/resize-observer/src/index.ts"],
+      "@ffdc/uxg-angular-components/cards/account-card": ["libs/angular-components/cards/account-card"],
+      "@ffdc/uxg-angular-components/entity-menu": ["libs/angular-components/entity-menu"]
     }
   },
   "exclude": ["node_modules", "tmp"]

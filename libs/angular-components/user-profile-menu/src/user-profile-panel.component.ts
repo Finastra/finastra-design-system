@@ -13,6 +13,7 @@ import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avata
 import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
+import { HeaderType } from './user-profile-menu.component';
 
 @Component({
   selector: 'uxg-user-profile-panel',
@@ -28,6 +29,7 @@ export class UxgUserProfilePanelComponent implements AfterContentInit {
   @Input() user!: UserProfile;
   @Input() defaultGravatar: DefaultGravatar | undefined;
   @Input() color: AvatarColor = 'gradient';
+  @Input() headerType: HeaderType = 'title';
 
   @Input() contentTemplate?: TemplateRef<any>;
   @Input() actionsTemplate?: TemplateRef<any>;

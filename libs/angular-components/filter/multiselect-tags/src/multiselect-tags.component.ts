@@ -16,10 +16,11 @@ interface UXGMultiSelectFilterChanges {
   templateUrl: './multiselect-tags.component.html',
   styleUrls: ['./multiselect-tags.component.scss']
 })
-export class MultiselectTagsComponent implements OnInit {
+export class MultiselectTagsComponent {
   private _data: MultiselectTag[] = [];
   @Input('dense') dense = null;
   @Input('large') large = null;
+
   @Input()
   set data(data: MultiselectTag[]) {
     this._data = cloneDeep(data);
@@ -35,8 +36,6 @@ export class MultiselectTagsComponent implements OnInit {
     this.data = [];
   }
 
-  ngOnInit() {}
-
   onTagSelection(tag: MultiselectTag) {
     if (tag.isSelected) {
       this.remove(tag);
@@ -47,6 +46,7 @@ export class MultiselectTagsComponent implements OnInit {
 
   add(tag: MultiselectTag) {
     const index = this.data.indexOf(tag);
+
     if (index >= 0) {
       this.data[index].isSelected = true;
       this.changes.emit({ added: [this.data[index]], removed: [] });
@@ -55,6 +55,7 @@ export class MultiselectTagsComponent implements OnInit {
 
   remove(tag: MultiselectTag) {
     const index = this.data.indexOf(tag);
+
     if (index >= 0) {
       this.data[index].isSelected = false;
       this.changes.emit({ added: [], removed: [this.data[index]] });

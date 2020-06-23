@@ -26,17 +26,20 @@ export class DrawService implements OnDestroy {
   private readonly _pointerMove: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
 
   readonly pointerMove: Observable<{ event: TouchEvent | MouseEvent; scroll: number }> = merge(
-    this.incrementScroll.pipe(withLatestFrom(this._pointerMove), map(([scroll, event]) => {
-      return { event, scroll };
-    })),
+    this.incrementScroll.pipe(
+      withLatestFrom(this._pointerMove),
+      map(([scroll, event]) => {
+        return { event, scroll };
+      })
+    ),
     this._pointerMove.pipe(
       tap(() => {
-          const container = this.getBoundary();
-          container._stopScrolling();
+        const container = this.getBoundary();
+        container._stopScrolling();
       }),
-      map(event => ({event, scroll: 0})
+      map(event => ({ event, scroll: 0 }))
     )
-    ));
+  );
 
   readonly pointerUp: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
   readonly scroll: Subject<Event> = new Subject<Event>();

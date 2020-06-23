@@ -1,0 +1,15 @@
+.mat-form-field-appearance-fill {
+  .mat-select {
+    .mat-select-arrow-wrapper {
+      transform: translateY(-25%);
+    }
+  }
+
+  &:not(.mat-form-field-has-label) {
+    .mat-select {
+      .mat-select-arrow-wrapper {
+        transform: none;
+      }
+    }
+  }
+}

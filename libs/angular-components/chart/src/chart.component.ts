@@ -122,13 +122,19 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     );
 
     this.subscriptions.push(
-      resizeObserver(this.elementRef.nativeElement).pipe(
-        debounceTime(400),
-        distinctUntilChanged((entryA: ResizeObserverEntry, entryB: ResizeObserverEntry) => {
-          return (entryA.contentRect.width === entryB.contentRect.width) && (entryA.contentRect.height === entryB.contentRect.height)
-        })).subscribe(() => {
-          this.revision++
-      })
+      resizeObserver(this.elementRef.nativeElement)
+        .pipe(
+          debounceTime(400),
+          distinctUntilChanged((entryA: ResizeObserverEntry, entryB: ResizeObserverEntry) => {
+            return (
+              entryA.contentRect.width === entryB.contentRect.width &&
+              entryA.contentRect.height === entryB.contentRect.height
+            );
+          })
+        )
+        .subscribe(() => {
+          this.revision++;
+        })
     );
   }
 

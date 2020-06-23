@@ -27,8 +27,8 @@ import { UserProfileMenuDemoComponentComponent } from './components/user-profile
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
-import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
 import { DashboardLayoutDemoComponent } from './components/dashboard-layout-demo/dashboard-layout-demo.component';
+import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -52,6 +52,11 @@ import { BannerModule } from '@ffdc/uxg-angular-components/banner';
 import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
 import { UxgDashboardLayoutModule } from '@ffdc/uxg-angular-components/dashboard-layout';
 import { MatTableModule } from '@angular/material/table';
+import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-demo.component';
+import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
+import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
+import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+
 @NgModule({
   declarations: [
     AvatarDemoComponent,
@@ -76,7 +81,9 @@ import { MatTableModule } from '@angular/material/table';
     AppComponent,
     BannerDemoComponent,
     GlobalNavDemoComponent,
-    DashboardLayoutDemoComponent
+    DashboardLayoutDemoComponent,
+    AccountCardDemoComponent,
+    EntityMenuDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +117,9 @@ import { MatTableModule } from '@angular/material/table';
     BannerModule,
     GlobalNavModule,
     UxgDashboardLayoutModule,
-    MatTableModule
+    MatTableModule,
+    AccountCardModule,
+    EntityMenuModule
   ],
   providers: [],
   exports: [],

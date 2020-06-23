@@ -825,13 +825,36 @@
             ],
             "exclude": ["**/node_modules/**", "!libs/angular-components/dashboard-layout/**"]
           }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "entity-menu": {
+      "projectType": "library",
+      "root": "libs/angular-components/entity-menu",
+      "sourceRoot": "libs/angular-components/entity-menu",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/entity-menu/tsconfig.lib.json",
+              "libs/angular-components/entity-menu/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**"]
+          }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/dashboard-layout/jest.config.js",
-            "tsConfig": "libs/angular-components/dashboard-layout/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/dashboard-layout/src/test-setup.ts"
+            "jestConfig": "libs/angular-components/entity-menu/jest.config.js",
+            "tsConfig": "libs/angular-components/entity-menu/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/entity-menu/test-setup.ts"
           }
         }
       },
@@ -856,13 +879,36 @@
             ],
             "exclude": ["**/node_modules/**", "!libs/angular-components/resize-observer/**"]
           }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "account-card": {
+      "projectType": "library",
+      "root": "libs/angular-components/cards/account-card",
+      "sourceRoot": "libs/angular-components/cards/account-card",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/cards/account-card/tsconfig.lib.json",
+              "libs/angular-components/cards/account-card/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-card/**"]
+          }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/resize-observer/jest.config.js",
-            "tsConfig": "libs/angular-components/resize-observer/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/resize-observer/src/test-setup.ts"
+            "jestConfig": "libs/angular-components/cards/account-card/jest.config.js",
+            "tsConfig": "libs/angular-components/cards/account-card/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/cards/account-card/test-setup.ts"
           }
         }
       },

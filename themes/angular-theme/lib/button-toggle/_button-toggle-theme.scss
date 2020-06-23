@@ -7,10 +7,6 @@
       color: mat-color($foreground, secondary-text);
       border-color: mat-color($foreground, divider);
 
-      .mat-icon {
-        color: mat-color($foreground, icon);
-      }
-
       &.mat-button-toggle-disabled {
         color: mat-color($foreground, secondary-text, 0.25);
 
@@ -20,7 +16,7 @@
       }
 
       &.mat-button-toggle-checked {
-        background-color: mat-color($primary, lighter);
+        background-color: mat-color($primary, default, 0.1);
 
         .mat-button-toggle-button,
         .mat-icon {

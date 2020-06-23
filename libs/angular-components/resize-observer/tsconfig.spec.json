@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "esnext",
-    "types": ["jest", "node"]
+    "types": ["node", "jest", "@types/resize-observer-browser"]
   },
   "files": ["test-setup.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]

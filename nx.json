@@ -76,6 +76,21 @@
     },
     "expandable-table": {
       "tags": []
+    },
+    "user-profile-menu": {
+      "tags": []
+    },
+    "entity-menu": {
+      "tags": []
+    },
+    "account-card": {
+      "tags": []
+    },
+    "dashboard-layout": {
+      "tags": []
+    },
+    "resize-observer": {
+      "tags": []
     }
   }
 }

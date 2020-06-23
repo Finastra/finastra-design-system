@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/devkit",
-  "version": "0.17.2",
+  "version": "0.19.5",
   "private": true,
   "main": "index.js",
   "builders": "./builders.json",

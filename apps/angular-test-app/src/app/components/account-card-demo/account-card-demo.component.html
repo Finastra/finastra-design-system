@@ -1,0 +1,18 @@
+<div class="accounts-list">
+  <ng-container *ngIf="accounts$ | async as accounts; else loading">
+    <uxg-account-card
+      *ngFor="let account of accounts"
+      [name]="account.name"
+      [balance]="account.balance"
+      [currency]="account.currency"
+      [number]="account.number"
+    ></uxg-account-card>
+  </ng-container>
+
+  <ng-template #loading>
+    <uxg-account-card-skeleton></uxg-account-card-skeleton>
+    <uxg-account-card-skeleton></uxg-account-card-skeleton>
+    <uxg-account-card-skeleton></uxg-account-card-skeleton>
+    <uxg-account-card-skeleton></uxg-account-card-skeleton>
+  </ng-template>
+</div>

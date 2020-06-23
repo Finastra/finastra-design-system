@@ -11,6 +11,11 @@
       "type": "boolean",
       "description": "Show output text.",
       "default": false
+    },
+    "fix": {
+      "type": "boolean",
+      "description": "Fix automatically linting issues.",
+      "default": false
     }
   }
 }

@@ -1,0 +1,18 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" ng-init color="primary">
+  <mat-icon>apps</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu" class="container-list">
+  <h6 class="uxg-h6 solutions-title">{{ title || 'Title' }}</h6>
+  <div class="solution-list">
+    <div *ngFor="let item of items" class="solution-item" (click)="itemClick.emit(item.value)" [title]="item.name">
+      <mat-card class="uxg-card-solution container-list-item" extra-dense>
+        <span class="uxg-h5 uxg-card-solution-name">
+          {{ item.abbr || 'SN' }}
+        </span>
+      </mat-card>
+      <h5 class="uxg-subtitle-4 solution-name">{{ item.name || 'Solution Name' }}</h5>
+    </div>
+  </div>
+  <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)">{{ bottomLabel || 'View All' }}</p>
+</mat-menu>
