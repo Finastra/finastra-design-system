@@ -1,9 +1,9 @@
 import { Injectable, Inject, NgZone, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { Subject } from 'rxjs';
-import { activeCapturingEventOptions } from './draw.utils';
+import { Subject, Observable, combineLatest, BehaviorSubject, merge } from 'rxjs';
+import { activeCapturingEventOptions, isTouchEvent } from './draw.utils';
 import { UxgDashboardLayoutComponent } from './dashboard-layout.component';
-
+import { map, tap, withLatestFrom } from 'rxjs/operators';
 /**
  * Service manages global event listeners on the `document`
  * and keeps trace of number drawing item, active item to clean event lisener properly.
@@ -22,8 +22,22 @@ export class DrawService implements OnDestroy {
       options?: AddEventListenerOptions | boolean;
     }
   >();
+  readonly incrementScroll = new Subject<number>();
+  private readonly _pointerMove: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
 
-  readonly pointerMove: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
+  readonly pointerMove: Observable<{ event: TouchEvent | MouseEvent; scroll: number }> = merge(
+    this.incrementScroll.pipe(withLatestFrom(this._pointerMove), map(([scroll, event]) => {
+      return { event, scroll };
+    })),
+    this._pointerMove.pipe(
+      tap(() => {
+          const container = this.getBoundary();
+          container._stopScrolling();
+      }),
+      map(event => ({event, scroll: 0})
+    )
+    ));
+
   readonly pointerUp: Subject<TouchEvent | MouseEvent> = new Subject<TouchEvent | MouseEvent>();
   readonly scroll: Subject<Event> = new Subject<Event>();
 
@@ -36,6 +50,10 @@ export class DrawService implements OnDestroy {
 
   removeBoundary() {
     delete this._boundary;
+  }
+
+  getBoundary(): UxgDashboardLayoutComponent {
+    return this._boundary;
   }
 
   getBoundaryRect(): ClientRect {
@@ -91,7 +109,7 @@ export class DrawService implements OnDestroy {
       // use `preventDefault` to prevent the page from scrolling while the user is dragging.
       this._globalListeners
         .set(moveEvent, {
-          handler: (e: Event) => this.pointerMove.next(e as TouchEvent | MouseEvent),
+          handler: (e: Event) => this._pointerMove.next(e as TouchEvent | MouseEvent),
           options: activeCapturingEventOptions
         })
         .set(upEvent, {
@@ -136,7 +154,7 @@ export class DrawService implements OnDestroy {
   ngOnDestroy() {
     this._registredItems.forEach(instance => this.stopListener(instance));
     this._clearGlobalListeners();
-    this.pointerMove.complete();
+    this._pointerMove.complete();
     this.pointerUp.complete();
   }
 

@@ -43,11 +43,8 @@ export class DrawItem {
   private _rootElementTapHighlight: string | null = null;
   private _hasMoved = false;
 
-  /** Coordinates within the element at which the user picked up the element. */
-  private _pickupPositionInElement: Point = { x: 0, y: 0 };
-
   /** Coordinates on the page at which the user picked up the element. */
-  private _pickupPositionOnPage: Point = { x: 0, y: 0 };
+  _pickupPositionOnPage: Point = { x: 0, y: 0 };
 
   /** Keeps track of the direction in which the user is dragging along each axis. */
   private _pointerDirectionDelta: { x: -1 | 0 | 1; y: -1 | 0 | 1 } = { x: 0, y: 0 };
@@ -150,8 +147,6 @@ export class DrawItem {
       this._dragDelayTimeout = null;
       this._removeListenForDelayMouseUp();
       this.pointerDown.next({
-        event,
-        pickupPositionInElement: { x: 0, y: 0 },
         pickupPositionOnPage: { x: 0, y: 0 },
         pointerPosition: { x: 0, y: 0 },
         source: this._element,
@@ -209,7 +204,6 @@ export class DrawItem {
 
     // If we have a custom preview template, the element won't be visible anyway so we avoid the
     // extra `getBoundingClientRect` calls and just move the preview next to the cursor.
-    this._pickupPositionInElement = this._getPointerPositionInElement(referenceElement, event);
     const pointerPosition = (this._pickupPositionOnPage = this._getPointerPositionOnPage(event));
     this._pointerDirectionDelta = { x: 0, y: 0 };
     this._pointerPositionAtLastDirectionChange = { x: pointerPosition.x, y: pointerPosition.y };
@@ -218,19 +212,18 @@ export class DrawItem {
     this._source = referenceElement;
     this.pointerDown.next({
       source: referenceElement,
-      event,
-      pickupPositionInElement: this._pickupPositionInElement,
       pickupPositionOnPage: this._pickupPositionOnPage,
       pointerPosition,
       cancelled: false
     });
   }
 
-  private _pointerMove = (event: MouseEvent | TouchEvent) => {
+  private _pointerMove = ({ event, scroll }: { event: MouseEvent | TouchEvent; scroll: number | null }) => {
+    const scrollY = scroll ?? 0;
     if (!this._hasStartedDrawing) {
       const pointerPosition = this._getPointerPositionOnPage(event);
       const distanceX = Math.abs(pointerPosition.x - this._pickupPositionOnPage.x);
-      const distanceY = Math.abs(pointerPosition.y - this._pickupPositionOnPage.y);
+      const distanceY = Math.abs(pointerPosition.y - this._pickupPositionOnPage.y) + scrollY;
       const isOverThreshold = distanceX + distanceY >= this._config.dragStartThreshold;
 
       // Only start dragging after the user has moved more than the minimum distance in either
@@ -252,22 +245,24 @@ export class DrawItem {
       return;
     }
 
+    // this._pickupPositionOnPage.y = this._pickupPositionOnPage.y - scrollY;
     const constrainedPointerPosition = this._getConstrainedPointerPosition(event);
     this._hasMoved = true;
     event.preventDefault();
     this._updatePointerDirectionDelta(constrainedPointerPosition);
-
-    this.pointerMove.next({
+    const mouseEvent = {
       source: this._source,
       pickupPositionOnPage: this._pickupPositionOnPage,
-      pickupPositionInElement: this._pickupPositionInElement,
       pointerPosition: constrainedPointerPosition,
       pointerPositionAtLastDirectionChange: this._pointerPositionAtLastDirectionChange,
-      event,
       hasMoved: this._hasMoved,
       distance: this._getDrawDistance(constrainedPointerPosition),
-      delta: this._pointerDirectionDelta
-    });
+      delta: this._pointerDirectionDelta,
+      isScrolling: !!scrollY
+    };
+    mouseEvent.pointerPosition.y = mouseEvent.pointerPosition.y + scrollY;
+    mouseEvent.distance.y = mouseEvent.distance.y + scrollY;
+    this.pointerMove.next(mouseEvent);
   };
 
   private _pointerUp = (event: MouseEvent | TouchEvent) => {
@@ -290,48 +285,28 @@ export class DrawItem {
     this._drawService.stopListener(this);
 
     if (this._handles) {
-      this._element.style.webkitTapHighlightColor = this._rootElementTapHighlight;
+      this._element.style.webkitTapHighlightColor = this._rootElementTapHighlight!;
       this._rootElementTapHighlight = null;
     }
 
-    const position = this._getPointerPositionOnPage(event);
+    const constrainedPointerPosition = this._getConstrainedPointerPosition(event);
     this.pointerUp.next({
       source: this._source,
-      pointerPosition: position,
-      pickupPositionInElement: this._pickupPositionInElement,
+      pointerPosition: constrainedPointerPosition,
       pickupPositionOnPage: this._pickupPositionOnPage,
       pointerPositionAtLastDirectionChange: this._pointerPositionAtLastDirectionChange,
-      event,
       hasMoved: this._hasMoved,
-      distance: this._getDrawDistance(position),
-      delta: this._pointerDirectionDelta
+      distance: this._getDrawDistance(constrainedPointerPosition),
+      delta: this._pointerDirectionDelta,
+      isScrolling: false
     });
     this._hasMoved = this._hasStartedDrawing = false;
-  }
-  /**
-   * Figures out the coordinates at which an element was picked up.
-   * @param referenceElement Element that initiated the dragging.
-   * @param event Event that initiated the dragging.
-   */
-  private _getPointerPositionInElement(referenceElement: HTMLElement, event: MouseEvent | TouchEvent): Point {
-    const elementRect = this._element.getBoundingClientRect();
-    const handleElement = referenceElement === this._element ? null : referenceElement;
-    const referenceRect = handleElement ? handleElement.getBoundingClientRect() : elementRect;
-    const point = isTouchEvent(event) ? event.targetTouches[0] : event;
-    const x = point.pageX - referenceRect.left - this.scrollPosition.left;
-    const y = point.pageY - referenceRect.top - this.scrollPosition.top;
-
-    return {
-      x: referenceRect.left - elementRect.left + x,
-      y: referenceRect.top - elementRect.top + y
-    };
   }
 
   /** Determines the point of the page that was touched by the user. */
   private _getPointerPositionOnPage(event: MouseEvent | TouchEvent): Point {
     // `touches` will be empty for start/end events so we have to fall back to `changedTouches`.
     const point = isTouchEvent(event) ? event.touches[0] || event.changedTouches[0] : event;
-
     return {
       x: point.pageX - this.scrollPosition.left,
       y: point.pageY - this.scrollPosition.top

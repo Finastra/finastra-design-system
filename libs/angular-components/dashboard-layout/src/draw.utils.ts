@@ -133,8 +133,6 @@ export function isTouchEvent(event: MouseEvent | TouchEvent): event is TouchEven
 export interface MouseDownEvent {
   source: any;
   pointerPosition: { x: number; y: number };
-  event: MouseEvent | TouchEvent;
-  pickupPositionInElement: Point;
   pickupPositionOnPage: Point;
   cancelled: boolean;
 }
@@ -142,13 +140,12 @@ export interface MouseDownEvent {
 export interface MouseMoveEvent {
   source: any;
   pointerPosition: Point;
-  pickupPositionInElement: Point;
   pickupPositionOnPage: Point;
   pointerPositionAtLastDirectionChange: Point;
-  event: MouseEvent | TouchEvent;
   distance: Point;
   hasMoved: boolean;
   delta: { x: -1 | 0 | 1; y: -1 | 0 | 1 };
+  isScrolling: boolean;
 }
 
 /** Clamps a value between a minimum and a maximum. */
@@ -180,4 +177,49 @@ export function getElementDataAction(element: HTMLElement): string {
 
 export function getElementDataActionDelay(element: HTMLElement): boolean {
   return !!element.dataset.actionDelay || false;
+}
+
+// export function isPointerNearClientRect(
+//   rect: ClientRect,
+//   paddingTop: number,
+//   paddingBottom: number,
+//   pointerY: number
+// ): boolean {
+//   const top = Math.max(rect.top, paddingTop);
+//   const bottom = Math.max(rect.bottom, paddingTop);
+//   return pointerY < top - threshold || pointerY > top + height + threshold;
+// }
+
+export function incrementVerticalScroll(node: HTMLElement | Window, amount: number) {
+  if (node === window) {
+    (node as Window).scrollBy(0, amount);
+  } else {
+    // Ideally we could use `Element.scrollBy` here as well, but IE and Edge don't support it.
+    (node as HTMLElement).scrollTop += amount;
+  }
+}
+
+export function getMutableClientRect(element: Element): ClientRect {
+  const clientRect = element.getBoundingClientRect();
+
+  // We need to clone the `clientRect` here, because all the values on it are readonly
+  // and we need to be able to update them. Also we can't use a spread here, because
+  // the values on a `ClientRect` aren't own properties. See:
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect#Notes
+  return {
+    top: clientRect.top,
+    right: clientRect.right,
+    bottom: clientRect.bottom,
+    left: clientRect.left,
+    width: clientRect.width,
+    height: clientRect.height
+  };
+}
+
+export function adjustClientRect(clientRect: ClientRect, top: number, left: number) {
+  clientRect.top += top;
+  clientRect.bottom = clientRect.top + clientRect.height;
+
+  clientRect.left += left;
+  clientRect.right = clientRect.left + clientRect.width;
 }

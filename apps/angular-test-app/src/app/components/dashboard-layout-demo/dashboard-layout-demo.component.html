@@ -4,9 +4,9 @@
 </mat-toolbar>
 <!-- <ng-container *ngTemplateOutlet="table"></ng-container> -->
 <br />
-<uxg-dashboard-layout [cols]="10" [editable]="edit">
+<uxg-dashboard-layout [cols]="10" [editable]="edit" scrollableParentSelector="mat-sidenav-content" paddingTop="60">
   <uxg-dashboard-item [editable]="edit" [cols]="6" [rows]="2">
-    <ng-container *ngTemplateOutlet="chart"></ng-container>
+    <ng-container *ngTemplateOutlet="table"></ng-container>
   </uxg-dashboard-item>
   <uxg-dashboard-item [editable]="edit" [cols]="6" [rows]="2">
     <mat-card class="box">1</mat-card>

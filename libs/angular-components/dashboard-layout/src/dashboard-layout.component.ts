@@ -23,15 +23,28 @@ import { defaultGridDefinition, GridItemPosition } from './models';
 import { Rect } from './rect';
 import { GridCoordinator } from './grid-coordinator';
 import { RatioGridStyler } from './styler';
-import { Subject, merge } from 'rxjs';
+import { Subject, merge, Subscription, interval, animationFrameScheduler } from 'rxjs';
 import { takeUntil, startWith } from 'rxjs/operators';
-import { Point } from './draw.utils';
+import { Point, incrementVerticalScroll, getMutableClientRect, adjustClientRect, getPixel } from './draw.utils';
 import { DrawService } from './draw.service';
+import { ViewportRuler } from '@angular/cdk/scrolling';
+import { DrawItem } from './draw-item';
 
 type ContentItem = UxpDashboardItemComponent & {
   rect: Rect;
   stamp?: boolean;
 };
+
+interface ScrollPosition {
+  top: number;
+  left: number;
+}
+
+/**
+ * Number of pixels to scroll for each frame when auto-scrolling an element.
+ * The value comes from trying it out manually until it feels right.
+ */
+const AUTO_SCROLL_STEP = 2;
 
 @Component({
   selector: 'uxg-dashboard-layout',
@@ -53,6 +66,9 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   @ViewChild('placeHolder', { read: TemplateRef, static: true }) placeholderTemplateRef!: TemplateRef<any>;
   @ViewChild('container', { read: ViewContainerRef, static: true }) containerViewRef!: ViewContainerRef;
 
+  @Input() scrollableParentSelector?: string;
+  @Input() paddingTop: number = 0;
+  @Input() paddingBottom: number = 0;
   @Input()
   get cols(): number {
     return this._cols;
@@ -100,6 +116,10 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     }
   }
 
+  _elementRect!: ClientRect;
+  _gridColumnWidth = 1;
+  _gridRowHeight = 1;
+
   private _gridCoordinator!: GridCoordinator;
   private _styler!: RatioGridStyler;
   private _orderedContentChildren: Array<ContentItem> = [];
@@ -107,18 +127,25 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   private _removeEditMode$ = new Subject<void>();
   private _element: HTMLElement;
   private _rowHeightRatio = 1;
-  _elementRect!: ClientRect;
-  _gridColumnWidth = 1;
-  _gridRowHeight = 1;
   private _placeHolderElement?: HTMLElement;
   private _placeHolderElementRef: EmbeddedViewRef<any> | undefined;
   private _shiftTargetKeys: string[] = [];
   private _shiftTargets: Point[] = [];
   private _targetPosition: GridItemPosition = { columnStart: 0, columnEnd: 0, rowEnd: 0, rowStart: 0 };
-
-  constructor(elementRef: ElementRef, private _ngZone: NgZone, private _drawService: DrawService) {
+  private _scrollNode: HTMLElement | Window | null = null;
+  private _scrollNodeRect: ClientRect | null | undefined = null;
+  private _scrollPosition: ScrollPosition = { top: 0, left: 0 };
+  private _viewportScrollSubscription = Subscription.EMPTY;
+  private _stopScrollTimers = new Subject<void>();
+  private _scrollDirection: 'UP' | 'DOWN' | 'NONE' = 'NONE';
+  private _activeItem?: DrawItem;
+  constructor(
+    elementRef: ElementRef,
+    private _ngZone: NgZone,
+    private _drawService: DrawService,
+    private _viewportRuler: ViewportRuler
+  ) {
     this._element = elementRef.nativeElement;
-    _drawService.setBoundary(this);
   }
 
   ngOnInit() {
@@ -132,7 +159,8 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     this._orderedContentChildren = [];
     this._removeEditMode();
     this._removeEditMode$.complete();
-    this._drawService.removeBoundary();
+    this._stopScrolling();
+    this._stopScrollTimers.complete();
   }
 
   ngAfterContentInit() {
@@ -145,12 +173,26 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     });
   }
 
-  private _initEditMode() {
-    const changedOrDestroyed = merge(this._contentChildren.changes, this._destroyed$, this._removeEditMode$);
-    this._elementRect = this._element.getBoundingClientRect();
-    this._gridColumnWidth = (this._elementRect.width - (this._cols - 1) * this._gutter) / this._cols;
-    this._gridRowHeight = this._gridColumnWidth * this._rowHeightRatio;
+  _startScrollingIfNecessary(pointerY: number, event: PosistionOffset) {
+    const top = Math.max(this._scrollNodeRect!.top + this.paddingTop, this._elementRect.top);
+    const scrollTop = this._scrollPosition.top;
+    this._scrollDirection = 'NONE';
+    if (pointerY < top && scrollTop > 0) {
+      this._scrollDirection = 'UP';
+    } else if (pointerY > this._scrollNodeRect!.bottom - this.paddingBottom) {
+      this._scrollDirection = 'DOWN';
+    }
 
+    if (this._scrollDirection !== 'NONE') {
+      this._ngZone.runOutsideAngular(this._startScrollInterval);
+    } else {
+      this._stopScrolling();
+    }
+  }
+
+  private _initEditMode() {
+    this._drawService.setBoundary(this);
+    const changedOrDestroyed = merge(this._contentChildren.changes, this._destroyed$, this._removeEditMode$);
     merge<PosistionOffset>(...this._contentChildren.map(child => child.changedSize))
       .pipe(takeUntil(changedOrDestroyed))
       .subscribe(event => {
@@ -201,6 +243,94 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
       });
   }
 
+  /**
+   * Called by one item has started drawing.
+   */
+  start(item: DrawItem) {
+    this._activeItem = item;
+    this._scrollDirection = 'NONE';
+    this._elementRect = getMutableClientRect(this._element);
+    this._gridColumnWidth = (this._elementRect.width - (this._cols - 1) * this._gutter) / this._cols;
+    this._gridRowHeight = this._gridColumnWidth * this._rowHeightRatio;
+    this._cacheScrollPosition();
+    this._listenToScrollEvents();
+  }
+
+  /**
+   * Called by one item has stop drawing
+   */
+  stop() {
+    this._activeItem = undefined;
+    this._stopScrolling();
+    this._viewportScrollSubscription.unsubscribe();
+  }
+
+  private _listenToScrollEvents() {
+    this._viewportScrollSubscription = this._drawService.scroll.subscribe(event => {
+      const target = event.target as HTMLElement | Document;
+      let newTop: number = 0;
+      let newLeft: number = 0;
+      if (target === document) {
+        const viewportScrollPosition = this._viewportRuler!.getViewportScrollPosition();
+        newTop = viewportScrollPosition.top;
+        newLeft = viewportScrollPosition.left;
+      } else if (target === this._scrollNode) {
+        newTop = (target as HTMLElement).scrollTop;
+        newLeft = (target as HTMLElement).scrollLeft;
+      }
+
+      const topDifference = this._scrollPosition.top - newTop;
+      const leftDifference = this._scrollPosition.left - newLeft;
+      adjustClientRect(this._elementRect, topDifference, leftDifference);
+      this._activeItem!._pickupPositionOnPage.y = this._activeItem!._pickupPositionOnPage.y + topDifference;
+
+      this._scrollPosition.top = newTop;
+      this._scrollPosition.left = newLeft;
+    });
+  }
+
+  private _cacheScrollPosition() {
+    if (this.scrollableParentSelector === 'viewport') {
+      this._scrollNode = window;
+      const { width, height } = this._viewportRuler.getViewportSize();
+      const clientRect = { width, height, top: 0, right: width, bottom: height, left: 0 };
+      this._scrollNodeRect = clientRect;
+      this._scrollPosition = this._viewportRuler.getViewportScrollPosition();
+    } else {
+      this._scrollNode = this.scrollableParentSelector
+        ? document.querySelector<HTMLElement>(this.scrollableParentSelector)
+        : this._element;
+
+      this._scrollNodeRect = this._scrollNode!.getBoundingClientRect();
+      this._scrollPosition = { top: this._scrollNode!.scrollTop, left: this._scrollNode!.scrollLeft };
+    }
+  }
+
+  /** Starts the interval that'll auto-scroll the element. */
+  private _startScrollInterval = () => {
+    this._stopScrolling();
+    interval(0, animationFrameScheduler)
+      .pipe(takeUntil(this._stopScrollTimers))
+      .subscribe({
+        next: () => {
+          const node = this._scrollNode;
+          console.log(this._scrollDirection);
+          if (this._scrollDirection === 'UP') {
+            incrementVerticalScroll(node!, -AUTO_SCROLL_STEP);
+            this._drawService.incrementScroll.next(-AUTO_SCROLL_STEP);
+          } else if (this._scrollDirection === 'DOWN') {
+            incrementVerticalScroll(node!, AUTO_SCROLL_STEP);
+            this._drawService.incrementScroll.next(AUTO_SCROLL_STEP);
+          }
+        }
+      });
+  };
+
+  /** Stops any currently-running auto-scroll sequences. */
+  _stopScrolling() {
+    this._stopScrollTimers.next();
+  }
+
   private calculateNewPosition(oldPosition: GridItemPosition, offset: PosistionOffset): GridItemPosition {
     return {
       columnStart: oldPosition.columnStart + Math.round(offset.left / this._gridColumnWidth),
@@ -218,6 +348,9 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
 
   private _removeEditMode() {
     this._removeEditMode$.next();
+    this._scrollNode = null;
+    this._scrollNodeRect = null;
+    this._drawService.removeBoundary();
   }
 
   private _updateShiftTargets(itemRect: Rect) {
