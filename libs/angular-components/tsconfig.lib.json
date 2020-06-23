@@ -6,7 +6,7 @@
     "declaration": true,
     "allowJs": false,
     "inlineSources": true,
-    "types": [],
+    "types": ["@types/resize-observer-browser"],
     "lib": ["dom", "es2018"]
   },
   "angularCompilerOptions": {
