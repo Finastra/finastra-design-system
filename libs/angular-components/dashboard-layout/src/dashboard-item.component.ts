@@ -74,8 +74,8 @@ export class UxpDashboardItemComponent implements OnInit, AfterViewInit, OnDestr
   private _stopMouseListener$ = new Subject<void>();
 
   private _elementRect!: ClientRect;
-  private _marginTop: number = 0;
-  private _elementLeft: number = 0;
+  private _marginTop = 0;
+  private _elementLeft = 0;
   private _columnWidth = 1;
   private _rowHeight = 0;
   private _activeTransform: Point = { x: 0, y: 0 };

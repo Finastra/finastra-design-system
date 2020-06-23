@@ -1,7 +1,7 @@
 import { Injectable, Inject, NgZone, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { Subject, Observable, combineLatest, BehaviorSubject, merge } from 'rxjs';
-import { activeCapturingEventOptions, isTouchEvent } from './draw.utils';
+import { Subject, Observable, merge } from 'rxjs';
+import { activeCapturingEventOptions } from './draw.utils';
 import { UxgDashboardLayoutComponent } from './dashboard-layout.component';
 import { map, tap, withLatestFrom } from 'rxjs/operators';
 /**

@@ -67,8 +67,8 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   @ViewChild('container', { read: ViewContainerRef, static: true }) containerViewRef!: ViewContainerRef;
 
   @Input() scrollableParentSelector?: string;
-  @Input() paddingTop: number = 0;
-  @Input() paddingBottom: number = 0;
+  @Input() paddingTop = 0;
+  @Input() paddingBottom = 0;
   @Input()
   get cols(): number {
     return this._cols;
@@ -268,8 +268,8 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   private _listenToScrollEvents() {
     this._viewportScrollSubscription = this._drawService.scroll.subscribe(event => {
       const target = event.target as HTMLElement | Document;
-      let newTop: number = 0;
-      let newLeft: number = 0;
+      let newTop = 0;
+      let newLeft = 0;
       if (target === document) {
         const viewportScrollPosition = this._viewportRuler!.getViewportScrollPosition();
         newTop = viewportScrollPosition.top;
@@ -382,7 +382,7 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
     }
     // create string for a key, easier to keep track of what targets
     const key = columnStart + ',' + rowStart;
-    const hasKey = this._shiftTargetKeys.indexOf(key) != -1;
+    const hasKey = this._shiftTargetKeys.indexOf(key) !== -1;
     if (hasKey) {
       return;
     }
@@ -393,7 +393,7 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   private _shift(item: ContentItem, columnStart: number, rowStart: number) {
     let shiftPosition: Point | null = null;
     let minDistance = Infinity;
-    let position = { x: columnStart, y: rowStart };
+    const position = { x: columnStart, y: rowStart };
     for (const target of this._shiftTargets) {
       const distance = this._getDistance(target, position);
       if (distance < minDistance) {
@@ -408,8 +408,8 @@ export class UxgDashboardLayoutComponent implements OnInit, AfterContentInit, On
   }
 
   private _getDistance(a: Point, b: Point): number {
-    var dx = b.x - a.x;
-    var dy = b.y - a.y;
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
     return Math.sqrt(dx * dx + dy * dy);
   }
 
