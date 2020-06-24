@@ -6,8 +6,8 @@ import { NavigationNode } from '@ffdc/uxg-angular-components/global-nav';
   templateUrl: './global-nav-demo.component.html',
   styleUrls: ['./global-nav-demo.component.scss'],
   host: {
-    class: 'ffdc-global-nav-demo'
-  }
+    class: 'ffdc-global-nav-demo',
+  },
 })
 export class GlobalNavDemoComponent {
   appName = 'Global Nav Demo';
@@ -17,26 +17,26 @@ export class GlobalNavDemoComponent {
       path: 'global-nav',
       title: 'app1',
       tooltip: 'app1',
-      icon: 'dashboard'
+      icon: 'dashboard',
     },
     {
       path: 'app2.com',
       title: 'app2',
       tooltip: 'app2',
-      icon: 'dashboard'
+      icon: 'dashboard',
     },
     {
       path: 'app3.com',
       title: 'app3',
       tooltip: 'app3',
-      icon: 'dashboard'
+      icon: 'dashboard',
     },
     {
       path: 'app4.com',
       title: 'app4',
       tooltip: 'app4',
-      icon: 'dashboard'
-    }
+      icon: 'dashboard',
+    },
   ];
 
   nodeChosen(node: any) {

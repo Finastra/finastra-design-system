@@ -79,7 +79,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerDemoComponent,
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
-    EntityMenuDemoComponent
+    EntityMenuDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -113,10 +113,10 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerModule,
     GlobalNavModule,
     AccountCardModule,
-    EntityMenuModule
+    EntityMenuModule,
   ],
   providers: [],
   exports: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

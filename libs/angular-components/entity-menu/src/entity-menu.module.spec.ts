@@ -4,7 +4,7 @@ import { EntityMenuModule } from './entity-menu.module';
 describe('EntityMenuModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [EntityMenuModule]
+      imports: [EntityMenuModule],
     }).compileComponents();
   }));
 

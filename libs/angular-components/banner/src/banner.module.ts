@@ -6,6 +6,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [BannerComponent],
   imports: [MatTooltipModule, CommonModule],
-  exports: [BannerComponent]
+  exports: [BannerComponent],
 })
 export class BannerModule {}

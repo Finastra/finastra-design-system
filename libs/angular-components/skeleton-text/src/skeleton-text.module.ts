@@ -4,6 +4,6 @@ import { SkeletonTextComponent } from './skeleton-text.component';
 
 @NgModule({
   declarations: [SkeletonTextComponent],
-  exports: [SkeletonTextComponent]
+  exports: [SkeletonTextComponent],
 })
 export class SkeletonTextModule {}

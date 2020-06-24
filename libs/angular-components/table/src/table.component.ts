@@ -8,7 +8,7 @@ import {
   OnChanges,
   SimpleChanges,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
@@ -21,7 +21,7 @@ import isEqual from 'lodash/isEqual';
   selector: 'uxg-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
@@ -82,7 +82,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
     if (!this.singleSelect && this.multiSelect) {
       this.selections.length = 0;
-      selectedIndex.forEach(sIndex => {
+      selectedIndex.forEach((sIndex) => {
         if (!this.isRowSelected(this.data[sIndex])) {
           this.selections.push(this.data[sIndex]);
         }
@@ -215,7 +215,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   singleSelectRowClick(row: any) {
     if (this.uxgTableEdit) return;
-    this.dataToComponent.forEach(item => delete item.uxgTableEdit);
+    this.dataToComponent.forEach((item) => delete item.uxgTableEdit);
 
     if (this.singleSelect) {
       if (!this.isRowSelected(row)) {
@@ -282,13 +282,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   emitSelectEvent() {
     this.selectChanged.emit({
       singleSelect: this.singleSelect ? true : false,
-      data: this.selections
+      data: this.selections,
     });
   }
 
   emitClickEvent(data: any) {
     this.multiSelectSingleRowClicked.emit({
-      data: data
+      data: data,
     });
   }
 
@@ -306,7 +306,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   rowEditClick(row: any) {
-    this.dataToComponent.forEach(item => {
+    this.dataToComponent.forEach((item) => {
       delete item.uxgTableEdit;
     });
     this.editRowOrigin = { ...row };
@@ -316,7 +316,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   rowSendTriggered(row: any) {
     this.rowSend.emit({
-      data: row
+      data: row,
     });
   }
 
@@ -324,24 +324,24 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     delete newRow.uxgTableEdit;
     this.uxgTableEdit = false;
     this.rowUpdated.emit({
-      data: newRow
+      data: newRow,
     });
   }
 
   rowEditCancel(row: any) {
     delete row.uxgTableEdit;
     this.uxgTableEdit = false;
-    Object.keys(row).forEach(key => {
+    Object.keys(row).forEach((key) => {
       row[key] = this.editRowOrigin[key];
     });
   }
 
   rowDelete(row: any) {
-    const rowIndex = this.dataToComponent.findIndex(item => item === row);
+    const rowIndex = this.dataToComponent.findIndex((item) => item === row);
     this.dataToComponent.splice(rowIndex, 1);
     this.dataToComponent = this.dataToComponent.slice();
     this.rowRemoved.emit({
-      data: row
+      data: row,
     });
   }
 
@@ -354,7 +354,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.localPaging({
       pageIndex: this.paging.pageIndex || 0,
       pageSize: this.paging.pageSize || 5,
-      length: this.data.length
+      length: this.data.length,
     });
   }
 
@@ -381,7 +381,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getSortColumnType(columnName: string): string | undefined {
-    const column = this.columns.find(item => {
+    const column = this.columns.find((item) => {
       return item.name === columnName;
     });
 
@@ -421,7 +421,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getSelectedIndex(row: any) {
-    const rowIdx = this.selections.findIndex(item => {
+    const rowIdx = this.selections.findIndex((item) => {
       return isEqual(item, row);
     });
     return rowIdx > -1 ? rowIdx : -1;

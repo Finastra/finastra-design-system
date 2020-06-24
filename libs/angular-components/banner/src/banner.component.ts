@@ -16,8 +16,8 @@ interface BannerItem {
   changeDetection: ChangeDetectionStrategy.Default,
   host: {
     class: 'uxg-banner',
-    '[class.uxg-banner-small]': 'small'
-  }
+    '[class.uxg-banner-small]': 'small',
+  },
 })
 export class BannerComponent {
   private _bannerData: Banner[] = [];
@@ -28,11 +28,11 @@ export class BannerComponent {
     }
   }
   get banners(): BannerItem[] {
-    return this._bannerData.map(banner => {
+    return this._bannerData.map((banner) => {
       return {
         name: banner.name,
         text: this.getBannerText(banner),
-        tooltip: banner.tooltip
+        tooltip: banner.tooltip,
       };
     });
   }

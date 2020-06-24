@@ -19,8 +19,8 @@ import { HighlightPipe } from './highlight.pipe';
     MatChipsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
-  exports: [FilterTagsComponent, HighlightPipe]
+  exports: [FilterTagsComponent, HighlightPipe],
 })
 export class FilterTagsModule {}

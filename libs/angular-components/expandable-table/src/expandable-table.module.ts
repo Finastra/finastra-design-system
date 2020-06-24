@@ -17,9 +17,9 @@ import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
     MatButtonModule,
     MatExpansionModule,
     MatCheckboxModule,
-    UxgTableModule
+    UxgTableModule,
   ],
   exports: [ExpandableTableComponent],
-  entryComponents: [ExpandableTableComponent]
+  entryComponents: [ExpandableTableComponent],
 })
 export class ExpandableTableModule {}

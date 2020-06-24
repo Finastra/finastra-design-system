@@ -21,9 +21,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
   ],
   declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent],
-  exports: [GlobalNavComponent, NavbarComponent, SidenavComponent]
+  exports: [GlobalNavComponent, NavbarComponent, SidenavComponent],
 })
 export class GlobalNavModule {}

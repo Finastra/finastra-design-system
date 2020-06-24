@@ -7,7 +7,7 @@ import {
   Output,
   TemplateRef,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { NavigationNode } from './services/navigation.model';
 import { Router, NavigationEnd } from '@angular/router';
@@ -19,8 +19,8 @@ import { ReplaySubject } from 'rxjs';
   templateUrl: './global-nav.component.html',
   styleUrls: ['./global-nav.component.scss'],
   host: {
-    class: 'uxg-global-nav'
-  }
+    class: 'uxg-global-nav',
+  },
 })
 export class GlobalNavComponent implements OnInit, OnDestroy {
   @Input() appName!: string;
@@ -39,7 +39,7 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   currentRoute = new ReplaySubject<string>();
 
   constructor(private router: Router) {
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(currentRoute => {
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((currentRoute) => {
       const route = (currentRoute as NavigationEnd).url;
       this.currentRoute.next(route);
     });
@@ -48,7 +48,7 @@ export class GlobalNavComponent implements OnInit, OnDestroy {
   ngOnInit() {
     if (!this.currentNode) {
       this.currentRoute.subscribe((currentRoute: string) => {
-        const currentNode = this.navigationNodes.find(node => node.path === currentRoute.replace(/\//g, ''));
+        const currentNode = this.navigationNodes.find((node) => node.path === currentRoute.replace(/\//g, ''));
         if (currentNode) {
           this.currentNode = currentNode;
           this.activeRoute = currentRoute;

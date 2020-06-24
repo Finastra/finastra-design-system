@@ -12,14 +12,14 @@ import { RepeaterModule } from './repeater.module';
 
 @Component({
   selector: 'uxg-mock-card',
-  template: '<p>Mock Card Component</p>'
+  template: '<p>Mock Card Component</p>',
 })
 class MockCardComponent {}
 
 @NgModule({
   imports: [CommonModule],
   declarations: [MockCardComponent],
-  entryComponents: [MockCardComponent]
+  entryComponents: [MockCardComponent],
 })
 export class FakeMockCardNgModule {}
 
@@ -37,7 +37,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '4/25',
       name: 'Fred Weaver',
       address: "St. Joseph's Street 9879",
-      country: 'Angola'
+      country: 'Angola',
     },
     {
       network: 'American Express',
@@ -48,7 +48,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '12/21',
       name: 'Roosevelt Fox',
       address: 'Borthwick Street 7058',
-      country: 'Sweden'
+      country: 'Sweden',
     },
     {
       network: 'Mastercard',
@@ -59,7 +59,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '3/23',
       name: 'Emmett Wagner',
       address: 'Cavaye Place 5408',
-      country: 'Cameroon'
+      country: 'Cameroon',
     },
     {
       network: 'Visa',
@@ -70,7 +70,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '5/21',
       name: 'Nylah Nash',
       address: 'Whichcote Street 5701',
-      country: 'Rwanda'
+      country: 'Rwanda',
     },
     {
       network: 'Maestro',
@@ -81,7 +81,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '6/22',
       name: 'Jacqueline Stevenson',
       address: 'Plympton Place 3116',
-      country: 'Fiji'
+      country: 'Fiji',
     },
     {
       network: 'Visa',
@@ -92,7 +92,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '11/26',
       name: 'Micah Morrison',
       address: 'Langford Close 5508',
-      country: 'Romania'
+      country: 'Romania',
     },
     {
       network: 'Visa',
@@ -103,7 +103,7 @@ describe('RepeaterComponent', () => {
       'expiration-date': '4/21',
       name: 'Vince Stone',
       address: 'Chelsea Manor Gardens 5397',
-      country: 'Reunion'
+      country: 'Reunion',
     },
     {
       network: 'American Express',
@@ -114,14 +114,14 @@ describe('RepeaterComponent', () => {
       'expiration-date': '10/19',
       name: 'Angelique Spencer',
       address: 'Connaught Close 4792',
-      country: 'Singapore'
-    }
+      country: 'Singapore',
+    },
   ];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [RepeaterComponent, ComponentRepeaterComponent],
-      imports: [FakeMockCardNgModule, CommonModule, MatTableModule, ScrollingModule, ExperimentalScrollingModule]
+      imports: [FakeMockCardNgModule, CommonModule, MatTableModule, ScrollingModule, ExperimentalScrollingModule],
     }).compileComponents();
     fixture = TestBed.createComponent(RepeaterComponent);
     component = fixture.componentInstance;
@@ -138,7 +138,7 @@ describe('RepeaterComponent', () => {
 
     component.component = componentR;
     component.ngOnChanges({
-      component: new SimpleChange(null, component.component, true)
+      component: new SimpleChange(null, component.component, true),
     });
 
     fixture.detectChanges();
@@ -152,7 +152,7 @@ describe('RepeaterComponent', () => {
     component.orientation = 'vertical';
     component.ngOnChanges({
       component: new SimpleChange(null, component.component, true),
-      orientation: new SimpleChange(null, component.orientation, true)
+      orientation: new SimpleChange(null, component.orientation, true),
     });
 
     fixture.detectChanges();
@@ -164,7 +164,7 @@ describe('RepeaterComponent', () => {
 
     component.multiSelect = true;
     component.ngOnChanges({
-      multiSelect: new SimpleChange(null, component.multiSelect, true)
+      multiSelect: new SimpleChange(null, component.multiSelect, true),
     });
 
     fixture.detectChanges();
@@ -176,7 +176,7 @@ describe('RepeaterComponent', () => {
 
     component.component = componentR;
     component.ngOnChanges({
-      component: new SimpleChange(null, component.component, true)
+      component: new SimpleChange(null, component.component, true),
     });
     fixture.detectChanges();
 
@@ -195,7 +195,7 @@ describe('RepeaterComponent', () => {
     component.multiSelect = true;
     component.ngOnChanges({
       component: new SimpleChange(null, component.component, true),
-      multiSelect: new SimpleChange(null, component.multiSelect, true)
+      multiSelect: new SimpleChange(null, component.multiSelect, true),
     });
     fixture.detectChanges();
 
@@ -219,7 +219,7 @@ describe('RepeaterComponent', () => {
     component.multiSelect = true;
     component.ngOnChanges({
       component: new SimpleChange(null, component.component, true),
-      selectedKeys: new SimpleChange(null, component.selectedKeys, true)
+      selectedKeys: new SimpleChange(null, component.selectedKeys, true),
     });
 
     fixture.detectChanges();

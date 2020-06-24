@@ -6,14 +6,14 @@ import {
   EventEmitter,
   OnInit,
   SimpleChanges,
-  OnChanges
+  OnChanges,
 } from '@angular/core';
 
 @Component({
   selector: 'uxg-entity-menu',
   templateUrl: './entity-menu.component.html',
   styleUrls: ['./entity-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class EntityMenuComponent implements OnInit, OnChanges {
   items: any[] = [];
@@ -40,7 +40,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
       return {
         name: value,
         abbr: this.formatItemName(value),
-        value: item
+        value: item,
       };
     });
   }
@@ -49,7 +49,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     if (name) {
       return name
         .split(' ')
-        .map(str => str.charAt(0))
+        .map((str) => str.charAt(0))
         .join('')
         .toUpperCase()
         .substring(0, this.abbreviationLength);

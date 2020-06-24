@@ -7,7 +7,7 @@ import { ToggleBtn } from '@ffdc/uxg-angular-components/filter/filter-toggle';
 @Component({
   selector: 'ffdc-filter-panel-demo',
   templateUrl: './filter-panel-demo.component.html',
-  styleUrls: ['./filter-panel-demo.component.scss']
+  styleUrls: ['./filter-panel-demo.component.scss'],
 })
 export class FilterPanelDemoComponent implements OnInit {
   sampleDataTree: TreeNode[] = [];
@@ -21,7 +21,7 @@ export class FilterPanelDemoComponent implements OnInit {
     { label: 'Malauzai', isSelected: true },
     { label: 'North America' },
     { label: 'Money Movement' },
-    { label: 'Static Data' }
+    { label: 'Static Data' },
   ];
 
   multiselectTagsSampleData = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];

@@ -24,8 +24,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
     title: 'Theme',
     routes: [
       { path: 'foundations', component: FoundationsDemoComponent, data: { title: 'Foundations' } },
-      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } }
-    ]
+      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } },
+    ],
   },
   {
     title: 'Components',
@@ -46,13 +46,13 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       {
         path: 'user-profile-menu',
         component: UserProfileMenuDemoComponentComponent,
-        data: { title: 'User Profile Menu' }
+        data: { title: 'User Profile Menu' },
       },
       { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
-      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } }
-    ]
-  }
-].map(groups => {
+      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } },
+    ],
+  },
+].map((groups) => {
   groups.routes = groups.routes.sort((a: any, b: any) => a.data.title.localeCompare(b.data.title));
   return groups;
 });

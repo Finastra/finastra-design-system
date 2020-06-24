@@ -6,7 +6,7 @@ import * as smoothscroll from 'smoothscroll-polyfill';
 
 enum ShowStatus {
   show = 'show',
-  hide = 'hide'
+  hide = 'hide',
 }
 @Component({
   selector: 'uxg-scroll-to-top',
@@ -17,9 +17,9 @@ enum ShowStatus {
       state('show', style({ opacity: 1, transform: 'scale(1)' })),
       state('hide', style({ opacity: 0, transform: 'scale(0)' })),
       transition('show => hide', animate('350ms ease-out')),
-      transition('hide => show', animate('350ms ease-in'))
-    ])
-  ]
+      transition('hide => show', animate('350ms ease-in')),
+    ]),
+  ],
 })
 export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   @Input() customTemplate?: TemplateRef<any>;
@@ -44,7 +44,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
       .pipe(
         throttleTime(10),
         map(() => this.parent.pageYOffset || this.parent.scrollTop),
-        map(y => {
+        map((y) => {
           if (y > this.showAfter) {
             return ShowStatus.show;
           } else {
@@ -54,7 +54,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
         distinctUntilChanged(),
         share()
       )
-      .subscribe(s => this.state$.next(s));
+      .subscribe((s) => this.state$.next(s));
   }
 
   ngOnDestroy() {

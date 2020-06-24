@@ -8,7 +8,7 @@ import {
   Output,
   EventEmitter,
   forwardRef,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
@@ -21,9 +21,9 @@ import { MatSelectChange } from '@angular/material/select';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FieldMatcherComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDestroy, OnChanges {
   @Input() fields: any;

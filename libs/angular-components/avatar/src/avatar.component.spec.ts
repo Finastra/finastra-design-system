@@ -9,7 +9,7 @@ describe('AvatarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AvatarComponent, InitialsPipe]
+      declarations: [AvatarComponent, InitialsPipe],
     }).compileComponents();
   }));
 

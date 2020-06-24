@@ -8,7 +8,7 @@ import {
   Output,
   OnDestroy,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 
@@ -20,7 +20,7 @@ import {
   ColorScale,
   PaletteConfig,
   PALETTE_DEFAULT_CONFIG,
-  LazyloadScriptService
+  LazyloadScriptService,
 } from '@ffdc/uxg-angular-components/core';
 
 import {
@@ -33,13 +33,13 @@ import {
   DEFAULT_DATA,
   DEFAULT_LAYOUT,
   DEFAULT_CONFIG,
-  DEFAULT_STYLE
+  DEFAULT_STYLE,
 } from './vector-map.models';
 
 @Component({
   selector: 'uxg-vector-map',
   templateUrl: './vector-map.component.html',
-  styleUrls: ['./vector-map.component.scss']
+  styleUrls: ['./vector-map.component.scss'],
 })
 export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   @ViewChild(PlotComponent, { static: false }) plot!: PlotComponent;
@@ -82,7 +82,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     this.setStyle();
 
     this.subscriptions.push(
-      this.paletteService.paletteChange$.subscribe(config => {
+      this.paletteService.paletteChange$.subscribe((config) => {
         this.paletteConfig = config;
 
         this.setPlotData();
@@ -124,7 +124,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
   @HostListener('window:resize')
@@ -191,20 +191,20 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
         marker: {
           line: {
             color: this.paletteConfig.vectorMap.marker.line.color,
-            width: this.paletteConfig.vectorMap.marker.line.width
-          }
+            width: this.paletteConfig.vectorMap.marker.line.width,
+          },
         },
-        zmax: this.max ? this.max : 1
-      }
+        zmax: this.max ? this.max : 1,
+      },
     ];
   }
 
   setCountries(data: Partial<VectorMapCountry>[]) {
-    this.countries = COUNTRIES.map(country => {
+    this.countries = COUNTRIES.map((country) => {
       const countryData = data.find(({ name, code }) => name === country.name || code === country.code) || country;
       return {
         ...country,
-        ...{ value: countryData ? countryData.value || 0 : 0 }
+        ...{ value: countryData ? countryData.value || 0 : 0 },
       };
     });
   }
@@ -233,7 +233,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
 
       this.legend.push({
         color: color[1].toString(),
-        text: text
+        text: text,
       });
     });
   }

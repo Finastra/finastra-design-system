@@ -4,7 +4,7 @@ import { MultiselectTagsModule } from './multiselect-tags.module';
 describe('MultiselectTagsModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MultiselectTagsModule]
+      imports: [MultiselectTagsModule],
     }).compileComponents();
   }));
 

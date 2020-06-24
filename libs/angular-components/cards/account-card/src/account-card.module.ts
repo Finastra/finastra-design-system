@@ -10,6 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [AccountCardComponent, AccountCardSkeletonComponent],
   imports: [MatCardModule, MatDividerModule, CommonModule, MatIconModule, SkeletonTextModule],
-  exports: [AccountCardComponent, AccountCardSkeletonComponent]
+  exports: [AccountCardComponent, AccountCardSkeletonComponent],
 })
 export class AccountCardModule {}

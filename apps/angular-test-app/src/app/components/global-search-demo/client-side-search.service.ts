@@ -11,7 +11,7 @@ export interface Result {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientSideSearchService {
   private index: any;
@@ -19,9 +19,9 @@ export class ClientSideSearchService {
   initIndex(fields?: string[], ref?: string) {
     return new Promise((resolve, reject) => {
       if (!this.index) {
-        this.index = elasticlunr(function(this: any) {
+        this.index = elasticlunr(function (this: any) {
           if (fields && fields.length) {
-            fields.forEach(field => {
+            fields.forEach((field) => {
               this.addField(field);
             });
           }
@@ -36,7 +36,7 @@ export class ClientSideSearchService {
 
   addFields(fields?: string[]) {
     if (this.index && fields && fields.length) {
-      fields.forEach(field => {
+      fields.forEach((field) => {
         this.index.addField(field);
       });
     }
@@ -69,7 +69,7 @@ export class ClientSideSearchService {
       return this.index.search(query, {
         fields,
         bool: 'AND',
-        expand: true
+        expand: true,
       });
     }
     return [];

@@ -5,7 +5,7 @@ import {
   ChangeDetectorRef,
   ViewEncapsulation,
   ChangeDetectionStrategy,
-  OnChanges
+  OnChanges,
 } from '@angular/core';
 
 @Component({
@@ -13,7 +13,7 @@ import {
   templateUrl: './repeater-card-example.component.html',
   styleUrls: ['./repeater-card-example.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RepeaterCardExampleComponent implements OnInit {
   @Input() data: any = {};

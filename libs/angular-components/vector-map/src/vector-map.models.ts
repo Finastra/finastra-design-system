@@ -237,7 +237,7 @@ export const COUNTRIES: VectorMapCountry[] = [
   { name: 'West Bank', value: 0, code: 'WBG' },
   { name: 'Yemen', value: 0, code: 'YEM' },
   { name: 'Zambia', value: 0, code: 'ZMB' },
-  { name: 'Zimbabwe', value: 0, code: 'ZWE' }
+  { name: 'Zimbabwe', value: 0, code: 'ZWE' },
 ];
 
 export interface VectorMapLegend {
@@ -251,12 +251,12 @@ export const DEFAULT_DATA = {
   autocolorscale: false,
   reversescale: true,
   marker: {
-    line: {}
+    line: {},
   },
   tick0: 0,
   zmin: 0,
   zmax: 1,
-  showscale: false
+  showscale: false,
 };
 
 export const DEFAULT_LAYOUT = {
@@ -265,29 +265,29 @@ export const DEFAULT_LAYOUT = {
     showframe: false,
     showcoastlines: false,
     projection: {
-      type: 'miller'
+      type: 'miller',
     },
     center: {
       lat: 25,
-      lon: 0
-    }
+      lon: 0,
+    },
   },
   margin: {
     l: 0,
     r: 0,
     b: 0,
     t: 0,
-    pad: 0
-  }
+    pad: 0,
+  },
 };
 
 export const DEFAULT_CONFIG = {
   displayModeBar: false,
-  responsive: true
+  responsive: true,
 };
 
 export const DEFAULT_STYLE = {
   position: 'relative',
   width: '100%',
-  height: '100%'
+  height: '100%',
 };

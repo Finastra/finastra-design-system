@@ -4,44 +4,44 @@ const TEMPLATES_DATA: any[] = [
   {
     displayName: 'Countries',
     columnsMatcher: 'name',
-    dataSource: '1'
+    dataSource: '1',
   },
   {
     displayName: 'Products',
     columnsMatcher: 'name',
-    dataSource: '2'
-  }
+    dataSource: '2',
+  },
 ];
 
 const COUNTRIES: any[] = [
   {
     name: 'Dubai',
-    country: 'United Arab Emirates'
+    country: 'United Arab Emirates',
   },
   {
     name: 'London',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
   },
   {
     name: 'New York',
-    country: 'United States of America'
+    country: 'United States of America',
   },
   {
     name: 'Paris',
-    country: 'France'
+    country: 'France',
   },
   {
     name: 'Singapore',
-    country: 'Republic of Singapore'
+    country: 'Republic of Singapore',
   },
   {
     name: 'Sydney',
-    country: 'Australia'
+    country: 'Australia',
   },
   {
     name: 'Toronto',
-    country: 'Canada'
-  }
+    country: 'Canada',
+  },
 ];
 
 const PRODUCT_LIST = [
@@ -52,7 +52,7 @@ const PRODUCT_LIST = [
     description:
       'quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
     image: 'http://dummyimage.com/239x174.jpg/5fa2dd/ffffff',
-    applications: []
+    applications: [],
   },
   {
     productId: 'Human Resources',
@@ -62,7 +62,7 @@ const PRODUCT_LIST = [
     description:
       'quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
     image: 'http://dummyimage.com/239x174.jpg/5fa2dd/ffffff',
-    applications: []
+    applications: [],
   },
   {
     productId: 'Finances',
@@ -71,7 +71,7 @@ const PRODUCT_LIST = [
     description:
       'quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
     image: 'http://dummyimage.com/239x174.jpg/5fa2dd/ffffff',
-    applications: []
+    applications: [],
   },
   {
     productId: 'Human Resources',
@@ -81,24 +81,24 @@ const PRODUCT_LIST = [
     description:
       'quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
     image: 'http://dummyimage.com/239x174.jpg/5fa2dd/ffffff',
-    applications: []
-  }
+    applications: [],
+  },
 ];
 
 const CT_COLUMNS: any[] = [
   { title: 'name', type: 'string', align: 'left' },
-  { title: 'country', type: 'string', align: 'left' }
+  { title: 'country', type: 'string', align: 'left' },
 ];
 const PR_COLUMNS: any[] = [
   { title: 'productId', type: 'string', align: 'left' },
   { title: 'name', type: 'string', align: 'left' },
-  { title: 'description', type: 'string', align: 'left' }
+  { title: 'description', type: 'string', align: 'left' },
 ];
 
 @Component({
   selector: 'ffdc-entity-menu-demo',
   templateUrl: './entity-menu-demo.component.html',
-  styleUrls: ['./entity-menu-demo.component.scss']
+  styleUrls: ['./entity-menu-demo.component.scss'],
 })
 export class EntityMenuDemoComponent implements OnInit {
   length = 2;

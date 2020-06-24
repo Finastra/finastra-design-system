@@ -20,7 +20,7 @@ import { of } from 'rxjs';
   // tslint:disable-next-line: component-selector
   selector: 'plotly-plot',
   template: '{{ data }}',
-  styles: ['']
+  styles: [''],
 })
 class PlotComponent {
   @Input() data: [] = [];
@@ -41,25 +41,25 @@ describe('VectorMapModule', () => {
   const simplePlot: Partial<VectorMapCountry>[] = [
     {
       name: 'Romania',
-      value: 1945
-    }
+      value: 1945,
+    },
   ];
 
   const viewMapDataSource: VectorMapDataSource = {
     data: {
       view1: [{ name: 'Romania', value: 2309 }],
-      view2: [{ name: 'Moldova', value: 1919 }]
+      view2: [{ name: 'Moldova', value: 1919 }],
     },
     views: [
       {
         id: 'view1',
-        text: 'View 1'
+        text: 'View 1',
       },
       {
         id: 'view2',
-        text: 'View 2'
-      }
-    ]
+        text: 'View 2',
+      },
+    ],
   };
 
   beforeEach(async(() => {
@@ -72,9 +72,9 @@ describe('VectorMapModule', () => {
         MatFormFieldModule,
         MatInputModule,
         PaletteModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
-      declarations: [VectorMapComponent, PlotComponent]
+      declarations: [VectorMapComponent, PlotComponent],
     }).compileComponents();
   }));
 

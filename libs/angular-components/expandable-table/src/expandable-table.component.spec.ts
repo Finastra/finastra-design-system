@@ -23,16 +23,16 @@ export const DATASOURCE = [
   {
     apiGroup: 'Countries',
     api: 'Located country',
-    description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit'
+    description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit',
   },
   { apiGroup: 'Countries', api: 'Nuke country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },
-  { apiGroup: 'Countries', api: 'Erase country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' }
+  { apiGroup: 'Countries', api: 'Erase country', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },
 ];
 
 export const COLUMNS = [
   { displayName: 'API Group', name: 'apiGroup' },
   { displayName: 'API', name: 'api' },
-  { displayName: 'Description', name: 'description' }
+  { displayName: 'Description', name: 'description' },
 ];
 
 export const GROUP_BY_KEY = 'apiGroup';
@@ -55,11 +55,11 @@ fdescribe('ExpandableTableComponent', () => {
         MatTableModule,
         MatCheckboxModule,
         MatDialogModule,
-        UxgTableModule
-      ]
+        UxgTableModule,
+      ],
     })
       .overrideComponent(ExpandableTableComponent, {
-        set: { changeDetection: ChangeDetectionStrategy.Default }
+        set: { changeDetection: ChangeDetectionStrategy.Default },
       })
       .compileComponents();
   }));
@@ -83,7 +83,7 @@ fdescribe('ExpandableTableComponent', () => {
     component.ngOnChanges({
       dataSource: new SimpleChange(null, component.dataSource, true),
       columns: new SimpleChange(null, component.columns, true),
-      groupByKey: new SimpleChange(null, component.groupByKey, true)
+      groupByKey: new SimpleChange(null, component.groupByKey, true),
     });
     fixture.detectChanges();
 
@@ -99,7 +99,7 @@ fdescribe('ExpandableTableComponent', () => {
     component.ngOnChanges({
       dataSource: new SimpleChange(null, component.dataSource, true),
       columns: new SimpleChange(null, component.columns, true),
-      groupByKey: new SimpleChange(null, component.groupByKey, true)
+      groupByKey: new SimpleChange(null, component.groupByKey, true),
     });
 
     fixture.detectChanges();
@@ -117,7 +117,7 @@ fdescribe('ExpandableTableComponent', () => {
     component.ngOnChanges({
       dataSource: new SimpleChange(null, component.dataSource, true),
       columns: new SimpleChange(null, component.columns, true),
-      groupByKey: new SimpleChange(null, component.groupByKey, true)
+      groupByKey: new SimpleChange(null, component.groupByKey, true),
     });
     fixture.detectChanges();
 
@@ -136,7 +136,7 @@ fdescribe('ExpandableTableComponent', () => {
     component.ngOnChanges({
       dataSource: new SimpleChange(null, component.dataSource, true),
       columns: new SimpleChange(null, component.columns, true),
-      groupByKey: new SimpleChange(null, component.groupByKey, true)
+      groupByKey: new SimpleChange(null, component.groupByKey, true),
     });
     fixture.detectChanges();
 
@@ -161,7 +161,7 @@ fdescribe('ExpandableTableComponent', () => {
       dataSource: new SimpleChange(null, component.dataSource, true),
       columns: new SimpleChange(null, component.columns, true),
       groupByKey: new SimpleChange(null, component.groupByKey, true),
-      selectable: new SimpleChange(null, component.selectable, true)
+      selectable: new SimpleChange(null, component.selectable, true),
     });
     fixture.detectChanges();
 

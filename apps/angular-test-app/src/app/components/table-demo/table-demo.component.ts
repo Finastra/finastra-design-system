@@ -5,7 +5,7 @@ import {
   EventEmitter,
   ViewEncapsulation,
   ViewChild,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import {
   UxgTableSelectEvent,
@@ -13,7 +13,7 @@ import {
   UxgSort,
   UxgColumnType,
   UxgColumn,
-  UxgPage
+  UxgPage,
 } from '@ffdc/uxg-angular-components/table';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -29,8 +29,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 3,
     Revenue: {
       currency: 'EUR',
-      amount: 3
-    }
+      amount: 3,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -43,8 +43,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 2,
     Revenue: {
       currency: 'EUR',
-      amount: 2
-    }
+      amount: 2,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -57,8 +57,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 4,
     Revenue: {
       currency: 'EUR',
-      amount: 4
-    }
+      amount: 4,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -71,8 +71,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 7,
     Revenue: {
       currency: 'EUR',
-      amount: 5
-    }
+      amount: 5,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -85,8 +85,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 6,
     Revenue: {
       currency: 'EUR',
-      amount: 6
-    }
+      amount: 6,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -99,8 +99,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 8,
     Revenue: {
       currency: 'EUR',
-      amount: 5
-    }
+      amount: 5,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -113,8 +113,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 1,
     Revenue: {
       currency: 'EUR',
-      amount: 1
-    }
+      amount: 1,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -127,8 +127,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 3,
     Revenue: {
       currency: 'EUR',
-      amount: 6
-    }
+      amount: 6,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -141,8 +141,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 3,
     Revenue: {
       currency: 'EUR',
-      amount: 7
-    }
+      amount: 7,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -155,8 +155,8 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 3,
     Revenue: {
       currency: 'EUR',
-      amount: 9
-    }
+      amount: 9,
+    },
   },
   {
     API: 'Exchange Rates',
@@ -169,9 +169,9 @@ const ELEMENT_DATA: any[] = [
     'No. of Calls': 3,
     Revenue: {
       currency: 'EUR',
-      amount: 3
-    }
-  }
+      amount: 3,
+    },
+  },
 ];
 
 const CUSTOM_PAGING: UxgPage = {
@@ -181,7 +181,7 @@ const CUSTOM_PAGING: UxgPage = {
   hidePageSize: false,
   pageSizeOptions: [3, 6, 12],
   pageSize: 3,
-  showFirstLastButtons: true
+  showFirstLastButtons: true,
 };
 
 @Component({
@@ -189,7 +189,7 @@ const CUSTOM_PAGING: UxgPage = {
   templateUrl: './table-demo.component.html',
   styleUrls: ['./table-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class TableDemoComponent implements OnInit {
   @ViewChild(TableComponent, { static: true }) table!: TableComponent;
@@ -230,11 +230,11 @@ export class TableDemoComponent implements OnInit {
 
   subData: any[] = [
     {
-      API: 'http://localhost'
+      API: 'http://localhost',
     },
     {
-      API: 'http://www.google.com'
-    }
+      API: 'http://www.google.com',
+    },
   ];
   subColumns: UxgColumn[] = [{ name: 'API', type: UxgColumnType.string }];
   subColumnsToDisplay = ['API'];
@@ -247,7 +247,7 @@ export class TableDemoComponent implements OnInit {
       this.actionInfo = 'Emiter define in cellTemplate has been fired\n\n';
       this.actionInfo += 'Column name: ' + event.column.name + '\n';
       this.actionInfo += 'Row data: \n';
-      Object.keys(event.element).forEach(key => {
+      Object.keys(event.element).forEach((key) => {
         this.actionInfo += '    ' + key + '=' + event.element[key] + '\n';
       });
       alert(this.actionInfo);
@@ -261,21 +261,21 @@ export class TableDemoComponent implements OnInit {
       { name: 'Hour of Day', type: UxgColumnType.string, align: 'left' },
       { name: 'Status Code', type: UxgColumnType.string, align: 'left' },
       { name: 'Error Response', type: UxgColumnType.string, align: 'center' },
-      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' }
+      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' },
     ];
     this.columnsCellTemplate = [
       {
         name: 'Revenue',
         type: UxgColumnType.cellTemplate,
         cellTemplate: this.typedCurrency,
-        cellEditTemplate: this.typedCurrencyEdit
+        cellEditTemplate: this.typedCurrencyEdit,
       },
       {
         name: 'API',
         type: UxgColumnType.cellTemplate,
         align: 'left',
         displayName: 'Display Api',
-        cellTemplate: this.tableCellTable
+        cellTemplate: this.tableCellTable,
       },
       {
         name: 'Action',
@@ -283,7 +283,7 @@ export class TableDemoComponent implements OnInit {
         align: 'left',
         displayName: 'Action',
         cellTemplateEmiter: this.cellTemplateEmiter,
-        cellTemplate: this.tableCellAction
+        cellTemplate: this.tableCellAction,
       },
       { name: 'End Point', type: UxgColumnType.string, align: 'left' },
       { name: 'Date Time', type: UxgColumnType.date, align: 'left' },
@@ -291,7 +291,7 @@ export class TableDemoComponent implements OnInit {
       { name: 'Hour of Day', type: UxgColumnType.string, align: 'left' },
       { name: 'Status Code', type: UxgColumnType.string, align: 'left' },
       { name: 'Error Response', type: UxgColumnType.string, align: 'left' },
-      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' }
+      { name: 'No. of Calls', type: UxgColumnType.number, align: 'right' },
     ];
     this.columnsToDisplayCellTemplate = [
       'API',
@@ -303,7 +303,7 @@ export class TableDemoComponent implements OnInit {
       'Status Code',
       'Error Response',
       'No. of Calls',
-      'Revenue'
+      'Revenue',
     ];
     this.columnsToDisplay = [
       'API',
@@ -313,10 +313,10 @@ export class TableDemoComponent implements OnInit {
       'Hour of Day',
       'Status Code',
       'Error Response',
-      'No. of Calls'
+      'No. of Calls',
     ];
     this.totalData = {
-      'Status Code': '80% GOOD'
+      'Status Code': '80% GOOD',
     };
   }
 
@@ -350,7 +350,7 @@ export class TableDemoComponent implements OnInit {
     });
   }
   getSortColumnType(columnName: string) {
-    const column = this.columns.find(item => {
+    const column = this.columns.find((item) => {
       return item.name === columnName;
     });
     return column ? column.type : '';
@@ -371,7 +371,7 @@ export class TableDemoComponent implements OnInit {
     const defaultPaging: PageEvent = {
       length: this.length,
       pageIndex: 0,
-      pageSize: 5
+      pageSize: 5,
     };
     this.applyPaging(defaultPaging);
   }
@@ -397,7 +397,7 @@ export class TableDemoComponent implements OnInit {
         hidePageSize: false,
         pageSizeOptions: [5, 10, 20],
         pageSize: 5,
-        showFirstLastButtons: true
+        showFirstLastButtons: true,
       };
       this.table.pageChanged.subscribe((page: PageEvent) => this.applyPaging(page));
     } else {

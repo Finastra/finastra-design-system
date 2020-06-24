@@ -34,9 +34,9 @@ describe('UxgTableModule', () => {
         MatButtonModule,
         MatCheckboxModule,
         MatInputModule,
-        FormsModule
+        FormsModule,
       ],
-      declarations: [TableComponent]
+      declarations: [TableComponent],
     }).compileComponents();
   }));
 

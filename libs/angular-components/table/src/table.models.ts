@@ -22,7 +22,7 @@ export enum UxgColumnType {
   number = 'number',
   date = 'date',
   typedouble = 'typedouble',
-  cellTemplate = 'cellTemplate'
+  cellTemplate = 'cellTemplate',
 }
 
 export interface UxgPage {
@@ -47,5 +47,5 @@ export const UxgDefaultPaging: UxgPage = {
   hidePageSize: false,
   pageSizeOptions: [5, 10],
   pageSize: 5,
-  showFirstLastButtons: true
+  showFirstLastButtons: true,
 };

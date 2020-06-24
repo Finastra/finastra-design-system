@@ -4,7 +4,7 @@ import { FilterToggleModule } from './filter-toggle.module';
 describe('FilterToggleModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FilterToggleModule]
+      imports: [FilterToggleModule],
     }).compileComponents();
   }));
 

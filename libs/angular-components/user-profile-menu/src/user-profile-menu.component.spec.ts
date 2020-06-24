@@ -7,7 +7,7 @@ describe('UxgUserProfileMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UxgUserProfileMenuModule]
+      imports: [UxgUserProfileMenuModule],
     }).compileComponents();
   }));
 
@@ -18,7 +18,7 @@ describe('UxgUserProfileMenuComponent', () => {
     component.user = {
       email: 'secret@uxg.ro',
       gravatarEmail: 'gravatar@uxg.ro',
-      username: 'Agent 47'
+      username: 'Agent 47',
     };
 
     fixture.detectChanges();

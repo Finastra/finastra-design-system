@@ -8,7 +8,7 @@ describe('AvatarListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AvatarListComponent]
+      declarations: [AvatarListComponent],
     }).compileComponents();
   }));
 

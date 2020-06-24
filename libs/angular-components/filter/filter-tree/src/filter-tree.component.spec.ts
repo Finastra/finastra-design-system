@@ -30,9 +30,9 @@ describe('FilterTreeModule', () => {
         MatIconModule,
         MatButtonModule,
         MatTreeModule,
-        MatIconModule
+        MatIconModule,
       ],
-      declarations: [FilterTreeComponent]
+      declarations: [FilterTreeComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(FilterTreeComponent);
     component = fixture.componentInstance;
@@ -45,16 +45,16 @@ describe('FilterTreeModule', () => {
         label: 'Consumer Banking',
         children: [
           {
-            label: 'Alerts'
+            label: 'Alerts',
           },
           {
-            label: 'Customer Management'
+            label: 'Customer Management',
           },
           {
-            label: 'Money Movement'
-          }
-        ]
-      }
+            label: 'Money Movement',
+          },
+        ],
+      },
     ];
 
     component.data = expectedFilterTreeDataSource;
@@ -99,10 +99,7 @@ describe('FilterTreeModule', () => {
       .replace(/\s/g, '')
       .toLowerCase();
     const treeElContent = filterTreeEl.textContent
-      ? filterTreeEl.textContent
-          .replace('expand_more', '')
-          .replace(/\s/g, '')
-          .toLowerCase()
+      ? filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g, '').toLowerCase()
       : '';
     expect(treeElContent).toEqual(expectedTreeNodeItemsLabels);
   });

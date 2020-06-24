@@ -7,7 +7,7 @@ describe('Legend Directive', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LegendComponent]
+      declarations: [LegendComponent],
     }).compileComponents();
   }));
 

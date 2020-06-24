@@ -19,7 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     UxgWizardPageComponent,
     UxgWizardPageTitleComponent,
     UxgWizardPageDescriptionComponent,
-    UxgWizardButtonComponent
+    UxgWizardButtonComponent,
   ],
   exports: [
     UxgWizardComponent,
@@ -27,7 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     UxgWizardPageComponent,
     UxgWizardPageTitleComponent,
     UxgWizardPageDescriptionComponent,
-    UxgWizardButtonComponent
-  ]
+    UxgWizardButtonComponent,
+  ],
 })
 export class WizardModule {}

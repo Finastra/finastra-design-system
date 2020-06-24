@@ -9,7 +9,7 @@ export function wizardAnimation() {
         ':enter',
         style({
           width: '100%',
-          transform: 'translateX(-100%)'
+          transform: 'translateX(-100%)',
         })
       ),
 
@@ -22,7 +22,7 @@ export function wizardAnimation() {
             style({
               opacity: 0,
               width: '100%',
-              transform: 'translateX(100%)'
+              transform: 'translateX(100%)',
             })
           )
         ),
@@ -33,11 +33,11 @@ export function wizardAnimation() {
             '500ms ease-in-out',
             style({
               opacity: 1,
-              transform: 'translateX(0%)'
+              transform: 'translateX(0%)',
             })
           )
-        )
-      ])
+        ),
+      ]),
     ]),
 
     // Next, slide right to left to show right page
@@ -47,7 +47,7 @@ export function wizardAnimation() {
         ':enter',
         style({
           width: '100%',
-          transform: 'translateX(100%)'
+          transform: 'translateX(100%)',
         })
       ),
 
@@ -60,7 +60,7 @@ export function wizardAnimation() {
             style({
               opacity: 0,
               width: '100%',
-              transform: 'translateX(-100%)'
+              transform: 'translateX(-100%)',
             })
           )
         ),
@@ -71,11 +71,11 @@ export function wizardAnimation() {
             '500ms ease-in-out',
             style({
               opacity: 1,
-              transform: 'translateX(0%)'
+              transform: 'translateX(0%)',
             })
           )
-        )
-      ])
-    ])
+        ),
+      ]),
+    ]),
   ]);
 }

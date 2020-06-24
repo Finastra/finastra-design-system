@@ -8,6 +8,6 @@ import { ScrollToTopComponent } from './scroll-to-top.component';
 @NgModule({
   imports: [CommonModule, MatButtonModule, MatIconModule, BrowserAnimationsModule],
   declarations: [ScrollToTopComponent],
-  exports: [ScrollToTopComponent]
+  exports: [ScrollToTopComponent],
 })
 export class ScrollToTopModule {}

@@ -6,8 +6,8 @@ import { NavigationNode } from '../../services/navigation.model';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   host: {
-    class: 'uxg-navbar'
-  }
+    class: 'uxg-navbar',
+  },
 })
 export class NavbarComponent implements OnInit, OnDestroy, OnChanges {
   @Input() brandIcon: string | undefined;

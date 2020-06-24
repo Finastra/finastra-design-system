@@ -24,9 +24,9 @@ describe('AppComponent', () => {
         MatListModule,
         ScrollToTopModule,
         RouterTestingModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
       ],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 

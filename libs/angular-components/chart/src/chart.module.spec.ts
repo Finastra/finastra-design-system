@@ -13,10 +13,10 @@ describe('ChartModule', () => {
           useValue: {
             load: () => {
               return of((global as any).Plotly);
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     }).compileComponents();
   }));
 

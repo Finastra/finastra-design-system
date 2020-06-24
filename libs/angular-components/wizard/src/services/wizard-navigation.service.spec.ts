@@ -7,7 +7,7 @@ import { ButtonHubService } from './button-hub.service';
 describe('WizardNavigationService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
+      providers: [WizardNavigationService, PageCollectionService, ButtonHubService],
     })
   );
 

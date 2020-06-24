@@ -6,13 +6,13 @@ import {
   ElementRef,
   Renderer2,
   Input,
-  Attribute
+  Attribute,
 } from '@angular/core';
 import { AvatarComponent } from './avatar.component';
 
 @Component({
   selector: 'uxg-avatar-list',
-  templateUrl: './avatar-list.component.html'
+  templateUrl: './avatar-list.component.html',
 })
 export class AvatarListComponent implements AfterContentInit {
   @Input() totalLength!: number;

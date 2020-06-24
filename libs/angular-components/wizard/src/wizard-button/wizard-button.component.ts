@@ -12,8 +12,8 @@ export type UxgWizardButtonType = 'cancel' | 'previous' | 'next' | 'done' | 'cus
     '[class.uxg-wizard-button]': 'true',
     '[class.auto-margin]': 'isCancel || isCustom',
     '[attr.aria-hidden]': 'isHidden',
-    '[attr.type]': 'type'
-  }
+    '[attr.type]': 'type',
+  },
 })
 export class UxgWizardButtonComponent {
   @Input() public type!: UxgWizardButtonType;

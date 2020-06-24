@@ -7,7 +7,7 @@ import {
   TemplateRef,
   ViewEncapsulation,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
@@ -18,7 +18,7 @@ import { Observable, Subject } from 'rxjs';
   selector: 'uxg-global-search',
   templateUrl: './global-search.component.html',
   styleUrls: ['./global-search.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class UxgGlobalSearch implements OnInit, OnChanges {
   @Input() groupBy?: string;
@@ -53,7 +53,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
         this.resultItemClick.emit($event);
         if (this.ref) this.ref.close();
       },
-      results: this.results$
+      results: this.results$,
     });
   }
 

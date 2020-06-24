@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { PaletteConfig, PALETTE_CONFIG } from './palette.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PaletteService implements OnDestroy {
   paletteChange$: Observable<PaletteConfig>;

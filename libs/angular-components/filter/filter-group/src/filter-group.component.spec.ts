@@ -32,8 +32,8 @@ describe('FilterGroupComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatDialogModule,
-        FormsModule
-      ]
+        FormsModule,
+      ],
     }).compileComponents();
     fixture = TestBed.createComponent(FilterGroupComponent);
     component = fixture.componentInstance;
@@ -48,8 +48,8 @@ describe('FilterGroupComponent', () => {
     component.selectedData = [
       {
         title: 'Tags',
-        selectedData: [{ label: 'TagA' }, { label: 'TreeNodeA' }]
-      }
+        selectedData: [{ label: 'TagA' }, { label: 'TreeNodeA' }],
+      },
     ];
     fixture.detectChanges();
     component.clearSelection();

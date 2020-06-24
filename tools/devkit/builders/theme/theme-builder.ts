@@ -43,15 +43,15 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
       sourceMap: true,
       sourceMapRoot: dest,
       sourceMapEmbed: true,
-      importer
+      importer,
     });
 
     const finalCss = await postcss([autoprefixer]).process(result.css, {
       from,
       to,
       map: {
-        inline: false
-      }
+        inline: false,
+      },
     });
 
     await writeFile(to, finalCss.css);

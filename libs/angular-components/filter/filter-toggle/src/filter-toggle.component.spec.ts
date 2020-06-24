@@ -20,8 +20,8 @@ describe('FilterToggleComponent', () => {
         BrowserAnimationsModule,
         MatIconModule,
         MatExpansionModule,
-        MatButtonToggleModule
-      ]
+        MatButtonToggleModule,
+      ],
     }).compileComponents();
     fixture = TestBed.createComponent(FilterToggleComponent);
     component = fixture.componentInstance;

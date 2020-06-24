@@ -29,7 +29,7 @@ describe('VectorMapDemoComponent', () => {
         MatInputModule,
         PaletteModule,
         VectorMapModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
       declarations: [VectorMapDemoComponent],
       providers: [
@@ -38,10 +38,10 @@ describe('VectorMapDemoComponent', () => {
           useValue: {
             load: () => {
               return of((global as any).Plotly);
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     }).compileComponents();
   }));
 

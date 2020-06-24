@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
@@ -29,7 +29,7 @@ interface UXGFilterChanges {
   selector: 'uxg-filter-tags',
   templateUrl: './filter-tags.component.html',
   styleUrls: ['./filter-tags.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class FilterTagsComponent implements OnInit {
   visible = true;
@@ -76,7 +76,7 @@ export class FilterTagsComponent implements OnInit {
         }
       })
     );
-    this.selectedData = this.data.filter(tag => tag.isSelected);
+    this.selectedData = this.data.filter((tag) => tag.isSelected);
   }
 
   add(event: MatChipInputEvent) {
@@ -84,7 +84,7 @@ export class FilterTagsComponent implements OnInit {
       const input = event.input;
       const value = (event.value || '').trim();
 
-      const validValue = this.data.some(el => el.label === value);
+      const validValue = this.data.some((el) => el.label === value);
 
       if (validValue) {
         this.selectedData.push({ label: value });
@@ -149,7 +149,7 @@ export class FilterTagsComponent implements OnInit {
 
     this.toHighlight = filterValue;
 
-    return this.data.filter(tag => tag.label.toLowerCase().includes(filterValue));
+    return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
   }
 
   getState() {

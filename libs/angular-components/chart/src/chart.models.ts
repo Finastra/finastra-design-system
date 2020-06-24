@@ -5,13 +5,13 @@ export const CHART_DEFAULT_PLOTLY_LAYOUT = {
     r: 0,
     b: 0,
     t: 0,
-    pad: 0
-  }
+    pad: 0,
+  },
 };
 
 export const CHART_DEFAULT_PLOTLY_CONFIG = {
   displaylogo: false,
-  responsive: true
+  responsive: true,
 };
 
 export enum ChartType {
@@ -31,12 +31,12 @@ export enum ChartType {
   stackedArea = 'stackedArea',
   fullStackedArea = 'fullStackedArea',
   pie = 'pie',
-  donut = 'donut'
+  donut = 'donut',
 }
 
 export enum ChartOrientation {
   horizontal = 'horizontal',
-  vertical = 'vertical'
+  vertical = 'vertical',
 }
 
 export interface ChartTypeConvertion {
@@ -51,44 +51,44 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
     name: 'bar',
     group: 'bar',
     trace: {
-      type: 'bar'
+      type: 'bar',
     },
     layout: {
-      barmode: 'group'
-    }
+      barmode: 'group',
+    },
   },
   [ChartType.stackedBar]: {
     name: 'stackedBar',
     group: 'bar',
     trace: {
-      type: 'bar'
+      type: 'bar',
     },
     layout: {
-      barmode: 'relative'
-    }
+      barmode: 'relative',
+    },
   },
   [ChartType.line]: {
     name: 'line',
     group: 'line',
     trace: {
-      type: 'scatter'
-    }
+      type: 'scatter',
+    },
   },
   [ChartType.scatter]: {
     name: 'scatter',
     group: 'line',
     trace: {
       type: 'scatter',
-      mode: 'markers'
-    }
+      mode: 'markers',
+    },
   },
   [ChartType.scatterLine]: {
     name: 'scatter+line',
     group: 'line',
     trace: {
       type: 'scatter',
-      mode: 'lines+markers'
-    }
+      mode: 'lines+markers',
+    },
   },
   [ChartType.stackedLine]: {
     name: 'Stacked line',
@@ -96,8 +96,8 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
     trace: {
       type: 'scatter',
       stackgroup: 'one',
-      fill: 'none'
-    }
+      fill: 'none',
+    },
   },
   [ChartType.fullStackedLine]: {
     name: 'Full stacked line',
@@ -106,16 +106,16 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
       type: 'scatter',
       stackgroup: 'one',
       groupnorm: 'percent',
-      fill: 'none'
-    }
+      fill: 'none',
+    },
   },
   [ChartType.spline]: {
     name: 'Spline',
     group: 'line',
     trace: {
       type: 'scatter',
-      line: { shape: 'spline' }
-    }
+      line: { shape: 'spline' },
+    },
   },
   [ChartType.stackedSpline]: {
     name: 'Stacked spline',
@@ -125,8 +125,8 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
       stackgroup: 'one',
       mode: 'lines+markers',
       fill: 'none',
-      line: { shape: 'spline' }
-    }
+      line: { shape: 'spline' },
+    },
   },
   [ChartType.fullStackedSpline]: {
     name: 'Full stacked spline',
@@ -137,16 +137,16 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
       groupnorm: 'percent',
       mode: 'lines+markers',
       fill: 'none',
-      line: { shape: 'spline' }
-    }
+      line: { shape: 'spline' },
+    },
   },
   [ChartType.stepline]: {
     name: 'Stepline',
     group: 'line',
     trace: {
       type: 'scatter',
-      line: { shape: 'hv' }
-    }
+      line: { shape: 'hv' },
+    },
   },
   [ChartType.steparea]: {
     name: 'Step area',
@@ -154,24 +154,24 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
     trace: {
       type: 'scatter',
       stackgroup: 'one',
-      line: { shape: 'hv' }
-    }
+      line: { shape: 'hv' },
+    },
   },
   [ChartType.area]: {
     name: 'Area',
     group: 'line',
     trace: {
       type: 'scatter',
-      stackgroup: 'one'
-    }
+      stackgroup: 'one',
+    },
   },
   [ChartType.stackedArea]: {
     name: 'Stacked area',
     group: 'line',
     trace: {
       type: 'scatter',
-      stackgroup: 'one'
-    }
+      stackgroup: 'one',
+    },
   },
   [ChartType.fullStackedArea]: {
     name: 'Full stacked area',
@@ -179,15 +179,15 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
     trace: {
       type: 'scatter',
       stackgroup: 'one',
-      groupnorm: 'percent'
-    }
+      groupnorm: 'percent',
+    },
   },
   [ChartType.pie]: {
     name: 'pie',
     group: 'pie',
     trace: {
-      type: 'pie'
-    }
+      type: 'pie',
+    },
   },
   [ChartType.donut]: {
     name: 'donut',
@@ -196,7 +196,7 @@ export const CHART_PLOLTLY_TYPE: Record<ChartType, ChartTypeConvertion> = {
       type: 'pie',
       hole: 0.5,
       automargin: true,
-      textposition: 'inside'
-    }
-  }
+      textposition: 'inside',
+    },
+  },
 };

@@ -4,7 +4,7 @@ import { AccountCardModule } from './account-card.module';
 describe('AccountCardModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AccountCardModule]
+      imports: [AccountCardModule],
     }).compileComponents();
   }));
 

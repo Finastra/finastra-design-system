@@ -31,9 +31,9 @@ import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-d
     MatInputModule,
     FlexLayoutModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
   ],
   entryComponents: [FilterGroupDialogComponent],
-  exports: [FilterGroupComponent, UxgFilter]
+  exports: [FilterGroupComponent, UxgFilter],
 })
 export class FilterGroupModule {}

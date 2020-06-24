@@ -3,7 +3,7 @@ import { ChartType, CHART_PLOLTLY_TYPE, ChartOrientation } from '../chart.models
 
 @Component({
   selector: 'uxg-trace',
-  template: ''
+  template: '',
 })
 export class TraceComponent {
   @Input() dimension!: Array<string | number>;
@@ -31,7 +31,7 @@ export class TraceComponent {
         name: this.measureName,
         ...(plotlyType ? plotlyType.trace : {}),
         orientation: this.orientation === ChartOrientation.horizontal ? 'h' : 'v',
-        ...(this.options ? this.options : {})
+        ...(this.options ? this.options : {}),
       };
       if (this.selectedPoints) {
         trace.selectedpoints = Array.from(this.selectedPoints);

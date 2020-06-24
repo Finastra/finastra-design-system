@@ -28,9 +28,9 @@ describe('TableDemoComponent', () => {
         MatFormFieldModule,
         MatSidenavModule,
         MatRadioModule,
-        FormsModule
+        FormsModule,
       ],
-      declarations: [TableDemoComponent]
+      declarations: [TableDemoComponent],
     }).compileComponents();
   }));
 

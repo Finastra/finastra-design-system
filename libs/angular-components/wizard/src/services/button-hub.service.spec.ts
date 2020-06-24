@@ -5,7 +5,7 @@ import { ButtonHubService } from './button-hub.service';
 describe('ButtonHubService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [ButtonHubService]
+      providers: [ButtonHubService],
     })
   );
 

@@ -8,18 +8,17 @@ module.exports = {
   resolver: '@nrwl/jest/plugins/resolver',
   transform: {
     '^.+\\.(ts|js|html)$': 'ts-jest',
-    [`(${babelModules}).+\\.js$`]: 'babel-jest'
+    [`(${babelModules}).+\\.js$`]: 'babel-jest',
   },
-  testEnvironment: 'jest-environment-jsdom-fifteen',
   reporters: [
     'default',
-    ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
+    ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }],
   ],
   globals: {
     'ts-jest': {
-      tsConfig: 'tsconfig.spec.json'
-    }
+      tsConfig: 'tsconfig.spec.json',
+    },
   },
   collectCoverage: true,
-  coverageReporters: ['json', 'html']
+  coverageReporters: ['json', 'html'],
 };

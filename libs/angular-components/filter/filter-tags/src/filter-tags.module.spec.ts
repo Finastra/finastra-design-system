@@ -4,7 +4,7 @@ import { FilterTagsModule } from './filter-tags.module';
 describe('FilterTagsModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FilterTagsModule]
+      imports: [FilterTagsModule],
     }).compileComponents();
   }));
 

@@ -9,7 +9,7 @@ describe('UxgGlobalSearch', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [GlobalSearchModule]
+      imports: [GlobalSearchModule],
     }).compileComponents();
   }));
 
