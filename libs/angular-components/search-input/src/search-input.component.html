@@ -11,7 +11,7 @@
   />
   <button
     [@showHide]="searchInput.value ? 'show' : 'hide'"
-    (click)="searchInput.value = ''"
+    (click)="searchInput.value = ''; term$.next('')"
     matSuffix
     mat-icon-button
     aria-label="Clear"
