@@ -5,7 +5,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnDestroy
+  OnDestroy,
+  Attribute
 } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
@@ -53,7 +54,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   term$ = new Subject<string>();
   private termSubscription: Subscription;
 
-  constructor() {
+  constructor(@Attribute('dense') public dense: any) {
     this.termSubscription = this.term$
       .pipe(debounceTime(this.debounceTime), distinctUntilChanged())
       .subscribe(query => {
