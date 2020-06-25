@@ -28,7 +28,7 @@
       *ngFor="let tag of filteredTags$ | async"
       [value]="tag"
       [ngClass]="{
-        'selected-option-highlight': selectedData.includes(tag)
+        'selected-option-highlight': applyHighlight(tag)
       }"
     >
       <span [innerHTML]="tag.label | highlight: toHighlight"></span>
