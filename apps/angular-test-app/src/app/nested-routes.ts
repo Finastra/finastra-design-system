@@ -18,6 +18,7 @@ import { BannerDemoComponent } from './components/banner-demo/banner-demo.compon
 import { ExpandableTableDemoComponent } from './components/expandable-table-demo/expandable-table-demo.component';
 import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
+import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -49,7 +50,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
         data: { title: 'User Profile Menu' }
       },
       { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
-      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } }
+      { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } },
+      { path: 'search-input', component: SearchInputDemoComponent, data: { title: 'Search Input' } }
     ]
   }
 ].map(groups => {

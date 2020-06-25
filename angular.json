@@ -871,6 +871,29 @@
           "styleext": "scss"
         }
       }
+    },
+    "search-input": {
+      "projectType": "library",
+      "root": "libs/angular-components/search-input",
+      "sourceRoot": "libs/angular-components/search-input",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/search-input/tsconfig.lib.json",
+              "libs/angular-components/search-input/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

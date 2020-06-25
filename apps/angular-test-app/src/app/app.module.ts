@@ -53,6 +53,8 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
+import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,8 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerDemoComponent,
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
-    EntityMenuDemoComponent
+    EntityMenuDemoComponent,
+    SearchInputDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,8 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerModule,
     GlobalNavModule,
     AccountCardModule,
-    EntityMenuModule
+    EntityMenuModule,
+    UxgSearchInputModule
   ],
   providers: [],
   exports: [],
