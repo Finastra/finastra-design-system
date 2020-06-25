@@ -85,6 +85,9 @@
     },
     "account-card": {
       "tags": []
+    },
+    "search-input": {
+      "tags": []
     }
   }
 }

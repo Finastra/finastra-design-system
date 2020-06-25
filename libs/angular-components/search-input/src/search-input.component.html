@@ -1,0 +1,22 @@
+<mat-form-field appearance="fill">
+  <mat-icon color="primary" matPrefix>search</mat-icon>
+  <input
+    #searchInput="matInput"
+    matInput
+    type="text"
+    placeholder="{{ placeholder }}"
+    [value]="query"
+    (input)="term$.next($event.target.value)"
+    aria-label="Search input"
+  />
+  <button
+    [@showHide]="searchInput.value ? 'show' : 'hide'"
+    (click)="searchInput.value = ''"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+  <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+</mat-form-field>
