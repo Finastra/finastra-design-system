@@ -63,6 +63,9 @@ export class MultiselectTagsComponent {
   }
 
   clearSelection() {
+    if (!this.data.some(tag => tag.isSelected)) {
+      return;
+    }
     this.changes.emit({ added: [], removed: [...this.data] });
     this.data.forEach(tag => (tag.isSelected = false));
   }
