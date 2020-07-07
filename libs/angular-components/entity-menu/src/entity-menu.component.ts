@@ -9,6 +9,11 @@ import {
   OnChanges
 } from '@angular/core';
 
+export interface EntityMenuItemWEvent {
+  value: any;
+  $event: MouseEvent;
+}
+
 @Component({
   selector: 'uxg-entity-menu',
   templateUrl: './entity-menu.component.html',
@@ -24,7 +29,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() bottomLabel = 'View all';
 
   @Output() bottomClick = new EventEmitter<Event>();
-  @Output() itemClick = new EventEmitter<any>();
+  @Output() itemClick = new EventEmitter<EntityMenuItemWEvent>();
 
   ngOnInit() {}
 
@@ -32,6 +37,13 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     if (changes.data || changes.property) {
       this.items = this.mapData(this.data.slice(0, 9), this.property);
     }
+  }
+
+  onItemClick(value: any, $event: MouseEvent) {
+    this.itemClick.emit({
+      value,
+      $event
+    });
   }
 
   private mapData(data: any[], property?: string) {

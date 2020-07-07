@@ -24,19 +24,18 @@
 
     <div class="description" fxLayout="column" *ngIf="actionDescription">
       <h3>Output:</h3>
-      {{ actionDescription }}
+      <p>
+        {{ actionDescription }}
+      </p>
+      <p *ngIf="actionEvent.which === 2">Middle click</p>
+      <p *ngIf="actionEvent.ctrlKey">Control key was pressed</p>
+      <p *ngIf="actionEvent.metaKey">Command key was pressed</p>
     </div>
   </mat-expansion-panel>
 
-  <uxg-entity-menu
-    [title]="title"
-    [data]="dataSourceExample"
-    [property]="columnsMatcherExample"
-    [abbreviationLength]="length"
-    [bottomLabel]="bottomLabel"
-    (bottomClick)="redirect()"
-    (itemClick)="displayItem($event)"
-  >
+  <uxg-entity-menu [title]="title" [data]="dataSourceExample" [property]="columnsMatcherExample"
+    [abbreviationLength]="length" [bottomLabel]="bottomLabel" (bottomClick)="redirect()"
+    (itemClick)="displayItem($event)">
   </uxg-entity-menu>
 </div>
 
