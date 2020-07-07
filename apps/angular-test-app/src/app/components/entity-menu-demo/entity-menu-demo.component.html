@@ -33,8 +33,13 @@
     </div>
   </mat-expansion-panel>
 
-  <uxg-entity-menu [title]="title" [data]="dataSourceExample" [property]="columnsMatcherExample"
-    [abbreviationLength]="length" (itemClick)="displayItem($event)">
+  <uxg-entity-menu
+    [title]="title"
+    [data]="dataSourceExample"
+    [property]="columnsMatcherExample"
+    [abbreviationLength]="length"
+    (itemClick)="displayItem($event)"
+  >
     <uxg-entity-menu-actions>
       <a class="uxg-body-3 view-all" href="/">View All</a>
     </uxg-entity-menu-actions>
