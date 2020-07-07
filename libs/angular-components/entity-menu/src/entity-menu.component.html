@@ -15,6 +15,5 @@
       <h5 class="uxg-subtitle-4 solution-name">{{ item.name || 'Solution Name' }}</h5>
     </div>
   </div>
-  <p class="uxg-body-3 view-all" (click)="bottomClick.emit($event)" (auxclick)="bottomClick.emit($event)">
-    {{ bottomLabel || 'View All' }}</p>
+  <ng-content select="uxg-entity-menu-actions"></ng-content>
 </mat-menu>

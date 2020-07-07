@@ -26,9 +26,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() title = '';
   @Input() property?: string;
   @Input() abbreviationLength = 3;
-  @Input() bottomLabel = 'View all';
 
-  @Output() bottomClick = new EventEmitter<Event>();
   @Output() itemClick = new EventEmitter<EntityMenuItemWEvent>();
 
   ngOnInit() {}
@@ -69,3 +67,11 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     return name;
   }
 }
+
+@Component({
+  selector: 'uxg-entity-menu-actions',
+  template: `
+    <ng-content></ng-content>
+  `
+})
+export class EntityMenuActionsComponent {}

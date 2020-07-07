@@ -1,48 +1,41 @@
-@import 'angular-theme/lib/core/style/spacing';
+@import "angular-theme/lib/core/style/spacing";
 
 .container-list {
-    max-width: 427px !important;
-    
-    .mat-menu-content:not(:empty) {
-      padding: 0;
+  max-width: 427px !important;
+
+  .mat-menu-content:not(:empty) {
+    padding: 0;
+  }
+
+  .mat-menu-content {
+    margin: $uxg-spacing-4;
+
+    .solutions-title {
+      margin-bottom: $uxg-spacing-4 + $uxg-spacing-2;
     }
-    
-    .mat-menu-content {
-      margin: $uxg-spacing-4;
 
-      .solutions-title {
-        margin-bottom: $uxg-spacing-4 + $uxg-spacing-2;
-      }
+    .solution-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: $uxg-spacing-3;
 
-      .solution-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: $uxg-spacing-3;
-  
-        .solution-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: $uxg-spacing-4;
-          cursor: pointer;
-  
-          .solution-name {
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100px;
-            margin: $uxg-spacing-2 $uxg-spacing-0
-          }
+      .solution-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $uxg-spacing-4;
+        cursor: pointer;
+
+        .solution-name {
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 100px;
+          margin: $uxg-spacing-2 $uxg-spacing-0;
         }
       }
-  
-      .view-all {
-        text-align: center;
-        cursor: pointer;
-        margin-bottom: $uxg-spacing-0;
-      }
     }
- }
-  
+  }
+}
