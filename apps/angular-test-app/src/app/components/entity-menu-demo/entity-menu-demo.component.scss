@@ -21,7 +21,7 @@ mat-expansion-panel {
         font-family: Roboto, sans-serif;
         border-bottom: 1px solid #e6ecf1;
         td {
-            padding: 8px;
+            padding: $uxg-spacing-2;
         }
         &.header {
             color: #9daab6;
