@@ -7,8 +7,6 @@ import { ChangeLog } from './changelog.models';
   encapsulation: ViewEncapsulation.None
 })
 export class UXGChangelogComponent {
-  @Input() changelog: ChangeLog;
-  @Input() title: string;
-
-  constructor() {}
+  @Input() changelog!: ChangeLog;
+  @Input() title!: string;
 }

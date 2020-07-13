@@ -1,2 +1,2 @@
-export * from './src/lib/changelog.module';
-export * from './src/lib/changelog.component';
+export * from './src/changelog.module';
+export * from './src/changelog.component';

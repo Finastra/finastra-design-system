@@ -55,8 +55,7 @@ import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-ca
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
 import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
-import { UXGChangelogModule } from "@ffdc/uxg-angular-components/changelog";
-
+import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
 
 @NgModule({
   declarations: [
@@ -84,8 +83,7 @@ import { UXGChangelogModule } from "@ffdc/uxg-angular-components/changelog";
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
     EntityMenuDemoComponent,
-    SearchInputDemoComponent,
-    UXGChangelogModule
+    SearchInputDemoComponent
   ],
   imports: [
     BrowserModule,
