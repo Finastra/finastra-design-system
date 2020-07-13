@@ -894,6 +894,29 @@
           "styleext": "scss"
         }
       }
+    },
+    "changelog": {
+      "projectType": "library",
+      "root": "libs/angular-components/changelog",
+      "sourceRoot": "libs/angular-components/changelog",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/changelog/tsconfig.lib.json",
+              "libs/angular-components/changelog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/changelog/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -88,6 +88,9 @@
     },
     "search-input": {
       "tags": []
+    },
+    "changelog": {
+      "tags": []
     }
   }
 }
