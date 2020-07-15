@@ -22,19 +22,20 @@ export class ChangelogDemoComponent implements OnInit {
           {
             category: 'UX',
             description:
-              "<span class='uxg-subtitle-2'>Changelog feature</span></br>The changelog tracks progress on features, updates and bugfixes for each new release of the Developer Portal. It's available in the <i>What's new</i> section of the user profile menu.",
+              '<span>Lorem ipit amet, consectetur adipiscing elisum dolor sit ait amet, consectetur adipiscing elimet, consectetur adipiscing elit. </span>',
             type: 'New'
           },
           {
             category: 'UX',
             description:
-              "<span class='uxg-subtitle-2'>User settings persistence</span></br>Various user settings (such as theme preferences, feature preview toggles, etc.) are now saved and persisted on further logins.",
-            type: 'New'
+              '<span>Lorem iit amet, consectetur adipiscing elipsum dolor sit amet, consectetur adipiscing elit. </span>',
+            type: 'Bugfix'
           },
           {
             category: 'Documentation',
-            description: 'New section about Vendor Validation Process added to Platform Overview guide.',
-            type: 'New'
+            description:
+              '<span>Lorem ipsum dolor sit amet, consecit amet, consectetur adipiscing elitetur adipiscing elit. </span>',
+            type: 'Deprecated'
           }
         ]
       },
@@ -46,18 +47,13 @@ export class ChangelogDemoComponent implements OnInit {
           {
             category: 'UX',
             description:
-              "<span class='uxg-subtitle-2'>Changelog feature</span></br>The changelog tracks progress on features, updates and bugfixes for each new release of the Developer Portal. It's available in the <i>What's new</i> section of the user profile menu.",
-            type: 'New'
+              '<span>Lorem ipsum dolor sit amet, consectetur adipiscing eliit amet, consectetur adipiscing elit. </span>',
+            type: 'Update'
           },
           {
             category: 'UX',
             description:
-              "<span class='uxg-subtitle-2'>User settings persistence</span></br>Various user settings (such as theme preferences, feature preview toggles, etc.) are now saved and persisted on further logins.",
-            type: 'New'
-          },
-          {
-            category: 'Documentation',
-            description: 'New section about Vendor Validation Process added to Platform Overview guide.',
+              '<span>it amet, consectetur adipiscing eliit amet, consectetur adipiscing eliLorem ipsum dolor sit amet, consectetur adipiscing elit. </span>',
             type: 'New'
           }
         ]
@@ -69,15 +65,14 @@ export class ChangelogDemoComponent implements OnInit {
         changes: [
           {
             category: 'Documentation',
-            description:
-              "<span class='uxg-subtitle-2'>Documentation revamp</span></br>Documentation page was restructured into 4 new guides. They are available on the new Documentation landing page, making it easier to navigate directly to your point of interest.",
+            description: '<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>',
             type: 'Update'
           },
           {
             category: 'Documentation',
             description:
-              "<div>New sample client tutorials added to Examples guide:</div><ul><li><a target='_blank' href='documentation/examples/sample-app-spi'>SPI Application Tutorial</a></li><li><a target='_blank' href='documentation/examples/sample-events'>Events Notification Application Tutorial</a></li></ul>",
-            type: 'Update'
+              '<span>Lorem ipsum dolor sit ametit amet, consectetur adipiscing eliit amet, consectetur adipiscing eli, consectetur adipiscing elit. </span>',
+            type: 'Bugfix'
           }
         ]
       }
