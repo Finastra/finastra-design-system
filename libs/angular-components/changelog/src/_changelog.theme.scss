@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/typography/typography';
+
 @mixin uxg-changelog-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -32,6 +34,7 @@
       .release-detail,
       .last-release,
       .first-release {
+        position: relative;
         background-color: mat-color($background, card);
         @include mat-elevation(4, $mat-elevation-color);
         cursor: unset;
@@ -94,47 +97,49 @@
           left: calc(#{-$bullet-center} - 6px);
         }
       }
-    }
 
-    .first-release {
-      &::after {
+      .first-release {
+        &::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          background-color: mat-color($primary, default);
+          top: $uxg-spacing-3;
+          bottom: -$uxg-spacing-5;
+          left: calc(#{-$bullet-center} - 6px);
+        }
+      }
+  
+      .release-detail::before,
+      .last-release::before {
         content: '';
         position: absolute;
-        width: 2px;
-        background-color: mat-color($primary, default);
+        width: 0;
+        height: 0;
         top: $uxg-spacing-3;
-        bottom: -$uxg-spacing-5;
-        left: calc(#{-$bullet-center} - 6px);
+        left: calc(#{-$bullet-center} - 13px);
+        color: mat-color($background, default);
+        border: 8px solid mat-color($primary, default);
+        background-color: mat-color($primary, default);
+        border-radius: 50%;
+        z-index: 1;
+      }
+  
+      .first-release::before {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        top: $uxg-spacing-1;
+        left: calc(#{-$bullet-center} - 24px);
+        background-color: mat-color($background, card);
+        border: 5px solid mat-color($primary, default);
+        border-radius: 50%;
+        z-index: 1;
       }
     }
 
-    .release-detail::before,
-    .last-release::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: $uxg-spacing-3;
-      left: calc(#{-$bullet-center} - 13px);
-      color: mat-color($background, default);
-      border: 8px solid mat-color($primary, default);
-      background-color: mat-color($primary, default);
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .first-release::before {
-      content: '';
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      top: $uxg-spacing-1;
-      left: calc(#{-$bullet-center} - 24px);
-      background-color: mat-color($background, card);
-      border: 5px solid mat-color($primary, default);
-      border-radius: 50%;
-      z-index: 1;
-    }
+    
 
     @include layout-bp(sm) {
       .changelog-container {

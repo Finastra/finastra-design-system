@@ -28,6 +28,7 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
+import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -83,7 +84,8 @@ import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
     EntityMenuDemoComponent,
-    SearchInputDemoComponent
+    SearchInputDemoComponent,
+    ChangelogDemoComponent
   ],
   imports: [
     BrowserModule,

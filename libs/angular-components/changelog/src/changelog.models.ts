@@ -4,7 +4,7 @@ export namespace ChangeLog {
     version?: string;
     date?: string;
     changes: Change[];
-    categories: [];
+    categories: string[];
   }
 
   export interface Change {
