@@ -163,7 +163,7 @@
           }
         }
         .first-release::before {
-          top: -40px;
+          top: calc(#{-$bullet-center} - 28px);
           width: 25px;
           height: 25px;
           left: calc(#{-$bullet-center} - 22px);
@@ -178,7 +178,7 @@
 
         .release-detail::before,
         .last-release::before {
-          top: -28px;
+          top: calc(#{-$bullet-center/2} - 22px);
         }
 
         .release-detail {
@@ -221,14 +221,14 @@
           }
         }
         .first-release::before {
-          top: -35px;
+          top: calc(#{-$bullet-center} - 22px);
           width: 18px;
           height: 18px;
           left: calc(#{-$bullet-center} - 19px);
         }
         .release-detail::before,
         .last-release::before {
-          top: -28px;
+          top: calc(#{-$bullet-center/2} - 22px);
         }
 
         .first-release {
@@ -253,6 +253,14 @@
           width: 90px;
           height: 90px;
         }
+      }
+    }
+  }
+
+  @include layout-bp(lt-md) {
+    .title {
+      .creator {
+        max-width: 400px;
       }
     }
   }
