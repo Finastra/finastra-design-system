@@ -51,7 +51,7 @@ export class ChangelogDemoComponent implements OnInit {
             type: 'Update'
           },
           {
-            category: 'UX',
+            category: 'Documentation',
             description:
               '<span>it amet, consectetur adipiscing eliit amet, consectetur adipiscing eliLorem ipsum dolor sit amet, consectetur adipiscing elit. </span>',
             type: 'New'
