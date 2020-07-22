@@ -28,8 +28,13 @@ uxg-changelog {
       padding: $uxg-spacing-4;
     }
 
+    .version-id {
+      margin-bottom: 0;
+    }
+
     .date {
       white-space: nowrap;
+      margin: 0;
     }
 
     .category {

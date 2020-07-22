@@ -92,15 +92,6 @@
       }
     }
 
-    .version-id {
-      @include mat-typography-level-to-styles($config, h4);
-    }
-
-    .date {
-      @include mat-typography-level-to-styles($config, h6);
-    }
-
-
     @include layout-bp(xs) {
       .title {
         .creator {
