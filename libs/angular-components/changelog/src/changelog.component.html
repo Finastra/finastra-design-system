@@ -14,8 +14,8 @@
     fxLayoutAlign="space-between start"
   >
     <div class="version" fxFlex="5" fxFlex.md="10">
-      <div class="version-id">v{{ release.version }}</div>
-      <span class="date">{{ release.date | date: 'longDate' }}</span>
+      <div class="version-id uxg-h4">v{{ release.version }}</div>
+      <span class="date uxg-h6">{{ release.date | date: 'longDate' }}</span>
     </div>
     <div
       [ngClass]="{ 'first-release': first, 'last-release': last, 'release-detail': !first && !last }"
@@ -27,7 +27,7 @@
         <div *ngFor="let change of release.changes" class="change">
           <div *ngIf="change.category == category" fxLayout.xs="column">
             <div fxFlex="10" fxFlex.lt-lg="15">
-              <span class="{{ change.type | lowercase }} type">{{ change.type | titlecase }}</span>
+              <span class="{{ change.type | lowercase }} type uxg-caption">{{ change.type | titlecase }}</span>
             </div>
             <div fxFlex="90" class="change-detail">
               <div [innerHTML]="change.description" class="uxg-body-2"></div>

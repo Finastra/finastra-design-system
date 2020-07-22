@@ -278,20 +278,6 @@
       }
     }
 
-    .changelog-container {
-      .version-id {
-        @include mat-typography-level-to-styles($config, h4);
-      }
-
-      .date {
-        @include mat-typography-level-to-styles($config, h6);
-      }
-      .change {
-        .type {
-          @include mat-typography-level-to-styles($config, caption);
-        }
-      }
-    }
 
     @include layout-bp(xs) {
       .title {
