@@ -1,7 +1,7 @@
-<div fxLayout="row" class="title" fxLayoutAlign="center center">
+<div fxLayout="row" *ngIf="title" class="title" fxLayoutAlign="center center">
   <div class="changelog-icon"></div>
   <div fxLayout="column">
-    <div class="creator" *ngIf="title">{{ title }}</div>
+    <div class="creator">{{ title }}</div>
     <span>Changelog</span>
   </div>
 </div>

@@ -15,7 +15,7 @@ uxg-changelog {
   }
 
   .changelog-container {
-    margin: 0 $uxg-spacing-4;
+    margin: $uxg-spacing-3 $uxg-spacing-4;
     .release-detail,
     .last-release,
     .first-release {
