@@ -28,6 +28,7 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
+import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -55,6 +56,7 @@ import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-ca
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
 import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
+import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import { SearchInputDemoComponent } from './components/search-input-demo/search-
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
     EntityMenuDemoComponent,
-    SearchInputDemoComponent
+    SearchInputDemoComponent,
+    ChangelogDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -117,7 +120,8 @@ import { SearchInputDemoComponent } from './components/search-input-demo/search-
     GlobalNavModule,
     AccountCardModule,
     EntityMenuModule,
-    UxgSearchInputModule
+    UxgSearchInputModule,
+    UXGChangelogModule
   ],
   providers: [],
   exports: [],

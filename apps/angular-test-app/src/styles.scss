@@ -12,6 +12,7 @@
 @import 'skeleton-text/src/skeleton-text.theme';
 @import 'wizard/src/wizard.theme';
 @import 'banner/src/banner.theme';
+@import 'changelog/src/changelog.theme';
 
 @import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
 
@@ -23,6 +24,7 @@ $uxg-typography: uxg-typography-config();
 @include uxg-filter-group-typography($uxg-typography);
 @include uxg-global-search-typography($uxg-typography);
 @include uxg-chart-typography($uxg-typography);
+@include uxg-changelog-typography($uxg-typography);
 
 @mixin app-theme($theme) {
     @include uxg-material-theme($theme);
@@ -36,6 +38,7 @@ $uxg-typography: uxg-typography-config();
     @include uxg-banner-theme($theme);
     @include uxg-skeleton-text-theme($theme);
     @include theme-repeater-card-example($theme);
+    @include uxg-changelog-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);
