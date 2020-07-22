@@ -27,7 +27,7 @@
         <div *ngFor="let change of release.changes" class="change">
           <div *ngIf="change.category == category" fxLayout.xs="column">
             <div fxFlex="10" fxFlex.lt-lg="15">
-              <span class="{{ change.type | lowercase }} type">{{ change.type | titlecase }}</span>
+              <span class="{{ change.type | lowercase }} type uxg-caption">{{ change.type | titlecase }}</span>
             </div>
             <div fxFlex="90" class="change-detail">
               <div [innerHTML]="change.description" class="uxg-body-2"></div>
