@@ -1,0 +1,35 @@
+@import "../../../themes/angular-theme/lib/core/core";
+@import "../../../themes/angular-theme/lib/core/theming/all-theme";
+@import "../../../themes/angular-theme/lib/core/typography/typography";
+@import "../../../themes/angular-theme/theme-variables";
+@import "../../../libs/angular-components/banner/src/banner.theme";
+
+@include uxg-core();
+
+// Add components typography mixins inside this mixin
+@mixin app-typography($typography) {
+}
+
+// Add components theme mixins inside this mixin
+@mixin app-theme($theme) {
+    @include uxg-material-theme($theme);
+    @include uxg-banner-theme($theme);
+}
+
+@include app-typography(uxg-typography-config());
+
+@include app-theme($uxg-light-theme);
+
+@media (prefers-color-scheme: dark) {
+    @include app-theme($uxg-dark-theme);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

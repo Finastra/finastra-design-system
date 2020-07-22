@@ -1,4 +1,8 @@
-@import 'angular-theme/lib/core/style/spacing';
+//@import 'angular-theme/lib/core/style/spacing';
+
+//@import "~@ffdc/uxg-angular-theme/lib/core/style/spacing";
+$uxg-spacing-2: 8px;
+$uxg-spacing-3: 16px;
 
 .uxg-banner {
   margin: $uxg-spacing-2;

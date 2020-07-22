@@ -88,6 +88,12 @@
     },
     "search-input": {
       "tags": []
+    },
+    "web-components-banner": {
+      "tags": []
+    },
+    "web-components-test-app": {
+      "tags": []
     }
   }
 }

@@ -18,7 +18,10 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": ["./themes/", "./libs/angular-components"]
+              "includePaths": [
+                "./themes/",
+                "./libs/angular-components"
+              ]
             },
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
@@ -31,7 +34,10 @@
               "apps/angular-test-app/src/assets",
               "apps/angular-test-app/src/_redirects"
             ],
-            "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
+            "styles": [
+              "apps/angular-test-app/src/styles.scss",
+              "apps/angular-test-app/src/assets/fonts.css"
+            ],
             "scripts": [
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
@@ -87,8 +93,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/angular-test-app/tsconfig.app.json", "apps/angular-test-app/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**"]
+            "tsConfig": [
+              "apps/angular-test-app/tsconfig.app.json",
+              "apps/angular-test-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-test-app/**"
+            ]
           }
         },
         "test": {
@@ -123,7 +135,10 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-test-app-e2e/**"
+            ]
           }
         }
       }
@@ -144,8 +159,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
+            "tsConfig": [
+              "libs/angular-components/tsconfig.lib.json",
+              "libs/angular-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/**"
+            ]
           }
         }
       },
@@ -168,7 +189,10 @@
               "libs/angular-components/core/tsconfig.lib.json",
               "libs/angular-components/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/core/**"
+            ]
           }
         },
         "test": {
@@ -197,7 +221,11 @@
           "options": {
             "inputPath": "themes/angular-theme/",
             "outputPath": "dist/themes/angular-theme",
-            "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
+            "assets": [
+              "themes/angular-theme/lib",
+              "themes/angular-theme/assets",
+              "themes/angular-theme/*.scss"
+            ],
             "sourceMap": true,
             "outputStyle": "compressed"
           },
@@ -233,7 +261,10 @@
               "libs/angular-components/global-search/tsconfig.lib.json",
               "libs/angular-components/global-search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/global-search/**"
+            ]
           }
         },
         "test": {
@@ -264,7 +295,10 @@
               "libs/angular-components/popover/tsconfig.lib.json",
               "libs/angular-components/popover/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/popover/**"
+            ]
           }
         },
         "test": {
@@ -295,7 +329,10 @@
               "libs/angular-components/scroll-to-top/tsconfig.lib.json",
               "libs/angular-components/scroll-to-top/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/scroll-to-top/**"
+            ]
           }
         },
         "test": {
@@ -326,7 +363,10 @@
               "libs/angular-components/table/tsconfig.lib.json",
               "libs/angular-components/table/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/table/**"
+            ]
           }
         },
         "test": {
@@ -357,7 +397,10 @@
               "libs/angular-components/filter/filter-tags/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-tags/**"
+            ]
           }
         },
         "test": {
@@ -388,7 +431,10 @@
               "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-tree/**"
+            ]
           }
         },
         "test": {
@@ -419,7 +465,10 @@
               "libs/angular-components/filter/multiselect-tags/tsconfig.lib.json",
               "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/multiselect-tags/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/multiselect-tags/**"
+            ]
           }
         },
         "test": {
@@ -450,7 +499,10 @@
               "libs/angular-components/repeater/tsconfig.lib.json",
               "libs/angular-components/repeater/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/repeater/**"
+            ]
           }
         },
         "test": {
@@ -481,7 +533,10 @@
               "libs/angular-components/vector-map/tsconfig.lib.json",
               "libs/angular-components/vector-map/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/vector-map/**"
+            ]
           }
         },
         "test": {
@@ -512,7 +567,10 @@
               "libs/angular-components/wizard/tsconfig.lib.json",
               "libs/angular-components/wizard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/wizard/**"
+            ]
           }
         },
         "test": {
@@ -543,7 +601,10 @@
               "libs/angular-components/skeleton-text/tsconfig.lib.json",
               "libs/angular-components/skeleton-text/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/skeleton-text/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/skeleton-text/**"
+            ]
           }
         },
         "test": {
@@ -574,7 +635,10 @@
               "libs/angular-components/chart/tsconfig.lib.json",
               "libs/angular-components/chart/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/chart/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/chart/**"
+            ]
           }
         },
         "test": {
@@ -605,7 +669,10 @@
               "libs/angular-components/filter/filter-group/tsconfig.lib.json",
               "libs/angular-components/filter/filter-group/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-group/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-group/**"
+            ]
           }
         },
         "test": {
@@ -636,7 +703,10 @@
               "libs/angular-components/filter/filter-toggle/tsconfig.lib.json",
               "libs/angular-components/filter/filter-toggle/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-toggle/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/filter/filter-toggle/**"
+            ]
           }
         },
         "test": {
@@ -667,7 +737,10 @@
               "libs/angular-components/global-nav/tsconfig.lib.json",
               "libs/angular-components/global-nav/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/global-nav/**"
+            ]
           }
         },
         "test": {
@@ -698,7 +771,10 @@
               "libs/angular-components/avatar/tsconfig.lib.json",
               "libs/angular-components/avatar/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/avatar/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/avatar/**"
+            ]
           }
         },
         "test": {
@@ -730,7 +806,10 @@
               "libs/angular-components/banner/tsconfig.lib.json",
               "libs/angular-components/banner/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/banner/**"
+            ]
           }
         },
         "test": {
@@ -761,7 +840,10 @@
               "libs/angular-components/user-profile-menu/tsconfig.lib.json",
               "libs/angular-components/user-profile-menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/user-profile-menu/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/user-profile-menu/**"
+            ]
           }
         },
         "test": {
@@ -792,7 +874,10 @@
               "libs/angular-components/expandable-table/tsconfig.lib.json",
               "libs/angular-components/expandable-table/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/expandable-table/**"
+            ]
           }
         },
         "test": {
@@ -823,7 +908,10 @@
               "libs/angular-components/entity-menu/tsconfig.lib.json",
               "libs/angular-components/entity-menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/entity-menu/**"
+            ]
           }
         },
         "test": {
@@ -854,7 +942,10 @@
               "libs/angular-components/cards/account-card/tsconfig.lib.json",
               "libs/angular-components/cards/account-card/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-card/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/cards/account-card/**"
+            ]
           }
         },
         "test": {
@@ -885,13 +976,220 @@
               "libs/angular-components/search-input/tsconfig.lib.json",
               "libs/angular-components/search-input/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/search-input/**"
+            ]
           }
         }
       },
       "schematics": {
         "@nrwl/angular:component": {
           "styleext": "scss"
+        }
+      }
+    },
+    "web-components-banner": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/web-components/banner",
+      "sourceRoot": "web-components/banner/src",
+      "prefix": "ffdc",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/web-components/banner",
+            "index": "web-components/banner/src/index.html",
+            "main": "web-components/banner/src/main.ts",
+            "polyfills": "web-components/banner/src/polyfills.ts",
+            "tsConfig": "web-components/banner/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "web-components/banner/src/favicon.ico",
+              "web-components/banner/src/assets"
+            ],
+            "styles": [
+              "web-components/banner/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "web-components/banner/src/environments/environment.ts",
+                  "with": "web-components/banner/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-components-banner:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-components-banner:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-components-banner:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/web-components/banner/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/web-components/banner/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-components-test-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/web-components-test-app",
+      "sourceRoot": "apps/web-components-test-app/src",
+      "prefix": "ffdc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/web-components-test-app",
+            "index": "apps/web-components-test-app/src/index.html",
+            "main": "apps/web-components-test-app/src/main.ts",
+            "polyfills": "apps/web-components-test-app/src/polyfills.ts",
+            "tsConfig": "apps/web-components-test-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/web-components-test-app/src/favicon.ico",
+              "apps/web-components-test-app/src/assets"
+            ],
+            "styles": [
+              "apps/web-components-test-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/web-components-test-app/src/environments/environment.ts",
+                  "with": "apps/web-components-test-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-components-test-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-components-test-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-components-test-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/web-components-test-app/tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/web-components-test-app/**"
+            ]
+          }
         }
       }
     }
