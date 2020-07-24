@@ -11,10 +11,28 @@
 
     &[color=primary] {
       color: mat-color($primary, default);
+
+      a {
+        color: mat-color($primary, default);
+        text-decoration: none;
+      }
+
+      .mat-flat-button {
+        color: mat-color($primary, default);
+      }
     }
 
     &[color=accent] {
       color: mat-color($accent, default);
+
+      a {
+        color: mat-color($accent, default);
+        text-decoration: none;
+      }
+
+      .mat-flat-button {
+        color: mat-color($primary, default);
+      }
     }
   }
 }
@@ -22,6 +40,10 @@
 @mixin uxg-breadcrumb-typography($config) {
   .uxg-breadcrumb {
     @include mat-typography-level-to-styles($config, body-2);
+
+    .mat-flat-button {
+      @include mat-typography-level-to-styles($config, body-2);
+    }
   }
 
   .uxg-breadcrumb[dense] {
