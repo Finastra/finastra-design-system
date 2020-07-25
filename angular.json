@@ -917,6 +917,41 @@
           "styleext": "scss"
         }
       }
+    },
+    "tailwind-test-app": {
+      "root": "apps/tailwind-test-app",
+      "sourceRoot": "apps/tailwind-test-app/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/apps/tailwind-test-app",
+            "index": "apps/tailwind-test-app/src/index.html",
+            "main": "apps/tailwind-test-app/src/main.ts",
+            "tsConfig": "apps/tailwind-test-app/tsconfig.app.json",
+            "assets": ["apps/tailwind-test-app/src/favicon.ico", "apps/tailwind-test-app/src/assets"],
+            "styles": ["apps/tailwind-test-app/src/tailwind.scss"],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "apps/tailwind-test-app/extra-webpack.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "tailwind-test-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/tailwind-test-app/tsconfig.app.json", "apps/tailwind-test-app/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/tailwind-test-app/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

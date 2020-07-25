@@ -91,6 +91,9 @@
     },
     "changelog": {
       "tags": []
+    },
+    "tailwind-test-app": {
+      "tags": []
     }
   }
 }

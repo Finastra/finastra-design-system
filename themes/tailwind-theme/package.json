@@ -1,0 +1,9 @@
+{
+  "name": "@ffdc/uxg-tailwind-theme",
+  "version": "0.19.8",
+  "description": "Tailwind CSS implementation of the Finastra Design System",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^1.5.2"
+  }
+}
