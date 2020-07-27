@@ -64,7 +64,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .color-swatch {
-  width: 30px;
-  height: 30px;
-  @apply rounded-full;
+  @apply rounded-full shadow-md w-6 h-6 my-1 mx-4 flex justify-center items-center;
 }

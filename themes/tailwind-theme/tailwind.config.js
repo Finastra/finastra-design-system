@@ -44,7 +44,10 @@ module.exports = {
       charcoal: {
         default: '#414141'
       },
+      'on-charcoal': '#ffffff',
       white: '#ffffff',
+      'on-white': '#414141',
+      'on-gradient': '#ffffff',
       violet: {
         50: '#f7f6fd',
         100: '#e9e5f9',
