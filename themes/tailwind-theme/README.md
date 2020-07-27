@@ -1,27 +1,14 @@
-[![@ffdc/uxg-angular-theme](https://img.shields.io/npm/v/@ffdc/uxg-angular-theme?label=uxg-angular-theme&style=flat-square)](https://www.npmjs.com/package/@ffdc/uxg-angular-theme)
-[![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
+# FINASTRA Tailwind Theme
 
-# FINASTRA Angular Theme
-
-The FINASTRA Angular Theme is the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, icons, logo) and UI elements (buttons, checkbox, input...).
+The FINASTRA Tailwind Theme is the Tailwind implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, spacings) and UI elements (buttons...).
 
 ## How to use it? 🤔
 
-You can get started in 2 simple steps:
-
-Install the dependency
+You can get started in by building your project using our tailwind.config.js:
 
 ```Bash
-npm install @ffdc/uxg-angular-theme
+npx tailwindcss build styles.css -o output.css -c tailwind.config,js
 ```
-
-Import the theme in your main stylesheet
-
-```SCSS
-@import '~@ffdc/uxg-angular-theme/all-theme';
-```
-
-You'll find a more exhaustive documentation on our developer [getting started](https://design.ffdcdev.fusionfabric.cloud/get-started/developers) page.
 
 ## Want to help? 🤗❤️
 
