@@ -917,6 +917,29 @@
           "styleext": "scss"
         }
       }
+    },
+    "breadcrumb": {
+      "projectType": "library",
+      "root": "libs/angular-components/breadcrumb",
+      "sourceRoot": "libs/angular-components/breadcrumb",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/breadcrumb/tsconfig.lib.json",
+              "libs/angular-components/breadcrumb/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/breadcrumb/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

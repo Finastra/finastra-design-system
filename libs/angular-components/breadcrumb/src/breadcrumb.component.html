@@ -1,0 +1,59 @@
+<ul class="uxg-breadcrumb" [attr.dense]="dense === '' ? '' : null" [attr.color]="color !== '' ? color : null">
+  <!-- back button -->
+  <ng-container *ngIf="shouldDisplayBackButton && enableBackButton">
+    <li class="uxg-breadcrumb-back">
+      <mat-icon class="uxg-breadcrumb-back" [color]="color" (click)="backToPreviousPage()">chevron_left</mat-icon>
+    </li>
+  </ng-container>
+
+  <ng-container *ngFor="let breadcrumbItem of breadcrumbs; last as isLast">
+    <ng-container *ngIf="!isLast; else lastItem">
+      <ng-template [ngTemplateOutlet]="linkItem" [ngTemplateOutletContext]="{ item: breadcrumbItem }"></ng-template>
+    </ng-container>
+    <!-- Last item template -->
+    <ng-template #lastItem>
+      <!-- whether last item has items data -->
+      <ng-container *ngIf="breadcrumbItem.items">
+        <li>
+          <button mat-flat-button [matMenuTriggerFor]="menu" disableRipple="true" [color]="color">
+            <span [class]="breadcrumbItem.itemClass">{{ breadcrumbItem.label }}</span>
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="uxg-breadcrumb-menu">
+            <mat-nav-list class="uxg-nav-list-level">
+              <a
+                *ngFor="let item of breadcrumbItem.items"
+                [routerLink]="item.url"
+                [queryParamsHandling]="item.queryParamsHandling"
+                [ngClass]="{ 'uxg-list-item-selected': item.label === breadcrumbItem.label }"
+                mat-list-item
+              >
+                <mat-icon mat-list-icon>{{ item.icon ? item.icon : 'filter_none' }}</mat-icon>
+                <p>{{ item.label }}</p>
+              </a>
+            </mat-nav-list>
+          </mat-menu>
+        </li>
+      </ng-container>
+
+      <!-- display last item as  a normal linkItem -->
+      <ng-container *ngIf="!breadcrumbItem.items">
+        <ng-template [ngTemplateOutlet]="linkItem" [ngTemplateOutletContext]="{ item: breadcrumbItem }"></ng-template>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+</ul>
+
+<!-- LinkItem template -->
+<ng-template #linkItem let-breadcrumbItem="item">
+  <li [class]="breadcrumbItem.itemClass">
+    <ng-container *ngIf="breadcrumbItem.url">
+      <a [routerLink]="breadcrumbItem.url" [queryParamsHandling]="breadcrumbItem.queryParamsHandling">{{
+        breadcrumbItem.label
+      }}</a>
+    </ng-container>
+    <ng-container *ngIf="!breadcrumbItem.url">
+      {{ breadcrumbItem.label }}
+    </ng-container>
+  </li>
+</ng-template>

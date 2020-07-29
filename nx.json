@@ -91,6 +91,9 @@
     },
     "changelog": {
       "tags": []
+    },
+    "breadcrumb": {
+      "tags": []
     }
   }
 }
