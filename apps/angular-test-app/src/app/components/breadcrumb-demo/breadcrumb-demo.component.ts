@@ -53,7 +53,8 @@ export class BreadcrumbDemoComponent implements OnInit {
   defaultBreadcrumbsWithoutMenu: Breadcrumb[] = [
     {
       label: 'Design System',
-      url: '/'
+      url: '/',
+      itemClass: 'uxg-h6'
     },
     {
       label: 'Foundations',

@@ -4,4 +4,5 @@ export interface Breadcrumb {
   queryParamsHandling?: string;
   icon?: string;
   items?: Breadcrumb[];
+  itemClass?: string;
 }
