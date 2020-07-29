@@ -29,6 +29,7 @@ import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.compon
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
 import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
+import { MyComponentDemoComponent } from './components/my-component-demo/my-component-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -57,6 +58,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
 import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
 import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
+import { MyComponentModule } from '@ffdc/uxg-angular-components/my-component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,8 @@ import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
     AccountCardDemoComponent,
     EntityMenuDemoComponent,
     SearchInputDemoComponent,
-    ChangelogDemoComponent
+    ChangelogDemoComponent,
+    MyComponentDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +124,8 @@ import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
     AccountCardModule,
     EntityMenuModule,
     UxgSearchInputModule,
-    UXGChangelogModule
+    UXGChangelogModule,
+    MyComponentModule
   ],
   providers: [],
   exports: [],
