@@ -27,6 +27,7 @@ $back-button-icon-size: 18px;
     display: inline-flex;
     margin: 0;
     align-items: center;
+    user-select: none;
 
     > * {
       margin: 0;
