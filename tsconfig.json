@@ -43,7 +43,8 @@
       "@ffdc/uxg-angular-components/cards/account-card": ["libs/angular-components/cards/account-card"],
       "@ffdc/uxg-angular-components/entity-menu": ["libs/angular-components/entity-menu"],
       "@ffdc/uxg-angular-components/search-input": ["libs/angular-components/search-input"],
-      "@ffdc/uxg-angular-components/changelog": ["libs/angular-components/changelog"]
+      "@ffdc/uxg-angular-components/changelog": ["libs/angular-components/changelog"],
+      "@ffdc/uxg-angular-components/my-component": ["libs/angular-components/my-component"]
     }
   },
   "exclude": ["node_modules", "tmp"]
