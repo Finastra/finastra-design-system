@@ -17,25 +17,25 @@
     .uxg-global-search-results-area {
       .uxg-global-search-result-group-header {
         .uxg-global-search-result-group-counter {
-          opacity: 0.4;
+          opacity: 0.7;
         }
       }
     }
 
     .uxg-global-search-results-counter {
-      opacity: 0.4;
+      opacity: 0.7;
     }
 
     .uxg-global-search-input-area {
       .uxg-global-search-input {
         .mat-form-field-label {
-          color: rgba($global-search-text-color, 0.4);
+          color: rgba($global-search-text-color, 0.7);
         }
       }
     }
 
     .uxg-global-search-close-overlay-button {
-      opacity: 0.4;
+      opacity: 0.7;
     }
   }
 }
