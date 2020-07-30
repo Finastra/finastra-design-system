@@ -28,6 +28,9 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { BannerDemoComponent } from './components/banner-demo/banner-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
+import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
+import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
+import { BreadcrumbDemoComponent } from './components/breadcrumb-demo/breadcrumb-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -53,6 +56,9 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
+import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
+import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -79,7 +85,10 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerDemoComponent,
     GlobalNavDemoComponent,
     AccountCardDemoComponent,
-    EntityMenuDemoComponent
+    EntityMenuDemoComponent,
+    SearchInputDemoComponent,
+    ChangelogDemoComponent,
+    BreadcrumbDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +122,10 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
     BannerModule,
     GlobalNavModule,
     AccountCardModule,
-    EntityMenuModule
+    EntityMenuModule,
+    UxgSearchInputModule,
+    UXGChangelogModule,
+    UxgBreadcrumbModule
   ],
   providers: [],
   exports: [],

@@ -48,6 +48,7 @@ export class FilterTagsComponent implements OnInit {
   @Input()
   set data(data: Tag[]) {
     this._data = data;
+    this.selectedData = this.data.filter(tag => tag.isSelected);
   }
 
   get data(): Tag[] {
@@ -76,7 +77,6 @@ export class FilterTagsComponent implements OnInit {
         }
       })
     );
-    this.selectedData = this.data.filter(tag => tag.isSelected);
   }
 
   add(event: MatChipInputEvent) {
@@ -124,6 +124,9 @@ export class FilterTagsComponent implements OnInit {
   }
 
   clearSelection() {
+    if (!this.selectedData.length) {
+      return;
+    }
     const removed = [...this.selectedData];
     this.selectedData.length = 0;
     this.changes.emit({ added: [], removed });
@@ -133,6 +136,14 @@ export class FilterTagsComponent implements OnInit {
   onClick() {
     this.trigger._onChange('');
     this.trigger.openPanel();
+  }
+
+  applyHighlight(tag: Tag) {
+    const element = this.selectedData.find(el => el.label === tag.label);
+    if (element) {
+      return true;
+    }
+    return false;
   }
 
   private isTag(value: Tag | string): value is Tag {

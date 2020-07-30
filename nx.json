@@ -85,6 +85,15 @@
     },
     "account-card": {
       "tags": []
+    },
+    "search-input": {
+      "tags": []
+    },
+    "changelog": {
+      "tags": []
+    },
+    "breadcrumb": {
+      "tags": []
     }
   }
 }

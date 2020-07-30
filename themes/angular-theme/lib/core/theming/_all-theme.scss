@@ -13,6 +13,7 @@
 @import '../../logo/logo-theme';
 @import '../../menu/menu-theme';
 @import '../../sidenav/sidenav-theme';
+@import '../../slide-toggle/slide-toggle-theme';
 @import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
 
@@ -82,6 +83,7 @@
   @include uxg-logo-theme($theme);
   @include uxg-menu-theme($theme);
   @include uxg-sidenav-theme($theme);
+  @include uxg-slide-toggle-theme($theme);
   @include uxg-table-theme($theme);
   @include uxg-toolbar-theme($theme);
 }

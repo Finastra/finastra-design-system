@@ -1,0 +1,7 @@
+@mixin uxg-slide-toggle-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  .mat-slide-toggle-thumb {
+    border-color: mat-color($foreground, divider);
+  }
+}

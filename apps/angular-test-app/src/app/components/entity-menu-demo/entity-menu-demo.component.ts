@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EntityMenuItemWEvent } from '@ffdc/uxg-angular-components/entity-menu';
 
 const TEMPLATES_DATA: any[] = [
   {
@@ -116,6 +117,7 @@ export class EntityMenuDemoComponent implements OnInit {
   columnsMatcherExample = this.currentTemplate.columnsMatcher;
 
   actionDescription!: string;
+  actionEvent!: MouseEvent;
 
   ngOnInit(): void {
     this.updateTemplate();
@@ -125,8 +127,9 @@ export class EntityMenuDemoComponent implements OnInit {
     this.actionDescription = 'Click on ' + this.bottomLabel;
   }
 
-  displayItem(data: any) {
-    this.actionDescription = JSON.stringify(data);
+  displayItem(data: EntityMenuItemWEvent) {
+    this.actionDescription = JSON.stringify(data.value);
+    this.actionEvent = data.$event;
   }
 
   updateTemplate() {

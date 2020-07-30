@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.19.4",
+  "version": "0.19.9",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -68,7 +68,7 @@
     "core-js": "^2.5.4",
     "d3": "5.15.0",
     "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "plotly.js": "1.54.1",
     "rxjs": "6.5.3",
     "smoothscroll-polyfill": "^0.4.4",
@@ -104,7 +104,8 @@
     "codelyzer": "5.2.2",
     "commander": "^2.20.0",
     "cpx": "^1.5.0",
-    "cypress": "^3.8.2",
+    "cypress": "^4.6.0",
+    "cypress-image-snapshot": "^3.1.1",
     "dotenv": "6.2.0",
     "es-abstract": "1.14.2",
     "fs-extra": "^8.1.0",

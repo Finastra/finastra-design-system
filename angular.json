@@ -871,6 +871,75 @@
           "styleext": "scss"
         }
       }
+    },
+    "search-input": {
+      "projectType": "library",
+      "root": "libs/angular-components/search-input",
+      "sourceRoot": "libs/angular-components/search-input",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/search-input/tsconfig.lib.json",
+              "libs/angular-components/search-input/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "changelog": {
+      "projectType": "library",
+      "root": "libs/angular-components/changelog",
+      "sourceRoot": "libs/angular-components/changelog",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/changelog/tsconfig.lib.json",
+              "libs/angular-components/changelog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/changelog/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "breadcrumb": {
+      "projectType": "library",
+      "root": "libs/angular-components/breadcrumb",
+      "sourceRoot": "libs/angular-components/breadcrumb",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/breadcrumb/tsconfig.lib.json",
+              "libs/angular-components/breadcrumb/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/breadcrumb/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.19.4",
+  "version": "0.19.9",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
@@ -13,6 +13,6 @@
     "smoothscroll-polyfill": "0.4.4"
   },
   "dependencies": {
-    "@ffdc/uxg-angular-theme": "0.19.4"
+    "@ffdc/uxg-angular-theme": "0.19.9"
   }
 }
