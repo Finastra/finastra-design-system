@@ -20,6 +20,7 @@ import { UserProfileMenuDemoComponentComponent } from './components/user-profile
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
 import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
+import { BreadcrumbDemoComponent } from './components/breadcrumb-demo/breadcrumb-demo.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -53,7 +54,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'banner', component: BannerDemoComponent, data: { title: 'Banner' } },
       { path: 'account-card', component: AccountCardDemoComponent, data: { title: 'Account Card' } },
       { path: 'search-input', component: SearchInputDemoComponent, data: { title: 'Search Input' } },
-      { path: 'changelog', component: ChangelogDemoComponent, data: { title: 'Changelog' } }
+      { path: 'changelog', component: ChangelogDemoComponent, data: { title: 'Changelog' } },
+      { path: 'breadcrumb', component: BreadcrumbDemoComponent, data: { title: 'Breadcrumb' } }
     ]
   }
 ].map(groups => {
