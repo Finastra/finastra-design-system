@@ -53,11 +53,7 @@
 
           .mat-chip-remove {
             color: mat-color($primary, default);
-            opacity: 0.75;
-
-            &:hover {
-              opacity: 1;
-            }
+            opacity: 1;
           }
         }
       }
