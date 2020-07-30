@@ -10,7 +10,7 @@
   $global-search-background: map-get($background, dialog);
 
   .uxg-global-search-overlay-backdrop {
-    background: rgba($global-search-background, 0.95);
+    background: mat-color($background, background);
   }
 
   uxg-global-search-overlay {
