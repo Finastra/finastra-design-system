@@ -24,7 +24,7 @@ jobs:
           working-directory: ./
           start: npm start
       - uses: actions/upload-artifact@v2
-        if: failure()
+        # if: failure()
         with:
           name: cypress-screenshots
           # path: cypress/snapshots/**/__diff_output__
