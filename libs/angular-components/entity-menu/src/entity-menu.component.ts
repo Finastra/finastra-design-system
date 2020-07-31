@@ -59,7 +59,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     if (name) {
       return name
         .split(' ')
-        .map(str => str.charAt(0))
+        .map((str) => str.charAt(0))
         .join('')
         .toUpperCase()
         .substring(0, this.abbreviationLength);
@@ -70,8 +70,6 @@ export class EntityMenuComponent implements OnInit, OnChanges {
 
 @Component({
   selector: 'uxg-entity-menu-actions',
-  template: `
-    <ng-content></ng-content>
-  `
+  template: ` <ng-content></ng-content> `
 })
 export class EntityMenuActionsComponent {}

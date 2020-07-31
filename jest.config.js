@@ -10,14 +10,19 @@ module.exports = {
     '^.+\\.(ts|js|html)$': 'ts-jest',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
-  testEnvironment: 'jest-environment-jsdom-fifteen',
+  // testEnvironment: 'jest-environment-jsdom-fifteen',
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
   ],
   globals: {
     'ts-jest': {
-      tsConfig: 'tsconfig.spec.json'
+      tsConfig: '<rootDir>/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.(html|svg)$',
+      astTransformers: [
+        'jest-preset-angular/build/InlineFilesTransformer',
+        'jest-preset-angular/build/StripStylesTransformer'
+      ]
     }
   },
   collectCoverage: true,

@@ -12,14 +12,14 @@ function componentsBuilder(options: Schema, context: BuilderContext): Observable
   const src = join(process.cwd(), options.project.replace('/ng-package.json', ''));
   const dest = resolve(src, project.dest);
 
-  return new Observable(subscriber => {
+  return new Observable((subscriber) => {
     execute(
       {
         project: options.project,
         tsConfig: options.tsConfig
       },
       context
-    ).subscribe(result => {
+    ).subscribe((result) => {
       subscriber.next(result);
 
       if (result.success === true) {

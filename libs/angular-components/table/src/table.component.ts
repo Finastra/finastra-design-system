@@ -82,7 +82,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
     if (!this.singleSelect && this.multiSelect) {
       this.selections.length = 0;
-      selectedIndex.forEach(sIndex => {
+      selectedIndex.forEach((sIndex) => {
         if (!this.isRowSelected(this.data[sIndex])) {
           this.selections.push(this.data[sIndex]);
         }
@@ -215,7 +215,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   singleSelectRowClick(row: any) {
     if (this.uxgTableEdit) return;
-    this.dataToComponent.forEach(item => delete item.uxgTableEdit);
+    this.dataToComponent.forEach((item) => delete item.uxgTableEdit);
 
     if (this.singleSelect) {
       if (!this.isRowSelected(row)) {
@@ -306,7 +306,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   rowEditClick(row: any) {
-    this.dataToComponent.forEach(item => {
+    this.dataToComponent.forEach((item) => {
       delete item.uxgTableEdit;
     });
     this.editRowOrigin = { ...row };
@@ -331,13 +331,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   rowEditCancel(row: any) {
     delete row.uxgTableEdit;
     this.uxgTableEdit = false;
-    Object.keys(row).forEach(key => {
+    Object.keys(row).forEach((key) => {
       row[key] = this.editRowOrigin[key];
     });
   }
 
   rowDelete(row: any) {
-    const rowIndex = this.dataToComponent.findIndex(item => item === row);
+    const rowIndex = this.dataToComponent.findIndex((item) => item === row);
     this.dataToComponent.splice(rowIndex, 1);
     this.dataToComponent = this.dataToComponent.slice();
     this.rowRemoved.emit({
@@ -381,7 +381,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getSortColumnType(columnName: string): string | undefined {
-    const column = this.columns.find(item => {
+    const column = this.columns.find((item) => {
       return item.name === columnName;
     });
 
@@ -421,7 +421,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getSelectedIndex(row: any) {
-    const rowIdx = this.selections.findIndex(item => {
+    const rowIdx = this.selections.findIndex((item) => {
       return isEqual(item, row);
     });
     return rowIdx > -1 ? rowIdx : -1;

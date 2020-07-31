@@ -79,7 +79,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
         this.searchTermChange.emit(value);
       });
 
-    this.results.subscribe(results => {
+    this.results.subscribe((results) => {
       this.resultsFound = this.resultsShown = results.length;
       const groupedResults = this.groupByResults(results, this.groupBy);
 
@@ -115,7 +115,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   private get(object: any, path: string | string[], defaultVal?: any): any {
-    const PATH = Array.isArray(path) ? path : path.split('.').filter(i => i.length);
+    const PATH = Array.isArray(path) ? path : path.split('.').filter((i) => i.length);
     if (!PATH.length) {
       return object === undefined ? defaultVal : object;
     }
@@ -142,7 +142,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       return previous;
     }, {});
 
-    return Object.keys(groupedCollection).map(key => ({
+    return Object.keys(groupedCollection).map((key) => ({
       key,
       value: groupedCollection[key]
     }));

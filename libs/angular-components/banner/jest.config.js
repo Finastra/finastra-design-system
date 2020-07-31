@@ -2,6 +2,7 @@ const name = 'banner';
 const suiteName = 'BannerModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,

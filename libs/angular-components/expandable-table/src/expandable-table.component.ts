@@ -103,15 +103,15 @@ export class ExpandableTableComponent implements OnChanges {
   generateData() {
     // add primaryKey
     let primaryKeyValue = 0;
-    this.dataSource.forEach(data => {
+    this.dataSource.forEach((data) => {
       data[this.primaryKey] = ++primaryKeyValue;
     });
 
     // input selection
     if (this.selection) {
       const initialSelection: any[] = [];
-      this.selection.forEach(selectionData => {
-        this.dataSource.forEach(data => {
+      this.selection.forEach((selectionData) => {
+        this.dataSource.forEach((data) => {
           if (isEqual(omit(data, 'primaryKey'), omit(selectionData, 'primaryKey'))) {
             initialSelection.push(data);
           }
@@ -121,7 +121,7 @@ export class ExpandableTableComponent implements OnChanges {
     }
 
     this.dataLength = this.dataSource.length;
-    this.dataSource = filter(this.dataSource, data => {
+    this.dataSource = filter(this.dataSource, (data) => {
       return data[this.groupByKey];
     });
 
@@ -132,9 +132,9 @@ export class ExpandableTableComponent implements OnChanges {
     if (!this.groupByKeyLabel) {
       this.groupByKeyLabel = this.groupByKey;
     }
-    this.groupInfo = find(this.columns, c => c.name === this.groupByKeyLabel);
-    this._columns = reject(this.columns, c => c.name === this.groupByKeyLabel);
-    this.visibleColumns = this._columns.map(c => c.name);
+    this.groupInfo = find(this.columns, (c) => c.name === this.groupByKeyLabel);
+    this._columns = reject(this.columns, (c) => c.name === this.groupByKeyLabel);
+    this.visibleColumns = this._columns.map((c) => c.name);
   }
 
   groupBy(groupId: string, collection: any[]): GroupedValues[] {
@@ -148,7 +148,7 @@ export class ExpandableTableComponent implements OnChanges {
       }))
       .value();
 
-    dataSource.forEach(ds => {
+    dataSource.forEach((ds) => {
       if (!ds.values[0][this.visibleColumns[1]]) {
         ds.values = [];
       }
@@ -160,12 +160,12 @@ export class ExpandableTableComponent implements OnChanges {
   // All
   toggleAll() {
     if (this.selectionModel.selected.length && this.isAllSelected()) {
-      this.selectionModel.selected.forEach(item => {
+      this.selectionModel.selected.forEach((item) => {
         this.selectionModel.toggle(item);
       });
     } else {
       this._dataSource.forEach((row: GroupedValues) => {
-        row.values.forEach(item => this.selectionModel.select(item));
+        row.values.forEach((item) => this.selectionModel.select(item));
       });
     }
     this.onSelectionChanged();
@@ -179,11 +179,11 @@ export class ExpandableTableComponent implements OnChanges {
   toggleRow(row: GroupedValues) {
     const selected = this.getSelectionByRow(row);
     if (selected && selected.length === row.values.length) {
-      selected.forEach(item => {
+      selected.forEach((item) => {
         this.selectionModel.toggle(item);
       });
     } else {
-      row.values.forEach(item => this.selectionModel.select(item));
+      row.values.forEach((item) => this.selectionModel.select(item));
     }
     this.onSelectionChanged();
   }
@@ -224,7 +224,7 @@ export class ExpandableTableComponent implements OnChanges {
   onTableSelectionChange(tableSelectionEvent: any, row: any) {
     const rowSelection = this.getSelectionByRow(row);
     if (tableSelectionEvent.data) {
-      rowSelection.forEach(selection => {
+      rowSelection.forEach((selection) => {
         this.selectionModel.toggle(selection);
       });
       tableSelectionEvent.data.forEach((selection: any) => {
@@ -236,7 +236,7 @@ export class ExpandableTableComponent implements OnChanges {
 
   onSelectionChanged() {
     const selectedItems: any[] = cloneDeep(this.selectionModel.selected);
-    selectedItems.forEach(data => {
+    selectedItems.forEach((data) => {
       delete data[this.primaryKey];
     });
     this.selectionChange.emit(selectedItems);

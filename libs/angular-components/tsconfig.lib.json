@@ -18,5 +18,6 @@
     "enableResourceInlining": true,
     "enableIvy": false
   },
-  "exclude": ["**/*.spec.ts"]
+  "exclude": ["**/*.spec.ts"],
+  "include": ["**\\*.ts"]
 }

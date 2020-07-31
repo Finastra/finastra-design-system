@@ -48,7 +48,7 @@ export class FilterTagsComponent implements OnInit {
   @Input()
   set data(data: Tag[]) {
     this._data = data;
-    this.selectedData = this.data.filter(tag => tag.isSelected);
+    this.selectedData = this.data.filter((tag) => tag.isSelected);
   }
 
   get data(): Tag[] {
@@ -84,7 +84,7 @@ export class FilterTagsComponent implements OnInit {
       const input = event.input;
       const value = (event.value || '').trim();
 
-      const validValue = this.data.some(el => el.label === value);
+      const validValue = this.data.some((el) => el.label === value);
 
       if (validValue) {
         this.selectedData.push({ label: value });
@@ -139,7 +139,7 @@ export class FilterTagsComponent implements OnInit {
   }
 
   applyHighlight(tag: Tag) {
-    const element = this.selectedData.find(el => el.label === tag.label);
+    const element = this.selectedData.find((el) => el.label === tag.label);
     if (element) {
       return true;
     }
@@ -160,7 +160,7 @@ export class FilterTagsComponent implements OnInit {
 
     this.toHighlight = filterValue;
 
-    return this.data.filter(tag => tag.label.toLowerCase().includes(filterValue));
+    return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
   }
 
   getState() {

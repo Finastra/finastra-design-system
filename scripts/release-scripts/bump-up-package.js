@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function(packagePath, version, scope) {
+module.exports = function (packagePath, version, scope) {
   let pkg = require(packagePath);
 
   // If package contains scope then bump it up as well
@@ -18,7 +18,7 @@ module.exports = function(packagePath, version, scope) {
     bumpUpDependencies(pkg.devDependencies, version, scope);
   }
 
-  fs.writeFile(packagePath, JSON.stringify(pkg, null, 2), err => {
+  fs.writeFile(packagePath, JSON.stringify(pkg, null, 2), (err) => {
     if (err) {
       console.log(err);
     }

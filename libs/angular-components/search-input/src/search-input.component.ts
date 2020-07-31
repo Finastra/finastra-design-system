@@ -57,7 +57,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   constructor(@Attribute('dense') public dense: any) {
     this.termSubscription = this.term$
       .pipe(debounceTime(this.debounceTime), distinctUntilChanged())
-      .subscribe(query => {
+      .subscribe((query) => {
         this.search.emit(query);
       });
   }

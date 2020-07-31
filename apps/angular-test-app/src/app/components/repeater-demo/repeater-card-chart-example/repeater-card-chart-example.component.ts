@@ -55,20 +55,10 @@ export class RepeaterCardChartExampleComponent implements OnInit {
     }
     this.element = this.chartContainer.nativeElement;
 
-    const svg = d3
-      .select(this.element)
-      .select('svg')
-      .attr('width', 280)
-      .attr('height', 30);
+    const svg = d3.select(this.element).select('svg').attr('width', 280).attr('height', 30);
 
-    const x = d3
-      .scaleLinear()
-      .domain([0, 50])
-      .range([0, 260]);
-    const y = d3
-      .scaleLinear()
-      .domain([0, 9999])
-      .range([30, 0]);
+    const x = d3.scaleLinear().domain([0, 50]).range([0, 260]);
+    const y = d3.scaleLinear().domain([0, 9999]).range([30, 0]);
 
     this.line = d3
       .line()
@@ -77,8 +67,8 @@ export class RepeaterCardChartExampleComponent implements OnInit {
       })
       .y((d: any) => y(d.amount));
 
-    this.dataNum1 = historic.filter(d => d.year <= 10);
-    this.dataNum2 = historic.filter(d => d.year >= 10);
+    this.dataNum1 = historic.filter((d) => d.year <= 10);
+    this.dataNum2 = historic.filter((d) => d.year >= 10);
     this.dataNum3 = historic;
 
     const g = svg
@@ -114,29 +104,20 @@ export class RepeaterCardChartExampleComponent implements OnInit {
 
   updateData() {
     const dataNum1Bis: any[] = [];
-    this.dataNum1.forEach(element => {
+    this.dataNum1.forEach((element) => {
       element.amount = this.randomIntFromInterval(0, 9999);
       dataNum1Bis.push(element);
     });
 
     const dataNum2Bis: any[] = [];
-    this.dataNum2.forEach(element => {
+    this.dataNum2.forEach((element) => {
       element.amount = this.randomIntFromInterval(0, 9999);
       dataNum2Bis.push(element);
     });
 
-    const svg = d3
-      .select(this.element)
-      .select('svg')
-      .transition();
-    svg
-      .select('.line1')
-      .duration(750)
-      .attr('d', this.line(dataNum1Bis));
-    svg
-      .select('.line2')
-      .duration(750)
-      .attr('d', this.line(dataNum2Bis));
+    const svg = d3.select(this.element).select('svg').transition();
+    svg.select('.line1').duration(750).attr('d', this.line(dataNum1Bis));
+    svg.select('.line2').duration(750).attr('d', this.line(dataNum2Bis));
   }
 
   randomIntFromInterval(min: number, max: number) {
