@@ -5,7 +5,7 @@
   $background: map-get($theme, background);
 
   .uxg-global-search-overlay-backdrop {
-    background: mat-color($background, background);
+    background: rgba($global-search-background, 0.95);
   }
 
   uxg-global-search-overlay {
