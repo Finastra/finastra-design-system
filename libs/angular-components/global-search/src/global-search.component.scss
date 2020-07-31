@@ -28,7 +28,6 @@ $close-button-size-small: 32px;
         height: 99px;
         display: flex;
         align-items: center;
-        opacity: 0.7;
         margin-right: $uxg-spacing-3;
 
         @include layout-bp(xs) {
