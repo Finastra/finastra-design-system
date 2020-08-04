@@ -43,8 +43,8 @@ jobs:
         run: npm run build:devkit
 
         # Test
-      - name: Lint affected files
-        run: npm run affected:lint -- --base=$NX_BASE --parallel
+      # - name: Lint affected files
+      #   run: npm run affected:lint -- --base=$NX_BASE --parallel
       - name: Check formatting
         run: npm run format:check -- --base=$NX_BASE --parallel
       - name: Run affected unit tests
