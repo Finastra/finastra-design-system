@@ -62,7 +62,7 @@ export class UxgBreadcrumbComponent implements OnDestroy {
     private cd: ChangeDetectorRef
   ) {
     combineLatest([
-      this.breakpointObserver.observe([Breakpoints.HandsetPortrait]).pipe(map(result => result.matches)),
+      this.breakpointObserver.observe([Breakpoints.HandsetPortrait]).pipe(map((result) => result.matches)),
       this.breadcrumbs$
     ])
       .pipe(
@@ -71,7 +71,7 @@ export class UxgBreadcrumbComponent implements OnDestroy {
         }),
         takeUntil(this.destroyed$)
       )
-      .subscribe(value => {
+      .subscribe((value) => {
         this.shouldDisplayBackButton = value;
         this.cd.markForCheck();
       });
