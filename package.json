@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.19.10",
+  "version": "0.20.0",
   "private": true,
   "license": "MIT",
   "scripts": {
