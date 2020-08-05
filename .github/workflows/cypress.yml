@@ -23,6 +23,7 @@ jobs:
         with:
           working-directory: ./
           start: npm start
+          cache-key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
