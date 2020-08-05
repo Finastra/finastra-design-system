@@ -6,11 +6,11 @@ interface ChainableFunctions {
 }
 
 export function createChain(chainableFunctions: ChainableFunctions) {
-  return function(input: any) {
+  return function (input: any) {
     let value = input;
 
     const wrapper = {
-      ...mapValues(chainableFunctions, f => (...args: any[]) => {
+      ...mapValues(chainableFunctions, (f) => (...args: any[]) => {
         // lodash always puts input as the first argument
         value = f(value, ...args);
         return wrapper;

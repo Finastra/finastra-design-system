@@ -44,7 +44,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
       .pipe(
         throttleTime(10),
         map(() => this.parent.pageYOffset || this.parent.scrollTop),
-        map(y => {
+        map((y) => {
           if (y > this.showAfter) {
             return ShowStatus.show;
           } else {
@@ -54,7 +54,7 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
         distinctUntilChanged(),
         share()
       )
-      .subscribe(s => this.state$.next(s));
+      .subscribe((s) => this.state$.next(s));
   }
 
   ngOnDestroy() {

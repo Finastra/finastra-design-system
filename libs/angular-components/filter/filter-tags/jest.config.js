@@ -2,6 +2,7 @@ const name = 'filter-tags';
 const suiteName = 'FilterTagsComponentModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../../jest.config.js',
   coverageDirectory: `../../../../coverage/libs/${name}`,

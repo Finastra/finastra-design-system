@@ -2,6 +2,7 @@ const name = 'core';
 const suiteName = 'UXGFilterModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,

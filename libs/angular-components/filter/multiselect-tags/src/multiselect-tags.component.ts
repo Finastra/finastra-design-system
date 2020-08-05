@@ -63,22 +63,22 @@ export class MultiselectTagsComponent {
   }
 
   clearSelection() {
-    if (!this.data.some(tag => tag.isSelected)) {
+    if (!this.data.some((tag) => tag.isSelected)) {
       return;
     }
     this.changes.emit({ added: [], removed: [...this.data] });
-    this.data.forEach(tag => (tag.isSelected = false));
+    this.data.forEach((tag) => (tag.isSelected = false));
   }
 
   getState() {
-    const filteredMultiTags = this.data.filter(el => el.isSelected === true);
+    const filteredMultiTags = this.data.filter((el) => el.isSelected === true);
     return [...filteredMultiTags];
   }
 
   setState(data: MultiselectTag[]) {
-    this.data.forEach(tag => {
+    this.data.forEach((tag) => {
       let found = false;
-      data.forEach(el => {
+      data.forEach((el) => {
         if (el.label === tag.label) {
           tag.isSelected = true;
           found = true;

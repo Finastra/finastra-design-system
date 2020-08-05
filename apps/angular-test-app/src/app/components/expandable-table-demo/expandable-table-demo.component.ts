@@ -45,7 +45,7 @@ export class ExpandableTableDemoComponent {
     this.selectable = false;
     this.actionDescription = '';
 
-    this.groupByList = COLUMNS.map(col => col.name);
+    this.groupByList = COLUMNS.map((col) => col.name);
   }
 
   updateGroupBy(event: any) {

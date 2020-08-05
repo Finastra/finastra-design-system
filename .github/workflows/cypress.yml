@@ -6,23 +6,24 @@ on:
 
 jobs:
   init:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           working-directory: ./
           start: npm start
+          cache-key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - uses: actions/upload-artifact@v2
         if: failure()
         with:

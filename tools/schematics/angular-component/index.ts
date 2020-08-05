@@ -21,7 +21,7 @@ import { readFile } from 'fs-extra';
 import { registerLocalPackage, addToIndex, addToNgJson } from '../../utils';
 import { updateJsonInTree } from '@nrwl/workspace';
 
-export default function(schema: Schema): Rule {
+export default function (schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
     const globalGitConfig = gitParse.sync({ path: gitPath({ type: 'global' }), cwd: '/' }) || {};
     const localGitConfig = gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
@@ -56,7 +56,7 @@ export default function(schema: Schema): Rule {
       addToNgJson({
         projectName: filename
       }),
-      updateJsonInTree(`nx.json`, json => {
+      updateJsonInTree(`nx.json`, (json) => {
         return {
           ...json,
           projects: {

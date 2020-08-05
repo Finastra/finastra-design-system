@@ -13,12 +13,12 @@ export class GroupTracesComponent {
 
   getTraces(): any[] {
     return this.traces
-      .map(trace => {
+      .map((trace) => {
         const t = trace.getPlotlyTrace();
         if (t && (this.columnPosition !== undefined || this.columnPosition !== undefined)) t.domain = this.domain;
         return t;
       })
-      .filter(trace => !!trace);
+      .filter((trace) => !!trace);
   }
 
   private get domain() {

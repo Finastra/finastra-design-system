@@ -41,7 +41,7 @@ export class FilterToggleComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.data.forEach(toggleBtn => {
+    this.data.forEach((toggleBtn) => {
       if (toggleBtn.isSelected) {
         this.initialValue = toggleBtn;
         this.selectedValue = toggleBtn;

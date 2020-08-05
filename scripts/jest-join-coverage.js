@@ -11,7 +11,7 @@ const { createReporter } = require('istanbul-api');
 
 const map = libCoverage.createCoverageMap();
 
-const normalizeJestCoverage = obj => {
+const normalizeJestCoverage = (obj) => {
   const result = obj;
   Object.entries(result).forEach(([k, v]) => {
     if (v.data) result[k] = v.data;
@@ -19,8 +19,8 @@ const normalizeJestCoverage = obj => {
   return result;
 };
 
-globby([`${rootPath}`, '!**/node_modules'], { expandDirectories: { files: ['coverage-final.json'] } }).then(paths => {
-  paths.forEach(path => {
+globby([`${rootPath}`, '!**/node_modules'], { expandDirectories: { files: ['coverage-final.json'] } }).then((paths) => {
+  paths.forEach((path) => {
     const coverage = require(path);
     map.merge(normalizeJestCoverage(coverage));
   });

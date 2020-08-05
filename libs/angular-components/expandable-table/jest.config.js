@@ -1,10 +1,23 @@
+const name = 'expandable-table';
+const suiteName = 'ExpandableTable';
+
 module.exports = {
-  name: 'angular-components-expandable-table',
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+  name,
   preset: '../../../jest.config.js',
-  coverageDirectory: '../../../coverage/libs/angular-components/expandable-table',
-  snapshotSerializers: [
-    'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
-    'jest-preset-angular/build/AngularSnapshotSerializer.js',
-    'jest-preset-angular/build/HTMLCommentSerializer.js'
+  coverageDirectory: `../../../coverage/libs/${name}`,
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        outputDirectory: './testresults/',
+        outputName: `junit-${name}.xml`,
+        suiteName,
+        classNameTemplate: '{classname}',
+        titleTemplate: `${suiteName} › {classname} › {title}`,
+        ancestorSeparator: ' › '
+      }
+    ]
   ]
 };

@@ -2,9 +2,10 @@ const name = 'account-card';
 const suiteName = 'AccountCardModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../../jest.config.js',
-  coverageDirectory: `../../../coverage/libs/${name}`,
+  coverageDirectory: `../../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [

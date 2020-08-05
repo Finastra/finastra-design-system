@@ -2,6 +2,7 @@ const name = 'wizard';
 const suiteName = 'WizardModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name: name,
   preset: '../../../jest.config.js',
   coverageDirectory: '../../../coverage/libs/components/wizard',

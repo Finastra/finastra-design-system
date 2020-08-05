@@ -20,6 +20,7 @@
             "stylePreprocessorOptions": {
               "includePaths": ["./themes/", "./libs/angular-components"]
             },
+            "allowedCommonJsDependencies": ["lodash", "elasticlunr"],
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
             "main": "apps/angular-test-app/src/main.ts",
@@ -88,15 +89,13 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["apps/angular-test-app/tsconfig.app.json", "apps/angular-test-app/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**"]
+            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/angular-test-app/jest.config.js",
-            "tsConfig": "apps/angular-test-app/tsconfig.spec.json",
-            "setupFile": "apps/angular-test-app/src/test-setup.ts"
+            "jestConfig": "apps/angular-test-app/jest.config.js"
           }
         }
       }
@@ -123,7 +122,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**"]
+            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**/*"]
           }
         }
       }
@@ -145,7 +144,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/**/*"]
           }
         }
       },
@@ -168,15 +167,13 @@
               "libs/angular-components/core/tsconfig.lib.json",
               "libs/angular-components/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/core/jest.config.js",
-            "tsConfig": "libs/angular-components/core/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/core/test-setup.ts"
+            "jestConfig": "libs/angular-components/core/jest.config.js"
           }
         }
       },
@@ -233,15 +230,13 @@
               "libs/angular-components/global-search/tsconfig.lib.json",
               "libs/angular-components/global-search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/global-search/jest.config.js",
-            "tsConfig": "libs/angular-components/global-search/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/global-search/test-setup.ts"
+            "jestConfig": "libs/angular-components/global-search/jest.config.js"
           }
         }
       },
@@ -264,15 +259,13 @@
               "libs/angular-components/popover/tsconfig.lib.json",
               "libs/angular-components/popover/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/popover/jest.config.js",
-            "tsConfig": "libs/angular-components/popover/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/popover/test-setup.ts"
+            "jestConfig": "libs/angular-components/popover/jest.config.js"
           }
         }
       },
@@ -295,15 +288,13 @@
               "libs/angular-components/scroll-to-top/tsconfig.lib.json",
               "libs/angular-components/scroll-to-top/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js",
-            "tsConfig": "libs/angular-components/scroll-to-top/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/scroll-to-top/test-setup.ts"
+            "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js"
           }
         }
       },
@@ -326,15 +317,13 @@
               "libs/angular-components/table/tsconfig.lib.json",
               "libs/angular-components/table/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/table/jest.config.js",
-            "tsConfig": "libs/angular-components/table/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/table/test-setup.ts"
+            "jestConfig": "libs/angular-components/table/jest.config.js"
           }
         }
       },
@@ -357,15 +346,13 @@
               "libs/angular-components/filter/filter-tags/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js",
-            "tsConfig": "libs/angular-components/filter/filter-tags/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter/filter-tags/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js"
           }
         }
       },
@@ -388,15 +375,13 @@
               "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
               "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js",
-            "tsConfig": "libs/angular-components/filter/filter-tree/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter/filter-tree/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js"
           }
         }
       },
@@ -419,15 +404,13 @@
               "libs/angular-components/filter/multiselect-tags/tsconfig.lib.json",
               "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/multiselect-tags/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/multiselect-tags/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js",
-            "tsConfig": "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter/multiselect-tags/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js"
           }
         }
       },
@@ -450,15 +433,13 @@
               "libs/angular-components/repeater/tsconfig.lib.json",
               "libs/angular-components/repeater/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/repeater/jest.config.js",
-            "tsConfig": "libs/angular-components/repeater/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/repeater/test-setup.ts"
+            "jestConfig": "libs/angular-components/repeater/jest.config.js"
           }
         }
       },
@@ -481,15 +462,13 @@
               "libs/angular-components/vector-map/tsconfig.lib.json",
               "libs/angular-components/vector-map/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/vector-map/jest.config.js",
-            "tsConfig": "libs/angular-components/vector-map/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/vector-map/test-setup.ts"
+            "jestConfig": "libs/angular-components/vector-map/jest.config.js"
           }
         }
       },
@@ -512,15 +491,13 @@
               "libs/angular-components/wizard/tsconfig.lib.json",
               "libs/angular-components/wizard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/wizard/jest.config.js",
-            "tsConfig": "libs/angular-components/wizard/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/wizard/test-setup.ts"
+            "jestConfig": "libs/angular-components/wizard/jest.config.js"
           }
         }
       },
@@ -543,15 +520,13 @@
               "libs/angular-components/skeleton-text/tsconfig.lib.json",
               "libs/angular-components/skeleton-text/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/skeleton-text/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/skeleton-text/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/skeleton-text/jest.config.js",
-            "tsConfig": "libs/angular-components/skeleton-text/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/skeleton-text/test-setup.ts"
+            "jestConfig": "libs/angular-components/skeleton-text/jest.config.js"
           }
         }
       },
@@ -574,15 +549,13 @@
               "libs/angular-components/chart/tsconfig.lib.json",
               "libs/angular-components/chart/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/chart/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/chart/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/chart/jest.config.js",
-            "tsConfig": "libs/angular-components/chart/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/chart/test-setup.ts"
+            "jestConfig": "libs/angular-components/chart/jest.config.js"
           }
         }
       },
@@ -605,15 +578,13 @@
               "libs/angular-components/filter/filter-group/tsconfig.lib.json",
               "libs/angular-components/filter/filter-group/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-group/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-group/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js",
-            "tsConfig": "libs/angular-components/filter/filter-group/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter/filter-group/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js"
           }
         }
       },
@@ -636,15 +607,13 @@
               "libs/angular-components/filter/filter-toggle/tsconfig.lib.json",
               "libs/angular-components/filter/filter-toggle/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-toggle/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-toggle/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js",
-            "tsConfig": "libs/angular-components/filter/filter-toggle/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/filter/filter-toggle/test-setup.ts"
+            "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js"
           }
         }
       },
@@ -667,15 +636,13 @@
               "libs/angular-components/global-nav/tsconfig.lib.json",
               "libs/angular-components/global-nav/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/global-nav/jest.config.js",
-            "tsConfig": "libs/angular-components/global-nav/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/global-nav/test-setup.ts"
+            "jestConfig": "libs/angular-components/global-nav/jest.config.js"
           }
         }
       },
@@ -698,16 +665,14 @@
               "libs/angular-components/avatar/tsconfig.lib.json",
               "libs/angular-components/avatar/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/avatar/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/avatar/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/avatar/jest.config.js",
-            "tsConfig": "libs/angular-components/avatar/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/angular-components/avatar/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       },
@@ -730,15 +695,13 @@
               "libs/angular-components/banner/tsconfig.lib.json",
               "libs/angular-components/banner/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/banner/jest.config.js",
-            "tsConfig": "libs/angular-components/banner/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/banner/test-setup.ts"
+            "jestConfig": "libs/angular-components/banner/jest.config.js"
           }
         }
       },
@@ -761,15 +724,13 @@
               "libs/angular-components/user-profile-menu/tsconfig.lib.json",
               "libs/angular-components/user-profile-menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/user-profile-menu/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/user-profile-menu/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js",
-            "tsConfig": "libs/angular-components/user-profile-menu/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/user-profile-menu/test-setup.ts"
+            "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js"
           }
         }
       },
@@ -782,7 +743,7 @@
     "expandable-table": {
       "projectType": "library",
       "root": "libs/angular-components/expandable-table",
-      "sourceRoot": "libs/angular-components/expandable-table/src",
+      "sourceRoot": "libs/angular-components/expandable-table",
       "prefix": "uxg",
       "architect": {
         "lint": {
@@ -792,15 +753,13 @@
               "libs/angular-components/expandable-table/tsconfig.lib.json",
               "libs/angular-components/expandable-table/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/expandable-table/jest.config.js",
-            "tsConfig": "libs/angular-components/expandable-table/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/expandable-table/src/test-setup.ts"
+            "jestConfig": "libs/angular-components/expandable-table/jest.config.js"
           }
         }
       },
@@ -823,15 +782,13 @@
               "libs/angular-components/entity-menu/tsconfig.lib.json",
               "libs/angular-components/entity-menu/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/entity-menu/jest.config.js",
-            "tsConfig": "libs/angular-components/entity-menu/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/entity-menu/test-setup.ts"
+            "jestConfig": "libs/angular-components/entity-menu/jest.config.js"
           }
         }
       },
@@ -854,15 +811,13 @@
               "libs/angular-components/cards/account-card/tsconfig.lib.json",
               "libs/angular-components/cards/account-card/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-card/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-card/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/cards/account-card/jest.config.js",
-            "tsConfig": "libs/angular-components/cards/account-card/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/cards/account-card/test-setup.ts"
+            "jestConfig": "libs/angular-components/cards/account-card/jest.config.js"
           }
         }
       },
@@ -885,7 +840,7 @@
               "libs/angular-components/search-input/tsconfig.lib.json",
               "libs/angular-components/search-input/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**/*"]
           }
         }
       },
@@ -908,7 +863,7 @@
               "libs/angular-components/changelog/tsconfig.lib.json",
               "libs/angular-components/changelog/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/changelog/**"]
+            "exclude": ["**/node_modules/**", "!libs/angular-components/changelog/**/*"]
           }
         }
       },

@@ -365,7 +365,7 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
       templateFieldsConfig: {}
     });
 
-    this.templateFieldsConfig.valueChanges.pipe(takeUntil(this.destroyed$)).subscribe(value => {
+    this.templateFieldsConfig.valueChanges.pipe(takeUntil(this.destroyed$)).subscribe((value) => {
       this.columnsMatcherExample = value;
     });
   }

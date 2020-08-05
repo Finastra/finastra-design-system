@@ -7,6 +7,7 @@ describe('PaletteService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       providers: [
+        PaletteService,
         {
           provide: PALETTE_CONFIG,
           useValue: PALETTE_DEFAULT_CONFIG

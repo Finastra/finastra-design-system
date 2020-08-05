@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AvatarComponent, UxgImageAvatar } from './avatar.component';
+import { NgModule } from '@angular/core';
 import { AvatarListComponent } from './avatar-list.component';
+import { AvatarComponent, UxgImageAvatar } from './avatar.component';
 import { InitialsPipe } from './initials.pipe';
 
 @NgModule({
