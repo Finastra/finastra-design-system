@@ -1,30 +1,13 @@
 <mat-toolbar class="uxg-toolbar uxg-toolbar-elevated">
-  <button
-    class="uxg-nav-header-button"
-    mat-icon-button
-    mat-primary
-    color="primary"
-    (click)="onMenuClick()"
-    aria-label="Menu"
-  >
+  <button class="uxg-nav-header-button" mat-icon-button mat-primary color="primary" (click)="onMenuClick()"
+    aria-label="Menu">
     <mat-icon>menu</mat-icon>
   </button>
 
-  <a
-    href="javascript:void(0)"
-    (click)="brandAction.emit($event)"
-    aria-label="Go to Finastra website"
-    class="uxg-logo"
-    dense
-  ></a>
+  <a href="javascript:void(0)" (click)="brandAction.emit($event)" aria-label="Go to Finastra website" class="uxg-logo"
+    dense></a>
 
-  <ul class="uxg-breadcrumb uxg-breadcrumb-responsive">
-    <button mat-icon-button color="accent" class="uxg-breadcrumb-back">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
-    <li class="uxg-h6">{{ appName }}</li>
-    <li *ngIf="currentNode">{{ currentNode?.title }}</li>
-  </ul>
+  <uxg-breadcrumb [breadcrumbs]="breadcrumbs"></uxg-breadcrumb>
 
   <span class="fill-remaining-space"></span>
 
