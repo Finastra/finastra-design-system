@@ -22,10 +22,7 @@ describe('ToasterService', () => {
         ToasterContainerRegistry,
         Overlay,
         ToasterContainerOverlayService,
-        {
-          provide: MatIconRegistry,
-          useValue: {}
-        }
+        MatIconRegistry
       ]
     })
       .overrideModule(BrowserDynamicTestingModule, {
