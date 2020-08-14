@@ -44,7 +44,8 @@
       "@ffdc/uxg-angular-components/entity-menu": ["libs/angular-components/entity-menu"],
       "@ffdc/uxg-angular-components/search-input": ["libs/angular-components/search-input"],
       "@ffdc/uxg-angular-components/changelog": ["libs/angular-components/changelog"],
-      "@ffdc/uxg-angular-components/breadcrumb": ["libs/angular-components/breadcrumb"]
+      "@ffdc/uxg-angular-components/breadcrumb": ["libs/angular-components/breadcrumb"],
+      "@ffdc/uxg-angular-components/toaster": ["libs/angular-components/toaster"]
     }
   },
   "exclude": ["node_modules", "tmp"]

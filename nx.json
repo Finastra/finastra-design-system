@@ -94,6 +94,9 @@
     },
     "breadcrumb": {
       "tags": []
+    },
+    "toaster": {
+      "tags": []
     }
   },
   "tasksRunnerOptions": {

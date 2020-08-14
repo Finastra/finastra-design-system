@@ -1,0 +1,59 @@
+@import 'angular-theme/lib/core/style/spacing';
+@import 'angular-theme/theme-variables';
+@import 'angular-theme/lib/core/layout/breakpoints';
+
+@mixin uxg-toaster-theme($theme) {
+  $border-radius: 4px;
+  $container-size: 48px;
+
+  $background: map-get($theme, background);
+
+  uxg-toaster {
+    margin: $uxg-spacing-3 4vw;
+    min-height: $container-size;
+    width: 92vw;
+    border-radius: $border-radius;
+    background: mat-color($background, card);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.07), 0 1px 18px 0 rgba(0, 0, 0, 0.06), 0 3px 5px -1px rgba(0, 0, 0, 0.1);
+    .icon-container {
+      width: $container-size;
+      border-radius: $border-radius 0 0 $border-radius;
+      padding: $uxg-spacing-3;
+      mat-icon {
+        color: white;
+      }
+    }
+    .message {
+      padding: $uxg-spacing-3;
+      word-break: break-word;
+      white-space: pre-line;
+    }
+    &.destroy-by-click {
+      cursor: pointer;
+    }
+    &.type-success .icon-container {
+      background-color: map-get($uxg-grass, 100);
+    }
+    &.type-info .icon-container {
+      background-color: map-get($uxg-ocean, 100);
+    }
+    &.type-error .icon-container {
+      background-color: map-get($uxg-crimson, 100);
+    }
+    &.type-warning .icon-container {
+      background-color: map-get($uxg-gold, 100);
+    }
+
+    /* Small Tablet */
+    @media only screen and (min-width: $small-tablet-size-down) and (max-width: $small-tablet-size-up) {
+      width: 50vw;
+      margin: $uxg-spacing-3;
+    }
+
+    /* Large Tablet and Desktop */
+    @media only screen and (min-width: $large-tablet-size-down) {
+      width: 30vw;
+      margin: $uxg-spacing-3;
+    }
+  }
+}

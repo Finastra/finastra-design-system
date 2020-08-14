@@ -55,6 +55,9 @@
       "path": "./table\\tsconfig.json"
     },
     {
+      "path": "./toaster\\tsconfig.json"
+    },
+    {
       "path": "./user-profile-menu\\tsconfig.json"
     },
     {
