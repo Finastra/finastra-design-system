@@ -8,9 +8,9 @@
   <mat-expansion-panel-header
     [expandedHeight]="headerHeight"
     [collapsedHeight]="headerHeight"
-    (click)="filterGroupPanel.toggle()"
+    (click)="$event.stopPropagation(); filterGroupPanel.expanded ? open() : close()"
   >
-    <div class="uxg-filter-group-header" (click)="$event.preventDefault(); $event.stopPropagation()">
+    <div class="uxg-filter-group-header">
       <div class="selectedFilters">
         <ng-container *ngFor="let filter of selectedData; let i = index">
           <div
@@ -34,11 +34,7 @@
       </div>
       <span class="fill-remaining-space"></span>
       <div class="expand-button">
-        <button
-          mat-icon-button
-          [color]="filterGroupPanel.expanded ? 'primary' : 'neutral'"
-          (click)="filterGroupPanel.toggle(); filterGroupPanel.expanded ? open() : close()"
-        >
+        <button mat-icon-button [color]="filterGroupPanel.expanded ? 'primary' : 'neutral'">
           <mat-icon>{{ filterGroupPanel.expanded ? 'arrow_drop_up' : 'arrow_drop_down' }}</mat-icon>
         </button>
       </div>
