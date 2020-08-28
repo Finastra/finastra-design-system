@@ -4,6 +4,7 @@
   hideToggle="true"
   [expanded]="expanded"
   [class.active]="isActive"
+  (uxgClickOutside)="handleOutsideClick()"
 >
   <mat-expansion-panel-header
     [expandedHeight]="headerHeight"
