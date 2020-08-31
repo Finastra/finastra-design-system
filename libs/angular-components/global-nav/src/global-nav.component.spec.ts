@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
 
 describe('GlobalNavModule', () => {
   let component: GlobalNavComponent;
@@ -27,7 +28,8 @@ describe('GlobalNavModule', () => {
         MatCardModule,
         MatListModule,
         NoopAnimationsModule,
-        RouterTestingModule
+        RouterTestingModule,
+        UxgBreadcrumbModule
       ],
       declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
     }).compileComponents();
