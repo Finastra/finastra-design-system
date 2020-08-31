@@ -1,7 +1,7 @@
 $uxg-toolbar-height: 56px;
 
-uxg-toaster-container {
-    padding-top: $uxg-toolbar-height;
+.uxg-toaster-overlay {
+    margin-top: $uxg-toolbar-height;
 }
 
 .demo-component {
