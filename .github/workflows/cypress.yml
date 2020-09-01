@@ -25,6 +25,7 @@ jobs:
           start: npm start
           cache-key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - uses: actions/upload-artifact@v2
+        # Comment if and switch path when getting updated snapshots
         if: failure()
         with:
           name: cypress-screenshots
