@@ -11,6 +11,7 @@
     *ngFor="let release of changelog; first as first; last as last"
     fxLayout="row"
     fxLayout.lt-md="column"
+    fxLayout.gt-md="row"
     fxLayoutAlign="space-between start"
   >
     <div class="version" fxFlex="5" fxFlex.md="10">
@@ -25,7 +26,7 @@
       <ng-container *ngFor="let category of release.categories">
         <div class="uxg-subtitle-2 category">{{ category }}</div>
         <div *ngFor="let change of release.changes" class="change">
-          <div *ngIf="change.category == category" fxLayout.xs="column">
+          <div *ngIf="change.category == category" fxLayout.xs="column" fxLayout.gt-xs="row">
             <div fxFlex="10" fxFlex.lt-lg="15">
               <span class="{{ change.type | lowercase }} type uxg-caption">{{ change.type | titlecase }}</span>
             </div>
