@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FilterGroupComponent } from './filter-group.component';
 import { UxgFilter } from './filter.directive';
 import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-dialog.component';
+import { ClickOutsideModule } from '@ffdc/uxg-angular-components/core';
 
 @NgModule({
   declarations: [FilterGroupComponent, UxgFilter, FilterGroupDialogComponent],
@@ -31,7 +32,8 @@ import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-d
     MatInputModule,
     FlexLayoutModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ClickOutsideModule
   ],
   entryComponents: [FilterGroupDialogComponent],
   exports: [FilterGroupComponent, UxgFilter]

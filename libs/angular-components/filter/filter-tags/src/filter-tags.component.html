@@ -30,6 +30,7 @@
       [ngClass]="{
         'selected-option-highlight': applyHighlight(tag)
       }"
+      (click)="$event.stopPropagation()"
     >
       <span [innerHTML]="tag.label | highlight: toHighlight"></span>
     </mat-option>
