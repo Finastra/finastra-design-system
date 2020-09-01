@@ -3,7 +3,8 @@ import { Toast } from './toaster.model';
 
 @Component({
   selector: 'uxg-toaster',
-  templateUrl: './toaster.component.html'
+  templateUrl: './toaster.component.html',
+  styleUrls: ['./toaster.component.scss']
 })
 export class ToasterComponent {
   @Input()

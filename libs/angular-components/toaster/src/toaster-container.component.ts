@@ -8,9 +8,7 @@ const voidState = style({
   transform: 'translateX(110%)',
   height: 0,
   marginLeft: '0',
-  marginRight: '0',
-  marginTop: '0',
-  marginBottom: '0'
+  marginRight: '0'
 });
 
 @Component({
