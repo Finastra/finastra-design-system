@@ -50,13 +50,15 @@ uxg-changelog {
       .change-detail {
         margin: $uxg-spacing-2 0;
       }
-
-      .type {
-        margin: $uxg-spacing-2 0;
-        text-align: center;
-        padding: 2px $uxg-spacing-2;
-        border-radius: $uxg-spacing-3;
-        display: inline-block;
+      .change-type {
+        min-width: 85px;
+        .type {
+          margin: $uxg-spacing-2 0;
+          text-align: center;
+          padding: 2px $uxg-spacing-2;
+          border-radius: $uxg-spacing-3;
+          display: inline-block;
+        }
       }
     }
 
@@ -147,7 +149,7 @@ uxg-changelog {
 
       .release-detail::before,
       .last-release::before {
-        top: calc(#{-$bullet-center/2} - 22px);
+        top: -30px;
       }
 
       .release-detail {
@@ -198,7 +200,7 @@ uxg-changelog {
       }
       .release-detail::before,
       .last-release::before {
-        top: calc(#{-$bullet-center/2} - 22px);
+        top: -30px;
       }
 
       .first-release {
