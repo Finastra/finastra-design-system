@@ -1,7 +1,16 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SelectionModel } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, SimpleChange } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChange,
+  SimpleChanges
+} from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Subscription } from 'rxjs';
 
@@ -62,7 +71,9 @@ export class FilterTreeComponent implements OnChanges {
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
-  constructor() {}
+  constructor(private hostElement: ElementRef) {
+    this.hostElement.nativeElement.__component = this;
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.data || changes.selectedData) {

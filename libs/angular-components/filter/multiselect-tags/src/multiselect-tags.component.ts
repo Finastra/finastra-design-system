@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 import cloneDeep from 'lodash/cloneDeep';
 
 export interface MultiselectTag {
@@ -32,7 +32,8 @@ export class MultiselectTagsComponent {
 
   @Output() changes = new EventEmitter<UXGMultiSelectFilterChanges>();
 
-  constructor() {
+  constructor(private hostElement: ElementRef) {
+    this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
