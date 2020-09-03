@@ -61,7 +61,8 @@ export class FilterTagsComponent implements OnInit {
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
-  constructor() {
+  constructor(private hostElement: ElementRef) {
+    this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
