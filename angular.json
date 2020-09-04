@@ -895,6 +895,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "toaster": {
+      "projectType": "library",
+      "root": "libs/angular-components/toaster",
+      "sourceRoot": "libs/angular-components/toaster",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/toaster/tsconfig.lib.json",
+              "libs/angular-components/toaster/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/toaster/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/toaster/jest.config.js",
+            "tsConfig": "libs/angular-components/toaster/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/toaster/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

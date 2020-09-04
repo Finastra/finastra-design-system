@@ -31,6 +31,7 @@ import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-me
 import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
 import { SearchInputDemoComponent } from './components/search-input-demo/search-input-demo.component';
 import { BreadcrumbDemoComponent } from './components/breadcrumb-demo/breadcrumb-demo.component';
+import { ToasterDemoComponent } from './components/toaster-demo/toaster-demo.component';
 
 import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
 import { RepeaterModule } from '@ffdc/uxg-angular-components/repeater';
@@ -59,6 +60,7 @@ import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
 import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
 import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
 import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
+import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,8 @@ import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
     EntityMenuDemoComponent,
     SearchInputDemoComponent,
     ChangelogDemoComponent,
-    BreadcrumbDemoComponent
+    BreadcrumbDemoComponent,
+    ToasterDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +128,8 @@ import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
     EntityMenuModule,
     UxgSearchInputModule,
     UXGChangelogModule,
-    UxgBreadcrumbModule
+    UxgBreadcrumbModule,
+    ToasterModule
   ],
   providers: [],
   exports: [],

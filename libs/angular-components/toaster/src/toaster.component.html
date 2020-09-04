@@ -1,0 +1,9 @@
+<div fxLayoutAlign="center center" class="icon-container">
+  <mat-icon dense *ngIf="toast.config.type === 'success'">check_circle_outline</mat-icon>
+  <mat-icon dense *ngIf="toast.config.type === 'error'">error_outline</mat-icon>
+  <mat-icon class="material-icons-outlined" dense *ngIf="toast.config.type === 'warning'">report_problem</mat-icon>
+  <mat-icon class="material-icons-outlined" dense *ngIf="toast.config.type === 'info'">info</mat-icon>
+</div>
+<div fxFlex fxFlexAlign="center" class="uxg-body-2 message">
+  {{ toast.message }}
+</div>
