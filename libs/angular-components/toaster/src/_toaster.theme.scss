@@ -20,19 +20,19 @@
     &.type-info .icon-container {
       background-color: mat-color($uxg-ocean, 25);
       mat-icon {
-        color: map-get($uxg-ocean, 100-dark);
+        color: mat-color($uxg-ocean, 100-dark);
       }
     }
     &.type-error .icon-container {
       background-color: mat-color($uxg-crimson, 25);
       mat-icon {
-        color: map-get($uxg-crimson, 100-dark);
+        color: mat-color($uxg-crimson, 100-dark);
       }
     }
     &.type-warning .icon-container {
       background-color: mat-color($uxg-gold, 25);
       mat-icon {
-        color: map-get($uxg-gold, 100-dark);
+        color: mat-color($uxg-gold, 100-dark);
       }
     }
   }
