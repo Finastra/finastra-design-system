@@ -10,4 +10,5 @@ import { ChangeLog } from './changelog.models';
 export class UXGChangelogComponent {
   @Input() changelog!: ChangeLog;
   @Input() title!: string;
+  @Input() displayVersion: 'left' | 'top' | 'none' = 'left';
 }
