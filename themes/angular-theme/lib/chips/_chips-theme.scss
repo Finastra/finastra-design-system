@@ -37,7 +37,7 @@
       &.mat-chip-selected {
         &,
         &.mat-primary {
-          background-color: mat-color($primary, default, 0.1);
+          background-color: mat-color($primary, default, 0.09);
           border: 1px solid mat-color($primary, default);
           color: mat-color($primary, default);
 
