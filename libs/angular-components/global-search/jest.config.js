@@ -2,6 +2,7 @@ const name = 'global-search';
 const suiteName = 'UxgGlobalSearchModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,

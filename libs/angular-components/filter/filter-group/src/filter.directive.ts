@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, Input, ViewRef } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { UXGFilter } from './filter.models';
 
 @Directive({ selector: '[uxgFilter]' })
@@ -7,11 +7,9 @@ export class UxgFilter implements AfterViewInit {
 
   component!: UXGFilter<any>;
 
-  constructor(public ref: ViewRef) {}
+  constructor(private ref: ElementRef) {}
 
   ngAfterViewInit() {
-    if ((<any>this.ref).context) {
-      this.component = (<any>this.ref).context;
-    }
+    this.component = this.ref.nativeElement.__component;
   }
 }

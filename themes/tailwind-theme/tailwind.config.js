@@ -75,7 +75,7 @@ module.exports = {
         900: '#8d0073'
       }
     },
-    gradients: theme => ({
+    gradients: (theme) => ({
       'gradient-vertical': [theme('colors.primary'), theme('colors.secondary'), theme('colors.error')]
     }),
     spacing: {
@@ -89,5 +89,9 @@ module.exports = {
       '8': '120px'
     }
   },
-  plugins: [require('tailwindcss-plugins/gradients')]
+  plugins: [require('tailwindcss-plugins/gradients')],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true
+  }
 };

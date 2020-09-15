@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     private renderer: Renderer2,
     private _overlayContainer: OverlayContainer
   ) {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.title = this.route.root.firstChild ? this.route.root.firstChild.snapshot.data['title'] : '';
       }

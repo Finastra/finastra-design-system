@@ -247,7 +247,7 @@ export class TableDemoComponent implements OnInit {
       this.actionInfo = 'Emiter define in cellTemplate has been fired\n\n';
       this.actionInfo += 'Column name: ' + event.column.name + '\n';
       this.actionInfo += 'Row data: \n';
-      Object.keys(event.element).forEach(key => {
+      Object.keys(event.element).forEach((key) => {
         this.actionInfo += '    ' + key + '=' + event.element[key] + '\n';
       });
       alert(this.actionInfo);
@@ -350,7 +350,7 @@ export class TableDemoComponent implements OnInit {
     });
   }
   getSortColumnType(columnName: string) {
-    const column = this.columns.find(item => {
+    const column = this.columns.find((item) => {
       return item.name === columnName;
     });
     return column ? column.type : '';

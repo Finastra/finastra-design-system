@@ -112,7 +112,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   ngOnInit(): void {
     this.setDefautLayout();
     this.subscriptions.push(
-      this.paletteService.paletteChange$.subscribe(config => {
+      this.paletteService.paletteChange$.subscribe((config) => {
         this.paletteConfig = config;
       })
     );
@@ -121,22 +121,22 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   ngAfterContentInit(): void {
     this.refresh();
     if (this.groupTraces && this.traces) {
-      merge(this.groupTraces.changes, this.traces.changes).subscribe(value => {
+      merge(this.groupTraces.changes, this.traces.changes).subscribe((value) => {
         this.refresh();
       });
     } else if (this.traces) {
-      merge(this.traces.changes).subscribe(value => {
+      merge(this.traces.changes).subscribe((value) => {
         this.refresh();
       });
     } else if (this.groupTraces) {
-      merge(this.groupTraces.changes).subscribe(value => {
+      merge(this.groupTraces.changes).subscribe((value) => {
         this.refresh();
       });
     }
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -177,13 +177,13 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
             if (!this.multiSelect) {
               // Set other trace selection to null
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t => delete t.selectedPoints);
+                g.traces?.forEach((t) => delete t.selectedPoints);
               });
-              this.traces?.forEach(t => delete t.selectedPoints);
+              this.traces?.forEach((t) => delete t.selectedPoints);
             } else {
               let someSelected = false;
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t => {
+                g.traces?.forEach((t) => {
                   if (
                     (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
                     t.selectedPoints?.length &&
@@ -192,7 +192,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
                     someSelected = true;
                 });
               });
-              this.traces?.forEach(t => {
+              this.traces?.forEach((t) => {
                 if (
                   (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
                   t.selectedPoints?.length &&
@@ -207,7 +207,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
               }
               if (!someSelected) {
                 this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                  g.traces?.forEach(t => {
+                  g.traces?.forEach((t) => {
                     if (
                       (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
                       t.selectedPoints?.length === 0
@@ -215,7 +215,7 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
                       delete t.selectedPoints;
                   });
                 });
-                this.traces?.forEach(t => {
+                this.traces?.forEach((t) => {
                   if (
                     (t.dimensionName !== trace?.dimensionName || t.measureName !== trace?.measureName) &&
                     t.selectedPoints?.length === 0
@@ -230,9 +230,9 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
             } else {
               // Set other trace selection to empty
               this.groupTraces?.forEach((g: GroupTracesComponent) => {
-                g.traces?.forEach(t => (t.selectedPoints = []));
+                g.traces?.forEach((t) => (t.selectedPoints = []));
               });
-              this.traces?.forEach(t => (t.selectedPoints = []));
+              this.traces?.forEach((t) => (t.selectedPoints = []));
 
               trace.selectedPoints = [item.pointIndex];
             }
@@ -423,17 +423,17 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
   private setData(): void {
     if (this.traces && this.traces.length) {
       this.data = this.traces
-        .map(trace => {
+        .map((trace) => {
           return trace.getPlotlyTrace();
         })
-        .filter(trace => !!trace);
+        .filter((trace) => !!trace);
     } else if (this.groupTraces && this.groupTraces.length) {
       let datas: Array<object> = [];
       let nbGrp = 1;
       this.groupTraces.forEach((grpTrace: GroupTracesComponent) => {
         datas = [
           ...datas,
-          ...grpTrace.getTraces().map(tr => {
+          ...grpTrace.getTraces().map((tr) => {
             tr.xaxis = 'x' + nbGrp;
             tr.yaxis = 'y' + nbGrp;
             tr.legendgroup = 'group' + nbGrp;

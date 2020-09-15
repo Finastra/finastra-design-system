@@ -16,6 +16,11 @@ uxg-changelog {
 
   .changelog-container {
     margin: $uxg-spacing-3 $uxg-spacing-4;
+
+    .version {
+      min-width: 100px;
+    }
+
     .release-detail,
     .last-release,
     .first-release {
@@ -45,13 +50,15 @@ uxg-changelog {
       .change-detail {
         margin: $uxg-spacing-2 0;
       }
-
-      .type {
-        margin: $uxg-spacing-2 0;
-        text-align: center;
-        padding: 2px $uxg-spacing-2;
-        border-radius: $uxg-spacing-3;
-        display: inline-block;
+      .change-type {
+        min-width: 85px;
+        .type {
+          margin: $uxg-spacing-2 0;
+          text-align: center;
+          padding: 2px $uxg-spacing-2;
+          border-radius: $uxg-spacing-3;
+          display: inline-block;
+        }
       }
     }
 
@@ -116,14 +123,18 @@ uxg-changelog {
           margin-right: $uxg-spacing-2;
         }
       }
-
+      .first-release,
+      .last-release,
+      .release-detail {
+        width: calc(100% - #{$bullet-space});
+      }
       .change {
         .change-detail {
           margin-top: $uxg-spacing-2;
         }
       }
       .first-release::before {
-        top: calc(#{-$bullet-center} - 24px);
+        top: -39.5px;
         width: 25px;
         height: 25px;
         left: calc(#{-$bullet-center} - 22px);
@@ -138,7 +149,7 @@ uxg-changelog {
 
       .release-detail::before,
       .last-release::before {
-        top: calc(#{-$bullet-center/2} - 22px);
+        top: -30px;
       }
 
       .release-detail {
@@ -170,6 +181,7 @@ uxg-changelog {
       .first-release {
         padding: $uxg-spacing-2 $uxg-spacing-3;
         margin-right: $uxg-spacing-2;
+        width: calc(100% - #{$bullet-space} - #{$uxg-spacing-2});
       }
       .change {
         .type {
@@ -181,14 +193,14 @@ uxg-changelog {
         }
       }
       .first-release::before {
-        top: calc(#{-$bullet-center} - 16px);
+        top: -36px;
         width: 18px;
         height: 18px;
         left: calc(#{-$bullet-center} - 19px);
       }
       .release-detail::before,
       .last-release::before {
-        top: calc(#{-$bullet-center/2} - 22px);
+        top: -30px;
       }
 
       .first-release {

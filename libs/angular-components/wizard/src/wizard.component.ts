@@ -66,7 +66,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.pages.forEach(page => (page.showTitle = this.showPageTitles));
+    this.pages.forEach((page) => (page.showTitle = this.showPageTitles));
 
     this.pageCollection.pages = this.pages;
 
@@ -90,7 +90,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
   onStepClick(page: UxgWizardPageComponent) {
@@ -128,7 +128,7 @@ export class UxgWizardComponent implements OnDestroy, AfterContentInit {
   }
 
   private listenForPageChanges(): Subscription {
-    return this.navService.currentPageChange.subscribe(page => {
+    return this.navService.currentPageChange.subscribe((page) => {
       this.currentPageId = this.pageCollection.getPageIndex(page);
       this.currentPageChange.emit();
     });

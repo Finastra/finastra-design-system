@@ -2,6 +2,7 @@ const name = 'entity-menu';
 const suiteName = 'EntityMenuModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,

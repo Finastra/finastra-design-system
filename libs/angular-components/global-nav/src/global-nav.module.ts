@@ -12,6 +12,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 
+import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    UxgBreadcrumbModule
   ],
   declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent],
   exports: [GlobalNavComponent, NavbarComponent, SidenavComponent]

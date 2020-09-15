@@ -1,0 +1,39 @@
+@import 'angular-theme/theme-variables';
+
+@mixin uxg-toaster-theme($theme) {
+
+  $foreground: map-get($theme, foreground);
+  $toaster-text-color: mat-color($foreground, text);
+
+  $background: map-get($theme, background);
+
+  uxg-toaster {
+    color: $toaster-text-color;
+    background: mat-color($background, card);
+
+    &.type-success .icon-container {
+      background-color: mat-color($uxg-grass, 25);
+      mat-icon {
+        color: mat-color($uxg-grass, 100-dark);
+      }
+    }
+    &.type-info .icon-container {
+      background-color: mat-color($uxg-ocean, 25);
+      mat-icon {
+        color: mat-color($uxg-ocean, 100-dark);
+      }
+    }
+    &.type-error .icon-container {
+      background-color: mat-color($uxg-crimson, 25);
+      mat-icon {
+        color: mat-color($uxg-crimson, 100-dark);
+      }
+    }
+    &.type-warning .icon-container {
+      background-color: mat-color($uxg-gold, 25);
+      mat-icon {
+        color: mat-color($uxg-gold, 100-dark);
+      }
+    }
+  }
+}
