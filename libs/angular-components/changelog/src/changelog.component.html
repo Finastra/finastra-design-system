@@ -13,7 +13,7 @@
     fxLayout.lt-md="column"
     [fxLayout.gt-md]="displayVersion === 'top' ? 'column' : 'row'"
     fxLayoutAlign="space-between start"
-    [class.layout-col]="displayVersion === 'top'"
+    [class.layout-column]="displayVersion === 'top'"
     [class.layout-none]="displayVersion === 'none'"
   >
     <div *ngIf="displayVersion !== 'none'" class="version" fxFlex="5" fxFlex.md="10">
