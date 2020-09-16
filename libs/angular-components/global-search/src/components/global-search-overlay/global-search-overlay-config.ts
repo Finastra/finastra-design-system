@@ -2,6 +2,7 @@ import { TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface SearchConfig {
+  emptySearchTemplate?: TemplateRef<any>;
   resultItemTemplate?: TemplateRef<any>;
   groupBy?: string;
   showFilter?: boolean;

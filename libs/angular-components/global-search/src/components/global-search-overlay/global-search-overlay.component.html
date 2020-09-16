@@ -25,7 +25,7 @@
       />
     </mat-form-field>
   </div>
-  <ng-container *ngIf="results$ | async as results">
+  <ng-container *ngIf="results$ | async as results; else emptySearch">
     <ng-container *ngIf="results.length; else empty">
       <div
         fxFlex="65"
@@ -55,6 +55,7 @@
               </div>
               <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
                 <div *ngFor="let result of resultGroup.value; let last = last">
+                 
                   <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
                     <ng-container
                       *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
@@ -94,6 +95,11 @@
   <div fxFlex="5" class="uxg-global-search-results-counter">
     No results found
   </div>
+</ng-template>
+
+<ng-template #emptySearch>
+  <ng-container  *ngTemplateOutlet="emptySearchTemplate">
+  </ng-container>
 </ng-template>
 
 <ng-template #defaultTemplate let-result>

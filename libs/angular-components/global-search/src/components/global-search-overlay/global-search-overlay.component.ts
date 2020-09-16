@@ -41,6 +41,8 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   filterSize = 0;
 
   @Input()
+  emptySearchTemplate = this.config.emptySearchTemplate;
+  @Input()
   resultItemTemplate = this.config.resultItemTemplate;
   @Input()
   groupBy = this.config.groupBy;
@@ -71,7 +73,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => this.searchInput.nativeElement.focus());
-
+    
     fromEvent(this.searchInput.nativeElement, 'input')
       .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
