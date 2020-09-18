@@ -55,7 +55,6 @@
               </div>
               <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
                 <div *ngFor="let result of resultGroup.value; let last = last">
-                 
                   <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
                     <ng-container
                       *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
@@ -98,8 +97,7 @@
 </ng-template>
 
 <ng-template #emptySearch>
-  <ng-container  *ngTemplateOutlet="emptySearchTemplate">
-  </ng-container>
+  <ng-container *ngTemplateOutlet="emptySearchTemplate"> </ng-container>
 </ng-template>
 
 <ng-template #defaultTemplate let-result>
