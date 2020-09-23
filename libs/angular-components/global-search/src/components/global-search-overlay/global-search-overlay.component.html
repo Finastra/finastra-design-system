@@ -25,7 +25,7 @@
       />
     </mat-form-field>
   </div>
-  <ng-container *ngIf="results$ | async as results">
+  <ng-container *ngIf="results$ | async as results; else emptySearch">
     <ng-container *ngIf="results.length; else empty">
       <div
         fxFlex="65"
@@ -35,8 +35,12 @@
         fxLayout.lt-lg="column"
         class="uxg-global-search-container-parent"
       >
-        <!-- results counter -->
-        <div class="uxg-global-search-results-counter">Showing {{ resultsShown }} of {{ resultsFound }} results</div>
+        <!-- results status area -->
+        <ng-container [ngTemplateOutlet]="resultStatusTemplate"></ng-container>
+        <div class="uxg-global-search-results-counter">
+          Showing {{ resultsShown }} out of {{ resultsFound }} results
+          <span class="uxg-caption">&nbsp;&nbsp;({{ searchTime }} seconds)</span>
+        </div>
         <!-- results area -->
         <div
           fxFlex="{{ showFilter ? '70' : 'auto' }}"
@@ -94,6 +98,10 @@
   <div fxFlex="5" class="uxg-global-search-results-counter">
     No results found
   </div>
+</ng-template>
+
+<ng-template #emptySearch>
+  <ng-container *ngTemplateOutlet="emptySearchTemplate"> </ng-container>
 </ng-template>
 
 <ng-template #defaultTemplate let-result>

@@ -100,6 +100,7 @@ $close-button-size-small: 32px;
         overflow: auto;
         padding: 1rem 5rem 2rem;
         height: 100%;
+        outline: none;
 
         @include layout-bp(lt-lg) {
           padding: 1rem 2rem 2rem;
