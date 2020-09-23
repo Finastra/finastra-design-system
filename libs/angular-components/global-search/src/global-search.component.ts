@@ -24,6 +24,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
   @Input() groupBy?: string;
   @Input() resultItemTemplate?: TemplateRef<any>;
   @Input() emptySearchTemplate?: TemplateRef<any>;
+  @Input() resultStatusTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
   @Input() itemDivider = false;
@@ -42,6 +43,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
 
   openSearch() {
     this.ref = this.overlayService.open({
+      resultStatusTemplate: this.resultStatusTemplate,
       emptySearchTemplate: this.emptySearchTemplate,
       resultItemTemplate: this.resultItemTemplate,
       showFilter: this.showFilter,

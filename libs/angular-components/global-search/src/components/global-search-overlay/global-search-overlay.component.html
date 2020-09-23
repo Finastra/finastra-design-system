@@ -35,8 +35,12 @@
         fxLayout.lt-lg="column"
         class="uxg-global-search-container-parent"
       >
-        <!-- results counter -->
-        <div class="uxg-global-search-results-counter">Showing {{ resultsShown }} of {{ resultsFound }} results</div>
+        <!-- results status area -->
+        <ng-container [ngTemplateOutlet]="resultStatusTemplate"></ng-container>
+        <div class="uxg-global-search-results-counter">
+          Showing {{ resultsShown }} out of {{ resultsFound }} results
+          <span class="uxg-caption">&nbsp;&nbsp;({{ searchTime }} seconds)</span>
+        </div>
         <!-- results area -->
         <div
           fxFlex="{{ showFilter ? '70' : 'auto' }}"

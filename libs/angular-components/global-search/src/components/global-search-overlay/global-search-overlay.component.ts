@@ -3,20 +3,20 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Inject,
   Input,
-  ViewChild,
-  ViewEncapsulation,
   Output,
-  EventEmitter
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
-import { ReplaySubject, fromEvent, Observable } from 'rxjs';
+import { fromEvent, Observable, ReplaySubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ResultGroup } from '../../global-search.model';
 import { SearchConfig } from './global-search-overlay-config';
 import { SearchOverlayRef } from './global-search-overlay-ref';
 import { SEARCH_CONFIG } from './global-search-overlay-token';
-import { ResultGroup } from '../../global-search.model';
 
 const ANIMATION_TIMINGS = '300ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 @Component({
@@ -40,6 +40,10 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   resultsFound = 0;
   filterSize = 0;
 
+  searchTime = '';
+
+  @Input()
+  resultStatusTemplate = this.config.resultStatusTemplate;
   @Input()
   emptySearchTemplate = this.config.emptySearchTemplate;
   @Input()
@@ -74,11 +78,14 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => this.searchInput.nativeElement.focus());
 
+    let t0: number, t1: number;
+
     fromEvent(this.searchInput.nativeElement, 'input')
       .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
         const value = this.searchInput.nativeElement.value;
         this.searchTermChange.emit(value);
+        t0 = performance.now();
       });
 
     this.results.subscribe((results) => {
@@ -87,6 +94,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
       this.filterSize = 0;
       this.results$.next(groupedResults);
+      t1 = performance.now();
+
+      this.searchTime = (t1 - t0).toLocaleString();
     });
   }
 
@@ -113,6 +123,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       } else {
         this.resultsShown -= resultGroup.value.length;
       }
+    }
+
+    const resultsArea = document.querySelector('.uxg-global-search-results-area');
+    if (resultsArea) {
+      resultsArea.scrollTo(0, 0);
     }
   }
 
