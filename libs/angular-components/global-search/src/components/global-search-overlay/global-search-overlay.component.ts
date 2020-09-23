@@ -40,6 +40,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   resultsFound = 0;
   filterSize = 0;
 
+  showHistory = false;
+  inputBlur = false;
+
   searchTime = '';
 
   @Input()
@@ -48,6 +51,8 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   emptySearchTemplate = this.config.emptySearchTemplate;
   @Input()
   resultItemTemplate = this.config.resultItemTemplate;
+  @Input()
+  searchHistoryTemplate = this.config.searchHistoryTemplate;
   @Input()
   groupBy = this.config.groupBy;
   @Input()
@@ -84,6 +89,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
         const value = this.searchInput.nativeElement.value;
+        if (value.length) {
+          this.showHistory = false;
+        }
         this.searchTermChange.emit(value);
         t0 = performance.now();
       });
@@ -108,6 +116,19 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     this.itemClicked.emit(item);
   }
 
+  onInputClick() {
+    if (!this.searchInput.nativeElement.value) {
+      this.showHistory = true;
+    } else {
+      this.showHistory = false;
+    }
+  }
+
+  onInputBlur() {
+    this.inputBlur = true;
+    this.showHistory = false;
+  }
+  
   toggleFilter(resultGroup: ResultGroup) {
     resultGroup.selected = !resultGroup.selected;
     if (resultGroup.selected) {

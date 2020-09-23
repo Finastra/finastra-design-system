@@ -5,6 +5,7 @@ export interface SearchConfig {
   resultStatusTemplate?: TemplateRef<any>;
   emptySearchTemplate?: TemplateRef<any>;
   resultItemTemplate?: TemplateRef<any>;
+  searchHistoryTemplate?: TemplateRef<any>;
   groupBy?: string;
   showFilter?: boolean;
   itemDivider?: boolean;

@@ -25,6 +25,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
   @Input() resultItemTemplate?: TemplateRef<any>;
   @Input() emptySearchTemplate?: TemplateRef<any>;
   @Input() resultStatusTemplate?: TemplateRef<any>;
+  @Input() searchHistoryTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
   @Input() itemDivider = false;
@@ -46,6 +47,7 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
       resultStatusTemplate: this.resultStatusTemplate,
       emptySearchTemplate: this.emptySearchTemplate,
       resultItemTemplate: this.resultItemTemplate,
+      searchHistoryTemplate: this.searchHistoryTemplate,
       showFilter: this.showFilter,
       groupBy: this.groupBy,
       itemDivider: this.itemDivider,

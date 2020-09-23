@@ -8,7 +8,7 @@
     fxFlex="30"
     fxFlex.lt-lg="20"
     fxFlex.xs="15"
-    fxLayout="row"
+    fxLayout="column"
     [@slideContent]="animationState"
     class="uxg-global-search-input-area"
   >
@@ -17,6 +17,8 @@
       <input
         matInput
         #searchInput
+        (click)="onInputClick()"
+        (blur)="onInputBlur()"
         type="search"
         placeholder="Search"
         autocomplete="off"
@@ -24,6 +26,7 @@
         aria-label="Global search"
       />
     </mat-form-field>
+    <ng-container *ngIf="showHistory; then searchHistory"> </ng-container>
   </div>
   <ng-container *ngIf="results$ | async as results; else emptySearch">
     <ng-container *ngIf="results.length; else empty">
@@ -102,6 +105,10 @@
 
 <ng-template #emptySearch>
   <ng-container *ngTemplateOutlet="emptySearchTemplate"> </ng-container>
+</ng-template>
+
+<ng-template #searchHistory>
+  <ng-container *ngTemplateOutlet="searchHistoryTemplate"> </ng-container>
 </ng-template>
 
 <ng-template #defaultTemplate let-result>
