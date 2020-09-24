@@ -98,9 +98,11 @@
 </div>
 
 <ng-template #empty>
-  <div fxFlex="5" class="uxg-global-search-results-counter">
-    No results found
-  </div>
+  <ng-container *ngIf="searchValue; else emptySearch">
+    <div fxFlex="5" class="uxg-global-search-results-counter">
+      No results found
+    </div>
+  </ng-container>
 </ng-template>
 
 <ng-template #emptySearch>
