@@ -39,7 +39,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   resultsShown = 0;
   resultsFound = 0;
   filterSize = 0;
-  searchValue = null;
+  searchValue = '';
   searchTime = '';
 
   @Input()
