@@ -31,50 +31,52 @@
         fxFlex="65"
         fxFlex.lt-lg="75"
         fxFlex.xs="80"
-        fxLayout="row wrap"
+        fxLayout
         fxLayout.lt-lg="column"
         class="uxg-global-search-container-parent"
       >
-        <!-- results status area -->
-        <ng-container [ngTemplateOutlet]="resultStatusTemplate"></ng-container>
-        <div class="uxg-global-search-results-counter">
-          Showing {{ resultsShown }} out of {{ resultsFound }} results
-          <span class="uxg-caption">&nbsp;&nbsp;({{ searchTime }} seconds)</span>
-        </div>
-        <!-- results area -->
         <div
+          fxLayout="column"
           fxFlex="{{ showFilter ? '70' : 'auto' }}"
           fxFlex.lt-lg="auto"
-          tabindex="0"
-          class="uxg-global-search-results-area"
+          class="uxg-global-search-results-container"
         >
-          <ng-container *ngFor="let resultGroup of results">
-            <ng-container *ngIf="!groupBy || (groupBy && (filterSize === 0 || (resultGroup.selected && filterSize)))">
-              <div
-                *ngIf="groupBy && resultGroup.key !== 'undefined' && resultGroup.value.length"
-                class="uxg-global-search-result-group-header"
-              >
-                <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
-                <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
-              </div>
-              <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
-                <div *ngFor="let result of resultGroup.value; let last = last">
-                  <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
-                    <ng-container
-                      *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
-                    >
-                    </ng-container>
-                  </div>
-                  <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
+          <!-- results status area -->
+          <ng-container [ngTemplateOutlet]="resultStatusTemplate"></ng-container>
+          <div class="uxg-global-search-results-counter">
+            Showing {{ resultsShown }} out of {{ resultsFound }} results
+            <span class="uxg-caption">&nbsp;&nbsp;({{ searchTime }} seconds)</span>
+          </div>
+          <!-- results area -->
+          <div class="uxg-global-search-results-area">
+            <ng-container *ngFor="let resultGroup of results">
+              <ng-container *ngIf="!groupBy || (groupBy && (filterSize === 0 || (resultGroup.selected && filterSize)))">
+                <div
+                  *ngIf="groupBy && resultGroup.key !== 'undefined' && resultGroup.value.length"
+                  class="uxg-global-search-result-group-header"
+                >
+                  <h4 class="uxg-h4">{{ resultGroup.key }}</h4>
+                  <span class="uxg-global-search-result-group-counter">({{ resultGroup.value.length }})</span>
                 </div>
-              </div>
-              <mat-divider *ngIf="groupBy && groupDivider"></mat-divider>
+                <div class="uxg-global-search-result-group-container" [fxLayout]="itemsLayout">
+                  <div *ngFor="let result of resultGroup.value; let last = last">
+                    <div class="uxg-global-search-result-item" (click)="onItemClick(result)">
+                      <ng-container
+                        *ngTemplateOutlet="resultItemTemplate || defaultTemplate; context: { $implicit: result }"
+                      >
+                      </ng-container>
+                    </div>
+                    <mat-divider [inset]="true" *ngIf="itemDivider && !last"></mat-divider>
+                  </div>
+                </div>
+                <mat-divider *ngIf="groupBy && groupDivider"></mat-divider>
+              </ng-container>
             </ng-container>
-          </ng-container>
+          </div>
         </div>
         <!-- filter area -->
         <ng-container *ngIf="groupBy && showFilter">
-          <mat-divider [vertical]="true"></mat-divider>
+          <mat-divider fxHide.lt-lg [vertical]="true"></mat-divider>
           <div
             fxLayout="column"
             fxLayout.lt-lg="row wrap"
@@ -88,6 +90,7 @@
               </mat-checkbox>
             </ng-container>
           </div>
+          <mat-divider fxHide.gt-md></mat-divider>
         </ng-container>
       </div>
     </ng-container>
