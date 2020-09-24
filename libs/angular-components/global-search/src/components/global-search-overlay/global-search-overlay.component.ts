@@ -128,7 +128,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
     this.inputBlur = true;
     this.showHistory = false;
   }
-  
+
   toggleFilter(resultGroup: ResultGroup) {
     resultGroup.selected = !resultGroup.selected;
     if (resultGroup.selected) {
