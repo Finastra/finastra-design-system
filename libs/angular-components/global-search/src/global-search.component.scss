@@ -133,17 +133,6 @@ $close-button-size-small: 32px;
             }
           }
         }
-
-        .uxg-global-search-results-counter {
-          display: flex;
-          align-items: center;
-          padding-left: 5rem;
-          width: 100%;
-
-          @include layout-bp(lt-lg) {
-            padding-left: 2rem;
-          }
-        }
       }
 
       .uxg-global-search-results-filter {
@@ -175,6 +164,17 @@ $close-button-size-small: 32px;
           order: -1;
           margin: 0 2rem $uxg-spacing-3;
         }
+      }
+    }
+
+    .uxg-global-search-results-counter {
+      display: flex;
+      align-items: center;
+      padding-left: 5rem;
+      width: 100%;
+
+      @include layout-bp(lt-lg) {
+        padding-left: 2rem;
       }
     }
 
