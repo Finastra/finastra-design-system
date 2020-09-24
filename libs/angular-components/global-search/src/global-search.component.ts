@@ -35,6 +35,8 @@ export class UxgGlobalSearch implements OnChanges {
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
+  @Output() inputClicked = new EventEmitter<string>();
+  @Output() inputBlured = new EventEmitter<void>();
 
   results$ = new Subject<any[]>();
 
@@ -62,6 +64,8 @@ export class UxgGlobalSearch implements OnChanges {
         this.resultItemClick.emit($event);
         if (this.ref) this.ref.close();
       },
+      inputClicked: ($event: any) => this.inputClicked.emit($event),
+      inputBlured: ($event: any) => this.inputBlured.emit($event),
       results: this.results$
     });
   }

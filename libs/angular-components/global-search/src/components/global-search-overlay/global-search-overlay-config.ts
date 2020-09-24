@@ -13,5 +13,7 @@ export interface SearchConfig {
   itemsLayout?: 'row' | 'column';
   searchTermChange: CallableFunction;
   itemClicked: CallableFunction;
+  inputClicked?: CallableFunction;
+  inputBlured?: CallableFunction;
   results: Observable<any[]>;
 }
