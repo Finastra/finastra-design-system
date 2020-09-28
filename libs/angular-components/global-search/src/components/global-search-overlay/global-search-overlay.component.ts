@@ -39,7 +39,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   resultsShown = 0;
   resultsFound = 0;
   filterSize = 0;
-
+  searchValue = '';
   searchTime = '';
 
   @Input()
@@ -84,6 +84,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
       .pipe(distinctUntilChanged(), debounceTime(this.searchDebounce))
       .subscribe(() => {
         const value = this.searchInput.nativeElement.value;
+        this.searchValue = value;
         this.searchTermChange.emit(value);
         t0 = performance.now();
       });
