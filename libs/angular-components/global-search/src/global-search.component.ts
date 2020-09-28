@@ -66,6 +66,10 @@ export class UxgGlobalSearch implements OnChanges {
     });
   }
 
+  closeSearch() {
+    if (this.ref) this.ref.close();
+  }
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('results') && !changes.results.firstChange) {
       this.results$.next(changes.results.currentValue);
