@@ -24,7 +24,13 @@
         aria-label="Global search"
         (click)="onInputClick()"
         (blur)="onInputBlur()"
+        [matAutocomplete]="auto"
       />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of recentSearches | async" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
   </div>
   <ng-container *ngIf="results$ | async as results; else emptySearch">

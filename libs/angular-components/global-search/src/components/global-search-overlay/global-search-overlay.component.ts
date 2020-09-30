@@ -60,6 +60,8 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   groupDivider = this.config.groupDivider;
   @Input()
   itemsLayout = this.config.itemsLayout;
+  @Input()
+  recentSearches = this.config.recentSearches;
 
   @Input() results: Observable<ResultGroup[]> = this.config.results;
 
@@ -79,7 +81,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => this.searchInput.nativeElement.focus());
+    setTimeout(() => {
+      if (!this.recentSearches.length) {
+        this.searchInput.nativeElement.focus();
+      }
+    });
 
     let t0: number, t1: number;
 

@@ -32,6 +32,7 @@ export class UxgGlobalSearch implements OnChanges {
   @Input() groupDivider = false;
   @Input() itemsLayout: 'row' | 'column' = 'column';
   @Input() results: any[] = [];
+  @Input() recentSearches: string[] = [];
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
@@ -66,7 +67,8 @@ export class UxgGlobalSearch implements OnChanges {
       },
       inputClicked: ($event: any) => this.inputClicked.emit($event),
       inputBlured: ($event: any) => this.inputBlured.emit($event),
-      results: this.results$
+      results: this.results$,
+      recentSearches: this.recentSearches
     });
   }
 

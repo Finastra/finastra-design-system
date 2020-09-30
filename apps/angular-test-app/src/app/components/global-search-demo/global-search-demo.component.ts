@@ -9,7 +9,7 @@ import { ClientSideSearchService } from './client-side-search.service';
 })
 export class GlobalSearchDemoComponent implements OnInit {
   results: any[] = [];
-
+  searchTerms: string[] = [];
   constructor(private snackBar: MatSnackBar, public searchService: ClientSideSearchService) {}
 
   ngOnInit() {
@@ -87,6 +87,8 @@ export class GlobalSearchDemoComponent implements OnInit {
         this.searchService.addDoc(item);
       });
     });
+
+    this.searchTerms.push('Forex Account', 'Forex Account 2', 'Forex Account 3');
   }
 
   onResultItemClick(item: any) {

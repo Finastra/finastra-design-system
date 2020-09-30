@@ -22,6 +22,7 @@
   (searchTermChange)="onSearchTermChange($event)"
   [results]="results"
   (resultItemClick)="onResultItemClick($event)"
+  [recentSearches]="searchTerms"
 >
   <button mat-stroked-button type="button" (click)="uxgGlobalSearchGrouped.openSearch()" color="accent" large>
     <mat-icon>search</mat-icon>&nbsp;Search (grouped)
