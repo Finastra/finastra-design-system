@@ -27,7 +27,7 @@
         [matAutocomplete]="auto"
       />
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of recentSearches | async" [value]="option">
+        <mat-option *ngFor="let option of recentSearches" [value]="option">
           {{ option }}
         </mat-option>
       </mat-autocomplete>
