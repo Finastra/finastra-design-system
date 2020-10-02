@@ -46,7 +46,7 @@ export class UxgGlobalSearch implements OnChanges {
   get searchIcon(): MatIcon {
     return this.componentRef?.instance.searchIcon!;
   }
-  
+
   constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
