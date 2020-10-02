@@ -41,6 +41,11 @@ export class UxgGlobalSearch implements OnChanges {
   get searchInput(): ElementRef {
     return this.componentRef?.instance.searchInput!;
   }
+
+  get searchIcon(): ElementRef {
+    return this.componentRef?.instance.searchIcon!;
+  }
+  
   constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
