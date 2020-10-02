@@ -43,7 +43,7 @@ export class UxgGlobalSearch implements OnChanges {
     return this.componentRef?.instance.searchInput!;
   }
 
-  get searchIcon(): MatIcon {
+  get searchIcon(): ElementRef {
     return this.componentRef?.instance.searchIcon!;
   }
 
