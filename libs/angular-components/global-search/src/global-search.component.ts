@@ -10,7 +10,6 @@ import {
   TemplateRef,
   ViewEncapsulation
 } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { Subject } from 'rxjs';
 import { GlobalSearchOverlayComponent } from '..';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
