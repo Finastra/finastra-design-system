@@ -10,6 +10,7 @@ import {
   TemplateRef,
   ViewEncapsulation
 } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { Subject } from 'rxjs';
 import { GlobalSearchOverlayComponent } from '..';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
@@ -42,7 +43,7 @@ export class UxgGlobalSearch implements OnChanges {
     return this.componentRef?.instance.searchInput!;
   }
 
-  get searchIcon(): ElementRef {
+  get searchIcon(): MatIcon {
     return this.componentRef?.instance.searchIcon!;
   }
   

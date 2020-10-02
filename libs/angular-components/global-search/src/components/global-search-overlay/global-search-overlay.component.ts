@@ -11,6 +11,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { fromEvent, Observable, ReplaySubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ResultGroup } from '../../global-search.model';
@@ -66,7 +67,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
-  @ViewChild('searchIcon', { static: true }) searchIcon!: ElementRef;
+  @ViewChild('searchIcon', { static: true }) searchIcon!: MatIcon;
   
   private searchDebounce = 300;
 
