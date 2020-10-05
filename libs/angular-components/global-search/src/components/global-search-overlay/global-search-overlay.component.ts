@@ -66,6 +66,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
+  @ViewChild('searchIcon', { static: true }) searchIcon!: ElementRef;
 
   private searchDebounce = 300;
 
