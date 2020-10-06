@@ -1,19 +1,43 @@
 @import '~@angular/material/theming';
 
+@function mat-color($palette, $hue: default, $opacity: null) {
+  // If hueKey is a number between zero and one, then it actually contains an
+  // opacity value, so recall this function with the default hue and that given opacity.
+  @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+    @return mat-color($palette, default, $hue);
+  }
+
+  $color: map-get($palette, $hue);
+
+  @if (type-of($color) != color) {
+    @if ($opacity == null) {
+      @return $color;
+    }
+
+    // Here is the change from the original function:
+    // If the $color resolved to something different from a color, we assume it is a CSS variable
+    // in the form of rgba(var(--rgba-css-var),a) and replace the 'a' value.
+    @debug $color;
+    @return #{str-slice($color, 0, str-index($color, ',')) + $opacity + ')'};
+  }
+
+  @return rgba($color, if($opacity == null, opacity($color), $opacity));
+}
+
 $uxg-charcoal: #414141;
 
 :root {
-  --color-primary: rgb(105, 78, 214);
-  --color-primary-100: #e9e5f9;
+  --color-primary: 0, 158, 224;
+  --color-primary-100: 0, 158, 224;
 }
 
 $uxg-violet: (
   50: #f7f6fd,
-  100: var(--color-primary-100),
+  100: rgba(var(--color-primary-100), 1),
   200: #d9d3f5,
   300: #b4a6ea,
   400: #8f7be1,
-  500: var(--color-primary),
+  500: rgba(var(--color-primary), 1),
   600: #4538cb,
   700: #2123c0,
   800: #141483,

@@ -12,7 +12,10 @@ export class ThemeBuilderComponent {
 
   changeComplete($event: ColorEvent) {
     console.log($event);
-    document.documentElement.style.setProperty('--color-primary', $event.color.hex);
+    document.documentElement.style.setProperty(
+      '--color-primary',
+      $event.color.rgb.r + ',' + $event.color.rgb.g + ',' + $event.color.rgb.b
+    );
     //document.documentElement.style.setProperty("--color-primary-100", $event.color.rgb.r+', '+$event.color.rgb.g+', '+$event.color.rgb.b);
   }
 }
