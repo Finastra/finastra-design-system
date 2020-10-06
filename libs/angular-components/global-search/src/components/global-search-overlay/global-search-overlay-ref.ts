@@ -4,6 +4,6 @@ export class SearchOverlayRef {
   constructor(private readonly overlay: OverlayRef) {}
 
   close() {
-    this.overlay.dispose();
+    this.overlay.detach();
   }
 }

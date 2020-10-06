@@ -1,41 +1,36 @@
 @import '~@angular/flex-layout/mq';
 
 @mixin uxg-global-search-colors($theme) {
-  $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  $global-search-primary-color: mat-color($primary, default);
-  $global-search-text-color: map-get($foreground, text);
-  $global-search-background: map-get($background, dialog);
-
   .uxg-global-search-overlay-backdrop {
-    background: rgba($global-search-background, 0.95);
+    background: mat-color($background, dialog, 0.95);
   }
 
   uxg-global-search-overlay {
     .uxg-global-search-results-area {
       .uxg-global-search-result-group-header {
         .uxg-global-search-result-group-counter {
-          opacity: 0.4;
+          opacity: 0.75;
         }
       }
     }
 
     .uxg-global-search-results-counter {
-      opacity: 0.4;
+      opacity: 0.75;
     }
 
     .uxg-global-search-input-area {
       .uxg-global-search-input {
         .mat-form-field-label {
-          color: rgba($global-search-text-color, 0.4);
+          color: mat-color($foreground, text)
         }
       }
     }
 
     .uxg-global-search-close-overlay-button {
-      opacity: 0.4;
+      opacity: 0.75;
     }
   }
 }
@@ -68,6 +63,7 @@
 
       .uxg-global-search-icon {
         font-size: mat-font-size($config, h1);
+        opacity: 0.75;
 
         @include layout-bp(xs) {
           font-size: mat-font-size($config, h3);

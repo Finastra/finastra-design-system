@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export interface ToggleBtn {
   label: string;
@@ -38,10 +38,12 @@ export class FilterToggleComponent implements OnInit {
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
-  constructor() {}
+  constructor(private hostElement: ElementRef) {
+    this.hostElement.nativeElement.__component = this;
+  }
 
   ngOnInit() {
-    this.data.forEach(toggleBtn => {
+    this.data.forEach((toggleBtn) => {
       if (toggleBtn.isSelected) {
         this.initialValue = toggleBtn;
         this.selectedValue = toggleBtn;

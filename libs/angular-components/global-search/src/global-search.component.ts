@@ -1,18 +1,19 @@
 import {
   Component,
+  ComponentRef,
+  ElementRef,
   EventEmitter,
   Input,
-  OnInit,
-  Output,
-  TemplateRef,
-  ViewEncapsulation,
   OnChanges,
-  SimpleChanges
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  ViewEncapsulation
 } from '@angular/core';
-import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
+import { Subject } from 'rxjs';
+import { GlobalSearchOverlayComponent } from '..';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
-import { ResultGroup } from './global-search.model';
-import { Observable, Subject } from 'rxjs';
+import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 
 @Component({
   selector: 'uxg-global-search',
@@ -20,9 +21,11 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./global-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class UxgGlobalSearch implements OnInit, OnChanges {
+export class UxgGlobalSearch implements OnChanges {
   @Input() groupBy?: string;
   @Input() resultItemTemplate?: TemplateRef<any>;
+  @Input() emptySearchTemplate?: TemplateRef<any>;
+  @Input() resultStatusTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
   @Input() itemDivider = false;
@@ -35,12 +38,23 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
 
   results$ = new Subject<any[]>();
 
+  get searchInput(): ElementRef {
+    return this.componentRef?.instance.searchInput!;
+  }
+
+  get searchIcon(): ElementRef {
+    return this.componentRef?.instance.searchIcon!;
+  }
+
   constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
+  private componentRef?: ComponentRef<GlobalSearchOverlayComponent>;
 
   openSearch() {
-    this.ref = this.overlayService.open({
+    [this.ref, this.componentRef] = this.overlayService.open({
+      resultStatusTemplate: this.resultStatusTemplate,
+      emptySearchTemplate: this.emptySearchTemplate,
       resultItemTemplate: this.resultItemTemplate,
       showFilter: this.showFilter,
       groupBy: this.groupBy,
@@ -57,11 +71,13 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
     });
   }
 
+  closeSearch() {
+    if (this.ref) this.ref.close();
+  }
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('results') && !changes.results.firstChange) {
       this.results$.next(changes.results.currentValue);
     }
   }
-
-  ngOnInit() {}
 }

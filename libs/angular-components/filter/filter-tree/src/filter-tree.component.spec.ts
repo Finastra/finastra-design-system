@@ -99,10 +99,7 @@ describe('FilterTreeModule', () => {
       .replace(/\s/g, '')
       .toLowerCase();
     const treeElContent = filterTreeEl.textContent
-      ? filterTreeEl.textContent
-          .replace('expand_more', '')
-          .replace(/\s/g, '')
-          .toLowerCase()
+      ? filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g, '').toLowerCase()
       : '';
     expect(treeElContent).toEqual(expectedTreeNodeItemsLabels);
   });

@@ -1,39 +1,36 @@
 import {
   Component,
-  OnInit,
-  Input,
-  ViewChild,
-  HostListener,
   EventEmitter,
-  Output,
-  OnDestroy,
+  HostListener,
+  Input,
   OnChanges,
-  SimpleChanges
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
 } from '@angular/core';
-import { Subscription, Observable } from 'rxjs';
-
 import { TooltipComponent } from '@angular/material/tooltip';
-import { PlotComponent } from 'angular-plotly.js';
-
 import {
-  PaletteService,
   ColorScale,
+  LazyloadScriptService,
   PaletteConfig,
-  PALETTE_DEFAULT_CONFIG,
-  LazyloadScriptService
+  PaletteService,
+  PALETTE_DEFAULT_CONFIG
 } from '@ffdc/uxg-angular-components/core';
-
+import { PlotComponent } from 'angular-plotly.js';
+import { Observable, Subscription } from 'rxjs';
 import {
-  VectorMapCountry,
-  VectorMapLegend,
-  VectorMapDataSource,
-  VectorMapView,
-  VectorMapViewsDataSource,
   COUNTRIES,
+  DEFAULT_CONFIG,
   DEFAULT_DATA,
   DEFAULT_LAYOUT,
-  DEFAULT_CONFIG,
-  DEFAULT_STYLE
+  DEFAULT_STYLE,
+  VectorMapCountry,
+  VectorMapDataSource,
+  VectorMapLegend,
+  VectorMapView,
+  VectorMapViewsDataSource
 } from './vector-map.models';
 
 @Component({
@@ -82,7 +79,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     this.setStyle();
 
     this.subscriptions.push(
-      this.paletteService.paletteChange$.subscribe(config => {
+      this.paletteService.paletteChange$.subscribe((config) => {
         this.paletteConfig = config;
 
         this.setPlotData();
@@ -124,7 +121,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
   @HostListener('window:resize')
@@ -200,7 +197,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   setCountries(data: Partial<VectorMapCountry>[]) {
-    this.countries = COUNTRIES.map(country => {
+    this.countries = COUNTRIES.map((country) => {
       const countryData = data.find(({ name, code }) => name === country.name || code === country.code) || country;
       return {
         ...country,

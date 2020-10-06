@@ -1,9 +1,8 @@
-import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { join } from 'path';
 import stylelint from 'stylelint';
 import formatter from 'stylelint-formatter-pretty';
-
 import { Schema } from './schema';
-import { join } from 'path';
 
 async function themeLinter(options: Schema, context: BuilderContext): Promise<BuilderOutput> {
   const logger = context.logger;
@@ -15,8 +14,8 @@ async function themeLinter(options: Schema, context: BuilderContext): Promise<Bu
 
   context.reportProgress(0, 1);
   const result = await stylelint.lint({
-    files: join(options.project, '/**/*.scss'),
-    configFile: join(options.project, './.stylelintrc.json'),
+    globbyOptions: { expandDirectories: true, cwd: join(process.cwd(), options.project) },
+    files: ['**/*.scss'],
     fix: options.fix,
     formatter
   });

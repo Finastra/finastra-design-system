@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { GlobalNavComponent } from './global-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -10,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
 
 describe('GlobalNavModule', () => {
   let component: GlobalNavComponent;
@@ -25,7 +27,9 @@ describe('GlobalNavModule', () => {
         MatButtonModule,
         MatCardModule,
         MatListModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        RouterTestingModule,
+        UxgBreadcrumbModule
       ],
       declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
     }).compileComponents();

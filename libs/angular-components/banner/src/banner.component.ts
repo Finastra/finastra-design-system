@@ -28,7 +28,7 @@ export class BannerComponent {
     }
   }
   get banners(): BannerItem[] {
-    return this._bannerData.map(banner => {
+    return this._bannerData.map((banner) => {
       return {
         name: banner.name,
         text: this.getBannerText(banner),

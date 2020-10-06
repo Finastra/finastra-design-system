@@ -2,6 +2,7 @@ const name = 'multiselect-tags';
 const suiteName = 'MultiselectTagsComponentModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   name,
   preset: '../../../../jest.config.js',
   coverageDirectory: `../../../../coverage/libs/${name}`,

@@ -89,7 +89,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
         this.selectedItems[this.selectedKeys[0]] = this.data[this.selectedKeys[0]];
       }
       if (this.multiSelect && this.multiSelect) {
-        this.selectedKeys.forEach(selectionIndex => {
+        this.selectedKeys.forEach((selectionIndex) => {
           this.selectedItems[selectionIndex] = this.data[selectionIndex];
         });
       }

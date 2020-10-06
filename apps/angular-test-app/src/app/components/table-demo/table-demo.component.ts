@@ -204,18 +204,18 @@ export class TableDemoComponent implements OnInit {
   customDataSource = ELEMENT_DATA.slice(0, 3);
   length = ELEMENT_DATA.length;
 
-  dragEnable = false;
-  totalEnable = false;
-  pageEnable = false;
-  customizedPage = false;
+  dragEnable = true;
+  totalEnable = true;
+  pageEnable = true;
+  customizedPage = true;
   stickyFooter = true;
   paging = null;
   customPaging = CUSTOM_PAGING;
   actionDescription = '';
   singleSelect = true;
-  enableTableEdit = false;
-  enableTableRowDelete = false;
-  enableTableSendEvent = false;
+  enableTableEdit = true;
+  enableTableRowDelete = true;
+  enableTableSendEvent = true;
 
   cellTemplateEmiter = new EventEmitter<any>();
   actionInfo = '';
@@ -247,7 +247,7 @@ export class TableDemoComponent implements OnInit {
       this.actionInfo = 'Emiter define in cellTemplate has been fired\n\n';
       this.actionInfo += 'Column name: ' + event.column.name + '\n';
       this.actionInfo += 'Row data: \n';
-      Object.keys(event.element).forEach(key => {
+      Object.keys(event.element).forEach((key) => {
         this.actionInfo += '    ' + key + '=' + event.element[key] + '\n';
       });
       alert(this.actionInfo);
@@ -350,7 +350,7 @@ export class TableDemoComponent implements OnInit {
     });
   }
   getSortColumnType(columnName: string) {
-    const column = this.columns.find(item => {
+    const column = this.columns.find((item) => {
       return item.name === columnName;
     });
     return column ? column.type : '';

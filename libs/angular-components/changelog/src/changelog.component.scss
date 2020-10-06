@@ -1,0 +1,249 @@
+@import 'angular-theme/lib/core/style/spacing';
+@import '~@angular/flex-layout/mq';
+
+$bullet-space: 8%;
+$bullet-center: $bullet-space / 2;
+
+@mixin changelog-layout($size) {
+  .version {
+    margin-bottom: $uxg-spacing-2;
+    position: relative;
+    left: $bullet-space;
+    display: inline-flex;
+    align-items: baseline;
+
+    .version-id {
+      margin-right: $uxg-spacing-2;
+    }
+  }
+
+  .first-release,
+  .release-detail,
+  .last-release {
+    @if $size == 'xs' {
+      padding: $uxg-spacing-2 $uxg-spacing-3;
+      margin-right: $uxg-spacing-2;
+      width: calc(100% - #{$bullet-space} - #{$uxg-spacing-2});
+    } @else {
+      width: calc(100% - #{$bullet-space});
+    }
+  }
+
+  .change {
+    @if $size == 'xs' {
+      .change-type {
+        .type {
+          margin: 0;
+          margin-left: -$uxg-spacing-1;
+        }
+      }
+    }
+    .change-detail {
+      margin-top: $uxg-spacing-2;
+    }
+  }
+
+  .first-release::before {
+    @if $size == 'xs' {
+      top: -36px;
+      width: 18px;
+      height: 18px;
+      left: calc(#{-$bullet-center} - 19px);
+    } 
+    @else if $size == 'none' {
+      top: $uxg-spacing-1;
+    }
+    @else {
+      top: -39.5px;
+      width: 25px;
+      height: 25px;
+      left: calc(#{-$bullet-center} - 22px);
+    }
+    
+  }
+
+  .release-detail::before,
+  .last-release::before {
+    @if $size == 'none' {
+      top: $uxg-spacing-3;
+    } @else {
+      top: -30px;
+    }
+  }
+
+  .first-release::after {
+    @if $size == 'xs' {
+      top: -$uxg-spacing-4;
+      bottom: -44px;
+    } @else if $size == 'none' {
+      top: $uxg-spacing-3;
+      bottom: -48px;
+    } @else {
+      top: -35px;
+      bottom: -35px;
+    }
+  }
+
+  .release-detail::after {
+    @if $size == 'xs' {
+      bottom: -44px;
+    } @else {
+      bottom: -35px;
+    }
+    @if $size == 'none' {
+      top: $uxg-spacing-3;
+      bottom: -48px;
+    } @else {
+      top: -$uxg-spacing-4;
+    }
+  }
+}
+
+uxg-changelog {
+  .title {
+    padding: 3rem 1rem;
+
+    .changelog-icon {
+      margin-right: $uxg-spacing-3;
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .changelog-container {
+    margin: $uxg-spacing-3 $uxg-spacing-4;
+
+    .version {
+      min-width: 100px;
+
+      .version-id {
+        margin-bottom: 0;
+      }
+
+      .date {
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      &.none {
+        width: 0;
+      }
+    }
+
+    .first-release,
+    .release-detail,
+    .last-release {
+      position: relative;
+      margin-left: $bullet-space;
+      flex: 1 1 100%;
+      cursor: unset;
+      height: unset;
+      margin-bottom: $uxg-spacing-4;
+      padding: $uxg-spacing-4;
+    }
+
+    .category {
+      padding: $uxg-spacing-2 0;
+    }
+
+    .change {
+      .change-detail {
+        margin: $uxg-spacing-2 0;
+      }
+
+      .change-type {
+        min-width: 85px;
+
+        .type {
+          margin: $uxg-spacing-2 0;
+          text-align: center;
+          padding: 2px $uxg-spacing-2;
+          border-radius: $uxg-spacing-3;
+          display: inline-block;
+        }
+      }
+    }
+
+    .first-release::before {
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      top: $uxg-spacing-1;
+      left: calc(#{-$bullet-center} - 24px);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .release-detail::before,
+    .last-release::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: $uxg-spacing-3;
+      left: calc(#{-$bullet-center} - 13px);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .first-release::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      top: $uxg-spacing-3;
+      bottom: -$uxg-spacing-5;
+      left: calc(#{-$bullet-center} - 6px);
+    }
+
+    .release-detail::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      top: $uxg-spacing-3;
+      bottom: -$uxg-spacing-5;
+      left: calc(#{-$bullet-center} - 6px);
+    }
+
+    .layout-column {
+      @include changelog-layout('sm');
+    }
+  }
+
+  @include layout-bp(sm) {
+    .changelog-container {
+      margin: 0 $uxg-spacing-4;
+      @include changelog-layout('sm');
+      .layout-none {
+        @include changelog-layout('none');
+      }
+    }
+  }
+
+  @include layout-bp(xs) {
+    .changelog-container {
+      margin: 0 $uxg-spacing-2;
+      @include changelog-layout('xs');
+      .layout-none {
+        @include changelog-layout('none');
+      }
+    }
+
+    .title {
+      padding: 2rem 1rem;
+
+      .changelog-icon {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+
+  @include layout-bp(lt-md) {
+    .title {
+      .creator {
+        max-width: 400px;
+      }
+    }
+  }
+}

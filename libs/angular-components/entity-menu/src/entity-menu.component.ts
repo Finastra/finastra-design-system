@@ -9,6 +9,11 @@ import {
   OnChanges
 } from '@angular/core';
 
+export interface EntityMenuItemWEvent {
+  value: any;
+  $event: MouseEvent;
+}
+
 @Component({
   selector: 'uxg-entity-menu',
   templateUrl: './entity-menu.component.html',
@@ -21,10 +26,8 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() title = '';
   @Input() property?: string;
   @Input() abbreviationLength = 3;
-  @Input() bottomLabel = '';
 
-  @Output() bottomClick: EventEmitter<any> = new EventEmitter<any>();
-  @Output() itemClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() itemClick = new EventEmitter<EntityMenuItemWEvent>();
 
   ngOnInit() {}
 
@@ -34,12 +37,20 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     }
   }
 
+  onItemClick(value: any, $event: MouseEvent) {
+    this.itemClick.emit({
+      value,
+      $event
+    });
+  }
+
   private mapData(data: any[], property?: string) {
     return data.map((item: any) => {
       const value = property ? item[property] : item;
       return {
         name: value,
-        abbr: this.formatItemName(value)
+        abbr: this.formatItemName(value),
+        value: item
       };
     });
   }
@@ -48,7 +59,7 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     if (name) {
       return name
         .split(' ')
-        .map(str => str.charAt(0))
+        .map((str) => str.charAt(0))
         .join('')
         .toUpperCase()
         .substring(0, this.abbreviationLength);
@@ -56,3 +67,9 @@ export class EntityMenuComponent implements OnInit, OnChanges {
     return name;
   }
 }
+
+@Component({
+  selector: 'uxg-entity-menu-actions',
+  template: ` <ng-content></ng-content> `
+})
+export class EntityMenuActionsComponent {}

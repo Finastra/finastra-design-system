@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChildren,
   EventEmitter,
@@ -8,13 +9,15 @@ import {
   OnDestroy,
   Output,
   QueryList,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ViewChild
 } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-dialog.component';
 import { UxgFilter } from './filter.directive';
 import { UXGFilterChanges } from './filter.models';
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 export interface FilterGroupComponentData {
   title: string;
@@ -36,6 +39,7 @@ export interface SavedFilter {
 export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Output() changes = new EventEmitter<UXGFilterChanges<any>>();
   @ContentChildren(UxgFilter, { descendants: true }) filterInstances!: QueryList<UxgFilter>;
+  @ViewChild(MatExpansionPanel) expansionPanel!: MatExpansionPanel;
 
   @Input() expanded = false;
   @Input() divideAtIndex: number[] = [];
@@ -43,19 +47,19 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   @Input() autoApply = false;
 
   subscriptions: Subscription[] = [];
+  dialogRef: MatDialogRef<FilterGroupDialogComponent, any> | undefined;
   selectedData: FilterGroupComponentData[] = [];
   savedFilters: SavedFilter[] = [];
   existingFilterNames: string[] = [];
   initialState: FilterGroupComponentData[] = [];
   activeFilter: FilterGroupComponentData[] = [];
   isActive = false;
-
   headerHeight = '40px';
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       const instanceTitle = filterInstance.instance;
       const selected: any = {};
       selected[instanceTitle] = filterInstance.component.getState();
@@ -65,7 +69,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
       this.subscriptions.push(
         filterInstance.component.changes.subscribe((change: UXGFilterChanges<any>) => {
           change.instance = instanceTitle;
-          this.selectedData.forEach(filter => {
+          this.selectedData.forEach((filter) => {
             if (filter.title === change.instance) {
               filter.selectedData = filterInstance.component.getState();
             }
@@ -83,7 +87,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
   openDialog() {
@@ -93,12 +97,12 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
       existingNames: this.existingFilterNames
     };
 
-    const dialogRef = this.dialog.open(FilterGroupDialogComponent, dialogConfig);
+    this.dialogRef = this.dialog.open(FilterGroupDialogComponent, dialogConfig);
     const state = this.getFilterStates();
 
-    dialogRef.afterClosed().subscribe(result => {
+    this.dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.savedFilters.forEach(filter => {
+        this.savedFilters.forEach((filter) => {
           filter.isSelected = false;
         });
         this.existingFilterNames.push(result.trim());
@@ -108,11 +112,13 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
           isSelected: true
         });
       }
+      this.dialogRef = undefined;
+      this.cd.markForCheck();
     });
   }
 
   selectFilter(filter: SavedFilter) {
-    this.savedFilters.forEach(savedFilter => {
+    this.savedFilters.forEach((savedFilter) => {
       if (savedFilter.filterName === filter.filterName) {
         savedFilter.isSelected = true;
       } else {
@@ -125,7 +131,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   applyFilters() {
     let change: UXGFilterChanges<any>;
     const activeFilter: FilterGroupComponentData[] = [];
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       const data = filterInstance.component.getState();
       activeFilter.push({ title: filterInstance.instance, selectedData: data });
       change = {
@@ -142,7 +148,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   updateFilter() {
     const state = this.getFilterStates();
-    this.savedFilters.forEach(filter => {
+    this.savedFilters.forEach((filter) => {
       if (filter.isSelected) {
         filter.filterState = state;
       }
@@ -150,16 +156,16 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
   }
 
   removeFilter(filter: any) {
-    this.savedFilters = this.savedFilters.filter(item => item !== filter);
-    this.existingFilterNames = this.existingFilterNames.filter(items => items !== filter.filterName);
+    this.savedFilters = this.savedFilters.filter((item) => item !== filter);
+    this.existingFilterNames = this.existingFilterNames.filter((items) => items !== filter.filterName);
   }
 
   clearSelection() {
-    this.filterInstances.forEach(filterInstance => {
+    this.filterInstances.forEach((filterInstance) => {
       filterInstance.component.clearSelection();
     });
 
-    this.selectedData.forEach(instance => {
+    this.selectedData.forEach((instance) => {
       instance.selectedData.length = 0;
     });
   }
@@ -170,7 +176,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   getFilterStates() {
     const groupState: any = [];
-    this.filterInstances.forEach(instance => {
+    this.filterInstances.forEach((instance) => {
       if (instance.component.getState) {
         groupState.push({
           title: instance.instance,
@@ -187,7 +193,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   setState(data: FilterGroupComponentData[]) {
     if (data.length) {
-      this.filterInstances.forEach(filterInstance => {
+      this.filterInstances.forEach((filterInstance) => {
         for (let i = 0; i < data.length; i++) {
           if (filterInstance.instance === data[i].title && filterInstance.component.setState) {
             filterInstance.component.setState(data[i].selectedData);
@@ -195,8 +201,8 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
         }
       });
 
-      data.forEach(obj => {
-        this.selectedData.forEach(obj2 => {
+      data.forEach((obj) => {
+        this.selectedData.forEach((obj2) => {
           if (obj.title === obj2.title) {
             obj2.selectedData.length = 0;
             obj2.selectedData.push(...obj.selectedData);
@@ -236,7 +242,7 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   getSelectedFilterState(): FilterGroupComponentData[] {
     const stateArray: FilterGroupComponentData[] = [];
-    this.savedFilters.forEach(filter => {
+    this.savedFilters.forEach((filter) => {
       if (filter.isSelected) {
         for (const key in filter.filterState) {
           if (filter.filterState.hasOwnProperty(key)) stateArray.push(filter.filterState[key]);
@@ -248,8 +254,8 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
 
   checkIsActive(): boolean {
     if (
-      this.selectedData.some(data => data.selectedData.length) &&
-      this.activeFilter.some(data => data.selectedData.length)
+      this.selectedData.some((data) => data.selectedData.length) &&
+      this.activeFilter.some((data) => data.selectedData.length)
     ) {
       return this.checkListEquality(this.activeFilter, this.selectedData);
     }
@@ -276,6 +282,12 @@ export class FilterGroupComponent implements AfterViewInit, OnDestroy {
       return true;
     } else {
       return false;
+    }
+  }
+
+  handleOutsideClick() {
+    if (this.expansionPanel.expanded && !this.dialogRef) {
+      this.expansionPanel.close();
     }
   }
 }

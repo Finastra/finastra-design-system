@@ -14,10 +14,10 @@ $uxg-violet: (
   300: #b4a6ea,
   400: #8f7be1,
   500: var(--color-primary),
-  600: #5836da,
-  700: #4a27cb,
-  800: #3e1db8,
-  900: #3315a4,
+  600: #4538cb,
+  700: #2123c0,
+  800: #141483,
+  900: #060546,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -62,11 +62,13 @@ $uxg-crimson: (
   50: #f17fa2,
   75: #ea3f74,
   100: #e40046,
+  100-dark: #9f0030,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $light-primary-text,
-    100: $light-primary-text
+    100: $light-primary-text,
+    100-dark: $light-primary-text
   )
 );
 
@@ -75,11 +77,13 @@ $uxg-grass: (
   50: #a9e0b7,
   75: #80d194,
   100: #56c271,
+  100-dark: #3c874e,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text
+    100: $dark-primary-text,
+    100-dark: $light-primary-text
   )
 );
 
@@ -88,11 +92,13 @@ $uxg-amber: (
   50: #ffc39c,
   75: #ffa76d,
   100: #ff8a3d,
+  100-dark: #b2602a,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text
+    100: $dark-primary-text,
+    100-dark: $light-primary-text
   )
 );
 
@@ -101,11 +107,13 @@ $uxg-gold: (
   50: #f7d991,
   75: #f3c65a,
   100: #f0b323,
+  100-dark: #a87d18,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text
+    100: $dark-primary-text,
+    100-dark: $light-primary-text
   )
 );
 
@@ -114,11 +122,13 @@ $uxg-lime: (
   50: #e8eaa9,
   75: #dde17f,
   100: #d2d755,
+  100-dark: #92963b,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text
+    100: $dark-primary-text,
+    100-dark: $light-primary-text
   )
 );
 
@@ -127,11 +137,13 @@ $uxg-ocean: (
   50: #ade0eb,
   75: #84d0e1,
   100: #5bc1d7,
+  100-dark: #3f8696,
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
     75: $dark-primary-text,
-    100: $dark-primary-text
+    100: $dark-primary-text,
+    100-dark: $light-primary-text
   )
 );
 

@@ -66,7 +66,8 @@ $uxg-filter-group-border-radius: 4px;
 
 .expansion-panel-actions {
   padding: $uxg-spacing-3;
-
+  align-items: center;
+  
   .saved-filters-container {
     flex: 1;
 

@@ -53,7 +53,7 @@ export class SidenavComponent implements OnInit, OnChanges {
     return !words
       ? ''
       : words
-          .map(word => word.substring(0, 1))
+          .map((word) => word.substring(0, 1))
           .join('')
           .substring(0, 3);
   }

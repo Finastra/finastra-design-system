@@ -83,7 +83,7 @@ export class GlobalSearchDemoComponent implements OnInit {
     ];
 
     this.searchService.initIndex(['nickname', 'id', 'accountType']).then(() => {
-      documents.forEach(item => {
+      documents.forEach((item) => {
         this.searchService.addDoc(item);
       });
     });
@@ -95,6 +95,6 @@ export class GlobalSearchDemoComponent implements OnInit {
 
   onSearchTermChange(value: string) {
     const results = this.searchService.search(value);
-    this.results = results.map(result => result.doc);
+    this.results = results.map((result) => result.doc);
   }
 }

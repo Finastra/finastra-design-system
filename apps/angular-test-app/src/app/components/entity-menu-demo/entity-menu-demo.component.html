@@ -24,7 +24,12 @@
 
     <div class="description" fxLayout="column" *ngIf="actionDescription">
       <h3>Output:</h3>
-      {{ actionDescription }}
+      <p>
+        {{ actionDescription }}
+      </p>
+      <p *ngIf="actionEvent.which === 2">Middle click</p>
+      <p *ngIf="actionEvent.ctrlKey">Control key was pressed</p>
+      <p *ngIf="actionEvent.metaKey">Command key was pressed</p>
     </div>
   </mat-expansion-panel>
 
@@ -33,10 +38,11 @@
     [data]="dataSourceExample"
     [property]="columnsMatcherExample"
     [abbreviationLength]="length"
-    [bottomLabel]="bottomLabel"
-    (bottomClick)="redirect()"
     (itemClick)="displayItem($event)"
   >
+    <uxg-entity-menu-actions>
+      <a class="uxg-body-3 view-all" href="/">View All</a>
+    </uxg-entity-menu-actions>
   </uxg-entity-menu>
 </div>
 
@@ -47,9 +53,6 @@ The entity-menu component is a floating panel containing list of options.
 </p>
 <p>If you want to :</p>
 <p>- Match a datasource column with one of your template data, you should provide <code>columnsMatcher</code> input.</p>
-<p>
-  - Change the label of the pararaph in the bottom of the menu, you should modify the <code>bottomLabel</code> input.
-</p>
 <p>
   - Change the abbreviation length of the options' title, you should modify the <code>abbreviationLength</code> input.
 </p>
@@ -90,12 +93,6 @@ The entity-menu component is a floating panel containing list of options.
         The number of initials you want to extract from the title
       </td>
     </tr>
-    <tr>
-      <td>bottomLabel</td>
-      <td>string</td>
-      <td>View All</td>
-      <td>the label of the pararaph in the bottom of the menu</td>
-    </tr>
   </tbody>
 </table>
 
@@ -107,12 +104,6 @@ The entity-menu component is a floating panel containing list of options.
       <td>Type</td>
       <td>Default Value</td>
       <td>Description</td>
-    </tr>
-    <tr>
-      <td>bottomClick</td>
-      <td>EventEmitter&lt;any&gt;</td>
-      <td></td>
-      <td>Click Event</td>
     </tr>
     <tr>
       <td>itemClick</td>

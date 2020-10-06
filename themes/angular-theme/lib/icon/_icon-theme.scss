@@ -1,5 +1,8 @@
 @mixin uxg-icon-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
+  $color: mat-color($primary, default);
+  $background: mat-color($primary, default, 0.1);
 
   .mat-icon[color=gradient] {
     background: mat-color($uxg-gradient, vertical);
@@ -12,6 +15,14 @@
     .mat-icon[color=gradient] {
       background: none !important;
       color: mat-color($accent, default);
+    }
+  }
+
+  .uxg-icon-category {
+    background-color: $background;
+
+    .mat-icon {
+      color: $color;
     }
   }
 }

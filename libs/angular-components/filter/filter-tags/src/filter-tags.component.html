@@ -28,10 +28,11 @@
       *ngFor="let tag of filteredTags$ | async"
       [value]="tag"
       [ngClass]="{
-        'selected-option-highlight': selectedData.includes(tag)
+        'selected-option-highlight': applyHighlight(tag)
       }"
+      (click)="$event.stopPropagation()"
     >
-      {{ tag.label }}
+      <span [innerHTML]="tag.label | highlight: toHighlight"></span>
     </mat-option>
   </mat-autocomplete>
 </div>

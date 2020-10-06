@@ -1,0 +1,43 @@
+<div fxLayout="row" *ngIf="title" class="title" fxLayoutAlign="center center">
+  <div class="changelog-icon"></div>
+  <div fxLayout="column">
+    <div class="creator">{{ title }}</div>
+    <span>Changelog</span>
+  </div>
+</div>
+
+<div class="changelog-container">
+  <div
+    *ngFor="let release of changelog; first as first; last as last"
+    [fxLayout]="displayVersion === 'top' ? 'column' : 'row'"
+    fxLayout.lt-md="column"
+    [fxLayout.gt-md]="displayVersion === 'top' ? 'column' : 'row'"
+    fxLayoutAlign="space-between start"
+    [class.layout-column]="displayVersion === 'top'"
+    [class.layout-none]="displayVersion === 'none'"
+  >
+    <div *ngIf="displayVersion !== 'none'" class="version" fxFlex="5" fxFlex.md="10">
+      <div class="version-id uxg-h4">v{{ release.version }}</div>
+      <span class="date uxg-h6">{{ release.date | date: 'longDate' }}</span>
+    </div>
+    <div
+      [ngClass]="{ 'first-release': first, 'last-release': last, 'release-detail': !first && !last }"
+      fxFlex="95"
+      fxFlex.md="90"
+    >
+      <ng-container *ngFor="let category of release.categories">
+        <div class="uxg-subtitle-2 category">{{ category }}</div>
+        <div *ngFor="let change of release.changes" class="change">
+          <div *ngIf="change.category == category" fxLayout.xs="column" fxLayout.gt-xs="row">
+            <div fxFlex="10" fxFlex.lt-lg="15" class="change-type">
+              <span class="{{ change.type | lowercase }} type uxg-caption">{{ change.type | titlecase }}</span>
+            </div>
+            <div fxFlex="90" class="change-detail">
+              <div [innerHTML]="change.description" class="uxg-body-2"></div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

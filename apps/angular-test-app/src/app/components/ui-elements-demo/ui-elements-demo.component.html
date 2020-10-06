@@ -1,29 +1,25 @@
-<div>
-  <h3 class="uxg-display-3">Avatars</h3>
-  <h5 class="uxg-h5">Default Avatar</h5>
-  <div class="example-row">
+<div class="block-test">
+  <h3 class="uxg-h3">Avatars</h3>
+  <div class="example-row avatar-default-test">
     <div class="uxg-avatar" large></div>
     <div class="uxg-avatar"></div>
     <div class="uxg-avatar" dense></div>
   </div>
 
-  <h5 class="uxg-h5">Avatar with Letter</h5>
-  <div class="example-row">
+  <div class="example-row avatar-letter-test">
     <div class="uxg-avatar" large>RH</div>
     <!-- You can use both <div> or <span> -->
     <span class="uxg-avatar">R</span>
     <div class="uxg-avatar" dense>R</div>
   </div>
 
-  <h5 class="uxg-h5">Avatar with Image</h5>
-  <div class="example-row">
-    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" large />
-    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" />
-    <img src="https://randomuser.me/api/portraits/women/17.jpg" class="uxg-avatar" dense />
+  <div class="example-row avatar-image-test">
+    <img src="/assets/profile_pic.jpg" class="uxg-avatar" large />
+    <img src="/assets/profile_pic.jpg" class="uxg-avatar" />
+    <img src="/assets/profile_pic.jpg" class="uxg-avatar" dense />
   </div>
 
-  <h5 class="uxg-h5">Avatar List</h5>
-  <div class="example-row">
+  <div class="example-row avatar-list-test">
     <ul class="uxg-avatar-list">
       <li><img src="https://randomuser.me/api/portraits/men/5.jpg" class="uxg-avatar" /></li>
       <li><img src="https://randomuser.me/api/portraits/men/6.jpg" class="uxg-avatar" /></li>
@@ -32,8 +28,7 @@
     </ul>
   </div>
 
-  <h5 class="uxg-h5">Avatar List Dense</h5>
-  <div class="example-row">
+  <div class="example-row avatar-list-dense-test">
     <ul class="uxg-avatar-list" dense>
       <li><img src="https://randomuser.me/api/portraits/women/8.jpg" class="uxg-avatar" /></li>
       <li><span class="uxg-avatar">S</span></li>
@@ -43,24 +38,32 @@
   </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Badges</h3>
-  <h5 class="uxg-h5">Side Badge</h5>
-  <div class="example-row">
+<div class="block-test">
+  <h3 class="uxg-h3">Badges</h3>
+  <div class="example-row badge-side-test">
     <h6 matBadge="4" class="uxg-subtitle-2 uxg-side-badge">Currencies</h6>
     <h6 matBadge="18" class="uxg-subtitle-2 uxg-side-badge">Folders</h6>
     <h6 matBadge="429" class="uxg-subtitle-2 uxg-side-badge">Portfolios</h6>
   </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Breadcrumb</h3>
+<div class="block-test">
+  <h3 class="uxg-h3">Breadcrumb</h3>
+  <div class="example-row">
+    <ul class="uxg-breadcrumb uxg-breadcrumb-responsive">
+      <button mat-icon-button color="accent" class="uxg-breadcrumb-back">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <li class="uxg-h6">PRODUCT NAME</li>
+      <li>Level</li>
+      <li>Sub-level</li>
+    </ul>
+  </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Buttons</h3>
-  <h5 class="uxg-h5">Basic Buttons</h5>
-  <div class="example-row">
+<div class="block-test">
+  <h3 class="uxg-h3">Buttons</h3>
+  <div class="example-row button-default-test">
     <button mat-button>Basic</button>
     <button mat-button color="primary">Primary</button>
     <button mat-button color="accent">Accent</button>
@@ -68,8 +71,7 @@
     <a mat-button routerLink=".">Link</a>
   </div>
 
-  <h5 class="uxg-h5">Stroked Buttons</h5>
-  <div class="example-row">
+  <div class="example-row button-stroked-test">
     <button mat-stroked-button>Basic</button>
     <button mat-stroked-button color="primary">Primary</button>
     <button mat-stroked-button color="accent">Accent</button>
@@ -77,8 +79,7 @@
     <a mat-stroked-button routerLink=".">Link</a>
   </div>
 
-  <h5 class="uxg-h5">Flat Buttons</h5>
-  <div class="example-row">
+  <div class="example-row button-flat-test">
     <button mat-flat-button>Basic</button>
     <button mat-flat-button color="primary">Primary</button>
     <button mat-flat-button color="accent">Accent</button>
@@ -86,8 +87,7 @@
     <a mat-flat-button routerLink=".">Link</a>
   </div>
 
-  <h5 class="uxg-h5">Buttons with Icons</h5>
-  <div class="example-row">
+  <div class="example-row button-text-icon-test">
     <button mat-flat-button color="primary" dense>
       <mat-icon>grade</mat-icon>
       Primary
@@ -102,15 +102,13 @@
     </button>
   </div>
 
-  <h5 class="uxg-h5">Button Densities</h5>
-  <div class="example-row">
+  <div class="example-row button-density-test">
     <button mat-flat-button color="primary" dense>Dense</button>
     <button mat-flat-button color="primary">Normal</button>
     <button mat-flat-button color="primary" large>Large</button>
   </div>
 
-  <h5 class="uxg-h5">Icon Buttons</h5>
-  <div class="example-row">
+  <div class="example-row button-icon-test">
     <button mat-icon-button aria-label="Example icon-button with a heart icon">
       <mat-icon>favorite</mat-icon>
     </button>
@@ -125,8 +123,7 @@
     </button>
   </div>
 
-  <h5 class="uxg-h5">Icon Buttons Dense</h5>
-  <div class="example-row">
+  <div class="example-row button-icon-dense-test">
     <button mat-icon-button aria-label="Example icon-button with a heart icon" dense>
       <mat-icon>favorite</mat-icon>
     </button>
@@ -141,8 +138,7 @@
     </button>
   </div>
 
-  <h5 class="uxg-h5">Fab Buttons</h5>
-  <div class="example-row">
+  <div class="example-row button-fab-test">
     <button mat-fab color="primary">Primary</button>
     <button mat-fab color="accent">Accent</button>
     <button mat-fab color="gradient">
@@ -157,8 +153,7 @@
     <a mat-fab routerLink=".">Link</a>
   </div>
 
-  <h5 class="uxg-h5">Mini Fab Buttons</h5>
-  <div class="example-row">
+  <div class="example-row button-fab-mini-test">
     <button mat-mini-fab color="primary">P</button>
     <button mat-mini-fab color="accent">A</button>
     <button mat-mini-fab disabled>
@@ -171,11 +166,10 @@
   </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Button toggle</h3>
-  <h5 class="uxg-h5">Filter Toggle</h5>
-  <div class="example-row">
-    <mat-button-toggle-group class="uxg-filtering-toggle-group">
+<div class="block-test">
+  <h3 class="uxg-h3">Button toggle</h3>
+  <div class="example-row toggle-filter-test">
+    <mat-button-toggle-group class="uxg-filtering-toggle-group" value="public">
       <mat-button-toggle value="public">
         <mat-icon>public</mat-icon>
         <span>Public</span>
@@ -184,17 +178,16 @@
         <mat-icon>group</mat-icon>
         <span>Shared</span>
       </mat-button-toggle>
-      <mat-button-toggle value="private">
+      <mat-button-toggle value="private" disabled>
         <mat-icon>lock</mat-icon>
         <span>Private</span>
       </mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 
-  <h5 class="uxg-h5">Button Toggle Dense</h5>
-  <div class="example-row">
+  <div class="example-row toggle-dense-test">
     <mat-button-toggle-group dense>
-      <mat-button-toggle value="left">
+      <mat-button-toggle value="left" disabled>
         <mat-icon>border_left</mat-icon>
       </mat-button-toggle>
       <mat-button-toggle value="inner">
@@ -204,33 +197,43 @@
         <mat-icon>border_right</mat-icon>
       </mat-button-toggle>
     </mat-button-toggle-group>
+
+    <mat-button-toggle-group dense #group="matButtonToggleGroup" value="trend">
+      <mat-button-toggle value="trend">
+        <mat-icon>timeline</mat-icon>
+        Trend
+      </mat-button-toggle>
+      <mat-button-toggle value="list">
+        <mat-icon>view_list</mat-icon>
+        List
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 
-  <h5 class="uxg-h5">Button Toggle</h5>
-  <div class="example-row">
+  <div class="example-row toggle-group-test">
     <mat-button-toggle-group>
       <mat-button-toggle value="bold">Bold</mat-button-toggle>
       <mat-button-toggle value="italic">Italic</mat-button-toggle>
-      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      <mat-button-toggle value="underline" disabled>Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-button-toggle-group value="chat">
+      <mat-button-toggle value="phone"><mat-icon>phone</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="chat"><mat-icon>chat</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="mail" disabled><mat-icon>mail_outline</mat-icon></mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Cards</h3>
-  <h5 class="uxg-h5">Card</h5>
-  <div class="example-row">
+<div class="block-test">
+  <h3 class="uxg-h3">Cards</h3>
+  <div class="example-row card-basic-test">
     <mat-card class="example-card">
       <mat-card-header>
         <img mat-card-avatar src="https://randomuser.me/api/portraits/women/36.jpg" class="uxg-avatar" />
         <mat-card-title>Open Innovation</mat-card-title>
         <mat-card-subtitle>Rachelle Ross</mat-card-subtitle>
       </mat-card-header>
-      <img
-        mat-card-image
-        src="https://www.finextra.com/finextra-images/articles/di7a2406.jpg"
-        alt="Photo of Fusion ONE"
-      />
+      <img mat-card-image src="/assets/conference.jpg" alt="Photo of Fusion ONE" />
       <mat-card-content>
         <p>
           To unlock the potential of people and businesses by creating a platform for open innovation in the world of
@@ -244,8 +247,7 @@
     </mat-card>
   </div>
 
-  <h5 class="uxg-h5">Card dense</h5>
-  <div class="example-row">
+  <div class="example-row card-workspace-dense-test">
     <mat-card dense>
       <div class="uxg-card-image-overlay">
         <img
@@ -285,8 +287,7 @@
     </mat-card>
   </div>
 
-  <h5 class="uxg-h5">Product Card</h5>
-  <div class="example-row">
+  <div class="example-row card-product-test">
     <mat-card class="uxg-card-product" large>
       <span class="uxg-h1 uxg-card-product-name">PRO</span>
     </mat-card>
@@ -301,8 +302,7 @@
     </mat-card>
   </div>
 
-  <h5 class="uxg-h5">Solution Card</h5>
-  <div class="example-row">
+  <div class="example-row card-solution-test">
     <mat-card class="uxg-card-solution" large>
       <span class="uxg-h1 uxg-card-solution-name">SOL</span>
     </mat-card>
@@ -318,26 +318,30 @@
   </div>
 </div>
 
-<div>
-  <h3 class="uxg-display-3">Chips</h3>
-  <h5 class="uxg-h5">Simple chips</h5>
-  <div class="example-row">
+<div class="block-test">
+  <h3 class="uxg-h3">Chips</h3>
+  <div class="example-row chip-states-test">
     <mat-chip-list>
       <mat-chip>Simple</mat-chip>
       <mat-chip disabled>Disabled</mat-chip>
       <mat-chip selected>Selected</mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Dense chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-density-test">
+    <mat-chip-list>
+      <mat-chip large>Large</mat-chip>
+      <mat-chip>Default</mat-chip>
+      <mat-chip dense>Dense</mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="example-row chip-dense-test">
     <mat-chip-list>
       <mat-chip dense>Dense</mat-chip>
       <mat-chip disabled dense>Disabled</mat-chip>
       <mat-chip selected dense>Selected</mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Icon chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-icon-test">
     <mat-chip-list>
       <mat-chip>
         <mat-icon matChipAvatar>check</mat-icon>
@@ -357,8 +361,7 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Dense icon chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-icon-dense-test">
     <mat-chip-list>
       <mat-chip dense>
         <mat-icon matChipAvatar>check</mat-icon>
@@ -374,8 +377,7 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Removable chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-removable-test">
     <mat-chip-list>
       <mat-chip removable>
         <span>Removable</span>
@@ -395,8 +397,7 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Avatar chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-avatar-test">
     <mat-chip-list>
       <mat-chip>
         <mat-chip-avatar>C</mat-chip-avatar>
@@ -408,8 +409,7 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-  <h5 class="uxg-h5">Toggle chips</h5>
-  <div class="example-row">
+  <div class="example-row chip-toggle-test">
     <mat-chip-list multiple="true">
       <mat-chip (click)="chip1.selected ? chip1.deselect() : chip1.select()" #chip1="matChip">
         <mat-icon matChipAvatar>language</mat-icon>
@@ -423,96 +423,42 @@
   </div>
 </div>
 
-<h5 class="uxg-h5">Fill Input</h5>
-<div class="example-row">
-  <mat-form-field floatLabel="false" appearance="fill">
-    <mat-icon color="primary" matPrefix>favorite</mat-icon>
-    <input matInput placeholder="Placeholder" />
-    <mat-icon color="primary" matSuffix>favorite</mat-icon>
-  </mat-form-field>
-</div>
-<div class="example-row">
-  <mat-form-field floatLabel="false" appearance="fill">
-    <input matInput placeholder="Placeholder" />
-    <mat-hint>Helper text</mat-hint>
-  </mat-form-field>
-</div>
-<div class="example-row">
-  <mat-form-field floatLabel="never" class="example-full-width" appearance="fill">
-    <mat-icon color="primary" matPrefix>search</mat-icon>
-    <mat-label>Search...</mat-label>
-    <input type="search" matInput />
-  </mat-form-field>
+<div class="block-test">
+  <h3 class="uxg-h3">Slide Toggle</h3>
+  <div class="example-row slide-toggle-states-test">
+    <mat-slide-toggle>Default</mat-slide-toggle>
+    <mat-slide-toggle checked="true">Accent</mat-slide-toggle>
+    <mat-slide-toggle checked="true" color="primary">Primary</mat-slide-toggle>
+  </div>
 </div>
 
-<h5 class="uxg-h5">Input With Icon Button</h5>
-<div class="example-container" dense>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" />
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
-      <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
 <div>
-  <mat-form-field appearance="fill">
-    <mat-label>Amount</mat-label>
-    <input matInput type="number" value="0" class="example-right-align" />
-    <span matPrefix>$&nbsp;</span>
-    <span matSuffix>.00</span>
-  </mat-form-field>
-</div>
-
-<h5 class="uxg-h5">Error Message</h5>
-<div class="example-container">
-  <mat-form-field #ff1 appearance="fill">
-    <mat-icon matPrefix>lock_outlined</mat-icon>
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required />
-    <mat-icon matSuffix [ngClass]="{ 'mat-warn': ff1._control.errorState }">error_outlined</mat-icon>
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-  </mat-form-field>
-</div>
-<br />
-<h5 class="uxg-h5">Dense Inputs</h5>
-<div class="example-container">
+  <h3 class="uxg-display-3">Inputs</h3>
+  <h5 class="uxg-h5">Fill Input</h5>
   <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <input matInput value="this is value" />
+    <mat-form-field floatLabel="false" appearance="fill">
+      <mat-icon color="primary" matPrefix>favorite</mat-icon>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon color="primary" matSuffix>favorite</mat-icon>
     </mat-form-field>
   </div>
   <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <mat-icon color="primary" matPrefix dense>search</mat-icon>
-      <input matInput value="this is value" />
-    </mat-form-field>
-  </div>
-  <div class="example-row">
-    <mat-form-field dense appearance="fill">
-      <mat-label>Label</mat-label>
-      <input matInput />
+    <mat-form-field floatLabel="false" appearance="fill">
+      <input matInput placeholder="Placeholder" />
       <mat-hint>Helper text</mat-hint>
     </mat-form-field>
   </div>
-  <div>
-    <form class="example-form">
-      <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
-        <mat-icon color="primary" matPrefix dense>search</mat-icon>
-        <mat-label>Search...</mat-label>
-        <input type="search" matInput />
-      </mat-form-field>
-    </form>
+  <div class="example-row">
+    <mat-form-field floatLabel="never" class="example-full-width" appearance="fill">
+      <mat-icon color="primary" matPrefix>search</mat-icon>
+      <mat-label>Search...</mat-label>
+      <input type="search" matInput />
+    </mat-form-field>
   </div>
 
-  <div>
-    <mat-form-field dense appearance="fill">
+  <h5 class="uxg-h5">Input With Icon Button</h5>
+  <div class="example-container" dense>
+    <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" />
       <button
@@ -522,38 +468,169 @@
         [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide"
       >
-        <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
     </mat-form-field>
   </div>
   <div>
-    <mat-form-field dense appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Amount</mat-label>
       <input matInput type="number" value="0" class="example-right-align" />
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
     </mat-form-field>
   </div>
+
+  <h5 class="uxg-h5">Error Message</h5>
+  <div class="example-container">
+    <mat-form-field #ff1 appearance="fill">
+      <mat-icon matPrefix>lock_outlined</mat-icon>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required />
+      <mat-icon matSuffix [ngClass]="{ 'mat-warn': ff1._control.errorState }">error_outlined</mat-icon>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <h5 class="uxg-h5">Dense Inputs</h5>
+  <div class="example-container">
+    <div class="example-row">
+      <mat-form-field dense appearance="fill">
+        <input matInput value="this is value" />
+      </mat-form-field>
+    </div>
+    <div class="example-row">
+      <mat-form-field dense appearance="fill">
+        <mat-icon color="primary" matPrefix dense>search</mat-icon>
+        <input matInput value="this is value" />
+      </mat-form-field>
+    </div>
+    <div class="example-row">
+      <mat-form-field dense appearance="fill">
+        <mat-label>Label</mat-label>
+        <input matInput />
+        <mat-hint>Helper text</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <form class="example-form">
+        <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
+          <mat-icon color="primary" matPrefix dense>search</mat-icon>
+          <mat-label>Search...</mat-label>
+          <input type="search" matInput />
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div>
+      <mat-form-field dense appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field dense appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" value="0" class="example-right-align" />
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field #ff2 dense appearance="fill">
+      <mat-icon matPrefix dense>lock_outlined</mat-icon>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required />
+      <mat-icon matSuffix dense [ngClass]="{ 'mat-warn': ff2._control.errorState }">error_outlined</mat-icon>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <br />
+  <h5 class="uxg-h5">Select</h5>
+  <div class="example-row">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Font size</mat-label>
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <p class="uxg-body-3">No label</p>
+      <mat-form-field appearance="fill">
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <h5 class="uxg-h5">Dense select</h5>
+  <div class="example-row">
+    <div>
+      <mat-form-field appearance="fill" dense>
+        <mat-label>Font size</mat-label>
+        <mat-select value="16px">
+          <mat-option value="10px">10px</mat-option>
+          <mat-option value="12px">12px</mat-option>
+          <mat-option value="14px">14px</mat-option>
+          <mat-option value="16px">16px</mat-option>
+          <mat-option value="18px">18px</mat-option>
+          <mat-option value="20px">20px</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <p class="uxg-body-3">Multi-select, no default value</p>
+      <mat-form-field appearance="fill" dense>
+        <mat-label>
+          Colors
+        </mat-label>
+        <mat-select multiple>
+          <mat-option value="Violet">Violet</mat-option>
+          <mat-option value="Fuchsia">Fuchsia</mat-option>
+          <mat-option value="Crimson">Crimson</mat-option>
+          <mat-option value="Grass">Grass</mat-option>
+          <mat-option value="Ocean">Ocean</mat-option>
+          <mat-option value="Gold">Gold</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <br />
+  <h5 class="uxg-h5">Search Input (Legacy)</h5>
+  <div class="example-row">
+    <mat-form-field floatLabel="never" class="example-full-width">
+      <mat-icon color="primary" matPrefix>search</mat-icon>
+      <input type="search" matInput placeholder="Search..." />
+    </mat-form-field>
+  </div>
 </div>
 
-<div class="example-container">
-  <mat-form-field #ff2 dense appearance="fill">
-    <mat-icon matPrefix dense>lock_outlined</mat-icon>
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required />
-    <mat-icon matSuffix dense [ngClass]="{ 'mat-warn': ff2._control.errorState }">error_outlined</mat-icon>
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-  </mat-form-field>
-</div>
-
-<br />
-<h5 class="uxg-h5">Search Input (Legacy)</h5>
-<div class="example-row">
-  <mat-form-field floatLabel="never" class="example-full-width">
-    <mat-icon color="primary" matPrefix>search</mat-icon>
-    <input type="search" matInput placeholder="Search..." />
-  </mat-form-field>
-</div>
 <div>
   <div>
     <h3 class="uxg-display-3">Expansion</h3>

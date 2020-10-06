@@ -1,16 +1,15 @@
-import {
-  Attribute,
-  Component,
-  Directive,
-  OnInit,
-  Input,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  ContentChild,
-  TemplateRef,
-  ViewChild
-} from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ContentChild,
+  Directive,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { Md5 } from 'ts-md5/dist/md5';
 
 export type AvatarColor = 'primary' | 'accent' | 'gradient' | 'initials';
@@ -58,7 +57,7 @@ export class AvatarComponent implements OnInit {
   getCode(str: string) {
     const charCodes = str
       .split('')
-      .map(char => char.charCodeAt(0))
+      .map((char) => char.charCodeAt(0))
       .join('');
     return parseInt(charCodes, 10);
   }
