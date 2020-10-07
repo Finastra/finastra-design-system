@@ -32,11 +32,11 @@ export class GlobalSearchOverlayService {
     componentRef.instance.searchTermChange.subscribe((value: any) => {
       if (config) config.searchTermChange(value);
     });
-    componentRef.instance.itemClicked.subscribe((value: any) => {
-      if (config) config.itemClicked(value);
+    componentRef.instance.itemClick.subscribe((value: any) => {
+      if (config) config.itemClick(value);
     });
-    componentRef.instance.searchClosed.subscribe(() => {
-      if (config) config.searchClosed();
+    componentRef.instance.searchClose.subscribe((value: any) => {
+      if (config) config.searchClose(value);
     });
     return [searchOverlayRef, componentRef];
   }

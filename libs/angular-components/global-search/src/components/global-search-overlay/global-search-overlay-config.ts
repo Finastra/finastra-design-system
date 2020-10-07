@@ -12,7 +12,7 @@ export interface SearchConfig {
   maxItems?: number;
   itemsLayout?: 'row' | 'column';
   searchTermChange: CallableFunction;
-  itemClicked: CallableFunction;
-  searchClosed: CallableFunction;
+  itemClick: CallableFunction;
+  searchClose: CallableFunction;
   results: Observable<any[]>;
 }
