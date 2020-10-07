@@ -74,7 +74,6 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
     this.closeSearch();
-    this.searchClose.emit();
   }
 
   ngAfterViewInit() {
@@ -105,6 +104,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   closeSearch() {
     this.ref.close();
+    this.searchClose.emit();
   }
 
   onItemClick(item: any) {
