@@ -11,7 +11,6 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { fromEvent, Observable, ReplaySubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ResultGroup } from '../../global-search.model';
