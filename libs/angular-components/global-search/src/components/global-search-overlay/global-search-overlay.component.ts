@@ -64,9 +64,9 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   @Input() results: Observable<ResultGroup[]> = this.config.results;
 
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
-  @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() itemClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchClose: EventEmitter<void> = new EventEmitter<void>();
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
-  @ViewChild('searchIcon', { static: true }) searchIcon!: ElementRef;
 
   private searchDebounce = 300;
 
@@ -104,10 +104,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   closeSearch() {
     this.ref.close();
+    this.searchClose.emit();
   }
 
   onItemClick(item: any) {
-    this.itemClicked.emit(item);
+    this.itemClick.emit(item);
   }
 
   toggleFilter(resultGroup: ResultGroup) {
