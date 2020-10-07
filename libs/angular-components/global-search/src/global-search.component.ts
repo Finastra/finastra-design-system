@@ -10,7 +10,7 @@ import {
   TemplateRef,
   ViewEncapsulation
 } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
+
 import { Subject } from 'rxjs';
 import { GlobalSearchOverlayComponent } from '..';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
@@ -36,15 +36,12 @@ export class UxgGlobalSearch implements OnChanges {
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
+  @Output() searchClosed = new EventEmitter<void>();
 
   results$ = new Subject<any[]>();
 
   get searchInput(): ElementRef {
     return this.componentRef?.instance.searchInput!;
-  }
-
-  get searchIcon(): MatIcon {
-    return this.componentRef?.instance.searchIcon!;
   }
 
   constructor(private overlayService: GlobalSearchOverlayService) {}
@@ -68,6 +65,7 @@ export class UxgGlobalSearch implements OnChanges {
         this.resultItemClick.emit($event);
         if (this.ref) this.ref.close();
       },
+      searchClosed: ($event: any) => this.searchClosed.emit($event),
       results: this.results$
     });
   }

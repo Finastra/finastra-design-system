@@ -35,7 +35,9 @@ export class GlobalSearchOverlayService {
     componentRef.instance.itemClicked.subscribe((value: any) => {
       if (config) config.itemClicked(value);
     });
-
+    componentRef.instance.searchClosed.subscribe(() => {
+      if (config) config.searchClosed();
+    });
     return [searchOverlayRef, componentRef];
   }
 

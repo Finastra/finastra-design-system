@@ -66,8 +66,8 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() itemClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchClosed: EventEmitter<void> = new EventEmitter<void>();
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
-  @ViewChild('searchIcon', { static: true }) searchIcon!: MatIcon;
 
   private searchDebounce = 300;
 
@@ -75,6 +75,7 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
 
   @HostListener('document:keydown.escape', ['$event']) handleKeydown(event: KeyboardEvent) {
     this.closeSearch();
+    this.searchClosed.emit();
   }
 
   ngAfterViewInit() {
