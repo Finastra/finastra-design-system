@@ -63,6 +63,7 @@ export class UxgGlobalSearch implements OnChanges {
       searchTermChange: ($event: any) => this.searchTermChange.emit($event),
       itemClick: ($event: any) => {
         this.resultItemClick.emit($event);
+        this.searchClose.emit($event);
         if (this.ref) this.ref.close();
       },
       searchClose: ($event: any) => this.searchClose.emit($event),
