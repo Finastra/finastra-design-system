@@ -29,6 +29,7 @@ $uxg-charcoal: #414141;
 :root {
   --color-primary: 0, 158, 224;
   --color-primary-100: 0, 158, 224;
+  --color-secondary: 16,71, 224;
 }
 
 $uxg-violet: (
@@ -62,7 +63,7 @@ $uxg-fuchsia: (
   200: #f66cd4,
   300: #e453bf,
   400: #d648b2,
-  500: #c137a2,
+  500: rgba(var(--color-secondary), 1),
   600: #ac258d,
   700: #9d1880,
   800: #910d75,

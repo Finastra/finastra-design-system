@@ -7,15 +7,24 @@ import { ColorEvent } from 'ngx-color';
   styleUrls: ['./theme-builder-demo.component.scss']
 })
 export class ThemeBuilderComponent {
-  state = '105, 78, 214';
+  statePrimary = '0, 158, 224';
+  stateSecondary = '16, 71, 224';
   constructor() {}
 
-  changeComplete($event: ColorEvent) {
+  changePrimaryComplete($event: ColorEvent) {
     console.log($event);
     document.documentElement.style.setProperty(
       '--color-primary',
       $event.color.rgb.r + ',' + $event.color.rgb.g + ',' + $event.color.rgb.b
     );
     //document.documentElement.style.setProperty("--color-primary-100", $event.color.rgb.r+', '+$event.color.rgb.g+', '+$event.color.rgb.b);
+  }
+
+  changeSecondaryComplete($event: ColorEvent) {
+    console.log($event);
+    document.documentElement.style.setProperty(
+      '--color-secondary',
+      $event.color.rgb.r + ',' + $event.color.rgb.g + ',' + $event.color.rgb.b
+    );
   }
 }

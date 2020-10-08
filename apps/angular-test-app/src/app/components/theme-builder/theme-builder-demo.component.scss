@@ -1,7 +1,15 @@
-.swatch {
+.swatchPrimary {
     width: 40px;
     height: 40px;
     background-color: rgba(var(--color-primary), 1);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.swatchSecondary {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--color-secondary), 1);
     cursor: pointer;
 }
 
