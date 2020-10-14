@@ -149,6 +149,14 @@ context('UI Elements', () => {
   });
 
   ////////
+  // LINK
+  ////////
+
+  it('match link', () => {
+    cy.get('.link-test').scrollIntoView().matchImageSnapshot();
+  });
+
+  ////////
   // SLIDE-TOGGLE
   ////////
 
