@@ -7,11 +7,13 @@
     color: mat-color($primary, default);
   }
 
-  .uxg-text-accent {
+  .uxg-text-accent,
+  .uxg-text-secondary {
     color: mat-color($accent, default);
   }
 
-  .uxg-text-warn {
+  .uxg-text-warn,
+  .uxg-text-error {
     color: mat-color($warn, default);
   }
 }
