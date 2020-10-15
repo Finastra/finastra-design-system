@@ -1,0 +1,19 @@
+@mixin uxg-color-utility($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .uxg-text-primary {
+    color: mat-color($primary, default);
+  }
+
+  .uxg-text-accent,
+  .uxg-text-secondary {
+    color: mat-color($accent, default);
+  }
+
+  .uxg-text-warn,
+  .uxg-text-error {
+    color: mat-color($warn, default);
+  }
+}
