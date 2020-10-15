@@ -1,14 +1,13 @@
 @mixin uxg-link-theme($theme) {
-   $primary: map-get($theme, primary);
-   $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
-   a {
+  .uxg-link {
     color: map-get($primary, default);
     text-decoration: underline;
-   }
 
-   a:hover {
-    color: map-get($accent, default);
-   }
-
+    &:hover {
+      color: map-get($accent, default);
+    }
+  }
 }
