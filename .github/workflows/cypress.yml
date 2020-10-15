@@ -26,8 +26,8 @@ jobs:
           cache-key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
       - uses: actions/upload-artifact@v2
         # Comment if and switch path when getting updated snapshots
-        # if: failure()
+        if: failure()
         with:
           name: cypress-screenshots
-          # path: cypress/snapshots/**/__diff_output__
-          path: cypress/snapshots
+          path: cypress/snapshots/**/__diff_output__
+          # path: cypress/snapshots
