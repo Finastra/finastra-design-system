@@ -16,6 +16,12 @@
     </uxg-avatar>
     <h6 class="uxg-h6">{{ user.username }}</h6>
     <div class="uxg-caption">{{ user.email }}</div>
+
+    <ng-container *ngIf="hasDetails">
+      <div>
+        <ng-container *ngTemplateOutlet="uxgUserProfilePanelDetails || detailsTemplate"></ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>
 

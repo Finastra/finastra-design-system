@@ -11,6 +11,7 @@ import {
 import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
+import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
 import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
 import { MatMenuTrigger } from '@angular/material/menu';
 export type HeaderType = 'hero' | 'title';
@@ -42,6 +43,9 @@ export class UxgUserProfileMenuComponent {
 
   @ContentChild(UxgUserProfilePanelActionsDirective, { read: TemplateRef, static: true })
   uxgUserProfilePanelActions: TemplateRef<any> | undefined;
+
+  @ContentChild(UxgUserProfilePanelDetailsDirective, { read: TemplateRef, static: true })
+  uxgUserProfilePanelDetails: TemplateRef<any> | undefined;
 
   constructor(@Attribute('dense') public dense: any) {}
 }
