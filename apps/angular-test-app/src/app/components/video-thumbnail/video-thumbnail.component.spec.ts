@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VideoThumbnailModule } from '@ffdc/uxg-angular-components/video-thumbnail';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 describe('VideoThumbnailDemoComponent', () => {
   let component: VideoThumbnailDemoComponent;
@@ -28,7 +29,12 @@ describe('VideoThumbnailDemoComponent', () => {
         MatInputModule,
         MatCheckboxModule,
         FormsModule,
-        VideoThumbnailModule
+        VideoThumbnailModule,
+        MatDialogModule
+      ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
       ],
       declarations: [VideoThumbnailDemoComponent]
     }).compileComponents();
