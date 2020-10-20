@@ -1,0 +1,38 @@
+@mixin uxg-video-thumbnail($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $icon: map-get($foreground, icon);
+    $base: map-get($foreground, base);
+    $card: map-get($background, card);
+
+    a {
+        display: block;
+        position: relative;
+
+        &:hover mat-icon {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 0 9px 0px $base;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        mat-icon {
+            background: $icon;
+            border-radius: 50%;
+            color: $card;
+            transform: scale(1.2);
+            padding: 6px;
+        }
+    }
+}

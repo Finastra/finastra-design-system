@@ -61,6 +61,11 @@ import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input'
 import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
 import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
 import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
+import { VideoThumbnailModule } from '@ffdc/uxg-angular-components/video-thumbnail';
+import {
+  VideoThumbnailDemoComponent,
+  VideoDialogComponent
+} from './components/video-thumbnail/video-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +96,9 @@ import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
     SearchInputDemoComponent,
     ChangelogDemoComponent,
     BreadcrumbDemoComponent,
-    ToasterDemoComponent
+    ToasterDemoComponent,
+    VideoThumbnailDemoComponent,
+    VideoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -129,7 +136,8 @@ import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
     UxgSearchInputModule,
     UXGChangelogModule,
     UxgBreadcrumbModule,
-    ToasterModule
+    ToasterModule,
+    VideoThumbnailModule
   ],
   providers: [],
   exports: [],
