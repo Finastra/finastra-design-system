@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { VideoThumbnailModule } from '@ffdc/uxg-angular-components/video-thumbnail';
 
 describe('VideoThumbnailDemoComponent', () => {
   let component: VideoThumbnailDemoComponent;
@@ -26,7 +27,8 @@ describe('VideoThumbnailDemoComponent', () => {
         MatButtonModule,
         MatInputModule,
         MatCheckboxModule,
-        FormsModule
+        FormsModule,
+        VideoThumbnailModule
       ],
       declarations: [VideoThumbnailDemoComponent]
     }).compileComponents();

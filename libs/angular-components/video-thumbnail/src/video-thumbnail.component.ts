@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { VideoWEvent, Video } from './video-thumbnail.interface';
 
 @Component({
-  selector: 'ux-hub-video-thumbnail',
+  selector: 'uxg-video-thumbnail',
   templateUrl: './video-thumbnail.component.html',
   styleUrls: ['./video-thumbnail.component.scss']
 })
