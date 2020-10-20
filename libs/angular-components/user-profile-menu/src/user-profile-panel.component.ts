@@ -13,6 +13,7 @@ import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avata
 import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
+import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
 import { HeaderType } from './user-profile-menu.component';
 
 @Component({
@@ -33,6 +34,7 @@ export class UxgUserProfilePanelComponent implements AfterContentInit {
 
   @Input() contentTemplate?: TemplateRef<any>;
   @Input() actionsTemplate?: TemplateRef<any>;
+  @Input() detailsTemplate?: TemplateRef<any>;
 
   @ViewChild('avatarImage', { read: TemplateRef, static: true })
   avatarImage!: TemplateRef<any>;
@@ -43,13 +45,18 @@ export class UxgUserProfilePanelComponent implements AfterContentInit {
   @ContentChild(UxgUserProfilePanelActionsDirective, { read: TemplateRef, static: true })
   uxgUserProfilePanelActions: TemplateRef<any> | undefined;
 
+  @ContentChild(UxgUserProfilePanelDetailsDirective, { read: TemplateRef, static: true })
+  uxgUserProfilePanelDetails: TemplateRef<any> | undefined;
+
   hasContent = false;
   hasFooter = false;
+  hasDetails = false;
 
   constructor() {}
 
   ngAfterContentInit() {
     this.hasContent = !!this.uxgUserProfilePanelContent || !!this.contentTemplate;
     this.hasFooter = !!this.uxgUserProfilePanelActions || !!this.actionsTemplate;
+    this.hasDetails = !!this.uxgUserProfilePanelDetails || !!this.detailsTemplate;
   }
 }

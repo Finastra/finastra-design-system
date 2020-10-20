@@ -7,6 +7,7 @@ import { AvatarModule } from '@ffdc/uxg-angular-components/avatar';
 import { UxgUserProfilePanelComponent } from './user-profile-panel.component';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
+import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
 import { UxgUserProfileMenuComponent } from './user-profile-menu.component';
 
 @NgModule({
@@ -15,13 +16,15 @@ import { UxgUserProfileMenuComponent } from './user-profile-menu.component';
     UxgUserProfileMenuComponent,
     UxgUserProfilePanelComponent,
     UxgUserProfilePanelActionsDirective,
-    UxgUserProfilePanelContentDirective
+    UxgUserProfilePanelContentDirective,
+    UxgUserProfilePanelDetailsDirective
   ],
   declarations: [
     UxgUserProfilePanelComponent,
     UxgUserProfileMenuComponent,
     UxgUserProfilePanelActionsDirective,
-    UxgUserProfilePanelContentDirective
+    UxgUserProfilePanelContentDirective,
+    UxgUserProfilePanelDetailsDirective
   ]
 })
 export class UxgUserProfileMenuModule {}

@@ -51,9 +51,14 @@
   </uxg-user-profile-menu>
 </div>
 
-<h5 class="uxg-h5">Avatar with contents and actions</h5>
+<h5 class="uxg-h5">Avatar with contents and actions and details</h5>
 <div fxLayout class="example-row">
   <uxg-user-profile-menu color="initials" [user]="vinh" headerType="hero">
+    <ng-template uxgUserProfilePanelDetails>
+      <div class="uxg-subtitle-1">Employee of the month</div>
+      <div class="uxg-subtitle-2">Finastra</div>
+      <div class="uxg-subtitle-3">Design System Team</div>
+    </ng-template>
     <ng-template uxgUserProfilePanelActions>
       <button mat-flat-button color="primary" dense>
         <mat-icon>exit_to_app</mat-icon>
@@ -62,6 +67,9 @@
     </ng-template>
   </uxg-user-profile-menu>
   <uxg-user-profile-menu [user]="user1">
+    <ng-template uxgUserProfilePanelDetails>
+      <div class="uxg-subtitle-3">Design System Team</div>
+    </ng-template>
     <ng-template uxgUserProfilePanelContent>
       <button mat-menu-item>
         <mat-icon>dashboard</mat-icon>
