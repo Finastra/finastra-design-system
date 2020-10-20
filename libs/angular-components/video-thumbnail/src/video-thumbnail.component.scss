@@ -1,1 +1,31 @@
-@import 'angular-theme/lib/core/style/spacing';
+@import "angular-theme/lib/core/style/spacing";
+@import "~@angular/material/theming";
+
+img {
+    width: 100%;
+    border-radius: 5px;
+    @include mat-elevation(8);
+}
+
+a {
+    display: block;
+    position: relative;
+
+    &:hover mat-icon {
+        transform: scale(1.1);
+    }
+}
+
+.play-button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    mat-icon {
+        border-radius: 50%;
+        transform: scale(1.2);
+        padding: 6px;
+    }
+}
