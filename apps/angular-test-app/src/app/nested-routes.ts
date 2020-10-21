@@ -22,6 +22,7 @@ import { SearchInputDemoComponent } from './components/search-input-demo/search-
 import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
 import { BreadcrumbDemoComponent } from './components/breadcrumb-demo/breadcrumb-demo.component';
 import { ToasterDemoComponent } from './components/toaster-demo/toaster-demo.component';
+import { VideoThumbnailDemoComponent } from './components/video-thumbnail/video-thumbnail.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
@@ -57,7 +58,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'search-input', component: SearchInputDemoComponent, data: { title: 'Search Input' } },
       { path: 'changelog', component: ChangelogDemoComponent, data: { title: 'Changelog' } },
       { path: 'breadcrumb', component: BreadcrumbDemoComponent, data: { title: 'Breadcrumb' } },
-      { path: 'toaster', component: ToasterDemoComponent, data: { title: 'Toaster' } }
+      { path: 'toaster', component: ToasterDemoComponent, data: { title: 'Toaster' } },
+      { path: 'video-thumbnail', component: VideoThumbnailDemoComponent, data: { title: 'Video Thumbnail' } }
     ]
   }
 ].map((groups) => {

@@ -10,6 +10,7 @@
     "build": "ng build",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js",
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
+    "dev": "npm start -- -o",
     "pretest": "rimraf ./coverage ./testresults",
     "posttest": "node ./scripts/jest-join-coverage.js",
     "test": "ng test",

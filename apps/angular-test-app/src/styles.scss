@@ -1,21 +1,22 @@
-@import 'angular-theme/lib/core/core';
-@import 'angular-theme/lib/core/theming/all-theme';
-@import 'angular-theme/lib/core/typography/typography';
-@import 'angular-theme/theme-variables';
+@import "angular-theme/lib/core/core";
+@import "angular-theme/lib/core/theming/all-theme";
+@import "angular-theme/lib/core/typography/typography";
+@import "angular-theme/theme-variables";
 
-@import 'global-search/src/global-search.theme';
-@import 'vector-map/src/vector-map.theme';
-@import 'chart/src/chart.theme';
-@import 'filter/filter-tags/src/filter-tags.theme';
-@import 'filter/filter-tree/src/filter-tree.theme';
-@import 'filter/filter-group/src/filter-group.theme';
-@import 'skeleton-text/src/skeleton-text.theme';
-@import 'wizard/src/wizard.theme';
-@import 'banner/src/banner.theme';
-@import 'changelog/src/changelog.theme';
-@import 'toaster/src/toaster.theme';
+@import "global-search/src/global-search.theme";
+@import "vector-map/src/vector-map.theme";
+@import "chart/src/chart.theme";
+@import "filter/filter-tags/src/filter-tags.theme";
+@import "filter/filter-tree/src/filter-tree.theme";
+@import "filter/filter-group/src/filter-group.theme";
+@import "skeleton-text/src/skeleton-text.theme";
+@import "wizard/src/wizard.theme";
+@import "banner/src/banner.theme";
+@import "changelog/src/changelog.theme";
+@import "toaster/src/toaster.theme";
+@import "video-thumbnail/src/video-thumbnail.theme";
 
-@import './app/components/repeater-demo/repeater-card-example/repeater-card-example.theme';
+@import "./app/components/repeater-demo/repeater-card-example/repeater-card-example.theme";
 
 $uxg-typography: uxg-typography-config();
 
@@ -28,19 +29,20 @@ $uxg-typography: uxg-typography-config();
 @include uxg-changelog-typography($uxg-typography);
 
 @mixin app-theme($theme) {
-    @include uxg-material-theme($theme);
-    @include uxg-filter-group-theme($theme);
-    @include uxg-filter-tags-theme($theme);
-    @include uxg-filter-tree-theme($theme);
-    @include uxg-global-search-theme($theme);
-    @include uxg-vector-map-theme($theme);
-    @include uxg-chart-theme($theme);
-    @include uxg-wizard-theme($theme);
-    @include uxg-banner-theme($theme);
-    @include uxg-skeleton-text-theme($theme);
-    @include theme-repeater-card-example($theme);
-    @include uxg-changelog-theme($theme);
-    @include uxg-toaster-theme($theme);
+  @include uxg-material-theme($theme);
+  @include uxg-filter-group-theme($theme);
+  @include uxg-filter-tags-theme($theme);
+  @include uxg-filter-tree-theme($theme);
+  @include uxg-global-search-theme($theme);
+  @include uxg-vector-map-theme($theme);
+  @include uxg-chart-theme($theme);
+  @include uxg-wizard-theme($theme);
+  @include uxg-banner-theme($theme);
+  @include uxg-skeleton-text-theme($theme);
+  @include theme-repeater-card-example($theme);
+  @include uxg-changelog-theme($theme);
+  @include uxg-toaster-theme($theme);
+  @include uxg-video-thumbnail($theme);
 }
 
 @include app-theme($uxg-light-theme);
