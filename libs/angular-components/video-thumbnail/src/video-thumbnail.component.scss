@@ -2,30 +2,45 @@
 @import "~@angular/material/theming";
 
 img {
-    width: 100%;
-    border-radius: 5px;
-    @include mat-elevation(8);
+  width: 100%;
+  border-radius: 4px;
+  @include mat-elevation(2);
 }
 
 a {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 
-    &:hover mat-icon {
-        transform: scale(1.1);
+  &:hover {
+    .play-button {
+      padding: 7px;
     }
+
+    .mat-icon {
+      transform: scale(1.4);
+    }
+  }
 }
 
 .play-button {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  height: 40px;
+  width: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 
-    mat-icon {
-        border-radius: 50%;
-        transform: scale(1.2);
-        padding: 6px;
-    }
+  &[dense] {
+    width: 32px;
+    height: 32px;
+  }
+
+  &[large] {
+    width: 64px;
+    height: 64px;
+  }
 }

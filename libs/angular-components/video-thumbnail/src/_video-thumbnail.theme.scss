@@ -6,9 +6,9 @@
 
     uxg-video-thumbnail {
         .play-button {
-            mat-icon {
-                background: $icon;
-                color: $card;
+            background: rgba(#212121, 0.36);
+            .mat-icon {
+                color: white;
             }
         }
     }
