@@ -8,6 +8,8 @@
     "clean": "rimraf dist coverage junit.xml",
     "start": "ng serve",
     "build": "ng build",
+    "build:theme": "ng build angular-theme --prod",
+    "dev": "ng serve -o",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js",
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
     "pretest": "rimraf ./coverage ./testresults",
