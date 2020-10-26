@@ -4,15 +4,16 @@
   $card-wave: map-get($background, card-wave);
 
   .uxg-card-product.mat-card {
-    background: bottom left / 100% 130% no-repeat url($card-wave), mat-color($uxg-gradient, horizontal);
+    background: bottom left / 100% 120% no-repeat url($card-wave), mat-color($uxg-gradient, horizontal);
     color: $uxg-charcoal;
   }
 
   .uxg-card-solution.mat-card {
-    background: top left / 40% 30% no-repeat
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="132.389" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M0,0V72C39.485,41.253,86.3,19,132.389,0Z"/></svg>'),
+    background:
+      top left / 40% 30% no-repeat
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="132.389" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M0,0V72C39.485,41.253,86.3,19,132.389,0Z"/></svg>'),
       bottom right / 30% 30% no-repeat
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100.288" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M320,240V168c-40.654,36.548-80.919,59.972-100.288,72Z" transform="translate(-219.712 -168)"/></svg>'),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100.288" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M320,240V168c-40.654,36.548-80.919,59.972-100.288,72Z" transform="translate(-219.712 -168)"/></svg>'),
       top left / 100% 100% no-repeat mat-color($uxg-gradient, diagonal);
     color: mat-color($primary, default-contrast);
   }
