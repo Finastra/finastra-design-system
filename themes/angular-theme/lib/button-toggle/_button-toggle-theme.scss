@@ -2,10 +2,16 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
 
+  $button-toggle-radius: $uxg-spacing-5 / 2;
+
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       color: mat-color($foreground, secondary-text);
       border-color: mat-color($foreground, divider);
+
+      .mat-button-toggle-button {
+        border-color: transparent;
+      }
 
       &.mat-button-toggle-disabled {
         color: mat-color($foreground, secondary-text, 0.25);
@@ -21,6 +27,10 @@
         .mat-button-toggle-button,
         .mat-icon {
           color: mat-color($primary, default);
+        }
+
+        .mat-button-toggle-button {
+          border-color: mat-color($primary, default);
         }
       }
     }

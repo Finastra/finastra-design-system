@@ -34,6 +34,26 @@ $button-toggle-radius-v: $uxg-spacing-3;
 
   .mat-button-toggle {
     flex: 1;
+
+    .mat-button-toggle-button {
+      border: 1px solid;
+    }
+
+    &.mat-button-toggle-checked {
+      &:last-of-type {
+        .mat-button-toggle-button {
+          border-top-right-radius: $button-toggle-radius/2;
+          border-bottom-right-radius: $button-toggle-radius/2;
+        }
+      }
+
+      &:first-of-type {
+        .mat-button-toggle-button {
+          border-top-left-radius: $button-toggle-radius/2;
+          border-bottom-left-radius: $button-toggle-radius/2;
+        }
+      }
+    }
   }
 
   &.mat-button-toggle-vertical {
@@ -60,6 +80,10 @@ $button-toggle-radius-v: $uxg-spacing-3;
   .mat-button-toggle {
     border: 1px solid;
     border-radius: $filtering-button-toggle-radius;
+
+    .mat-button-toggle-button {
+      border: none;
+    }
   }
 
   .mat-button-toggle-label-content {
