@@ -7,6 +7,10 @@
       color: mat-color($foreground, secondary-text);
       border-color: mat-color($foreground, divider);
 
+      .mat-button-toggle-button {
+        border-color: transparent;
+      }
+
       &.mat-button-toggle-disabled {
         color: mat-color($foreground, secondary-text, 0.25);
 
@@ -22,6 +26,10 @@
         .mat-icon {
           color: mat-color($primary, default);
         }
+
+        .mat-button-toggle-button {
+          border-color: mat-color($primary, default);
+        }
       }
     }
   }
@@ -29,6 +37,10 @@
   .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       border-color: mat-color($foreground, divider);
+
+      .mat-button-toggle-button {
+        border-color: transparent;
+      }
 
       &.mat-button-toggle-checked {
         border-color: mat-color($primary, default);
