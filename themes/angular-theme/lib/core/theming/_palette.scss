@@ -17,7 +17,6 @@
     // Here is the change from the original function:
     // If the $color resolved to something different from a color, we assume it is a CSS variable
     // in the form of rgba(var(--rgba-css-var),a) and replace the 'a' value.
-    @debug $color;
     @return #{str-slice($color, 0, str-index($color, ",")) + $opacity + ")"};
   }
 
@@ -28,7 +27,11 @@ $uxg-charcoal: #414141;
 
 :root {
   --color-primary: 105, 78, 214;
+  --color-primary-lighter: 233, 229, 249;
+  --color-primary-darker: 6, 5, 70;
   --color-secondary: 193, 55, 162;
+  --color-secondary-lighter: 193, 55, 162;
+  --color-secondary-darker: 193, 55, 162;
   --gradient-stop-1: #694ed6;
   --gradient-stop-2: #c137a2;
   --gradient-stop-3: #e95247;
@@ -38,7 +41,7 @@ $uxg-charcoal: #414141;
 
 $uxg-violet: (
   50: #f7f6fd,
-  100: #e9e5f9,
+  100: rgba(var(--color-primary-lighter), 1),
   200: #d9d3f5,
   300: #b4a6ea,
   400: #8f7be1,
@@ -46,7 +49,7 @@ $uxg-violet: (
   600: #4538cb,
   700: #2123c0,
   800: #141483,
-  900: #060546,
+  900: rgba(var(--color-primary-darker), 1),
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
