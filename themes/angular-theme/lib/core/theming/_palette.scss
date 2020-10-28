@@ -36,13 +36,13 @@ $uxg-charcoal: #414141;
   --text-color-primary-lighter: 65, 65, 65;
   --text-color-primary-darker: 65, 65, 65;
   --text-color-secondary: 255, 255, 255;
-  --text-color-secondary-lighter: ;
-  --text-color-secondary-darker: ;
-  --gradient-stop-1: #694ed6;
-  --gradient-stop-2: #c137a2;
-  --gradient-stop-3: #e95247;
-  --gradient-stop-4: #e42d1a;
-  --gradient-stop-3-vert: #e40046;
+  --text-color-secondary-lighter: 65, 65, 65;
+  --text-color-secondary-darker: 255, 255, 255;
+  --gradient-stop-1: 105, 78, 214;
+  --gradient-stop-2: 193, 55, 162;
+  --gradient-stop-3: 233, 82, 71;
+  --gradient-stop-4: 230, 46, 25;
+  --gradient-stop-3-vert: 228, 0, 70;
 }
 
 $uxg-violet: (
@@ -57,8 +57,8 @@ $uxg-violet: (
   800: #141483,
   900: rgba(var(--color-primary-darker), 1),
   contrast: (
-    50: rgba(var(--text-color-primary-lighter), 1),
-    100: $dark-primary-text,
+    50: $dark-primary-text,
+    100: rgba(var(--text-color-primary-lighter), 1),
     200: $dark-primary-text,
     300: $dark-primary-text,
     400: $light-primary-text,
@@ -83,7 +83,7 @@ $uxg-fuchsia: (
   900: rgba(var(--color-secondary-darker), 1),
   contrast: (
     50: $dark-primary-text,
-    100: $dark-primary-text,
+    100: rgba(var(--text-color-secondary-lighter), 1),
     200: $dark-primary-text,
     300: $dark-primary-text,
     400: $light-primary-text,
@@ -91,7 +91,7 @@ $uxg-fuchsia: (
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
-    900: $light-primary-text,
+    900: rgba(var(--text-color-secondary-darker), 1),
   ),
 );
 
@@ -189,33 +189,33 @@ $uxg-gradient: (
   vertical:
   linear-gradient(
     180deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2),
-    var(--gradient-stop-3-vert)
+    rgba(var(--gradient-stop-1), 1),
+    rgba(var(--gradient-stop-2), 1),
+    rgba(var(--gradient-stop-3-vert), 1)
   ),
   vertical-hover:
   linear-gradient(
     180deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2) 70%,
-    var(--gradient-stop-3) 90%,
-    var(--gradient-stop-4)
+    rgba(var(--gradient-stop-1), 1),
+    rgba(var(--gradient-stop-2), 1) 70%,
+    rgba(var(--gradient-stop-3), 1) 90%,
+    rgba(var(--gradient-stop-4), 1)
   ),
   horizontal:
   linear-gradient(
     90deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2) 70%,
-    var(--gradient-stop-3) 90%,
-    var(--gradient-stop-4)
+    rgba(var(--gradient-stop-1), 1),
+    rgba(var(--gradient-stop-2), 1) 70%,
+    rgba(var(--gradient-stop-3), 1) 90%,
+    rgba(var(--gradient-stop-4), 1)
   ),
   diagonal:
   linear-gradient(
     45deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2) 70%,
-    var(--gradient-stop-3) 90%,
-    var(--gradient-stop-4)
+    rgba(var(--gradient-stop-1), 1),
+    rgba(var(--gradient-stop-2), 1) 70%,
+    rgba(var(--gradient-stop-3), 1) 90%,
+    rgba(var(--gradient-stop-4), 1)
   ),
   contrast: (
     vertical: $light-primary-text,

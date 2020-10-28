@@ -49,16 +49,16 @@ export class ThemeBuilderComponent {
       '--color-primary-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
-    document.documentElement.style.setProperty('--gradient-stop-1', $event.color.hex);
-    document.documentElement.style.setProperty('--gradient-stop-2', $event.color.hex);
+    document.documentElement.style.setProperty('--gradient-stop-1', this.rgbStringFrom($event.color.rgb));
+    document.documentElement.style.setProperty('--gradient-stop-2', this.rgbStringFrom($event.color.rgb));
     this.textContrastOnBackground($event.color.rgb, '--text-color-primary');
   }
 
   changeSecondaryComplete($event: ColorEvent) {
     document.documentElement.style.setProperty('--color-secondary', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty('--gradient-stop-3', $event.color.hex);
-    document.documentElement.style.setProperty('--gradient-stop-3-vert', $event.color.hex);
-    document.documentElement.style.setProperty('--gradient-stop-4', $event.color.hex);
+    document.documentElement.style.setProperty('--gradient-stop-3', this.rgbStringFrom($event.color.rgb));
+    document.documentElement.style.setProperty('--gradient-stop-3-vert', this.rgbStringFrom($event.color.rgb));
+    document.documentElement.style.setProperty('--gradient-stop-4', this.rgbStringFrom($event.color.rgb));
     this.textContrastOnBackground($event.color.rgb, '--text-color-secondary');
   }
 }
