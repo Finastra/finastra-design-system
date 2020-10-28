@@ -39,7 +39,8 @@ $uxg-charcoal: #414141;
   --text-color-secondary-lighter: 65, 65, 65;
   --text-color-secondary-darker: 255, 255, 255;
   --gradient-vertical: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
-  --gradient-horizontal: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1) 70%, rgba(233, 82, 71) 90%, rgba(228, 0, 70);
+  --gradient-horizontal: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1) 70%, rgba(233, 82, 71, 1) 90%,
+    rgba(228, 45, 26, 1);
 }
 
 $uxg-violet: (
