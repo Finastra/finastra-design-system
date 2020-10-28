@@ -10,7 +10,6 @@ export class ThemeBuilderComponent {
   colorShift = 150;
   statePrimary = '0, 158, 224';
   stateSecondary = '16, 71, 224';
-  constructor() {}
 
   private rgbStringFrom(rgbObject: any) {
     return rgbObject.r + ',' + rgbObject.g + ',' + rgbObject.b;
@@ -49,16 +48,25 @@ export class ThemeBuilderComponent {
       '--color-primary-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
-    document.documentElement.style.setProperty('--gradient-stop-1', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty('--gradient-stop-2', this.rgbStringFrom($event.color.rgb));
+
+    const gradient = `rgba(${this.rgbStringFrom($event.color.rgb)}, 1), rgba(${this.stateSecondary})`;
+    document.documentElement.style.setProperty('--gradient-vertical', gradient);
+    document.documentElement.style.setProperty('--gradient-horizontal', gradient);
+
     this.textContrastOnBackground($event.color.rgb, '--text-color-primary');
+
+    this.statePrimary = this.rgbStringFrom($event.color.rgb);
   }
 
   changeSecondaryComplete($event: ColorEvent) {
     document.documentElement.style.setProperty('--color-secondary', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty('--gradient-stop-3', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty('--gradient-stop-3-vert', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty('--gradient-stop-4', this.rgbStringFrom($event.color.rgb));
+
+    const gradient = `rgba(${this.statePrimary}), rgba(${this.rgbStringFrom($event.color.rgb)}, 1)`;
+    document.documentElement.style.setProperty('--gradient-vertical', gradient);
+    document.documentElement.style.setProperty('--gradient-horizontal', gradient);
+
     this.textContrastOnBackground($event.color.rgb, '--text-color-secondary');
+
+    this.stateSecondary = this.rgbStringFrom($event.color.rgb);
   }
 }
