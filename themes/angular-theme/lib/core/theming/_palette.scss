@@ -30,8 +30,14 @@ $uxg-charcoal: #414141;
   --color-primary-lighter: 233, 229, 249;
   --color-primary-darker: 6, 5, 70;
   --color-secondary: 193, 55, 162;
-  --color-secondary-lighter: 193, 55, 162;
-  --color-secondary-darker: 193, 55, 162;
+  --color-secondary-lighter: 249, 154, 224;
+  --color-secondary-darker: 141, 0, 115;
+  --text-color-primary: 255, 255, 255;
+  --text-color-primary-lighter: 65, 65, 65;
+  --text-color-primary-darker: 65, 65, 65;
+  --text-color-secondary: 255, 255, 255;
+  --text-color-secondary-lighter: ;
+  --text-color-secondary-darker: ;
   --gradient-stop-1: #694ed6;
   --gradient-stop-2: #c137a2;
   --gradient-stop-3: #e95247;
@@ -51,22 +57,22 @@ $uxg-violet: (
   800: #141483,
   900: rgba(var(--color-primary-darker), 1),
   contrast: (
-    50: $dark-primary-text,
+    50: rgba(var(--text-color-primary-lighter), 1),
     100: $dark-primary-text,
     200: $dark-primary-text,
     300: $dark-primary-text,
     400: $light-primary-text,
-    500: $light-primary-text,
+    500: rgba(var(--text-color-primary), 1),
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
-    900: $light-primary-text,
+    900: rgba(var(--text-color-primary-darker), 1),
   ),
 );
 
 $uxg-fuchsia: (
   50: #fbc9ee,
-  100: #f99ae0,
+  100: rgba(var(--color-secondary-lighter), 1),
   200: #f66cd4,
   300: #e453bf,
   400: #d648b2,
@@ -74,14 +80,14 @@ $uxg-fuchsia: (
   600: #ac258d,
   700: #9d1880,
   800: #910d75,
-  900: #8d0073,
+  900: rgba(var(--color-secondary-darker), 1),
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
     200: $dark-primary-text,
     300: $dark-primary-text,
     400: $light-primary-text,
-    500: $light-primary-text,
+    500: rgba(var(--text-color-secondary), 1),
     600: $light-primary-text,
     700: $light-primary-text,
     800: $light-primary-text,
