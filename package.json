@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/finastra-design-system",
-  "version": "0.21.12",
+  "version": "0.21.13",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,6 @@
     "start": "ng serve",
     "build": "ng build",
     "build:theme": "ng build angular-theme --prod",
-    "dev": "ng serve -o",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js",
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
     "dev": "npm start -- -o",
