@@ -1,15 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UxgUserProfileMenuComponent, UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
 
 describe('UxgUserProfileMenuComponent', () => {
   let component: UxgUserProfileMenuComponent;
   let fixture: ComponentFixture<UxgUserProfileMenuComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [UxgUserProfileMenuModule]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [UxgUserProfileMenuModule]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UxgUserProfileMenuComponent);

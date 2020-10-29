@@ -12,8 +12,8 @@ import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
   exports: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent]
 })
 export class ChartModule {
-  constructor(layzyLoadScript: LazyloadScriptService) {
-    layzyLoadScript.load('plotly.js', 'Plotly').subscribe((plotly) => {
+  constructor(lazyLoadScriptService: LazyloadScriptService) {
+    lazyLoadScriptService.load('plotly.js', 'Plotly').subscribe((plotly) => {
       PlotlyService.setPlotly(plotly);
     });
   }

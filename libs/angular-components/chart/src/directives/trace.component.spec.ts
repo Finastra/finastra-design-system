@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChartType, CHART_PLOLTLY_TYPE, ChartOrientation } from '../chart.models';
 import { TraceComponent } from './trace.component';
@@ -7,11 +7,13 @@ describe('Trace diretive', () => {
   let component: TraceComponent;
   let fixture: ComponentFixture<TraceComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TraceComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TraceComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TraceComponent);

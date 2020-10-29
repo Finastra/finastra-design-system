@@ -37,7 +37,7 @@
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
                 "bundleName": "plotly",
-                "lazy": true
+                "inject": false
               }
             ]
           },
@@ -915,9 +915,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/toaster/jest.config.js",
-            "tsConfig": "libs/angular-components/toaster/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/toaster/test-setup.ts"
+            "jestConfig": "libs/angular-components/toaster/jest.config.js"
           }
         }
       },
@@ -946,9 +944,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js",
-            "tsConfig": "libs/angular-components/video-thumbnail/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/video-thumbnail/test-setup.ts"
+            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
           }
         }
       },

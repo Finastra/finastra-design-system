@@ -480,9 +480,7 @@
   {{ element[column.name].amount }} {{ element[column.name].currency }}
 </ng-template>
 
-<ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column">
-  edit cell
-</ng-template>
+<ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column"> edit cell </ng-template>
 
 <ng-template #tableCellTable let-element="element" let-column="column" let-emiter="emiter">
   <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false">

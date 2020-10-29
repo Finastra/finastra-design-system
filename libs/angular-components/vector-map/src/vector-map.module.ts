@@ -24,8 +24,8 @@ import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
   exports: [VectorMapComponent]
 })
 export class VectorMapModule {
-  constructor(layzyLoadScript: LazyloadScriptService) {
-    layzyLoadScript.load('plotly.js', 'Plotly').subscribe((plotly) => {
+  constructor(lazyLoadScriptService: LazyloadScriptService) {
+    lazyLoadScriptService.load('plotly.js', 'Plotly').subscribe((plotly) => {
       PlotlyService.setPlotly(plotly);
     });
   }

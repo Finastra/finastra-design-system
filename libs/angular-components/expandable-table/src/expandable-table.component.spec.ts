@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,28 +41,30 @@ fdescribe('ExpandableTableComponent', () => {
   let component: ExpandableTableComponent;
   let fixture: ComponentFixture<ExpandableTableComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ExpandableTableComponent],
-      imports: [
-        MatProgressBarModule,
-        MatButtonModule,
-        MatExpansionModule,
-        MatIconModule,
-        MatInputModule,
-        MatFormFieldModule,
-        BrowserAnimationsModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatDialogModule,
-        UxgTableModule
-      ]
-    })
-      .overrideComponent(ExpandableTableComponent, {
-        set: { changeDetection: ChangeDetectionStrategy.Default }
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ExpandableTableComponent],
+        imports: [
+          MatProgressBarModule,
+          MatButtonModule,
+          MatExpansionModule,
+          MatIconModule,
+          MatInputModule,
+          MatFormFieldModule,
+          BrowserAnimationsModule,
+          MatTableModule,
+          MatCheckboxModule,
+          MatDialogModule,
+          UxgTableModule
+        ]
       })
-      .compileComponents();
-  }));
+        .overrideComponent(ExpandableTableComponent, {
+          set: { changeDetection: ChangeDetectionStrategy.Default }
+        })
+        .compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ExpandableTableComponent);
