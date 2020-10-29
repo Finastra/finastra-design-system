@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { GroupTracesComponent } from './groupTrace.component';
 import { ViewChild, Component, NO_ERRORS_SCHEMA, AfterViewInit } from '@angular/core';
 import { TraceComponent } from './trace.component';
@@ -35,16 +35,18 @@ describe('GroupTrace', () => {
   let fixtureTest: ComponentFixture<TestContainerComponent>;
   let componentTest: TestContainerComponent;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [GroupTracesComponent, TraceComponent, TestContainerComponent],
-      schemas: [NO_ERRORS_SCHEMA]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [GroupTracesComponent, TraceComponent, TestContainerComponent],
+        schemas: [NO_ERRORS_SCHEMA]
+      }).compileComponents();
 
-    fixtureTest = TestBed.createComponent(TestContainerComponent);
-    componentTest = fixtureTest.componentInstance;
-    fixtureTest.detectChanges();
-  }));
+      fixtureTest = TestBed.createComponent(TestContainerComponent);
+      componentTest = fixtureTest.componentInstance;
+      fixtureTest.detectChanges();
+    })
+  );
 
   it('should create', () => {
     fixture = TestBed.createComponent(GroupTracesComponent);

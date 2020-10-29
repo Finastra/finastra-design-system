@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComponentRepeaterComponent } from './component-repeater.component';
 import { Component, NgModule, Type, ComponentFactoryResolver } from '@angular/core';

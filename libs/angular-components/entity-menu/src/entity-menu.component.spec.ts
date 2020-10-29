@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EntityMenuComponent } from './entity-menu.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,12 +10,14 @@ describe('EntityMenuModule', () => {
   let component: EntityMenuComponent;
   let fixture: ComponentFixture<EntityMenuComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [MatButtonModule, MatIconModule, MatCardModule, MatMenuModule],
-      declarations: [EntityMenuComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [MatButtonModule, MatIconModule, MatCardModule, MatMenuModule],
+        declarations: [EntityMenuComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EntityMenuComponent);

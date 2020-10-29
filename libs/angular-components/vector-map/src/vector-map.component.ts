@@ -67,9 +67,9 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
 
   plotlyReady$: Observable<any>;
 
-  constructor(public paletteService: PaletteService, public layzyLoadScript: LazyloadScriptService) {
+  constructor(public paletteService: PaletteService, public lazyLoadScriptService: LazyloadScriptService) {
     this.click = new EventEmitter<Partial<VectorMapCountry>>();
-    this.plotlyReady$ = layzyLoadScript.load('plotly.js', 'Plotly');
+    this.plotlyReady$ = lazyLoadScriptService.load('plotly.js', 'Plotly');
   }
 
   ngOnInit() {

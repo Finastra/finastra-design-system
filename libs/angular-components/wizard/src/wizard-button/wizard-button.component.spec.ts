@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UxgWizardButtonComponent } from './wizard-button.component';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
@@ -9,12 +9,14 @@ describe('UxgWizardButtonComponent', () => {
   let component: UxgWizardButtonComponent;
   let fixture: ComponentFixture<UxgWizardButtonComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [UxgWizardButtonComponent],
-      providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UxgWizardButtonComponent],
+        providers: [WizardNavigationService, PageCollectionService, ButtonHubService]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UxgWizardButtonComponent);

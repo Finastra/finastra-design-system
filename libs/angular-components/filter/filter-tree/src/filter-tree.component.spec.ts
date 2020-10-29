@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { DebugElement, EventEmitter, SimpleChange } from '@angular/core';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -18,49 +18,51 @@ describe('FilterTreeModule', () => {
   let filterTreeDe: DebugElement;
   let filterTreeEl: Element;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatTreeModule,
-        MatIconModule
-      ],
-      declarations: [FilterTreeComponent]
-    }).compileComponents();
-    fixture = TestBed.createComponent(FilterTreeComponent);
-    component = fixture.componentInstance;
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          CommonModule,
+          BrowserAnimationsModule,
+          FormsModule,
+          ReactiveFormsModule,
+          MatCheckboxModule,
+          MatChipsModule,
+          MatIconModule,
+          MatButtonModule,
+          MatTreeModule,
+          MatIconModule
+        ],
+        declarations: [FilterTreeComponent]
+      }).compileComponents();
+      fixture = TestBed.createComponent(FilterTreeComponent);
+      component = fixture.componentInstance;
 
-    filterTreeDe = fixture.debugElement.query(By.css('.filter-tree'));
-    filterTreeEl = filterTreeDe.nativeElement;
+      filterTreeDe = fixture.debugElement.query(By.css('.filter-tree'));
+      filterTreeEl = filterTreeDe.nativeElement;
 
-    expectedFilterTreeDataSource = [
-      {
-        label: 'Consumer Banking',
-        children: [
-          {
-            label: 'Alerts'
-          },
-          {
-            label: 'Customer Management'
-          },
-          {
-            label: 'Money Movement'
-          }
-        ]
-      }
-    ];
+      expectedFilterTreeDataSource = [
+        {
+          label: 'Consumer Banking',
+          children: [
+            {
+              label: 'Alerts'
+            },
+            {
+              label: 'Customer Management'
+            },
+            {
+              label: 'Money Movement'
+            }
+          ]
+        }
+      ];
 
-    component.data = expectedFilterTreeDataSource;
-    component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
-    fixture.detectChanges();
-  }));
+      component.data = expectedFilterTreeDataSource;
+      component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
+      fixture.detectChanges();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterTreeComponent);

@@ -2,6 +2,7 @@ const name = 'toaster';
 const suiteName = 'ToasterModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [

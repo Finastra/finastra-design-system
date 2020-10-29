@@ -12,16 +12,18 @@ describe('UxgWizardPageComponent', () => {
     getPageIndex: jest.fn()
   };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [UxgWizardPageComponent],
-      providers: [
-        ButtonHubService,
-        { provide: PageCollectionService, useValue: mockPageCollection },
-        WizardNavigationService
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UxgWizardPageComponent],
+        providers: [
+          ButtonHubService,
+          { provide: PageCollectionService, useValue: mockPageCollection },
+          WizardNavigationService
+        ]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UxgWizardPageComponent);

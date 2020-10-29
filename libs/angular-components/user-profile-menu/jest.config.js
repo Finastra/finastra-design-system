@@ -1,7 +1,8 @@
-const name = 'vector-map';
-const suiteName = 'VectorMapModule';
+const name = 'user-profile-menu';
+const suiteName = 'UxgUserProfileMenuModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -18,15 +19,5 @@ module.exports = {
       }
     ]
   ],
-  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  globals: {
-    'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.spec.json',
-      stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: {
-        before: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer']
-      }
-    }
-  },
   displayName: 'user-profile-menu'
 };

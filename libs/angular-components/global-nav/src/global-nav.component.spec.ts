@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -17,23 +17,25 @@ describe('GlobalNavModule', () => {
   let component: GlobalNavComponent;
   let fixture: ComponentFixture<GlobalNavComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatButtonModule,
-        MatCardModule,
-        MatListModule,
-        NoopAnimationsModule,
-        RouterTestingModule,
-        UxgBreadcrumbModule
-      ],
-      declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          MatToolbarModule,
+          MatButtonModule,
+          MatIconModule,
+          MatSidenavModule,
+          MatButtonModule,
+          MatCardModule,
+          MatListModule,
+          NoopAnimationsModule,
+          RouterTestingModule,
+          UxgBreadcrumbModule
+        ],
+        declarations: [GlobalNavComponent, NavbarComponent, SidenavComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(GlobalNavComponent);

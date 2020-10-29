@@ -12,23 +12,25 @@ import { AppComponent } from './app.component';
 import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        MatCardModule,
-        MatSidenavModule,
-        MatSlideToggleModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        MatListModule,
-        ScrollToTopModule,
-        RouterTestingModule,
-        NoopAnimationsModule
-      ],
-      declarations: [AppComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          MatCardModule,
+          MatSidenavModule,
+          MatSlideToggleModule,
+          MatToolbarModule,
+          MatIconModule,
+          MatButtonModule,
+          MatListModule,
+          ScrollToTopModule,
+          RouterTestingModule,
+          NoopAnimationsModule
+        ],
+        declarations: [AppComponent]
+      }).compileComponents();
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

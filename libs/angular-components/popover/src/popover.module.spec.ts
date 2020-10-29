@@ -1,12 +1,14 @@
-import { async, TestBed } from '@angular/core/testing';
+import { waitForAsync, TestBed } from '@angular/core/testing';
 import { PopoverModule } from './popover.module';
 
 describe('PopoverModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [PopoverModule]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [PopoverModule]
+      }).compileComponents();
+    })
+  );
 
   it('should create', () => {
     expect(PopoverModule).toBeDefined();

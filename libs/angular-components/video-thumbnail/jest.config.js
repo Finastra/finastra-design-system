@@ -2,6 +2,7 @@ const name = 'video-thumbnail';
 const suiteName = 'VideoThumbnailModule';
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
