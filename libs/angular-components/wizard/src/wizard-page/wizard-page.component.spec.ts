@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { UxgWizardPageComponent } from './wizard-page.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ButtonHubService } from '../services/button-hub.service';
 import { PageCollectionService } from '../services/page-collection.service';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
+import { UxgWizardPageComponent } from './wizard-page.component';
 
 describe('UxgWizardPageComponent', () => {
   let component: UxgWizardPageComponent;
