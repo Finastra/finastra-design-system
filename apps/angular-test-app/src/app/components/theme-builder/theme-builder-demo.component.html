@@ -1,0 +1,10 @@
+<div class="swatchPrimary" [matMenuTriggerFor]="primaryMenu"></div>
+<div class="swatchSecondary" [matMenuTriggerFor]="secondaryMenu"></div>
+
+<mat-menu #primaryMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="statePrimary" (onChangeComplete)="changePrimaryComplete($event)"></color-sketch>
+</mat-menu>
+
+<mat-menu #secondaryMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="stateSecondary" (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
+</mat-menu>

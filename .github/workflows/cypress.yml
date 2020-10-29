@@ -13,7 +13,7 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -23,11 +23,12 @@ jobs:
         with:
           working-directory: ./
           start: npm start
-          cache-key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
+          wait-on: 'http://localhost:4200'
       - uses: actions/upload-artifact@v2
-        # Comment if and switch path when getting updated snapshots
+        # Replace if and path when getting updated snapshots
+        # if: always()
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/snapshots/**/__diff_output__
           # path: cypress/snapshots
+          path: cypress/snapshots/**/__diff_output__

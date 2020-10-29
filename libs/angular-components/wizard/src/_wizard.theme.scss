@@ -12,10 +12,9 @@
   $wizard-step-done-color: map-get($uxg-grass, 100);
   $wizard-timeline-color: mat-color($background, status-bar);
 
-  $wizard-dark-blue: mat-color($uxg-violet, 900);
-  $wizard-step-description-color: mat-color($primary, lighter);
-  $wizard-step-disabled-color: #404065;
-  $wizard-step-container-active-color: #4d4c7f;
+  $wizard-dark-blue: mat-color($primary, darker);
+  $wizard-step-description-color: mat-color($primary, lighter, 0.8);
+  $wizard-step-container-active-color: mat-color($background, background, 0.25);
 
   $wizard-dot-color: map_get($mat-grey, 200);
   $wizard-dot-active-color: mat-color($primary, default);
@@ -67,13 +66,13 @@
         }
 
         .step-description {
-          color: rgba($wizard-step-description-color, 0.8);
+          color: $wizard-step-description-color;
         }
 
         &.disabled {
           .step-title,
           .step-description {
-            color: $wizard-step-disabled-color;
+            opacity: 0.2;
           }
         }
 
@@ -107,7 +106,7 @@
         }
 
         .step-description {
-          color: rgba($wizard-step-description-color, 0.8);
+          color: $wizard-step-description-color;
         }
       }
 
