@@ -36,9 +36,7 @@
         <div class="filter-panel-tags">
           <div class="filter-panel-tags-title">
             <h5 class="uxg-h5">Tags</h5>
-            <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>
-              Clear all
-            </button>
+            <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
           <uxg-filter-tags [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
           </uxg-filter-tags>
