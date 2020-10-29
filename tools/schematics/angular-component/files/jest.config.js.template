@@ -3,7 +3,6 @@ const suiteName = '<%= className %>Module';
 
 module.exports = {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  name,
   preset: '../../../jest.config.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -19,5 +18,6 @@ module.exports = {
         ancestorSeparator: ' › '
       }
     ]
-  ]
+  ],
+  displayName: name
 };
