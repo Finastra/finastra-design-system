@@ -2,8 +2,7 @@ const name = 'video-thumbnail';
 const suiteName = 'VideoThumbnailModule';
 
 module.exports = {
-  name,
-  preset: '../../../jest.config.js',
+  preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
@@ -18,5 +17,6 @@ module.exports = {
         ancestorSeparator: ' › '
       }
     ]
-  ]
+  ],
+  displayName: 'video-thumbnail'
 };

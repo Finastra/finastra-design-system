@@ -2,8 +2,7 @@ const name = 'vector-map';
 const suiteName = 'VectorMapModule';
 
 module.exports = {
-  name,
-  preset: '../../../jest.config.js',
+  preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
@@ -24,10 +23,10 @@ module.exports = {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: [
-        'jest-preset-angular/build/InlineFilesTransformer',
-        'jest-preset-angular/build/StripStylesTransformer'
-      ]
+      astTransformers: {
+        before: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer']
+      }
     }
-  }
+  },
+  displayName: 'user-profile-menu'
 };
