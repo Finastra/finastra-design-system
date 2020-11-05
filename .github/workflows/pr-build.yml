@@ -68,6 +68,7 @@ jobs:
           name: "uxg-angular-components"
           path: "./dist/libs/angular-components"
 
+        # Deploy
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
