@@ -69,6 +69,7 @@ export class FilterTreeComponent implements OnChanges {
     return this._data;
   }
 
+  @Input() multipleSelection = true;
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
   constructor(private hostElement: ElementRef) {
@@ -82,7 +83,7 @@ export class FilterTreeComponent implements OnChanges {
         ? (this.selectedData = changes.selectedData.currentValue)
         : (this.selectedData = this.getSelectedNodes(this.dataSource.data));
 
-      this.checkListSelection = new SelectionModel<TreeNode>(true, this.selectedData);
+      this.checkListSelection = new SelectionModel<TreeNode>(this.multipleSelection, this.selectedData);
       if (this.subscription) {
         this.subscription.unsubscribe();
       }
