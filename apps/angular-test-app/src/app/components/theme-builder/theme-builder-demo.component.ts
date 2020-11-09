@@ -8,7 +8,7 @@ import { ColorEvent, RGB, RGBA } from 'ngx-color';
 })
 export class ThemeBuilderComponent {
   colorShift = 150;
-  statePrimary = '0, 158, 224';
+  statePrimary = '105, 78, 214';
   stateSecondary = '16, 71, 224';
   stateWarn = '228, 0, 70';
 
@@ -51,8 +51,7 @@ export class ThemeBuilderComponent {
     );
 
     const gradient = `rgba(${this.rgbStringFrom($event.color.rgb)}, 1), rgba(${this.stateSecondary})`;
-    document.documentElement.style.setProperty('--gradient-vertical', gradient);
-    document.documentElement.style.setProperty('--gradient-horizontal', gradient);
+    document.documentElement.style.setProperty('--gradient', gradient);
 
     this.textContrastOnBackground($event.color.rgb, '--text-color-primary');
 
@@ -71,8 +70,7 @@ export class ThemeBuilderComponent {
     );
 
     const gradient = `rgba(${this.statePrimary}), rgba(${this.rgbStringFrom($event.color.rgb)}, 1)`;
-    document.documentElement.style.setProperty('--gradient-vertical', gradient);
-    document.documentElement.style.setProperty('--gradient-horizontal', gradient);
+    document.documentElement.style.setProperty('--gradient', gradient);
 
     this.textContrastOnBackground($event.color.rgb, '--text-color-secondary');
 

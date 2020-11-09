@@ -44,12 +44,7 @@ $uxg-charcoal: #414141;
   --text-color-warn: 255, 255, 255;
   --text-color-warn-lighter: 255, 255, 255;
   --text-color-warn-darker: 255, 255, 255;
-  --gradient-vertical: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
-  --gradient-horizontal:
-    rgba(105, 78, 214, 1),
-    rgba(193, 55, 162, 1) 70%,
-    rgba(233, 82, 71, 1) 90%,
-    rgba(228, 45, 26, 1);
+  --gradient: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
 }
 
 $uxg-violet: (
@@ -193,13 +188,11 @@ $uxg-ocean: (
 );
 
 $uxg-gradient: (
-  vertical: linear-gradient(180deg, var(--gradient-vertical)),
-  vertical-hover: linear-gradient(180deg, var(--gradient-horizontal)),
-  horizontal: linear-gradient(90deg, var(--gradient-horizontal)),
-  diagonal: linear-gradient(45deg, var(--gradient-horizontal)),
+  vertical: linear-gradient(180deg, var(--gradient)),
+  horizontal: linear-gradient(90deg, var(--gradient)),
+  diagonal: linear-gradient(45deg, var(--gradient)),
   contrast: (
     vertical: $light-primary-text,
-    vertical-hover: $light-primary-text,
     horizontal: $light-primary-text,
     diagonal: $light-primary-text,
   ),
