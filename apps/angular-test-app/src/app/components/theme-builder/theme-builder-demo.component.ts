@@ -10,6 +10,7 @@ export class ThemeBuilderComponent {
   colorShift = 150;
   statePrimary = '0, 158, 224';
   stateSecondary = '16, 71, 224';
+  stateWarn = '228, 0, 70';
 
   private rgbStringFrom(rgbObject: any) {
     return rgbObject.r + ',' + rgbObject.g + ',' + rgbObject.b;
@@ -60,6 +61,14 @@ export class ThemeBuilderComponent {
 
   changeSecondaryComplete($event: ColorEvent) {
     document.documentElement.style.setProperty('--color-secondary', this.rgbStringFrom($event.color.rgb));
+    document.documentElement.style.setProperty(
+      '--color-secondary-lighter',
+      this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
+    );
+    document.documentElement.style.setProperty(
+      '--color-secondary-darker',
+      this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
+    );
 
     const gradient = `rgba(${this.statePrimary}), rgba(${this.rgbStringFrom($event.color.rgb)}, 1)`;
     document.documentElement.style.setProperty('--gradient-vertical', gradient);
@@ -68,5 +77,21 @@ export class ThemeBuilderComponent {
     this.textContrastOnBackground($event.color.rgb, '--text-color-secondary');
 
     this.stateSecondary = this.rgbStringFrom($event.color.rgb);
+  }
+
+  changeWarnComplete($event: ColorEvent) {
+    document.documentElement.style.setProperty('--color-warn', this.rgbStringFrom($event.color.rgb));
+    document.documentElement.style.setProperty(
+      '--color-warn-lighter',
+      this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
+    );
+    document.documentElement.style.setProperty(
+      '--color-warn-darker',
+      this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
+    );
+
+    this.textContrastOnBackground($event.color.rgb, '--text-color-warn');
+
+    this.stateWarn = this.rgbStringFrom($event.color.rgb);
   }
 }
