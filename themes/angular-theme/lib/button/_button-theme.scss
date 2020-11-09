@@ -18,6 +18,22 @@
     }
   }
 
+  .mat-flat-button,
+  .mat-raised-button,
+  .mat-fab,
+  .mat-mini-fab {
+    &.mat-primary,
+    &.mat-accent,
+    &.mat-warn {
+      & .mat-ripple-element {
+        // since the use of CSS variables,
+        // opacity is already set on rgba background-color.
+        // see #288
+        opacity: unset;
+      }
+    }
+  }
+
   .mat-icon-button {
     &.mat-neutral,
     &.mat-gradient {
