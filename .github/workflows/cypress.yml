@@ -25,7 +25,7 @@ jobs:
           start: npm start
           wait-on: 'http://localhost:4200'
       - uses: actions/upload-artifact@v2
-        Replace if and path when getting updated snapshots
+        # Replace if and path when getting updated snapshots
         if: always()
         # if: failure()
         with:
