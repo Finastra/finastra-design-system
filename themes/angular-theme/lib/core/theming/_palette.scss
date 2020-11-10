@@ -35,6 +35,7 @@ $uxg-charcoal: #414141;
   --color-warn: 228, 0, 70;
   --color-warn-lighter: 234, 63, 116;
   --color-warn-darker: 159, 0, 48;
+  --color-gradient: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
   --text-color-primary: 255, 255, 255;
   --text-color-primary-lighter: 65, 65, 65;
   --text-color-primary-darker: 65, 65, 65;
@@ -44,7 +45,7 @@ $uxg-charcoal: #414141;
   --text-color-warn: 255, 255, 255;
   --text-color-warn-lighter: 255, 255, 255;
   --text-color-warn-darker: 255, 255, 255;
-  --gradient: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
+  --text-color-gradient: 255, 255, 255;
 }
 
 $uxg-violet: (
@@ -188,13 +189,13 @@ $uxg-ocean: (
 );
 
 $uxg-gradient: (
-  vertical: linear-gradient(180deg, var(--gradient)),
-  horizontal: linear-gradient(90deg, var(--gradient)),
-  diagonal: linear-gradient(45deg, var(--gradient)),
+  vertical: linear-gradient(180deg, var(--color-gradient)),
+  horizontal: linear-gradient(90deg, var(--color-gradient)),
+  diagonal: linear-gradient(45deg, var(--color-gradient)),
   contrast: (
-    vertical: $light-primary-text,
-    horizontal: $light-primary-text,
-    diagonal: $light-primary-text,
+    vertical: rgba(var(--text-color-gradient), 1),
+    horizontal: rgba(var(--text-color-gradient), 1),
+    diagonal: rgba(var(--text-color-gradient), 1),
   ),
 );
 
