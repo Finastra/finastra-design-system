@@ -25,6 +25,10 @@ export enum UxgColumnType {
   cellTemplate = 'cellTemplate'
 }
 
+export enum UxgActionColumnPosition {
+  start = 'start',
+  end = 'end'
+}
 export interface UxgPage {
   disabled?: boolean;
   length?: number;

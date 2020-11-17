@@ -13,7 +13,8 @@ import {
   UxgSort,
   UxgColumnType,
   UxgColumn,
-  UxgPage
+  UxgPage,
+  UxgActionColumnPosition
 } from '@ffdc/uxg-angular-components/table';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -238,7 +239,7 @@ export class TableDemoComponent implements OnInit {
   ];
   subColumns: UxgColumn[] = [{ name: 'API', type: UxgColumnType.string }];
   subColumnsToDisplay = ['API'];
-
+  actionColumnPosition = UxgActionColumnPosition.end;
   constructor() {}
 
   ngOnInit(): void {
