@@ -161,8 +161,7 @@
       mat-row
       *matRowDef="let row; columns: columnsToDisplayToComponent"
       (click)="singleSelectRowClick(row)"
-      [ngClass]="isRowSelected(row) ? 'selected' : ''"
-      [ngClass]="row._class ? row._class : ''"
+      [ngClass]="[isRowSelected(row) ? 'selected' : '', row._class ? row._class : '']"
     ></tr>
     <tr
       mat-footer-row

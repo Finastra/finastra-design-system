@@ -98,7 +98,10 @@
 <p>The <code>data</code> is a data array which contains the data to display in the table.</p>
 <p>The <code>columns</code> is an array which contains the configuration of each columns.</p>
 <p>The <code>columnsToDisplay</code> is an array which columns should display in the table.</p>
-
+<p>
+  If you want to add a specific class to a row. you can add an attribute "_class" and assign the class name string to
+  it. This class will be added to the row and you can customize it by yourself
+</p>
 <p>
   There are others input and output that you can use to control the dispay style of table and interact with the table
   component.
@@ -117,7 +120,10 @@
         @Input()<br />
         data:Array&lt;any&gt;[]
       </td>
-      <td>An array of data.</td>
+      <td>
+        An array of data.
+        <span style="color: red">Do not use "_class" since it is used to add a customized class to the table row</span>
+      </td>
     </tr>
     <tr>
       <td>
