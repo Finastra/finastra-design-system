@@ -18,6 +18,22 @@
     }
   }
 
+  .mat-flat-button.cdk-keyboard-focused {
+    &.mat-primary {
+      .mat-button-focus-overlay {
+        background: mat-color($primary, default-contrast);
+        opacity: 0.24;
+      }
+    }
+
+    &.mat-accent {
+      .mat-button-focus-overlay {
+        background: mat-color($accent, default-contrast);
+        opacity: 0.24;
+      }
+    }
+  }
+
   .mat-flat-button,
   .mat-raised-button,
   .mat-fab,
