@@ -34,7 +34,7 @@ jobs:
             export NX_BASE=$(git rev-parse HEAD~1)
           fi
           echo "Base => $NX_BASE"
-          echo ::set-env name=NX_BASE::$NX_BASE
+          echo "NX_BASE=$NX_BASE" >> $GITHUB_ENV
 
       # Setup
       - name: Install Dependencies
