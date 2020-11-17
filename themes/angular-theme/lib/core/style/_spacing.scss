@@ -5,3 +5,33 @@ $uxg-spacing-3: 16px !default;
 $uxg-spacing-4: 24px !default;
 $uxg-spacing-5: 48px !default;
 $uxg-spacing-6: 96px !default;
+
+// helpers
+$spacings: (
+  $uxg-spacing-0,
+  $uxg-spacing-1,
+  $uxg-spacing-2,
+  $uxg-spacing-3,
+  $uxg-spacing-4,
+  $uxg-spacing-5,
+  $uxg-spacing-6
+);
+$sides: (top, bottom, left, right);
+
+@for $i from 1 through length($spacings) {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$i - 1} {
+      margin-#{$side}: nth($spacings, $i) !important;
+    }
+    .p#{str-slice($side, 0, 1)}-#{$i - 1} {
+      padding-#{$side}: nth($spacings, $i) !important;
+    }
+  }
+
+  .m-#{$i - 1} {
+    margin: nth($spacings, $i) !important;
+  }
+  .p-#{$i - 1} {
+    padding: nth($spacings, $i) !important;
+  }
+}
