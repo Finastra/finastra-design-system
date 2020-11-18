@@ -131,7 +131,7 @@
     "postcss": "^7.0.17",
     "prettier": "2.1.2",
     "rimraf": "^2.7.1",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "semver": "^6.3.0",
     "stylelint": "^13.3.0",
     "stylelint-config-standard": "^19.0.0",
