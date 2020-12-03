@@ -4,7 +4,7 @@
     "precommit": "git add ."
   },
   "skip": {
-    "changelog": true,
+    "changelog": true
   },
   "bumpFiles": [
     {
