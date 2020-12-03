@@ -1,0 +1,37 @@
+{
+  "skip": {
+    "changelog": true,
+    "commit": true,
+    "tag": true
+  },
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    },
+    {
+      "filename": "themes/angular-theme/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/avatar/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/banner/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/table/package.json",
+      "type": "json"
+    }
+  ]
+}
