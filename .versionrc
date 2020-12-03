@@ -30,7 +30,87 @@
       "type": "json"
     },
     {
+      "filename": "libs/angular-components/breadcrumb/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/cards/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/changelog/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/chart/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/core/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/entity-menu/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/expandable-table/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/filter/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/global-nav/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/global-search/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/popover/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/repeater/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/scroll-to-top/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/search-input/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/skeleton-text/package.json",
+      "type": "json"
+    },
+    {
       "filename": "libs/angular-components/table/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/toaster/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/user-profile-menu/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/vector-map/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/video-thumbnail/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/wizard/package.json",
       "type": "json"
     }
   ]
