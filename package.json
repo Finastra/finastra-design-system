@@ -42,7 +42,7 @@
     "help": "nx help",
     "nx": "nx",
     "testjest": "jest",
-    "release": "npx standard-version && cd theme/angular-theme && npx standard-version && cd ../../libs/angular-components && npx standard-version"
+    "release": "npx standard-version && cd themes/angular-theme && npx standard-version && cd ../../libs/angular-components && npx standard-version"
   },
   "husky": {
     "hooks": {
