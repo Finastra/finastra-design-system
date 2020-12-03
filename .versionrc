@@ -1,8 +1,9 @@
 {
+  "scripts": {
+    "postbump": "npm run changelog:theme && npm run changelog:components"
+  },
   "skip": {
     "changelog": true,
-    "commit": true,
-    "tag": true
   },
   "bumpFiles": [
     {
