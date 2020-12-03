@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "postbump": "npm run changelog:theme && npm run changelog:components"
+    "postbump": "npm run changelog:theme && npm run changelog:components",
+    "precommit": "git add ."
   },
   "skip": {
     "changelog": true,
