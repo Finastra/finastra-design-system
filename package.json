@@ -42,7 +42,7 @@
     "help": "nx help",
     "nx": "nx",
     "testjest": "jest",
-    "release": "npx standard-version -an",
+    "release": "npx standard-version -an && git push --follow-tags",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
     "changelog:components": "cd libs/angular-components && npx standard-version"
   },
