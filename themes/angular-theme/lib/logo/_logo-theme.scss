@@ -3,6 +3,6 @@
 
   .uxg-logo,
   .uxg-logo[dense] {
-    background: center / contain no-repeat url(map-get($foreground, logo));
+    background: center / contain no-repeat map-get($foreground, logo);
   }
 }
