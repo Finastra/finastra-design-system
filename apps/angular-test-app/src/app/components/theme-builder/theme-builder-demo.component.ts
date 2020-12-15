@@ -92,4 +92,19 @@ export class ThemeBuilderComponent {
 
     this.stateWarn = this.rgbStringFrom($event.color.rgb);
   }
+
+  onFileChanged($event: any) {
+    const file = $event.target.files[0];
+    const reader = new FileReader();
+    reader.addEventListener('load', ({ target }) => {
+      if (target && target.result) {
+        this.setLogo(target.result.toString());
+      }
+    });
+    reader.readAsDataURL(file);
+  }
+
+  setLogo(url: string) {
+    document.documentElement.style.setProperty('--logo', `url(${url})`);
+  }
 }
