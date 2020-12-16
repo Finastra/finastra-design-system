@@ -9,26 +9,12 @@ name: Create Release
 
 jobs:
   build:
-    name: Create Release
+    name: Test and build
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: true
-
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -46,13 +32,11 @@ jobs:
         run: |
           git fetch origin master
           git checkout -qf FETCH_HEAD
-
         # Setup
       - name: Install Dependencies
         run: npm ci --loglevel=error
       - name: Build DevKit
         run: npm run build:devkit
-
         # Test
       - name: Content list
         uses: enricomarino/actions@v2
@@ -81,7 +65,29 @@ jobs:
           name: "uxg-angular-components"
           path: "./dist/libs/angular-components"
 
-        # Publish
+  release:
+    needs: build
+    name: Create GH Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: true
+
+  publish:
+    needs: build
+    name: Publish to NPM
+    runs-on: ubuntu-latest
+    steps:
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -93,7 +99,11 @@ jobs:
           token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
           package: ./dist/themes/angular-theme/package.json
 
-        # Deploy
+  deploy:
+    needs: build
+    name: Deploy to Netlify
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
