@@ -37,7 +37,7 @@
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
                 "bundleName": "plotly",
-                "inject": false
+                "inject": true
               }
             ]
           },
@@ -52,7 +52,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
