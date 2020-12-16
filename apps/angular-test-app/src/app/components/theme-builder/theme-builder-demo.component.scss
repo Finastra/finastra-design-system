@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 .swatch {
     width: 40px;
     height: 40px;
@@ -18,4 +20,21 @@
 
 .color-picker {
     padding: 0;
+}
+
+.var {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: $uxg-spacing-3;
+
+    h5 {
+        align-self: center;
+    }
+}
+
+.logo-input {
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
 }
