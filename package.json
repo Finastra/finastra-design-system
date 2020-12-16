@@ -3,6 +3,10 @@
   "version": "0.23.0",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusionfabric/finastra-design-system.git"
+  },
   "scripts": {
     "ng": "nx",
     "clean": "rimraf dist coverage junit.xml",
@@ -38,7 +42,9 @@
     "help": "nx help",
     "nx": "nx",
     "testjest": "jest",
-    "release": "node ./scripts/release.js"
+    "release": "npx standard-version -an && git push --follow-tags",
+    "changelog:theme": "cd themes/angular-theme && npx standard-version",
+    "changelog:components": "cd libs/angular-components && npx standard-version"
   },
   "husky": {
     "hooks": {
@@ -90,11 +96,6 @@
     "@nrwl/jest": "10.4.4",
     "@nrwl/tao": "10.4.4",
     "@nrwl/workspace": "10.4.4",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^6.3.0",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/npm": "^5.1.15",
-    "@semantic-release/release-notes-generator": "^7.3.0",
     "@types/autoprefixer": "^9.7.2",
     "@types/d3": "5.7.2",
     "@types/fs-extra": "^8.0.0",
@@ -132,8 +133,8 @@
     "postcss": "^7.0.17",
     "prettier": "2.1.2",
     "rimraf": "^2.7.1",
-    "semantic-release": "^17.2.3",
     "semver": "^6.3.0",
+    "standard-version": "^9.0.0",
     "stylelint": "^13.3.0",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-formatter-pretty": "^1.1.2",

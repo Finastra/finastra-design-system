@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "postbump": "npm run changelog:theme && npm run changelog:components",
+    "precommit": "git add ."
+  },
+  "skip": {
+    "changelog": true
+  },
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    },
+    {
+      "filename": "themes/angular-theme/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "libs/angular-components/package.json",
+      "type": "json"
+    }
+  ]
+}
