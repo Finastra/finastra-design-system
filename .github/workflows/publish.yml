@@ -1,6 +1,6 @@
 on:
   release:
-    types: [published]
+    types: [published, prereleased]
 
 name: Publish
 
