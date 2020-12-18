@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.8](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.7...v0.23.8) (2020-12-18)
+
 ### [0.23.7](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.6...v0.23.7) (2020-12-16)
 
 ### [0.23.6](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.5...v0.23.6) (2020-12-16)

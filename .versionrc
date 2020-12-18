@@ -21,7 +21,7 @@
     },
     {
       "filename": "libs/angular-components/package.json",
-      "type": "json"
+      "updater": "scripts/standard-version-updater.js"
     }
   ]
 }
