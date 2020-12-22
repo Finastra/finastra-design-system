@@ -43,6 +43,14 @@ export class MultiselectTagsComponent {
     } else {
       this.add(tag);
     }
+    this.removeFocusFromChip();
+  }
+
+  removeFocusFromChip() {
+    const tmpElem = document.createElement('input');
+    document.body.appendChild(tmpElem);
+    tmpElem.focus();
+    document.body.removeChild(tmpElem);
   }
 
   add(tag: MultiselectTag) {
