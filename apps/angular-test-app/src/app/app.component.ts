@@ -34,6 +34,19 @@ export class AppComponent implements OnInit {
     const darkTheme = this.getDarkThemeValue();
     this.dark = darkTheme;
     this.setTheme(darkTheme);
+    // debugger
+  }
+
+  toggleClass(dark) {
+    const allElements = document.getElementsByClassName('uxg-card-product-name');
+
+    for (let i = 0; i < allElements.length; i++) {
+      if (dark) {
+        allElements[i].classList.add('txtWh');
+      } else {
+        allElements[i].classList.remove('txtWh');
+      }
+    }
   }
 
   toggleTheme() {
@@ -51,13 +64,16 @@ export class AppComponent implements OnInit {
 
   setTheme(dark: boolean) {
     const darkThemeClass = 'uxg-dark-theme';
+    const txtWh = 'txtWh';
 
     if (dark) {
       this.renderer.addClass(this.document.body, darkThemeClass);
       this._overlayContainer.getContainerElement().classList.add(darkThemeClass);
+      this.toggleClass(dark);
     } else {
       this.renderer.removeClass(this.document.body, darkThemeClass);
       this._overlayContainer.getContainerElement().classList.remove(darkThemeClass);
+      this.toggleClass(dark);
     }
   }
 }
