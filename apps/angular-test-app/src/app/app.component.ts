@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
     const darkTheme = this.getDarkThemeValue();
     this.dark = darkTheme;
     this.setTheme(darkTheme);
-    // debugger
   }
 
   toggleClass(dark) {
