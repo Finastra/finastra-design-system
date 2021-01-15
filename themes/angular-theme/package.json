@@ -5,6 +5,11 @@
   "license": "MIT",
   "sass": "_all-theme.scss",
   "css": "all-theme.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusionfabric/finastra-design-system.git",
+    "directory": "themes/angular-theme"
+  },
   "peerDependencies": {
     "@angular/material": "^10.0.0"
   }
