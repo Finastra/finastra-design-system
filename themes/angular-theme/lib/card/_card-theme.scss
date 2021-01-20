@@ -1,11 +1,12 @@
 @mixin uxg-card-theme($theme) {
   $primary: map-get($theme, primary);
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
   $card-wave: map-get($background, card-wave);
 
   .uxg-card-product.mat-card {
     background: bottom left / 100% 120% no-repeat url($card-wave), mat-color($uxg-gradient, horizontal);
-    color: $uxg-charcoal;
+    color: mat-color($foreground, text);
   }
 
   .uxg-card-solution.mat-card {
