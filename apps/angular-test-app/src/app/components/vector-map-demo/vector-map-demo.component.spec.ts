@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,32 +18,34 @@ describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
   let fixture: ComponentFixture<VectorMapDemoComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        MatTooltipModule,
-        FlexLayoutModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatInputModule,
-        PaletteModule,
-        VectorMapModule,
-        BrowserAnimationsModule
-      ],
-      declarations: [VectorMapDemoComponent],
-      providers: [
-        {
-          provide: LazyloadScriptService,
-          useValue: {
-            load: () => {
-              return of((global as any).Plotly);
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          CommonModule,
+          MatTooltipModule,
+          FlexLayoutModule,
+          MatSelectModule,
+          MatFormFieldModule,
+          MatInputModule,
+          PaletteModule,
+          VectorMapModule,
+          BrowserAnimationsModule
+        ],
+        declarations: [VectorMapDemoComponent],
+        providers: [
+          {
+            provide: LazyloadScriptService,
+            useValue: {
+              load: () => {
+                return of((global as any).Plotly);
+              }
             }
           }
-        }
-      ]
-    }).compileComponents();
-  }));
+        ]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapDemoComponent);

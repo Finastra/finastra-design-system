@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDemoComponent } from './table-demo.component';
 import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
@@ -16,23 +16,25 @@ describe('TableDemoComponent', () => {
   let component: TableDemoComponent;
   let fixture: ComponentFixture<TableDemoComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        UxgTableModule,
-        CommonModule,
-        MatPaginatorModule,
-        BrowserAnimationsModule,
-        MatSlideToggleModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatSidenavModule,
-        MatRadioModule,
-        FormsModule
-      ],
-      declarations: [TableDemoComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          UxgTableModule,
+          CommonModule,
+          MatPaginatorModule,
+          BrowserAnimationsModule,
+          MatSlideToggleModule,
+          MatSelectModule,
+          MatFormFieldModule,
+          MatSidenavModule,
+          MatRadioModule,
+          FormsModule
+        ],
+        declarations: [TableDemoComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TableDemoComponent);

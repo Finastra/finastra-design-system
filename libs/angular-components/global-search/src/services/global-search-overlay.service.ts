@@ -1,18 +1,19 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 import { ComponentRef, Injectable, Injector } from '@angular/core';
-
 import { SearchConfig } from '../components/global-search-overlay/global-search-overlay-config';
 import { SearchOverlayRef } from '../components/global-search-overlay/global-search-overlay-ref';
-import { GlobalSearchOverlayComponent } from '../components/global-search-overlay/global-search-overlay.component';
 import { SEARCH_CONFIG } from '../components/global-search-overlay/global-search-overlay-token';
+import { GlobalSearchOverlayComponent } from '../components/global-search-overlay/global-search-overlay.component';
+
+export type GlobalSearchOverlay = [SearchOverlayRef, ComponentRef<GlobalSearchOverlayComponent>];
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalSearchOverlayService {
   constructor(private overlay: Overlay, private parentInjector: Injector) {}
 
-  open(config?: SearchConfig) {
+  open(config?: SearchConfig): GlobalSearchOverlay {
     const overlayRef = this.overlay.create({
       positionStrategy: this.overlay.position().global(),
       scrollStrategy: this.overlay.scrollStrategies.block(),
@@ -31,11 +32,13 @@ export class GlobalSearchOverlayService {
     componentRef.instance.searchTermChange.subscribe((value: any) => {
       if (config) config.searchTermChange(value);
     });
-    componentRef.instance.itemClicked.subscribe((value: any) => {
-      if (config) config.itemClicked(value);
+    componentRef.instance.itemClick.subscribe((value: any) => {
+      if (config) config.itemClick(value);
     });
-
-    return searchOverlayRef;
+    componentRef.instance.searchClose.subscribe((value: any) => {
+      if (config) config.searchClose(value);
+    });
+    return [searchOverlayRef, componentRef];
   }
 
   getInjector(config: SearchConfig, overlayRef: SearchOverlayRef, parentInjector: Injector) {

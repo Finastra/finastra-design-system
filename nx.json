@@ -94,6 +94,12 @@
     },
     "breadcrumb": {
       "tags": []
+    },
+    "toaster": {
+      "tags": []
+    },
+    "video-thumbnail": {
+      "tags": []
     }
   },
   "tasksRunnerOptions": {

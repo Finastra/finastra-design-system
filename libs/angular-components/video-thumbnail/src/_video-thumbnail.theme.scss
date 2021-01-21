@@ -1,0 +1,15 @@
+@mixin uxg-video-thumbnail($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $icon: map-get($foreground, icon);
+    $card: map-get($background, card);
+
+    uxg-video-thumbnail {
+        .play-button {
+            background: rgba(#212121, 0.36);
+            .mat-icon {
+                color: white;
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UxgWizardComponent } from './wizard.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,13 +10,15 @@ describe('UxgWizardComponent', () => {
   let component: UxgWizardComponent;
   let fixture: ComponentFixture<UxgWizardComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
-      declarations: [UxgWizardComponent],
-      schemas: [NO_ERRORS_SCHEMA]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [BrowserAnimationsModule, MatIconModule, MatDividerModule],
+        declarations: [UxgWizardComponent],
+        schemas: [NO_ERRORS_SCHEMA]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UxgWizardComponent);

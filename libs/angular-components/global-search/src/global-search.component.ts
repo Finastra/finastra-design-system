@@ -1,18 +1,20 @@
 import {
   Component,
+  ComponentRef,
+  ElementRef,
   EventEmitter,
   Input,
-  OnInit,
-  Output,
-  TemplateRef,
-  ViewEncapsulation,
   OnChanges,
-  SimpleChanges
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  ViewEncapsulation
 } from '@angular/core';
-import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
+
+import { Subject } from 'rxjs';
+import { GlobalSearchOverlayComponent } from '..';
 import { SearchOverlayRef } from './components/global-search-overlay/global-search-overlay-ref';
-import { ResultGroup } from './global-search.model';
-import { Observable, Subject } from 'rxjs';
+import { GlobalSearchOverlayService } from './services/global-search-overlay.service';
 
 @Component({
   selector: 'uxg-global-search',
@@ -20,9 +22,11 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./global-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class UxgGlobalSearch implements OnInit, OnChanges {
+export class UxgGlobalSearch implements OnChanges {
   @Input() groupBy?: string;
   @Input() resultItemTemplate?: TemplateRef<any>;
+  @Input() emptySearchTemplate?: TemplateRef<any>;
+  @Input() resultStatusTemplate?: TemplateRef<any>;
   @Input() showFilter = true;
   @Input() maxItems?: number;
   @Input() itemDivider = false;
@@ -32,15 +36,23 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
 
   @Output() resultItemClick = new EventEmitter();
   @Output() searchTermChange = new EventEmitter<string>();
+  @Output() searchClose = new EventEmitter<void>();
 
   results$ = new Subject<any[]>();
+
+  get searchInput(): ElementRef {
+    return this.componentRef?.instance.searchInput!;
+  }
 
   constructor(private overlayService: GlobalSearchOverlayService) {}
 
   private ref?: SearchOverlayRef;
+  private componentRef?: ComponentRef<GlobalSearchOverlayComponent>;
 
   openSearch() {
-    this.ref = this.overlayService.open({
+    [this.ref, this.componentRef] = this.overlayService.open({
+      resultStatusTemplate: this.resultStatusTemplate,
+      emptySearchTemplate: this.emptySearchTemplate,
       resultItemTemplate: this.resultItemTemplate,
       showFilter: this.showFilter,
       groupBy: this.groupBy,
@@ -49,12 +61,18 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
       maxItems: this.maxItems,
       itemsLayout: this.itemsLayout,
       searchTermChange: ($event: any) => this.searchTermChange.emit($event),
-      itemClicked: ($event: any) => {
+      itemClick: ($event: any) => {
         this.resultItemClick.emit($event);
+        this.searchClose.emit($event);
         if (this.ref) this.ref.close();
       },
+      searchClose: ($event: any) => this.searchClose.emit($event),
       results: this.results$
     });
+  }
+
+  closeSearch() {
+    if (this.ref) this.ref.close();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -62,6 +80,4 @@ export class UxgGlobalSearch implements OnInit, OnChanges {
       this.results$.next(changes.results.currentValue);
     }
   }
-
-  ngOnInit() {}
 }

@@ -1,6 +1,7 @@
 @mixin uxg-button-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
   $foreground: map-get($theme, foreground);
 
   .mat-stroked-button {
@@ -15,6 +16,44 @@
     &[disabled] {
       background-color: mat-color($foreground, text, 0.1);
       border-color: mat-color($foreground, text, 0.25);
+    }
+  }
+
+  .mat-flat-button,
+  .mat-raised-button,
+  .mat-fab,
+  .mat-mini-fab {
+    &.mat-primary,
+    &.mat-accent,
+    &.mat-warn {
+      & .mat-ripple-element {
+        // since the use of CSS variables,
+        // opacity is already set on rgba background-color.
+        // see #288
+        opacity: unset;
+      }
+    }
+
+    &.cdk-keyboard-focused {
+      &.mat-primary .mat-button-focus-overlay {
+        background: mat-color($primary, default-contrast);
+        opacity: 0.24;
+      }
+
+      &.mat-accent .mat-button-focus-overlay {
+        background: mat-color($accent, default-contrast);
+        opacity: 0.24;
+      }
+
+      &.mat-gradient .mat-button-focus-overlay {
+        background: mat-color($primary, default-contrast);
+        opacity: 0.24;
+      }
+
+      &.mat-warn .mat-button-focus-overlay {
+        background: mat-color($warn, default-contrast);
+        opacity: 0.24;
+      }
     }
   }
 

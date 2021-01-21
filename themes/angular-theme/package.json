@@ -1,10 +1,15 @@
 {
   "name": "@ffdc/uxg-angular-theme",
-  "version": "0.20.3",
+  "version": "0.23.8",
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
   "sass": "_all-theme.scss",
   "css": "all-theme.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusionfabric/finastra-design-system.git",
+    "directory": "themes/angular-theme"
+  },
   "peerDependencies": {
     "@angular/material": "^10.0.0"
   }

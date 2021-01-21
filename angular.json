@@ -37,7 +37,7 @@
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
                 "bundleName": "plotly",
-                "lazy": true
+                "inject": true
               }
             ]
           },
@@ -52,7 +52,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -887,6 +886,64 @@
               "libs/angular-components/breadcrumb/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**", "!libs/angular-components/breadcrumb/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "toaster": {
+      "projectType": "library",
+      "root": "libs/angular-components/toaster",
+      "sourceRoot": "libs/angular-components/toaster",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/toaster/tsconfig.lib.json",
+              "libs/angular-components/toaster/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/toaster/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/toaster/jest.config.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "video-thumbnail": {
+      "projectType": "library",
+      "root": "libs/angular-components/video-thumbnail",
+      "sourceRoot": "libs/angular-components/video-thumbnail",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/video-thumbnail/tsconfig.lib.json",
+              "libs/angular-components/video-thumbnail/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/video-thumbnail/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
           }
         }
       },

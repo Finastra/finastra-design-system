@@ -1,0 +1,8 @@
+<ng-container *ngIf="video">
+  <a (click)="onVideoClick(video, $event)" href="#">
+    <div class="play-button" [attr.dense]="dense === '' || null" [attr.large]="large === '' || null">
+      <mat-icon [attr.dense]="dense === '' || null" [attr.large]="large === '' || null">play_arrow</mat-icon>
+    </div>
+    <img [src]="video.thumbnail" [attr.alt]="video.alt" />
+  </a>
+</ng-container>

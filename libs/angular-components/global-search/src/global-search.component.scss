@@ -95,38 +95,42 @@ $close-button-size-small: 32px;
     }
 
     .uxg-global-search-container-parent {
+      .uxg-global-search-results-container {
+        overflow: hidden;
 
-      .uxg-global-search-results-area {
-        overflow: auto;
-        padding: 1rem 5rem 2rem;
-        height: 100%;
+        .uxg-global-search-results-area {
+          overflow: auto;
+          padding: 1rem 5rem 2rem;
+          height: 100%;
+          outline: none;
 
-        @include layout-bp(lt-lg) {
-          padding: 1rem 2rem 2rem;
-        }
+          @include layout-bp(lt-lg) {
+            padding: 1rem 2rem 2rem;
+          }
 
-        .uxg-global-search-result-group-header {
-          display: flex;
-          padding-top: $uxg-spacing-3;
-
-          .uxg-h4 {
-            margin: 0;
+          .uxg-global-search-result-group-header {
             display: flex;
-            align-items: center;
+            padding-top: $uxg-spacing-3;
+
+            .uxg-h4 {
+              margin: 0;
+              display: flex;
+              align-items: center;
+            }
+
+            .uxg-global-search-result-group-counter {
+              margin-left: $uxg-spacing-2;
+            }
           }
 
-          .uxg-global-search-result-group-counter {
-            margin-left: $uxg-spacing-2;
-          }
-        }
+          .uxg-global-search-result-group-container {
+            padding-top: $uxg-spacing-2;
+            padding-bottom: $uxg-spacing-3;
 
-        .uxg-global-search-result-group-container {
-          padding-top: $uxg-spacing-2;
-          padding-bottom: $uxg-spacing-3;
-
-          .uxg-global-search-result-item {
-            cursor: pointer;
-            margin: $uxg-spacing-2 $uxg-spacing-3 $uxg-spacing-2 0;
+            .uxg-global-search-result-item {
+              cursor: pointer;
+              margin: $uxg-spacing-2 $uxg-spacing-3 $uxg-spacing-2 0;
+            }
           }
         }
       }
@@ -150,6 +154,15 @@ $close-button-size-small: 32px;
           @include layout-bp(lt-lg) {
             width: 100%;
           }
+        }
+      }
+
+      mat-divider {
+        margin-bottom: 2rem;
+
+        &.mat-divider-horizontal {
+          order: -1;
+          margin: 0 2rem $uxg-spacing-3;
         }
       }
     }

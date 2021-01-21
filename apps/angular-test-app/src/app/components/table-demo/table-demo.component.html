@@ -21,6 +21,7 @@
       (multiSelectSingleRowClicked)="rowClickUnderMutiSelectMode($event)"
       [enableSend]="enableTableSendEvent"
       (rowSend)="rowSendClickEvent($event)"
+      [actionColumnPosition]="actionColumnPosition"
     >
     </uxg-table>
   </div>
@@ -50,6 +51,13 @@
           >
         </div>
       </div>
+    </div>
+    <div class="selection-area" fxLayout="column" fxLayoutAlign="start start">
+      <h5>Action column position</h5>
+      <mat-radio-group fxLayout="column" [(ngModel)]="actionColumnPosition">
+        <mat-radio-button [value]="'start'">start</mat-radio-button>
+        <mat-radio-button [value]="'end'">end</mat-radio-button>
+      </mat-radio-group>
     </div>
     <div class="selection-area" fxLayout="column" fxLayoutAlign="start start">
       <h5>Select Mode</h5>
@@ -90,7 +98,10 @@
 <p>The <code>data</code> is a data array which contains the data to display in the table.</p>
 <p>The <code>columns</code> is an array which contains the configuration of each columns.</p>
 <p>The <code>columnsToDisplay</code> is an array which columns should display in the table.</p>
-
+<p>
+  If you want to add a specific class to a row. you can add an attribute "_class" and assign the class name string to
+  it. This class will be added to the row and you can customize it by yourself
+</p>
 <p>
   There are others input and output that you can use to control the dispay style of table and interact with the table
   component.
@@ -109,7 +120,10 @@
         @Input()<br />
         data:Array&lt;any&gt;[]
       </td>
-      <td>An array of data.</td>
+      <td>
+        An array of data.
+        <span style="color: red;">Do not use "_class" since it is used to add a customized class to the table row</span>
+      </td>
     </tr>
     <tr>
       <td>
@@ -237,6 +251,13 @@
       </td>
     </tr>
     <tr>
+      <td>@Input()<br />actionColumnPosition: UxgActionColumnPosition</td>
+      <td>
+        by default action columnn located at end of the table(UxgActionColumnPosition.end), if you want to change it you
+        can set it to 'UxgActionColumnPosition.start'
+      </td>
+    </tr>
+    <tr>
       <td>@Output()<br />rowRemoved : EventEmitter&lt;any&gt;</td>
       <td>Emit the removed row, when you enable delete and click on the delete icon</td>
     </tr>
@@ -331,6 +352,25 @@
       <td>Object</td>
       <td>yes</td>
       <td>The emiter you want to use in your template, if you need to trigger action on a click for example</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>UxgActionColumnPosition</h3>
+<p>You can specify the position of the action cloumn. Start of the table or end of the table</p>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Property</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td>start</td>
+    </tr>
+    <tr>
+      <td>end</td>
+      <td>end</td>
     </tr>
   </tbody>
 </table>
@@ -480,9 +520,7 @@
   {{ element[column.name].amount }} {{ element[column.name].currency }}
 </ng-template>
 
-<ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column">
-  edit cell
-</ng-template>
+<ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column"> edit cell </ng-template>
 
 <ng-template #tableCellTable let-element="element" let-column="column" let-emiter="emiter">
   <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false">

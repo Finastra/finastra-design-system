@@ -14,7 +14,15 @@ import { MatTable } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
 import { MatCheckbox } from '@angular/material/checkbox';
 
-import { UxgColumn, UxgSort, UxgPage, UxgColumnType, UxgTableSelectEvent, UxgDefaultPaging } from './table.models';
+import {
+  UxgColumn,
+  UxgSort,
+  UxgPage,
+  UxgColumnType,
+  UxgTableSelectEvent,
+  UxgDefaultPaging,
+  UxgActionColumnPosition
+} from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import isEqual from 'lodash/isEqual';
 @Component({
@@ -51,7 +59,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       (this.enableEdit || this.enableDelete) &&
       this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
     ) {
-      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+      this.addOrUpdateActionColumnToColumnsToDisplay();
     }
   }
 
@@ -90,7 +98,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  @Input() singleSelect = true;
+  @Input() singleSelect = false;
   @Input() multiSelect = false;
 
   @Output() selectChanged = new EventEmitter<UxgTableSelectEvent>();
@@ -105,6 +113,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() enableEdit = false;
   @Input() enableDelete = false;
   @Input() enableSend = false;
+  @Input() actionColumnPosition: UxgActionColumnPosition = UxgActionColumnPosition.end;
 
   @Output() rowRemoved = new EventEmitter<any>();
   @Output() rowUpdated = new EventEmitter<any>();
@@ -142,7 +151,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       (this.enableEdit || this.enableDelete) &&
       this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
     ) {
-      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+      this.addOrUpdateActionColumnToColumnsToDisplay();
     }
 
     if (this.pageEnable && !this.paging) {
@@ -202,6 +211,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
     if (changes.enableSend && !changes.enableSend.isFirstChange()) {
       this.resetActionRow();
+    }
+
+    if (changes.actionColumnPosition && !changes.actionColumnPosition.isFirstChange()) {
+      this.addOrUpdateActionColumnToColumnsToDisplay();
     }
   }
 
@@ -403,7 +416,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       (this.enableDelete || this.enableEdit || this.enableSend) &&
       this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
     ) {
-      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+      this.addOrUpdateActionColumnToColumnsToDisplay();
     }
 
     if (
@@ -412,7 +425,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       !this.enableEdit &&
       this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1
     ) {
-      this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.length - 1, 1);
+      this.removeActionColumnsFromColumnsToDisplay();
     }
   }
 
@@ -425,5 +438,26 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       return isEqual(item, row);
     });
     return rowIdx > -1 ? rowIdx : -1;
+  }
+
+  addOrUpdateActionColumnToColumnsToDisplay() {
+    if (this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1) {
+      this.removeActionColumnsFromColumnsToDisplay();
+    }
+
+    if (!this.actionColumnPosition || this.actionColumnPosition === UxgActionColumnPosition.end) {
+      this.columnsToDisplayToComponent = this.columnsToDisplayToComponent.concat(this.uxgTableActionColumn);
+    }
+    if (this.actionColumnPosition === UxgActionColumnPosition.start) {
+      this.columnsToDisplayToComponent = this.uxgTableActionColumn.concat(this.columnsToDisplayToComponent);
+    }
+  }
+
+  removeActionColumnsFromColumnsToDisplay() {
+    if (this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1)
+      this.columnsToDisplayToComponent.splice(
+        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]),
+        1
+      );
   }
 }

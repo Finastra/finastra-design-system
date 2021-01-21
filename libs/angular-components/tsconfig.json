@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "types": ["node", "jest"]
   },
@@ -53,6 +53,9 @@
     },
     {
       "path": "./table\\tsconfig.json"
+    },
+    {
+      "path": "./toaster\\tsconfig.json"
     },
     {
       "path": "./user-profile-menu\\tsconfig.json"

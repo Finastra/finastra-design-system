@@ -28,12 +28,9 @@ $uxg-paginator-icon-height: 20px;
       }
 
       .mat-icon-button {
-        height: $uxg-paginator-height;
-        width: $uxg-paginator-height;
-
-        span {
-          margin-left: $uxg-spacing-2;
-          margin-right: $uxg-spacing-2;
+        .mat-button-wrapper {
+          align-items: center;
+          justify-content: center;
         }
 
         .mat-paginator-icon {

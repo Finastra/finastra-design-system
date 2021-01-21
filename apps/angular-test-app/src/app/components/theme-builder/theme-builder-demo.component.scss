@@ -1,0 +1,40 @@
+@import 'angular-theme/lib/core/style/spacing';
+
+.swatch {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.swatchPrimary {
+    background-color: rgba(var(--color-primary), 1);
+}
+
+.swatchSecondary {
+    background-color: rgba(var(--color-secondary), 1);
+}
+.swatchWarn {
+    background-color: rgba(var(--color-warn), 1);
+}
+
+.color-picker {
+    padding: 0;
+}
+
+.var {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: $uxg-spacing-3;
+
+    h5 {
+        align-self: center;
+    }
+}
+
+.logo-input {
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}

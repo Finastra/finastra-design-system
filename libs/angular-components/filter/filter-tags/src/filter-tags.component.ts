@@ -55,13 +55,15 @@ export class FilterTagsComponent implements OnInit {
     return this._data;
   }
 
+  @Input() placeholder = 'Filter by tags';
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
   @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
-  constructor() {
+  constructor(private hostElement: ElementRef) {
+    this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 

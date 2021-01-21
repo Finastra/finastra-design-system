@@ -1,0 +1,80 @@
+<h1>Toaster component</h1>
+
+<h2>Toaster demo</h2>
+<div class="demo-component">
+  <p>
+    You can change the default settings for the toaster below and click on the `Display toaster` button to generate a
+    toaster with the displayed config.
+  </p>
+  <div class="config">
+    <mat-form-field>
+      <mat-label>Toaster message</mat-label>
+      <input matInput type="text" [(ngModel)]="toasterMessage" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select the toaster type</mat-label>
+      <mat-select [(value)]="toasterType">
+        <mat-option value="{{ toasterTypes.INFO }}">Info</mat-option>
+        <mat-option value="{{ toasterTypes.SUCCESS }}">Success</mat-option>
+        <mat-option value="{{ toasterTypes.WARNING }}">Warning</mat-option>
+        <mat-option value="{{ toasterTypes.ERROR }}">Error</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Toaster display duration (ms)</mat-label>
+      <input matInput type="number" [(ngModel)]="toasterDuration" />
+    </mat-form-field>
+    <mat-checkbox [labelPosition]="'before'" [(ngModel)]="toasterDestroyByClick"
+      >Destroy toaster by clicking on it</mat-checkbox
+    >
+  </div>
+  <p>
+    <button mat-flat-button color="primary" (click)="displayToaster()">Display toaster</button>
+  </p>
+</div>
+
+<h2>Description</h2>
+<p>
+  The ToasterService provides a capability to build toast notifications.
+  <code>ToasterService.show(message, config)</code> accepts two params, config is optional.
+</p>
+<h3>Usage</h3>
+<p>Import <code>ToasterModule</code> to your app module.</p>
+<p>
+  Calling <code>ToasterService.show(...)</code> will render new toast and return <code>ToasterRef</code> with help of
+  which you may close newly created toast by calling <code>close</code> method.
+</p>
+<p>
+  <code>
+    const toastRef: ToasterRef = this.toasterService.show(...);<br />
+    toastRef.close();
+  </code>
+</p>
+<p>&nbsp;</p>
+<p>Config accepts following options:</p>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>coloring and icon of the toast.</td>
+      <td>Default is `info`.</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td>
+        the time after which the toast will be destroyed. `0` means endless toast, that may be destroyed by click only.
+      </td>
+      <td>Default is 5000 ms</td>
+    </tr>
+    <tr>
+      <td>destroyByClick</td>
+      <td>provides a capability to destroy toast by click.</td>
+      <td>Default is true.</td>
+    </tr>
+  </tbody>
+</table>

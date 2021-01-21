@@ -16,6 +16,7 @@
 @import '../../slide-toggle/slide-toggle-theme';
 @import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
+@import 'color-utility';
 
 @mixin uxg-core-theme($theme) {
   $foreground: map-get($theme, foreground);
@@ -28,6 +29,8 @@
       background: mat-color($background, selected-text);
     }
   }
+
+  @include uxg-color-utility($theme);
 }
 
 // Create a theme.
