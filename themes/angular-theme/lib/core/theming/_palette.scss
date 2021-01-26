@@ -35,7 +35,7 @@ $uxg-charcoal: #414141;
   --color-warn: 228, 0, 70;
   --color-warn-lighter: 234, 63, 116;
   --color-warn-darker: 159, 0, 48;
-  --color-gradient: rgba(105, 78, 214, 1), rgba(193, 55, 162, 1), rgba(228, 0, 70, 1);
+  --color-gradient: rgba(var(--color-primary), 1), rgba(var(--color-secondary), 1);
   --text-color-primary: 255, 255, 255;
   --text-color-primary-lighter: 65, 65, 65;
   --text-color-primary-darker: 65, 65, 65;
@@ -54,7 +54,7 @@ $uxg-violet: (
   100: rgba(var(--color-primary-lighter), 1),
   200: #d9d3f5,
   300: #b4a6ea,
-  400: #8f7be1,
+  400: #917ee0,
   500: rgba(var(--color-primary), 1),
   600: #4538cb,
   700: #2123c0,
