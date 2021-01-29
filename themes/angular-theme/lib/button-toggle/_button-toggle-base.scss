@@ -39,19 +39,17 @@ $button-toggle-radius-v: $uxg-spacing-3;
       border: 1px solid;
     }
 
-    &.mat-button-toggle-checked {
-      &:last-of-type {
-        .mat-button-toggle-button {
-          border-top-right-radius: $button-toggle-radius/2;
-          border-bottom-right-radius: $button-toggle-radius/2;
-        }
+    &:last-of-type {
+      .mat-button-toggle-button {
+        border-top-right-radius: $button-toggle-radius/2;
+        border-bottom-right-radius: $button-toggle-radius/2;
       }
+    }
 
-      &:first-of-type {
-        .mat-button-toggle-button {
-          border-top-left-radius: $button-toggle-radius/2;
-          border-bottom-left-radius: $button-toggle-radius/2;
-        }
+    &:first-of-type {
+      .mat-button-toggle-button {
+        border-top-left-radius: $button-toggle-radius/2;
+        border-bottom-left-radius: $button-toggle-radius/2;
       }
     }
   }
