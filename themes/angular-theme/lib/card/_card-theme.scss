@@ -1,20 +1,38 @@
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
 @mixin uxg-card-theme($theme) {
   $primary: map-get($theme, primary);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $card-wave: map-get($background, card-wave);
+
+  $prod-wave: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 320 246"><path fill="#{map-get($background, card)}" d="M320,0v218.3c-2.8,2.1-5.7,4.2-8.6,6.2c-57.1,39.1-132,15.1-180.5,3.3C114.2,223.8,65.3,206.1,0,194V0H320z"/></svg>';
+  $prod-wave: str-replace($prod-wave, '#', '%23');
+
+  $sol-wave-top: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="132.389" height="72"><path fill="#{map-get($background, card)}" d="M0,0V72C39.485,41.253,86.3,19,132.389,0Z"/></svg>';
+  $sol-wave-top: str-replace($sol-wave-top, '#', '%23');
+
+  $sol-wave-bot: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100.288" height="72"><path fill="#{map-get($background, card)}" d="M320,240V168c-40.654,36.548-80.919,59.972-100.288,72Z" transform="translate(-219.712 -168)"/></svg>';
+  $sol-wave-bot: str-replace($sol-wave-bot, '#', '%23');
 
   .uxg-card-product.mat-card {
-    background: bottom left / 100% 120% no-repeat url($card-wave), mat-color($uxg-gradient, horizontal);
+    background: bottom left / 100% 120% no-repeat url($prod-wave), mat-color($uxg-gradient, horizontal);
     color: mat-color($foreground, text);
   }
 
   .uxg-card-solution.mat-card {
     background:
       top left / 40% 30% no-repeat
-      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="132.389" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M0,0V72C39.485,41.253,86.3,19,132.389,0Z"/></svg>'),
+      url($sol-wave-top),
       bottom right / 30% 30% no-repeat
-      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100.288" height="72"><defs><style>.a{fill:%23fff;}</style></defs><path class="a" d="M320,240V168c-40.654,36.548-80.919,59.972-100.288,72Z" transform="translate(-219.712 -168)"/></svg>'),
+      url($sol-wave-bot),
       top left / 100% 100% no-repeat mat-color($uxg-gradient, diagonal);
     color: mat-color($primary, default-contrast);
   }
