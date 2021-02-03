@@ -1,6 +1,6 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.23.8",
+  "version": "0.23.9",
   "repository": {
     "type": "git",
     "url": "https://github.com/fusionfabric/finastra-design-system.git",
@@ -18,6 +18,6 @@
     "smoothscroll-polyfill": "0.4.4"
   },
   "dependencies": {
-    "@ffdc/uxg-angular-theme": "0.23.8"
+    "@ffdc/uxg-angular-theme": "0.23.9"
   }
 }

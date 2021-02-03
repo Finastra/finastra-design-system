@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.9](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.8...v0.23.9) (2021-02-03)
+
+
+### Bug Fixes
+
+* **card:** adapt product card text color to theme ([#313](https://github.com/fusionfabric/finastra-design-system/issues/313)) ([fdc0208](https://github.com/fusionfabric/finastra-design-system/commit/fdc020863a7b8ebd35b58a90ef09144ea0e07234))
+* **toggle-button:** remove useless selector ([#315](https://github.com/fusionfabric/finastra-design-system/issues/315)) ([c15a640](https://github.com/fusionfabric/finastra-design-system/commit/c15a640a3eef3b990399592913b6a04e92fd3e74))
+
 ### [0.23.8](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.7...v0.23.8) (2020-12-18)
 
 ### [0.23.7](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.6...v0.23.7) (2020-12-16)
