@@ -8,7 +8,9 @@
     background: mat-color($background, dialog, 0.95);
   }
 
-  uxg-global-search-overlay {
+  .uxg-global-search-overlay {
+    color: mat-color($foreground, text);
+
     .uxg-global-search-results-area {
       .uxg-global-search-result-group-header {
         .uxg-global-search-result-group-counter {
@@ -24,14 +26,13 @@
     .uxg-global-search-input-area {
       .uxg-global-search-input {
         .mat-form-field-label {
-          color: mat-color($foreground, text)
+          color: mat-color($foreground, text);
         }
       }
     }
 
     .uxg-global-search-close-overlay-button {
       opacity: 0.75;
-      color: mat-color($foreground, text);
     }
   }
 }
