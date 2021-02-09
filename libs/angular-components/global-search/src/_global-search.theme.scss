@@ -31,6 +31,7 @@
 
     .uxg-global-search-close-overlay-button {
       opacity: 0.75;
+      color: mat-color($foreground, text);
     }
   }
 }
