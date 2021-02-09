@@ -78,6 +78,10 @@ $button-toggle-radius-v: $uxg-spacing-3;
   .mat-button-toggle {
     border: 1px solid;
     border-radius: $filtering-button-toggle-radius;
+
+    &.mat-button-toggle-checked .mat-button-toggle-button {
+      border-radius: 0;
+    }
   }
 
   .mat-button-toggle-label-content {
