@@ -56,6 +56,7 @@ export class FilterTagsComponent implements OnInit {
   }
 
   @Input() placeholder = 'Filter by tags';
+  @Input() ariaLabel = 'Input Tag';
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
   @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
