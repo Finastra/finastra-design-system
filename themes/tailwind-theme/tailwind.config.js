@@ -79,14 +79,14 @@ module.exports = {
       'gradient-vertical': [theme('colors.primary'), theme('colors.secondary'), theme('colors.error')]
     }),
     spacing: {
-      '1': '4px',
-      '2': '8px',
-      '3': '16px',
-      '4': '24px',
-      '5': '32px',
-      '6': '48px',
-      '7': '96px',
-      '8': '120px'
+      1: '4px',
+      2: '8px',
+      3: '16px',
+      4: '24px',
+      5: '32px',
+      6: '48px',
+      7: '96px',
+      8: '120px'
     }
   },
   plugins: [require('tailwindcss-plugins/gradients')],
