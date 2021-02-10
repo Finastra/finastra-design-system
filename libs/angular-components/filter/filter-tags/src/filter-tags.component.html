@@ -9,7 +9,7 @@
   <mat-form-field class="chip-list" appearance="fill" dense>
     <mat-icon matPrefix dense class="search-icon">search</mat-icon>
     <input
-      aria-label="Input Tag"
+      [attr.aria-label]="ariaLabel"
       matInput
       type="text"
       #tagInput
