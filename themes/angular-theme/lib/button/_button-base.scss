@@ -49,6 +49,10 @@ button {
       width: $button-icon-size-large;
       height: $button-icon-size-large;
     }
+
+    &:hover:not(.mat-button-disabled) .mat-button-focus-overlay {
+      opacity: 0.04;
+    }
   }
 }
 

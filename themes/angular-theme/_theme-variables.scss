@@ -1,12 +1,4 @@
 @import 'lib/core/theming/theming';
-@import 'lib/core/theming/palette';
 
-$uxg-light-primary: mat-palette($uxg-violet, 500, 100, 700);
-$uxg-light-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
-$uxg-light-warn:    mat-palette($uxg-crimson, 100, 75, 100);
-
-$uxg-dark-primary: mat-palette($uxg-violet, 400, 100, 900);
-$uxg-dark-accent:  mat-palette($uxg-fuchsia, 400, 100, 900);
-
-$uxg-light-theme: uxg-light-theme($uxg-light-primary, $uxg-light-accent, $uxg-light-warn);
-$uxg-dark-theme: uxg-dark-theme($uxg-dark-primary, $uxg-dark-accent, $uxg-light-warn);
+$uxg-light-theme: uxg-light-theme();
+$uxg-dark-theme: uxg-dark-theme();

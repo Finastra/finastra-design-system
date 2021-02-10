@@ -37,7 +37,7 @@
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
                 "bundleName": "plotly",
-                "lazy": true
+                "inject": true
               }
             ]
           },
@@ -52,7 +52,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -915,9 +914,36 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/toaster/jest.config.js",
-            "tsConfig": "libs/angular-components/toaster/tsconfig.spec.json",
-            "setupFile": "libs/angular-components/toaster/test-setup.ts"
+            "jestConfig": "libs/angular-components/toaster/jest.config.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "video-thumbnail": {
+      "projectType": "library",
+      "root": "libs/angular-components/video-thumbnail",
+      "sourceRoot": "libs/angular-components/video-thumbnail",
+      "prefix": "uxg",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/video-thumbnail/tsconfig.lib.json",
+              "libs/angular-components/video-thumbnail/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/video-thumbnail/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
           }
         }
       },

@@ -3,8 +3,8 @@ const suiteName = 'UxgGlobalSearchModule';
 
 module.exports = {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  name,
-  preset: '../../../jest.config.js',
+
+  preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
@@ -19,5 +19,6 @@ module.exports = {
         ancestorSeparator: ' › '
       }
     ]
-  ]
+  ],
+  displayName: 'global-search'
 };

@@ -1,8 +1,13 @@
 @mixin uxg-link-theme($theme) {
-  // $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
-  // a {
-  //     color: map-get($foreground, text);
-  //     text-decoration: none;
-  // }
+  .uxg-link {
+    color: map-get($primary, default);
+    text-decoration: underline;
+
+    &:hover {
+      color: map-get($accent, default);
+    }
+  }
 }

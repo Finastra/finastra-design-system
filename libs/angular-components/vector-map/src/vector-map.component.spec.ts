@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Component, Input, EventEmitter, Output } from '@angular/core';
@@ -62,21 +62,23 @@ describe('VectorMapModule', () => {
     ]
   };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        MatTooltipModule,
-        FlexLayoutModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatInputModule,
-        PaletteModule,
-        BrowserAnimationsModule
-      ],
-      declarations: [VectorMapComponent, PlotComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          CommonModule,
+          MatTooltipModule,
+          FlexLayoutModule,
+          MatSelectModule,
+          MatFormFieldModule,
+          MatInputModule,
+          PaletteModule,
+          BrowserAnimationsModule
+        ],
+        declarations: [VectorMapComponent, PlotComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapComponent);

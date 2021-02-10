@@ -101,12 +101,12 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     @Inject(DOCUMENT) private document: any,
     private paletteService: PaletteService,
     private cd: ChangeDetectorRef,
-    public layzyLoadScript: LazyloadScriptService
+    public lazyLoadScriptService: LazyloadScriptService
   ) {
     this.onClick = new EventEmitter<Array<Object>>();
     this.onSelected = new EventEmitter<Array<Object>>();
     this.onDoubleClick = new EventEmitter<Array<Object>>();
-    this.plotlyReady$ = layzyLoadScript.load('plotly.js', 'Plotly');
+    this.plotlyReady$ = lazyLoadScriptService.load('plotly.js', 'Plotly');
   }
 
   ngOnInit(): void {

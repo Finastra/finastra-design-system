@@ -9,6 +9,7 @@ import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-
 import { WizardDemoComponent } from './components/wizard-demo/wizard-demo.component';
 import { FoundationsDemoComponent } from './components/foundations-demo/foundations-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
+import { ThemeBuilderComponent } from './components/theme-builder/theme-builder-demo.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { ChartDemoComponent } from './components/chart-demo/chart-demo.component';
 import { EntityMenuDemoComponent } from './components/entity-menu-demo/entity-menu-demo.component';
@@ -22,13 +23,15 @@ import { SearchInputDemoComponent } from './components/search-input-demo/search-
 import { ChangelogDemoComponent } from './components/changelog-demo/changelog-demo.component';
 import { BreadcrumbDemoComponent } from './components/breadcrumb-demo/breadcrumb-demo.component';
 import { ToasterDemoComponent } from './components/toaster-demo/toaster-demo.component';
+import { VideoThumbnailDemoComponent } from './components/video-thumbnail/video-thumbnail.component';
 
 export const nestedRoutes: { title: string; routes: Routes }[] = [
   {
     title: 'Theme',
     routes: [
       { path: 'foundations', component: FoundationsDemoComponent, data: { title: 'Foundations' } },
-      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } }
+      { path: 'ui-elements', component: UiElementsDemoComponent, data: { title: 'UI Elements' } },
+      { path: 'theme-builder', component: ThemeBuilderComponent, data: { title: 'Theme Builder' } }
     ]
   },
   {
@@ -57,7 +60,8 @@ export const nestedRoutes: { title: string; routes: Routes }[] = [
       { path: 'search-input', component: SearchInputDemoComponent, data: { title: 'Search Input' } },
       { path: 'changelog', component: ChangelogDemoComponent, data: { title: 'Changelog' } },
       { path: 'breadcrumb', component: BreadcrumbDemoComponent, data: { title: 'Breadcrumb' } },
-      { path: 'toaster', component: ToasterDemoComponent, data: { title: 'Toaster' } }
+      { path: 'toaster', component: ToasterDemoComponent, data: { title: 'Toaster' } },
+      { path: 'video-thumbnail', component: VideoThumbnailDemoComponent, data: { title: 'Video Thumbnail' } }
     ]
   }
 ].map((groups) => {

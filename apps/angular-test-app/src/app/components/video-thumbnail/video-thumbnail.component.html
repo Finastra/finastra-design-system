@@ -1,0 +1,71 @@
+<h2>Demo</h2>
+
+<div class="demo-component">
+  <p class="description">Fiddle with the configuration below to see the changes apply on the demo component below</p>
+
+  <div class="config">
+    <mat-form-field>
+      <mat-label>Select the toaster type</mat-label>
+      <mat-select [(value)]="video.thumbnail">
+        <mat-option value="assets/video-1.png">Kate's video</mat-option>
+        <mat-option value="assets/conference.jpg">Fusion One</mat-option>
+        <mat-option value="assets/Financial_Market_Volatility.jpeg">Market volatility</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Alt (altenative text)</mat-label>
+      <input matInput type="text" [(ngModel)]="video.alt" />
+    </mat-form-field>
+  </div>
+
+  <div class="component">
+    <uxg-video-thumbnail [video]="video" (videoClick)="onVideoClick($event)"> </uxg-video-thumbnail>
+  </div>
+</div>
+
+<h2>Usage</h2>
+<ul>
+  <li>
+    <p>Import <code>VideoThumbnailModule</code> to your app module.</p>
+  </li>
+  <li>
+    <p>
+      Include the theme in your app's styles.scss
+      <code> @include uxg-video-thumbnail($theme); </code>
+    </p>
+  </li>
+</ul>
+
+<br />
+
+<h3>Inputs</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td>video</td>
+      <td>&#123;thumbail: string, alt: string, url: string}</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<h3>Outputs</h3>
+<table class="documentation">
+  <tbody>
+    <tr class="header">
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>videoClick</td>
+      <td>&#123; value: Video; $event: MouseEvent; }</td>
+    </tr>
+  </tbody>
+</table>

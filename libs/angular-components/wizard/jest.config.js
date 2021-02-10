@@ -3,8 +3,8 @@ const suiteName = 'WizardModule';
 
 module.exports = {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  name: name,
-  preset: '../../../jest.config.js',
+
+  preset: '../../../jest.preset.js',
   coverageDirectory: '../../../coverage/libs/components/wizard',
   reporters: [
     'default',
@@ -19,5 +19,6 @@ module.exports = {
         ancestorSeparator: ' › '
       }
     ]
-  ]
+  ],
+  displayName: 'wizard'
 };

@@ -100,6 +100,9 @@
     },
     "toaster": {
       "tags": []
+    },
+    "video-thumbnail": {
+      "tags": []
     }
   },
   "tasksRunnerOptions": {

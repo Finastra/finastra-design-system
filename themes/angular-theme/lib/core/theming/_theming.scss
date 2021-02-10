@@ -1,11 +1,15 @@
 @import 'palette';
 
+$uxg-primary: mat-palette($uxg-violet, 500, 100, 900);
+$uxg-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
+$uxg-warn:    mat-palette($uxg-crimson, 100, 75, '100-dark');
+
 // Creates a container object for a light theme to be given to individual component theme mixins.
-@function uxg-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+@function uxg-light-theme() {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
+    primary: $uxg-primary,
+    accent: $uxg-accent,
+    warn: $uxg-warn,
     is-dark: false,
     foreground: $uxg-light-theme-foreground,
     background: $uxg-light-theme-background,
@@ -13,11 +17,11 @@
 }
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
-@function uxg-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+@function uxg-dark-theme() {
   @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
+    primary: $uxg-primary,
+    accent: $uxg-accent,
+    warn: $uxg-warn,
     is-dark: true,
     foreground: $uxg-dark-theme-foreground,
     background: $uxg-dark-theme-background,

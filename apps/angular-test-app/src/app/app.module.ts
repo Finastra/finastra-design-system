@@ -22,6 +22,7 @@ import { RepeaterDemoComponent } from './components/repeater-demo/repeater-demo.
 import { FieldMatcherComponent } from './components/repeater-demo/field-matcher/field-matcher.component';
 import { SkeletonDemoComponent } from './components/skeleton-demo/skeleton-demo.component';
 import { TableDemoComponent } from './components/table-demo/table-demo.component';
+import { ThemeBuilderComponent } from './components/theme-builder/theme-builder-demo.component';
 import { UiElementsDemoComponent } from './components/ui-elements-demo/ui-elements-demo.component';
 import { UserProfileMenuDemoComponentComponent } from './components/user-profile-menu-demo/user-profile-menu-demo-component.component';
 import { VectorMapDemoComponent } from './components/vector-map-demo/vector-map-demo.component';
@@ -57,10 +58,17 @@ import { GlobalNavDemoComponent } from './components/global-nav-demo/global-nav-
 import { AccountCardDemoComponent } from './components/account-card-demo/account-card-demo.component';
 import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
 import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+import { ColorSketchModule } from 'ngx-color/sketch';
+
 import { UxgSearchInputModule } from '@ffdc/uxg-angular-components/search-input';
 import { UXGChangelogModule } from '@ffdc/uxg-angular-components/changelog';
 import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
 import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
+import { VideoThumbnailModule } from '@ffdc/uxg-angular-components/video-thumbnail';
+import {
+  VideoThumbnailDemoComponent,
+  VideoDialogComponent
+} from './components/video-thumbnail/video-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +87,7 @@ import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
     RepeaterCardExampleComponent,
     SkeletonDemoComponent,
     TableDemoComponent,
+    ThemeBuilderComponent,
     UiElementsDemoComponent,
     UserProfileMenuDemoComponentComponent,
     VectorMapDemoComponent,
@@ -91,7 +100,9 @@ import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
     SearchInputDemoComponent,
     ChangelogDemoComponent,
     BreadcrumbDemoComponent,
-    ToasterDemoComponent
+    ToasterDemoComponent,
+    VideoThumbnailDemoComponent,
+    VideoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -124,12 +135,15 @@ import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
     UxgUserProfileMenuModule,
     BannerModule,
     GlobalNavModule,
+    EntityMenuModule,
+    ColorSketchModule,
     AccountCardModule,
     EntityMenuModule,
     UxgSearchInputModule,
     UXGChangelogModule,
     UxgBreadcrumbModule,
-    ToasterModule
+    ToasterModule,
+    VideoThumbnailModule
   ],
   providers: [],
   exports: [],

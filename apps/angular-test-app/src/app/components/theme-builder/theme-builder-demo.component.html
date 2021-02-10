@@ -1,0 +1,32 @@
+<div class="var">
+  <h5 class="uxg-h5">Primary color</h5>
+  <div class="swatch swatchPrimary" [matMenuTriggerFor]="primaryMenu"></div>
+</div>
+
+<div class="var">
+  <h5 class="uxg-h5">Accent color</h5>
+  <div class="swatch swatchSecondary" [matMenuTriggerFor]="secondaryMenu"></div>
+</div>
+
+<div class="var">
+  <h5 class="uxg-h5">Warn color</h5>
+  <div class="swatch swatchWarn" [matMenuTriggerFor]="warnMenu"></div>
+</div>
+
+<div class="var">
+  <h5 class="uxg-h5">Logo</h5>
+  <div class="logo-input" (click)="fileInput.click()"></div>
+  <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput />
+</div>
+
+<mat-menu #primaryMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="statePrimary" (onChangeComplete)="changePrimaryComplete($event)"></color-sketch>
+</mat-menu>
+
+<mat-menu #secondaryMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="stateSecondary" (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
+</mat-menu>
+
+<mat-menu #warnMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="stateWarn" (onChangeComplete)="changeWarnComplete($event)"></color-sketch>
+</mat-menu>

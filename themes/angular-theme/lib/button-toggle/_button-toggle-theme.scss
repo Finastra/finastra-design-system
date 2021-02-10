@@ -1,11 +1,17 @@
 @mixin uxg-button-toggle-theme($theme) {
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       color: mat-color($foreground, secondary-text);
       border-color: mat-color($foreground, divider);
+      background-color: mat-color($background, card);
+
+      .mat-button-toggle-button {
+        border-color: transparent;
+      }
 
       &.mat-button-toggle-disabled {
         color: mat-color($foreground, secondary-text, 0.25);
@@ -16,7 +22,12 @@
       }
 
       &.mat-button-toggle-checked {
-        background-color: mat-color($primary, default, 0.1);
+        background-color: mat-color($background, background);
+
+        .mat-button-toggle-button {
+          background-color: mat-color($primary, default, 0.09);
+          border-color: mat-color($primary, default);
+        }
 
         .mat-button-toggle-button,
         .mat-icon {
@@ -29,6 +40,10 @@
   .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
       border-color: mat-color($foreground, divider);
+
+      .mat-button-toggle-button {
+        border-color: transparent;
+      }
 
       &.mat-button-toggle-checked {
         border-color: mat-color($primary, default);
