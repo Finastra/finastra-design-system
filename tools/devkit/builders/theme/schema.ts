@@ -4,7 +4,7 @@ export interface Schema extends JsonObject {
   inputPath: string;
   outputPath: string;
   silent: boolean;
-  outputStyle: 'compact' | 'compressed' | 'expanded' | 'nested';
+  outputStyle: 'compressed' | 'expanded';
   sourceMap: boolean;
   assets: string[];
 }

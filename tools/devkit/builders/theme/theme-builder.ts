@@ -1,11 +1,10 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
-import { renderSync } from 'node-sass';
+import { renderSync } from 'sass';
 import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
 import { join, relative } from 'path';
 import { sync as globby } from 'globby';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
-import importer from 'node-sass-tilde-importer';
 import { Schema } from './schema';
 
 async function themeBuilder(options: Schema, context: BuilderContext): Promise<BuilderOutput> {
@@ -42,8 +41,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
       outputStyle: options.outputStyle || 'expanded',
       sourceMap: true,
       sourceMapRoot: dest,
-      sourceMapEmbed: true,
-      importer
+      sourceMapEmbed: true
     });
 
     const finalCss = await postcss([autoprefixer]).process(result.css, {
