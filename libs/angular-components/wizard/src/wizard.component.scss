@@ -18,27 +18,25 @@ $dot-size-xs: 8px;
 $timeline-progress-width: 4px;
 $timeline-progress-left-margin: 2px;
 
-$timeline-top: 15vh;
-$timeline-right: 2vw;
-$timeline-bottom: 15vh;
-$timeline-width: calc(22vw + #{$uxg-spacing-1});
-$timeline-top-xs: 4vh;
+$timeline-top: 15%;
+$timeline-right: 2%;
+$timeline-bottom: 15%;
+$timeline-width: calc(22% + #{$uxg-spacing-1});
+$timeline-top-xs: 4%;
 
-$wizard-container-top: 8vh;
-$wizard-container-bottom: 5vh;
-$wizard-container-left: 5vw;
-$wizard-container-right: 22vw;
+$wizard-container-top: 8%;
+$wizard-container-bottom: 5%;
+$wizard-container-left: 5%;
+$wizard-container-right: 22%;
 
-$wizard-page-height: 12vh;
+$wizard-page-height: 12%;
 $wizard-page-bottom: 0;
-$wizard-page-top: 12vh;
+$wizard-page-top: 12%;
 $wizard-page-right: 2rem;
 $wizard-page-left: 0;
 $wizard-page-top-xs: 0;
 
-$wizard-title-top: 3vh;
-$wizard-title-width: 73vw;
-$wizard-title-left: 5vw;
+$wizard-title-top: 3%;
 
 .uxg-wizard {
   position: relative;
@@ -79,8 +77,8 @@ $wizard-title-left: 5vw;
     display: flex;
     justify-content: center;
     top: $wizard-title-top;
-    width: $wizard-title-width;
-    left: $wizard-title-left;
+    left: $wizard-container-left;
+    right: $wizard-container-right;
   }
 
   .uxg-wizard-footer {
