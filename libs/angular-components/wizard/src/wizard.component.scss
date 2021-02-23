@@ -1,4 +1,3 @@
-@import '~@angular/material/theming';
 @import 'angular-theme/lib/core/style/spacing';
 
 $buttons-wrapper-size: 44px;
@@ -42,7 +41,6 @@ $wizard-title-top: 3%;
   position: relative;
 
   .uxg-wizard-container {
-    @include mat-elevation(4);
     position: absolute;
     border-radius: $wizard-border-radius;
     top: $wizard-container-top;
