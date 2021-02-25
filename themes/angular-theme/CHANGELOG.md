@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.10](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.9...v0.23.10) (2021-02-25)
+
+
+### Features
+
+* **icon-button:** add hover state ([#318](https://github.com/fusionfabric/finastra-design-system/issues/318)) ([9f008fa](https://github.com/fusionfabric/finastra-design-system/commit/9f008fa7e945ce1f0315a603543db83ac6fc444c))
+
+
+### Bug Fixes
+
+* **expansion:** remove ref to uxg-dark-theme class ([#322](https://github.com/fusionfabric/finastra-design-system/issues/322)) ([b7776b3](https://github.com/fusionfabric/finastra-design-system/commit/b7776b3da9f1a581170da1713950657dc5e5d305))
+* **theme:** add missing import of form-field typography ([#317](https://github.com/fusionfabric/finastra-design-system/issues/317)) ([daa7611](https://github.com/fusionfabric/finastra-design-system/commit/daa7611798b83e34c2d914879b272de01aa7b072))
+* **theme:** make dark theme AA compliant ([#256](https://github.com/fusionfabric/finastra-design-system/issues/256)) ([72b796f](https://github.com/fusionfabric/finastra-design-system/commit/72b796f41be6aed9cbd0ce2fbdb7ae989e54339c))
+
 ### [0.23.9](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.8...v0.23.9) (2021-02-03)
 
 

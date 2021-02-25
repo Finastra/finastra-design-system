@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.10](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.9...v0.23.10) (2021-02-25)
+
+
+### Bug Fixes
+
+* **global-search:** make global search compatible with dark theme ([#319](https://github.com/fusionfabric/finastra-design-system/issues/319)) ([f33984a](https://github.com/fusionfabric/finastra-design-system/commit/f33984a57de5c48d34e9bae6a56bcdd83020c0b0))
+* **theme:** make dark theme AA compliant ([#256](https://github.com/fusionfabric/finastra-design-system/issues/256)) ([72b796f](https://github.com/fusionfabric/finastra-design-system/commit/72b796f41be6aed9cbd0ce2fbdb7ae989e54339c))
+
 ### [0.23.9](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.8...v0.23.9) (2021-02-03)
 
 
