@@ -1,9 +1,8 @@
 @mixin uxg-skeleton-text-theme($theme) {
     $foreground: map-get($theme, foreground);
-    $skeleton-color: map-get($foreground, text);
 
-    $background-color: rgba($skeleton-color, 0.065);
-    $background-color-animated: rgba($skeleton-color, 0.135);
+    $background-color: mat-color($foreground, text, 0.065);
+    $background-color-animated: mat-color($foreground, text, 0.135);
     
     uxg-skeleton-text {
         background: $background-color;
