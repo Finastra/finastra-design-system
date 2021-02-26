@@ -6,6 +6,10 @@
   .uxg-expansion-filter.mat-expansion-panel {
     background: transparent;
 
+    &:not([class*=mat-elevation-z]) {
+      @include mat-elevation(0);
+    }
+
     .mat-expansion-panel-header {
       border-color: mat-color($foreground, divider);
       background: mat-color($background, card);
@@ -21,6 +25,8 @@
     .mat-expansion-panel-content {
       .mat-expansion-panel-body {
         background: mat-color($background, card);
+
+        @include mat-elevation(2);
       }
     }
   }

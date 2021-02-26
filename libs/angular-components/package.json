@@ -1,23 +1,23 @@
 {
   "name": "@ffdc/uxg-angular-components",
-  "version": "0.23.9",
+  "version": "0.23.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/fusionfabric/finastra-design-system.git",
     "directory": "libs/angular-components"
   },
   "peerDependencies": {
-    "@angular/common": "^10.0.0",
-    "@angular/core": "^10.0.0",
-    "@angular/forms": "^10.0.0",
-    "@angular/cdk": "^10.0.0",
-    "@angular/flex-layout": "^10.0.0-beta.32",
-    "lodash": "4.17.19",
+    "@angular/common": "^11.0.0",
+    "@angular/core": "^11.0.0",
+    "@angular/forms": "^11.0.0",
+    "@angular/cdk": "^11.0.0",
+    "@angular/flex-layout": "^11.0.0-beta.33",
+    "lodash": "^4.17.20",
     "angular-plotly.js": "^2.0.0",
     "plotly.js": "1.52.2",
     "smoothscroll-polyfill": "0.4.4"
   },
   "dependencies": {
-    "@ffdc/uxg-angular-theme": "0.23.9"
+    "@ffdc/uxg-angular-theme": "0.23.10"
   }
 }
