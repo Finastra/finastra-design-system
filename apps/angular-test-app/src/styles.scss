@@ -27,6 +27,7 @@ $uxg-typography: uxg-typography-config();
 @include uxg-global-search-typography($uxg-typography);
 @include uxg-chart-typography($uxg-typography);
 @include uxg-changelog-typography($uxg-typography);
+@include uxg-wizard-typography($uxg-typography);
 
 @mixin app-theme($theme) {
   @include uxg-material-theme($theme);
