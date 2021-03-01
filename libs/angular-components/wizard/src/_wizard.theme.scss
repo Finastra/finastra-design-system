@@ -4,17 +4,18 @@
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
   $default-background-color: mat-color($background, card);
 
   $wizard-background-color: mat-color($background, background);
   $wizard-step-active-color: mat-color($accent, default);
   $wizard-step-done-color: map-get($uxg-grass, 100);
-  $wizard-timeline-color: mat-color($background, status-bar);
+  $wizard-timeline-color: mat-color($foreground, disabled-text);
 
   $wizard-dark-blue: mat-color($primary, darker);
   $wizard-step-description-color: mat-color($primary, lighter, 0.8);
-  $wizard-step-container-active-color: mat-color($background, background, 0.25);
+  $wizard-step-container-active-color: mat-color($primary, default, 0.45);
 
   $wizard-dot-color: map_get($mat-grey, 200);
   $wizard-dot-active-color: mat-color($primary, default);
@@ -30,25 +31,26 @@
       background: $wizard-dark-blue;
 
       .close-button {
-        color: white;
+        color: mat-color($primary, darker-contrast);
       }
     }
 
-    .uxg-wizard-timeline {
+    .uxg-wizard-timeline,
+    .uxg-wizard-timeline-xs {
       .step {
-        background-color: white;
+        background-color: $default-background-color;
         color: $wizard-timeline-color;
 
         &.done {
           background-color: $wizard-step-done-color;
           border-color: $wizard-step-done-color;
-          color: white;
+          color: mat-contrast($uxg-grass, 100);
         }
 
         &.active {
           border-color: $wizard-step-active-color;
           background-color: $wizard-step-active-color;
-          color: white;
+          color: mat-color($accent, default-contrast);
         }
       }
 
@@ -62,7 +64,7 @@
 
       .step-info-container {
         .step-title {
-          color: white;
+          color: mat-color($primary, darker-contrast);;
         }
 
         .step-description {
@@ -80,7 +82,7 @@
           background-color: $wizard-step-container-active-color;
 
           .step-description {
-            color: white;
+            color: mat-color($primary, darker-contrast);
           }
         }
       }
@@ -89,29 +91,8 @@
     .uxg-wizard-timeline-xs {
       background: $wizard-dark-blue;
 
-      .step {
-        background-color: white;
-        color: $wizard-timeline-color;
-
-        &.active {
-          border-color: $wizard-step-active-color;
-          background-color: $wizard-step-active-color;
-          color: white;
-        }
-      }
-
-      .step-info-container {
-        .step-title {
-          color: white;
-        }
-
-        .step-description {
-          color: $wizard-step-description-color;
-        }
-      }
-
       .close-button {
-        color: white;
+        color: mat-color($primary, darker-contrast);
       }
     }
 
@@ -121,29 +102,6 @@
 
         &.active {
           background-color: $wizard-dot-active-color;
-        }
-      }
-    }
-  }
-
-  .uxg-dark-theme {
-    .uxg-wizard {
-      .uxg-wizard-right-panel {
-        background: rgba(black, 0.38) !important;
-      }
-
-      .uxg-wizard-timeline {
-        .step-info-container {
-          &.active {
-            background: mat-color($primary, default, 0.38) !important;
-          }
-        }
-
-        .step {
-          &.active {
-            border-color: mat-color($accent, 900) !important;
-            background-color: mat-color($accent, 900) !important;
-          }
         }
       }
     }
