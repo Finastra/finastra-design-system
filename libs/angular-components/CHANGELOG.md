@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.11](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.10...v0.23.11) (2021-03-01)
+
+
+### Features
+
+* **theme:** better separation of css vars for dark and light ([#324](https://github.com/fusionfabric/finastra-design-system/issues/324)) ([eb2b18f](https://github.com/fusionfabric/finastra-design-system/commit/eb2b18fe5690c36584b19a78ee78f861033b9892))
+* **wizard:** sizing over container instead of viewport ([#326](https://github.com/fusionfabric/finastra-design-system/issues/326)) ([0882594](https://github.com/fusionfabric/finastra-design-system/commit/0882594b8b53af8e5e843aa1b210affe2d94a9e0))
+
+
+### Bug Fixes
+
+* **wizard:** remove hard coded colors, use theme instead ([#321](https://github.com/fusionfabric/finastra-design-system/issues/321)) ([07e22eb](https://github.com/fusionfabric/finastra-design-system/commit/07e22eb95c8b490c44ab9ef66cbd115451b354c0))
+
 ### [0.23.10](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.9...v0.23.10) (2021-02-25)
 
 

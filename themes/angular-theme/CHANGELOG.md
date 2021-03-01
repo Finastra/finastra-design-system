@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.11](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.10...v0.23.11) (2021-03-01)
+
+
+### Features
+
+* **theme:** better separation of css vars for dark and light ([#324](https://github.com/fusionfabric/finastra-design-system/issues/324)) ([eb2b18f](https://github.com/fusionfabric/finastra-design-system/commit/eb2b18fe5690c36584b19a78ee78f861033b9892))
+
 ### [0.23.10](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.9...v0.23.10) (2021-02-25)
 
 
