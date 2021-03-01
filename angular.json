@@ -65,7 +65,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -95,7 +96,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/angular-test-app/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/apps/angular-test-app"]
         }
       }
     },
@@ -173,7 +175,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/core/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/core"]
         }
       },
       "schematics": {
@@ -236,7 +239,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/global-search/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/global-search"]
         }
       },
       "schematics": {
@@ -265,7 +269,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/popover/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/popover"]
         }
       },
       "schematics": {
@@ -294,7 +299,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/scroll-to-top"]
         }
       },
       "schematics": {
@@ -323,7 +329,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/table/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/table"]
         }
       },
       "schematics": {
@@ -352,7 +359,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/filter/filter-tags"]
         }
       },
       "schematics": {
@@ -381,7 +389,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/filter/filter-tree"]
         }
       },
       "schematics": {
@@ -410,7 +419,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/filter/multiselect-tags"]
         }
       },
       "schematics": {
@@ -439,7 +449,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/repeater/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/repeater"]
         }
       },
       "schematics": {
@@ -468,7 +479,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/vector-map/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/vector-map"]
         }
       },
       "schematics": {
@@ -497,7 +509,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/wizard/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/wizard"]
         }
       },
       "schematics": {
@@ -526,7 +539,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/skeleton-text/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/skeleton-text"]
         }
       },
       "schematics": {
@@ -555,7 +569,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/chart/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/chart"]
         }
       },
       "schematics": {
@@ -584,7 +599,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/filter/filter-group"]
         }
       },
       "schematics": {
@@ -613,7 +629,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/filter/filter-toggle"]
         }
       },
       "schematics": {
@@ -642,7 +659,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/global-nav/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/global-nav"]
         }
       },
       "schematics": {
@@ -672,7 +690,8 @@
           "options": {
             "jestConfig": "libs/angular-components/avatar/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/avatar"]
         }
       },
       "schematics": {
@@ -701,7 +720,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/banner/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/banner"]
         }
       },
       "schematics": {
@@ -730,7 +750,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/user-profile-menu"]
         }
       },
       "schematics": {
@@ -759,7 +780,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/expandable-table/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/expandable-table"]
         }
       },
       "schematics": {
@@ -788,7 +810,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/entity-menu/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/entity-menu"]
         }
       },
       "schematics": {
@@ -817,7 +840,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/cards/account-card/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/cards/account-card"]
         }
       },
       "schematics": {
@@ -915,7 +939,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/toaster/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/toaster"]
         }
       },
       "schematics": {
@@ -944,7 +969,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
-          }
+          },
+          "outputs": ["coverage/libs/angular-components/video-thumbnail"]
         }
       },
       "schematics": {
