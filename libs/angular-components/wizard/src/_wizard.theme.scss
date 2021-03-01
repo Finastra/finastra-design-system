@@ -1,5 +1,3 @@
-@import 'angular-theme/lib/core/typography/typography';
-
 @mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
@@ -152,5 +150,3 @@
     }
   }
 }
-
-@include uxg-wizard-typography(uxg-typography-config());
