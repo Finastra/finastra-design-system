@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.12](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.11...v0.23.12) (2021-03-01)
+
+
+### Bug Fixes
+
+* **wizard:** remove not necessary import to prevent css var bug ([#328](https://github.com/fusionfabric/finastra-design-system/issues/328)) ([d9c6a39](https://github.com/fusionfabric/finastra-design-system/commit/d9c6a3952ed37b6a416bf9e939ab3a049006bce8))
+
 ### [0.23.11](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.10...v0.23.11) (2021-03-01)
 
 
