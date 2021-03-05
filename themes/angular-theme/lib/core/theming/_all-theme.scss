@@ -17,23 +17,12 @@
 @import '../../table/table-theme';
 @import '../../toolbar/toolbar-theme';
 @import 'color-utility';
-@import "light-variables";
-@import "dark-variables";
 
 @mixin uxg-core-theme($theme) {
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-  $is-dark: map-get($theme, is-dark);
 
-  #{if(&, '&', 'body')} {
-    @if $is-dark {
-      @include dark-vars();
-    }
-
-    @else {
-      @include light-vars();
-    }
-
+  body {
     color: mat-color($foreground, text);
 
     *::selection {

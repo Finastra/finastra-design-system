@@ -6,6 +6,6 @@
 
 @include uxg-material-theme($uxg-light-theme);
 
-@media (prefers-color-scheme: dark) {
+.uxg-dark-theme {
   @include uxg-material-theme($uxg-dark-theme);
 }
