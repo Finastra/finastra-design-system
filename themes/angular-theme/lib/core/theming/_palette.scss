@@ -208,7 +208,7 @@ $uxg-dark-theme-background: (
   raised-button: #242424,
   focused-button: $light-focused,
   selected-button: map_get($mat-grey, 900),
-  selected-text: map_get($uxg-violet, 900),
+  selected-text: mat_color($uxg-violet, 500, 0.5),
   selected-disabled-button: #242424,
   disabled-button-toggle: black,
   unselected-chip: map_get($mat-grey, 700),
