@@ -4,6 +4,4 @@
 
 @include uxg-core();
 
-.uxg-dark-theme {
-  @include uxg-material-theme($uxg-dark-theme);
-}
+@include uxg-material-theme($uxg-dark-theme);

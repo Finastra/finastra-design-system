@@ -1,6 +1,4 @@
 @import "~@angular/material/theming";
-@import "light-variables";
-@import "dark-variables";
 
 @function mat-color($palette, $hue: default, $opacity: null) {
   // If hueKey is a number between zero and one, then it actually contains an
@@ -26,16 +24,6 @@
 }
 
 $uxg-charcoal: #414141;
-
-// Light theme CSS variables
-:root {
-  @include light-vars();
-}
-
-// Dark theme CSS variables
-.uxg-dark-theme {
-  @include dark-vars();
-}
 
 $uxg-violet: (
   50: #f7f6fd,
