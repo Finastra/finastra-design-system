@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.13](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.12...v0.23.13) (2021-03-10)
+
+
+### Features
+
+* **theme:** simplify theme inclusion ([#330](https://github.com/fusionfabric/finastra-design-system/issues/330)) ([d09d32e](https://github.com/fusionfabric/finastra-design-system/commit/d09d32ecafb3df8ae585d56d5772620f70e79395))
+
+
+### Bug Fixes
+
+* **theme:** make dark theme selected text accessible ([#331](https://github.com/fusionfabric/finastra-design-system/issues/331)) ([e239b9d](https://github.com/fusionfabric/finastra-design-system/commit/e239b9dd613c8cd17aa623b1b7706817354125e1))
+
 ### [0.23.12](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.11...v0.23.12) (2021-03-01)
 
 ### [0.23.11](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.10...v0.23.11) (2021-03-01)
