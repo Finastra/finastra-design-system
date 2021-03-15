@@ -36,6 +36,7 @@ testem.log
 /typings
 /.history
 junit.xml
+finastra-design-system.iml
 
 # System Files
 .DS_Store
