@@ -1,5 +1,5 @@
-@import "src/lib/status-step/uxg-status-step.theme";
-@import "src/lib/horizontal-status-stepper.theme";
+@import "uxg-status-step.theme";
+@import "horizontal-status-stepper.theme";
 
 @mixin uxg-status-stepper-theme($theme) {
   @include uxg-status-step-theme($theme);
