@@ -1,4 +1,4 @@
-import {Component, TemplateRef, ViewChild} from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'uxg-status-step',
@@ -7,5 +7,4 @@ import {Component, TemplateRef, ViewChild} from '@angular/core';
 })
 export class StatusStepComponent {
   @ViewChild('template') public template?: TemplateRef<any>;
-
 }

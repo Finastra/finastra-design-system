@@ -70,7 +70,7 @@ import {
   VideoDialogComponent
 } from './components/video-thumbnail/video-thumbnail.component';
 import { StatusStepsDemoComponent } from './components/status-steps-demo/status-steps-demo.component';
-import {StatusStepperModule} from "@ffdc/uxg-angular-components/status-stepper";
+import { StatusStepperModule } from '@ffdc/uxg-angular-components/status-stepper';
 
 @NgModule({
   declarations: [
