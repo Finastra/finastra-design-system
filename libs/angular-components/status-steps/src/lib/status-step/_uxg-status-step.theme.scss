@@ -1,0 +1,10 @@
+@mixin uxg-status-step-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  .ffdc-step-label {
+    color: mat-color($foreground, text, 0.45);
+
+    [primary] {
+      color: mat-color($foreground, text, 0.75);
+    }
+  }
+}

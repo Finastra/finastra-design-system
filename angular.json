@@ -978,6 +978,31 @@
           "styleext": "scss"
         }
       }
+    },
+    "status-steps": {
+      "projectType": "library",
+      "root": "libs/angular-components/status-steps",
+      "sourceRoot": "libs/angular-components/status-steps/src",
+      "prefix": "ffdc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular-components/status-steps/src/**/*.ts",
+              "libs/angular-components/status-steps/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/angular-components/status-steps"],
+          "options": {
+            "jestConfig": "libs/angular-components/status-steps/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -100,7 +100,8 @@
     },
     "video-thumbnail": {
       "tags": []
-    }
+    },
+    "status-steps": { "tags": [] }
   },
   "tasksRunnerOptions": {
     "default": {

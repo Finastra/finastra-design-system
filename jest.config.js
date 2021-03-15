@@ -24,6 +24,7 @@ module.exports = {
     '<rootDir>/libs/angular-components/entity-menu',
     '<rootDir>/libs/angular-components/cards/account-card',
     '<rootDir>/libs/angular-components/toaster',
-    '<rootDir>/libs/angular-components/video-thumbnail'
+    '<rootDir>/libs/angular-components/video-thumbnail',
+    '<rootDir>/libs/angular-components/status-steps'
   ]
 };
