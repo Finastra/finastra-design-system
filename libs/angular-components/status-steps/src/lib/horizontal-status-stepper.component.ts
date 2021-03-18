@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ContentChildren, Input, QueryList} from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { StatusStepComponent } from './status-step/status-step.component';
 
 @Component({
