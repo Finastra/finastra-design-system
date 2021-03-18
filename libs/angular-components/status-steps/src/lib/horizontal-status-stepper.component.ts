@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ContentChildren, QueryList } from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ContentChildren, Input, QueryList} from '@angular/core';
 import { StatusStepComponent } from './status-step/status-step.component';
 
 @Component({
@@ -16,7 +16,7 @@ export class HorizontalStatusStepperComponent implements AfterViewInit {
     this.cdr.detectChanges();
   }
 
-  public currentStep: number = 3;
+  @Input() public currentStep: number = -1;
 
   public isComplete(stepNumber: number): boolean {
     return stepNumber < this.currentStep;

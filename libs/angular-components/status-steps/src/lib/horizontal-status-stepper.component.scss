@@ -1,3 +1,5 @@
+@import 'angular-theme/lib/core/style/spacing';
+
 :host {
   display: flex;
   width: 100%;
@@ -17,11 +19,12 @@
     .step-icon {
       display: flex;
       width: 100%;
+      margin-bottom:$uxg-spacing-3;
     }
 
     .icon-container {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -41,7 +44,7 @@
     border-top-width: 1px;
     border-top-style: solid;
     width: 100%;
-    margin-top: 11px;
+    margin-top: 16px;
 
     &.first,
     &.last {
