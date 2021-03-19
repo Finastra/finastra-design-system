@@ -11,7 +11,7 @@
     .completed,
     .current {
       .icon-container {
-        color: mat-contrast($primary, 500);
+        color: mat-color($primary, default-contrast);
         background-color: mat-color($primary, default);
       }
     }
