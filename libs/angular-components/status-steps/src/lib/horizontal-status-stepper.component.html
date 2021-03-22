@@ -1,0 +1,19 @@
+<ng-container *ngFor="let step of steps; let isLast = last; let isFirst = first; let index = index">
+  <div class="horizontal-stepper" [class.current]="isCurrent(index + 1)" [class.completed]="isComplete(index + 1)">
+    <div class="step-data">
+      <div class="step-icon">
+        <div class="horizontal-line" [class.first]="isFirst"></div>
+        <div class="icon-container">
+          <mat-icon *ngIf="isComplete(index + 1)">done</mat-icon>
+          <span *ngIf="!isComplete(index + 1)" class="step-index">{{ index + 1 }}</span>
+        </div>
+        <div class="horizontal-line" [class.last]="isLast"></div>
+      </div>
+      <ng-template
+        [ngTemplateOutlet]="step.template"
+        [ngTemplateOutletContext]="{ isCurrent: isCurrent(index + 1) }"
+      ></ng-template>
+    </div>
+  </div>
+  <div *ngIf="!isLast" class="horizontal-line"></div>
+</ng-container>

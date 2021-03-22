@@ -1,0 +1,10 @@
+@mixin uxg-status-step-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  .uxg-step-label {
+    color: mat-color($foreground, text, 0.65);
+
+    [step-title] {
+      color: mat-color($foreground, text);
+    }
+  }
+}

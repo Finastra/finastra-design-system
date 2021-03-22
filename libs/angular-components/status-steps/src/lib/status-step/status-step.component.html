@@ -1,0 +1,6 @@
+<ng-template #template let-isCurrent="isCurrent">
+  <div class="uxg-step-label" [class.current]="isCurrent">
+    <span class="uxg-body-1"><ng-content select="[step-title]"></ng-content></span>
+    <span class="uxg-body-2"><ng-content></ng-content></span>
+  </div>
+</ng-template>

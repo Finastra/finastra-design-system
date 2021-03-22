@@ -1,0 +1,7 @@
+@import "uxg-status-step.theme";
+@import "horizontal-status-stepper.theme";
+
+@mixin uxg-status-stepper-theme($theme) {
+  @include uxg-status-step-theme($theme);
+  @include uxg-horizontal-status-stepper-theme($theme);
+}

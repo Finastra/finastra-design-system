@@ -69,6 +69,8 @@ import {
   VideoThumbnailDemoComponent,
   VideoDialogComponent
 } from './components/video-thumbnail/video-thumbnail.component';
+import { StatusStepsDemoComponent } from './components/status-steps-demo/status-steps-demo.component';
+import { StatusStepperModule } from '@ffdc/uxg-angular-components/status-stepper';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,8 @@ import {
     BreadcrumbDemoComponent,
     ToasterDemoComponent,
     VideoThumbnailDemoComponent,
-    VideoDialogComponent
+    VideoDialogComponent,
+    StatusStepsDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -143,7 +146,8 @@ import {
     UXGChangelogModule,
     UxgBreadcrumbModule,
     ToasterModule,
-    VideoThumbnailModule
+    VideoThumbnailModule,
+    StatusStepperModule
   ],
   providers: [],
   exports: [],

@@ -1,0 +1,25 @@
+@mixin uxg-horizontal-status-stepper-theme($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .uxg-horizontal-status-stepper {
+    .icon-container {
+      color:  mat-color($foreground, text);
+      background-color:  mat-color($background,  focused-button);
+    }
+
+    .completed,
+    .current {
+      .icon-container {
+        color: mat-color($primary, default-contrast);
+        background-color: mat-color($primary, default);
+      }
+    }
+
+    .horizontal-line {
+      border-color: mat-color($foreground, divider);;
+    }
+  }
+
+
+}
