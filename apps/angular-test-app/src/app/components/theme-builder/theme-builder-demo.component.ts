@@ -40,18 +40,18 @@ export class ThemeBuilderComponent {
   }
 
   changePrimaryComplete($event: ColorEvent) {
-    document.documentElement.style.setProperty('--color-primary', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty('--color-primary', this.rgbStringFrom($event.color.rgb));
+    document.body.style.setProperty(
       '--color-primary-lighter',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
     );
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty(
       '--color-primary-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
 
     const gradient = `rgba(${this.rgbStringFrom($event.color.rgb)}, 1), rgba(${this.stateSecondary})`;
-    document.documentElement.style.setProperty('--color-gradient', gradient);
+    document.body.style.setProperty('--color-gradient', gradient);
 
     this.textContrastOnBackground($event.color.rgb, '--text-color-primary');
 
@@ -59,18 +59,18 @@ export class ThemeBuilderComponent {
   }
 
   changeSecondaryComplete($event: ColorEvent) {
-    document.documentElement.style.setProperty('--color-secondary', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty('--color-secondary', this.rgbStringFrom($event.color.rgb));
+    document.body.style.setProperty(
       '--color-secondary-lighter',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
     );
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty(
       '--color-secondary-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
 
     const gradient = `rgba(${this.statePrimary}), rgba(${this.rgbStringFrom($event.color.rgb)}, 1)`;
-    document.documentElement.style.setProperty('--color-gradient', gradient);
+    document.body.style.setProperty('--color-gradient', gradient);
 
     this.textContrastOnBackground($event.color.rgb, '--text-color-secondary');
 
@@ -78,12 +78,12 @@ export class ThemeBuilderComponent {
   }
 
   changeWarnComplete($event: ColorEvent) {
-    document.documentElement.style.setProperty('--color-warn', this.rgbStringFrom($event.color.rgb));
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty('--color-warn', this.rgbStringFrom($event.color.rgb));
+    document.body.style.setProperty(
       '--color-warn-lighter',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
     );
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty(
       '--color-warn-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
@@ -105,6 +105,6 @@ export class ThemeBuilderComponent {
   }
 
   setLogo(url: string) {
-    document.documentElement.style.setProperty('--logo', `url(${url})`);
+    document.body.style.setProperty('--logo', `url(${url})`);
   }
 }
