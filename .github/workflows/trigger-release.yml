@@ -1,8 +1,7 @@
 name: Trigger release
 
 on: 
-  workflow_dispatch:
-    inputs:
+  workflow_dispatch
 
 jobs:
   check_user_permission:
@@ -12,14 +11,17 @@ jobs:
       # Check for write permission
       - name: Check user permission
         id: check
-        uses: scherermichael-oss/action-has-permission@v1.0.6
+        uses: scherermichael-oss/action-has-permission@master
         with:
           required-permission: admin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Exit on insufficient permissions
+        if: "! steps.check.outputs.has-permission"
+        run: exit 1
 
   trigger_release:
-    if: check_user_permission.steps.check.outputs.has-permission
+    needs: check_user_permission
     runs-on: ubuntu-latest
     name: Trigger release
     steps:
@@ -30,8 +32,8 @@ jobs:
         with:
           node-version: 15.x
       - name: Install dependencies
-        run: npm ci --loglevel=error
+        run: npm ci --loglevel=error --ignore-scripts --omit=prod
 
       # Trigger
-      #- name: Trigger release script
-      #  run: npm run release
+      - name: Trigger release script
+        run: npm run release
