@@ -35,5 +35,5 @@ jobs:
         run: npm ci --loglevel=error --ignore-scripts --omit=prod
 
       # Trigger
-      #- name: Trigger release script
-      #  run: npm run release
+      - name: Trigger release script
+        run: npm run release
