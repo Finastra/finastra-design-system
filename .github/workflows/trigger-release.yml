@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 15.x
       - name: Install dependencies
-        run: npm ci --loglevel=error
+        run: npm ci --loglevel=error --ignore-scripts
 
       # Trigger
       #- name: Trigger release script
