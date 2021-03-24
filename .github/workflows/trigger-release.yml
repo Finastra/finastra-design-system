@@ -11,7 +11,7 @@ jobs:
       # Check for write permission
       - name: Check user permission
         id: check
-        uses: scherermichael-oss/action-has-permission@v1.0.6
+        uses: scherermichael-oss/action-has-permission@master
         with:
           required-permission: admin
         env:
