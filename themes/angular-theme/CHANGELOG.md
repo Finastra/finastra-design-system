@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.14](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.13...v0.23.14) (2021-03-24)
+
+
+### Features
+
+* **status-stepper:** add horizontal status stepper component ([#333](https://github.com/fusionfabric/finastra-design-system/issues/333)) ([172e9fa](https://github.com/fusionfabric/finastra-design-system/commit/172e9faa96cc01301ceb90cd3ea2396af44241bd))
+
 ### [0.23.13](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.12...v0.23.13) (2021-03-10)
 
 ### Features
