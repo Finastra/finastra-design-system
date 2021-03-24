@@ -1,8 +1,7 @@
 name: Trigger release
 
 on: 
-  workflow_dispatch:
-    inputs:
+  workflow_dispatch
 
 jobs:
   check_user_permission:
@@ -19,7 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   trigger_release:
-    if: check_user_permission.steps.check.outputs.has-permission
+    if: jobs.check_user_permission.steps.check.outputs.has-permission
     runs-on: ubuntu-latest
     name: Trigger release
     steps:
