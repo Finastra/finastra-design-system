@@ -16,9 +16,12 @@ jobs:
           required-permission: admin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Exit on insufficient permissions
+        if: "! steps.check.outputs.has-permission"
+        run: exit 1
 
   trigger_release:
-    if: jobs.check_user_permission.steps.check.outputs.has-permission
+    needs: check_user_permission
     runs-on: ubuntu-latest
     name: Trigger release
     steps:
