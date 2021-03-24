@@ -1,0 +1,37 @@
+name: Trigger release
+
+on: 
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  check_user_permission:
+    runs-on: ubuntu-latest
+    name: Check user's permission level
+    steps:
+      # Check for write permission
+      - name: Check user permission
+        id: check
+        uses: scherermichael-oss/action-has-permission@v1.0.6
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  trigger_release:
+    if: check_user_permission.steps.check.outputs.has-permission
+    runs-on: ubuntu-latest
+    name: Trigger release
+    steps:
+      # Setup
+      - uses: actions/checkout@v1
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+      - name: Install dependencies
+        run: npm ci --loglevel=error
+
+      # Trigger
+      #- name: Trigger release script
+      #  run: npm run release
