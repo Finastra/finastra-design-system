@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.15](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.14...v0.23.15) (2021-03-29)
+
+
+### Bug Fixes
+
+* **theme:** apply theme on root instead of body ([#337](https://github.com/fusionfabric/finastra-design-system/issues/337)) ([a0b5e17](https://github.com/fusionfabric/finastra-design-system/commit/a0b5e17ca02905d417af4f3eb0d3e21fff0ef117))
+
 ### [0.23.14](https://github.com/fusionfabric/finastra-design-system/compare/v0.23.13...v0.23.14) (2021-03-24)
 
 
