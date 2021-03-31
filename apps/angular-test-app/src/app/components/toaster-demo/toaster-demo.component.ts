@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { ToasterConfig, ToasterService, ToastType } from '@ffdc/uxg-angular-components/toaster';
+import { ToasterConfig, ToasterService, ToastType } from '@finastra/angular-components/toaster';
 
 @Component({
   selector: 'ffdc-toaster-demo',

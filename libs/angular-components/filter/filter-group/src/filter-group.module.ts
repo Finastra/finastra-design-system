@@ -15,7 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FilterGroupComponent } from './filter-group.component';
 import { UxgFilter } from './filter.directive';
 import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-dialog.component';
-import { ClickOutsideModule } from '@ffdc/uxg-angular-components/core';
+import { ClickOutsideModule } from '@finastra/angular-components/core';
 
 @NgModule({
   declarations: [FilterGroupComponent, UxgFilter, FilterGroupDialogComponent],

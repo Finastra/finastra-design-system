@@ -8,7 +8,7 @@ import {
   AfterContentInit,
   ViewChild
 } from '@angular/core';
-import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
+import { DefaultGravatar, AvatarColor } from '@finastra/angular-components/avatar';
 
 import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';

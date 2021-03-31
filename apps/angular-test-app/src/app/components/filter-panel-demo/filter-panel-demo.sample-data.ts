@@ -1,6 +1,6 @@
-import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
-import { Tag } from '@ffdc/uxg-angular-components/filter/filter-tags';
-import { ToggleBtn } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
+import { Tag } from '@finastra/angular-components/filter/filter-tags';
+import { ToggleBtn } from '@finastra/angular-components/filter/filter-toggle';
 
 export const sampleFilterTree: TreeNode[] = [
   {

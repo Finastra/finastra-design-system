@@ -8,7 +8,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ScrollToTopModule } from '@ffdc/uxg-angular-components/scroll-to-top';
+import { ScrollToTopModule } from '@finastra/angular-components/scroll-to-top';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

@@ -1,6 +1,6 @@
 import { waitForAsync, TestBed } from '@angular/core/testing';
 import { VectorMapModule } from './vector-map.module';
-import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { LazyloadScriptService } from '@finastra/angular-components/core';
 import { of } from 'rxjs';
 
 describe('VectorMapModule', () => {

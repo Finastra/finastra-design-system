@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Banner } from '@ffdc/uxg-angular-components/banner';
+import { Banner } from '@finastra/angular-components/banner';
 @Component({
   selector: 'ffdc-banner-demo',
   templateUrl: './banner-demo.component.html',

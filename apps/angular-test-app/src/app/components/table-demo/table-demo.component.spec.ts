@@ -1,7 +1,7 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDemoComponent } from './table-demo.component';
-import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
+import { UxgTableModule } from '@finastra/angular-components/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';

@@ -1,5 +1,5 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { UxgUserProfileMenuComponent, UxgUserProfileMenuModule } from '@ffdc/uxg-angular-components/user-profile-menu';
+import { UxgUserProfileMenuComponent, UxgUserProfileMenuModule } from '@finastra/angular-components/user-profile-menu';
 
 describe('UxgUserProfileMenuComponent', () => {
   let component: UxgUserProfileMenuComponent;

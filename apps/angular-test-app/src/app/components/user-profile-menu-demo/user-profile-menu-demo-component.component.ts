@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { UserProfile } from '@ffdc/uxg-angular-components/user-profile-menu';
+import { UserProfile } from '@finastra/angular-components/user-profile-menu';
 @Component({
   selector: 'uxg-user-profile-menu-demo',
   templateUrl: './user-profile-menu-demo-component.component.html',

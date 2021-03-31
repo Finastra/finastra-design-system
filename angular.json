@@ -12,7 +12,7 @@
       },
       "root": "apps/angular-test-app",
       "sourceRoot": "apps/angular-test-app/src",
-      "prefix": "ffdc",
+      "prefix": "finastra",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -132,7 +132,7 @@
       "projectType": "library",
       "root": "libs/angular-components",
       "sourceRoot": "libs/angular-components/",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "build": {
           "builder": "./dist/tools/devkit:components-builder",
@@ -159,7 +159,7 @@
       "projectType": "library",
       "root": "libs/angular-components/core",
       "sourceRoot": "libs/angular-components/core",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -189,7 +189,7 @@
       "projectType": "library",
       "root": "themes/angular-theme",
       "sourceRoot": "themes/angular-theme/",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "build": {
           "builder": "./dist/tools/devkit:theme-builder",
@@ -214,7 +214,7 @@
         }
       },
       "schematics": {
-        "@ffdc/angular:theme": {
+        "@finastra/angular:theme": {
           "styleext": "scss"
         }
       }
@@ -223,7 +223,7 @@
       "projectType": "library",
       "root": "libs/angular-components/global-search",
       "sourceRoot": "libs/angular-components/global-search",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -253,7 +253,7 @@
       "projectType": "library",
       "root": "libs/angular-components/popover",
       "sourceRoot": "libs/angular-components/popover",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -283,7 +283,7 @@
       "projectType": "library",
       "root": "libs/angular-components/scroll-to-top",
       "sourceRoot": "libs/angular-components/scroll-to-top",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -313,7 +313,7 @@
       "projectType": "library",
       "root": "libs/angular-components/table",
       "sourceRoot": "libs/angular-components/table",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -343,7 +343,7 @@
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-tags",
       "sourceRoot": "libs/angular-components/filter/filter-tags",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -373,7 +373,7 @@
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-tree",
       "sourceRoot": "libs/angular-components/filter/filter-tree",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -403,7 +403,7 @@
       "projectType": "library",
       "root": "libs/angular-components/filter/multiselect-tags",
       "sourceRoot": "libs/angular-components/filter/multiselect-tags",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -433,7 +433,7 @@
       "projectType": "library",
       "root": "libs/angular-components/repeater",
       "sourceRoot": "libs/angular-components/repeater",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -463,7 +463,7 @@
       "projectType": "library",
       "root": "libs/angular-components/vector-map",
       "sourceRoot": "libs/angular-components/vector-map",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -493,7 +493,7 @@
       "projectType": "library",
       "root": "libs/angular-components/wizard",
       "sourceRoot": "libs/angular-components/wizard",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -523,7 +523,7 @@
       "projectType": "library",
       "root": "libs/angular-components/skeleton-text",
       "sourceRoot": "libs/angular-components/skeleton-text",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -553,7 +553,7 @@
       "projectType": "library",
       "root": "libs/angular-components/chart",
       "sourceRoot": "libs/angular-components/chart",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -583,7 +583,7 @@
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-group",
       "sourceRoot": "libs/angular-components/filter/filter-group",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -613,7 +613,7 @@
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-toggle",
       "sourceRoot": "libs/angular-components/filter/filter-toggle",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -643,7 +643,7 @@
       "projectType": "library",
       "root": "libs/angular-components/global-nav",
       "sourceRoot": "libs/angular-components/global-nav",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -673,7 +673,7 @@
       "projectType": "library",
       "root": "libs/angular-components/avatar",
       "sourceRoot": "libs/angular-components/avatar/src",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -704,7 +704,7 @@
       "projectType": "library",
       "root": "libs/angular-components/banner",
       "sourceRoot": "libs/angular-components/banner",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -734,7 +734,7 @@
       "projectType": "library",
       "root": "libs/angular-components/user-profile-menu",
       "sourceRoot": "libs/angular-components/user-profile-menu",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -764,7 +764,7 @@
       "projectType": "library",
       "root": "libs/angular-components/expandable-table",
       "sourceRoot": "libs/angular-components/expandable-table",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -794,7 +794,7 @@
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
       "sourceRoot": "libs/angular-components/entity-menu",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -824,7 +824,7 @@
       "projectType": "library",
       "root": "libs/angular-components/cards/account-card",
       "sourceRoot": "libs/angular-components/cards/account-card",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -854,7 +854,7 @@
       "projectType": "library",
       "root": "libs/angular-components/search-input",
       "sourceRoot": "libs/angular-components/search-input",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -877,7 +877,7 @@
       "projectType": "library",
       "root": "libs/angular-components/changelog",
       "sourceRoot": "libs/angular-components/changelog",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -900,7 +900,7 @@
       "projectType": "library",
       "root": "libs/angular-components/breadcrumb",
       "sourceRoot": "libs/angular-components/breadcrumb",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -923,7 +923,7 @@
       "projectType": "library",
       "root": "libs/angular-components/toaster",
       "sourceRoot": "libs/angular-components/toaster",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -953,7 +953,7 @@
       "projectType": "library",
       "root": "libs/angular-components/video-thumbnail",
       "sourceRoot": "libs/angular-components/video-thumbnail",
-      "prefix": "uxg",
+      "prefix": "finastra",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -983,15 +983,16 @@
       "projectType": "library",
       "root": "libs/angular-components/status-steps",
       "sourceRoot": "libs/angular-components/status-steps/src",
-      "prefix": "ffdc",
+      "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:eslint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/status-steps/src/**/*.ts",
-              "libs/angular-components/status-steps/src/**/*.html"
-            ]
+            "tsConfig": [
+              "libs/angular-components/status-steps/tsconfig.lib.json",
+              "libs/angular-components/status-steps/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/status-steps/**"]
           }
         },
         "test": {

@@ -14,7 +14,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
-import { createChain } from '@ffdc/uxg-angular-components/core';
+import { createChain } from '@finastra/angular-components/core';
 import cloneDeep from 'lodash/cloneDeep';
 import filter from 'lodash/filter';
 import find from 'lodash/find';

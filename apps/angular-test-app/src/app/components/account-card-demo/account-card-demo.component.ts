@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Account } from '@ffdc/uxg-angular-components/cards/account-card';
+import { Account } from '@finastra/angular-components/cards/account-card';
 
 @Component({
   selector: 'ffdc-account-card-demo',

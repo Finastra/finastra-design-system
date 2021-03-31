@@ -1,7 +1,7 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToasterDemoComponent } from './toaster-demo.component';
-import { ToasterModule } from '@ffdc/uxg-angular-components/toaster';
+import { ToasterModule } from '@finastra/angular-components/toaster';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';

@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { VectorMapComponent } from './vector-map.component';
 import { PlotlyViaCDNModule, PlotlyService } from 'angular-plotly.js';
-import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { LazyloadScriptService } from '@finastra/angular-components/core';
 
 @NgModule({
   imports: [

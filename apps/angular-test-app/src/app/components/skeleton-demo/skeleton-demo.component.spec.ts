@@ -1,6 +1,6 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SkeletonDemoComponent } from './skeleton-demo.component';
-import { SkeletonTextModule } from '@ffdc/uxg-angular-components/skeleton-text';
+import { SkeletonTextModule } from '@finastra/angular-components/skeleton-text';
 import { MatCardModule } from '@angular/material/card';
 
 describe('SkeletonDemoComponent', () => {

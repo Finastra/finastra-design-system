@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Breadcrumb } from '@ffdc/uxg-angular-components/breadcrumb';
+import { Breadcrumb } from '@finastra/angular-components/breadcrumb';
 
 @Component({
   selector: 'ffdc-breadcrumb-demo',

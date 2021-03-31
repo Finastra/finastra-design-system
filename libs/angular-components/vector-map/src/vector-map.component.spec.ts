@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { PaletteModule, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { PaletteModule, LazyloadScriptService } from '@finastra/angular-components/core';
 import { VectorMapComponent } from './vector-map.component';
 import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
 import { of } from 'rxjs';

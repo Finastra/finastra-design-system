@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Video, VideoWEvent } from '@ffdc/uxg-angular-components/video-thumbnail';
+import { Video, VideoWEvent } from '@finastra/angular-components/video-thumbnail';
 
 @Component({
   selector: 'ffdc-video-thumbnail',

@@ -10,7 +10,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { NavigationNode } from '../../services/navigation.model';
-import { Breadcrumb } from '@ffdc/uxg-angular-components/breadcrumb';
+import { Breadcrumb } from '@finastra/angular-components/breadcrumb';
 
 @Component({
   selector: 'uxg-navbar',

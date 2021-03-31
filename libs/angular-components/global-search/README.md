@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { GlobalSearchModule } from '@ffdc/uxg-angular-components/global-search';
+import { GlobalSearchModule } from '@finastra/angular-components/global-search';
 
 @NgModule({
   imports: [

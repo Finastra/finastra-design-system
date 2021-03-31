@@ -1,7 +1,7 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WizardDemoComponent } from './wizard-demo.component';
-import { WizardModule } from '@ffdc/uxg-angular-components/wizard';
+import { WizardModule } from '@finastra/angular-components/wizard';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

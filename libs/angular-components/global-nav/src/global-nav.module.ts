@@ -12,7 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 
-import { UxgBreadcrumbModule } from '@ffdc/uxg-angular-components/breadcrumb';
+import { UxgBreadcrumbModule } from '@finastra/angular-components/breadcrumb';
 
 @NgModule({
   imports: [
