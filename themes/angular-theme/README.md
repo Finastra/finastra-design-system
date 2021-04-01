@@ -1,4 +1,4 @@
-[![@ffdc/uxg-angular-theme](https://img.shields.io/npm/v/@ffdc/uxg-angular-theme?label=uxg-angular-theme&style=flat-square)](https://www.npmjs.com/package/@ffdc/uxg-angular-theme)
+[![@finastra/angular-theme](https://img.shields.io/npm/v/@finastra/angular-theme?label=angular-theme&style=flat-square)](https://www.npmjs.com/package/@finastra/angular-theme)
 [![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
 
 # FINASTRA Angular Theme
@@ -12,20 +12,20 @@ You can get started in 2 simple steps:
 Install the dependency
 
 ```Bash
-npm install @ffdc/uxg-angular-theme
+npm install @finastra/angular-theme
 ```
 
 Import the theme in your main stylesheet
 
 ```SCSS
-@import '~@ffdc/uxg-angular-theme/all-theme';
+@import '~@finastra/angular-theme/all-theme';
 ```
 
-You'll find a more exhaustive documentation on our developer [getting started](https://design.ffdcdev.fusionfabric.cloud/get-started/developers) page.
+You'll find a more exhaustive documentation on our developer [getting started](https://design.fusionfabric.cloud/get-started/developers) page.
 
 ## Want to help? 🤗❤️
 
 Want to file a bug, contribute some code, or improve documentation?
 Excellent!
 
-If it's your first time contributing, use the tag [![good first issue badge](https://img.shields.io/badge/-good%20first%20issue-blueviolet?style=flat-square)](https://github.com/fusionfabric/finastra-design-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+If it's your first time contributing, use the tag [![good first issue badge](https://img.shields.io/badge/-good%20first%20issue-blueviolet?style=flat-square)](https://github.com/finastra/finastra-design-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)

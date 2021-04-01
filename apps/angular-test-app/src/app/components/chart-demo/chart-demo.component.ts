@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LegendPosition, ChartType, ChartOrientation } from '@ffdc/uxg-angular-components/chart';
+import { LegendPosition, ChartType, ChartOrientation } from '@finastra/angular-components/chart';
 
 @Component({
   selector: 'ffdc-chart-demo',

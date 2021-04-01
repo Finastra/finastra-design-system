@@ -21,7 +21,7 @@ Before submitting it, please consider the following steps:
 - Make sure the bug is not already covered in the list of open issues
 - Reproduce the issue in a live editor like [StackBlitz](https://stackblitz.com/) or [CodePen](https://codepen.io/)
 - Take screenshots if it's a UI issue
-- Provide the informations requested in the [bug report template](https://github.com/fusionfabric/finastra-design-system/issues/new?template=bug_report.md)
+- Provide the informations requested in the [bug report template](https://github.com/finastra/finastra-design-system/issues/new?template=bug_report.md)
 
 Then the process of reviewing, planning and hopefully fixing your issue will start.
 
@@ -29,13 +29,13 @@ Then the process of reviewing, planning and hopefully fixing your issue will sta
 
 You experienced frustation when trying to achieve some design using the theme?
 You identified some components that could help other developpers?
-Open a GitHub [feature request](https://github.com/fusionfabric/finastra-design-system/issues/new?template=feature_request.md)
+Open a GitHub [feature request](https://github.com/finastra/finastra-design-system/issues/new?template=feature_request.md)
 
 You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
 ## <a name="submit"></a> Submission Guidelines
 
-Before creating a new pull request please make sure there is no related ongoing work by searching the [GitHub issues](https://github.com/fusionfabric/finastra-design-system/issues) and [Github PRs](https://github.com/fusionfabric/finastra-design-system/pulls) as well.
+Before creating a new pull request please make sure there is no related ongoing work by searching the [GitHub issues](https://github.com/finastra/finastra-design-system/issues) and [Github PRs](https://github.com/finastra/finastra-design-system/pulls) as well.
 If you find something similar, join the discussion and consider contributing to it.
 If nothing match your search, then create a new issue accordingly ([Issues and Bugs](#issues), [Feature Requests](#features)).
 When your issue is validated and you are assigned to it, you can start with those simple steps:
@@ -50,7 +50,7 @@ When your issue is validated and you are assigned to it, you can start with thos
 - Add upstream remote for later updates
 
 ```sh
-> git remote add upstream git@github.com:fusionfabric/finastra-design-system.git
+> git remote add upstream git@github.com:finastra/finastra-design-system.git
 ```
 
 - Create a feature or bugfix branch according to your needs

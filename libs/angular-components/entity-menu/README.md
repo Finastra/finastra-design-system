@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { EntityMenuModule } from '@ffdc/uxg-angular-components/entity-menu';
+import { EntityMenuModule } from '@finastra/angular-components/entity-menu';
 
 @NgModule({
   imports: [

@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { ChartModule } from '@ffdc/uxg-angular-components/chart';
+import { ChartModule } from '@finastra/angular-components/chart';
 
 @NgModule({
   imports: [

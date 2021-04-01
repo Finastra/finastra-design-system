@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ExpandableTableComponent } from '@ffdc/uxg-angular-components/expandable-table';
+import { ExpandableTableComponent } from '@finastra/angular-components/expandable-table';
 
 export const DATASOURCE = [
   { apiGroup: 'FX Rate', api: 'Rate Changed', description: 'Lorem ipsum dolor sit amet, consectur, adipscing elit' },

@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent, LegendPosition, LegendPositionConvertion } from './directives/legend.component';
 import { TraceComponent } from './directives/trace.component';
-import { PaletteModule } from '@ffdc/uxg-angular-components/core';
+import { PaletteModule } from '@finastra/angular-components/core';
 import { AfterViewInit, ViewChild, Component, SimpleChange } from '@angular/core';
 import { ChartType, CHART_PLOLTLY_TYPE } from './chart.models';
 import { of } from 'rxjs';

@@ -3,7 +3,7 @@
 ### Typescript
 
 ```typescript
-import { AccountCardModule } from '@ffdc/uxg-angular-components/cards/account-card';
+import { AccountCardModule } from '@finastra/angular-components/cards/account-card';
 
 @NgModule({
   imports: [AccountCardModule]
@@ -14,7 +14,7 @@ export class AppModule {}
 ### Scss
 
 ```scss
-@import '~@ffdc/uxg-angular-components/cards/account-card/account-card.theme';
+@import '~@finastra/angular-components/cards/account-card/account-card.theme';
 
 @mixin app-theme($theme) {
   @include uxg-account-card-theme($theme);

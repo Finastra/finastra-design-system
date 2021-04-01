@@ -66,7 +66,7 @@ export default function (schema: Schema): Rule {
         };
       }),
       mergeWith(templateSource),
-      registerLocalPackage(dest, `@ffdc/uxg-angular-components/${filename}`)
+      registerLocalPackage(dest, `@finastra/angular-components/${filename}`)
     ]);
   };
 }

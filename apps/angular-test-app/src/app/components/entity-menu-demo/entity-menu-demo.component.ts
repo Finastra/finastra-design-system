@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EntityMenuItemWEvent } from '@ffdc/uxg-angular-components/entity-menu';
+import { EntityMenuItemWEvent } from '@finastra/angular-components/entity-menu';
 
 const TEMPLATES_DATA: any[] = [
   {

@@ -1,7 +1,7 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PopoverDemoComponent } from './popover-demo.component';
-import { PopoverModule } from '@ffdc/uxg-angular-components/popover';
+import { PopoverModule } from '@finastra/angular-components/popover';
 
 describe('PopoverDemoComponent', () => {
   let component: PopoverDemoComponent;

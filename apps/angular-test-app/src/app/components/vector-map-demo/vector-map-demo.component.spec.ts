@@ -9,9 +9,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 
 import { VectorMapDemoComponent } from './vector-map-demo.component';
-import { VectorMapModule } from '@ffdc/uxg-angular-components/vector-map';
-import { PaletteModule } from '@ffdc/uxg-angular-components/core';
-import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { VectorMapModule } from '@finastra/angular-components/vector-map';
+import { PaletteModule } from '@finastra/angular-components/core';
+import { LazyloadScriptService } from '@finastra/angular-components/core';
 import { of } from 'rxjs';
 
 describe('VectorMapDemoComponent', () => {

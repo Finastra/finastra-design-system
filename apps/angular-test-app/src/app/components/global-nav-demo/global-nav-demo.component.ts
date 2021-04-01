@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationNode } from '@ffdc/uxg-angular-components/global-nav';
+import { NavigationNode } from '@finastra/angular-components/global-nav';
 
 @Component({
   selector: 'ffdc-global-nav-demo',

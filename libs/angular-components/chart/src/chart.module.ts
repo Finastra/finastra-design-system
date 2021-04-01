@@ -5,7 +5,7 @@ import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
 import { ChartComponent } from './chart.component';
 import { PlotlyViaCDNModule, PlotlyService } from 'angular-plotly.js';
-import { LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { LazyloadScriptService } from '@finastra/angular-components/core';
 @NgModule({
   imports: [CommonModule, PlotlyViaCDNModule],
   declarations: [ChartComponent, GroupTracesComponent, LegendComponent, TraceComponent],

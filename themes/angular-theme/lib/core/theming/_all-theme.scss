@@ -25,7 +25,7 @@
   $background: map-get($theme, background);
   $is-dark: map-get($theme, is-dark);
 
-  #{if(&, '&', 'body')} {
+  #{if(&, '&', ':root')} {
     @if $is-dark {
       @include dark-vars();
     }

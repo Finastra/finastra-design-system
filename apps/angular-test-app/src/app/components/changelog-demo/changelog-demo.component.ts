@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ChangeLog } from '@ffdc/uxg-angular-components/changelog';
+import { ChangeLog } from '@finastra/angular-components/changelog';
 
 @Component({
   selector: 'ffdc-changelog-demo',

@@ -12,7 +12,7 @@ import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
 import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
-import { DefaultGravatar, AvatarColor } from '@ffdc/uxg-angular-components/avatar';
+import { DefaultGravatar, AvatarColor } from '@finastra/angular-components/avatar';
 import { MatMenuTrigger } from '@angular/material/menu';
 export type HeaderType = 'hero' | 'title';
 
