@@ -1,6 +1,6 @@
 {
   "name": "@finastra/angular-components",
-  "version": "0.23.15",
+  "version": "0.23.16",
   "repository": {
     "type": "git",
     "url": "https://github.com/finastra/finastra-design-system.git",
@@ -18,6 +18,6 @@
     "smoothscroll-polyfill": "0.4.4"
   },
   "dependencies": {
-    "@finastra/angular-theme": "0.23.15"
+    "@finastra/angular-theme": "0.23.16"
   }
 }
