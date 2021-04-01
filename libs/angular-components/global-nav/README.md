@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { GlobalNavModule } from '@ffdc/uxg-angular-components/global-nav';
+import { GlobalNavModule } from '@finastra/angular-components/global-nav';
 
 @NgModule({
   imports: [

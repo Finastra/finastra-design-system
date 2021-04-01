@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { ExpandableTableModule } from '@ffdc/uxg-angular-components/expandable-table';
+import { ExpandableTableModule } from '@finastra/angular-components/expandable-table';
 
 @NgModule({
   imports: [

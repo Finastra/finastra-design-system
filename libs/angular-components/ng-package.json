@@ -5,5 +5,5 @@
     "entryFile": "index.ts",
     "styleIncludePaths": ["../../themes"]
   },
-  "whitelistedNonPeerDependencies": ["@ffdc/uxg-angular-theme"]
+  "whitelistedNonPeerDependencies": ["@finastra/angular-theme"]
 }

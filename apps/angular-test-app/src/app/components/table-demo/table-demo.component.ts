@@ -15,7 +15,7 @@ import {
   UxgColumn,
   UxgPage,
   UxgActionColumnPosition
-} from '@ffdc/uxg-angular-components/table';
+} from '@finastra/angular-components/table';
 import { PageEvent } from '@angular/material/paginator';
 
 const ELEMENT_DATA: any[] = [

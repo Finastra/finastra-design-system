@@ -1,5 +1,5 @@
 {
-  "npmScope": "ffdc",
+  "npmScope": "finastra",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",

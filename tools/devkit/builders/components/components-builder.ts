@@ -29,7 +29,7 @@ function componentsBuilder(options: Schema, context: BuilderContext): Observable
             const to = join(dest, asset.replace('src/', ''));
 
             let scss = readFileSync(from, { encoding: 'utf-8' });
-            scss = scss.replace('angular-theme', '~@ffdc/uxg-angular-theme');
+            scss = scss.replace('angular-theme', '~@finastra/angular-theme');
 
             writeFileSync(to, scss.toString());
           }

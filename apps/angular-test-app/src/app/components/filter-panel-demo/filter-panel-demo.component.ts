@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { sampleFilterTree, sampleFilterTags, sampleToggleBtn, sampleTimeline } from './filter-panel-demo.sample-data';
-import { TreeNode } from '@ffdc/uxg-angular-components/filter/filter-tree';
-import { Tag } from '@ffdc/uxg-angular-components/filter/filter-tags';
-import { ToggleBtn } from '@ffdc/uxg-angular-components/filter/filter-toggle';
+import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
+import { Tag } from '@finastra/angular-components/filter/filter-tags';
+import { ToggleBtn } from '@finastra/angular-components/filter/filter-toggle';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',

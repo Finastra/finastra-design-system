@@ -5,7 +5,7 @@
 In your `app.module.ts` :
 
 ```ts
-import { Banner } from '@ffdc/uxg-angular-components/banner';
+import { Banner } from '@finastra/angular-components/banner';
 
 @NgModule({
   imports: [

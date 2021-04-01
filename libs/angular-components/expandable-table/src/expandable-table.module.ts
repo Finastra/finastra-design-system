@@ -6,7 +6,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
 import { ExpandableTableComponent } from './expandable-table.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
+import { UxgTableModule } from '@finastra/angular-components/table';
 
 @NgModule({
   declarations: [ExpandableTableComponent],

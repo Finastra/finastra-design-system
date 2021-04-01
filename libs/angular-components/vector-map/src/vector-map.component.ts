@@ -17,7 +17,7 @@ import {
   PaletteConfig,
   PaletteService,
   PALETTE_DEFAULT_CONFIG
-} from '@ffdc/uxg-angular-components/core';
+} from '@finastra/angular-components/core';
 import { PlotComponent } from 'angular-plotly.js';
 import { Observable, Subscription } from 'rxjs';
 import {

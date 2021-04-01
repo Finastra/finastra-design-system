@@ -58,17 +58,17 @@ jobs:
       - name: Upload Angular Theme Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: "uxg-angular-theme"
+          name: "angular-theme"
           path: "./dist/themes/angular-theme"
       - name: Upload Angular Components Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: "uxg-angular-components"
+          name: "angular-components"
           path: "./dist/libs/angular-components"
       - name: Upload Angular Test App Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: "uxg-angular-app"
+          name: "angular-app"
           path: "./dist/apps/angular-test-app"
 
   release:
@@ -96,11 +96,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: "uxg-angular-theme"
+          name: "angular-theme"
           path: "./dist/themes/angular-theme"
       - uses: actions/download-artifact@v2
         with:
-          name: "uxg-angular-components"
+          name: "angular-components"
           path: "./dist/libs/angular-components"
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
@@ -120,7 +120,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: "uxg-angular-app"
+          name: "angular-app"
           path: "./dist/apps/angular-test-app"
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1

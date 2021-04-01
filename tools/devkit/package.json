@@ -1,5 +1,5 @@
 {
-  "name": "@ffdc/devkit",
+  "name": "@finastra/devkit",
   "version": "0.23.0",
   "private": true,
   "main": "index.js",

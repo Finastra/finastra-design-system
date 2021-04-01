@@ -23,7 +23,7 @@ import { TraceComponent } from './directives/trace.component';
 import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
 import { GroupTracesComponent } from './directives/groupTrace.component';
 import { LegendComponent } from './directives/legend.component';
-import { PaletteService, PaletteConfig, LazyloadScriptService } from '@ffdc/uxg-angular-components/core';
+import { PaletteService, PaletteConfig, LazyloadScriptService } from '@finastra/angular-components/core';
 import { Subscription, merge, Observable } from 'rxjs';
 
 @Component({

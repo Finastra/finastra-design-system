@@ -13,7 +13,7 @@ import { ExpandableTableComponent } from './expandable-table.component';
 import { SimpleChange, ChangeDetectionStrategy } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
-import { UxgTableModule } from '@ffdc/uxg-angular-components/table';
+import { UxgTableModule } from '@finastra/angular-components/table';
 import { cloneDeep } from 'lodash';
 
 export const DATASOURCE = [

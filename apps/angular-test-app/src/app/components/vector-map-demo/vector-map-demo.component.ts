@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VectorMapDataSource } from '@ffdc/uxg-angular-components/vector-map';
+import { VectorMapDataSource } from '@finastra/angular-components/vector-map';
 
 @Component({
   selector: 'ffdc-vector-map-demo',

@@ -12,6 +12,6 @@ module.exports.writeVersion = function (contents, version) {
   let indent = detectIndent(contents).indent;
   let newline = detectNewline(contents);
   json.version = version;
-  json.dependencies['@ffdc/uxg-angular-theme'] = version;
+  json.dependencies['@finastra/angular-theme'] = version;
   return stringifyPackage(json, indent, newline);
 };
