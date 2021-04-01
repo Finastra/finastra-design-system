@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.18](https://github.com/finastra/finastra-design-system/compare/v0.23.17...v0.23.18) (2021-04-01)
+
 ### [0.23.17](https://github.com/finastra/finastra-design-system/compare/v0.23.16...v0.23.17) (2021-04-01)
 
 ### [0.23.16](https://github.com/finastra/finastra-design-system/compare/v0.23.15...v0.23.16) (2021-04-01)
