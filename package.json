@@ -41,7 +41,7 @@
     "help": "nx help",
     "nx": "nx",
     "testjest": "jest",
-    "release": "npx standard-version -an && git push --follow-tags",
+    "release": "npx standard-version -an",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
     "changelog:components": "cd libs/angular-components && npx standard-version",
     "workspace-generator": "nx workspace-generator"
