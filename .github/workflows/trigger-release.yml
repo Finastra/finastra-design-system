@@ -33,6 +33,9 @@ jobs:
           node-version: 15.x
       - name: Install dependencies
         run: npm ci --loglevel=error --ignore-scripts --omit=prod
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
 
       # Trigger
       - name: Trigger release script
