@@ -5,7 +5,7 @@ on:
       - 'themes/angular-theme/**'
 
 jobs:
-  init:
+  cypress:
     runs-on: ubuntu-latest
 
     steps:
