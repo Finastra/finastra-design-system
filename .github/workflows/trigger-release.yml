@@ -35,7 +35,7 @@ jobs:
         run: npm ci --loglevel=error --ignore-scripts --omit=prod
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
+          token: '${{ secrets.FINASTRA_BOT_GITHUB_TOKEN }}'
 
       # Trigger
       - name: Trigger release script
