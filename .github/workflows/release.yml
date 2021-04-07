@@ -85,7 +85,6 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: true
 
   publish:
     needs: build
