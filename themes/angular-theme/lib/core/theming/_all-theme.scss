@@ -38,6 +38,7 @@
 
     *::selection {
       background: mat-color($background, selected-text);
+      color: mat-color($foreground, text);
     }
   }
 
