@@ -19,3 +19,7 @@ Want to file a bug, contribute some code, or improve documentation?
 Excellent!
 
 If it's your first time contributing, use the tag [![good first issue badge](https://img.shields.io/badge/-good%20first%20issue-blueviolet?style=flat-square)](https://github.com/finastra/finastra-design-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system?ref=badge_large)
