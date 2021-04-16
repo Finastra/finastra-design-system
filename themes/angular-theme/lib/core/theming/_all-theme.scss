@@ -25,6 +25,12 @@
   $background: map-get($theme, background);
   $is-dark: map-get($theme, is-dark);
 
+  @at-root {
+    body {
+      background: mat-color($background, background);
+    }
+  }
+
   #{if(&, '&', ':root')} {
     @if $is-dark {
       @include dark-vars();
