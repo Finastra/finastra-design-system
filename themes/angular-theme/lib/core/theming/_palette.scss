@@ -180,7 +180,7 @@ $uxg-gradient: (
 $uxg-light-theme-background: (
   status-bar: map_get($mat-grey, 300),
   app-bar: white,
-  background: map_get($mat-grey, 50),
+  background: rgba(var(--color-background), 1),
   hover: rgba(black, 0.04),
   card: #fff,
   dialog: white,
@@ -200,7 +200,7 @@ $uxg-light-theme-background: (
 $uxg-dark-theme-background: (
   status-bar: black,
   app-bar:    #242424,
-  background: #191919,
+  background: rgba(var(--color-background), 1),
   hover:      rgba(white, 0.04),
   card:       #242424,
   dialog:     #242424,
