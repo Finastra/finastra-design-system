@@ -15,7 +15,8 @@
     "lodash": "^4.17.20",
     "angular-plotly.js": "^2.0.0",
     "plotly.js": "1.52.2",
-    "smoothscroll-polyfill": "0.4.4"
+    "smoothscroll-polyfill": "0.4.4",
+    "ts-md5": "1.2.7"
   },
   "dependencies": {
     "@finastra/angular-theme": "1.0.0"
