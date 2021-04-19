@@ -10,6 +10,7 @@
               (click)="
                 demoFilter.clearSelection();
                 demoFilterTags.clearSelection();
+                demoGroupFilterTags.clearSelection();
                 toggleBtnFilter.reset();
                 demoMultiselectTags.clearSelection()
               "
@@ -45,13 +46,13 @@
         <div class="filter-panel-group-tags">
           <div class="filter-panel-tags-title">
             <h5 class="uxg-h5">Group Tags</h5>
-            <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
+            <button mat-button (click)="demoGroupFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
           <uxg-filter-tags
             [data]="sampleGroupTags"
             [groupTags]="true"
             (changes)="updateGroupFilterTags($event)"
-            #demoFilterTags
+            #demoGroupFilterTags
           >
           </uxg-filter-tags>
         </div>
@@ -146,19 +147,18 @@
             <uxg-filter-tags uxgFilter="Tags" [data]="sampleDataTags" (changes)="updateFilterTags($event)">
             </uxg-filter-tags>
           </div>
-          <div class="filter-panel-group-tags">
-            <div class="filter-panel-tags-title">
-              <h5 class="uxg-h5">Group Tags</h5>
-              <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
-            </div>
+
+          <div class="filter-instance">
+            <div class="uxg-h6">Group Tags</div>
             <uxg-filter-tags
+              uxgFilter="Tags"
               [data]="sampleGroupTags"
               [groupTags]="true"
               (changes)="updateGroupFilterTags($event)"
-              #demoFilterTags
             >
             </uxg-filter-tags>
           </div>
+
           <div class="filter-instance">
             <div class="uxg-h6">Usage Type</div>
             <uxg-multiselect-tags

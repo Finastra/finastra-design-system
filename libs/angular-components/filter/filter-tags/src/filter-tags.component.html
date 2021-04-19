@@ -14,7 +14,7 @@
   </mat-chip-list>
 
   <ng-container *ngIf="groupTags; else simpleTags">
-    <mat-form-field class="chip-list" appearance="fill" dense>
+    <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
       <mat-icon matPrefix dense class="search-icon">search</mat-icon>
       <input
         [attr.aria-label]="ariaLabel"
@@ -47,7 +47,7 @@
     </mat-autocomplete>
   </ng-container>
   <ng-template #simpleTags>
-    <mat-form-field class="chip-list" appearance="fill" dense>
+    <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
       <mat-icon matPrefix dense class="search-icon">search</mat-icon>
       <input
         [attr.aria-label]="ariaLabel"
