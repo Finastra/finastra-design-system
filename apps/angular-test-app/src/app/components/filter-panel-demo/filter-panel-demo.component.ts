@@ -23,6 +23,14 @@ export class FilterPanelDemoComponent implements OnInit {
     { label: 'Money Movement' },
     { label: 'Static Data' }
   ];
+  sampleGroupTags = [
+    { category: 'A', label: 'Alabama' },
+    { category: 'A', label: 'Alaska', isSelected: true },
+    { category: 'A', label: 'Arizona' },
+    { category: 'A', label: 'Arkansas' },
+    { category: 'C', label: 'California' },
+    { category: 'C', label: 'Colorado' }
+  ];
 
   multiselectTagsSampleData = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
   chosenTags: string[] = [];
@@ -30,6 +38,7 @@ export class FilterPanelDemoComponent implements OnInit {
 
   treeFilter: string[] = [];
   tagFilter: string[] = [];
+  groupTagFilter: string[] = [];
   groupFilter: string[] = [];
   toggleFilter: string[] = [];
   constructor() {}
@@ -52,6 +61,10 @@ export class FilterPanelDemoComponent implements OnInit {
 
   updateFilterTags(changes: string[]) {
     this.tagFilter = changes;
+  }
+
+  updateGroupFilterTags(changes: string[]) {
+    this.groupTagFilter = changes;
   }
 
   updateFilterToggle(changes: any[]) {

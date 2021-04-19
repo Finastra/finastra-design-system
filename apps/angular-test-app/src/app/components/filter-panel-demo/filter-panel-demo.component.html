@@ -38,7 +38,21 @@
             <h5 class="uxg-h5">Tags</h5>
             <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
-          <uxg-filter-tags [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
+          <uxg-filter-tags standard [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
+          </uxg-filter-tags>
+        </div>
+
+        <div class="filter-panel-group-tags">
+          <div class="filter-panel-tags-title">
+            <h5 class="uxg-h5">Group Tags</h5>
+            <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
+          </div>
+          <uxg-filter-tags
+            [data]="sampleGroupTags"
+            [groupTags]="true"
+            (changes)="updateGroupFilterTags($event)"
+            #demoFilterTags
+          >
           </uxg-filter-tags>
         </div>
 
@@ -89,6 +103,9 @@
 
         <h5 class="uxg-h5">Filter Tags Results</h5>
         <pre>{{ tagFilter | json }}</pre>
+
+        <h5 class="uxg-h5">Filter Group Tags Results</h5>
+        <pre>{{ groupTagFilter | json }}</pre>
 
         <h5 class="uxg-h5">Filter Multiselect Tags Results</h5>
         <pre>{{ chosenMultiselectTags | json }}</pre>
