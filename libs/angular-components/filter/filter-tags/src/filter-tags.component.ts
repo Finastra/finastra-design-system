@@ -41,7 +41,7 @@ export class FilterTagsComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  groupData:any[] = [];
+  groupData: any[] = [];
 
   toHighlight = '';
   formCtrl = new FormControl();
@@ -67,20 +67,21 @@ export class FilterTagsComponent implements OnInit {
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
   @ViewChildren('tagInput') input!: QueryList<ElementRef<HTMLInputElement>>;
-  @ViewChildren(MatAutocomplete) autocomplete!:QueryList<MatAutocomplete>;
+  @ViewChildren(MatAutocomplete) autocomplete!: QueryList<MatAutocomplete>;
   @ViewChildren(MatAutocompleteTrigger) triggerCollection!: QueryList<MatAutocompleteTrigger>;
 
-
-  constructor(private hostElement: ElementRef, 
-  @Attribute('standard') public standard: any,
-  @Attribute('dense') public dense: any) {
+  constructor(
+    private hostElement: ElementRef,
+    @Attribute('standard') public standard: any,
+    @Attribute('dense') public dense: any
+  ) {
     this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
   ngOnInit() {
-    if(this.groupTags) {
-      this.filterByCategory(this.data)
+    if (this.groupTags) {
+      this.filterByCategory(this.data);
     }
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
       startWith(null),
@@ -96,63 +97,56 @@ export class FilterTagsComponent implements OnInit {
   }
 
   add(event: MatChipInputEvent, field: number) {
-    const auto = this.autocomplete.find((element, index) => index === field)
-    if(auto) {
+    const auto = this.autocomplete.find((element, index) => index === field);
+    if (auto) {
       if (!auto.isOpen) {
         const input = event.input;
         const value = (event.value || '').trim();
-  
+
         const validValue = this.data.some((el) => el.label === value);
-  
+
         if (validValue) {
           this.selectedData.push({ label: value });
         }
-  
+
         if (input) {
           input.value = '';
         }
-  
+
         this.formCtrl.setValue(null);
-  
+
         if (value) {
           this.changes.emit({ added: [{ label: event.value }], removed: [] });
         }
       }
     }
-    
   }
 
   filterByCategory(tags: Tag[]) {
     const groups: any = [];
-    for(const tag of tags) {
-      if(tag.category) {
-        groups.push({'category': tag.category, 'labels': {"label":tag.label}}) 
-      } 
+    for (const tag of tags) {
+      if (tag.category) {
+        groups.push({ category: tag.category, labels: { label: tag.label } });
+      }
     }
 
-    this.groupData = groups.reduce(( aggregate:any, nextElement:any ) => {
-      const category = nextElement.category;        
-      
-      //create a new row in the aggregate if one doesn't exist
-      let aggregatedRow = aggregate.find( (tag:any) => tag.category === category );       
-      if ( !aggregatedRow ) {
-         aggregatedRow = { category, labels: [] }; 
-         aggregate.push( aggregatedRow );
+    this.groupData = groups.reduce((aggregate: any, nextElement: any) => {
+      const category = nextElement.category;
+
+      let aggregatedRow = aggregate.find((tag: any) => tag.category === category);
+      if (!aggregatedRow) {
+        aggregatedRow = { category, labels: [] };
+        aggregate.push(aggregatedRow);
       }
-      //add the new exchange pair id to the aggregate row       
-      aggregatedRow.labels.push( {"label": nextElement.labels.label});
+      aggregatedRow.labels.push({ label: nextElement.labels.label });
 
       return aggregate;
-          
-   }, []);
-   console.log("group", this.groupData)
-   //start with an empty array
+    }, []);
   }
 
   remove(tag: Tag) {
     for (const trigger of this.triggerCollection.toArray()) {
-      trigger.panelClosingActions
-      .subscribe(e => {
+      trigger.panelClosingActions.subscribe((e) => {
         if (!(e && e.source)) {
           trigger.closePanel();
         }
@@ -166,15 +160,15 @@ export class FilterTagsComponent implements OnInit {
     this.toHighlight = '';
   }
 
-  onSelected(event: MatAutocompleteSelectedEvent, field:number) {
-    const input = this.input.find((element, index) => index === field)
+  onSelected(event: MatAutocompleteSelectedEvent, field: number) {
+    const input = this.input.find((element, index) => index === field);
     if (this.selectedData.indexOf(event.option.value) === -1) {
       this.selectedData.push(event.option.value);
       this.changes.emit({ added: [event.option.value], removed: [] });
     }
 
     this.toHighlight = '';
-    if(input) {
+    if (input) {
       input.nativeElement.value = '';
     }
     this.formCtrl.setValue(null);
@@ -192,15 +186,13 @@ export class FilterTagsComponent implements OnInit {
 
   onClick() {
     for (const trigger of this.triggerCollection.toArray()) {
-      trigger.panelClosingActions
-      .subscribe(e => {
+      trigger.panelClosingActions.subscribe((e) => {
         if (!(e && e.source)) {
           trigger._onChange('');
           trigger.openPanel();
         }
       });
     }
-   
   }
 
   applyHighlight(tag: Tag) {
