@@ -81,7 +81,7 @@ export class FilterTagsComponent implements OnInit {
 
   ngOnInit() {
     if (this.groupTags) {
-      this.filterByCategory(this.data);
+      this.filterByCategory();
     }
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
       startWith(null),
@@ -122,15 +122,8 @@ export class FilterTagsComponent implements OnInit {
     }
   }
 
-  filterByCategory(tags: Tag[]) {
-    const groups: any = [];
-    for (const tag of tags) {
-      if (tag.category) {
-        groups.push({ category: tag.category, labels: { label: tag.label } });
-      }
-    }
-
-    this.groupData = groups.reduce((aggregate: any, nextElement: any) => {
+  filterByCategory() {
+    this.groupData = this.data.reduce((aggregate: any, nextElement: any) => {
       const category = nextElement.category;
 
       let aggregatedRow = aggregate.find((tag: any) => tag.category === category);
@@ -138,10 +131,12 @@ export class FilterTagsComponent implements OnInit {
         aggregatedRow = { category, labels: [] };
         aggregate.push(aggregatedRow);
       }
-      aggregatedRow.labels.push({ label: nextElement.labels.label });
+      aggregatedRow.labels.push({ label: nextElement.label });
 
       return aggregate;
     }, []);
+
+    console.log('groups', this.groupData);
   }
 
   remove(tag: Tag) {
