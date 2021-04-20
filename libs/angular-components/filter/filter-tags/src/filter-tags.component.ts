@@ -68,7 +68,7 @@ export class FilterTagsComponent implements OnInit {
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
-  constructor(private hostElement: ElementRef,  @Attribute('standard') public standard: any) {
+  constructor(private hostElement: ElementRef, @Attribute('standard') public standard: any) {
     this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
@@ -80,10 +80,9 @@ export class FilterTagsComponent implements OnInit {
         map((tag: string | null) => {
           if (tag) {
             const filteredCategories = this.filter(tag);
-            return this.filterCategories(filteredCategories)
-            
+            return this.filterCategories(filteredCategories);
           } else {
-            return this.filterCategories(this.data)
+            return this.filterCategories(this.data);
           }
         })
       );
@@ -93,7 +92,7 @@ export class FilterTagsComponent implements OnInit {
       startWith(null),
       map((tag: string | null) => {
         if (tag) {
-            return this.filter(tag);
+          return this.filter(tag);
         } else {
           this.toHighlight = '';
           return this.data.slice();
@@ -102,19 +101,18 @@ export class FilterTagsComponent implements OnInit {
     );
   }
 
-
   filterCategories(data: any) {
-    const filteredCategories:any = [];
-    for ( const tag of data) {
-      if(!filteredCategories.includes(tag.category)) {
-        filteredCategories.push(tag.category)
+    const filteredCategories: any = [];
+    for (const tag of data) {
+      if (!filteredCategories.includes(tag.category)) {
+        filteredCategories.push(tag.category);
       }
     }
-     return filteredCategories
+    return filteredCategories;
   }
 
-  filterTagsByCategory(data: Tag[], category:string) {
-    return data.filter((item: any) => category === item.category)
+  filterTagsByCategory(data: Tag[], category: string) {
+    return data.filter((item: any) => category === item.category);
   }
 
   add(event: MatChipInputEvent) {
