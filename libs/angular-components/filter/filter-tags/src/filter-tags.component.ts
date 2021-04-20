@@ -111,8 +111,8 @@ export class FilterTagsComponent implements OnInit {
     return filteredCategories;
   }
 
-  filterTagsByCategory(data: Tag[], category: string) {
-    return data.filter((item: any) => category === item.category);
+  filterTagsByCategory(data: Tag[] | null, category: string) {
+    return data?.filter((item: any) => category === item.category);
   }
 
   add(event: MatChipInputEvent) {
