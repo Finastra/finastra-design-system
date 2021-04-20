@@ -1,6 +1,5 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import {
-  AfterViewInit,
   Attribute,
   Component,
   ElementRef,
@@ -8,21 +7,19 @@ import {
   Input,
   OnInit,
   Output,
-  QueryList,
   ViewChild,
-  ViewChildren,
   ViewEncapsulation
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 export interface Tag {
   label: string;
-  category?: string;
   isSelected?: boolean;
+  category?: string;
 }
 
 interface UXGFilterChanges {
@@ -42,6 +39,7 @@ export class FilterTagsComponent implements OnInit {
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   groupData: any[] = [];
+  categories$!: Observable<string[]>;
 
   toHighlight = '';
   formCtrl = new FormControl();
@@ -66,28 +64,36 @@ export class FilterTagsComponent implements OnInit {
   @Input() groupTags = false;
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
-  @ViewChildren('tagInput') input!: QueryList<ElementRef<HTMLInputElement>>;
-  @ViewChildren(MatAutocomplete) autocomplete!: QueryList<MatAutocomplete>;
-  @ViewChildren(MatAutocompleteTrigger) triggerCollection!: QueryList<MatAutocompleteTrigger>;
+  @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
+  @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
+  @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
-  constructor(
-    private hostElement: ElementRef,
-    @Attribute('standard') public standard: any,
-    @Attribute('dense') public dense: any
-  ) {
+  constructor(private hostElement: ElementRef,  @Attribute('standard') public standard: any) {
     this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
   ngOnInit() {
     if (this.groupTags) {
-      this.filterByCategory();
+      this.categories$ = this.formCtrl.valueChanges.pipe(
+        startWith(null),
+        map((tag: string | null) => {
+          if (tag) {
+            const filteredCategories = this.filter(tag);
+            return this.filterCategories(filteredCategories)
+            
+          } else {
+            return this.filterCategories(this.data)
+          }
+        })
+      );
     }
+
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
       startWith(null),
       map((tag: string | null) => {
         if (tag) {
-          return this.filter(tag);
+            return this.filter(tag);
         } else {
           this.toHighlight = '';
           return this.data.slice();
@@ -96,57 +102,46 @@ export class FilterTagsComponent implements OnInit {
     );
   }
 
-  add(event: MatChipInputEvent, field: number) {
-    const auto = this.autocomplete.find((element, index) => index === field);
-    if (auto) {
-      if (!auto.isOpen) {
-        const input = event.input;
-        const value = (event.value || '').trim();
 
-        const validValue = this.data.some((el) => el.label === value);
-
-        if (validValue) {
-          this.selectedData.push({ label: value });
-        }
-
-        if (input) {
-          input.value = '';
-        }
-
-        this.formCtrl.setValue(null);
-
-        if (value) {
-          this.changes.emit({ added: [{ label: event.value }], removed: [] });
-        }
+  filterCategories(data: any) {
+    const filteredCategories:any = [];
+    for ( const tag of data) {
+      if(!filteredCategories.includes(tag.category)) {
+        filteredCategories.push(tag.category)
       }
     }
+     return filteredCategories
   }
 
-  filterByCategory() {
-    this.groupData = this.data.reduce((aggregate: any, nextElement: any) => {
-      const category = nextElement.category;
+  filterTagsByCategory(data: Tag[], category:string) {
+    return data.filter((item: any) => category === item.category)
+  }
 
-      let aggregatedRow = aggregate.find((tag: any) => tag.category === category);
-      if (!aggregatedRow) {
-        aggregatedRow = { category, labels: [] };
-        aggregate.push(aggregatedRow);
+  add(event: MatChipInputEvent) {
+    if (!this.autocomplete.isOpen) {
+      const input = event.input;
+      const value = (event.value || '').trim();
+
+      const validValue = this.data.some((el) => el.label === value);
+
+      if (validValue) {
+        this.selectedData.push({ label: value });
       }
-      aggregatedRow.labels.push({ label: nextElement.label });
 
-      return aggregate;
-    }, []);
+      if (input) {
+        input.value = '';
+      }
 
-    console.log('groups', this.groupData);
+      this.formCtrl.setValue(null);
+
+      if (value) {
+        this.changes.emit({ added: [{ label: event.value }], removed: [] });
+      }
+    }
   }
 
   remove(tag: Tag) {
-    for (const trigger of this.triggerCollection.toArray()) {
-      trigger.panelClosingActions.subscribe((e) => {
-        if (!(e && e.source)) {
-          trigger.closePanel();
-        }
-      });
-    }
+    this.trigger.closePanel();
     const index = this.selectedData.indexOf(tag);
     if (index >= 0) {
       const tagAtIndex = this.selectedData.splice(index, 1);
@@ -155,17 +150,14 @@ export class FilterTagsComponent implements OnInit {
     this.toHighlight = '';
   }
 
-  onSelected(event: MatAutocompleteSelectedEvent, field: number) {
-    const input = this.input.find((element, index) => index === field);
+  onSelected(event: MatAutocompleteSelectedEvent) {
     if (this.selectedData.indexOf(event.option.value) === -1) {
       this.selectedData.push(event.option.value);
       this.changes.emit({ added: [event.option.value], removed: [] });
     }
 
     this.toHighlight = '';
-    if (input) {
-      input.nativeElement.value = '';
-    }
+    this.input.nativeElement.value = '';
     this.formCtrl.setValue(null);
   }
 
@@ -180,14 +172,8 @@ export class FilterTagsComponent implements OnInit {
   }
 
   onClick() {
-    for (const trigger of this.triggerCollection.toArray()) {
-      trigger.panelClosingActions.subscribe((e) => {
-        if (!(e && e.source)) {
-          trigger._onChange('');
-          trigger.openPanel();
-        }
-      });
-    }
+    this.trigger._onChange('');
+    this.trigger.openPanel();
   }
 
   applyHighlight(tag: Tag) {
@@ -211,7 +197,6 @@ export class FilterTagsComponent implements OnInit {
     }
 
     this.toHighlight = filterValue;
-
     return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
   }
 

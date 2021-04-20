@@ -13,28 +13,28 @@
     </mat-chip>
   </mat-chip-list>
 
-  <ng-container *ngIf="groupTags; else simpleTags">
-    <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
-      <mat-icon matPrefix dense class="search-icon">search</mat-icon>
-      <input
-        [attr.aria-label]="ariaLabel"
-        matInput
-        type="text"
-        #tagInput
-        [placeholder]="placeholder"
-        [formControl]="formCtrl"
-        [matAutocomplete]="autocomplete"
-        [matChipInputFor]="chipList"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-        [matChipInputAddOnBlur]="addOnBlur"
-        (matChipInputTokenEnd)="add($event, 0)"
-        (click)="onClick()"
-      />
-    </mat-form-field>
-    <mat-autocomplete #autocomplete (optionSelected)="onSelected($event, 0)">
-      <mat-optgroup *ngFor="let group of groupData" [label]="group.category">
+  <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
+    <mat-icon matPrefix dense class="search-icon">search</mat-icon>
+    <input
+      [attr.aria-label]="ariaLabel"
+      matInput
+      type="text"
+      #tagInput
+      [placeholder]="placeholder"
+      [formControl]="formCtrl"
+      [matAutocomplete]="autocomplete"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)"
+      (click)="onClick()"
+    />
+  </mat-form-field>
+  <mat-autocomplete #autocomplete (optionSelected)="onSelected($event)">
+    <ng-container *ngIf="groupTags; else simpleTags">
+      <mat-optgroup *ngFor="let category of categories$ | async" [label]="category">
         <mat-option
-          *ngFor="let tag of group.labels"
+          *ngFor="let tag of filterTagsByCategory(filteredTags$ | async, category)"
           [value]="tag"
           [ngClass]="{
             'selected-option-highlight': applyHighlight(tag)
@@ -44,27 +44,8 @@
           <span [innerHTML]="tag.label | highlight: toHighlight"></span>
         </mat-option>
       </mat-optgroup>
-    </mat-autocomplete>
-  </ng-container>
-  <ng-template #simpleTags>
-    <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
-      <mat-icon matPrefix dense class="search-icon">search</mat-icon>
-      <input
-        [attr.aria-label]="ariaLabel"
-        matInput
-        type="text"
-        #tagInput
-        [placeholder]="placeholder"
-        [formControl]="formCtrl"
-        [matAutocomplete]="autocomplete"
-        [matChipInputFor]="chipList"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-        [matChipInputAddOnBlur]="addOnBlur"
-        (matChipInputTokenEnd)="add($event, 1)"
-        (click)="onClick()"
-      />
-    </mat-form-field>
-    <mat-autocomplete #autocomplete (optionSelected)="onSelected($event, 1)">
+    </ng-container>
+    <ng-template #simpleTags>
       <mat-option
         *ngFor="let tag of filteredTags$ | async"
         [value]="tag"
@@ -75,6 +56,6 @@
       >
         <span [innerHTML]="tag.label | highlight: toHighlight"></span>
       </mat-option>
-    </mat-autocomplete>
-  </ng-template>
+    </ng-template>
+  </mat-autocomplete>
 </div>
