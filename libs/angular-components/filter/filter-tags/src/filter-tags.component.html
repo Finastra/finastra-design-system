@@ -2,7 +2,7 @@
   <mat-chip-list #chipList aria-label="Tags selection">
     <mat-chip
       [attr.standard]="standard === '' || null"
-      [attr.dense]="dense === '' || null"
+      [attr.dense]="standard === '' ? null : ''"
       selected
       *ngFor="let tag of selectedData"
       [removable]="removable"
