@@ -39,7 +39,7 @@
             <h5 class="uxg-h5">Tags</h5>
             <button mat-button (click)="demoFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
-          <uxg-filter-tags standard [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
+          <uxg-filter-tags [data]="sampleDataTags" (changes)="updateFilterTags($event)" #demoFilterTags>
           </uxg-filter-tags>
         </div>
 
@@ -49,6 +49,7 @@
             <button mat-button (click)="demoGroupFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
           <uxg-filter-tags
+            standard
             [data]="sampleGroupTags"
             [groupTags]="true"
             (changes)="updateGroupFilterTags($event)"

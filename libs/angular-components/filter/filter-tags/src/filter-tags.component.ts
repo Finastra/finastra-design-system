@@ -15,6 +15,7 @@ import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent }
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { uniq } from 'lodash';
 
 export interface Tag {
   label: string;
@@ -38,8 +39,7 @@ export class FilterTagsComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  groupData: any[] = [];
-  categories$!: Observable<string[]>;
+  categories$!: Observable<(string | undefined)[]>;
 
   toHighlight = '';
   formCtrl = new FormControl();
@@ -79,10 +79,12 @@ export class FilterTagsComponent implements OnInit {
         startWith(null),
         map((tag: string | null) => {
           if (tag) {
-            const filteredCategories = this.filter(tag);
-            return this.filterCategories(filteredCategories);
+            const filteredTags = this.filter(tag);
+            // tslint:disable-next-line: no-shadowed-variable
+            return uniq(filteredTags.map((tag) => tag.category));
           } else {
-            return this.filterCategories(this.data);
+            // tslint:disable-next-line: no-shadowed-variable
+            return uniq(this.data.map((tag) => tag.category));
           }
         })
       );
@@ -99,16 +101,6 @@ export class FilterTagsComponent implements OnInit {
         }
       })
     );
-  }
-
-  filterCategories(data: any) {
-    const filteredCategories: any = [];
-    for (const tag of data) {
-      if (!filteredCategories.includes(tag.category)) {
-        filteredCategories.push(tag.category);
-      }
-    }
-    return filteredCategories;
   }
 
   filterTagsByCategory(data: Tag[] | null, category: string) {

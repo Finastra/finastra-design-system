@@ -17,6 +17,7 @@
     <mat-icon matPrefix dense class="search-icon">search</mat-icon>
     <input
       [attr.aria-label]="ariaLabel"
+      autocomplete="off"
       matInput
       type="text"
       #tagInput
@@ -33,21 +34,19 @@
   <mat-autocomplete #autocomplete (optionSelected)="onSelected($event)">
     <ng-container *ngIf="groupTags; else simpleTags">
       <mat-optgroup *ngFor="let category of categories$ | async" [label]="category">
-        <mat-option
-          *ngFor="let tag of filterTagsByCategory(filteredTags$ | async, category)"
-          [value]="tag"
-          [ngClass]="{
-            'selected-option-highlight': applyHighlight(tag)
-          }"
-          (click)="$event.stopPropagation()"
-        >
-          <span [innerHTML]="tag.label | highlight: toHighlight"></span>
-        </mat-option>
+        <ng-container
+          *ngTemplateOutlet="
+            simpleTags;
+            context: {
+              categoryTags: filterTagsByCategory(filteredTags$ | async, category)
+            }
+          "
+        ></ng-container>
       </mat-optgroup>
     </ng-container>
-    <ng-template #simpleTags>
+    <ng-template #simpleTags let-categoryTags="categoryTags">
       <mat-option
-        *ngFor="let tag of filteredTags$ | async"
+        *ngFor="let tag of categoryTags || (filteredTags$ | async)"
         [value]="tag"
         [ngClass]="{
           'selected-option-highlight': applyHighlight(tag)
