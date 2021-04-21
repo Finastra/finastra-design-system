@@ -1,5 +1,6 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import {
+  Attribute,
   Component,
   ElementRef,
   EventEmitter,
@@ -12,12 +13,14 @@ import {
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { uniq } from 'lodash';
 
 export interface Tag {
   label: string;
   isSelected?: boolean;
+  category?: string;
 }
 
 interface UXGFilterChanges {
@@ -36,6 +39,7 @@ export class FilterTagsComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
+  categories$!: Observable<(string | undefined)[]>;
 
   toHighlight = '';
   formCtrl = new FormControl();
@@ -57,18 +61,35 @@ export class FilterTagsComponent implements OnInit {
 
   @Input() placeholder = 'Filter by tags';
   @Input() ariaLabel = 'Input Tag';
+  @Input() groupTags = false;
   @Output() changes = new EventEmitter<UXGFilterChanges>();
 
   @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
 
-  constructor(private hostElement: ElementRef) {
+  constructor(private hostElement: ElementRef, @Attribute('standard') public standard: any) {
     this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
   ngOnInit() {
+    if (this.groupTags) {
+      this.categories$ = this.formCtrl.valueChanges.pipe(
+        startWith(null),
+        map((tag: string | null) => {
+          if (tag) {
+            const filteredTags = this.filter(tag);
+            // tslint:disable-next-line: no-shadowed-variable
+            return uniq(filteredTags.map((tag) => tag.category));
+          } else {
+            // tslint:disable-next-line: no-shadowed-variable
+            return uniq(this.data.map((tag) => tag.category));
+          }
+        })
+      );
+    }
+
     this.filteredTags$ = this.formCtrl.valueChanges.pipe(
       startWith(null),
       map((tag: string | null) => {
@@ -80,6 +101,10 @@ export class FilterTagsComponent implements OnInit {
         }
       })
     );
+  }
+
+  filterTagsByCategory(data: Tag[] | null, category: string) {
+    return data?.filter((item: any) => category === item.category);
   }
 
   add(event: MatChipInputEvent) {
@@ -162,7 +187,6 @@ export class FilterTagsComponent implements OnInit {
     }
 
     this.toHighlight = filterValue;
-
     return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
   }
 
