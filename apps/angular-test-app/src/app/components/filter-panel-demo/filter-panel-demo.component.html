@@ -45,7 +45,7 @@
 
         <div class="filter-panel-group-tags">
           <div class="filter-panel-tags-title">
-            <h5 class="uxg-h5">Group Tags</h5>
+            <h5 class="uxg-h5 title">Group Tags</h5>
             <button mat-button (click)="demoGroupFilterTags.clearSelection()" color="accent" dense>Clear all</button>
           </div>
           <uxg-filter-tags
@@ -53,6 +53,7 @@
             [data]="sampleGroupTags"
             [groupTags]="true"
             (changes)="updateGroupFilterTags($event)"
+            (focused)="focus($event)"
             #demoGroupFilterTags
           >
           </uxg-filter-tags>

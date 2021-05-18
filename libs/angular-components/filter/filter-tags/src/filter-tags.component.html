@@ -29,6 +29,8 @@
       [matChipInputAddOnBlur]="addOnBlur"
       (matChipInputTokenEnd)="add($event)"
       (click)="onClick()"
+      (focus)="focus()"
+      (blur)="blur()"
     />
   </mat-form-field>
   <mat-autocomplete #autocomplete (optionSelected)="onSelected($event)">
