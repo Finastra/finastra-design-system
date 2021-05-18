@@ -1,5 +1,5 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
-import { renderSync } from 'node-sass';
+import { renderSync } from 'sass';
 import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
 import { join, relative } from 'path';
 import { sync as globby } from 'globby';
