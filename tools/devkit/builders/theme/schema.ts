@@ -1,10 +1,10 @@
-import { JsonObject, JsonArray } from '@angular-devkit/core';
+import { JsonObject } from '@angular-devkit/core';
 
 export interface Schema extends JsonObject {
   inputPath: string;
   outputPath: string;
   silent: boolean;
-  outputStyle: 'compact' | 'compressed' | 'expanded' | 'nested';
+  outputStyle: 'compressed' | 'expanded';
   sourceMap: boolean;
   assets: string[];
 }

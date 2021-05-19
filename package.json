@@ -103,6 +103,7 @@
     "@types/jest": "26.0.15",
     "@types/lodash": "4.14.163",
     "@types/node": "14.14.33",
+    "@types/sass": "^1.16.0",
     "@types/smoothscroll-polyfill": "0.3.1",
     "acorn": "^6.4.2",
     "autoprefixer": "^10.2.5",
