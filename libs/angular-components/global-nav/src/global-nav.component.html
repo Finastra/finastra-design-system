@@ -2,6 +2,7 @@
   <mat-sidenav #globalNavDrawer mode="over">
     <uxg-sidenav
       [appName]="appName"
+      [shortName]="shortName"
       [navigationNodes]="navigationNodes"
       [activeRoute]="activeRoute"
       (nodeChosen)="nodeChosen.emit($event)"

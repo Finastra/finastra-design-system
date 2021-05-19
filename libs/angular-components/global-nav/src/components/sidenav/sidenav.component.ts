@@ -20,6 +20,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class SidenavComponent implements OnInit, OnChanges {
   @Input() appName!: string;
+  @Input() shortName!: string;
   @Input() navigationNodes!: NavigationNode[];
   @Input() activeRoute!: string;
 
@@ -33,7 +34,7 @@ export class SidenavComponent implements OnInit, OnChanges {
   constructor(@Inject(forwardRef(() => MatSidenav)) private _host: MatSidenav, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.iconName = this.getIconName(this.appName);
+    this.iconName = this.shortName && this.shortName.length > 0 ? this.shortName : this.getIconName(this.appName);
     this._host.openedChange.subscribe(() => {
       this.currentNodes = this.navigationNodes;
       this.cd.markForCheck();
@@ -49,7 +50,7 @@ export class SidenavComponent implements OnInit, OnChanges {
   private getIconName(name: string) {
     if (!name) return name;
     const words = name.replace('-', ' ').split(' ');
-    if (words && words.length === 1) return name;
+    if (words && words.length === 1) return name.substring(0, 3);
     return !words
       ? ''
       : words

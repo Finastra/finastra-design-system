@@ -24,6 +24,7 @@ import { ReplaySubject } from 'rxjs';
 })
 export class GlobalNavComponent implements OnInit, OnDestroy {
   @Input() appName!: string;
+  @Input() shortName!: string;
   @Input() navigationNodes!: NavigationNode[];
   @Input() activeRoute!: string;
   @Input() currentNode!: NavigationNode;
