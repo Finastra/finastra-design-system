@@ -11,6 +11,6 @@
     "directory": "themes/angular-theme"
   },
   "peerDependencies": {
-    "@angular/material": "^11.2.0"
+    "@angular/material": "^12.0.0"
   }
 }
