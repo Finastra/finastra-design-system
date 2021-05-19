@@ -7,7 +7,7 @@
     background: transparent;
 
     &:not([class*=mat-elevation-z]) {
-      @include mat-elevation(0);
+      @include mat.elevation(0);
     }
 
     .mat-expansion-panel-header {
@@ -26,7 +26,7 @@
       .mat-expansion-panel-body {
         background: mat-color($background, card);
 
-        @include mat-elevation(2);
+        @include mat.elevation(2);
       }
     }
   }

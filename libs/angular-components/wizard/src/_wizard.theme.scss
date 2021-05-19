@@ -1,3 +1,5 @@
+@use '~@angular/material' as mat;
+
 @mixin uxg-wizard-theme($theme) {
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
@@ -42,7 +44,7 @@
         &.done {
           background-color: $wizard-step-done-color;
           border-color: $wizard-step-done-color;
-          color: mat-contrast($uxg-grass, 100);
+          color: mat-color($uxg-grass, "100-contrast");
         }
 
         &.active {
@@ -112,18 +114,18 @@
     .uxg-wizard-timeline {
       .step {
         font: {
-          weight: mat-font-weight($config, h1);
-          size: mat-font-size($config, subtitle-1);
+          weight: mat.font-weight($config, h1);
+          size: mat.font-size($config, subtitle-1);
         }
 
         mat-icon {
-          font-weight: mat-font-weight($config, h1);
+          font-weight: mat.font-weight($config, h1);
         }
       }
 
       .step-info-container {
         .step-description {
-          @include mat-typography-level-to-styles($config, caption);
+          @include mat.typography-level($config, caption);
         }
       }
     }
@@ -131,20 +133,20 @@
     .uxg-wizard-timeline-xs {
       .step {
         font: {
-          weight: mat-font-weight($config, h2);
-          size: mat-font-size($config, subtitle-2);
+          weight: mat.font-weight($config, h2);
+          size: mat.font-size($config, subtitle-2);
         }
 
         mat-icon {
-          font-weight: mat-font-weight($config, h2);
+          font-weight: mat.font-weight($config, h2);
         }
       }
 
       .step-info-container {
         .step-description {
-          @include mat-typography-level-to-styles($config, body-3);
+          @include mat.typography-level($config, body-3);
 
-          font-weight: mat-font-weight($config, caption);
+          font-weight: mat.font-weight($config, caption);
         }
       }
     }

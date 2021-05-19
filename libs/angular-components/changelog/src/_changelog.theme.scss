@@ -1,10 +1,12 @@
+@use '~@angular/material' as mat;
 
 @mixin uxg-changelog-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
-
+  $elevation-color: map-get($foreground, elevation);
+  
   uxg-changelog {
     .title {
       .changelog-icon {
@@ -27,7 +29,7 @@
       .last-release,
       .first-release {
         background-color: mat-color($background, card);
-        @include mat-elevation(4, $mat-elevation-color);
+        @include mat.elevation(4, $elevation-color);
       }
 
       .change {
@@ -84,22 +86,22 @@
   uxg-changelog {
     .title {
       .creator {
-        @include mat-typography-level-to-styles($config, h2);
+        @include mat.typography-level($config, h2);
       }
 
       span {
-        @include mat-typography-level-to-styles($config, h2);
+        @include mat.typography-level($config, h2);
       }
     }
 
     @include layout-bp(xs) {
       .title {
         .creator {
-          @include mat-typography-level-to-styles($config, h3);
+          @include mat.typography-level($config, h3);
         }
 
         span {
-          @include mat-typography-level-to-styles($config, h3);
+          @include mat.typography-level($config, h3);
         }
       }
     }

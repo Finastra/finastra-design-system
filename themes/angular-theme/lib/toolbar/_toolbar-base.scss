@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '../core/style/spacing';
 @import '../core/layout/breakpoints';
 
@@ -5,7 +6,7 @@ $uxg-toolbar-height: 56px;
 $uxg-toolbar-margin: $uxg-spacing-2;
 
 .uxg-toolbar.uxg-toolbar-elevated {
-  @include mat-elevation(4);
+  @include mat.elevation(4);
 }
 
 .uxg-toolbar.mat-toolbar {

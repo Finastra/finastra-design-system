@@ -39,14 +39,14 @@
 
 @mixin uxg-breadcrumb-typography($config) {
   .uxg-breadcrumb {
-    @include mat-typography-level-to-styles($config, body-2);
+    @include mat.typography-level($config, body-2);
 
     .mat-flat-button {
-      @include mat-typography-level-to-styles($config, body-2);
+      @include mat.typography-level($config, body-2);
     }
   }
 
   .uxg-breadcrumb[dense] {
-    @include mat-typography-level-to-styles($config, caption);
+    @include mat.typography-level($config, caption);
   }
 }

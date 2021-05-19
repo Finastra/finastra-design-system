@@ -56,17 +56,17 @@
   .mat-button-toggle-group {
     .mat-button-toggle {
       .mat-button-toggle-label-content {
-        font-family: mat-font-family($config, subtitle-2);
-        font-size: mat-font-size($config, subtitle-2);
-        font-weight: mat-font-weight($config, subtitle-2);
-        line-height: mat-line-height($config, button-1);
+        font-family: mat.font-family($config, subtitle-2);
+        font-size: mat.font-size($config, subtitle-2);
+        font-weight: mat.font-weight($config, subtitle-2);
+        line-height: mat.line-height($config, button-1);
       }
     }
 
     &[dense] {
       .mat-button-toggle {
         .mat-button-toggle-label-content {
-          @include mat-typography-level-to-styles($config, subtitle-3);
+          @include mat.typography-level($config, subtitle-3);
         }
       }
     }
@@ -75,9 +75,9 @@
   .uxg-filtering-toggle-group.mat-button-toggle-group {
     .mat-button-toggle {
       .mat-button-toggle-label-content {
-        font-family: mat-font-family($config, body-2);
-        font-size: mat-font-size($config, body-2);
-        font-weight: mat-font-weight($config, body-2);
+        font-family: mat.font-family($config, body-2);
+        font-size: mat.font-size($config, body-2);
+        font-weight: mat.font-weight($config, body-2);
       }
     }
   }

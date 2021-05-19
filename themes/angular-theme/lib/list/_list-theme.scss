@@ -50,23 +50,23 @@
 @mixin uxg-list-typography($config) {
   .uxg-nav-list.mat-nav-list.mat-list-base {
     & .mat-list-item > * {
-      @include mat-typography-level-to-styles($config, subtitle-1);
+      @include mat.typography-level($config, subtitle-1);
     }
   }
 
   .mat-list-base.mat-nav-list.uxg-link-list {
     & .mat-list-item > * {
-      @include mat-typography-level-to-styles($config, caption);
+      @include mat.typography-level($config, caption);
     }
   }
 
   .uxg-ol {
     *::before {
-      @include mat-typography-level-to-styles($config, h6);
+      @include mat.typography-level($config, h6);
     }
 
     .uxg-ol-title {
-      @include mat-typography-level-to-styles($config, subtitle-1);
+      @include mat.typography-level($config, subtitle-1);
     }
   }
 }

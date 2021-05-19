@@ -1,8 +1,9 @@
+@use '~@angular/material/' as mat;
 @import 'palette';
 
-$uxg-primary: mat-palette($uxg-violet, 500, 100, 900);
-$uxg-accent:  mat-palette($uxg-fuchsia, 500, 100, 900);
-$uxg-warn:    mat-palette($uxg-crimson, 100, 75, '100-dark');
+$uxg-primary: mat.define-palette($uxg-violet, 500, 100, 900);
+$uxg-accent:  mat.define-palette($uxg-fuchsia, 500, 100, 900);
+$uxg-warn:    mat.define-palette($uxg-crimson, 100, 75, '100-dark');
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
 @function uxg-light-theme() {

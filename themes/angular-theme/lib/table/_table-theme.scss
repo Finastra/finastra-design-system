@@ -27,13 +27,13 @@
   .mat-table {
     thead {
       tr {
-        font-family: mat-font-family($config, subtitle-2);
+        font-family: mat.font-family($config, subtitle-2);
       }
     }
 
     tbody {
       tr {
-        font-family: mat-font-family($config, body-2);
+        font-family: mat.font-family($config, body-2);
       }
     }
   }

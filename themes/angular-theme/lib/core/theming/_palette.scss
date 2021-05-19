@@ -1,10 +1,11 @@
-@import "~@angular/material/theming";
+@use '~@angular/material/' as mat;
+@use '~@angular/material/core/theming/palette' as matPalette;
 
 @function mat-color($palette, $hue: default, $opacity: null) {
   // If hueKey is a number between zero and one, then it actually contains an
   // opacity value, so recall this function with the default hue and that given opacity.
   @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
-    @return mat-color($palette, default, $hue);
+    @return mat.get-color-from-palette($palette, default, $hue);
   }
 
   $color: map-get($palette, $hue);
@@ -24,6 +25,17 @@
 }
 
 $uxg-charcoal: #414141;
+$dark-primary-text: matPalette.$dark-primary-text;
+$light-primary-text: matPalette.$light-primary-text;
+$mat-grey: matPalette.$grey-palette;
+$dark-focused: matPalette.$dark-focused;
+$light-focused: matPalette.$light-focused;
+$dark-dividers: matPalette.$dark-dividers;
+$light-dividers: matPalette.$light-dividers;
+$dark-disabled-text: matPalette.$dark-disabled-text;
+$light-disabled-text: matPalette.$light-disabled-text;
+$dark-secondary-text: matPalette.$dark-secondary-text;
+$light-secondary-text: matPalette.$light-secondary-text;
 
 $uxg-violet: (
   50: #f7f6fd,

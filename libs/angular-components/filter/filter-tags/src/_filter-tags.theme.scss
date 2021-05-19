@@ -1,3 +1,5 @@
+@use '~@angular/material' as mat;
+
 @mixin uxg-filter-tags-theme($theme) {
   $primary: map-get($theme, primary);
   $filter-tags-background-color: mat-color($primary, default, .12);
@@ -29,13 +31,13 @@
 @mixin uxg-filter-tags-typography($config) {
   .mat-autocomplete-panel {
     .mat-option {
-      @include mat-typography-level-to-styles($config, body-2);
+      @include mat.typography-level($config, body-2);
     }
 
     .selected-option-highlight,
     .search-term-highlight,
     .selected-option-highlight.mat-selected {
-      @include mat-typography-level-to-styles($config, subtitle-2);
+      @include mat.typography-level($config, subtitle-2);
     }
   }
 }

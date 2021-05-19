@@ -12,17 +12,17 @@
   .uxg-side-badge {
     &.mat-badge-medium.mat-badge-after {
       .mat-badge-content {
-        @include mat-typography-level-to-styles($config, overline);
+        @include mat.typography-level($config, overline);
 
-        font-weight: mat-font-weight($config, display-6);
+        font-weight: mat.font-weight($config, display-6);
       }
     }
 
     &.mat-badge-large.mat-badge-after {
       .mat-badge-content {
-        @include mat-typography-level-to-styles($config, subtitle-2);
+        @include mat.typography-level($config, subtitle-2);
 
-        font-weight: mat-font-weight($config, caption);
+        font-weight: mat.font-weight($config, caption);
       }
     }
   }

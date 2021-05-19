@@ -1,3 +1,5 @@
+@use '~@angular/material/' as mat;
+
 @import 'typography/all-typography';
 @import 'style/elevation';
 
@@ -23,6 +25,6 @@
 @import '../toolbar/toolbar-base';
 
 @mixin uxg-core($typography-config: null) {
-  @include mat-core($typography-config);
+  @include mat.core($typography-config);
   @include uxg-material-typography($typography-config);
 }

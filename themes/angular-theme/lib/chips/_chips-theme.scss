@@ -74,16 +74,16 @@
 
 @mixin uxg-chips-typography($config) {
   .mat-chip.mat-standard-chip {
-    @include mat-typography-level-to-styles($config, caption);
+    @include mat.typography-level($config, caption);
 
     &[dense] {
-      @include mat-typography-level-to-styles($config, legend);
+      @include mat.typography-level($config, legend);
 
-      font-weight: mat-font-weight($config, caption);
+      font-weight: mat.font-weight($config, caption);
     }
 
     &[large] {
-      @include mat-typography-level-to-styles($config, body-2);
+      @include mat.typography-level($config, body-2);
     }
   }
 }
