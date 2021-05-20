@@ -44,7 +44,7 @@
         &.done {
           background-color: $wizard-step-done-color;
           border-color: $wizard-step-done-color;
-          color: mat-color($uxg-grass, "100-contrast");
+          color: mat.get-contrast-color-from-palette($uxg-grass, 100);
         }
 
         &.active {
@@ -64,7 +64,7 @@
 
       .step-info-container {
         .step-title {
-          color: mat-color($primary, darker-contrast);;
+          color: mat-color($primary, darker-contrast);
         }
 
         .step-description {

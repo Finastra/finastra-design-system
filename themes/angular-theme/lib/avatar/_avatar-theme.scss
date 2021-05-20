@@ -18,7 +18,7 @@
   $uxg-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
   .uxg-avatar {
-    color: mat.get-color-from-palette($uxg-gradient, "vertical-contrast");
+    color: mat.get-contrast-color-from-palette($uxg-gradient, vertical);
     background: mat-color($uxg-gradient, vertical);
 
     &.uxg-primary-color {
