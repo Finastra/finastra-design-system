@@ -77,7 +77,7 @@ export class WizardNavigationService implements OnDestroy {
   }
 
   public cancel() {
-    this._wizardCancel.next();
+    this._wizardCancel.next(true);
   }
 
   constructor(public pageCollection: PageCollectionService, public buttonService: ButtonHubService) {
@@ -146,7 +146,7 @@ export class WizardNavigationService implements OnDestroy {
     }
 
     if (isDone) {
-      this._wizardDone.next();
+      this._wizardDone.next(true);
     }
 
     if (isNext) {

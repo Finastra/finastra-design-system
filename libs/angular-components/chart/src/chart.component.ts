@@ -17,7 +17,7 @@ import {
   ChangeDetectorRef,
   AfterContentInit
 } from '@angular/core';
-import { PlotComponent } from 'angular-plotly.js';
+import { PlotlyComponent } from 'angular-plotly.js';
 import { DOCUMENT } from '@angular/common';
 import { TraceComponent } from './directives/trace.component';
 import { CHART_DEFAULT_PLOTLY_CONFIG } from './chart.models';
@@ -34,7 +34,7 @@ import { Subscription, merge, Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterContentInit {
-  @ViewChild(PlotComponent, { static: false }) plot!: PlotComponent;
+  @ViewChild(PlotlyComponent, { static: false }) plot!: PlotlyComponent;
 
   @ContentChildren(TraceComponent) traces?: QueryList<TraceComponent>;
   @ContentChild(LegendComponent, { static: false }) legend?: LegendComponent;
