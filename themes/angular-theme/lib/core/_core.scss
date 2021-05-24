@@ -1,5 +1,7 @@
 @use '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
 @use '~@angular/material/' as mat;
+@use '~@angular/material/core/theming/theming';
+
 @import 'typography/all-typography';
 
 @import '../avatar/avatar-base';
