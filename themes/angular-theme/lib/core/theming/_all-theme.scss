@@ -56,7 +56,6 @@
 
 // Create a theme.
 @mixin uxg-material-theme($theme) {
-  @include mat.core($theme);
   @include mat.all-component-themes($theme);
   // uxg themes
   @include uxg-core-theme($theme);
