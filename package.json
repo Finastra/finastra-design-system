@@ -133,7 +133,7 @@
     "postcss": "^8.3.0",
     "prettier": "2.3.0",
     "rimraf": "^3.0.2",
-    "sass": "1.33.0",
+    "sass": "1.32.13",
     "semver": "^7.3.5",
     "standard-version": "^9.3.0",
     "stylelint": "^13.13.1",
