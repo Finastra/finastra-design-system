@@ -1,7 +1,6 @@
+@use '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
 @use '~@angular/material/' as mat;
-
 @import 'typography/all-typography';
-@import 'style/elevation';
 
 @import '../avatar/avatar-base';
 @import '../badge/badge-base';
