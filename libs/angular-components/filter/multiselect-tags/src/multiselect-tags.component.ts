@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-import cloneDeep from 'lodash/cloneDeep';
+import cloneDeep from 'lodash-es/cloneDeep';
 
 export interface MultiselectTag {
   label: string;

@@ -1,5 +1,5 @@
 const nxPreset = require('@nrwl/jest/preset');
-const babelModules = ['lodash-es', 'plotly.js'].join('|');
+const babelModules = ['plotly.js'].join('|');
 
 module.exports = {
   ...nxPreset,
