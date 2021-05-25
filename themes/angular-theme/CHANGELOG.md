@@ -6,16 +6,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.1.0](https://github.com/finastra/finastra-design-system/compare/v1.0.0...v1.1.0) (2021-04-19)
 
-
 ### Features
 
-* **theme:** use css var for background, apply to body ([#347](https://github.com/finastra/finastra-design-system/issues/347)) ([20bd73d](https://github.com/finastra/finastra-design-system/commit/20bd73d3d705c6135d58d2f5af9809e065dcb09f))
-
+- **theme:** use css var for background, apply to body ([#347](https://github.com/finastra/finastra-design-system/issues/347)) ([20bd73d](https://github.com/finastra/finastra-design-system/commit/20bd73d3d705c6135d58d2f5af9809e065dcb09f))
 
 ### Bug Fixes
 
-* **icon:** gradient without autoprefixer ([#348](https://github.com/finastra/finastra-design-system/issues/348)) ([ea1a69a](https://github.com/finastra/finastra-design-system/commit/ea1a69a494a1c1eedd17e49971c306f961ac379e))
-* **theme:** force text contrast on selection ([#346](https://github.com/finastra/finastra-design-system/issues/346)) ([4f2e5ea](https://github.com/finastra/finastra-design-system/commit/4f2e5eaa974aa5198ba7e5f5c86c76631822cdef))
+- **icon:** gradient without autoprefixer ([#348](https://github.com/finastra/finastra-design-system/issues/348)) ([ea1a69a](https://github.com/finastra/finastra-design-system/commit/ea1a69a494a1c1eedd17e49971c306f961ac379e))
+- **theme:** force text contrast on selection ([#346](https://github.com/finastra/finastra-design-system/issues/346)) ([4f2e5ea](https://github.com/finastra/finastra-design-system/commit/4f2e5eaa974aa5198ba7e5f5c86c76631822cdef))
 
 ## [1.0.0](https://github.com/finastra/finastra-design-system/compare/v0.23.21...v1.0.0) (2021-04-06)
 

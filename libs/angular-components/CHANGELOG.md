@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.2.0](https://github.com/finastra/finastra-design-system/compare/v1.1.0...v1.2.0) (2021-04-21)
 
-
 ### Features
 
-* **filter-tags:** allow options group in autocomplete ([#351](https://github.com/finastra/finastra-design-system/issues/351)) ([1ae3110](https://github.com/finastra/finastra-design-system/commit/1ae3110f4011331ae558ff293a98918b7af3a7a4))
+- **filter-tags:** allow options group in autocomplete ([#351](https://github.com/finastra/finastra-design-system/issues/351)) ([1ae3110](https://github.com/finastra/finastra-design-system/commit/1ae3110f4011331ae558ff293a98918b7af3a7a4))
 
 ## [1.1.0](https://github.com/finastra/finastra-design-system/compare/v1.0.0...v1.1.0) (2021-04-19)
 
