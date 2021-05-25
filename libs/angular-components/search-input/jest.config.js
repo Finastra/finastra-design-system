@@ -1,5 +1,5 @@
-const name = 'skeleton-text';
-const suiteName = 'SkeletonTextModule';
+const name = 'search-input';
+const suiteName = 'UxgSearchInputModule';
 
 module.exports = {
   name,
