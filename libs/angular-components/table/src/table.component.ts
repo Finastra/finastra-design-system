@@ -24,7 +24,7 @@ import {
   UxgActionColumnPosition
 } from './table.models';
 import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'lodash-es/isEqual';
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',

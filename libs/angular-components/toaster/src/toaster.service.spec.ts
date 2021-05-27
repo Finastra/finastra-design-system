@@ -18,7 +18,7 @@ describe('ToasterService', () => {
     TestBed.configureTestingModule({
       imports: [ToasterModule, BrowserAnimationsModule, HttpClientTestingModule],
       providers: [
-        { provide: TOASTER_CONFIG, value: new InjectionToken<ToasterConfig>('Default toaster config') },
+        { provide: TOASTER_CONFIG, useValue: new InjectionToken<ToasterConfig>('Default toaster config') },
         ToasterContainerRegistry,
         Overlay,
         ToasterContainerOverlayService,

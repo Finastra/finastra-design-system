@@ -12,11 +12,11 @@
     "@angular/forms": "^11.2.0",
     "@angular/cdk": "^11.2.0",
     "@angular/flex-layout": "^11.0.0-beta.33",
-    "lodash": "^4.17.20",
+    "lodash-es": "^4.17.21",
     "angular-plotly.js": "^2.0.0",
     "plotly.js": "1.52.2",
     "smoothscroll-polyfill": "0.4.4",
-    "ts-md5": "1.2.7"
+    "ts-md5": "^1.2.7"
   },
   "dependencies": {
     "@finastra/angular-theme": "1.2.0"

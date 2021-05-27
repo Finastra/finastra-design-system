@@ -15,14 +15,14 @@ import {
 } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { createChain } from '@finastra/angular-components/core';
-import cloneDeep from 'lodash/cloneDeep';
-import filter from 'lodash/filter';
-import find from 'lodash/find';
-import groupBy from 'lodash/groupBy';
-import isEqual from 'lodash/isEqual';
-import map from 'lodash/map';
-import omit from 'lodash/omit';
-import reject from 'lodash/reject';
+import cloneDeep from 'lodash-es/cloneDeep';
+import filter from 'lodash-es/filter';
+import find from 'lodash-es/find';
+import groupBy from 'lodash-es/groupBy';
+import isEqual from 'lodash-es/isEqual';
+import map from 'lodash-es/map';
+import omit from 'lodash-es/omit';
+import reject from 'lodash-es/reject';
 
 @Component({
   selector: 'uxg-expandable-table',

@@ -8,21 +8,20 @@ import { StatusStepComponent } from './status-step/status-step.component';
   host: { class: 'uxg-horizontal-status-stepper' }
 })
 export class HorizontalStatusStepperComponent implements AfterViewInit {
+  constructor(private cdr: ChangeDetectorRef) {}
   @ContentChildren(StatusStepComponent) public steps?: QueryList<StatusStepComponent>;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  @Input() public currentStep = -1;
 
-  public ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.cdr.detectChanges();
   }
 
-  @Input() public currentStep: number = -1;
-
-  public isComplete(stepNumber: number): boolean {
+  isComplete(stepNumber: number): boolean {
     return stepNumber < this.currentStep;
   }
 
-  public isCurrent(stepNumber: number): boolean {
+  isCurrent(stepNumber: number): boolean {
     return stepNumber === this.currentStep;
   }
 }
