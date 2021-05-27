@@ -78,12 +78,4 @@ export class FilterPanelDemoComponent implements OnInit {
   updateMultiselectTags(tags: string[]) {
     this.chosenMultiselectTags = tags;
   }
-
-  focus(state: boolean) {
-    if (state) {
-      document.querySelector('.title')?.classList.add('focused');
-    } else {
-      document.querySelector('.title')?.classList.remove('focused');
-    }
-  }
 }
