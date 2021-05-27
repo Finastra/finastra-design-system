@@ -130,7 +130,7 @@
     "node-sass": "4.14.1",
     "node-sass-tilde-importer": "1.0.2",
     "parse-git-config": "^3.0.0",
-    "postcss": "^7.0.17",
+    "postcss": "^8.2.10",
     "prettier": "2.3.0",
     "rimraf": "^3.0.2",
     "semver": "^7.3.5",
