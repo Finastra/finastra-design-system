@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.2.0](https://github.com/finastra/finastra-design-system/compare/v1.1.0...v1.2.0) (2021-04-21)
+## [1.3.0](https://github.com/finastra/finastra-design-system/compare/v1.2.0...v1.3.0) (2021-05-27)
 
 
 ### Features
 
-* **filter-tags:** allow options group in autocomplete ([#351](https://github.com/finastra/finastra-design-system/issues/351)) ([1ae3110](https://github.com/finastra/finastra-design-system/commit/1ae3110f4011331ae558ff293a98918b7af3a7a4))
+* **global-nav:** add optional shortName and fix long single word for appName ([#359](https://github.com/finastra/finastra-design-system/issues/359)) ([14dffe7](https://github.com/finastra/finastra-design-system/commit/14dffe7662a40c01cd2499b026dfc6e48680e928))
+
+## [1.2.0](https://github.com/finastra/finastra-design-system/compare/v1.1.0...v1.2.0) (2021-04-21)
+
+### Features
+
+- **filter-tags:** allow options group in autocomplete ([#351](https://github.com/finastra/finastra-design-system/issues/351)) ([1ae3110](https://github.com/finastra/finastra-design-system/commit/1ae3110f4011331ae558ff293a98918b7af3a7a4))
 
 ## [1.1.0](https://github.com/finastra/finastra-design-system/compare/v1.0.0...v1.1.0) (2021-04-19)
 

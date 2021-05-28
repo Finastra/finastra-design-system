@@ -1,18 +1,14 @@
 const nxPreset = require('@nrwl/jest/preset');
-const babelModules = ['lodash-es', 'plotly.js'].join('|');
+const babelModules = ['plotly.js'].join('|');
 
 module.exports = {
   ...nxPreset,
   verbose: true,
-  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  preset: 'jest-preset-angular',
-  resolver: '@nrwl/jest/plugins/resolver',
   transform: {
     '^.+\\.(ts|js|html)$': 'ts-jest',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
-  // testEnvironment: 'jest-environment-jsdom-fifteen',
+  transformIgnorePatterns: ['node_modules/(?!lodash-es/*)'],
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
@@ -26,6 +22,11 @@ module.exports = {
       }
     }
   },
+  snapshotSerializers: [
+    'jest-preset-angular/build/serializers/no-ng-attributes',
+    'jest-preset-angular/build/serializers/ng-snapshot',
+    'jest-preset-angular/build/serializers/html-comment'
+  ],
   collectCoverage: true,
   coverageReporters: ['json', 'html']
 };

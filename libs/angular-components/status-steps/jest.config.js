@@ -1,20 +1,24 @@
+const name = 'status-steps';
+const suiteName = 'StatusStepperModule';
+
 module.exports = {
-  displayName: 'status-steps',
-  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  globals: {
-    'ts-jest': {
-      stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: {
-        before: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer']
-      },
-      tsconfig: '<rootDir>/tsconfig.spec.json'
-    }
-  },
-  coverageDirectory: '../../../coverage/libs/angular-components/status-steps',
-  snapshotSerializers: [
-    'jest-preset-angular/build/serializers/no-ng-attributes',
-    'jest-preset-angular/build/serializers/ng-snapshot',
-    'jest-preset-angular/build/serializers/html-comment'
-  ]
+
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        outputDirectory: './testresults/',
+        outputName: `junit-${name}.xml`,
+        suiteName,
+        classNameTemplate: '{classname}',
+        titleTemplate: `${suiteName} › {classname} › {title}`,
+        ancestorSeparator: ' › '
+      }
+    ]
+  ],
+  displayName: 'status-steps'
 };
