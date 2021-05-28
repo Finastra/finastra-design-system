@@ -5,9 +5,9 @@
   "main": "index.js",
   "builders": "./builders.json",
   "devDependencies": {
-    "@angular-devkit/architect": "0.1200.1",
-    "@angular-devkit/build-angular": "12.0.1",
-    "@angular-devkit/core": "12.0.1",
-    "@angular-devkit/schematics": "12.0.1"
+    "@angular-devkit/architect": "0.1200.2",
+    "@angular-devkit/build-angular": "12.0.2",
+    "@angular-devkit/core": "12.0.2",
+    "@angular-devkit/schematics": "12.0.2"
   }
 }

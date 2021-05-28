@@ -7,16 +7,16 @@
     "directory": "libs/angular-components"
   },
   "peerDependencies": {
-    "@angular/common": "^12.0.0",
-    "@angular/core": "^12.0.0",
-    "@angular/forms": "^12.0.0",
-    "@angular/cdk": "^12.0.0",
-    "@angular/flex-layout": "^11.0.0-beta.33",
+    "@angular/common": "^12.0.2",
+    "@angular/core": "^12.0.2",
+    "@angular/forms": "^12.0.2",
+    "@angular/cdk": "^12.0.2",
+    "@angular/flex-layout": "12.0.0-beta.34",
     "lodash-es": "^4.17.21",
-    "angular-plotly.js": "^2.0.0",
+    "angular-plotly.js": "^4.0.0",
     "plotly.js": "1.58.4",
     "smoothscroll-polyfill": "0.4.4",
-    "ts-md5": "^1.2.7"
+    "ts-md5": "^1.2.8"
   },
   "dependencies": {
     "@finastra/angular-theme": "1.3.0"
