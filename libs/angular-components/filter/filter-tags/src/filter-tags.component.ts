@@ -63,6 +63,7 @@ export class FilterTagsComponent implements OnInit {
   @Input() ariaLabel = 'Input Tag';
   @Input() groupTags = false;
   @Output() changes = new EventEmitter<UXGFilterChanges>();
+  @Output() focused = new EventEmitter<boolean>();
 
   @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
@@ -105,6 +106,14 @@ export class FilterTagsComponent implements OnInit {
 
   filterTagsByCategory(data: Tag[] | null, category: string) {
     return data?.filter((item: any) => category === item.category);
+  }
+
+  focus() {
+    this.focused.emit(true);
+  }
+
+  blur() {
+    this.focused.emit(false);
   }
 
   add(event: MatChipInputEvent) {
