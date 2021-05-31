@@ -20,7 +20,7 @@
             "stylePreprocessorOptions": {
               "includePaths": ["./themes/", "./libs/angular-components"]
             },
-            "allowedCommonJsDependencies": ["lodash", "elasticlunr"],
+            "allowedCommonJsDependencies": ["elasticlunr"],
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
             "main": "apps/angular-test-app/src/main.ts",

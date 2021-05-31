@@ -15,7 +15,7 @@ import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent }
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { uniq } from 'lodash';
+import { uniq } from 'lodash-es';
 
 export interface Tag {
   label: string;
