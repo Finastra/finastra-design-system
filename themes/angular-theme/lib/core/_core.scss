@@ -1,4 +1,4 @@
-@use '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
+@forward '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
 @use '~@angular/material/core/theming/theming';
 @use '~@angular/material/' as mat;
 
