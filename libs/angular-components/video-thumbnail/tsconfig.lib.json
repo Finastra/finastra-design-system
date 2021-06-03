@@ -1,10 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../../dist/out-tsc",
     "target": "es2015",
     "declaration": true,
-    "allowJs": false,
     "inlineSources": true,
     "types": [],
     "lib": ["dom", "es2018"]
@@ -18,5 +17,6 @@
     "enableResourceInlining": true,
     "enableIvy": false
   },
-  "exclude": ["**/*.spec.ts"]
+  "exclude": ["**/*.spec.ts"],
+  "include": ["**\\*.ts"]
 }

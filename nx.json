@@ -101,7 +101,9 @@
     "video-thumbnail": {
       "tags": []
     },
-    "status-steps": { "tags": [] }
+    "status-steps": {
+      "tags": []
+    }
   },
   "tasksRunnerOptions": {
     "default": {

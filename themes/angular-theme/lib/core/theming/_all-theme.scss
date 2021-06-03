@@ -1,3 +1,7 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+@use 'sass:map';
+@use '~@angular/material' as mat;
+
 @import '../../avatar/avatar-theme';
 @import '../../badge/badge-theme';
 @import '../../button/button-theme';
@@ -21,13 +25,13 @@
 @import "dark-variables";
 
 @mixin uxg-core-theme($theme) {
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-  $is-dark: map-get($theme, is-dark);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+  $is-dark: map.get($theme, is-dark);
 
   @at-root {
     body {
-      background: mat-color($background, background);
+      background: mat.get-color-from-palette($background, background);
     }
   }
 
@@ -40,11 +44,11 @@
       @include light-vars();
     }
 
-    color: mat-color($foreground, text);
+    color: mat.get-color-from-palette($foreground, text);
 
     *::selection {
-      background: mat-color($background, selected-text);
-      color: mat-color($foreground, text);
+      background: mat.get-color-from-palette($background, selected-text);
+      color: mat.get-color-from-palette($foreground, text);
     }
   }
 
@@ -53,40 +57,7 @@
 
 // Create a theme.
 @mixin uxg-material-theme($theme) {
-  @include mat-core-theme($theme);
-  @include mat-autocomplete-theme($theme);
-  @include mat-badge-theme($theme);
-  @include mat-bottom-sheet-theme($theme);
-  @include mat-button-theme($theme);
-  @include mat-button-toggle-theme($theme);
-  @include mat-card-theme($theme);
-  @include mat-checkbox-theme($theme);
-  @include mat-chips-theme($theme);
-  @include mat-table-theme($theme);
-  @include mat-datepicker-theme($theme);
-  @include mat-dialog-theme($theme);
-  @include mat-divider-theme($theme);
-  @include mat-expansion-panel-theme($theme);
-  @include mat-form-field-theme($theme);
-  @include mat-grid-list-theme($theme);
-  @include mat-icon-theme($theme);
-  @include mat-list-theme($theme);
-  @include mat-menu-theme($theme);
-  @include mat-paginator-theme($theme);
-  @include mat-progress-bar-theme($theme);
-  @include mat-progress-spinner-theme($theme);
-  @include mat-radio-theme($theme);
-  @include mat-select-theme($theme);
-  @include mat-sidenav-theme($theme);
-  @include mat-slide-toggle-theme($theme);
-  @include mat-slider-theme($theme);
-  @include mat-stepper-theme($theme);
-  @include mat-sort-theme($theme);
-  @include mat-tabs-theme($theme);
-  @include mat-toolbar-theme($theme);
-  @include mat-tooltip-theme($theme);
-  @include mat-tree-theme($theme);
-  @include mat-snack-bar-theme($theme);
+  @include mat.all-component-themes($theme);
   // uxg themes
   @include uxg-core-theme($theme);
   @include uxg-avatar-theme($theme);

@@ -34,7 +34,7 @@ describe('ScrollToTopComponent', () => {
   });
 
   it('should be able to setup different parent than window', () => {
-    component.parentElementSelector = 'mockedParent';
+    component.parentElementSelector = 'html';
     component.ngAfterViewInit();
 
     expect(component.parent).not.toBe(window);

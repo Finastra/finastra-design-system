@@ -5,5 +5,5 @@
     "entryFile": "index.ts",
     "styleIncludePaths": ["../../themes"]
   },
-  "whitelistedNonPeerDependencies": ["@finastra/angular-theme"]
+  "allowedNonPeerDependencies": ["@finastra/angular-theme"]
 }

@@ -17,7 +17,7 @@ export class ClientSideSearchService {
   private index: any;
 
   initIndex(fields?: string[], ref?: string) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       if (!this.index) {
         this.index = elasticlunr(function (this: any) {
           if (fields && fields.length) {

@@ -18,7 +18,7 @@ import {
   PaletteService,
   PALETTE_DEFAULT_CONFIG
 } from '@finastra/angular-components/core';
-import { PlotComponent } from 'angular-plotly.js';
+import { PlotlyComponent } from 'angular-plotly.js';
 import { Observable, Subscription } from 'rxjs';
 import {
   COUNTRIES,
@@ -39,7 +39,7 @@ import {
   styleUrls: ['./vector-map.component.scss']
 })
 export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
-  @ViewChild(PlotComponent, { static: false }) plot!: PlotComponent;
+  @ViewChild(PlotlyComponent, { static: false }) plot!: PlotlyComponent;
   @ViewChild('tooltip', { static: true }) tooltip!: TooltipComponent;
 
   @Input() title = 'Vector Map';

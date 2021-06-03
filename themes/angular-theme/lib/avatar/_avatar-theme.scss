@@ -1,5 +1,3 @@
-@import '~@angular/material/theming';
-
 @mixin multiple-backgrounds($backgrounds...) {
   $multi-background: ();
 
@@ -20,7 +18,7 @@
   $uxg-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
   .uxg-avatar {
-    color: mat-contrast($uxg-gradient, vertical);
+    color: mat.get-contrast-color-from-palette($uxg-gradient, vertical);
     background: mat-color($uxg-gradient, vertical);
 
     &.uxg-primary-color {
@@ -69,39 +67,39 @@
 
 @mixin uxg-avatar-typography($config) {
   .uxg-avatar {
-    @include mat-typography-level-to-styles($config, display-6);
+    @include mat.typography-level($config, display-6);
 
     &[large] {
-      @include mat-typography-level-to-styles($config, display-4);
+      @include mat.typography-level($config, display-4);
     }
 
     &[dense] {
-      @include mat-typography-level-to-styles($config, body-2);
+      @include mat.typography-level($config, body-2);
     }
   }
 
   .uxg-avatar-number {
     font: {
-      family: mat-font-family($config, subtitle-1);
-      size: mat-font-size($config, subtitle-1);
+      family: mat.font-family($config, subtitle-1);
+      size: mat.font-size($config, subtitle-1);
     }
   }
 
   *[large] {
     .uxg-avatar {
-      @include mat-typography-level-to-styles($config, display-4);
+      @include mat.typography-level($config, display-4);
     }
   }
 
   *[dense] {
     .uxg-avatar {
-      @include mat-typography-level-to-styles($config, body-2);
+      @include mat.typography-level($config, body-2);
     }
 
     .uxg-avatar-number {
       font: {
-        family: mat-font-family($config, caption);
-        size: mat-font-size($config, caption);
+        family: mat.font-family($config, caption);
+        size: mat.font-size($config, caption);
       }
     }
   }

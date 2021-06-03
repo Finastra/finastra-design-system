@@ -30,7 +30,7 @@
         // since the use of CSS variables,
         // opacity is already set on rgba background-color.
         // see #288
-        opacity: unset;
+        opacity: 0.1;
       }
     }
 
@@ -102,12 +102,12 @@
   button[dense],
   a[dense],
   *[dense] button {
-    @include mat-typography-level-to-styles($config, button-3);
+    @include mat.typography-level($config, button-3);
   }
 
   button[large],
   a[large],
   *[large] button {
-    @include mat-typography-level-to-styles($config, button-1);
+    @include mat.typography-level($config, button-1);
   }
 }

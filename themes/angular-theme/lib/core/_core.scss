@@ -1,5 +1,9 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+@forward '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
+@use '~@angular/material/core/theming/theming';
+@use '~@angular/material/' as mat;
+
 @import 'typography/all-typography';
-@import 'style/elevation';
 
 @import '../avatar/avatar-base';
 @import '../badge/badge-base';
@@ -23,6 +27,6 @@
 @import '../toolbar/toolbar-base';
 
 @mixin uxg-core($typography-config: null) {
-  @include mat-core($typography-config);
+  @include mat.core($typography-config);
   @include uxg-material-typography($typography-config);
 }

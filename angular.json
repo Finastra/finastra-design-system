@@ -26,7 +26,6 @@
             "main": "apps/angular-test-app/src/main.ts",
             "polyfills": "apps/angular-test-app/src/polyfills.ts",
             "tsConfig": "apps/angular-test-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/angular-test-app/src/favicon.ico",
               "apps/angular-test-app/src/assets",
@@ -39,7 +38,13 @@
                 "bundleName": "plotly",
                 "inject": true
               }
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -49,7 +54,14 @@
                   "with": "apps/angular-test-app/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,

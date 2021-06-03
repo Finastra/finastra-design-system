@@ -1,5 +1,5 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
-import { renderSync } from 'node-sass';
+import { renderSync, Importer } from 'sass';
 import { readFile, writeFile, mkdirp, copy, remove } from 'fs-extra';
 import { join, relative } from 'path';
 import { sync as globby } from 'globby';
@@ -43,7 +43,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
       sourceMap: true,
       sourceMapRoot: dest,
       sourceMapEmbed: true,
-      importer
+      importer: importer as Importer
     });
 
     const finalCss = await postcss([autoprefixer]).process(result.css, {

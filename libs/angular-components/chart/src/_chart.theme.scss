@@ -1,9 +1,11 @@
+@use '~@angular/material' as mat;
+
 @mixin uxg-chart-typography($config) {
   .chart-font, .chart-font-axis, .chart-font-legend {
     font: {
-      family: mat-font-family($config, body-1);
-      size: mat-font-size($config, body-1);
-      weight: mat-font-weight($config, body-1);
+      family: mat.font-family($config, body-1);
+      size: mat.font-size($config, body-1);
+      weight: mat.font-weight($config, body-1);
     };
   }
 }

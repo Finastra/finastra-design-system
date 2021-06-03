@@ -32,13 +32,13 @@ export class ButtonHubService {
 
   public buttonClicked(buttonType: string) {
     if ('previous' === buttonType) {
-      this._previousButtonClicked.next();
+      this._previousButtonClicked.next(true);
     } else if ('next' === buttonType) {
-      this._nextButtonClicked.next();
+      this._nextButtonClicked.next(true);
     } else if ('done' === buttonType) {
-      this._doneButtonClicked.next();
+      this._doneButtonClicked.next(true);
     } else if ('cancel' === buttonType) {
-      this._cancelButtonClicked.next();
+      this._cancelButtonClicked.next(true);
     } else {
       this._customButtonClicked.next(buttonType);
     }

@@ -22,7 +22,7 @@ import { of } from 'rxjs';
   template: '{{ data }}',
   styles: ['']
 })
-class PlotComponent {
+class PlotlyComponent {
   @Input() data: [] = [];
   @Input() layout: object = {};
   @Input() config: object = {};
@@ -75,7 +75,7 @@ describe('VectorMapModule', () => {
           PaletteModule,
           BrowserAnimationsModule
         ],
-        declarations: [VectorMapComponent, PlotComponent]
+        declarations: [VectorMapComponent, PlotlyComponent]
       }).compileComponents();
     })
   );

@@ -1,5 +1,5 @@
 {
-  "id": "ThemeBuilder",
+  "$id": "ThemeBuilder",
   "title": "Theme Builder",
   "description": "Builds the themes",
   "properties": {

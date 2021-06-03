@@ -1,3 +1,5 @@
+@use '~@angular/material' as mat;
+
 @mixin uxg-filter-group-theme($theme) {
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
@@ -34,7 +36,7 @@
     .mat-expansion-panel-header {
       .uxg-filter-group-header {
         .selectedFilters {
-          @include mat-typography-level-to-styles($config, subtitle-3);
+          @include mat.typography-level($config, subtitle-3);
         }
       }
     }
