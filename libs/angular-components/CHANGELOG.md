@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/finastra/finastra-design-system/compare/v1.3.0...v1.4.0) (2021-06-03)
+
+
+### Bug Fixes
+
+* **filter-tags:** Add focus and blur events ([#357](https://github.com/finastra/finastra-design-system/issues/357)) ([fe57f38](https://github.com/finastra/finastra-design-system/commit/fe57f38260b08485c1af88a775d8bbb5c93a4e86))
+
 ## [1.3.0](https://github.com/finastra/finastra-design-system/compare/v1.2.0...v1.3.0) (2021-05-27)
 
 
