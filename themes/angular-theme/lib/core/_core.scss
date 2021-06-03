@@ -1,3 +1,4 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
 @forward '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
 @use '~@angular/material/core/theming/theming';
 @use '~@angular/material/' as mat;
