@@ -13,10 +13,9 @@
     </mat-chip>
   </mat-chip-list>
 
-  <mat-form-field floatLabel="always" class="chip-list" appearance="fill" dense>
+  <mat-form-field aria-label="Search" floatLabel="always" class="chip-list" appearance="fill" dense>
     <mat-icon matPrefix dense class="search-icon">search</mat-icon>
     <input
-      [attr.aria-label]="ariaLabel"
       autocomplete="off"
       matInput
       type="text"
