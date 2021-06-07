@@ -46,7 +46,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   @Input() dataSource: VectorMapDataSource = [];
   @Input() showLegend = true;
   @Input() autoResize = true;
-  // tslint:disable-next-line: no-output-native
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() click = new EventEmitter<Partial<VectorMapCountry>>();
   @Output() viewChange = new EventEmitter<VectorMapView>();
 

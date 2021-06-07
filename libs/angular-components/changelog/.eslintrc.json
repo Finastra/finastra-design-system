@@ -1,0 +1,19 @@
+{
+  "extends": ["../../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["libs/angular-components/changelog/tsconfig.*?.json"]
+      },
+      "rules": {
+        "@typescript-eslint/no-namespace": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "rules": {}
+    }
+  ]
+}

@@ -1,7 +1,23 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "defaultProject": "test",
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
   "projects": {
     "test": {
       "projectType": "application",
@@ -98,10 +114,9 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": ["apps/angular-test-app/tsconfig.app.json", "apps/angular-test-app/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app/**/*"]
+            "lintFilePatterns": ["apps/angular-test-app/src/**/*.ts", "apps/angular-test-app/src/**/*.html"]
           }
         },
         "test": {
@@ -132,10 +147,9 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": "apps/angular-test-app-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/angular-test-app-e2e/**/*"]
+            "lintFilePatterns": ["apps/angular-test-app-e2e/src/**/*.ts"]
           }
         }
       }
@@ -154,8 +168,10 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:lint",
           "options": {
+            "linter": "eslint",
+            "config": "libs/angular-components/.eslintrc.json",
             "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/angular-components/**/*"]
           }
@@ -174,13 +190,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/core/tsconfig.lib.json",
-              "libs/angular-components/core/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/core/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/core/src/**/*.ts",
+              "libs/angular-components/core/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -238,13 +253,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/global-search/tsconfig.lib.json",
-              "libs/angular-components/global-search/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-search/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/global-search/src/**/*.ts",
+              "libs/angular-components/global-search/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -268,13 +282,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/popover/tsconfig.lib.json",
-              "libs/angular-components/popover/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/popover/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/popover/src/**/*.ts",
+              "libs/angular-components/popover/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -298,13 +311,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/scroll-to-top/tsconfig.lib.json",
-              "libs/angular-components/scroll-to-top/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/scroll-to-top/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/scroll-to-top/src/**/*.ts",
+              "libs/angular-components/scroll-to-top/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -328,13 +340,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/table/tsconfig.lib.json",
-              "libs/angular-components/table/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/table/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/table/src/**/*.ts",
+              "libs/angular-components/table/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -358,13 +369,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/filter/filter-tags/tsconfig.lib.json",
-              "libs/angular-components/filter/filter-tags/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tags/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/filter/filter-tags/src/**/*.ts",
+              "libs/angular-components/filter/filter-tags/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -388,13 +398,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/filter/filter-tree/tsconfig.lib.json",
-              "libs/angular-components/filter/filter-tree/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-tree/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/filter/filter-tree/src/**/*.ts",
+              "libs/angular-components/filter/filter-tree/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -418,13 +427,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/filter/multiselect-tags/tsconfig.lib.json",
-              "libs/angular-components/filter/multiselect-tags/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/multiselect-tags/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/filter/multiselect-tags/src/**/*.ts",
+              "libs/angular-components/filter/multiselect-tags/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -448,13 +456,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/repeater/tsconfig.lib.json",
-              "libs/angular-components/repeater/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/repeater/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/repeater/src/**/*.ts",
+              "libs/angular-components/repeater/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -478,13 +485,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/vector-map/tsconfig.lib.json",
-              "libs/angular-components/vector-map/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/vector-map/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/vector-map/src/**/*.ts",
+              "libs/angular-components/vector-map/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -508,13 +514,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/wizard/tsconfig.lib.json",
-              "libs/angular-components/wizard/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/wizard/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/wizard/src/**/*.ts",
+              "libs/angular-components/wizard/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -538,13 +543,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/skeleton-text/tsconfig.lib.json",
-              "libs/angular-components/skeleton-text/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/skeleton-text/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/skeleton-text/src/**/*.ts",
+              "libs/angular-components/skeleton-text/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -568,13 +572,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/chart/tsconfig.lib.json",
-              "libs/angular-components/chart/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/chart/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/chart/src/**/*.ts",
+              "libs/angular-components/chart/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -598,13 +601,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/filter/filter-group/tsconfig.lib.json",
-              "libs/angular-components/filter/filter-group/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-group/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/filter/filter-group/src/**/*.ts",
+              "libs/angular-components/filter/filter-group/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -628,13 +630,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/filter/filter-toggle/tsconfig.lib.json",
-              "libs/angular-components/filter/filter-toggle/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/filter/filter-toggle/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/filter/filter-toggle/src/**/*.ts",
+              "libs/angular-components/filter/filter-toggle/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -658,13 +659,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/global-nav/tsconfig.lib.json",
-              "libs/angular-components/global-nav/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/global-nav/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/global-nav/src/**/*.ts",
+              "libs/angular-components/global-nav/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -688,13 +688,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/avatar/tsconfig.lib.json",
-              "libs/angular-components/avatar/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/avatar/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/avatar/src/**/*.ts",
+              "libs/angular-components/avatar/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -719,13 +718,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/banner/tsconfig.lib.json",
-              "libs/angular-components/banner/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/banner/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/banner/src/**/*.ts",
+              "libs/angular-components/banner/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -749,13 +747,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/user-profile-menu/tsconfig.lib.json",
-              "libs/angular-components/user-profile-menu/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/user-profile-menu/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/user-profile-menu/src/**/*.ts",
+              "libs/angular-components/user-profile-menu/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -779,13 +776,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/expandable-table/tsconfig.lib.json",
-              "libs/angular-components/expandable-table/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/expandable-table/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/expandable-table/src/**/*.ts",
+              "libs/angular-components/expandable-table/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -809,13 +805,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/entity-menu/tsconfig.lib.json",
-              "libs/angular-components/entity-menu/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/entity-menu/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/entity-menu/src/**/*.ts",
+              "libs/angular-components/entity-menu/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -839,13 +834,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/cards/account-card/tsconfig.lib.json",
-              "libs/angular-components/cards/account-card/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/cards/account-card/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/cards/account-card/src/**/*.ts",
+              "libs/angular-components/cards/account-card/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -869,13 +863,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/search-input/tsconfig.lib.json",
-              "libs/angular-components/search-input/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/search-input/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/search-input/src/**/*.ts",
+              "libs/angular-components/search-input/src/**/*.html"
+            ]
           }
         }
       },
@@ -892,13 +885,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/changelog/tsconfig.lib.json",
-              "libs/angular-components/changelog/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/changelog/**/*"]
+            "lintFilePatterns": [
+              "libs/angular-components/changelog/src/**/*.ts",
+              "libs/angular-components/changelog/src/**/*.html"
+            ]
           }
         }
       },
@@ -915,13 +907,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/breadcrumb/tsconfig.lib.json",
-              "libs/angular-components/breadcrumb/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/breadcrumb/**"]
+            "lintFilePatterns": [
+              "libs/angular-components/breadcrumb/src/**/*.ts",
+              "libs/angular-components/breadcrumb/src/**/*.html"
+            ]
           }
         }
       },
@@ -938,13 +929,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/toaster/tsconfig.lib.json",
-              "libs/angular-components/toaster/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/toaster/**"]
+            "lintFilePatterns": [
+              "libs/angular-components/toaster/src/**/*.ts",
+              "libs/angular-components/toaster/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -968,13 +958,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/video-thumbnail/tsconfig.lib.json",
-              "libs/angular-components/video-thumbnail/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/video-thumbnail/**"]
+            "lintFilePatterns": [
+              "libs/angular-components/video-thumbnail/src/**/*.ts",
+              "libs/angular-components/video-thumbnail/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -998,13 +987,12 @@
       "prefix": "finastra",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/angular-components/status-steps/tsconfig.lib.json",
-              "libs/angular-components/status-steps/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-components/status-steps/**"]
+            "lintFilePatterns": [
+              "libs/angular-components/status-steps/src/**/*.ts",
+              "libs/angular-components/status-steps/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -1017,23 +1005,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular",
-    "analytics": false
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    }
-  },
-  "defaultProject": "test"
+  }
 }

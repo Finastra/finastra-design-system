@@ -3,9 +3,20 @@
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
-    "tslint.json": "*",
+    ".eslintrc.json": "*",
     "nx.json": "*",
     "tsconfig.base.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
   },
   "projects": {
     "test-e2e": {
@@ -104,16 +115,5 @@
     "status-steps": {
       "tags": []
     }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  },
-  "affected": {
-    "defaultBase": "master"
   }
 }

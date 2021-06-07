@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { PaletteModule, LazyloadScriptService } from '@finastra/angular-components/core';
+import { PaletteModule } from '@finastra/angular-components/core';
 import { VectorMapComponent } from './vector-map.component';
 import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
 import { of } from 'rxjs';
@@ -17,7 +17,7 @@ import { of } from 'rxjs';
 // Created PlotlyDemoComponent because of issues when Testing with the
 // PlotlyComponent
 @Component({
-  // tslint:disable-next-line: component-selector
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'plotly-plot',
   template: '{{ data }}',
   styles: ['']

@@ -50,7 +50,7 @@ export class BannerComponent {
   private abbreviateNumber(number: number) {
     const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E'];
     // what tier? (determines SI symbol)
-    // tslint:disable-next-line: no-bitwise
+    // eslint-disable-next-line no-bitwise
     const tier = (Math.log10(number) / 3) | 0;
 
     // if zero, we don't need a suffix
