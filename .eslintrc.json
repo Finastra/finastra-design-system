@@ -2,7 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "esnext",
+    "sourceType": "module",
     "project": "./tsconfig.*?.json"
   },
   "ignorePatterns": ["**/*"],
