@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/finastra/finastra-design-system/compare/v1.4.0...v1.4.1) (2021-06-09)
+
+
+### Bug Fixes
+
+* **components:** aria changes on global search & filter tags ([#364](https://github.com/finastra/finastra-design-system/issues/364)) ([053f309](https://github.com/finastra/finastra-design-system/commit/053f30923e629521222a67f9084c0d1710acf72f))
+
 ## [1.4.0](https://github.com/finastra/finastra-design-system/compare/v1.3.0...v1.4.0) (2021-06-03)
 
 
