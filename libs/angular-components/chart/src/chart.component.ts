@@ -80,13 +80,13 @@ export class ChartComponent implements OnInit, OnDestroy, OnChanges, AfterConten
     }
   }
 
-  // tslint:disable-next-line: no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onClick: EventEmitter<Array<Object>>;
 
-  // tslint:disable-next-line: no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onSelected: EventEmitter<Array<Object>>;
 
-  // tslint:disable-next-line: no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onDoubleClick: EventEmitter<Array<Object>>;
 
   private lastClick = {

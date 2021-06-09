@@ -46,13 +46,12 @@ export function addToNgJson(options: NgJsonOptions): Rule {
 
         architect: {
           lint: {
-            builder: '@angular-devkit/build-angular:tslint',
+            builder: '@nrwl/linter:eslint',
             options: {
-              tsConfig: [
-                `libs/angular-components/${options.projectName}/tsconfig.lib.json`,
-                `libs/angular-components/${options.projectName}/tsconfig.spec.json`
-              ],
-              exclude: ['**/node_modules/**', `!libs/angular-components/${options.projectName}/**`]
+              lintFilePatterns: [
+                `libs/angular-components/${options.projectName}/src/**/*.ts`,
+                `libs/angular-components/${options.projectName}/src/**/*.html`
+              ]
             }
           },
           test: {

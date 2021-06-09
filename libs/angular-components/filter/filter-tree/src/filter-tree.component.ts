@@ -87,7 +87,7 @@ export class FilterTreeComponent implements OnChanges {
       if (this.subscription) {
         this.subscription.unsubscribe();
       }
-      // tslint:disable-next-line: no-shadowed-variable
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       this.subscription = this.checkListSelection.changed.subscribe((changes) => {
         this.changes.emit({
           added: changes.added,

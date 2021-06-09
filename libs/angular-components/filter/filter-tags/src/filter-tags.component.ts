@@ -81,10 +81,10 @@ export class FilterTagsComponent implements OnInit {
         map((tag: string | null) => {
           if (tag) {
             const filteredTags = this.filter(tag);
-            // tslint:disable-next-line: no-shadowed-variable
+            // eslint-disable-next-line @typescript-eslint/no-shadow
             return uniq(filteredTags.map((tag) => tag.category));
           } else {
-            // tslint:disable-next-line: no-shadowed-variable
+            // eslint-disable-next-line @typescript-eslint/no-shadow
             return uniq(this.data.map((tag) => tag.category));
           }
         })

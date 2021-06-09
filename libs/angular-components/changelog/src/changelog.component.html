@@ -28,7 +28,7 @@
       <ng-container *ngFor="let category of release.categories">
         <div class="uxg-subtitle-2 category">{{ category }}</div>
         <div *ngFor="let change of release.changes" class="change">
-          <div *ngIf="change.category == category" fxLayout.xs="column" fxLayout.gt-xs="row">
+          <div *ngIf="change.category === category" fxLayout.xs="column" fxLayout.gt-xs="row">
             <div fxFlex="10" fxFlex.lt-lg="15" class="change-type">
               <span class="{{ change.type | lowercase }} type uxg-caption">{{ change.type | titlecase }}</span>
             </div>
