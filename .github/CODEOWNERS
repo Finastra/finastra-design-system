@@ -3,20 +3,20 @@
 *   @rbordeanu @bcldvd @ttalbot
 
 # Repository management
-/scripts/   @rbordeanu
-/tools/     @rbordeanu
+/scripts/   @adrian-apetrei @rbordeanu
+/tools/     @adrian-apetrei @rbordeanu
 
 # Themes and style files
-/themes/    @studios-team
-*.scss      @studios-team
-*.css       @studios-team
-*.png       @studios-team
-*.jpeg      @studios-team
-*.jpg       @studios-team
-*.svg       @studios-team
+/themes/    @dorsaffrigui @ttalbot
+*.scss      @dorsaffrigui @ttalbot
+*.css       @dorsaffrigui @ttalbot
+*.png       @dorsaffrigui @ttalbot
+*.jpeg      @dorsaffrigui @ttalbot
+*.jpg       @dorsaffrigui @ttalbot
+*.svg       @dorsaffrigui @ttalbot
 
 # Palette service
-/libs/angular-components/core/src/palette/palette.defaults.ts   @studios-team
+/libs/angular-components/core/src/palette/palette.defaults.ts   @dorsaffrigui @ttalbot
 
 # Per components owners
 /libs/angular-components/global-search/            @rbordeanu
