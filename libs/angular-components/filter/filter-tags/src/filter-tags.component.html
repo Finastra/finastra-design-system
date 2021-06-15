@@ -5,6 +5,7 @@
       [attr.dense]="standard === '' ? null : ''"
       selected
       *ngFor="let tag of selectedData"
+      [attr.aria-label]="tag.label"
       [removable]="removable"
       (removed)="remove(tag)"
     >
