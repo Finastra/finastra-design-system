@@ -18,6 +18,13 @@ $side-badge-min-width-large: 14px;
 }
 
 .uxg-side-badge {
+  &.mat-badge-small.mat-badge-after span.mat-badge-content {
+    @include uxg-side-badge-base();
+
+    border-radius: $side-badge-radius-standard;
+    padding: 0 $uxg-spacing-2;
+  }
+
   &.mat-badge-medium.mat-badge-after span.mat-badge-content {
     @include uxg-side-badge-base();
 
