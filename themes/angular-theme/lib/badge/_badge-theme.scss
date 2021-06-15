@@ -1,6 +1,5 @@
 @mixin uxg-badge-color($color-name, $color) {
-  &[color=#{$color-name}],
-  &.mat-#{$color-name},
+  &[matBadgeColor=#{$color-name}],
   &.mat-badge-#{$color-name} {
     .mat-badge-content {
       background-color: mat-color($color, default);
