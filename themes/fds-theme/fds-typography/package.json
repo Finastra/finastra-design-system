@@ -1,0 +1,10 @@
+{
+  "name": "@finastra/typography",
+  "version": "1.0.0",
+  "author": "Talbot, Thomas <thomas.talbot@finastra.com>",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@material/typography": "^11.0.0"
+  }
+}

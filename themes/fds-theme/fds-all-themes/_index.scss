@@ -1,0 +1,22 @@
+@use "@material/theme" with (
+  $primary: #694ED6,
+  $secondary: #C137A2,
+);
+
+@mixin core-styles() {
+  @include theme.core-styles;
+}
+
+@mixin dark-theme() {
+  #{if(&, '&', ':root')} {
+    --mdc-theme-primary: #ff9900;
+    --mdc-theme-secondary: #c137a2;
+    --mdc-theme-background: #fafafa;
+    --mdc-theme-surface: #fff;
+    --mdc-theme-error: #e40046;
+    --mdc-theme-on-primary: #000;
+    --mdc-theme-on-secondary: #fff;
+    --mdc-theme-on-surface: #000;
+    --mdc-theme-on-error: #fff;
+  }
+}

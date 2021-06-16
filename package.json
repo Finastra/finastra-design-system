@@ -82,9 +82,12 @@
     "rxjs": "^7.1.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "2.2.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@material/button": "^11.0.0",
+    "@material/mwc-button": "^0.21.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^12.0.0",
     "@angular-devkit/build-angular": "12.0.3",
     "@angular-devkit/core": "12.0.3",
     "@angular-eslint/eslint-plugin": "~12.1.0",

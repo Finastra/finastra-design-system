@@ -1,0 +1,11 @@
+{
+  "name": "@finastra/theme",
+  "version": "1.0.0",
+  "author": "Talbot, Thomas <thomas.talbot@finastra.com>",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@material/theme": "^11.0.0",
+    "@material/typography": "^11.0.0"
+  }
+}
