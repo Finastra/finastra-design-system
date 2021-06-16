@@ -18,6 +18,7 @@ $side-badge-min-width-large: 14px;
 }
 
 .uxg-side-badge {
+  vertical-align: baseline;
   &.mat-badge-small.mat-badge-after span.mat-badge-content {
     @include uxg-side-badge-base();
 
@@ -29,7 +30,7 @@ $side-badge-min-width-large: 14px;
     @include uxg-side-badge-base();
 
     border-radius: $side-badge-radius-standard;
-    padding: 0 $uxg-spacing-2;
+    padding: 2px 10px;
   }
 
   &.mat-badge-large.mat-badge-after span.mat-badge-content {

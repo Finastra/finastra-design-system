@@ -1,7 +1,7 @@
 @mixin uxg-badge-color($color-name, $color) {
   &[matBadgeColor=#{$color-name}],
   &.mat-badge-#{$color-name} {
-    .mat-badge-content {
+    span.mat-badge-content {
       background-color: mat-color($color, default);
       border-style: none;
       color: mat-color($color, default-contrast);
@@ -15,7 +15,7 @@
   $secondary: map-get($theme, accent);
   $warn: map-get($theme, warn);
 
-  .uxg-side-badge {
+  .uxg-side-badge.mat-badge-after {
     .mat-badge-content {
       background-color: transparent;
       border-color: mat-color($foreground, text, 0.15);
