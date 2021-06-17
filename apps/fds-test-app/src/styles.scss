@@ -1,1 +1,6 @@
+@use "./../../../themes/fds-theme" ;
 @use "@material/button/styles";
+
+.dark {
+    @include fds-theme.dark-theme;
+}

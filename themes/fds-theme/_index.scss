@@ -1,2 +1,9 @@
-@use './fds-all-themes';
-@use './fds-typography';
+@use './all-themes';
+@use './typography';
+
+@include typography.core-styles;
+@include all-themes.core-styles;
+
+@mixin dark-theme() {
+    @include all-themes.dark-theme;
+  }
