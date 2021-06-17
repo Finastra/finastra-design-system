@@ -1,11 +1,15 @@
 @use 'sass:math';
+@use 'sass:string';
 
 @function px-to-rem($px) {
   @return math.div($px, 16px) * 1rem;
 }
 
+$font-family: string.unquote('Futura') !default;
+
 $fds-styles: (
   headline1: (
+    font-family: $font-family,
     font-size: px-to-rem(60px),
     line-height: px-to-rem(90px),
     font-weight: 700,
@@ -14,6 +18,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline2: (
+    font-family: $font-family,
     font-size: px-to-rem(48px),
     line-height: px-to-rem(72px),
     font-weight: 700,
@@ -22,6 +27,7 @@ $fds-styles: (
     text-transform: inherit,
     ),
   headline3: (
+    font-family: $font-family,
     font-size: px-to-rem(32px),
     line-height: px-to-rem(48px),
     font-weight: 700,
@@ -30,6 +36,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline4: (
+    font-family: $font-family,
     font-size: px-to-rem(24px),
     line-height: px-to-rem(36px),
     font-weight: 700,
@@ -38,6 +45,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline5: (
+    font-family: $font-family,
     font-size: px-to-rem(18px),
     line-height: px-to-rem(27px),
     font-weight: 700,
@@ -46,6 +54,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline6: (
+    font-family: $font-family,
     font-size: px-to-rem(14px),
     line-height: px-to-rem(21px),
     font-weight: 700,
