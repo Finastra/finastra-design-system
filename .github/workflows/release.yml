@@ -46,7 +46,7 @@ jobs:
       - name: Run affected unit tests
         run: npm run affected:test -- --base=origin/master --parallel
 
-        # Build
+        # Angular Build 
       - name: Build Test App
         run: npm run build -- --prod
       - name: Build Angular Theme
@@ -68,6 +68,21 @@ jobs:
         with:
           name: "angular-app"
           path: "./dist/apps/angular-test-app"
+        # Fds Build 
+      - name: Build fds test App
+        run: npm run build:fds-test-app -- --prod
+      - name: Build fds Theme
+        run: npm run build fds-theme -- --prod
+      - name: Upload fds Theme Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: "fds-theme"
+          path: "./dist/themes/fds-theme"
+      - name: Upload fds Test App Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: "fds-app"
+          path: "./dist/apps/fds-test-app"
 
   release:
     needs: build
@@ -99,29 +114,39 @@ jobs:
         with:
           name: "angular-components"
           path: "./dist/libs/angular-components"
+      - uses: actions/download-artifact@v2
+        with:
+          name: "fds-theme"
+          path: "./dist/themes/fds-theme"
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
           package: ./dist/libs/angular-components/package.json
           access: public
-      - name: Publish Theme
+      - name: Publish angular theme
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
           package: ./dist/themes/angular-theme/package.json
           access: public
+      - name: Publish fds theme
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
+          package: ./dist/themes/fds-theme/package.json
+          access: public
 
   deploy:
     needs: build
-    name: Deploy to Netlify
+    name: Deploy angular app to Netlify
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v2
         with:
           name: "angular-app"
           path: "./dist/apps/angular-test-app"
-      - name: Deploy to Netlify
+      - name: Deploy angular app to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: "./dist/apps/angular-test-app"
@@ -129,6 +154,25 @@ jobs:
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+    name: Deploy fds app to Netlify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: "fds-app"
+          path: "./dist/apps/fds-test-app"
+      - name: Deploy fds app to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: "./dist/apps/fds-test-app"
+          production-branch: master
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy fds app from GitHub Actions"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

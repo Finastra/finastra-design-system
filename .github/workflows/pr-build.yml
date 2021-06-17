@@ -46,7 +46,7 @@ jobs:
       - name: Run affected unit tests
         run: npm run affected:test -- --base=$NX_BASE --parallel
 
-        # Build
+        # Angular build
       - name: Build Test App
         run: npm run build -- --prod
       - name: Build Angular Theme
@@ -63,15 +63,41 @@ jobs:
         with:
           name: "angular-components"
           path: "./dist/libs/angular-components"
+        # Fds build
+      - name: Build Fds test App
+        run: npm run build:fds-test-app -- --prod
+      - name: Build Fds Theme
+        run: npm run build fds-theme -- --prod
+      - name: Upload Fds theme Artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: "fds-theme"
+          path: "./dist/themes/fds-theme"
 
         # Deploy
-      - name: Deploy to Netlify
+      - name: Deploy angular test app to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: "./dist/apps/angular-test-app"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
+          deploy-message: "Deploy angular app from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+          alias: deploy-preview-${{ github.event.number }}
+          github-deployment-environment: Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+      - name: Deploy fds test app to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: "./dist/apps/fds-test-app"
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy fds app from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
           overwrites-pull-request-comment: true
