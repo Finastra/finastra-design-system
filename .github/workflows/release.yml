@@ -71,13 +71,11 @@ jobs:
         # Fds Build 
       - name: Build fds test App
         run: npm run build:fds-test-app -- --prod
-      - name: Build fds Theme
-        run: npm run build fds-theme -- --prod
       - name: Upload fds Theme Artifact
         uses: actions/upload-artifact@v2
         with:
           name: "fds-theme"
-          path: "./dist/themes/fds-theme"
+          path: "./themes/fds-theme"
       - name: Upload fds Test App Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -117,7 +115,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: "fds-theme"
-          path: "./dist/themes/fds-theme"
+          path: "./themes/fds-theme"
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -134,7 +132,7 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
-          package: ./dist/themes/fds-theme/package.json
+          package: ./themes/fds-theme/package.json
           access: public
 
   deploy:

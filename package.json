@@ -13,7 +13,6 @@
     "start": "ng serve",
     "build": "ng build",
     "build:theme": "ng build angular-theme --prod",
-    "build:fds-theme": "ng build fds-theme --prod",
     "build:fds-test-app": "ng build fds-test-app",
     "start:fds-test-app": "ng serve fds-test-app",
     "postinstall": "ngcc --properties es2015 browser module main && node ./decorate-angular-cli.js",

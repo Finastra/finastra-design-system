@@ -66,13 +66,11 @@ jobs:
         # Fds build
       - name: Build Fds test App
         run: npm run build:fds-test-app -- --prod
-      - name: Build Fds Theme
-        run: npm run build fds-theme -- --prod
       - name: Upload Fds theme Artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: "fds-theme"
-          path: "./dist/themes/fds-theme"
+          path: "./themes/fds-theme"
 
         # Deploy
       - name: Deploy angular test app to Netlify
