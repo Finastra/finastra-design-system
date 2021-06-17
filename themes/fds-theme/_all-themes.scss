@@ -9,14 +9,14 @@
 
 @mixin dark-theme() {
   #{if(&, '&', ':root')} {
-    --mdc-theme-primary: #ff9900;
-    --mdc-theme-secondary: #c137a2;
-    --mdc-theme-background: #fafafa;
-    --mdc-theme-surface: #fff;
+    --mdc-theme-primary: #927ee0;
+    --mdc-theme-secondary: #e453bf;
+    --mdc-theme-background: #191919;
+    --mdc-theme-surface: #242424;
     --mdc-theme-error: #e40046;
     --mdc-theme-on-primary: #000;
-    --mdc-theme-on-secondary: #fff;
-    --mdc-theme-on-surface: #000;
+    --mdc-theme-on-secondary: #000;
+    --mdc-theme-on-surface: #fff;
     --mdc-theme-on-error: #fff;
   }
 }

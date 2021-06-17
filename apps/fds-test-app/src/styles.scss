@@ -1,6 +1,10 @@
 @use "./../../../themes/fds-theme" ;
 @use "@material/button/styles";
 
+body {
+    background-color: var(--mdc-theme-background);
+}
+
 .dark {
     @include fds-theme.dark-theme;
 }
