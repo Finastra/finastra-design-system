@@ -15,7 +15,7 @@
     "build:theme": "ng build angular-theme --prod",
     "build:fds-theme": "ng build fds-theme --prod",
     "build:fds-test-app": "ng build fds-test-app",
-    "start:fds-test-app":"ng serve fds-test-app",
+    "start:fds-test-app": "ng serve fds-test-app",
     "postinstall": "ngcc --properties es2015 browser module main && node ./decorate-angular-cli.js",
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
     "dev": "npm start -- -o",
@@ -47,7 +47,8 @@
     "release": "npx standard-version -an",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
     "changelog:components": "cd libs/angular-components && npx standard-version",
-    "workspace-generator": "nx workspace-generator"
+    "workspace-generator": "nx workspace-generator",
+    "fix:deps": "npx npm-force-resolutions"
   },
   "husky": {
     "hooks": {
@@ -159,5 +160,8 @@
     "ts-node": "10.0.0",
     "tsickle": "0.39.1",
     "typescript": "4.2.4"
+  },
+  "resolutions": {
+    "sass": "1.33.0"
   }
 }
