@@ -1,0 +1,11 @@
+@use "@material/shape";
+@use "./typography";
+
+@mixin core-styles() {
+  .fds-button {
+    --mdc-shape-small: 22px;
+    --mdc-shape-medium: 22px;
+    --mdc-shape-large: 22px;
+    --mdc-typography-button-text-transform: typography.get-text-transform('button');
+  }
+}

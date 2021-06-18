@@ -53,3 +53,7 @@ $unused: typography.set-styles_(
     }
   }
 }
+
+@function get-text-transform($typography) {
+  @return map.get(typography-styles.$fds-styles, $typography, text-transform);
+}
