@@ -11,6 +11,8 @@
   },
   "peerDependencies": {
     "@material/theme": "^11.0.0",
-    "@material/typography": "^11.0.0"
+    "@material/typography": "^11.0.0",
+    "@material/shape": "^11.0.0",
+    "@material/button": "^11.0.0"
   }
 }

@@ -1,9 +1,15 @@
 @use "@material/shape";
+@use '@material/button/button-theme';
 @use "./typography";
 
 @mixin core-styles() {
   .mdc-button,
   mwc-button {
     --mdc-shape-small: 22px;
+    &.mdc-button--dense {
+      // --mdc-typography-button-font-size: 11px;
+      @include button-theme.density(-2);
+    }
   }
+
 }

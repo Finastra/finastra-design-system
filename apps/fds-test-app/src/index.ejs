@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
     <title>fds</title>
   </head>
   <body>
+
+    <div class="buttons">
+      <div class="demo">
+        <button class="mdc-button mdc-button--unelevated">
+          <span class="mdc-button__ripple"></span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
+          <span class="mdc-button__label">mdc unelevated</span>
+        </button>
+        <mwc-button unelevated label="mwc unelevated" icon="account_circle"></mwc-button>
+      </div>
+
+      <div class="demo">
+        <button class="mdc-button mdc-button--unelevated mdc-button--dense">
+          <span class="mdc-button__ripple"></span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
+          <span class="mdc-button__label">mdc dense</span>
+        </button>
+        <mwc-button dense unelevated label="mwc dense" icon="favorite"></mwc-button>
+      </div>
+
+      <div class="demo">
+        <button class="mdc-button mdc-button--outlined">
+          <span class="mdc-button__ripple"></span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">add</i>
+          <span class="mdc-button__label">mdc outlined</span>
+        </button>
+        <mwc-button outlined label="mwc outlined" icon="add"></mwc-button>
+      </div>
+    </div>
+
+    <div class="colors">
+      <div class="swatch mdc-theme--primary-bg"></div>
+      <div class="swatch mdc-theme--secondary-bg"></div>
+      <div class="swatch mdc-theme--background"></div>
+      <div class="swatch mdc-theme--surface"></div>
+      <div class="swatch mdc-theme--error"></div>
+    </div>
 
     <div class="typography">
       <h1 class="mdc-typography--headline1 mdc-theme--on-surface">Headline 1</h1>
@@ -26,26 +64,6 @@
       <p class="mdc-typography--caption mdc-theme--on-surface">caption</p>
       <p class="mdc-typography--overline mdc-theme--on-surface">overline</p>
     </div>
-
-    <div class="buttons">
-      <div class="demo">
-        <button class="mdc-button mdc-button--unelevated fds-button">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">mdc unelevated</span>
-        </button>
-        <mwc-button unelevated label="mwc unelevated" class="fds-button"></mwc-button>
-      </div>
-
-      <div class="demo">
-        <button class="mdc-button mdc-button--outlined fds-button">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">mdc outlined</span>
-        </button>
-        <mwc-button outlined label="mwc outlined" class="fds-button"></mwc-button>
-      </div>
-    </div>
-
-
 
   </body>
 </html>
