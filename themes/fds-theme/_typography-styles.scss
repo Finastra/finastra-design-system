@@ -111,12 +111,12 @@ $fds-styles: (
     text-transform: inherit,
   ),
   button: (
-    font-size: px-to-rem(16px),
-    line-height: px-to-rem(24px),
+    font-size: px-to-rem(14px),
+    line-height: px-to-rem(20px),
     font-weight: 700,
     letter-spacing: 1.25px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: none,
   ),
   caption: (
     font-size: px-to-rem(12px),
