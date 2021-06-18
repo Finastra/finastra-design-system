@@ -66,12 +66,6 @@ jobs:
         # Fds build
       - name: Build Fds test App
         run: npm run build:fds-test-app -- --prod
-      - name: Upload Fds theme Artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: "fds-theme"
-          path: "./themes/fds-theme"
-
         # Deploy
       - name: Deploy angular test app to Netlify
         uses: nwtgck/actions-netlify@v1.1
@@ -80,22 +74,6 @@ jobs:
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy angular app from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-          alias: deploy-preview-${{ github.event.number }}
-          github-deployment-environment: Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 1
-      - name: Deploy fds test app to Netlify
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-          publish-dir: "./dist/apps/fds-test-app"
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy fds app from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
           overwrites-pull-request-comment: true

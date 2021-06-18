@@ -71,11 +71,6 @@ jobs:
         # Fds Build 
       - name: Build fds test App
         run: npm run build:fds-test-app -- --prod
-      - name: Upload fds Theme Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: "fds-theme"
-          path: "./themes/fds-theme"
       - name: Upload fds Test App Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -112,10 +107,6 @@ jobs:
         with:
           name: "angular-components"
           path: "./dist/libs/angular-components"
-      - uses: actions/download-artifact@v2
-        with:
-          name: "fds-theme"
-          path: "./themes/fds-theme"
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -152,25 +143,6 @@ jobs:
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 1
-    name: Deploy fds app to Netlify
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: "fds-app"
-          path: "./dist/apps/fds-test-app"
-      - name: Deploy fds app to Netlify
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-          publish-dir: "./dist/apps/fds-test-app"
-          production-branch: master
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy fds app from GitHub Actions"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

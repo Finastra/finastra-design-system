@@ -45,7 +45,8 @@
             "assets": [
               "apps/angular-test-app/src/favicon.ico",
               "apps/angular-test-app/src/assets",
-              "apps/angular-test-app/src/_redirects"
+              "apps/angular-test-app/src/_redirects",
+              { "glob": "index.html", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" }
             ],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": [
@@ -54,7 +55,7 @@
                 "bundleName": "plotly",
                 "inject": true
               }
-            ],
+            ],        
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
@@ -289,7 +290,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/fds-test-app",
-            "index": "apps/fds-test-app/src/index.ejs",
+            "index": "apps/fds-test-app/src/index.html",
             "main": "apps/fds-test-app/src/index.ts",
             "tsConfig": "apps/fds-test-app/tsconfig.app.json",
             "styles": ["apps/fds-test-app/src/styles.scss"]
