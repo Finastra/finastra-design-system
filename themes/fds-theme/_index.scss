@@ -1,11 +1,2 @@
-@use './all-themes';
-@use './typography';
-@use './button';
-
-@include all-themes.core-styles;
-@include typography.core-styles;
-@include button.core-styles;
-
-@mixin dark-theme() {
-  @include all-themes.dark-theme;
-}
+@forward './all-themes';
+@use './fds-theme';

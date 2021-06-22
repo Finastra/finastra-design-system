@@ -42,9 +42,9 @@ $unused: typography.set-styles_(
     overline: $styles-overline,
   )
 );
-@include typography.core-styles;
 
 @mixin core-styles() {
+  @include typography.core-styles;
   :root {
     @each $typo-style, $typo-style-props in $unused {
       @each $typo-style-property, $typo-style-property-value in $typo-style-props {

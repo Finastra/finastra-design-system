@@ -1,22 +1,25 @@
-@use "@material/theme" with (
+@forward "@material/theme" with (
   $primary: #694ED6,
+  $on-primary: #FFF,
   $secondary: #C137A2,
+  $on-secondary: #FFF,
+  $background: #FAFAFA,
+  $surface: #FFF,
+  $on-surface: #212121,
+  $error: #E40046,
 );
-
-@mixin core-styles() {
-  @include theme.core-styles;
-}
 
 @mixin dark-theme() {
   #{if(&, '&', ':root')} {
-    --mdc-theme-primary: #927ee0;
-    --mdc-theme-secondary: #e453bf;
+    --mdc-theme-primary: #927EE0;
+    --mdc-theme-on-primary: #000;
+    --mdc-theme-secondary: #E453bf;
     --mdc-theme-background: #191919;
     --mdc-theme-surface: #242424;
-    --mdc-theme-error: #e40046;
+    --mdc-theme-error: #E40046;
     --mdc-theme-on-primary: #000;
     --mdc-theme-on-secondary: #000;
-    --mdc-theme-on-surface: #fff;
-    --mdc-theme-on-error: #fff;
+    --mdc-theme-on-surface: #FFF;
+    --mdc-theme-on-error: #FFF;
   }
 }
