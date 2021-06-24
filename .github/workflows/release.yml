@@ -6,7 +6,6 @@ on:
       - v*
     paths:
       - '!themes/fds-theme/**'
-      - '!apps/fds-test-app/**'
 
 name: Create Angular release
 
