@@ -44,4 +44,8 @@ export class VectorMapDemoComponent {
     { name: 'Russia', value: 500 },
     { name: 'Singapore', value: 6000 }
   ];
+
+  logClick(event: Array<object>) {
+    console.log('click: ', event);
+  }
 }
