@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette' as palette;
+
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
@@ -9,9 +13,9 @@
 }
 
 @mixin uxg-card-theme($theme) {
-  $primary: map-get($theme, primary);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
 
   $prod-wave: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 320 246"><path fill="#{map-get($background, card)}" d="M320,0v218.3c-2.8,2.1-5.7,4.2-8.6,6.2c-57.1,39.1-132,15.1-180.5,3.3C114.2,223.8,65.3,206.1,0,194V0H320z"/></svg>';
   $prod-wave: str-replace($prod-wave, '#', '%23');
@@ -23,8 +27,8 @@
   $sol-wave-bot: str-replace($sol-wave-bot, '#', '%23');
 
   .uxg-card-product.mat-card {
-    background: bottom left / 100% 120% no-repeat url($prod-wave), mat-color($uxg-gradient, horizontal);
-    color: mat-color($foreground, text);
+    background: bottom left / 100% 120% no-repeat url($prod-wave), mat.get-color-from-palette(palette.$uxg-gradient, horizontal);
+    color: mat.get-color-from-palette($foreground, text);
   }
 
   .uxg-card-solution.mat-card {
@@ -33,8 +37,8 @@
       url($sol-wave-top),
       bottom right / 30% 30% no-repeat
       url($sol-wave-bot),
-      top left / 100% 100% no-repeat mat-color($uxg-gradient, diagonal);
-    color: mat-color($primary, default-contrast);
+      top left / 100% 100% no-repeat mat.get-color-from-palette(palette.$uxg-gradient, diagonal);
+    color: mat.get-color-from-palette($primary, default-contrast);
   }
 }
 

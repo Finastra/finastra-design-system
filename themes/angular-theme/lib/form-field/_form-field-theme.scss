@@ -1,8 +1,12 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
+
 @mixin uxg-form-field-fill-theme($theme) {
-  $primary: map-get($theme, primary);
-  $warn: map-get($theme, warn);
-  $fill-background: mat-color($primary, default, 0.08);
-  $warn-background: mat-color($warn, default, 0.08);
+  $primary: map.get($theme, primary);
+  $warn: map.get($theme, warn);
+  $fill-background: palette.get-color-from-palette($primary, default, 0.08);
+  $warn-background: palette.get-color-from-palette($warn, default, 0.08);
 
   .mat-form-field-appearance-fill {
     .mat-form-field-flex {
@@ -10,11 +14,11 @@
     }
 
     .mat-form-field-underline::before {
-      background-color: map-get($primary, default);
+      background-color: map.get($primary, default);
     }
 
     .mat-form-field-ripple {
-      background-color: map-get($primary, default);
+      background-color: map.get($primary, default);
     }
   }
 

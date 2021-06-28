@@ -1,28 +1,32 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
+
 @mixin uxg-chips-theme($theme) {
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
-  $primary: map-get($theme, primary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $primary: map.get($theme, primary);
 
   .mat-chip.mat-standard-chip {
-    background-color: mat-color($background, raised-button);
-    border: 1px solid mat-color($foreground, text, 0.15);
-    color: mat-color($foreground, text);
+    background-color: palette.get-color-from-palette($background, raised-button);
+    border: 1px solid palette.get-color-from-palette($foreground, text, 0.15);
+    color: palette.get-color-from-palette($foreground, text);
 
     &:not(.mat-chip-disabled) {
       .mat-icon {
-        color: mat-color($foreground, text);
+        color: palette.get-color-from-palette($foreground, text);
         opacity: 0.75;
       }
 
       .mat-ripple-element {
-        background: mat-color($primary, default, 0.2);
+        background: palette.get-color-from-palette($primary, default, 0.2);
       }
 
       &:hover {
-        color: mat-color($primary, default);
+        color: palette.get-color-from-palette($primary, default);
 
         .mat-icon {
-          color: mat-color($primary, default);
+          color: palette.get-color-from-palette($primary, default);
         }
       }
 
@@ -37,22 +41,22 @@
       &.mat-chip-selected {
         &,
         &.mat-primary {
-          background-color: mat-color($primary, default, 0.09);
-          border: 1px solid mat-color($primary, default);
-          color: mat-color($primary, default);
+          background-color: palette.get-color-from-palette($primary, default, 0.09);
+          border: 1px solid palette.get-color-from-palette($primary, default);
+          color: palette.get-color-from-palette($primary, default);
 
           .mat-icon {
-            color: mat-color($primary, default);
+            color: palette.get-color-from-palette($primary, default);
             opacity: 1;
           }
 
           .mat-ripple-element {
-            background: mat-color($primary, default, 0.2);
+            background: palette.get-color-from-palette($primary, default, 0.2);
             opacity: 1;
           }
 
           .mat-chip-remove {
-            color: mat-color($primary, default);
+            color: palette.get-color-from-palette($primary, default);
             opacity: 1;
           }
         }
@@ -60,13 +64,13 @@
     }
 
     &::after {
-      background-color: mat-color($primary, default);
+      background-color: palette.get-color-from-palette($primary, default);
     }
 
     &.mat-chip-disabled {
-      background-color: mat-color($foreground, base, 0.1);
-      color: mat-color($foreground, text, 0.5);
-      border-color: mat-color($foreground, text, 0.15);
+      background-color: palette.get-color-from-palette($foreground, base, 0.1);
+      color: palette.get-color-from-palette($foreground, text, 0.5);
+      border-color: palette.get-color-from-palette($foreground, text, 0.15);
       opacity: 1;
     }
   }

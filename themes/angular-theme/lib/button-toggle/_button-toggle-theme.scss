@@ -1,37 +1,41 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette' as fds;
+
 @mixin uxg-button-toggle-theme($theme) {
-  $primary: map-get($theme, primary);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
-      color: mat-color($foreground, secondary-text);
-      border-color: mat-color($foreground, divider);
-      background-color: mat-color($background, card);
+      color: fds.get-color-from-palette($foreground, secondary-text);
+      border-color: fds.get-color-from-palette($foreground, divider);
+      background-color: fds.get-color-from-palette($background, card);
 
       .mat-button-toggle-button {
         border-color: transparent;
       }
 
       &.mat-button-toggle-disabled {
-        color: mat-color($foreground, secondary-text, 0.25);
+        color: fds.get-color-from-palette($foreground, secondary-text, 0.25);
 
         .mat-icon {
-          color: mat-color($foreground, icon, 0.12);
+          color: fds.get-color-from-palette($foreground, icon, 0.12);
         }
       }
 
       &.mat-button-toggle-checked {
-        background-color: mat-color($background, background);
+        background-color: fds.get-color-from-palette($background, background);
 
         .mat-button-toggle-button {
-          background-color: mat-color($primary, default, 0.09);
-          border-color: mat-color($primary, default);
+          background-color: fds.get-color-from-palette($primary, default, 0.09);
+          border-color: fds.get-color-from-palette($primary, default);
         }
 
         .mat-button-toggle-button,
         .mat-icon {
-          color: mat-color($primary, default);
+          color: fds.get-color-from-palette($primary, default);
         }
       }
     }
@@ -39,14 +43,14 @@
 
   .uxg-filtering-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle {
-      border-color: mat-color($foreground, divider);
+      border-color: fds.get-color-from-palette($foreground, divider);
 
       .mat-button-toggle-button {
         border-color: transparent;
       }
 
       &.mat-button-toggle-checked {
-        border-color: mat-color($primary, default);
+        border-color: fds.get-color-from-palette($primary, default);
       }
     }
   }

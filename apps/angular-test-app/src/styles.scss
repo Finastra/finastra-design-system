@@ -1,7 +1,8 @@
-@import "angular-theme/lib/core/core";
-@import "angular-theme/lib/core/theming/all-theme";
-@import "angular-theme/lib/core/typography/typography";
-@import "angular-theme/theme-variables";
+@use "angular-theme/lib/core/core";
+@use "angular-theme/lib/core/theming/all-theme";
+@use "angular-theme/lib/core/typography/typography";
+@use "angular-theme/theme-variables";
+@use "angular-theme/lib/core/style/spacing";
 
 @import "global-search/src/global-search.theme";
 @import "vector-map/src/vector-map.theme";
@@ -19,9 +20,9 @@
 
 @import "./app/components/repeater-demo/repeater-card-example/repeater-card-example.theme";
 
-$uxg-typography: uxg-typography-config();
+$uxg-typography: typography.uxg-typography-config();
 
-@include uxg-core();
+@include core.uxg-core();
 
 @include uxg-filter-tags-typography($uxg-typography);
 @include uxg-filter-group-typography($uxg-typography);
@@ -31,7 +32,7 @@ $uxg-typography: uxg-typography-config();
 @include uxg-wizard-typography($uxg-typography);
 
 @mixin app-theme($theme) {
-  @include uxg-material-theme($theme);
+  @include all-theme.uxg-material-theme($theme);
   @include uxg-filter-group-theme($theme);
   @include uxg-filter-tags-theme($theme);
   @include uxg-filter-tree-theme($theme);
@@ -48,10 +49,10 @@ $uxg-typography: uxg-typography-config();
   @include uxg-status-stepper-theme($theme);
 }
 
-@include app-theme($uxg-light-theme);
+@include app-theme(theme-variables.$uxg-light-theme);
 
 .uxg-dark-theme {
-  @include app-theme($uxg-dark-theme);
+  @include app-theme(theme-variables.$uxg-dark-theme);
 }
 
 html,
@@ -95,14 +96,14 @@ section {
 }
 
 .example-row {
-  margin-top: $uxg-spacing-3;
-  margin-left: $uxg-spacing-5;
+  margin-top: spacing.$uxg-spacing-3;
+  margin-left: spacing.$uxg-spacing-5;
   display: inline-block;
 }
 
 .block-test {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2 * $uxg-spacing-5;
+  margin-bottom: 2 * spacing.$uxg-spacing-5;
   align-items: flex-start;
 }

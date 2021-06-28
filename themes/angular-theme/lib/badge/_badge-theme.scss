@@ -1,10 +1,14 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
+
 @mixin uxg-badge-theme($theme) {
-  $foreground: map-get($theme, foreground);
+  $foreground: map.get($theme, foreground);
 
   .uxg-side-badge .mat-badge-content {
     background-color: transparent;
-    border-color: mat-color($foreground, text, 0.15);
-    color: mat-color($foreground, text);
+    border-color: palette.get-color-from-palette($foreground, text, 0.15);
+    color: palette.get-color-from-palette($foreground, text);
   }
 }
 

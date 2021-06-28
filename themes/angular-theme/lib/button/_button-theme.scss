@@ -1,21 +1,25 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette' as palette;
+
 @mixin uxg-button-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $warn: map.get($theme, warn);
+  $foreground: map.get($theme, foreground);
 
   .mat-stroked-button {
     &.mat-primary {
-      border-color: mat-color($primary, default, 0.5);
+      border-color: palette.get-color-from-palette($primary, default, 0.5);
     }
 
     &.mat-accent {
-      border-color: mat-color($accent, default, 0.5);
+      border-color: palette.get-color-from-palette($accent, default, 0.5);
     }
 
     &[disabled] {
-      background-color: mat-color($foreground, text, 0.1);
-      border-color: mat-color($foreground, text, 0.25);
+      background-color: palette.get-color-from-palette($foreground, text, 0.1);
+      border-color: palette.get-color-from-palette($foreground, text, 0.25);
     }
   }
 
@@ -36,22 +40,22 @@
 
     &.cdk-keyboard-focused {
       &.mat-primary .mat-button-focus-overlay {
-        background: mat-color($primary, default-contrast);
+        background: palette.get-color-from-palette($primary, default-contrast);
         opacity: 0.24;
       }
 
       &.mat-accent .mat-button-focus-overlay {
-        background: mat-color($accent, default-contrast);
+        background: palette.get-color-from-palette($accent, default-contrast);
         opacity: 0.24;
       }
 
       &.mat-gradient .mat-button-focus-overlay {
-        background: mat-color($primary, default-contrast);
+        background: palette.get-color-from-palette($primary, default-contrast);
         opacity: 0.24;
       }
 
       &.mat-warn .mat-button-focus-overlay {
-        background: mat-color($warn, default-contrast);
+        background: palette.get-color-from-palette($warn, default-contrast);
         opacity: 0.24;
       }
     }
@@ -61,19 +65,19 @@
     &.mat-neutral,
     &.mat-gradient {
       .mat-button-ripple {
-        color: mat-color($primary, default);
+        color: palette.get-color-from-palette($primary, default);
       }
     }
 
     &.mat-neutral {
       .mat-icon {
-        color: mat-color($foreground, text, 0.75);
+        color: palette.get-color-from-palette($foreground, text, 0.75);
       }
     }
 
     &.mat-gradient {
       .mat-icon {
-        background: mat-color($uxg-gradient, vertical);
+        background: palette.get-color-from-palette(palette.$uxg-gradient, vertical);
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -81,8 +85,8 @@
   }
 
   .mat-fab.mat-gradient {
-    color: mat-color($primary, default-contrast);
-    background: mat-color($uxg-gradient, vertical);
+    color: palette.get-color-from-palette($primary, default-contrast);
+    background: palette.get-color-from-palette(palette.$uxg-gradient, vertical);
   }
 
   // graceful degradation targeting IE10+
@@ -91,7 +95,7 @@
       &.mat-gradient {
         .mat-icon {
           background: none !important;
-          color: mat-color($accent, default);
+          color: palette.get-color-from-palette($accent, default);
         }
       }
     }

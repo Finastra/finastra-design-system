@@ -1,7 +1,10 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+
 @mixin uxg-expansion-theme($theme) {
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
-  $primary: map-get($theme, primary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $primary: map.get($theme, primary);
 
   .uxg-expansion-filter.mat-expansion-panel {
     background: transparent;
@@ -11,20 +14,20 @@
     }
 
     .mat-expansion-panel-header {
-      border-color: mat-color($foreground, divider);
-      background: mat-color($background, card);
-      color: mat-color($foreground, text, 0.6);
+      border-color: mat.get-color-from-palette($foreground, divider);
+      background: mat.get-color-from-palette($background, card);
+      color: mat.get-color-from-palette($foreground, text, 0.6);
     }
 
     &.active {
       .mat-expansion-panel-header {
-        border-color: mat-color($primary, default);
+        border-color: mat.get-color-from-palette($primary, default);
       }
     }
 
     .mat-expansion-panel-content {
       .mat-expansion-panel-body {
-        background: mat-color($background, card);
+        background: mat.get-color-from-palette($background, card);
 
         @include mat.elevation(2);
       }
@@ -32,18 +35,18 @@
   }
 
   .mat-action-row {
-    background-color: mat-color($background, background);
+    background-color: mat.get-color-from-palette($background, background);
   }
 
   .uxg-contact {
     .uxg-contact-header {
       .mat-icon {
-        color: mat-color($primary, lighter);
+        color: mat.get-color-from-palette($primary, lighter);
       }
 
       .mat-icon-button {
         .mat-icon {
-          color: mat-color($primary, default);
+          color: mat.get-color-from-palette($primary, default);
         }
       }
     }

@@ -56,7 +56,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
 
     await writeFile(to, finalCss.css);
     if (options.sourceMap === true) {
-      await writeFile(to.replace('.css', '.map'), finalCss.map);
+      await writeFile(to.replace('.css', '.map'), finalCss.map.toString());
     }
 
     await writeFile(join(dest, 'package.json'), JSON.stringify(pkg, null, 4));

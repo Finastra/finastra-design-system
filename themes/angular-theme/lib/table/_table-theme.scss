@@ -1,22 +1,24 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
 
 @mixin uxg-table-theme($theme) {
-  $primary: map-get($theme, primary);
+  $primary: map.get($theme, primary);
 
   .mat-table {
     tr {
       &.selected {
-        background-color: mat-color($primary, darker, 0.07);
+        background-color: mat.get-color-from-palette($primary, darker, 0.07);
       }
     }
 
     &.uxg-table-alternate {
       tr {
         &:nth-child(even) {
-          background-color: mat-color($primary, default, 0.03);
+          background-color: mat.get-color-from-palette($primary, default, 0.03);
         }
 
         &.selected {
-          background-color: mat-color($primary, darker, 0.07);
+          background-color: mat.get-color-from-palette($primary, darker, 0.07);
         }
       }
     }
