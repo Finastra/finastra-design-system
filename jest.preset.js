@@ -5,7 +5,7 @@ module.exports = {
   ...nxPreset,
   verbose: true,
   transform: {
-    '^.+\\.(ts|js|html)$': 'ts-jest',
+    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
   transformIgnorePatterns: ['node_modules/(?!lodash-es/*)'],
