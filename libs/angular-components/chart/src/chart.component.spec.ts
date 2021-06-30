@@ -354,7 +354,7 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.plot, 'updatePlot');
+    jest.spyOn(component.chart.plot, 'updatePlot');
 
     component.chart.revision = component.chart.revision++;
     fixture.detectChanges();
@@ -426,8 +426,8 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.onClick, 'emit');
-    spyOn(component.chart.onSelected, 'emit');
+    jest.spyOn(component.chart.onClick, 'emit');
+    jest.spyOn(component.chart.onSelected, 'emit');
 
     component.chart.onSelect(dummyPoint);
     tick(300);
@@ -498,8 +498,8 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.onClick, 'emit');
-    spyOn(component.chart.onSelected, 'emit');
+    jest.spyOn(component.chart.onClick, 'emit');
+    jest.spyOn(component.chart.onSelected, 'emit');
 
     component.chart.onSelect(dummyPoint);
     tick(300);
@@ -571,7 +571,7 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.onClick, 'emit');
+    jest.spyOn(component.chart.onClick, 'emit');
 
     component.chart.onSelect(dummyPoint);
     tick(300);
@@ -646,7 +646,7 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.onDoubleClick, 'emit');
+    jest.spyOn(component.chart.onDoubleClick, 'emit');
 
     component.chart.onSelect(dummyPoint);
     tick(50);
@@ -724,8 +724,8 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    spyOn(component.chart.onClick, 'emit');
-    spyOn(component.chart.onSelected, 'emit');
+    jest.spyOn(component.chart.onClick, 'emit');
+    jest.spyOn(component.chart.onSelected, 'emit');
 
     component.chart.onSelect(dummyPoint);
     tick(300);
