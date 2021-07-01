@@ -354,7 +354,7 @@ describe('Chart Component', () => {
     component.chart.ngAfterContentInit();
     component.chart.ngOnInit();
     fixture.detectChanges();
-    jest.spyOn(component.chart.plot, 'updatePlot');
+    jest.spyOn(component.chart.plot, 'updatePlot').mockImplementation(() => Promise.resolve() );
 
     component.chart.revision = component.chart.revision++;
     fixture.detectChanges();
