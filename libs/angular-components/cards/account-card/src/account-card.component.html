@@ -1,4 +1,8 @@
-<mat-card>
+<mat-card [ngClass]="{'selected-card': selected} ">
+  <span *ngIf="selected" class="checked">
+    <mat-icon>check_circle</mat-icon>
+  </span>
+
   <mat-card-content>
     <div class="uxg-icon-category">
       <mat-icon aria-label="credit card icon">credit_card</mat-icon>

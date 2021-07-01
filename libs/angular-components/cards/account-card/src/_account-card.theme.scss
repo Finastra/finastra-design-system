@@ -1,2 +1,16 @@
 @mixin uxg-account-card-theme($theme) {
+    $primary: map-get($theme, primary);
+
+      .selected-card {
+          border: 2px solid mat-color($primary, default);
+          background : mat-color($primary, default,0.1);
+          .checked {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+              .mat-icon {
+                  color: mat-color($primary, default);
+              }
+          }
+      }
 }

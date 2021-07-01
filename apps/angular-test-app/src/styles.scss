@@ -16,6 +16,7 @@
 @import "toaster/src/toaster.theme";
 @import "video-thumbnail/src/video-thumbnail.theme";
 @import "status-steps/status-stepper.theme";
+@import "cards/account-card/src/account-card.theme";
 
 @import "./app/components/repeater-demo/repeater-card-example/repeater-card-example.theme";
 
@@ -46,6 +47,7 @@ $uxg-typography: uxg-typography-config();
   @include uxg-toaster-theme($theme);
   @include uxg-video-thumbnail($theme);
   @include uxg-status-stepper-theme($theme);
+  @include uxg-account-card-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);
