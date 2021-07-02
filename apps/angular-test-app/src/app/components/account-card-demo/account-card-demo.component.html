@@ -22,22 +22,20 @@
 
 <h2>Selectable Account Card</h2>
 <div class="accounts-list">
-  <ng-container *ngIf="accounts$ | async as accounts; else loading">
-    <uxg-account-card
-      *ngFor="let account of accounts"
-      [name]="account.name"
-      [balance]="account.balance"
-      [currency]="account.currency"
-      [number]="account.number"
-      [selected]="selectedAccount == account.id"
-      (click)="selectAccount(account)"
-    ></uxg-account-card>
-  </ng-container>
+  <uxg-account-card
+    [name]="accounts[0].name"
+    [balance]="accounts[0].balance"
+    [currency]="accounts[0].currency"
+    [number]="accounts[0].number"
+    [selected]="true"
+    [selectedWithCheckIcon]="true"
+  ></uxg-account-card>
 
-  <ng-template #loading>
-    <uxg-account-card-skeleton></uxg-account-card-skeleton>
-    <uxg-account-card-skeleton></uxg-account-card-skeleton>
-    <uxg-account-card-skeleton></uxg-account-card-skeleton>
-    <uxg-account-card-skeleton></uxg-account-card-skeleton>
-  </ng-template>
+  <uxg-account-card
+    [name]="accounts[1].name"
+    [balance]="accounts[1].balance"
+    [currency]="accounts[1].currency"
+    [number]="accounts[1].number"
+    [selected]="true"
+  ></uxg-account-card>
 </div>
