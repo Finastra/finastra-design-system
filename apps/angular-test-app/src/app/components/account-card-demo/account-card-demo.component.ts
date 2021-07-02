@@ -39,7 +39,7 @@ export class AccountCardDemoComponent implements OnInit {
     }
   ];
   accounts$ = new Subject();
-  selectedAccount=this.accounts[0].id;
+  selectedAccount = this.accounts[0].id;
   constructor() {}
 
   ngOnInit() {
@@ -48,7 +48,7 @@ export class AccountCardDemoComponent implements OnInit {
     }, 1500);
   }
 
-  selectAccount(account:Account) {
-    this.selectedAccount=account.id;
-   }
+  selectAccount(account: Account) {
+    this.selectedAccount = account.id;
+  }
 }
