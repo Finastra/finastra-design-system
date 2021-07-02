@@ -31,7 +31,7 @@ class PlotlyComponent {
 
   @Output() hover = new EventEmitter<any>();
   @Output() unhover = new EventEmitter<any>();
-  @Output() plotly_click = new EventEmitter<any>();
+  @Output() plotlyClick = new EventEmitter<any>();
 }
 
 describe('VectorMapModule', () => {

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/finastra/finastra-design-system/compare/v1.4.1...v1.4.2) (2021-06-30)
+
+
+### Bug Fixes
+
+* **theme:** remove useless semicolon from svg ([#379](https://github.com/finastra/finastra-design-system/issues/379)) ([f997f9c](https://github.com/finastra/finastra-design-system/commit/f997f9c52bb0e715db753fa2d66a5e208a6406b8))
+
 ### [1.4.1](https://github.com/finastra/finastra-design-system/compare/v1.4.0...v1.4.1) (2021-06-09)
 
 ## [1.4.0](https://github.com/finastra/finastra-design-system/compare/v1.3.0...v1.4.0) (2021-06-03)
