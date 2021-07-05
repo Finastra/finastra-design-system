@@ -2,22 +2,50 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette';
 
+@mixin uxg-badge-color($color-name, $color) {
+  &[matBadgeColor=#{$color-name}],
+  &.mat-badge-#{$color-name} {
+    span.mat-badge-content {
+      background-color: palette.use-color-from-palette($color, default);
+      border-style: none;
+      color: palette.use-color-from-palette($color, default-contrast);
+    }
+  }
+}
+
 @mixin theme($theme) {
   $foreground: map.get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $secondary: map.get($theme, accent);
+  $warn: map.get($theme, warn);
 
-  .uxg-side-badge .mat-badge-content {
-    background-color: transparent;
-    border-color: palette.get-color-from-palette($foreground, text, 0.15);
-    color: palette.get-color-from-palette($foreground, text);
+  .uxg-side-badge.mat-badge-after {
+    .mat-badge-content {
+      background-color: transparent;
+      border-color: palette.use-color-from-palette($foreground, text, 0.15);
+      color: palette.use-color-from-palette($foreground, text);
+    }
+    
+    @include uxg-badge-color('primary', $primary);
+    @include uxg-badge-color('accent', $secondary);
+    @include uxg-badge-color('warn', $warn);
   }
 }
 
 @mixin typography($config) {
   .uxg-side-badge {
-    &.mat-badge-medium.mat-badge-after {
+    &.mat-badge-small.mat-badge-after {
       .mat-badge-content {
         @include mat.typography-level($config, overline);
 
+        font-weight: mat.font-weight($config, display-6);
+      }
+    }
+    
+    &.mat-badge-medium.mat-badge-after {
+      .mat-badge-content {
+        @include mat.typography-level($config, subtitle-3);
+        
         font-weight: mat.font-weight($config, display-6);
       }
     }
