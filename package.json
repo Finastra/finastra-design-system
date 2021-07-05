@@ -76,7 +76,7 @@
     "angular-plotly.js": "^4.0.0",
     "core-js": "^3.14.0",
     "d3": "6.7.0",
-    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "elasticlunr": "^0.9.5",
     "ngx-color": "^7.0.0",
     "plotly.js": "^1.58.4",
     "rxjs": "^7.1.0",
