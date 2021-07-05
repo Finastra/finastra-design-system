@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette';
 
-@mixin uxg-chips-theme($theme) {
+@mixin theme($theme) {
   $background: map.get($theme, background);
   $foreground: map.get($theme, foreground);
   $primary: map.get($theme, primary);
@@ -76,7 +76,7 @@
   }
 }
 
-@mixin uxg-chips-typography($config) {
+@mixin typography($config) {
   .mat-chip.mat-standard-chip {
     @include mat.typography-level($config, caption);
 

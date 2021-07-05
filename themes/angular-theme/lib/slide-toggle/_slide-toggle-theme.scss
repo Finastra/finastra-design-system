@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use  '../core/theming/palette';
 
-@mixin uxg-slide-toggle-theme($theme) {
+@mixin theme($theme) {
   $foreground: map.get($theme, foreground);
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);

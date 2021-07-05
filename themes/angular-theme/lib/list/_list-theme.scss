@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette';
 
-@mixin uxg-list-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $foreground: map.get($theme, foreground);
 
@@ -51,7 +51,7 @@
   }
 }
 
-@mixin uxg-list-typography($config) {
+@mixin typography($config) {
   .uxg-nav-list.mat-nav-list.mat-list-base {
     & .mat-list-item > * {
       @include mat.typography-level($config, subtitle-1);

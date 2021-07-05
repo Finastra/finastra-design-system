@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '~@angular/material/' as mat;
 
-@mixin uxg-menu-theme($theme) {
+@mixin theme($theme) {
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
 

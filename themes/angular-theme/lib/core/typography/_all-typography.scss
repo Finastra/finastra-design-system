@@ -17,14 +17,14 @@
   }
   @include uxg-typography.uxg-base-typography($config);
 
-  @include avatar-theme.uxg-avatar-typography($config);
-  @include badge-theme.uxg-badge-typography($config);
-  @include button-theme.uxg-button-typography($config);
-  @include button-toggle-theme.uxg-button-toggle-typography($config);
-  @include breadcrumb-theme.uxg-breadcrumb-typography($config);
-  @include card-theme.uxg-card-typography($config);
-  @include chips-theme.uxg-chips-typography($config);
-  @include form-field-theme.uxg-form-field-typography($config);
-  @include list-theme.uxg-list-typography($config);
-  @include table-theme.uxg-table-typography($config);
+  @include avatar-theme.typography($config);
+  @include badge-theme.typography($config);
+  @include button-theme.typography($config);
+  @include button-toggle-theme.typography($config);
+  @include breadcrumb-theme.typography($config);
+  @include card-theme.typography($config);
+  @include chips-theme.typography($config);
+  @include form-field-theme.typography($config);
+  @include list-theme.typography($config);
+  @include table-theme.typography($config);
 }

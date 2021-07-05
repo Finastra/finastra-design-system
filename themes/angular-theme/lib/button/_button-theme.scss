@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette' as palette;
 
-@mixin uxg-button-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
   $warn: map.get($theme, warn);
@@ -102,7 +102,7 @@
   }
 }
 
-@mixin uxg-button-typography($config) {
+@mixin typography($config) {
   button[dense],
   a[dense],
   *[dense] button {

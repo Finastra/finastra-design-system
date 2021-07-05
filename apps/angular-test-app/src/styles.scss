@@ -1,58 +1,52 @@
-@use "angular-theme/lib/core/core";
-@use "angular-theme/lib/core/theming/all-theme";
-@use "angular-theme/lib/core/typography/typography";
-@use "angular-theme/theme-variables";
-@use "angular-theme/lib/core/style/spacing";
+@use "angular-theme" as fds;
 
-@import "global-search/src/global-search.theme";
-@import "vector-map/src/vector-map.theme";
-@import "chart/src/chart.theme";
-@import "filter/filter-tags/src/filter-tags.theme";
-@import "filter/filter-tree/src/filter-tree.theme";
-@import "filter/filter-group/src/filter-group.theme";
-@import "skeleton-text/src/skeleton-text.theme";
-@import "wizard/src/wizard.theme";
-@import "banner/src/banner.theme";
-@import "changelog/src/changelog.theme";
-@import "toaster/src/toaster.theme";
-@import "video-thumbnail/src/video-thumbnail.theme";
-@import "status-steps/status-stepper.theme";
+@use "global-search/src/global-search.theme" as global-search;
+@use "vector-map/src/vector-map.theme" as vector-map;
+@use "chart/src/chart.theme" as chart;
+@use "filter/filter-tags/src/filter-tags.theme" as filter-tags;
+@use "filter/filter-tree/src/filter-tree.theme" as filter-tree;
+@use "filter/filter-group/src/filter-group.theme" as filter-group;
+@use "skeleton-text/src/skeleton-text.theme" as skeleton;
+@use "wizard/src/wizard.theme" as wizard;
+@use "banner/src/banner.theme" as banner;
+@use "changelog/src/changelog.theme" as changelog;
+@use "toaster/src/toaster.theme" as toaster;
+@use "video-thumbnail/src/video-thumbnail.theme" as video-thumbnail;
+@use "status-steps/status-stepper.theme" as status-stepper;
 
-@import "./app/components/repeater-demo/repeater-card-example/repeater-card-example.theme";
+@use "./app/components/repeater-demo/repeater-card-example/repeater-card-example.theme" as repeater;
 
-$uxg-typography: typography.uxg-typography-config();
+@include fds.uxg-core();
 
-@include core.uxg-core();
-
-@include uxg-filter-tags-typography($uxg-typography);
-@include uxg-filter-group-typography($uxg-typography);
-@include uxg-global-search-typography($uxg-typography);
-@include uxg-chart-typography($uxg-typography);
-@include uxg-changelog-typography($uxg-typography);
-@include uxg-wizard-typography($uxg-typography);
+@include filter-tags.typography(fds.$typography);
+@include filter-group.typography(fds.$typography);
+@include global-search.typography(fds.$typography);
+@include chart.typography(fds.$typography);
+@include changelog.typography(fds.$typography);
+@include wizard.typography(fds.$typography);
 
 @mixin app-theme($theme) {
-  @include all-theme.uxg-material-theme($theme);
-  @include uxg-filter-group-theme($theme);
-  @include uxg-filter-tags-theme($theme);
-  @include uxg-filter-tree-theme($theme);
-  @include uxg-global-search-theme($theme);
-  @include uxg-vector-map-theme($theme);
-  @include uxg-chart-theme($theme);
-  @include uxg-wizard-theme($theme);
-  @include uxg-banner-theme($theme);
-  @include uxg-skeleton-text-theme($theme);
-  @include theme-repeater-card-example($theme);
-  @include uxg-changelog-theme($theme);
-  @include uxg-toaster-theme($theme);
-  @include uxg-video-thumbnail($theme);
-  @include uxg-status-stepper-theme($theme);
+  @include fds.uxg-material-theme($theme);
+  @include filter-group.theme($theme);
+  @include filter-tags.theme($theme);
+  @include filter-tree.theme($theme);
+  @include global-search.theme($theme);
+  @include vector-map.theme($theme);
+  @include chart.theme($theme);
+  @include wizard.theme($theme);
+  @include banner.theme($theme);
+  @include skeleton.theme($theme);
+  @include repeater.theme($theme);
+  @include changelog.theme($theme);
+  @include toaster.theme($theme);
+  @include video-thumbnail.theme($theme);
+  @include status-stepper.theme($theme);
 }
 
-@include app-theme(theme-variables.$uxg-light-theme);
+@include app-theme(fds.$light-theme);
 
 .uxg-dark-theme {
-  @include app-theme(theme-variables.$uxg-dark-theme);
+  @include app-theme(fds.$dark-theme);
 }
 
 html,
@@ -96,14 +90,14 @@ section {
 }
 
 .example-row {
-  margin-top: spacing.$uxg-spacing-3;
-  margin-left: spacing.$uxg-spacing-5;
+  margin-top: fds.$uxg-spacing-3;
+  margin-left: fds.$uxg-spacing-5;
   display: inline-block;
 }
 
 .block-test {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2 * spacing.$uxg-spacing-5;
+  margin-bottom: 2 * fds.$uxg-spacing-5;
   align-items: flex-start;
 }

@@ -1,7 +1,8 @@
+@forward './lib/core/core';
 @forward './lib/core/style/spacing';
 @forward './lib/core/layout/breakpoints';
 @forward './lib/core/theming/palette';
-@forward './lib/core/theming/theming' show uxg-light-theme, uxg-dark-theme;
+@forward './lib/core/theming/theming';
 @forward './lib/core/theming/light-css-variables';
 @forward './lib/core/theming/dark-css-variables';
 @forward './lib/core/theming/color-utility';
@@ -9,6 +10,3 @@
 
 @forward './lib/core/typography/typography';
 @forward './lib/core/typography/all-typography';
-
-$uxg-light-theme: uxg-light-theme();
-$uxg-dark-theme: uxg-dark-theme();

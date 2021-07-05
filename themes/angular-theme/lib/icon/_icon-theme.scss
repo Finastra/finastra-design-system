@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../core/theming/palette' as palette;
 
-@mixin uxg-icon-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
   $color: palette.get-color-from-palette($primary, default);

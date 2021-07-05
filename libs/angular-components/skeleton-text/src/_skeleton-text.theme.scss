@@ -1,8 +1,11 @@
-@mixin uxg-skeleton-text-theme($theme) {
-    $foreground: map-get($theme, foreground);
+@use 'sass:map';
+@use 'angular-theme' as fds;
 
-    $background-color: mat-color($foreground, text, 0.065);
-    $background-color-animated: mat-color($foreground, text, 0.135);
+@mixin theme($theme) {
+    $foreground: map.get($theme, foreground);
+
+    $background-color: fds.get-color-from-palette($foreground, text, 0.065);
+    $background-color-animated: fds.get-color-from-palette($foreground, text, 0.135);
     
     uxg-skeleton-text {
         background: $background-color;

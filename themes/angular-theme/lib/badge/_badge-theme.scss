@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette';
 
-@mixin uxg-badge-theme($theme) {
+@mixin theme($theme) {
   $foreground: map.get($theme, foreground);
 
   .uxg-side-badge .mat-badge-content {
@@ -12,7 +12,7 @@
   }
 }
 
-@mixin uxg-badge-typography($config) {
+@mixin typography($config) {
   .uxg-side-badge {
     &.mat-badge-medium.mat-badge-after {
       .mat-badge-content {

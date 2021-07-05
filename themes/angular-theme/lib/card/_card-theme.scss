@@ -12,7 +12,7 @@
   @return $string;
 }
 
-@mixin uxg-card-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $background: map.get($theme, background);
   $foreground: map.get($theme, foreground);
@@ -42,7 +42,7 @@
   }
 }
 
-@mixin uxg-card-typography($config) {
+@mixin typography($config) {
   .mat-card[dense] {
     .mat-card-title {
       font-size: 14px;

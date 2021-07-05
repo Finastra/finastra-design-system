@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette';
 
-@mixin uxg-form-field-fill-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $warn: map.get($theme, warn);
   $fill-background: palette.get-color-from-palette($primary, default, 0.08);
@@ -29,7 +29,7 @@
   }
 }
 
-@mixin uxg-form-field-typography($config) {
+@mixin typography($config) {
   .mat-form-field-appearance-fill {
     @include mat.typography-level($config, subtitle-1);
 

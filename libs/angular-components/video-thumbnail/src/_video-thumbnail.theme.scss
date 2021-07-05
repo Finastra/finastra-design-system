@@ -1,8 +1,10 @@
-@mixin uxg-video-thumbnail($theme) {
-    $foreground: map-get($theme, foreground);
-    $background: map-get($theme, background);
-    $icon: map-get($foreground, icon);
-    $card: map-get($background, card);
+@use 'sass:map';
+
+@mixin theme($theme) {
+    $foreground: map.get($theme, foreground);
+    $background: map.get($theme, background);
+    $icon: map.get($foreground, icon);
+    $card: map.get($background, card);
 
     uxg-video-thumbnail {
         .play-button {

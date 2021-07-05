@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '~@angular/material/' as mat;
 
-@mixin uxg-breadcrumb-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
   $foreground: map.get($theme, foreground);
@@ -40,7 +40,7 @@
   }
 }
 
-@mixin uxg-breadcrumb-typography($config) {
+@mixin typography($config) {
   .uxg-breadcrumb {
     @include mat.typography-level($config, body-2);
 

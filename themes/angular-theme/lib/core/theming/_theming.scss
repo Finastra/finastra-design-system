@@ -29,3 +29,6 @@ $uxg-warn:    mat.define-palette(uxg-palette.$uxg-crimson, 100, 75, '100-dark');
     background: uxg-palette.$uxg-dark-theme-background,
   );
 }
+
+$light-theme: uxg-light-theme();
+$dark-theme: uxg-dark-theme();

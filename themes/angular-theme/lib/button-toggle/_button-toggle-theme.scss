@@ -2,7 +2,7 @@
 @use '~@angular/material/' as mat;
 @use '../core/theming/palette' as fds;
 
-@mixin uxg-button-toggle-theme($theme) {
+@mixin theme($theme) {
   $primary: map.get($theme, primary);
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
@@ -56,7 +56,7 @@
   }
 }
 
-@mixin uxg-button-toggle-typography($config) {
+@mixin typography($config) {
   .mat-button-toggle-group {
     .mat-button-toggle {
       .mat-button-toggle-label-content {
