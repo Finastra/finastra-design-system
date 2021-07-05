@@ -6,9 +6,9 @@
   &[matBadgeColor=#{$color-name}],
   &.mat-badge-#{$color-name} {
     span.mat-badge-content {
-      background-color: palette.use-color-from-palette($color, default);
+      background-color: palette.get-color-from-palette($color, default);
       border-style: none;
-      color: palette.use-color-from-palette($color, default-contrast);
+      color: palette.get-color-from-palette($color, default-contrast);
     }
   }
 }
@@ -22,8 +22,8 @@
   .uxg-side-badge.mat-badge-after {
     .mat-badge-content {
       background-color: transparent;
-      border-color: palette.use-color-from-palette($foreground, text, 0.15);
-      color: palette.use-color-from-palette($foreground, text);
+      border-color: palette.get-color-from-palette($foreground, text, 0.15);
+      color: palette.get-color-from-palette($foreground, text);
     }
     
     @include uxg-badge-color('primary', $primary);
