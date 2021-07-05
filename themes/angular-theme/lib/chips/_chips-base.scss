@@ -1,5 +1,5 @@
-@import '../core/style/spacing';
-@import '../icon/icon-base';
+@use '../core/style/spacing' as *;
+@use '../icon/icon-base' as *;
 
 $chip-min-height-dense: 18px;
 $chip-icon-size-dense: 14px;

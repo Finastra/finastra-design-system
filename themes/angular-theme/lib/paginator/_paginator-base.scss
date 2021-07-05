@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $uxg-paginator-height: 44px;
 $uxg-paginator-icon-height: 20px;

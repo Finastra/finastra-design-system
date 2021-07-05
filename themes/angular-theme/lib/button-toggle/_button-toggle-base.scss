@@ -1,6 +1,6 @@
 @use 'sass:math';
-@import '../core/style/spacing';
-@import '../icon/icon-base';
+@use '../core/style/spacing' as *;
+@use '../icon/icon-base' as *;
 
 $button-toggle-margin: $uxg-spacing-2;
 $button-toggle-icon-dense: 18px;

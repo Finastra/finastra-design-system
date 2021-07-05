@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 // uxg-link-list
 $uxg-link-list-item-height: 35px;

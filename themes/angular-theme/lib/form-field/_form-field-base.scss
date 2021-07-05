@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $mat-form-field-fill-side-padding: 1em !default;
 $mat-form-field-fill-line-spacing: 7px !default;

@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $avatar-size: $uxg-spacing-5;
 $avatar-size-large: $uxg-spacing-6;

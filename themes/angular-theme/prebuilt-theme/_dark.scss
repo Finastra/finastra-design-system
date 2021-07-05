@@ -1,0 +1,9 @@
+@use '../lib/core/core';
+@use '../lib/core/theming/theming';
+@use '../lib/core/theming/all-theme';
+
+$uxg-dark-theme: theming.uxg-dark-theme();
+
+@include core.uxg-core();
+
+@include all-theme.uxg-material-theme($uxg-dark-theme);

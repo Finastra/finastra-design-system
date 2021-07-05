@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $side-badge-border-width: 1px;
 $side-badge-radius-standard: 12px;

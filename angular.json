@@ -116,10 +116,9 @@
           "builder": "./dist/tools/devkit:theme-builder",
           "options": {
             "inputPath": "themes/angular-theme/",
-            "outputPath": "dist/themes/angular-theme",
+            "outputPath": "dist/themes/angular-theme/",
             "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
-            "sourceMap": true,
-            "outputStyle": "compressed"
+            "sourceMap": true
           },
           "configurations": {
             "production": {
