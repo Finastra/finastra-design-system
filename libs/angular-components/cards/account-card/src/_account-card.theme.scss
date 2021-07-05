@@ -1,3 +1,5 @@
+@import "angular-theme/lib/core/style/spacing";
+
 @mixin uxg-account-card-theme($theme) {
     $primary: map-get($theme, primary);
 
@@ -6,8 +8,8 @@
           background : mat-color($primary, default,0.1);
           .checked {
             position: absolute;
-            right: 12px;
-            top: 12px;
+            right: $uxg-spacing-2;
+            top: $uxg-spacing-2;
               .mat-icon {
                   color: mat-color($primary, default);
               }
