@@ -43,7 +43,7 @@ export class AccountCardDemoComponent implements OnInit {
     }, 1500);
   }
 
-  onClick(event:any) {
+  onClick(event: any) {
     console.log(event);
   }
 }
