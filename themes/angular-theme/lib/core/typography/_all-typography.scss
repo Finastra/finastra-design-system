@@ -15,6 +15,7 @@
   @if $config == null {
     $config: uxg-typography.uxg-typography-config();
   }
+
   @include uxg-typography.uxg-base-typography($config);
 
   @include avatar-theme.typography($config);
