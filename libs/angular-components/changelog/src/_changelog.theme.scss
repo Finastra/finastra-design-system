@@ -1,11 +1,14 @@
+@use 'sass:map';
 @use '~@angular/material' as mat;
+@use 'angular-theme' as fds;
+@import '~@angular/flex-layout/mq';
 
-@mixin uxg-changelog-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-  $elevation-color: map-get($foreground, elevation);
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+  $elevation-color: map.get($foreground, elevation);
   
   uxg-changelog {
     .title {
@@ -16,11 +19,11 @@
       }
 
       .creator {
-        color: mat-color($primary, default);
+        color: fds.get-color-from-palette($primary, default);
       }
 
       span {
-        color: mat-color($foreground, text);
+        color: fds.get-color-from-palette($foreground, text);
       }
     }
 
@@ -28,61 +31,61 @@
       .release-detail,
       .last-release,
       .first-release {
-        background-color: mat-color($background, card);
+        background-color: fds.get-color-from-palette($background, card);
         @include mat.elevation(4, $elevation-color);
       }
 
       .change {
         .new {
-          color: mat-color($primary, default);
-          border: 1px solid mat-color($primary, default);
-          background-color: mat-color($primary, 300, 0.1);
+          color: fds.get-color-from-palette($primary, default);
+          border: 1px solid fds.get-color-from-palette($primary, default);
+          background-color: fds.get-color-from-palette($primary, 300, 0.1);
         }
         .update {
-          color: map-get($uxg-grass, 100);
-          border: 1px solid map-get($uxg-grass, 100);
-          background-color: mat-color($uxg-grass, 100, 0.1);
+          color: map.get(fds.$uxg-grass, 100);
+          border: 1px solid map.get(fds.$uxg-grass, 100);
+          background-color: fds.get-color-from-palette(fds.$uxg-grass, 100, 0.1);
         }
         .bugfix {
-          color: map-get($uxg-crimson, 100);
-          border: 1px solid map-get($uxg-crimson, 100);
-          background-color: mat-color($uxg-crimson, 100, 0.1);
+          color: map.get(fds.$uxg-crimson, 100);
+          border: 1px solid map.get(fds.$uxg-crimson, 100);
+          background-color: fds.get-color-from-palette(fds.$uxg-crimson, 100, 0.1);
         }
         .deprecated {
-          color: mat-color($foreground, text, 0.6);
-          border: 1px solid mat-color($foreground, text, 0.6);
-          background-color: mat-color($mat-grey, 400, 0.1);
+          color: fds.get-color-from-palette($foreground, text, 0.6);
+          border: 1px solid fds.get-color-from-palette($foreground, text, 0.6);
+          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.1);
         }
       }
 
       .release-detail {
         &::after {
-          border-left: 2px dotted mat-color($primary, default);
+          border-left: 2px dotted fds.get-color-from-palette($primary, default);
         }
       }
 
       .first-release {
         &::after {
-          background-color: mat-color($primary, default);
+          background-color: fds.get-color-from-palette($primary, default);
         }
       }
   
       .release-detail::before,
       .last-release::before {
-        color: mat-color($background, default);
-        border: 8px solid mat-color($primary, default);
-        background-color: mat-color($primary, default);
+        color: fds.get-color-from-palette($background, default);
+        border: 8px solid fds.get-color-from-palette($primary, default);
+        background-color: fds.get-color-from-palette($primary, default);
       }
   
       .first-release::before {
-        background-color: mat-color($background, card);
-        border: 5px solid mat-color($primary, default);
+        background-color: fds.get-color-from-palette($background, card);
+        border: 5px solid fds.get-color-from-palette($primary, default);
       }
     }
   }
 }
 
-@mixin uxg-changelog-typography($config) {
+@mixin typography($config) {
   uxg-changelog {
     .title {
       .creator {

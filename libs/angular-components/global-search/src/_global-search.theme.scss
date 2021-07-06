@@ -1,16 +1,18 @@
+@use 'sass:map';
 @use '~@angular/material' as mat;
+@use 'angular-theme' as fds;
 @import '~@angular/flex-layout/mq';
 
 @mixin uxg-global-search-colors($theme) {
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
 
   .uxg-global-search-overlay-backdrop {
-    background: mat-color($background, dialog, 0.95);
+    background: fds.get-color-from-palette($background, dialog, 0.95);
   }
 
   .uxg-global-search-overlay {
-    color: mat-color($foreground, text);
+    color: fds.get-color-from-palette($foreground, text);
 
     .uxg-global-search-results-area {
       .uxg-global-search-result-group-header {
@@ -27,7 +29,7 @@
     .uxg-global-search-input-area {
       .uxg-global-search-input {
         .mat-form-field-label {
-          color: mat-color($foreground, text);
+          color: fds.get-color-from-palette($foreground, text);
         }
       }
     }
@@ -38,7 +40,7 @@
   }
 }
 
-@mixin uxg-global-search-typography($config: null) {
+@mixin typography($config: null) {
   @if $config==null {
     $config: uxg-typography-config();
   }
@@ -118,6 +120,6 @@
   }
 }
 
-@mixin uxg-global-search-theme($theme) {
+@mixin theme($theme) {
   @include uxg-global-search-colors($theme);
 }

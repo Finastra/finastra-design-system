@@ -1,18 +1,22 @@
-@mixin uxg-list-theme($theme) {
-  $primary: map-get($theme, primary);
-  $foreground: map-get($theme, foreground);
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
 
   .uxg-ol {
     *::before {
       color: map-get($primary, default-contrast);
-      background: mat-color($primary, default);
+      background: palette.get-color-from-palette($primary, default);
     }
   }
 
   .mat-list-base.mat-nav-list {
     &.uxg-link-list {
       .mat-list-item {
-        color: mat-color($primary, default);
+        color: palette.get-color-from-palette($primary, default);
       }
     }
 
@@ -22,24 +26,24 @@
         border-left-color: transparent;
 
         &:hover {
-          background-color: mat-color($primary, default, 0.04);
-          border-color: mat-color($primary, default, 0.2);
+          background-color: palette.get-color-from-palette($primary, default, 0.04);
+          border-color: palette.get-color-from-palette($primary, default, 0.2);
         }
 
         .mat-icon {
-          color: mat-color($foreground, text, 0.25);
+          color: palette.get-color-from-palette($foreground, text, 0.25);
         }
 
         .mat-ripple-element {
-          background-color: mat-color($primary, default, 0.1);
+          background-color: palette.get-color-from-palette($primary, default, 0.1);
         }
 
         &.uxg-list-item-selected {
-          color: mat-color($primary, default);
-          border-color: mat-color($primary, default);
+          color: palette.get-color-from-palette($primary, default);
+          border-color: palette.get-color-from-palette($primary, default);
 
           .mat-icon {
-            color: mat-color($primary, default, 0.5);
+            color: palette.get-color-from-palette($primary, default, 0.5);
           }
         }
       }
@@ -47,7 +51,7 @@
   }
 }
 
-@mixin uxg-list-typography($config) {
+@mixin typography($config) {
   .uxg-nav-list.mat-nav-list.mat-list-base {
     & .mat-list-item > * {
       @include mat.typography-level($config, subtitle-1);

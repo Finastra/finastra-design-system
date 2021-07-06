@@ -1,24 +1,26 @@
+@use 'sass:map';
 @use '~@angular/material' as mat;
+@use 'angular-theme' as fds;
 
-@mixin uxg-wizard-theme($theme) {
-  $accent: map-get($theme, accent);
-  $primary: map-get($theme, primary);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+@mixin theme($theme) {
+  $accent: map.get($theme, accent);
+  $primary: map.get($theme, primary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
 
-  $default-background-color: mat-color($background, card);
+  $default-background-color: fds.get-color-from-palette($background, card);
 
-  $wizard-background-color: mat-color($background, background);
-  $wizard-step-active-color: mat-color($accent, default);
-  $wizard-step-done-color: map-get($uxg-grass, 100);
-  $wizard-timeline-color: mat-color($foreground, disabled-text);
+  $wizard-background-color: fds.get-color-from-palette($background, background);
+  $wizard-step-active-color: fds.get-color-from-palette($accent, default);
+  $wizard-step-done-color: map.get(fds.$uxg-grass, 100);
+  $wizard-timeline-color: fds.get-color-from-palette($foreground, disabled-text);
 
-  $wizard-dark-blue: mat-color($primary, darker);
-  $wizard-step-description-color: mat-color($primary, lighter, 0.8);
-  $wizard-step-container-active-color: mat-color($primary, default, 0.45);
+  $wizard-dark-blue: fds.get-color-from-palette($primary, darker);
+  $wizard-step-description-color: fds.get-color-from-palette($primary, lighter, 0.8);
+  $wizard-step-container-active-color: fds.get-color-from-palette($primary, default, 0.45);
 
-  $wizard-dot-color: map_get($mat-grey, 200);
-  $wizard-dot-active-color: mat-color($primary, default);
+  $wizard-dot-color: map_get(fds.$mat-grey, 200);
+  $wizard-dot-active-color: fds.get-color-from-palette($primary, default);
 
   .uxg-wizard {
     background: $wizard-background-color;
@@ -31,7 +33,7 @@
       background: $wizard-dark-blue;
 
       .close-button {
-        color: mat-color($primary, darker-contrast);
+        color: fds.get-color-from-palette($primary, darker-contrast);
       }
     }
 
@@ -44,13 +46,13 @@
         &.done {
           background-color: $wizard-step-done-color;
           border-color: $wizard-step-done-color;
-          color: mat.get-contrast-color-from-palette($uxg-grass, 100);
+          color: mat.get-contrast-color-from-palette(fds.$uxg-grass, 100);
         }
 
         &.active {
           border-color: $wizard-step-active-color;
           background-color: $wizard-step-active-color;
-          color: mat-color($accent, default-contrast);
+          color: fds.get-color-from-palette($accent, default-contrast);
         }
       }
 
@@ -64,7 +66,7 @@
 
       .step-info-container {
         .step-title {
-          color: mat-color($primary, darker-contrast);
+          color: fds.get-color-from-palette($primary, darker-contrast);
         }
 
         .step-description {
@@ -82,7 +84,7 @@
           background-color: $wizard-step-container-active-color;
 
           .step-description {
-            color: mat-color($primary, darker-contrast);
+            color: fds.get-color-from-palette($primary, darker-contrast);
           }
         }
       }
@@ -92,7 +94,7 @@
       background: $wizard-dark-blue;
 
       .close-button {
-        color: mat-color($primary, darker-contrast);
+        color: fds.get-color-from-palette($primary, darker-contrast);
       }
     }
 
@@ -108,7 +110,7 @@
   }
 }
 
-@mixin uxg-wizard-typography($config) {
+@mixin typography($config) {
   .uxg-wizard {
 
     .uxg-wizard-timeline {

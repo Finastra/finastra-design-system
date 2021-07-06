@@ -1,23 +1,26 @@
+@use 'sass:map';
+@use 'angular-theme' as fds;
+
 @mixin uxg-horizontal-status-stepper-theme($theme) {
-  $primary: map-get($theme, primary);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
   .uxg-horizontal-status-stepper {
     .icon-container {
-      color:  mat-color($foreground, text);
-      background-color:  mat-color($background,  focused-button);
+      color:  fds.get-color-from-palette($foreground, text);
+      background-color:  fds.get-color-from-palette($background,  focused-button);
     }
 
     .completed,
     .current {
       .icon-container {
-        color: mat-color($primary, default-contrast);
-        background-color: mat-color($primary, default);
+        color: fds.get-color-from-palette($primary, default-contrast);
+        background-color: fds.get-color-from-palette($primary, default);
       }
     }
 
     .horizontal-line {
-      border-color: mat-color($foreground, divider);;
+      border-color: fds.get-color-from-palette($foreground, divider);;
     }
   }
 

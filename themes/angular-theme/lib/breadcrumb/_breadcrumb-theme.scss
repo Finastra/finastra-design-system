@@ -1,43 +1,46 @@
-@mixin uxg-breadcrumb-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $foreground: map.get($theme, foreground);
 
   .uxg-breadcrumb {
     a {
-      color: map-get($foreground, text);
+      color: map.get($foreground, text);
       text-decoration: none;
     }
 
     &[color=primary] {
-      color: mat-color($primary, default);
+      color: mat.get-color-from-palette($primary, default);
 
       a {
-        color: mat-color($primary, default);
+        color: mat.get-color-from-palette($primary, default);
         text-decoration: none;
       }
 
       .mat-flat-button {
-        color: mat-color($primary, default);
+        color: mat.get-color-from-palette($primary, default);
       }
     }
 
     &[color=accent] {
-      color: mat-color($accent, default);
+      color: mat.get-color-from-palette($accent, default);
 
       a {
-        color: mat-color($accent, default);
+        color: mat.get-color-from-palette($accent, default);
         text-decoration: none;
       }
 
       .mat-flat-button {
-        color: mat-color($primary, default);
+        color: mat.get-color-from-palette($primary, default);
       }
     }
   }
 }
 
-@mixin uxg-breadcrumb-typography($config) {
+@mixin typography($config) {
   .uxg-breadcrumb {
     @include mat.typography-level($config, body-2);
 

@@ -1,25 +1,29 @@
+@use 'sass:map';
+@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
+
 @mixin uxg-badge-color($color-name, $color) {
   &[matBadgeColor=#{$color-name}],
   &.mat-badge-#{$color-name} {
     span.mat-badge-content {
-      background-color: mat-color($color, default);
+      background-color: palette.get-color-from-palette($color, default);
       border-style: none;
-      color: mat-color($color, default-contrast);
+      color: palette.get-color-from-palette($color, default-contrast);
     }
   }
 }
 
-@mixin uxg-badge-theme($theme) {
-  $foreground: map-get($theme, foreground);
-  $primary: map-get($theme, primary);
-  $secondary: map-get($theme, accent);
-  $warn: map-get($theme, warn);
+@mixin theme($theme) {
+  $foreground: map.get($theme, foreground);
+  $primary: map.get($theme, primary);
+  $secondary: map.get($theme, accent);
+  $warn: map.get($theme, warn);
 
   .uxg-side-badge.mat-badge-after {
     .mat-badge-content {
       background-color: transparent;
-      border-color: mat-color($foreground, text, 0.15);
-      color: mat-color($foreground, text);
+      border-color: palette.get-color-from-palette($foreground, text, 0.15);
+      color: palette.get-color-from-palette($foreground, text);
     }
     
     @include uxg-badge-color('primary', $primary);
@@ -28,7 +32,7 @@
   }
 }
 
-@mixin uxg-badge-typography($config) {
+@mixin typography($config) {
   .uxg-side-badge {
     &.mat-badge-small.mat-badge-after {
       .mat-badge-content {

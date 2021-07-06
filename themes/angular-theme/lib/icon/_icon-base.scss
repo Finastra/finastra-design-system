@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $icon-size-extra-large: $uxg-spacing-5;
 $icon-size-large: 36px;

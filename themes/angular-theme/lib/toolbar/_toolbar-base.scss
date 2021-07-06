@@ -1,7 +1,7 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 @use '~@angular/material' as mat;
-@import '../core/style/spacing';
-@import '../core/layout/breakpoints';
+@use '../core/style/spacing' as *;
+@use '../core/layout/breakpoints' as *;
 
 $uxg-toolbar-height: 56px;
 $uxg-toolbar-margin: $uxg-spacing-2;

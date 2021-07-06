@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $uxg-user-profile-width: 280px;
 $uxg-user-profile-menu-item-icon-size: 18px;

@@ -1,14 +1,13 @@
 @use '~@angular/material' as mat;
 
-@import 'angular-theme/lib/core/style/spacing';
-@import 'angular-theme/theme-variables';
-@import 'angular-theme/lib/core/layout/breakpoints';
+@use 'angular-theme/lib/core/style/spacing';
+@use 'angular-theme/lib/core/layout/breakpoints';
 
 $border-radius: 4px;
 $container-size: 48px;
 
 :host {
-  margin: $uxg-spacing-3 4vw;
+  margin: spacing.$uxg-spacing-3 4vw;
   min-height: $container-size;
   width: 92vw;
   border-radius: $border-radius;
@@ -16,10 +15,10 @@ $container-size: 48px;
   .icon-container {
     width: $container-size;
     border-radius: $border-radius 0 0 $border-radius;
-    padding: $uxg-spacing-3;
+    padding: spacing.$uxg-spacing-3;
   }
   .message {
-    padding: $uxg-spacing-3;
+    padding: spacing.$uxg-spacing-3;
     word-break: break-word;
     white-space: pre-line;
   }
@@ -28,14 +27,14 @@ $container-size: 48px;
   }
 
   /* Small Tablet */
-  @media only screen and (min-width: $small-tablet-size-down) and (max-width: $small-tablet-size-up) {
+  @media only screen and (min-width: breakpoints.$small-tablet-size-down) and (max-width: breakpoints.$small-tablet-size-up) {
     width: 50vw;
-    margin: $uxg-spacing-3;
+    margin: spacing.$uxg-spacing-3;
   }
 
   /* Large Tablet and Desktop */
-  @media only screen and (min-width: $large-tablet-size-down) {
+  @media only screen and (min-width: breakpoints.$large-tablet-size-down) {
     width: 30vw;
-    margin: $uxg-spacing-3;
+    margin: spacing.$uxg-spacing-3;
   }
 }
