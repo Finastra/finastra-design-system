@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/finastra/finastra-design-system/compare/v1.4.2...v1.5.0) (2021-07-06)
+
+
+### Features
+
+* **badge:** more colors and sizes ([#372](https://github.com/finastra/finastra-design-system/issues/372)) ([704be89](https://github.com/finastra/finastra-design-system/commit/704be89406832d66176be09465295b0b5e73662f))
+
 ### [1.4.2](https://github.com/finastra/finastra-design-system/compare/v1.4.1...v1.4.2) (2021-06-30)
 
 
