@@ -21,8 +21,8 @@
 @use '../../table/table-theme';
 @use '../../toolbar/toolbar-theme';
 @use './color-utility';
-@use "./light-css-variables";
-@use "./dark-css-variables";
+@use './light-css-variables';
+@use './dark-css-variables';
 
 @mixin uxg-core-theme($theme) {
   $foreground: map.get($theme, foreground);
