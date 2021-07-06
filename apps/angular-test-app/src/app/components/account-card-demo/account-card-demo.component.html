@@ -27,8 +27,9 @@
     [balance]="accounts[0].balance"
     [currency]="accounts[0].currency"
     [number]="accounts[0].number"
-    [selected]="true"
-    [selectedWithCheckIcon]="true"
+    [selectable]="true"
+    [selectedithCheckIcon]="true"
+    (onClick)="onClick($event)"
   ></uxg-account-card>
 
   <uxg-account-card
@@ -36,6 +37,8 @@
     [balance]="accounts[1].balance"
     [currency]="accounts[1].currency"
     [number]="accounts[1].number"
-    [selected]="true"
+    [selectable]="true"
+    [selectedithCheckIcon]="false"
+    (onClick)="onClick($event)"
   ></uxg-account-card>
 </div>

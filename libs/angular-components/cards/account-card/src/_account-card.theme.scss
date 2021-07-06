@@ -1,18 +1,49 @@
 @import "angular-theme/lib/core/style/spacing";
 
 @mixin uxg-account-card-theme($theme) {
-    $primary: map-get($theme, primary);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
 
-      .selected-card {
-          border: 1px solid mat-color($primary, default);
-          background : mat-color($primary, default,0.1);
-          .checked {
-            position: absolute;
-            right: $uxg-spacing-2;
-            top: $uxg-spacing-2;
-              .mat-icon {
-                  color: mat-color($primary, default);
-              }
-          }
+  .selectable-card {
+    .checked {
+      display: none;
+    }
+
+    &:hover {
+      background: mat-color($foreground, text, 0.1);
+      .checked {
+        display: block;
+        position: absolute;
+        right: $uxg-spacing-2;
+        top: $uxg-spacing-2;
+        .mat-icon {
+          color: mat-color($foreground, text, 0.5);
+        }
       }
+    }
+  }
+
+  .selected-card {
+    border: 1px solid mat-color($primary, default);
+    background: mat-color($primary, default, 0.1);
+
+    .checked {
+      display: block;
+      position: absolute;
+      right: $uxg-spacing-2;
+      top: $uxg-spacing-2;
+      .mat-icon {
+        color: mat-color($primary, default);
+      }
+    }
+
+    &:hover {
+      background: mat-color($primary, default, 0.1);
+      .checked {
+        .mat-icon {
+          color: mat-color($primary, default);
+        }
+      }
+    }
+  }
 }
