@@ -1,5 +1,6 @@
 @use 'sass:map';
-@use 'angular-theme' as fds;
+@use 'angular-theme/lib/core/theming/palette';
+@use 'angular-theme/lib/core/style/spacing';
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
@@ -13,38 +14,38 @@
     }
 
     &:hover {
-      background: fds.get-color-from-palette($foreground, text, 0.1);
+      background: palette.get-color-from-palette($foreground, text, 0.1);
       .checked {
         display: block;
         position: absolute;
-        right: fds.$uxg-spacing-2;
-        top: fds.$uxg-spacing-2;
+        right: spacing.$uxg-spacing-2;
+        top: spacing.$uxg-spacing-2;
         .mat-icon {
-          color: fds.get-color-from-palette($foreground, text, 0.5);
+          color: palette.get-color-from-palette($foreground, text, 0.5);
         }
       }
     }
   }
 
   .selected-card {
-    border: 1px solid fds.get-color-from-palette($primary, default);
-    background: fds.get-color-from-palette($primary, default, 0.1);
+    border: 1px solid palette.get-color-from-palette($primary, default);
+    background: palette.get-color-from-palette($primary, default, 0.1);
 
     .checked {
       display: block;
       position: absolute;
-      right: fds.$uxg-spacing-2;
-      top: fds.$uxg-spacing-2;
+      right: spacing.$uxg-spacing-2;
+      top: spacing.$uxg-spacing-2;
       .mat-icon {
-        color: fds.get-color-from-palette($primary, default);
+        color: palette.get-color-from-palette($primary, default);
       }
     }
 
     &:hover {
-      background: fds.get-color-from-palette($primary, default, 0.1);
+      background: palette.get-color-from-palette($primary, default, 0.1);
       .checked {
         .mat-icon {
-          color: fds.get-color-from-palette($primary, default);
+          color: palette.get-color-from-palette($primary, default);
         }
       }
     }
