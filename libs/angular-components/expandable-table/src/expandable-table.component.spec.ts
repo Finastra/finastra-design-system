@@ -123,7 +123,7 @@ fdescribe('ExpandableTableComponent', () => {
     });
     fixture.detectChanges();
 
-    spyOn(component.selectionChange, 'emit');
+    jest.spyOn(component.selectionChange, 'emit');
     component.toggleAll();
 
     expect(component.selectionChange.emit).toHaveBeenCalled();
@@ -147,7 +147,7 @@ fdescribe('ExpandableTableComponent', () => {
     row.values.forEach((val: any) => {
       delete val.primaryKey;
     });
-    spyOn(component.selectionChange, 'emit');
+    jest.spyOn(component.selectionChange, 'emit');
     component.toggleRow(row);
 
     expect(component.selectionChange.emit).toHaveBeenCalledWith(row.values);
@@ -171,7 +171,7 @@ fdescribe('ExpandableTableComponent', () => {
 
     const checkbox = checkboxes[3];
 
-    spyOn(component.selectionChange, 'emit');
+    jest.spyOn(component.selectionChange, 'emit');
     checkbox.dispatchEvent(new Event('change'));
 
     const expectedObj = cloneDeep(DATASOURCE[0]) as any;

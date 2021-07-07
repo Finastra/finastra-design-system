@@ -1,11 +1,14 @@
-@mixin uxg-banner-theme($theme) {
-    $primary: map-get($theme, primary);
-    $accent: map-get($theme, accent);
-    $text-primary: mat-color($primary, default);
-    $color-accent: mat-color($accent, default);
-    $foreground: map-get($theme, foreground);
-    $text-banner: mat-color($foreground, base);
-    $divider: mat-color($foreground, divider);
+@use 'sass:map';
+@use 'angular-theme' as fds;
+
+@mixin theme($theme) {
+    $primary: map.get($theme, primary);
+    $accent: map.get($theme, accent);
+    $text-primary: fds.get-color-from-palette($primary, default);
+    $color-accent: fds.get-color-from-palette($accent, default);
+    $foreground: map.get($theme, foreground);
+    $text-banner: fds.get-color-from-palette($foreground, base);
+    $divider: fds.get-color-from-palette($foreground, divider);
 
     .uxg-banner {
         .uxg-body-1{

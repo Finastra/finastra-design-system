@@ -1,6 +1,5 @@
 import { Tree } from '@angular-devkit/schematics/src/tree/interface';
 import { createSourceFile, ScriptTarget } from 'typescript';
-import { InsertChange } from '@schematics/angular/utility/change';
 import { Rule } from '@angular-devkit/schematics';
 
 interface ComponentOptions {

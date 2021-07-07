@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '~@angular/material' as mat;
 
 $primary-font: 'Roboto, roboto, "Helvetica Neue", sans-serif';
@@ -67,14 +68,14 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
   // Loop through the levels and set the `font-family` of the ones that don't have one to the base.
   // Note that Sass can't modify maps in place, which means that we need to merge and re-assign.
   @each $key, $level in $config {
-    @if map-get($level, font-family) == null {
-      $new-level: map-merge($level, (font-family: $primary-font));
-      $config: map-merge($config, ($key: $new-level));
+    @if map.get($level, font-family) == null {
+      $new-level: map.merge($level, (font-family: $primary-font));
+      $config: map.merge($config, ($key: $new-level));
     }
   }
 
   // Add the base font family to the config.
-  @return map-merge($config, (primary-font: $primary-font));
+  @return map.merge($config, (primary-font: $primary-font));
 }
 
 // Adds the base typography styles, based on a config.
@@ -181,3 +182,5 @@ $secondary-font: '"Futura EF", "futura-pt", "Futura", "Hind", "Verdana", "Arial 
     @include mat.typography-level($config, legend);
   }
 }
+
+$typography: uxg-typography-config();

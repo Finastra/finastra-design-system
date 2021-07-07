@@ -1,8 +1,9 @@
-@import "angular-theme/lib/core/style/spacing";
+@use 'sass:map';
+@use 'angular-theme' as fds;
 
-@mixin uxg-account-card-theme($theme) {
-  $primary: map-get($theme, primary);
-  $foreground: map-get($theme, foreground);
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
 
   .selectable-card {
     border: 1px solid transparent;
@@ -12,38 +13,38 @@
     }
 
     &:hover {
-      background: mat-color($foreground, text, 0.1);
+      background: fds.get-color-from-palette($foreground, text, 0.1);
       .checked {
         display: block;
         position: absolute;
-        right: $uxg-spacing-2;
-        top: $uxg-spacing-2;
+        right: fds.$uxg-spacing-2;
+        top: fds.$uxg-spacing-2;
         .mat-icon {
-          color: mat-color($foreground, text, 0.5);
+          color: fds.get-color-from-palette($foreground, text, 0.5);
         }
       }
     }
   }
 
   .selected-card {
-    border: 1px solid mat-color($primary, default);
-    background: mat-color($primary, default, 0.1);
+    border: 1px solid fds.get-color-from-palette($primary, default);
+    background: fds.get-color-from-palette($primary, default, 0.1);
 
     .checked {
       display: block;
       position: absolute;
-      right: $uxg-spacing-2;
-      top: $uxg-spacing-2;
+      right: fds.$uxg-spacing-2;
+      top: fds.$uxg-spacing-2;
       .mat-icon {
-        color: mat-color($primary, default);
+        color: fds.get-color-from-palette($primary, default);
       }
     }
 
     &:hover {
-      background: mat-color($primary, default, 0.1);
+      background: fds.get-color-from-palette($primary, default, 0.1);
       .checked {
         .mat-icon {
-          color: mat-color($primary, default);
+          color: fds.get-color-from-palette($primary, default);
         }
       }
     }

@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $title-block-margin-small: $uxg-spacing-1;
 

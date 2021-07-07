@@ -1,8 +1,10 @@
+@use 'sass:math';
+
 @import 'angular-theme/lib/core/style/spacing';
 @import '~@angular/flex-layout/mq';
 
 $bullet-space: 8%;
-$bullet-center: $bullet-space / 2;
+$bullet-center: math.div($bullet-space, 2);
 
 @mixin changelog-layout($size) {
   .version {

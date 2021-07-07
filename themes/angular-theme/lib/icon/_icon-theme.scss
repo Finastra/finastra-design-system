@@ -1,11 +1,14 @@
-@mixin uxg-icon-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $color: mat-color($primary, default);
-  $background: mat-color($primary, default, 0.1);
+@use 'sass:map';
+@use '../core/theming/palette' as palette;
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $color: palette.get-color-from-palette($primary, default);
+  $background: palette.get-color-from-palette($primary, default, 0.1);
 
   .mat-icon[color=gradient] {
-    background: mat-color($uxg-gradient, vertical);
+    background: palette.get-color-from-palette(palette.$uxg-gradient, vertical);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,7 +18,7 @@
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .mat-icon[color=gradient] {
       background: none !important;
-      color: mat-color($accent, default);
+      color: palette.get-color-from-palette($accent, default);
     }
   }
 

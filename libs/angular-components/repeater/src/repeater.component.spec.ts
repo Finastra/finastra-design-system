@@ -181,7 +181,7 @@ describe('RepeaterComponent', () => {
     fixture.detectChanges();
 
     const button = fixture.debugElement.query(By.css('.repeater-item'));
-    spyOn(component.selectionChange, 'emit');
+    jest.spyOn(component.selectionChange, 'emit');
     button.nativeElement.click();
 
     const expectedObj = { value: { '0': data[0] } };
@@ -203,7 +203,7 @@ describe('RepeaterComponent', () => {
 
     const button1 = buttons[0];
     const button2 = buttons[1];
-    spyOn(component.selectionChange, 'emit');
+    jest.spyOn(component.selectionChange, 'emit');
     button1.nativeElement.click();
     button2.nativeElement.click();
 

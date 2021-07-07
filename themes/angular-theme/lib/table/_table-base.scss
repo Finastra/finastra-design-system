@@ -1,4 +1,4 @@
-@import "../core/style/spacing";
+@use "../core/style/spacing" as *;
 
 $uxg-table-cell-icon-margin: $uxg-spacing-2;
 $uxg-table-cell-margin: $uxg-spacing-3;

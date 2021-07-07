@@ -1,5 +1,5 @@
-@import '../core/layout/breakpoints';
-@import '../icon/icon-base';
+@use '../core/layout/breakpoints' as *;
+@use '../icon/icon-base';
 
 $back-button-icon-size: 18px;
 
@@ -20,7 +20,7 @@ $back-button-icon-size: 18px;
     cursor: pointer;
     padding-top: 2px;
 
-    @include icon-size($back-button-icon-size);
+    @include icon-base.icon-size($back-button-icon-size);
   }
 
   li {

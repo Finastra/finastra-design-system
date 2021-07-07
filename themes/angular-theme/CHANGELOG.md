@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/finastra/finastra-design-system/compare/v2.0.0...v2.0.1) (2021-07-07)
+
+## [2.0.0](https://github.com/finastra/finastra-design-system/compare/v1.5.0...v2.0.0) (2021-07-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** use new dart-sass syntax
+
+* **deps:** update to angular 12.1 and dart-sass ([#378](https://github.com/finastra/finastra-design-system/issues/378)) ([f75a316](https://github.com/finastra/finastra-design-system/commit/f75a31693d8899f6297e90d4d029720e449c8835))
+
+## [1.5.0](https://github.com/finastra/finastra-design-system/compare/v1.4.2...v1.5.0) (2021-07-06)
+
+
+### Features
+
+* **badge:** more colors and sizes ([#372](https://github.com/finastra/finastra-design-system/issues/372)) ([704be89](https://github.com/finastra/finastra-design-system/commit/704be89406832d66176be09465295b0b5e73662f))
+
 ### [1.4.2](https://github.com/finastra/finastra-design-system/compare/v1.4.1...v1.4.2) (2021-06-30)
 
 
