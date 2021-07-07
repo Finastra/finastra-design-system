@@ -5,6 +5,8 @@
   $foreground: map-get($theme, foreground);
 
   .selectable-card {
+    border: 1px solid transparent;
+    cursor: pointer;
     .checked {
       display: none;
     }
