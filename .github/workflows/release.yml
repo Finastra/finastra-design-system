@@ -2,8 +2,8 @@ on:
   push:
     branch:
       - 'master'
-    # tags:
-    #   - v*
+    tags:
+      - v*
 
 name: Create Release
 
@@ -69,22 +69,22 @@ jobs:
           name: "angular-app"
           path: "./dist/apps/angular-test-app"
 
-  # release:
-  #   needs: build
-  #   name: Create GH Release
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
-  #     - name: Create Release
-  #       id: create_release
-  #       uses: actions/create-release@v1
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         tag_name: ${{ github.ref }}
-  #         release_name: Release ${{ github.ref }}
-  #         draft: false
+  release:
+    needs: build
+    name: Create GH Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
 
   publish:
     needs: build
@@ -99,12 +99,12 @@ jobs:
         with:
           name: "angular-components"
           path: "./dist/libs/angular-components"
-      # - name: Publish Components
-      #   uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
-      #     package: ./dist/libs/angular-components/package.json
-      #     access: public
+      - name: Publish Components
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
+          package: ./dist/libs/angular-components/package.json
+          access: public
       - name: Publish Theme
         uses: JS-DevTools/npm-publish@v1
         with:
