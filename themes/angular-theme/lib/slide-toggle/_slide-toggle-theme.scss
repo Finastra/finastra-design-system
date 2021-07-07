@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use  '../core/theming/palette';
+@use '../core/theming/palette';
 
 @mixin theme($theme) {
   $foreground: map.get($theme, foreground);

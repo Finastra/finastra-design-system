@@ -1,28 +1,7 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 @use '~@angular/material/core/style/elevation' with ( $opacity: 0.8 );
 @use '~@angular/material/' as mat;
-
 @use './typography/all-typography' as uxg-typography;
-@use '../avatar/avatar-base';
-@use '../badge/badge-base';
-@use '../block/title-base';
-@use '../button/button-base';
-@use '../button-toggle/button-toggle-base';
-@use '../breadcrumb/breadcrumb-base';
-@use '../card/card-base';
-@use '../chips/chips-base';
-@use '../expansion/expansion-base';
-@use '../icon/icon-base';
-@use '../form-field/form-field-base';
-@use '../list/list-base';
-@use '../logo/logo-base';
-@use '../menu/menu-base';
-@use '../paginator/paginator-base';
-@use '../select/select-base';
-@use '../sidenav/sidenav-base';
-@use '../slide-toggle/slide-toggle-base';
-@use '../table/table-base';
-@use '../toolbar/toolbar-base';
 @use './style/spacing';
 
 @mixin uxg-core($typography-config: null) {

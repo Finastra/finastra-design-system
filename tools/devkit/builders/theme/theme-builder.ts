@@ -20,7 +20,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
     // cleanup
     await remove(dest);
     await mkdirp(dest);
-    options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`, 'package.json'];
+    options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`, `${src}/package.json`];
 
     // compile prebuilt
     const prebuiltThemes = globby(join(src, 'prebuilt-theme', '*.scss'));

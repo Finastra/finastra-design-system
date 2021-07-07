@@ -6,7 +6,7 @@ $uxg-spacing-4: 24px !default;
 $uxg-spacing-5: 48px !default;
 $uxg-spacing-6: 96px !default;
 
-@mixin styles(){
+@mixin styles() {
   $sides: (top, bottom, left, right);
   $spacings: (
     $uxg-spacing-0,
@@ -36,4 +36,3 @@ $uxg-spacing-6: 96px !default;
     }
   }
 }
-
