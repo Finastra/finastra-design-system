@@ -1,6 +1,6 @@
 <mat-card [ngClass]="{ 'selectable-card': selectable, 'selected-card': selected }" (click)="onCardClick(selected)">
   <span *ngIf="selectedithCheckIcon && selectable" class="checked">
-    <mat-icon>check_circle</mat-icon>
+    <mat-icon>{{ selected ? 'check_circle' : 'check_circle_outlined' }}</mat-icon>
   </span>
 
   <mat-card-content>

@@ -14,14 +14,14 @@
     }
 
     &:hover {
-      background: palette.get-color-from-palette($foreground, text, 0.1);
+      background: palette.get-color-from-palette($primary, default, 0.05);
       .checked {
         display: block;
         position: absolute;
         right: spacing.$uxg-spacing-2;
         top: spacing.$uxg-spacing-2;
         .mat-icon {
-          color: palette.get-color-from-palette($foreground, text, 0.5);
+          color: palette.get-color-from-palette($primary, default);
         }
       }
     }
