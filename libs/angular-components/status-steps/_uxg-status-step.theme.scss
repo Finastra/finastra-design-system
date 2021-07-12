@@ -1,10 +1,13 @@
+@use 'sass:map';
+@use 'angular-theme' as fds;
+
 @mixin uxg-status-step-theme($theme) {
-  $foreground: map-get($theme, foreground);
+  $foreground: map.get($theme, foreground);
   .uxg-step-label {
-    color: mat-color($foreground, text, 0.65);
+    color: fds.get-color-from-palette($foreground, text, 0.65);
 
     [step-title] {
-      color: mat-color($foreground, text);
+      color: fds.get-color-from-palette($foreground, text);
     }
   }
 }

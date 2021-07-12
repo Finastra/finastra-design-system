@@ -1,15 +1,17 @@
+@use 'sass:map';
 @use '~@angular/material' as mat;
+@use 'angular-theme' as fds;
 
-@mixin uxg-filter-tags-theme($theme) {
-  $primary: map-get($theme, primary);
-  $filter-tags-background-color: mat-color($primary, default, .12);
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $filter-tags-background-color: fds.get-color-from-palette($primary, default, .12);
   $filter-tags-option-height: 32px;
 
   uxg-filter-tags {
     .filter-tags-container {
       .chip-list {
         .search-icon {
-          color: mat-color($primary);
+          color: fds.get-color-from-palette($primary);
         }
       }
     }
@@ -28,7 +30,7 @@
   }
 }
 
-@mixin uxg-filter-tags-typography($config) {
+@mixin typography($config) {
   .mat-autocomplete-panel {
     .mat-option {
       @include mat.typography-level($config, body-2);

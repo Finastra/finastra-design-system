@@ -47,7 +47,7 @@ describe('MultiselectTagsModule', () => {
   });
 
   it('should add tag', () => {
-    const spy = spyOn(wrapper, 'updateMultiselectTags');
+    const spy = jest.spyOn(wrapper, 'updateMultiselectTags');
     const tag: MultiselectTag = wrapper.component.data[0];
 
     wrapper.component.onTagSelection(tag);
@@ -57,7 +57,7 @@ describe('MultiselectTagsModule', () => {
   });
 
   it('should remove tag', () => {
-    const spy = spyOn(wrapper, 'updateMultiselectTags');
+    const spy = jest.spyOn(wrapper, 'updateMultiselectTags');
     const tag: MultiselectTag = wrapper.component.data[0];
 
     tag.isSelected = true;

@@ -5,7 +5,7 @@ module.exports = {
   ...nxPreset,
   verbose: true,
   transform: {
-    '^.+\\.(ts|js|html)$': 'ts-jest',
+    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
   transformIgnorePatterns: ['node_modules/(?!lodash-es/*)'],
@@ -17,9 +17,10 @@ module.exports = {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: {
-        before: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer']
-      }
+      astTransformers: [
+        'jest-preset-angular/build/InlineFilesTransformer',
+        'jest-preset-angular/build/StripStylesTransformer'
+      ]
     }
   },
   snapshotSerializers: [

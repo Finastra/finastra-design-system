@@ -1,4 +1,4 @@
-@import '../core/style/spacing';
+@use '../core/style/spacing' as *;
 
 $side-badge-border-width: 1px;
 $side-badge-radius-standard: 12px;
@@ -18,11 +18,20 @@ $side-badge-min-width-large: 14px;
 }
 
 .uxg-side-badge {
-  &.mat-badge-medium.mat-badge-after span.mat-badge-content {
+  vertical-align: baseline;
+
+  &.mat-badge-small.mat-badge-after span.mat-badge-content {
     @include uxg-side-badge-base();
 
     border-radius: $side-badge-radius-standard;
     padding: 0 $uxg-spacing-2;
+  }
+
+  &.mat-badge-medium.mat-badge-after span.mat-badge-content {
+    @include uxg-side-badge-base();
+
+    border-radius: $side-badge-radius-standard;
+    padding: 2px 10px;
   }
 
   &.mat-badge-large.mat-badge-after span.mat-badge-content {

@@ -1,4 +1,5 @@
-@import '../core/style/spacing';
+@use 'sass:math';
+@use '../core/style/spacing' as *;
 
 $avatar-size: $uxg-spacing-5;
 $avatar-size-large: $uxg-spacing-6;
@@ -53,7 +54,7 @@ $avatar-size-dense: $uxg-spacing-4;
     display: inline-grid;
     margin: 0;
     position: relative;
-    width: $avatar-size / 1.5;
+    width: math.div($avatar-size, 1.5);
 
     &:nth-child(1) {
       z-index: 2;
@@ -70,13 +71,13 @@ $avatar-size-dense: $uxg-spacing-4;
 
   &[dense] {
     li, uxg-avatar {
-      width: $avatar-size-dense / 1.5;
+      width: math.div($avatar-size-dense, 1.5);
     }
   }
 
   &[large] {
     li, uxg-avatar {
-      width: $avatar-size-large / 1.5;
+      width: math.div($avatar-size-large, 1.5);
     }
   }
 }

@@ -1,4 +1,4 @@
-@mixin uxg-logo-theme($theme) {
+@mixin theme($theme) {
   $foreground: map-get($theme, foreground);
 
   .uxg-logo,
