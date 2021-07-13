@@ -99,7 +99,7 @@
           },
           "outputs": ["coverage/libs/angular-components/core"]
         }
-      }, 
+      },
       "schematics": {
         "@nrwl/angular:component": {
           "styleext": "scss"
@@ -136,70 +136,6 @@
       "schematics": {
         "@finastra/angular:theme": {
           "styleext": "scss"
-        }
-      }
-    },
-    "fds-theme": {
-      "projectType": "library",
-      "root": "themes/fds-theme",
-      "sourceRoot": "themes/fds-theme/",
-      "prefix": "finastra",
-      "architect": {
-        "build": {
-          "builder": "./dist/tools/devkit:theme-builder",
-          "options": {
-            "inputPath": "themes/fds-theme/",
-            "outputPath": "dist/themes/fds-theme",
-            "assets": ["themes/fds-theme/fds-all-themes/*.scss", "themes/fds-theme/fds-typography/*.scss", "themes/fds-theme/*.scss"],
-            "sourceMap": true,
-            "outputStyle": "compressed"
-          },
-          "configurations": {
-            "production": {
-              "outputStyle": "compressed"
-            }
-          }
-        },
-        "lint": {
-          "builder": "./dist/tools/devkit:theme-linter",
-          "options": {
-            "project": "themes/fds-theme"
-          }
-        }
-      },
-      "schematics": {
-        "@finastra/angular:theme": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "fds-test-app": {
-      "root": "apps/fds-test-app",
-      "sourceRoot": "apps/fds-test-app/src",
-      "projectType": "application",
-      "architect": {
-        "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
-          "options": {
-            "outputPath": "dist/apps/fds-test-app",
-            "index": "apps/fds-test-app/src/index.html",
-            "main": "apps/fds-test-app/src/index.ts",
-            "tsConfig": "apps/fds-test-app/tsconfig.app.json",
-            "styles": ["apps/fds-test-app/src/styles.scss"]
-          }
-        },
-        "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "options": {
-            "browserTarget": "fds-test-app:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/fds-test-app/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**", "!apps/fds-test-app/**"]
-          }
         }
       }
     },
@@ -389,6 +325,74 @@
       },
       "schematics": {
         "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "fds-test-app": {
+      "root": "apps/fds-test-app",
+      "sourceRoot": "apps/fds-test-app/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/apps/fds-test-app",
+            "index": "apps/fds-test-app/src/index.html",
+            "main": "apps/fds-test-app/src/index.ts",
+            "tsConfig": "apps/fds-test-app/tsconfig.app.json",
+            "styles": ["apps/fds-test-app/src/styles.scss"]
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "fds-test-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/fds-test-app/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/fds-test-app/**"]
+          }
+        }
+      }
+    },
+    "fds-theme": {
+      "projectType": "library",
+      "root": "themes/fds-theme",
+      "sourceRoot": "themes/fds-theme/",
+      "prefix": "finastra",
+      "architect": {
+        "build": {
+          "builder": "./dist/tools/devkit:theme-builder",
+          "options": {
+            "inputPath": "themes/fds-theme/",
+            "outputPath": "dist/themes/fds-theme",
+            "assets": [
+              "themes/fds-theme/fds-all-themes/*.scss",
+              "themes/fds-theme/fds-typography/*.scss",
+              "themes/fds-theme/*.scss"
+            ],
+            "sourceMap": true,
+            "outputStyle": "compressed"
+          },
+          "configurations": {
+            "production": {
+              "outputStyle": "compressed"
+            }
+          }
+        },
+        "lint": {
+          "builder": "./dist/tools/devkit:theme-linter",
+          "options": {
+            "project": "themes/fds-theme"
+          }
+        }
+      },
+      "schematics": {
+        "@finastra/angular:theme": {
           "styleext": "scss"
         }
       }

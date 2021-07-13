@@ -31,9 +31,6 @@
     "angular-theme": {
       "tags": []
     },
-    "fds-theme": {
-      "tags": []
-    },
     "avatar": {
       "tags": []
     },
@@ -41,9 +38,6 @@
       "tags": []
     },
     "breadcrumb": {
-      "tags": []
-    },
-    "fds-test-app": {
       "tags": []
     },
     "changelog": {
@@ -56,6 +50,12 @@
       "tags": []
     },
     "expandable-table": {
+      "tags": []
+    },
+    "fds-test-app": {
+      "tags": []
+    },
+    "fds-theme": {
       "tags": []
     },
     "filter-group": {

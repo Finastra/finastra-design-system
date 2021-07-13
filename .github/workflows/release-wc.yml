@@ -9,7 +9,7 @@ on:
 
 name: Create FDS release
 
-jobs: 
+jobs:
   publish:
     needs: build
     name: Publish to NPM
