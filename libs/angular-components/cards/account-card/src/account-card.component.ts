@@ -14,7 +14,7 @@ export class AccountCardComponent implements OnInit, OnDestroy {
   @Input() icon = 'credit_card';
   @Input() iconAriaLabel = 'Credit Card';
   @Input() selectable?: boolean;
-  @Input() selectedithCheckIcon?: boolean;
+  @Input() selectedWithCheckIcon?: boolean;
   @Output() onClick = new EventEmitter<boolean>();
 
   ngOnInit() {}
