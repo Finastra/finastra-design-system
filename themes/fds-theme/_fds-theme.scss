@@ -3,11 +3,14 @@
 
 @mixin -fds-styles() {
   @include theme.core-styles;
-  .mdc-theme--gradient {
-    @include theme.property(background, custom-properties.create(--mdc-theme-gradient, linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary))));
+  :root {
+    --fds-theme-gradient: linear-gradient(red, green);
   }
-  .mdc-theme--error-bg {
-    @include theme.property(background, custom-properties.create(--mdc-theme-gradient, var(--mdc-theme-error)));
+  .fds-theme--gradient {
+    @include theme.property(background, custom-properties.create(--fds-theme-gradient, linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary))));
+  }
+  .fds-theme--error-bg {
+    @include theme.property(background, custom-properties.create(--mdc-theme-error-bg, var(--mdc-theme-error)));
   }
 }
 
