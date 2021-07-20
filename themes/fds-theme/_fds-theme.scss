@@ -4,7 +4,7 @@
 @mixin -fds-styles() {
   @include theme.core-styles;
   :root {
-    --fds-theme-gradient: linear-gradient(red, green);
+    --fds-theme-gradient: linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary));
   }
   .fds-theme--gradient {
     @include theme.property(background, custom-properties.create(--fds-theme-gradient, linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary))));
