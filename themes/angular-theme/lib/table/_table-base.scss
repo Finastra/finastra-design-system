@@ -34,13 +34,9 @@ $uxg-table-row-height: 44px;
         padding-left: $uxg-table-cell-margin;
         padding-right: $uxg-table-cell-margin;
 
-        div {
-          display: flex;
-
-          .mat-icon {
-            transform: scale(0.66);
-            margin-right: $uxg-table-cell-icon-margin;
-          }
+        .mat-icon {
+          transform: scale(0.66);
+          margin-right: $uxg-table-cell-icon-margin;
         }
       }
     }
