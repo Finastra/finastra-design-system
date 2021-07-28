@@ -1,30 +1,30 @@
-@import "angular-theme/lib/core/style/spacing";
+@use '~@finastra/angular-theme' as fds;
 
 .container-list {
   max-width: 427px !important;
 
   .mat-menu-content:not(:empty) {
-    padding: $uxg-spacing-0;
+    padding: fds.$uxg-spacing-0;
   }
 
   .mat-menu-content {
-    margin: $uxg-spacing-4;
+    margin: fds.$uxg-spacing-4;
 
     .solutions-title {
-      margin-bottom: $uxg-spacing-4 + $uxg-spacing-2;
+      margin-bottom: fds.$uxg-spacing-4 + fds.$uxg-spacing-2;
     }
 
     .solution-list {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: $uxg-spacing-3;
+      grid-gap: fds.$uxg-spacing-3;
 
       .solution-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: $uxg-spacing-4;
+        margin-bottom: fds.$uxg-spacing-4;
         cursor: pointer;
 
         .solution-name {
@@ -33,7 +33,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           width: 100px;
-          margin: $uxg-spacing-2 $uxg-spacing-0;
+          margin: fds.$uxg-spacing-2 fds.$uxg-spacing-0;
         }
       }
     }

@@ -6,7 +6,7 @@
     type="text"
     placeholder="{{ placeholder }}"
     [value]="query"
-    (input)="term$.next($event.target.value)"
+    (input)="onChange($event)"
     aria-label="Search input"
   />
   <button

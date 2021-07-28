@@ -17,7 +17,7 @@ import {
 })
 export class ComponentRepeaterComponent implements OnInit {
   private _factory: any;
-  @Input() set factory(data: ComponentFactory<any>) {
+  @Input() set factory(data: ComponentFactory<any> | undefined) {
     this._factory = data;
     this.updateComponent();
   }

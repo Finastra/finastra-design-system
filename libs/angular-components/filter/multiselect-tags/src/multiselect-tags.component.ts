@@ -19,7 +19,7 @@ interface UXGMultiSelectFilterChanges {
 export class MultiselectTagsComponent {
   private _data: MultiselectTag[] = [];
   @Input('dense') dense = null;
-  @Input('large') large = null;
+  @Input('large') large: any = null;
 
   @Input()
   set data(data: MultiselectTag[]) {

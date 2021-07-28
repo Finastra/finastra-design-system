@@ -55,11 +55,19 @@
       "prefix": "finastra",
       "architect": {
         "build": {
-          "builder": "./dist/tools/devkit:components-builder",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "libs/angular-components/tsconfig.lib.json",
             "project": "libs/angular-components/ng-package.json"
-          }
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/angular-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
         },
         "lint": {
           "builder": "@nrwl/linter:lint",
@@ -115,8 +123,8 @@
         "build": {
           "builder": "./dist/tools/devkit:theme-builder",
           "options": {
-            "inputPath": "themes/angular-theme/",
-            "outputPath": "dist/themes/angular-theme/",
+            "inputPath": "themes/angular-theme/lib/",
+            "outputPath": "themes/angular-theme/prebuit-theme",
             "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
             "sourceMap": true
           },

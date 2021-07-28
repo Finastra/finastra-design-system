@@ -27,7 +27,7 @@ import { MatSelectChange } from '@angular/material/select';
 })
 export class FieldMatcherComponent implements ControlValueAccessor, OnInit, OnDestroy, OnChanges {
   @Input() fields: any;
-  @Input() templateFields: any;
+  @Input() templateFields!: { [key: string]: any };
 
   constructor() {}
 

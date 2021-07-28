@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'angular-theme' as fds;
+@use '~@finastra/angular-theme' as fds;
 
 @mixin uxg-horizontal-status-stepper-theme($theme) {
   $primary: map.get($theme, primary);

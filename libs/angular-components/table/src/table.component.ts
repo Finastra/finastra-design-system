@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
-import { MatCheckbox } from '@angular/material/checkbox';
+import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
 
 import {
   UxgColumn,
@@ -23,7 +23,7 @@ import {
   UxgDefaultPaging,
   UxgActionColumnPosition
 } from './table.models';
-import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDragStart, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import isEqual from 'lodash-es/isEqual';
 @Component({
   selector: 'uxg-table',
@@ -262,7 +262,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.emitSelectEvent();
   }
 
-  multiSelectAllRows($event: MatCheckbox) {
+  multiSelectAllRows($event: MatCheckboxChange) {
     if ($event.checked) {
       this.selections = this.dataToComponent;
     } else {
@@ -305,14 +305,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  columnDragStarted($event: CdkDropList, index: number) {
+  columnDragStarted($event: CdkDragStart, index: number) {
     index = this.resetIndexWithMultiSelectRow(index);
 
     this.previousIndex = index;
   }
 
-  columnDropped($event: CdkDropList, index: number) {
-    index = this.resetIndexWithMultiSelectRow(index);
+  columnDropped($event: CdkDragDrop<number>) {
+    const index = this.resetIndexWithMultiSelectRow($event.currentIndex);
     if ($event) {
       moveItemInArray(this.columnsToDisplayToComponent, this.previousIndex, index);
     }

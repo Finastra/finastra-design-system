@@ -1,4 +1,5 @@
 export * from './src/user-profile';
+export * from './src/header-type';
 export * from './src/user-profile-panel-actions.directive';
 export * from './src/user-profile-panel-content.directive';
 export * from './src/user-profile-panel-details.directive';

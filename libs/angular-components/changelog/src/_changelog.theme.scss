@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '~@angular/material' as mat;
-@use 'angular-theme' as fds;
-@import '~@angular/flex-layout/mq';
+@use '~@finastra/angular-theme' as fds;
+@use '~@angular/flex-layout/mq' as flex-layout;
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
@@ -9,7 +9,7 @@
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
   $elevation-color: map.get($foreground, elevation);
-  
+
   uxg-changelog {
     .title {
       .changelog-icon {
@@ -69,14 +69,14 @@
           background-color: fds.get-color-from-palette($primary, default);
         }
       }
-  
+
       .release-detail::before,
       .last-release::before {
         color: fds.get-color-from-palette($background, default);
         border: 8px solid fds.get-color-from-palette($primary, default);
         background-color: fds.get-color-from-palette($primary, default);
       }
-  
+
       .first-release::before {
         background-color: fds.get-color-from-palette($background, card);
         border: 5px solid fds.get-color-from-palette($primary, default);
@@ -97,7 +97,7 @@
       }
     }
 
-    @include layout-bp(xs) {
+    @include flex-layout.layout-bp(xs) {
       .title {
         .creator {
           @include mat.typography-level($config, h3);

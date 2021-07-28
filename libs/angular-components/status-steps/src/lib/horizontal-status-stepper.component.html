@@ -10,7 +10,7 @@
         <div class="horizontal-line" [class.last]="isLast"></div>
       </div>
       <ng-template
-        [ngTemplateOutlet]="step.template"
+        [ngTemplateOutlet]="step.template ?? null"
         [ngTemplateOutletContext]="{ isCurrent: isCurrent(index + 1) }"
       ></ng-template>
     </div>

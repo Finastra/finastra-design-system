@@ -85,7 +85,11 @@
           >
             <h5 class="uxg-h5">Filter results by</h5>
             <ng-container *ngFor="let resultGroup of results">
-              <mat-checkbox color="primary" [checked]="resultGroup.selected" (change)="toggleFilter(resultGroup)">
+              <mat-checkbox
+                color="primary"
+                [checked]="resultGroup.selected ?? false"
+                (change)="toggleFilter(resultGroup)"
+              >
                 {{ resultGroup.key }} ({{ resultGroup.value.length }})
               </mat-checkbox>
             </ng-container>

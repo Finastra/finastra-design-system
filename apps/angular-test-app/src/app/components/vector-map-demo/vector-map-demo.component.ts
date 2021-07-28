@@ -45,7 +45,7 @@ export class VectorMapDemoComponent {
     { name: 'Singapore', value: 6000 }
   ];
 
-  logClick(event: Array<object>) {
+  logClick(event: any) {
     console.log('click: ', event);
   }
 }

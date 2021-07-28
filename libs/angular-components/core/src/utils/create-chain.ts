@@ -1,5 +1,5 @@
 // created from https://github.com/lodash/lodash/issues/3298#issuecomment-341685354
-import mapValues from 'lodash-es/mapValues';
+import { mapValues } from 'lodash-es';
 
 interface ChainableFunctions {
   [key: string]: (...args: any[]) => any;

@@ -29,7 +29,7 @@ export class RepeaterComponent implements OnInit, OnChanges {
   }
 
   @Input() component!: Type<any> | ComponentFactory<any>;
-  @Input() orientation = 'horizontal';
+  @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
   @Input() multiSelect = false;
   @Input() space = '0px';
   @Input() columnsMatcher: { [k: string]: string } = {};

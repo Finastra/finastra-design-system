@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 .uxg-popover-menu-item.mat-menu-item {
   height: auto;
@@ -6,7 +6,7 @@
   line-height: inherit;
   display: flex;
   flex-direction: column;
-  padding: $uxg-spacing-3;
+  padding: fds.$uxg-spacing-3;
 
   &.cdk-program-focused:not([disabled]),
   &:hover:not([disabled]) {

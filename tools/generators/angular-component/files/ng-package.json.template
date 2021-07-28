@@ -3,6 +3,5 @@
   "dest": "../../dist/libs/angular-components/<%= filename %>",
   "lib": {
     "entryFile": "index.ts",
-    "styleIncludePaths": ["../../../themes"]
   }
 }

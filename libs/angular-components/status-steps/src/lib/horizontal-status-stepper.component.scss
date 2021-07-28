@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 :host {
   display: flex;
@@ -19,7 +19,7 @@
     .step-icon {
       display: flex;
       width: 100%;
-      margin-bottom:$uxg-spacing-3;
+      margin-bottom: fds.$uxg-spacing-3;
     }
 
     .icon-container {

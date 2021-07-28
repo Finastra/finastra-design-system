@@ -20,12 +20,11 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
     // cleanup
     await remove(dest);
     await mkdirp(dest);
-    options.assets = [...options.assets, `${src}/LICENSE`, `${src}/README.md`, `${src}/package.json`];
 
     // compile prebuilt
     const prebuiltThemes = globby(join(src, 'prebuilt-theme', '*.scss'));
     for (const theme of prebuiltThemes) {
-      const outFile = theme.replace(src, dest).replace('.scss', '.css');
+      const outFile = theme.replace(join(src, 'prebuilt-theme'), dest).replace('.scss', '.css');
       logger.info(`Compiling "${theme}" to "${outFile}"...`);
 
       const result = renderSync({
@@ -52,9 +51,6 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
       }
     }
 
-    for (const asset of globby(options.assets)) {
-      await copy(join(src, relative(src, asset)), join(dest, relative(src, asset)), { recursive: true });
-    }
     context.reportProgress(1, 1);
     return { success: true };
   } catch (err) {

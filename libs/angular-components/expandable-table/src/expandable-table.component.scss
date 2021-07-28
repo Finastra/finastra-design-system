@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 uxg-expandable-table {
   width: 100%;
@@ -7,12 +7,12 @@ uxg-expandable-table {
   .expandable-table-header {
     display: flex;
     align-items: center;
-    padding: $uxg-spacing-2;
-    padding-left: $uxg-spacing-4;
+    padding: fds.$uxg-spacing-2;
+    padding-left: fds.$uxg-spacing-4;
 
     .title {
       &.selectable {
-        padding-left: $uxg-spacing-3;
+        padding-left: fds.$uxg-spacing-3;
       }
     }
 
@@ -23,7 +23,7 @@ uxg-expandable-table {
   }
 
   .check-box-header {
-    margin-right: $uxg-spacing-3;
+    margin-right: fds.$uxg-spacing-3;
     display: flex;
   }
 
@@ -36,7 +36,7 @@ uxg-expandable-table {
       .mat-expansion-panel-header-title {
         margin-right: 0;
         align-items: center;
-        padding-left: $uxg-spacing-4;
+        padding-left: fds.$uxg-spacing-4;
         min-height: 48px;
 
         .header-text {
@@ -44,7 +44,7 @@ uxg-expandable-table {
           flex-direction: column;
 
           &.selectable {
-            padding-left: $uxg-spacing-3;
+            padding-left: fds.$uxg-spacing-3;
           }
 
           .subtitle {
@@ -87,31 +87,31 @@ uxg-expandable-table {
         &.not-selectable {
           td {
             &.mat-cell:first-of-type {
-              padding-left: $uxg-spacing-2 + $uxg-spacing-4 !important;
+              padding-left: fds.$uxg-spacing-2 + fds.$uxg-spacing-4 !important;
             }
           }
 
           th {
             &.mat-header-cell:first-of-type {
-              padding-left: $uxg-spacing-2 + $uxg-spacing-4 !important;
+              padding-left: fds.$uxg-spacing-2 + fds.$uxg-spacing-4 !important;
             }
           }
         }
 
         td {
           &.mat-cell:first-of-type {
-            padding-left: $uxg-spacing-4 ! important;
+            padding-left: fds.$uxg-spacing-4 ! important;
           }
         }
 
         th {
           &.mat-header-cell:first-of-type {
-            padding-left: $uxg-spacing-4 ! important;
+            padding-left: fds.$uxg-spacing-4 ! important;
           }
         }
 
         .mat-column-uxg-table-select-row {
-          width: $uxg-spacing-3;
+          width: fds.$uxg-spacing-3;
 
           .check-box {
             display: flex;

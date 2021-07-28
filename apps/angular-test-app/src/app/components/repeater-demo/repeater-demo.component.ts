@@ -344,8 +344,8 @@ export class RepeaterDemoComponent implements OnInit, OnDestroy {
   columnsExample = this.columns;
   dataSourceExample = this.dataSource;
   componentExample!: Type<any>;
-  columnsMatcherExample!: Object;
-  orientationExample = 'horizontal';
+  columnsMatcherExample!: any;
+  orientationExample: 'horizontal' | 'vertical' = 'horizontal';
   spaceExample!: string;
   multiselectExample = true;
 
