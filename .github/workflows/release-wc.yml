@@ -3,7 +3,7 @@ on:
     branch:
       - 'master'
     tags:
-      - '@finastra/fds-theme*'
+      - '@finastra/fds-theme**'
       - '!v*'
 
 name: Create FDS release
