@@ -831,13 +831,41 @@
               "apps/angular-test-app/src/favicon.ico",
               "apps/angular-test-app/src/assets",
               "apps/angular-test-app/src/_redirects",
-              { "glob": "index.html", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "styles.css", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "main-es5.js", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "main-es2015.js", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "polyfills-es2015.js", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "runtime-es5.js", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" },
-              { "glob": "runtime-es2015.js", "input": "dist/apps/fds-test-app", "output": "/fds-theme/" }
+              {
+                "glob": "index.html",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "styles.css",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "main-es5.js",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "main-es2015.js",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "polyfills-es2015.js",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "runtime-es5.js",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              },
+              {
+                "glob": "runtime-es2015.js",
+                "input": "dist/apps/fds-test-app",
+                "output": "/fds-theme/"
+              }
             ],
             "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": [
