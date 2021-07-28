@@ -16,7 +16,8 @@
     }
   
     &.fds-button--gradient {
-      --mdc-theme-primary: linear-gradient(red, green);
+      // impossible since background-color does not support linear-gradient
+      --mdc-theme-primary: var(--fds-theme-gradient);
     }
   }
 
