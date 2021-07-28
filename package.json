@@ -44,7 +44,7 @@
     "nx": "nx",
     "testjest": "jest",
     "release:angular": "npx standard-version -an",
-    "release:wc": "cd themes/fds-theme && npx standard-version --prerelease alpha",
+    "release:wc": "cd themes/fds-theme && npx standard-version --prerelease alpha -t @finatra/fds-theme@",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
     "changelog:components": "cd libs/angular-components && npx standard-version",
     "workspace-generator": "nx workspace-generator",
