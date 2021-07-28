@@ -3,9 +3,8 @@ on:
     branch:
       - 'master'
     tags:
-      - v*
-    paths:
-      - '!themes/fds-theme/**'
+      - 'v*'
+      - '!@finastra/fds-theme*'
 
 name: Create Angular release
 

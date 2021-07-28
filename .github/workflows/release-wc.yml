@@ -3,9 +3,8 @@ on:
     branch:
       - 'master'
     tags:
-      - v*
-    paths:
-      - 'themes/fds-theme/**'
+      - '@finastra/fds-theme*'
+      - '!v*'
 
 name: Create FDS release
 
