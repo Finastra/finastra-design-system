@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.4](https://github.com/finastra/finastra-design-system/compare/@finastra/fds-theme@0.0.1-alpha.3...@finastra/fds-theme@0.0.1-alpha.4) (2021-07-28)
+
 ### 0.0.1-alpha.3 (2021-07-28)
 
 
