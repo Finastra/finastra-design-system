@@ -16,6 +16,6 @@
     "@material/button": "^11.0.0"
   },
   "scripts": {
-    "release": "standard-version --prerelease alpha --tag-prefix '@finatra/fds-theme@'"
+    "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'"
   }
 }
