@@ -13,6 +13,7 @@ jobs:
     name: Publish to NPM
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Publish fds theme
         uses: JS-DevTools/npm-publish@v1
         with:
