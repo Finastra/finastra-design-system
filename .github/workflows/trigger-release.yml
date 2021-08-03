@@ -1,7 +1,6 @@
 name: Trigger release
 
-on: 
-  workflow_dispatch
+on: workflow_dispatch
 
 jobs:
   check_user_permission:
@@ -17,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Exit on insufficient permissions
-        if: "! steps.check.outputs.has-permission"
+        if: '! steps.check.outputs.has-permission'
         run: exit 1
 
   trigger_release:
