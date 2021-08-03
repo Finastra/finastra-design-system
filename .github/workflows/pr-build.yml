@@ -8,10 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js 16.x
+      - name: Use Node.js 15.x
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 15.x
       - name: Cache Node.js modules
         uses: actions/cache@v1
         with:
