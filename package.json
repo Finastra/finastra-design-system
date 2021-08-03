@@ -167,7 +167,8 @@
     "npm": ">=7.15.0"
   },
   "workspaces": [
-    "themes/angular-theme"
+    "themes/angular-theme",
+    "themes/fds-theme"
   ],
   "resolutions": {
     "sass": "1.33.0"
