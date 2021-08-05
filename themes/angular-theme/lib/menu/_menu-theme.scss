@@ -1,15 +1,15 @@
 @use 'sass:map';
-@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
 
 @mixin theme($theme) {
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
 
   .mat-menu-content {
-    color: mat.get-color-from-palette($foreground, text);
+    color: palette.get-color-from-palette($foreground, text);
   }
 
   .uxg-menu-header {
-    background-color: mat.get-color-from-palette($background, background, 0.5);
+    background-color: palette.get-color-from-palette($background, background, 0.5);
   }
 }
