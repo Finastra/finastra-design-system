@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '~@angular/material/' as mat;
+@use '../core/theming/palette';
 
 @mixin theme($theme) {
   $foreground: map.get($theme, foreground);
@@ -7,16 +7,16 @@
 
   .uxg-toolbar {
     .uxg-toolbar-icon-menu {
-      color: mat.get-color-from-palette($foreground, text, 0.38);
+      color: palette.get-color-from-palette($foreground, text, 0.38);
     }
 
     &.mat-primary {
       .mat-icon-button {
-        color: mat.get-color-from-palette($primary, default-contrast);
+        color: palette.get-color-from-palette($primary, default-contrast);
       }
 
       .uxg-toolbar-icon-menu {
-        color: mat.get-color-from-palette($primary, default-contrast, 0.38);
+        color: palette.get-color-from-palette($primary, default-contrast, 0.38);
       }
     }
   }
