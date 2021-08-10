@@ -2,8 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "../../../dist/out-tsc",
-    "module": "commonjs",
+    "outDir": "../../dist/out-tsc",
+    "module": "esnext",
     "types": ["jest", "node"]
   },
   "files": ["test-setup.ts"],

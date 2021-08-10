@@ -1,7 +1,6 @@
 name: Trigger release
 
-on: 
-  workflow_dispatch
+on: workflow_dispatch
 
 jobs:
   check_user_permission:
@@ -17,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Exit on insufficient permissions
-        if: "! steps.check.outputs.has-permission"
+        if: '! steps.check.outputs.has-permission'
         run: exit 1
 
   trigger_release:
@@ -28,9 +27,9 @@ jobs:
       # Setup
       - uses: actions/checkout@v1
       - name: Use Node.js 15.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 15.x
+          node-version: '15'
       - name: Install dependencies
         run: npm ci --loglevel=error --ignore-scripts --omit=prod
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest

@@ -64,7 +64,8 @@ export class SidenavComponent implements OnInit, OnChanges {
     this._host.close();
   }
 
-  isActive(path: string) {
+  isActive(path?: string) {
+    if (path === undefined) return false;
     if (this.activeRoute) return this.activeRoute.includes(path);
   }
 }

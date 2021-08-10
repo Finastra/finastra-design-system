@@ -8,10 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: '15'
       - name: Cache Node.js modules
         uses: actions/cache@v1
         with:
@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v1.0.0
         with:
           name: 'angular-theme'
-          path: './dist/themes/angular-theme'
+          path: './themes/angular-theme'
       - name: Upload Angular Components Artifact
         uses: actions/upload-artifact@v1.0.0
         with:

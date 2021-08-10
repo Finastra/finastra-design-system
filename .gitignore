@@ -41,3 +41,5 @@ finastra-design-system.iml
 # System Files
 .DS_Store
 Thumbs.db
+
+themes/angular-theme/prebuit-theme

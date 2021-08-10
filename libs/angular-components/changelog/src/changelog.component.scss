@@ -1,21 +1,21 @@
 @use 'sass:math';
 
-@import 'angular-theme/lib/core/style/spacing';
-@import '~@angular/flex-layout/mq';
+@use '~@finastra/angular-theme' as fds;
+@use '~@angular/flex-layout/mq' as flex-layout;
 
 $bullet-space: 8%;
 $bullet-center: math.div($bullet-space, 2);
 
 @mixin changelog-layout($size) {
   .version {
-    margin-bottom: $uxg-spacing-2;
+    margin-bottom: fds.$uxg-spacing-2;
     position: relative;
     left: $bullet-space;
     display: inline-flex;
     align-items: baseline;
 
     .version-id {
-      margin-right: $uxg-spacing-2;
+      margin-right: fds.$uxg-spacing-2;
     }
   }
 
@@ -23,9 +23,9 @@ $bullet-center: math.div($bullet-space, 2);
   .release-detail,
   .last-release {
     @if $size == 'xs' {
-      padding: $uxg-spacing-2 $uxg-spacing-3;
-      margin-right: $uxg-spacing-2;
-      width: calc(100% - #{$bullet-space} - #{$uxg-spacing-2});
+      padding: fds.$uxg-spacing-2 fds.$uxg-spacing-3;
+      margin-right: fds.$uxg-spacing-2;
+      width: calc(100% - #{$bullet-space} - #{fds.$uxg-spacing-2});
     } @else {
       width: calc(100% - #{$bullet-space});
     }
@@ -36,12 +36,12 @@ $bullet-center: math.div($bullet-space, 2);
       .change-type {
         .type {
           margin: 0;
-          margin-left: -$uxg-spacing-1;
+          margin-left: -(fds.$uxg-spacing-1);
         }
       }
     }
     .change-detail {
-      margin-top: $uxg-spacing-2;
+      margin-top: fds.$uxg-spacing-2;
     }
   }
 
@@ -51,9 +51,9 @@ $bullet-center: math.div($bullet-space, 2);
       width: 18px;
       height: 18px;
       left: calc(#{-$bullet-center} - 19px);
-    } 
+    }
     @else if $size == 'none' {
-      top: $uxg-spacing-1;
+      top: fds.$uxg-spacing-1;
     }
     @else {
       top: -39.5px;
@@ -61,13 +61,13 @@ $bullet-center: math.div($bullet-space, 2);
       height: 25px;
       left: calc(#{-$bullet-center} - 22px);
     }
-    
+
   }
 
   .release-detail::before,
   .last-release::before {
     @if $size == 'none' {
-      top: $uxg-spacing-3;
+      top: fds.$uxg-spacing-3;
     } @else {
       top: -30px;
     }
@@ -75,10 +75,10 @@ $bullet-center: math.div($bullet-space, 2);
 
   .first-release::after {
     @if $size == 'xs' {
-      top: -$uxg-spacing-4;
+      top: -(fds.$uxg-spacing-4);
       bottom: -44px;
     } @else if $size == 'none' {
-      top: $uxg-spacing-3;
+      top: fds.$uxg-spacing-3;
       bottom: -48px;
     } @else {
       top: -35px;
@@ -93,10 +93,10 @@ $bullet-center: math.div($bullet-space, 2);
       bottom: -35px;
     }
     @if $size == 'none' {
-      top: $uxg-spacing-3;
+      top: fds.$uxg-spacing-3;
       bottom: -48px;
     } @else {
-      top: -$uxg-spacing-4;
+      top: -(fds.$uxg-spacing-4);
     }
   }
 }
@@ -106,14 +106,14 @@ uxg-changelog {
     padding: 3rem 1rem;
 
     .changelog-icon {
-      margin-right: $uxg-spacing-3;
+      margin-right: fds.$uxg-spacing-3;
       width: 120px;
       height: 120px;
     }
   }
 
   .changelog-container {
-    margin: $uxg-spacing-3 $uxg-spacing-4;
+    margin: fds.$uxg-spacing-3 fds.$uxg-spacing-4;
 
     .version {
       min-width: 100px;
@@ -140,27 +140,27 @@ uxg-changelog {
       flex: 1 1 100%;
       cursor: unset;
       height: unset;
-      margin-bottom: $uxg-spacing-4;
-      padding: $uxg-spacing-4;
+      margin-bottom: fds.$uxg-spacing-4;
+      padding: fds.$uxg-spacing-4;
     }
 
     .category {
-      padding: $uxg-spacing-2 0;
+      padding: fds.$uxg-spacing-2 0;
     }
 
     .change {
       .change-detail {
-        margin: $uxg-spacing-2 0;
+        margin: fds.$uxg-spacing-2 0;
       }
 
       .change-type {
         min-width: 85px;
 
         .type {
-          margin: $uxg-spacing-2 0;
+          margin: fds.$uxg-spacing-2 0;
           text-align: center;
-          padding: 2px $uxg-spacing-2;
-          border-radius: $uxg-spacing-3;
+          padding: 2px fds.$uxg-spacing-2;
+          border-radius: fds.$uxg-spacing-3;
           display: inline-block;
         }
       }
@@ -171,7 +171,7 @@ uxg-changelog {
       position: absolute;
       width: 28px;
       height: 28px;
-      top: $uxg-spacing-1;
+      top: fds.$uxg-spacing-1;
       left: calc(#{-$bullet-center} - 24px);
       border-radius: 50%;
       z-index: 1;
@@ -183,7 +183,7 @@ uxg-changelog {
       position: absolute;
       width: 0;
       height: 0;
-      top: $uxg-spacing-3;
+      top: fds.$uxg-spacing-3;
       left: calc(#{-$bullet-center} - 13px);
       border-radius: 50%;
       z-index: 1;
@@ -193,8 +193,8 @@ uxg-changelog {
       content: '';
       position: absolute;
       width: 2px;
-      top: $uxg-spacing-3;
-      bottom: -$uxg-spacing-5;
+      top: fds.$uxg-spacing-3;
+      bottom: -(fds.$uxg-spacing-5);
       left: calc(#{-$bullet-center} - 6px);
     }
 
@@ -202,8 +202,8 @@ uxg-changelog {
       content: '';
       position: absolute;
       width: 2px;
-      top: $uxg-spacing-3;
-      bottom: -$uxg-spacing-5;
+      top: fds.$uxg-spacing-3;
+      bottom: -(fds.$uxg-spacing-5);
       left: calc(#{-$bullet-center} - 6px);
     }
 
@@ -212,9 +212,9 @@ uxg-changelog {
     }
   }
 
-  @include layout-bp(sm) {
+  @include flex-layout.layout-bp(sm) {
     .changelog-container {
-      margin: 0 $uxg-spacing-4;
+      margin: 0 fds.$uxg-spacing-4;
       @include changelog-layout('sm');
       .layout-none {
         @include changelog-layout('none');
@@ -222,9 +222,9 @@ uxg-changelog {
     }
   }
 
-  @include layout-bp(xs) {
+  @include flex-layout.layout-bp(xs) {
     .changelog-container {
-      margin: 0 $uxg-spacing-2;
+      margin: 0 fds.$uxg-spacing-2;
       @include changelog-layout('xs');
       .layout-none {
         @include changelog-layout('none');
@@ -241,7 +241,7 @@ uxg-changelog {
     }
   }
 
-  @include layout-bp(lt-md) {
+  @include flex-layout.layout-bp(lt-md) {
     .title {
       .creator {
         max-width: 400px;

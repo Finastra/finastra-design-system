@@ -36,7 +36,7 @@
         cdkDropList
         cdkDropListLockAxis="x"
         cdkDropListOrientation="horizontal"
-        (cdkDropListDropped)="columnDropped($event, columnIndex)"
+        (cdkDropListDropped)="columnDropped($event)"
         cdkDrag
         (cdkDragStarted)="columnDragStarted($event, columnIndex)"
         [cdkDragDisabled]="!columnDragEnable"
@@ -178,7 +178,7 @@
   [hidePageSize]="paging?.hidePageSize"
   [pageIndex]="paging?.pageIndex"
   [pageSize]="paging?.pageSize"
-  [pageSizeOptions]="paging?.pageSizeOptions"
+  [pageSizeOptions]="paging?.pageSizeOptions ?? []"
   [showFirstLastButtons]="paging?.showFirstLastButtons"
   (page)="applyPageChanges($event)"
 >

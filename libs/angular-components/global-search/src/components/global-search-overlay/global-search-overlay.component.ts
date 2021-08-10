@@ -43,11 +43,11 @@ export class GlobalSearchOverlayComponent implements AfterViewInit {
   searchTime = '';
 
   @Input()
-  resultStatusTemplate = this.config.resultStatusTemplate;
+  resultStatusTemplate = this.config.resultStatusTemplate ?? null;
   @Input()
-  emptySearchTemplate = this.config.emptySearchTemplate;
+  emptySearchTemplate = this.config.emptySearchTemplate ?? null;
   @Input()
-  resultItemTemplate = this.config.resultItemTemplate;
+  resultItemTemplate = this.config.resultItemTemplate ?? null;
   @Input()
   groupBy = this.config.groupBy;
   @Input()

@@ -1,7 +1,7 @@
-@use '../lib/core/core';
-@use '../lib/core/theming/theming';
-@use '../lib/core/theming/all-theme';
-@use '../base';
+@use '../core/core';
+@use '../core/theming/theming';
+@use '../core/theming/all-theme';
+@use '../../base';
 
 $uxg-dark-theme: theming.uxg-dark-theme();
 

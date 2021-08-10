@@ -54,7 +54,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
   data: any[] = [];
   layout: any = {};
   config: any = {};
-  style: Partial<CSSStyleDeclaration> = {};
+  style: { [key: string]: string } = {};
   paletteConfig: PaletteConfig = PALETTE_DEFAULT_CONFIG;
   legend: VectorMapLegend[] = [];
   viewId: string | null = null;
@@ -156,7 +156,7 @@ export class VectorMapComponent implements OnInit, OnDestroy, OnChanges {
     this.config = { ...DEFAULT_CONFIG, ...config };
   }
 
-  setStyle(style: Partial<CSSStyleDeclaration> = {}) {
+  setStyle(style: { [key: string]: string } = {}) {
     this.style = { ...DEFAULT_STYLE, ...style };
   }
 

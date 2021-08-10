@@ -14,10 +14,10 @@ export class AppModule {}
 ### Scss
 
 ```scss
-@import '~@finastra/angular-components/cards/account-card/account-card.theme';
+@use '~@finastra/angular-components/cards/account-card/account-card.theme';
 
 @mixin app-theme($theme) {
-  @include uxg-account-card-theme($theme);
+  @include account-card.uxg-account-card-theme($theme);
 }
 
 @include app-theme($uxg-light-theme);

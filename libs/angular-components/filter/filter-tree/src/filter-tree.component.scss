@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 $row-height: 32px;
 
@@ -10,7 +10,7 @@ $row-height: 32px;
 }
 
 .filter-tree .child-tree {
-  padding: $uxg-spacing-1 $uxg-spacing-4;
+  padding: fds.$uxg-spacing-1 fds.$uxg-spacing-4;
 
   &.collapsed {
     padding-top: 0;

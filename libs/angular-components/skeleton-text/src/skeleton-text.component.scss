@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 :host {
   display: block;
@@ -7,8 +7,8 @@
   height: inherit;
   line-height: 10px;
 
-  margin-top: $uxg-spacing-1;
-  margin-bottom: $uxg-spacing-1;
+  margin-top: fds.$uxg-spacing-1;
+  margin-bottom: fds.$uxg-spacing-1;
 
   user-select: none;
   pointer-events: none;

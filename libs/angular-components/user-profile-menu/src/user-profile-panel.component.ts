@@ -14,7 +14,7 @@ import { UserProfile } from './user-profile';
 import { UxgUserProfilePanelActionsDirective } from './user-profile-panel-actions.directive';
 import { UxgUserProfilePanelContentDirective } from './user-profile-panel-content.directive';
 import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
-import { HeaderType } from './user-profile-menu.component';
+import { HeaderType } from './header-type';
 
 @Component({
   selector: 'uxg-user-profile-panel',

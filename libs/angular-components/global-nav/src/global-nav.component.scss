@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 mat-sidenav-container {
     height: 100%;
@@ -36,5 +36,5 @@ mat-sidenav-container {
 }
 
 .theme-toggle {
-    margin-left: $uxg-spacing-3;
+    margin-left: fds.$uxg-spacing-3;
 }

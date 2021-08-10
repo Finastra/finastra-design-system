@@ -1,4 +1,4 @@
-@import 'angular-theme/lib/core/style/spacing';
+@use '~@finastra/angular-theme' as fds;
 
 $buttons-wrapper-size: 44px;
 
@@ -20,7 +20,7 @@ $timeline-progress-left-margin: 2px;
 $timeline-top: 15%;
 $timeline-right: 2%;
 $timeline-bottom: 15%;
-$timeline-width: calc(22% + #{$uxg-spacing-1});
+$timeline-width: calc(22% + #{fds.$uxg-spacing-1});
 $timeline-top-xs: 4%;
 
 $wizard-container-top: 8%;
@@ -66,7 +66,7 @@ $wizard-title-top: 3%;
   .uxg-wizard-right-panel {
     .close-button {
       float: right;
-      padding: $uxg-spacing-3;
+      padding: fds.$uxg-spacing-3;
     }
   }
 
@@ -82,7 +82,7 @@ $wizard-title-top: 3%;
   .uxg-wizard-footer {
     display: flex;
     align-items: center;
-    margin: 0 $uxg-spacing-3;
+    margin: 0 fds.$uxg-spacing-3;
 
     .dot-navigation {
       order: 2;
@@ -96,7 +96,7 @@ $wizard-title-top: 3%;
           width: $dot-size-xs;
           height: $dot-size-xs;
           border-radius: 50%;
-          margin: $uxg-spacing-1;
+          margin: fds.$uxg-spacing-1;
         }
       }
     }
@@ -193,11 +193,11 @@ $wizard-title-top: 3%;
       cursor: pointer;
       height: $step-container-height;
       justify-content: center;
-      padding: $uxg-spacing-3;
+      padding: fds.$uxg-spacing-3;
 
       .step-title {
         transition: color 250ms ease-in;
-        margin-bottom: $uxg-spacing-2;
+        margin-bottom: fds.$uxg-spacing-2;
       }
 
       .step-description {
@@ -216,12 +216,12 @@ $wizard-title-top: 3%;
 
   .uxg-wizard-timeline-xs {
     width: 100%;
-    padding: $uxg-spacing-3;
+    padding: fds.$uxg-spacing-3;
 
     .step {
       width: $step-size-xs;
       height: $step-size-xs;
-      margin-right: $uxg-spacing-2;
+      margin-right: fds.$uxg-spacing-2;
       border: $step-border-width solid;
       border-radius: 50%;
       display: flex;
@@ -238,7 +238,7 @@ $wizard-title-top: 3%;
     }
 
     .step-title {
-      margin-bottom: $uxg-spacing-2;
+      margin-bottom: fds.$uxg-spacing-2;
     }
 
     .close-button {

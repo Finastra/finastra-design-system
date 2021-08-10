@@ -104,7 +104,7 @@ export class FilterTagsComponent implements OnInit {
     );
   }
 
-  filterTagsByCategory(data: Tag[] | null, category: string) {
+  filterTagsByCategory(data: Tag[] | null, category: string | undefined) {
     return data?.filter((item: any) => category === item.category);
   }
 

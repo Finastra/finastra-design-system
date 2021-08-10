@@ -14,8 +14,7 @@ import { UxgUserProfilePanelContentDirective } from './user-profile-panel-conten
 import { UxgUserProfilePanelDetailsDirective } from './user-profile-panel-details.directive';
 import { DefaultGravatar, AvatarColor } from '@finastra/angular-components/avatar';
 import { MatMenuTrigger } from '@angular/material/menu';
-export type HeaderType = 'hero' | 'title';
-
+import { HeaderType } from './header-type';
 @Component({
   selector: 'uxg-user-profile-menu',
   templateUrl: './user-profile-menu.component.html',

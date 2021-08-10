@@ -49,9 +49,9 @@ export class UxgSearchInputComponent implements OnDestroy {
 
   @Input() hint?: string;
 
-  @Output() search = new EventEmitter<string>();
+  @Output() search = new EventEmitter<string | undefined>();
 
-  term$ = new Subject<string>();
+  term$ = new Subject<string | undefined>();
   private termSubscription: Subscription;
 
   constructor(@Attribute('dense') public dense: any) {
@@ -64,5 +64,9 @@ export class UxgSearchInputComponent implements OnDestroy {
 
   ngOnDestroy() {
     this.termSubscription.unsubscribe();
+  }
+
+  onChange(event: Event) {
+    this.term$.next((event.target as HTMLInputElement).value);
   }
 }

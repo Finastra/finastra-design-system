@@ -75,7 +75,7 @@ export class FilterPanelDemoComponent implements OnInit {
     this.groupFilter = changes;
   }
 
-  updateMultiselectTags(tags: string[]) {
+  updateMultiselectTags(tags: any) {
     this.chosenMultiselectTags = tags;
   }
 }

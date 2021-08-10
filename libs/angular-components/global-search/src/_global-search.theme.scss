@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '~@angular/material' as mat;
-@use 'angular-theme' as fds;
-@import '~@angular/flex-layout/mq';
+@use '~@finastra/angular-theme' as fds;
+@use '~@angular/flex-layout/mq' as flex-layout;
 
 @mixin uxg-global-search-colors($theme) {
   $foreground: map.get($theme, foreground);
@@ -54,13 +54,13 @@
         .mat-form-field-label {
           @include mat.typography-level($config, h2);
 
-          @include layout-bp(xs) {
+          @include flex-layout.layout-bp(xs) {
             @include mat.typography-level($config, h4);
           }
         }
 
         .mat-input-element {
-          @include layout-bp(xs) {
+          @include flex-layout.layout-bp(xs) {
             @include mat.typography-level($config, h4);
           }
         }
@@ -70,7 +70,7 @@
         font-size: mat.font-size($config, h1);
         opacity: 0.75;
 
-        @include layout-bp(xs) {
+        @include flex-layout.layout-bp(xs) {
           font-size: mat.font-size($config, h3);
         }
       }
@@ -79,7 +79,7 @@
     .uxg-global-search-results-area {
       .uxg-global-search-result-group-header {
         .uxg-h4 {
-          @include layout-bp(xs) {
+          @include flex-layout.layout-bp(xs) {
             @include mat.typography-level($config, h5);
           }
         }
@@ -87,7 +87,7 @@
         .uxg-global-search-result-group-counter {
           @include mat.typography-level($config, display-6);
 
-          @include layout-bp(xs) {
+          @include flex-layout.layout-bp(xs) {
             @include mat.typography-level($config, subtitle-1);
           }
         }
@@ -98,13 +98,13 @@
       @include mat.typography-level($config, body-1);
 
       .uxg-h5 {
-        @include layout-bp(xs) {
+        @include flex-layout.layout-bp(xs) {
           @include mat.typography-level($config, h6);
         }
       }
 
       .mat-checkbox-label {
-        @include layout-bp(xs) {
+        @include flex-layout.layout-bp(xs) {
           @include mat.typography-level($config, body-2);
         }
       }
@@ -113,7 +113,7 @@
     .uxg-global-search-results-counter {
       @include mat.typography-level($config, body-1);
 
-      @include layout-bp(xs) {
+      @include flex-layout.layout-bp(xs) {
         @include mat.typography-level($config, body-2);
       }
     }

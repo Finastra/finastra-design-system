@@ -9,11 +9,6 @@
       "implementation": "./linters/theme/theme-linter.js",
       "schema": "./linters/theme/schema.json",
       "description": "Lints UXG theme"
-    },
-    "components-builder": {
-      "implementation": "./builders/components/components-builder.js",
-      "schema": "./builders/components/schema.json",
-      "description": "Build UXG components"
     }
   }
 }

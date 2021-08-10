@@ -19,7 +19,7 @@
 
     <ng-container *ngIf="hasDetails">
       <div>
-        <ng-container *ngTemplateOutlet="uxgUserProfilePanelDetails || detailsTemplate"></ng-container>
+        <ng-container *ngTemplateOutlet="uxgUserProfilePanelDetails || detailsTemplate || null"></ng-container>
       </div>
     </ng-container>
   </div>
@@ -28,14 +28,14 @@
 <ng-container *ngIf="hasContent">
   <mat-divider></mat-divider>
   <div>
-    <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent || contentTemplate"></ng-container>
+    <ng-container *ngTemplateOutlet="uxgUserProfilePanelContent || contentTemplate || null"></ng-container>
   </div>
 </ng-container>
 
 <ng-container *ngIf="hasFooter">
   <mat-divider></mat-divider>
   <div [ngClass]="{ 'uxg-menu-footer': hasFooter }">
-    <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions || actionsTemplate"></ng-container>
+    <ng-container *ngTemplateOutlet="uxgUserProfilePanelActions || actionsTemplate || null"></ng-container>
   </div>
 </ng-container>
 
