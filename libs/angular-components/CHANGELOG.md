@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.1-alpha.0...v2.1.0) (2021-08-12)
+
+
+### Features
+
+* **account-card:** add selected state ([#380](https://github.com/finastra/finastra-design-system/issues/380)) ([9ba0e7c](https://github.com/finastra/finastra-design-system/commit/9ba0e7c0b8bd071c1a2818b90a5c8509d68f4c14))
+* **wizard:** add default id ([237b90c](https://github.com/finastra/finastra-design-system/commit/237b90c98e3435d97489cc79e8042feae8bbc06d))
+
 ### [2.0.2](https://github.com/finastra/finastra-design-system/compare/v2.0.1...v2.0.2) (2021-07-16)
 
 ### [2.0.1](https://github.com/finastra/finastra-design-system/compare/v2.0.0...v2.0.1) (2021-07-07)
