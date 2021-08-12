@@ -27,7 +27,10 @@ export class UxgWizardPageComponent {
   @Output('uxgWizardPageDone') doneButtonClicked: EventEmitter<UxgWizardPageComponent> = new EventEmitter();
 
   public get id() {
-    return `uxg-wizard-page-${this.pageCollection.getPageIndex(this)}`;
+    if (this.pageCollection.pagesCount) {
+      return `uxg-wizard-page-${this.pageCollection.getPageIndex(this)}`;
+    }
+    return 'uxg-wizard-page-0';
   }
 
   public get current(): boolean {
