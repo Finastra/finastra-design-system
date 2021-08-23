@@ -6,7 +6,6 @@ import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angu
   styleUrls: ['./account-card.component.scss']
 })
 export class AccountCardComponent implements OnInit, OnDestroy {
-  selected: boolean = false;
   @Input() name?: string;
   @Input() balance?: number;
   @Input() currency?: string;
@@ -14,16 +13,19 @@ export class AccountCardComponent implements OnInit, OnDestroy {
   @Input() icon = 'credit_card';
   @Input() iconAriaLabel = 'Credit Card';
   @Input() selectable?: boolean;
+  @Input() selected?: boolean;
   @Input() selectedWithCheckIcon?: boolean;
-  @Output() onClick = new EventEmitter<boolean>();
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.selected) {
+      this.selectable = true;
+    }
+  }
   ngOnDestroy() {}
 
-  public onCardClick(selected: boolean) {
+  public onCardClick() {
     if (this.selectable) {
-      this.selected = !selected;
-      this.onClick.emit(this.selected);
+      this.selected = !this.selected;
     }
   }
 }
