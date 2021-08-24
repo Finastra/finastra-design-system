@@ -7,12 +7,14 @@
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
 
-
   uxg-filter-group {
-    .uxg-side-badge .mat-badge-content {
-      color: fds.get-color-from-palette($primary, default);
-      background-color: fds.get-color-from-palette($primary, default, 0.15);
-      border-color: fds.get-color-from-palette($primary, default, 0.15);
+    .uxg-group-filter{
+      display: flex;
+      .mat-badge-content {
+        color: fds.get-color-from-palette($primary, default) !important;
+        background-color: fds.get-color-from-palette($primary, default, 0.15) !important;
+        border-color: fds.get-color-from-palette($primary, default) !important;
+      }
     }
 
     .uxg-expansion-filter {
