@@ -18,7 +18,6 @@
           <div
             *ngIf="filter.selectedData.length && !filter.selectedData[0].value"
             [matBadge]="filter.selectedData.length"
-            matBadgeColor="primary"
             matBadgeSize="small"
             class="uxg-group-filter uxg-side-badge"
           >
@@ -27,7 +26,6 @@
           <div
             *ngIf="!filter.selectedData.length"
             matBadge="All"
-            matBadgeColor="primary"
             matBadgeSize="small"
             class="uxg-group-filter uxg-side-badge"
           >
