@@ -43,3 +43,19 @@ finastra-design-system.iml
 Thumbs.db
 
 themes/angular-theme/prebuit-theme
+
+# build
+/_site/
+/libs/web-components/**/*.js
+/libs/web-components/**/*.js.map
+/libs/web-components/**/*.d.ts
+/libs/web-components/**/*.css
+/libs/web-components/**/*.css.map
+/libs/web-components/**/*.js
+/libs/web-components/**/*.js.map
+/libs/web-components/**/*.tgz
+/libs/web-components/**/*-css.ts
+/libs/web-components/**/package-lock.json
+**/*.tsbuildinfo*
+compile
+storybook-static
