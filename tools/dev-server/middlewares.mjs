@@ -5,7 +5,7 @@ export async function devIndex(ctx, next) {
   if (ctx.url === '/' || ctx.url === '/index.html' || ctx.url.match(/\/([^\/]*)\/demo\/(.*)\.html/)) {
     const pkgs = await scanPackages();
     if (ctx.url === '/' || ctx.url === '/index.html') {
-      const content = await ctx.render('tools/view/index', { pkgs, title: 'Finastra Design System' });
+      const content = await ctx.render('tools/dev-server/view/index', { pkgs, title: 'Finastra Design System' });
       ctx.body = content;
       await next();
     } else {
@@ -21,12 +21,12 @@ export async function devIndex(ctx, next) {
 export async function esjRender(context, next) {
   koaEjs(context.app, {
     root: '.',
-    layout: 'tools/view/layout',
+    layout: 'tools/dev-server/view/layout',
     viewExt: 'html',
     async: true,
     cache: false,
     debug: false,
-    writeResp: false,
+    writeResp: false
   });
   await next();
 }

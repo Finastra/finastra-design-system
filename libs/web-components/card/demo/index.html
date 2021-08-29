@@ -1,0 +1,144 @@
+<script type="module" src="node_modules/@finastra/card/dist/card.js"></script>
+<script type="module">
+  import '@material/mwc-button';
+  import '@material/mwc-icon-button';
+</script>
+<style>
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #cccccc;
+    padding: 16px;
+    row-gap: 16px;
+    column-gap: 16px;
+  }
+
+  .card-item {
+    width: 350px;
+  }
+
+  .solution-card-content {
+    padding: 16px;
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__title,
+  .card__subtitle,
+  .card__secondary {
+    font-family: Roboto, sans-serif;
+  }
+
+  .card__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color: rgba(0, 0, 0);
+  }
+
+  .card__subtitle {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: inherit;
+    text-decoration-line: inherit;
+    text-decoration-style: inherit;
+    text-decoration-color: inherit;
+  }
+
+  .card__secondary {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: inherit;
+    text-transform: inherit;
+    padding: 0 1rem 8px;
+  }
+
+  .card__image {
+    --fds-card-media-background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg');
+  }
+</style>
+<div class="card-container">
+  <fds-card
+    class="card-item"
+    mediaAspectRatio="16-9"
+    style="
+      --fds-card-media-background-image: url('https://p01p10401017001.blob.core.windows.net/apis-info/solutions/consumer-banking/cover.png');
+    "
+  >
+    <div slot="media">
+      <div class="solution-card-content">
+        <div>US Consumer Banking</div>
+        <div>Finastra</div>
+        <div>Services for accessing account holder data and addressing the needs of a financial institution’s customerg</div>
+      </div>
+    </div>
+  </fds-card>
+
+  <fds-card style="width: 300px; height: 100px" outlined> </fds-card>
+
+  <div style="height: 16px"></div>
+
+  <fds-card class="card-item">
+    <div slot="primary-action">
+      <div class="card__header">
+        <div class="card__header-text">
+          <div class="card__title">Our Changing Planet</div>
+          <div class="card__subtitle">by Kurt Wagner</div>
+        </div>
+      </div>
+      <div class="card__secondary mdc-typography mdc-typography--body2">
+        Visit ten places on our planet that are undergoing the biggest changes today.
+      </div>
+    </div>
+    <mwc-button slot="button-action">Read</mwc-button>
+    <mwc-button slot="button-action">Bookmark</mwc-button>
+    <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+  </fds-card>
+
+  <div style="height: 16px">fullBleed</div>
+
+  <fds-card fullBleed>
+    <div slot="primary-action">
+      <div class="card__header">
+        <div class="card__header-text">
+          <div class="card__title">Our Changing Planet</div>
+          <div class="card__subtitle">by Kurt Wagner</div>
+        </div>
+      </div>
+      <div class="card__secondary mdc-typography mdc-typography--body2">
+        Visit ten places on our planet that are undergoing the biggest changes today.
+      </div>
+    </div>
+    <mwc-button slot="button-action">All Business Headlines</mwc-button>
+  </fds-card>
+
+  <div style="height: 16px">Media</div>
+  <fds-card class="card__image" mediaAspectRatio="16-9">
+    <div slot="media"></div>
+  </fds-card>
+  <div style="height: 16px">Media</div>
+
+  <fds-card class="card__image" mediaAspectRatio="16-9">
+    <div slot="media"></div>
+    <mwc-button slot="button-action">Read</mwc-button>
+    <mwc-button slot="button-action">Bookmark</mwc-button>
+    <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+    <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+  </fds-card>
+</div>

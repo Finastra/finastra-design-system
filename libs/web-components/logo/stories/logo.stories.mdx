@@ -10,40 +10,40 @@ import '@finastra/logo';
     dense: {
       table: {
         category: 'attributes',
-        defaultValue: { summary: false },
+        defaultValue: { summary: false }
       },
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: 'Makes icon smaller',
+      description: 'Makes icon smaller'
     },
     '--fds-logo': {
       table: {
         category: 'css',
-        defaultValue: { summary: 'Logo Finastra' },
+        defaultValue: { summary: 'Logo Finastra' }
       },
       type: 'string',
       description: 'Logo with',
-      control: null,
+      control: null
     },
     '--fds-logo-width': {
       table: {
         category: 'css',
-        defaultValue: { summary: '122px' },
+        defaultValue: { summary: '122px' }
       },
       type: 'string',
       description: 'Logo with',
-      control: null,
+      control: null
     },
     '--fds-logo-height': {
       table: {
         category: 'css',
-        defaultValue: { summary: '60px' },
+        defaultValue: { summary: '60px' }
       },
       type: 'string',
       description: 'Logo height',
-      control: null,
-    },
+      control: null
+    }
   }}
 />
 
@@ -61,9 +61,9 @@ Logo component displays an image encoded on Base64 from `--fds-logo` css varible
     parameters={{
       docs: {
         source: {
-          code: '<fds-logo></fds-logo>',
-        },
-      },
+          code: '<fds-logo></fds-logo>'
+        }
+      }
     }}
   >
     {Template.bind({})}
@@ -92,9 +92,9 @@ npm install @finastra/logo
     parameters={{
       docs: {
         source: {
-          code: '<fds-logo dense></fds-logo>',
-        },
-      },
+          code: '<fds-logo dense></fds-logo>'
+        }
+      }
     }}
   >
     {Template.bind({})}

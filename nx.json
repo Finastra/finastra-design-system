@@ -118,6 +118,18 @@
     "video-thumbnail": {
       "tags": []
     },
+    "wc:card": {
+      "tags": ["web-components"]
+    },
+    "wc:divider": {
+      "tags": ["web-components"]
+    },
+    "wc:logo": {
+      "tags": ["web-components"]
+    },
+    "wc:search-input": {
+      "tags": ["web-components"]
+    },
     "wizard": {
       "tags": []
     }

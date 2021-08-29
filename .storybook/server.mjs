@@ -6,5 +6,5 @@ export default {
   port: 8181,
   open: '/',
   middleware: [],
-  plugins: [storybookPlugin({ type: 'web-components' }), ...baseConfig.plugins],
+  plugins: [storybookPlugin({ type: 'web-components' }), ...baseConfig.plugins]
 };

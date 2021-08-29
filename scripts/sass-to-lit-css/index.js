@@ -27,11 +27,11 @@ const options = [
     alias: 's',
     type: String,
     multiple: true,
-    defaultOption: true,
-  },
+    defaultOption: true
+  }
 ];
 
-const {source} = commandLineArgs(options);
+const { source } = commandLineArgs(options);
 
 if (!source) {
   console.error('Must provide a source file!');

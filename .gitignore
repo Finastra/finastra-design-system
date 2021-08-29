@@ -54,7 +54,8 @@ themes/angular-theme/prebuit-theme
 /libs/web-components/**/*.js
 /libs/web-components/**/*.js.map
 /libs/web-components/**/*.tgz
-/libs/web-components/**/*-css.ts
+/libs/web-components/**/*.css.ts
+/libs/web-components/**/dist
 /libs/web-components/**/package-lock.json
 **/*.tsbuildinfo*
 compile

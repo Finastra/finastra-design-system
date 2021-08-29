@@ -9,10 +9,10 @@
     "logo"
   ],
   "license": "MIT",
-  "main": "logo.js",
-  "module": "logo.js",
+  "main": "dist/logo.js",
+  "module": "dist/logo.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "lit-element": "^2.5.1",

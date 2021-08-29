@@ -35,12 +35,12 @@ async function sassToCss(sassFile) {
       }
       return nodeSassImport(url, ...otherArgs);
     },
-    outputStyle: 'compressed',
+    outputStyle: 'compressed'
   });
-    
+
   // Strip any Byte Order Marking from output CSS
   let cssStr = result.css.toString();
-  if (cssStr.charCodeAt(0) === 0xFEFF) {
+  if (cssStr.charCodeAt(0) === 0xfeff) {
     cssStr = cssStr.substr(1);
   }
   return cssStr;
