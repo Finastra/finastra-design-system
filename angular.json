@@ -1040,7 +1040,7 @@
         }
       }
     },
-    "wc:card": {
+    "wc-card": {
       "projectType": "library",
       "root": "libs/web-components/card",
       "sourceRoot": "libs/web-components/card",
@@ -1054,7 +1054,7 @@
         }
       }
     },
-    "wc:divider": {
+    "wc-divider": {
       "projectType": "library",
       "root": "libs/web-components/divider",
       "sourceRoot": "libs/web-components/divider",
@@ -1068,7 +1068,7 @@
         }
       }
     },
-    "wc:logo": {
+    "wc-logo": {
       "projectType": "library",
       "root": "libs/web-components/logo",
       "sourceRoot": "libs/web-components/logo",
@@ -1082,7 +1082,7 @@
         }
       }
     },
-    "wc:search-input": {
+    "wc-search-input": {
       "projectType": "library",
       "root": "libs/web-components/search-input",
       "sourceRoot": "libs/web-components/search-input",
