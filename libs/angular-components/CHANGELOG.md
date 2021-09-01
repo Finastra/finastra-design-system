@@ -2,33 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.2](https://github.com/finastra/finastra-design-system/compare/v2.1.1...v2.1.2) (2021-09-01)
+
+### Bug Fixes
+
+- **account-card:** correct theme path ([#399](https://github.com/finastra/finastra-design-system/issues/399)) ([69d36e5](https://github.com/finastra/finastra-design-system/commit/69d36e516723d2c9de1b5b878d5f7771f7071c96))
+
 ### [2.1.1](https://github.com/finastra/finastra-design-system/compare/v2.1.0...v2.1.1) (2021-08-27)
 
 ## [2.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.1-alpha.0...v2.1.0) (2021-08-12)
 
-
 ### Features
 
-* **account-card:** add selected state ([#380](https://github.com/finastra/finastra-design-system/issues/380)) ([9ba0e7c](https://github.com/finastra/finastra-design-system/commit/9ba0e7c0b8bd071c1a2818b90a5c8509d68f4c14))
-* **wizard:** add default id ([237b90c](https://github.com/finastra/finastra-design-system/commit/237b90c98e3435d97489cc79e8042feae8bbc06d))
+- **account-card:** add selected state ([#380](https://github.com/finastra/finastra-design-system/issues/380)) ([9ba0e7c](https://github.com/finastra/finastra-design-system/commit/9ba0e7c0b8bd071c1a2818b90a5c8509d68f4c14))
+- **wizard:** add default id ([237b90c](https://github.com/finastra/finastra-design-system/commit/237b90c98e3435d97489cc79e8042feae8bbc06d))
 
 ### [2.0.2](https://github.com/finastra/finastra-design-system/compare/v2.0.1...v2.0.2) (2021-07-16)
 
 ### [2.0.1](https://github.com/finastra/finastra-design-system/compare/v2.0.0...v2.0.1) (2021-07-07)
 
-
 ### Bug Fixes
 
-* **changelog:** make svg compatible for sass update ([c002b89](https://github.com/finastra/finastra-design-system/commit/c002b898da832db0cb43419b22670ab91d785f83))
+- **changelog:** make svg compatible for sass update ([c002b89](https://github.com/finastra/finastra-design-system/commit/c002b898da832db0cb43419b22670ab91d785f83))
 
 ## [2.0.0](https://github.com/finastra/finastra-design-system/compare/v1.5.0...v2.0.0) (2021-07-06)
 
-
 ### ⚠ BREAKING CHANGES
 
-* **deps:** use new dart-sass syntax
+- **deps:** use new dart-sass syntax
 
-* **deps:** update to angular 12.1 and dart-sass ([#378](https://github.com/finastra/finastra-design-system/issues/378)) ([f75a316](https://github.com/finastra/finastra-design-system/commit/f75a31693d8899f6297e90d4d029720e449c8835))
+- **deps:** update to angular 12.1 and dart-sass ([#378](https://github.com/finastra/finastra-design-system/issues/378)) ([f75a316](https://github.com/finastra/finastra-design-system/commit/f75a31693d8899f6297e90d4d029720e449c8835))
 
 ## [1.5.0](https://github.com/finastra/finastra-design-system/compare/v1.4.2...v1.5.0) (2021-07-06)
 
@@ -36,24 +39,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.4.1](https://github.com/finastra/finastra-design-system/compare/v1.4.0...v1.4.1) (2021-06-09)
 
-
 ### Bug Fixes
 
-* **components:** aria changes on global search & filter tags ([#364](https://github.com/finastra/finastra-design-system/issues/364)) ([053f309](https://github.com/finastra/finastra-design-system/commit/053f30923e629521222a67f9084c0d1710acf72f))
+- **components:** aria changes on global search & filter tags ([#364](https://github.com/finastra/finastra-design-system/issues/364)) ([053f309](https://github.com/finastra/finastra-design-system/commit/053f30923e629521222a67f9084c0d1710acf72f))
 
 ## [1.4.0](https://github.com/finastra/finastra-design-system/compare/v1.3.0...v1.4.0) (2021-06-03)
 
-
 ### Bug Fixes
 
-* **filter-tags:** Add focus and blur events ([#357](https://github.com/finastra/finastra-design-system/issues/357)) ([fe57f38](https://github.com/finastra/finastra-design-system/commit/fe57f38260b08485c1af88a775d8bbb5c93a4e86))
+- **filter-tags:** Add focus and blur events ([#357](https://github.com/finastra/finastra-design-system/issues/357)) ([fe57f38](https://github.com/finastra/finastra-design-system/commit/fe57f38260b08485c1af88a775d8bbb5c93a4e86))
 
 ## [1.3.0](https://github.com/finastra/finastra-design-system/compare/v1.2.0...v1.3.0) (2021-05-27)
 
-
 ### Features
 
-* **global-nav:** add optional shortName and fix long single word for appName ([#359](https://github.com/finastra/finastra-design-system/issues/359)) ([14dffe7](https://github.com/finastra/finastra-design-system/commit/14dffe7662a40c01cd2499b026dfc6e48680e928))
+- **global-nav:** add optional shortName and fix long single word for appName ([#359](https://github.com/finastra/finastra-design-system/issues/359)) ([14dffe7](https://github.com/finastra/finastra-design-system/commit/14dffe7662a40c01cd2499b026dfc6e48680e928))
 
 ## [1.2.0](https://github.com/finastra/finastra-design-system/compare/v1.1.0...v1.2.0) (2021-04-21)
 
