@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '~@angular/material/' as mat;
+@use '~@angular/material' as mat;
 @use '../core/theming/palette';
 
 @mixin uxg-badge-color($color-name, $color) {
