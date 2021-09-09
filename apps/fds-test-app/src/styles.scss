@@ -1,13 +1,14 @@
-@use "./../../../themes/fds-theme" ;
-@use "./../../../themes/fds-theme/typography" ;
-@use "./../../../themes/fds-theme/button";
-@use "./../../../themes/fds-theme/elevation";
+@use '@finastra/fds-theme';
+@use '@finastra/fds-theme/typography';
+@use '@finastra/fds-theme/button';
+@use '@finastra/fds-theme/elevation';
 
 @include fds-theme.core-styles;
 @include typography.core-styles;
 
 body {
     @include fds-theme.property(background, background);
+    @include fds-theme.property(margin, spacing-6);
 }
 
 .dark {
@@ -24,4 +25,21 @@ body {
     height: 50px;
     border-radius: 50%;
     @include elevation.elevation(5);
+}
+
+.typography {
+    @include fds-theme.property(color, on-surface);
+}
+
+.fds-theme--gradient {
+    @include fds-theme.property(background, gradient);
+}
+
+.fds-theme--success-bg {
+    @include fds-theme.property(background, success);
+    @include fds-theme.property(color, on-success);
+}
+
+.fds-theme--error-bg {
+    @include fds-theme.property(background, error);
 }

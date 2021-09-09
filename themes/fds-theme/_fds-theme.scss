@@ -1,21 +1,32 @@
+@use 'sass:map';
 @use '@material/theme/custom-properties';
-@use './all-themes' as theme;
+@use '@material/theme/theme-color' as mat;
+@use './mdc-theme' as mdc;
+@use './foundations';
 
-@mixin -fds-styles() {
-  @include theme.core-styles;
+@mixin core-styles() {
+  @include mdc.core-styles;
   :root {
-    --fds-theme-gradient: linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary));
-    --fds-theme-success: #26D07C;
-  }
-  .fds-theme--gradient {
-    @include theme.property(background, custom-properties.create(--fds-theme-gradient, linear-gradient(var(--mdc-theme-primary), var(--mdc-theme-secondary))));
-  }
-  .fds-theme--error-bg {
-    @include theme.property(background, custom-properties.create(--fds-theme-error-bg, var(--mdc-theme-error)));
-  }
-  .fds-theme--success-bg {
-    @include theme.property(background, custom-properties.create(--fds-theme-success-bg, var(--fds-theme-success)));
+    @each $property, $value in foundations.getProperties() {
+      --mdc-theme-#{$property}: var(--fds-theme-#{$property});
+    }
   }
 }
 
-@include -fds-styles;
+@mixin property($property, $value) {
+  @include mdc.property(
+    $property: $property, 
+    $value: custom-properties.create(--fds-theme-#{$value}, foundations.getProperty($value)),
+  );
+}
+
+@mixin dark-theme() {
+  #{if(&, '&', ':root')} {
+    @each $property, $value in foundations.getProperties('dark') {
+      $cust-prop: --fds-theme-#{$property};
+      @include custom-properties.declaration(
+        custom-properties.create($cust-prop, $value)
+      )
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use './foundations';
+
+@forward "@material/theme" with (
+  $primary: foundations.getProperty(primary),
+  $on-primary: foundations.getProperty(on-primary),
+  $secondary: foundations.getProperty(secondary),
+  $on-secondary: foundations.getProperty(on-secondary),
+  $background: foundations.getProperty(background),
+  $surface: foundations.getProperty(surface),
+  $on-surface: foundations.getProperty(on-surface),
+  $error: foundations.getProperty(error),
+);
