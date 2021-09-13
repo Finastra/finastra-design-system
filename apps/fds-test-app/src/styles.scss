@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '@finastra/fds-theme';
 @use '@finastra/fds-theme/typography';
 @use '@finastra/fds-theme/button';
@@ -7,8 +8,9 @@
 @include typography.core-styles;
 
 body {
-    @include fds-theme.property(background, background);
-    @include fds-theme.property(margin, spacing-6);
+    $primary: theme-color.$primary;
+    $button-back: rgba($primary, 0.5);
+    @include fds-theme.property(background, $button-back);
 }
 
 .dark {
@@ -31,15 +33,15 @@ body {
     @include fds-theme.property(color, on-surface);
 }
 
-.fds-theme--gradient {
-    @include fds-theme.property(background, gradient);
-}
+// .fds-theme--gradient {
+//     @include fds-theme.property(background, gradient);
+// }
 
-.fds-theme--success-bg {
-    @include fds-theme.property(background, success);
-    @include fds-theme.property(color, on-success);
-}
+// .fds-theme--success-bg {
+//     @include fds-theme.property(background, success);
+//     @include fds-theme.property(color, on-success);
+// }
 
-.fds-theme--error-bg {
-    @include fds-theme.property(background, error);
-}
+// .fds-theme--error-bg {
+//     @include fds-theme.property(background, error);
+// }

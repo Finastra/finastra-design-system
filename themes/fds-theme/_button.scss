@@ -1,25 +1,28 @@
 @use '@material/button/button-theme';
 @use '@material/button/styles';
 @use '@material/shape';
-@use './fds-theme';
+@use './theme-color';
+@use './mdc-theme';
 @use './typography';
 
 @mixin core-styles() {
+  $primary: theme-color.$primary;
+
   .mdc-button,
   mwc-button {
     --mdc-shape-small: 22px;
-    @include fds-theme.property(--mdc-theme-primary, primary);
+    @include mdc-theme.property(--mdc-theme-primary, rgba($primary, 0.3));
     &.mdc-button--dense {
       @include button-theme.density(-2);
     }
 
     &.fds-button--secondary {
-      @include fds-theme.property(--mdc-theme-primary, secondary);
+      @include mdc-theme.property(--mdc-theme-primary, secondary);
     }
   
     &.fds-button--gradient {
-      @include fds-theme.property(--mdc-theme-primary, gradient);
-      @include fds-theme.property(background, gradient);
+      @include mdc-theme.property(--mdc-theme-primary, gradient);
+      @include mdc-theme.property(background, gradient);
       border-radius: var(--mdc-shape-small);
     }
   }

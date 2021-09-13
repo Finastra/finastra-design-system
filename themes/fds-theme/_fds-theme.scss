@@ -1,29 +1,21 @@
-@use 'sass:map';
 @use '@material/theme/custom-properties';
-@use '@material/theme/theme-color' as mat;
 @use './mdc-theme' as mdc;
 @use './foundations';
 
 @mixin core-styles() {
   @include mdc.core-styles;
-  :root {
-    @each $property, $value in foundations.getProperties() {
-      --mdc-theme-#{$property}: var(--fds-theme-#{$property});
+  @each $style in ('gradient', 'success', 'error') {
+    .mdc-theme--#{$style}-bg {
+      @include mdc.property(background, $style, $important: true);
     }
   }
 }
 
-@mixin property($property, $value) {
-  @include mdc.property(
-    $property: $property, 
-    $value: custom-properties.create(--fds-theme-#{$value}, foundations.getProperty($value)),
-  );
-}
 
 @mixin dark-theme() {
   #{if(&, '&', ':root')} {
     @each $property, $value in foundations.getProperties('dark') {
-      $cust-prop: --fds-theme-#{$property};
+      $cust-prop: --mdc-theme-#{$property};
       @include custom-properties.declaration(
         custom-properties.create($cust-prop, $value)
       )

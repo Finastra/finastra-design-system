@@ -1,2 +1,2 @@
-@forward './mdc-theme' hide property, core-styles;
-@forward './fds-theme' show property, dark-theme, core-styles;
+@forward './mdc-theme' show property;
+@forward './fds-theme' show dark-theme, core-styles;
