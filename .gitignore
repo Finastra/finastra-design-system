@@ -60,3 +60,4 @@ themes/angular-theme/prebuit-theme
 **/*.tsbuildinfo*
 compile
 storybook-static
+**/coverage

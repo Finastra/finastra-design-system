@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [2.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.1-alpha.0...v2.1.0) (2021-08-12)
+### [2.1.3](https://github.com/finastra/finastra-design-system/compare/v2.1.2...v2.1.3) (2021-09-02)
 
+### [2.1.2](https://github.com/finastra/finastra-design-system/compare/v2.1.1...v2.1.2) (2021-09-01)
+
+### [2.1.1](https://github.com/finastra/finastra-design-system/compare/v2.1.0...v2.1.1) (2021-08-27)
+
+## [2.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.1-alpha.0...v2.1.0) (2021-08-12)
 
 ### Bug Fixes
 
-* **theme:** color opacity ([#397](https://github.com/finastra/finastra-design-system/issues/397)) ([de592b4](https://github.com/finastra/finastra-design-system/commit/de592b433beedd6c1077bea2d95e858652884513))
+- **theme:** color opacity ([#397](https://github.com/finastra/finastra-design-system/issues/397)) ([de592b4](https://github.com/finastra/finastra-design-system/commit/de592b433beedd6c1077bea2d95e858652884513))
 
 ### [2.0.2](https://github.com/finastra/finastra-design-system/compare/v2.0.1...v2.0.2) (2021-07-16)
 
@@ -15,26 +20,23 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [2.0.0](https://github.com/finastra/finastra-design-system/compare/v1.5.0...v2.0.0) (2021-07-06)
 
-
 ### ⚠ BREAKING CHANGES
 
-* **deps:** use new dart-sass syntax
+- **deps:** use new dart-sass syntax
 
-* **deps:** update to angular 12.1 and dart-sass ([#378](https://github.com/finastra/finastra-design-system/issues/378)) ([f75a316](https://github.com/finastra/finastra-design-system/commit/f75a31693d8899f6297e90d4d029720e449c8835))
+- **deps:** update to angular 12.1 and dart-sass ([#378](https://github.com/finastra/finastra-design-system/issues/378)) ([f75a316](https://github.com/finastra/finastra-design-system/commit/f75a31693d8899f6297e90d4d029720e449c8835))
 
 ## [1.5.0](https://github.com/finastra/finastra-design-system/compare/v1.4.2...v1.5.0) (2021-07-06)
 
-
 ### Features
 
-* **badge:** more colors and sizes ([#372](https://github.com/finastra/finastra-design-system/issues/372)) ([704be89](https://github.com/finastra/finastra-design-system/commit/704be89406832d66176be09465295b0b5e73662f))
+- **badge:** more colors and sizes ([#372](https://github.com/finastra/finastra-design-system/issues/372)) ([704be89](https://github.com/finastra/finastra-design-system/commit/704be89406832d66176be09465295b0b5e73662f))
 
 ### [1.4.2](https://github.com/finastra/finastra-design-system/compare/v1.4.1...v1.4.2) (2021-06-30)
 
-
 ### Bug Fixes
 
-* **theme:** remove useless semicolon from svg ([#379](https://github.com/finastra/finastra-design-system/issues/379)) ([f997f9c](https://github.com/finastra/finastra-design-system/commit/f997f9c52bb0e715db753fa2d66a5e208a6406b8))
+- **theme:** remove useless semicolon from svg ([#379](https://github.com/finastra/finastra-design-system/issues/379)) ([f997f9c](https://github.com/finastra/finastra-design-system/commit/f997f9c52bb0e715db753fa2d66a5e208a6406b8))
 
 ### [1.4.1](https://github.com/finastra/finastra-design-system/compare/v1.4.0...v1.4.1) (2021-06-09)
 
