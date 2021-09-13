@@ -1,6 +1,6 @@
 @use '@material/theme/custom-properties';
 @use './mdc-theme' as mdc;
-@use './foundations';
+@use './theme-color';
 
 @mixin core-styles() {
   @include mdc.core-styles;
@@ -14,7 +14,7 @@
 
 @mixin dark-theme() {
   #{if(&, '&', ':root')} {
-    @each $property, $value in foundations.getProperties('dark') {
+    @each $property, $value in theme-color.$properties {
       $cust-prop: --mdc-theme-#{$property};
       @include custom-properties.declaration(
         custom-properties.create($cust-prop, $value)

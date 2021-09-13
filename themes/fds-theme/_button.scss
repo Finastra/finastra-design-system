@@ -6,12 +6,10 @@
 @use './typography';
 
 @mixin core-styles() {
-  $primary: theme-color.$primary;
-
   .mdc-button,
   mwc-button {
     --mdc-shape-small: 22px;
-    @include mdc-theme.property(--mdc-theme-primary, rgba($primary, 0.3));
+    @include mdc-theme.property(--mdc-theme-primary, primary);
     &.mdc-button--dense {
       @include button-theme.density(-2);
     }

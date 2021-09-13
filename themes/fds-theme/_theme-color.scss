@@ -1,5 +1,3 @@
-@use '@material/theme/theme-color';
-
 $primary: #694ED6 !default;
 $secondary: #C137A2 !default;
 $background: #FAFAFA !default;
@@ -26,7 +24,7 @@ $properties: (
   on-surface: $on-surface,
   on-error: $on-error,
   on-success: $on-success,
-  text-primary-on-background: theme-color.ink-color-for-fill_(primary, $background),
+  text-primary-on-background: #FFFFFF,
   text-secondary-on-background: #C137A2,
   text-hint-on-background: #694ED6,
   text-disabled-on-background: #694ED6,

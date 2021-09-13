@@ -8,9 +8,7 @@
 @include typography.core-styles;
 
 body {
-    $primary: theme-color.$primary;
-    $button-back: rgba($primary, 0.5);
-    @include fds-theme.property(background, $button-back);
+    @include fds-theme.property(background, background);
 }
 
 .dark {

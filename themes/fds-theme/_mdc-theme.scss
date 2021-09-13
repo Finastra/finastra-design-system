@@ -1,6 +1,6 @@
 @use './theme-color';
-@forward "@material/theme/theme" show property, core-styles;
 
 @forward "@material/theme/theme-color" with (
   $property-values: theme-color.$properties
 );
+@forward "@material/theme/theme" show property, core-styles;
