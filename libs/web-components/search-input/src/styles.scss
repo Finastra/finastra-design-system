@@ -1,0 +1,20 @@
+@use "@material/mwc-textfield/mwc-textfield";
+
+.mdc-text-field--with-leading-icon {
+  padding-right: 4px;
+}
+
+.fds-search-input-clear-button {
+  align-self: center;
+  transition: opacity 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  --mdc-icon-button-size: 32px;
+  --mdc-icon-size: 18px;
+
+  &.fds-search-input-clear-button--show {
+    opacity: 1;
+  }
+
+  &.fds-search-input-clear-button--hide {
+    opacity: 0;
+  }
+}

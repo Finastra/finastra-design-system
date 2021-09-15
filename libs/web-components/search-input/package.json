@@ -1,0 +1,27 @@
+{
+  "name": "@finastra/search-input",
+  "version": "1.0.0",
+  "description": "Search Input Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "search input"
+  ],
+  "license": "MIT",
+  "displayName": "Search Input",
+  "icon": "search",
+  "main": "dist/search-input.js",
+  "module": "dist/search-input.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-icon-button": "^0.21.0",
+    "@material/mwc-textfield": "^0.21.0",
+    "@material/mwc-icon": "^0.21.0",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {}
+}

@@ -1,20 +1,15 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "allowJs": false,
-    "declaration": true,
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "outDir": "../dist/tools",
+    "outDir": "../dist/out-tsc/tools",
     "rootDir": ".",
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2015",
-    "types": ["node"]
+    "module": "commonjs",
+    "target": "es5",
+    "types": ["node"],
+    "importHelpers": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": false
   },
   "include": ["**/*.ts"]
 }

@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit-html';
+
+import '@finastra/logo';
+
+<Meta
+  title="Logo"
+  component={'fds-logo'}
+  argTypes={{
+    dense: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Makes icon smaller'
+    },
+    '--fds-logo': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: 'Logo Finastra' }
+      },
+      type: 'string',
+      description: 'Logo with',
+      control: null
+    },
+    '--fds-logo-width': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: '122px' }
+      },
+      type: 'string',
+      description: 'Logo with',
+      control: null
+    },
+    '--fds-logo-height': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: '60px' }
+      },
+      type: 'string',
+      description: 'Logo height',
+      control: null
+    }
+  }}
+/>
+
+export const Template = ({ dense = false }) => {
+  return html`<fds-logo  ?dense=${dense}></fsd-logo>`;
+};
+
+# Logo
+
+Logo component displays an image encoded on Base64 from `--fds-logo` css varibles.
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-logo></fds-logo>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/logo
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Dense
+
+<Canvas>
+  <Story
+    name="Dense"
+    args={{ dense: true }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-logo dense></fds-logo>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
