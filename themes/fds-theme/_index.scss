@@ -1,2 +1,4 @@
-@forward './mdc-theme' show property;
-@forward './fds-theme' show dark-theme, core-styles;
+@use './color/fds-color';
+@use './typography/fds-typography';
+@use './spacing/fds-spacing';
+@use './elevation/fds-elevation';

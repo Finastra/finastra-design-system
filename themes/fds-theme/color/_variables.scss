@@ -1,0 +1,47 @@
+@use 'sass:color';
+
+$_black: black;
+$_white: white;
+
+$primary: #694ED6 !default;
+$secondary: #C137A2 !default;
+$background: #FAFAFA !default;
+$surface: #FFFFFF !default;
+$success: #008744 !default;
+$error: #E40046 !default;
+$gradient: linear-gradient(#694ED6, #C137A2) !default;
+$on-primary: #FFFFFF !default;
+$on-secondary: #FFFFFF !default;
+$on-surface: #000000 !default;
+$on-error: #FFFFFF !default;
+$on-success: #FFFFFF !default;
+
+$properties: (
+  primary: $primary,
+  secondary: $secondary,
+  background: $background,
+  surface: $surface,
+  success: $success,
+  error: $error,
+  gradient: $gradient,
+  on-primary: $on-primary,
+  on-secondary: $on-secondary,
+  on-surface: $on-surface,
+  on-error: $on-error,
+  on-success: $on-success,
+  text-primary-on-background: color.change($_black, $alpha: 0.75),
+  text-secondary-on-background: color.change($_black, $alpha: 0.54),
+  text-hint-on-background: color.change($_black, $alpha: 0.29),
+  text-disabled-on-background: color.change($_black, $alpha: 0.29),
+  text-icon-on-background: color.change($_black, $alpha: 0.29),
+  text-primary-on-light: color.change($_black, $alpha: 0.75),
+  text-secondary-on-light: color.change($_black, $alpha: 0.54),
+  text-hint-on-light: color.change($_black, $alpha: 0.29),
+  text-disabled-on-light: color.change($_black, $alpha: 0.29),
+  text-icon-on-light: color.change($_black, $alpha: 0.29),
+  text-primary-on-dark: $_white,
+  text-secondary-on-dark: color.change($_white, $alpha: 0.7),
+  text-hint-on-dark: color.change($_white, $alpha: 0.5),
+  text-disabled-on-dark: color.change($_white, $alpha: 0.5),
+  text-icon-on-dark: color.change($_white, $alpha: 0.5)
+)

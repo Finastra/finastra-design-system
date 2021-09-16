@@ -1,0 +1,54 @@
+@use 'sass:map';
+@use '@material/theme/custom-properties';
+@use './variables';
+
+$sides: (top, bottom, left, right);
+
+@mixin core-styles() {
+  @each $key, $value in variables.$properties {
+    @each $side in $sides {
+      .m#{str-slice($side, 0, 1)}-#{$key} {
+        @include custom-properties.declaration(
+          margin-#{$side},
+          custom-properties.create($key, $value)
+        );
+      }
+      .p#{str-slice($side, 0, 1)}-#{$key} {
+        @include custom-properties.declaration(
+          padding-#{$side},
+          custom-properties.create($key, $value)
+        );
+      }
+    }
+
+    .m-#{$key} {
+      @include custom-properties.declaration(
+        margin,
+        custom-properties.create($key, $value)
+      );
+    }
+    .p-#{$key} {
+      @include custom-properties.declaration(
+        padding,
+        custom-properties.create($key, $value)
+      );
+    }
+  }
+}
+
+// ToDo: make sure $value is a number between 0 and 6
+@mixin margin($value) {
+  $prop: map.get(variables.$properties, spacing-#{$value});
+  @include custom-properties.declaration(
+    margin,
+    custom-properties.create(spacing-#{$value}, $prop)
+  );
+}
+
+@mixin padding($value) {
+  $prop: map.get(variables.$properties, spacing-#{$value});
+  @include custom-properties.declaration(
+    padding,
+    custom-properties.create(spacing-#{$value}, $prop)
+  );
+}

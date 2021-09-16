@@ -1,0 +1,12 @@
+@use './mdc-typography' as mdc;
+
+@mixin core-styles() {
+  @include mdc.core-styles;
+  :root {
+    @each $typo-style, $typo-style-props in mdc.$unused {
+      @each $typo-style-property, $typo-style-property-value in $typo-style-props {
+        --mdc-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
+      }
+    }
+  }
+}

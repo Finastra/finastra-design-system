@@ -1,0 +1,13 @@
+@use "@material/elevation" with (
+  $umbra-opacity: 0.16,
+  $penumbra-opacity: 0.11,
+  $ambient-opacity: 0.09
+);
+
+@mixin core-styles() {
+  @include elevation.core-styles();
+}
+
+@mixin z($elevation) {
+  @include elevation.elevation($elevation);
+}

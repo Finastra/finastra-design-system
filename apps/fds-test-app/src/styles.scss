@@ -1,18 +1,14 @@
-@use 'sass:color';
 @use '@finastra/fds-theme';
-@use '@finastra/fds-theme/typography';
-@use '@finastra/fds-theme/button';
-@use '@finastra/fds-theme/elevation';
 
-@include fds-theme.core-styles;
-@include typography.core-styles;
+@use '@finastra/fds-theme/color';
+@use '@finastra/fds-theme/elevation';
+@use '@finastra/fds-theme/typography';
+@use '@finastra/fds-theme/spacing';
+
 
 body {
-    @include fds-theme.property(background, background);
-}
-
-.dark {
-    @include fds-theme.dark-theme;
+    @include color.property(background, background);
+    @include color.property(color, text-primary-on-background);
 }
 
 .demo {
@@ -24,22 +20,5 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    @include elevation.elevation(5);
+    @include elevation.z(5);
 }
-
-.typography {
-    @include fds-theme.property(color, on-surface);
-}
-
-// .fds-theme--gradient {
-//     @include fds-theme.property(background, gradient);
-// }
-
-// .fds-theme--success-bg {
-//     @include fds-theme.property(background, success);
-//     @include fds-theme.property(color, on-success);
-// }
-
-// .fds-theme--error-bg {
-//     @include fds-theme.property(background, error);
-// }
