@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/card",
+  "displayName": "Card",
+  "version": "1.0.0",
+  "description": "Card Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "card"
+  ],
+  "license": "MIT",
+  "main": "dist/card.js",
+  "module": "dist/card.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/card": "11.0.0",
+    "@material/mwc-ripple": "0.21.0",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {},
+  "icon": "dashboard"
+}

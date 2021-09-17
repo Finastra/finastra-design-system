@@ -1,0 +1,39 @@
+$width: 1px;
+$inset-margin: 80px;
+$foreground: rgba(0, 0, 0, 0.12);
+
+:host {
+  display: block;
+  margin: 0;
+  border-top-width: $width;
+  border-top-style: solid;
+  border-top-color: var(--fds-divider-color, $foreground);
+}
+
+:host([inset='left']) {
+  margin-left: var(--fds-divider-inset-margin, $inset-margin);
+  [dir='rtl'] & {
+    margin-left: auto;
+    margin-right: var(--fds-divider-inset-margin, $inset-margin);
+  }
+}
+
+:host([inset='right']) {
+  margin-right: var(--fds-divider-inset-margin, $inset-margin);
+  [dir='rtl'] & {
+    margin-right: auto;
+    margin-left: var(--fds-divider-inset-margin, $inset-margin);
+  }
+}
+
+:host([inset='both']) {
+  margin-right: calc(var(--fds-divider-inset-margin, #{$inset-margin}) / 2);
+  margin-left: calc(var(--fds-divider-inset-margin, #{$inset-margin}) / 2);
+}
+
+:host([vertical]) {
+  border-top: 0;
+  border-right-width: $width;
+  border-right-style: solid;
+  border-right-color: var(--fds-divider-color, $foreground);
+}

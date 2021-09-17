@@ -1,0 +1,79 @@
+import { Meta, Story, Canvas, ArgsTable } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
+
+import { html } from 'lit-html';
+
+import '@finastra/search-input';
+
+<Meta
+  title="Search Input"
+  component={'fds-search-input'}
+  argTypes={{
+    icon: {
+      table: {
+        category: 'properties',
+        defaultValue: { summary: 'search' }
+      },
+      control: 'text',
+      defaultValue: 'search',
+      type: 'string',
+      description: 'search icon'
+    }
+  }}
+/>
+
+export const Template = ({ icon }) => {
+  return html`<fds-search-input .icon=${ifDefined(icon)}></fds-search-input>`;
+};
+
+# Search Input
+
+Search Input Component is a Text Input field with clear button and search icon.
+
+Search Input extends `mwc-textfield` component, so it inherits all capacity of [mwc-textfield](https://github.com/material-components/material-components-web-components/tree/master/packages/textfield)
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-search-input></fds-search-input>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/search-input
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Custom icon
+
+<Canvas>
+  <Story
+    name="Custom Icon"
+    args={{ icon: 'location_searching' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-search-input icon="location_searching"></fds-search-input>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

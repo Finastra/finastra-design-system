@@ -94,10 +94,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/core/src/**/*.ts",
-              "libs/angular-components/core/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/core/src/**/*.ts", "libs/angular-components/core/src/**/*.html"]
           }
         },
         "test": {
@@ -156,10 +153,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/avatar/src/**/*.ts",
-              "libs/angular-components/avatar/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/avatar/src/**/*.ts", "libs/angular-components/avatar/src/**/*.html"]
           }
         },
         "test": {
@@ -186,10 +180,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/banner/src/**/*.ts",
-              "libs/angular-components/banner/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/banner/src/**/*.ts", "libs/angular-components/banner/src/**/*.html"]
           }
         },
         "test": {
@@ -215,10 +206,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/breadcrumb/src/**/*.ts",
-              "libs/angular-components/breadcrumb/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/breadcrumb/src/**/*.ts", "libs/angular-components/breadcrumb/src/**/*.html"]
           }
         }
       },
@@ -237,10 +225,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/changelog/src/**/*.ts",
-              "libs/angular-components/changelog/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/changelog/src/**/*.ts", "libs/angular-components/changelog/src/**/*.html"]
           }
         }
       },
@@ -259,10 +244,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/chart/src/**/*.ts",
-              "libs/angular-components/chart/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/chart/src/**/*.ts", "libs/angular-components/chart/src/**/*.html"]
           }
         },
         "test": {
@@ -288,10 +270,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/entity-menu/src/**/*.ts",
-              "libs/angular-components/entity-menu/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/entity-menu/src/**/*.ts", "libs/angular-components/entity-menu/src/**/*.html"]
           }
         },
         "test": {
@@ -390,11 +369,7 @@
           "options": {
             "inputPath": "themes/fds-theme/",
             "outputPath": "dist/themes/fds-theme",
-            "assets": [
-              "themes/fds-theme/fds-all-themes/*.scss",
-              "themes/fds-theme/fds-typography/*.scss",
-              "themes/fds-theme/*.scss"
-            ],
+            "assets": ["themes/fds-theme/fds-all-themes/*.scss", "themes/fds-theme/fds-typography/*.scss", "themes/fds-theme/*.scss"],
             "sourceMap": true,
             "outputStyle": "compressed"
           },
@@ -542,10 +517,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/global-nav/src/**/*.ts",
-              "libs/angular-components/global-nav/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/global-nav/src/**/*.ts", "libs/angular-components/global-nav/src/**/*.html"]
           }
         },
         "test": {
@@ -571,10 +543,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/global-search/src/**/*.ts",
-              "libs/angular-components/global-search/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/global-search/src/**/*.ts", "libs/angular-components/global-search/src/**/*.html"]
           }
         },
         "test": {
@@ -629,10 +598,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/popover/src/**/*.ts",
-              "libs/angular-components/popover/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/popover/src/**/*.ts", "libs/angular-components/popover/src/**/*.html"]
           }
         },
         "test": {
@@ -658,10 +624,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/repeater/src/**/*.ts",
-              "libs/angular-components/repeater/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/repeater/src/**/*.ts", "libs/angular-components/repeater/src/**/*.html"]
           }
         },
         "test": {
@@ -687,10 +650,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/scroll-to-top/src/**/*.ts",
-              "libs/angular-components/scroll-to-top/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/scroll-to-top/src/**/*.ts", "libs/angular-components/scroll-to-top/src/**/*.html"]
           }
         },
         "test": {
@@ -716,10 +676,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/search-input/src/**/*.ts",
-              "libs/angular-components/search-input/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/search-input/src/**/*.ts", "libs/angular-components/search-input/src/**/*.html"]
           }
         }
       },
@@ -738,10 +695,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/skeleton-text/src/**/*.ts",
-              "libs/angular-components/skeleton-text/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/skeleton-text/src/**/*.ts", "libs/angular-components/skeleton-text/src/**/*.html"]
           }
         },
         "test": {
@@ -767,10 +721,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/status-steps/src/**/*.ts",
-              "libs/angular-components/status-steps/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/status-steps/src/**/*.ts", "libs/angular-components/status-steps/src/**/*.html"]
           }
         },
         "test": {
@@ -792,10 +743,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/table/src/**/*.ts",
-              "libs/angular-components/table/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/table/src/**/*.ts", "libs/angular-components/table/src/**/*.html"]
           }
         },
         "test": {
@@ -991,10 +939,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/toaster/src/**/*.ts",
-              "libs/angular-components/toaster/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/toaster/src/**/*.ts", "libs/angular-components/toaster/src/**/*.html"]
           }
         },
         "test": {
@@ -1049,10 +994,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/vector-map/src/**/*.ts",
-              "libs/angular-components/vector-map/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/vector-map/src/**/*.ts", "libs/angular-components/vector-map/src/**/*.html"]
           }
         },
         "test": {
@@ -1098,6 +1040,62 @@
         }
       }
     },
+    "wc-card": {
+      "projectType": "library",
+      "root": "libs/web-components/card",
+      "sourceRoot": "libs/web-components/card",
+      "prefix": "fds",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
+          }
+        }
+      }
+    },
+    "wc-divider": {
+      "projectType": "library",
+      "root": "libs/web-components/divider",
+      "sourceRoot": "libs/web-components/divider",
+      "prefix": "fds",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/divider/src/**/*.ts"]
+          }
+        }
+      }
+    },
+    "wc-logo": {
+      "projectType": "library",
+      "root": "libs/web-components/logo",
+      "sourceRoot": "libs/web-components/logo",
+      "prefix": "fds",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/logo/src/**/*.ts"]
+          }
+        }
+      }
+    },
+    "wc-search-input": {
+      "projectType": "library",
+      "root": "libs/web-components/search-input",
+      "sourceRoot": "libs/web-components/search-input",
+      "prefix": "fds",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/search-input/src/**/*.ts"]
+          }
+        }
+      }
+    },
     "wizard": {
       "projectType": "library",
       "root": "libs/angular-components/wizard",
@@ -1107,10 +1105,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/wizard/src/**/*.ts",
-              "libs/angular-components/wizard/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/wizard/src/**/*.ts", "libs/angular-components/wizard/src/**/*.html"]
           }
         },
         "test": {

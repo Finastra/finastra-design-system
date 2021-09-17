@@ -1,14 +1,4 @@
-import {
-  Rule,
-  SchematicContext,
-  Tree,
-  apply,
-  url,
-  applyTemplates,
-  move,
-  mergeWith,
-  chain
-} from '@angular-devkit/schematics';
+import { Rule, SchematicContext, Tree, apply, url, applyTemplates, move, mergeWith, chain } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 
 import gitParse from 'parse-git-config';
@@ -23,8 +13,8 @@ import { updateJsonInTree } from '@nrwl/workspace';
 
 export default function (schema: Schema): Rule {
   return async (host: Tree, context: SchematicContext) => {
-    const globalGitConfig = gitParse.sync({ path: gitPath({ type: 'global' }), cwd: '/' }) || {};
-    const localGitConfig = gitParse.sync({ path: gitPath({ type: 'local' }), cwd: '/' }) || {};
+    const globalGitConfig = gitParse.sync({ path: gitPath('global'), cwd: '/' }) || {};
+    const localGitConfig = gitParse.sync({ path: gitPath(), cwd: '/' }) || {};
 
     const user = {
       name: (localGitConfig.user && localGitConfig.user.name) || globalGitConfig.user.name,
