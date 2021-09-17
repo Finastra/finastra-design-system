@@ -8,6 +8,10 @@
   @include elevation.core-styles();
 }
 
-@mixin z($elevation) {
-  @include elevation.elevation($elevation);
+///
+/// Applies CSS box-shadow to an element to apply requested z-index elevation.
+/// @param {Number} $z-value - The elevation between in 0 and 24.
+///
+@mixin z($z-value) {
+  @include elevation.elevation($z-value);
 }

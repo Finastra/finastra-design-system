@@ -4,6 +4,7 @@
 
 @mixin core-styles() {
   @include mdc.core-styles;
+  
   @each $style in ('gradient', 'success', 'error') {
     .mdc-theme--#{$style}-bg {
       @include mdc.property(background, $style, $important: true);
