@@ -11,7 +11,7 @@ body {
 }
 
 .demo {
-    margin: 10px;
+    @include spacing.margin(3);
 }
 
 .swatch {
@@ -22,4 +22,8 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.my-headline1 {
+    @include typography.style(headline1);
 }

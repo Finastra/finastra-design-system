@@ -10,3 +10,16 @@
     }
   }
 }
+
+///
+/// Apply CSS so that element have requested type scale
+///
+/// @example
+///   @include typography.style(body3);
+///   @include typography.style(headline1);
+///
+/// @param {String} $style - The style name requested
+///
+@mixin style($style) {
+  @include mdc.typography($style);
+} 
