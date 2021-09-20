@@ -33,7 +33,7 @@
 
           &::after,
           &::before {
-            border-color: $border-color;
+            border-color: palette.get-color-from-palette($primary, default, 0.1);
           }
 
           &::before {
@@ -45,10 +45,10 @@
           }
         }
       }
-    }
 
-    .mat-tab-label::before {
-      background: palette.get-color-from-palette($foreground, divider);
+      &::before {
+        background: palette.get-color-from-palette($foreground, divider);
+      }
     }
   }
 }
