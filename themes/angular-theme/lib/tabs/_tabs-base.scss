@@ -1,0 +1,71 @@
+@use "../core/style/spacing"as *;
+
+.uxg-tabs {
+  $tab-radius: 6px;
+
+  .mat-ink-bar {
+    visibility: hidden !important;
+  }
+
+  .mat-tab-body {
+    padding: $uxg-spacing-3;
+  }
+
+  .mat-tab-label {
+    &:not(.mat-tab-label-active) {
+      border-bottom: 1px solid;
+    }
+
+    &.mat-tab-label-active {
+      padding: 0;
+      opacity: 1;
+      align-items: flex-end;
+
+      .mat-tab-label-content::after {
+        right: 0;
+        border-left: 1px solid;
+        border-bottom-left-radius: $tab-radius;
+      }
+
+      .mat-tab-label-content::before {
+        left: 0;
+        border-right: 1px solid;
+        border-bottom-right-radius: $tab-radius;
+      }
+
+      .mat-tab-label-content {
+        width: 100%;
+        margin: 0 $tab-radius;
+        height: 97%;
+        border: 1px solid;
+        border-bottom: 0;
+        border-top-left-radius: $tab-radius;
+        border-top-right-radius: $tab-radius;
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: $tab-radius;
+          height: $tab-radius;
+          background: transparent;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+  }
+
+  .mat-tab-label:not(:first-child, .mat-tab-label-active, .mat-tab-label-active + .mat-tab-label) {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      left: 0;
+    }
+  }
+}
