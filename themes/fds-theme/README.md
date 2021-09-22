@@ -1,8 +1,8 @@
-# FINASTRA Material Theme
+# FDS Theme
 
-The FINASTRA Material Theme is a CSS + JS implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, icons, logo) and UI elements (buttons, checkbox, input...).
+The FINASTRA Material Theme is a SCSS implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, spacing, elevation).
 
-## How to use it? 🤔
+## Quick start 🤔
 
 You can get started in 2 simple steps:
 
@@ -12,15 +12,19 @@ Install the dependency
 npm install @finastra/fds-theme
 ```
 
-Import the theme in your main stylesheet
+Use the theme in your app's main stylesheet to get the core styles initialized, including helper classes and custom properties for color, spacing, elevation and typography.
 
 ```SCSS
-@import '~@finastra/fds-theme';
-
-@include fds-theme.core-styles;
+@use '@finastra/fds-theme';
 ```
 
-You'll find a more exhaustive documentation on our developer [getting started](https://design.fusionfabric.cloud/get-started/developers) page.
+## Usage
+
+- [Color](./color/README.md)
+- [Elevation](./elevation/README.md)
+- [Spacing](./spacing/README.md)
+- [Typography](./typography/README.md)
+
 
 ## Want to help? 🤗❤️
 
