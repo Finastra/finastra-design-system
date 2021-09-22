@@ -1,6 +1,6 @@
 name: Release WC Canary
 on:
- pull_request:
+  pull_request:
     branches:
       - master
     paths:
@@ -9,7 +9,7 @@ on:
 
 permissions:
   contents: write # for checkout and commit
-  pull-requests: write  # for create pr
+  pull-requests: write # for create pr
 
 jobs:
   createReleasePR:
