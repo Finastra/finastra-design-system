@@ -25,7 +25,6 @@ Use the theme in your app's main stylesheet to get the core styles initialized, 
 - [Spacing](./spacing/README.md)
 - [Typography](./typography/README.md)
 
-
 ## Want to help? 🤗❤️
 
 Want to file a bug, contribute some code, or improve documentation?
