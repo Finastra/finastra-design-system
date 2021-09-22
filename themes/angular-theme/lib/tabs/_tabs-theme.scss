@@ -6,7 +6,7 @@
   $primary: map.get($theme, primary);
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
-  $border-color: palette.get-color-from-palette($primary, default, 0.3);
+  $border-color: palette.get-color-from-palette($primary, 400);
   $tab-bg: palette.get-color-from-palette($background, card);
 
   .uxg-tabs {
@@ -33,7 +33,7 @@
 
           &::after,
           &::before {
-            border-color: palette.get-color-from-palette($primary, default, 0.1);
+            border-color: $border-color;
           }
 
           &::before {

@@ -12,13 +12,22 @@
   }
 
   .mat-tab-label {
+    opacity: 1;
+
     &:not(.mat-tab-label-active) {
       border-bottom: 1px solid;
+      .mat-tab-label-content {
+        opacity: 0.6;
+      }
+      &:focus {
+        .mat-tab-label-content {
+          opacity: 1;
+        }
+      }
     }
 
     &.mat-tab-label-active {
       padding: 0;
-      opacity: 1;
       align-items: flex-end;
 
       .mat-tab-label-content::after {
