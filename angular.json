@@ -39,9 +39,7 @@
           "options": {
             "jestConfig": "libs/angular-components/cards/account-card/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/cards/account-card"
-          ]
+          "outputs": ["coverage/libs/angular-components/cards/account-card"]
         }
       },
       "schematics": {
@@ -76,14 +74,8 @@
           "options": {
             "linter": "eslint",
             "config": "libs/angular-components/.eslintrc.json",
-            "tsConfig": [
-              "libs/angular-components/tsconfig.lib.json",
-              "libs/angular-components/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/angular-components/**/*"
-            ]
+            "tsConfig": ["libs/angular-components/tsconfig.lib.json", "libs/angular-components/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/angular-components/**/*"]
           }
         }
       },
@@ -102,10 +94,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/core/src/**/*.ts",
-              "libs/angular-components/core/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/core/src/**/*.ts", "libs/angular-components/core/src/**/*.html"]
           }
         },
         "test": {
@@ -113,9 +102,7 @@
           "options": {
             "jestConfig": "libs/angular-components/core/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/core"
-          ]
+          "outputs": ["coverage/libs/angular-components/core"]
         }
       },
       "schematics": {
@@ -135,11 +122,7 @@
           "options": {
             "inputPath": "themes/angular-theme/lib/",
             "outputPath": "themes/angular-theme/prebuit-theme",
-            "assets": [
-              "themes/angular-theme/lib",
-              "themes/angular-theme/assets",
-              "themes/angular-theme/*.scss"
-            ],
+            "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
             "sourceMap": true
           },
           "configurations": {
@@ -170,10 +153,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/avatar/src/**/*.ts",
-              "libs/angular-components/avatar/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/avatar/src/**/*.ts", "libs/angular-components/avatar/src/**/*.html"]
           }
         },
         "test": {
@@ -182,9 +162,7 @@
             "jestConfig": "libs/angular-components/avatar/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/angular-components/avatar"
-          ]
+          "outputs": ["coverage/libs/angular-components/avatar"]
         }
       },
       "schematics": {
@@ -202,10 +180,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/banner/src/**/*.ts",
-              "libs/angular-components/banner/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/banner/src/**/*.ts", "libs/angular-components/banner/src/**/*.html"]
           }
         },
         "test": {
@@ -213,9 +188,7 @@
           "options": {
             "jestConfig": "libs/angular-components/banner/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/banner"
-          ]
+          "outputs": ["coverage/libs/angular-components/banner"]
         }
       },
       "schematics": {
@@ -233,10 +206,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/breadcrumb/src/**/*.ts",
-              "libs/angular-components/breadcrumb/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/breadcrumb/src/**/*.ts", "libs/angular-components/breadcrumb/src/**/*.html"]
           }
         }
       },
@@ -255,10 +225,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/changelog/src/**/*.ts",
-              "libs/angular-components/changelog/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/changelog/src/**/*.ts", "libs/angular-components/changelog/src/**/*.html"]
           }
         }
       },
@@ -277,10 +244,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/chart/src/**/*.ts",
-              "libs/angular-components/chart/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/chart/src/**/*.ts", "libs/angular-components/chart/src/**/*.html"]
           }
         },
         "test": {
@@ -288,9 +252,7 @@
           "options": {
             "jestConfig": "libs/angular-components/chart/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/chart"
-          ]
+          "outputs": ["coverage/libs/angular-components/chart"]
         }
       },
       "schematics": {
@@ -308,10 +270,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/entity-menu/src/**/*.ts",
-              "libs/angular-components/entity-menu/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/entity-menu/src/**/*.ts", "libs/angular-components/entity-menu/src/**/*.html"]
           }
         },
         "test": {
@@ -319,9 +278,7 @@
           "options": {
             "jestConfig": "libs/angular-components/entity-menu/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/entity-menu"
-          ]
+          "outputs": ["coverage/libs/angular-components/entity-menu"]
         }
       },
       "schematics": {
@@ -350,9 +307,7 @@
           "options": {
             "jestConfig": "libs/angular-components/expandable-table/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/expandable-table"
-          ]
+          "outputs": ["coverage/libs/angular-components/expandable-table"]
         }
       },
       "schematics": {
@@ -374,9 +329,7 @@
             "index": "apps/fds-test-app/src/index.html",
             "main": "apps/fds-test-app/src/index.ts",
             "tsConfig": "apps/fds-test-app/tsconfig.app.json",
-            "styles": [
-              "apps/fds-test-app/src/styles.scss"
-            ]
+            "styles": ["apps/fds-test-app/src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -399,13 +352,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/fds-test-app/tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/fds-test-app/**"
-            ]
+            "tsConfig": ["apps/fds-test-app/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/fds-test-app/**"]
           }
         }
       }
@@ -421,11 +369,7 @@
           "options": {
             "inputPath": "themes/fds-theme/",
             "outputPath": "dist/themes/fds-theme",
-            "assets": [
-              "themes/fds-theme/fds-all-themes/*.scss",
-              "themes/fds-theme/fds-typography/*.scss",
-              "themes/fds-theme/*.scss"
-            ],
+            "assets": ["themes/fds-theme/fds-all-themes/*.scss", "themes/fds-theme/fds-typography/*.scss", "themes/fds-theme/*.scss"],
             "sourceMap": true,
             "outputStyle": "compressed"
           },
@@ -468,9 +412,7 @@
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/filter/filter-group"
-          ]
+          "outputs": ["coverage/libs/angular-components/filter/filter-group"]
         }
       },
       "schematics": {
@@ -499,9 +441,7 @@
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/filter/filter-tags"
-          ]
+          "outputs": ["coverage/libs/angular-components/filter/filter-tags"]
         }
       },
       "schematics": {
@@ -530,9 +470,7 @@
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/filter/filter-toggle"
-          ]
+          "outputs": ["coverage/libs/angular-components/filter/filter-toggle"]
         }
       },
       "schematics": {
@@ -561,9 +499,7 @@
           "options": {
             "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/filter/filter-tree"
-          ]
+          "outputs": ["coverage/libs/angular-components/filter/filter-tree"]
         }
       },
       "schematics": {
@@ -581,10 +517,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/global-nav/src/**/*.ts",
-              "libs/angular-components/global-nav/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/global-nav/src/**/*.ts", "libs/angular-components/global-nav/src/**/*.html"]
           }
         },
         "test": {
@@ -592,9 +525,7 @@
           "options": {
             "jestConfig": "libs/angular-components/global-nav/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/global-nav"
-          ]
+          "outputs": ["coverage/libs/angular-components/global-nav"]
         }
       },
       "schematics": {
@@ -612,10 +543,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/global-search/src/**/*.ts",
-              "libs/angular-components/global-search/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/global-search/src/**/*.ts", "libs/angular-components/global-search/src/**/*.html"]
           }
         },
         "test": {
@@ -623,9 +551,7 @@
           "options": {
             "jestConfig": "libs/angular-components/global-search/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/global-search"
-          ]
+          "outputs": ["coverage/libs/angular-components/global-search"]
         }
       },
       "schematics": {
@@ -654,9 +580,7 @@
           "options": {
             "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/filter/multiselect-tags"
-          ]
+          "outputs": ["coverage/libs/angular-components/filter/multiselect-tags"]
         }
       },
       "schematics": {
@@ -674,10 +598,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/popover/src/**/*.ts",
-              "libs/angular-components/popover/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/popover/src/**/*.ts", "libs/angular-components/popover/src/**/*.html"]
           }
         },
         "test": {
@@ -685,9 +606,7 @@
           "options": {
             "jestConfig": "libs/angular-components/popover/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/popover"
-          ]
+          "outputs": ["coverage/libs/angular-components/popover"]
         }
       },
       "schematics": {
@@ -705,10 +624,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/repeater/src/**/*.ts",
-              "libs/angular-components/repeater/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/repeater/src/**/*.ts", "libs/angular-components/repeater/src/**/*.html"]
           }
         },
         "test": {
@@ -716,9 +632,7 @@
           "options": {
             "jestConfig": "libs/angular-components/repeater/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/repeater"
-          ]
+          "outputs": ["coverage/libs/angular-components/repeater"]
         }
       },
       "schematics": {
@@ -736,10 +650,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/scroll-to-top/src/**/*.ts",
-              "libs/angular-components/scroll-to-top/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/scroll-to-top/src/**/*.ts", "libs/angular-components/scroll-to-top/src/**/*.html"]
           }
         },
         "test": {
@@ -747,9 +658,7 @@
           "options": {
             "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/scroll-to-top"
-          ]
+          "outputs": ["coverage/libs/angular-components/scroll-to-top"]
         }
       },
       "schematics": {
@@ -767,10 +676,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/search-input/src/**/*.ts",
-              "libs/angular-components/search-input/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/search-input/src/**/*.ts", "libs/angular-components/search-input/src/**/*.html"]
           }
         }
       },
@@ -789,10 +695,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/skeleton-text/src/**/*.ts",
-              "libs/angular-components/skeleton-text/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/skeleton-text/src/**/*.ts", "libs/angular-components/skeleton-text/src/**/*.html"]
           }
         },
         "test": {
@@ -800,9 +703,7 @@
           "options": {
             "jestConfig": "libs/angular-components/skeleton-text/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/skeleton-text"
-          ]
+          "outputs": ["coverage/libs/angular-components/skeleton-text"]
         }
       },
       "schematics": {
@@ -820,17 +721,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/status-steps/src/**/*.ts",
-              "libs/angular-components/status-steps/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/status-steps/src/**/*.ts", "libs/angular-components/status-steps/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/angular-components/status-steps"
-          ],
+          "outputs": ["coverage/libs/angular-components/status-steps"],
           "options": {
             "jestConfig": "libs/angular-components/status-steps/jest.config.js",
             "passWithNoTests": true
@@ -847,10 +743,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/table/src/**/*.ts",
-              "libs/angular-components/table/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/table/src/**/*.ts", "libs/angular-components/table/src/**/*.html"]
           }
         },
         "test": {
@@ -858,9 +751,7 @@
           "options": {
             "jestConfig": "libs/angular-components/table/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/table"
-          ]
+          "outputs": ["coverage/libs/angular-components/table"]
         }
       },
       "schematics": {
@@ -884,14 +775,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "./themes/",
-                "./libs/angular-components"
-              ]
+              "includePaths": ["./themes/", "./libs/angular-components"]
             },
-            "allowedCommonJsDependencies": [
-              "elasticlunr"
-            ],
+            "allowedCommonJsDependencies": ["elasticlunr"],
             "outputPath": "dist/apps/angular-test-app",
             "index": "apps/angular-test-app/src/index.html",
             "main": "apps/angular-test-app/src/main.ts",
@@ -937,10 +823,7 @@
                 "output": "/fds-theme/"
               }
             ],
-            "styles": [
-              "apps/angular-test-app/src/styles.scss",
-              "apps/angular-test-app/src/assets/fonts.css"
-            ],
+            "styles": ["apps/angular-test-app/src/styles.scss", "apps/angular-test-app/src/assets/fonts.css"],
             "scripts": [
               {
                 "input": "node_modules/plotly.js/dist/plotly.js",
@@ -987,9 +870,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -1011,10 +892,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/angular-test-app/src/**/*.ts",
-              "apps/angular-test-app/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/angular-test-app/src/**/*.ts", "apps/angular-test-app/src/**/*.html"]
           }
         },
         "test": {
@@ -1022,9 +900,7 @@
           "options": {
             "jestConfig": "apps/angular-test-app/jest.config.js"
           },
-          "outputs": [
-            "coverage/apps/angular-test-app"
-          ]
+          "outputs": ["coverage/apps/angular-test-app"]
         }
       }
     },
@@ -1049,9 +925,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/angular-test-app-e2e/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/angular-test-app-e2e/src/**/*.ts"]
           }
         }
       }
@@ -1065,10 +939,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/toaster/src/**/*.ts",
-              "libs/angular-components/toaster/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/toaster/src/**/*.ts", "libs/angular-components/toaster/src/**/*.html"]
           }
         },
         "test": {
@@ -1076,9 +947,7 @@
           "options": {
             "jestConfig": "libs/angular-components/toaster/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/toaster"
-          ]
+          "outputs": ["coverage/libs/angular-components/toaster"]
         }
       },
       "schematics": {
@@ -1107,9 +976,7 @@
           "options": {
             "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/user-profile-menu"
-          ]
+          "outputs": ["coverage/libs/angular-components/user-profile-menu"]
         }
       },
       "schematics": {
@@ -1127,10 +994,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/vector-map/src/**/*.ts",
-              "libs/angular-components/vector-map/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/vector-map/src/**/*.ts", "libs/angular-components/vector-map/src/**/*.html"]
           }
         },
         "test": {
@@ -1138,9 +1002,7 @@
           "options": {
             "jestConfig": "libs/angular-components/vector-map/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/vector-map"
-          ]
+          "outputs": ["coverage/libs/angular-components/vector-map"]
         }
       },
       "schematics": {
@@ -1169,9 +1031,7 @@
           "options": {
             "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/video-thumbnail"
-          ]
+          "outputs": ["coverage/libs/angular-components/video-thumbnail"]
         }
       },
       "schematics": {
@@ -1189,9 +1049,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/web-components/card/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
       }
@@ -1205,9 +1063,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/web-components/divider/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/web-components/divider/src/**/*.ts"]
           }
         }
       }
@@ -1221,9 +1077,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/web-components/logo/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/web-components/logo/src/**/*.ts"]
           }
         }
       }
@@ -1237,9 +1091,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/web-components/search-input/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/web-components/search-input/src/**/*.ts"]
           }
         }
       }
@@ -1253,10 +1105,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/angular-components/wizard/src/**/*.ts",
-              "libs/angular-components/wizard/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/angular-components/wizard/src/**/*.ts", "libs/angular-components/wizard/src/**/*.html"]
           }
         },
         "test": {
@@ -1264,9 +1113,7 @@
           "options": {
             "jestConfig": "libs/angular-components/wizard/jest.config.js"
           },
-          "outputs": [
-            "coverage/libs/angular-components/wizard"
-          ]
+          "outputs": ["coverage/libs/angular-components/wizard"]
         }
       },
       "schematics": {
