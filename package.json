@@ -57,6 +57,7 @@
     "wc:build": "npm run wc:build:style && npm run wc:build:ts -- --verbose",
     "wc:build:style": "npm run build:style -w libs/web-components",
     "wc:build:ts": "tsc --build libs/web-components",
+    "wc:build:storybook": "npm run wc:build && build-storybook -o storybook-static",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
     "wc:serve": "concurrently npm:wc:watch wds",
