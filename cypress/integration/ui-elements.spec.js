@@ -163,4 +163,12 @@ context('UI Elements', () => {
   it('match slide-toggle states', () => {
     cy.get('.slide-toggle-states-test').scrollIntoView().matchImageSnapshot();
   });
+
+  ////////
+  // TABS
+  ////////
+
+  it('match tabs', () => {
+    cy.get('.uxg-tabs-test').scrollIntoView().matchImageSnapshot();
+  });
 });
