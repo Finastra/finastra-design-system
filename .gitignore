@@ -61,3 +61,4 @@ themes/angular-theme/prebuit-theme
 compile
 storybook-static
 **/coverage
+**/tsc-out
