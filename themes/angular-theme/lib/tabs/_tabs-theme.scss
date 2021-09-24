@@ -1,0 +1,54 @@
+@use 'sass:map';
+@use '~@angular/material'as mat;
+@use '../core/theming/palette';
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+  $border-color: palette.get-color-from-palette($primary, 400);
+  $tab-bg: palette.get-color-from-palette($background, card);
+
+  .uxg-tabs {
+    .mat-tab-header {
+      border-bottom: 0;
+    }
+
+    .mat-tab-body-wrapper {
+      background-color: $tab-bg;
+    }
+
+    .mat-tab-label {
+      &:not(.mat-tab-label-active) {
+        border-color: $border-color;
+      }
+
+      &.mat-tab-label-active {
+        color: palette.get-color-from-palette($primary, default);
+
+        .mat-tab-label-content {
+          @include mat.elevation(4);
+          border-color: $border-color;
+          background-color: $tab-bg;
+
+          &::after,
+          &::before {
+            border-color: $border-color;
+          }
+
+          &::before {
+            box-shadow: 3px 1px 0px 0px $tab-bg;
+          }
+
+          &::after {
+            box-shadow: -3px 1px 0px 0px $tab-bg;
+          }
+        }
+      }
+
+      &::before {
+        background: palette.get-color-from-palette($foreground, divider);
+      }
+    }
+  }
+}

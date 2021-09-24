@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, Input, OnDestroy, TemplateRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, Input, OnDestroy, PLATFORM_ID, TemplateRef } from '@angular/core';
 import { BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
 import * as smoothscroll from 'smoothscroll-polyfill';
@@ -31,30 +32,32 @@ export class ScrollToTopComponent implements AfterViewInit, OnDestroy {
   state$ = new BehaviorSubject<string>(ShowStatus.hide);
   parent: any;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   ngAfterViewInit() {
-    smoothscroll.polyfill();
-    if (this.parentElementSelector) {
-      this.parent = document.querySelector(this.parentElementSelector);
-    } else {
-      this.parent = window;
+    if (isPlatformBrowser(this.platformId)) {
+      smoothscroll.polyfill();
+      if (this.parentElementSelector) {
+        this.parent = document.querySelector(this.parentElementSelector);
+      } else {
+        this.parent = window;
+      }
+      this.scroll$ = fromEvent(this.parent, 'scroll')
+        .pipe(
+          throttleTime(10),
+          map(() => this.parent.pageYOffset || this.parent.scrollTop),
+          map((y) => {
+            if (y > this.showAfter) {
+              return ShowStatus.show;
+            } else {
+              return ShowStatus.hide;
+            }
+          }),
+          distinctUntilChanged(),
+          share()
+        )
+        .subscribe((s) => this.state$.next(s));
     }
-    this.scroll$ = fromEvent(this.parent, 'scroll')
-      .pipe(
-        throttleTime(10),
-        map(() => this.parent.pageYOffset || this.parent.scrollTop),
-        map((y) => {
-          if (y > this.showAfter) {
-            return ShowStatus.show;
-          } else {
-            return ShowStatus.hide;
-          }
-        }),
-        distinctUntilChanged(),
-        share()
-      )
-      .subscribe((s) => this.state$.next(s));
   }
 
   ngOnDestroy() {
