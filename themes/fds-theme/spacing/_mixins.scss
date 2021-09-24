@@ -6,6 +6,19 @@
 
 $sides: (top, bottom, left, right);
 
+///
+/// Generates helper classes for spacing with following format:
+///  .{prop}{side}-{value}
+///
+/// where {prop} is m or p respectively for margin or padding,
+/// {side} is one of t, b, r, l respectively for top, bottom, right and left,
+/// {side} can be empty in case it applies to all sides,
+/// {value} represent the spacing from 0 to 6
+///
+/// @example
+///  <div clas=".mt-4"></div>
+///  <div clas=".p-1"></div>
+///
 @mixin core-styles() {
   @each $key, $value in variables.$properties {
     @each $side in $sides {

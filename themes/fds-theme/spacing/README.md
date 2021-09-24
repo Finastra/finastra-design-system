@@ -8,11 +8,19 @@ Before being able to use spacing helper classes, you will have to include them i
 @use '@finastra/fds-theme/spacing/fds-spacing';
 ```
 
+Spacing helper classes are built on the following format:
+
+`.{prop}{side}-{value}` where:
+- {prop} is m or p, respectively for margin or padding
+- {side} is t, b, r or l respectively for top, bottom, right or left
+- {side} can be empty in case spacing applies on all sides
+- {value} is the spacing between 0 and 6
+
 ### Example
 
 ```HTML
-<div class="m-4">
-  <!-- margin: $spacing-4; -->
+<div class="mt-4">
+  <!-- margin-top: $spacing-4; -->
 </div>
 ```
 
