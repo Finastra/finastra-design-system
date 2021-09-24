@@ -1,4 +1,4 @@
-@use './color/fds-color';
-@use './elevation/fds-elevation';
-@use './spacing/fds-spacing';
-@use './typography/fds-typography';
+@forward './color' show property;
+@forward './elevation' show elevation;
+@forward './spacing' show margin, padding;
+@forward './typography' show typography;

@@ -6,15 +6,13 @@ There's 3 ways to use colors in the Finastra design system theme depending on yo
 - [Custom properties](#custom-properties)
 - [Mixins](#mixins)
 
-Regardless of your choice, you will have to load the theme in your application's main SASS file.
-
-```SCSS
-@use '@finastra/fds-theme';
-```
-
 ## Helper classes
 
 The helper classes are the fastest way to use colors directly in the HTML.
+
+```SCSS
+@use '@finastra/fds-theme/color/fds-color';
+```
 
 Be aware that some classes are meant to be used on containers as their background color (such as `.mdc-theme--primary-bg`, `.mdc-theme--background`, `.mdc-theme--surface`...) some are meant to be used on texts (such as `.mdc-theme--primary`, `.mdc-theme--error`, `.mdc-theme--on-surface`...).
 
@@ -108,13 +106,13 @@ and `$style` is any [color style available](#available-styles).
 ### Examples
 
 ```SCSS
-@use '@finastra/fds-theme/color';
+@use '@finastra/fds-theme' as fds;
 
 .my-container {
-  @include color.property(background, background);
+  @include fds.property(background, background);
 
   &.title {
-    @include color.property(color, primary);
+    @include fds.property(color, primary);
   }
 }
 ```

@@ -12,6 +12,6 @@
 /// Applies CSS box-shadow to an element to apply requested z-index elevation.
 /// @param {Number} $z-value - The elevation between in 0 and 24.
 ///
-@mixin z($z-value) {
+@mixin elevation($z-value) {
   @include elevation.elevation($z-value);
 }

@@ -2,6 +2,14 @@
 
 ## Helper classes
 
+Before being able to use typography helper classes, you will have to include them in your Sass styles.
+
+```SCSS
+@use '@finastra/fds-theme/typography/fds-typography';
+```
+
+### Example
+
 ```HTML
 <h1 class="mdc-typography--headline1">This is headline 1</h1>
 ```
@@ -11,18 +19,18 @@
 ## Mixins
 
 ```SCSS
-@mixin style($typo-style) {}
+@mixin typography($style) {}
 ```
 
-Where `$typo-style` is any of the [available text styles](#available-text-styles).
+Where `$style` is any of the [available text styles](#available-text-styles).
 
 ### Example
 
 ```SCSS
-@use '@finastra/fds-theme/typography';
+@use '@finastra/fds-theme' as fds;
 
 .my-component-subtitle {
-  @include typography.style(subtitle2);
+  @include fds.typography(subtitle2);
 }
 ```
 

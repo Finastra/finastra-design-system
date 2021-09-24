@@ -2,6 +2,12 @@
 
 ## Helper classes
 
+Before being able to use spacing helper classes, you will have to include them in your Sass styles.
+
+```SCSS
+@use '@finastra/fds-theme/spacing/fds-spacing';
+```
+
 ### Example
 
 ```HTML
@@ -21,10 +27,10 @@
 ### Example
 
 ```SCSS
-@use '@finastra/fds-theme/spacing';
+@use '@finastra/fds-theme' as fds;
 
 .my-container {
-  margin: spacing.$spacing-4;
+  margin: fds.$spacing-4;
 }
 ```
 
@@ -43,9 +49,10 @@
 ### Example
 
 ```SCSS
-@use '@finastra/fds-theme/spacing';
+@use '@finastra/fds-theme' as fds;
 
 .my-component {
-  @include spacing.padding(2);
+  @include fds.padding(1);
+  @include fds.margin(2);
 }
 ```

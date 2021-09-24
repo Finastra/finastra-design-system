@@ -15,7 +15,7 @@ npm install @finastra/fds-theme
 Use the theme in your app's main stylesheet to get the core styles initialized, including helper classes and custom properties for color, spacing, elevation and typography.
 
 ```SCSS
-@use '@finastra/fds-theme';
+@use '@finastra/fds-theme/styles';
 ```
 
 ## Usage

@@ -55,7 +55,7 @@ $sides: (top, bottom, left, right);
 /// @param {Number} $spacing - The spacing requested between 0 and 6
 ///
 @mixin margin($spacing) {
-  $prop: _get-spacing($spacing);;
+  $prop: _get-spacing($spacing);
   @include custom-properties.declaration(
     margin,
     custom-properties.create(spacing-#{$spacing}, $prop)

@@ -1,22 +1,18 @@
-@use '@finastra/fds-theme';
-
-@use '@finastra/fds-theme/color';
-@use '@finastra/fds-theme/elevation';
-@use '@finastra/fds-theme/typography';
-@use '@finastra/fds-theme/spacing';
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme/styles';
 
 body {
-    @include color.property(background, background);
-    @include color.property(color, text-primary-on-background);
+    @include fds.property(background, background);
+    @include fds.property(color, text-primary-on-background);
 }
 
 .demo {
-    @include spacing.margin(3);
+    @include fds.margin(3);
 }
 
 .swatch {
-    @include spacing.margin(0);
-    @include elevation.z(5);
+    @include fds.margin(0);
+    @include fds.elevation(5);
 
     display: inline-block;
     width: 50px;
@@ -25,5 +21,5 @@ body {
 }
 
 .my-headline1 {
-    @include typography.style(headline1);
+    @include fds.typography(headline1);
 }

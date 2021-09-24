@@ -20,6 +20,6 @@
 ///
 /// @param {String} $style - The style name requested
 ///
-@mixin style($style) {
+@mixin typography($style) {
   @include mdc.typography($style);
 } 
