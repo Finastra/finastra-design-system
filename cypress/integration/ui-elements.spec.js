@@ -171,4 +171,12 @@ context('UI Elements', () => {
   it('match tabs', () => {
     cy.get('.uxg-tabs-test').scrollIntoView().matchImageSnapshot();
   });
+
+  it('match tabs with background', () => {
+    cy.get('.uxg-tabs-background-test').scrollIntoView().matchImageSnapshot();
+  });
+
+  it('match tabs custom', () => {
+    cy.get('.uxg-tabs-custom-test').scrollIntoView().matchImageSnapshot();
+  });
 });

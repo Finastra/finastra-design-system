@@ -2,20 +2,43 @@
 @use '~@angular/material'as mat;
 @use '../core/theming/palette';
 
+@mixin uxg-tabs-bgcolor($color-name, $color) {
+  $bg-color: palette.get-color-from-palette($color, $color-name);
+  &[tabsBgColor=#{$color-name}]{
+    .mat-tab-body-wrapper {
+      background-color: $bg-color;
+    }
+    .mat-tab-label {
+      &.mat-tab-label-active {
+        .mat-tab-label-content {
+          background-color: $bg-color;
+          &::before {
+            box-shadow: 2px 2px 0 0 $bg-color;
+          }
+          &::after {
+            box-shadow: -2px 2px 0 0 $bg-color;
+          }
+        }
+      }
+    }
+  }
+}
+
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
+
   $border-color: palette.get-color-from-palette($primary, 400);
-  $tab-bg: palette.get-color-from-palette($background, card);
+  $default-bg: palette.get-color-from-palette($background, background);
 
   .uxg-tabs {
     .mat-tab-header {
       border-bottom: 0;
     }
 
-    .mat-tab-body-wrapper {
-      background-color: $tab-bg;
+    .mat-tab-labels::after {
+      background: $border-color;
     }
 
     .mat-tab-label {
@@ -29,7 +52,6 @@
         .mat-tab-label-content {
           @include mat.elevation(4);
           border-color: $border-color;
-          background-color: $tab-bg;
 
           &::after,
           &::before {
@@ -37,11 +59,11 @@
           }
 
           &::before {
-            box-shadow: 3px 1px 0px 0px $tab-bg;
+            box-shadow: 2px 2px 0px 0px $default-bg;
           }
 
           &::after {
-            box-shadow: -3px 1px 0px 0px $tab-bg;
+            box-shadow: -2px 2px 0px 0px $default-bg;
           }
         }
       }
@@ -49,6 +71,26 @@
       &::before {
         background: palette.get-color-from-palette($foreground, divider);
       }
+      &::after {
+        background: $border-color;
+      }
     }
+
+    &.light-inactive-tabs {
+      .mat-tab-label {
+        &:not(.mat-tab-label-active) {
+          color: white;
+        }
+        &.mat-tab-disabled {
+          color: rgba(white, 0.4);
+        }
+        &::before {
+          background: rgba(white, 0.6);
+        }
+      }
+    }
+
+    @include uxg-tabs-bgcolor('background', $background);
+    @include uxg-tabs-bgcolor('card', $background);
   }
 }

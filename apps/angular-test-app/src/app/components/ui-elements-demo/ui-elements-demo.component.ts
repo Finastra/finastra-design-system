@@ -12,6 +12,7 @@ export class UiElementsDemoComponent {
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
+  tabText: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus mauris orci, ac aliquam velit luctus vitae. Integer semper tortor tortor, in venenatis diam dignissim sed. Sed tempus lacus ac nisi lacinia vestibulum vitae in lectus."; 
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
