@@ -1,2 +1,4 @@
-@forward './all-themes';
-@use './fds-theme';
+@forward './color' show property;
+@forward './elevation' show elevation;
+@forward './spacing' show margin, padding;
+@forward './typography' show typography;
