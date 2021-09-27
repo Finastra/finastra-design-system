@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use '@material/theme/custom-properties';
+@use './variables';
+
+$sides: (top, bottom, left, right);
+
+@mixin core-styles() {
+  @each $key, $value in variables.$properties {
+    @each $side in $sides {
+      .m#{str-slice($side, 0, 1)}-#{$key} {
+        @include custom-properties.declaration(
+          margin-#{$side},
+          custom-properties.create($key, $value)
+        );
+      }
+      .p#{str-slice($side, 0, 1)}-#{$key} {
+        @include custom-properties.declaration(
+          padding-#{$side},
+          custom-properties.create($key, $value)
+        );
+      }
+    }
+
+    .m-#{$key} {
+      @include custom-properties.declaration(
+        margin,
+        custom-properties.create($key, $value)
+      );
+    }
+    .p-#{$key} {
+      @include custom-properties.declaration(
+        padding,
+        custom-properties.create($key, $value)
+      );
+    }
+  }
+}
+
+@function _get-spacing($spacing) {
+  @if meta.type-of($spacing) != number or not math.is-unitless($spacing) {
+    @error "$spacing must be a unitless number, but received '#{$spacing}'";
+  }
+
+  @if $spacing < 0 or $spacing > 6 {
+    @error "$spacing must be between 0 and 6, but received '#{$spacing}'";
+  }
+
+  @return map.get(variables.$properties, spacing-#{$spacing});
+}
+
+///
+/// Apply CSS so that element have requested margin
+/// @param {Number} $spacing - The spacing requested between 0 and 6
+///
+@mixin margin($spacing) {
+  $prop: _get-spacing($spacing);
+  @include custom-properties.declaration(
+    margin,
+    custom-properties.create(spacing-#{$spacing}, $prop)
+  );
+}
+
+///
+/// Apply CSS so that element have requested padding
+/// @param {Number} $spacing - The spacing requested between 0 and 6
+///
+@mixin padding($spacing) {
+  $prop: _get-spacing($spacing);;
+  @include custom-properties.declaration(
+    padding,
+    custom-properties.create(spacing-#{$spacing}, $prop)
+  );
+}

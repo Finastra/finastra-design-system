@@ -98,15 +98,15 @@
     "@angular/platform-browser": "12.1.0",
     "@angular/platform-browser-dynamic": "12.1.0",
     "@angular/router": "12.1.0",
-    "@material/button": "^11.0.0",
-    "@material/elevation": "^11.0.0",
+    "@material/button": "^12.0.0",
+    "@material/elevation": "^12.0.0",
     "@material/mwc-button": "^0.21.0",
     "@ngrx/component-store": "12.0.0",
     "@types/git-config-path": "^2.0.1",
     "angular-plotly.js": "^4.0.0",
     "core-js": "3.15.2",
     "d3": "6.7.0",
-    "elasticlunr": "github:weixsong/elasticlunr.js#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "elasticlunr": "git://github.com/weixsong/elasticlunr.js.git#f773890392760e0b3c68f0e65dbacb396dff297f",
     "ngx-color": "^7.0.0",
     "plotly.js": "^1.58.4",
     "rxjs": "^6.5.3",
@@ -197,6 +197,6 @@
   },
   "engines": {
     "node": ">=12.13.0",
-    "npm": ">=7.15.0"
+    "npm": ">=7.7.6"
   }
 }

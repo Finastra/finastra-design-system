@@ -1,3 +1,8 @@
 export const parameters = {
-  layout: 'centered'
+  layout: 'centered',
+  options: {
+    storySort: {
+      order: ['Guide', 'Components']
+    }
+  }
 };

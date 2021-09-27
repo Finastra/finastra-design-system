@@ -1,9 +1,15 @@
-@use 'sass:map';
-@use './typography-styles';
-@use '@material/feature-targeting/feature-targeting';
+@use './variables';
 @use "@material/typography" with (
-  $styles: typography-styles.$fds-styles
+  $styles: variables.$fds-styles
 );
+
+@mixin core-styles() {
+  @include typography.core-styles;
+}
+
+@mixin typography($style) {
+  @include typography.typography($style);
+}
 
 $styles-headline1: () !default;
 $styles-headline2: () !default;
@@ -23,7 +29,7 @@ $styles-overline: () !default;
 
 $unused: typography.set-styles_(
   typography.$base,
-  typography-styles.$fds-styles,
+  variables.$fds-styles,
   (
     headline1: $styles-headline1,
     headline2: $styles-headline2,
@@ -42,14 +48,3 @@ $unused: typography.set-styles_(
     overline: $styles-overline,
   )
 );
-
-@mixin core-styles() {
-  @include typography.core-styles;
-  :root {
-    @each $typo-style, $typo-style-props in $unused {
-      @each $typo-style-property, $typo-style-property-value in $typo-style-props {
-        --mdc-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
-      }
-    }
-  }
-}

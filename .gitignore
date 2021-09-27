@@ -62,4 +62,3 @@ compile
 storybook-static
 **/coverage
 **/tsc-out
-storybook-static
