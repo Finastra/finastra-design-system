@@ -1,0 +1,34 @@
+name: Publish Storybook
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'packages/**'
+      - '!packages/**/package.json'
+
+permissions:
+  contents: write # for checkout and commit
+jobs:
+  createReleasePR:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15
+          registry-url: https://registry.npmjs.org/
+      - name: Build
+        run: |
+          npm ci
+          npm run wc:build:storybook
+      - name: Deploy Storybook 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: storybook
+          folder: storybook-static
+          target-folder: next
