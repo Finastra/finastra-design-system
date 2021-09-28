@@ -11,6 +11,17 @@
     padding: $uxg-spacing-3;
   }
 
+  .mat-tab-labels::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    z-index: -1;
+  }
+
   .mat-tab-label {
     opacity: 1;
     align-items: flex-end;
@@ -65,10 +76,8 @@
         }
       }
     }
-  }
 
-  .mat-tab-label:not(:first-child, .mat-tab-label-active, .mat-tab-label-active + .mat-tab-label) {
-    &::before {
+    &:not(:first-child, .mat-tab-label-active, .mat-tab-label-active + .mat-tab-label)::before {
       content: "";
       display: block;
       position: absolute;
