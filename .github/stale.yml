@@ -17,5 +17,3 @@ pulls:
 issues:
   # Number of days of inactivity before an issue becomes stale   
   daysUntilStale: 90
-
-
