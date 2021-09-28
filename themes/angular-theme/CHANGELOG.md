@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/finastra/finastra-design-system/compare/v2.2.1...v2.3.0) (2021-09-28)
+
+
+### Features
+
+* **tabs:** new tabs improvements ([#412](https://github.com/finastra/finastra-design-system/issues/412)) ([de23e66](https://github.com/finastra/finastra-design-system/commit/de23e660da95459c75136c0034b0707782cb0200))
+
 ### [2.2.1](https://github.com/finastra/finastra-design-system/compare/v2.2.0...v2.2.1) (2021-09-23)
 
 ## [2.2.0](https://github.com/finastra/finastra-design-system/compare/v2.1.3...v2.2.0) (2021-09-23)

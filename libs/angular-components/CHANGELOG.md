@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/finastra/finastra-design-system/compare/v2.2.1...v2.3.0) (2021-09-28)
+
+
+### Bug Fixes
+
+* **account-card:** add a selected input ([#400](https://github.com/finastra/finastra-design-system/issues/400)) ([03fc023](https://github.com/finastra/finastra-design-system/commit/03fc023091c9c73b04799ee13376db62edf47bda))
+
 ### [2.2.1](https://github.com/finastra/finastra-design-system/compare/v2.2.0...v2.2.1) (2021-09-23)
 
 ## [2.2.0](https://github.com/finastra/finastra-design-system/compare/v2.1.3...v2.2.0) (2021-09-23)
