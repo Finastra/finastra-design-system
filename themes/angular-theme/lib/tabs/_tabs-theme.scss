@@ -4,7 +4,7 @@
 
 @mixin uxg-tabs-bgcolor($color-name, $color) {
   $bg-color: palette.get-color-from-palette($color, $color-name);
-  &[tabsBgColor=#{$color-name}]{
+  &[activeTabBgColor=#{$color-name}]{
     .mat-tab-body-wrapper {
       background-color: $bg-color;
     }
@@ -30,11 +30,15 @@
   $background: map.get($theme, background);
 
   $border-color: palette.get-color-from-palette($primary, 400);
-  $default-bg: palette.get-color-from-palette($background, background);
+  $default-bg: palette.get-color-from-palette($background, card);
 
   .uxg-tabs {
     .mat-tab-header {
       border-bottom: 0;
+    }
+
+    .mat-tab-body-wrapper {
+      background-color: $default-bg;
     }
 
     .mat-tab-labels::after {
@@ -52,6 +56,7 @@
         .mat-tab-label-content {
           @include mat.elevation(4);
           border-color: $border-color;
+          background-color: $default-bg;
 
           &::after,
           &::before {
@@ -76,7 +81,7 @@
       }
     }
 
-    &.light-inactive-tabs {
+    &.inactive-tabs-on-dark {
       .mat-tab-label {
         &:not(.mat-tab-label-active) {
           color: white;
@@ -91,6 +96,5 @@
     }
 
     @include uxg-tabs-bgcolor('background', $background);
-    @include uxg-tabs-bgcolor('card', $background);
   }
 }

@@ -11,7 +11,7 @@
     padding: $uxg-spacing-3;
   }
 
-  &[tabsBgColor] .mat-tab-labels::after {
+  .mat-tab-labels::after {
     content: "";
     display: block;
     position: absolute;
