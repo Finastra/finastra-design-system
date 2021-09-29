@@ -18,8 +18,7 @@ interface PackageJson {
 interface PackageVersions {
   mdc: string;
   mwc: string;
-  litElement: string;
-  litHtml: string;
+  lit: string;
 }
 
 function mapPackageVersion(packageName: string, versions: PackageVersions): string {
@@ -31,12 +30,8 @@ function mapPackageVersion(packageName: string, versions: PackageVersions): stri
     return versions.mdc;
   }
 
-  if (packageName === 'lit-element') {
+  if (packageName === 'lit') {
     return versions.litElement;
-  }
-
-  if (packageName === 'lit-html') {
-    return versions.litHtml;
   }
 
   return '';
@@ -46,13 +41,11 @@ function main() {
   const latestVersions: PackageVersions = {
     mdc: getPkgVersion('@material/base@latest'),
     mwc: getPkgVersion('@material/mwc-base@latest'),
-    litHtml: getPkgVersion('lit-html@latest'),
-    litElement: getPkgVersion('lit-element@latest')
+    lit: getPkgVersion('lit@latest')
   };
   console.log(`Found latest MDC Web version: ${latestVersions.mdc}\n`);
   console.log(`Found latest MWC Web version: ${latestVersions.mwc}\n`);
-  console.log(`Found latest Lit Element version: ${latestVersions.litElement}\n`);
-  console.log(`Found latest Lit Html version: ${latestVersions.litHtml}\n`);
+  console.log(`Found latest Lit version: ${latestVersions.lit}\n`);
 
   const packageJsonPaths = glob.sync(path.join('*', 'package.json'), { cwd: packagesDir });
   let anyChanged = false;
@@ -95,8 +88,7 @@ function main() {
     // https://help.github.com/en/articles/development-tools-for-github-actions#set-an-output-parameter-set-output
     console.log(`::set-output name=new-mdc-version::${latestVersions.mdc.substring(1)}`);
     console.log(`::set-output name=new-mwc-version::${latestVersions.mwc.substring(1)}`);
-    console.log(`::set-output name=new-lit-html-version::${latestVersions.litHtml.substring(1)}`);
-    console.log(`::set-output name=new-lit-element-version::${latestVersions.litElement.substring(1)}`);
+    console.log(`::set-output name=new-lit-version::${latestVersions.lit.substring(1)}`);
     console.log(`\nRemember to run npm install!`);
   }
 }

@@ -1,4 +1,5 @@
-import { customElement, LitElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
+import { LitElement } from 'lit';
 
 import { styles } from './styles.css';
 
