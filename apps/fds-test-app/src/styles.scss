@@ -1,25 +1,17 @@
 @use '@finastra/fds-theme' as fds;
-@use '@finastra/fds-theme/styles';
 
 body {
-    @include fds.property(background, background);
-    @include fds.property(color, text-primary-on-background);
-}
-
-.demo {
-    @include fds.margin(3);
+    // background: var(--fds-background);
+    @include fds.bg-color(background);
 }
 
 .swatch {
-    @include fds.margin(0);
-    @include fds.elevation(5);
-
     display: inline-block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
-.my-headline1 {
-    @include fds.typography(headline1);
-}
+// .my-headline1 {
+
+// }

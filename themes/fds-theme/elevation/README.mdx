@@ -1,0 +1,27 @@
+# FDS Theme Elevation
+
+<Meta title="Guide/Elevation" />
+
+## Mixins
+
+```SCSS
+@use '@finastra/fds-theme' as fds;
+
+.my-elevated-component {
+  @use fds.elevation(4);
+}
+```
+
+## Helper classes
+
+Before being able to use the helper classes, you need to include them in your Sass styles.
+
+```SCSS
+@use '@finastra/fds-theme/helpers';
+```
+
+```HTML
+<div class="fds-elevation-z2">
+
+</div>
+```

@@ -4,8 +4,16 @@
   $ambient-opacity: 0.09
 );
 
-@mixin core-styles() {
-  @include elevation.core-styles();
+@mixin custom-properties() {
+  // ToDo: make fds custom properties??
+}
+
+@mixin helper-classes() {
+  @for $i from 0 through 24 {
+    .fds-elevation-z#{$i} {
+      @include elevation.elevation($i);
+    }
+  }
 }
 
 ///

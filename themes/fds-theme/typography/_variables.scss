@@ -5,11 +5,14 @@
   @return math.div($px, 16px) * 1rem;
 }
 
-$font-family: string.unquote('Spartan') !default;
+$headline-font-family: string.unquote('Spartan') !default;
+$font-family: string.unquote('Roboto') !default;
 
-$fds-styles: (
+$properties: (
+  font-family: $font-family,
+  headline-font-family: $headline-font-family,
   headline1: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(51px),
     line-height: px-to-rem(71px),
     font-weight: 800,
@@ -18,7 +21,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline2: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(41px),
     line-height: px-to-rem(57px),
     font-weight: 800,
@@ -27,7 +30,7 @@ $fds-styles: (
     text-transform: inherit,
     ),
   headline3: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(28px),
     line-height: px-to-rem(39px),
     font-weight: 800,
@@ -36,7 +39,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline4: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(21px),
     line-height: px-to-rem(29px),
     font-weight: 800,
@@ -45,7 +48,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline5: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(16px),
     line-height: px-to-rem(22px),
     font-weight: 800,
@@ -54,7 +57,7 @@ $fds-styles: (
     text-transform: inherit,
   ),
   headline6: (
-    font-family: $font-family,
+    font-family: $headline-font-family,
     font-size: px-to-rem(13px),
     line-height: px-to-rem(18px),
     font-weight: 800,
