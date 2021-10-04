@@ -24,10 +24,12 @@ This theme is built around custom properties. You can use them directly in your 
 ```
 
 > Don't forget to load all the custom properties by adding the `@use` rule. If you only need the colors' custom properties you can write:
+>
 > ```SCSS
->@use '@finastra/fds-theme/colors/custom-properties';
->```
->It won't load custom properties for typography, spacing...
+> @use '@finastra/fds-theme/colors/custom-properties';
+> ```
+>
+> It won't load custom properties for typography, spacing...
 
 ### Available custom properties
 
@@ -53,6 +55,7 @@ That is the recommended way of using colors because it will take profit of custo
 It's the ideal way to use theme's colors when writing components for example.
 
 There is 2 use cases where you would use colors:
+
 - when applying background color to a container of any kind. In this case you'll use the `bg-color` mixin.
 - when applying text color. In this case you'll use the `text-color` mixin.
 
@@ -98,7 +101,6 @@ will generate:
 | `on-surface`   | Text color on surface background (default #000000)   |
 | `on-success`   | Text color on success background (default #FFFFFF)   |
 | `on-error`     | Text color on error background (default #FFFFFF)     |
-
 
 ## Helper classes
 
