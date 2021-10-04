@@ -1,6 +1,13 @@
 @use 'sass:map';
 @use './variables';
 
+/// Loads the colors' custom properties on root.
+///
+/// @example
+///   .my-container {
+///      background: var(--fds-surface);
+///      color: var(--fds-on-surface);
+///   }
 @mixin custom-properties() {
   :root {
     @each $style, $variable in variables.$properties {
@@ -9,6 +16,12 @@
   }
 }
 
+/// Loads the colors' helper classes.
+///
+/// @example
+///   <div class="fds-primary-bg">
+///      <p class="fds-on-primary">Hello</p>
+///   </div>
 @mixin helper-classes() {
   @each $style, $variable in variables.$properties {
     .fds-#{$style} {
@@ -20,11 +33,27 @@
   }
 }
 
+/// Generates CSS to apply background color to a container.
+///
+/// @example
+///   .my-primary-container {
+///     @include fds.bg-color(primary);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
 @mixin bg-color($style){
   $bg-color: map.get(variables.$properties, $style);
   background-color: var(--fds-#{$style}, #{$bg-color});
 }
 
+/// Generates CSS to apply color to a text.
+///
+/// @example
+///   .my-error-text {
+///     @include fds.text-color(error);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
   $bg-color: map.get(variables.$properties, $style);
   color: var(--fds-#{$style}, #{$bg-color});

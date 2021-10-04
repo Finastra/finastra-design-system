@@ -2,6 +2,12 @@
 @use 'sass:meta';
 @use './variables';
 
+/// Loads the typography's custom properties on root.
+///
+/// @example
+///   .my-headline {
+///      font: var(--fds-headline1);
+///   }
 @mixin custom-properties() {
   :root {
     @each $key, $value in variables.$properties {
@@ -28,6 +34,10 @@
   }
 }
 
+/// Loads the typography's helper classes.
+///
+/// @example
+///   <p class="fds-body2">Hello</p>
 @mixin helper-classes() {
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
@@ -41,6 +51,14 @@
   }
 }
 
+/// Apply typography style to a text
+///
+/// @example
+///   .my-small-text {
+///     @include fds.typography(caption)
+///   }
+///
+/// @param {String} $style - any of the predefined style in Finastra's typo scale
 @mixin typography($style) {
   $typo-style: map.get(variables.$properties, $style);
   $letter-spacing: map.get($typo-style, 'letter-spacing');

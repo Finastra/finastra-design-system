@@ -2,13 +2,15 @@
 
 <Meta title="Guide/Elevation" />
 
+We use 24 levels of elevation. From 0 which means there is no elevation to 24 which is the highest level of elevation.
+
 ## Mixins
 
 ```SCSS
 @use '@finastra/fds-theme' as fds;
 
 .my-elevated-component {
-  @use fds.elevation(4);
+  @include fds.elevation(4);
 }
 ```
 
@@ -20,8 +22,10 @@ Before being able to use the helper classes, you need to include them in your Sa
 @use '@finastra/fds-theme/helpers';
 ```
 
-```HTML
-<div class="fds-elevation-z2">
+Then you'll be able to use helper classes in your app's HTML
 
+```HTML
+<div class="fds-elevation-2">
+   <p>some content</p>
 </div>
 ```

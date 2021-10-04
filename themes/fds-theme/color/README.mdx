@@ -14,12 +14,20 @@ This theme is built around custom properties. You can use them directly in your 
 
 ### Examples
 
-```CSS
-.my-container {
+```SCSS
+@use '@finastra/fds-theme';
+
+.my-primary-container {
   background-color: var(--fds-primary);
   color: var(--fds-on-primary);
 }
 ```
+
+> Don't forget to load all the custom properties by adding the `@use` rule. If you only need the colors' custom properties you can write:
+> ```SCSS
+>@use '@finastra/fds-theme/colors/custom-properties';
+>```
+>It won't load custom properties for typography, spacing...
 
 ### Available custom properties
 
@@ -44,17 +52,9 @@ That is the recommended way of using colors because it will take profit of custo
 
 It's the ideal way to use theme's colors when writing components for example.
 
-Here is the mixin signature:
-
-```SCSS
-@mixin bg-color($style) {}
-```
-
-```SCSS
-@mixin text-color($style) {}
-```
-
-Where `$style` is any [color style available](#available-styles).
+There is 2 use cases where you would use colors:
+- when applying background color to a container of any kind. In this case you'll use the `bg-color` mixin.
+- when applying text color. In this case you'll use the `text-color` mixin.
 
 ### Examples
 
