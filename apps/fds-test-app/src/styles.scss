@@ -9,6 +9,7 @@ body {
 
 .swatch {
     @include fds.margin(3);
+    @include fds.elevation(2);
 
     display: inline-block;
     width: 50px;
