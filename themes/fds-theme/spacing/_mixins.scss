@@ -1,44 +1,62 @@
-@use 'sass:map';
+@use 'sass:list';
 @use 'sass:math';
 @use 'sass:meta';
-@use '@material/theme/custom-properties';
+@use 'sass:string';
 @use './variables';
 
-$sides: (top, bottom, left, right);
-
-@mixin core-styles() {
-  @each $key, $value in variables.$properties {
-    @each $side in $sides {
-      .m#{str-slice($side, 0, 1)}-#{$key} {
-        @include custom-properties.declaration(
-          margin-#{$side},
-          custom-properties.create($key, $value)
-        );
-      }
-      .p#{str-slice($side, 0, 1)}-#{$key} {
-        @include custom-properties.declaration(
-          padding-#{$side},
-          custom-properties.create($key, $value)
-        );
-      }
-    }
-
-    .m-#{$key} {
-      @include custom-properties.declaration(
-        margin,
-        custom-properties.create($key, $value)
-      );
-    }
-    .p-#{$key} {
-      @include custom-properties.declaration(
-        padding,
-        custom-properties.create($key, $value)
-      );
+/// Loads the spacing's custom properties on root.
+///
+/// @example
+///   .my-container {
+///      margin: var(--fds-spacing-2);
+///      padding: var(--fds-spacing-1);
+///   }
+@mixin custom-properties() {
+  :root {
+    @each $key, $value in variables.$properties {
+      --fds-#{$key}: #{$value};
     }
   }
 }
 
-@function _get-spacing($spacing) {
+/// Loads the spacing's helper classes using following format:
+/// fds-{m|p}{t|b|r|l}-{spacing}
+/// where
+/// {m|p} is used respectively for margin or padding.
+/// {t|b|r|l} is used for top, bottom, right or left.
+/// Can be dismissed if spacing apply to all 4 sides.
+/// {spacing} is the spacing value between 0 and 6.
+///
+/// @example
+///   <div class="fds-mt-6">
+///      <p>Hello</p>
+///   </div>
+///
+/// @example
+///   <div class="fds-p-2">
+///      <span>some content</span>
+///   </div>
+@mixin helper-classes() {
+  @each $key, $value in variables.$properties {
+    @each $prop in 'margin', 'padding' {
+      $length: string.length($key);
+      .fds-#{string.slice($prop, 0, 1)}-#{string.slice($key, $length, $length + 1)} {
+        #{$prop}: var(--fds-#{$key}, #{$value});
+      }
+      @each $side in variables.$sides {
+        .fds-#{string.slice($prop, 0, 1)}#{string.slice($side, 0, 1)}-#{string.slice($key, $length, $length + 1)} {
+          #{$prop}-#{$side}: var(--fds-#{$key}, #{$value});
+        }
+      }
+    }
+  }
+}
+
+/// Check if spacing is a unitless number between 0 and 6.
+///
+/// @param {*} $spacing - The value to validate
+/// @return The same spacing passed in parameter if value is correct
+@function _check-spacing($spacing) {
   @if meta.type-of($spacing) != number or not math.is-unitless($spacing) {
     @error "$spacing must be a unitless number, but received '#{$spacing}'";
   }
@@ -47,29 +65,36 @@ $sides: (top, bottom, left, right);
     @error "$spacing must be between 0 and 6, but received '#{$spacing}'";
   }
 
-  @return map.get(variables.$properties, spacing-#{$spacing});
+  @return $spacing;
 }
 
+/// Generates CSS to apply proper spacing
 ///
-/// Apply CSS so that element have requested margin
-/// @param {Number} $spacing - The spacing requested between 0 and 6
-///
-@mixin margin($spacing) {
-  $prop: _get-spacing($spacing);
-  @include custom-properties.declaration(
-    margin,
-    custom-properties.create(spacing-#{$spacing}, $prop)
-  );
+/// @param {String} $prop - The margin or the padding
+/// @param {Number} $value - The spacing between 0 and 6
+/// @param {String} $side - The side where to apply spacing
+@mixin spacing($prop, $value, $side) {
+  @if (list.index(variables.$sides, $side)) {
+    #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)});
+  } @else if $side == '' {
+    #{$prop}: var(--fds-spacing-#{_check-spacing($value)});
+  } @else {
+    @error "$side must be one of [top, bottom, right, left], but received '#{$side}'";
+  }
 }
 
+/// Generates CSS to apply proper margin
 ///
-/// Apply CSS so that element have requested padding
-/// @param {Number} $spacing - The spacing requested between 0 and 6
+/// @param {Number} $value - The spacing between 0 and 6
+/// @param {String} $side - The side where to apply margin (may be null)
+@mixin margin($value, $side: '') {
+  @include spacing(margin, $value, $side);
+}
+
+/// Generates CSS to apply proper padding
 ///
-@mixin padding($spacing) {
-  $prop: _get-spacing($spacing);;
-  @include custom-properties.declaration(
-    padding,
-    custom-properties.create(spacing-#{$spacing}, $prop)
-  );
+/// @param {Number} $value - The spacing between 0 and 6
+/// @param {String} $side - The side where to apply padding (may be null)
+@mixin padding($value, $side: '') {
+  @include spacing(padding, $value, $side);
 }

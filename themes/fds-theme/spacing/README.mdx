@@ -1,0 +1,79 @@
+# FDS Theme Spacing
+
+<Meta title="Guide/Spacing" />
+
+## Custom properties
+
+### Example
+
+```SCSS
+@use '@finastra/fds-theme';
+
+.my-container {
+  margin: var(--fds-spacing-2);
+  padding: var(--fds-spacing-1);
+}
+```
+
+| Custom property   | default value |
+| ----------------- | ------------: |
+| `--fds-spacing-0` |             0 |
+| `--fds-spacing-1` |           4px |
+| `--fds-spacing-2` |           8px |
+| `--fds-spacing-3` |          16px |
+| `--fds-spacing-4` |          24px |
+| `--fds-spacing-5` |          48px |
+| `--fds-spacing-6` |          96px |
+
+## Mixins
+
+### Example
+
+```SCSS
+@use '@finastra/fds-theme' as fds;
+
+.my-component {
+  @include fds.padding(1);
+  @include fds.margin(2, left);
+}
+```
+
+## Helper classes
+
+Before being able to use spacing helper classes, you will have to include them in your Sass styles.
+
+```SCSS
+@use '@finastra/fds-theme/spacing/helpers';
+```
+
+> Note that this is not necessary if you already imported all the helpers in your app using
+>
+> ```SCSS
+> @use '@finastra/fds-theme/helpers';
+> ```
+
+The helper classes format is built like so:
+
+fds-`{m|p}{t|b|r|l}`-`{spacing}`
+
+Where:
+
+- `{m|p}` is the `margin` or `padding` property
+- `{t|b|r|l}` is the side, respectively `top`, `bottom`, `right` or `left`. The side can be dismissed in case the spacing applies to all 4 sides
+- `{spacing}` is the spacing value between 0 and 6
+
+### Example
+
+```HTML
+<!-- margin: var(--fds-spacing-4); -->
+<div class="fds-m-4">
+  <p>Hello</p>
+</div>
+```
+
+```HTML
+<!-- padding-top: var(--fds-spacing-2); -->
+<div class="fds-pt-2">
+  <p>World!</p>
+</div>
+```

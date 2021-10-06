@@ -1,18 +1,15 @@
 @use '@finastra/fds-theme' as fds;
-@use '@finastra/fds-theme/styles';
+@use '@finastra/fds-theme/color/helpers' as color-helper;
+@use '@finastra/fds-theme/typography/helpers' as typo-helper;
 
 body {
-    @include fds.property(background, background);
-    @include fds.property(color, text-primary-on-background);
-}
-
-.demo {
-    @include fds.margin(3);
+    // background: var(--fds-background);
+    @include fds.bg-color(background);
 }
 
 .swatch {
-    @include fds.margin(0);
-    @include fds.elevation(5);
+    @include fds.margin(3);
+    @include fds.elevation(2);
 
     display: inline-block;
     width: 50px;
