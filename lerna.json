@@ -1,4 +1,4 @@
 {
-  "useWorkspaces": true,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "packages": ["themes/fds-theme", "libs/web-components/*"]
 }
