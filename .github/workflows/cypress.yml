@@ -1,7 +1,7 @@
 name: Cypress Theme Tests
 on:
   pull_request:
-    path:
+    paths:
       - 'themes/angular-theme/**'
 
 jobs:
