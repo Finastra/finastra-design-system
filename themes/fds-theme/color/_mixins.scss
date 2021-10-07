@@ -23,12 +23,18 @@
 ///      <p class="fds-on-primary">Hello</p>
 ///   </div>
 @mixin helper-classes() {
-  @each $style, $variable in variables.$properties {
-    .fds-#{$style} {
-      color: #{$variable};
-    }
-    .fds-#{$style}-bg {
-      background: #{$variable};
+  @each $style, $value in variables.$properties {
+    @if $style != 'background' and $style != 'surface' {
+      .fds-#{$style} {
+        color: var(--fds-#{$style});
+      }
+      .fds-#{$style}-bg {
+        background: var(--fds-#{$style});
+      }
+    } @else {
+      .fds-#{$style} {
+        background: var(--fds-#{$style});
+      }
     }
   }
 }
