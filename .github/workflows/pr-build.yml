@@ -1,5 +1,9 @@
-name: pr ci
-on: pull_request
+name: Angular PR CI
+on:
+  pull_request:
+    paths:
+      - 'themes/angular-theme/**'
+      - 'libs/angular-components/**'
 
 jobs:
   build:
