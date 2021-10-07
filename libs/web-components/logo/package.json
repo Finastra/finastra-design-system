@@ -1,7 +1,7 @@
 {
   "name": "@finastra/logo",
   "displayName": "Logo",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "Logo Web Component",
   "keywords": [
     "finastra design system",
