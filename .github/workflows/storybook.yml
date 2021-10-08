@@ -2,7 +2,7 @@ name: Publish Storybook
 on:
   push:
     branches:
-      - feature/storybook
+      - master
     paths:
       - 'libs/**'
       - 'themes/fds-theme/**'
