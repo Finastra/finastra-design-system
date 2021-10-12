@@ -64,7 +64,7 @@ jobs:
           release_name: v${{ env.RELEASE_VERSION }}
           body: ''
           draft: false
-          prerelease: false
+          prerelease: true
       - name: Publish
         run: |
           npx lerna publish from-package --yes
