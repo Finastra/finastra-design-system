@@ -57,8 +57,9 @@ import '@material/mwc-button';
   }}
 />
 
-export const StandardCard = ({ outlined = false, fullBleed = false }) => {
-  return html` <style>
+export const Template = ({ outlined = false, fullBleed = false }) => {
+     return html`
+     <style>
       .card__header {
         display: flex;
         flex-direction: row;
@@ -126,15 +127,16 @@ Card component
 <Canvas>
   <Story
     name="Default"
+    args={{ fullBleed: true }}
     parameters={{
       docs: {
         source: {
-          code: StandardCard({}).strings.toString()
+          code: '<fds-card></fds-card>'
         }
       }
     }}
   >
-    {StandardCard({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
@@ -156,31 +158,33 @@ npm install @finastra/card
 <Canvas>
   <Story
     name="outlined"
+    args={{ outlined: true }}
     parameters={{
       docs: {
         source: {
-          code: StandardCard({ outlined: true }).strings.toString()
+          code: '<fds-card></fds-card>'
         }
       }
     }}
   >
-    {StandardCard({ outlined: true })}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
-### fullBleed
+### Outlined
 
 <Canvas>
   <Story
     name="fullBleed"
+    args={{ fullBleed: true }}
     parameters={{
       docs: {
         source: {
-          code: StandardCard({ fullBleed: true }).strings.toString()
+          code: '<fds-card></fds-card>'
         }
       }
     }}
   >
-    {StandardCard({ fullBleed: true })}
+    {Template.bind({})}
   </Story>
 </Canvas>
