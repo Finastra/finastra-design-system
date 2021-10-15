@@ -15,7 +15,7 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template = ({ dense = false }) => {
-  return html`<fds-logo ?dense=${dense}></fsd-logo>`;
+  return html`<fds-logo ?dense=${dense}></fds-logo>`;
 };
 
 // Default

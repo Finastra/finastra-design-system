@@ -130,6 +130,9 @@
     "wc-search-input": {
       "tags": ["web-components"]
     },
+    "wc-skeleton-text": {
+      "tags": ["web-components"]
+    },
     "wizard": {
       "tags": []
     }

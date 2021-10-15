@@ -1,0 +1,41 @@
+:host {
+  --text-color: 65,65,65;
+
+  display: block;
+
+  width: 100%;
+  height: inherit;
+  line-height: 10px;
+
+  //@include fds.margin(2, top);
+  margin-top: var(--fds-spacing-1);
+  margin-bottom: var(--fds-spacing-1);
+
+  user-select: none;
+  pointer-events: none;
+
+  background: rgba(var(--text-color),.065);
+}
+
+:host([animated]) {
+  position: relative;
+
+  background-image: linear-gradient(to right,rgba(var(--text-color),.065) 8%,rgba(var(--text-color),.135) 18%,rgba(var(--text-color),.065) 33%);
+
+  background-size: 800px 104px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}

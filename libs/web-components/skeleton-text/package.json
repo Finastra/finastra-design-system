@@ -1,0 +1,22 @@
+{
+  "name": "@finastra/skeleton-text",
+  "displayName": "skeleton-text",
+  "version": "0.0.1",
+  "description": "skeleton-text Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "skeleton-text"
+  ],
+  "license": "MIT",
+  "main": "dist/skeleton-text.js",
+  "module": "dist/skeleton-text.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit-element": "2.5.1",
+    "lit-html": "1.4.1",
+    "tslib": "^2.0.1"
+  }
+}
