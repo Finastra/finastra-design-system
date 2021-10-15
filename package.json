@@ -130,7 +130,6 @@
     "@nrwl/jest": "12.4.0",
     "@nrwl/tao": "12.4.0",
     "@nrwl/workspace": "12.4.0",
-    "@types/autoprefixer": "^10.2.0",
     "@types/command-line-args": "^5.0.0",
     "@types/d3": "6.7.0",
     "@types/fs-extra": "^9.0.11",
