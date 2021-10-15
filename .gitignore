@@ -52,6 +52,7 @@ themes/angular-theme/prebuit-theme
 /libs/web-components/**/*.css
 /libs/web-components/**/*.css.map
 /libs/web-components/**/*.js
+!/libs/web-components/**/*stories.js
 /libs/web-components/**/*.js.map
 /libs/web-components/**/*.tgz
 /libs/web-components/**/*.css.ts

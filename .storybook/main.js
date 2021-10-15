@@ -1,3 +1,3 @@
 module.exports = {
-  stories: ['../libs/web-components/**/stories/*.stories.{js,md,mdx}', '../themes/fds-theme/**/*.mdx']
+  stories: ['../libs/web-components/**/stories/*.stories.{js,md,mdx,ts}', '../themes/fds-theme/**/*.mdx']
 };
