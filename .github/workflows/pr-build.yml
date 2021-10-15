@@ -1,9 +1,9 @@
 name: Angular PR CI
 on:
   pull_request:
-    paths:
-      - 'themes/angular-theme/**'
-      - 'libs/angular-components/**'
+    paths-ignore:
+      - 'themes/fds-theme/**'
+      - 'libs/web-components/**'
 
 jobs:
   build:
