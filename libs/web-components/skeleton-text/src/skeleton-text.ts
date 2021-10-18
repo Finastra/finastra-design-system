@@ -8,10 +8,9 @@ export class SkeletonText extends LitElement {
   static styles = styles;
 
   render() {
-    return html`<span>&nbsp;</span>`
+    return html`<span>&nbsp;</span>`;
   }
 }
-
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -5,8 +5,8 @@ import { html } from 'lit-html';
 import '@finastra/logo';
 
 export default {
-  title: 'Components/Logo (js)',
- /*  parameters: {
+  title: 'Components/Logo (js)'
+  /*  parameters: {
     docs: {
       description: { component: Doc },
     },
@@ -24,7 +24,6 @@ export const Default = Template.bind({});
 Default.args = {
   dense: false
 };
-
 
 // Dense
 export const Dense = Template.bind({});

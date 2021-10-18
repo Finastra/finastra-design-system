@@ -1,6 +1,5 @@
 # Skeleton text
 
-
 ## Installation
 
 ```bash
