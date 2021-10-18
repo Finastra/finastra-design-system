@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  --mdc-shape-small: 22px;
+  --mdc-theme-primary: var(--fds-primary);
+}
+
+:host([secondary]) {
+  --mdc-theme-primary: var(--fds-secondary);
+}

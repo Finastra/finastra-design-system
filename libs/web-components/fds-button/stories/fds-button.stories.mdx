@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit-html';
+
+import '@finastra/fds-button';
+
+<Meta
+  title="Components/FdsButton"
+  component={'fds-button'}
+  argTypes={{
+    label: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    }
+  }}
+/>
+
+export const Template = ({ secondary=true, label = '', icon = '' }) => {
+  return html`<fds-button .secondary=${secondary} .label=${label} .icon=${icon}></fds-button>`;
+};
+
+# fds-button
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button></-fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/fds-button
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Name
+
+<Canvas>
+  <Story
+    name="Name"
+    args={{ secondary = true, label="button", icon="account_circle"  }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
