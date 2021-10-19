@@ -28,6 +28,7 @@
     "build:devkit": "tsc -p ./tools/devkit/tsconfig.devkit.json && cpx -v \"./tools/devkit/**/*.json\" dist/tools/devkit",
     "build:fds-test-app": "ng build fds-test-app",
     "build:theme": "ng build angular-theme --prod",
+    "build:fds-theme": "cd themes/fds-theme && npm run build",
     "build:scripts": "tsc --project scripts/tsconfig.json",
     "changelog:components": "cd libs/angular-components && npx standard-version",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
@@ -54,7 +55,7 @@
     "testjest": "jest",
     "update": "nx migrate latest",
     "update:check": "ng update",
-    "wc:build": "npm run wc:build:style && npm run wc:build:ts -- --verbose",
+    "wc:build": "npm run wc:build:style && npm run wc:build:ts -- --verbose --watch",
     "wc:build:style": "npm run build:style -w libs/web-components",
     "wc:build:ts": "tsc --build libs/web-components",
     "wc:build:storybook": "npm run wc:build && build-storybook -o storybook-static",
@@ -83,7 +84,7 @@
     ]
   },
   "resolutions": {
-    "sass": "1.33.0"
+    "sass": "1.43.2"
   },
   "dependencies": {
     "@angular/animations": "12.1.0",
