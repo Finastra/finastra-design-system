@@ -46,7 +46,6 @@
     "ng": "nx",
     "nx": "nx",
     "release:angular": "npx standard-version -an",
-    "release:wc": "cd themes/fds-theme && npm run release",
     "start": "ng serve",
     "start:fds-test-app": "ng serve fds-test-app",
     "pretest": "rimraf ./coverage ./testresults",
