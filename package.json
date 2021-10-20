@@ -55,7 +55,7 @@
     "testjest": "jest",
     "update": "nx migrate latest",
     "update:check": "ng update",
-    "wc:build": "npm run wc:build:style && npm run wc:build:ts -- --verbose --watch",
+    "wc:build": "npm run wc:build:style && npm run wc:build:ts && npm run build:fds-theme -- --verbose",
     "wc:build:style": "npm run build:style -w libs/web-components",
     "wc:build:ts": "tsc --build libs/web-components",
     "wc:build:storybook": "npm run wc:build && build-storybook -o storybook-static",
@@ -65,7 +65,7 @@
     "wc:storybook": "wds -c .storybook/server.mjs",
     "wc:test": "",
     "wc:test:all": "",
-    "wc:watch": "npm run wc:build && node scripts/watcher.js",
+    "wc:watch": "npm run wc:build --watch && node scripts/watcher.js",
     "wc:clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
     "workspace-generator": "nx workspace-generator"

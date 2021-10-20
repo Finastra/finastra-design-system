@@ -6,7 +6,6 @@ $feat-color: mdc-feature-create-target($query, color);
 $feat-structure: mdc-feature-create-target($query, structure);
 
 :host {
-  --mdc-theme-primary: var(--fds-primary);
   display: inline-flex;
   @include mdc-theme-prop(
     border-radius,
