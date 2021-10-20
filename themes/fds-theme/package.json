@@ -9,7 +9,7 @@
     "directory": "themes/fds-theme"
   },
   "devDependencies": {
-    "sass": "1.43.2"
+    "sass": "1.33.0"
   },
   "peerDependencies": {
     "@material/elevation": "^13.0.0"

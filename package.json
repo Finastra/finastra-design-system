@@ -84,7 +84,7 @@
     ]
   },
   "resolutions": {
-    "sass": "1.43.2"
+    "sass": "1.33.0"
   },
   "dependencies": {
     "@angular/animations": "12.1.0",
