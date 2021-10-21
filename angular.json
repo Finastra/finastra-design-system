@@ -1096,6 +1096,20 @@
         }
       }
     },
+    "wc-skeleton-text": {
+      "projectType": "library",
+      "root": "libs/web-components/skeleton-text",
+      "sourceRoot": "libs/web-components/skeleton-text",
+      "prefix": "fds",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/skeleton-text/src/**/*.ts"]
+          }
+        }
+      }
+    },
     "wizard": {
       "projectType": "library",
       "root": "libs/angular-components/wizard",
