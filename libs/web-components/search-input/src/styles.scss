@@ -1,5 +1,8 @@
 @use "@material/mwc-textfield/mwc-textfield";
 
+:host {
+  --mdc-theme-primary: var(--fds-primary);
+}
 .mdc-text-field--with-leading-icon {
   padding-right: 4px;
 }
