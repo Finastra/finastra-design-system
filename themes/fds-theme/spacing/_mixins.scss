@@ -2,7 +2,7 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
-@use './variables';
+@use '../light-theme' as variables;
 
 /// Loads the spacing's custom properties on root.
 ///
@@ -11,13 +11,6 @@
 ///      margin: var(--fds-spacing-2);
 ///      padding: var(--fds-spacing-1);
 ///   }
-@mixin custom-properties() {
-  :root {
-    @each $key, $value in variables.$properties {
-      --fds-#{$key}: #{$value};
-    }
-  }
-}
 
 /// Loads the spacing's helper classes using following format:
 /// fds-{m|p}{t|b|r|l}-{spacing}
@@ -37,7 +30,7 @@
 ///      <span>some content</span>
 ///   </div>
 @mixin helper-classes() {
-  @each $key, $value in variables.$properties {
+  @each $key, $value in variables.$spacing-properties {
     @each $prop in 'margin', 'padding' {
       $length: string.length($key);
       .fds-#{string.slice($prop, 0, 1)}-#{string.slice($key, $length, $length + 1)} {

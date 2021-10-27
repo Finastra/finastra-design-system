@@ -1,0 +1,123 @@
+@use 'sass:color';
+
+//colors
+$_black: black;
+$_white: white;
+
+$primary: #694ED6 !default;
+$secondary: #C137A2 !default;
+$background: #FAFAFA !default;
+$surface: #FFFFFF !default;
+$success: #008744 !default;
+$error: #E40046 !default;
+$gradient: linear-gradient(#694ED6, #C137A2) !default;
+$on-primary: #FFFFFF !default;
+$on-secondary: #FFFFFF !default;
+$on-surface: #000000 !default;
+$on-error: #FFFFFF !default;
+$on-success: #FFFFFF !default;
+
+//spacings
+$spacing-0: 0 !default;
+$spacing-1: 4px !default;
+$spacing-2: 8px !default;
+$spacing-3: 16px !default;
+$spacing-4: 24px !default;
+$spacing-5: 48px !default;
+$spacing-6: 96px !default;
+
+$sides: 'top', 'bottom', 'right', 'left';
+
+//typography
+$font-family: Roboto !default;
+$headline-font-family: Spartan !default;
+$headline1: normal normal 800 3.1875rem/4.4375rem Spartan !default;
+$headline2: normal normal 800 2.5625rem/3.5625rem Spartan !default;
+$headline3: normal normal 800 1.75rem/2.4375rem Spartan !default;
+$headline4: normal normal 800 1.3125rem/1.8125rem Spartan !default;
+$headline5: normal normal 800 1rem/1.375rem Spartan !default;
+$headline6: normal normal 800 0.8125rem/1.125rem Spartan !default;
+$subtitle1: normal normal 500 1rem/1.5rem Roboto !default;
+$subtitle2: normal normal 500 0.875rem/1.3125rem Roboto !default;
+$subtitle3: normal normal 500 0.75rem/1.125rem Roboto !default;
+$body1: normal normal 300 1rem/1.5rem Roboto !default;
+$body2: normal normal 300 0.875rem/1.3125rem Roboto !default;
+$body3: normal normal 300 0.75rem/1.125rem Roboto !default;
+$button: normal normal 700 0.875rem/1.25rem Roboto !default;
+$caption: normal normal 400 0.75rem/1.125rem Roboto !default;
+$overline: normal normal 500 0.625rem/0.9375rem Roboto !default;
+
+$colors-properties: (
+    primary: $primary,
+    secondary: $secondary,
+    background: $background,
+    surface: $surface,
+    success: $success,
+    error: $error,
+    gradient: $gradient,
+    on-primary: $on-primary,
+    on-secondary: $on-secondary,
+    on-surface: $on-surface,
+    on-error: $on-error,
+    on-success: $on-success,
+    text-high-on-background: color.change($_black, $alpha: 0.75),
+    text-medium-on-background: color.change($_black, $alpha: 0.54),
+    text-hint-on-background: color.change($_black, $alpha: 0.29),
+    text-disabled-on-background: color.change($_black, $alpha: 0.29),
+    text-icon-on-background: color.change($_black, $alpha: 0.29),
+    text-high-on-light: color.change($_black, $alpha: 0.75),
+    text-medium-on-light: color.change($_black, $alpha: 0.54),
+    text-hint-on-light: color.change($_black, $alpha: 0.29),
+    text-disabled-on-light: color.change($_black, $alpha: 0.29),
+    text-icon-on-light: color.change($_black, $alpha: 0.29),
+    text-high-on-dark: $_white,
+    text-medium-on-dark: color.change($_white, $alpha: 0.7),
+    text-hint-on-dark: color.change($_white, $alpha: 0.5),
+    text-disabled-on-dark: color.change($_white, $alpha: 0.5),
+    text-icon-on-dark: color.change($_white, $alpha: 0.5),
+);
+
+$spacing-properties: (
+    spacing-0: $spacing-0,
+    spacing-1: $spacing-1,
+    spacing-2: $spacing-2,
+    spacing-3: $spacing-3,
+    spacing-4: $spacing-4,
+    spacing-5: $spacing-5,
+    spacing-6: $spacing-6,
+);
+
+$typography-properties: (
+    font-family: $font-family,
+    headline-font-family: $headline-font-family,
+    headline1: $headline1,
+    headline2: $headline2,
+    headline3: $headline3,
+    headline4: $headline4,
+    headline5: $headline5,
+    headline6: $headline6,
+    subtitle1: $subtitle1,
+    subtitle2: $subtitle2,
+    subtitle3: $subtitle3,
+    body1: $body1,
+    body2: $body2,
+    body3: $body3,
+    button: $button,
+    caption: $caption,
+    overline: $overline,
+);
+
+@mixin use() {
+    #{if(&, '&', ':root')} {
+        @each $style, $value in $colors-properties {
+            --fds-#{$style}: #{$value};
+            --mdc-theme-#{$style}: var(--fds-#{$style});
+        }
+        @each $style, $value in $spacing-properties {
+            --fds-#{$style}: #{$value};
+        }
+        @each $style, $value in $typography-properties {
+            --fds-#{$style}: #{$value};
+        }
+    }
+}

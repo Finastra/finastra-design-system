@@ -8,31 +8,6 @@
 ///   .my-headline {
 ///      font: var(--fds-headline1);
 ///   }
-@mixin custom-properties() {
-  :root {
-    @each $key, $value in variables.$properties {
-      @if (meta.type-of($value) == 'map') {
-        $font-weight: map.get($value, 'font-weight');
-        $font-size: map.get($value, 'font-size');
-        $line-height: map.get($value, 'line-height');
-        $font-family: map.get($value, 'font-family');
-        
-        @if (not $font-family) {
-          $font-family: map.get(variables.$properties, 'font-family');
-        }
-
-        --fds-#{$key}:
-          normal
-          normal
-          #{$font-weight}
-          #{$font-size}/#{$line-height}
-          #{$font-family};
-      } @else {
-        --fds-#{$key}: #{$value};
-      }
-    }
-  }
-}
 
 /// Loads the typography's helper classes.
 ///

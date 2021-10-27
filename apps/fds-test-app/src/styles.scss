@@ -1,9 +1,11 @@
 @use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme/light-theme' as light-theme;
 @use '@finastra/fds-theme/color/helpers' as color-helper;
 @use '@finastra/fds-theme/typography/helpers' as typo-helper;
 
+@include light-theme.use();
 body {
-    // background: var(--fds-background);
+    //background: var(--fds-background);
     @include fds.bg-color(background);
 }
 
