@@ -6,7 +6,7 @@ export class FdsButton extends LitElement {
   static styles = styles;
 
   @property({ type: String })
-  label = '';
+  label = 'fds button';
 
   @property({ type: String })
   icon = '';

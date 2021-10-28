@@ -2,8 +2,10 @@
   display: block;
   --mdc-shape-small: 22px;
   --mdc-theme-primary: var(--fds-primary);
+  --mdc-button-outline-color: var(--fds-primary);
 }
 
 :host([secondary]) {
+  --mdc-theme-primary: #C137A2;
   --mdc-theme-primary: var(--fds-secondary);
 }
