@@ -8,10 +8,14 @@
     "url": "https://github.com/finastra/finastra-design-system.git",
     "directory": "themes/fds-theme"
   },
+  "devDependencies": {
+    "sass": "1.33.0"
+  },
   "peerDependencies": {
     "@material/elevation": "^13.0.0"
   },
   "scripts": {
-    "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'"
+    "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
+    "build": "sass _custom-properties.scss styles.css --load-path=./node_modules"
   }
 }
