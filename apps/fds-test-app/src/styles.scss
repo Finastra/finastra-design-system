@@ -1,5 +1,6 @@
 @use '@finastra/fds-theme' as fds;
 @use '@finastra/fds-theme/light-theme' as light-theme;
+@use '@finastra/fds-theme/dark-theme' as dark-theme;
 @use '@finastra/fds-theme/color/helpers' as color-helper;
 @use '@finastra/fds-theme/typography/helpers' as typo-helper;
 
@@ -21,4 +22,8 @@ body {
 
 .my-headline1 {
     @include fds.typography(headline1);
+}
+
+@media (prefers-color-scheme: dark) {
+    @include dark-theme.use();
 }

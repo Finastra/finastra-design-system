@@ -1,3 +1,12 @@
 @use "./light-theme" as light-theme;
+@use "./dark-theme" as dark-theme;
 
 @include light-theme.use();
+
+.dark {
+    @include dark-theme.use();
+}
+
+@media (prefers-color-scheme: dark) {
+    @include dark-theme.use();
+}
