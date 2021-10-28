@@ -1,6 +1,5 @@
 import { customElement, LitElement, html, property } from 'lit-element';
 import { styles } from './styles.css';
-import '@material/mwc-button';
 
 @customElement('fds-button')
 export class FdsButton extends LitElement {
