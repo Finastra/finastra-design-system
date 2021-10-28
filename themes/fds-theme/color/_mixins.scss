@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../light-theme' as variables;
+@use './variables';
 
 /// Loads the colors' custom properties on root.
 ///
@@ -15,7 +15,7 @@
 ///      <p class="fds-on-primary">Hello</p>
 ///   </div>
 @mixin helper-classes() {
-  @each $style, $value in variables.$colors-properties {
+  @each $style, $value in variables.$properties {
     @if $style != 'background' and $style != 'surface' {
       .fds-#{$style} {
         color: var(--fds-#{$style});
@@ -40,7 +40,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin bg-color($style){
-  $bg-color: map.get(variables.$colors-properties, $style);
+  $bg-color: map.get(variables.$properties, $style);
   background-color: var(--fds-#{$style}, #{$bg-color});
 }
 
@@ -53,6 +53,6 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
-  $bg-color: map.get(variables.$colors-properties, $style);
+  $bg-color: map.get(variables.$properties, $style);
   color: var(--fds-#{$style}, #{$bg-color});
 }

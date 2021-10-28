@@ -2,7 +2,7 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
-@use '../light-theme' as variables;
+@use './variables';
 
 /// Loads the spacing's custom properties on root.
 ///
@@ -30,7 +30,7 @@
 ///      <span>some content</span>
 ///   </div>
 @mixin helper-classes() {
-  @each $key, $value in variables.$spacing-properties {
+  @each $key, $value in variables.$properties {
     @each $prop in 'margin', 'padding' {
       $length: string.length($key);
       .fds-#{string.slice($prop, 0, 1)}-#{string.slice($key, $length, $length + 1)} {
