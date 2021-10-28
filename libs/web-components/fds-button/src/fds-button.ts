@@ -29,20 +29,20 @@ export class FdsButton extends LitElement {
   render() {
     if (this.outlined || this.text) {
       return html`<mwc-button
-        ?disabled="${this.disabled}"
-        ?dense="${this.dense}"
-        ?outlined="${this.outlined}"
         label="${this.label}"
         icon="${this.icon}"
+        ?outlined="${this.outlined}"
+        ?dense="${this.dense}"
+        ?disabled="${this.disabled}"
       ></mwc-button>`;
     }
 
     return html`<mwc-button
-      ?unelevated="${this.unelevated}"
-      ?disabled="${this.disabled}"
-      ?dense="${this.dense}"
       label="${this.label}"
       icon="${this.icon}"
+      ?unelevated="${this.unelevated}"
+      ?dense="${this.dense}"
+      ?disabled="${this.disabled}"
     ></mwc-button>`;
   }
 }

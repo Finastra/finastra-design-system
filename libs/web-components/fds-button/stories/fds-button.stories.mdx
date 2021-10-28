@@ -83,13 +83,13 @@ import '@finastra/fds-button';
 
 export const Template = ({ icon, label, outlined, text, dense, disabled, secondary = false }) => {
   return html`<fds-button
-    ?secondary=${secondary}
-    ?disabled=${disabled}
-    ?dense=${dense}
-    ?text=${text}
-    ?outlined=${outlined}
     .label=${label}
     .icon=${ifDefined(icon)}
+    ?secondary=${secondary}
+    ?outlined=${outlined}
+    ?text=${text}
+    ?dense=${dense}
+    ?disabled=${disabled}
   ></fds-button>`;
 };
 
