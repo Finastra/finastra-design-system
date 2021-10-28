@@ -81,7 +81,7 @@ import '@finastra/fds-button';
   }}
 />
 
-export const Template = ({ icon, label, outlined, text, dense, disabled, secondary=false }) => {
+export const Template = ({ icon, label, outlined, text, dense, disabled, secondary = false }) => {
   return html`<fds-button
     ?secondary=${secondary}
     ?disabled=${disabled}
@@ -125,10 +125,11 @@ npm install @finastra/fds-button
 ## Examples
 
 ### Secondary button
+
 <Canvas>
   <Story
     name="Secondary"
-    args={{  secondary: true, label:"secondary button", icon:"favorite" }}
+    args={{ secondary: true, label: 'secondary button', icon: 'favorite' }}
     parameters={{
       docs: {
         source: {
@@ -140,7 +141,6 @@ npm install @finastra/fds-button
     {Template.bind({})}
   </Story>
 </Canvas>
-
 
 ### Outlined button
 
