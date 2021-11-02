@@ -69,6 +69,7 @@ jobs:
           prerelease: true
       - name: Publish
         run: |
+          npm whoami
           npx lerna publish from-package --yes --no-verify-access
         env:
           NODE_AUTH_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
