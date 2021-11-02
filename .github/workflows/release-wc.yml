@@ -67,10 +67,15 @@ jobs:
           body: ''
           draft: false
           prerelease: true
+      - name: Authenticate with Registry
+        run: |
+          npm logout
+          echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$FINASTRA_BOT_NPM_AUTH_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Publish
         run: |
-          npm whoami
-          npx lerna publish from-package --yes --no-verify-access
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npx lerna publish from-package --yes
