@@ -24,7 +24,9 @@ jobs:
           registry-url: https://check.npmjs.org/
       - name: Install dependencies
         run: npm ci
-      - name: Build
+      - name: Build fds theme
+        run: npm run build:fds-theme
+      - name: Build web components
         run: npm run wc:build
       - name: Get Release Version
         run: |
@@ -70,3 +72,4 @@ jobs:
           npx lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
