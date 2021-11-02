@@ -69,7 +69,7 @@ jobs:
           prerelease: true
       - name: Publish
         run: |
-          npx lerna publish from-package --yes
+          npx lerna publish from-package --yes --no-verify-access
         env:
           NODE_AUTH_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
