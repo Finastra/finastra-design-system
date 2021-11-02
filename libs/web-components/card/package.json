@@ -25,5 +25,8 @@
     "@material/mwc-button": "0.23.0",
     "@material/mwc-icon-button": "0.23.0"
   },
-  "icon": "dashboard"
+  "icon": "dashboard",
+  "publishConfig": {
+    "access": "public"
+  }
 }

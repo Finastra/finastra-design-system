@@ -17,5 +17,8 @@
   "scripts": {
     "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
     "build": "sass _custom-properties.scss styles.css --load-path=../../node_modules"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
