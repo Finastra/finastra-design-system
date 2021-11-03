@@ -69,10 +69,9 @@ jobs:
           prerelease: true
       - name: Authenticate with Registry
         run: |
-          npm logout
           echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
           echo "registry=https://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$FINASTRA_BOT_NPM_AUTH_TOKEN" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           npm whoami
         env:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
