@@ -77,4 +77,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Publish
         run: |
-          npx lerna publish from-package --yes
+          npx lerna publish from-package --no-git-reset --yes
