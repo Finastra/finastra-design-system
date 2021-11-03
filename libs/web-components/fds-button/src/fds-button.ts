@@ -32,6 +32,7 @@ export class FdsButton extends LitElement {
         label="${this.label}"
         icon="${this.icon}"
         ?outlined="${this.outlined}"
+        ?text="${this.text}"
         ?dense="${this.dense}"
         ?disabled="${this.disabled}"
       ></mwc-button>`;
