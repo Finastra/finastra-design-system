@@ -31,6 +31,9 @@
     "angular-theme": {
       "tags": []
     },
+    "autocomplete": {
+      "tags": ["web-components"]
+    },
     "avatar": {
       "tags": []
     },

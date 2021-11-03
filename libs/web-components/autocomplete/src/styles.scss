@@ -1,0 +1,12 @@
+:host {
+  display: block;
+
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+}
+
+.fds-autocomplete {
+  position: relative;
+  display: inline-flex;
+}

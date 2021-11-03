@@ -60,7 +60,7 @@
     "wc:build:storybook": "npm run wc:build && build-storybook -o storybook-static",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
-    "wc:serve": "concurrently npm:wc:watch wds",
+    "wc:serve": "wds",
     "wc:storybook": "wds -c .storybook/server.mjs",
     "wc:test": "",
     "wc:test:all": "",

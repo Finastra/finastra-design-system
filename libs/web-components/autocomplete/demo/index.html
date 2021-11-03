@@ -1,0 +1,66 @@
+<script type="module" src="node_modules/@finastra/autocomplete/dist/autocomplete.js"></script>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    margin-top: 32px;
+    line-height: 65px;
+    font-weight: 700;
+  }
+</style>
+<div class="container">
+  <div>
+    <fds-autocomplete name="World" value="One">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+
+  <div class="title">minLengthToOpenMenu=1</div>
+  <div>
+    <fds-autocomplete name="World" value="One" minLengthToOpenMenu="1">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+
+  <div class="title">disabled</div>
+  <div>
+    <fds-autocomplete name="World" value="One" disabled="true">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+
+  <div class="title">required</div>
+  <div>
+    <fds-autocomplete name="World" value="One" required="true">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+
+  <div class="title">icon</div>
+  <div>
+    <fds-autocomplete name="World" value="One" icon="search">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+
+  <div class="title">showClearButton</div>
+  <div>
+    <fds-autocomplete name="World" value="One" showClearButton="true">
+      <mwc-list-item value="One">One</mwc-list-item>
+      <mwc-list-item value="Two">Two</mwc-list-item>
+      <mwc-list-item value="Three">Three</mwc-list-item>
+    </fds-autocomplete>
+  </div>
+</div>

@@ -24,5 +24,21 @@
     "importHelpers": true
   },
   "file": [],
-  "references": [{ "path": "logo" }, { "path": "divider" }, { "path": "search-input" }, { "path": "card" }]
+  "references": [
+    {
+      "path": "logo"
+    },
+    {
+      "path": "divider"
+    },
+    {
+      "path": "search-input"
+    },
+    {
+      "path": "card"
+    },
+    {
+      "path": "autocomplete"
+    }
+  ]
 }

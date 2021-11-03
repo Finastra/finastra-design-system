@@ -15,21 +15,26 @@ export class SearchInput extends TextFieldBase {
   static styles = styles;
 
   @property({ type: String }) icon = 'search';
+  @property({ type: Boolean }) showClearButton = true;
 
   protected renderTrailingIcon(): TemplateResult | string {
     const clearButtonclasses = {
       'fds-search-input-clear-button--show': !!this.value,
       'fds-search-input-clear-button--hide': !this.value
     };
-    return html`<mwc-icon-button
-      @click=${this.clear}
-      class="mdc-text-field__affix--suffix fds-search-input-clear-button ${classMap(clearButtonclasses)}"
-      icon="clear"
-    ></mwc-icon-button>`;
+    return this.showClearButton
+      ? html`<mwc-icon-button
+          @click=${this.clear}
+          class="mdc-text-field__affix--suffix fds-search-input-clear-button ${classMap(clearButtonclasses)}"
+          icon="clear"
+        ></mwc-icon-button>`
+      : ``;
   }
 
   private clear() {
     this.value = '';
+    const inputEvent = new CustomEvent('input');
+    this.dispatchEvent(inputEvent);
     this.focus();
   }
 }

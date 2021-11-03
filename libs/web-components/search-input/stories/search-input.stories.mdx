@@ -18,12 +18,22 @@ import '@finastra/search-input';
       defaultValue: 'search',
       type: 'string',
       description: 'search icon'
+    },
+    showClearButton: {
+      table: {
+        category: 'properties',
+        defaultValue: { summary: true }
+      },
+      control: 'boolean',
+      defaultValue: true,
+      type: 'boolean',
+      description: 'show clear button'
     }
   }}
 />
 
-export const Template = ({ icon }) => {
-  return html`<fds-search-input .icon=${ifDefined(icon)}></fds-search-input>`;
+export const Template = ({ icon, showClearButton }) => {
+  return html`<fds-search-input .icon=${ifDefined(icon)} .showClearButton=${ifDefined(showClearButton)}></fds-search-input>`;
 };
 
 # Search Input

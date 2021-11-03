@@ -144,6 +144,17 @@
         }
       }
     },
+    "autocomplete": {
+      "root": "libs/web-components/autocomplete",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
+          }
+        }
+      }
+    },
     "avatar": {
       "projectType": "library",
       "root": "libs/angular-components/avatar",
