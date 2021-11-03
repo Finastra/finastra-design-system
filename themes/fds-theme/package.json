@@ -1,6 +1,6 @@
 {
   "name": "@finastra/fds-theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Talbot, Thomas <thomas.talbot@finastra.com>",
   "license": "MIT",
   "repository": {
@@ -16,6 +16,9 @@
   },
   "scripts": {
     "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
-    "build": "sass _custom-properties.scss styles.css --load-path=./node_modules"
+    "build": "sass _custom-properties.scss styles.css --load-path=../../node_modules"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

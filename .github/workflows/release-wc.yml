@@ -24,7 +24,9 @@ jobs:
           registry-url: https://check.npmjs.org/
       - name: Install dependencies
         run: npm ci
-      - name: Build
+      - name: Build fds theme
+        run: npm run build:fds-theme
+      - name: Build web components
         run: npm run wc:build
       - name: Get Release Version
         run: |
@@ -65,8 +67,15 @@ jobs:
           body: ''
           draft: false
           prerelease: true
+      - name: Authenticate with Registry
+        run: |
+          echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+          git update-index --assume-unchanged .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Publish
         run: |
           npx lerna publish from-package --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
