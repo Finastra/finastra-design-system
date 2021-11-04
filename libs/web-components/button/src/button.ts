@@ -2,11 +2,11 @@ import { customElement, LitElement, html, property } from 'lit-element';
 import { styles } from './styles.css';
 
 @customElement('fds-button')
-export class FdsButton extends LitElement {
+export class Button extends LitElement {
   static styles = styles;
 
   @property({ type: String })
-  label = 'fds button';
+  label = 'Button';
 
   @property({ type: String })
   icon = '';
@@ -50,6 +50,6 @@ export class FdsButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fds-button': FdsButton;
+    'fds-button': Button;
   }
 }

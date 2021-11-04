@@ -1,16 +1,16 @@
 {
-  "name": "@finastra/fds-button",
-  "displayName": "Fds Button",
+  "name": "@finastra/button",
+  "displayName": "Button",
   "version": "1.0.0",
-  "description": "Fds Button Web Component",
+  "description": "Button Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Fds Button"
+    "Button"
   ],
   "license": "MIT",
-  "main": "dist/fds-button.js",
-  "module": "dist/fds-button.js",
+  "main": "dist/button.js",
+  "module": "dist/button.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
