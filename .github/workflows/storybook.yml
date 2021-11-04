@@ -8,6 +8,7 @@ on:
       - 'themes/fds-theme/**'
       - '!libs/**/package.json'
       - '!themes/fds-theme/package.json'
+      - '.storybook/**'
 
 permissions:
   contents: write # for checkout and commit
