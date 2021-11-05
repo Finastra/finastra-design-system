@@ -49,7 +49,7 @@
 /// @param {String} $style - The name of the style to apply
 @mixin bg-color($style){
   $bg-color: map.get(variables.$properties, $style);
-  background-color: var(--fds-#{$style}, #{$bg-color});
+  background: var(--fds-#{$style}, #{$bg-color});
 }
 
 /// Generates CSS to apply color to a text.
