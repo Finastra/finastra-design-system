@@ -75,7 +75,7 @@ jobs:
           npm whoami
           git update-index --assume-unchanged .npmrc
         env:
-          NPM_TOKEN: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Publish
         run: |
           npx lerna publish from-package --yes
