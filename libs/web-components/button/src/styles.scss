@@ -6,7 +6,6 @@
 }
 
 :host([secondary]) {
-  --mdc-theme-primary: #C137A2;
   --mdc-theme-primary: var(--fds-secondary);
   --mdc-button-outline-color: var(--fds-secondary);
 }
