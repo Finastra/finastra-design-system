@@ -1,6 +1,7 @@
 @use '@finastra/fds-theme' as fds;
-@use '@finastra/fds-theme/color/helpers' as color-helper;
-@use '@finastra/fds-theme/typography/helpers' as typo-helper;
+@use '@finastra/fds-theme/dark' with ( $class: '.dark-theme' );
+// @use '@finastra/fds-theme/light' with ( $class: '.light-theme' );
+@use '@finastra/fds-theme/helpers';
 
 body {
     // background: var(--fds-background);

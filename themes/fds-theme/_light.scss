@@ -1,0 +1,6 @@
+@use './color/mixins';
+@use './color/light';
+
+$class: ':root' !default;
+
+@include mixins.custom-properties($class, light.$properties);

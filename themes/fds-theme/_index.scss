@@ -1,6 +1,18 @@
-@forward './color';
+@forward './color' show
+  $primary,
+  $secondary,
+  $background,
+  $surface,
+  $success,
+  $error,
+  $gradient,
+  $on-primary,
+  $on-secondary,
+  $on-surface,
+  $on-error,
+  $on-success,
+  bg-color,
+  text-color;
 @forward './elevation';
 @forward './spacing';
 @forward './typography';
-
-@use './custom-properties';
