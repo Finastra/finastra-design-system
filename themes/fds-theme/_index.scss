@@ -12,7 +12,10 @@
   $on-error,
   $on-success,
   bg-color,
-  text-color;
+  text-color,
+  use-theme-light,
+  use-theme-dark;
 @forward './elevation';
 @forward './spacing';
 @forward './typography';
+@forward './custom-properties';

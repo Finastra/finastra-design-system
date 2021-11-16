@@ -1,6 +1,9 @@
 @use './color/mixins';
 @use './color/dark';
+@use './custom-properties';
 
 $class: ':root' !default;
 
-@include mixins.custom-properties($class, dark.$properties);
+@include mixins.wrap($class) {
+    @include mixins.custom-properties(dark.$properties);
+}

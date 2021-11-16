@@ -1,6 +1,7 @@
 @use 'sass:map';
+@use 'sass:string';
 @use './light';
-
+@use './dark';
 /// Loads the colors' custom properties on root.
 ///
 /// @example
@@ -8,12 +9,35 @@
 ///      background: var(--fds-surface);
 ///      color: var(--fds-on-surface);
 ///   }
-@mixin custom-properties($class, $properties) {
-  @debug $class;
-  #{$class} {
-    @each $style, $variable in $properties {
-      --fds-#{$style}: #{$variable};
+@mixin custom-properties($properties) {
+  @each $style, $variable in $properties {
+    --fds-#{$style}: #{$variable};
+    --mdc-theme-#{$style}: var(--fds-#{$style});
+  }
+}
+
+@mixin wrap($class: null) {
+  @if $class and $class != "root" and $class != ":root" {
+    $class: check-class-name($class);
+    #{$class} {
+      @content;
     }
+  } @else {
+    #{if(&, '&', ':root')} {
+      @content;
+    }
+  }
+}
+
+@mixin use-theme-light() {
+  @include wrap() {
+    @include custom-properties(light.$properties);
+  }
+}
+
+@mixin use-theme-dark() {
+  @include wrap() {
+    @include custom-properties(dark.$properties);
   }
 }
 
@@ -25,16 +49,17 @@
 ///   </div>
 @mixin helper-classes() {
   @each $style, $value in light.$properties {
-    @if $style != 'background' and $style != 'surface' {
+    $bg-color: map.get(light.$properties, $style);
+    @if $style != "background" and $style != "surface" {
       .fds-#{$style} {
-        color: var(--fds-#{$style});
+        color: var(--fds-#{$style}, #{$bg-color});
       }
       .fds-#{$style}-bg {
-        background: var(--fds-#{$style});
+        background: var(--fds-#{$style}, #{$bg-color});
       }
     } @else {
       .fds-#{$style} {
-        background: var(--fds-#{$style});
+        background: var(--fds-#{$style}, #{$bg-color});
       }
     }
   }
@@ -48,7 +73,7 @@
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin bg-color($style){
+@mixin bg-color($style) {
   $bg-color: map.get(light.$properties, $style);
   background: var(--fds-#{$style}, #{$bg-color});
 }
@@ -62,6 +87,22 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
-  $bg-color: map.get(variables.$properties, $style);
+  $bg-color: map.get(light.$properties, $style);
   color: var(--fds-#{$style}, #{$bg-color});
+}
+
+@function check-class-name($class: "") {
+  @if $class == "" or $class == " " or string.length($class) == 0 {
+    @error "'#{$class}' name is empty";
+  }
+
+  @if string.index($class, ".") == 1 and string.length($class) <= 1 {
+    @error "You must specify a name to your class";
+  }
+
+  @if (string.index($class, ".") != 1) and ($class != ":root" and $class != "root") {
+    $class: "." + $class;
+  }
+
+  @return $class;
 }

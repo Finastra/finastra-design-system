@@ -1,11 +1,13 @@
 @use '@finastra/fds-theme' as fds;
-@use '@finastra/fds-theme/dark' with ( $class: '.dark-theme' );
-// @use '@finastra/fds-theme/light' with ( $class: '.light-theme' );
+@use '@finastra/fds-theme/light' with ($class: 'light-theme');
+@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
 @use '@finastra/fds-theme/helpers';
 
+//@include fds.use-theme-light();
+
 body {
-    // background: var(--fds-background);
     @include fds.bg-color(background);
+    @include fds.text-color(on-surface);
 }
 
 .swatch {
@@ -20,4 +22,8 @@ body {
 
 .my-headline1 {
     @include fds.typography(headline1);
+}
+
+@media (prefers-color-scheme: dark) {
+    //@include fds.use-theme-dark();
 }

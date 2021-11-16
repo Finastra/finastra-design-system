@@ -13,4 +13,6 @@
   $on-success;
 @forward './mixins' show
   bg-color,
-  text-color;
+  text-color,
+  use-theme-light,
+  use-theme-dark;
