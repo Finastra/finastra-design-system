@@ -1,0 +1,7 @@
+@use './color/mixins';
+
+@include mixins.use-theme-light();
+
+@media (prefers-color-scheme: dark) {
+    @include mixins.use-theme-dark();
+}

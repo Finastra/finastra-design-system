@@ -1,7 +1,0 @@
-@use './color/mixins';
-
-@mixin wrap($properties, $class:null) {
-    @include mixins.wrap($class) {
-        @include mixins.custom-properties($properties);
-    }
-}
