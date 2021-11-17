@@ -12,13 +12,14 @@
   $on-error,
   $on-success,
   bg-color,
-  text-color,
-  use-theme-light,
-  use-theme-dark;
+  text-color;
 @forward './elevation';
 @forward './spacing' show 
 margin,
 padding;
 @forward './typography' show 
 typography;
-@forward './custom-properties';
+@forward './mixins' show 
+use-theme-light,
+use-theme-dark;
+

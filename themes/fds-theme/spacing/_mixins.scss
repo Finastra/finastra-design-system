@@ -13,11 +13,9 @@
 ///      padding: var(--fds-spacing-1);
 ///   }
 @mixin custom-properties() {
-  :root {
     @each $key, $value in variables.$properties {
       --fds-#{$key}: #{$value};
     }
-  }
 }
 
 /// Loads the spacing's helper classes using following format:

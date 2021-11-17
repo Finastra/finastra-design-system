@@ -9,7 +9,6 @@
 ///      font: var(--fds-headline1);
 ///   }
 @mixin custom-properties() {
-  :root {
     @each $key, $value in variables.$properties {
       @if (meta.type-of($value) == 'map') {
         $font-weight: map.get($value, 'font-weight');
@@ -31,7 +30,6 @@
         --fds-#{$key}: #{$value};
       }
     }
-  }
 }
 
 /// Loads the typography's helper classes.

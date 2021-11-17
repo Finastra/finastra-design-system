@@ -1,7 +1,5 @@
 @use 'sass:map';
-@use 'sass:string';
 @use './light';
-@use './dark';
 /// Loads the colors' custom properties.
 ///
 /// @example
@@ -13,46 +11,6 @@
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
     --mdc-theme-#{$style}: var(--fds-#{$style});
-  }
-}
-
-/// Use this mixin to include any content block inside your class or root.
-@mixin wrap($class: null) {
-  @if $class and $class != "root" and $class != ":root" {
-    $class: is-valid-name($class);
-    #{$class} {
-      @content;
-    }
-  } @else {
-    #{if(&, '&', ':root')} {
-      @content;
-    }
-  }
-}
-
-/// Loads the light colors' custom properties inside your container .
-///
-/// @example
-///   @use '@finastra/fds-theme' as fds;
-///     .my-container {
-///        @include fds.use-theme-light();
-///      }
-@mixin use-theme-light() {
-  @include wrap() {
-    @include custom-properties(light.$properties);
-  }
-}
-
-/// Loads the dark colors' custom properties inside your container .
-///
-/// @example
-///   @use '@finastra/fds-theme' as fds;
-///     .my-container {
-///        @include fds.use-theme-dark();
-///      }
-@mixin use-theme-dark() {
-  @include wrap() {
-    @include custom-properties(dark.$properties);
   }
 }
 
@@ -104,21 +62,4 @@
 @mixin text-color($style) {
   $bg-color: map.get(light.$properties, $style);
   color: var(--fds-#{$style}, #{$bg-color});
-}
-
-/// Check if the class name is valid
-@function is-valid-name($class) {
-  @if $class == "" or $class == " " {
-    @error "'#{$class}' name is empty";
-  }
-
-  @if string.index($class, ".") == 1 and string.length($class) <= 1 {
-    @error "You must specify a name to your class";
-  }
-
-  @if string.index($class, ".") != 1 and $class != ":root" and $class != "root" {
-    $class: "." + $class;
-  }
-
-  @return $class;
 }

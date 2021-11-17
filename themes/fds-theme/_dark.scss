@@ -1,6 +1,5 @@
-@use './color/mixins';
 @use './color/dark';
-@use './custom-properties';
+@use './mixins';
 
 $class: ':root' !default;
 

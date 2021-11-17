@@ -1,5 +1,4 @@
-@use './color/mixins';
-@use './custom-properties';
+@use './mixins';
 
 @include mixins.use-theme-light();
 
