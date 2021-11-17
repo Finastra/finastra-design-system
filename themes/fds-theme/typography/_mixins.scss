@@ -62,7 +62,11 @@
 @mixin typography($style) {
   $typo-style: map.get(variables.$properties, $style);
   $letter-spacing: map.get($typo-style, 'letter-spacing');
+  $font-weight: map.get($typo-style, 'font-weight');
+  $font-size: map.get($typo-style, 'font-size');
+  $line-height: map.get($typo-style, 'line-height');
+  $font-family: map.get($typo-style, 'font-family');
 
-  font: var(--fds-#{$style});
+  font: var(--fds-#{$style}, normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family});
   letter-spacing: #{$letter-spacing};
 }

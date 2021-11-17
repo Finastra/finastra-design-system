@@ -16,6 +16,9 @@
   use-theme-light,
   use-theme-dark;
 @forward './elevation';
-@forward './spacing';
-@forward './typography';
+@forward './spacing' show 
+margin,
+padding;
+@forward './typography' show 
+typography;
 @forward './custom-properties';
