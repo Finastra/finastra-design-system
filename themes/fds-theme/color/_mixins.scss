@@ -18,7 +18,7 @@
 
 @mixin wrap($class: null) {
   @if $class and $class != "root" and $class != ":root" {
-    $class: check-class-name($class);
+    $class: is-valid-name($class);
     #{$class} {
       @content;
     }
@@ -91,8 +91,8 @@
   color: var(--fds-#{$style}, #{$bg-color});
 }
 
-@function check-class-name($class: "") {
-  @if $class == "" or $class == " " or string.length($class) == 0 {
+@function is-valid-name($class) {
+  @if $class == "" or $class == " " {
     @error "'#{$class}' name is empty";
   }
 
@@ -100,7 +100,7 @@
     @error "You must specify a name to your class";
   }
 
-  @if (string.index($class, ".") != 1) and ($class != ":root" and $class != "root") {
+  @if string.index($class, ".") != 1 and $class != ":root" and $class != "root" {
     $class: "." + $class;
   }
 
