@@ -15,11 +15,11 @@
   text-color;
 @forward './elevation';
 @forward './spacing' show 
-margin,
-padding;
+  margin,
+  padding;
 @forward './typography' show 
-typography;
+  typography;
 @forward './mixins' show 
-use-theme-light,
-use-theme-dark;
+  use-theme-light,
+  use-theme-dark;
 
