@@ -69,34 +69,17 @@ export const Template = ({ outlined = false, fullBleed = false }) => {
         display: flex;
         flex-direction: column;
       }
-      .card__title,
-      .card__subtitle,
-      .card__secondary {
-        font-family: Roboto, sans-serif;
-      }
       .card__title {
-        font-size: 1.25rem;
-        font-weight: 500;
-        line-height: 2rem;
-        color: rgba(0, 0, 0);
+        font: var(--fds-headline4);
+        color: var(--fds-on-surface);
       }
       .card__subtitle {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.54);
-        text-decoration: inherit;
-        text-decoration-line: inherit;
-        text-decoration-style: inherit;
-        text-decoration-color: inherit;
+        font: var(--fds-subtitle1);
+        color: var(--fds-text-high-on-background);
       }
       .card__secondary {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.54);
-        text-decoration: inherit;
-        text-transform: inherit;
+        font: var(--fds-body2);
+        color: var(--fds-text-high-on-background);
         padding: 0 1rem 8px;
       }
     </style>
