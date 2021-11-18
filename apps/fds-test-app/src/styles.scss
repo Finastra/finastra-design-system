@@ -6,7 +6,7 @@
 
 body {
     @include fds.bg-color(background);
-    @include fds.text-color(on-surface);
+    @include fds.text-color(on-background);
 }
 
 .swatch {

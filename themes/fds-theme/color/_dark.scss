@@ -12,6 +12,7 @@ $error: #E40046 !default;
 $gradient: linear-gradient(#917EE0, #E453BF) !default;
 $on-primary: #000000 !default;
 $on-secondary: #000000 !default;
+$on-background: #FFFFFF !default;
 $on-surface: #FFFFFF !default;
 $on-error: #FFFFFF !default;
 $on-success: #FFFFFF !default;
@@ -26,6 +27,7 @@ $properties: (
   gradient: $gradient,
   on-primary: $on-primary,
   on-secondary: $on-secondary,
+  on-background: $on-background,
   on-surface: $on-surface,
   on-error: $on-error,
   on-success: $on-success,
