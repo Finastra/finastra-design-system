@@ -2,7 +2,7 @@
 @use '@finastra/fds-theme/dark' with ( $class: 'dark-theme');
 @use '@finastra/fds-theme/helpers';
 
-// @include fds.use-theme-light();
+ //@include fds.use-light-theme();
 
 .swatch {
     // @include fds.margin(3);
@@ -19,5 +19,5 @@
 // }
 
 // @media (prefers-color-scheme: dark) {
-    //@include fds.use-theme-dark();
+//     @include fds.use-dark-theme();
 // }

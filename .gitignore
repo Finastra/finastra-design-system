@@ -58,8 +58,7 @@ themes/angular-theme/prebuit-theme
 /libs/web-components/**/dist
 /libs/web-components/**/package-lock.json
 **/*.tsbuildinfo*
-/themes/fds-theme/*.css
-/themes/fds-theme/*.css.map
+/themes/fds-theme/prebuilt/**
 compile
 storybook-static
 **/coverage

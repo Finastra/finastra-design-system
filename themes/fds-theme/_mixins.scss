@@ -24,6 +24,7 @@
 ///        @include fds.use-theme-light();
 ///      }
 @mixin use-light-theme() {
+    @include init();
     @include wrap() {
         @include custom-properties(light.$properties);
     }
@@ -37,6 +38,7 @@
 ///        @include fds.use-theme-dark();
 ///      }
 @mixin use-dark-theme() {
+    @include init();
     @include wrap() {
         @include custom-properties(dark.$properties);
     }
@@ -46,7 +48,7 @@
 ///
 /// @param {string=} $class - The class name to validate
 @mixin wrap($class: null) {
-    @if $class and $class != 'root' and $class != ':root' {
+    @if $class and $class != "root" and $class != ":root" {
         $class: is-valid-name($class);
         #{$class} {
             @content;
@@ -58,20 +60,28 @@
     }
 }
 
+/// Initialize the body with a background and text color
+@mixin init() {
+    body {
+        @include colors.bg-color(background);
+        @include colors.text-color(on-surface);
+    }
+}
+
 /// Check if the class name is valid
 ///
 /// @param {string} $class - The class name to validate
 @function is-valid-name($class) {
-    @if $class == '' or $class == ' ' {
+    @if $class == "" or $class == " " {
         @error ''#{$class}' name is empty';
     }
 
-    @if string.index($class, '.') == 1 and string.length($class) <= 1 {
+    @if string.index($class, ".") == 1 and string.length($class) <= 1 {
         @error 'You must specify a name to your class';
     }
 
-    @if string.index($class, '.') != 1 and $class != ':root' and $class != 'root' {
-        $class: '.' + $class;
+    @if string.index($class, ".") != 1 and $class != ":root" and $class != "root" {
+        $class: "." + $class;
     }
 
     @return $class;
