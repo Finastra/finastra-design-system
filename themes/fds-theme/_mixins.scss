@@ -23,7 +23,7 @@
 ///     .my-container {
 ///        @include fds.use-theme-light();
 ///      }
-@mixin use-theme-light() {
+@mixin use-light-theme() {
     @include wrap() {
         @include custom-properties(light.$properties);
     }
@@ -36,7 +36,7 @@
 ///     .my-container {
 ///        @include fds.use-theme-dark();
 ///      }
-@mixin use-theme-dark() {
+@mixin use-dark-theme() {
     @include wrap() {
         @include custom-properties(dark.$properties);
     }

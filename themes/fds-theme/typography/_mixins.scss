@@ -40,9 +40,13 @@
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
       $letter-spacing: map.get($value, 'letter-spacing');
+      $font-weight: map.get($value, 'font-weight');
+      $font-size: map.get($value, 'font-size');
+      $line-height: map.get($value, 'line-height');
+      $font-family: map.get($value, 'font-family');
 
       .fds-#{$key} {
-        font: var(--fds-#{$key});
+        font: var(--fds-#{$key}, normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family});
         letter-spacing: #{$letter-spacing};
       }
     }

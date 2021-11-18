@@ -1,9 +1,8 @@
 @use '@finastra/fds-theme' as fds;
-@use '@finastra/fds-theme/light' with ($class: 'light-theme');
-@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+@use '@finastra/fds-theme/dark' with ( $class: 'dark-theme');
 @use '@finastra/fds-theme/helpers';
 
-//@include fds.use-theme-light();
+// @include fds.use-theme-light();
 
 body {
     @include fds.bg-color(background);
@@ -11,8 +10,8 @@ body {
 }
 
 .swatch {
-    @include fds.margin(3);
-    @include fds.elevation(2);
+    // @include fds.margin(3);
+    // @include fds.elevation(2);
 
     display: inline-block;
     width: 50px;
@@ -20,10 +19,10 @@ body {
     border-radius: 50%;
 }
 
-.my-headline1 {
-    @include fds.typography(headline1);
-}
+// .my-headline1 {
+//     @include fds.typography(headline1);
+// }
 
-@media (prefers-color-scheme: dark) {
+// @media (prefers-color-scheme: dark) {
     //@include fds.use-theme-dark();
-}
+// }

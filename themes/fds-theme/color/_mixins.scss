@@ -7,7 +7,7 @@
 ///      background: var(--fds-surface);
 ///      color: var(--fds-on-surface);
 ///   }
-@mixin custom-properties($properties) {
+@mixin custom-properties($properties: light.$properties) {
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
     --mdc-theme-#{$style}: var(--fds-#{$style});

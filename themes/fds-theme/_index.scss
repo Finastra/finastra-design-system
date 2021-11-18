@@ -20,6 +20,6 @@
 @forward './typography' show 
   typography;
 @forward './mixins' show 
-  use-theme-light,
-  use-theme-dark;
+  use-light-theme,
+  use-dark-theme;
 

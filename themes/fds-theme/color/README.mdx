@@ -15,21 +15,13 @@ This theme is built around custom properties. You can use them directly in your 
 ### Examples
 
 ```SCSS
-@use '@finastra/fds-theme';
+@use '@finastra/fds-theme/light';
 
 .my-primary-container {
   background-color: var(--fds-primary);
   color: var(--fds-on-primary);
 }
 ```
-
-> Don't forget to load all the custom properties by adding the `@use` rule. If you only need the colors' custom properties you can write:
->
-> ```SCSS
-> @use '@finastra/fds-theme/colors/custom-properties';
-> ```
->
-> It won't load custom properties for typography, spacing...
 
 ### Available custom properties
 
