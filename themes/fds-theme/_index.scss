@@ -23,3 +23,7 @@
   use-light-theme,
   use-dark-theme;
 
+  body {
+    background: var(--fds-background,#FAFAFA);
+    color: var(--fds-on-surface,#000000);
+  }
