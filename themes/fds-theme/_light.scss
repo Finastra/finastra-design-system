@@ -3,7 +3,6 @@
 
 $class: ':root' !default;
 
-@include mixins.init();
 @include mixins.wrap($class) {
     @include mixins.custom-properties(light.$properties);
 }

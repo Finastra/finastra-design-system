@@ -38,7 +38,6 @@
 ///        @include fds.use-theme-dark();
 ///      }
 @mixin use-dark-theme() {
-    @include init();
     @include wrap() {
         @include custom-properties(dark.$properties);
     }
@@ -57,14 +56,6 @@
         #{if(&, '&', ':root')} {
             @content;
         }
-    }
-}
-
-/// Initialize the body with a background and text color
-@mixin init() {
-    body {
-        @include colors.bg-color(background);
-        @include colors.text-color(on-surface);
     }
 }
 

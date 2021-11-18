@@ -4,6 +4,11 @@
 
  //@include fds.use-light-theme();
 
+body {
+    @include fds.bg-color(background);
+    @include fds.text-color(on-surface);
+}
+
 .swatch {
     // @include fds.margin(3);
     // @include fds.elevation(2);
