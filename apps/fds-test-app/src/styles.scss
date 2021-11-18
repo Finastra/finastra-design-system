@@ -2,7 +2,7 @@
 @use '@finastra/fds-theme/dark' with ( $class: 'dark-theme');
 @use '@finastra/fds-theme/helpers';
 
- //@include fds.use-light-theme();
+//  @include fds.use-light-theme();
 
 body {
     @include fds.bg-color(background);

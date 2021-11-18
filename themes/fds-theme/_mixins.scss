@@ -22,7 +22,7 @@
 ///   @use '@finastra/fds-theme' as fds;
 ///     .my-container {
 ///        @include fds.use-theme-light();
-///      }
+///     }
 @mixin use-light-theme() {
     @include wrap() {
         @include custom-properties(light.$properties);
@@ -35,7 +35,7 @@
 ///   @use '@finastra/fds-theme' as fds;
 ///     .my-container {
 ///        @include fds.use-theme-dark();
-///      }
+///     }
 @mixin use-dark-theme() {
     @include wrap() {
         @include custom-properties(dark.$properties);
@@ -44,10 +44,10 @@
 
 /// Use this mixin to include any content block inside your class or root.
 ///
-/// @param {string=} $class - The class name to validate
+/// @param {string} $class - The class name to validate
 @mixin wrap($class: null) {
-    @if $class and $class != "root" and $class != ":root" {
-        $class: is-valid-name($class);
+    @if $class and $class != 'root' and $class != ':root' {
+        $class: -validate-class($class);
         #{$class} {
             @content;
         }
@@ -61,17 +61,17 @@
 /// Check if the class name is valid
 ///
 /// @param {string} $class - The class name to validate
-@function is-valid-name($class) {
-    @if $class == "" or $class == " " {
-        @error ''#{$class}' name is empty';
+@function -validate-class($class) {
+    @if $class == '' or $class == ' ' {
+        @error 'Theme class should not be empty. If you want your theme applied on root do not specify $class.';
     }
 
-    @if string.index($class, ".") == 1 and string.length($class) <= 1 {
+    @if string.index($class, '.') == 1 and string.length($class) <= 1 {
         @error 'You must specify a name to your class';
     }
 
-    @if string.index($class, ".") != 1 and $class != ":root" and $class != "root" {
-        $class: "." + $class;
+    @if string.index($class, '.') != 1 and $class != ':root' and $class != 'root' {
+        $class: '.' + $class;
     }
 
     @return $class;
