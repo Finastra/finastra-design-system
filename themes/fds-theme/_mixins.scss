@@ -24,7 +24,6 @@
 ///        @include fds.use-theme-light();
 ///      }
 @mixin use-light-theme() {
-    @include init();
     @include wrap() {
         @include custom-properties(light.$properties);
     }
