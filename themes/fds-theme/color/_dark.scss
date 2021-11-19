@@ -12,10 +12,11 @@ $error: #E40046 !default;
 $gradient: linear-gradient(#917EE0, #E453BF) !default;
 $on-primary: #000000 !default;
 $on-secondary: #000000 !default;
-$on-background: #FFFFFF !default;
+$on-background: color.change($_white, $alpha: 0.75) !default;
 $on-surface: #FFFFFF !default;
 $on-error: #FFFFFF !default;
 $on-success: #FFFFFF !default;
+$on-gradient: #000000 !default;
 
 $properties: (
   primary: $primary,
@@ -31,7 +32,8 @@ $properties: (
   on-surface: $on-surface,
   on-error: $on-error,
   on-success: $on-success,
-  text-high-on-background: color.change($_white, $alpha: 0.75),
+  on-gradient: $on-gradient,
+  text-high-on-background: $on-background,
   text-medium-on-background: color.change($_white, $alpha: 0.54),
   text-hint-on-background: color.change($_white, $alpha: 0.29),
   text-disabled-on-background: color.change($_white, $alpha: 0.29),

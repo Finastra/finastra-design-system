@@ -11,7 +11,8 @@
   $on-background,
   $on-surface,
   $on-error,
-  $on-success;
+  $on-success,
+  $on-gradient;
 @forward './mixins' show
   bg-color,
   text-color;
