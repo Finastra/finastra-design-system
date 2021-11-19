@@ -3,6 +3,7 @@
   --mdc-shape-small: 22px;
   --mdc-theme-primary: var(--fds-primary);
   --mdc-button-outline-color: var(--fds-primary);
+  --mdc-typography-button-text-transform: none;
 }
 
 :host([secondary]) {
