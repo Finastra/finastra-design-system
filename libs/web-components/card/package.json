@@ -1,7 +1,7 @@
 {
   "name": "@finastra/card",
   "displayName": "Card",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Card Web Component",
   "keywords": [
     "finastra design system",
@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@material/card": "12.0.0",
-    "@material/mwc-ripple": "0.23.0",
     "@material/mwc-button": "0.23.0",
     "@material/mwc-icon-button": "0.23.0",
+    "@material/mwc-ripple": "0.23.0",
     "lit-element": "2.5.1",
     "lit-html": "1.4.1",
     "tslib": "^2.0.1"
