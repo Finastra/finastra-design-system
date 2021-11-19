@@ -17,7 +17,7 @@
   --mdc-theme-on-primary: var(--fds-on-primary);
   --fds-on-secondary: #FFFFFF;
   --mdc-theme-on-secondary: var(--fds-on-secondary);
-  --fds-on-background: #000000;
+  --fds-on-background: rgba(0, 0, 0, 0.75);
   --mdc-theme-on-background: var(--fds-on-background);
   --fds-on-surface: #000000;
   --mdc-theme-on-surface: var(--fds-on-surface);
@@ -25,6 +25,8 @@
   --mdc-theme-on-error: var(--fds-on-error);
   --fds-on-success: #FFFFFF;
   --mdc-theme-on-success: var(--fds-on-success);
+  --fds-on-gradient: #FFFFFF;
+  --mdc-theme-on-gradient: var(--fds-on-gradient);
   --fds-text-high-on-background: rgba(0, 0, 0, 0.75);
   --mdc-theme-text-high-on-background: var(--fds-text-high-on-background);
   --fds-text-medium-on-background: rgba(0, 0, 0, 0.54);
@@ -101,7 +103,7 @@
     --mdc-theme-on-primary: var(--fds-on-primary);
     --fds-on-secondary: #000000;
     --mdc-theme-on-secondary: var(--fds-on-secondary);
-    --fds-on-background: #FFFFFF;
+    --fds-on-background: rgba(255, 255, 255, 0.75);
     --mdc-theme-on-background: var(--fds-on-background);
     --fds-on-surface: #FFFFFF;
     --mdc-theme-on-surface: var(--fds-on-surface);
@@ -109,6 +111,8 @@
     --mdc-theme-on-error: var(--fds-on-error);
     --fds-on-success: #FFFFFF;
     --mdc-theme-on-success: var(--fds-on-success);
+    --fds-on-gradient: #000000;
+    --mdc-theme-on-gradient: var(--fds-on-gradient);
     --fds-text-high-on-background: rgba(255, 255, 255, 0.75);
     --mdc-theme-text-high-on-background: var(--fds-text-high-on-background);
     --fds-text-medium-on-background: rgba(255, 255, 255, 0.54);
