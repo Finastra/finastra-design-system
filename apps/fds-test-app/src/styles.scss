@@ -19,9 +19,9 @@ body {
     border-radius: 50%;
 }
 
-// .my-headline1 {
-//     @include fds.typography(headline1);
-// }
+.my-headline-1 {
+    @include fds.typography(headline-1);
+}
 
 // @media (prefers-color-scheme: dark) {
 //     @include fds.use-dark-theme();

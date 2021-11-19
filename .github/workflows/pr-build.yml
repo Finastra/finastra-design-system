@@ -2,6 +2,7 @@ name: Angular PR CI
 on:
   pull_request:
     paths-ignore:
+      - 'apps/fds-test-app/**'
       - 'themes/fds-theme/**'
       - 'libs/web-components/**'
 
