@@ -8,18 +8,18 @@
 | -------------------------- | ----------- | --------: |
 | --fds-font-family          | Roboto      |           |
 | --fds-headline-font-family | Spartan     |           |
-| --fds-headline1            | Spartan     |      51px |
-| --fds-headline2            | Spartan     |      41px |
-| --fds-headline3            | Spartan     |      28px |
-| --fds-headline4            | Spartan     |      21px |
-| --fds-headline5            | Spartan     |      16px |
-| --fds-headline6            | Spartan     |      13px |
-| --fds-subtitle1            | Roboto      |      16px |
-| --fds-subtitle2            | Roboto      |      14px |
-| --fds-subtitle3            | Roboto      |      12px |
-| --fds-body1                | Roboto      |      16px |
-| --fds-body2                | Roboto      |      14px |
-| --fds-body3                | Roboto      |      12px |
+| --fds-headline-1           | Spartan     |      51px |
+| --fds-headline-2           | Spartan     |      41px |
+| --fds-headline-3           | Spartan     |      28px |
+| --fds-headline-4           | Spartan     |      21px |
+| --fds-headline-5           | Spartan     |      16px |
+| --fds-headline-6           | Spartan     |      13px |
+| --fds-subtitle-1           | Roboto      |      16px |
+| --fds-subtitle-2           | Roboto      |      14px |
+| --fds-subtitle-3           | Roboto      |      12px |
+| --fds-body-1               | Roboto      |      16px |
+| --fds-body-2               | Roboto      |      14px |
+| --fds-body-3               | Roboto      |      12px |
 | --fds-button               | Roboto      |      14px |
 | --fds-caption              | Roboto      |      12px |
 | --fds-overline             | Roboto      |      10px |
@@ -38,29 +38,29 @@ Where `$style` is any of the [available text styles](#available-text-styles).
 @use '@finastra/fds-theme' as fds;
 
 .my-component-subtitle {
-  @include fds.typography(subtitle2);
+  @include fds.typography(subtitle-2);
 }
 ```
 
 ### Available text styles
 
-| Text style  | font-family | font-size |
-| ----------- | ----------- | --------: |
-| `headline1` | Spartan     |      51px |
-| `headline2` | Spartan     |      41px |
-| `headline3` | Spartan     |      28px |
-| `headline4` | Spartan     |      21px |
-| `headline5` | Spartan     |      16px |
-| `headline6` | Spartan     |      13px |
-| `subtitle1` | Roboto      |      16px |
-| `subtitle2` | Roboto      |      14px |
-| `subtitle3` | Roboto      |      12px |
-| `body1`     | Roboto      |      16px |
-| `body2`     | Roboto      |      14px |
-| `body3`     | Roboto      |      12px |
-| `button`    | Roboto      |      14px |
-| `caption`   | Roboto      |      12px |
-| `overline`  | Roboto      |      10px |
+| Text style   | font-family | font-size |
+| ------------ | ----------- | --------: |
+| `headline-1` | Spartan     |      51px |
+| `headline-2` | Spartan     |      41px |
+| `headline-3` | Spartan     |      28px |
+| `headline-4` | Spartan     |      21px |
+| `headline-5` | Spartan     |      16px |
+| `headline-6` | Spartan     |      13px |
+| `subtitle-1` | Roboto      |      16px |
+| `subtitle-2` | Roboto      |      14px |
+| `subtitle-3` | Roboto      |      12px |
+| `body-1`     | Roboto      |      16px |
+| `body-2`     | Roboto      |      14px |
+| `body-3`     | Roboto      |      12px |
+| `button`     | Roboto      |      14px |
+| `caption`    | Roboto      |      12px |
+| `overline`   | Roboto      |      10px |
 
 ## Helper classes
 
@@ -73,5 +73,5 @@ Before being able to use typography helper classes, you will have to include the
 ### Example
 
 ```HTML
-<h1 class="fds-headline1">This is headline 1</h1>
+<h1 class="fds-headline-1">This is headline 1</h1>
 ```
