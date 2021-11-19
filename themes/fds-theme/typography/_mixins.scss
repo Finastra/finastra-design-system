@@ -11,12 +11,6 @@
 @mixin custom-properties() {
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
-      $font-family: map.get($value, 'font-family');
-
-      @if (not $font-family) {
-        $font-family: map.get(variables.$properties, 'font-family');
-      }
-
       --fds-#{$key}: #{typo-fallback($value)};
     } @else {
       --fds-#{$key}: #{$value};
@@ -65,6 +59,10 @@
   $font-size: map.get($typo-style, 'font-size');
   $line-height: map.get($typo-style, 'line-height');
   $font-family: map.get($typo-style, 'font-family');
+
+  @if (not $font-family) {
+    $font-family: map.get(variables.$properties, 'font-family');
+  }
 
   @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family};
 }
