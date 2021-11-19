@@ -6,7 +6,7 @@
 ///
 /// @example
 ///   .my-headline {
-///      font: var(--fds-headline1);
+///      font: var(--fds-headline-1);
 ///   }
 @mixin custom-properties() {
   @each $key, $value in variables.$properties {
@@ -27,7 +27,7 @@
 /// Loads the typography's helper classes.
 ///
 /// @example
-///   <p class="fds-body2">Hello</p>
+///   <p class="fds-body-2">Hello</p>
 @mixin helper-classes() {
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
