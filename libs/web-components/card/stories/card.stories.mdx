@@ -114,6 +114,30 @@ Card component
       docs: {
          source: {
           code: `
+ <style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
 <fds-card fullBleed>
   <div slot="primary-action">
     <div class="card__header">
@@ -162,7 +186,32 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: `<fds-card outlined>
+          code: `
+ <style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
+<fds-card outlined>
   <div slot="primary-action">
     <div class="card__header">
       <div class="card__header-text">
@@ -197,7 +246,32 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: `<fds-card fullBleed>
+          code: `
+<style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
+<fds-card fullBleed>
   <div slot="primary-action">
     <div class="card__header">
       <div class="card__header-text">
