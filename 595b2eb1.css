@@ -1,6 +1,8 @@
 :root {
   --fds-primary: #694ED6;
   --mdc-theme-primary: var(--fds-primary);
+  --fds-primary-lighter: rgba(105, 78, 214, 0.08);
+  --mdc-theme-primary-lighter: var(--fds-primary-lighter);
   --fds-secondary: #C137A2;
   --mdc-theme-secondary: var(--fds-secondary);
   --fds-background: #FAFAFA;
@@ -87,6 +89,8 @@
   :root {
     --fds-primary: #917EE0;
     --mdc-theme-primary: var(--fds-primary);
+    --fds-primary-lighter: rgba(145, 126, 224, 0.08);
+    --mdc-theme-primary-lighter: var(--fds-primary-lighter);
     --fds-secondary: #E453BF;
     --mdc-theme-secondary: var(--fds-secondary);
     --fds-background: #191919;
