@@ -21,6 +21,8 @@ body {
 
 .my-headline-1 {
     @include fds.typography(headline-1);
+    @include fds.text-color(gradient-horizontal);
+    display: inline-block;
 }
 
 // @media (prefers-color-scheme: dark) {
