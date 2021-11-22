@@ -48,5 +48,5 @@ $properties: (
   text-medium-on-dark: color.change($_white, $alpha: 0.7),
   text-hint-on-dark: color.change($_white, $alpha: 0.5),
   text-disabled-on-dark: color.change($_white, $alpha: 0.5),
-  text-icon-on-dark: color.change($_white, $alpha: 0.5),
+  text-icon-on-dark: color.change($_white, $alpha: 0.5)
 )
