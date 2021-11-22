@@ -90,7 +90,7 @@ export const Template = ({ outlined = false, fullBleed = false }) => {
             <div class="card__subtitle">by Kurt Wagner</div>
           </div>
         </div>
-        <div class="card__secondary mdc-typography mdc-typography--body2">
+        <div class="card__secondary">
           Visit ten places on our planet that are undergoing the biggest changes today.
         </div>
       </div>
@@ -112,8 +112,26 @@ Card component
     args={{ fullBleed: true }}
     parameters={{
       docs: {
-        source: {
-          code: '<fds-card></fds-card>'
+         source: {
+          code: `
+<fds-card fullBleed>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}
@@ -144,7 +162,24 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: '<fds-card></fds-card>'
+          code: `<fds-card outlined>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary mdc-typography mdc-typography--body2">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}
@@ -162,7 +197,24 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: '<fds-card></fds-card>'
+          code: `<fds-card fullBleed>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary mdc-typography mdc-typography--body2">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}
