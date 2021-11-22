@@ -20,6 +20,7 @@ $on-gradient: #000000 !default;
 
 $properties: (
   primary: $primary,
+  primary-lighter: color.change($primary, $alpha: 0.08),
   secondary: $secondary,
   background: $background,
   surface: $surface,
@@ -47,5 +48,5 @@ $properties: (
   text-medium-on-dark: color.change($_white, $alpha: 0.7),
   text-hint-on-dark: color.change($_white, $alpha: 0.5),
   text-disabled-on-dark: color.change($_white, $alpha: 0.5),
-  text-icon-on-dark: color.change($_white, $alpha: 0.5)
+  text-icon-on-dark: color.change($_white, $alpha: 0.5),
 )
