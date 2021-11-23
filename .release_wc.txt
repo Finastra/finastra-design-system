@@ -9,3 +9,4 @@
 - [11/05/2021] Request release v0.0.3 by dorsaffrigui 
 - [11/19/2021] Request release v0.0.4 by ttalbot 
 - [11/19/2021] Request release v0.0.5 by ttalbot 
+- [11/23/2021] Request release v0.0.6 by ttalbot 
