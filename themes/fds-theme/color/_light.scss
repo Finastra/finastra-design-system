@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:string';
 
 $_black: black;
 $_white: white;
@@ -27,6 +28,8 @@ $properties: (
   success: $success,
   error: $error,
   gradient: $gradient,
+  gradient-horizontal: string.insert($gradient, '90deg ,', string.index($gradient, '(') + 1),
+  gradient-vertical: $gradient,
   on-primary: $on-primary,
   on-secondary: $on-secondary,
   on-background: $on-background,

@@ -1,5 +1,7 @@
 @use 'sass:map';
+@use 'sass:string';
 @use './light';
+
 /// Loads the colors' custom properties.
 ///
 /// @example
@@ -61,5 +63,12 @@
 /// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
   $bg-color: map.get(light.$properties, $style);
-  color: var(--fds-#{$style}, #{$bg-color});
+  @if string.index($style, 'gradient') {
+    background: var(--fds-#{$style}, #{$bg-color});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @else {
+    color: var(--fds-#{$style}, #{$bg-color});
+  }
 }
