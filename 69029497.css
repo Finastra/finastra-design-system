@@ -39,7 +39,7 @@
   --mdc-theme-text-medium-on-background: var(--fds-text-medium-on-background);
   --fds-text-hint-on-background: rgba(0, 0, 0, 0.29);
   --mdc-theme-text-hint-on-background: var(--fds-text-hint-on-background);
-  --fds-text-disabled-on-background: rgba(0, 0, 0, 0.29);
+  --fds-text-disabled-on-background: rgba(0, 0, 0, 0.12);
   --mdc-theme-text-disabled-on-background: var(--fds-text-disabled-on-background);
   --fds-text-icon-on-background: rgba(0, 0, 0, 0.29);
   --mdc-theme-text-icon-on-background: var(--fds-text-icon-on-background);
@@ -131,7 +131,7 @@
     --mdc-theme-text-medium-on-background: var(--fds-text-medium-on-background);
     --fds-text-hint-on-background: rgba(255, 255, 255, 0.29);
     --mdc-theme-text-hint-on-background: var(--fds-text-hint-on-background);
-    --fds-text-disabled-on-background: rgba(255, 255, 255, 0.29);
+    --fds-text-disabled-on-background: rgba(255, 255, 255, 0.12);
     --mdc-theme-text-disabled-on-background: var(--fds-text-disabled-on-background);
     --fds-text-icon-on-background: rgba(255, 255, 255, 0.29);
     --mdc-theme-text-icon-on-background: var(--fds-text-icon-on-background);
