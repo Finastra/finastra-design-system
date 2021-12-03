@@ -27,7 +27,7 @@ npm run wc:serve
 ```
 
 - Storybook (for the document and demo)
-
+  
 ```
 npm run wc:storybook
 ```
@@ -49,6 +49,14 @@ npm run wc:build:ts
 npm run wc:build
 ```
 
+Before running Storybook, be sure to build it using the following command:
+
+```
+npm run wc:build:storybook
+```
+
+> Note that you need to build the storybook only the first time you clone the repository or if you have modified a file inside the .storybook folder.
+
 ### Running Tests (WIP ⚠️)
 
 ```
@@ -69,3 +77,6 @@ npm run format
 ```
 npm run wc:generate MY_COMPONENT_NAME
 ```
+
+> To see a demo of the generated web component, run the commands mentioned in 
+[Web Component Development](#web-component-development).
