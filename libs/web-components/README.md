@@ -49,13 +49,13 @@ npm run wc:build:ts
 npm run wc:build
 ```
 
-Before running Storybook, be sure to build it using the following command:
+Before running Storybook, be sure to build it using the following command
 
 ```
 npm run wc:build:storybook
 ```
 
-> Note that you need to build the storybook only the first time you clone the repository or if you have modified a file inside the .storybook folder.
+> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
 
 ### Running Tests (WIP ⚠️)
 
