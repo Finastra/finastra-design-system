@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/button",
+  "displayName": "Button",
+  "version": "0.0.8",
+  "description": "Button Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Button"
+  ],
+  "license": "MIT",
+  "main": "dist/button.js",
+  "module": "dist/button.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-button": "0.25.0",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

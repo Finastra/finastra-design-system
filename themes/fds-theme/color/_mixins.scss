@@ -1,24 +1,74 @@
-@use '@material/theme/custom-properties';
-@use './mdc-theme' as mdc;
-@use './variables';
+@use 'sass:map';
+@use 'sass:string';
+@use './light';
 
-@mixin core-styles() {
-  @include mdc.core-styles;
-  
-  @each $style in ('gradient', 'success', 'error') {
-    .mdc-theme--#{$style}-bg {
-      @include mdc.property(background, $style, $important: true);
+/// Loads the colors' custom properties.
+///
+/// @example
+///   .my-container {
+///      background: var(--fds-surface);
+///      color: var(--fds-on-surface);
+///   }
+@mixin custom-properties($properties: light.$properties) {
+  @each $style, $variable in $properties {
+    --fds-#{$style}: #{$variable};
+    --mdc-theme-#{$style}: var(--fds-#{$style});
+  }
+}
+
+/// Loads the colors' helper classes.
+///
+/// @example
+///   <div class="fds-primary-bg">
+///      <p class="fds-on-primary">Hello</p>
+///   </div>
+@mixin helper-classes() {
+  @each $style, $value in light.$properties {
+    $bg-color: map.get(light.$properties, $style);
+    @if $style != "background" and $style != "surface" {
+      .fds-#{$style} {
+        color: var(--fds-#{$style}, #{$bg-color});
+      }
+      .fds-#{$style}-bg {
+        background: var(--fds-#{$style}, #{$bg-color});
+      }
+    } @else {
+      .fds-#{$style} {
+        background: var(--fds-#{$style}, #{$bg-color});
+      }
     }
   }
 }
 
-// @mixin dark-theme() {
-//   #{if(&, '&', ':root')} {
-//     @each $property, $value in theme-color.$properties {
-//       $cust-prop: --mdc-theme-#{$property};
-//       @include custom-properties.declaration(
-//         custom-properties.create($cust-prop, $value)
-//       )
-//     }
-//   }
-// }
+/// Generates CSS to apply background color to a container.
+///
+/// @example
+///   .my-primary-container {
+///     @include fds.bg-color(primary);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin bg-color($style) {
+  $bg-color: map.get(light.$properties, $style);
+  background: var(--fds-#{$style}, #{$bg-color});
+}
+
+/// Generates CSS to apply color to a text.
+///
+/// @example
+///   .my-error-text {
+///     @include fds.text-color(error);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin text-color($style) {
+  $bg-color: map.get(light.$properties, $style);
+  @if string.index($style, 'gradient') {
+    background: var(--fds-#{$style}, #{$bg-color});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @else {
+    color: var(--fds-#{$style}, #{$bg-color});
+  }
+}

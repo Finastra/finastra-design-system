@@ -1,8 +1,13 @@
+import theme from './theme';
+
 export const parameters = {
   layout: 'centered',
   options: {
     storySort: {
-      order: ['Guide', 'Components']
+      order: ['Foundations', 'Components']
     }
-  }
+  },
+  docs: {
+    theme: theme,
+  },
 };

@@ -4,13 +4,16 @@ on:
     branches:
       - master
     paths:
-      - 'packages/**'
-      - '!packages/**/package.json'
+      - 'libs/**'
+      - 'themes/fds-theme/**'
+      - '.storybook/**'
+      - '!libs/**/package.json'
+      - '!themes/fds-theme/package.json'
 
 permissions:
   contents: write # for checkout and commit
 jobs:
-  createReleasePR:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +25,7 @@ jobs:
         with:
           node-version: 15
           registry-url: https://registry.npmjs.org/
-      - name: Build
+      - name: Build Storybook
         run: |
           npm ci
           npm run wc:build:storybook
@@ -31,4 +34,3 @@ jobs:
         with:
           branch: storybook
           folder: storybook-static
-          target-folder: next

@@ -1,6 +1,6 @@
 {
   "name": "@finastra/divider",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "Divider Web Component",
   "keywords": [
     "finastra design system",
@@ -19,5 +19,7 @@
     "lit": "2.0.0",
     "tslib": "^2.0.1"
   },
-  "devDependencies": {}
+  "publishConfig": {
+    "access": "public"
+  }
 }

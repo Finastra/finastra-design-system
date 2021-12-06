@@ -1,7 +1,7 @@
 {
   "name": "@finastra/card",
   "displayName": "Card",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "Card Web Component",
   "keywords": [
     "finastra design system",
@@ -20,6 +20,8 @@
     "lit": "2.0.0",
     "tslib": "^2.0.1"
   },
-  "devDependencies": {},
-  "icon": "dashboard"
+  "icon": "dashboard",
+  "publishConfig": {
+    "access": "public"
+  }
 }

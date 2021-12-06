@@ -2,7 +2,7 @@
 
 ## Getting your envionement set up
 
-1. Make sure you have `npm@7.x.x` installed.
+1. Make sure you have `node@15.x.x` and `npm@7.x.x` installed.
 2. Fork `Finastra Design System` repo on Github.
 3. Clone your fork to your machine with `git clone`
 4. From the root of the project, run `npm install` to install the dependencies.
@@ -32,29 +32,29 @@ npm run wc:serve
 npm run wc:storybook
 ```
 
+> You can also see the storybook in the browser: https://finastra.github.io/finastra-design-system/
+
 ### Build
 
 Run the following commands to build all components
 
-```
-// Build component style (scss -> ts)
+```bash
+# Build component style (scss -> ts)
 npm run wc:build:style
 
-// Build component typescript (ts -> js)
+# Build component typescript (ts -> js)
 npm run wc:build:ts
 
-// Shortcut running both above commands
+# Shortcut running both above commands
 npm run wc:build
-
 ```
 
-### Running Tests(TODO)
+### Running Tests (WIP ⚠️)
 
 ```
 npm run wc:test:all
 
 npm run wc:test COMPONENT_FOLDER_NAME
-
 ```
 
 ### Linting & Formating

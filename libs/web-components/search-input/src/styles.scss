@@ -1,5 +1,13 @@
 @use "@material/mwc-textfield/mwc-textfield";
 
+:host {
+  --mdc-text-field-fill-color: var(--fds-primary-lighter);
+  --mdc-text-field-idle-line-color : var(--fds-primary);
+  --mdc-text-field-hover-line-color: var(--fds-primary);
+  --mdc-text-field-ink-color: var(--fds-on-background);
+  --mdc-ripple-color:var(--fds-primary-lighter);
+}
+
 .mdc-text-field--with-leading-icon {
   padding-right: 4px;
 }
@@ -17,4 +25,18 @@
   &.fds-search-input-clear-button--hide {
     opacity: 0;
   }
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled)  {
+  .mdc-text-field__icon--leading {
+    color: var(--fds-primary);
+  }
+
+  .mdc-text-field__affix--suffix {
+    color: var(--fds-on-background);
+  }
+}
+
+.mdc-text-field__input {
+  font: var(--fds-subtitle-1)
 }

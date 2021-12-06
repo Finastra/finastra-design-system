@@ -12,18 +12,18 @@ Install the dependency
 npm install @finastra/fds-theme
 ```
 
-Use the theme in your app's main stylesheet to get the core styles initialized, including helper classes and custom properties for color, spacing, elevation and typography.
+Use the theme in your app's main stylesheet to get the custom properties initialized, including Sass mixins for color, spacing, elevation and typography.
 
 ```SCSS
-@use '@finastra/fds-theme/styles';
+@use '@finastra/fds-theme';
 ```
 
 ## Usage
 
-- [Color](./color/README.md)
-- [Elevation](./elevation/README.md)
-- [Spacing](./spacing/README.md)
-- [Typography](./typography/README.md)
+- [Color](./color/README.mdx)
+- [Elevation](./elevation/README.mdx)
+- [Spacing](./spacing/README.mdx)
+- [Typography](./typography/README.mdx)
 
 ## Want to help? 🤗❤️
 

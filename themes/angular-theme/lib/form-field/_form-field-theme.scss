@@ -6,7 +6,7 @@
   $primary: map.get($theme, primary);
   $warn: map.get($theme, warn);
   $fill-background: palette.get-color-from-palette($primary, default, 0.08);
-  $warn-background: palette.get-color-from-palette($warn, default, 0.08);
+  $warn-background: palette.get-color-from-palette($warn, default, 0.04);
 
   .mat-form-field-appearance-fill {
     .mat-form-field-flex {

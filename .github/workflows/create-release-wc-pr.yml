@@ -27,7 +27,7 @@ jobs:
       - name: Version up
         run: |
           npx lerna version ${{ github.event.inputs.release_version }} --force-publish=* --no-git-tag-version --no-push --yes --exact
-          npm install --package-lock-only
+          npm install --package-lock-only --ignore-scripts
       - name: Get Release Version
         run: |
           RELEASE_VERSION=$(node -p 'require("./lerna.json").version')

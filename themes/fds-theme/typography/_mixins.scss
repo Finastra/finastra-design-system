@@ -1,25 +1,68 @@
-@use './mdc-typography' as mdc;
+@use 'sass:map';
+@use 'sass:meta';
+@use './variables';
 
-@mixin core-styles() {
-  @include mdc.core-styles;
-  :root {
-    @each $typo-style, $typo-style-props in mdc.$unused {
-      @each $typo-style-property, $typo-style-property-value in $typo-style-props {
-        --mdc-typography-#{$typo-style}-#{$typo-style-property}: #{$typo-style-property-value};
+/// Loads the typography's custom properties.
+///
+/// @example
+///   .my-headline {
+///      font: var(--fds-headline-1);
+///   }
+@mixin custom-properties() {
+  @each $key, $value in variables.$properties {
+    @if (meta.type-of($value) == 'map') {
+      --fds-#{$key}: #{typo-fallback($value)};
+    } @else {
+      --fds-#{$key}: #{$value};
+    }
+  }
+}
+
+/// Loads the typography's helper classes.
+///
+/// @example
+///   <p class="fds-body-2">Hello</p>
+@mixin helper-classes() {
+  @each $key, $value in variables.$properties {
+    @if (meta.type-of($value) == 'map') {
+      $letter-spacing: map.get($value, 'letter-spacing');
+
+      .fds-#{$key} {
+        font: var(--fds-#{$key}, #{typo-fallback($value)});
+        letter-spacing: #{$letter-spacing};
       }
     }
   }
 }
 
-///
-/// Apply CSS so that element have requested type scale
+/// Apply typography style to a text
 ///
 /// @example
-///   @include typography.style(body3);
-///   @include typography.style(headline1);
+///   .my-small-text {
+///     @include fds.typography(caption)
+///   }
 ///
-/// @param {String} $style - The style name requested
-///
+/// @param {String} $style - any of the predefined style in Finastra's typo scale
 @mixin typography($style) {
-  @include mdc.typography($style);
-} 
+  $typo-style: map.get(variables.$properties, $style);
+  $letter-spacing: map.get($typo-style, 'letter-spacing');
+
+  font: var(--fds-#{$style}, #{typo-fallback($typo-style)});
+  letter-spacing: #{$letter-spacing};
+}
+
+/// Returns a value for font
+///
+/// @param {Map} $typo-style - Map that includes font-related properties
+@function typo-fallback($typo-style) {
+  $font-weight: map.get($typo-style, 'font-weight');
+  $font-size: map.get($typo-style, 'font-size');
+  $line-height: map.get($typo-style, 'line-height');
+  $font-family: map.get($typo-style, 'font-family');
+
+  @if (not $font-family) {
+    $font-family: map.get(variables.$properties, 'font-family');
+  }
+
+  @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family};
+}

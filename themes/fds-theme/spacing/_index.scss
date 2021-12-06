@@ -1,2 +1,5 @@
-@forward './mixins';
-@forward './variables';
+@forward './mixins' show
+  margin,
+  margin-x,
+  margin-y,
+  padding;

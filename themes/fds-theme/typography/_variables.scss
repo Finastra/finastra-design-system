@@ -5,11 +5,14 @@
   @return math.div($px, 16px) * 1rem;
 }
 
-$font-family: string.unquote('Spartan') !default;
+$headline-font-family: string.unquote('Spartan') !default;
+$font-family: string.unquote('Roboto') !default;
 
-$fds-styles: (
-  headline1: (
-    font-family: $font-family,
+$properties: (
+  font-family: $font-family,
+  headline-font-family: $headline-font-family,
+  headline-1: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(51px),
     line-height: px-to-rem(71px),
     font-weight: 800,
@@ -17,8 +20,8 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  headline2: (
-    font-family: $font-family,
+  headline-2: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(41px),
     line-height: px-to-rem(57px),
     font-weight: 800,
@@ -26,8 +29,8 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
     ),
-  headline3: (
-    font-family: $font-family,
+  headline-3: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(28px),
     line-height: px-to-rem(39px),
     font-weight: 800,
@@ -35,8 +38,8 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  headline4: (
-    font-family: $font-family,
+  headline-4: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(21px),
     line-height: px-to-rem(29px),
     font-weight: 800,
@@ -44,8 +47,8 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  headline5: (
-    font-family: $font-family,
+  headline-5: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(16px),
     line-height: px-to-rem(22px),
     font-weight: 800,
@@ -53,8 +56,8 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  headline6: (
-    font-family: $font-family,
+  headline-6: (
+    font-family: $headline-font-family,
     font-size: px-to-rem(13px),
     line-height: px-to-rem(18px),
     font-weight: 800,
@@ -62,7 +65,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  subtitle1: (
+  subtitle-1: (
     font-size: px-to-rem(16px),
     line-height: px-to-rem(24px),
     font-weight: 500,
@@ -70,7 +73,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  subtitle2: (
+  subtitle-2: (
     font-size: px-to-rem(14px),
     line-height: px-to-rem(21px),
     font-weight: 500,
@@ -78,7 +81,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  subtitle3: (
+  subtitle-3: (
     font-size: px-to-rem(12px),
     line-height: px-to-rem(18px),
     font-weight: 500,
@@ -86,7 +89,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  body1: (
+  body-1: (
     font-size: px-to-rem(16px),
     line-height: px-to-rem(24px),
     font-weight: 300,
@@ -94,7 +97,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  body2: (
+  body-2: (
     font-size: px-to-rem(14px),
     line-height: px-to-rem(21px),
     font-weight: 300,
@@ -102,7 +105,7 @@ $fds-styles: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  body3: (
+  body-3: (
     font-size: px-to-rem(12px),
     line-height: px-to-rem(18px),
     font-weight: 300,
