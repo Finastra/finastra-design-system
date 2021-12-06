@@ -31,7 +31,6 @@ npm run wc:serve
 ```
 npm run wc:storybook
 ```
-
 > You can also see the storybook in the browser: https://finastra.github.io/finastra-design-system/
 
 ### Build
