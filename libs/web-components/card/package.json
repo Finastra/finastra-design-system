@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@material/card": "13.0.0",
-    "@material/mwc-ripple": "0.25.1",
-    "lit": "2.0.0",
+    "@material/mwc-ripple": "0.25.3",
+    "lit": "2.0.2",
     "tslib": "^2.0.1"
   },
   "icon": "dashboard",

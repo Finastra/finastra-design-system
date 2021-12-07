@@ -31,7 +31,7 @@ function mapPackageVersion(packageName: string, versions: PackageVersions): stri
   }
 
   if (packageName === 'lit') {
-    return versions.litElement;
+    return versions.lit;
   }
 
   return '';
@@ -48,6 +48,7 @@ function main() {
   console.log(`Found latest Lit version: ${latestVersions.lit}\n`);
 
   const packageJsonPaths = glob.sync(path.join('*', 'package.json'), { cwd: packagesDir });
+  packageJsonPaths.push(path.join('../package.json'));
   let anyChanged = false;
   for (const relPath of packageJsonPaths) {
     const absPath = path.join(packagesDir, relPath);
