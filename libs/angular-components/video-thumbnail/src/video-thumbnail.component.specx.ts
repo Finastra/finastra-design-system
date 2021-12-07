@@ -10,10 +10,10 @@ describe('VideoThumbnailModule', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-    imports: [MatIconModule],
-    declarations: [VideoThumbnailComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+        imports: [MatIconModule],
+        declarations: [VideoThumbnailComponent],
+        teardown: { destroyAfterEach: false }
+      }).compileComponents();
     })
   );
 
