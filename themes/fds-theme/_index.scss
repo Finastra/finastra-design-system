@@ -18,6 +18,8 @@
 @forward './elevation';
 @forward './spacing' show 
   margin,
+  margin-x,
+  margin-y,
   padding;
 @forward './typography' show 
   typography;

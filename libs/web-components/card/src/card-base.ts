@@ -1,5 +1,6 @@
-import { html, LitElement, property, query, TemplateResult } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map';
+import { html, LitElement, TemplateResult } from 'lit';
+import { property, query } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 export type AspectRatioType = '16-9' | 'square' | '';
 

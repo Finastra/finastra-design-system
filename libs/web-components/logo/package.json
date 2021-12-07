@@ -1,7 +1,7 @@
 {
   "name": "@finastra/logo",
   "displayName": "Logo",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Logo Web Component",
   "keywords": [
     "finastra design system",
@@ -15,8 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "lit-element": "2.5.1",
-    "lit-html": "1.4.1",
+    "lit": "2.0.2",
     "tslib": "^2.0.1"
   },
   "publishConfig": {
