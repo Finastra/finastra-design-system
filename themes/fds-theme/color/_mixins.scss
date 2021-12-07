@@ -1,18 +1,18 @@
 @use 'sass:map';
-@use './variables';
+@use 'sass:string';
+@use './light';
 
-/// Loads the colors' custom properties on root.
+/// Loads the colors' custom properties.
 ///
 /// @example
 ///   .my-container {
 ///      background: var(--fds-surface);
 ///      color: var(--fds-on-surface);
 ///   }
-@mixin custom-properties() {
-  :root {
-    @each $style, $variable in variables.$properties {
-      --fds-#{$style}: #{$variable};
-    }
+@mixin custom-properties($properties: light.$properties) {
+  @each $style, $variable in $properties {
+    --fds-#{$style}: #{$variable};
+    --mdc-theme-#{$style}: var(--fds-#{$style});
   }
 }
 
@@ -23,17 +23,18 @@
 ///      <p class="fds-on-primary">Hello</p>
 ///   </div>
 @mixin helper-classes() {
-  @each $style, $value in variables.$properties {
-    @if $style != 'background' and $style != 'surface' {
+  @each $style, $value in light.$properties {
+    $bg-color: map.get(light.$properties, $style);
+    @if $style != "background" and $style != "surface" {
       .fds-#{$style} {
-        color: var(--fds-#{$style});
+        color: var(--fds-#{$style}, #{$bg-color});
       }
       .fds-#{$style}-bg {
-        background: var(--fds-#{$style});
+        background: var(--fds-#{$style}, #{$bg-color});
       }
     } @else {
       .fds-#{$style} {
-        background: var(--fds-#{$style});
+        background: var(--fds-#{$style}, #{$bg-color});
       }
     }
   }
@@ -47,9 +48,9 @@
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin bg-color($style){
-  $bg-color: map.get(variables.$properties, $style);
-  background-color: var(--fds-#{$style}, #{$bg-color});
+@mixin bg-color($style) {
+  $bg-color: map.get(light.$properties, $style);
+  background: var(--fds-#{$style}, #{$bg-color});
 }
 
 /// Generates CSS to apply color to a text.
@@ -61,6 +62,13 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
-  $bg-color: map.get(variables.$properties, $style);
-  color: var(--fds-#{$style}, #{$bg-color});
+  $bg-color: map.get(light.$properties, $style);
+  @if string.index($style, 'gradient') {
+    background: var(--fds-#{$style}, #{$bg-color});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @else {
+    color: var(--fds-#{$style}, #{$bg-color});
+  }
 }

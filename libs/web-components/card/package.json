@@ -1,7 +1,7 @@
 {
   "name": "@finastra/card",
   "displayName": "Card",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "Card Web Component",
   "keywords": [
     "finastra design system",
@@ -15,15 +15,13 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/card": "12.0.0",
-    "@material/mwc-ripple": "0.23.0",
-    "lit-element": "2.5.1",
-    "lit-html": "1.4.1",
+    "@material/card": "13.0.0",
+    "@material/mwc-ripple": "0.25.3",
+    "lit": "2.0.2",
     "tslib": "^2.0.1"
   },
-  "devDependencies": {
-    "@material/mwc-button": "0.23.0",
-    "@material/mwc-icon-button": "0.23.0"
-  },
-  "icon": "dashboard"
+  "icon": "dashboard",
+  "publishConfig": {
+    "access": "public"
+  }
 }

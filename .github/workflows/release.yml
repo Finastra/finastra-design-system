@@ -111,13 +111,13 @@ jobs:
       - name: Publish Components
         uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
+          token: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
           package: ./dist/libs/angular-components/package.json
           access: public
       - name: Publish angular theme
         uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.FFDC_BOT_NPM_AUTH_TOKEN }}
+          token: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
           package: ./themes/angular-theme/package.json
           access: public
 

@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  --mdc-shape-small: 22px;
+  --mdc-theme-primary: var(--fds-primary);
+  --mdc-button-outline-color: var(--fds-primary);
+  --mdc-typography-button-text-transform: none;
+  --mdc-button-disabled-ink-color: var(--fds-text-hint-on-background);
+  --mdc-button-disabled-fill-color: var(--fds-text-disabled-on-background);
+}
+
+:host([secondary]) {
+  --mdc-theme-primary: var(--fds-secondary);
+  --mdc-button-outline-color: var(--fds-secondary);
+}

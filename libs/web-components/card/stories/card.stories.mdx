@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
-import { html } from 'lit-html';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 import '@finastra/card';
 
@@ -58,8 +58,7 @@ import '@material/mwc-button';
 />
 
 export const Template = ({ outlined = false, fullBleed = false }) => {
-     return html`
-     <style>
+  return html` <style>
       .card__header {
         display: flex;
         flex-direction: row;
@@ -69,34 +68,17 @@ export const Template = ({ outlined = false, fullBleed = false }) => {
         display: flex;
         flex-direction: column;
       }
-      .card__title,
-      .card__subtitle,
-      .card__secondary {
-        font-family: Roboto, sans-serif;
-      }
       .card__title {
-        font-size: 1.25rem;
-        font-weight: 500;
-        line-height: 2rem;
-        color: rgba(0, 0, 0);
+        font: var(--fds-headline-4);
+        color: var(--fds-text-high-on-background);
       }
       .card__subtitle {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.54);
-        text-decoration: inherit;
-        text-decoration-line: inherit;
-        text-decoration-style: inherit;
-        text-decoration-color: inherit;
+        font: var(--fds-subtitle-1);
+        color: var(--fds-text-high-on-background);
       }
       .card__secondary {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.54);
-        text-decoration: inherit;
-        text-transform: inherit;
+        font: var(--fds-body-2);
+        color: var(--fds-text-high-on-background);
         padding: 0 1rem 8px;
       }
     </style>
@@ -108,9 +90,7 @@ export const Template = ({ outlined = false, fullBleed = false }) => {
             <div class="card__subtitle">by Kurt Wagner</div>
           </div>
         </div>
-        <div class="card__secondary mdc-typography mdc-typography--body2">
-          Visit ten places on our planet that are undergoing the biggest changes today.
-        </div>
+        <div class="card__secondary">Visit ten places on our planet that are undergoing the biggest changes today.</div>
       </div>
       <mwc-button slot="button-action">Read</mwc-button>
       <mwc-button slot="button-action">Bookmark</mwc-button>
@@ -131,7 +111,49 @@ Card component
     parameters={{
       docs: {
         source: {
-          code: '<fds-card></fds-card>'
+          code: `
+ <style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
+<fds-card fullBleed>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}
@@ -162,7 +184,49 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: '<fds-card></fds-card>'
+          code: `
+ <style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
+<fds-card outlined>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary mdc-typography mdc-typography--body2">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}
@@ -180,7 +244,49 @@ npm install @finastra/card
     parameters={{
       docs: {
         source: {
-          code: '<fds-card></fds-card>'
+          code: `
+<style>
+  .card__header {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+  }
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .card__title {
+    font: var(--fds-headline-4);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__subtitle {
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+  }
+  .card__secondary {
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    padding: 0 1rem 8px;
+  }
+</style>
+<fds-card fullBleed>
+  <div slot="primary-action">
+    <div class="card__header">
+      <div class="card__header-text">
+        <div class="card__title">Our Changing Planet</div>
+        <div class="card__subtitle">by Kurt Wagner</div>
+      </div>
+    </div>
+    <div class="card__secondary mdc-typography mdc-typography--body2">
+      Visit ten places on our planet that are undergoing the biggest changes today.
+    </div>
+  </div>
+  <mwc-button slot="button-action">Read</mwc-button>
+  <mwc-button slot="button-action">Bookmark</mwc-button>
+  <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
+  <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+</fds-card>`
         }
       }
     }}

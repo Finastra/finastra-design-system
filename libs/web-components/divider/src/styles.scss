@@ -1,13 +1,12 @@
 $width: 1px;
 $inset-margin: 80px;
-$foreground: rgba(0, 0, 0, 0.12);
 
 :host {
   display: block;
   margin: 0;
   border-top-width: $width;
   border-top-style: solid;
-  border-top-color: var(--fds-divider-color, $foreground);
+  border-top-color: var(--fds-text-hint-on-background);
 }
 
 :host([inset='left']) {
@@ -35,5 +34,5 @@ $foreground: rgba(0, 0, 0, 0.12);
   border-top: 0;
   border-right-width: $width;
   border-right-style: solid;
-  border-right-color: var(--fds-divider-color, $foreground);
+  border-color: var(--fds-text-hint-on-background);
 }

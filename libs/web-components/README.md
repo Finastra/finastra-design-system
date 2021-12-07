@@ -27,11 +27,10 @@ npm run wc:serve
 ```
 
 - Storybook (for the document and demo)
-
+  
 ```
 npm run wc:storybook
 ```
-
 > You can also see the storybook in the browser: https://finastra.github.io/finastra-design-system/
 
 ### Build
@@ -48,6 +47,14 @@ npm run wc:build:ts
 # Shortcut running both above commands
 npm run wc:build
 ```
+
+Before running Storybook, be sure to build it using the following command
+
+```
+npm run wc:build:storybook
+```
+
+> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
 
 ### Running Tests (WIP ⚠️)
 
@@ -69,3 +76,6 @@ npm run format
 ```
 npm run wc:generate MY_COMPONENT_NAME
 ```
+
+> To see a demo of the generated web component, run the commands mentioned in 
+[Web Component Development](#web-component-development).

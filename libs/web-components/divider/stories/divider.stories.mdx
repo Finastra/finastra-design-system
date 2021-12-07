@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
-import { html } from 'lit-html';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 import '@finastra/divider';
 
@@ -34,21 +34,12 @@ import '@finastra/divider';
       type: 'string',
       description: 'inset margin value',
       control: null
-    },
-    '--fds-divider-color': {
-      table: {
-        category: 'css',
-        defaultValue: { summary: 'rgba(0, 0, 0, 0.12)' }
-      },
-      type: 'string',
-      description: 'Divider color',
-      control: null
     }
   }}
 />
 
 export const Template = ({ inset = undefined, vertical = false }) => {
-  return html`<fds-divider style="flex: 1" inset=${ifDefined(inset)} ?vertical=${vertical}></fsd-divider>`;
+  return html`<fds-divider style='flex: 1; height: 50px;' inset=${ifDefined(inset)} ?vertical=${vertical}></fsd-divider>`;
 };
 
 # Divider
@@ -83,20 +74,74 @@ npm install @finastra/divider
 
 ## Examples
 
-### Inset
+### Inset left
 
 <Canvas>
   <Story
-    name="Inset"
-    args={{ inset: 'both' }}
+    name="Inset left"
+    args={{ inset: 'left' }}
     parameters={{
       docs: {
         source: {
-          code: '<fds-divider inset="both"></fds-Divider>'
+          code: `<fds-divider inset='left'></fds-Divider>`
         }
       }
     }}
   >
-    {Template({ inset: 'both' })}
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Inset right
+
+<Canvas>
+  <Story
+    name="Inset right"
+    args={{ inset: 'right' }}
+    parameters={{
+      docs: {
+        source: {
+          code: `<fds-divider inset='right'></fds-Divider>`
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Inset both
+
+<Canvas>
+  <Story
+    name="Inset both"
+    args={{ inset: 'both' }}
+    parameters={{
+      docs: {
+        source: {
+          code: `<fds-divider inset='both'></fds-Divider>`
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Vertical
+
+<Canvas>
+  <Story
+    name="Vertical"
+    args={{ vertical: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: `<fds-divider vertical></fds-Divider>`
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
   </Story>
 </Canvas>

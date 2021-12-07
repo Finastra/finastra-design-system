@@ -1,1 +1,5 @@
-@forward './mixins' show margin, padding;
+@forward './mixins' show
+  margin,
+  margin-x,
+  margin-y,
+  padding;

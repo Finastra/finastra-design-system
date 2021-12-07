@@ -2,34 +2,18 @@
 @use 'sass:meta';
 @use './variables';
 
-/// Loads the typography's custom properties on root.
+/// Loads the typography's custom properties.
 ///
 /// @example
 ///   .my-headline {
-///      font: var(--fds-headline1);
+///      font: var(--fds-headline-1);
 ///   }
 @mixin custom-properties() {
-  :root {
-    @each $key, $value in variables.$properties {
-      @if (meta.type-of($value) == 'map') {
-        $font-weight: map.get($value, 'font-weight');
-        $font-size: map.get($value, 'font-size');
-        $line-height: map.get($value, 'line-height');
-        $font-family: map.get($value, 'font-family');
-        
-        @if (not $font-family) {
-          $font-family: map.get(variables.$properties, 'font-family');
-        }
-
-        --fds-#{$key}:
-          normal
-          normal
-          #{$font-weight}
-          #{$font-size}/#{$line-height}
-          #{$font-family};
-      } @else {
-        --fds-#{$key}: #{$value};
-      }
+  @each $key, $value in variables.$properties {
+    @if (meta.type-of($value) == 'map') {
+      --fds-#{$key}: #{typo-fallback($value)};
+    } @else {
+      --fds-#{$key}: #{$value};
     }
   }
 }
@@ -37,14 +21,14 @@
 /// Loads the typography's helper classes.
 ///
 /// @example
-///   <p class="fds-body2">Hello</p>
+///   <p class="fds-body-2">Hello</p>
 @mixin helper-classes() {
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
       $letter-spacing: map.get($value, 'letter-spacing');
 
       .fds-#{$key} {
-        font: var(--fds-#{$key});
+        font: var(--fds-#{$key}, #{typo-fallback($value)});
         letter-spacing: #{$letter-spacing};
       }
     }
@@ -63,6 +47,22 @@
   $typo-style: map.get(variables.$properties, $style);
   $letter-spacing: map.get($typo-style, 'letter-spacing');
 
-  font: var(--fds-#{$style});
+  font: var(--fds-#{$style}, #{typo-fallback($typo-style)});
   letter-spacing: #{$letter-spacing};
+}
+
+/// Returns a value for font
+///
+/// @param {Map} $typo-style - Map that includes font-related properties
+@function typo-fallback($typo-style) {
+  $font-weight: map.get($typo-style, 'font-weight');
+  $font-size: map.get($typo-style, 'font-size');
+  $line-height: map.get($typo-style, 'line-height');
+  $font-family: map.get($typo-style, 'font-family');
+
+  @if (not $font-family) {
+    $font-family: map.get(variables.$properties, 'font-family');
+  }
+
+  @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family};
 }

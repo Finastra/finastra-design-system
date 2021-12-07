@@ -1,6 +1,28 @@
-@forward './color';
+@forward './color' show
+  $primary,
+  $secondary,
+  $background,
+  $surface,
+  $success,
+  $error,
+  $gradient,
+  $on-primary,
+  $on-secondary,
+  $on-background,
+  $on-surface,
+  $on-error,
+  $on-success,
+  $on-gradient,
+  bg-color,
+  text-color;
 @forward './elevation';
-@forward './spacing';
-@forward './typography';
-
-@use './custom-properties';
+@forward './spacing' show 
+  margin,
+  margin-x,
+  margin-y,
+  padding;
+@forward './typography' show 
+  typography;
+@forward './mixins' show 
+  use-light-theme,
+  use-dark-theme;

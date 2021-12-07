@@ -2,6 +2,7 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
+@use 'sass:map';
 @use './variables';
 
 /// Loads the spacing's custom properties on root.
@@ -12,11 +13,9 @@
 ///      padding: var(--fds-spacing-1);
 ///   }
 @mixin custom-properties() {
-  :root {
     @each $key, $value in variables.$properties {
       --fds-#{$key}: #{$value};
     }
-  }
 }
 
 /// Loads the spacing's helper classes using following format:
@@ -74,10 +73,13 @@
 /// @param {Number} $value - The spacing between 0 and 6
 /// @param {String} $side - The side where to apply spacing
 @mixin spacing($prop, $value, $side) {
+  $spacing-name: 'spacing-'+$value;
+  $spacing-value: map.get(variables.$properties, $spacing-name);
+  
   @if (list.index(variables.$sides, $side)) {
-    #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)});
+    #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)},#{$spacing-value});
   } @else if $side == '' {
-    #{$prop}: var(--fds-spacing-#{_check-spacing($value)});
+    #{$prop}: var(--fds-spacing-#{_check-spacing($value)},#{$spacing-value});
   } @else {
     @error "$side must be one of [top, bottom, right, left], but received '#{$side}'";
   }
@@ -89,6 +91,22 @@
 /// @param {String} $side - The side where to apply margin (may be null)
 @mixin margin($value, $side: '') {
   @include spacing(margin, $value, $side);
+}
+
+/// Generates CSS to apply proper horizontal margin
+///
+/// @param {Number} $value - The spacing between 0 and 6
+@mixin margin-x($value) {
+  @include margin($value, 'left');
+  @include margin($value, 'right');
+}
+
+/// Generates CSS to apply proper vertical margin
+///
+/// @param {Number} $value - The spacing between 0 and 6
+@mixin margin-y($value) {
+  @include margin($value, 'top');
+  @include margin($value, 'bottom');
 }
 
 /// Generates CSS to apply proper padding

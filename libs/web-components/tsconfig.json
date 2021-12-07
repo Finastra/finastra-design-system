@@ -25,20 +25,11 @@
   },
   "file": [],
   "references": [
-    {
-      "path": "logo"
-    },
-    {
-      "path": "divider"
-    },
-    {
-      "path": "search-input"
-    },
-    {
-      "path": "card"
-    },
-    {
-      "path": "autocomplete"
-    }
+    { "path": "logo" },
+    { "path": "divider" },
+    { "path": "search-input" },
+    { "path": "card" },
+    { "path": "button" },
+    { "path": "autocomplete" }
   ]
 }

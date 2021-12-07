@@ -1,0 +1,215 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
+
+import '@finastra/button';
+
+<Meta
+  title="Components/Button"
+  component={'fds-button'}
+  argTypes={{
+    label: {
+      table: {
+        category: 'properties',
+        defaultValue: { summary: 'fds button' }
+      },
+      control: 'text',
+      defaultValue: 'fds button',
+      type: 'string',
+      description: 'button label'
+    },
+    icon: {
+      table: {
+        category: 'properties',
+        defaultValue: { summary: 'search' }
+      },
+      control: 'text',
+      defaultValue: 'search',
+      type: 'string',
+      description: 'button icon'
+    },
+    secondary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Secondary button'
+    },
+    outlined: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Outlined button'
+    },
+    text: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Text button'
+    },
+    dense: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Dense button'
+    },
+    disabled: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Disabled button'
+    }
+  }}
+/>
+
+export const Template = ({ icon, label, outlined, text, dense, disabled, secondary = false }) => {
+  return html`<fds-button
+    .label=${label}
+    .icon=${ifDefined(icon)}
+    ?secondary=${secondary}
+    ?outlined=${outlined}
+    ?text=${text}
+    ?dense=${dense}
+    ?disabled=${disabled}
+  ></fds-button>`;
+};
+
+# fds-button
+
+<Canvas>
+  <Story
+    name="Raised"
+    args={{ icon: 'favorite', label: 'Raised button' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button label="Raised button" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/fds-button
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Secondary button
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{ secondary: true, label: 'Secondary button', icon: 'favorite' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button secondary label="Secondary button" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Outlined button
+
+<Canvas>
+  <Story
+    name="Outlined"
+    args={{ icon: 'favorite', label: 'Button outlined', outlined: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button outlined label="Button outlined" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### text button
+
+<Canvas>
+  <Story
+    name="Text"
+    args={{ icon: 'favorite', label: 'Button text', text: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button text label="Button text" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### dense button
+
+<Canvas>
+  <Story
+    name="Dense"
+    args={{ icon: 'favorite', label: 'Button dense', dense: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button dense label="Button dense" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### disabled button
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{ icon: 'favorite', label: 'Button disabled', disabled: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button disabled label="Button disabled" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

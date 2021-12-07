@@ -1,1 +1,14 @@
 - [10/07/2021] Request release v0.0.1 by bcldvd 
+- [11/02/2021] Request release v0.0.1 by dorsaffrigui 
+- [11/02/2021] Request release v0.0.1 by ttalbot 
+- [11/02/2021] Request release v0.0.1 by ttalbot 
+- [11/02/2021] Request release v0.0.2 by dorsaffrigui 
+- [11/03/2021] Request release v0.0.3 by ttalbot 
+- [11/03/2021] Request release v0.0.2 by ttalbot 
+- [11/03/2021] Request release v0.0.2 by ttalbot 
+- [11/05/2021] Request release v0.0.3 by dorsaffrigui 
+- [11/19/2021] Request release v0.0.4 by ttalbot 
+- [11/19/2021] Request release v0.0.5 by ttalbot 
+- [11/23/2021] Request release v0.0.6 by ttalbot 
+- [11/24/2021] Request release v0.0.7 by dorsaffrigui 
+- [12/06/2021] Request release v0.0.8 by ttalbot 

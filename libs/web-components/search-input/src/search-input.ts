@@ -1,7 +1,7 @@
-import { customElement, property } from 'lit-element';
-import { html, TemplateResult } from 'lit-html';
+import { customElement, property } from 'lit/decorators.js';
+import { html, TemplateResult } from 'lit';
 import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
-import { classMap } from 'lit-html/directives/class-map';
+import { classMap } from 'lit/directives/class-map.js';
 
 import '@material/mwc-icon-button';
 
