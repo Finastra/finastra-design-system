@@ -1,4 +1,5 @@
-import { customElement, LitElement, html, property, state, query, PropertyValues } from 'lit-element';
+import { LitElement, html, PropertyValues } from 'lit';
+import { customElement, property, state, query, } from 'lit/decorators.js';
 import { Menu } from '@material/mwc-menu';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 
