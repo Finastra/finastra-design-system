@@ -1,4 +1,4 @@
-import { customElement } from 'lit-element';
+import { customElement } from 'lit/decorators.js';
 import { CardBase } from './card-base';
 
 import { styles } from './styles.css';
