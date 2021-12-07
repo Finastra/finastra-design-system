@@ -1,9 +1,5 @@
 import { customElement } from 'lit/decorators.js';
 import { CardBase } from './card-base';
-
-import '@material/mwc-button';
-import '@material/mwc-icon-button';
-
 import { styles } from './styles.css';
 
 @customElement('fds-card')
