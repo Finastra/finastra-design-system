@@ -178,6 +178,35 @@ export class Autocomplete extends LitElement {
     }
   }
 
+  protected handleKeyDown(event: KeyboardEvent) {
+      if (!this.menuOpen) {
+        return;
+      }
+      let selectedIndex = this.menuElement?.index as number;
+      const length = this.menuElement?.items.length ?? 0;
+      switch(event.key) {
+        case "Down":
+        case "ArrowDown":
+          selectedIndex++;
+          if (selectedIndex >= length) selectedIndex = length - 1;
+          this.menuElement?.select(selectedIndex);
+          event.preventDefault();
+          break;
+        case "Up":
+        case "ArrowUp":
+          selectedIndex--;
+          if (selectedIndex < 0) selectedIndex = 0;
+          this.menuElement?.select(selectedIndex);
+          event.preventDefault();
+          break;
+        case "Esc": // IE/Edge specific value
+        case "Escape":
+          this.menuOpen = false
+          event.preventDefault();
+          break;
+      }
+  }
+
   render() {
     return html`
       <div class="fds-autocomplete">
@@ -188,6 +217,7 @@ export class Autocomplete extends LitElement {
           .showClearButton="${this.showClearButton}"
           ?disabled="${this.disabled}"
           ?required=${this.required}
+          @keydown=${this.handleKeyDown}
           @focus=${this.onInputFocus}
           @blur=${this.onInputBlur}
           @input=${this.onSearchInputChange}
