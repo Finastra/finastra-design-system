@@ -5,6 +5,7 @@ on:
       - 'apps/fds-test-app/**'
       - 'themes/fds-theme/**'
       - 'libs/web-components/**'
+      - '.storybook/**'
 
 jobs:
   build:
