@@ -4,11 +4,12 @@ const babelModules = ['plotly.js'].join('|');
 module.exports = {
   ...nxPreset,
   verbose: true,
+  // resolver: 'jest-preset-angular/build/resolvers/ng-jest-resolver.js',
   transform: {
-    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
+    '^.+\\.(ts|js|mjs|html)$': 'jest-preset-angular',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!lodash-es/*)'],
+  transformIgnorePatterns: ['node_modules/(?!lodash-es/*)', 'node_modules/(?!.*\\.mjs$)'],
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
