@@ -22,7 +22,7 @@ body {
 .my-headline-1 {
     @include fds.typography(headline-1);
     @include fds.text-color(gradient-horizontal);
-    @include fds.margin-y(6);
+    @include fds.margin(6, top, left);
 
     display: inline-block;
 }
