@@ -89,6 +89,7 @@
   --fds-spacing-4: 24px;
   --fds-spacing-5: 48px;
   --fds-spacing-6: 96px;
+  --fds-spacing-7: 192px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -183,6 +184,7 @@
     --fds-spacing-4: 24px;
     --fds-spacing-5: 48px;
     --fds-spacing-6: 96px;
+    --fds-spacing-7: 192px;
   }
 }
 
