@@ -22,9 +22,9 @@ jobs:
           wait-on: 'http://localhost:4200'
       - uses: actions/upload-artifact@v2
         # Replace if and path when getting updated snapshots
-        # if: always()
-        if: failure()
+        if: always()
+        #if: failure()
         with:
           name: cypress-screenshots
-          # path: cypress/snapshots
-          path: cypress/snapshots/**/__diff_output__
+          path: cypress/snapshots
+          #path: cypress/snapshots/**/__diff_output__
