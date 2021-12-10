@@ -4,7 +4,6 @@ const babelModules = ['plotly.js'].join('|');
 module.exports = {
   ...nxPreset,
   verbose: true,
-  // resolver: 'jest-preset-angular/build/resolvers/ng-jest-resolver.js',
   transform: {
     '^.+\\.(ts|js|mjs|html)$': 'jest-preset-angular',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'

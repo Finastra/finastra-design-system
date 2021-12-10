@@ -10,8 +10,7 @@ import { CommonModule } from '@angular/common';
 
 import { VectorMapDemoComponent } from './vector-map-demo.component';
 import { VectorMapModule } from '@finastra/angular-components/vector-map';
-import { PaletteModule } from '@finastra/angular-components/core';
-import { LazyloadScriptService } from '@finastra/angular-components/core';
+import { PaletteModule, LazyloadScriptService } from '@finastra/angular-components/core';
 import { of } from 'rxjs';
 
 describe('VectorMapDemoComponent', () => {
@@ -32,7 +31,7 @@ describe('VectorMapDemoComponent', () => {
           VectorMapModule,
           BrowserAnimationsModule
         ],
-        declarations: [VectorMapDemoComponent],
+        declarations: [VectorMapDemoComponent],        
         providers: [
           {
             provide: LazyloadScriptService,
@@ -42,7 +41,8 @@ describe('VectorMapDemoComponent', () => {
               }
             }
           }
-        ]
+        ],
+        teardown: { destroyAfterEach: false },
       }).compileComponents();
     })
   );
