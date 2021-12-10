@@ -31,7 +31,7 @@ describe('VectorMapDemoComponent', () => {
           VectorMapModule,
           BrowserAnimationsModule
         ],
-        declarations: [VectorMapDemoComponent],        
+        declarations: [VectorMapDemoComponent],
         providers: [
           {
             provide: LazyloadScriptService,
@@ -42,7 +42,7 @@ describe('VectorMapDemoComponent', () => {
             }
           }
         ],
-        teardown: { destroyAfterEach: false },
+        teardown: { destroyAfterEach: false }
       }).compileComponents();
     })
   );
