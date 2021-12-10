@@ -9,7 +9,7 @@ module.exports = {
     '^.+\\.(ts|js|mjs|html)$': 'jest-preset-angular',
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!lodash-es/*)', 'node_modules/(?!.*\\.mjs$)'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!lodash-es/*)', '<rootDir>/node_modules/(?!.*\\.mjs$)'],
   reporters: [
     'default',
     ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
