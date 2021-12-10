@@ -10,18 +10,12 @@ module.exports = {
     [`(${babelModules}).+\\.js$`]: 'babel-jest'
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!lodash-es/*)', '<rootDir>/node_modules/(?!.*\\.mjs$)'],
-  reporters: [
-    'default',
-    ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]
-  ],
+  reporters: ['default', ['jest-junit', { outputDirectory: './testresults/', outputName: `junit-${new Date().getTime()}.xml` }]],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: [
-        'jest-preset-angular/build/InlineFilesTransformer',
-        'jest-preset-angular/build/StripStylesTransformer'
-      ]
+      astTransformers: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer']
     }
   },
   snapshotSerializers: [
