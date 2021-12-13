@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '~@finastra/angular-theme' as fds;
-@use '~@angular/flex-layout/mq' as flex-layout;
+@use '@angular/flex-layout/core/sass/layout-bp' as flex-layout;
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
