@@ -18,7 +18,8 @@
     "outDir": "./",
     "baseUrl": ".",
     "paths": {
-      "@finastra/*": ["./*"]
+      "@finastra/*": ["./*"],
+      "@fds/test-helper": ["./helpers"]
     },
     "composite": true,
     "importHelpers": true
