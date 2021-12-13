@@ -19,6 +19,7 @@ export default {
       functions: 80,
       lines: 90,
     },
+    exclude: ['**/node_modules/**', '**/*.css.ts'],
   },
   testFramework: {
     config: {
@@ -32,6 +33,6 @@ export default {
   ],
   groups: packages.map(pkg => ({
     name: pkg,
-    files: `${packagesPath}/${pkg}/test/**/*.test.js`,
+    files: `${packagesPath}/${pkg}/dist/test/**/*.test.js`,
   })),
 };
