@@ -24,6 +24,7 @@
 | `--fds-spacing-4` |          24px |
 | `--fds-spacing-5` |          48px |
 | `--fds-spacing-6` |          96px |
+| `--fds-spacing-7` |         192px |
 
 ## Mixins
 
@@ -33,8 +34,19 @@
 @use '@finastra/fds-theme' as fds;
 
 .my-component {
+  // padding on all sides
   @include fds.padding(1);
-  @include fds.margin(2, left);
+  // margin on 1 or multiple sides
+  @include fds.margin(2, top, left);
+}
+
+.my-container {
+  // Horinzontal margin
+  // similar to @include fds.margin(3, left, right);
+  @include fds.margin-x(3);
+  // Vertical padding
+  // similar to @include fds.padding(2, top, bottom);
+  @include fds.padding-y(2);
 }
 ```
 

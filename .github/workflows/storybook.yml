@@ -9,6 +9,7 @@ on:
       - '.storybook/**'
       - '!libs/**/package.json'
       - '!themes/fds-theme/package.json'
+      - 'package.json'
 
 permissions:
   contents: write # for checkout and commit
