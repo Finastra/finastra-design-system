@@ -14,3 +14,4 @@
 - [12/06/2021] Request release v0.0.8 by ttalbot 
 - [12/07/2021] Request release v0.0.9 by ttalbot 
 - [12/07/2021] Request release v0.0.10 by dorsaffrigui 
+- [12/13/2021] Request release v0.0.11 by ttalbot 
