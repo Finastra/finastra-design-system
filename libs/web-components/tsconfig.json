@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@finastra/*": ["./*"],
-      "@fds/test-helper": ["./helpers"]
+      "@fds/test-helper": ["_helpers"]
     },
     "composite": true,
     "importHelpers": true
