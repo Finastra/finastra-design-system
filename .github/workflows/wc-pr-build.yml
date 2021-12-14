@@ -1,10 +1,13 @@
 name: Web Components PR
 on:
-  pull_request:
-    paths-ignore:
-      - 'apps/fds-test-app/**'
-      - 'themes/fds-theme/**'
-      - 'libs/angular-components/**'
+  push:
+      branches:
+        - feature/wc-testing-baseline-475
+  # pull_request:
+  #   paths-ignore:
+  #     - 'apps/fds-test-app/**'
+  #     - 'themes/fds-theme/**'
+  #     - 'libs/angular-components/**'
 
 jobs:
   build:
