@@ -34,8 +34,10 @@ jobs:
         run: npm ci --loglevel=error
       - name: Build DevKit
         run: npm run build:devkit
+      - name: Build web components
+        run: npm run wc:build
 
-        # Test
+      # Test
       - name: Unit tests
         run: npm run wc:test
       - name: Codecov
@@ -45,9 +47,6 @@ jobs:
           file: ./wc-coverage/lcov.info
           fail_ci_if_error: true
 
-        # Build
-      - name: Build web components
-        run: npm run wc:build
       - name: Build Storybook
         run: npm run wc:build:storybook
         
