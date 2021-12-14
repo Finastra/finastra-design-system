@@ -14,124 +14,35 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "account-card": {
-      "tags": []
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
     },
-    "angular-components": {
-      "tags": []
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "defaultProject": "test",
+  "generators": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "angular-core": {
-      "tags": []
-    },
-    "angular-theme": {
-      "tags": []
-    },
-    "avatar": {
-      "tags": []
-    },
-    "banner": {
-      "tags": []
-    },
-    "breadcrumb": {
-      "tags": []
-    },
-    "changelog": {
-      "tags": []
-    },
-    "chart": {
-      "tags": []
-    },
-    "entity-menu": {
-      "tags": []
-    },
-    "expandable-table": {
-      "tags": []
-    },
-    "fds-test-app": {
-      "tags": []
-    },
-    "fds-theme": {
-      "tags": []
-    },
-    "filter-group": {
-      "tags": []
-    },
-    "filter-tags": {
-      "tags": []
-    },
-    "filter-toggle": {
-      "tags": []
-    },
-    "filter-tree": {
-      "tags": []
-    },
-    "global-nav": {
-      "tags": []
-    },
-    "global-search": {
-      "tags": []
-    },
-    "multiselect-tags": {
-      "tags": []
-    },
-    "popover": {
-      "tags": []
-    },
-    "repeater": {
-      "tags": []
-    },
-    "scroll-to-top": {
-      "tags": []
-    },
-    "search-input": {
-      "tags": []
-    },
-    "skeleton-text": {
-      "tags": []
-    },
-    "status-steps": {
-      "tags": []
-    },
-    "table": {
-      "tags": []
-    },
-    "test": {
-      "tags": []
-    },
-    "test-e2e": {
-      "tags": []
-    },
-    "toaster": {
-      "tags": []
-    },
-    "user-profile-menu": {
-      "tags": []
-    },
-    "vector-map": {
-      "tags": []
-    },
-    "video-thumbnail": {
-      "tags": []
-    },
-    "wc-card": {
-      "tags": ["web-components"]
-    },
-    "wc-divider": {
-      "tags": ["web-components"]
-    },
-    "wc-logo": {
-      "tags": ["web-components"]
-    },
-    "wc-search-input": {
-      "tags": ["web-components"]
-    },
-    "wizard": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   }
 }

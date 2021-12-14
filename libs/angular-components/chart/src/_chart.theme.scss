@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use '~@angular/material' as mat;
-@use '~@finastra/angular-theme' as fds;
+@use '@angular/material' as mat;
+@use '@finastra/angular-theme' as fds;
 
 @mixin typography($config) {
   .chart-font, .chart-font-axis, .chart-font-legend {

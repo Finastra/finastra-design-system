@@ -11,7 +11,8 @@ describe('VideoThumbnailModule', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         imports: [MatIconModule],
-        declarations: [VideoThumbnailComponent]
+        declarations: [VideoThumbnailComponent],
+        teardown: { destroyAfterEach: false }
       }).compileComponents();
     })
   );

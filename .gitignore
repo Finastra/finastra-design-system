@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -42,7 +43,7 @@ finastra-design-system.iml
 .DS_Store
 Thumbs.db
 
-themes/angular-theme/prebuit-theme
+themes/angular-theme/prebuilt-theme
 
 # build
 /_site/
