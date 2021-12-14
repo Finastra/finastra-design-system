@@ -43,11 +43,12 @@ jobs:
       - name: Unit tests
         run: npm run wc:test
       - name: Codecov
-        uses: codecov/codecov-action@v1.5.0
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./wc-coverage/lcov.info
+          files: ./wc-coverage/lcov.info
           fail_ci_if_error: true
+          verbose: true
 
       - name: Build Storybook
         run: npm run wc:build:storybook
