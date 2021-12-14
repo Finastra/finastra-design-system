@@ -28,6 +28,7 @@
 /.sass-cache
 /connect.lock
 /coverage
+/wc-coverage
 /testresults
 /libpeerconnection.log
 npm-debug.log

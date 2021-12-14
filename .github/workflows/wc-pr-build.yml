@@ -1,0 +1,50 @@
+name: Web Components PR
+on:
+  pull_request:
+    paths-ignore:
+      - 'apps/fds-test-app/**'
+      - 'themes/fds-theme/**'
+      - 'libs/angular-components/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      # Setup
+      - name: Install Dependencies
+        run: npm ci --loglevel=error
+      - name: Build DevKit
+        run: npm run build:devkit
+
+        # Test
+      - name: Unit tests
+        run: npm run wc:test
+      - name: Codecov
+        uses: codecov/codecov-action@v1.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./wc-coverage/lcov.info
+          fail_ci_if_error: true
+
+        # Build
+      - name: Build web components
+        run: npm run wc:build
+      - name: Build Storybook
+        run: npm run wc:build:storybook
+        

@@ -14,7 +14,7 @@ export default {
   nodeResolve: true,
   coverageConfig: {
     report: true,
-    reportDir: 'coverage',
+    reportDir: 'wc-coverage',
     threshold: {
       statements: 90,
       branches: 65,
