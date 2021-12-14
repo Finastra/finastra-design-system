@@ -195,7 +195,6 @@
     "ts-jest": "27.0.5",
     "ts-md5": "1.2.8",
     "ts-node": "10.0.0",
-    "tsickle": "0.43.0",
     "typescript": "4.4.4"
   },
   "engines": {
