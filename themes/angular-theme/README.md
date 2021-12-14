@@ -18,7 +18,7 @@ npm install @finastra/angular-theme
 Import the theme in your main stylesheet
 
 ```SCSS
-@import '~@finastra/angular-theme/all-theme';
+@import '@finastra/angular-theme/all-theme';
 ```
 
 You'll find a more exhaustive documentation on our developer [getting started](https://design.fusionfabric.cloud/get-started/developers) page.
