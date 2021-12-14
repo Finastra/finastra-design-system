@@ -3,7 +3,7 @@ import {html, fixture, expect, elementUpdated} from '@open-wc/testing';
 import {Card} from '../src/card.js';
 import '../src/card.js';
 
-describe('Card', () => {
+xdescribe('Card', () => {
 
     it('should have default options', async () => {
         const el: Card = await fixture(html`<fds-card></fds-card>`);
