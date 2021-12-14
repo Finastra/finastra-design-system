@@ -31,7 +31,9 @@ jobs:
 
       # Setup
       - name: Install Dependencies
-        run: npm ci --loglevel=error --ignore-scripts
+        run: npm ci --loglevel=error
+        env:
+          SKIP_POST_INSTALL: true
       - name: Build DevKit
         run: npm run build:devkit
       - name: Build web components
