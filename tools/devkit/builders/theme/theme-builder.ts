@@ -1,12 +1,11 @@
 import { BuilderOutput, createBuilder, BuilderContext } from '@angular-devkit/architect';
-import { renderSync, Importer } from 'sass';
-import { writeFile, ensureFileSync, mkdirp, copy, remove, write } from 'fs-extra';
-import { join, relative } from 'path';
+import { renderSync } from 'sass';
+import { writeFile, ensureFileSync, mkdirp, remove } from 'fs-extra';
+import { join } from 'path';
 import { sync as globby } from 'globby';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import { Schema } from './schema';
-import importer from 'node-sass-tilde-importer';
 
 async function themeBuilder(options: Schema, context: BuilderContext): Promise<BuilderOutput> {
   const logger = context.logger;
@@ -34,7 +33,7 @@ async function themeBuilder(options: Schema, context: BuilderContext): Promise<B
         sourceMap: true,
         sourceMapRoot: dest,
         sourceMapEmbed: true,
-        importer: importer as Importer
+        includePaths: ['./node_modules']
       });
       const finalCss = await postcss([autoprefixer]).process(result.css, {
         from: theme,

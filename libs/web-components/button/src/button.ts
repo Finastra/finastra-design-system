@@ -1,4 +1,8 @@
-import { customElement, LitElement, html, property } from 'lit-element';
+import { LitElement, html } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+
+import '@material/mwc-button';
+
 import { styles } from './styles.css';
 
 @customElement('fds-button')

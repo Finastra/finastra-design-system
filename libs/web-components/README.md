@@ -27,10 +27,11 @@ npm run wc:serve
 ```
 
 - Storybook (for the document and demo)
-  
+
 ```
 npm run wc:storybook
 ```
+
 > You can also see the storybook in the browser: https://finastra.github.io/finastra-design-system/
 
 ### Build
@@ -81,5 +82,5 @@ npm run format
 npm run wc:generate MY_COMPONENT_NAME
 ```
 
-> To see a demo of the generated web component, run the commands mentioned in 
-[Web Component Development](#web-component-development).
+> To see a demo of the generated web component, run the commands mentioned in
+> [Web Component Development](#web-component-development).

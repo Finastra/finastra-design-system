@@ -1,5 +1,8 @@
+const { getJestProjects } = require('@nrwl/jest');
+
 module.exports = {
   projects: [
+    ...getJestProjects(),
     '<rootDir>/apps/angular-test-app',
     '<rootDir>/libs/angular-components/core',
     '<rootDir>/libs/angular-components/global-search',
