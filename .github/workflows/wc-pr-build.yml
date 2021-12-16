@@ -9,12 +9,11 @@ on:
   #     - 'themes/fds-theme/**'
   #     - 'libs/angular-components/**'
 
-env:
-  nodeVersion: '16'
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      nodeVersion: '16'
 
     steps:
       - uses: actions/checkout@v1
