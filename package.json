@@ -99,6 +99,7 @@
     "@angular/platform-browser-dynamic": "13.0.3",
     "@angular/router": "13.0.3",
     "@material/elevation": "^13.0.0",
+    "@material/mwc-icon": "^0.25.3",
     "@material/mwc-list": "0.25.3",
     "@material/mwc-top-app-bar-fixed": "0.25.3",
     "@ngrx/component-store": "13.0.1",
