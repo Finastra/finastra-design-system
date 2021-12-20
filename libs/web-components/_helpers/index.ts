@@ -1,1 +1,1 @@
-export * from './test/shadow-root'
+export * from './test/shadow-root';

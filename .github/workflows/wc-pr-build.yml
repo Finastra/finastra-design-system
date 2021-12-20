@@ -1,13 +1,10 @@
 name: Web Components PR
 on:
-  push:
-      branches:
-        - feature/wc-testing-baseline-475
-  # pull_request:
-  #   paths-ignore:
-  #     - 'apps/fds-test-app/**'
-  #     - 'themes/fds-theme/**'
-  #     - 'libs/angular-components/**'
+  pull_request:
+    paths-ignore:
+      - 'apps/fds-test-app/**'
+      - 'themes/fds-theme/**'
+      - 'libs/angular-components/**'
 
 jobs:
   build:
@@ -52,4 +49,3 @@ jobs:
 
       - name: Build Storybook
         run: npm run wc:build:storybook
-        

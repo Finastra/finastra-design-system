@@ -37,7 +37,7 @@ async function addToQueue(fileName) {
 
   spinner.stopAndPersist({
     text: chalk.green(`saw change to ${fileName}`),
-    symbol: '🔭',
+    symbol: '🔭'
   });
 
   updating = true;
@@ -50,7 +50,7 @@ async function addToQueue(fileName) {
     spinner.start();
     execPromise = exec('npm run wc:build');
   } else {
-    spinner.color ='blue';
+    spinner.color = 'blue';
     spinner.text = chalk.blue('Building Typescript');
     spinner.start();
     execPromise = exec('npm run wc:build:ts');
@@ -67,7 +67,7 @@ async function addToQueue(fileName) {
   spinner.stopAndPersist({
     symbol: '🎉',
     text: chalk.yellow(`Build complete - Watching for changes
-    `),
+    `)
   });
   updating = false;
 }
