@@ -1,0 +1,46 @@
+name: 'Codecov'
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      # Setup
+      - name: Install Dependencies
+        run: npm ci --loglevel=error
+        env:
+          SKIP_POST_INSTALL: true
+      - name: Build DevKit
+        run: npm run build:devkit
+      - name: Build web components
+        run: npm run wc:build
+
+      # Test
+      - name: Unit tests
+        run: npm run wc:test
+      - name: Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./wc-coverage/lcov.info
+          fail_ci_if_error: true
+          verbose: true
