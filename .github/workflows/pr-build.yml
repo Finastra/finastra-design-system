@@ -6,6 +6,7 @@ on:
       - 'themes/fds-theme/**'
       - 'libs/web-components/**'
       - '.storybook/**'
+      - '.github/**'
 
 jobs:
   build:
