@@ -1,0 +1,9 @@
+# Commands to start on workspace startup
+tasks:
+  - init:  export NG_CLI_ANALYTICS=ci && export SKIP_POST_INSTALL=true && npm ci
+    command: npm run wc:serve
+
+# Ports to expose on workspace startup
+ports:
+  - port: 8080
+    onOpen: open-preview
