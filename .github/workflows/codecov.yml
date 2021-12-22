@@ -3,6 +3,8 @@ name: 'Codecov'
 on:
   push:
     branches: [master]
+    path:
+      - 'libs/web-components/**'
 
 jobs:
   build:
