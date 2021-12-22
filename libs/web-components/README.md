@@ -57,12 +57,16 @@ npm run wc:build:storybook
 
 > Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
 
-### Running Tests (WIP ⚠️)
+### Running Tests
 
 ```
-npm run wc:test:all
+npm run wc:test:watch
+```
 
-npm run wc:test COMPONENT_FOLDER_NAME
+Or in watch mode
+
+```
+npm run wc:test:watch
 ```
 
 ### Linting & Formating
