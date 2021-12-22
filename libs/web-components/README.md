@@ -15,7 +15,7 @@
     </a>
     <img src="https://img.shields.io/badge/PRs-welcome-green" alt="PRs welcome"/>
     <a href="https://gitpod.io/#https://github.com/Finastra/finastra-design-system/tree/feature/dev-lifecycle-doc-513">
-        <img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod">
+        <img src="https://img.shields.io/badge/Gitpod-✨-blue?logo=gitpod">
     </a>
     <a href="https://finastra.github.io/finastra-design-system/" alt="FOSSA Status">
         <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/>
@@ -29,14 +29,13 @@
 
 # Packages
 
-| Name       | Package                                                                        | Version                                                                                                                         | Links                                                                                                                                                                             |
-| ------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Button** | [`@finastra/button`](https://npmjs.com/package/@finastra/button)     | [![latest](https://img.shields.io/npm/v/@finastra/button.svg)](https://npmjs.com/package/@finastra/button)     | [![README](https://img.shields.io/badge/README--56C271.svg)](./button/README.md)     |
-| **Card**     | [`@finastra/card`](https://npmjs.com/package/@finastra/card)   | [![latest](https://img.shields.io/npm/v/@finastra/card.svg)](https://npmjs.com/package/@finastra/card)   | [![README](https://img.shields.io/badge/README--56C271.svg)](./card/README.md)    |
-| **Divider**    | [`@finastra/divider`](https://npmjs.com/package/@finastra/divider) | [![latest](https://img.shields.io/npm/v/@finastra/divider.svg)](https://npmjs.com/package/@finastra/divider) | [![README](https://img.shields.io/badge/README--56C271.svg)](./divider/README.md)  |
-| **Logo**    | [`@finastra/logo`](https://npmjs.com/package/@finastra/logo) | [![latest](https://img.shields.io/npm/v/@finastra/logo.svg)](https://npmjs.com/package/@finastra/logo) | [![README](https://img.shields.io/badge/README--56C271.svg)](./logo/README.md)  |
-| **Search Input**    | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md)  |
-
+| Name             | Package                                                                      | Version                                                                                                                | Links                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Button**       | [`@finastra/button`](https://npmjs.com/package/@finastra/button)             | [![latest](https://img.shields.io/npm/v/@finastra/button.svg)](https://npmjs.com/package/@finastra/button)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./button/README.md)       |
+| **Card**         | [`@finastra/card`](https://npmjs.com/package/@finastra/card)                 | [![latest](https://img.shields.io/npm/v/@finastra/card.svg)](https://npmjs.com/package/@finastra/card)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./card/README.md)         |
+| **Divider**      | [`@finastra/divider`](https://npmjs.com/package/@finastra/divider)           | [![latest](https://img.shields.io/npm/v/@finastra/divider.svg)](https://npmjs.com/package/@finastra/divider)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./divider/README.md)      |
+| **Logo**         | [`@finastra/logo`](https://npmjs.com/package/@finastra/logo)                 | [![latest](https://img.shields.io/npm/v/@finastra/logo.svg)](https://npmjs.com/package/@finastra/logo)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./logo/README.md)         |
+| **Search Input** | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md) |
 
 <br/>
 <br/>

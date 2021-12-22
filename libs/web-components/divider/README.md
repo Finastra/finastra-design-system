@@ -7,7 +7,6 @@
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/divider?style=for-the-badge)](https://www.npmjs.com/package/@finastra/divider)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/divider?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/divider)
 
-
 ```
 npm i @finastra/divider
 ```
