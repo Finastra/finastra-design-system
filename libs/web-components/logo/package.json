@@ -9,8 +9,8 @@
     "logo"
   ],
   "license": "MIT",
-  "main": "dist/logo.js",
-  "module": "dist/logo.js",
+  "main": "dist/src/logo.js",
+  "module": "dist/src/logo.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

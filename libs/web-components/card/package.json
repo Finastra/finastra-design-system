@@ -9,8 +9,8 @@
     "card"
   ],
   "license": "MIT",
-  "main": "dist/card.js",
-  "module": "dist/card.js",
+  "main": "dist/src/card.js",
+  "module": "dist/src/card.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

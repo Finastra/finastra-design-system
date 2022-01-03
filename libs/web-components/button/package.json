@@ -9,8 +9,8 @@
     "Button"
   ],
   "license": "MIT",
-  "main": "dist/button.js",
-  "module": "dist/button.js",
+  "main": "dist/src/button.js",
+  "module": "dist/src/button.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
