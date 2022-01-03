@@ -8,11 +8,12 @@
 
 Following monorepo is composed of several assets :
 
-- [Angular Material theme (Finastra branded)](https://github.com/finastra/finastra-design-system/tree/master/themes/angular-theme)
-- [Angular components](https://github.com/finastra/finastra-design-system/tree/master/libs/angular-components)
-- [Web Components](https://github.com/finastra/finastra-design-system/tree/master/libs/web-components/README.md)
-- [Test Angular Application showcasing the above](https://github.com/finastra/finastra-design-system/tree/master/apps/angular-test-app)
-- [Power BI theme (Finastra branded)](https://github.com/finastra/finastra-design-system/tree/master/themes/power-bi-theme)
+- [Angular Material theme (Finastra branded)](./themes/angular-theme/README.md)
+- [Angular components](./libs/angular-components/README.md)
+- [Test Angular Application showcasing the above](./apps/angular-test-app)
+- [Modern CSS version of our Theme](./themes/fds-theme/README.md)
+- [Web Components](./libs/web-components/README.md)
+- [Power BI theme (Finastra branded)](./themes/power-bi-theme/README.md)
 
 ## Want to help ? 🤗❤️
 
