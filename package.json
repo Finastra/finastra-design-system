@@ -108,6 +108,7 @@
     "core-js": "3.15.2",
     "d3": "6.7.0",
     "elasticlunr": "git://github.com/weixsong/elasticlunr.js.git#f773890392760e0b3c68f0e65dbacb396dff297f",
+    "jsonc-parser": "^3.0.0",
     "ngx-color": "^7.0.0",
     "plotly.js": "^1.58.4",
     "rxjs": "^6.5.3",
