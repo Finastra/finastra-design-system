@@ -9,8 +9,8 @@
     "<%= className %>"
   ],
   "license": "MIT",
-  "main": "dist/<%= fileName %>.js",
-  "module": "dist/<%= fileName %>.js",
+  "main": "dist/src/<%= fileName %>.js",
+  "module": "dist/src/<%= fileName %>.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
