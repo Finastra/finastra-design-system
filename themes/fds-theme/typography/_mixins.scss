@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'sass:meta';
+@use 'sass:string';
 @use './variables';
 
 /// Loads the typography's custom properties.
@@ -11,9 +12,17 @@
 @mixin custom-properties() {
   @each $key, $value in variables.$properties {
     @if (meta.type-of($value) == 'map') {
-      --fds-#{$key}: #{typo-fallback($value)};
-    } @else {
+      $mdc-typo-style: str-replace($key, '-', '');
+      @each $typo-style, $typo-style-value in $value {
+        --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
+        --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style},#{$typo-style-value});
+      }
+      @debug $key;
+      --fds-#{$key}: #{typo-fallback($key)};
+    }
+    @else {
       --fds-#{$key}: #{$value};
+      --mdc-typography-#{$key}: #{$value};
     }
   }
 }
@@ -55,14 +64,30 @@
 ///
 /// @param {Map} $typo-style - Map that includes font-related properties
 @function typo-fallback($typo-style) {
-  $font-weight: map.get($typo-style, 'font-weight');
-  $font-size: map.get($typo-style, 'font-size');
-  $line-height: map.get($typo-style, 'line-height');
-  $font-family: map.get($typo-style, 'font-family');
-
-  @if (not $font-family) {
-    $font-family: map.get(variables.$properties, 'font-family');
+  @if (meta.type-of($typo-style) == 'map') {
+    $font-weight: map.get($typo-style, 'font-weight');
+    $font-size: map.get($typo-style, 'font-size');
+    $line-height: map.get($typo-style, 'line-height');
+    $font-family: map.get($typo-style, 'font-family');
+    @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family}; 
   }
+  @else {
+    @return normal normal var(--fds-#{$typo-style}-font-weight) var(--fds-#{$typo-style}-font-size) /
+    var(--fds-#{$typo-style}-line-height) var(--fds-#{$typo-style}-font-family);
+  }
+}
 
-  @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family};
+// Replace `$search` with `$replace` in `$string`
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
 }
