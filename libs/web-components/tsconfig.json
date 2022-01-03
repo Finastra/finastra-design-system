@@ -25,5 +25,24 @@
     "importHelpers": true
   },
   "file": [],
-  "references": [{ "path": "logo" }, { "path": "divider" }, { "path": "search-input" }, { "path": "card" }, { "path": "button" }]
+  "references": [
+    {
+      "path": "logo"
+    },
+    {
+      "path": "divider"
+    },
+    {
+      "path": "search-input"
+    },
+    {
+      "path": "card"
+    },
+    {
+      "path": "button"
+    },
+    {
+      "path": "base-card"
+    }
+  ]
 }

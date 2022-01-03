@@ -6,27 +6,6 @@ $query: mdc-feature-all();
 $feat-color: mdc-feature-create-target($query, color);
 $feat-structure: mdc-feature-create-target($query, structure);
 
-:host {
-  display: inline-flex;
-  @include mdc-theme-prop(
-    border-radius,
-    (
-      varname: --mdc-card-border-radius,
-      fallback: 4px 4px 4px 4px,
-    )
-  );
-}
-
-.mdc-card {
-  border-radius: inherit;
-  flex: 1;
-  @include fds.bg-color(surface);
-}
-
-slot {
-  border-radius: inherit;
-}
-
 .mdc-card__media-first-child,
 .mdc-card__primary-action:first-child {
   border-top-left-radius: inherit;

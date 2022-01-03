@@ -185,6 +185,18 @@
       },
       "tags": []
     },
+    "base-card": {
+      "root": "libs/web-components/base-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "breadcrumb": {
       "projectType": "library",
       "root": "libs/angular-components/breadcrumb",
