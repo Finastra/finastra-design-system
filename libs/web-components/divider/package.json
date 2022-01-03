@@ -10,8 +10,8 @@
   "license": "MIT",
   "displayName": "Divider",
   "icon": "horizontal_rule",
-  "main": "dist/divider.js",
-  "module": "dist/divider.js",
+  "main": "dist/src/divider.js",
+  "module": "dist/src/divider.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
