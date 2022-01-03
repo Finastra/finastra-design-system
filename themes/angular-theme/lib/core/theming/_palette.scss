@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use 'sass:map';
-@use '~@angular/material' as mat;
-@use '~@angular/material/core/theming/palette' as matPalette;
+@use '@angular/material' as mat;
+@use '@angular/material/core/theming/palette' as matPalette;
 
 @function get-color-from-palette($palette, $hue: default, $opacity: null) {
   // If hueKey is a number between zero and one, then it actually contains an

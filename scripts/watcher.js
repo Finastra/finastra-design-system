@@ -1,6 +1,8 @@
 const watch = require('node-watch');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
+const ora = require('ora');
+const chalk = require('chalk');
 
 const watchOptions = {
   recursive: true,
@@ -16,23 +18,44 @@ watch('libs/web-components', watchOptions, function (_event, fileName) {
   addToQueue(fileName);
 });
 
+const spinner = ora({
+  text: 'Watcher Started, watching for changes',
+  spinner: 'dots'
+}).start();
+
+spinner.stopAndPersist({
+  symbol: '✔',
+  color: 'green'
+});
+
 let updating = false;
 
 async function addToQueue(fileName) {
-  if (updating) {
+  if (updating || fileName.includes('.d.ts')) {
     return;
   }
-  console.log(`saw change to ${fileName}`);
+
+  spinner.stopAndPersist({
+    text: chalk.green(`saw change to ${fileName}`),
+    symbol: '🔭'
+  });
+
   updating = true;
   const buildSass = fileName.endsWith('scss');
   let execPromise;
+
   if (buildSass) {
-    console.log('building styles and typescript');
+    spinner.color = 'magenta';
+    spinner.text = chalk.magenta('Building Styles and Typescript');
+    spinner.start();
     execPromise = exec('npm run wc:build');
   } else {
-    console.log('building typescript');
+    spinner.color = 'blue';
+    spinner.text = chalk.blue('Building Typescript');
+    spinner.start();
     execPromise = exec('npm run wc:build:ts');
   }
+
   try {
     const { stdout } = await execPromise;
     console.log(stdout);
@@ -40,8 +63,11 @@ async function addToQueue(fileName) {
     console.log(stdout);
     console.log('ERROR:', stderr);
   }
-  console.log('watcher build complete!');
+
+  spinner.stopAndPersist({
+    symbol: '🎉',
+    text: chalk.yellow(`Build complete - Watching for changes
+    `)
+  });
   updating = false;
 }
-
-console.log('watcher started!');

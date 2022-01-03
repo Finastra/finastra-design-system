@@ -18,6 +18,54 @@ Use the theme in your app's main stylesheet to get the custom properties initial
 @use '@finastra/fds-theme';
 ```
 
+## Theming 🖌️
+Fds theme supports both **light** and **dark** theme.
+### SASS
+If you are coding in **SASS** you have 3 different ways to load the theme of your preference
+
+- By loading only **custom properties**
+
+```SCSS
+@use '@finastra/fds-theme/light';
+//or
+@use '@finastra/fds-theme/dark';
+```
+
+- By using **mixins** directly inside your container
+
+```SCSS
+@use '@finastra/fds-theme' as fds;
+
+  .my-container {
+    @include fds.use-light-theme();
+    //or
+    @include fds.use-dark-theme();
+  }
+```
+
+- Or by simply putting your **class name** in the **@use** rule
+
+```SCSS
+@use '@finastra/fds-theme/light' with ($class: 'light-theme');
+//or
+@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+```
+
+> Note that you should use the same class name in your html
+
+```HTML
+<my-container class="light-theme"></my-container>
+```
+
+### Using a pre-built theme
+You can use Fds theme without Sass by using a pre-built theme
+
+```CSS
+@import '@finastra/fds-theme/prebuilt/light';
+/* or */
+@import '@finastra/fds-theme/prebuilt/dark';
+```
+
 ## Usage
 
 - [Color](./color/README.mdx)

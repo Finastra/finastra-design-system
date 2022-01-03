@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use '~@angular/material' as mat;
-@use '~@finastra/angular-theme' as fds;
+@use '@angular/material' as mat;
+@use '@finastra/angular-theme' as fds;
 
 @mixin theme($theme) {
   $accent: map.get($theme, accent);
