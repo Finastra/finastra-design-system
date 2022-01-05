@@ -1,25 +1,23 @@
 @use "@finastra/fds-theme" as fds;
-@import '@material/card/mdc-card.scss';
-@import '@material/theme/_mixins.scss';
+@use '@material/card' as card;
 
-:host {
-  display: inline-flex;
-  @include mdc-theme-prop(
-    border-radius,
-    (
-      varname: --mdc-card-border-radius,
-      fallback: 4px 4px 4px 4px,
-    )
-  );
+@mixin core-styles() {
+  :host {
+    display: inline-flex;
+    @include card.core-styles();
+    --mdc-card-border-radius: 4px 4px 4px 4px;
+  }
+  
+  .mdc-card {
+    border-radius: inherit;
+    flex: 1;
+    @include fds.bg-color(surface);
+    height: 100%;
+  }
+  
+  slot {
+    border-radius: inherit;
+  }
 }
 
-.mdc-card {
-  border-radius: inherit;
-  flex: 1;
-  @include fds.bg-color(surface);
-  height: 100%;
-}
-
-slot {
-  border-radius: inherit;
-}
+@include core-styles();
