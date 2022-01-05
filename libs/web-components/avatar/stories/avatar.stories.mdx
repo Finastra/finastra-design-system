@@ -17,31 +17,152 @@ import '@finastra/avatar';
       type: 'text',
       description: 'Somebody'
     },
-    '--fds-avatar-text-color': {
+    shortName: {
       table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
+        category: 'attributes',
+        defaultValue: { summary: '' }
       },
-      type: 'string',
-      description: 'Text color',
-      control: null
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    },
+    dense: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'dense avatar'
+    },
+    large: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'large avatar'
+    },
+    primary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'primary avatar'
+    },
+    secondary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'secondary avatar'
     }
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-avatar  .name=${name}></fsd-avatar>`;
+export const Template = ({ name, shortName, dense=false, large=false, primary=false, secondary=false }) => {
+  return html`<fds-avatar
+    name=${name}
+    shortName=${shortName}
+    ?dense=${dense}
+    ?large=${large}
+    ?primary=${primary}
+    ?secondary=${secondary}
+  ></fds-avatar>`;
 };
 
-# avatar
+# Default Avatar
 
 <Canvas>
   <Story
     name="Default"
+    args={{ name: "" , large:false }}
     parameters={{
       docs: {
         source: {
           code: '<fds-avatar></fds-avatar>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Large avatar
+
+<Canvas>
+  <Story
+    name="Large"
+    args={{ large: true }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-avatar large></fds-avatar>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Dense avatar
+
+<Canvas>
+  <Story
+    name="Dense"
+    args={{ dense: true }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-avatar dense></fds-avatar>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Colored avatar
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{ primary: true }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-avatar primary></fds-avatar>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Avatar with letter
+
+<Canvas>
+  <Story
+    name="text"
+    args={{ name: "Raya"}}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-avatar name="Raya"></fds-avatar>'
         }
       }
     }}
@@ -71,7 +192,7 @@ npm install @finastra/avatar
     parameters={{
       docs: {
         source: {
-          code: '<fds-avatar name="Workd"></fds-avatar>'
+          code: '<fds-avatar></fds-avatar>'
         }
       }
     }}

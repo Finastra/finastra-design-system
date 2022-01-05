@@ -16,8 +16,17 @@ export class Avatar extends LitElement {
   @property({ type: Boolean })
   dense = false;
 
+  @property({ type: Boolean })
+  large = false;
+
+  @property({ type: Boolean })
+  primary = false;
+
+  @property({ type: Boolean })
+  secondary = false;
+
   render() {
-    if (!this.shortName) {
+ if (!this.shortName) {
       return html`<div class="fds-avatar">${this.transform(this.name,this.dense)}</div>`;
     } else {
       return html`<div class="fds-avatar">${this.shortName}</div>`;
