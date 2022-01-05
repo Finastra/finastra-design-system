@@ -1,0 +1,10 @@
+@use "@finastra/fds-theme" as fds;
+@use "@finastra/base-card/src" as base-card;
+
+:host {
+    @include base-card.core-styles();
+}
+
+.app-card-label {
+    @include fds.typography(headline-4);
+}

@@ -43,6 +43,9 @@
     },
     {
       "path": "base-card"
+    },
+    {
+      "path": "app-card"
     }
   ]
 }

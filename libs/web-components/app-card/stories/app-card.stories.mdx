@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+
+import '@finastra/app-card';
+
+<Meta
+  title="Components/AppCard"
+  component={'fds-app-card'}
+  argTypes={{
+    name: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    },
+    '--fds-app-card-text-color': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: 'Text color' }
+      },
+      type: 'string',
+      description: 'Text color',
+      control: null
+    }
+  }}
+/>
+
+export const Template = ({ name = '' }) => {
+  return html`<fds-app-card  .name=${name}></fsd-app-card>`;
+};
+
+# app-card
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-app-card></fds-app-card>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/app-card
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Name
+
+<Canvas>
+  <Story
+    name="Name"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-app-card name="Workd"></fds-app-card>'
+        }
+      }
+    }}
+  >
+    {Template.bind({}, 'World')}
+  </Story>
+</Canvas>

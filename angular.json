@@ -130,6 +130,18 @@
       },
       "tags": []
     },
+    "app-card": {
+      "root": "libs/web-components/app-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/app-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "avatar": {
       "projectType": "library",
       "root": "libs/angular-components/avatar",
