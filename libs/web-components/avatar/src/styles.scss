@@ -15,6 +15,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host {
   display: block;
+  --fds-avatar-font-size: 16px;
 }
 
 .fds-avatar {
@@ -27,10 +28,11 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   align-items: center;
   display: flex;
   justify-content: center;
+  text-transform:uppercase;
   @include fds.bg-color(gradient);
   @include fds.text-color(on-primary);
   @include fds.typography(body-3);
-  font-size: large;
+  font-size: var(--fds-avatar-font-size);
 
   &:empty:not(img) {
     @include multiple-backgrounds(
@@ -44,7 +46,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     height: 24px;
     width: 24px;
-    @include fds.typography(body-3);
+    --fds-avatar-font-size: 14px;
   }
 }
 
@@ -52,8 +54,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     height: 96px;
     width: 96px;
-    @include fds.typography(body-3);
-    font-size: xxx-large;
+    --fds-avatar-font-size: 44px;
   }
 }
 

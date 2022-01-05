@@ -15,7 +15,7 @@ import '@finastra/avatar';
       control: 'text',
       defaultValue: '',
       type: 'text',
-      description: 'Somebody'
+      description: 'Avatar name'
     },
     shortName: {
       table: {
@@ -25,47 +25,47 @@ import '@finastra/avatar';
       control: 'text',
       defaultValue: '',
       type: 'text',
-      description: 'Somebody'
+      description: 'Avatar short name'
     },
     dense: {
       table: {
         category: 'attributes',
-        defaultValue: { summary: '' }
+        defaultValue: { summary: 'false' }
       },
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: 'dense avatar'
+      description: 'Dense avatar'
     },
     large: {
       table: {
         category: 'attributes',
-        defaultValue: { summary: '' }
+        defaultValue: { summary: 'false' }
       },
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: 'large avatar'
+      description: 'Large avatar'
     },
     primary: {
       table: {
         category: 'attributes',
-        defaultValue: { summary: '' }
+        defaultValue: { summary: 'false' }
       },
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: 'primary avatar'
+      description: 'Primary avatar'
     },
     secondary: {
       table: {
         category: 'attributes',
-        defaultValue: { summary: '' }
+        defaultValue: { summary: 'false' }
       },
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: 'secondary avatar'
+      description: 'Secondary avatar'
     }
   }}
 />
@@ -99,7 +99,20 @@ export const Template = ({ name, shortName, dense=false, large=false, primary=fa
   </Story>
 </Canvas>
 
-# Large avatar
+## Installation
+
+```
+npm install @finastra/avatar
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Large avatar
 
 <Canvas>
   <Story
@@ -117,7 +130,7 @@ export const Template = ({ name, shortName, dense=false, large=false, primary=fa
   </Story>
 </Canvas>
 
-# Dense avatar
+### Dense avatar
 
 <Canvas>
   <Story
@@ -135,7 +148,7 @@ export const Template = ({ name, shortName, dense=false, large=false, primary=fa
   </Story>
 </Canvas>
 
-# Colored avatar
+### Colored avatar
 
 <Canvas>
   <Story
@@ -153,11 +166,11 @@ export const Template = ({ name, shortName, dense=false, large=false, primary=fa
   </Story>
 </Canvas>
 
-# Avatar with letter
+### Avatar with letter
 
 <Canvas>
   <Story
-    name="text"
+    name="Letter"
     args={{ name: "Raya"}}
     parameters={{
       docs: {
@@ -168,35 +181,5 @@ export const Template = ({ name, shortName, dense=false, large=false, primary=fa
     }}
   >
     {Template.bind({})}
-  </Story>
-</Canvas>
-
-## Installation
-
-```
-npm install @finastra/avatar
-
-```
-
-## API
-
-<ArgsTable of="." story="^" />
-
-## Examples
-
-### Name
-
-<Canvas>
-  <Story
-    name="Name"
-    parameters={{
-      docs: {
-        source: {
-          code: '<fds-avatar></fds-avatar>'
-        }
-      }
-    }}
-  >
-    {Template.bind({}, 'World')}
   </Story>
 </Canvas>

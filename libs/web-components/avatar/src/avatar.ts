@@ -26,18 +26,25 @@ export class Avatar extends LitElement {
   secondary = false;
 
   render() {
- if (!this.shortName) {
-      return html`<div class="fds-avatar">${this.transform(this.name,this.dense)}</div>`;
+    if (this.primary && this.secondary) {
+      return new Error('cannot use both primary and secondary attribute! ');
+    }
+    if (this.dense && this.large) {
+      return new Error('cannot use both dense and large attribute!');
+    }
+    if (!this.shortName) {
+      return html`<div title="${this.name}" class="fds-avatar">${this.transformName(this.name, this.dense)}</div>`;
     } else {
-      return html`<div class="fds-avatar">${this.shortName}</div>`;
+      if (!this.name) {
+        return new Error('Please specify a name to your avatar');
+      } else return html`<div title="${this.name}" class="fds-avatar">${this.transformShortName(this.shortName, this.dense)}</div>`;
     }
   }
 
-  transform(fullName: string, dense?: any): string {
+  transformName(fullName: string, dense?: any): string {
     const [name, surname] = fullName.split(' ');
     let initials = name.charAt(0).toUpperCase();
     if (!dense) {
-      console.log("not dense")
       if (surname) {
         initials += surname.charAt(0).toUpperCase();
       } else if (name.length >= 2) {
@@ -45,6 +52,17 @@ export class Avatar extends LitElement {
       }
     }
     return initials;
+  }
+
+  transformShortName(shortName: string, dense?: any): string {
+    if (!dense) {
+      if (shortName.length > 2) {
+        return shortName.substring(0, 2);
+      }
+    } else {
+      return shortName.substring(0, 1);
+    }
+    return shortName;
   }
 }
 
