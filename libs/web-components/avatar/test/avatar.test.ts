@@ -9,4 +9,51 @@ describe('Avatar', () => {
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });
+
+  it('should be able to generate a short name', async () => {
+    const el1: Avatar = await fixture(html`<fds-avatar name="raya hristova"></fds-avatar>`);
+    await elementUpdated(el1);
+    expect(shadowRoot(el1).textContent).equal('RH');
+
+    const el2: Avatar = await fixture(html`<fds-avatar name="raya"></fds-avatar>`);
+    await elementUpdated(el2);
+    expect(shadowRoot(el2).textContent).equal('RA');
+  });
+
+  it('should be able to transform a short name', async () => {
+    const el1: Avatar = await fixture(html`<fds-avatar shortName="RH" name="Raya"></fds-avatar>`);
+    await elementUpdated(el1);
+    expect(shadowRoot(el1).textContent).equal('RH');
+
+    const el2: Avatar = await fixture(html`<fds-avatar dense shortName="RH" name="Raya"></fds-avatar>`);
+    await elementUpdated(el2);
+    expect(shadowRoot(el2).textContent).equal('R');
+
+    const el3: Avatar = await fixture(html`<fds-avatar shortName="RHR" name="Raya"></fds-avatar>`);
+    await elementUpdated(el3);
+    expect(shadowRoot(el3).textContent).equal('RH');
+  });
+
+  // it('should display an error if name is not defined ', async () => {
+  //   const el: Avatar = await fixture(html`<fds-avatar shortName="raya hristova"></fds-avatar>`);
+  //   await elementUpdated(el);
+  //   console.log(shadowRoot(el));
+  //   expect(shadowRoot(el).textContent).contain('Error');
+  // });
+
+  // it('Should display an error if both dense and large are used', async () => {
+  //   const el: Avatar = await fixture(html`<fds-avatar large dense></fds-avatar>`);
+  //   await elementUpdated(el);
+  //   expect(shadowRoot(el).textContent).contain('Error');
+  // });
+
+  // it('Should display an error if both primary and secondary are used', async () => {
+  //   const el: Avatar = await fixture(html`<fds-avatar primary secondary></fds-avatar>`);
+  //   await elementUpdated(el);
+  //   expect(shadowRoot(el).textContent).contain('Error');
+  // });
 });
+
+function shadowRoot(el: Element) {
+  return el.shadowRoot ? el.shadowRoot : el;
+}
