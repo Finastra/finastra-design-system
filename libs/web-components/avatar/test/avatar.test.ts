@@ -34,24 +34,29 @@ describe('Avatar', () => {
     expect(shadowRoot(el3).textContent).equal('RH');
   });
 
-  // it('should display an error if name is not defined ', async () => {
-  //   const el: Avatar = await fixture(html`<fds-avatar shortName="raya hristova"></fds-avatar>`);
-  //   await elementUpdated(el);
-  //   console.log(shadowRoot(el));
-  //   expect(shadowRoot(el).textContent).contain('Error');
-  // });
+  it('should display an error if name is not defined ', async () => {
+    try {
+      await fixture(html`<fds-avatar shortName="raya hristova"></fds-avatar>`);
+    } catch (e) {
+      expect(e + '').equal('Error: Please specify a name to your avatar');
+    }
+  });
 
-  // it('Should display an error if both dense and large are used', async () => {
-  //   const el: Avatar = await fixture(html`<fds-avatar large dense></fds-avatar>`);
-  //   await elementUpdated(el);
-  //   expect(shadowRoot(el).textContent).contain('Error');
-  // });
+  it('Should display an error if both dense and large are used', async () => {
+    try {
+      await fixture(html`<fds-avatar large dense></fds-avatar>`);
+    } catch (e) {
+      expect(e + '').equal('Error: Cannot use both dense and large attribute');
+    }
+  });
 
-  // it('Should display an error if both primary and secondary are used', async () => {
-  //   const el: Avatar = await fixture(html`<fds-avatar primary secondary></fds-avatar>`);
-  //   await elementUpdated(el);
-  //   expect(shadowRoot(el).textContent).contain('Error');
-  // });
+  it('Should display an error if both primary and secondary are used', async () => {
+    try {
+      await fixture(html`<fds-avatar primary secondary></fds-avatar>`);
+    } catch (e) {
+      expect(e + '').equal('Error: Cannot use both primary and secondary attribute');
+    }
+  });
 });
 
 function shadowRoot(el: Element) {

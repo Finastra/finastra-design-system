@@ -27,10 +27,10 @@ export class Avatar extends LitElement {
 
   render() {
     if (this.primary && this.secondary) {
-      throw new Error('Cannot use both primary and secondary attribute! !');
+      throw new Error('Cannot use both primary and secondary attribute');
     }
     if (this.dense && this.large) {
-      throw new Error('Cannot use both dense and large attribute!');
+      throw new Error('Cannot use both dense and large attribute');
     }
     if (!this.name) {
       if (this.shortName) {
