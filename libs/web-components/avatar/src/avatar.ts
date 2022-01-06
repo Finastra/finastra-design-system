@@ -36,7 +36,7 @@ export class Avatar extends LitElement {
       if (this.shortName) {
         throw new Error('Please specify a name to your avatar');
       } else {
-        return html`<div title="${this.name}" class="fds-avatar"></div>`;
+        return html`<div class="fds-avatar"></div>`;
       }
     }
     if (!this.shortName) {
