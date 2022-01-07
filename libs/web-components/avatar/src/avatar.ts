@@ -39,11 +39,9 @@ export class Avatar extends LitElement {
         return html`<div class="fds-avatar"></div>`;
       }
     }
-    if (!this.shortName) {
-      return html`<div title="${this.name}" class="fds-avatar">${this.transformName(this.name, this.dense)}</div>`;
-    } else {
-      return html`<div title="${this.name}" class="fds-avatar">${this.transformShortName(this.shortName, this.dense)}</div>`;
-    }
+    return html`<div title="${this.name}" class="fds-avatar">
+      ${!this.shortName ? this.transformName(this.name, this.dense) : this.transformShortName(this.shortName, this.dense)}
+    </div>`;
   }
 
   transformName(fullName: string, dense?: any): string {
