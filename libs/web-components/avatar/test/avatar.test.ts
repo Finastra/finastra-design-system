@@ -13,25 +13,25 @@ describe('Avatar', () => {
   it('should be able to generate a short name', async () => {
     const el1: Avatar = await fixture(html`<fds-avatar name="raya hristova"></fds-avatar>`);
     await elementUpdated(el1);
-    expect(shadowRoot(el1).textContent).equal('RH');
+    expect(shadowRoot(el1).textContent?.replace(/\s+/g,'')).equal('RH');
 
     const el2: Avatar = await fixture(html`<fds-avatar name="raya"></fds-avatar>`);
     await elementUpdated(el2);
-    expect(shadowRoot(el2).textContent).equal('RA');
+    expect(shadowRoot(el2).textContent?.replace(/\s+/g,'')).equal('RA');
   });
 
   it('should be able to transform a short name', async () => {
     const el1: Avatar = await fixture(html`<fds-avatar shortName="RH" name="Raya"></fds-avatar>`);
     await elementUpdated(el1);
-    expect(shadowRoot(el1).textContent).equal('RH');
+    expect(shadowRoot(el1).textContent?.replace(/\s+/g,'')).equal('RH');
 
     const el2: Avatar = await fixture(html`<fds-avatar dense shortName="RH" name="Raya"></fds-avatar>`);
     await elementUpdated(el2);
-    expect(shadowRoot(el2).textContent).equal('R');
+    expect(shadowRoot(el2).textContent?.replace(/\s+/g,'')).equal('R');
 
     const el3: Avatar = await fixture(html`<fds-avatar shortName="RHR" name="Raya"></fds-avatar>`);
     await elementUpdated(el3);
-    expect(shadowRoot(el3).textContent).equal('RH');
+    expect(shadowRoot(el3).textContent?.replace(/\s+/g,'')).equal('RH');
   });
 
   it('should display an error if name is not defined ', async () => {
