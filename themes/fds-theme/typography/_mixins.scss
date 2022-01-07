@@ -15,11 +15,10 @@
       $mdc-typo-style: str-replace($key, '-', '');
       @each $typo-style, $typo-style-value in $value {
         --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
-        --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style},#{$typo-style-value});
+        --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style}, #{$typo-style-value});
       }
       --fds-#{$key}: #{typo-fallback($key)};
-    }
-    @else {
+    } @else {
       --fds-#{$key}: #{$value};
       --mdc-typography-#{$key}: #{$value};
     }
@@ -70,8 +69,8 @@
     $font-family: map.get($style, 'font-family');
 
      @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) 
-     var(--fds-#{$typo-style}-font-size,#{$font-size}) /
-     var(--fds-#{$typo-style}-line-height,#{$line-height}) var(--fds-#{$typo-style}-font-family,#{$font-family});
+    var(--fds-#{$typo-style}-font-size, #{$font-size}) / var(--fds-#{$typo-style}-line-height, #{$line-height})
+    var(--fds-#{$typo-style}-font-family, #{$font-family});
 }
 
 // Replace `$search` with `$replace` in `$string`
@@ -83,7 +82,8 @@
   $index: str-index($string, $search);
   
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
   
   @return $string;
