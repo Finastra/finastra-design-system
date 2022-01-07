@@ -17,7 +17,6 @@
         --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
         --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style},#{$typo-style-value});
       }
-      @debug $key;
       --fds-#{$key}: #{typo-fallback($key)};
     }
     @else {
@@ -37,7 +36,7 @@
       $letter-spacing: map.get($value, 'letter-spacing');
 
       .fds-#{$key} {
-        font: var(--fds-#{$key}, #{typo-fallback($value)});
+        font: var(--fds-#{$key}, #{typo-fallback($key)});
         letter-spacing: #{$letter-spacing};
       }
     }
@@ -56,7 +55,7 @@
   $typo-style: map.get(variables.$properties, $style);
   $letter-spacing: map.get($typo-style, 'letter-spacing');
 
-  font: var(--fds-#{$style}, #{typo-fallback($typo-style)});
+  font: var(--fds-#{$style}, #{typo-fallback($style)});
   letter-spacing: #{$letter-spacing};
 }
 
@@ -64,17 +63,15 @@
 ///
 /// @param {Map} $typo-style - Map that includes font-related properties
 @function typo-fallback($typo-style) {
-  @if (meta.type-of($typo-style) == 'map') {
-    $font-weight: map.get($typo-style, 'font-weight');
-    $font-size: map.get($typo-style, 'font-size');
-    $line-height: map.get($typo-style, 'line-height');
-    $font-family: map.get($typo-style, 'font-family');
-    @return normal normal #{$font-weight} #{$font-size}/#{$line-height} #{$font-family}; 
-  }
-  @else {
-    @return normal normal var(--fds-#{$typo-style}-font-weight) var(--fds-#{$typo-style}-font-size) /
-    var(--fds-#{$typo-style}-line-height) var(--fds-#{$typo-style}-font-family);
-  }
+    $style: map.get(variables.$properties, $typo-style);
+    $font-weight: map.get($style, 'font-weight');
+    $font-size: map.get($style, 'font-size');
+    $line-height: map.get($style, 'line-height');
+    $font-family: map.get($style, 'font-family');
+
+     @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) 
+     var(--fds-#{$typo-style}-font-size,#{$font-size}) /
+     var(--fds-#{$typo-style}-line-height,#{$line-height}) var(--fds-#{$typo-style}-font-family,#{$font-family});
 }
 
 // Replace `$search` with `$replace` in `$string`
