@@ -13,6 +13,7 @@
     flex: 1;
     @include fds.bg-color(surface);
     height: 100%;
+    overflow: hidden;
   }
   
   slot {

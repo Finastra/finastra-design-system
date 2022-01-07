@@ -1,10 +1,111 @@
 @use "@finastra/fds-theme" as fds;
 @use "@finastra/base-card/src" as base-card;
 
-:host {
+
+:host{
     @include base-card.core-styles();
+    width: 160px;
+    height: 120px;
+    .app-card {
+        width: 160px;
+        height: 120px;
+    }
+    .app-card-decoration {
+        &.pattern {
+            top: -32px;
+        }
+    
+        &.ribbon {
+            bottom: -32px;
+        }
+    }
+}
+
+.app-card{
+    display: flex;
+}
+
+:host([large]) {
+    display:flex;
+    width: 320px;
+    height: 240px;
+    .app-card {
+        width: 320px;
+        height: 240px; 
+        .app-card-label {
+            @include fds.typography(headline-1);
+        }
+        .app-card-decoration {
+            &.pattern {
+                top: -63px;
+            }
+        
+            &.ribbon {
+                bottom: -63px;
+            }
+        }
+    }
+}
+
+:host([dense]){
+    width: 120px;
+    height: 90px;
+    .app-card {
+        width: 120px;
+        height: 90px; 
+        .app-card-label {
+            @include fds.typography(headline-5);
+        }
+        .app-card-decoration {
+            &.pattern {
+                top: -24px;
+            }
+        
+            &.ribbon {
+                bottom: -24px;
+            }
+        }
+    }
+}
+
+:host([extra-dense]) {
+    width: 100px;
+    height: 70px;
+    .app-card {
+        width: 100px;
+        height: 70px; 
+        .app-card-label {
+            @include fds.typography(headline-5);
+        }
+        .app-card-decoration {
+            &.pattern {
+                top: -17px;
+            }
+        
+            &.ribbon {
+                bottom: -17px;
+            }
+        }
+    }
 }
 
 .app-card-label {
-    @include fds.typography(headline-4);
+    @include fds.typography(headline-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.app-card-decoration {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+
+    .ribbon-primary{
+        fill: var(--fds-primary);
+    } 
+    .ribbon-secondary{
+        fill: var(--fds-secondary);
+    } 
 }
