@@ -4,44 +4,104 @@ import { html } from 'lit';
 import '@finastra/app-card';
 
 <Meta
-  title="Components/AppCard"
+  title="Components/App Card"
   component={'fds-app-card'}
   argTypes={{
-    name: {
+    label: {
       table: {
-        category: 'attributes',
+        category: 'properties',
         defaultValue: { summary: '' }
       },
       control: 'text',
-      defaultValue: '',
-      type: 'text',
-      description: 'Somebody'
-    },
-    '--fds-app-card-text-color': {
-      table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
-      },
+      defaultValue: 'Application',
       type: 'string',
-      description: 'Text color',
-      control: null
+      description: 'app card label'
+    },
+    shortLabel: {
+      table: {
+        category: 'properties',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: 'APP',
+      type: 'string',
+      description: 'optional app card displayed label'
+    },
+    primary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: true }
+      },
+      control: 'boolean',
+      defaultValue: true,
+      type: 'boolean',
+      description: 'color and ribbon type'
+    },
+    secondary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'color and ribbon type'
+    },
+    large: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'card size'
+    },
+    dense: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'card size'
+    },
+    'extra-dense': {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'card size'
     }
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-app-card  .name=${name}></fsd-app-card>`;
+export const Template = ({ primary = true, secondary = false, large = false, extraDense = false, dense = false, label, shortLabel }) => {
+  return html`<fds-app-card
+    ?primary=${primary}
+    ?secondary=${secondary}
+    ?large=${large}
+    ?extra-dense=${extraDense}
+    ?dense=${dense}
+    .label=${label}
+    .shortLabel=${shortLabel}
+  ></fds-app-card>`;
 };
 
-# app-card
+# Default App Card
 
 <Canvas>
   <Story
     name="Default"
+    args={{ label: 'App', dense: true }}
     parameters={{
       docs: {
         source: {
-          code: '<fds-app-card></fds-app-card>'
+          code: `<fds-app-card label="App" dense></fds-app-card>`
         }
       }
     }}
@@ -60,22 +120,3 @@ npm install @finastra/app-card
 ## API
 
 <ArgsTable of="." story="^" />
-
-## Examples
-
-### Name
-
-<Canvas>
-  <Story
-    name="Name"
-    parameters={{
-      docs: {
-        source: {
-          code: '<fds-app-card name="Workd"></fds-app-card>'
-        }
-      }
-    }}
-  >
-    {Template.bind({}, 'World')}
-  </Story>
-</Canvas>
