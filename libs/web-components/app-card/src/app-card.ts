@@ -13,13 +13,19 @@ export class AppCard extends BaseCard {
 
   @property({ type: String }) label;
   @property({ type: String }) shortLabel;
-  @property({ type: Boolean }) primary = true;
+  @property({ type: Boolean }) primary = false;
   @property({ type: Boolean }) secondary = false;
   @property({ type: Boolean }) large = false;
   @property({ type: Boolean }) dense = false;
   @property({ type: Boolean }) extraDense = false;
 
   protected renderCardContent(): TemplateResult {
+    if (this.primary && this.secondary) {
+      throw new Error('Cannot use both primary and secondary attribute, default color is primary');
+    }
+    if ([this.large, this.dense, this.extraDense].filter((val) => val === true).length > 1) {
+      throw new Error('Cannot use multiple size attributes at the same time');
+    }
     return html`<div class="app-card" title="${this.label}">
       ${this.renderPatternSVG()}
       <span class="app-card-label">${this.shortLabel || this.formatItemName(this.label)}</span>
