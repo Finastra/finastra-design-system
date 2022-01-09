@@ -4,33 +4,25 @@ import { html } from 'lit';
 import '@finastra/base-card';
 
 <Meta
-  title="Components/BaseCard"
+  title="Components/Base Card"
   component={'fds-base-card'}
   argTypes={{
-    name: {
+    outlined: {
       table: {
         category: 'attributes',
         defaultValue: { summary: '' }
       },
-      control: 'text',
-      defaultValue: '',
-      type: 'text',
-      description: 'Somebody'
-    },
-    '--fds-base-card-text-color': {
-      table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
-      },
-      type: 'string',
-      description: 'Text color',
-      control: null
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: ''
     }
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-base-card  .name=${name}></fsd-base-card>`;
+export const Template = ({ outlined = false }) => {
+  return html`<fds-base-card ?outlined=${outlined} style="height: 100px;
+    width: 200px;"></fsd-base-card>`;
 };
 
 # base-card
@@ -60,22 +52,3 @@ npm install @finastra/base-card
 ## API
 
 <ArgsTable of="." story="^" />
-
-## Examples
-
-### Name
-
-<Canvas>
-  <Story
-    name="Name"
-    parameters={{
-      docs: {
-        source: {
-          code: '<fds-base-card name="Workd"></fds-base-card>'
-        }
-      }
-    }}
-  >
-    {Template.bind({}, 'World')}
-  </Story>
-</Canvas>
