@@ -41,7 +41,7 @@
             }
         
             &.ribbon {
-                bottom: -63px;
+                bottom: -64px;
             }
         }
     }
@@ -95,6 +95,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
+    color: var(--fds-on-background);
 }
 
 .app-card-decoration {
