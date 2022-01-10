@@ -17,5 +17,8 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
