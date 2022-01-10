@@ -1,7 +1,7 @@
 {
   "name": "@finastra/avatar",
   "displayName": "Avatar",
-  "version": "1.0.0",
+  "version": "0.0.14",
   "description": "Avatar Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,5 +17,8 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
