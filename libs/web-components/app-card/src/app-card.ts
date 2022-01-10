@@ -33,7 +33,7 @@ export class AppCard extends BaseCard {
     </div>`;
   }
 
-  protected formatItemName(name: string) {
+  formatItemName(name: string) {
     if (name) {
       return name
         .split(' ')
