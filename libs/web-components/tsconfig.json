@@ -42,6 +42,9 @@
       "path": "button"
     },
     {
+      "path": "avatar"
+    },
+    {
       "path": "user-profile"
     }
   ]

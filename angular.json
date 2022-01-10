@@ -1060,6 +1060,18 @@
       },
       "tags": []
     },
+    "wc-avatar": {
+      "root": "libs/web-components/avatar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/avatar/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wc-card": {
       "projectType": "library",
       "root": "libs/web-components/card",
