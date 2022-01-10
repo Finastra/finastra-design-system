@@ -1,16 +1,16 @@
 {
-  "name": "@finastra/<%= fileName %>",
-  "displayName": "<%= className %>",
+  "name": "@finastra/avatar",
+  "displayName": "Avatar",
   "version": "1.0.0",
-  "description": "<%= className %> Web Component",
+  "description": "Avatar Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "<%= className %>"
+    "Avatar"
   ],
   "license": "MIT",
-  "main": "dist/src/<%= fileName %>.js",
-  "module": "dist/src/<%= fileName %>.js",
+  "main": "dist/src/avatar.js",
+  "module": "dist/src/avatar.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
