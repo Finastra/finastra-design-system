@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+
+import '@finastra/user-profile';
+
+<Meta
+  title="Components/UserProfile"
+  component={'fds-user-profile'}
+  argTypes={{
+    name: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    },
+    '--fds-user-profile-text-color': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: 'Text color' }
+      },
+      type: 'string',
+      description: 'Text color',
+      control: null
+    }
+  }}
+/>
+
+export const Template = ({ name = '' }) => {
+  return html`<fds-user-profile  .name=${name}></fsd-user-profile>`;
+};
+
+# user-profile
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-user-profile></fds-user-profile>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/user-profile
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Name
+
+<Canvas>
+  <Story
+    name="Name"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-user-profile name="Workd"></fds-user-profile>'
+        }
+      }
+    }}
+  >
+    {Template.bind({}, 'World')}
+  </Story>
+</Canvas>
