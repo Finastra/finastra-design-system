@@ -21,5 +21,8 @@
     "@material/mwc-list": "0.25.3",
     "@material/mwc-select": "0.25.3",
     "@material/mwc-button": "0.25.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

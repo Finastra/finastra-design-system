@@ -1,7 +1,66 @@
+@use '@finastra/fds-theme' as fds;
+
 :host {
-  display: block;
+  display: inline-block;
+  --mdc-menu-min-width: 300px;
 
   #menu {
     position: absolute;
+
+    .header {
+      text-align: center;
+      padding: 16px;
+
+      fds-avatar {
+        display: inline-block;
+        margin: auto;
+      }
+
+      .title {
+        @include fds.typography(headline-6);
+        margin-top: 16px;
+      }
+
+      slot[name="subtitle"]::slotted(*) {
+        margin: 0;
+        @include fds.typography(body-3);
+      }
+    }
+
+    .content {
+      slot[name="actions"]::slotted(*) {
+        padding: 16px;
+        mwc-list-item {
+          .mdc-deprecated-list {
+            font: var(--fds-body-1);
+          }
+        }
+      }
+    }
+
+    .header-dense {
+      padding: 24px;
+      fds-avatar {
+        float: left;
+        margin: 0;
+        margin-right: 8px;
+      }
+      .title {
+        margin: 0;
+        padding-top: 8px;
+        display: inline-block;
+        @include fds.typography(headline-6);
+      }
+
+      slot[name="subtitle"]::slotted(*) {
+        margin: 0;
+        @include fds.typography(body-3);
+      }
+    }
+    .content {
+      slot[name="actions"]::slotted(*) {
+        padding: 16px;
+      }
+    }
   }
 }

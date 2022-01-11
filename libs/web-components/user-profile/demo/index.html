@@ -1,2 +1,56 @@
 <script type="module" src="node_modules/@finastra/user-profile/dist/src/user-profile.js"></script>
-<fds-user-profile name="World"></fds-user-profile>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<script type="module" src="node_modules/@finastra/divider/dist/src/divider.js"></script>
+<script type="module" src="node_modules/@material/mwc-list"></script>
+
+<div style="display: flex;">
+
+    <fds-user-profile name="Raya Hristova">
+        <div slot="subtitle">RayaHristova@finastra.com</div>
+        <div slot="divider">
+            <fds-divider></fds-divider>
+        </div>
+        <div slot="actions">
+            <mwc-list-item graphic="icon">
+                <slot>item one</slot>
+                <mwc-icon slot="graphic">dashboard</mwc-icon>
+              </mwc-list-item>
+              <mwc-list-item graphic="icon">
+                <slot>item two</slot>
+                <mwc-icon slot="graphic">dashboard</mwc-icon>
+              </mwc-list-item>
+            <div slot="divider">
+                <fds-divider></fds-divider>
+            </div>
+            <fds-button dense fullwidth label="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+        </div>
+    </fds-user-profile>
+
+    <fds-user-profile dense name="Raya Hristova" buttonLabel="Dense menu">
+        <div slot="subtitle">RayaHristova@finastra.com</div>
+        <div slot="divider">
+            <fds-divider></fds-divider>
+        </div>
+        <div slot="actions">
+            <mwc-list-item>Item 0</mwc-list-item>
+            <mwc-list-item>Item 1</mwc-list-item>
+            <mwc-list-item>Item 2</mwc-list-item>
+            <mwc-list-item>Item 3</mwc-list-item>
+            <div slot="divider">
+                <fds-divider></fds-divider>
+            </div>
+            <fds-button dense fullwidth label="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+        </div>
+    </fds-user-profile>
+
+    <fds-user-profile name="Raya Hristova">
+        <div slot="subtitle">RayaHristova@finastra.com</div>
+        <div slot="actions">
+            <fds-button dense fullwidth label="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+        </div>
+    </fds-user-profile>
+
+</div>
