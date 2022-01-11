@@ -35,14 +35,14 @@
     {
       "path": "search-input"
     },
+    { 
+      "path": "base-card"
+    },
     {
       "path": "card"
     },
     {
       "path": "button"
-    },
-    {
-      "path": "base-card"
     },
     {
       "path": "app-card"
