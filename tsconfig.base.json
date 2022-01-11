@@ -48,8 +48,8 @@
       "@finastra/angular-components/vector-map": ["libs/angular-components/vector-map"],
       "@finastra/angular-components/video-thumbnail": ["libs/angular-components/video-thumbnail"],
       "@finastra/angular-components/wizard": ["libs/angular-components/wizard"],
-      "@finastra/devkit": ["dist/devkit/"],
-      "@finastra/base-card": ["libs/web-components/base-card"]
+      "@finastra/base-card": ["libs/web-components/base-card"],
+      "@finastra/devkit": ["dist/devkit/"]
     }
   },
   "angularCompilerOptions": {
