@@ -67,7 +67,7 @@ import '@finastra/app-card';
       type: 'boolean',
       description: 'card size'
     },
-    'extra-dense': {
+    extraDense: {
       table: {
         category: 'attributes',
         defaultValue: { summary: false }
@@ -85,7 +85,7 @@ export const Template = ({ primary = true, secondary = false, large = false, ext
     ?primary=${primary}
     ?secondary=${secondary}
     ?large=${large}
-    ?extra-dense=${extraDense}
+    ?extraDense=${extraDense}
     ?dense=${dense}
     .label=${label}
     .shortLabel=${shortLabel}
