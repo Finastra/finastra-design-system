@@ -2,11 +2,12 @@
   "name": "@finastra/base-card",
   "displayName": "BaseCard",
   "version": "0.0.14",
-  "description": "BaseCard Web Component",
+  "description": "Base Card Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "BaseCard"
+    "Base Card",
+    "Card"
   ],
   "license": "MIT",
   "main": "dist/src/base-card.js",
