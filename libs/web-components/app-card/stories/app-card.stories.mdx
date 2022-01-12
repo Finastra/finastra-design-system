@@ -27,16 +27,6 @@ import '@finastra/app-card';
       type: 'string',
       description: 'optional app card displayed label'
     },
-    primary: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: true }
-      },
-      control: 'boolean',
-      defaultValue: true,
-      type: 'boolean',
-      description: 'color and ribbon type'
-    },
     secondary: {
       table: {
         category: 'attributes',
@@ -80,9 +70,8 @@ import '@finastra/app-card';
   }}
 />
 
-export const Template = ({ primary = true, secondary = false, large = false, extraDense = false, dense = false, label, shortLabel }) => {
+export const Template = ({ secondary = false, large = false, extraDense = false, dense = false, label, shortLabel }) => {
   return html`<fds-app-card
-    ?primary=${primary}
     ?secondary=${secondary}
     ?large=${large}
     ?extraDense=${extraDense}
