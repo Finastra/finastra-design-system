@@ -1,5 +1,6 @@
 import { html, fixture, expect, elementUpdated } from '@open-wc/testing';
 import { AppCard } from '../src/app-card.js';
+import * as sinon from 'sinon';
 import '../src/app-card.js';
 
 describe('AppCard', () => {
@@ -30,22 +31,11 @@ describe('AppCard', () => {
     expect(el.label).to.equal(undefined);
   });
 
-  it('should throw error if primary and secondary attributes at the same time', async () => {
-    try {
-      await fixture(html`<fds-app-card primary secondary></fds-app-card>`);
-    } catch (e) {
-      expect(e instanceof Error).equal(true);
-      expect((e as Error).message).equal('Cannot use both primary and secondary attribute, default color is primary');
-    }
-  });
-
-  it('should throw error if there are multiple size attributes at the same time', async () => {
-    try {
-      await fixture(html`<fds-app-card large dense></fds-app-card>`);
-    } catch (e) {
-      expect(e instanceof Error).equal(true);
-      expect((e as Error).message).equal('Cannot use multiple size attributes at the same time');
-    }
+  it('should log warning if there are multiple size attributes at the same time', async () => {
+    await fixture(html`<fds-app-card large dense></fds-app-card>`);
+    const warnSpy = sinon.spy(console, 'warn');
+    await fixture(html`<fds-app-card large dense></fds-app-card>`);
+    expect(warnSpy.callCount).to.equal(1);
   });
 
   it('should format item name ', async () => {

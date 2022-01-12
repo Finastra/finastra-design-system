@@ -19,7 +19,7 @@ export class AppCard extends BaseCard {
 
   protected renderCardContent(): TemplateResult {
     if ([this.large, this.dense, this.extraDense].filter((val) => val === true).length > 1) {
-      throw new Error('Cannot use multiple size attributes at the same time');
+      console.warn('[App Card]: Cannot use multiple size attributes at the same time.');
     }
     return html`<div class="app-card" title="${this.label}">
       ${renderPatternSVG()}
