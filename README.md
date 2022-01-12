@@ -10,7 +10,7 @@ Following monorepo is composed of several assets :
 
 - [Angular Material theme (Finastra branded)](./themes/angular-theme/README.md)
 - [Angular components](./libs/angular-components/README.md)
-- [Test Angular Application showcasing the above](./apps/angular-test-app)
+- [Test Angular Application showcasing the above](https://lucid-bassi-bfa8cc.netlify.app/)
 - [Modern CSS version of our Theme](./themes/fds-theme/README.md)
 - [Web Components](./libs/web-components/README.md)
 - [Power BI theme (Finastra branded)](./themes/power-bi-theme/README.md)
