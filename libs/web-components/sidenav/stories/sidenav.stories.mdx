@@ -6,61 +6,58 @@ import '@material/mwc-drawer';
 import '@material/mwc-icon';
 import '@material/mwc-list';
 
-<Meta
-  title="Components/Sidenav"
-/>
+<Meta title="Components/Sidenav" />
 
 export const Template = ({ dense = false }) => {
   return html`<style>
-    mwc-drawer {
-      display:inline-block;
-    }
-    .fds-sidenav {
-      --mdc-drawer-width: 300px;
-      background-color: var(--fds-surface);
-      color: var(--fds-on-surface);
-    }
-    .fds-sidenav-header {
-      background-color: var(--fds-background);
-      height: 210px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .fds-sidenav-list {
-      --mdc-theme-text-primary-on-background: var(--fds-on-background);
-      width: 100%;
-    }
-  </style>
-  <mwc-drawer>
-    <div class="fds-sidenav">
-      <div class="fds-sidenav-header">
-        <fds-logo></fds-logo>
+      mwc-drawer {
+        display: inline-block;
+      }
+      .fds-sidenav {
+        --mdc-drawer-width: 300px;
+        background-color: var(--fds-surface);
+        color: var(--fds-on-surface);
+      }
+      .fds-sidenav-header {
+        background-color: var(--fds-background);
+        height: 210px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fds-sidenav-list {
+        --mdc-theme-text-primary-on-background: var(--fds-on-background);
+        width: 100%;
+      }
+    </style>
+    <mwc-drawer>
+      <div class="fds-sidenav">
+        <div class="fds-sidenav-header">
+          <fds-logo></fds-logo>
+        </div>
+        <div class="fds-sidenav-list">
+          <mwc-list activatable>
+            <mwc-list-item selected activated graphic="icon">
+              <span>Home</span>
+              <mwc-icon slot="graphic">home</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Applications</span>
+              <mwc-icon slot="graphic">dashboard</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Tools</span>
+              <mwc-icon slot="graphic">extension</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Settings</span>
+              <mwc-icon slot="graphic">settings</mwc-icon>
+            </mwc-list-item>
+          </mwc-list>
+        </div>
       </div>
-      <div class="fds-sidenav-list">
-        <mwc-list activatable>
-          <mwc-list-item selected activated graphic="icon">
-            <span>Home</span>
-            <mwc-icon slot="graphic">home</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Applications</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Tools</span>
-            <mwc-icon slot="graphic">extension</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Settings</span>
-            <mwc-icon slot="graphic">settings</mwc-icon>
-          </mwc-list-item>
-        </mwc-list>
-      </div>
-    </div>
-    <div slot="appContent" class="app">
-    </div>
-  </mwc-drawer>`;
+      <div slot="appContent" class="app"></div>
+    </mwc-drawer>`;
 };
 
 # Sidenav
