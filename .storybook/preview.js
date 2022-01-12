@@ -5,10 +5,10 @@ export const parameters = {
   options: {
     storySort: {
       order: ['Foundations', 'Components'],
-      method: 'alphabetical',
+      method: 'alphabetical'
     }
   },
   docs: {
-    theme: theme,
-  },
+    theme: theme
+  }
 };
