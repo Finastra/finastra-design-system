@@ -3,54 +3,63 @@
 <script type="module" src="node_modules/@finastra/divider/dist/src/divider.js"></script>
 <script type="module" src="node_modules/@material/mwc-list"></script>
 
-<div style="display: flex;">
+<style>
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-profile p {
+    font: var(--fds-body-1);
+    color: var(--fds-on-background);
+  }
 
-    <fds-user-profile name="Raya Hristova">
-        <div slot="subtitle">RayaHristova@finastra.com</div>
-        <div slot="divider">
-            <fds-divider></fds-divider>
-        </div>
-        <div slot="actions">
-            <mwc-list-item graphic="icon">
-                <slot>item one</slot>
-                <mwc-icon slot="graphic">dashboard</mwc-icon>
-              </mwc-list-item>
-              <mwc-list-item graphic="icon">
-                <slot>item two</slot>
-                <mwc-icon slot="graphic">dashboard</mwc-icon>
-              </mwc-list-item>
-            <div slot="divider">
-                <fds-divider></fds-divider>
-            </div>
-            <fds-button dense fullwidth label="logout"></fds-button>
-            <fds-button text fullwidth label="View profile"></fds-button>
-        </div>
-    </fds-user-profile>
+  .user-profile .item-list {
+    padding-bottom: 16px;
+  }
 
-    <fds-user-profile dense name="Raya Hristova" buttonLabel="Dense menu">
-        <div slot="subtitle">RayaHristova@finastra.com</div>
-        <div slot="divider">
-            <fds-divider></fds-divider>
-        </div>
-        <div slot="actions">
-            <mwc-list-item>Item 0</mwc-list-item>
-            <mwc-list-item>Item 1</mwc-list-item>
-            <mwc-list-item>Item 2</mwc-list-item>
-            <mwc-list-item>Item 3</mwc-list-item>
-            <div slot="divider">
-                <fds-divider></fds-divider>
-            </div>
-            <fds-button dense fullwidth label="logout"></fds-button>
-            <fds-button text fullwidth label="View profile"></fds-button>
-        </div>
-    </fds-user-profile>
+  .user-profile mwc-list-item {
+    color: var(--fds-on-background);
+  }
 
-    <fds-user-profile name="Raya Hristova">
-        <div slot="subtitle">RayaHristova@finastra.com</div>
-        <div slot="actions">
-            <fds-button dense fullwidth label="logout"></fds-button>
-            <fds-button text fullwidth label="View profile"></fds-button>
-        </div>
-    </fds-user-profile>
+  .user-profile fds-divider {
+    position: relative;
+    padding-top: 16px;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
 
+  .user-profile fds-button+fds-button {
+    margin-top: 8px;
+  }
+</style>
+
+<div class="user-profile">
+  <p>Default user profile</p>
+  <fds-user-profile name="Raya Hristova">
+    <div slot="userInfo">raya.hristova@finastra.com</div>
+    <div slot="actions">
+      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+      <fds-button text fullwidth label="View profile"></fds-button>
+    </div>
+  </fds-user-profile>
+
+  <p>User profile dense</p>
+  <fds-user-profile dense name="Raya Hristova" buttonLabel="Dense menu">
+    <div slot="userInfo">raya.hristova@finastra.com</div>
+
+    <div slot="actions">
+      <div class="item-list">
+        <mwc-list-item graphic="icon">
+          <span>item one</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>item two</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+      </div>
+      <fds-divider></fds-divider>
+      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+    </div>
+  </fds-user-profile>
 </div>

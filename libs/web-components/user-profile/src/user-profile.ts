@@ -19,54 +19,54 @@ export class UserProfile extends LitElement {
   @query('#menu')
   menu;
 
-  @property()
-  name = '';
+  @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
   @property()
-  buttonLabel = 'Menu';
+  name = '';
 
   @property({ type: Boolean })
   dense = false;
 
-  @property({ type: Number }) count = 0;
+  protected actionsCount = 0;
+  protected divider = true;
 
   render() {
-    return html` <div>
-      <fds-button text id="button" label="${this.buttonLabel}" raised label="Open Menu" @click="${this._showMenu}"></fds-button>
+    return html`
+      <fds-avatar dense id="button" @click="${this._showMenu}"></fds-avatar>
       <mwc-menu id="menu" fullwidth>
-          ${
-            this.dense
-              ? html` <div class="header-dense">
-                  <fds-avatar name=${this.name}></fds-avatar>
-                  <div class="title">${this.name}</div>
-                  <slot name="subtitle"></slot>
-                </div>
-                <div class="content">
-                <slot name="divider"></slot>
-                <slot name="actions">
-                <slot name="divider"></slot>
-              </div> 
+          ${this.dense
+        ? html`
+                  <div class="header-dense">
+                    <fds-avatar name=${this.name}></fds-avatar>
+                    <div class="title">${this.name}</div>
+                    <slot name="userInfo"></slot>
+                  </div>
+                  ${this.divider ? html` <fds-divider></fds-divider>` : ''}
+                  <slot name="actions" id="actions"> </slot>
                 `
-              : html`
-            <div class="header">
-              <fds-avatar name=${this.name} large></fds-avatar>
-              <div class="title">${this.name}</div>
-              <slot name="subtitle"></slot>
-            </div>
-            <div class="content">
-              <slot name="divider"></slot>
-              <slot name="actions">
-              <slot name="divider"></slot>
-            </div> 
-      `
-          } 
-      </mwc-menu>
-      </div>
-    </div>`;
+        : html`
+                  <div class="header">
+                    <fds-avatar name=${this.name} large></fds-avatar>
+                    <div class="title">${this.name}</div>
+                    <slot name="userInfo"></slot>
+                  </div>
+                  ${this.divider ? html` <fds-divider></fds-divider>` : ''}
+                  <slot name="actions" id="actions"> </slot>
+                `
+      } 
+      </mwc-menu>`;
   }
 
   private _showMenu() {
     this.menu.show();
+    this.actionsCount = this._actionsSlot.assignedNodes().length;
+    this.requestUpdate();
+    if (this.actionsCount > 0) {
+      console.log(this.actionsCount);
+      this.divider = true;
+    } else {
+      this.divider = false;
+    }
   }
 }
 

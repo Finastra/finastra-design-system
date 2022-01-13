@@ -18,24 +18,20 @@
 
       .title {
         @include fds.typography(headline-6);
+        @include fds.text-color(on-background);
         margin-top: 16px;
       }
 
-      slot[name="subtitle"]::slotted(*) {
+      slot[name="userInfo"]::slotted(*) {
         margin: 0;
         @include fds.typography(body-3);
+        @include fds.text-color(on-background);
       }
     }
 
-    .content {
-      slot[name="actions"]::slotted(*) {
-        padding: 16px;
-        mwc-list-item {
-          .mdc-deprecated-list {
-            font: var(--fds-body-1);
-          }
-        }
-      }
+    slot[name="actions"]::slotted(*) {
+      padding: 16px;
+      @include fds.text-color(on-background);
     }
 
     .header-dense {
@@ -50,16 +46,13 @@
         padding-top: 8px;
         display: inline-block;
         @include fds.typography(headline-6);
+        @include fds.text-color(on-background);
       }
 
-      slot[name="subtitle"]::slotted(*) {
+      slot[name="userInfo"]::slotted(*) {
         margin: 0;
         @include fds.typography(body-3);
-      }
-    }
-    .content {
-      slot[name="actions"]::slotted(*) {
-        padding: 16px;
+        @include fds.text-color(on-background);
       }
     }
   }
