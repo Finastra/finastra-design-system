@@ -14,7 +14,6 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 }
 
 :host {
-  display: inline-block;
   --fds-avatar-font-size: 16px;
 }
 
