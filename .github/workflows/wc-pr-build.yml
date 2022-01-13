@@ -51,7 +51,7 @@ jobs:
       - name: Deploy storybook to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
-          publish-dir: './dist/apps/angular-test-app'
+          publish-dir: './storybook-static'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: 'Deploy Storybook from GitHub Actions'
