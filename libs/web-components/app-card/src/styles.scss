@@ -88,6 +88,27 @@
     }
 }
 
+:host([large][dense]),
+:host([dense][extraDense]),
+:host([large][extraDense]){
+    @include base-card.core-styles();
+    width: 160px;
+    height: 120px;
+    .app-card {
+        width: 160px;
+        height: 120px;
+    }
+    .app-card-decoration {
+        &.pattern {
+            top: -32px;
+        }
+    
+        &.ribbon {
+            bottom: -32px;
+        }
+    }
+}
+
 .app-card-label {
     @include fds.typography(headline-3);
     display: flex;
