@@ -194,6 +194,7 @@
     "rimraf": "^3.0.2",
     "sass": "1.44.0",
     "semver": "^7.3.5",
+    "sinon": "^12.0.1",
     "standard-version": "^9.3.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
