@@ -1,7 +1,7 @@
 {
   "name": "@finastra/card",
   "displayName": "Card",
-  "version": "0.0.8",
+  "version": "0.0.14",
   "description": "Card Web Component",
   "keywords": [
     "finastra design system",
@@ -9,8 +9,8 @@
     "card"
   ],
   "license": "MIT",
-  "main": "dist/card.js",
-  "module": "dist/card.js",
+  "main": "dist/src/card.js",
+  "module": "dist/src/card.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

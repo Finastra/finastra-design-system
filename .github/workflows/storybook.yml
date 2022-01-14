@@ -9,6 +9,7 @@ on:
       - '.storybook/**'
       - '!libs/**/package.json'
       - '!themes/fds-theme/package.json'
+      - 'package.json'
 
 permissions:
   contents: write # for checkout and commit
@@ -23,7 +24,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: 15
+          node-version: 16
           registry-url: https://registry.npmjs.org/
       - name: Build Storybook
         run: |

@@ -16,7 +16,7 @@
 *.launch
 .settings/
 *.sublime-workspace
-
+.angular
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
@@ -25,9 +25,11 @@
 !.vscode/extensions.json
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
+/wc-coverage
 /testresults
 /libpeerconnection.log
 npm-debug.log
@@ -42,7 +44,7 @@ finastra-design-system.iml
 .DS_Store
 Thumbs.db
 
-themes/angular-theme/prebuit-theme
+themes/angular-theme/prebuilt-theme
 
 # build
 /_site/

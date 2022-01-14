@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '~@finastra/angular-theme' as fds;
+@use '@finastra/angular-theme' as fds;
 
 @mixin uxg-status-step-theme($theme) {
   $foreground: map.get($theme, foreground);

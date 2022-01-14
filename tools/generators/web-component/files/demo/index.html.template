@@ -1,2 +1,2 @@
-<script type="module" src="node_modules/@finastra/<%= fileName %>/dist/<%= fileName %>.js"></script>
+<script type="module" src="node_modules/@finastra/<%= fileName %>/dist/src/<%= fileName %>.js"></script>
 <fds-<%= fileName %> name="World"></fds-<%= fileName %>>

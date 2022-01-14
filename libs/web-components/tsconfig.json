@@ -18,18 +18,32 @@
     "outDir": "./",
     "baseUrl": ".",
     "paths": {
-      "@finastra/*": ["./*"]
+      "@finastra/*": ["./*"],
+      "@fds/test-helper": ["_helpers"]
     },
     "composite": true,
     "importHelpers": true
   },
   "file": [],
   "references": [
-    { "path": "logo" },
-    { "path": "divider" },
-    { "path": "search-input" },
-    { "path": "card" },
-    { "path": "button" },
+    {
+      "path": "logo"
+    },
+    {
+      "path": "divider"
+    },
+    {
+      "path": "search-input"
+    },
+    {
+      "path": "card"
+    },
+    {
+      "path": "button"
+    },
+    {
+      "path": "avatar"
+    },
     { "path": "autocomplete" }
   ]
 }
