@@ -12,3 +12,7 @@
   --mdc-theme-primary: var(--fds-secondary);
   --mdc-button-outline-color: var(--fds-secondary);
 }
+
+:host([fullWidth]) {
+  flex: 1;
+}
