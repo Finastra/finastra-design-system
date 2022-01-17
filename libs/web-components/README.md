@@ -14,7 +14,7 @@
         <img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" />
     </a>
     <img src="https://img.shields.io/badge/PRs-welcome-green" alt="PRs welcome"/>
-    <a href="https://gitpod.io/#https://github.com/Finastra/finastra-design-system/tree/feature/dev-lifecycle-doc-513">
+    <a href="https://gitpod.io/#https://github.com/Finastra/finastra-design-system">
         <img src="https://img.shields.io/badge/Gitpod-✨-blue?logo=gitpod">
     </a>
     <a href="https://finastra.github.io/finastra-design-system/" alt="FOSSA Status">
