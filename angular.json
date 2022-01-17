@@ -139,6 +139,19 @@
             "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
           }
         }
+      },
+      "tags": ["web-components"]
+    },
+
+    "app-card": {
+      "root": "libs/web-components/app-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
+          }
+        }
       }
     },
     "avatar": {
@@ -195,6 +208,18 @@
         }
       },
       "tags": []
+    },
+    "base-card": {
+      "root": "libs/web-components/base-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "breadcrumb": {
       "projectType": "library",
