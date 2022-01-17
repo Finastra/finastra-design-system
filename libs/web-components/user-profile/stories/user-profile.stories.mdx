@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/a
 import { html } from 'lit';
 
 import '@finastra/user-profile';
+import '@finastra/button';
 
 <Meta
   title="Components/User Profile"
@@ -17,20 +18,66 @@ import '@finastra/user-profile';
       type: 'text',
       description: 'Somebody'
     },
-    '--fds-user-profile-text-color': {
+    dense: {
       table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Dense user profile'
+    },
+    userInfo: {
+      table: {
+        category: 'slot'
       },
       type: 'string',
-      description: 'Text color',
+      description: '',
+      control: null
+    },
+    actions: {
+      table: {
+        category: 'slot'
+      },
+      type: 'string',
+      description: '',
       control: null
     }
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-user-profile  .name=${name}></fsd-user-profile>`;
+export const Template = ({ name = 'Raya Hristova', dense = false }) => {
+  return html`
+    <style>
+      fds-user-profile {
+        display: flex;
+        flex-direction: column;
+      }
+      fds-user-profile p {
+        font: var(--fds-body-1);
+        color: var(--fds-on-background);
+      }
+      fds-user-profile fds-divider {
+        position: relative;
+        padding-top: 16px;
+        margin-right: -16px;
+        margin-left: -16px;
+      }
+      fds-user-profile fds-button {
+        line-height: 0px;
+      }
+      fds-user-profile fds-button+fds-button {
+        margin-top: 8px;
+      }
+  </style>
+  <fds-user-profile .name=${name} ?dense=${dense}>
+    <div slot="userInfo">raya.hristova@finastra.com</div>
+    <div slot="actions">
+      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+      <fds-button text fullwidth label="View profile"></fds-button>
+    </div>
+  </fds-user-profile>`;
 };
 
 # user-profile
@@ -38,10 +85,41 @@ export const Template = ({ name = '' }) => {
 <Canvas>
   <Story
     name="Default"
+    args={{ name: 'Raya Hristova', dense:false }}
     parameters={{
       docs: {
         source: {
-          code: '<fds-user-profile></fds-user-profile>'
+          code: `
+          
+<style>
+  fds-user-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  fds-user-profile p {
+      font: var(--fds-body-1);
+      color: var(--fds-on-background);
+  }
+  fds-user-profile fds-divider {
+    position: relative;
+    padding-top: 16px;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+  fds-user-profile fds-button {
+    line-height: 0px;
+  }
+  fds-user-profile fds-button+fds-button {
+    margin-top: 8px;
+  }
+</style>
+<fds-user-profile name="Raya Hristova">
+  <div slot="userInfo">raya.hristova@finastra.com</div>
+    <div slot="actions">
+      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+      <fds-button text fullwidth label="View profile"></fds-button>
+    </div>
+</fds-user-profile>`
         }
       }
     }}
@@ -67,15 +145,52 @@ npm install @finastra/user-profile
 
 <Canvas>
   <Story
-    name="Name"
+    name="Dense"
+    args={{ name: 'Raya Hristova', dense:true }}
     parameters={{
       docs: {
         source: {
-          code: '<fds-user-profile name="Workd"></fds-user-profile>'
+          code: `
+                 
+<style>
+  fds-user-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  fds-user-profile p {
+      font: var(--fds-body-1);
+      color: var(--fds-on-background);
+  }
+  fds-user-profile .item-list {
+    padding-bottom: 16px;
+  }
+ fds-user-profile mwc-list-item {
+    color: var(--fds-on-background);
+  }
+  fds-user-profile fds-divider {
+    position: relative;
+    padding-top: 16px;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+  fds-user-profile fds-button {
+    line-height: 0px;
+  }
+  fds-user-profile fds-button+fds-button {
+    margin-top: 8px;
+  }
+</style>
+<fds-user-profile dense name="Raya Hristova">
+  <div slot="userInfo">raya.hristova@finastra.com</div>
+    <div slot="actions">
+      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+      <fds-button text fullwidth label="View profile"></fds-button>
+    </div>
+</fds-user-profile>`
         }
       }
     }}
   >
-    {Template.bind({}, 'World')}
+    {Template.bind({})}
   </Story>
 </Canvas>
