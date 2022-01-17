@@ -1,10 +1,11 @@
-import { html, LitElement, TemplateResult } from 'lit';
+import { html, TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { BaseCard } from '@finastra/base-card';
 
 export type AspectRatioType = '16-9' | 'square' | '';
 
-export class CardBase extends LitElement {
+export class CardBase extends BaseCard {
   @query('[name="primary-action"]') protected _primaryActionSlot!: HTMLSlotElement;
 
   @query('[name="media"]') protected _mediaSlot!: HTMLSlotElement;
@@ -12,8 +13,6 @@ export class CardBase extends LitElement {
   @query('[name="icon-action"]') protected _iconSlot!: HTMLSlotElement;
 
   @query('[name="button-action"]') protected _buttonSlot!: HTMLSlotElement;
-
-  @property({ type: Boolean }) outlined = false;
 
   @property({ type: Boolean }) fullBleed = false;
 
@@ -72,13 +71,10 @@ export class CardBase extends LitElement {
     this.requestUpdate();
   }
 
-  render() {
-    const classes = { 'mdc-card--outlined': this.outlined };
-    return html` <div class="mdc-card ${classMap(classes)}">
-      ${this.renderPrimaryAction()} ${this.renderMedia()}
+  protected renderCardContent(): TemplateResult {
+    return html` ${this.renderPrimaryAction()} ${this.renderMedia()}
       <slot @slotchange=${this.onContentSlotChanged}></slot>
-      ${this.renderActions()}
-    </div>`;
+      ${this.renderActions()}`;
   }
 
   protected renderPrimaryAction() {

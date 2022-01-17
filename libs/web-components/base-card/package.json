@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/base-card",
+  "displayName": "Base Card",
+  "version": "0.0.15",
+  "description": "Base Card Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Base Card",
+    "Card"
+  ],
+  "license": "MIT",
+  "main": "dist/src/base-card.js",
+  "module": "dist/src/base-card.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/card": "13.0.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

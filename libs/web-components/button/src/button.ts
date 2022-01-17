@@ -30,25 +30,30 @@ export class Button extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
-  render() {
-    if (this.outlined || this.text) {
-      return html`<mwc-button
-        label="${this.label}"
-        icon="${this.icon}"
-        ?outlined="${this.outlined}"
-        ?text="${this.text}"
-        ?dense="${this.dense}"
-        ?disabled="${this.disabled}"
-      ></mwc-button>`;
-    }
+  @property({ type: Boolean })
+  fullwidth = false;
 
-    return html`<mwc-button
-      label="${this.label}"
-      icon="${this.icon}"
-      ?unelevated="${this.unelevated}"
-      ?dense="${this.dense}"
-      ?disabled="${this.disabled}"
-    ></mwc-button>`;
+  render() {
+    return html`
+      ${this.outlined || this.text
+        ? html` <mwc-button
+            label="${this.label}"
+            icon="${this.icon}"
+            ?outlined="${this.outlined}"
+            ?text="${this.text}"
+            ?dense="${this.dense}"
+            ?disabled="${this.disabled}"
+            ?fullwidth="${this.fullwidth}"
+          ></mwc-button>`
+        : html` <mwc-button
+            label="${this.label}"
+            icon="${this.icon}"
+            ?unelevated="${this.unelevated}"
+            ?dense="${this.dense}"
+            ?disabled="${this.disabled}"
+            ?fullwidth="${this.fullwidth}"
+          ></mwc-button>`}
+    `;
   }
 }
 

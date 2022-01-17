@@ -4,5 +4,15 @@
     "activityBar.border": "#c137a2",
     "menubar.selectionForeground": "#ffffff",
     "titleBar.border": "#c137a2"
-  }
+  },
+  "conventionalCommits.scopes": [
+    "wc:app-card",
+    "wc:avatar",
+    "wc:button",
+    "wc:card",
+    "wc:divider",
+    "wc:logo",
+    "wc:search-input",
+    "wc:sidenav"
+  ]
 }
