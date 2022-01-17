@@ -28,7 +28,7 @@ export class UserProfile extends LitElement {
   dense = false;
 
   protected actionsCount = 0;
-  protected divider = true;
+  public divider = true;
 
   render() {
     return html`

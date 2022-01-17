@@ -9,4 +9,35 @@ describe('UserProfile', () => {
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });
+
+  it('should not display divider when actions slot is undefined', async () => {
+    const el: UserProfile = await fixture(html`<fds-user-profile></fds-user-profile>`);
+    await elementUpdated(el);
+    shadowRoot(el).querySelector('fds-avatar')?.click();
+    expect(el.divider).to.be.false;
+  });
+
+  it('should not display divider when header is dense', async () => {
+    const el: UserProfile = await fixture(html`<fds-user-profile dense></fds-user-profile>`);
+    await elementUpdated(el);
+    shadowRoot(el).querySelector('fds-avatar')?.click();
+    expect(el.divider).to.be.false;
+  });
+
+  it('Should display divider when actions slot is defined', async () => {
+    const el: UserProfile = await fixture(html`<fds-user-profile dense>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>`);
+    await elementUpdated(el);
+    shadowRoot(el).querySelector('fds-avatar')?.click();
+    expect(el.divider).to.be.true;
+  });
 });
+
+function shadowRoot(el: Element) {
+  return el.shadowRoot ? el.shadowRoot : el;
+}
