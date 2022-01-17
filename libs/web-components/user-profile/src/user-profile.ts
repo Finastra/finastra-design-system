@@ -62,7 +62,6 @@ export class UserProfile extends LitElement {
     this.actionsCount = this._actionsSlot.assignedNodes().length;
     this.requestUpdate();
     if (this.actionsCount > 0) {
-      console.log(this.actionsCount);
       this.divider = true;
     } else {
       this.divider = false;
