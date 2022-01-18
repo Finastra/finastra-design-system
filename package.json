@@ -61,15 +61,13 @@
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
     "wc:serve": "npm run build:fds-theme && concurrently npm:wc:watch wds",
-    "wc:storybook": "wds -c .storybook/server.mjs",
+    "wc:storybook": "start-storybook -p 8080",
     "wc:test": "web-test-runner --coverage",
     "wc:test:watch": "npm run wc:test -- --watch",
     "wc:watch": "npm run wc:build --watch && node scripts/watcher.js",
     "wc:clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "workspace-generator": "nx workspace-generator",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "workspace-generator": "nx workspace-generator"
   },
   "husky": {
     "hooks": {
