@@ -1,6 +1,6 @@
 {
   "name": "@finastra/search-input",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Search Input Web Component",
   "keywords": [
     "finastra design system",
@@ -10,8 +10,8 @@
   "license": "MIT",
   "displayName": "Search Input",
   "icon": "search",
-  "main": "dist/search-input.js",
-  "module": "dist/search-input.js",
+  "main": "dist/src/search-input.js",
+  "module": "dist/src/search-input.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

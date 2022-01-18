@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+
+import '@finastra/logo';
+import '@material/mwc-drawer';
+import '@material/mwc-icon';
+import '@material/mwc-list';
+
+<Meta title="Components/Sidenav" />
+
+export const Template = () => {
+  return html`<style>
+      .fds-sidenav {
+        --mdc-drawer-width: 300px;
+        background-color: var(--fds-surface);
+        color: var(--fds-on-surface);
+      }
+      .fds-sidenav-header {
+        background-color: var(--fds-background);
+        height: 210px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fds-sidenav-list {
+        --mdc-theme-text-primary-on-background: var(--fds-on-background);
+        width: 100%;
+      }
+    </style>
+    <mwc-drawer>
+      <div class="fds-sidenav">
+        <div class="fds-sidenav-header">
+          <fds-logo></fds-logo>
+        </div>
+        <div class="fds-sidenav-list">
+          <mwc-list activatable>
+            <mwc-list-item selected activated graphic="icon">
+              <span>Home</span>
+              <mwc-icon slot="graphic">home</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Applications</span>
+              <mwc-icon slot="graphic">dashboard</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Tools</span>
+              <mwc-icon slot="graphic">extension</mwc-icon>
+            </mwc-list-item>
+            <mwc-list-item graphic="icon">
+              <span>Settings</span>
+              <mwc-icon slot="graphic">settings</mwc-icon>
+            </mwc-list-item>
+          </mwc-list>
+        </div>
+      </div>
+      <div slot="appContent" class="app"></div>
+    </mwc-drawer>`;
+};
+
+# Sidenav
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: `<style>
+  .fds-sidenav {
+    --mdc-drawer-width: 300px;
+    background-color: var(--fds-surface);
+    color: var(--fds-on-surface);
+  }
+  .fds-sidenav-header {
+    background-color: var(--fds-background);
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fds-sidenav-list {
+    --mdc-theme-text-primary-on-background: var(--fds-on-background);
+    width: 100%;
+  }
+</style>
+<mwc-drawer>
+  <div class="fds-sidenav">
+    <div class="fds-sidenav-header">
+      <fds-logo></fds-logo>
+    </div>
+    <div class="fds-sidenav-list">
+      <mwc-list activatable>
+        <mwc-list-item selected activated graphic="icon">
+          <span>Home</span>
+          <mwc-icon slot="graphic">home</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Applications</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Tools</span>
+          <mwc-icon slot="graphic">extension</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Settings</span>
+          <mwc-icon slot="graphic">settings</mwc-icon>
+        </mwc-list-item>
+      </mwc-list>
+    </div>
+  </div>
+  <div slot="appContent" class="app">
+  </div>
+</mwc-drawer>`
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm i @material/mwc-drawer @material/mwc-list @material/mwc-icon
+
+```
+
+## API
+
+Current sidenav is delivered as a template to be used in a mwc-drawer.
+Just copy/paste the template provided in this documentation.

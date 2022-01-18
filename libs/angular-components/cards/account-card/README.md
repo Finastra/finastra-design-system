@@ -14,7 +14,7 @@ export class AppModule {}
 ### Scss
 
 ```scss
-@use '~@finastra/angular-components/cards/account-card/account-card.theme';
+@use '@finastra/angular-components/cards/account-card/account-card.theme';
 
 @mixin app-theme($theme) {
   @include account-card.uxg-account-card-theme($theme);

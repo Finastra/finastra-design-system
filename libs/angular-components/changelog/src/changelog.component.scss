@@ -1,7 +1,7 @@
 @use 'sass:math';
 
-@use '~@finastra/angular-theme' as fds;
-@use '~@angular/flex-layout/mq' as flex-layout;
+@use '@finastra/angular-theme' as fds;
+@use '@angular/flex-layout/core/sass/layout-bp' as flex-layout;
 
 $bullet-space: 8%;
 $bullet-center: math.div($bullet-space, 2);

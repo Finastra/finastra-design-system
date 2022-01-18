@@ -1,23 +1,5 @@
 {
   "version": 1,
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular",
-    "analytics": false
-  },
-  "defaultProject": "test",
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    }
-  },
   "projects": {
     "account-card": {
       "projectType": "library",
@@ -46,7 +28,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "angular-components": {
       "projectType": "library",
@@ -83,7 +66,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "angular-core": {
       "projectType": "library",
@@ -109,7 +93,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "angular-theme": {
       "projectType": "library",
@@ -121,7 +106,7 @@
           "builder": "./dist/tools/devkit:theme-builder",
           "options": {
             "inputPath": "themes/angular-theme/lib/",
-            "outputPath": "themes/angular-theme/prebuit-theme",
+            "outputPath": "themes/angular-theme/prebuilt-theme",
             "assets": ["themes/angular-theme/lib", "themes/angular-theme/assets", "themes/angular-theme/*.scss"],
             "sourceMap": true
           },
@@ -142,7 +127,20 @@
         "@finastra/angular:theme": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
+    },
+    "app-card": {
+      "root": "libs/web-components/app-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/app-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "avatar": {
       "projectType": "library",
@@ -169,7 +167,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "banner": {
       "projectType": "library",
@@ -195,7 +194,20 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
+    },
+    "base-card": {
+      "root": "libs/web-components/base-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "breadcrumb": {
       "projectType": "library",
@@ -214,7 +226,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "changelog": {
       "projectType": "library",
@@ -233,7 +246,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "chart": {
       "projectType": "library",
@@ -259,7 +273,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "entity-menu": {
       "projectType": "library",
@@ -285,7 +300,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "expandable-table": {
       "projectType": "library",
@@ -314,7 +330,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "fds-test-app": {
       "root": "apps/fds-test-app",
@@ -348,15 +365,9 @@
           "options": {
             "browserTarget": "fds-test-app:build"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/fds-test-app/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**", "!apps/fds-test-app/**"]
-          }
         }
-      }
+      },
+      "tags": []
     },
     "fds-theme": {
       "projectType": "library",
@@ -390,7 +401,8 @@
         "@finastra/angular:theme": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "filter-group": {
       "projectType": "library",
@@ -419,7 +431,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "filter-tags": {
       "projectType": "library",
@@ -448,7 +461,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "filter-toggle": {
       "projectType": "library",
@@ -477,7 +491,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "filter-tree": {
       "projectType": "library",
@@ -506,7 +521,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "global-nav": {
       "projectType": "library",
@@ -532,7 +548,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "global-search": {
       "projectType": "library",
@@ -558,7 +575,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "multiselect-tags": {
       "projectType": "library",
@@ -587,7 +605,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "popover": {
       "projectType": "library",
@@ -613,7 +632,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "repeater": {
       "projectType": "library",
@@ -639,7 +659,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "scroll-to-top": {
       "projectType": "library",
@@ -665,7 +686,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "search-input": {
       "projectType": "library",
@@ -684,7 +706,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "skeleton-text": {
       "projectType": "library",
@@ -710,7 +733,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "status-steps": {
       "projectType": "library",
@@ -732,7 +756,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "table": {
       "projectType": "library",
@@ -758,7 +783,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "test": {
       "projectType": "application",
@@ -775,7 +801,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "stylePreprocessorOptions": {
-              "includePaths": ["./themes/", "./libs/angular-components"]
+              "includePaths": ["./themes/", "./libs/angular-components", "node_modules"]
             },
             "allowedCommonJsDependencies": ["elasticlunr"],
             "outputPath": "dist/apps/angular-test-app",
@@ -902,7 +928,8 @@
           },
           "outputs": ["coverage/apps/angular-test-app"]
         }
-      }
+      },
+      "tags": []
     },
     "test-e2e": {
       "root": "apps/angular-test-app-e2e",
@@ -928,7 +955,8 @@
             "lintFilePatterns": ["apps/angular-test-app-e2e/src/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": []
     },
     "toaster": {
       "projectType": "library",
@@ -954,7 +982,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "user-profile-menu": {
       "projectType": "library",
@@ -983,7 +1012,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "vector-map": {
       "projectType": "library",
@@ -1009,7 +1039,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "video-thumbnail": {
       "projectType": "library",
@@ -1038,7 +1069,20 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
+    },
+    "wc-avatar": {
+      "root": "libs/web-components/avatar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/avatar/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "wc-card": {
       "projectType": "library",
@@ -1052,7 +1096,8 @@
             "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["web-components"]
     },
     "wc-divider": {
       "projectType": "library",
@@ -1066,7 +1111,8 @@
             "lintFilePatterns": ["libs/web-components/divider/src/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["web-components"]
     },
     "wc-logo": {
       "projectType": "library",
@@ -1080,7 +1126,8 @@
             "lintFilePatterns": ["libs/web-components/logo/src/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["web-components"]
     },
     "wc-search-input": {
       "projectType": "library",
@@ -1094,7 +1141,8 @@
             "lintFilePatterns": ["libs/web-components/search-input/src/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["web-components"]
     },
     "wizard": {
       "projectType": "library",
@@ -1120,7 +1168,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     }
   }
 }

@@ -1,0 +1,20 @@
+<script type="module" src="node_modules/@finastra/app-card/dist/src/app-card.js"></script>
+<style>
+  p {
+    color: var(--fds-on-background);
+    font: var(--fds-body-1);
+  }
+</style>
+
+<div style="display: flex; align-items: center; flex-direction: column">
+  <p>fds-app-card large</p>
+  <fds-app-card label="App name" large secondary></fds-app-card>
+  <p>default fds-app-card with label</p>
+  <fds-app-card label="App name"></fds-app-card>
+  <p>fds-app-card with shortLabel and secondary color</p>
+  <fds-app-card label="App name" shortLabel="APP" secondary></fds-app-card>
+  <p>fds-app-card dense</p>
+  <fds-app-card label="App name" dense></fds-app-card>
+  <p>fds-app-card extraDense</p>
+  <fds-app-card label="App name" extraDense secondary></fds-app-card>
+</div>
