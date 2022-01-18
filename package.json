@@ -157,8 +157,6 @@
     "@typescript-eslint/parser": "~4.33.0",
     "@web/dev-server": "0.1.28",
     "@web/dev-server-rollup": "0.3.13",
-    "@web/dev-server-storybook": "0.3.8",
-    "@web/storybook-prebuilt": "^0.1.26",
     "@web/test-runner": "^0.13.22",
     "@web/test-runner-playwright": "^0.8.8",
     "acorn": "^8.2.4",

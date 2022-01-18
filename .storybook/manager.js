@@ -1,8 +1,8 @@
-import { addons } from '@web/storybook-prebuilt/addons';
+import { addons } from '@storybook/addons';
 import theme from './theme';
 
 addons.setConfig({
-  theme: theme,
+  theme,
   showPanel: true,
   isToolshown: true,
   toolbar: {
