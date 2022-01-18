@@ -2,19 +2,14 @@ import { LitElement, html } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 
 import '@material/mwc-menu';
-import '@material/mwc-list/mwc-list-item';
-import '@material/mwc-select';
 import '@finastra/avatar';
-import '@finastra/button';
+import '@finastra/divider';
 
 import { styles } from './styles.css';
 
 @customElement('fds-user-profile')
 export class UserProfile extends LitElement {
   static styles = styles;
-
-  @query('#button')
-  button;
 
   @query('#menu')
   menu;
@@ -31,7 +26,7 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <fds-avatar dense id="button" @click="${this._showMenu}"></fds-avatar>
+    return html` <fds-avatar dense @click="${this._showMenu}"></fds-avatar>
       <mwc-menu id="menu" fullwidth>
         ${this.dense
           ? html`
