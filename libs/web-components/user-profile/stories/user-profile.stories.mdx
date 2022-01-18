@@ -48,8 +48,7 @@ import '@finastra/button';
 />
 
 export const Template = ({ name = 'Raya Hristova', dense = false }) => {
-  return html`
-    <style>
+  return html` <style>
       fds-user-profile {
         display: flex;
         flex-direction: column;
@@ -67,17 +66,17 @@ export const Template = ({ name = 'Raya Hristova', dense = false }) => {
       fds-user-profile fds-button {
         line-height: 0px;
       }
-      fds-user-profile fds-button+fds-button {
+      fds-user-profile fds-button + fds-button {
         margin-top: 8px;
       }
-  </style>
-  <fds-user-profile .name=${name} ?dense=${dense}>
-    <div slot="userInfo">raya.hristova@finastra.com</div>
-    <div slot="actions">
-      <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
-      <fds-button text fullwidth label="View profile"></fds-button>
-    </div>
-  </fds-user-profile>`;
+    </style>
+    <fds-user-profile .name=${name} ?dense=${dense}>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>`;
 };
 
 # user-profile
@@ -85,7 +84,7 @@ export const Template = ({ name = 'Raya Hristova', dense = false }) => {
 <Canvas>
   <Story
     name="Default"
-    args={{ name: 'Raya Hristova', dense:false }}
+    args={{ name: 'Raya Hristova', dense: false }}
     parameters={{
       docs: {
         source: {
@@ -146,7 +145,7 @@ npm install @finastra/user-profile
 <Canvas>
   <Story
     name="Dense"
-    args={{ name: 'Raya Hristova', dense:true }}
+    args={{ name: 'Raya Hristova', dense: true }}
     parameters={{
       docs: {
         source: {

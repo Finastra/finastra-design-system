@@ -31,29 +31,27 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html`
-      <fds-avatar dense id="button" @click="${this._showMenu}"></fds-avatar>
+    return html` <fds-avatar dense id="button" @click="${this._showMenu}"></fds-avatar>
       <mwc-menu id="menu" fullwidth>
-          ${this.dense
-        ? html`
-                  <div class="header-dense">
-                    <fds-avatar name=${this.name}></fds-avatar>
-                    <div class="title">${this.name}</div>
-                    <slot name="userInfo"></slot>
-                  </div>
-                  ${this.divider ? html` <fds-divider></fds-divider>` : ''}
-                  <slot name="actions" id="actions"> </slot>
-                `
-        : html`
-                  <div class="header">
-                    <fds-avatar name=${this.name} large></fds-avatar>
-                    <div class="title">${this.name}</div>
-                    <slot name="userInfo"></slot>
-                  </div>
-                  ${this.divider ? html` <fds-divider></fds-divider>` : ''}
-                  <slot name="actions" id="actions"> </slot>
-                `
-      } 
+        ${this.dense
+          ? html`
+              <div class="header-dense">
+                <fds-avatar name=${this.name}></fds-avatar>
+                <div class="title">${this.name}</div>
+                <slot name="userInfo"></slot>
+              </div>
+              ${this.divider ? html` <fds-divider></fds-divider>` : ''}
+              <slot name="actions" id="actions"> </slot>
+            `
+          : html`
+              <div class="header">
+                <fds-avatar name=${this.name} large></fds-avatar>
+                <div class="title">${this.name}</div>
+                <slot name="userInfo"></slot>
+              </div>
+              ${this.divider ? html` <fds-divider></fds-divider>` : ''}
+              <slot name="actions" id="actions"> </slot>
+            `}
       </mwc-menu>`;
   }
 

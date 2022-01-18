@@ -35,7 +35,7 @@ describe('UserProfile', () => {
         <fds-button text fullwidth label="View profile"></fds-button>
       </div>
     </fds-user-profile>`);
-    
+
     await elementUpdated(el);
     shadowRoot(el).querySelector('fds-avatar')?.click();
     expect(el.divider).to.be.true;
