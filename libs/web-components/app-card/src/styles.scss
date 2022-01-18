@@ -1,9 +1,9 @@
 @use "@finastra/fds-theme" as fds;
-@use "@finastra/base-card/src" as base-card;
+//@use "@finastra/base-card/src" as base-card;
 
 
 :host{
-    @include base-card.core-styles();
+    //@include base-card.core-styles();
     width: 160px;
     height: 120px;
     .app-card {
@@ -91,7 +91,7 @@
 :host([large][dense]),
 :host([dense][extraDense]),
 :host([large][extraDense]){
-    @include base-card.core-styles();
+    //@include base-card.core-styles();
     width: 160px;
     height: 120px;
     .app-card {

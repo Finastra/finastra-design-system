@@ -1,4 +1,4 @@
-@use "@finastra/base-card/src" as base-card;
+//@use "@finastra/base-card/src" as base-card;
 @use '@material/card' as mdcCard;
 @use '@material/theme' as matTheme;
 @use '@material/feature-targeting/feature-targeting';
@@ -9,7 +9,7 @@ $feat-color: feature-targeting.create-target($query, color);
 $feat-structure: feature-targeting.create-target($query, structure);
 
 :host {
-  @include base-card.core-styles();
+  //@include base-card.core-styles();
 }
 
 .mdc-card__media-first-child,

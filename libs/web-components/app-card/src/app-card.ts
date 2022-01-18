@@ -1,13 +1,13 @@
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { customElement } from 'lit/decorators.js';
-import { BaseCard } from '@finastra/base-card';
+//import { BaseCard } from '@finastra/base-card';
 
 import { styles } from './styles.css';
 import { renderPatternSVG, renderPrimarySVG, renderSecondarySVG } from './app-card-decorations';
 
 @customElement('fds-app-card')
-export class AppCard extends BaseCard {
+export class AppCard extends LitElement {
   static styles = styles;
 
   @property({ type: String }) label;

@@ -1,11 +1,11 @@
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { BaseCard } from '@finastra/base-card';
+//import { BaseCard } from '@finastra/base-card';
 
 export type AspectRatioType = '16-9' | 'square' | '';
 
-export class CardBase extends BaseCard {
+export class CardBase extends LitElement {
   @query('[name="primary-action"]') protected _primaryActionSlot!: HTMLSlotElement;
 
   @query('[name="media"]') protected _mediaSlot!: HTMLSlotElement;
