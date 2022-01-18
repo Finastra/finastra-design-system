@@ -1,8 +1,6 @@
 import { themes } from '@storybook/theming';
 import theme from './theme';
-import '../themes/fds-theme/prebuilt/all-themes.css';
 import './all-themes.scss';
-import addons from '@storybook/addons';
 
 const isDark =
     typeof window !== `undefined`
@@ -32,15 +30,3 @@ export const parameters = {
     stylePreview: true,
   }
 };
-
-
-// get an instance to the communication channel for the manager and preview
-const channel = addons.getChannel();
-
-channel.on('DARK_MODE', (isDark) => {
-  if (isDark) {
-    console.log('dark')
-  } else {
-    console.log('light')
-  }
-});
