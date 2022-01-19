@@ -17,8 +17,8 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@finastra/avatar": "0.0.14",
-    "@finastra/divider": "0.0.14",
+    "@finastra/avatar": "0.0.15",
+    "@finastra/divider": "0.0.15",
     "@material/mwc-menu": "0.25.3"
   },
   "publishConfig": {
