@@ -1,6 +1,6 @@
 import themeLight from './theme-light';
 import themeDark from './theme-dark';
-import './all-themes.scss';
+import './styles.scss';
 
 const isDark =
     typeof window !== `undefined`

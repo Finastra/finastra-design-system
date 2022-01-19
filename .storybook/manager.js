@@ -1,5 +1,5 @@
 import { addons } from '@storybook/addons';
-import theme from './theme-light';
+import '!style-loader!css-loader!sass-loader!./styles.scss';
 
 addons.setConfig({
   showPanel: true,
