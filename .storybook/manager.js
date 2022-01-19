@@ -1,8 +1,7 @@
 import { addons } from '@storybook/addons';
-import theme from './theme';
+import theme from './theme-light';
 
 addons.setConfig({
-  theme,
   showPanel: true,
   isToolshown: true,
   toolbar: {
