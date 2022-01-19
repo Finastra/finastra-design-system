@@ -30,9 +30,10 @@ function mapPackageVersion(packageName: string, versions: PackageVersions): stri
     return versions.mdc;
   }
 
-  if (packageName === 'lit') {
-    return versions.lit;
-  }
+  // Use ^2.0.0
+  // if (packageName === 'lit') {
+  //   return versions.lit;
+  // }
 
   return '';
 }
