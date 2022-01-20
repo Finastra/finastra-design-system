@@ -27,6 +27,7 @@ export class Autocomplete extends LitElement {
 
 
   @property({ type: String }) icon = '';
+  @property({ type: Boolean }) loading = false;
   @property({ type: Boolean }) showClearButton = false;
   @property({ type: String }) value = '';
   @property({ type: Number }) minLengthToOpenMenu = 0;
@@ -214,6 +215,7 @@ export class Autocomplete extends LitElement {
           class="formElement"
           .value="${this.value}"
           .icon="${this.icon}"
+          .loading="${this.loading}"
           .showClearButton="${this.showClearButton}"
           ?disabled="${this.disabled}"
           ?required=${this.required}
