@@ -1,119 +1,59 @@
-<!DOCTYPE html><html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Storybook</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"/><style>html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-    <style>
-      html,
-      body {
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+  * {
+    box-sizing: border-box;
+  }</style><script>/* globals window */
+  /* eslint-disable no-underscore-dangle */
+  try {
+    if (window.top !== window) {
+      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('unable to connect to top frame for connecting dev tools');
+  }
 
-    <style>
-      #root[hidden],
+  window.onerror = function onerror(message, source, line, column, err) {
+    if (window.CONFIG_TYPE !== 'DEVELOPMENT') return;
+    // eslint-disable-next-line no-var, vars-on-top
+    var xhr = new window.XMLHttpRequest();
+    xhr.open('POST', '/runtime-error');
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(
+      JSON.stringify({
+        /* eslint-disable object-shorthand */
+        message: message,
+        source: source,
+        line: line,
+        column: column,
+        error: err && { message: err.message, name: err.name, stack: err.stack },
+        origin: 'manager',
+        /* eslint-enable object-shorthand */
+      })
+    );
+  };</script><style>#root[hidden],
       #docs-root[hidden] {
         display: none !important;
-      }
-    </style>
-    
-  
-<link rel="preload" href="./3f788d32.js" as="script">
-</head>
-
-  <body>
-    <div id="root"></div>
-    <div id="docs-root"></div>
-    
-  
-<script>(function () {
-  function polyfillsLoader() {
-    function loadScript(src, type, attributes = []) {
-      return new Promise(function (resolve) {
-        var script = document.createElement('script');
-
-        function onLoaded() {
-          if (script.parentElement) {
-            script.parentElement.removeChild(script);
-          }
-
-          resolve();
-        }
-
-        script.src = src;
-        script.onload = onLoaded;
-        attributes.forEach(att => {
-          script.setAttribute(att.name, att.value);
-        });
-
-        script.onerror = function () {
-          console.error('[polyfills-loader] failed to load: ' + src + ' check the network tab for HTTP status.');
-          onLoaded();
-        };
-
-        if (type) script.type = type;
-        document.head.appendChild(script);
-      });
-    }
-
-    var polyfills = [];
-    polyfills.push(loadScript('./polyfills/regenerator-runtime.de2e6a3a74a500cae72a3cab1a403efc.js'));
-
-    if (!('fetch' in window) || !('Request' in window) || !('signal' in window.Request.prototype)) {
-      polyfills.push(loadScript('./polyfills/fetch.c406ed8f3fd5c584ab4b8ee2407c3814.js'));
-    }
-
-    polyfills.push(loadScript('./polyfills/systemjs.200c680897e2c47082fe1714c434a7c3.js'));
-
-    if (!('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
-      polyfills.push(loadScript('./polyfills/intersection-observer.83ec8aa758f883d6da14b722e6a50fcc.js'));
-    }
-
-    if (!('ResizeObserver' in window)) {
-      polyfills.push(loadScript('./polyfills/resize-observer.c66e75decd4adba0d63c03d136370195.js'));
-    }
-
-    if (!('attachShadow' in Element.prototype) || !('getRootNode' in Element.prototype) || window.ShadyDOM && window.ShadyDOM.force) {
-      polyfills.push(loadScript('./polyfills/webcomponents.d7ffce1754011cfedff5f846f12e0c11.js'));
-    }
-
-    if (!('noModule' in HTMLScriptElement.prototype) && 'getRootNode' in Element.prototype) {
-      polyfills.push(loadScript('./polyfills/custom-elements-es5-adapter.3342b468203af1a14ca005e80d14148f.js'));
-    }
-
-    function loadFiles() {
-      System.import('./3f788d32.js');
-    }
-
-    if (polyfills.length) {
-      Promise.all(polyfills).then(loadFiles);
-    } else {
-      loadFiles();
-    }
-  }
-
-  if (!('noModule' in HTMLScriptElement.prototype)) {
-    var s = document.createElement('script');
-
-    function onLoaded() {
-      document.head.removeChild(s);
-      polyfillsLoader();
-    }
-
-    s.src = "./polyfills/core-js.59d29a44a085632e7b6710203b236b5f.js";
-    s.onload = onLoaded;
-
-    s.onerror = function () {
-      console.error('[polyfills-loader] failed to load: ' + s.src + ' check the network tab for HTTP status.');
-      onLoaded();
-    };
-
-    document.head.appendChild(s);
-  } else {
-    polyfillsLoader();
-  }
-})();</script></body></html>
+      }</style></head><body><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
+          
+      
+          
+            window['LOGLEVEL'] = "info";
+          
+      
+          
+            window['FEATURES'] = {"postcss":true,"emotionAlias":true,"warnOnLegacyHierarchySeparator":true};
+          
+      
+          
+      
+          
+      
+          
+            window['DOCS_MODE'] = false;</script><script src="runtime~main.3036ddb65e8eb695300c.manager.bundle.js"></script><script src="451.96f378b0fcc85d5fd9d6.manager.bundle.js"></script><script src="main.51b035e14a208f554c07.manager.bundle.js"></script></body></html>
