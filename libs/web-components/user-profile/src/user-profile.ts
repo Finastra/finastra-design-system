@@ -22,12 +22,15 @@ export class UserProfile extends LitElement {
   @property({ type: Boolean })
   dense = false;
 
+  @property({ type: Boolean })
+  open = false;
+
   protected actionsCount = 0;
   public divider = true;
 
   render() {
-    return html` <fds-avatar dense @click="${this._showMenu}"></fds-avatar>
-      <mwc-menu id="menu" fullwidth>
+    return html` <fds-avatar dense @click="${this._showMenu}" open="${this.open}"></fds-avatar>
+      <mwc-menu id="menu" fullwidth ?open=${this.open}>
         ${this.dense
           ? html`
               <div class="header-dense">
