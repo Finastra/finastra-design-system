@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../libs/web-components/**/stories/*.stories.{js,md,mdx}', '../themes/fds-theme/**/*.stories.mdx'],
+  stories: ['../libs/web-components/**/stories/*.stories.{ts,js,md,mdx}', '../themes/fds-theme/**/*.stories.mdx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

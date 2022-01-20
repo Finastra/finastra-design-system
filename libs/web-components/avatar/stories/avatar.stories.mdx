@@ -1,73 +1,13 @@
 import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
 import { html } from 'lit';
+import {cssprops, argTypes} from './custom-element.json';
 
 import '@finastra/avatar';
 
 <Meta
   title="Components/Avatar"
   component={'fds-avatar'}
-  argTypes={{
-    name: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: '' }
-      },
-      control: 'text',
-      defaultValue: '',
-      type: 'text',
-      description: 'Avatar name'
-    },
-    shortName: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: '' }
-      },
-      control: 'text',
-      defaultValue: '',
-      type: 'text',
-      description: 'Avatar short name'
-    },
-    dense: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: 'false' }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'Dense avatar'
-    },
-    large: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: 'false' }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'Large avatar'
-    },
-    primary: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: 'false' }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'Primary avatar'
-    },
-    secondary: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: 'false' }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'Secondary avatar'
-    }
-  }}
+  argTypes={argTypes}
 />
 
 export const Template = ({ name, shortName, dense = false, large = false, primary = false, secondary = false }) => {
