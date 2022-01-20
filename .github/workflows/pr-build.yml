@@ -9,6 +9,16 @@ on:
       - 'angular.json'
 
 jobs:
+  check_wc_label:
+    runs-on: ubuntu-latest
+    name: Check labels
+    steps:
+      - name: output labels
+        run: echo ${{github.event.pull_request.labels}}
+      - name: Exit if label `web-component` is found
+        if: 'contains( github.event.pull_request.labels.*.name, 'web-component')'
+        run: exit 1
+
   build:
     runs-on: ubuntu-latest
 
