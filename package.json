@@ -67,7 +67,9 @@
     "wc:watch": "npm run wc:build --watch && node scripts/watcher.js",
     "wc:clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "workspace-generator": "nx workspace-generator"
+    "workspace-generator": "nx workspace-generator",
+    "cem": "cem analyze --litelement --globs 'libs/web-components/**/src/*.ts' --outdir .storybook",
+    "prewc:storybook": "npm run cem"
   },
   "husky": {
     "hooks": {
@@ -128,6 +130,7 @@
     "@angular/compiler-cli": "13.0.3",
     "@angular/language-service": "13.0.3",
     "@babel/core": "^7.16.7",
+    "@custom-elements-manifest/analyzer": "^0.5.7",
     "@nrwl/angular": "13.2.4",
     "@nrwl/cli": "13.2.4",
     "@nrwl/cypress": "13.2.4",
@@ -222,5 +225,6 @@
   "engines": {
     "node": ">=16.13.0",
     "npm": ">=7.7.6"
-  }
+  },
+  "customElements": ".storybook/custom-elements.json"
 }

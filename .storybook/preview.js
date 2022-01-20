@@ -1,6 +1,10 @@
 import themeLight from './theme-light';
 import themeDark from './theme-dark';
 import './styles.scss';
+import { setCustomElementsManifest } from '@storybook/web-components';
+import customElementsManifest from './custom-elements.json';
+
+setCustomElementsManifest(customElementsManifest);
 
 const isDark = typeof window !== `undefined` ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches : null;
 

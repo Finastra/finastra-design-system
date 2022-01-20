@@ -1,0 +1,39 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "fds-logo",
+      "path": "./../src/logo.ts",
+      "description": "A text field web component",
+      "attributes": [
+        {
+          "name": "dense",
+          "description": "Make the logo dense",
+          "type": "boolean"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"styles\""
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--fds-logo",
+          "description": "String representing an image encoded in base64"
+        },
+        {
+          "name": "--fds-logo-width",
+          "description": "Width of the logo"
+        },
+        {
+          "name": "--fds-logo-height",
+          "description": "Height of the logo",
+          "type": "color"
+        }
+      ]
+    }
+  ]
+}
