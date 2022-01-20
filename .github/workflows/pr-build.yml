@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: output labels
         run: echo ${{github.event.pull_request.labels}}
-      - name: Exit if label `web-component` is found
-        if: 'contains( github.event.pull_request.labels.*.name, 'web-component')'
-        run: exit 1
+      #- name: Exit if label `web-component` is found
+      #  if: 'contains( github.event.pull_request.labels.*.name, 'web-component')'
+      #  run: exit 1
 
   build:
     runs-on: ubuntu-latest
