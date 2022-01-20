@@ -5,6 +5,7 @@ import './styles.scss';
 const isDark = typeof window !== `undefined` ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches : null;
 
 export const parameters = {
+  backgrounds: { disable: true },
   layout: 'centered',
   options: {
     storySort: {
