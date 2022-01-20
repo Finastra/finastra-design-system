@@ -15,10 +15,10 @@ npm i @finastra/logo
 
 Here is the list of CSS custom properties, aka CSS Variables:
 
-| Name | Description  | 
-|---|---|
-| --fds-logo | String representing an image encoded in base64 
-| --fds-logo-width | Width of the logo
-| --fds-logo-height | Height of the logo
+| Name              | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| --fds-logo        | String representing an image encoded in base64 |
+| --fds-logo-width  | Width of the logo                              |
+| --fds-logo-height | Height of the logo                             |
 
 <br/>

@@ -6,5 +6,5 @@ export default {
 
   // Typography
   fontBase: '"Roboto", sans-serif',
-  fontCode: 'monospace',
+  fontCode: 'monospace'
 };

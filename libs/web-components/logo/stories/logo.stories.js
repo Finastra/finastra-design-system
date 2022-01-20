@@ -5,16 +5,16 @@ import '@finastra/logo';
 export default {
   title: 'Components/Logo',
   argTypes: {
-    dense: { control: 'boolean' },
+    dense: { control: 'boolean' }
   },
   args: {
-    dense: false,
+    dense: false
   },
   parameters: {
     docs: {
       description: { component: README }
-    },
-  },
+    }
+  }
 };
 
 const Template = ({ dense = false }) => {
@@ -25,5 +25,5 @@ export const Default = Template.bind({});
 
 export const Dense = Template.bind({});
 Dense.args = {
-  dense: true,
+  dense: true
 };
