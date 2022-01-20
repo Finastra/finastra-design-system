@@ -9,20 +9,9 @@ on:
       - 'angular.json'
 
 jobs:
-  check_wc_label:
-    runs-on: ubuntu-latest
-    name: Check labels
-    steps:
-      - name: output labels
-        run: echo ${{join(github.event.pull_request.labels.*.name, ',')}}
-      - name: Set `execute_build` output to true if no label `web-component` is found
-        if: "!(contains(github.event.pull_request.labels.*.name, 'web-component'))"
-        run: echo "::set-output name=execute_build::true"
-
   build:
     runs-on: ubuntu-latest
-    needs: [check_wc_label]
-    if: needs.check_wc_label.outputs.execute_build == 'true'
+    if: "!(contains(github.event.pull_request.labels.*.name, 'web-component'))"
     steps:
       - uses: actions/checkout@v1
 
