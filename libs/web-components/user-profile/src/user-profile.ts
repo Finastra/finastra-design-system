@@ -17,7 +17,7 @@ export class UserProfile extends LitElement {
   @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
   @property()
-  name = '';
+  userName = '';
 
   @property({ type: Boolean })
   dense = false;
@@ -34,8 +34,8 @@ export class UserProfile extends LitElement {
         ${this.dense
           ? html`
               <div class="header-dense">
-                <fds-avatar name=${this.name}></fds-avatar>
-                <div class="title">${this.name}</div>
+                <fds-avatar userName=${this.userName}></fds-avatar>
+                <div class="title">${this.userName}</div>
                 <slot name="userInfo"></slot>
               </div>
               ${this.divider ? html` <fds-divider></fds-divider>` : ''}
@@ -43,8 +43,8 @@ export class UserProfile extends LitElement {
             `
           : html`
               <div class="header">
-                <fds-avatar name=${this.name} large></fds-avatar>
-                <div class="title">${this.name}</div>
+                <fds-avatar userName=${this.userName} large></fds-avatar>
+                <div class="title">${this.userName}</div>
                 <slot name="userInfo"></slot>
               </div>
               ${this.divider ? html` <fds-divider></fds-divider>` : ''}
