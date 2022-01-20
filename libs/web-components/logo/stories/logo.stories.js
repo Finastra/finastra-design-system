@@ -13,6 +13,20 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
+    },
+    cssprops: {
+      "fds-logo": {
+        control: "text",
+        description: "String representing an image encoded in base64",
+      },
+      "fds-logo-width": {
+        value: "122px",
+        control: "text",
+      },
+      "fds-logo-height": {
+        value: "60px",
+        control: "text",
+      },
     }
   }
 };
