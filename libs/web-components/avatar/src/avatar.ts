@@ -1,8 +1,12 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
 import { styles } from './styles.css';
 
+/**
+ * @cssprop [--fds-avatar-font-size=16px]
+ * @cssprop {color} [--fds-primary=#694ED6]
+ * @cssprop {color} [--fds-secondary=#C137A2]
+ */
 @customElement('fds-avatar')
 export class Avatar extends LitElement {
   static styles = styles;
