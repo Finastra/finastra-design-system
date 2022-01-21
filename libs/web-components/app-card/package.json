@@ -1,6 +1,7 @@
 {
   "name": "@finastra/app-card",
   "displayName": "App Card",
+  "icon":"smart_screen",
   "version": "0.0.16",
   "description": "App Card Web Component",
   "keywords": [

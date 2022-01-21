@@ -1,6 +1,7 @@
 {
   "name": "@finastra/logo",
   "displayName": "Logo",
+  "icon":"polymer",
   "version": "0.0.16",
   "description": "Logo Web Component",
   "keywords": [

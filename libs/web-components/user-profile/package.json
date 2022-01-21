@@ -2,6 +2,7 @@
   "name": "@finastra/user-profile",
   "displayName": "User Profile",
   "version": "1.0.0",
+  "icon": "badge",
   "description": "UserProfile Web Component",
   "keywords": [
     "Finastra Design System",
