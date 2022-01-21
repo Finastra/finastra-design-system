@@ -26,14 +26,11 @@ export class Avatar extends LitElement {
   secondary = false;
 
   render() {
-    if ([this.primary, this.secondary].filter((val) => val === true).length > 1) {
+    if (this.primary, this.secondary) {
       console.warn('Cannot use both primary and secondary attribut');
     }
-    if ([this.large, this.dense].filter((val) => val === true).length > 1) {
+    if (this.large, this.dense) {
       console.warn('Cannot use both large and dense attribut');
-    }
-    if ([this.shortName, !this.name].filter((val) => val === true).length > 1) {
-      console.warn('Please specify a name to your avatar');
     }
     if (!this.name) {
       if (this.shortName) {
