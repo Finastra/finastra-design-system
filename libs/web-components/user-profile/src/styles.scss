@@ -4,6 +4,12 @@
   display: inline-block;
   --mdc-menu-min-width: 300px;
 
+  fds-avatar {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   #menu {
     position: absolute;
 

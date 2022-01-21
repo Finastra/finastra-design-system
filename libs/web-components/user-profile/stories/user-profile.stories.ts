@@ -1,5 +1,7 @@
-import README from '../README.md';
+const README = require('../README.md');
 import { html } from 'lit-html';
+import { Meta, Story } from '@storybook/web-components';
+import type {UserProfile} from '@finastra/user-profile';
 import '@finastra/user-profile';
 
 export default {
@@ -31,9 +33,36 @@ export default {
     open: false,
     userName: 'Raya Hristova'
   }
+} as Meta;
+
+const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
+  return html` <style>
+      fds-user-profile {
+        height: 300px;
+      }
+      fds-user-profile fds-button {
+        line-height: 0px;
+      }
+      fds-user-profile fds-button + fds-button {
+        margin-top: 8px;
+      }
+    </style>
+
+    <fds-user-profile .userName=${userName} ?dense=${dense} ?open=${open}>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>`;
 };
 
-const Template = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
+export const Default: Story<UserProfile> = Template.bind({});
+Default.args = {
+  open: true
+};
+
+const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -71,12 +100,7 @@ const Template = ({ userName = 'Raya Hristova', dense = false, open = true }) =>
     </fds-user-profile>`;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  open: true
-};
-
-export const Dense = Template.bind({});
+export const Dense: Story<UserProfile> = ComplexTemplate.bind({});
 Dense.args = {
   dense: true,
   open: true
