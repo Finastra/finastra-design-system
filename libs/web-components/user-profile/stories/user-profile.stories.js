@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import '@finastra/user-profile';
 
 export default {
-  title: 'Components/user-profile',
+  title: 'Components/User Profile',
   parameters: {
     docs: {
       description: { component: README }
