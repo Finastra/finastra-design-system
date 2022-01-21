@@ -26,10 +26,10 @@ export class Avatar extends LitElement {
   secondary = false;
 
   render() {
-    if (this.primary, this.secondary) {
+    if (this.primary && this.secondary) {
       console.warn('Cannot use both primary and secondary attribut');
     }
-    if (this.large, this.dense) {
+    if (this.large && this.dense) {
       console.warn('Cannot use both large and dense attribut');
     }
     if (!this.name) {
