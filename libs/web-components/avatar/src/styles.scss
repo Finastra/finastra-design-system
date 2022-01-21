@@ -60,8 +60,9 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 :host([large][dense])
  {
   .fds-avatar {
-    width: 48x;
-    height: 48x;
+    width: 48px;
+    height: 48px;
+    --fds-avatar-font-size: 16px;
   }
 }
 
