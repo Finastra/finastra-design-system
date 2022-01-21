@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "lit": "2.0.2",
+    "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
   "publishConfig": {
