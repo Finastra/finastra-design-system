@@ -57,6 +57,14 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   }
 }
 
+:host([large][dense])
+ {
+  .fds-avatar {
+    width: 48x;
+    height: 48x;
+  }
+}
+
 :host([primary]) {
   .fds-avatar {
     @include fds.bg-color(primary);
@@ -71,6 +79,15 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
     @include fds.bg-color(secondary);
     &:empty:not(img) {
       @include multiple-backgrounds($fds-default-avatar, var(--fds-secondary));
+    }
+  }
+}
+
+:host([primary][secondary]) {
+  .fds-avatar {
+    @include fds.bg-color(grandient);
+    &:empty:not(img) {
+      @include multiple-backgrounds($fds-default-avatar, var(--fds-gradient));
     }
   }
 }
