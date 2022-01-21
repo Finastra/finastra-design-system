@@ -69,7 +69,8 @@
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
     "workspace-generator": "nx workspace-generator",
     "cem": "cem analyze --litelement --globs 'libs/web-components/**/src/*.ts' --outdir .storybook",
-    "prewc:storybook": "npm run cem"
+    "prewc:storybook": "npm run cem",
+    "prewc:build:storybook": "npm run cem"
   },
   "husky": {
     "hooks": {
