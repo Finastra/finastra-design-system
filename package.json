@@ -60,7 +60,7 @@
     "wc:build:storybook": "npm run build:fds-theme && npm run wc:build && build-storybook -o storybook-static",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
-    "wc:serve": "npm run build:fds-theme && concurrently npm:wc:watch wds",
+    "wc:serve": "npm run build:fds-theme && concurrently npm:wc:watch wds --open",
     "wc:storybook": "start-storybook -p 8080",
     "wc:test": "web-test-runner --coverage",
     "wc:test:watch": "npm run wc:test -- --watch",
