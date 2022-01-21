@@ -12,7 +12,7 @@ describe('UserProfile', () => {
 
   it('should not display divider when actions slot is undefined', async () => {
     const el: UserProfile = await fixture(html`<fds-user-profile></fds-user-profile>`);
-
+    
     await elementUpdated(el);
     shadowRoot(el).querySelector('fds-avatar')?.click();
     expect(el.divider).to.be.false;
@@ -22,8 +22,8 @@ describe('UserProfile', () => {
     const el: UserProfile = await fixture(html`<fds-user-profile dense></fds-user-profile>`);
 
     await elementUpdated(el);
-    expect(shadowRoot(el).querySelector('mwc-menu div')).to.have.class('header-dense');
     shadowRoot(el).querySelector('fds-avatar')?.click();
+    expect(shadowRoot(el).querySelector('mwc-menu div')).to.have.class('header-dense');
   });
 
   it('Should display divider when actions slot is defined', async () => {
