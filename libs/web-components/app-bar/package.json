@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/app-bar",
+  "displayName": "AppBar",
+  "version": "1.0.0",
+  "description": "AppBar Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "AppBar"
+  ],
+  "license": "MIT",
+  "main": "dist/src/app-bar.js",
+  "module": "dist/src/app-bar.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-icon-button": "^0.25.3",
+    "@material/mwc-top-app-bar": "^0.25.3",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
