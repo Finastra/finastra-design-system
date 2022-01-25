@@ -1,7 +1,9 @@
 import { LitElement, html, PropertyValues } from 'lit';
-import { customElement, property, state, query, } from 'lit/decorators.js';
+import { customElement, property, state, query } from 'lit/decorators.js';
 import { Menu } from '@material/mwc-menu';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
+import { ariaProperty } from '@material/mwc-base/aria-property';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { styles } from './styles.css';
 
@@ -17,14 +19,12 @@ export class Autocomplete extends LitElement {
   @state() protected isUiValid = true;
   @state() protected selectedText = '';
 
-
   @query('.formElement') protected formElement!: HTMLInputElement;
   @query('slot') protected slotElement!: HTMLSlotElement | null;
   @query('select') protected nativeSelectElement!: HTMLSelectElement | null;
   @query('.fds-autocomplete') protected anchorElement!: HTMLDivElement | null;
   @query('.mdc-menu') protected menuElement!: Menu | null;
   @query('slot') protected listItemSlot!: HTMLSlotElement;
-
 
   @property({ type: String }) icon = '';
   @property({ type: Boolean }) loading = false;
@@ -35,17 +35,31 @@ export class Autocomplete extends LitElement {
   @property({ type: Boolean }) useInnerFilter = true;
   @property({ type: Boolean }) disabled = false;
 
+  /** @soyPrefixAttribute */
+  @ariaProperty
+  @property({ type: String, attribute: 'aria-label' })
+  override ariaLabel!: string;
 
-  protected _menuUpdateComplete: null|Promise<unknown> = null;
+  /** @soyPrefixAttribute */
+  @ariaProperty
+  @property({ type: String, attribute: 'aria-labelledby' })
+  ariaLabelledBy!: string;
 
-  protected onBodyClickBound: (evt: MouseEvent) => void = () => undefined;
+  /** @soyPrefixAttribute */
+  @ariaProperty
+  @property({ type: String, attribute: 'aria-describedby' })
+  ariaDescribedBy!: string;
+
+  protected _menuUpdateComplete: null | Promise<unknown> = null;
+
+  protected onBodyClickBound?: (evt: MouseEvent) => void;
 
   protected onInputFocus() {
     this._validateOpenMenu();
   }
 
   protected onInputBlur(event: Event) {
-    if (!this.menuOpen ) {
+    if (!this.menuOpen) {
       this.blur();
     } else {
       event.preventDefault();
@@ -64,12 +78,8 @@ export class Autocomplete extends LitElement {
     this.formElement.focus();
   }
 
-  protected _closeMenu() {
-    this.menuOpen = false;
-  }
-
   protected _validateOpenMenu() {
-    if (this.disabled || (this.minLengthToOpenMenu > 0 &&  this.value.length < this.minLengthToOpenMenu)) {
+    if (this.disabled || (this.minLengthToOpenMenu > 0 && this.value.length < this.minLengthToOpenMenu)) {
       this.menuOpen = false;
       return;
     }
@@ -85,46 +95,44 @@ export class Autocomplete extends LitElement {
     this.menuOpen = true;
   }
 
-
   /**
    * Filter suggestion menu by value.
    */
   protected _innerFilter() {
-    const listItems = this.listItemSlot.assignedNodes().filter(item => (item as Element).tagName === 'MWC-LIST-ITEM');
+    const listItems = this.listItemSlot.assignedNodes().filter((item) => (item as Element).tagName === 'MWC-LIST-ITEM');
     let count = 0;
-    listItems.forEach(item => {
+    listItems.forEach((item) => {
       const listItem = item as ListItem;
-      if (!listItem.value  || listItem.value.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1) {
-        listItem.classList.add('mwc-list-item__hide')
+      if (!listItem.value || listItem.value.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1) {
+        listItem.classList.add('mwc-list-item__hide');
       } else {
         listItem.classList.remove('mwc-list-item__hide');
-        count++
+        count++;
       }
-    })
+    });
 
-    return count
+    return count;
   }
-
 
   protected onSearchInputChange() {
     this.value = this.formElement.value;
     this._validateOpenMenu();
-    this.dispatchInputEven();
+    this.dispatchInputEvent();
   }
 
-  protected dispatchInputEven() {
-    const inputEvent = new CustomEvent('input');
+  protected dispatchInputEvent() {
+    const inputEvent = new CustomEvent('input', {detail: this.value});
     this.dispatchEvent(inputEvent);
   }
 
   protected onMenuOpened() {
     this.menuOpen = true;
-    this.registerBodyClick()
+    this.registerBodyClick();
   }
 
   protected onMenuClosed() {
     this.menuOpen = false;
-    this.deregisterBodyClick()
+    this.deregisterBodyClick();
   }
 
   protected override async getUpdateComplete() {
@@ -144,68 +152,58 @@ export class Autocomplete extends LitElement {
     super.firstUpdated(_changedProperties);
   }
 
-  async layout(updateItems = true) {
-    await this.updateComplete;
-
-    const menuElement = this.menuElement;
-    if (menuElement) {
-      menuElement.layout(updateItems);
-    }
-  }
-
   protected onBodyClick(evt: MouseEvent) {
     const path = evt.composedPath();
     if (this.menuOpen && path.indexOf(this) === -1) {
-      this.menuOpen = false
+      this.menuOpen = false;
     }
   }
 
   protected registerBodyClick() {
     this.onBodyClickBound = this.onBodyClick.bind(this);
     // capture otherwise listener closes menu after quick menu opens
-    document.body.addEventListener(
-        'click', this.onBodyClickBound, {passive: true, capture: true});
+    document.body.addEventListener('click', this.onBodyClickBound, { passive: true, capture: true });
   }
 
   protected deregisterBodyClick() {
-    document.body.removeEventListener(
-        'click', this.onBodyClickBound, {capture: true});
+    if (this.onBodyClickBound)
+      document.body.removeEventListener('click', this.onBodyClickBound, { capture: true });
   }
 
   protected onMenuSelected() {
-    const selectedItem =  this.menuElement?.selected as ListItem;
+    const selectedItem = this.menuElement?.selected as ListItem;
     if (selectedItem) {
       this.value = selectedItem.value;
     }
   }
 
   protected handleKeyDown(event: KeyboardEvent) {
-      if (!this.menuOpen) {
-        return;
-      }
-      let selectedIndex = this.menuElement?.index as number;
-      const length = this.menuElement?.items.length ?? 0;
-      switch(event.key) {
-        case "Down":
-        case "ArrowDown":
-          selectedIndex++;
-          if (selectedIndex >= length) selectedIndex = length - 1;
-          this.menuElement?.select(selectedIndex);
-          event.preventDefault();
-          break;
-        case "Up":
-        case "ArrowUp":
-          selectedIndex--;
-          if (selectedIndex < 0) selectedIndex = 0;
-          this.menuElement?.select(selectedIndex);
-          event.preventDefault();
-          break;
-        case "Esc": // IE/Edge specific value
-        case "Escape":
-          this.menuOpen = false
-          event.preventDefault();
-          break;
-      }
+    if (!this.menuOpen) {
+      return;
+    }
+    let selectedIndex = this.menuElement?.index as number;
+    const length = this.menuElement?.items.length ?? 0;
+    switch (event.key) {
+      case 'Down':
+      case 'ArrowDown':
+        selectedIndex++;
+        if (selectedIndex >= length) selectedIndex = length - 1;
+        this.menuElement?.select(selectedIndex);
+        event.preventDefault();
+        break;
+      case 'Up':
+      case 'ArrowUp':
+        selectedIndex--;
+        if (selectedIndex < 0) selectedIndex = 0;
+        this.menuElement?.select(selectedIndex);
+        event.preventDefault();
+        break;
+      case 'Esc': // IE/Edge specific value
+      case 'Escape':
+        this.menuOpen = false;
+        event.preventDefault();
+        break;
+    }
   }
 
   render() {
@@ -219,6 +217,7 @@ export class Autocomplete extends LitElement {
           .showClearButton="${this.showClearButton}"
           ?disabled="${this.disabled}"
           ?required=${this.required}
+          label="${ifDefined(this.ariaLabel)}"
           @keydown=${this.handleKeyDown}
           @focus=${this.onInputFocus}
           @blur=${this.onInputBlur}
@@ -226,8 +225,8 @@ export class Autocomplete extends LitElement {
         ></fds-search-input>
 
         <mwc-menu
-        activatable
-        wrapFocus
+          activatable
+          wrapFocus
           class="mdc-menu"
           .fullwidth=${true}
           .open=${this.menuOpen}

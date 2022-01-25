@@ -1,0 +1,90 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { html, fixture, expect, elementUpdated, triggerFocusFor, triggerBlurFor, oneEvent } from '@open-wc/testing';
+import { Autocomplete } from '../src/autocomplete.js';
+import { Menu } from '@material/mwc-menu';
+import '../src/autocomplete.js';
+import { SearchInput } from '../../search-input/dist/src/search-input.js';
+
+describe('Autocomplete', () => {
+  let element: Autocomplete;
+  beforeEach(async () => {
+    element = await fixture(html`
+      <fds-autocomplete aria-label="test">
+        <mwc-list-item value="One">One</mwc-list-item>
+        <mwc-list-item value="Two">Two</mwc-list-item>
+        <mwc-list-item value="Three">Three</mwc-list-item>
+      </fds-autocomplete>
+    `);
+  });
+  it('should load accessibly', async () => {
+    await elementUpdated(element);
+    await expect(element).to.be.accessible();
+  });
+
+  it('should focused and blured', async () => {
+    await triggerFocusFor(element);
+    expect(document.activeElement === element).to.be.true;
+
+    await triggerBlurFor(element);
+    expect(document.activeElement === element).to.be.false;
+  });
+
+  it('should navigate using keyboard', async () => {
+    const textInput = element.shadowRoot?.querySelector('.formElement');
+    await triggerFocusFor(element);
+    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Down' }));
+    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
+    expect(menu?.index).to.equal(0);
+
+    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Down' }));
+    expect(menu?.index).to.equal(1);
+
+    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Up' }));
+    expect(menu?.index).to.equal(0);
+
+    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Esc' }));
+    await menu?.updateComplete;
+    expect(menu?.open).to.equal(false);
+  });
+
+  it('should close menu on click outside', async () => {
+    await triggerFocusFor(element);
+    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
+    expect(menu?.open).to.equal(true);
+    await oneEvent(menu!, 'opened');
+    document.body.dispatchEvent(new MouseEvent('click'));
+    await element?.updateComplete;
+    expect(menu?.open).to.equal(false);
+  });
+
+  it('should filter menu', async () => {
+    await triggerFocusFor(element);
+    const textInput: SearchInput | null | undefined = element.shadowRoot?.querySelector('.formElement');
+    let data = '';
+    element.addEventListener('input', (event:  any) => (data = event.detail));
+    textInput!.value = 'O';
+    textInput?.dispatchEvent(new InputEvent('input', { bubbles: true}));
+    await textInput?.updateComplete;
+    await element?.updateComplete;
+    expect(data).to.equal('O');
+  });
+
+  it('should not open menu if not found any suggestion', async () => {
+    await triggerFocusFor(element);
+    const textInput: SearchInput | null | undefined = element.shadowRoot?.querySelector('.formElement');
+    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
+    textInput!.value = 'ABC';
+    textInput?.dispatchEvent(new InputEvent('input', { bubbles: true}));
+    await textInput?.updateComplete;
+    await element?.updateComplete;
+    expect(menu?.open).to.equal(false);
+  });
+
+  it('should not open menu if minLengthToOpenMenu not validate', async () => {
+    element.minLengthToOpenMenu = 4;
+    await element?.updateComplete;
+    await triggerFocusFor(element);
+    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
+    expect(menu?.open).to.equal(false);
+  });
+});
