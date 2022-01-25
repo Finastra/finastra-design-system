@@ -49,7 +49,7 @@
       top: 0;
       height: 250px;
       background-image: linear-gradient(
-        90deg,#0a0014,#23055a 40%,#50015a 80%,#4b0254);
+        90deg, darken(fds.get-color-from-palette($primary, 800), 20% ), darken(fds.get-color-from-palette($primary, 800), 10% ) 40%, darken(fds.get-color-from-palette($accent,  800),15%) 80%);
     }
 
     .title:after {
