@@ -12,9 +12,11 @@ export default {
     }
   },
   argTypes: {
-    dense: { control: 'boolean' },
+    denseMenu: { control: 'boolean' },
+    denseAvatar: { control: 'boolean' },
     open: { control: 'boolean' },
     userName: { control: 'text' },
+    shortName: { control: 'text' },
     userInfo: {
       table: {
         category: 'slot'
@@ -29,13 +31,15 @@ export default {
     }
   },
   args: {
-    dense: false,
+    denseMenu: false,
+    denseAvatar: false,
     open: false,
-    userName: 'Raya Hristova'
+    userName: 'Raya Hristova',
+    shortName: ''
   }
 } as Meta;
 
-const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
+const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName='', denseMenu = false, denseAvatar = false, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -48,7 +52,7 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = fals
       }
     </style>
 
-    <fds-user-profile .userName=${userName} ?dense=${dense} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?denseAvatar=${denseAvatar} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
         <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
@@ -62,7 +66,7 @@ Default.args = {
   open: true
 };
 
-  const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
+  const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName='', denseMenu = true, denseAvatar=false, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -91,7 +95,7 @@ Default.args = {
       }
     </style>
 
-    <fds-user-profile .userName=${userName} ?dense=${dense} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?denseAvatar=${denseAvatar} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
       <div slot="actions">
@@ -112,6 +116,7 @@ Default.args = {
 
 export const Dense: Story<UserProfile> = ComplexTemplate.bind({});
 Dense.args = {
-  dense: true,
+  denseMenu: true,
+  denseAvatar: true,
   open: true
 };

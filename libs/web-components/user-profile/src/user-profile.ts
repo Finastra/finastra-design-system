@@ -19,8 +19,14 @@ export class UserProfile extends LitElement {
   @property()
   userName = '';
 
+  @property()
+  shortName = '';
+
   @property({ type: Boolean })
-  dense = false;
+  denseMenu = false;
+
+  @property({ type: Boolean })
+  denseAvatar = false;
 
   @property({ type: Boolean })
   open = false;
@@ -29,12 +35,12 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <fds-avatar dense @click="${this._showMenu}" open="${this.open}"></fds-avatar>
+    return html` <fds-avatar ?dense=${this.denseAvatar} name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
       <mwc-menu id="menu" fullwidth ?open=${this.open}>
-        ${this.dense
+        ${this.denseMenu
           ? html`
               <div class="header-dense">
-                <fds-avatar userName=${this.userName}></fds-avatar>
+                <fds-avatar name=${this.userName} shortName=${this.shortName}></fds-avatar>
                 <div class="title">${this.userName}</div>
                 <slot name="userInfo"></slot>
               </div>
@@ -43,7 +49,7 @@ export class UserProfile extends LitElement {
             `
           : html`
               <div class="header">
-                <fds-avatar userName=${this.userName} large></fds-avatar>
+                <fds-avatar name=${this.userName} shortName=${this.shortName} large></fds-avatar>
                 <div class="title">${this.userName}</div>
                 <slot name="userInfo"></slot>
               </div>
