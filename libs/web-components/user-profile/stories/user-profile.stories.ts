@@ -62,7 +62,7 @@ Default.args = {
   open: true
 };
 
-const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
+  const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', dense = false, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -94,9 +94,19 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', dense
     <fds-user-profile .userName=${userName} ?dense=${dense} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
+      <div slot="actions">
+        <div class="item-list">
+          <mwc-list-item graphic="icon">
+            <span>item one</span>
+            <mwc-icon slot="graphic">dashboard</mwc-icon>
+          </mwc-list-item>
+          <mwc-list-item graphic="icon">
+            <span>item two</span>
+            <mwc-icon slot="graphic">dashboard</mwc-icon>
+          </mwc-list-item>
+        </div>
+        <fds-divider></fds-divider>
         <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
-        <fds-button text fullwidth label="View profile"></fds-button>
-      </div>
     </fds-user-profile>`;
 };
 
