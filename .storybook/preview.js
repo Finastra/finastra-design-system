@@ -1,6 +1,11 @@
-import theme from './theme';
+import themeLight from './theme-light';
+import themeDark from './theme-dark';
+import './styles.scss';
+
+const isDark = typeof window !== `undefined` ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches : null;
 
 export const parameters = {
+  backgrounds: { disable: true },
   layout: 'centered',
   options: {
     storySort: {
@@ -8,7 +13,14 @@ export const parameters = {
       method: 'alphabetical'
     }
   },
-  docs: {
-    theme: theme
+  darkMode: {
+    current: isDark ? 'dark' : 'light',
+    // Override the default dark theme
+    dark: { ...themeDark },
+    // Override the default light theme
+    light: { ...themeLight },
+    darkClass: 'dark-theme',
+    lightClass: 'light-theme',
+    stylePreview: true
   }
 };
