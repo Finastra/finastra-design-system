@@ -29,7 +29,11 @@ export class AppBar extends LitElement {
   }
 
   renderLogo(): TemplateResult {
-    return this.logo ? html`<img src="${this.logo}" class="logo" />` : html``;
+    return this.logo ? html`<img src="${this.logo}" class="logo" @click="${this.navigateToLogoUri}" />` : html``;
+  }
+
+  navigateToLogoUri() {
+    location.href = this.logoRedirectUri;
   }
 }
 
