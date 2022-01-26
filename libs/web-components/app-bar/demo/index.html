@@ -10,10 +10,13 @@
     color: var(--fds-on-background);
     font: var(--fds-body-1);
   }
+  fds-button {
+    padding-left: 16px;
+  }
 </style>
 
 <div style="width: 800px">
-  <p>Basic app bar</p>
+  <p>App bar with content</p>
   <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
     <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
     <fds-search-input label="Search" slot="content"></fds-search-input>
@@ -23,7 +26,7 @@
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
-  <p>Basic app bar 2</p>
+  <p>App bar with navigation</p>
   <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
     <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
     <fds-button text label="Tab 1" slot="navigation"></fds-button>
