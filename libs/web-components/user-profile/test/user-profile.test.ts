@@ -19,7 +19,7 @@ describe('UserProfile', () => {
   });
 
   it('should set dense header', async () => {
-    const el: UserProfile = await fixture(html`<fds-user-profile dense></fds-user-profile>`);
+    const el: UserProfile = await fixture(html`<fds-user-profile denseMenu></fds-user-profile>`);
 
     await elementUpdated(el);
     shadowRoot(el).querySelector('fds-avatar')?.click();
@@ -27,10 +27,10 @@ describe('UserProfile', () => {
   });
 
   it('Should display divider when actions slot is defined', async () => {
-    const el: UserProfile = await fixture(html`<fds-user-profile dense>
+    const el: UserProfile = await fixture(html`<fds-user-profile denseMenu>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
-        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button denseMenu fullwidth label="Logout" icon="logout"></fds-button>
         <fds-button text fullwidth label="View profile"></fds-button>
       </div>
     </fds-user-profile>`);

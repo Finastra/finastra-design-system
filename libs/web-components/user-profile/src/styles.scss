@@ -15,7 +15,6 @@
 
     .header {
       text-align: center;
-      padding: 16px;
       @include fds.padding(3);
 
       fds-avatar {
