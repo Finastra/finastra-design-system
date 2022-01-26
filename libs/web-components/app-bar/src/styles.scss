@@ -20,10 +20,6 @@
       flex-direction: row;
       align-items: center;
     }
-    .logo {
-      height: 30px;
-      padding: 5px 16px;
-    }
 
     .app-name {
       @include fds.typography(headline-6);
@@ -43,10 +39,6 @@
     }
   }
 }
-
-// ::slotted(.actions > *){
-//   padding: 5px 16px;
-// }
 
 :host([transparent]) {
   .bar {

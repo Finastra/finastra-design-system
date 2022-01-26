@@ -2,6 +2,7 @@ import { LitElement, html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import '@material/mwc-top-app-bar';
 import { styles } from './styles.css';
+import '@finastra/logo';
 
 @customElement('fds-app-bar')
 export class AppBar extends LitElement {
@@ -19,7 +20,7 @@ export class AppBar extends LitElement {
     return html`<div class="bar">
       <div class="top-bar">
         <slot name="menu"></slot>
-        ${this.renderLogo()}
+        <fds-logo dense></fds-logo>
         <span class="app-name">${this.appName}</span>
         <div class="app-bar-content">
           ${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}
@@ -29,10 +30,6 @@ export class AppBar extends LitElement {
       </div>
       ${this.prominent ? this.renderNavigationSlot() : ''}
     </div>`;
-  }
-
-  renderLogo(): TemplateResult {
-    return this.logo ? html`<img src="${this.logo}" class="logo" @click="${this.navigateToLogoUri}" />` : html``;
   }
 
   renderNavigationSlot(): TemplateResult {
