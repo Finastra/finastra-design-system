@@ -6,9 +6,14 @@
   mwc-icon-button {
     color: var(--fds-primary);
   }
+  p {
+    color: var(--fds-on-background);
+    font: var(--fds-body-1);
+  }
 </style>
 
 <div style="width: 800px">
+  <p>Basic app bar</p>
   <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
     <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
     <fds-search-input label="Search" slot="content"></fds-search-input>
@@ -18,6 +23,18 @@
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
+  <p>Basic app bar 2</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
+    <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
+    <fds-button text label="Tab 1" slot="navigation"></fds-button>
+    <fds-button text label="Tab 2" slot="navigation"></fds-button>
+    <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
+    <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+    <fds-avatar dense slot="actions"></fds-avatar>
+    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+  </fds-app-bar>
+
+  <p>Transparent app bar</p>
   <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png" transparent>
     <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
     <fds-search-input label="Search" slot="content"></fds-search-input>
@@ -27,6 +44,7 @@
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
+  <p>App bar with buttons</p>
   <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
     <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
@@ -35,5 +53,16 @@
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
+  </fds-app-bar>
+
+  <p>Prominent app bar</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png" prominent>
+    <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
+    <fds-button text label="Tab 1" slot="navigation"></fds-button>
+    <fds-button text label="Tab 2" slot="navigation"></fds-button>
+    <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
+    <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+    <fds-avatar dense slot="actions"></fds-avatar>
+    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 </div>
