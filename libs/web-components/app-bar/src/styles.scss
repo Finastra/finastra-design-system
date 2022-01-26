@@ -5,24 +5,29 @@
   .bar {
     //position: absolute;
     padding: 5px 16px;
-    height: 56px;
+    min-height: 56px;
     left: 0px;
     right: 0px;
     top: 0px;
     @include fds.bg-color(surface);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.11), 0px 2px 1px rgba(0, 0, 0, 0.09), 0px 1px 3px rgba(0, 0, 0, 0.16);
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   
+    .top-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
     .logo {
       height: 30px;
-      padding: inherit;
+      padding: 5px 16px;
     }
 
     .app-name {
       @include fds.typography(headline-6);
-      padding: inherit;
+      padding: 5px 16px;
     }
 
     .app-bar-content {

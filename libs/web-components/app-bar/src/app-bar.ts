@@ -17,19 +17,26 @@ export class AppBar extends LitElement {
 
   render(): TemplateResult {
     return html`<div class="bar">
-      <slot name="menu"></slot>
-      ${this.renderLogo()}
-      <span class="app-name">${this.appName}</span>
-      <div class="app-bar-content">
-        <slot name="navigation" class="bar-block"></slot>
-        <slot name="content" class="bar-block"></slot>
-        <slot name="actions" class="bar-block"></slot>
+      <div class="top-bar">
+        <slot name="menu"></slot>
+        ${this.renderLogo()}
+        <span class="app-name">${this.appName}</span>
+        <div class="app-bar-content">
+          ${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}
+          <slot name="content" class="bar-block"></slot>
+          <slot name="actions" class="bar-block"></slot>
+        </div>
       </div>
+      ${this.prominent ? this.renderNavigationSlot() : ''}
     </div>`;
   }
 
   renderLogo(): TemplateResult {
     return this.logo ? html`<img src="${this.logo}" class="logo" @click="${this.navigateToLogoUri}" />` : html``;
+  }
+
+  renderNavigationSlot(): TemplateResult {
+    return html`<slot name="navigation" class="bar-block"></slot>`;
   }
 
   navigateToLogoUri() {
