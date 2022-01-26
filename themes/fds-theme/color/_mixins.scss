@@ -11,14 +11,8 @@
 ///   }
 @mixin custom-properties($properties: light.$properties) {
   @each $style, $variable in $properties {
-    @if $style== 'gradient' or $style== 'gradient-vertical' {
-      --fds-#{$style}: linear-gradient(var(--fds-primary), var(--fds-secondary));
-    } @else if $style== 'gradient-horizontal' {
-      --fds-#{$style}: linear-gradient(90deg, var(--fds-primary), var(--fds-secondary));
-    } @else {
       --fds-#{$style}: #{$variable};
       --mdc-theme-#{$style}: var(--fds-#{$style});
-    }
   }
 }
 
