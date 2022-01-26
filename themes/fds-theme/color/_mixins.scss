@@ -31,7 +31,7 @@
 @mixin helper-classes() {
   @each $style, $value in light.$properties {
     $bg-color: map.get(light.$properties, $style);
-    @if $style != "background" and $style != "surface" {
+    @if $style != 'background' and $style != 'surface' {
       .fds-#{$style} {
         color: var(--fds-#{$style}, #{$bg-color});
       }
@@ -69,7 +69,7 @@
 /// @param {String} $style - The name of the style to apply
 @mixin text-color($style) {
   $bg-color: map.get(light.$properties, $style);
-  @if string.index($style, "gradient") {
+  @if string.index($style, 'gradient') {
     background: var(--fds-#{$style}, #{$bg-color});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
