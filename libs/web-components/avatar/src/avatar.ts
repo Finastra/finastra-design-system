@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * @cssprop [--fds-avatar-font-size=16px]
  * @cssprop {color} [--fds-primary=#694ED6]
  * @cssprop {color} [--fds-secondary=#C137A2]
  */
