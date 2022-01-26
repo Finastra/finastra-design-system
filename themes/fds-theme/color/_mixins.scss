@@ -11,8 +11,8 @@
 ///   }
 @mixin custom-properties($properties: light.$properties) {
   @each $style, $variable in $properties {
-      --fds-#{$style}: #{$variable};
-      --mdc-theme-#{$style}: var(--fds-#{$style});
+    --fds-#{$style}: #{$variable};
+    --mdc-theme-#{$style}: var(--fds-#{$style});
   }
 }
 
@@ -25,7 +25,7 @@
 @mixin helper-classes() {
   @each $style, $value in light.$properties {
     $bg-color: map.get(light.$properties, $style);
-    @if $style != 'background' and $style != 'surface' {
+    @if $style != "background" and $style != "surface" {
       .fds-#{$style} {
         color: var(--fds-#{$style}, #{$bg-color});
       }
@@ -67,7 +67,8 @@
     background: var(--fds-#{$style}, #{$bg-color});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  } @else {
+  }
+  @else {
     color: var(--fds-#{$style}, #{$bg-color});
   }
 }
