@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/logo": "0.0.15",
+    "@finastra/logo": "0.0.16",
     "@material/mwc-top-app-bar": "^0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
