@@ -113,19 +113,11 @@ uxg-changelog {
   }
 
   .changelog-container {
-    margin: fds.$uxg-spacing-3 fds.$uxg-spacing-4;
+    margin: fds.$uxg-spacing-5;
 
     .version {
       min-width: 100px;
-
-      .version-id {
-        margin-bottom: 0;
-      }
-
-      .date {
-        white-space: nowrap;
-        margin: 0;
-      }
+      text-align: right;
 
       &.none {
         width: 0;
@@ -214,7 +206,7 @@ uxg-changelog {
 
   @include flex-layout.layout-bp(sm) {
     .changelog-container {
-      margin: 0 fds.$uxg-spacing-4;
+      margin: fds.$uxg-spacing-4;
       @include changelog-layout('sm');
       .layout-none {
         @include changelog-layout('none');
@@ -224,7 +216,7 @@ uxg-changelog {
 
   @include flex-layout.layout-bp(xs) {
     .changelog-container {
-      margin: 0 fds.$uxg-spacing-2;
+      margin: fds.$uxg-spacing-4 fds.$uxg-spacing-2;
       @include changelog-layout('xs');
       .layout-none {
         @include changelog-layout('none');

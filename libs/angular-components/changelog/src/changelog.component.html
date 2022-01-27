@@ -2,7 +2,7 @@
   <div class="changelog-icon"></div>
   <div fxLayout="column">
     <div class="creator">{{ title }}</div>
-    <span>Changelog</span>
+    <span>{{ subtitle }}</span>
   </div>
 </div>
 
@@ -12,19 +12,17 @@
     [fxLayout]="displayVersion === 'top' ? 'column' : 'row'"
     fxLayout.lt-md="column"
     [fxLayout.gt-md]="displayVersion === 'top' ? 'column' : 'row'"
-    fxLayoutAlign="space-between start"
+    fxLayoutAlign="center"
     [class.layout-column]="displayVersion === 'top'"
     [class.layout-none]="displayVersion === 'none'"
   >
-    <div *ngIf="displayVersion !== 'none'" class="version" fxFlex="5" fxFlex.md="10">
-      <div class="version-id uxg-h4">v{{ release.version }}</div>
-      <span class="date uxg-h6">{{ release.date | date: 'longDate' }}</span>
+    <div class="version" fxFlex="10" fxFlex.md="10">
+      <div *ngIf="displayVersion !== 'none'" class="version-id">v{{ release.version }}</div>
+      <span [ngClass]="{ 'version-id': displayVersion == 'none', date: displayVersion !== 'none' }">{{
+        release.date | date: 'longDate'
+      }}</span>
     </div>
-    <div
-      [ngClass]="{ 'first-release': first, 'last-release': last, 'release-detail': !first && !last }"
-      fxFlex="95"
-      fxFlex.md="90"
-    >
+    <div [ngClass]="{ 'first-release': first, 'last-release': last, 'release-detail': !first && !last }" fxFlex="90" fxFlex.md="90">
       <ng-container *ngFor="let category of release.categories">
         <div class="uxg-subtitle-2 category">{{ category }}</div>
         <div *ngFor="let change of release.changes" class="change">
