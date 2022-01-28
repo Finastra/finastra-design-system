@@ -75,11 +75,13 @@ Default.args = {
         font: var(--fds-body-1);
         color: var(--fds-on-background);
       }
-      fds-user-profile .item-list {
-        padding-bottom: 16px;
-      }
       fds-user-profile mwc-list-item {
         color: var(--fds-on-background);
+        margin-top: -10px;
+      }
+
+      fds-user-profile mwc-list-item + mwc-list-item{
+        margin-top: 0px;
       }
       fds-user-profile fds-divider {
         position: relative;
