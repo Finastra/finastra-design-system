@@ -2,7 +2,6 @@ const README = require('../README.md');
 import {cssprops, argTypes} from './custom-element.json';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import type {Logo} from '@finastra/logo';
 import '@finastra/logo';
 
 export default {
