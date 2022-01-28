@@ -15,11 +15,13 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host {
   --fds-avatar-font-size: 16px;
+  --fds-avatar-width: 48px;
+  --fds-avatar-height: 48px;
 }
 
 .fds-avatar {
-  height: 48px;
-  width: 48px;
+  height: var(--fds-avatar-width, 48px);
+  width: var(--fds-avatar-height, 48px);
   border-radius: 50%;
   margin: 4px;
   object-fit: cover;
@@ -43,16 +45,16 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host([dense]) {
   .fds-avatar {
-    height: 24px;
-    width: 24px;
+    --fds-avatar-width: 24px;
+    --fds-avatar-height: 24px;
     --fds-avatar-font-size: 14px;
   }
 }
 
 :host([large]) {
   .fds-avatar {
-    height: 96px;
-    width: 96px;
+    --fds-avatar-width: 96px;
+    --fds-avatar-height: 96px;
     --fds-avatar-font-size: 44px;
   }
 }
