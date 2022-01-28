@@ -2,6 +2,7 @@ const README = require('../README.md');
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '@finastra/<%= fileName %>';
+import type {<%=className%>} from '@finastra/<%= fileName %>';
 
 
 export default {
@@ -17,8 +18,8 @@ export default {
   }
 } as Meta;
 
-const Template: Story = ({ name = 'World' }) => {
+const Template: Story<<%=className%>> = ({ name = 'World' }) => {
   return html`<fds-<%= fileName %>  .name=${name}></fsd-<%= fileName %>>`;
 };
 
-export const Default: Story = Template.bind({});
+export const Default: Story<<%=className%>> = Template.bind({});
