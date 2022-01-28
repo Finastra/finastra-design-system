@@ -27,18 +27,18 @@ export class Avatar extends LitElement {
 
   render() {
     if (this.primary && this.secondary) {
-      throw new Error('Cannot use both primary and secondary attribute');
+      console.warn('Cannot use both primary and secondary attribute');
     }
-    if (this.dense && this.large) {
-      throw new Error('Cannot use both dense and large attribute');
+    if (this.large && this.dense) {
+      console.warn('Cannot use both large and dense attribute');
     }
     if (!this.name) {
       if (this.shortName) {
-        throw new Error('Please specify a name to your avatar');
-      } else {
-        return html`<div class="fds-avatar"></div>`;
+        console.warn('Please specify a name to your avatar');
       }
+      return html`<div class="fds-avatar"></div>`;
     }
+
     return html`<div title="${this.name}" class="fds-avatar">
       ${!this.shortName ? this.transformName(this.name, this.dense) : this.transformShortName(this.shortName, this.dense)}
     </div>`;
