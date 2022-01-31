@@ -7,7 +7,7 @@ import { styles } from './styles.css';
 export class <%=className %> extends LitElement {
   static styles = styles;
 
-  @property()
+  @property({ type: String })
   name = ''
 
 

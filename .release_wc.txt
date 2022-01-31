@@ -20,3 +20,4 @@
 - [01/10/2022] Request release v0.0.14 by dorsaffrigui 
 - [01/14/2022] Request release v0.0.15 by bcldvd 
 - [01/19/2022] Request release v0.0.16 by bcldvd 
+- [01/31/2022] Request release v0.0.17 by dorsaffrigui 

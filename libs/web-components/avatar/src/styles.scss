@@ -41,6 +41,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     --fds-avatar-size: 24px;
     --fds-avatar-font-size: 14px;
+    font-size: var(--fds-avatar-font-size, 14px);
   }
 }
 
@@ -48,6 +49,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     --fds-avatar-size: 96px;
     --fds-avatar-font-size: 44px;
+    font-size: var(--fds-avatar-font-size, 44px);
   }
 }
 
