@@ -1,19 +1,14 @@
 const README = require('../README.md');
 import { html } from 'lit-html';
 import { Meta, Story } from '@storybook/web-components';
-import type {UserProfile} from '@finastra/user-profile';
+import type { UserProfile } from '@finastra/user-profile';
 import '@finastra/user-profile';
+import { cssprops } from './custom-element.json';
 
 export default {
   title: 'Components/User Profile',
-  parameters: {
-    docs: {
-      description: { component: README }
-    }
-  },
   argTypes: {
     denseMenu: { control: 'boolean' },
-    denseAvatar: { control: 'boolean' },
     open: { control: 'boolean' },
     userName: { control: 'text' },
     shortName: { control: 'text' },
@@ -32,14 +27,19 @@ export default {
   },
   args: {
     denseMenu: false,
-    denseAvatar: false,
     open: false,
     userName: 'Raya Hristova',
     shortName: ''
+  },
+  parameters: {
+    docs: {
+      description: { component: README }
+    },
+    cssprops
   }
 } as Meta;
 
-const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName='', denseMenu = false, denseAvatar = false, open = true }) => {
+const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', denseMenu = false, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -52,7 +52,7 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName=''
       }
     </style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?denseAvatar=${denseAvatar} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
         <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
@@ -66,7 +66,7 @@ Default.args = {
   open: true
 };
 
-  const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName='', denseMenu = true, denseAvatar=false, open = true }) => {
+const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', denseMenu = true, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -97,7 +97,7 @@ Default.args = {
       }
     </style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?denseAvatar=${denseAvatar} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
       <div slot="actions">
@@ -119,6 +119,5 @@ Default.args = {
 export const Dense: Story<UserProfile> = ComplexTemplate.bind({});
 Dense.args = {
   denseMenu: true,
-  denseAvatar: true,
   open: true
 };

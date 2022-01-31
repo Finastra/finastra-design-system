@@ -7,6 +7,10 @@ import '@finastra/divider';
 
 import { styles } from './styles.css';
 
+/**
+ * @cssprop [--fds-avatar-size=48px]
+ * @cssprop [--fds-avatar-font-size=16px]
+ */
 @customElement('fds-user-profile')
 export class UserProfile extends LitElement {
   static styles = styles;
@@ -26,16 +30,13 @@ export class UserProfile extends LitElement {
   denseMenu = false;
 
   @property({ type: Boolean })
-  denseAvatar = false;
-
-  @property({ type: Boolean })
   open = false;
 
   protected actionsCount = 0;
   public divider = true;
 
   render() {
-    return html` <fds-avatar ?dense=${this.denseAvatar} name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
+    return html` <fds-avatar  denseMenu=${this.denseMenu} name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
       <mwc-menu id="menu" fullwidth ?open=${this.open}>
         ${this.denseMenu
           ? html`
