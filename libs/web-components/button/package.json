@@ -1,8 +1,7 @@
 {
   "name": "@finastra/button",
   "displayName": "Button",
-  "icon":"smart_button",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Button Web Component",
   "keywords": [
     "Finastra Design System",

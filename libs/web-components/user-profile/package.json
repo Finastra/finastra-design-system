@@ -18,8 +18,8 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@finastra/avatar": "0.0.16",
-    "@finastra/divider": "0.0.16",
+    "@finastra/avatar": "0.0.17",
+    "@finastra/divider": "0.0.17",
     "@material/mwc-menu": "0.25.3"
   },
   "publishConfig": {

@@ -1,8 +1,7 @@
 {
   "name": "@finastra/avatar",
   "displayName": "Avatar",
-  "icon":"account_circle",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Avatar Web Component",
   "keywords": [
     "Finastra Design System",

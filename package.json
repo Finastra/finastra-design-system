@@ -67,7 +67,11 @@
     "wc:watch": "npm run wc:build --watch && node scripts/watcher.js",
     "wc:clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "workspace-generator": "nx workspace-generator"
+    "workspace-generator": "nx workspace-generator",
+    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
+    "postwca":"node ./scripts/wca-to-storybook.js",
+    "prewc:build:storybook":"npm run wca",
+    "prewc:storybook":"npm run wca"
   },
   "husky": {
     "hooks": {
@@ -128,6 +132,7 @@
     "@angular/compiler-cli": "13.0.3",
     "@angular/language-service": "13.0.3",
     "@babel/core": "^7.16.7",
+    "@ljcl/storybook-addon-cssprops": "file:ljcl-storybook-addon-cssprops-1.0.0.tgz",
     "@nrwl/angular": "13.2.4",
     "@nrwl/cli": "13.2.4",
     "@nrwl/cypress": "13.2.4",
@@ -179,7 +184,7 @@
     "eslint-config-prettier": "8.3.0",
     "fs-extra": "^10.0.0",
     "git-config-path": "^2.0.0",
-    "globby": "^11.0.3",
+    "globby": "^11.1.0",
     "husky": "^6.0.0",
     "istanbul-api": "^3.0.0",
     "istanbul-lib-coverage": "^3.0.0",
@@ -218,10 +223,11 @@
     "ts-md5": "1.2.8",
     "ts-node": "10.0.0",
     "typescript": "4.4.4",
+    "web-component-analyzer": "^1.1.6",
     "webpack": "^5.64.1"
   },
   "engines": {
-    "node": ">=16.13.0",
-    "npm": ">=7.7.6"
+    "node": "^16",
+    "npm": "^7"
   }
 }
