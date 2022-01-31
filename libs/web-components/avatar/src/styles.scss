@@ -13,15 +13,9 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   background: $multi-background;
 }
 
-:host {
-  --fds-avatar-font-size: 16px;
-  --fds-avatar-width: 48px;
-  --fds-avatar-height: 48px;
-}
-
 .fds-avatar {
-  height: var(--fds-avatar-width, 48px);
-  width: var(--fds-avatar-height, 48px);
+  height: var(--fds-avatar-size, 48px);
+  width: var(--fds-avatar-size, 48px);
   border-radius: 50%;
   margin: 4px;
   object-fit: cover;
@@ -33,7 +27,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   @include fds.bg-color(gradient);
   @include fds.text-color(on-primary);
   @include fds.typography(body-3);
-  font-size: var(--fds-avatar-font-size);
+  font-size: var(--fds-avatar-font-size, 16px);
 
   &:empty:not(img) {
     @include multiple-backgrounds(
@@ -45,16 +39,14 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host([dense]) {
   .fds-avatar {
-    --fds-avatar-width: 24px;
-    --fds-avatar-height: 24px;
+    --fds-avatar-size: 24px;
     --fds-avatar-font-size: 14px;
   }
 }
 
 :host([large]) {
   .fds-avatar {
-    --fds-avatar-width: 96px;
-    --fds-avatar-height: 96px;
+    --fds-avatar-size: 96px;
     --fds-avatar-font-size: 44px;
   }
 }
@@ -76,4 +68,3 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
     }
   }
 }
-
