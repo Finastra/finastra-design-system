@@ -66,3 +66,4 @@ storybook-static
 **/coverage
 **/tsc-out
 !/libs/web-components/**/*.stories.js
+libs/web-components/**/stories/custom-element.json
