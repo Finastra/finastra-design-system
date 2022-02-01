@@ -41,24 +41,24 @@ export default {
 
 const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', denseMenu = false, open = true }) => {
   return html` <style>
-      fds-user-profile {
-        height: 300px;
-      }
-      fds-user-profile fds-button {
-        line-height: 0px;
-      }
-      fds-user-profile fds-button + fds-button {
-        margin-top: 8px;
-      }
-    </style>
+fds-user-profile {
+  height: 300px;
+}
+fds-user-profile fds-button {
+  line-height: 0px;
+}
+fds-user-profile fds-button + fds-button {
+  margin-top: 8px;
+}
+</style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?open=${open}>
-      <div slot="userInfo">raya.hristova@finastra.com</div>
-      <div slot="actions">
-        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
-        <fds-button text fullwidth label="View profile"></fds-button>
-      </div>
-    </fds-user-profile>`;
+<fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?denseMenu= ${denseMenu}>
+<div slot="userInfo">raya.hristova@finastra.com</div>
+<div slot="actions">
+  <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+  <fds-button text fullwidth label="View profile"></fds-button>
+</div>
+</fds-user-profile>`;
 };
 
 export const Default: Story<UserProfile> = Template.bind({});
