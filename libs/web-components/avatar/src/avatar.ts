@@ -5,6 +5,8 @@ import { styles } from './styles.css';
 /**
  * @cssprop {color} [--fds-primary=#694ED6]
  * @cssprop {color} [--fds-secondary=#C137A2]
+ * @cssprop [--fds-avatar-size=48px]
+ * @cssprop [--fds-avatar-font-size=16px]
  */
 @customElement('fds-avatar')
 export class Avatar extends LitElement {
