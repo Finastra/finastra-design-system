@@ -33,6 +33,9 @@ export class Button extends LitElement {
   @property({ type: Boolean })
   fullwidth = false;
 
+  @property({ type: Boolean })
+  trailingIcon = false;
+
   render() {
     return html`
       ${this.outlined || this.text
@@ -44,6 +47,7 @@ export class Button extends LitElement {
             ?dense="${this.dense}"
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
+            ?trailingIcon="${this.trailingIcon}"
           ></mwc-button>`
         : html` <mwc-button
             label="${this.label}"
@@ -52,6 +56,7 @@ export class Button extends LitElement {
             ?dense="${this.dense}"
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
+            ?trailingIcon="${this.trailingIcon}"
           ></mwc-button>`}
     `;
   }

@@ -49,6 +49,12 @@
     },
     {
       "path": "avatar"
+    },
+    {
+      "path": "menu-trigger"
+    },
+    {
+      "path": "launchpad"
     }
   ]
 }

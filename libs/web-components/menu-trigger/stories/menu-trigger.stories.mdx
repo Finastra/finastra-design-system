@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+
+import '@finastra/menu-trigger';
+
+<Meta
+  title="Components/MenuTrigger"
+  component={'fds-menu-trigger'}
+  argTypes={{
+    name: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    },
+    '--fds-menu-trigger-text-color': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: 'Text color' }
+      },
+      type: 'string',
+      description: 'Text color',
+      control: null
+    }
+  }}
+/>
+
+export const Template = ({ name = '' }) => {
+  return html`<fds-menu-trigger  .name=${name}></fsd-menu-trigger>`;
+};
+
+# menu-trigger
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-menu-trigger></fds-menu-trigger>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/menu-trigger
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Name
+
+<Canvas>
+  <Story
+    name="Name"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-menu-trigger name="Workd"></fds-menu-trigger>'
+        }
+      }
+    }}
+  >
+    {Template.bind({}, 'World')}
+  </Story>
+</Canvas>

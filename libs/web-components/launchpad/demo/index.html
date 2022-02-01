@@ -1,0 +1,130 @@
+<script type="module" src="node_modules/@finastra/launchpad/dist/src/launchpad.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+
+<style>
+  .tools-title {
+    font: var(--fds-headline-4);
+    padding-bottom: var(--fds-spacing-3);
+  }
+</style>
+
+<fds-launchpad
+  apps='
+    [
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app1.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app2.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app3.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app4.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app5.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app6.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app7.com"
+        }
+      }
+    ]
+  ',
+  redirectHomeUrl="https://myapps.ffdc.com"
+>
+</fds-launchpad>
+<br />
+<fds-launchpad
+  apps='
+    [
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app1.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app2.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app3.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app4.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app5.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app6.com"
+        }
+      },
+      {
+        "name": "App",
+        "shortName": "App",
+        "sso-initiation-urls": {
+          "web": "https://app7.com"
+        }
+      }
+    ]
+  ',
+  redirectHomeUrl="https://myapps.ffdc.com"
+>
+  <div slot="tools">
+    <div class="tools-title">Tools</div>
+    <fds-button outlined label="Outlined button" icon="account_circle"></fds-button><br />
+    <fds-button outlined secondary label="Outlined secondary button" icon="account_circle"></fds-button><br />
+  </div>
+</fds-launchpad>

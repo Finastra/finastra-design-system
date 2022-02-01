@@ -1,0 +1,65 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: inline-block;
+  --mdc-menu-min-width: 696px;
+
+  #launchpad {
+    position: absolute;
+
+    .top-action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: right;
+      @include fds.padding(4, top, right, left);
+      @include fds.padding(1, bottom);
+    }
+
+    .menu-body {
+      max-height: 318px;
+      overflow-y: scroll;
+
+      .app-content {
+        @include fds.padding(5, right, left);
+        @include fds.padding(3, bottom);
+
+        .app-title {
+          @include fds.typography(headline-4);
+          @include fds.padding(3, right, left, bottom);
+        }
+
+        .appcard-list {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          grid-row-gap: 32px;
+          grid-column-gap: 56px;
+          @include fds.padding(3);
+        }
+        .appcard-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      }
+
+      .menu-tools {
+        @include fds.padding(5, right, left);
+
+        slot[name="tools"]::slotted(*) {
+          @include fds.padding(3, right, bottom, left);
+        }
+      }
+    }
+
+    .bottom-action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      @include fds.margin(4, top, bottom);
+    }
+  }
+}

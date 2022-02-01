@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { html } from 'lit';
+
+import '@finastra/launchpad';
+
+<Meta
+  title="Components/Launchpad"
+  component={'fds-launchpad'}
+  argTypes={{
+    name: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: '' }
+      },
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'Somebody'
+    },
+    '--fds-launchpad-text-color': {
+      table: {
+        category: 'css',
+        defaultValue: { summary: 'Text color' }
+      },
+      type: 'string',
+      description: 'Text color',
+      control: null
+    }
+  }}
+/>
+
+export const Template = ({ name = '' }) => {
+  return html`<fds-launchpad  .name=${name}></fsd-launchpad>`;
+};
+
+# launchpad
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-launchpad></fds-launchpad>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Installation
+
+```
+npm install @finastra/launchpad
+
+```
+
+## API
+
+<ArgsTable of="." story="^" />
+
+## Examples
+
+### Name
+
+<Canvas>
+  <Story
+    name="Name"
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-launchpad name="Workd"></fds-launchpad>'
+        }
+      }
+    }}
+  >
+    {Template.bind({}, 'World')}
+  </Story>
+</Canvas>
