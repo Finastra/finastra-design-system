@@ -8,7 +8,7 @@ import { cssprops } from './custom-element.json';
 export default {
   title: 'Components/User Profile',
   argTypes: {
-    denseMenu: { control: 'boolean' },
+    dense: { control: 'boolean' },
     open: { control: 'boolean' },
     userName: { control: 'text' },
     shortName: { control: 'text' },
@@ -26,7 +26,7 @@ export default {
     }
   },
   args: {
-    denseMenu: false,
+    dense: false,
     open: false,
     userName: 'Raya Hristova',
     shortName: ''
@@ -39,7 +39,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', denseMenu = false, open = true }) => {
+const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = false, open = true }) => {
   return html` <style>
 fds-user-profile {
   height: 300px;
@@ -52,7 +52,7 @@ fds-user-profile fds-button + fds-button {
 }
 </style>
 
-<fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?denseMenu= ${denseMenu}>
+<fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?dense= ${dense}>
 <div slot="userInfo">raya.hristova@finastra.com</div>
 <div slot="actions">
   <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
@@ -66,7 +66,7 @@ Default.args = {
   open: true
 };
 
-const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', denseMenu = true, open = true }) => {
+const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = true, open = true }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -97,7 +97,7 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
       }
     </style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?denseMenu=${denseMenu} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?dense=${dense} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
       <div slot="actions">
@@ -118,6 +118,6 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
 
 export const Dense: Story<UserProfile> = ComplexTemplate.bind({});
 Dense.args = {
-  denseMenu: true,
+  dense: true,
   open: true
 };

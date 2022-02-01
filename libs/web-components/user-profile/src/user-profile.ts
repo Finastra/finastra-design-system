@@ -27,7 +27,7 @@ export class UserProfile extends LitElement {
   shortName = '';
 
   @property({ type: Boolean })
-  denseMenu = false;
+  dense = false;
 
   @property({ type: Boolean })
   open = false;
@@ -36,9 +36,9 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <fds-avatar  denseMenu=${this.denseMenu} name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
+    return html` <fds-avatar name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
       <mwc-menu id="menu" fullwidth ?open=${this.open}>
-        ${this.denseMenu
+        ${this.dense
           ? html`
               <div class="header-dense">
                 <fds-avatar name=${this.userName} shortName=${this.shortName}></fds-avatar>
