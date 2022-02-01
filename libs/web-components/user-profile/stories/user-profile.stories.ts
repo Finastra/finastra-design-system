@@ -41,21 +41,22 @@ export default {
 
 const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = false, open = true }) => {
   return html` <style>
-fds-user-profile {
-  height: 300px;
-}
-fds-user-profile fds-button {
-  line-height: 0px;
-}
-fds-user-profile fds-button + fds-button {
-  margin-top: 8px;
-}
+  fds-user-profile {
+    height: 300px;
+  }
+  fds-user-profile fds-button {
+    line-height: 0px;
+    padding: 0px 16px 8px 16px;
+  }
+  fds-user-profile fds-button + fds-button {
+    margin-top: 8px;
+  }
 </style>
 
 <fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?dense= ${dense}>
 <div slot="userInfo">raya.hristova@finastra.com</div>
 <div slot="actions">
-  <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+  <fds-button fullwidth label="Logout" icon="logout"></fds-button>
   <fds-button text fullwidth label="View profile"></fds-button>
 </div>
 </fds-user-profile>`;
@@ -68,34 +69,37 @@ Default.args = {
 
 const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = true, open = true }) => {
   return html` <style>
-      fds-user-profile {
-        height: 300px;
-      }
-      fds-user-profile p {
-        font: var(--fds-body-1);
-        color: var(--fds-on-background);
-      }
-      fds-user-profile mwc-list-item {
-        color: var(--fds-on-background);
-        margin-top: -10px;
-      }
-
-      fds-user-profile mwc-list-item + mwc-list-item{
-        margin-top: 0px;
-      }
-      fds-user-profile fds-divider {
-        position: relative;
-        padding-top: 16px;
-        margin-right: -16px;
-        margin-left: -16px;
-      }
-      fds-user-profile fds-button {
-        line-height: 0px;
-      }
-      fds-user-profile fds-button + fds-button {
-        margin-top: 8px;
-      }
-    </style>
+  fds-user-profile {
+   height: 300px;
+  }
+  fds-user-profile p {
+    font: var(--fds-body-1);
+    color: var(--fds-on-background);
+  }
+  fds-user-profile mwc-list-item {
+    color: var(--fds-on-background);
+    margin-top: -10px;
+  }
+  fds-user-profile mwc-list-item + mwc-list-item{
+    margin-top: 0px;
+  }
+  fds-user-profile mwc-list-item:last-child{
+    margin-bottom: 4px;
+  }
+  fds-user-profile fds-divider {
+    position: relative;
+    padding-top: 16px;
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+  fds-user-profile fds-button {
+    line-height: 0px;
+    padding: 0px 16px 8px 16px;
+  }
+  fds-user-profile fds-button + fds-button {
+    margin-top: 8px;
+  }
+</style>
 
     <fds-user-profile userName=${userName} shortName=${shortName} ?dense=${dense} ?open=${open}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
@@ -112,7 +116,7 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
           </mwc-list-item>
         </div>
         <fds-divider></fds-divider>
-        <fds-button dense fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
     </fds-user-profile>`;
 };
 
