@@ -1,6 +1,10 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
 # FDS Theme Color
 
 <Meta title="Foundations/Color" />
+
+export const Template = <div class=".my-primary-container"></div>;
 
 There's 3 ways to use colors in the Finastra design system theme depending on your needs:
 
@@ -13,6 +17,13 @@ There's 3 ways to use colors in the Finastra design system theme depending on yo
 This theme is built around custom properties. You can use them directly in your CSS files, however we recommend the use of [Sass mixins](#mixins) for a better developer experience.
 
 ### Examples
+
+
+<Story
+name="test">
+{Template.bind({})}
+</Story>
+
 
 ```SCSS
 @use '@finastra/fds-theme/light';
