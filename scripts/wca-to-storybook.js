@@ -4,7 +4,7 @@ const globby = require('globby');
 const READ_WRITE_OPTS = {encoding: 'utf-8'};
 
 async function main() {
-    const paths = await getPaths('../libs/web-components/*/stories/custom-element.json');
+    const paths = await getPaths('../libs/web-components/*/src/*.ts');
     paths.forEach(path => {
         const {attributes, cssProperties} = getContent(path);
         const argTypes = mapArgTypes(attributes);
@@ -18,7 +18,12 @@ main();
 
 async function getPaths(paths) {
     const eatThat = join(__dirname, paths);
-    return await globby(eatThat);
+    const tsPaths = await globby(eatThat);
+    const filteredPaths = tsPaths.filter(path => !path.includes('.css.ts'));
+    const rootFolders = filteredPaths.map(path => path.split('/').slice(0, -2).join('/'));
+    const uniqueFolders = [...new Set(rootFolders)];
+    const customElementsPaths = uniqueFolders.map(path => join(path, 'stories/custom-element.json'));
+    return customElementsPaths;
 }
 
 function getContent(path) {
