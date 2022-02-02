@@ -1,72 +1,15 @@
 import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
 import { html } from 'lit';
+import {cssprops, argTypes} from './custom-element.json';
 
 import '@finastra/app-card';
 
 <Meta
   title="Components/App Card"
   component={'fds-app-card'}
-  argTypes={{
-    label: {
-      table: {
-        category: 'properties',
-        defaultValue: { summary: '' }
-      },
-      control: 'text',
-      defaultValue: 'Application',
-      type: 'string',
-      description: 'app card label'
-    },
-    shortLabel: {
-      table: {
-        category: 'properties',
-        defaultValue: { summary: '' }
-      },
-      control: 'text',
-      defaultValue: '',
-      type: 'string',
-      description: 'optional app card displayed label'
-    },
-    secondary: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: false }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'color and ribbon type'
-    },
-    large: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: false }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'card size'
-    },
-    dense: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: false }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'card size'
-    },
-    extraDense: {
-      table: {
-        category: 'attributes',
-        defaultValue: { summary: false }
-      },
-      control: 'boolean',
-      defaultValue: false,
-      type: 'boolean',
-      description: 'card size'
-    }
+  argTypes={argTypes}
+  parameters={{
+    cssprops
   }}
 />
 
@@ -151,7 +94,7 @@ npm install @finastra/app-card
 <Canvas>
   <Story
     name="Large"
-    args={{ large: true }}
+    args={{ label: 'Application', large: true }}
     parameters={{
       docs: {
         source: {
@@ -169,7 +112,7 @@ npm install @finastra/app-card
 <Canvas>
   <Story
     name="Dense"
-    args={{ dense: true }}
+    args={{ label: 'Application', dense: true }}
     parameters={{
       docs: {
         source: {
@@ -187,7 +130,7 @@ npm install @finastra/app-card
 <Canvas>
   <Story
     name="Extra Dense"
-    args={{ extraDense: true }}
+    args={{ label: 'Application', extraDense: true }}
     parameters={{
       docs: {
         source: {

@@ -43,7 +43,19 @@ function mapArgTypes(attributes, slots) {
     attr = attributes.reduce((prev, next) => {
       prev[next.name] = {
          control: sanitizeControl(next.type),
-        ...(next.description ? { description: next.description } : {})
+      }
+      if (next.hasOwnProperty('description')) {
+          prev[next.name].description = next.description;
+      }
+      if (next.hasOwnProperty('default')) {
+          prev[next.name].table = {
+            defaultValue: {summary: sanitizeDefaultValue(next.default)}
+          };
+          prev[next.name].defaultValue = sanitizeDefaultValue(next.default);
+      } else {
+        prev[next.name].type = {
+          required: true
+        };
       }
       return prev;
     }, {});
@@ -75,4 +87,13 @@ function sanitizeValue(value) {
 
 function sanitizeCssPropName(name) {
     return name.replace(/^--(.*)/g, "$1");
+}
+
+function sanitizeDefaultValue(defaultValue) {
+    if (defaultValue === 'false') {
+        defaultValue = false;
+    } else {
+        defaultValue = defaultValue.replace(/^\"(.*)\"$/g, "$1");
+    }
+    return defaultValue;
 }
