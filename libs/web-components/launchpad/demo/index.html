@@ -1,130 +1,188 @@
 <script type="module" src="node_modules/@finastra/launchpad/dist/src/launchpad.js"></script>
-<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<script type="module" src="node_modules/@finastra/app-card/dist/src/app-card.js"></script>
 
 <style>
   .tools-title {
     font: var(--fds-headline-4);
     padding-bottom: var(--fds-spacing-3);
   }
-</style>
 
-<fds-launchpad
-  apps='
-    [
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app1.com"
+  .tools-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 32px;
+    grid-column-gap: 56px;
+    padding-top: var(--fds-spacing-3);
+    padding-bottom: var(--fds-spacing-3);
+  }
+  .tools-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .tools-name {
+    font: var(--fds-subtitle-3);
+    color: var(--fds-on-surface);
+    padding-top: var(--fds-spacing-2);
+    text-align: center;
+  }
+</style>
+<div>
+  <fds-launchpad
+    apps='
+      [
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app1.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app2.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app3.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app4.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app5.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app6.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app7.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app8.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app9.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app10.com"
+          }
         }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app2.com"
+      ]
+    '
+  >
+  </fds-launchpad>
+  <br /><br />
+  <fds-launchpad
+    apps='
+      [
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app1.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app2.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app3.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app4.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app5.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app6.com"
+          }
+        },
+        {
+          "name": "App",
+          "shortName": "App",
+          "sso-initiation-urls": {
+            "web": "https://app7.com"
+          }
         }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app3.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app4.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app5.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app6.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app7.com"
-        }
-      }
-    ]
-  ',
-  redirectHomeUrl="https://myapps.ffdc.com"
->
-</fds-launchpad>
-<br />
-<fds-launchpad
-  apps='
-    [
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app1.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app2.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app3.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app4.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app5.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app6.com"
-        }
-      },
-      {
-        "name": "App",
-        "shortName": "App",
-        "sso-initiation-urls": {
-          "web": "https://app7.com"
-        }
-      }
-    ]
-  ',
-  redirectHomeUrl="https://myapps.ffdc.com"
->
-  <div slot="tools">
-    <div class="tools-title">Tools</div>
-    <fds-button outlined label="Outlined button" icon="account_circle"></fds-button><br />
-    <fds-button outlined secondary label="Outlined secondary button" icon="account_circle"></fds-button><br />
-  </div>
-</fds-launchpad>
+      ]
+    '
+  >
+    <div slot="tools">
+      <div class="tools-title">Tools</div>
+      <div class='tools-list'>
+        <div>
+          <fds-app-card class='tools-item' label="Dashboard" extraDense primary></fds-app-card>
+          <div class="tools-name">Dashboard</div>
+        </div>
+        <div>
+          <fds-app-card class='tools-item' label="Fusion Creator" extraDense primary></fds-app-card>
+          <div class="tools-name">Fusion Creator</div>
+        </div>
+        <div>
+          <fds-app-card class='tools-item' label="Fusion Store" extraDense primary></fds-app-card>
+          <div class="tools-name">Fusion Store</div>
+        </div>
+        <div>
+          <fds-app-card class='tools-item' label="Billing" extraDense primary></fds-app-card>
+          <div class="tools-name">Billing</div>
+        </div>
+      </div>
+    </div>
+  </fds-launchpad>
+</div>

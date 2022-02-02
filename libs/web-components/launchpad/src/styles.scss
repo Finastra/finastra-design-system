@@ -17,7 +17,7 @@
     }
 
     .menu-body {
-      max-height: 318px;
+      max-height: 445px;
       overflow-y: scroll;
 
       .app-content {
@@ -26,6 +26,7 @@
 
         .app-title {
           @include fds.typography(headline-4);
+          @include fds.text-color(on-surface);
           @include fds.padding(3, right, left, bottom);
         }
 
@@ -35,13 +36,21 @@
           grid-row-gap: 32px;
           grid-column-gap: 56px;
           @include fds.padding(3);
-        }
-        .appcard-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
+
+          .appcard-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+
+          .appcard-name {
+            @include fds.typography(subtitle-3);
+            @include fds.text-color(on-surface);
+            @include fds.padding(2, top);
+            text-align: center;
+          }
         }
       }
 

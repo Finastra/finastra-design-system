@@ -1,11 +1,10 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 
-import '@finastra/menu-trigger';
 import '@finastra/app-card';
-import '@material/mwc-button';
+import '@finastra/button';
+import '@finastra/menu-trigger';
 import '@material/mwc-icon-button';
-import '@material/mwc-list';
 import '@material/mwc-menu';
 
 import { styles } from './styles.css';
@@ -24,7 +23,6 @@ export class Launchpad extends LitElement {
   @property({ type: String }) appNameProperty = 'name';
   @property({ type: String }) shortAppNameProperty = 'shortName';
   @property({ type: String }) title = 'Apps';
-  @property({ type: String }) redirectHomeUrl = '';
   @property({ type: String }) baseUrl = 'https://myapps.fusionfabric.cloud/';
   @property({ type: String }) tenantId = '';
   @property({ type: String }) channelType = '';
@@ -43,7 +41,7 @@ export class Launchpad extends LitElement {
 
   render() {
     return html`
-      <fds-menu-trigger @click='${() => this.launchpad!.show()}' id='trigger' primary outlined label='Launch'></fds-menu-trigger>
+      <fds-menu-trigger @click='${() => this.launchpad!.show()}' id='trigger'></fds-menu-trigger>
       <mwc-menu id='launchpad' fullwidth @closed=${this._onClosed}>
         <div class='top-action'>
           <mwc-icon-button @click='${() => this.launchpad!.close()}' secondary icon='close'></mwc-icon-button>
@@ -52,11 +50,17 @@ export class Launchpad extends LitElement {
           <div class='app-content'>
             <div class='app-title'>${this.title}</div>
             <div class='appcard-list'>
-              ${this.apps.map((app:any) =>
-                html`
-                  <fds-app-card @click='${() => this._handleAppCardClick(app)}' label='${app[this.appNameProperty]}' shortLabel='${app[this.shortAppNameProperty]}' class='appcard-item' extraDense secondary></fds-app-card>
-                `
-              )}
+              ${(this.apps && this.apps.length > 0) ?
+                  this.apps.map((app:any) =>
+                    html`
+                      <div>
+                        <fds-app-card @click='${() => this._handleAppCardClick(app)}' label='${app[this.appNameProperty]}' shortLabel='${app[this.shortAppNameProperty]}' class='appcard-item' extraDense secondary></fds-app-card>
+                        <div class="appcard-name">${app[this.appNameProperty]}</div>
+                      </div>
+                    `
+                  )
+                  : ""
+              }
             </div>
           </div>
           <div class="menu-tools">
@@ -64,7 +68,7 @@ export class Launchpad extends LitElement {
           </div>
         </div>
         <div class='bottom-action'>
-          <fds-button @click='${() => this._handleLaunchpageClick(this.redirectHomeUrl)}' outlined primary label='Back to launchpage' icon='chevron_left'></fds-button>
+          <fds-button @click='${() => this._handleLaunchpageClick()}' outlined primary label='Back to launchpage' icon='chevron_left'></fds-button>
         </div>
       </mwc-menu>
     `;
@@ -74,11 +78,11 @@ export class Launchpad extends LitElement {
     window.location.replace(`${this.baseUrl}${this.tenantId}/${this.channelType}/applications/${app[this.appNameProperty]}`);
   }
 
-  private _handleLaunchpageClick(redirectHomeUrl: string) {
-    if (redirectHomeUrl) {
-      window.location.replace(redirectHomeUrl);
+  private _handleLaunchpageClick() {
+    if (this.baseUrl && this.tenantId) {
+      window.location.replace(`${this.baseUrl}${this.tenantId}/${this.channelType}`);
     } else {
-      console.error('redirectHomeUrl is not defined!', redirectHomeUrl);
+      console.error('redirectHomeUrl is not defined!', `${this.baseUrl}${this.tenantId}/${this.channelType}`);
     }
   }
 

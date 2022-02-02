@@ -1,4 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
 import { html } from 'lit';
 
 import '@finastra/menu-trigger';
@@ -7,30 +8,55 @@ import '@finastra/menu-trigger';
   title="Components/MenuTrigger"
   component={'fds-menu-trigger'}
   argTypes={{
-    name: {
+    label: {
       table: {
-        category: 'attributes',
-        defaultValue: { summary: '' }
+        category: 'properties',
+        defaultValue: { summary: 'Launch' }
       },
       control: 'text',
-      defaultValue: '',
-      type: 'text',
-      description: 'Somebody'
-    },
-    '--fds-menu-trigger-text-color': {
-      table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
-      },
+      defaultValue: 'Launch',
       type: 'string',
-      description: 'Text color',
-      control: null
+      description: 'Button label'
+    },
+    on: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Menu Trigger state'
+    },
+    secondary: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'secondary button'
+    },
+    outlined: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: true }
+      },
+      control: 'boolean',
+      defaultValue: true,
+      type: 'boolean',
+      description: 'Outlined button'
+    },
+    toggle: {
+      action: 'toggle',
+      description: 'Toggle function to open/close the menu'
     }
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-menu-trigger  .name=${name}></fsd-menu-trigger>`;
+export const Template = ({label, on, secondary = false, outlined}) => {
+  return html`<fds-menu-trigger .label=${label} ?on=${on} ?secondary=${secondary} ?outlined=${outlined}></fds-menu-trigger>`;
 };
 
 # menu-trigger
@@ -63,19 +89,20 @@ npm install @finastra/menu-trigger
 
 ## Examples
 
-### Name
+### Custom
 
 <Canvas>
   <Story
-    name="Name"
+    name="Custom"
+    args={{ label: 'Design', secondary: 'true', outlined: 'true'}}
     parameters={{
       docs: {
         source: {
-          code: '<fds-menu-trigger name="Workd"></fds-menu-trigger>'
+          code: '<fds-menu-trigger></fds-menu-trigger>'
         }
       }
     }}
   >
-    {Template.bind({}, 'World')}
+    {Template.bind({})}
   </Story>
 </Canvas>

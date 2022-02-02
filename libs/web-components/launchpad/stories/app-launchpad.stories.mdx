@@ -1,13 +1,64 @@
-import { Meta, Story, Canvas, ArgsTable, Props } from '@web/storybook-prebuilt/addon-docs/blocks.js';
+import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
 import { html } from 'lit';
 
 import '@finastra/launchpad';
+import '@finastra/app-card';
 
 <Meta
   title="Components/Launchpad"
   component={'fds-launchpad'}
   argTypes={{
-    name: {
+    apps: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: [] }
+      },
+      control: 'array',
+      defaultValue: [],
+      type: 'array',
+      description: 'List of apps'
+    },
+    appNameProperty: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: 'name' }
+      },
+      control: 'text',
+      defaultValue: 'name',
+      type: 'text',
+      description: 'Property name of the application name that will be used by the product card'
+    },
+    shortAppNameProperty: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: 'shortName' }
+      },
+      control: 'text',
+      defaultValue: 'shortName',
+      type: 'text',
+      description: 'Property name of the application shortName that will be used by the product card (optional)'
+    },
+    title: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: 'Apps' }
+      },
+      control: 'text',
+      defaultValue: 'Apps',
+      type: 'text',
+      description: 'Title used in the menu (optional)'
+    },
+    baseUrl: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: 'https://myapps.fusionfabric.cloud/' }
+      },
+      control: 'text',
+      defaultValue: 'https://myapps.fusionfabric.cloud/',
+      type: 'text',
+      description: 'Base url of the Launcher'
+    },
+    tenantId: {
       table: {
         category: 'attributes',
         defaultValue: { summary: '' }
@@ -15,29 +66,41 @@ import '@finastra/launchpad';
       control: 'text',
       defaultValue: '',
       type: 'text',
-      description: 'Somebody'
+      description: 'TenantId can be forced, but if left empty the launchpad will try to resolve it'
     },
-    '--fds-launchpad-text-color': {
+    channelType: {
       table: {
-        category: 'css',
-        defaultValue: { summary: 'Text color' }
+        category: 'attributes',
+        defaultValue: { summary: '' }
       },
-      type: 'string',
-      description: 'Text color',
-      control: null
-    }
+      control: 'text',
+      defaultValue: '',
+      type: 'text',
+      description: 'channelType can be forced, but if left empty the launchpad will try to resolve it'
+    },
   }}
 />
 
-export const Template = ({ name = '' }) => {
-  return html`<fds-launchpad  .name=${name}></fsd-launchpad>`;
+export const Template = ({ apps , appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
+  return html`
+    <fds-launchpad
+      .apps=${apps}
+      .appNameProperty=${appNameProperty}
+      .shortAppNameProperty=${shortAppNameProperty}
+      .title=${title}
+      .baseUrl=${baseUrl}
+      .channelType=${channelType}
+    >
+    </fsd-launchpad>
+  `;
 };
 
-# launchpad
+# Launchpad
 
 <Canvas>
   <Story
     name="Default"
+    args={{ apps: [{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app1.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app2.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app3.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app4.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app5.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app6.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app7.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app8.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app9.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app10.com"}}] }}
     parameters={{
       docs: {
         source: {
@@ -63,19 +126,44 @@ npm install @finastra/launchpad
 
 ## Examples
 
-### Name
+### Launchpad with custom tools
 
 <Canvas>
   <Story
-    name="Name"
+    name="Launchpad with custom tools"
+    args={{ apps: [{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app1.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app2.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app3.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app4.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app5.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app6.com"}},{"name":"App","shortName":"App","sso-initiation-urls":{"web":"https://app7.com"}}] }}
     parameters={{
       docs: {
         source: {
-          code: '<fds-launchpad name="Workd"></fds-launchpad>'
+          code: `
+            <fds-launchpad>
+              <div slot="tools">
+                <div class="tools-title">Tools</div>
+                <div class='tools-list'>
+                  <div>
+                    <fds-app-card class='tools-item' label="Dashboard" extraDense primary></fds-app-card>
+                    <div class="tools-name">Dashboard</div>
+                  </div>
+                  <div>
+                    <fds-app-card class='tools-item' label="Fusion Creator" extraDense primary></fds-app-card>
+                    <div class="tools-name">Fusion Creator</div>
+                  </div>
+                  <div>
+                    <fds-app-card class='tools-item' label="Fusion Store" extraDense primary></fds-app-card>
+                    <div class="tools-name">Fusion Store</div>
+                  </div>
+                  <div>
+                    <fds-app-card class='tools-item' label="Billing" extraDense primary></fds-app-card>
+                    <div class="tools-name">Billing</div>
+                  </div>
+                </div>
+              </div>
+            </fds-launchpad>
+          `
         }
       }
     }}
   >
-    {Template.bind({}, 'World')}
+    {Template.bind({})}
   </Story>
 </Canvas>

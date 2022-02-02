@@ -1,9 +1,6 @@
 import { customElement, property } from 'lit/decorators.js';
 import { Button } from '@finastra/button';
 
-import '@material/mwc-button';
-import '@material/mwc-icon';
-
 @customElement('fds-menu-trigger')
 export class MenuTrigger extends Button {
 
@@ -13,6 +10,8 @@ export class MenuTrigger extends Button {
     super();
     this.trailingIcon = true;
     this.icon = "expand_more";
+    this.outlined = true;
+    this.label = "Launch";
     this.addEventListener('click', this.toggle);
   }
 
