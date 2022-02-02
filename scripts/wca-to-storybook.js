@@ -1,7 +1,7 @@
 const { readFileSync, writeFileSync } = require('fs');
 const { join } = require('path');
 const globby = require('globby');
-const READ_WRITE_OPTS = {encoding: 'utf-8'};
+const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
 async function main() {
     const paths = await getPaths('../libs/web-components/*/stories/custom-element.json');
@@ -32,21 +32,24 @@ function mapArgTypes(attributes, slots) {
 
   if (slots) {
     sl = slots.reduce((prev, next) => {
-      prev[next.name] = { table: { category: 'slot' }, description: sanitizeControl(next.description) };
+      prev[next.name] = {
+        table: { category: 'slot'},
+        ...(next.description ? { description: next.description } : {})
+      }
       return prev;
     }, {});
   }
   if (attributes) {
     attr = attributes.reduce((prev, next) => {
-      prev[next.name] = { control: sanitizeControl(next.type) };
-        return prev;
+      prev[next.name] = {
+         control: sanitizeControl(next.type),
+        ...(next.description ? { description: next.description } : {})
+      }
+      return prev;
     }, {});
-}
+  }
 
-  return {
-    ...attr,
-    ...sl
-  };
+  return { ...attr, ...sl };
 }
 
 function mapCssProps(cssProperties) {
