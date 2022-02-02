@@ -6,11 +6,11 @@ const READ_WRITE_OPTS = {encoding: 'utf-8'};
 async function main() {
     const paths = await getPaths('../libs/web-components/*/stories/custom-element.json');
     paths.forEach(path => {
-    const { attributes, slots, cssProperties } = getContent(path);
-    const argTypes = mapArgTypes(attributes, slots);
-        const cssprops = mapCssProps(cssProperties);
-    const newFile = JSON.stringify({ argTypes, cssprops }, null, 2);
-        writeFileSync(path, newFile, READ_WRITE_OPTS);
+      const { attributes, slots, cssProperties } = getContent(path);
+      const argTypes = mapArgTypes(attributes, slots);
+      const cssprops = mapCssProps(cssProperties);
+      const newFile = JSON.stringify({ argTypes, cssprops }, null, 2);
+      writeFileSync(path, newFile, READ_WRITE_OPTS);
     });
 }
 
