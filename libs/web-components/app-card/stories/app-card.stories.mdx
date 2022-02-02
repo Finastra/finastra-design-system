@@ -33,7 +33,7 @@ export const Template = ({ secondary = false, large = false, extraDense = false,
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card label="App"></fds-app-card>`
+          code: `<fds-app-card label="Application"></fds-app-card>`
         }
       }
     }}
@@ -62,7 +62,7 @@ npm install @finastra/app-card
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card label="App" secondary></fds-app-card>`
+          code: `<fds-app-card label="Application" secondary></fds-app-card>`
         }
       }
     }}
@@ -80,7 +80,7 @@ npm install @finastra/app-card
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card label="App" shortLabel="A"></fds-app-card>`
+          code: `<fds-app-card label="Application" shortLabel="App"></fds-app-card>`
         }
       }
     }}
@@ -98,7 +98,7 @@ npm install @finastra/app-card
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card large></fds-app-card>`
+          code: `<fds-app-card label="Application" large></fds-app-card>`
         }
       }
     }}
@@ -112,11 +112,11 @@ npm install @finastra/app-card
 <Canvas>
   <Story
     name="Dense"
-    args={{ label: 'Application', dense: true }}
+    args={{ label: 'App', dense: true }}
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card dense></fds-app-card>`
+          code: `<fds-app-card label="Application" dense></fds-app-card>`
         }
       }
     }}
@@ -134,7 +134,7 @@ npm install @finastra/app-card
     parameters={{
       docs: {
         source: {
-          code: `<fds-app-card extraDense></fds-app-card>`
+          code: `<fds-app-card label="Application" extraDense></fds-app-card>`
         }
       }
     }}
