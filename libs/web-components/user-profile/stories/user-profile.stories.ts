@@ -78,13 +78,10 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
   }
   fds-user-profile mwc-list-item {
     color: var(--fds-on-background);
-    margin-top: -10px;
+    margin-top: -16px;
   }
   fds-user-profile mwc-list-item + mwc-list-item{
     margin-top: 0px;
-  }
-  fds-user-profile mwc-list-item:last-child{
-    margin-bottom: 4px;
   }
   fds-user-profile fds-divider {
     position: relative;
