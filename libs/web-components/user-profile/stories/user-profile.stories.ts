@@ -3,28 +3,11 @@ import { html } from 'lit-html';
 import { Meta, Story } from '@storybook/web-components';
 import type { UserProfile } from '@finastra/user-profile';
 import '@finastra/user-profile';
-import { cssprops } from './custom-element.json';
+import {argTypes ,cssprops } from './custom-element.json';
 
 export default {
   title: 'Components/User Profile',
-  argTypes: {
-    dense: { control: 'boolean' },
-    open: { control: 'boolean' },
-    userName: { control: 'text' },
-    shortName: { control: 'text' },
-    userInfo: {
-      table: {
-        category: 'slot'
-      },
-      control: null
-    },
-    actions: {
-      table: {
-        category: 'slot'
-      },
-      control: null
-    }
-  },
+  argTypes,
   args: {
     dense: false,
     open: false,

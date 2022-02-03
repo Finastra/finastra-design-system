@@ -8,8 +8,10 @@ import '@finastra/divider';
 import { styles } from './styles.css';
 
 /**
- * @cssprop [--fds-avatar-size=48px]
- * @cssprop [--fds-avatar-font-size=16px]
+ * @slot actions -Actions that a user can perform
+ * @slot userInfo -The user info
+ * @cssprop [--fds-avatar-size=48px] -Size of the avatar that triggers the menu
+ * @cssprop [--fds-avatar-font-size=16px] -Font size of the avatar that triggers the menu
  */
 @customElement('fds-user-profile')
 export class UserProfile extends LitElement {
@@ -20,15 +22,27 @@ export class UserProfile extends LitElement {
 
   @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
+  /**
+   * Name of the avatar, used to generate the initials (Displayed on hover)
+   */
   @property({ type: String })
   userName = '';
 
+  /**
+   * Use this property to override the initials
+   */
   @property({ type: String })
   shortName = '';
 
+  /**
+   * Align the default avatar with user info
+   */
   @property({ type: Boolean })
   dense = false;
 
+  /**
+   * Open the menu by default
+   */
   @property({ type: Boolean })
   open = false;
 
