@@ -14,6 +14,7 @@
     "wc:logo",
     "wc:search-input",
     "wc:sidenav",
+    "wc:user-profile",
     "storybook"
   ]
 }
