@@ -69,9 +69,9 @@
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
     "workspace-generator": "nx workspace-generator",
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
-    "postwca":"node ./scripts/wca-to-storybook.js",
-    "prewc:build:storybook":"npm run wca",
-    "prewc:storybook":"npm run wca"
+    "postwca": "node ./scripts/wca-to-storybook.js",
+    "prewc:build:storybook": "npm run wca",
+    "prewc:storybook": "npm run wca"
   },
   "husky": {
     "hooks": {
@@ -145,6 +145,7 @@
     "@nrwl/workspace": "13.2.4",
     "@open-wc/testing": "^3.0.3",
     "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-docs": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
     "@storybook/addons": "^6.4.13",

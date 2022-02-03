@@ -1,0 +1,68 @@
+<script type="module" src="node_modules/@finastra/user-profile/dist/src/user-profile.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+
+<style>
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-profile p {
+    font: var(--fds-body-1);
+    color: var(--fds-on-background);
+  }
+
+  fds-user-profile mwc-list-item {
+    color: var(--fds-on-background);
+    margin-top: calc(var(--fds-spacing-3) * -1);
+  }
+
+  fds-user-profile mwc-list-item + mwc-list-item {
+    margin-top: var(--fds-spacing-0);
+  }
+
+  fds-user-profile fds-divider {
+    position: relative;
+    padding-top: var(--fds-spacing-3);
+    margin: var(--fds-spacing-0) calc(var(--fds-spacing-3) * -1) var(--fds-spacing-0) calc(var(--fds-spacing-3) * -1);
+  }
+
+  fds-user-profile fds-button {
+    line-height: var(--fds-spacing-0);
+    padding: var(--fds-spacing-0) var(--fds-spacing-3) var(--fds-spacing-2) var(--fds-spacing-3);
+  }
+
+  fds-user-profile fds-button + fds-button {
+    margin-top: var(--fds-spacing-2);
+  }
+</style>
+
+<div class="user-profile">
+  <p>Default user profile</p>
+  <fds-user-profile userName="Raya Hristova">
+    <div slot="userInfo">raya.hristova@finastra.com</div>
+    <div slot="actions">
+      <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+      <fds-button text fullwidth label="View profile"></fds-button>
+    </div>
+  </fds-user-profile>
+
+  <p>User profile dense</p>
+  <fds-user-profile dense userName="Raya Hristova" buttonLabel="Dense menu">
+    <div slot="userInfo">raya.hristova@finastra.com</div>
+
+    <div slot="actions">
+      <div class="item-list">
+        <mwc-list-item graphic="icon">
+          <span>item one</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>item two</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+      </div>
+      <fds-divider></fds-divider>
+      <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+    </div>
+  </fds-user-profile>
+</div>

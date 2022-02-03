@@ -15,6 +15,7 @@
     "wc:search-input",
     "wc:sidenav",
     "storybook",
-    "wc:app-bar"
+    "wc:app-bar",
+    "wc:user-profile"
   ]
 }
