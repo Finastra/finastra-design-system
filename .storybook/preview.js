@@ -13,6 +13,7 @@ export const parameters = {
       method: 'alphabetical'
     }
   },
+  controls: { expanded: true, sort: 'requiredFirst' },
   darkMode: {
     current: isDark ? 'dark' : 'light',
     // Override the default dark theme

@@ -17,7 +17,7 @@ describe('AppCard', () => {
     expect(el.dense).to.equal(false);
     expect(el.large).to.equal(false);
     expect(el.secondary).to.equal(false);
-    expect(el.shortLabel).to.equal(undefined);
+    expect(el.shortLabel).to.equal('');
     expect(el.label).to.equal(undefined);
   });
 
@@ -27,7 +27,7 @@ describe('AppCard', () => {
     expect(el.dense).to.equal(false);
     expect(el.large).to.equal(false);
     expect(el.secondary).to.equal(true);
-    expect(el.shortLabel).to.equal(undefined);
+    expect(el.shortLabel).to.equal('');
     expect(el.label).to.equal(undefined);
   });
 
