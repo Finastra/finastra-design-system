@@ -12,7 +12,7 @@ describe('UserProfile', () => {
 
   it('should not display divider when actions slot is undefined', async () => {
     const el: UserProfile = await fixture(html`<fds-user-profile></fds-user-profile>`);
-    
+
     await elementUpdated(el);
     shadowRoot(el).querySelector('fds-avatar')?.click();
     expect(el.divider).to.be.false;

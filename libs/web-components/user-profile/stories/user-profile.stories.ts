@@ -41,25 +41,25 @@ export default {
 
 const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = false, open = true }) => {
   return html` <style>
-  fds-user-profile {
-    height: 300px;
-  }
-  fds-user-profile fds-button {
-    line-height: 0px;
-    padding: 0px 16px 8px 16px;
-  }
-  fds-user-profile fds-button + fds-button {
-    margin-top: 8px;
-  }
-</style>
+      fds-user-profile {
+        height: 300px;
+      }
+      fds-user-profile fds-button {
+        line-height: 0px;
+        padding: 0px 16px 8px 16px;
+      }
+      fds-user-profile fds-button + fds-button {
+        margin-top: 8px;
+      }
+    </style>
 
-<fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?dense= ${dense}>
-<div slot="userInfo">raya.hristova@finastra.com</div>
-<div slot="actions">
-  <fds-button fullwidth label="Logout" icon="logout"></fds-button>
-  <fds-button text fullwidth label="View profile"></fds-button>
-</div>
-</fds-user-profile>`;
+    <fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?dense=${dense}>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>`;
 };
 
 export const Default: Story<UserProfile> = Template.bind({});
@@ -78,23 +78,22 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
   }
   fds-user-profile mwc-list-item {
     color: var(--fds-on-background);
-    margin-top: -16px;
+    margin-top: calc(var(--fds-spacing-3) * -1);
   }
   fds-user-profile mwc-list-item + mwc-list-item{
-    margin-top: 0px;
+    margin-top: var(--fds-spacing-0);
   }
   fds-user-profile fds-divider {
     position: relative;
-    padding-top: 16px;
-    margin-right: -16px;
-    margin-left: -16px;
+    padding-top: var(--fds-spacing-3);
+    margin: var(--fds-spacing-0) calc(var(--fds-spacing-3) * -1) var(--fds-spacing-0) calc(var(--fds-spacing-3) * -1);
   }
   fds-user-profile fds-button {
-    line-height: 0px;
-    padding: 0px 16px 8px 16px;
+    line-height: var(--fds-spacing-0);
+    padding:  var(--fds-spacing-0) var(--fds-spacing-3) var(--fds-spacing-2) var(--fds-spacing-3);
   }
   fds-user-profile fds-button + fds-button {
-    margin-top: 8px;
+    margin-top: var(--fds-spacing-2);
   }
 </style>
 

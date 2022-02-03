@@ -36,7 +36,12 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <fds-avatar name="${this.userName}" shortName="${this.shortName}" @click="${this._showMenu}" open="${this.open}"></fds-avatar>
+    return html` <fds-avatar
+        name="${this.userName}"
+        shortName="${this.shortName}"
+        @click="${this._showMenu}"
+        open="${this.open}"
+      ></fds-avatar>
       <mwc-menu id="menu" fullwidth ?open=${this.open}>
         ${this.dense
           ? html`
@@ -61,7 +66,7 @@ export class UserProfile extends LitElement {
   }
 
   private _showMenu() {
-    this.menu.show();
+    this.menu!.show();
     this.actionsCount = this._actionsSlot.assignedNodes().length;
     this.requestUpdate();
     if (this.actionsCount > 0) {

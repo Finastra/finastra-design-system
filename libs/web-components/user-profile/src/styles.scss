@@ -43,10 +43,10 @@
     .header-dense {
       padding: 24px;
       fds-avatar {
-        --fds-avatar-size: 48px;
-        --fds-avatar-font-size: 16px;
+        --fds-avatar-size: var(--fds-spacing-5);
+        --fds-avatar-font-size: var(--fds-spacing-3);
         float: left;
-        margin: 0;
+        @include fds.margin(0);
         @include fds.margin(2,right);
       }
       .title {
