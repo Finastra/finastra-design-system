@@ -23,7 +23,7 @@ export class UserProfile extends LitElement {
   @property()
   userName = '';
 
-  @property()
+  @property({ type: String })
   shortName = '';
 
   @property({ type: Boolean })
