@@ -4,17 +4,19 @@ import '@material/mwc-top-app-bar';
 import { styles } from './styles.css';
 import '@finastra/logo';
 
+/**
+ * @cssprop --fds-logo - String representing an image encoded in base64
+ */
 @customElement('fds-app-bar')
 export class AppBar extends LitElement {
   static styles = styles;
 
   @property({ type: String }) appName = '';
-  @property({ type: String }) logo = '';
   @property({ type: String }) logoRedirectUri = '';
 
   @property({ type: Boolean }) prominent = false;
   @property({ type: Boolean }) transparent = false;
-  @property({ type: Boolean }) hideOnScroll = false;
+  //@property({ type: Boolean }) hideOnScroll = false;
 
   render(): TemplateResult {
     return html`<div class="bar">

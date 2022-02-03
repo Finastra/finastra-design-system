@@ -22,6 +22,7 @@
 
     .app-name {
       @include fds.typography(headline-6);
+      color: var(--fds-on-background);
       padding: 5px 16px;
     }
 
@@ -36,6 +37,10 @@
       flex-direction: row;
       align-items: center;
     }
+  }
+
+  fds-logo:hover {
+    cursor: pointer;
   }
 }
 
