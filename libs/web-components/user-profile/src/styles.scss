@@ -4,7 +4,7 @@
   display: inline-block;
   --mdc-menu-min-width: 300px;
 
-  fds-avatar {
+  &>fds-avatar {
     &:hover {
       cursor: pointer;
     }
