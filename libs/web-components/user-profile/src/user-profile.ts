@@ -61,7 +61,7 @@ export class UserProfile extends LitElement {
   }
 
   private _showMenu() {
-    this.menu.show();
+    this.menu!.show();
     this.actionsCount = this._actionsSlot.assignedNodes().length;
     this.requestUpdate();
     if (this.actionsCount > 0) {
