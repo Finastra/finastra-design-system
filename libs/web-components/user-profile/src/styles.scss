@@ -58,7 +58,7 @@
       }
 
       slot[name="userInfo"]::slotted(*) {
-        margin: 0;
+        @include fds.margin(0);
         @include fds.typography(body-3);
         @include fds.text-color(on-background);
       }
