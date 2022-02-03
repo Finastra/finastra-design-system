@@ -1,7 +1,7 @@
 {
   "name": "@finastra/user-profile",
   "displayName": "User Profile",
-  "version": "1.0.0",
+  "version": "0.0.17",
   "icon": "badge",
   "description": "UserProfile Web Component",
   "keywords": [
