@@ -20,7 +20,7 @@ export class UserProfile extends LitElement {
 
   @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
-  @property()
+  @property({ type: String })
   userName = '';
 
   @property({ type: String })
