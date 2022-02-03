@@ -41,7 +41,7 @@
     }
 
     .header-dense {
-      padding: 24px;
+      @include fds.padding(4);
       fds-avatar {
         --fds-avatar-size: var(--fds-spacing-5);
         --fds-avatar-font-size: var(--fds-spacing-3);
