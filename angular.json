@@ -721,6 +721,18 @@
       },
       "tags": []
     },
+    "sidenav": {
+      "root": "libs/web-components/sidenav",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/sidenav/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "skeleton-text": {
       "projectType": "library",
       "root": "libs/angular-components/skeleton-text",

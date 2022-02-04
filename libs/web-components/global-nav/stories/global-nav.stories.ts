@@ -1,21 +1,15 @@
 const README = require('../README.md');
 import '@finastra/app-bar';
-import { AppBar } from '@finastra/app-bar';
-import '@material/mwc-drawer';
-import '@material/mwc-icon-button';
-import '@material/mwc-top-app-bar';
+import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 export default {
   title: 'Components/Global Nav',
-  component: 'fds-app-bar',
-  //argTypes,
   parameters: {
     docs: {
       description: { component: README }
     }
-    //cssprops
   },
   decorators: [
     (story) => html` <style>
@@ -34,7 +28,8 @@ export default {
         mwc-icon-button {
           color: var(--fds-primary);
         }
-        p {
+        .main-content {
+          padding: var(--fds-spacing-4);
           color: var(--fds-on-background);
           font: var(--fds-body-1);
         }
@@ -61,47 +56,13 @@ export default {
           width: 100%;
         }
       </style>
-      <script>
-        const drawer = document.getElementsByTagName('mwc-drawer')[0];
-        if (drawer) {
-          const container = drawer.parentNode;
-          container.addEventListener('MDCTopAppBar:nav', () => {
-            drawer.open = !drawer.open;
-          });
-        }
-      </script>
       ${story()}`
   ]
 } as Meta;
 
-const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
-  return html` <mwc-drawer hasHeader type="modal">
-    <div class="fds-sidenav-header" slot="title">
-      <fds-logo></fds-logo>
-    </div>
-    <div class="fds-sidenav">
-      <div class="fds-sidenav-list">
-        <mwc-list activatable>
-          <mwc-list-item selected activated graphic="icon">
-            <span>Home</span>
-            <mwc-icon slot="graphic">home</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Applications</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Tools</span>
-            <mwc-icon slot="graphic">extension</mwc-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
-            <span>Settings</span>
-            <mwc-icon slot="graphic">settings</mwc-icon>
-          </mwc-list-item>
-        </mwc-list>
-      </div>
-    </div>
-    <div slot="appContent">
+const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
+  return html`<fds-sidenav type="modal">
+  <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
@@ -140,20 +101,7 @@ const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent
         </p>
       </div>
     </div>
-  </mwc-drawer>`;
+</fsd-sidenav>`;
 };
 
-export const Default: Story<AppBar> = Template.bind({});
-/* <fds-app-bar 
-        appName=${appName} 
-        logoRedirectUri=${logoRedirectUri}
-        ?prominent=${prominent}
-        ?transparent=${transparent}
-      >
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
-
-        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-        <fds-avatar dense slot="actions"></fds-avatar>
-        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
-      </fds-app-bar> */
+export const Default: Story = Template.bind({});
