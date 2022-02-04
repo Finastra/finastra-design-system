@@ -1,51 +1,52 @@
 const README = require('../README.md');
-import {cssprops, argTypes} from './custom-element.json';
+import { cssprops, argTypes } from './custom-element.json';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '@finastra/app-bar';
 import { AppBar } from '@finastra/app-bar';
+import { EVENTS } from '../src/constants';
 
 export default {
   title: 'Components/App bar',
   component: 'fds-app-bar',
   argTypes,
   parameters: {
+    actions: {
+      handles: [EVENTS.NAVIGATION]
+    },
     docs: {
       description: { component: README }
     },
-    cssprops 
+    cssprops
   },
-  decorators: [(story) => html`<style>
-    fds-app-bar {
-      min-width: calc(100vw - 180px);
-    }
-    mwc-icon-button {
-      color: var(--fds-primary);
-    }
-    p {
-      color: var(--fds-on-background);
-      font: var(--fds-body-1);
-    }
-    fds-button {
-      padding-left: 16px;
-    }
-  </style>${story()}`],
+  decorators: [
+    (story) => html`<style>
+        fds-app-bar {
+          min-width: calc(100vw - 180px);
+        }
+        mwc-icon-button {
+          color: var(--fds-primary);
+        }
+        p {
+          color: var(--fds-on-background);
+          font: var(--fds-body-1);
+        }
+        fds-button {
+          padding-left: 16px;
+        }</style
+      >${story()}`
+  ]
 } as Meta;
 
-const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false}) => {
-  return html`<fds-app-bar 
-  appName=${appName} 
-  logoRedirectUri=${logoRedirectUri}
-  ?prominent=${prominent}
-  ?transparent=${transparent}
->
-  <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
+const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
+  return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
-  <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
-  <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-  <fds-avatar dense slot="actions"></fds-avatar>
-  <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
-</fds-app-bar>`;
+    <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
+    <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+    <fds-avatar dense slot="actions"></fds-avatar>
+    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+  </fds-app-bar>`;
 };
 
 export const Default: Story<AppBar> = Template.bind({});
@@ -61,14 +62,9 @@ Transparent.args = {
   appName: 'Finastra'
 };
 
-const NavigationalTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri = '', prominent = false, transparent = false}) => {
-  return html`<fds-app-bar  
-  appName=${appName} 
-  logoRedirectUri=${logoRedirectUri}
-  ?prominent=${prominent}
-  ?transparent=${transparent}
->
-    <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
+const NavigationalTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri = '', prominent = false, transparent = false }) => {
+  return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
     <fds-button text label="Tab 1" slot="navigation"></fds-button>
     <fds-button text label="Tab 2" slot="navigation"></fds-button>
@@ -77,7 +73,7 @@ const NavigationalTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirec
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
     <fds-avatar dense slot="actions"></fds-avatar>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
-</fds-app-bar>`;
+  </fds-app-bar>`;
 };
 
 export const WithNavigation: Story<AppBar> = NavigationalTemplate.bind({});
@@ -91,14 +87,9 @@ Prominent.args = {
   appName: 'Finastra'
 };
 
-const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri = '', prominent = false, transparent = false}) => {
-  return html`<fds-app-bar   
-  appName=${appName}
-  logoRedirectUri=${logoRedirectUri}
-  ?prominent=${prominent}
-  ?transparent=${transparent}
->
-    <mwc-icon-button icon="menu" slot="menu"></mwc-icon-button>
+const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri = '', prominent = false, transparent = false }) => {
+  return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
@@ -106,7 +97,7 @@ const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri =
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
-</fds-app-bar>`;
+  </fds-app-bar>`;
 };
 
 export const WithButtons: Story<AppBar> = ButtonTemplate.bind({});

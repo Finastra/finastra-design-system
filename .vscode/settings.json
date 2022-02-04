@@ -1,5 +1,6 @@
 {
   "debug.node.autoAttach": "on",
+  "editor.formatOnSave": true,
   "workbench.colorCustomizations": {
     "activityBar.border": "#c137a2",
     "menubar.selectionForeground": "#ffffff",
