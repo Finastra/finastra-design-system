@@ -9,4 +9,22 @@ describe('Launchpad', () => {
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });
+
+  it('should open', async () => {
+    const el: Launchpad = await fixture(html`<fds-launchpad></fds-launchpad>`);
+    await elementUpdated(el);
+    await shadowRoot(el).querySelector('fds-launchpad')?.click();
+    await expect(shadowRoot(el).querySelector('mwc-menu'))?.to.be.accessible();
+  });
+
+  it('should contain the tools', async () => {
+    const el: Launchpad = await fixture(html`<fds-launchpad><div class="slot" slot="tools"><h3>test</h3></div></fds-launchpad>`);
+    await elementUpdated(el);
+    await shadowRoot(el).querySelector('fds-launchpad')?.click();
+    expect(shadowRoot(el).querySelector('mwc-menu')).to.have.class('slot');
+  });
 });
+
+function shadowRoot(el: Element) {
+  return el.shadowRoot ? el.shadowRoot : el;
+}
