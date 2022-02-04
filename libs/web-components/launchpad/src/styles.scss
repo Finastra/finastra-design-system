@@ -6,6 +6,7 @@
 
   #launchpad {
     position: absolute;
+    @include fds.margin(2, top);
 
     .top-action {
       display: flex;
