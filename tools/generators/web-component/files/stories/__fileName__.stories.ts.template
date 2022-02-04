@@ -15,7 +15,12 @@ export default {
     docs: {
       description: { component: README }
     },
-  }
+  },
+  decorators: [
+    (story) => html`<style>
+      /* Add you styles here */ 
+    </style>${story()}`
+  ]
 } as Meta;
 
 const Template: Story<<%=className%>> = ({ name = 'World' }) => {
