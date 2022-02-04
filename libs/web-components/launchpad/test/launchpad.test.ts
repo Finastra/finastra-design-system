@@ -13,15 +13,15 @@ describe('Launchpad', () => {
   it('should open', async () => {
     const el: Launchpad = await fixture(html`<fds-launchpad></fds-launchpad>`);
     await elementUpdated(el);
-    await shadowRoot(el).querySelector('fds-launchpad')?.click();
+    await shadowRoot(el).querySelector('mwc-button')?.click();
     await expect(shadowRoot(el).querySelector('mwc-menu'))?.to.be.accessible();
   });
 
   it('should contain the tools', async () => {
-    const el: Launchpad = await fixture(html`<fds-launchpad><div class="slot" slot="tools"><h3>test</h3></div></fds-launchpad>`);
+    const el: Launchpad = await fixture(html`<fds-launchpad><div slot="tools"><h3>test</h3></div></fds-launchpad>`);
     await elementUpdated(el);
-    await shadowRoot(el).querySelector('fds-launchpad')?.click();
-    expect(shadowRoot(el).querySelector('mwc-menu')).to.have.class('slot');
+    await shadowRoot(el).querySelector('mwc-button')?.click();
+    await expect(shadowRoot(el).querySelector('mwc-menu .menu-body .menu-tools'))?.to.be.accessible();
   });
 });
 

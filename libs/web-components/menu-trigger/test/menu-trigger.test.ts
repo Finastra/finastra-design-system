@@ -12,7 +12,6 @@ describe('MenuTrigger', () => {
 
   it('should be outline by default', async () => {
     const el: MenuTrigger = await fixture(html`<fds-menu-trigger></fds-menu-trigger>`);
-
     await elementUpdated(el);
     await expect(shadowRoot(el).querySelector('mwc-button')?.hasAttribute('outlined')).to.equal(true);
   });
@@ -20,7 +19,7 @@ describe('MenuTrigger', () => {
   it('should toggle', async () => {
     const el: MenuTrigger = await fixture(html`<fds-menu-trigger></fds-menu-trigger>`);
     await elementUpdated(el);
-    await shadowRoot(el).querySelector('fds-menu-trigger')?.click();
+    await shadowRoot(el).querySelector('mwc-button')?.click();
     await expect(el.on && el.icon === "expand_less").to.be.true;
   });
 });
