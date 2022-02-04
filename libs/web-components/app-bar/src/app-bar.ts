@@ -1,19 +1,21 @@
-import { LitElement, html, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import '@material/mwc-top-app-bar';
-import { styles } from './styles.css';
 import '@finastra/logo';
+import '@material/mwc-top-app-bar';
+import { html, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { EVENTS } from './constants';
+import { ResizeElement } from './resizable-element';
+import { styles } from './styles.css';
 
 /**
  * @slot navigationIcon - Slot to add a navigation icon (e.g. hamburger menu)
+ * @slot navigation - Slot to add content next to app bar title (hidden in tablet and mobile)
  * @slot content - Slot to add content in the center of the app bar
  * @slot actions - Slot to add content in the right side of the app bar
  *
  * @cssprop --fds-logo - String representing an image encoded in base64
  */
 @customElement('fds-app-bar')
-export class AppBar extends LitElement {
+export class AppBar extends ResizeElement {
   static styles = styles;
 
   @property({ type: String }) appName = '';
@@ -40,7 +42,9 @@ export class AppBar extends LitElement {
   }
 
   renderNavigationSlot(): TemplateResult {
-    return html`<slot name="navigation" class="bar-block"></slot>`;
+    return html`<div class="slot__navigation">
+      <slot name="navigation" class="bar-block"></slot>
+    </div>`;
   }
 
   handleNavigationClick() {

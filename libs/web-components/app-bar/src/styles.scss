@@ -42,11 +42,21 @@
   fds-logo:hover {
     cursor: pointer;
   }
+
+  .slot__navigation {
+    display: none;
+  }
 }
 
 :host([transparent]) {
   .bar {
     background:none;
     box-shadow: none;
+  }
+}
+
+:host(.lg) { 
+  .slot__navigation {
+    display: flex;
   }
 }

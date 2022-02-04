@@ -1,10 +1,10 @@
 const README = require('../README.md');
-import { cssprops, argTypes } from './custom-element.json';
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/app-bar';
 import { AppBar } from '@finastra/app-bar';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { EVENTS } from '../src/constants';
+import { argTypes, cssprops } from './custom-element.json';
 
 export default {
   title: 'Components/App bar',

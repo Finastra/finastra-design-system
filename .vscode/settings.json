@@ -1,6 +1,11 @@
 {
   "debug.node.autoAttach": "on",
   "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
   "workbench.colorCustomizations": {
     "activityBar.border": "#c137a2",
     "menubar.selectionForeground": "#ffffff",
