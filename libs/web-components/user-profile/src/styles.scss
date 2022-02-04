@@ -1,0 +1,67 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: inline-block;
+  --mdc-menu-min-width: 300px;
+
+  &>fds-avatar {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  #menu {
+    position: absolute;
+
+    .header {
+      text-align: center;
+      @include fds.padding(3);
+
+      fds-avatar {
+        display: inline-block;
+        margin: auto;
+      }
+
+      .title {
+        @include fds.typography(headline-6);
+        @include fds.text-color(on-background);
+        @include fds.margin(3,top);
+      }
+
+      slot[name="userInfo"]::slotted(*) {
+        @include fds.typography(body-3);
+        @include fds.text-color(on-background);
+        @include fds.margin(0);
+      }
+    }
+
+    slot[name="actions"]::slotted(*) {
+      @include fds.padding(3,top);
+      @include fds.text-color(on-background);
+    }
+
+    .header-dense {
+      @include fds.padding(4);
+      fds-avatar {
+        --fds-avatar-size: var(--fds-spacing-5);
+        --fds-avatar-font-size: var(--fds-spacing-3);
+        float: left;
+        @include fds.margin(0);
+        @include fds.margin(2,right);
+      }
+      .title {
+        display: inline-block;
+        @include fds.margin(0);
+        @include fds.padding(2,top);
+        @include fds.typography(headline-6);
+        @include fds.text-color(on-background);
+      }
+
+      slot[name="userInfo"]::slotted(*) {
+        @include fds.margin(0);
+        @include fds.typography(body-3);
+        @include fds.text-color(on-background);
+      }
+    }
+  }
+}

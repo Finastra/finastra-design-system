@@ -51,6 +51,9 @@
       "path": "avatar"
     },
     {
+      "path": "user-profile"
+    },
+    {
       "path": "menu-trigger"
     },
     {

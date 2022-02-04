@@ -21,7 +21,7 @@
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
-  "icon": "dashboard",
+  "icon": "call_to_action",
   "publishConfig": {
     "access": "public"
   }

@@ -151,6 +151,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/theming": "^6.4.13",
     "@storybook/web-components": "^6.4.13",
+    "@storybook/addon-docs": "^6.4.13",
     "@types/command-line-args": "^5.0.0",
     "@types/d3": "6.7.0",
     "@types/fs-extra": "^9.0.11",
