@@ -71,7 +71,9 @@
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
     "prewc:build:storybook": "npm run wca",
-    "prewc:storybook": "npm run wca"
+    "prewc:storybook": "npm run wca",
+    "add": "npm install --package-lock-only --no-package-lock --prefix",
+    "postadd": "npm install"
   },
   "husky": {
     "hooks": {
@@ -232,6 +234,6 @@
   },
   "engines": {
     "node": "^16",
-    "npm": "^7"
+    "npm": "^8"
   }
 }

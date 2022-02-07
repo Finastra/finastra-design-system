@@ -31,7 +31,7 @@
 
 | Name             | Package                                                                      | Version                                                                                                                | Links                                                                                  |
 | ---------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| **App Bar**     | [`@finastra/app-bar`](https://npmjs.com/package/@finastra/app-bar)         | [![latest](https://img.shields.io/npm/v/@finastra/app-bar.svg)](https://npmjs.com/package/@finastra/app-bar)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-bar/README.md)     |
+| **App Bar**      | [`@finastra/app-bar`](https://npmjs.com/package/@finastra/app-bar)           | [![latest](https://img.shields.io/npm/v/@finastra/app-bar.svg)](https://npmjs.com/package/@finastra/app-bar)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-bar/README.md)      |
 | **App Card**     | [`@finastra/app-card`](https://npmjs.com/package/@finastra/app-card)         | [![latest](https://img.shields.io/npm/v/@finastra/app-card.svg)](https://npmjs.com/package/@finastra/app-card)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-card/README.md)     |
 | **Avatar**       | [`@finastra/avatar`](https://npmjs.com/package/@finastra/avatar)             | [![latest](https://img.shields.io/npm/v/@finastra/avatar.svg)](https://npmjs.com/package/@finastra/avatar)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./avatar/README.md)       |
 | **Base Card**    | [`@finastra/base-card`](https://npmjs.com/package/@finastra/base-card)       | [![latest](https://img.shields.io/npm/v/@finastra/base-card.svg)](https://npmjs.com/package/@finastra/base-card)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./base-card/README.md)    |
@@ -123,3 +123,27 @@ npm run wc:generate MY_COMPONENT_NAME
 
 > To see a demo of the generated web component, run the commands mentioned in the
 > [#Web Component Development](#web-component-development) section.
+
+<br>
+
+### Adding local dependencies
+
+Whenever you need to use a component inside another component, you'll need to add it as a dependency in its package.json file.
+
+To accomplish this easily, we've added an `add` script in the root package.json.\
+It can be used like following:
+
+```bash
+npm run add -- submodule submoduleToAdd
+```
+
+#### Example
+
+Say we want to use the `@finastra/avatar` component inside the `@finastra/user-profile` component.\
+We'd be running:
+
+```bash
+npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
+```
+
+> Version of the package will be automatically updated during release.
