@@ -1,3 +1,6 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
+import { html } from 'lit-html';
+
 # FDS Theme Spacing
 
 <Meta title="Foundations/Spacing" />
@@ -6,14 +9,30 @@
 
 ### Example
 
-```SCSS
-@use '@finastra/fds-theme';
+export const TemplateCustomProp = (args) => { return html`
+<style>
+  .spacing {
+    padding: var(--fds-spacing-4);
+    margin: var(--fds-spacing-3);
+  }
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: var(--fds-secondary);
+    color: var(--fds-on-secondary);
+  }
+</style>
+<div class="spacing demo-layout">Hello World!</div>
+` };
 
-.my-container {
-  margin: var(--fds-spacing-2);
-  padding: var(--fds-spacing-1);
-}
-```
+<Canvas>
+  <Story name="Custom properties" args={{}}>
+    {TemplateCustomProp.bind({})}
+  </Story>
+</Canvas>
 
 | Custom property   | default value |
 | ----------------- | ------------: |
@@ -76,16 +95,29 @@ Where:
 
 ### Example
 
-```HTML
-<!-- margin: var(--fds-spacing-4); -->
-<div class="fds-m-4">
-  <p>Hello</p>
-</div>
-```
+export const TemplateHelper = (args) => { return html`
+<style>
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: var(--fds-primary);
+    color: var(--fds-on-primary);
+  }
+</style>
+<div class="${args.class} demo-layout">Hello World!</div>
+` };
 
-```HTML
-<!-- padding-top: var(--fds-spacing-2); -->
-<div class="fds-pt-2">
-  <p>World!</p>
-</div>
-```
+<Canvas>
+  <Story name="Margin helper" args={{class:'fds-m-4'}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Padding helper" args={{class:'fds-pt-5'}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>
