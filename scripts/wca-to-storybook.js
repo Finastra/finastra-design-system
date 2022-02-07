@@ -56,7 +56,6 @@ function mapArgTypes(attributes, slots) {
         prev[next.name].table = {
           defaultValue: { summary: sanitizeDefaultValue(next.default) }
         };
-        prev[next.name].defaultValue = sanitizeDefaultValue(next.default);
       } else {
         prev[next.name].type = {
           required: true
@@ -86,9 +85,16 @@ function mapCssProps(cssProperties) {
 
 function sanitizeControl(control) {
   if (control && control.includes('|')) {
-    return {
-      type: 'select'
-    };
+    const nbOptions = control.split('|').length;
+    if (nbOptions < 4) {
+      return {
+        type: 'radio'
+      };
+    } else {
+      return {
+        type: 'select'
+      };
+    }
   } else {
     if (control === 'string') control = 'text';
     return control || 'text';

@@ -5,7 +5,7 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 export default {
-  title: 'Components/Global Nav',
+  title: 'Patterns/Global Nav',
   parameters: {
     docs: {
       description: { component: README }
@@ -62,6 +62,31 @@ export default {
 
 const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
   return html`<fds-sidenav type="modal">
+  <div slot="sidenavContent">
+    <div class="fds-sidenav-header">
+      <fds-logo></fds-logo>
+    </div>
+    <div class="fds-sidenav-list">
+      <mwc-list activatable>
+        <mwc-list-item selected activated graphic="icon">
+          <span>Home</span>
+          <mwc-icon slot="graphic">home</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Applications</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Tools</span>
+          <mwc-icon slot="graphic">extension</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Settings</span>
+          <mwc-icon slot="graphic">settings</mwc-icon>
+        </mwc-list-item>
+      </mwc-list>
+    </div>
+  </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>

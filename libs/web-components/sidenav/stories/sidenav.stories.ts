@@ -8,6 +8,12 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes } from './custom-element.json';
 
+argTypes.type.control['labels'] = {
+  '': 'None - ""',
+  modal: 'Modal - "modal"',
+  dismissible: ' Dismissible - "dismissible"'
+};
+
 export default {
   title: 'Components/Sidenav',
   argTypes,
