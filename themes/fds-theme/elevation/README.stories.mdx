@@ -1,3 +1,6 @@
+import { Meta, Story, Canvas, ArgsTable, Props } from '@storybook/addon-docs';
+import { html } from 'lit-html';
+
 # FDS Theme Elevation
 
 <Meta title="Foundations/Elevation" />
@@ -24,8 +27,23 @@ Before being able to use the helper classes, you need to include them in your Sa
 
 Then you'll be able to use helper classes in your app's HTML
 
-```HTML
-<div class="fds-elevation-2">
-   <p>some content</p>
-</div>
-```
+export const TemplateHelper = (args) => { return html`
+<style>
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: var(--fds-surface);
+    color: var(--fds-on-surface);
+  }
+</style>
+<div class="fds-elevation-3 demo-layout">Hello World!</div>
+` };
+
+<Canvas>
+  <Story name="Helper classes" args={{}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>
