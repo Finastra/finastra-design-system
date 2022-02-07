@@ -1,3 +1,4 @@
+import { EVENTS as APP_BAR_EVENTS } from '@finastra/app-bar/dist/src/constants';
 import '@material/mwc-drawer';
 import { Drawer } from '@material/mwc-drawer';
 import { html, LitElement } from 'lit';
@@ -46,8 +47,7 @@ export class Sidenav extends LitElement {
   }
 
   registerEventLister() {
-    // TODO: import event from shared lib
-    this.addEventListener('MDCTopAppBar:nav', () => {
+    this.addEventListener(APP_BAR_EVENTS.NAVIGATION, () => {
       this.drawer.open = !this.drawer.open;
     });
   }
