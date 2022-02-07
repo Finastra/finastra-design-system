@@ -55,8 +55,8 @@
   }
 }
 
-:host(.lg) { 
+@media (min-width:960px) {
   .slot__navigation {
-    display: flex;
+    display: flex!important;
   }
 }

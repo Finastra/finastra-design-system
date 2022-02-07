@@ -20,7 +20,7 @@ export default {
     cssprops
   },
   decorators: [
-    (story) => html`<style>
+    (story) => html`${story()}<style>
         fds-app-bar {
           min-width: calc(100vw - 180px);
         }
@@ -33,8 +33,8 @@ export default {
         }
         fds-button {
           padding-left: 16px;
-        }</style
-      >${story()}`
+        }
+      </style>`
   ]
 } as Meta;
 

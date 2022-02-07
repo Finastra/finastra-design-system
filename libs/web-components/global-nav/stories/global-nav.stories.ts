@@ -87,6 +87,16 @@ const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false
       </mwc-list>
     </div>
   </div>
+  <div slot="navigation">
+    <mwc-list activatable>
+      <mwc-list-item graphic="icon">
+        <span>Tab 1</span>
+      </mwc-list-item>
+      <mwc-list-item graphic="icon">
+        <span>Tab 2</span>
+      </mwc-list-item>
+    </mwc-list>
+  </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>

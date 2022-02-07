@@ -2,4 +2,14 @@
   --mdc-drawer-width: 300px;
   background-color: var(--fds-surface);
   color: var(--fds-on-surface);
+
+  .navigation {
+    display: inline;
+  }
+}
+
+@media (min-width:960px) {
+  .navigation {
+    display: none!important;
+  }
 }

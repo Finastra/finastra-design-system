@@ -1,9 +1,8 @@
 import '@finastra/logo';
 import '@material/mwc-top-app-bar';
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { EVENTS } from './constants';
-import { ResizeElement } from './resizable-element';
 import { styles } from './styles.css';
 
 /**
@@ -15,7 +14,7 @@ import { styles } from './styles.css';
  * @cssprop --fds-logo - String representing an image encoded in base64
  */
 @customElement('fds-app-bar')
-export class AppBar extends ResizeElement {
+export class AppBar extends LitElement {
   static styles = styles;
 
   @property({ type: String }) appName = '';

@@ -10,6 +10,11 @@ export enum DRAWER_TYPES {
   MODAL = 'modal'
 }
 
+/**
+ * @slot sidenavContent - Content of the sidenav
+ * @slot navigation - Navigational elements
+ * @slot appContent - Content of the app
+ */
 @customElement('fds-sidenav')
 export class Sidenav extends LitElement {
   static styles = styles;
@@ -30,6 +35,9 @@ export class Sidenav extends LitElement {
     return html`<mwc-drawer .type=${this.type}>
       <div class="drawer-content">
         <slot name="sidenavContent"></slot>
+        <div class="navigation">
+          <slot name="navigation"></slot>
+        </div>
       </div>
       <div slot="appContent" class="app">
         <slot name="appContent"></slot>
