@@ -5,6 +5,7 @@ import { html } from 'lit-html';
 import '@finastra/app-bar';
 import { AppBar } from '@finastra/app-bar';
 import { EVENTS } from '../src/constants';
+import '@finastra/user-profile';
 
 export default {
   title: 'Components/App bar',
@@ -21,8 +22,9 @@ export default {
   },
   decorators: [
     (story) => html`<style>
-        fds-avatar {
+        fds-user-profile {
           --fds-avatar-size: 22px;
+          padding: calc(var(--fds-avatar-size, 24px) / 2);
         }
         fds-app-bar {
           min-width: calc(100vw - 180px);
@@ -48,7 +50,13 @@ const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>`;
 };
@@ -75,7 +83,13 @@ const NavigationalTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirec
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>`;
 };
@@ -97,7 +111,13 @@ const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri =
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
