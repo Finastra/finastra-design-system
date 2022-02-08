@@ -23,20 +23,24 @@ export class Launchpad extends LitElement {
   @property({ type: String }) appNameProperty = 'name';
   @property({ type: String }) shortAppNameProperty = 'shortName';
   @property({ type: String }) title = 'Apps';
-  @property({ type: String }) baseUrl = 'https://myapps.fusionfabric.cloud/';
+  @property({ type: String }) baseUrl = 'https://myapps.fusionfabric.cloud';
   @property({ type: String }) tenantId = '';
   @property({ type: String }) channelType = '';
 
   constructor() {
     super();
+    const url = new URL(window.location.href);
     if (!this.tenantId.length) {
-      //try to get the tenant & channel from the url
-      const url = new URL(window.location.href);
+      // tenantId will always be the first pathname param
       this.tenantId = url.pathname.split('/')[1];
-      //handle the case without channel
+    }
+    if (!this.channelType.length) {
       const channel = url.pathname.split('/')[2];
+      // as channelType is optional it must match b2c or b2e
       this.channelType = (channel === 'b2c' || channel === 'b2e') ? channel : '';
     }
+    // make sure baseUrl do not finish with /
+    this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
   }
 
   render() {
@@ -75,14 +79,16 @@ export class Launchpad extends LitElement {
   }
 
   private _handleAppCardClick(app: any) {
-    window.location.replace(`${this.baseUrl}${this.tenantId}/${this.channelType}/applications/${app[this.appNameProperty]}`);
+    const path = `${this.tenantId}${this.channelType.length > 1 ? `/${this.channelType}` : ''}`
+    window.location.replace(`${this.baseUrl}/${path}/applications/${app[this.appNameProperty]}`);
   }
 
   private _handleLaunchpageClick() {
-    if (this.baseUrl && this.tenantId) {
-      window.location.replace(`${this.baseUrl}${this.tenantId}/${this.channelType}`);
+    const path = `${this.tenantId} ${this.channelType.length > 1 ? `/${this.channelType}` : ''}`
+    if (this.baseUrl.length > 1 && this.tenantId.length > 1) {
+      window.location.replace(`${this.baseUrl}/${path}`);
     } else {
-      console.error('redirectHomeUrl is not defined!', `${this.baseUrl}${this.tenantId}/${this.channelType}`);
+      console.error('baseUrl is not defined!', `${this.baseUrl}/${path}`);
     }
   }
 
