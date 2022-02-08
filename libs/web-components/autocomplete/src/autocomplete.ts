@@ -35,18 +35,13 @@ export class Autocomplete extends LitElement {
   @property({ type: Boolean }) useInnerFilter = true;
   @property({ type: Boolean }) disabled = false;
 
-  /** @soyPrefixAttribute */
-  @ariaProperty
+ 
   @property({ type: String, attribute: 'aria-label' })
-  override ariaLabel!: string;
+  ariaLabel!: string;
 
-  /** @soyPrefixAttribute */
-  @ariaProperty
   @property({ type: String, attribute: 'aria-labelledby' })
   ariaLabelledBy!: string;
 
-  /** @soyPrefixAttribute */
-  @ariaProperty
   @property({ type: String, attribute: 'aria-describedby' })
   ariaDescribedBy!: string;
 
@@ -135,13 +130,13 @@ export class Autocomplete extends LitElement {
     this.deregisterBodyClick();
   }
 
-  protected override async getUpdateComplete() {
+  protected async getUpdateComplete() {
     await this._menuUpdateComplete;
     const result = await super.getUpdateComplete();
     return result;
   }
 
-  protected override async firstUpdated(_changedProperties: PropertyValues) {
+  protected async firstUpdated(_changedProperties: PropertyValues) {
     const menuElement = this.menuElement;
 
     if (menuElement) {
