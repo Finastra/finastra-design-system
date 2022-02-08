@@ -16,12 +16,25 @@ import { EVENTS } from './constants';
 export class AppBar extends LitElement {
   static styles = styles;
 
+  /**
+   * Application's name
+   */
   @property({ type: String }) appName = '';
+
+  /**
+   * Set the logo redirect Uri
+   */
   @property({ type: String }) logoRedirectUri = '';
 
+  /**
+   * Make the app bar much taller
+   */
   @property({ type: Boolean }) prominent = false;
+
+  /**
+   * Give a transparent background to app bar
+   */
   @property({ type: Boolean }) transparent = false;
-  //@property({ type: Boolean }) hideOnScroll = false;
 
   render(): TemplateResult {
     return html`<div class="bar">
