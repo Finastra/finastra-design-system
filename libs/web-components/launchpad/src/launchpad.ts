@@ -45,7 +45,7 @@ export class Launchpad extends LitElement {
 
   render() {
     return html`
-      <fds-menu-trigger @click='${() => this.launchpad!.show()}' id='trigger'></fds-menu-trigger>
+      <fds-menu-trigger @click='${() => this.launchpad!.show()}' outlined id='trigger'></fds-menu-trigger>
       <mwc-menu id='launchpad' fullwidth @closed=${this._onClosed}>
         <div class='top-action'>
           <mwc-icon-button @click='${() => this.launchpad!.close()}' secondary icon='close'></mwc-icon-button>

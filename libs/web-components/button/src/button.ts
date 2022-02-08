@@ -48,7 +48,9 @@ export class Button extends LitElement {
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
             ?trailingIcon="${this.trailingIcon}"
-          ></mwc-button>`
+          >
+            <slot></slot>
+          </mwc-button>`
         : html` <mwc-button
             label="${this.label}"
             icon="${this.icon}"
@@ -57,7 +59,9 @@ export class Button extends LitElement {
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
             ?trailingIcon="${this.trailingIcon}"
-          ></mwc-button>`}
+          >
+            <slot></slot>
+          </mwc-button>`}
     `;
   }
 }
