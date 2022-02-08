@@ -21,6 +21,9 @@ export default {
   },
   decorators: [
     (story) => html`<style>
+        fds-avatar {
+          --fds-avatar-size: 22px;
+        }
         fds-app-bar {
           min-width: calc(100vw - 180px);
         }
@@ -39,12 +42,13 @@ export default {
 } as Meta;
 
 const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
-  return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+  return html`
+  <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
     <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-avatar slot="actions"></fds-avatar>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>`;
 };

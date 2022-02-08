@@ -17,7 +17,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   height: var(--fds-avatar-size, 48px);
   width: var(--fds-avatar-size, 48px);
   border-radius: 50%;
-  margin: 4px;
+  margin: 0px;
   object-fit: cover;
   user-select: none;
   align-items: center;
