@@ -31,7 +31,7 @@ const Template: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProper
       .channelType=${channelType}
     >
       <div slot='tools'></div>
-    </fsd-launchpad>
+    </fds-launchpad>
   `;
 };
 
