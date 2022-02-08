@@ -19,7 +19,7 @@ export class Launchpad extends LitElement {
 
   @query('#launchpad') launchpad!: Menu | null;
 
-  @property({ type: Array }) apps = [];
+  @property({ type: Array }) apps: any[] = [];
   @property({ type: String }) appNameProperty = 'name';
   @property({ type: String }) shortAppNameProperty = 'shortName';
   @property({ type: String }) title = 'Apps';
