@@ -3,6 +3,8 @@
 :host {
   display: block;
   .bar {
+    @include fds.padding(3,right,left);
+    @include fds.padding(1,top,bottom);
     min-height: 56px;
     left: 0px;
     right: 0px;
