@@ -997,6 +997,18 @@
       },
       "tags": []
     },
+    "user-profile": {
+      "root": "libs/web-components/user-profile",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/user-profile/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "user-profile-menu": {
       "projectType": "library",
       "root": "libs/angular-components/user-profile-menu",

@@ -10,11 +10,22 @@ import { renderPatternSVG, renderPrimarySVG, renderSecondarySVG } from './app-ca
 export class AppCard extends BaseCard {
   static styles = styles;
 
+  /** App card label */
   @property({ type: String }) label;
-  @property({ type: String }) shortLabel;
+
+  /** Optional app card displayed label */
+  @property({ type: String }) shortLabel = '';
+
+  /** Color and ribbon type */
   @property({ type: Boolean }) secondary = false;
+
+  /** Make the card bigger */
   @property({ type: Boolean }) large = false;
+
+  /** Make the card smaller */
   @property({ type: Boolean }) dense = false;
+
+  /** Make the card extra small */
   @property({ type: Boolean }) extraDense = false;
 
   protected renderCardContent(): TemplateResult {

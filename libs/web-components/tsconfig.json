@@ -50,6 +50,11 @@
     {
       "path": "avatar"
     },
-    { "path": "autocomplete" }
+    {
+      "path": "user-profile"
+    },
+    { 
+      "path": "autocomplete" 
+    }
   ]
 }

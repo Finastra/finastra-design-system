@@ -2,7 +2,6 @@ import { LitElement, html, PropertyValues } from 'lit';
 import { customElement, property, state, query } from 'lit/decorators.js';
 import { Menu } from '@material/mwc-menu';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
-import { ariaProperty } from '@material/mwc-base/aria-property';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { styles } from './styles.css';

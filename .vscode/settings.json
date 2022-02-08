@@ -13,6 +13,8 @@
     "wc:divider",
     "wc:logo",
     "wc:search-input",
-    "wc:sidenav"
+    "wc:sidenav",
+    "wc:user-profile",
+    "storybook"
   ]
 }
