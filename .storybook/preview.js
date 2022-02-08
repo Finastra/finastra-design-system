@@ -22,5 +22,11 @@ export const parameters = {
     darkClass: 'dark-theme',
     lightClass: 'light-theme',
     stylePreview: true
+  },
+  previewTabs: {
+    'storybook/docs/panel': {},
+    canvas: {
+      hidden: true
+    }
   }
 };
