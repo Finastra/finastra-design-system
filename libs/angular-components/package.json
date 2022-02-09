@@ -7,11 +7,11 @@
     "directory": "libs/angular-components"
   },
   "peerDependencies": {
-    "@angular/common": "^13.0.3",
-    "@angular/core": "^13.0.3",
-    "@angular/forms": "^13.0.3",
-    "@angular/cdk": "^13.0.3",
-    "@angular/flex-layout": "13.0.0-beta.36",
+    "@angular/common": "^13.2.1",
+    "@angular/core": "^13.2.1",
+    "@angular/forms": "^13.2.1",
+    "@angular/cdk": "^13.2.1",
+    "@angular/flex-layout": "13.0.0-beta.38",
     "lodash-es": "^4.17.21",
     "angular-plotly.js": "^4.0.0",
     "plotly.js": "^1.58.4",
