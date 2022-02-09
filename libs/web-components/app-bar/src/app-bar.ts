@@ -27,12 +27,12 @@ export class AppBar extends LitElement {
   @property({ type: String }) logoRedirectUri = '';
 
   /**
-   * Make the app bar much taller
+   * Extend the app bar
    */
   @property({ type: Boolean }) prominent = false;
 
   /**
-   * Give a transparent background to app bar
+   * Give a transparent background to the app bar
    */
   @property({ type: Boolean }) transparent = false;
 
