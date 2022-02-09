@@ -1,7 +1,9 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
+import { renderAvatarSVG } from './user-profile-decorations';
 
 import '@material/mwc-menu';
+import '@material/mwc-icon-button';
 import '@finastra/avatar';
 import '@finastra/divider';
 
@@ -40,23 +42,12 @@ export class UserProfile extends LitElement {
   @property({ type: Boolean })
   dense = false;
 
-  /**
-   * Open the menu by default
-   */
-  @property({ type: Boolean })
-  open = false;
-
   protected actionsCount = 0;
   public divider = true;
 
   render() {
-    return html` <fds-avatar
-        name="${this.userName}"
-        shortName="${this.shortName}"
-        @click="${this._showMenu}"
-        open="${this.open}"
-      ></fds-avatar>
-      <mwc-menu id="menu" fullwidth ?open=${this.open}>
+    return html` <mwc-icon-button @click="${this._showMenu}"> ${renderAvatarSVG()} </mwc-icon-button>
+      <mwc-menu id="menu" fullwidth corner="BOTTOM_START">
         ${this.dense
           ? html`
               <div class="header-dense">
