@@ -9,16 +9,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { UxgTableModule } from '@finastra/angular-components/table';
 
 @NgModule({
-    declarations: [ExpandableTableComponent],
-    imports: [
-        CommonModule,
-        MatTableModule,
-        MatIconModule,
-        MatButtonModule,
-        MatExpansionModule,
-        MatCheckboxModule,
-        UxgTableModule
-    ],
-    exports: [ExpandableTableComponent]
+  declarations: [ExpandableTableComponent],
+  imports: [CommonModule, MatTableModule, MatIconModule, MatButtonModule, MatExpansionModule, MatCheckboxModule, UxgTableModule],
+  exports: [ExpandableTableComponent]
 })
 export class ExpandableTableModule {}

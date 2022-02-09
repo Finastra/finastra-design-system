@@ -18,23 +18,23 @@ import { FilterGroupDialogComponent } from './filter-group-dialog/filter-group-d
 import { ClickOutsideModule } from '@finastra/angular-components/core';
 
 @NgModule({
-    declarations: [FilterGroupComponent, UxgFilter, FilterGroupDialogComponent],
-    imports: [
-        ReactiveFormsModule,
-        CommonModule,
-        MatExpansionModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatBadgeModule,
-        MatChipsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        FlexLayoutModule,
-        MatDialogModule,
-        FormsModule,
-        ClickOutsideModule
-    ],
-    exports: [FilterGroupComponent, UxgFilter]
+  declarations: [FilterGroupComponent, UxgFilter, FilterGroupDialogComponent],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatBadgeModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
+    MatDialogModule,
+    FormsModule,
+    ClickOutsideModule
+  ],
+  exports: [FilterGroupComponent, UxgFilter]
 })
 export class FilterGroupModule {}
