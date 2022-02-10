@@ -10,6 +10,10 @@ const README = require('../README.md');
 export default {
   title: 'Components/Menu Trigger',
   argTypes,
+  args: {
+    label: 'Launch',
+    outlined: true
+  },
   parameters: {
     docs: {
       description: { component: README }
@@ -17,12 +21,11 @@ export default {
   }
 } as Meta;
 
-const Template: Story<MenuTrigger> = ({label, on, outlined}) => {
-  return html`<fds-menu-trigger label=${label} ?on=${on} ?outlined=${outlined}></fds-menu-trigger>`;
+const Template: Story<MenuTrigger> = ({ label, on, outlined, secondary }) => {
+  return html`<fds-menu-trigger label=${label} ?on=${on} ?outlined=${outlined} ?secondary=${secondary}></fds-menu-trigger>`;
 };
 
 export const Default: Story<MenuTrigger> = Template.bind({});
-Default.args={ label: 'Launch', outlined: true};
 
 export const Custom: Story<MenuTrigger> = Template.bind({});
-Custom.args={ label: 'Design', outlined: true};
+Custom.args = { label: 'Design', outlined: true, secondary: true };
