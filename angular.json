@@ -130,6 +130,18 @@
       },
       "tags": []
     },
+    "app-bar": {
+      "root": "libs/web-components/app-bar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/app-bar/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "app-card": {
       "root": "libs/web-components/app-card",
       "architect": {

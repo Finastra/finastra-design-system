@@ -58,6 +58,9 @@
     },
     {
       "path": "launchpad"
-    }
+    },
+    {
+      "path": "app-bar"
+    }  
   ]
 }
