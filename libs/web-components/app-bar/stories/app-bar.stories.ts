@@ -22,10 +22,6 @@ export default {
   },
   decorators: [
     (story) => html`<style>
-        fds-user-profile {
-          --fds-avatar-size: 22px;
-          padding: calc(var(--fds-avatar-size, 24px) / 2);
-        }
         fds-app-bar {
           min-width: calc(68vw - 100px);
         }
