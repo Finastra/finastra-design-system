@@ -55,7 +55,7 @@ export class MenuTrigger extends Button {
     super.connectedCallback();
   }
 
-  updated(changedProperties: Map<string, unknown>) {
+  updated(changedProperties) {
     this.menuTrailingIcon = this.on ? 'expand_less' : 'expand_more';
     super.update(changedProperties);
   }
