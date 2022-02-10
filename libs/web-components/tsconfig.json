@@ -53,8 +53,17 @@
     {
       "path": "user-profile"
     },
-    { 
-      "path": "autocomplete" 
+    {
+      "path": "autocomplete"
+    },
+    {
+      "path": "menu-trigger"
+    },
+    {
+      "path": "launchpad"
+    },
+    {
+      "path": "app-bar"
     }
   ]
 }

@@ -4,11 +4,10 @@
   display: inline-block;
   --mdc-menu-min-width: 300px;
 
-  &>fds-avatar {
-    &:hover {
-      cursor: pointer;
-    }
-  }
+   mwc-icon-button  {
+    display: block;
+    --mdc-ripple-color: var(--fds-primary);
+  }   
 
   #menu {
     position: absolute;
