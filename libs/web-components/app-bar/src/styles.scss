@@ -41,8 +41,11 @@
     }
   }
 
-  fds-logo:hover {
-    cursor: pointer;
+  fds-logo {
+    @include fds.padding(1,left);
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
