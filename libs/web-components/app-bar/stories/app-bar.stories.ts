@@ -27,7 +27,7 @@ export default {
           padding: calc(var(--fds-avatar-size, 24px) / 2);
         }
         fds-app-bar {
-          min-width: calc(100vw - 180px);
+          min-width: calc(68vw - 100px);
         }
         mwc-icon-button {
           color: var(--fds-primary);
