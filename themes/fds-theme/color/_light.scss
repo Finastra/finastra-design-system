@@ -37,6 +37,7 @@ $properties: (
   on-error: $on-error,
   on-success: $on-success,
   on-gradient: $on-gradient,
+  text-primary-on-background: $on-background,
   text-high-on-background: $on-background,
   text-medium-on-background: color.change($_black, $alpha: 0.54),
   text-hint-on-background: color.change($_black, $alpha: 0.29),
