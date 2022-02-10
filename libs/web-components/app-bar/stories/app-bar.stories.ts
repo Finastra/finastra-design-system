@@ -36,6 +36,12 @@ export default {
         fds-button {
           padding-left: 16px;
         }
+        fds-user-profile fds-button {
+          padding-right: 16px;
+        }
+        fds-user-profile fds-button + fds-button {
+        margin-top: var(--fds-spacing-2);
+      }
   </style
       >${story()}`
   ]
