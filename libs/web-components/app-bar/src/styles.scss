@@ -41,11 +41,12 @@
     }
   }
 
-  fds-logo {
-    @include fds.padding(1,left);
-    &:hover {
+  fds-logo:hover {
       cursor: pointer;
-    }
+  }
+
+  slot[name="navigationIcon"]::slotted(*) {
+    @include fds.padding(1,right);
   }
 }
 
