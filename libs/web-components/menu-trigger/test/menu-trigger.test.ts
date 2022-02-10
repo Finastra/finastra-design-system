@@ -20,7 +20,7 @@ describe('MenuTrigger', () => {
     const el: MenuTrigger = await fixture(html`<fds-menu-trigger outlined></fds-menu-trigger>`);
     await elementUpdated(el);
     await shadowRoot(el).querySelector('fds-button')?.click();
-    await expect(el.on && el.menuTrailingIcon === "arrow_drop_up").to.be.true;
+    await expect(el.on && el.menuTrailingIcon === "expand_less").to.be.true;
   });
 });
 
