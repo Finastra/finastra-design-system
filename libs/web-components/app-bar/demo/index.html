@@ -1,6 +1,6 @@
 <script type="module" src="node_modules/@finastra/app-bar/dist/src/app-bar.js"></script>
 <script type="module" src="node_modules/@finastra/search-input/dist/src/search-input.js"></script>
-<script type="module" src="node_modules/@finastra/avatar/dist/src/avatar.js"></script>
+<script type="module" src="node_modules/@finastra/user-profile/dist/src/user-profile.js"></script>
 <script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
 <style>
   mwc-icon-button {
@@ -22,7 +22,13 @@
     <fds-search-input label="Search" slot="content"></fds-search-input>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
@@ -33,7 +39,13 @@
     <fds-button text label="Tab 2" slot="navigation"></fds-button>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
@@ -43,7 +55,13 @@
     <fds-search-input label="Search" slot="content"></fds-search-input>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 
@@ -52,7 +70,13 @@
     <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
@@ -65,7 +89,13 @@
     <fds-button text label="Tab 2" slot="navigation"></fds-button>
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>
 </div>

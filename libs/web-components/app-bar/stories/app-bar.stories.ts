@@ -6,6 +6,7 @@ import '@finastra/app-bar';
 import { AppBar } from '@finastra/app-bar';
 import { EVENTS } from '../src/constants';
 import '@finastra/user-profile';
+import '@finastra/button';
 
 export default {
   title: 'Components/App bar',
