@@ -10,9 +10,22 @@ import { styles } from './styles.css';
 export class MenuTrigger extends Button {
   static styles = styles;
 
+  /**
+   * Whether the toggle is activated.
+   */
   @property({ type: Boolean }) on = false;
+
+  /**
+   * Whether the toggle button should be using secondary.
+   */
   @property({ type: Boolean }) secondary = false;
-  @property({ type: String }) menuTrailingIcon = 'expand_more';
+
+
+  protected menuTrailingIcon = 'expand_more';
+
+  get _menuTrailingIcon() {
+    return this.menuTrailingIcon;
+  }
 
   constructor() {
     super();

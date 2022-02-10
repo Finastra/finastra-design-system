@@ -12,96 +12,110 @@ const demoApps = [{'name':'App','shortName':'App','sso-initiation-urls':{'web':'
 export default {
   title: 'Components/Launchpad',
   argTypes,
+  args: {
+    apps: demoApps
+  },
   parameters: {
     docs: {
       description: { component: README }
     }
+  },
+  decorators: [
+    (story) =>
+    html`
+<style>
+  .sb-show-main.sb-main-centered #root {
+    padding: 16px;
   }
+  body.sb-main-centered #root-inner {
+    padding: 64px;
+    height: 600px;
+  }
+</style>
+${story()}`
+  ]
 } as Meta;
 
 const Template: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
   return html`
-    <fds-launchpad
-      .apps=${apps}
-      .appNameProperty=${appNameProperty}
-      .shortAppNameProperty=${shortAppNameProperty}
-      .title=${title}
-      .baseUrl=${baseUrl}
-      .tenantId=${tenantId}
-      .channelType=${channelType}
-    >
-      <div slot='tools'></div>
-    </fds-launchpad>
+<fds-launchpad
+  .apps=${apps}
+  .appNameProperty=${appNameProperty}
+  .shortAppNameProperty=${shortAppNameProperty}
+  .title=${title}
+  .baseUrl=${baseUrl}
+  .tenantId=${tenantId}
+  .channelType=${channelType}
+>
+  <div slot='tools'></div>
+</fds-launchpad>
   `;
 };
 
 const ComplexTemplate: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
   return html`
-    <style>
-      .tools-title {
-        font: var(--fds-headline-4);
-        padding-bottom: var(--fds-spacing-3);
-      }
-      .tools-list {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-row-gap: 32px;
-        grid-column-gap: 56px;
-        padding-top: var(--fds-spacing-3);
-        padding-bottom: var(--fds-spacing-3);
-      }
-      .tools-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-      .tools-name {
-        font: var(--fds-subtitle-3);
-        color: var(--fds-on-surface);
-        padding-top: var(--fds-spacing-2);
-        text-align: center;
-      }
-    </style>
-    <fds-launchpad
-      .apps=${apps}
-      .appNameProperty=${appNameProperty}
-      .shortAppNameProperty=${shortAppNameProperty}
-      .title=${title}
-      .baseUrl=${baseUrl}
-      .tenantId=${tenantId}
-      .channelType=${channelType}
-    >
-      <div slot='tools'>
-        <div class='tools-title'>Tools</div>
-        <div class='tools-list'>
-          <div>
-            <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
-            <div class='tools-name'>Tool</div>
-          </div>
-          <div>
-            <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
-            <div class='tools-name'>Tool</div>
-          </div>
-          <div>
-            <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
-            <div class='tools-name'>Tool</div>
-          </div>
-          <div>
-            <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
-            <div class='tools-name'>Tool</div>
-          </div>
-        </div>
+<style>
+  .tools-title {
+    font: var(--fds-headline-4);
+    padding-bottom: var(--fds-spacing-3);
+  }
+  .tools-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 32px;
+    grid-column-gap: 56px;
+    padding-top: var(--fds-spacing-3);
+    padding-bottom: var(--fds-spacing-3);
+  }
+  .tools-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .tools-name {
+    font: var(--fds-subtitle-3);
+    color: var(--fds-on-surface);
+    padding-top: var(--fds-spacing-2);
+    text-align: center;
+  }
+</style>
+<fds-launchpad
+  .apps=${apps}
+  .appNameProperty=${appNameProperty}
+  .shortAppNameProperty=${shortAppNameProperty}
+  .title=${title}
+  .baseUrl=${baseUrl}
+  .tenantId=${tenantId}
+  .channelType=${channelType}
+>
+  <div slot='tools'>
+    <div class='tools-title'>Tools</div>
+    <div class='tools-list'>
+      <div>
+        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+        <div class='tools-name'>Tool</div>
       </div>
-    </fds-launchpad>
+      <div>
+        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+        <div class='tools-name'>Tool</div>
+      </div>
+      <div>
+        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+        <div class='tools-name'>Tool</div>
+      </div>
+      <div>
+        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+        <div class='tools-name'>Tool</div>
+      </div>
+    </div>
+  </div>
+</fds-launchpad>
   `;
 };
 
 export const Default: Story<Launchpad> = Template.bind({});
-Default.args = {
-  apps: demoApps
-};
 
 export const WithTools: Story<Launchpad> = ComplexTemplate.bind({});
 WithTools.args = {

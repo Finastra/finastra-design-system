@@ -19,12 +19,39 @@ export class Launchpad extends LitElement {
 
   @query('#launchpad') protected launchpad!: Menu | null;
 
+  /**
+   * List of apps.
+   */
   @property({ type: Array }) apps: any[] = [];
+
+  /**
+   * Name of application name property of type string that will be used by the product card.
+   */
   @property({ type: String }) appNameProperty = 'name';
+
+  /**
+   * Name of the short application name property used by the product card.
+   */
   @property({ type: String }) shortAppNameProperty = '';
+
+  /**
+   * Title used by the menu trigger.
+   */
   @property({ type: String }) title = 'Apps';
+
+  /**
+   * Base url of the Launchpage.
+   */
   @property({ type: String }) baseUrl = 'https://myapps.fusionfabric.cloud';
+
+  /**
+   * If tenantId is empty, the Launchpad will try to extract it from the window.location.
+   */
   @property({ type: String }) tenantId = '';
+
+  /**
+   * If channelType is empty, the Launchpad will try to extract it from the window.location.
+   */
   @property({ type: String }) channelType = '';
 
   private launchpageUrl = '';
