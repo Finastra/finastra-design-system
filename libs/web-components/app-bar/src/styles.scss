@@ -46,7 +46,7 @@
   }
 
   slot[name="navigationIcon"]::slotted(*) {
-    @include fds.padding(1,right);
+    @include fds.padding(2,right);
   }
 }
 
