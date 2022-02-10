@@ -7,7 +7,7 @@ import '@finastra/launchpad';
 import '@finastra/app-card';
 
 const README = require('../README.md');
-const demoApps = [{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app1.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app2.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app3.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app4.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app5.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app6.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app7.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app8.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app9.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app10.com'}}];
+const demoApps = [{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app1.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app2.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app3.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app4.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app5.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app6.com'}}];
 
 export default {
   title: 'Components/Launchpad',
