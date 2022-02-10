@@ -1,6 +1,6 @@
 import { devIndex, esjRender } from './tools/dev-server/middlewares.mjs';
 export default {
-  port: 8080,
+  port: 4000,
   watch: true,
   open: true,
   // appIndex: 'index.html',

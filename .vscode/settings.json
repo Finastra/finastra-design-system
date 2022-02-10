@@ -1,5 +1,6 @@
 {
   "debug.node.autoAttach": "on",
+  "editor.formatOnSave": true,
   "workbench.colorCustomizations": {
     "activityBar.border": "#c137a2",
     "menubar.selectionForeground": "#ffffff",
@@ -14,7 +15,8 @@
     "wc:logo",
     "wc:search-input",
     "wc:sidenav",
-    "wc:user-profile",
-    "storybook"
+    "storybook",
+    "wc:app-bar",
+    "wc:user-profile"
   ]
 }

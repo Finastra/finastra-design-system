@@ -130,6 +130,18 @@
       },
       "tags": []
     },
+    "app-bar": {
+      "root": "libs/web-components/app-bar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/app-bar/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "app-card": {
       "root": "libs/web-components/app-card",
       "architect": {
@@ -137,6 +149,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/app-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "launchpad": {
+      "root": "libs/web-components/launchpad",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/launchpad/src/**/*.ts"]
           }
         }
       },
@@ -577,6 +601,18 @@
         }
       },
       "tags": []
+    },
+    "menu-trigger": {
+      "root": "libs/web-components/menu-trigger",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/menu-trigger/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "multiselect-tags": {
       "projectType": "library",
