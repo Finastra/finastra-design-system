@@ -15,17 +15,19 @@ import { Menu } from '@material/mwc-menu';
 export class Launchpad extends LitElement {
   static styles = styles;
 
-  @query('#trigger') trigger!: MenuTrigger | null;
+  @query('#trigger') protected trigger!: MenuTrigger | null;
 
-  @query('#launchpad') launchpad!: Menu | null;
+  @query('#launchpad') protected launchpad!: Menu | null;
 
   @property({ type: Array }) apps: any[] = [];
   @property({ type: String }) appNameProperty = 'name';
-  @property({ type: String }) shortAppNameProperty = 'shortName';
+  @property({ type: String }) shortAppNameProperty = '';
   @property({ type: String }) title = 'Apps';
   @property({ type: String }) baseUrl = 'https://myapps.fusionfabric.cloud';
   @property({ type: String }) tenantId = '';
   @property({ type: String }) channelType = '';
+
+  private launchpageUrl = '';
 
   constructor() {
     super();
@@ -33,6 +35,9 @@ export class Launchpad extends LitElement {
     if (!this.tenantId.length) {
       // tenantId will always be the first pathname param
       this.tenantId = url.pathname.split('/')[1];
+      if (!this.tenantId.length) {
+        console.error("tenantId not found");
+      }
     }
     if (!this.channelType.length) {
       const channel = url.pathname.split('/')[2];
@@ -41,6 +46,8 @@ export class Launchpad extends LitElement {
     }
     // make sure baseUrl do not finish with /
     this.baseUrl = this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
+    // build the launchpageUrl
+    this.launchpageUrl = `${this.baseUrl}/${this.tenantId}${this.channelType.length ? `/${this.channelType}` : ''}`
   }
 
   render() {
@@ -79,17 +86,11 @@ export class Launchpad extends LitElement {
   }
 
   private _handleAppCardClick(app: any) {
-    const path = `${this.tenantId}${this.channelType.length > 1 ? `/${this.channelType}` : ''}`
-    window.location.replace(`${this.baseUrl}/${path}/applications/${app[this.appNameProperty]}`);
+    window.location.replace(`${this.launchpageUrl}/applications/${app[this.appNameProperty]}`);
   }
 
   private _handleLaunchpageClick() {
-    const path = `${this.tenantId} ${this.channelType.length > 1 ? `/${this.channelType}` : ''}`
-    if (this.baseUrl.length > 1 && this.tenantId.length > 1) {
-      window.location.replace(`${this.baseUrl}/${path}`);
-    } else {
-      console.error('baseUrl is not defined!', `${this.baseUrl}/${path}`);
-    }
+    window.location.replace(this.launchpageUrl);
   }
 
   private _onClosed() {

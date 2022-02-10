@@ -12,7 +12,7 @@ export class MenuTrigger extends Button {
 
   @property({ type: Boolean }) on = false;
   @property({ type: Boolean }) secondary = false;
-  @property({ type: String }) menuTrailingIcon = 'arrow_drop_down';
+  @property({ type: String }) menuTrailingIcon = 'expand_more';
 
   constructor() {
     super();
@@ -43,7 +43,7 @@ export class MenuTrigger extends Button {
   }
 
   updated(changedProperties: Map<string, unknown>) {
-    this.on ? this.menuTrailingIcon = 'arrow_drop_up' : this.menuTrailingIcon = 'arrow_drop_down';
+    this.menuTrailingIcon = this.on ? 'expand_less' : 'expand_more';
     super.update(changedProperties);
   }
 
