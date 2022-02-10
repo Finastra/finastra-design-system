@@ -94,7 +94,7 @@ const ComplexTemplate: Story<Launchpad> = ({ apps , appNameProperty, shortAppNam
           </div>
         </div>
       </div>
-    </fsd-launchpad>
+    </fds-launchpad>
   `;
 };
 
