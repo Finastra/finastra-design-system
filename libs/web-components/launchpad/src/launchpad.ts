@@ -40,7 +40,7 @@ export class Launchpad extends LitElement {
       this.channelType = (channel === 'b2c' || channel === 'b2e') ? channel : '';
     }
     // make sure baseUrl do not finish with /
-    this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
+    this.baseUrl = this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
   }
 
   render() {
