@@ -12,8 +12,6 @@ import { styles } from './styles.css';
 /**
  * @slot actions -Actions that a user can perform
  * @slot userInfo -The user info
- * @cssprop [--fds-avatar-size=48px] -Size of the avatar that triggers the menu
- * @cssprop [--fds-avatar-font-size=16px] -Font size of the avatar that triggers the menu
  */
 @customElement('fds-user-profile')
 export class UserProfile extends LitElement {
@@ -46,7 +44,7 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <mwc-icon-button @click="${this._showMenu}"> ${renderAvatarSVG()} </mwc-icon-button>
+    return html` <mwc-icon-button @click="${this._showMenu}" aria-label="avatar button"> ${renderAvatarSVG()} </mwc-icon-button>
       <mwc-menu id="menu" fullwidth corner="BOTTOM_START">
         ${this.dense
           ? html`
