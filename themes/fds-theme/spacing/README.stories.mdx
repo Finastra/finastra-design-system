@@ -32,7 +32,7 @@ export const TemplateCustomProp = (args) => { return html`
 <div class="spacing demo-layout">Hello World!</div>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Custom properties" args={{}}>
     {TemplateCustomProp.bind({})}
   </Story>
@@ -97,7 +97,7 @@ Where:
 - `{t|b|r|l}` is the side, respectively `top`, `bottom`, `right` or `left`. The side can be dismissed in case the spacing applies to all 4 sides
 - `{spacing}` is the spacing value between 0 and 6
 
-### Example
+### Examples
 
 export const TemplateHelper = (args) => { return html`
 <style>
@@ -114,13 +114,13 @@ export const TemplateHelper = (args) => { return html`
 <div class="${args.class} demo-layout">Hello World!</div>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Margin helper" args={{class:'fds-m-4'}}>
     {TemplateHelper.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Padding helper" args={{class:'fds-pt-5'}}>
     {TemplateHelper.bind({})}
   </Story>

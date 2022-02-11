@@ -31,6 +31,8 @@ Before being able to use the helper classes, you need to include them in your Sa
 
 Then you'll be able to use helper classes in your app's HTML
 
+### Examples
+
 export const TemplateHelper = (args) => { return html`
 <style>
   .demo-layout {
@@ -46,7 +48,7 @@ export const TemplateHelper = (args) => { return html`
 <div class="fds-elevation-3 demo-layout">Hello World!</div>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Helper classes" args={{}}>
     {TemplateHelper.bind({})}
   </Story>

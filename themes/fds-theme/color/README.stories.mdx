@@ -26,7 +26,6 @@ export const TemplateCustomProp = (args) => { return html`
   .my-primary-container {
     background-color: var(--fds-primary);
     color: var(--fds-on-primary);
-    font: var(--fds-body-1);
   }
   .demo-layout {
     display: flex;
@@ -39,7 +38,7 @@ export const TemplateCustomProp = (args) => { return html`
 <div class="my-primary-container demo-layout">Hello World!</div>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Custom properties" args={{}}>
     {TemplateCustomProp.bind({})}
   </Story>
@@ -130,6 +129,14 @@ will generate:
 
 The helper classes are the fastest way to use colors directly in the HTML.
 
+```SCSS
+@use '@finastra/fds-theme/helpers';
+```
+
+Be aware that some classes are meant to be used on containers as their background color (such as `.fds-primary-bg`, `.fds-background`, `.fds-surface`...) some are meant to be used on texts (such as `.fds-primary`, `.fds-error`, `.fds-on-surface`...).
+
+### Examples
+
 export const TemplateHelper = (args) => { return html`
 <style>
   .demo-layout {
@@ -145,25 +152,11 @@ export const TemplateHelper = (args) => { return html`
 </div>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Helper classes" args={{}}>
     {TemplateHelper.bind({})}
   </Story>
 </Canvas>
-
-```SCSS
-@use '@finastra/fds-theme/helpers';
-```
-
-Be aware that some classes are meant to be used on containers as their background color (such as `.fds-primary-bg`, `.fds-background`, `.fds-surface`...) some are meant to be used on texts (such as `.fds-primary`, `.fds-error`, `.fds-on-surface`...).
-
-### Examples
-
-```HTML
-<div class="fds-surface">
-  <p class="fds-on-surface">Hello!</p>
-</div>
-```
 
 ```HTML
 <div class="fds-primary-bg">

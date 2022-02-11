@@ -23,6 +23,8 @@ Make sure to copy the code below into the `<head>` of your html.
 
 ## Custom properties
 
+### Example
+
 export const TemplateCustomProp = (args) => { return html`
 <style>
   .my-title {
@@ -116,7 +118,7 @@ export const TemplateHelper = (args) => { return html`
 <h1 class="fds-headline-1 fds-on-surface">This is headline 1</h1>
 ` };
 
-<Canvas>
+<Canvas withSource="open">
   <Story name="Helper classes" args={{}}>
     {TemplateHelper.bind({})}
   </Story>
