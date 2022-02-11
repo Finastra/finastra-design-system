@@ -59,7 +59,7 @@
   .uxg-avatar-list {
     > li, > uxg-avatar {
       > .uxg-avatar {
-        border: 1px solid mat.get-color-from-palette($background, background);
+        border: 2px solid mat.get-color-from-palette($background, background);
       }
     }
   }
@@ -91,7 +91,7 @@
 
   *[large] {
     .uxg-avatar {
-      @include mat.typography-level($config, display-5);
+      @include mat.typography-level($config, display-4);
     }
   }
 
