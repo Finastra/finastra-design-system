@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.1](https://github.com/finastra/finastra-design-system/compare/v0.0.18...v2.6.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* **theme:** remove quotes in define-palette ([#594](https://github.com/finastra/finastra-design-system/issues/594)) ([d35622d](https://github.com/finastra/finastra-design-system/commit/d35622dbe062824a018f417198aaeb3d8dc74565))
+
 ## [2.6.0](https://github.com/finastra/finastra-design-system/compare/v0.0.16...v2.6.0) (2022-01-25)
 
 ## [2.5.0](https://github.com/finastra/finastra-design-system/compare/v0.0.13...v2.5.0) (2021-12-14)
