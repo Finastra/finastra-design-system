@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -199,7 +199,7 @@
     "lint-staged": "^11.0.0",
     "lit-html": "2.0.2",
     "lodash-es": "^4.17.21",
-    "ng-packagr": "13.0.8",
+    "ng-packagr": "13.2.1",
     "node-sass-import": "^2.0.1",
     "node-watch": "0.7.1",
     "ora": "^5.4.1",
