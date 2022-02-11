@@ -10,7 +10,6 @@ export default {
   argTypes,
   args: {
     dense: false,
-    open: false,
     userName: 'Raya Hristova',
     shortName: ''
   },
@@ -22,7 +21,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = false, open = true }) => {
+const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = false }) => {
   return html` <style>
       fds-user-profile {
         height: 300px;
@@ -36,7 +35,7 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = 
       }
     </style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?open=${open} ?dense=${dense}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?dense=${dense}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
         <fds-button fullwidth label="Logout" icon="logout"></fds-button>
@@ -46,11 +45,8 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = 
 };
 
 export const Default: Story<UserProfile> = Template.bind({});
-Default.args = {
-  open: true
-};
 
-const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = true, open = true }) => {
+const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = '', dense = true }) => {
   return html` <style>
   fds-user-profile {
    height: 300px;
@@ -80,7 +76,7 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
   }
 </style>
 
-    <fds-user-profile userName=${userName} shortName=${shortName} ?dense=${dense} ?open=${open}>
+    <fds-user-profile userName=${userName} shortName=${shortName} ?dense=${dense}>
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
       <div slot="actions">
@@ -101,6 +97,5 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
 
 export const Dense: Story<UserProfile> = ComplexTemplate.bind({});
 Dense.args = {
-  dense: true,
-  open: true
+  dense: true
 };

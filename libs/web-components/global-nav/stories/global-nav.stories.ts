@@ -100,7 +100,13 @@ const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false
 
         <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
         <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-        <fds-avatar dense slot="actions"></fds-avatar>
+        <fds-user-profile slot="actions" userName="Raya Hristova">
+          <div slot="userInfo">raya.hristova@finastra.com</div>
+          <div slot="actions">
+            <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+          </div>
+        </fds-user-profile>
         <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
       </fds-app-bar>
       <div class="main-content">

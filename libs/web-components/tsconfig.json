@@ -58,6 +58,12 @@
     },
     {
       "path": "sidenav"
-    }
+    },
+    {
+      "path": "menu-trigger"
+    },
+    {
+      "path": "launchpad"
+    },
   ]
 }

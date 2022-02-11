@@ -1,10 +1,12 @@
 const README = require('../README.md');
-import '@finastra/app-bar';
-import { AppBar } from '@finastra/app-bar';
+import { cssprops, argTypes } from './custom-element.json';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import '@finastra/app-bar';
+import { AppBar } from '@finastra/app-bar';
 import { EVENTS } from '../src/constants';
-import { argTypes, cssprops } from './custom-element.json';
+import '@finastra/user-profile';
+import '@finastra/button';
 
 export default {
   title: 'Components/App bar',
@@ -20,9 +22,9 @@ export default {
     cssprops
   },
   decorators: [
-    (story) => html`${story()}<style>
+    (story) => html` <style>
         fds-app-bar {
-          min-width: calc(100vw - 180px);
+          min-width: calc(68vw - 100px);
         }
         mwc-icon-button {
           color: var(--fds-primary);
@@ -34,17 +36,31 @@ export default {
         fds-button {
           padding-left: 16px;
         }
-      </style>`
+        fds-user-profile fds-button {
+          padding-right: 16px;
+        }
+        fds-user-profile fds-button + fds-button {
+        margin-top: var(--fds-spacing-2);
+      }
+  </style
+      >${story()}`
   ]
 } as Meta;
 
 const Template: Story<AppBar> = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
-  return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+  return html`
+  <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
     <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>`;
 };
@@ -71,7 +87,13 @@ const NavigationalTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirec
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
   </fds-app-bar>`;
 };
@@ -93,7 +115,13 @@ const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri =
 
     <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
     <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
-    <fds-avatar dense slot="actions"></fds-avatar>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName='R'>
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
     <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
