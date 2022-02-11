@@ -14,10 +14,10 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 }
 
 .fds-avatar {
-  height: 48px;
-  width: 48px;
+  height: var(--fds-avatar-size, 48px);
+  width: var(--fds-avatar-size, 48px);
   border-radius: 50%;
-  margin: 4px;
+  margin: 0px;
   object-fit: cover;
   user-select: none;
   align-items: center;
@@ -27,7 +27,6 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   @include fds.bg-color(gradient);
   @include fds.text-color(on-primary);
   @include fds.typography(body-3);
-  --fds-avatar-font-size: 16px;
   font-size: var(--fds-avatar-font-size, 16px);
 
   &:empty:not(img) {
@@ -40,8 +39,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host([dense]) {
   .fds-avatar {
-    height: 24px;
-    width: 24px;
+    --fds-avatar-size: 24px;
     --fds-avatar-font-size: 14px;
     font-size: var(--fds-avatar-font-size, 14px);
   }
@@ -49,8 +47,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
 
 :host([large]) {
   .fds-avatar {
-    height: 96px;
-    width: 96px;
+    --fds-avatar-size: 96px;
     --fds-avatar-font-size: 44px;
     font-size: var(--fds-avatar-font-size, 44px);
   }
@@ -73,4 +70,3 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
     }
   }
 }
-

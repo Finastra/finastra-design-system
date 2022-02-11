@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -69,9 +69,9 @@
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
     "workspace-generator": "nx workspace-generator",
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
-    "postwca":"node ./scripts/wca-to-storybook.js",
-    "prewc:build:storybook":"npm run wca",
-    "prewc:storybook":"npm run wca"
+    "postwca": "node ./scripts/wca-to-storybook.js",
+    "prewc:build:storybook": "npm run wca",
+    "prewc:storybook": "npm run wca"
   },
   "husky": {
     "hooks": {
@@ -105,7 +105,9 @@
     "@material/elevation": "^13.0.0",
     "@material/mwc-drawer": "0.25.3",
     "@material/mwc-icon": "^0.25.3",
+    "@material/mwc-icon-button": "^0.25.3",
     "@material/mwc-list": "0.25.3",
+    "@material/mwc-top-app-bar": "^0.25.3",
     "@material/mwc-top-app-bar-fixed": "0.25.3",
     "@ngrx/component-store": "13.0.1",
     "@types/git-config-path": "^2.0.1",
@@ -143,6 +145,7 @@
     "@nrwl/workspace": "13.2.4",
     "@open-wc/testing": "^3.0.3",
     "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-docs": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
     "@storybook/addons": "^6.4.13",
@@ -196,7 +199,7 @@
     "lint-staged": "^11.0.0",
     "lit-html": "2.0.2",
     "lodash-es": "^4.17.21",
-    "ng-packagr": "13.0.8",
+    "ng-packagr": "13.2.1",
     "node-sass-import": "^2.0.1",
     "node-watch": "0.7.1",
     "ora": "^5.4.1",

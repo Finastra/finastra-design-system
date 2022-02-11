@@ -3,28 +3,48 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * @cssprop {color} [--fds-primary=#694ED6]
- * @cssprop {color} [--fds-secondary=#C137A2]
+ * @cssprop {color} [--fds-primary=#694ED6] - Color of the start of the gradient
+ * @cssprop {color} [--fds-secondary=#C137A2] - Color of the end of the gradient
+ * @cssprop [--fds-avatar-size=48px] - Size of the avatar
+ * @cssprop [--fds-avatar-font-size=16px] - Font size of the avatar
  */
 @customElement('fds-avatar')
 export class Avatar extends LitElement {
   static styles = styles;
 
+  /**
+   * Name of the avatar, used to generate the initials (Displayed on hover)
+   */
   @property({ type: String })
   name = '';
 
+  /**
+   * Use this property to override the initials
+   */
   @property({ type: String })
   shortName = '';
 
+  /**
+   * Make the avatar smaller
+   */
   @property({ type: Boolean })
   dense = false;
 
+  /**
+   * Make the avatar bigger
+   */
   @property({ type: Boolean })
   large = false;
 
+  /**
+   * Use theme's primary color as background
+   */
   @property({ type: Boolean })
   primary = false;
 
+  /**
+   * Use theme's secondary color as background
+   */
   @property({ type: Boolean })
   secondary = false;
 

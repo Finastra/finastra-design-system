@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://www.fusionfabric.cloud/" target="blank"><img src="https://dev-to-uploads.s3.amazonaws.com/i/t2fcfqa7fxh6z927fmb1.png"  alt="FusionFabric.cloud" /></a>
 </p>
-  
+
   <p align="center">A set of opinionated web-components for building efficient and scalable financial applications</p>
 <p align="center">
     <a href="https://github.com/Finastra/finastra-design-system/actions/workflows/wc-pr-build.yml">
@@ -31,13 +31,17 @@
 
 | Name             | Package                                                                      | Version                                                                                                                | Links                                                                                  |
 | ---------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **App Bar**     | [`@finastra/app-bar`](https://npmjs.com/package/@finastra/app-bar)         | [![latest](https://img.shields.io/npm/v/@finastra/app-bar.svg)](https://npmjs.com/package/@finastra/app-bar)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-bar/README.md)     |
 | **App Card**     | [`@finastra/app-card`](https://npmjs.com/package/@finastra/app-card)         | [![latest](https://img.shields.io/npm/v/@finastra/app-card.svg)](https://npmjs.com/package/@finastra/app-card)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-card/README.md)     |
 | **Avatar**       | [`@finastra/avatar`](https://npmjs.com/package/@finastra/avatar)             | [![latest](https://img.shields.io/npm/v/@finastra/avatar.svg)](https://npmjs.com/package/@finastra/avatar)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./avatar/README.md)       |
 | **Base Card**    | [`@finastra/base-card`](https://npmjs.com/package/@finastra/base-card)       | [![latest](https://img.shields.io/npm/v/@finastra/base-card.svg)](https://npmjs.com/package/@finastra/base-card)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./base-card/README.md)    |
 | **Button**       | [`@finastra/button`](https://npmjs.com/package/@finastra/button)             | [![latest](https://img.shields.io/npm/v/@finastra/button.svg)](https://npmjs.com/package/@finastra/button)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./button/README.md)       |
 | **Card**         | [`@finastra/card`](https://npmjs.com/package/@finastra/card)                 | [![latest](https://img.shields.io/npm/v/@finastra/card.svg)](https://npmjs.com/package/@finastra/card)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./card/README.md)         |
 | **Divider**      | [`@finastra/divider`](https://npmjs.com/package/@finastra/divider)           | [![latest](https://img.shields.io/npm/v/@finastra/divider.svg)](https://npmjs.com/package/@finastra/divider)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./divider/README.md)      |
+| **Launchpad** | [`@finastra/launchpad`](https://npmjs.com/package/@finastra/launchpad)         | [![latest](https://img.shields.io/npm/v/@finastra/launchpad.svg)](https://npmjs.com/package/@finastra/launchpad)        | [![README](https://img.shields.io/badge/README--56C271.svg)](./launchpad/README.md)    |
 | **Logo**         | [`@finastra/logo`](https://npmjs.com/package/@finastra/logo)                 | [![latest](https://img.shields.io/npm/v/@finastra/logo.svg)](https://npmjs.com/package/@finastra/logo)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./logo/README.md)         |
+| **Menu Trigger** | [`@finastra/menu-trigger`](https://npmjs.com/package/@finastra/menu-trigger) | [![latest](https://img.shields.io/npm/v/@finastra/menu-trigger.svg)](https://npmjs.com/package/@finastra/menu-trigger) | [![README](https://img.shields.io/badge/README--56C271.svg)](./menu-trigger/README.md) |
+| **User Profile** | [`@finastra/user-profile`](https://npmjs.com/package/@finastra/user-profile) | [![latest](https://img.shields.io/npm/v/@finastra/user-profile.svg)](https://npmjs.com/package/@finastra/user-profile) | [![README](https://img.shields.io/badge/README--56C271.svg)](./user-profile/README.md) |
 | **Search Input** | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md) |
 
 <br/>

@@ -49,6 +49,18 @@
     },
     {
       "path": "avatar"
-    }
+    },
+    {
+      "path": "user-profile"
+    },
+    {
+      "path": "menu-trigger"
+    },
+    {
+      "path": "launchpad"
+    },
+    {
+      "path": "app-bar"
+    }  
   ]
 }
