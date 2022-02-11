@@ -6,6 +6,7 @@ const READ_WRITE_OPTS = {encoding: 'utf-8'};
 async function main() {
     const paths = await getPaths('../libs/web-components/*/stories/custom-element.json');
     paths.forEach(path => {
+        console.log(path);
         const {attributes, cssProperties} = getContent(path);
         const argTypes = mapArgTypes(attributes);
         const cssprops = mapCssProps(cssProperties);
