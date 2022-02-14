@@ -22,6 +22,7 @@
     "wc:sidenav",
     "storybook",
     "wc:app-bar",
-    "wc:user-profile"
+    "wc:user-profile",
+    "wc:global-nav"
   ]
 }

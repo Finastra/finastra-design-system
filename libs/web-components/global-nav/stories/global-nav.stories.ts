@@ -1,8 +1,19 @@
-const README = require('../README.md');
 import '@finastra/app-bar';
+import '@finastra/app-card';
+import '@finastra/launchpad';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+
+const README = require('../README.md');
+const demoApps = [
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app1.com' } },
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app2.com' } },
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app3.com' } },
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app4.com' } },
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app5.com' } },
+  { name: 'App', shortName: 'App', 'sso-initiation-urls': { web: 'https://app6.com' } }
+];
 
 export default {
   title: 'Patterns/Global Nav',
@@ -11,8 +22,13 @@ export default {
       description: { component: README }
     }
   },
+  args: {
+    apps: demoApps,
+    appName: 'Super App'
+  },
   decorators: [
-    (story) => html` <style>
+    (story) => html`${story()}
+      <style>
         .sb-show-main.sb-main-centered {
           display: block;
         }
@@ -22,7 +38,7 @@ export default {
         body.sb-main-centered #root-inner {
           padding: 0;
         }
-        fds-app-bar {
+        #root-inner fds-app-bar {
           min-width: calc(100vw - 180px);
         }
         mwc-icon-button {
@@ -55,12 +71,11 @@ export default {
           --mdc-theme-text-primary-on-background: var(--fds-on-background);
           width: 100%;
         }
-      </style>
-      ${story()}`
+      </style>`
   ]
 } as Meta;
 
-const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false }) => {
+const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
   <div slot="sidenavContent">
     <div class="fds-sidenav-header">
@@ -87,17 +102,17 @@ const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false
       </mwc-list>
     </div>
   </div>
-  <div slot="navigation">
-    <fds-button text label="Tab 1"></fds-button>
-    <fds-button text label="Tab 2"></fds-button>
-  </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
 
-        <fds-button text label="Tab 1" slot="navigation"></fds-button>
-        <fds-button text label="Tab 2" slot="navigation"></fds-button>
+        <fds-launchpad
+          .apps=${apps}
+          slot="actions"
+        >
+        </fds-launchpad>
 
+        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
         <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
         <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
@@ -140,3 +155,191 @@ const Template: Story = ({ appName = '', logoRedirectUri = '', prominent = false
 };
 
 export const Default: Story = Template.bind({});
+
+export const TransparentAppBar: Story = Template.bind({});
+TransparentAppBar.args = {
+  appName: 'App with transparent app bar',
+  transparent: true
+};
+
+const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
+  return html`<fds-sidenav type="modal">
+  <div slot="sidenavContent">
+    <div class="fds-sidenav-header">
+      <fds-logo></fds-logo>
+    </div>
+    <div class="fds-sidenav-list">
+      <mwc-list activatable>
+        <mwc-list-item selected activated graphic="icon">
+          <span>Home</span>
+          <mwc-icon slot="graphic">home</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Applications</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Tools</span>
+          <mwc-icon slot="graphic">extension</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Settings</span>
+          <mwc-icon slot="graphic">settings</mwc-icon>
+        </mwc-list-item>
+      </mwc-list>
+    </div>
+  </div>
+  <div slot="navigation">
+    <fds-button text label="Tab 1"></fds-button>
+    <fds-button text label="Tab 2"></fds-button>
+  </div>
+  <div slot="appContent">
+      <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+
+        <fds-button text label="Tab 1" slot="navigation"></fds-button>
+        <fds-button text label="Tab 2" slot="navigation"></fds-button>
+
+        <fds-launchpad
+          .apps=${apps}
+          slot="actions"
+        >
+        </fds-launchpad>
+
+        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+        <fds-user-profile slot="actions" userName="Raya Hristova">
+          <div slot="userInfo">raya.hristova@finastra.com</div>
+          <div slot="actions">
+            <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+          </div>
+        </fds-user-profile>
+        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+      </fds-app-bar>
+      <div class="main-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+</fsd-sidenav>`;
+};
+
+export const WithTabs: Story = WithTabsTemplate.bind({});
+WithTabs.args = {
+  appName: 'App with tabs'
+};
+
+export const ProminentAppBar: Story = WithTabsTemplate.bind({});
+ProminentAppBar.args = {
+  appName: 'App with tabs below app bar',
+  prominent: true
+};
+
+const ExplicitLogoutTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
+  return html`<fds-sidenav type="modal">
+  <div slot="sidenavContent">
+    <div class="fds-sidenav-header">
+      <fds-logo></fds-logo>
+    </div>
+    <div class="fds-sidenav-list">
+      <mwc-list activatable>
+        <mwc-list-item selected activated graphic="icon">
+          <span>Home</span>
+          <mwc-icon slot="graphic">home</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Applications</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Tools</span>
+          <mwc-icon slot="graphic">extension</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Settings</span>
+          <mwc-icon slot="graphic">settings</mwc-icon>
+        </mwc-list-item>
+      </mwc-list>
+    </div>
+  </div>
+  <div slot="appContent">
+      <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+
+        <fds-launchpad
+          .apps=${apps}
+          slot="actions"
+        >
+        </fds-launchpad>
+
+        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+        <fds-user-profile slot="actions" userName="Raya Hristova">
+          <div slot="userInfo">raya.hristova@finastra.com</div>
+          <div slot="actions">
+            <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+          </div>
+        </fds-user-profile>
+        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-button label="Logout" icon="logout" slot="actions"></fds-button>
+      </fds-app-bar>
+      <div class="main-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+</fsd-sidenav>`;
+};
+
+export const ExplicitLogout: Story = ExplicitLogoutTemplate.bind({});
+ExplicitLogout.args = {
+  appName: 'App with explicit logout'
+};
