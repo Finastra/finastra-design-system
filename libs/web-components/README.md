@@ -59,7 +59,7 @@
 
 > Alternatively, you can use [Gitpod](https://gitpod.io/#https://github.com/Finastra/finastra-design-system) to code in your browser !
 
-## Web Component Development
+## Web component development
 
 ### Local developement
 
@@ -105,7 +105,7 @@ npm run wc:build:storybook
 
 > Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
 
-### Running Tests
+### Running tests
 
 ```
 npm run wc:test
