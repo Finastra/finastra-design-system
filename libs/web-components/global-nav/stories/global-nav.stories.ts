@@ -113,8 +113,8 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
         </fds-launchpad>
 
         <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -207,8 +207,8 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
         </fds-launchpad>
 
         <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -297,8 +297,8 @@ const ExplicitLogoutTemplate: Story = ({ appName = '', logoRedirectUri = '', pro
         </fds-launchpad>
 
         <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="info" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
