@@ -65,7 +65,6 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: -40px -15px;
         }
         .fds-sidenav-list {
           --mdc-theme-text-primary-on-background: var(--fds-on-background);
