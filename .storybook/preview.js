@@ -7,9 +7,12 @@ const isDark = typeof window !== `undefined` ? window.matchMedia && window.match
 export const parameters = {
   backgrounds: { disable: true },
   layout: 'centered',
+  docs: {
+    theme: isDark ? themeDark : themeLight,
+  },
   options: {
     storySort: {
-      order: ['Foundations', 'Components'],
+      order: ['Welcome', 'Foundations', 'Components'],
       method: 'alphabetical'
     }
   },
