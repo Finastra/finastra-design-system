@@ -254,11 +254,11 @@ WithTabs.args = {
 
 export const ProminentAppBar: Story = WithTabsTemplate.bind({});
 ProminentAppBar.args = {
-  appName: 'App with tabs below app bar',
+  appName: 'App with tabs on a second row',
   prominent: true
 };
 
-const ExplicitLogoutTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
+const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
   <div slot="sidenavContent">
     <div class="fds-sidenav-header">
@@ -338,7 +338,7 @@ const ExplicitLogoutTemplate: Story = ({ appName = '', logoRedirectUri = '', pro
 </fsd-sidenav>`;
 };
 
-export const ExplicitLogout: Story = ExplicitLogoutTemplate.bind({});
-ExplicitLogout.args = {
+export const WithButtons: Story = WithButtonsTemplate.bind({});
+WithButtons.args = {
   appName: 'App with explicit logout'
 };

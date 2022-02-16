@@ -8,26 +8,13 @@
     position: absolute;
     @include fds.margin(2, top);
 
-    .top-action {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: right;
-      @include fds.padding(2, top);
-      @include fds.padding(3, right, left);
-      @include fds.padding(1, bottom);
-      mwc-icon-button {
-        color: var(--fds-primary);
-      }
-    }
-
     .menu-body {
       max-height: 445px;
       overflow-y: scroll;
 
       .app-content {
         @include fds.padding(5, right, left);
-        @include fds.padding(3, bottom);
+        @include fds.padding(3, top, bottom);
 
         .app-title {
           @include fds.typography(headline-4);
