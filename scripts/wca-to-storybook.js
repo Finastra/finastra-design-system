@@ -56,6 +56,7 @@ function mapArgTypes(attributes, slots) {
         prev[next.name].table = {
           defaultValue: { summary: sanitizeDefaultValue(next.default) }
         };
+        prev[next.name].defaultValue = sanitizeDefaultValue(next.default);
       } else {
         prev[next.name].type = {
           required: true
