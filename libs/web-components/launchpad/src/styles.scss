@@ -2,14 +2,14 @@
 
 :host {
   display: inline-block;
-  --mdc-menu-min-width: 696px;
+  --mdc-menu-min-width: 562px;
 
   #launchpad {
     position: absolute;
     @include fds.margin(2, top);
 
     .menu-body {
-      max-height: 445px;
+      max-height: 462px;
       overflow-y: scroll;
 
       .app-content {
@@ -24,7 +24,7 @@
 
         .appcard-list {
           display: grid;
-          grid-template-columns: auto auto auto auto;
+          grid-template-columns: auto auto auto;
           grid-row-gap: 32px;
           grid-column-gap: 56px;
           @include fds.padding(3);
@@ -33,15 +33,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-          }
 
-          .appcard-name {
-            @include fds.typography(subtitle-3);
-            @include fds.text-color(on-surface);
-            @include fds.padding(2, top);
-            text-align: center;
+            .appcard {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+
+            .appcard-name {
+              @include fds.typography(subtitle-3);
+              @include fds.text-color(on-surface);
+              @include fds.padding(2, top);
+              text-align: center;
+            }
           }
         }
       }
