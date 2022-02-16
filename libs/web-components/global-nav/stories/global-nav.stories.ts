@@ -50,7 +50,7 @@ export default {
           font: var(--fds-body-1);
         }
         fds-button {
-          padding-left: 16px;
+          padding-left: var(--fds-spacing-3);
         }
       </style>
       <style>
