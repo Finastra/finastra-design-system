@@ -1,13 +1,13 @@
+import '@finastra/app-card';
+import '@finastra/launchpad';
+import { Launchpad } from '@finastra/launchpad';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes } from './custom-element.json';
-import { Launchpad } from '@finastra/launchpad';
 
-import '@finastra/launchpad';
-import '@finastra/app-card';
 
 const README = require('../README.md');
-const demoApps = [{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app1.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app2.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app3.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app4.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app5.com'}},{'name':'App','shortName':'App','sso-initiation-urls':{'web':'https://app6.com'}}];
+const demoApps = [{ 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app1.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app2.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app3.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app4.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app5.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app6.com' } }];
 
 export default {
   title: 'Components/Launchpad',
@@ -22,7 +22,7 @@ export default {
   },
   decorators: [
     (story) =>
-    html`
+      html`
 <style>
   .sb-show-main.sb-main-centered #root {
     padding: 16px;
@@ -36,7 +36,7 @@ ${story()}`
   ]
 } as Meta;
 
-const Template: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
+const Template: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
   return html`
 <fds-launchpad
   .apps=${apps}
@@ -52,7 +52,7 @@ const Template: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProper
   `;
 };
 
-const ComplexTemplate: Story<Launchpad> = ({ apps , appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
+const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
   return html`
 <style>
   .tools-title {
@@ -61,13 +61,18 @@ const ComplexTemplate: Story<Launchpad> = ({ apps , appNameProperty, shortAppNam
   }
   .tools-list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-row-gap: 32px;
     grid-column-gap: 56px;
     padding-top: var(--fds-spacing-3);
     padding-bottom: var(--fds-spacing-3);
   }
   .tools-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tools {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,20 +98,20 @@ const ComplexTemplate: Story<Launchpad> = ({ apps , appNameProperty, shortAppNam
   <div slot='tools'>
     <div class='tools-title'>Tools</div>
     <div class='tools-list'>
-      <div>
-        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+      <div class="tools-item">
+        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
         <div class='tools-name'>Tool</div>
       </div>
-      <div>
-        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+      <div class="tools-item">
+        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
         <div class='tools-name'>Tool</div>
       </div>
-      <div>
-        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+      <div class="tools-item">
+        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
         <div class='tools-name'>Tool</div>
       </div>
-      <div>
-        <fds-app-card class='tools-item' label='Tool' extraDense primary></fds-app-card>
+      <div class="tools-item">
+        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
         <div class='tools-name'>Tool</div>
       </div>
     </div>

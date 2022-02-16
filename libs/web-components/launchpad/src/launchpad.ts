@@ -87,12 +87,12 @@ export class Launchpad extends LitElement {
                 ? this.apps.map(
                     (app: any) =>
                       html`
-                        <div>
+                        <div class="appcard-item">
                           <fds-app-card
                             @click="${() => this._handleAppCardClick(app)}"
                             label="${app[this.appNameProperty]}"
                             shortLabel="${app[this.shortAppNameProperty]}"
-                            class="appcard-item"
+                            class="appcard"
                             extraDense
                             secondary
                           ></fds-app-card>
