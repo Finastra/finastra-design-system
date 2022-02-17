@@ -1,14 +1,3 @@
 @use '../themes/fds-theme/light' with ($class: 'light-theme');
 @use '../themes/fds-theme/dark' with ($class: 'dark-theme');
 @use '../themes/fds-theme/helpers';
-
-.test {
-    margin: 100px !important;
-}
-
-.welcome-header {
-    background-image: url(../themes/fds-theme/docs/img/title.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 300px;
-}
