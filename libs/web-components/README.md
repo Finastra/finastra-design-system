@@ -43,6 +43,7 @@
 | **Menu Trigger** | [`@finastra/menu-trigger`](https://npmjs.com/package/@finastra/menu-trigger) | [![latest](https://img.shields.io/npm/v/@finastra/menu-trigger.svg)](https://npmjs.com/package/@finastra/menu-trigger) | [![README](https://img.shields.io/badge/README--56C271.svg)](./menu-trigger/README.md) |
 | **User Profile** | [`@finastra/user-profile`](https://npmjs.com/package/@finastra/user-profile) | [![latest](https://img.shields.io/npm/v/@finastra/user-profile.svg)](https://npmjs.com/package/@finastra/user-profile) | [![README](https://img.shields.io/badge/README--56C271.svg)](./user-profile/README.md) |
 | **Search Input** | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md) |
+| **Sidenav** | [`@finastra/sidenav`](https://npmjs.com/package/@finastra/sidenav) | [![latest](https://img.shields.io/npm/v/@finastra/sidenav.svg)](https://npmjs.com/package/@finastra/sidenav) | [![README](https://img.shields.io/badge/README--56C271.svg)](./sidenav/README.md) |
 
 <br/>
 <br/>
