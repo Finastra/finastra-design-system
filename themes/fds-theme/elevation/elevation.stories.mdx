@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { html } from 'lit-html';
+
+# FDS Theme Elevation
+
+<Meta title="Foundations/Elevation"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+/>
+
+We use 24 levels of elevation. From 0 which means there is no elevation to 24 which is the highest level of elevation.
+
+## Mixins
+
+```SCSS
+@use '@finastra/fds-theme' as fds;
+
+.my-elevated-component {
+  @include fds.elevation(4);
+}
+```
+
+## Helper classes
+
+Before being able to use the helper classes, you need to include them in your Sass styles.
+
+```SCSS
+@use '@finastra/fds-theme/helpers';
+```
+
+Then you'll be able to use helper classes in your app's HTML
+
+### Examples
+
+export const TemplateHelper = (args) => { return html`
+<style>
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: var(--fds-surface);
+    color: var(--fds-on-surface);
+  }
+</style>
+<div class="fds-elevation-3 demo-layout">Hello World!</div>
+` };
+
+<Canvas withSource="open">
+  <Story name="Helper classes" args={{}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>

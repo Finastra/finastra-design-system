@@ -7,9 +7,15 @@ const isDark = typeof window !== `undefined` ? window.matchMedia && window.match
 export const parameters = {
   backgrounds: { disable: true },
   layout: 'centered',
+  previewTabs: {
+    "storybook/docs/panel": {
+      index: -1
+    },
+    canvas: { title: "Sandbox" }
+  },
   options: {
     storySort: {
-      order: ['Foundations', 'Components'],
+      order: ['Welcome', 'Foundations', 'Components'],
       method: 'alphabetical'
     }
   },

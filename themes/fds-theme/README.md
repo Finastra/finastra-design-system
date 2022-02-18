@@ -68,10 +68,10 @@ You can use Fds theme without Sass by using a pre-built theme
 
 ## Usage
 
-- [Color](./color/README.mdx)
-- [Elevation](./elevation/README.mdx)
-- [Spacing](./spacing/README.mdx)
-- [Typography](./typography/README.mdx)
+- [Color](https://finastra.github.io/finastra-design-system/?path=/story/foundations-color--page)
+- [Elevation](https://finastra.github.io/finastra-design-system/?path=/story/foundations-elevation--page)
+- [Spacing](https://finastra.github.io/finastra-design-system/?path=/story/foundations-spacing--page)
+- [Typography](https://finastra.github.io/finastra-design-system/?path=/story/foundations-typography--page)
 
 ## Want to help? 🤗❤️
 

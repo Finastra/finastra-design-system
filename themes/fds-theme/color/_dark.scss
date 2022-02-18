@@ -13,7 +13,7 @@ $error: #ff1a5e !default;
 $gradient: linear-gradient(var(--fds-primary, #917EE0), var(--fds-secondary, #E453BF)) !default;
 $on-primary: #000000 !default;
 $on-secondary: #000000 !default;
-$on-background: color.change($_white, $alpha: 0.75) !default;
+$on-background: #FFFFFF;
 $on-surface: #FFFFFF !default;
 $on-error: #000000 !default;
 $on-success: #000000 !default;
