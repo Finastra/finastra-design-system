@@ -32,7 +32,7 @@ export default {
           justify-content: center;
           align-items: center;
         }
-        .fds-sidenav-list {
+        .fds-sidenav-list, .navigation {
           --mdc-theme-text-primary-on-background: var(--fds-on-background);
           width: 100%;
         }
@@ -73,7 +73,7 @@ const Template: Story<Sidenav> = ({ type }) => {
       </mwc-list>
     </div>
   </div>
-  <div slot="navigation">
+  <div slot="navigation" class="navigation">
     <mwc-list activatable>
       <mwc-list-item graphic="icon">
         <span>Tab 1</span>
