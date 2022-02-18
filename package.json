@@ -71,7 +71,9 @@
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
     "prewc:build:storybook": "npm run wca",
-    "prewc:storybook": "npm run wca"
+    "prewc:storybook": "npm run wca",
+    "add": "npm install --package-lock-only --no-package-lock --prefix",
+    "postadd": "npm install"
   },
   "husky": {
     "hooks": {
@@ -134,7 +136,7 @@
     "@angular/compiler-cli": "13.0.3",
     "@angular/language-service": "13.0.3",
     "@babel/core": "^7.16.7",
-    "@ljcl/storybook-addon-cssprops": "file:ljcl-storybook-addon-cssprops-1.0.0.tgz",
+    "@ljcl/storybook-addon-cssprops": "file:ljcl-storybook-addon-cssprops-1.0.1.tgz",
     "@nrwl/angular": "13.2.4",
     "@nrwl/cli": "13.2.4",
     "@nrwl/cypress": "13.2.4",
@@ -209,6 +211,8 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^10.1.1",
     "prettier": "2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
@@ -230,6 +234,6 @@
   },
   "engines": {
     "node": "^16",
-    "npm": "^7"
+    "npm": "^8"
   }
 }

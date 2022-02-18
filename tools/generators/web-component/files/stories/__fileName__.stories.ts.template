@@ -17,9 +17,9 @@ export default {
     },
   },
   decorators: [
-    (story) => html`<style>
+    (story) => html`${story()}<style>
       /* Add you styles here */ 
-    </style>${story()}`
+    </style>`
   ]
 } as Meta;
 

@@ -125,3 +125,27 @@ npm run wc:generate MY_COMPONENT_NAME
 
 > To see a demo of the generated web component, run the commands mentioned in the
 > [#Web Component Development](#web-component-development) section.
+
+<br>
+
+### Adding local dependencies
+
+Whenever you need to use a component inside another component, you'll need to add it as a dependency in its package.json file.
+
+To accomplish this easily, we've added an `add` script in the root package.json.\
+It can be used like following:
+
+```bash
+npm run add -- submodule submoduleToAdd
+```
+
+#### Example
+
+Say we want to use the `@finastra/avatar` component inside the `@finastra/user-profile` component.\
+We'd be running:
+
+```bash
+npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
+```
+
+> Version of the package will be automatically updated during release.

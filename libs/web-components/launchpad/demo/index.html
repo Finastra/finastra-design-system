@@ -9,19 +9,27 @@
 
   .tools-list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-row-gap: 32px;
     grid-column-gap: 56px;
     padding-top: var(--fds-spacing-3);
     padding-bottom: var(--fds-spacing-3);
   }
+
   .tools-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tools {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
   }
+
   .tools-name {
     font: var(--fds-subtitle-3);
     color: var(--fds-on-surface);
@@ -95,13 +103,6 @@
           "sso-initiation-urls": {
             "web": "https://app9.com"
           }
-        },
-        {
-          "name": "App",
-          "shortName": "App",
-          "sso-initiation-urls": {
-            "web": "https://app10.com"
-          }
         }
       ]
     '
@@ -152,13 +153,6 @@
           "sso-initiation-urls": {
             "web": "https://app6.com"
           }
-        },
-        {
-          "name": "App",
-          "shortName": "App",
-          "sso-initiation-urls": {
-            "web": "https://app7.com"
-          }
         }
       ]
     '
@@ -166,20 +160,20 @@
     <div slot="tools">
       <div class="tools-title">Tools</div>
       <div class='tools-list'>
-        <div>
-          <fds-app-card class='tools-item' label="Tool" extraDense primary></fds-app-card>
+        <div class="tools-item">
+          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
           <div class="tools-name">Tool</div>
         </div>
-        <div>
-          <fds-app-card class='tools-item' label="Tool" extraDense primary></fds-app-card>
+        <div class="tools-item">
+          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
           <div class="tools-name">Tool</div>
         </div>
-        <div>
-          <fds-app-card class='tools-item' label="Tool" extraDense primary></fds-app-card>
+        <div class="tools-item">
+          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
           <div class="tools-name">Tool</div>
         </div>
-        <div>
-          <fds-app-card class='tools-item' label="Tool" extraDense primary></fds-app-card>
+        <div class="tools-item">
+          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
           <div class="tools-name">Tool</div>
         </div>
       </div>

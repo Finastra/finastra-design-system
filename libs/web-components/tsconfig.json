@@ -54,13 +54,16 @@
       "path": "user-profile"
     },
     {
+      "path": "app-bar"
+    },
+    {
+      "path": "sidenav"
+    },
+    {
       "path": "menu-trigger"
     },
     {
       "path": "launchpad"
     },
-    {
-      "path": "app-bar"
-    }  
   ]
 }

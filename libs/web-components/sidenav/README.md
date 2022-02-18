@@ -1,11 +1,12 @@
 # Sidenav
 
-Current sidenav is delivered as a template to be used in a mwc-drawer.
+Simple wrapper for [Material's Drawer web component](https://material-components.github.io/material-web/demos/drawer/).
 
-## Usage
+[![See it on NPM!](https://img.shields.io/npm/v/@finastra/sidenav?style=for-the-badge)](https://www.npmjs.com/package/@finastra/sidenav)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/sidenav?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/sidenav')
+
+## Installation
 
 ```
-npm i @material/mwc-drawer @material/mwc-list @material/mwc-icon
+npm i @finastra/sidenav
 ```
-
-Just copy/paste the template provided in Storybook documentation.
