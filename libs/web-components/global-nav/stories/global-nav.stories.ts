@@ -160,6 +160,16 @@ TransparentAppBar.args = {
   appName: 'App with transparent app bar',
   transparent: true
 };
+TransparentAppBar.decorators = [
+  (story) => html`${story()}
+    <style>
+      fds-sidenav {
+        background: url('https://res.cloudinary.com/ffdc/image/upload/v1645178291/Storybook/Global%20Nav/Global_nav_transparent_background_oyautp.png')
+          no-repeat center center fixed;
+        background-size: cover;
+      }
+    </style>`
+];
 
 const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
