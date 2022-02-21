@@ -54,7 +54,10 @@
       "path": "user-profile"
     },
     {
-      "path": "autocomplete"
+      "path": "app-bar"
+    },
+    {
+      "path": "sidenav"
     },
     {
       "path": "menu-trigger"
@@ -63,7 +66,7 @@
       "path": "launchpad"
     },
     {
-      "path": "app-bar"
+      "path": "autocomplete"
     }
   ]
 }

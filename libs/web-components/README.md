@@ -43,13 +43,14 @@
 | **Menu Trigger** | [`@finastra/menu-trigger`](https://npmjs.com/package/@finastra/menu-trigger) | [![latest](https://img.shields.io/npm/v/@finastra/menu-trigger.svg)](https://npmjs.com/package/@finastra/menu-trigger) | [![README](https://img.shields.io/badge/README--56C271.svg)](./menu-trigger/README.md) |
 | **User Profile** | [`@finastra/user-profile`](https://npmjs.com/package/@finastra/user-profile) | [![latest](https://img.shields.io/npm/v/@finastra/user-profile.svg)](https://npmjs.com/package/@finastra/user-profile) | [![README](https://img.shields.io/badge/README--56C271.svg)](./user-profile/README.md) |
 | **Search Input** | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md) |
+| **Sidenav** | [`@finastra/sidenav`](https://npmjs.com/package/@finastra/sidenav) | [![latest](https://img.shields.io/npm/v/@finastra/sidenav.svg)](https://npmjs.com/package/@finastra/sidenav) | [![README](https://img.shields.io/badge/README--56C271.svg)](./sidenav/README.md) |
 
 <br/>
 <br/>
 
 # Developer guide
 
-## Getting your envionement set up
+## Getting your environment set up
 
 1. Make sure you have `node@16.x.x` and `npm@8.x.x` installed.
 2. Fork [Finastra Design System](https://github.com/Finastra/finastra-design-system) repo on Github.
@@ -59,7 +60,7 @@
 
 > Alternatively, you can use [Gitpod](https://gitpod.io/#https://github.com/Finastra/finastra-design-system) to code in your browser !
 
-## Web Component Development
+## Web component development
 
 ### Local developement
 
@@ -105,7 +106,7 @@ npm run wc:build:storybook
 
 > Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
 
-### Running Tests
+### Running tests
 
 ```
 npm run wc:test
@@ -125,3 +126,27 @@ npm run wc:generate MY_COMPONENT_NAME
 
 > To see a demo of the generated web component, run the commands mentioned in the
 > [#Web Component Development](#web-component-development) section.
+
+<br>
+
+### Adding local dependencies
+
+Whenever you need to use a component inside another component, you'll need to add it as a dependency in its package.json file.
+
+To accomplish this easily, we've added an `add` script in the root package.json.\
+It can be used like following:
+
+```bash
+npm run add -- submodule submoduleToAdd
+```
+
+#### Example
+
+Say we want to use the `@finastra/avatar` component inside the `@finastra/user-profile` component.\
+We'd be running:
+
+```bash
+npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
+```
+
+> Version of the package will be automatically updated during release.
