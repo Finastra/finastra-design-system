@@ -4,6 +4,10 @@ The `<fds-launchpad>` is the menu that is part of the [Global Navigation Patern]
 
 You can customize the __Tools__ section using `app-card` to add elements to it (c.f. [storybook](https://finastra.github.io/finastra-design-system/?path=/story/components-launchpad--custom-tools))
 
+## Demo
+
+Divider demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-launchpad--default)
+
 ## Usage
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/launchpad?style=for-the-badge)](https://www.npmjs.com/package/@finastra/launchpad)

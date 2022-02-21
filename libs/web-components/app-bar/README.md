@@ -5,6 +5,10 @@ Menu, navigation, content and actions are slots where you can put customized con
 
 We recommend to use global navigation [templates](https://finastra.github.io/finastra-design-system/?path=/story/patterns-global-nav--default) if you need examples.
 
+## Demo
+
+App Bar demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-app-bar--default)
+
 ## Usage
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/app-bar?style=for-the-badge)](https://www.npmjs.com/package/@finastra/app-bar)

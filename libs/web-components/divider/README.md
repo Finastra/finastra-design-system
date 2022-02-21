@@ -2,6 +2,10 @@
 
 `fds-divider` brings clarity to a layout by grouping and dividing content that exists in close proximity. It can also be used to establish rhythm and hierarchy.
 
+## Demo
+
+Divider demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-divider--default-story)
+
 ## Usage
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/divider?style=for-the-badge)](https://www.npmjs.com/package/@finastra/divider)

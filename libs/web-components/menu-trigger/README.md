@@ -1,6 +1,10 @@
 # MenuTrigger
 
-The `<fds-menu-trigger>` is a toggle button used for menu (c.f. [storybook](https://finastra.github.io/finastra-design-system/))
+The `<fds-menu-trigger>` is a toggle button used for menu.
+
+## Demo
+
+Menu Trigger demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-menu-trigger--custom)
 
 ## Usage
 
