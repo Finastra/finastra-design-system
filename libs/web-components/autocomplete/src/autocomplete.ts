@@ -1,8 +1,8 @@
-import { LitElement, html, PropertyValues } from 'lit';
-import { customElement, property, state, query } from 'lit/decorators.js';
-import { Menu } from '@material/mwc-menu';
-import { ListItem } from '@material/mwc-list/mwc-list-item';
+import { html, LitElement, PropertyValues } from 'lit';
+import { customElement, property, query, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import { ListItem } from '@material/mwc-list/mwc-list-item';
+import { Menu } from '@material/mwc-menu';
 
 import { styles } from './styles.css';
 
@@ -36,13 +36,13 @@ export class Autocomplete extends LitElement {
 
  
   @property({ type: String, attribute: 'aria-label' })
-  ariaLabel!: string;
+  ariaLabel="";
 
   @property({ type: String, attribute: 'aria-labelledby' })
-  ariaLabelledBy!: string;
+  ariaLabelledBy="";
 
   @property({ type: String, attribute: 'aria-describedby' })
-  ariaDescribedBy!: string;
+  ariaDescribedBy="";
 
   protected _menuUpdateComplete: null | Promise<unknown> = null;
 
