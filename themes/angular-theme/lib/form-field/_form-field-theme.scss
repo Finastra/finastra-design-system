@@ -4,9 +4,10 @@
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
-  $warn: map.get($theme, warn);
+  $error: map.get($theme, error);
   $fill-background: palette.get-color-from-palette($primary, default, 0.08);
-  $warn-background: palette.get-color-from-palette($warn, default, 0.04);
+  $error-background: palette.get-color-from-palette($error, default, 0.04);
+  @debug $error-background;
 
   .mat-form-field-appearance-fill {
     .mat-form-field-flex {
@@ -24,7 +25,23 @@
 
   .mat-form-field.mat-form-field-invalid {
     .mat-form-field-flex {
-      background-color: $warn-background;
+      background-color: $error-background;
+    }
+
+    .mat-input-element {
+      caret-color: map.get($error, default);
+    }
+
+    .mat-icon.mat-warn,
+    .mat-form-field-label,
+    .mat-form-field-label .mat-form-field-required-marker,
+    .mat-error {
+      color: map.get($error, default);
+    }
+
+    
+    .mat-form-field-ripple {
+      background-color: map.get($error, default);
     }
   }
 }

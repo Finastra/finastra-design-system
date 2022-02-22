@@ -6,6 +6,7 @@
   $accent: map.get($theme, accent);
   $warn: map.get($theme, warn);
   $success: map.get($theme, success);
+  $error: map.get($theme, error);
 
   .uxg-text-primary {
     color: palette.mat-color($primary, default);
@@ -16,9 +17,12 @@
     color: palette.mat-color($accent, default);
   }
 
-  .uxg-text-warn,
-  .uxg-text-error {
+  .uxg-text-warn {
     color: palette.mat-color($warn, default);
+  }
+
+  .uxg-text-error {
+    color: palette.mat-color($error, default);
   }
 
   .uxg-text-success {
