@@ -5,7 +5,7 @@ It is customizable enough to allow you to add more user information or even acti
 
 ## Demo
 
-User Profile demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-user-profile--default)
+User profile demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-user-profile--default)
 
 ## Usage
 
