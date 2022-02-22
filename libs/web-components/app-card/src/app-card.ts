@@ -6,6 +6,10 @@ import { BaseCard } from '@finastra/base-card';
 import { styles } from './styles.css';
 import { renderPatternSVG, renderPrimarySVG, renderSecondarySVG } from './app-card-decorations';
 
+/**
+ * @cssprop {color} [--fds-primary=#694ED6] - Color of the default ribbon
+ * @cssprop {color} [--fds-secondary=#C137A2] - Color of the secondary ribbon
+ */
 @customElement('fds-app-card')
 export class AppCard extends BaseCard {
   static styles = styles;

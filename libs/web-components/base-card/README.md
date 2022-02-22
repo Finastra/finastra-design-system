@@ -1,6 +1,6 @@
 # Base Card
 
-This component is a container for a card style. 
+This component is a container for a card style.
 
 ## Demo
 
@@ -14,3 +14,5 @@ Base Card demo is available [here](https://finastra.github.io/finastra-design-sy
 ```
 npm i @finastra/base-card
 ```
+
+To use it, your component needs to extend `BaseCard` and implements the function `renderCardContent()` which returns the `TemplateResult` to display in the card.

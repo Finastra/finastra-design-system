@@ -1,4 +1,4 @@
-# AppCard
+# App Card
 
 This component extends [@finastra/base-card](https://www.npmjs.com/package/@finastra/base-card).
 

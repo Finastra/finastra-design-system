@@ -1,12 +1,14 @@
-import { LitElement, html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-
 import { styles } from './styles.css';
 
 @customElement('fds-base-card')
 export class BaseCard extends LitElement {
   static styles = styles;
+  /**
+   * Line border
+   */
   @property({ type: Boolean }) outlined = false;
 
   protected render(): TemplateResult {
