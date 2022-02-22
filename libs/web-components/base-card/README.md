@@ -4,7 +4,7 @@ This component is a container for a card style.
 
 ## Demo
 
-Base Card demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-base-card--default-story)
+Base card demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-base-card--default-story)
 
 ## Usage
 
