@@ -1,6 +1,5 @@
 import '@finastra/avatar';
 import '@finastra/divider';
-import { MenuTrigger } from '@finastra/menu-trigger';
 import '@material/mwc-icon-button';
 import '@material/mwc-menu';
 import { Menu } from '@material/mwc-menu';
@@ -19,7 +18,7 @@ export class UserProfile extends LitElement {
 
   @query('#menu') protected menu!: Menu;
 
-  @query('#anchor') protected anchor!: MenuTrigger;
+  @query('#anchor') protected anchor;
 
   @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
