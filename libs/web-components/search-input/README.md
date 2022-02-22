@@ -4,7 +4,7 @@
 
 ## Demo
 
-Search Input demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-search-input--custom-icon)
+Search input demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-search-input--custom-icon)
 
 ## Usage
 
