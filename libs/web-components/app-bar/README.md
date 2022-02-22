@@ -7,7 +7,7 @@ We recommend to use global navigation [templates](https://finastra.github.io/fin
 
 ## Demo
 
-App Bar demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-app-bar--default)
+App bar demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-app-bar--default)
 
 ## Usage
 
