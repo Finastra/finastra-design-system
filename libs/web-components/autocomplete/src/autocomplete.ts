@@ -212,6 +212,7 @@ export class Autocomplete extends LitElement {
           ?disabled="${this.disabled}"
           ?required=${this.required}
           label="${ifDefined(this.ariaLabel)}"
+          placeholder="${ifDefined(this.ariaLabel)}"
           @keydown=${this.handleKeyDown}
           @focus=${this.onInputFocus}
           @blur=${this.onInputBlur}
