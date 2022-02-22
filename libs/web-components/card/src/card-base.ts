@@ -5,12 +5,6 @@ import { classMap } from 'lit/directives/class-map.js';
 
 export type AspectRatioType = '16-9' | 'square' | '';
 
-/**
- * @slot primary-action - Slot to add actions in primary text at the bottom, it is the main tappable area of the card.
- * @slot button-action - Slot to add action buttons with text
- * @slot icon-action - Slot to add icon action buttons with no text
- * @slot media - Slot to a media area that displays a custom `background-image` with `background-size: cover`
- */
 export class CardBase extends BaseCard {
   @query('[name="primary-action"]') protected _primaryActionSlot!: HTMLSlotElement;
 
@@ -25,9 +19,6 @@ export class CardBase extends BaseCard {
    */
   @property({ type: Boolean }) fullBleed = false;
 
-  /**
-   * To have a single action button take up the entire width of the action row
-   */
   @property({ type: Boolean }) mediaPrimaryAction = false;
 
   /**
