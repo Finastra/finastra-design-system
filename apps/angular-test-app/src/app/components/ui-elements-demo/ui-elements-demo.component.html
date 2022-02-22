@@ -42,9 +42,9 @@
   <h3 class="uxg-h3">Badges</h3>
   <div class="example-row badge-side-test">
     <h6 matBadge="4" class="uxg-subtitle-2 uxg-side-badge" matBadgeSize="small">Currencies</h6>
-    <h6 matBadge="18" class="uxg-subtitle-2 uxg-side-badge" matBadgeColor="accent" matBadgeSize="medium">Folders</h6>
+    <h6 matBadge="18" class="uxg-subtitle-2 uxg-side-badge" matBadgeColor="secondary" matBadgeSize="medium">Folders</h6>
     <h6 matBadge="72" class="uxg-subtitle-2 uxg-side-badge" matBadgeColor="primary">Counterparty</h6>
-    <h6 matBadge="429" class="uxg-subtitle-2 uxg-side-badge" matBadgeColor="warn" matBadgeSize="large">Portfolios</h6>
+    <h6 matBadge="429" class="uxg-subtitle-2 uxg-side-badge" matBadgeColor="error" matBadgeSize="large">Portfolios</h6>
   </div>
 </div>
 
@@ -218,9 +218,15 @@
       <mat-button-toggle value="underline" disabled>Underline</mat-button-toggle>
     </mat-button-toggle-group>
     <mat-button-toggle-group value="chat">
-      <mat-button-toggle value="phone"><mat-icon>phone</mat-icon></mat-button-toggle>
-      <mat-button-toggle value="chat"><mat-icon>chat</mat-icon></mat-button-toggle>
-      <mat-button-toggle value="mail" disabled><mat-icon>mail_outline</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="phone">
+        <mat-icon>phone</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="chat">
+        <mat-icon>chat</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="mail" disabled>
+        <mat-icon>mail_outline</mat-icon>
+      </mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 </div>
@@ -259,7 +265,9 @@
       <mat-card-actions>
         <ul class="uxg-avatar-list" dense>
           <li><img src="https://randomuser.me/api/portraits/men/36.jpg" class="uxg-avatar" /></li>
-          <li><div class="uxg-avatar"></div></li>
+          <li>
+            <div class="uxg-avatar"></div>
+          </li>
           <li><img src="https://randomuser.me/api/portraits/women/37.jpg" class="uxg-avatar" /></li>
           <li class="uxg-avatar-number">+6</li>
         </ul>
