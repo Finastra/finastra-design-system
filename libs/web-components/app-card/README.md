@@ -6,7 +6,7 @@ This card is aimed to be used to display an application in an app list.
 
 ## Demo
 
-App Card demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-app-card--default-story)
+App card demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-app-card--default-story)
 
 ## Usage
 
