@@ -166,18 +166,6 @@
       },
       "tags": ["web-components"]
     },
-    "launchpad": {
-      "root": "libs/web-components/launchpad",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "avatar": {
       "projectType": "library",
       "root": "libs/angular-components/avatar",
@@ -613,6 +601,18 @@
         }
       },
       "tags": []
+    },
+    "launchpad": {
+      "root": "libs/web-components/launchpad",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/launchpad/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "menu-trigger": {
       "root": "libs/web-components/menu-trigger",

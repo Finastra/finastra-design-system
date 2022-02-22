@@ -17,7 +17,7 @@
   $foreground: map.get($theme, foreground);
   $primary: map.get($theme, primary);
   $secondary: map.get($theme, accent);
-  $warn: map.get($theme, warn);
+  $error: map.get($theme, error);
 
   .uxg-side-badge.mat-badge-after {
     .mat-badge-content {
@@ -28,7 +28,9 @@
 
     @include uxg-badge-color('primary', $primary);
     @include uxg-badge-color('accent', $secondary);
-    @include uxg-badge-color('warn', $warn);
+    @include uxg-badge-color('secondary', $secondary);
+    @include uxg-badge-color('error', $error);
+    @include uxg-badge-color('warn', $error);
   }
 }
 
