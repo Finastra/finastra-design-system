@@ -7,6 +7,7 @@ import { EVENTS } from './constants';
 
 /**
  * @slot navigationIcon - Slot to add a navigation icon (e.g. hamburger menu)
+ * @slot navigation - Slot to add content in the left of the app bar, just after the app name or in the second line in prominent app bar
  * @slot content - Slot to add content in the center of the app bar
  * @slot actions - Slot to add content in the right side of the app bar
  *

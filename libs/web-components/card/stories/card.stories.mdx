@@ -18,7 +18,7 @@ import '@material/mwc-button';
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
-      description: ''
+      description: 'Whether or not to show the material outlined variant.'
     },
     fullBleed: {
       table: {
@@ -28,14 +28,34 @@ import '@material/mwc-button';
       control: 'boolean',
       defaultValue: false,
       type: 'boolean',
+      description: 'To have a single action button take up the entire width of the action row'
+    },
+    mediaPrimaryAction: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
       description: ''
+    },
+    mediaAspectRatio: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Maintains the given aspect ratio on a media subelement by dynamically scaling its height relative to its width'
     },
     'icon-action': {
       table: {
         category: 'slot'
       },
       type: 'string',
-      description: '',
+      description: 'Icon action buttons with no text',
       control: null
     },
     'button-action': {
@@ -43,7 +63,7 @@ import '@material/mwc-button';
         category: 'slot'
       },
       type: 'string',
-      description: '',
+      description: 'Action buttons with text',
       control: null
     },
     'primary-action': {
@@ -51,7 +71,15 @@ import '@material/mwc-button';
         category: 'slot'
       },
       type: 'string',
-      description: '',
+      description: 'Actions in primary text at the bottom, it is the main tappable area of the card',
+      control: null
+    },
+    'media': {
+      table: {
+        category: 'slot'
+      },
+      type: 'string',
+      description: 'Media area that displays a custom `background-image` with `background-size: cover`',
       control: null
     }
   }}
