@@ -7,7 +7,6 @@
   $error: map.get($theme, error);
   $fill-background: palette.get-color-from-palette($primary, default, 0.08);
   $error-background: palette.get-color-from-palette($error, default, 0.04);
-  @debug $error-background;
 
   .mat-form-field-appearance-fill {
     .mat-form-field-flex {
