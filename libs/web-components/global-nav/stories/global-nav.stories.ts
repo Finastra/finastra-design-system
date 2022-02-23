@@ -52,6 +52,13 @@ export default {
         fds-button {
           padding-left: var(--fds-spacing-3);
         }
+        fds-user-profile fds-button {
+          line-height: 0px;
+          padding: var(--fds-spacing-0) var(--fds-spacing-3) var(--fds-spacing-2) var(--fds-spacing-3);
+        }
+        fds-user-profile fds-button + fds-button {
+          margin-top: var(--fds-spacing-2);
+        }
       </style>
       <style>
         .fds-sidenav {
