@@ -84,17 +84,17 @@
         .update {
           color: map.get($success, default);
           border: 1px solid map.get($success, default);
-          background-color: fds.get-color-from-palette($success, default, 0.1);
+          background-color: fds.get-color-from-palette($success, default, 0.017);
         }
         .bugfix {
           color: map.get($error, default);
           border: 1px solid map.get($error, default);
-          background-color: fds.get-color-from-palette($error, default, 0.1);
+          background-color: fds.get-color-from-palette($error, default, 0.096);
         }
         .deprecated {
-          color: fds.get-color-from-palette($foreground, text, 0.6);
-          border: 1px solid fds.get-color-from-palette($foreground, text, 0.6);
-          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.1);
+          color: fds.get-color-from-palette($foreground, text, 0.8);
+          border: 1px solid fds.get-color-from-palette($foreground, text, 0.8);
+          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.09);
         }
       }
 
