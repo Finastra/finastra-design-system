@@ -130,6 +130,18 @@
       },
       "tags": []
     },
+    "autocomplete": {
+      "root": "libs/web-components/autocomplete",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "app-bar": {
       "root": "libs/web-components/app-bar",
       "architect": {

@@ -65,5 +65,8 @@
     {
       "path": "launchpad"
     },
+    {
+      "path": "autocomplete"
+    }
   ]
 }
