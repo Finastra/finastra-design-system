@@ -133,6 +133,15 @@ export class Launchpad extends LitElement {
       this.trigger!.toggle();
     }
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+    setTimeout(() => {
+      this.launchpad!.anchor = this.trigger;
+      this.launchpad!.x = -420;
+      this.launchpad!.y = 0;
+    }, 0);
+  }
 }
 
 declare global {

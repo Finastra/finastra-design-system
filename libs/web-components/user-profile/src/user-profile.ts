@@ -1,13 +1,12 @@
-import { LitElement, html } from 'lit';
-import { customElement, property, query } from 'lit/decorators.js';
-import { renderAvatarSVG } from './user-profile-decorations';
-
-import '@material/mwc-menu';
-import '@material/mwc-icon-button';
 import '@finastra/avatar';
 import '@finastra/divider';
-
+import '@material/mwc-icon-button';
+import '@material/mwc-menu';
+import { Menu } from '@material/mwc-menu';
+import { html, LitElement } from 'lit';
+import { customElement, property, query } from 'lit/decorators.js';
 import { styles } from './styles.css';
+import { renderAvatarSVG } from './user-profile-decorations';
 
 /**
  * @slot actions -Actions that a user can perform
@@ -17,8 +16,9 @@ import { styles } from './styles.css';
 export class UserProfile extends LitElement {
   static styles = styles;
 
-  @query('#menu')
-  menu;
+  @query('#menu') protected menu!: Menu;
+
+  @query('#anchor') protected anchor;
 
   @query('[name="actions"]') protected _actionsSlot!: HTMLSlotElement;
 
@@ -44,8 +44,8 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <mwc-icon-button @click="${this._showMenu}" aria-label="avatar button"> ${renderAvatarSVG()} </mwc-icon-button>
-      <mwc-menu id="menu" fullwidth corner="BOTTOM_START">
+    return html` <mwc-icon-button @click="${this._showMenu}" id="anchor" aria-label="avatar button"> ${renderAvatarSVG()} </mwc-icon-button>
+      <mwc-menu id="menu" fullwidth>
         ${this.dense
           ? html`
               <div class="header-dense">
@@ -66,6 +66,17 @@ export class UserProfile extends LitElement {
               <slot name="actions" id="actions"> </slot>
             `}
       </mwc-menu>`;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    setTimeout(() => {
+      this.menu.anchor = this.anchor;
+      this.menu.corner = 'BOTTOM_START';
+      this.menu.menuCorner = 'END';
+      this.menu.x = 40;
+      this.menu.y = -50;
+    }, 0);
   }
 
   private _showMenu() {
