@@ -1,14 +1,12 @@
+import '@finastra/search-input';
+import '@material/mwc-icon';
+import { ListItem } from '@material/mwc-list/mwc-list-item';
+import '@material/mwc-menu';
+import { Menu } from '@material/mwc-menu';
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { ListItem } from '@material/mwc-list/mwc-list-item';
-import { Menu } from '@material/mwc-menu';
-
 import { styles } from './styles.css';
-
-import '@finastra/search-input';
-import '@material/mwc-menu';
-import '@material/mwc-icon';
 
 @customElement('fds-autocomplete')
 export class Autocomplete extends LitElement {
@@ -33,16 +31,16 @@ export class Autocomplete extends LitElement {
   @property({ type: Boolean }) required = false;
   @property({ type: Boolean }) useInnerFilter = true;
   @property({ type: Boolean }) disabled = false;
+  @property({ type: String }) placeholder = '';
 
- 
   @property({ type: String, attribute: 'aria-label' })
-  ariaLabel="";
+  ariaLabel = '';
 
   @property({ type: String, attribute: 'aria-labelledby' })
-  ariaLabelledBy="";
+  ariaLabelledBy = '';
 
   @property({ type: String, attribute: 'aria-describedby' })
-  ariaDescribedBy="";
+  ariaDescribedBy = '';
 
   protected _menuUpdateComplete: null | Promise<unknown> = null;
 
@@ -115,7 +113,7 @@ export class Autocomplete extends LitElement {
   }
 
   protected dispatchInputEvent() {
-    const inputEvent = new CustomEvent('input', {detail: this.value});
+    const inputEvent = new CustomEvent('input', { detail: this.value });
     this.dispatchEvent(inputEvent);
   }
 
@@ -160,8 +158,7 @@ export class Autocomplete extends LitElement {
   }
 
   protected deregisterBodyClick() {
-    if (this.onBodyClickBound)
-      document.body.removeEventListener('click', this.onBodyClickBound, { capture: true });
+    if (this.onBodyClickBound) document.body.removeEventListener('click', this.onBodyClickBound, { capture: true });
   }
 
   protected onMenuSelected() {
@@ -212,7 +209,7 @@ export class Autocomplete extends LitElement {
           ?disabled="${this.disabled}"
           ?required=${this.required}
           label="${ifDefined(this.ariaLabel)}"
-          placeholder="${ifDefined(this.ariaLabel)}"
+          placeholder="${ifDefined(this.placeholder)}"
           @keydown=${this.handleKeyDown}
           @focus=${this.onInputFocus}
           @blur=${this.onInputBlur}
