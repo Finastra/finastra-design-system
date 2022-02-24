@@ -1,10 +1,10 @@
+import { customElement, property } from 'lit/decorators.js';
+import { html } from 'lit-html';
+
 import { Button } from '@finastra/button';
 import '@material/mwc-icon';
-import { html } from 'lit-html';
-import { customElement, property } from 'lit/decorators.js';
+
 import { styles } from './styles.css';
-
-
 
 @customElement('fds-menu-trigger')
 export class MenuTrigger extends Button {
