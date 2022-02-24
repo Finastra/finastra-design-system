@@ -46,6 +46,8 @@ jobs:
           verbose: true
 
       # Storybook
+      - name: Check Components' Stories
+        run: npm run wc:storybook:check
       - name: Build Storybook
         run: npm run wc:build:storybook
       - name: Deploy storybook to Netlify
