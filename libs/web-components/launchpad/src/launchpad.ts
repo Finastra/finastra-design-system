@@ -61,7 +61,7 @@ export class Launchpad extends LitElement {
       // tenantId will always be the first pathname param
       this.tenantId = url.pathname.split('/')[1];
       if (!this.tenantId.length) {
-        console.error('tenantId not found');
+        console.error("tenantId not found");
       }
     }
     if (!this.channelType.length) {
@@ -70,9 +70,8 @@ export class Launchpad extends LitElement {
       this.channelType = channel === 'b2c' || channel === 'b2e' ? channel : '';
     }
     // make sure baseUrl do not finish with /
-    this.baseUrl = this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
-    // build the launchpageUrl
-    this.launchpageUrl = `${this.baseUrl}/${this.tenantId}${this.channelType.length ? `/${this.channelType}` : ''}`;
+    this.baseUrl[this.baseUrl.length - 1] === '/' ? this.baseUrl.slice(0, -1) : this.baseUrl;
+    this.launchpageUrl = `${this.baseUrl}/${this.tenantId}${this.channelType.length ? `/${this.channelType}` : ''}`
   }
 
   render() {
@@ -84,9 +83,9 @@ export class Launchpad extends LitElement {
             <div class="app-title">${this.title}</div>
             <div class="appcard-list">
               ${this.apps && this.apps.length > 0
-                ? this.apps.map(
-                    (app: any) =>
-                      html`
+        ? this.apps.map(
+          (app: any) =>
+            html`
                         <div class="appcard-item">
                           <fds-app-card
                             @click="${() => this._handleAppCardClick(app)}"
@@ -99,8 +98,8 @@ export class Launchpad extends LitElement {
                           <div class="appcard-name">${app[this.appNameProperty]}</div>
                         </div>
                       `
-                  )
-                : ''}
+        )
+        : ''}
             </div>
           </div>
           <div class="menu-tools">
