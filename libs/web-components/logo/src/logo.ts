@@ -1,11 +1,10 @@
 import { LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-
 import { styles } from './styles.css';
 
 /**
- * @attr {boolean} [dense=false]
- * 
+ * @attr {boolean} [dense=false] - Logo in a smaller size
+ *
  * @cssprop --fds-logo - String representing an image encoded in base64
  * @cssprop [--fds-logo-width=122px]
  * @cssprop [--fds-logo-height=60px]

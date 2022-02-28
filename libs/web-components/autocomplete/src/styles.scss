@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  --mdc-text-field-label-ink-color: var(--fds-text-medium-on-background);
+
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+}
+
+.fds-autocomplete {
+  position: relative;
+  display: inline-flex;
+}

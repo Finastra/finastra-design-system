@@ -1,7 +1,7 @@
 {
   "name": "@finastra/launchpad",
   "displayName": "Launchpad",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "description": "Launchpad Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,9 +15,9 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/app-card": "0.0.18",
-    "@finastra/button": "0.0.18",
-    "@finastra/menu-trigger": "0.0.18",
+    "@finastra/app-card": "0.0.20",
+    "@finastra/button": "0.0.20",
+    "@finastra/menu-trigger": "0.0.20",
     "@material/mwc-icon-button": "0.25.3",
     "@material/mwc-menu": "0.25.3",
     "lit": "^2.0.0",

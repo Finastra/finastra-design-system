@@ -112,30 +112,30 @@ $uxg-fuchsia: (
 $uxg-crimson: (
   25: #f8bdcf,
   50: #f17fa2,
-  75: rgba(var(--color-warn-ligther), 1),
-  100: rgba(var(--color-warn), 1),
-  100-dark: rgba(var(--color-warn-darker), 1),
+  75: rgba(var(--color-error-ligther), 1),
+  100: rgba(var(--color-error), 1),
+  100-dark: rgba(var(--color-error-darker), 1),
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
-    75: rgba(var(--text-color-warn-ligther), 1),
-    100: rgba(var(--text-color-warn), 1),
-    100-dark: rgba(var(--text-color-warn-darker), 1),
+    75: rgba(var(--text-color-error-lighter), 1),
+    100: rgba(var(--text-color-error), 1),
+    100-dark: rgba(var(--text-color-error-darker), 1),
   ),
 );
 
 $uxg-grass: (
   25: #d4efda,
   50: #a9e0b7,
-  75: #80d194,
-  100: #56c271,
-  100-dark: #3c874e,
+  75: rgba(var(--color-success-lighter), 1),
+  100: rgba(var(--color-success), 1),
+  100-dark: rgba(var(--color-success-darker), 1),
   contrast: (
     25: $dark-primary-text,
     50: $dark-primary-text,
-    75: $dark-primary-text,
-    100: $dark-primary-text,
-    100-dark: $light-primary-text,
+    75: rgba(var(--text-color-success-lighter), 1),
+    100: rgba(var(--text-color-success), 1),
+    100-dark: rgba(var(--text-color-success-darker), 1),
   ),
 );
 

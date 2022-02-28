@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/sidenav",
+  "displayName": "Sidenav",
+  "version": "0.0.20",
+  "description": "Sidenav Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Sidenav"
+  ],
+  "license": "MIT",
+  "main": "dist/src/sidenav.js",
+  "module": "dist/src/sidenav.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/app-bar": "file:../app-bar",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

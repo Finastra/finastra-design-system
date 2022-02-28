@@ -1,7 +1,7 @@
 {
   "name": "@finastra/button",
   "displayName": "Button",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "description": "Button Web Component",
   "keywords": [
     "Finastra Design System",

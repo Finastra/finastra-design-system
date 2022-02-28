@@ -130,6 +130,18 @@
       },
       "tags": []
     },
+    "autocomplete": {
+      "root": "libs/web-components/autocomplete",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "app-bar": {
       "root": "libs/web-components/app-bar",
       "architect": {
@@ -149,18 +161,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/app-card/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
-    "launchpad": {
-      "root": "libs/web-components/launchpad",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/launchpad/src/**/*.ts"]
           }
         }
       },
@@ -602,6 +602,18 @@
       },
       "tags": []
     },
+    "launchpad": {
+      "root": "libs/web-components/launchpad",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/launchpad/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu-trigger": {
       "root": "libs/web-components/menu-trigger",
       "architect": {
@@ -744,6 +756,18 @@
         }
       },
       "tags": []
+    },
+    "sidenav": {
+      "root": "libs/web-components/sidenav",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/sidenav/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "skeleton-text": {
       "projectType": "library",

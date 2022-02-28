@@ -9,7 +9,7 @@ $secondary: #C137A2 !default;
 $background: #FAFAFA !default;
 $surface: #FFFFFF !default;
 $success: #008744 !default;
-$error: #E40046 !default;
+$error: #D60040 !default;
 $gradient: linear-gradient(var(--fds-primary, #694ED6), var(--fds-secondary, #C137A2)) !default;
 $on-primary: #FFFFFF !default;
 $on-secondary: #FFFFFF !default;
@@ -37,6 +37,7 @@ $properties: (
   on-error: $on-error,
   on-success: $on-success,
   on-gradient: $on-gradient,
+  text-primary-on-background: $on-background,
   text-high-on-background: $on-background,
   text-medium-on-background: color.change($_black, $alpha: 0.54),
   text-hint-on-background: color.change($_black, $alpha: 0.29),

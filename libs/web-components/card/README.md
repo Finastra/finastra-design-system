@@ -2,6 +2,10 @@
 
 This component is a clone from https://github.com/material-components/material-components-web-components/tree/mwc-card/packages/card.
 
+## Demo
+
+Card demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-card--default-story)
+
 ## Usage
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/card?style=for-the-badge)](https://www.npmjs.com/package/@finastra/card)

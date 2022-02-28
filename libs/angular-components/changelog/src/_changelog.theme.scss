@@ -5,7 +5,9 @@
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
-  $accent: map.get($theme, accent);
+  $secondary: map.get($theme, accent);
+  $error: map.get($theme, error);
+  $success: map.get($theme, success);
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
   $elevation-color: map.get($foreground, elevation);
@@ -27,7 +29,7 @@
         background-image: linear-gradient(
         to right,
         fds.get-color-from-palette($primary, default),
-        fds.get-color-from-palette($accent, default)
+        fds.get-color-from-palette($secondary, default)
     );
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
@@ -49,7 +51,7 @@
       top: 0;
       height: 250px;
       background-image: linear-gradient(
-        90deg, darken(fds.get-color-from-palette($primary, 800), 20% ), darken(fds.get-color-from-palette($primary, 800), 10% ) 40%, darken(fds.get-color-from-palette($accent,  800),15%) 80%);
+        90deg, darken(fds.get-color-from-palette($primary, 800), 20% ), darken(fds.get-color-from-palette($primary, 800), 10% ) 40%, darken(fds.get-color-from-palette($secondary,  800),15%) 80%);
     }
 
     .title:after {
@@ -75,49 +77,49 @@
 
       .change {
         .new {
-          color: fds.get-color-from-palette($primary, default);
-          border: 1px solid fds.get-color-from-palette($primary, default);
+          color: map.get($primary, default);
+          border: 1px solid map.get($primary, default);
           background-color: fds.get-color-from-palette($primary, 300, 0.1);
         }
         .update {
-          color: map.get(fds.$uxg-grass, 100);
-          border: 1px solid map.get(fds.$uxg-grass, 100);
-          background-color: fds.get-color-from-palette(fds.$uxg-grass, 100, 0.1);
+          color: map.get($success, default);
+          border: 1px solid map.get($success, default);
+          background-color: fds.get-color-from-palette($success, default, 0.017);
         }
         .bugfix {
-          color: map.get(fds.$uxg-crimson, 100);
-          border: 1px solid map.get(fds.$uxg-crimson, 100);
-          background-color: fds.get-color-from-palette(fds.$uxg-crimson, 100, 0.1);
+          color: map.get($error, default);
+          border: 1px solid map.get($error, default);
+          background-color: fds.get-color-from-palette($error, default, 0.096);
         }
         .deprecated {
-          color: fds.get-color-from-palette($foreground, text, 0.6);
-          border: 1px solid fds.get-color-from-palette($foreground, text, 0.6);
-          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.1);
+          color: fds.get-color-from-palette($foreground, text, 0.8);
+          border: 1px solid fds.get-color-from-palette($foreground, text, 0.8);
+          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.09);
         }
       }
 
       .release-detail {
         &::after {
-          border-left: 2px dotted fds.get-color-from-palette($primary, default);
+          border-left: 2px dotted map.get($primary, default);
         }
       }
 
       .first-release {
         &::after {
-          background-color: fds.get-color-from-palette($primary, default);
+          background-color: map.get($primary, default);
         }
       }
 
       .release-detail::before,
       .last-release::before {
-        color: fds.get-color-from-palette($background, default);
-        border: 8px solid fds.get-color-from-palette($primary, default);
-        background-color: fds.get-color-from-palette($primary, default);
+        color: map.get($background, default);
+        border: 8px solid map.get($primary, default);
+        background-color: map.get($primary, default);
       }
 
       .first-release::before {
-        background-color: fds.get-color-from-palette($background, card);
-        border: 5px solid fds.get-color-from-palette($primary, default);
+        background-color: map.get($background, card);
+        border: 5px solid map.get($primary, default);
       }
     }
   }

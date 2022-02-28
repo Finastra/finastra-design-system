@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/finastra/finastra-design-system/compare/v2.6.1...v2.7.0) (2022-02-18)
+
+
+### Features
+
+* **theme:** add success color to theme ([#596](https://github.com/finastra/finastra-design-system/issues/596)) ([b2fa854](https://github.com/finastra/finastra-design-system/commit/b2fa85458ee0d78040de137f58289ffd9b8e54e1))
+
 ### [2.6.1](https://github.com/finastra/finastra-design-system/compare/v0.0.18...v2.6.1) (2022-02-11)
 
 

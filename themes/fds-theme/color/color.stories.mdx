@@ -1,6 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { html } from 'lit-html';
+
 # FDS Theme Color
 
-<Meta title="Foundations/Color" />
+<Meta title="Foundations/Color" 
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+/>
 
 There's 3 ways to use colors in the Finastra design system theme depending on your needs:
 
@@ -14,14 +24,28 @@ This theme is built around custom properties. You can use them directly in your 
 
 ### Examples
 
-```SCSS
-@use '@finastra/fds-theme/light';
+export const TemplateCustomProp = (args) => { return html`
+<style>
+  .my-primary-container {
+    background-color: var(--fds-primary);
+    color: var(--fds-on-primary);
+  }
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+  }
+</style>
+<div class="my-primary-container demo-layout">Hello World!</div>
+` };
 
-.my-primary-container {
-  background-color: var(--fds-primary);
-  color: var(--fds-on-primary);
-}
-```
+<Canvas withSource="open">
+  <Story name="Custom properties" args={{}}>
+    {TemplateCustomProp.bind({})}
+  </Story>
+</Canvas>
 
 ### Available custom properties
 
@@ -116,11 +140,26 @@ Be aware that some classes are meant to be used on containers as their backgroun
 
 ### Examples
 
-```HTML
-<div class="fds-surface">
-  <p class="fds-on-surface">Hello!</p>
+export const TemplateHelper = (args) => { return html`
+<style>
+  .demo-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+  }
+</style>
+<div class="fds-surface demo-layout">
+  <p class="fds-on-surface">Hello World!</p>
 </div>
-```
+` };
+
+<Canvas withSource="open">
+  <Story name="Helper classes" args={{}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>
 
 ```HTML
 <div class="fds-primary-bg">

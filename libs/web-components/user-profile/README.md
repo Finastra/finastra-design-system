@@ -1,7 +1,11 @@
 # UserProfile
 
-The User Profile web component shows detailed information about a user.
+The user profile web component shows detailed information about a user.
 It is customizable enough to allow you to add more user information or even actions if needed.
+
+## Demo
+
+User profile demo is available [here](https://finastra.github.io/finastra-design-system/?path=/story/components-user-profile--default)
 
 ## Usage
 

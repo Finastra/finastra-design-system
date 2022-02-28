@@ -1,7 +1,7 @@
+import { BaseCard } from '@finastra/base-card';
 import { html, TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { BaseCard } from '@finastra/base-card';
 
 export type AspectRatioType = '16-9' | 'square' | '';
 
@@ -14,10 +14,16 @@ export class CardBase extends BaseCard {
 
   @query('[name="button-action"]') protected _buttonSlot!: HTMLSlotElement;
 
+  /**
+   * To have a single action button take up the entire width of the action row
+   */
   @property({ type: Boolean }) fullBleed = false;
 
   @property({ type: Boolean }) mediaPrimaryAction = false;
 
+  /**
+   * Maintains the given aspect ratio on a media subelement by dynamically scaling its height relative to its width.
+   */
   @property({ type: String }) mediaAspectRatio: AspectRatioType = '';
 
   protected buttonCount = 0;

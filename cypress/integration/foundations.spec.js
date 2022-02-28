@@ -59,4 +59,8 @@ context('Foundations', () => {
   it('match small scale', () => {
     cy.get('.typo-small-test').scrollIntoView().matchImageSnapshot();
   });
+
+  it('match text colors', () => {
+    cy.get('.typo-color-test').scrollIntoView().matchImageSnapshot();
+  });
 });
