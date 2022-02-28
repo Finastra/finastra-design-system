@@ -85,7 +85,7 @@ jobs:
           enable-commit-comment: true
           overwrites-pull-request-comment: true
           alias: deploy-preview-${{ github.event.number }}
-          github-deployment-environment: Netlify
+          github-deployment-environment: angular-pr
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
