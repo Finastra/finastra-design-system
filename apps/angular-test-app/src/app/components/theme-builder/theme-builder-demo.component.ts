@@ -10,7 +10,7 @@ export class ThemeBuilderComponent {
   colorShift = 150;
   statePrimary = '105, 78, 214';
   stateSecondary = '193, 55, 162';
-  stateWarn = '228, 0, 70';
+  stateError = '228, 0, 70';
 
   private rgbStringFrom(rgbObject: any) {
     return rgbObject.r + ',' + rgbObject.g + ',' + rgbObject.b;
@@ -77,20 +77,20 @@ export class ThemeBuilderComponent {
     this.stateSecondary = this.rgbStringFrom($event.color.rgb);
   }
 
-  changeWarnComplete($event: ColorEvent) {
-    document.documentElement.style.setProperty('--color-warn', this.rgbStringFrom($event.color.rgb));
+  changeErrorComplete($event: ColorEvent) {
+    document.documentElement.style.setProperty('--color-error', this.rgbStringFrom($event.color.rgb));
     document.documentElement.style.setProperty(
-      '--color-warn-lighter',
+      '--color-Error-lighter',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, this.colorShift))
     );
     document.documentElement.style.setProperty(
-      '--color-warn-darker',
+      '--color-error-darker',
       this.rgbStringFrom(this.changeLuminosity($event.color.rgb, -this.colorShift))
     );
 
-    this.textContrastOnBackground($event.color.rgb, '--text-color-warn');
+    this.textContrastOnBackground($event.color.rgb, '--text-color-error');
 
-    this.stateWarn = this.rgbStringFrom($event.color.rgb);
+    this.stateError = this.rgbStringFrom($event.color.rgb);
   }
 
   onFileChanged($event: any) {

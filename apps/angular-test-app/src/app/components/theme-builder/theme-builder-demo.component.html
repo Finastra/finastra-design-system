@@ -4,13 +4,13 @@
 </div>
 
 <div class="var">
-  <h5 class="uxg-h5">Accent color</h5>
+  <h5 class="uxg-h5">Secondary color</h5>
   <div class="swatch swatchSecondary" [matMenuTriggerFor]="secondaryMenu"></div>
 </div>
 
 <div class="var">
-  <h5 class="uxg-h5">Warn color</h5>
-  <div class="swatch swatchWarn" [matMenuTriggerFor]="warnMenu"></div>
+  <h5 class="uxg-h5">Error color</h5>
+  <div class="swatch swatchError" [matMenuTriggerFor]="errorMenu"></div>
 </div>
 
 <div class="var">
@@ -27,6 +27,6 @@
   <color-sketch [color]="stateSecondary" (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
 </mat-menu>
 
-<mat-menu #warnMenu="matMenu" panelClass="color-picker">
-  <color-sketch [color]="stateWarn" (onChangeComplete)="changeWarnComplete($event)"></color-sketch>
+<mat-menu #errorMenu="matMenu" panelClass="color-picker">
+  <color-sketch [color]="stateError" (onChangeComplete)="changeErrorComplete($event)"></color-sketch>
 </mat-menu>

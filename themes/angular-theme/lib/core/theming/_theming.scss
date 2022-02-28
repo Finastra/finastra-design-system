@@ -4,7 +4,7 @@
 
 $uxg-primary: mat.define-palette(uxg-palette.$uxg-violet, 500, 100, 900);
 $uxg-accent:  mat.define-palette(uxg-palette.$uxg-fuchsia, 500, 100, 900);
-$uxg-warn:    mat.define-palette(uxg-palette.$uxg-crimson, 100, 75, 100-dark);
+$uxg-warn:    mat.define-palette(uxg-palette.$uxg-amber, 100, 75, 100-dark);
 $uxg-error:   mat.define-palette(uxg-palette.$uxg-crimson, 100, 75, 100-dark);
 $uxg-success: mat.define-palette(uxg-palette.$uxg-grass, 100, 75, 100-dark);
 
