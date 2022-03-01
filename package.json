@@ -120,6 +120,7 @@
     "jsonc-parser": "^3.0.0",
     "ngx-color": "^7.0.0",
     "plotly.js": "^1.58.4",
+    "react-syntax-highlighter": "^15.4.5",
     "rxjs": "^6.5.3",
     "smoothscroll-polyfill": "^0.4.4",
     "tslib": "2.3.1",
