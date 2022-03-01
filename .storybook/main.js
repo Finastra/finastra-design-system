@@ -5,7 +5,8 @@ module.exports = {
     '@storybook/addon-essentials',
     'storybook-dark-mode',
     '@storybook/preset-scss',
-    '@ljcl/storybook-addon-cssprops'
+    '@ljcl/storybook-addon-cssprops',
+    'storybook-addon-designs'
   ],
   framework: '@storybook/web-components',
   core: {
