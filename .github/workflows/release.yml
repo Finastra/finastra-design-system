@@ -1,10 +1,10 @@
 on:
-  push:
-    branch:
+  pull_request:
+    branches:
       - 'master'
-    tags:
-      - 'v*'
-      - '!@finastra/fds-theme*'
+    types: [closed]
+    paths:
+      - 'libs/angular-components/CHANGELOG.md'
 
 name: Create Angular release
 
