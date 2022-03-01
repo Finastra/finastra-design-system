@@ -11,5 +11,13 @@ module.exports = {
   framework: '@storybook/web-components',
   core: {
     builder: 'webpack5'
+  },
+  webpackFinal: async (config) => {
+    config.watchOptions.ignored = [
+      '**/libs/web-components/**/src/**.css.ts',
+      '**/libs/web-components/**/src/**.scss',
+      '**/libs/web-components/**/src/**.ts'
+    ];
+    return config;
   }
 };
