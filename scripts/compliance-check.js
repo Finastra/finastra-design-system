@@ -7,7 +7,7 @@ async function main() {
   const paths = await getPaths('../libs/web-components/*/src/*.ts');
   paths.forEach((path) => {
     const splitedPath = path.split('/');
-    const wcName = splitedPath[splitedPath.length - 1].toUpperCase();
+    const wcName = splitedPath[splitedPath.length - 1];
     glob(`${path}/stories/*.stories.*`, {}, function (error, file) {
       if (error) {
         core.setFailed(`Compliance check error: ${error}`);
@@ -16,7 +16,7 @@ async function main() {
           console.log(`✅ ${wcName} [1/2] ${file}`);
         } else {
           console.log(`❌ ${wcName} [1/2] ${path}`);
-          core.setFailed(`${wcName} compliance check failed! Each component must have a story 📕!`);
+          core.setFailed(`Compliance check failed! ${wcName} must have a story 📕!`);
         }
       }
     });
@@ -28,7 +28,7 @@ async function main() {
           console.log(`✅ ${wcName} [2/2] ${file}`);
         } else {
           console.log(`❌ ${wcName} [2/2] ${path}`);
-          core.setFailed(`${wcName} compliance check failed! Each component must have a test 🔬!`);
+          core.setFailed(`Compliance check failed! ${wcName} must have a test 🔬!`);
         }
       }
     })
