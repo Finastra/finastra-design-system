@@ -111,7 +111,18 @@ import '@finastra/button';
   }}
 />
 
-export const Template = ({ icon, label, outlined, text, dense, large, disabled, secondary = false, gradient = false, fullwidth = false }) => {
+export const Template = ({
+  icon,
+  label,
+  outlined,
+  text,
+  dense,
+  large,
+  disabled,
+  secondary = false,
+  gradient = false,
+  fullwidth = false
+}) => {
   return html`<fds-button
     .label=${label}
     .icon=${ifDefined(icon)}

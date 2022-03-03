@@ -3,7 +3,6 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
-
 @customElement('fds-button')
 export class Button extends LitElement {
   static styles = styles;
@@ -41,14 +40,11 @@ export class Button extends LitElement {
     >
       ${this.icon ? this.renderIcon() : ''}
       <span>${this.label}<span>
-    </button>`
+    </button>`;
   }
 
   protected renderIcon() {
-    return html`
-    <fds-icon>
-      ${this.icon}
-    </fds-icon>`;
+    return html` <fds-icon> ${this.icon} </fds-icon>`;
   }
 }
 

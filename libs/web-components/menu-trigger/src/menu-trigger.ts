@@ -18,7 +18,6 @@ export class MenuTrigger extends Button {
    */
   @property({ type: Boolean }) secondary = false;
 
-
   protected menuTrailingIcon = 'expand_more';
 
   get _menuTrailingIcon() {
@@ -34,18 +33,18 @@ export class MenuTrigger extends Button {
 
   render() {
     return html`
-    <fds-button
-      label='${this.label}'
-      icon='${this.icon}'
-      ?outlined='${this.outlined}'
-      ?text='${this.text}'
-      ?dense='${this.dense}'
-      ?disabled='${this.disabled}'
-      ?fullwidth='${this.fullwidth}'
-      ?secondary='${this.secondary}'
-    >
-      <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
-    </fds-button>
+      <fds-button
+        label="${this.label}"
+        icon="${this.icon}"
+        ?outlined="${this.outlined}"
+        ?text="${this.text}"
+        ?dense="${this.dense}"
+        ?disabled="${this.disabled}"
+        ?fullwidth="${this.fullwidth}"
+        ?secondary="${this.secondary}"
+      >
+        <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
+      </fds-button>
     `;
   }
 

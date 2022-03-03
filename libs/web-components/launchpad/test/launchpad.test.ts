@@ -18,7 +18,11 @@ describe('Launchpad', () => {
   });
 
   it('should contain the tools', async () => {
-    const el: Launchpad = await fixture(html`<fds-launchpad><div slot="tools"><h3>test</h3></div></fds-launchpad>`);
+    const el: Launchpad = await fixture(
+      html`<fds-launchpad
+        ><div slot="tools"><h3>test</h3></div></fds-launchpad
+      >`
+    );
     await elementUpdated(el);
     await shadowRoot(el).querySelector('fds-button')?.click();
     await expect(shadowRoot(el).querySelector('mwc-menu .menu-body .menu-tools'))?.to.be.accessible();
