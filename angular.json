@@ -130,18 +130,6 @@
       },
       "tags": []
     },
-    "autocomplete": {
-      "root": "libs/web-components/autocomplete",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "app-bar": {
       "root": "libs/web-components/app-bar",
       "architect": {
@@ -161,6 +149,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/app-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "autocomplete": {
+      "root": "libs/web-components/autocomplete",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/autocomplete/src/**/*.ts"]
           }
         }
       },
@@ -601,6 +601,18 @@
         }
       },
       "tags": []
+    },
+    "icon": {
+      "root": "libs/web-components/icon",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "launchpad": {
       "root": "libs/web-components/launchpad",

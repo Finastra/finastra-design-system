@@ -38,6 +38,16 @@ import '@finastra/button';
       type: 'boolean',
       description: 'Secondary button'
     },
+    gradient: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Gradient button'
+    },
     outlined: {
       table: {
         category: 'attributes',
@@ -68,6 +78,16 @@ import '@finastra/button';
       type: 'boolean',
       description: 'Dense button'
     },
+    large: {
+      table: {
+        category: 'attributes',
+        defaultValue: { summary: false }
+      },
+      control: 'boolean',
+      defaultValue: false,
+      type: 'boolean',
+      description: 'Large button'
+    },
     disabled: {
       table: {
         category: 'attributes',
@@ -91,14 +111,16 @@ import '@finastra/button';
   }}
 />
 
-export const Template = ({ icon, label, outlined, text, dense, disabled, secondary = false, fullwidth = false }) => {
+export const Template = ({ icon, label, outlined, text, dense, large, disabled, secondary = false, gradient = false, fullwidth = false }) => {
   return html`<fds-button
     .label=${label}
     .icon=${ifDefined(icon)}
     ?secondary=${secondary}
+    ?gradient=${gradient}
     ?outlined=${outlined}
     ?text=${text}
     ?dense=${dense}
+    ?large=${large}
     ?disabled=${disabled}
     ?fullwidth=${fullwidth}
   ></fds-button>`;
@@ -153,6 +175,24 @@ npm install @finastra/fds-button
   </Story>
 </Canvas>
 
+### Gradient button
+
+<Canvas>
+  <Story
+    name="Gradient"
+    args={{ gradient: true, label: 'Gradient button', icon: 'favorite' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button gradient label="Gradient button" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ### Outlined button
 
 <Canvas>
@@ -199,6 +239,24 @@ npm install @finastra/fds-button
       docs: {
         source: {
           code: '<fds-button dense label="Button dense" icon="favorite"></fds-button>'
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### large button
+
+<Canvas>
+  <Story
+    name="Large"
+    args={{ icon: 'favorite', label: 'Button large', large: 'true' }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<fds-button large label="Button dense" icon="favorite"></fds-button>'
         }
       }
     }}

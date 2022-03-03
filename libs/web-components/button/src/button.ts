@@ -1,7 +1,8 @@
-import '@material/mwc-button';
+import '@finastra/icon';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
+
 
 @customElement('fds-button')
 export class Button extends LitElement {
@@ -35,32 +36,19 @@ export class Button extends LitElement {
   trailingIcon = false;
 
   render() {
+    return html`<button
+      ?disabled="${this.disabled}"
+    >
+      ${this.icon ? this.renderIcon() : ''}
+      <span>${this.label}<span>
+    </button>`
+  }
+
+  protected renderIcon() {
     return html`
-      ${this.outlined || this.text
-        ? html` <mwc-button
-            label="${this.label}"
-            icon="${this.icon}"
-            ?outlined="${this.outlined}"
-            ?text="${this.text}"
-            ?dense="${this.dense}"
-            ?disabled="${this.disabled}"
-            ?fullwidth="${this.fullwidth}"
-            ?trailingIcon="${this.trailingIcon}"
-          >
-            <slot></slot>
-          </mwc-button>`
-        : html` <mwc-button
-            label="${this.label}"
-            icon="${this.icon}"
-            ?unelevated="${this.unelevated}"
-            ?dense="${this.dense}"
-            ?disabled="${this.disabled}"
-            ?fullwidth="${this.fullwidth}"
-            ?trailingIcon="${this.trailingIcon}"
-          >
-            <slot></slot>
-          </mwc-button>`}
-    `;
+    <fds-icon>
+      ${this.icon}
+    </fds-icon>`;
   }
 }
 

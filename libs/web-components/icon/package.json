@@ -1,16 +1,16 @@
 {
-  "name": "@finastra/button",
-  "displayName": "Button",
-  "version": "0.0.20",
-  "description": "Button Web Component",
+  "name": "@finastra/icon",
+  "displayName": "Icon",
+  "version": "1.0.0",
+  "description": "Icon Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Button"
+    "Icon"
   ],
   "license": "MIT",
-  "main": "dist/src/button.js",
-  "module": "dist/src/button.js",
+  "main": "dist/src/icon.js",
+  "module": "dist/src/icon.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

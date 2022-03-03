@@ -1,8 +1,0 @@
-@use '@finastra/fds-theme' as fds;
-
-:host {
-  .menu-trigger-icon {
-    --mdc-icon-size: 18px;
-    @include fds.margin(2, left);
-  }
-}

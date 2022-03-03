@@ -1,9 +1,7 @@
-import { customElement, property } from 'lit/decorators.js';
-import { html } from 'lit-html';
-
 import { Button } from '@finastra/button';
-import '@material/mwc-icon';
-
+import '@finastra/icon';
+import { html } from 'lit-html';
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 @customElement('fds-menu-trigger')
@@ -46,7 +44,7 @@ export class MenuTrigger extends Button {
       ?fullwidth='${this.fullwidth}'
       ?secondary='${this.secondary}'
     >
-      <mwc-icon class="menu-trigger-icon">${this.menuTrailingIcon}</mwc-icon>
+      <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
     </fds-button>
     `;
   }

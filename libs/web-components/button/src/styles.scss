@@ -1,18 +1,80 @@
+@use '@finastra/fds-theme' as fds;
+
 :host {
-  display: block;
-  --mdc-shape-small: 22px;
-  --mdc-theme-primary: var(--fds-primary);
-  --mdc-button-outline-color: var(--fds-primary);
-  --mdc-typography-button-text-transform: none;
-  --mdc-button-disabled-ink-color: var(--fds-text-hint-on-background);
-  --mdc-button-disabled-fill-color: var(--fds-text-disabled-on-background);
+  display: inline-flex;
+  outline: none;
+  --fds-button-radius: 18px;
+  --fds-button-radius-large: 24px;
 }
 
-:host([secondary]) {
-  --mdc-theme-primary: var(--fds-secondary);
-  --mdc-button-outline-color: var(--fds-secondary);
+:host>button {
+  @include fds.typography('button-2');
+  @include fds.bg-color('primary');
+  @include fds.text-color('on-primary');
+  @include fds.padding-x(3);
+  @include fds.padding-y(2);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  --fds-icon-color: var(--fds-on-primary);
+  --fds-icon-size: 18px;
+  border-radius: var(--fds-button-radius);
+  border: none;
+  cursor: pointer;
 }
 
-:host([fullWidth]) {
-  flex: 1;
+:host>button>fds-icon {
+  margin-right: var(--fds-spacing-2);
+}
+
+:host([secondary])>button {
+  background-color: var(--fds-secondary);
+  color: var(--fds-on-secondary);
+}
+
+:host([gradient])>button {
+  background: var(--fds-gradient);
+  color: var(--fds-on-gradient);
+}
+
+:host([outlined])>button {
+  @include fds.text-color('primary');
+
+  background-color: transparent;
+  border: 1px solid var(--fds-primary);
+  --fds-icon-color: var(--fds-primary);
+}
+
+:host([text])>button {
+  @include fds.text-color('primary');
+
+  background-color: transparent;
+  --fds-icon-color: var(--fds-primary);
+}
+
+:host([fullWidth]),
+:host([fullWidth])>button {
+  width: 100%;
+}
+
+:host([dense])>button {
+  @include fds.typography('button-3');
+
+  padding: 6px var(--fds-spacing-3);
+}
+
+:host([large])>button {
+  @include fds.typography('button-1');
+
+  padding: 10px var(--fds-spacing-4);
+  border-radius: var(--fds-button-radius-large);
+  --fds-icon-size: 24px;
+}
+
+:host([disabled])>button {
+  @include fds.bg-color('text-medium-on-background');
+  @include fds.text-color('text-disabled-on-background');
+
+  --fds-icon-color: var(--fds-text-disabled-on-background);
 }
