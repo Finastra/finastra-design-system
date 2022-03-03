@@ -58,6 +58,7 @@
     "wc:build:style": "npm run build:style -w libs/web-components",
     "wc:build:ts": "tsc --build libs/web-components",
     "wc:build:storybook": "npm run build:fds-theme && npm run wc:build && build-storybook -o storybook-static",
+    "wc:compliance:check": "node ./scripts/compliance-check.js",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
     "wc:serve": "npm run build:fds-theme && concurrently npm:wc:watch wds --open",
@@ -92,6 +93,7 @@
     "sass": "1.33.0"
   },
   "dependencies": {
+    "@actions/core": "^1.6.0",
     "@angular/animations": "13.0.3",
     "@angular/cdk": "13.0.3",
     "@angular/cdk-experimental": "13.0.3",
