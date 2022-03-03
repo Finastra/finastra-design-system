@@ -34,6 +34,10 @@ jobs:
       - name: Build web components
         run: npm run wc:build
 
+      # Compliance Check
+      - name: Compliance Check
+        run: npm run wc:compliance:check
+
       # Test
       - name: Unit tests
         run: npm run wc:test
