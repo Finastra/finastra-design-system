@@ -3,8 +3,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spartan:wght@800&display=swap"
-  rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spartan:wght@800&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet" />
 
 <style>
@@ -40,22 +39,138 @@
     margin-top: var(--fds-spacing-4) !important;
   }
 
-  /* .sbdocs.sbdocs-wrapper {
-    background: var(--fds-surface);
-  } */
+  /* Storybook background color */
+  .sbdocs.sbdocs-wrapper {
+    background: none;
+  }
 
-  /* .sbdocs.sbdocs-h1,
+  /* doc preview background */
+  .css-1fqqvvq {
+    background: none !important;
+  }
+
+  /* doc table default value style */
+  .css-ks2jcn {
+    border: 0.5px solid var(--fds-text-hint-on-background) !important;
+    color: var(--fds-text-medium-on-background) !important;
+    background-color: var(--fds-surface) !important;
+  }
+  /* doc table seperator */
+  .css-6hhrgj tbody tr:not(:first-child),
+  .css-6hhrgj tbody tr {
+    border: 1px solid var(--fds-text-disabled-on-background) !important;
+  }
+
+  /* doc table content */
+  #docs-root .docblock-argstable tr td {
+    background: none;
+    color: var(--fds-on-background);
+  }
+
+  /* doc table header */
+  #docs-root .docblock-argstable tr th {
+    /* background: none; */
+    color: var(--fds-text-medium-on-background);
+  }
+
+  /* doc text input color */
+  .css-141ccx4 {
+    background: var(--fds-surface) !important;
+    color: var(--fds-on-surface) !important;
+  }
+
+  /* Slot text color + icon */
+  .css-s7utv5,
+  .css-1caxgf7 {
+    color: var(--fds-text-medium-on-background) !important;
+  }
+
+  /* Slot row */
+  .css-hj75sh .css-11nj37o,
+  .css-hj75sh .css-11nj37o ~ td {
+    background: var(--fds-surface) !important;
+  }
+
+  /* storybook preview header */
+  .sbdocs .css-vcinso {
+    background: var(--fds-surface) !important;
+  }
+
+  /* Table style in foundations */
+  .css-10n01gg tr th,
+  .css-10n01gg tr td {
+    color: var(--fds-on-surface) !important;
+    border: 1px solid var(--fds-text-disabled-on-background) !important;
+  }
+
+  /* text color */
+  .sbdocs.sbdocs-h1,
   .sbdocs.sbdocs-h2,
   .sbdocs.sbdocs-h3,
   .sbdocs.sbdocs-h4,
   .sbdocs.sbdocs-h5,
   .sbdocs.sbdocs-h6,
   .sbdocs.sbdocs-p,
-  .sbdocs.sbdocs-li {
+  .sbdocs.sbdocs-li,
+  .css-10n01gg tr th {
     color: var(--fds-on-background);
   }
 
+  /* Snippet background color in Foundations */
+  .css-3zww90 pre.prismjs,
+  .css-3zww90 {
+    background: var(--fds-surface) !important;
+    color: var(--fds-on-surface);
+  }
+
+  /* Divider color */
+  .css-10n01gg tr th,
+  .sbdocs.sbdocs-h2 {
+    border-bottom: 1px solid var(--fds-text-disabled-on-background);
+  }
+
+  /* Alternate table row color */
+  .css-10n01gg tr:nth-of-type(2n) {
+    background-color: var(--fds-surface) !important;
+  }
+
+  /* <a> text color */
   .sbdocs.sbdocs-a {
     color: var(--fds-primary);
+  }
+
+  /* disabled text color in toggle button */
+  .css-ozs5u1 span {
+    color: var(--fds-text-icon-on-background) !important;
+  }
+
+  /* True/false toogle button */
+  .css-ozs5u1 input:not(:checked) ~ span:first-of-type,
+  .css-ozs5u1 input:checked ~ span:last-of-type {
+    background: var(--fds-background) !important;
+    color: var(--fds-on-background) !important;
+  }
+
+  /* toogle button border color */
+  .docblock-argstable-body tr .css-ozs5u1 input:focus {
+    box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
+
+  /* 
+  .css-tmvzag {
+    background: none !important;
+  } */
+
+  /* .css-ozs5u1{
+    background: var(--fds-text-icon-on-background);
+  } */
+
+  /* code snippet background color */
+  /* .css-ywd5pw {
+    background: black;
+  } */
+
+  /* .css-d474as {
+    background:var(--fds-surface);
   } */
 </style>
