@@ -132,7 +132,7 @@ npm run wc:generate MY_COMPONENT_NAME
 
 #### 💡 Compliance check for new web-component
 
-We recommand using the **generator** to start a new web-component. To be compliante for contribution your web-component **must** have *story* and a *test* file.
+We recommand using the **generator** to start a new web-component. To be compliant for contribution your web-component **must** have *story* and a *test* file.
 
 <br>
 
