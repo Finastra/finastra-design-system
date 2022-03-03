@@ -20,6 +20,10 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=248%3A5777'
     }
   },
   args: {
