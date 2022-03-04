@@ -48,21 +48,5 @@ jobs:
           verbose: true
 
       # Storybook
-      - name: Build Storybook
-        run: npm run wc:build:storybook
-      - name: Deploy storybook to Netlify
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-          publish-dir: './storybook-static'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy Storybook from GitHub Actions'
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-          alias: deploy-preview-${{ github.event.number }}
-          github-deployment-environment: storybook-pr
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 1
+      - name: Build Storybook & deploy to Chromatic
+        run: npm run chromatic
