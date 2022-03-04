@@ -1,9 +1,9 @@
-import { LitElement, html, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import '@material/mwc-top-app-bar';
-import { styles } from './styles.css';
 import '@finastra/logo';
+import '@material/mwc-top-app-bar';
+import { html, LitElement, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { EVENTS } from './constants';
+import { styles } from './styles.css';
 
 /**
  * @slot navigationIcon - Slot to add a navigation icon (e.g. hamburger menu)
@@ -43,11 +43,7 @@ export class AppBar extends LitElement {
         <slot name="navigationIcon" @click=${this.handleNavigationClick}></slot>
         <fds-logo dense @click=${this.navigateToLogoUri}></fds-logo>
         <span class="app-name">${this.appName}</span>
-        <div class="app-bar-content">
-          ${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}
-          <slot name="content" class="bar-block"></slot>
-          <slot name="actions" class="bar-block"></slot>
-        </div>
+        <div class="app-bar-content">${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}</div>
       </div>
       ${this.prominent ? this.renderNavigationSlot() : ''}
     </div>`;
