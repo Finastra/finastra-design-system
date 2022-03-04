@@ -49,7 +49,8 @@ jobs:
 
       # Storybook
       - name: Build Storybook & deploy to Chromatic
-        run: npm run chromatic
+        uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: wc:build:storybook
