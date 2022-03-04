@@ -39,12 +39,12 @@
     margin-top: var(--fds-spacing-4) !important;
   }
 
-  /* Storybook background color */
+  /* storybook background color */
   .sbdocs.sbdocs-wrapper {
     background: none;
   }
 
-  /* Doc preview background */
+  /* doc preview background */
   .css-1fqqvvq,
   .css-tmvzag {
     background: none !important;
@@ -56,6 +56,7 @@
     color: var(--fds-text-medium-on-background) !important;
     background-color: var(--fds-surface) !important;
   }
+
   /* doc table seperator */
   .css-6hhrgj tbody tr:not(:first-child),
   .css-6hhrgj tbody tr {
@@ -70,26 +71,43 @@
 
   /* doc table header */
   #docs-root .docblock-argstable tr th {
-    /* background: none; */
     color: var(--fds-text-medium-on-background);
   }
 
   /* doc text input color */
+  .css-1aszhj9,
   .css-141ccx4 {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface) !important;
   }
-
-  /* Slot text color + icon */
+  .css-141ccx4:focus {
+    box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
+  /* slot text color + icon */
   .css-s7utv5,
   .css-1caxgf7 {
     color: var(--fds-text-medium-on-background) !important;
   }
 
-  /* Slot row */
+  /* slot row */
   .css-hj75sh .css-11nj37o,
   .css-hj75sh .css-11nj37o ~ td {
     background: var(--fds-surface) !important;
+  }
+
+  /* Row viewer */
+  .css-1o58ns1 {
+    color: var(--fds-text-medium-on-background) !important;
+    background-color: var(--fds-surface) !important;
+  }
+  .css-1o58ns1:hover {
+    background: var(--fds-primary-lighter) !important;
+    color: var(--fds-primary) !important;
+  }
+
+  /* list style */
+  .rejt-name {
+    color: var(--fds-primary) !important;
   }
 
   /* storybook preview header */
@@ -97,7 +115,7 @@
     background: var(--fds-surface) !important;
   }
 
-  /* Table style in foundations */
+  /* table style in foundations */
   .css-10n01gg tr th,
   .css-10n01gg tr td {
     color: var(--fds-on-surface) !important;
@@ -117,20 +135,20 @@
     color: var(--fds-on-background);
   }
 
-  /* Snippet background color in Foundations */
+  /* snippet background color in Foundations */
   .css-3zww90 pre.prismjs,
   .css-3zww90 {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface);
   }
 
-  /* Divider color */
+  /* divider color */
   .css-10n01gg tr th,
   .sbdocs.sbdocs-h2 {
     border-bottom: 1px solid var(--fds-text-disabled-on-background);
   }
 
-  /* Alternate table row color */
+  /* alternate table row color */
   .css-10n01gg tr:nth-of-type(2n) {
     background-color: var(--fds-surface) !important;
   }
@@ -145,7 +163,7 @@
     color: var(--fds-text-icon-on-background) !important;
   }
 
-  /* True/false toogle button */
+  /* true/false toogle button */
   .css-ozs5u1 input:not(:checked) ~ span:first-of-type,
   .css-ozs5u1 input:checked ~ span:last-of-type {
     background: var(--fds-background) !important;
@@ -157,25 +175,61 @@
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
   }
 
-  /* Code Snippet colors */
-  .css-1m7olli * .token.selector {
+  /* code Snippet colors */
+  .css-1m7olli * .token.selector,
+  .css-1m7olli * .token.tag {
     color: var(--fds-success) !important;
   }
-
   .css-1m7olli * .token.string {
     color: var(--fds-error) !important;
   }
-
-  .css-1m7olli * .token.keyword {
+  .css-1m7olli * .token.keyword,
+  .css-1m7olli * .token.attr-value {
     color: var(--fds-primary) !important;
   }
-
-  .css-1m7olli * .token.function {
+  .css-1m7olli * .token.function,
+  .css-1m7olli * .token.attr-name {
     color: var(--fds-secondary) !important;
   }
-
   .css-1m7olli * .token.punctuation {
     color: var(--fds-on-background) !important;
   }
+  .css-1m7olli * .token.comment {
+    color: var(--fds-text-medium-on-background) !important;
+  }
 
+  /* style <code> tag */
+  .css-1p8ieni code,
+  .css-1ta8r1d code,
+  .css-1npuvnl {
+    color: var(--fds-on-background) !important;
+    background-color: var(--fds-background) !important;
+  }
+
+  /* show code button */
+  .css-3ltsna,
+  .css-11xgcgt {
+    color: var(--fds-on-surface) !important;
+    background: var(--fds-surface) !important;
+  }
+  .css-3ltsna {
+    border-top: 1px solid var(--fds-text-disabled-on-background) !important;
+    border-left: 1px solid var(--fds-text-disabled-on-background) !important;
+  }
+  .css-3ltsna:focus,
+  .css-17vdvg6:focus {
+    box-shadow: var(--fds-primary) 0 -3px 0 0 inset !important;
+  }
+
+  /* reset button */
+  .css-1m2jg1k {
+    background-color: var(--fds-primary-lighter) !important;
+    color: var(--fds-primary) !important;
+    box-shadow: var(--fds-text-disabled-on-background) 0 0 0 1px inset !important;
+  }
+  .css-1m2jg1k:hover {
+    background-color: var(--fds-primary-lighter) !important;
+    color: var(--fds-primary) !important;
+    box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
 </style>
