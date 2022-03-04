@@ -50,3 +50,6 @@ jobs:
       # Storybook
       - name: Build Storybook & deploy to Chromatic
         run: npm run chromatic
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
