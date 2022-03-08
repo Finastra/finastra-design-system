@@ -72,3 +72,16 @@
     color: var(--fds-#{$style}, #{$bg-color});
   }
 }
+
+/// Generates CSS to fill an svg with a given color.
+///
+/// @example
+///   .my-svg {
+///     @include fds.fill(primary);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin fill($style) {
+  $fill: map.get(light.$properties, $style);
+  fill: var(--fds-#{$style}, #{$fill});
+}
