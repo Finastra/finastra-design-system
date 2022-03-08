@@ -14,7 +14,8 @@
   $on-success,
   $on-gradient,
   bg-color,
-  text-color;
+  text-color,
+  fill;
 @forward './elevation';
 @forward './spacing' show 
   margin,

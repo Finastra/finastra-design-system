@@ -1,11 +1,12 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit-html';
-import { Figma } from "storybook-addon-designs/blocks"
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { Figma } from 'storybook-addon-designs/blocks';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 # FDS Theme Color
 
-<Meta title="Foundations/Color" 
+<Meta
+  title="Foundations/Color"
   parameters={{
     viewMode: 'docs',
     previewTabs: {
@@ -26,22 +27,24 @@ This theme is built around custom properties. You can use them directly in your 
 
 ### Examples
 
-export const TemplateCustomProp = (args) => { return html`
-<style>
-  .my-primary-container {
-    background-color: var(--fds-primary);
-    color: var(--fds-on-primary);
-  }
-  .demo-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-  }
-</style>
-<div class="my-primary-container demo-layout">Hello World!</div>
-` };
+export const TemplateCustomProp = (args) => {
+  return html`
+    <style>
+      .my-primary-container {
+        background-color: var(--fds-primary);
+        color: var(--fds-on-primary);
+      }
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+    <div class="my-primary-container demo-layout">Hello World!</div>
+  `;
+};
 
 <Canvas withSource="open">
   <Story name="Custom properties" args={{}}>
@@ -77,10 +80,13 @@ That is the recommended way of using colors because it will take profit of custo
 
 It's the ideal way to use theme's colors when writing components for example.
 
-There is 2 use cases where you would use colors:
+There are 3 use cases where you would use colors:
 
-- when applying background color to a container of any kind. In this case you'll use the `bg-color` mixin.
-- when applying text color. In this case you'll use the `text-color` mixin.
+| Mixin        | Description                                               |
+| ------------ | --------------------------------------------------------- |
+| `bg-color`   | when applying background color to a container of any kind |
+| `text-color` | when applying text color                                  |
+| `fill`       | when filling an SVG                                       |
 
 ### Examples
 
@@ -93,6 +99,10 @@ There is 2 use cases where you would use colors:
   &.title {
     @include fds.text-color(primary);
   }
+
+  &svg {
+    @include fds.fill(primary);
+  }
 }
 ```
 
@@ -100,15 +110,17 @@ will generate:
 
 ```scss
 .my-container {
-  background: var(--fds-background, #FAFAFA);
+  background: var(--fds-background, #fafafa);
 }
 
 .my-container.title {
-  color: var(--fds-primary, #694ED6);
+  color: var(--fds-primary, #694ed6);
 }
 ```
 
 ### Available styles
+
+> i.e. what you can use inside the mixins
 
 | Color style           | Description                                          |
 | --------------------- | ---------------------------------------------------- |
@@ -142,20 +154,22 @@ Be aware that some classes are meant to be used on containers as their backgroun
 
 ### Examples
 
-export const TemplateHelper = (args) => { return html`
-<style>
-  .demo-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-  }
-</style>
-<div class="fds-surface demo-layout">
-  <p class="fds-on-surface">Hello World!</p>
-</div>
-` };
+export const TemplateHelper = (args) => {
+  return html`
+    <style>
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+    <div class="fds-surface demo-layout">
+      <p class="fds-on-surface">Hello World!</p>
+    </div>
+  `;
+};
 
 <Canvas withSource="open">
   <Story name="Helper classes" args={{}}>
@@ -210,5 +224,7 @@ export const TemplateHelper = (args) => { return html`
 <Figma url="https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A3005" />
 
 export const Component = () => {
-  return <SyntaxHighlighter/>;
+  return <SyntaxHighlighter />;
 };
+
+;
