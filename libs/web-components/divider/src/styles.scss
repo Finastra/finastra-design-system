@@ -1,3 +1,5 @@
+@use '@finastra/fds-theme' as fds;
+
 $width: 1px;
 $inset-margin: 80px;
 
@@ -6,7 +8,7 @@ $inset-margin: 80px;
   margin: 0;
   border-top-width: $width;
   border-top-style: solid;
-  border-top-color: var(--fds-text-hint-on-background);
+  @include fds.explicit-custom-property(border-top-color, text-hint-on-background);
 }
 
 :host([inset='left']) {
@@ -34,5 +36,5 @@ $inset-margin: 80px;
   border-top: 0;
   border-right-width: $width;
   border-right-style: solid;
-  border-color: var(--fds-text-hint-on-background);
+  @include fds.explicit-custom-property(border-color, text-hint-on-background);
 }
