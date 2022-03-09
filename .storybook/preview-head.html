@@ -45,21 +45,21 @@
   }
 
   /* doc preview background */
-  .css-1fqqvvq,
+  .sbdocs.sbdocs-preview,
   .css-tmvzag {
     background: none !important;
   }
 
   /* doc table default value style */
-  .css-ks2jcn {
+  .docblock-argstable-body tr td:nth-child(3) span {
     border: 0.5px solid var(--fds-text-hint-on-background) !important;
     color: var(--fds-text-medium-on-background) !important;
     background-color: var(--fds-surface) !important;
   }
 
   /* doc table seperator */
-  .css-6hhrgj tbody tr:not(:first-child),
-  .css-6hhrgj tbody tr {
+  .docblock-argstable-body tr:not(:first-child),
+  .docblock-argstable-body tr {
     border: 1px solid var(--fds-text-disabled-on-background) !important;
   }
 
@@ -75,12 +75,14 @@
   }
 
   /* doc text input color */
-  .css-1aszhj9,
-  .css-141ccx4 {
+  .docblock-argstable-body tr td textarea,
+  .docblock-argstable-body tr td label input[type="number"],
+  .docblock-argstable-body tr td:nth-child(4) button
+  {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface) !important;
   }
-  .css-141ccx4:focus {
+  .docblock-argstable tr td textarea:focus {
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
   }
   /* slot text color + icon */
@@ -96,11 +98,11 @@
   }
 
   /* Row viewer */
-  .css-1o58ns1 {
+  .docblock-argstable-body td div button {
     color: var(--fds-text-medium-on-background) !important;
     background-color: var(--fds-surface) !important;
   }
-  .css-1o58ns1:hover {
+  .docblock-argstable td div button:hover {
     background: var(--fds-primary-lighter) !important;
     color: var(--fds-primary) !important;
   }
@@ -116,8 +118,8 @@
   }
 
   /* table style in foundations */
-  .css-10n01gg tr th,
-  .css-10n01gg tr td {
+  .sbdocs-table tr th,
+  .sbdocs-table tr td {
     color: var(--fds-on-surface) !important;
     border: 1px solid var(--fds-text-disabled-on-background) !important;
   }
@@ -136,20 +138,21 @@
   }
 
   /* snippet background color in Foundations */
-  .css-3zww90 pre.prismjs,
-  .css-3zww90 {
+  .docblock-source pre.prismjs,
+  .docblock-source pre.prismjs code,
+  .docblock-source {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface);
   }
 
   /* divider color */
-  .css-10n01gg tr th,
+  .sbdocs-table tr th,
   .sbdocs.sbdocs-h2 {
     border-bottom: 1px solid var(--fds-text-disabled-on-background);
   }
 
   /* alternate table row color */
-  .css-10n01gg tr:nth-of-type(2n) {
+  .sbdocs-table tr:nth-of-type(2n) {
     background-color: var(--fds-surface) !important;
   }
 
@@ -159,75 +162,85 @@
   }
 
   /* disabled text color in toggle button */
-  .css-ozs5u1 span {
+  .docblock-argstable-body td label span {
     color: var(--fds-text-icon-on-background) !important;
   }
 
   /* true/false toogle button */
-  .css-ozs5u1 input:not(:checked) ~ span:first-of-type,
-  .css-ozs5u1 input:checked ~ span:last-of-type {
+  .docblock-argstable-body td label input:not(:checked) ~ span:first-of-type,
+  .docblock-argstable-body td label input:checked ~ span:last-of-type {
     background: var(--fds-background) !important;
     color: var(--fds-on-background) !important;
   }
 
   /* toogle button border color */
-  .docblock-argstable-body tr .css-ozs5u1 input:focus {
+  .docblock-argstable-body td label input:focus {
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
   }
 
   /* code Snippet colors */
-  .css-1m7olli * .token.selector,
-  .css-1m7olli * .token.tag {
+  .docblock-source .prismjs .token.selector,
+  .docblock-source .prismjs .token.tag,
+  .docblock-source .prismjs .token.selector,
+  .docblock-source .prismjs .token.tag  {
     color: var(--fds-success) !important;
   }
-  .css-1m7olli * .token.string {
+  .docblock-source .prismjs .token.string {
     color: var(--fds-error) !important;
   }
-  .css-1m7olli * .token.keyword,
-  .css-1m7olli * .token.attr-value {
+  .docblock-source .prismjs .token.keyword,
+  .docblock-source .prismjs .token.attr-value {
     color: var(--fds-primary) !important;
   }
-  .css-1m7olli * .token.function,
-  .css-1m7olli * .token.attr-name {
+  .docblock-source  .prismjs .token.function,
+  .docblock-source .prismjs .token.attr-name {
     color: var(--fds-secondary) !important;
   }
-  .css-1m7olli * .token.punctuation {
+  .docblock-source .prismjs .token.punctuation {
     color: var(--fds-on-background) !important;
   }
-  .css-1m7olli * .token.comment {
+  .docblock-source .prismjs .language-scss .token.comment {
     color: var(--fds-text-medium-on-background) !important;
   }
 
   /* style <code> tag */
-  .css-1p8ieni code,
-  .css-1ta8r1d code,
-  .css-1npuvnl {
+  .sbdocs-p code,
+  .sbdocs-li > code,
+  .docblock-argstable-body td code,
+  .sbdocs-content .sbdocs-pre code{
     color: var(--fds-on-background) !important;
     background-color: var(--fds-background) !important;
   }
 
   /* show code button */
-  .css-3ltsna,
-  .css-11xgcgt {
+  .docblock-code-toggle,
+  .docblock-source div:nth-child(2) button,
+  .sbdocs-pre .docblock-source div:nth-child(2){
     color: var(--fds-on-surface) !important;
     background: var(--fds-surface) !important;
   }
-  .css-3ltsna {
+
+  .docblock-code-toggle,
+  .docblock-source div:nth-child(2) button {
     border-top: 1px solid var(--fds-text-disabled-on-background) !important;
     border-left: 1px solid var(--fds-text-disabled-on-background) !important;
   }
-  .css-3ltsna:focus,
-  .css-17vdvg6:focus {
+  .docblock-code-toggle:focus,
+  .docblock-source div:nth-child(2) button:focus,
+  .sbdocs-preview div:nth-child(2) button:focus {
     box-shadow: var(--fds-primary) 0 -3px 0 0 inset !important;
+  }
+  .sbdocs-preview .docs-story > div:nth-child(2) {
+    background: var(--fds-surface) !important; 
   }
 
   /* reset button */
-  .css-1m2jg1k {
+  .docblock-argstable-head th button{
     background-color: var(--fds-primary-lighter) !important;
     color: var(--fds-primary) !important;
     box-shadow: var(--fds-text-disabled-on-background) 0 0 0 1px inset !important;
   }
-  .css-1m2jg1k:hover {
+  .docblock-argstable-head th button:hover {
     background-color: var(--fds-primary-lighter) !important;
     color: var(--fds-primary) !important;
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
