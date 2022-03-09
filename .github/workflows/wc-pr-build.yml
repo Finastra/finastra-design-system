@@ -49,6 +49,7 @@ jobs:
 
       # Storybook
       - name: Build Storybook & deploy to Chromatic
+        if: github.event.pull_request.draft == false
         uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
