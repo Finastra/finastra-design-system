@@ -4,4 +4,6 @@
   --mdc-theme-secondary: var(--fds-primary);
   --mdc-checkbox-checked-color: var(--fds-primary,#917EE0);
   --mdc-ripple-color: var(--fds-primary,#917EE0);
+  --mdc-checkbox-unchecked-color: var(--fds-text-medium-on-background);
+  --mdc-checkbox-disabled-color: var(--fds-text-hint-on-background);
 }
