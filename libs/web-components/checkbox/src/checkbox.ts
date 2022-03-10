@@ -23,13 +23,12 @@ export class Checkbox extends CheckboxBase {
 
   render() {
     return html` <mwc-checkbox
-    ?checked='${this.checked}'
-    ?indeterminate='${this.indeterminate}'
-    ?disabled='${this.disabled}'
+      ?checked="${this.checked}"
+      ?indeterminate="${this.indeterminate}"
+      ?disabled="${this.disabled}"
     ></mwc-checkbox>`;
   }
 }
-
 
 declare global {
   interface HTMLElementTagNameMap {

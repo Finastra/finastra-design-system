@@ -23,12 +23,10 @@ export default {
     },
     cssprops
   },
-  decorators: [
-    (story) => html`${story()}`
-  ]
+  decorators: [(story) => html`${story()}`]
 } as Meta;
 
-const Template: Story = ({ checked, indeterminate, disabled}) => {
+const Template: Story = ({ checked, indeterminate, disabled }) => {
   return html`<fds-checkbox ?checked=${checked} ?indeterminate=${indeterminate} ?disabled=${disabled}></fsd-checkbox>`;
 };
 
@@ -46,5 +44,3 @@ export const Indeterminate: Story = Template.bind({});
 Indeterminate.args = {
   indeterminate: true
 };
-
-
