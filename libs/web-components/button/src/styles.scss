@@ -41,6 +41,8 @@
 :host([outlined])>button {
   @include fds.text-color('primary');
 
+  padding-top: calc(var(--fds-spacing-2) - 1px);
+  padding-bottom: calc(var(--fds-spacing-2) - 1px);
   background-color: transparent;
   border: 1px solid var(--fds-primary);
   --fds-icon-color: var(--fds-primary);
