@@ -32,6 +32,10 @@ context('UI Elements', () => {
   // BADGES
   ////////
 
+  it('match badges', () => {
+    cy.get('.badge-test').scrollIntoView().matchImageSnapshot();
+  });
+
   it('match side badges', () => {
     cy.get('.badge-side-test').scrollIntoView().matchImageSnapshot();
   });

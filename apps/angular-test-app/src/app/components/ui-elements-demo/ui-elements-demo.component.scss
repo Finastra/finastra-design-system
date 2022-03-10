@@ -28,3 +28,9 @@
   background-image: linear-gradient(to right, #322b65 25%, #862670 100%);
   padding-top: $uxg-spacing-2;
 }
+
+.badge-side-test {
+  .mat-badge {
+    margin-right: 24px;
+  }
+}
