@@ -13,15 +13,28 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 export class Checkbox extends LitElement {
   static styles = styles;
 
+  /**
+   * Whether the checkbox is checked.
+   */
   @property({ type: Boolean })
   checked = false;
 
+
+  /**
+   * It is used on the parent to indicate that some but not all of its children are checked.
+   */
   @property({ type: Boolean })
   indeterminate = false;
 
+  /**
+   * When true, the checkbox cannot be interacted with
+   */
   @property({ type: Boolean })
   disabled = false;
 
+  /**
+   * aria label 
+   */
   @property({ type: String, attribute: 'aria-label' })
   ariaLabel = '';
 

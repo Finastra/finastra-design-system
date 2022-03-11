@@ -22,8 +22,7 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A1046'
     },
     cssprops
-  },
-  decorators: [(story) => html`${story()}`]
+  }
 } as Meta;
 
 const Template: Story = ({ checked, indeterminate, disabled }) => {
