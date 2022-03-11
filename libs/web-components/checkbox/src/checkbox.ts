@@ -19,7 +19,6 @@ export class Checkbox extends LitElement {
   @property({ type: Boolean })
   checked = false;
 
-
   /**
    * It is used on the parent to indicate that some but not all of its children are checked.
    */

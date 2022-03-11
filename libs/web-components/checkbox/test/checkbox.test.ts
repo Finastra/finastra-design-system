@@ -9,4 +9,14 @@ describe('Checkbox', () => {
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });
+
+  it('should be checked', async () => {
+    const el: Checkbox = await fixture(html`<fds-checkbox checked></fds-checkbox>`);
+    await elementUpdated(el);
+    await expect(shadowRoot(el).querySelector('mwc-checkbox')?.hasAttribute('checked')).to.equal(true);
+  });
 });
+
+function shadowRoot(el: Element) {
+  return el.shadowRoot ? el.shadowRoot : el;
+}
