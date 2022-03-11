@@ -4,7 +4,7 @@ import '../src/checkbox.js';
 
 describe('Checkbox', () => {
   it('loads accessibly', async () => {
-    const el: Checkbox = await fixture(html`<fds-checkbox></fds-checkbox>`);
+    const el: Checkbox = await fixture(html`<fds-checkbox aria-label="test"></fds-checkbox>`);
 
     await elementUpdated(el);
     await expect(el).to.be.accessible();
