@@ -1,17 +1,13 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
+import { SwitchBase } from '@material/mwc-switch/mwc-switch-base';
 
 import { styles } from './styles.css';
 
 @customElement('fds-switch')
-export class Switch extends LitElement {
-  static styles = styles;
-
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+export class Switch extends SwitchBase {
+  static override styles = [styles];  
+  constructor() {
+    super();
   }
 }
 

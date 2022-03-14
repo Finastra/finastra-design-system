@@ -1,7 +1,14 @@
+@use '@material/mwc-switch/styles';
+
 :host {
   display: block;
-}
+  --mdc-switch-selected-handle-color: var(--fds-primary);
+  --mdc-switch-selected-track-color: var(--fds-primary-lighter);
+  --mdc-switch-selected-focus-state-layer-color: var(--fds-primary-lighter);
+  --mdc-switch-unselected-icon-color: var(--fds-text-on-background);
+  --mdc-switch-unselected-hover-track-color: var(--fds-primary-lighter);
 
-p {
-  color: var(--fds-switch-text-color, blue);
+  --mdc-switch-unselected-handle-color: var(--fds-text-on-background);
+  --mdc-switch-unselected-track-color: var(--fds-text-medium-on-background);
+  --mdc-switch-unselected-icon-color: var(--fds-text-on-background);
 }
