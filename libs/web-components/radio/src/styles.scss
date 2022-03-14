@@ -1,0 +1,14 @@
+@use '@material/radio/mixins' as radio-mixins;
+@use '@material/radio/variables' as radio-variables;
+
+@include radio-mixins.without-ripple();
+
+:host {
+  display: inline-block;
+  outline: none;
+  --mdc-theme-secondary: var(--fds-primary,#917EE0);
+  --mdc-radio-checked-color: var(--fds-primary,#917EE0);
+  --mdc-ripple-color: var(--fds-primary,#917EE0);
+  --mdc-radio-unchecked-color: var(--fds-text-medium-on-background);
+  --mdc-radio-disabled-color: var(--fds-text-hint-on-background);
+}
