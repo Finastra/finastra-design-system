@@ -17,7 +17,8 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@material/mwc-checkbox": "0.25.3"
+    "@material/mwc-checkbox": "0.25.3",
+    "@material/checkbox": "13.0.0"
   },
   "publishConfig": {
     "access": "public"

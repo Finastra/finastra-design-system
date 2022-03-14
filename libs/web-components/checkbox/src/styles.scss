@@ -1,3 +1,5 @@
+@use '@material/mwc-checkbox/mwc-checkbox';
+
 :host {
   display: block;
   --mdc-ripple-color: var(--fds-primary);
