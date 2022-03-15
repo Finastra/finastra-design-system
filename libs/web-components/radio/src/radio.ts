@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * @cssprop {color} [--fds-primary=#917EE0] - FDS Primary color.
+ * @cssprop {color} [--fds-primary=#694ED6] - FDS Primary color.
  * @attr [checked=true] - Whether this radio button is the currently-selected one in its group.
  * @attr [disabled=false] - If true, this radio button cannot be selected or de-selected.
  * @attr [name=''] - Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group.
