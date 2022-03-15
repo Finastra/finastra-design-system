@@ -104,11 +104,11 @@
 ///
 /// @example
 ///   .mdc-card__media {
-///     @include fds.explicit-custom-property(background-image, card-media-background-image);
+///     @include fds.property(background-image, card-media-background-image);
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin explicit-custom-property($property, $style) {
+@mixin property($property, $style) {
   $variable: map.get(light.$properties, $style);
   #{$property}: var(--fds-#{$style}, #{$variable});
 }
