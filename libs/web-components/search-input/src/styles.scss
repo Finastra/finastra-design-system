@@ -1,11 +1,12 @@
 @use "@material/mwc-textfield/mwc-textfield";
+@use "@finastra/fds-theme" as fds;
 
 :host {
-  --mdc-text-field-fill-color: var(--fds-primary-lighter);
-  --mdc-text-field-idle-line-color : var(--fds-primary);
-  --mdc-text-field-hover-line-color: var(--fds-primary);
-  --mdc-text-field-ink-color: var(--fds-on-background);
-  --mdc-ripple-color:var(--fds-primary-lighter);
+  @include fds.mdc(text-field-fill-color, primary-lighter);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-hover-line-color, primary);
+  @include fds.mdc(text-field-ink-color, on-background);
+  @include fds.mdc(ripple-color, primary-lighter);
 }
 
 .mdc-text-field--with-leading-icon {
@@ -29,14 +30,14 @@
 
 .mdc-text-field:not(.mdc-text-field--disabled)  {
   .mdc-text-field__icon--leading {
-    color: var(--fds-primary);
+    @include fds.text-color(primary);
   }
 
   .mdc-text-field__affix--suffix {
-    color: var(--fds-on-background);
+    @include fds.text-color(on-background	);
   }
 }
 
 .mdc-text-field__input {
-  font: var(--fds-subtitle-1)
+  @include fds.typography(subtitle-1);
 }

@@ -32,7 +32,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   &:empty:not(img) {
     @include multiple-backgrounds(
       $fds-default-avatar,
-      top left / 100% 100% no-repeat linear-gradient(var(--fds-primary), var(--fds-secondary))
+      top left / 100% 100% no-repeat linear-gradient(var(--fds-primary, #694ED6), var(--fds-secondary, #C137A2))
     );
   }
 }
@@ -57,7 +57,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     @include fds.bg-color(primary);
     &:empty:not(img) {
-      @include multiple-backgrounds($fds-default-avatar, var(--fds-primary));
+      @include multiple-backgrounds($fds-default-avatar, var(--fds-primary, #694ED6));
     }
   }
 }
@@ -66,7 +66,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   .fds-avatar {
     @include fds.bg-color(secondary);
     &:empty:not(img) {
-      @include multiple-backgrounds($fds-default-avatar, var(--fds-secondary));
+      @include multiple-backgrounds($fds-default-avatar, var(--fds-secondary, #C137A2));
     }
   }
 }
