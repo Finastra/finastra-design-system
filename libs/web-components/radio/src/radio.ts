@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * @cssprop {color} [--mdc-theme-secondary=#917EE0] - FDS Primary color
+ * @cssprop {color} [--fds-primary=#917EE0] - FDS Primary color
  */
 @customElement('fds-radio')
 export class Radio extends RadioBase {
