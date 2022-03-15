@@ -29,8 +29,6 @@ jobs:
         run: npm ci --loglevel=error
         env:
           SKIP_POST_INSTALL: true
-      - name: Compliance Check
-        run: npm run wc:compliance:check
       - name: Build DevKit
         run: npm run build:devkit
       - name: Build web components
@@ -66,3 +64,6 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
+
+      - name: Compliance Check
+        run: npm run wc:compliance:check
