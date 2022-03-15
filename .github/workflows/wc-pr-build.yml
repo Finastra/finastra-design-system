@@ -29,8 +29,6 @@ jobs:
         run: npm ci --loglevel=error
         env:
           SKIP_POST_INSTALL: true
-      - name: Compliance Check
-        run: npm run wc:compliance:check
       - name: Build DevKit
         run: npm run build:devkit
       - name: Build web components
@@ -55,3 +53,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: wc:build:storybook
+
+      - name: Compliance Check
+        run: npm run wc:compliance:check
