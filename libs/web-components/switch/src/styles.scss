@@ -3,7 +3,7 @@
 :host {
   display: block;
   --mdc-switch-selected-handle-color: var(--fds-primary);
-  --mdc-switch-selected-track-color: var(--fds-primary-lighter);
+  --mdc-switch-selected-track-color: var(--fds-primary);
 
   --mdc-switch-unselected-hover-track-color: var(--fds-text-hint-on-background);
   --mdc-switch-unselected-handle-color: var(--fds-surface);
@@ -22,4 +22,8 @@
 
 .mdc-switch__handle::before, .mdc-switch__handle::after {
   border: 1px solid var(--fds-text-disabled-on-background);
+}
+
+.mdc-switch .mdc-switch__track { 
+  opacity: 0.54;
 }
