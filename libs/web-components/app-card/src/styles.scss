@@ -115,7 +115,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
-    color: var(--fds-on-background);
+    @include fds.text-color(on-background);
 }
 
 .app-card-decoration {
@@ -124,9 +124,9 @@
     height: inherit;
 
     .ribbon-primary{
-        fill: var(--fds-primary);
+        @include fds.fill(primary);
     } 
     .ribbon-secondary{
-        fill: var(--fds-secondary);
-    } 
+        @include fds.fill(secondary);
+    }
 }

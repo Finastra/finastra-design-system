@@ -33,9 +33,6 @@ export default {
         fds-app-bar {
           min-width: calc(68vw - 100px);
         }
-        mwc-icon-button {
-          color: var(--fds-primary);
-        }
         p {
           color: var(--fds-on-background);
           font: var(--fds-body-1);
