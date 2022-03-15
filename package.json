@@ -74,7 +74,8 @@
     "prewc:build:storybook": "npm run wca",
     "prewc:storybook": "npm run wca",
     "add": "npm install --package-lock-only --no-package-lock --prefix",
-    "postadd": "npm install"
+    "postadd": "npm install",
+    "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes"
   },
   "husky": {
     "hooks": {
@@ -178,6 +179,7 @@
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.3",
     "canvas": "^2.8.0",
+    "chromatic": "^6.5.1",
     "command-line-args": "^5.1.1",
     "commander": "^7.2.0",
     "concurrently": "^6.2.1",

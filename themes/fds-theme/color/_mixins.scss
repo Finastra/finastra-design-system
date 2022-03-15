@@ -12,7 +12,7 @@
 @mixin custom-properties($properties: light.$properties) {
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
-    --mdc-theme-#{$style}: var(--fds-#{$style});
+    --mdc-theme-#{$style}: var(--fds-#{$style},#{$variable});
   }
 }
 
@@ -49,8 +49,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin bg-color($style) {
-  $bg-color: map.get(light.$properties, $style);
-  background: var(--fds-#{$style}, #{$bg-color});
+  @include property(background, $style);
 }
 
 /// Generates CSS to apply color to a text.
@@ -71,4 +70,43 @@
   @else {
     color: var(--fds-#{$style}, #{$bg-color});
   }
+}
+
+/// Generates CSS to fill an svg with a given color.
+///
+/// @example
+///   .my-svg {
+///     @include fds.fill(primary);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin fill($style) {
+  @include property(fill, $style);
+}
+
+
+/// Maps mdc's css properties to fds ones.
+///
+/// @example
+///   mwc-textfield {
+///     @include fds.mdc(text-field-label-ink-color, text-medium-on-background);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin mdc($mdc, $style) {
+  $variable: map.get(light.$properties, $style);
+  --mdc-#{$mdc}: var(--fds-#{$style}, #{$variable});
+}
+
+/// Generates CSS
+///
+/// @example
+///   .mdc-card__media {
+///     @include fds.property(background-image, card-media-background-image);
+///   }
+///
+/// @param {String} $style - The name of the style to apply
+@mixin property($property, $style) {
+  $variable: map.get(light.$properties, $style);
+  #{$property}: var(--fds-#{$style}, #{$variable});
 }
