@@ -76,7 +76,7 @@ export const TemplateCustomProp = (args) => {
 
 ## Mixins
 
-That is the recommended way of using colors because it will take profit of custom properties while keeping fallback when custom properties are not available.
+Mixins are the recommended way of using colors, as it will generate the given custom property while adding a fallback for when the custom property is not set on app level.
 
 It's the ideal way to use theme's colors when writing components for example.
 
@@ -115,6 +115,36 @@ will generate:
 
 .my-container.title {
   color: var(--fds-primary, #694ed6);
+}
+```
+
+#### Other mixins available
+
+If you want to use another property than those, you can use the generic `property` mixin.
+
+```scss
+.my-image {
+  @include fds.property(background-image, card-media-background-image);
+}
+
+.my-border {
+  @include fds.property(border-color, text-hint-on-background);
+}
+```
+
+Also available is the `mdc` mixin, which will map the given property to the MDC one.
+
+```scss
+.my-container {
+  @include fds.mdc(theme-primary, primary);
+}
+```
+
+will generate
+
+```scss
+.my-container {
+  --mdc-theme-primary: var(--fds-primary, #694ed6);
 }
 ```
 

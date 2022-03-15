@@ -110,5 +110,5 @@ slot[name='primary-action']::slotted(*) {
 .mdc-card__media {
   flex: 1;
   background-color: inherit;
-  @include fds.explicit-custom-property(background-image, card-media-background-image);
+  @include fds.property(background-image, card-media-background-image);
 }
