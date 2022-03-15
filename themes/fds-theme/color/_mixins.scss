@@ -49,8 +49,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin bg-color($style) {
-  $bg-color: map.get(light.$properties, $style);
-  background: var(--fds-#{$style}, #{$bg-color});
+  @include property(background, $style);
 }
 
 /// Generates CSS to apply color to a text.
@@ -82,8 +81,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin fill($style) {
-  $fill: map.get(light.$properties, $style);
-  fill: var(--fds-#{$style}, #{$fill});
+  @include property(fill, $style);
 }
 
 
