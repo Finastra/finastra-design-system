@@ -1,8 +1,5 @@
-@use '@material/radio/mixins' as radio-mixins;
-@use '@material/radio/variables' as radio-variables;
+@use '@material/mwc-radio/mwc-radio';
 @use '@finastra/fds-theme' as fds;
-
-@include radio-mixins.without-ripple();
 
 :host {
   display: inline-block;
@@ -12,8 +9,4 @@
   @include fds.mdc(radio-checked-color, primary);
   @include fds.mdc(radio-unchecked-color, text-medium-on-background);
   @include fds.mdc(radio-disabled-color, text-hint-on-background);
-
-  .mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {
-    @include fds.property(border-color, text-medium-on-background);
-  }
 }
