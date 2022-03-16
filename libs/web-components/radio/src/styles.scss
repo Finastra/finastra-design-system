@@ -1,14 +1,19 @@
 @use '@material/radio/mixins' as radio-mixins;
 @use '@material/radio/variables' as radio-variables;
+@use '@finastra/fds-theme' as fds;
 
 @include radio-mixins.without-ripple();
 
 :host {
   display: inline-block;
   outline: none;
-  --mdc-theme-secondary: var(--fds-primary,#694ED6);
-  --mdc-radio-checked-color: var(--fds-primary,#694ED6);
-  --mdc-ripple-color: var(--fds-primary,#694ED6);
-  --mdc-radio-unchecked-color: var(--fds-text-medium-on-background);
-  --mdc-radio-disabled-color: var(--fds-text-hint-on-background);
+  @include fds.mdc(theme-secondary, primary);
+  @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(radio-checked-color, primary);
+  @include fds.mdc(radio-unchecked-color, text-medium-on-background);
+  @include fds.mdc(radio-disabled-color, text-hint-on-background);
+
+  .mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {
+    @include fds.property(border-color, text-medium-on-background);
+  }
 }
