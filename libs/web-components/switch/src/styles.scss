@@ -1,27 +1,47 @@
 @use '@material/mwc-switch/styles';
+@use '@finastra/fds-theme' as fds;
+
 $track-color-opacity: 0.54;
 
 :host {
   display: block;
-  --mdc-switch-selected-handle-color: var(--fds-primary);
-  --mdc-switch-selected-track-color: var(--fds-primary);
 
-  --mdc-switch-unselected-hover-track-color: var(--fds-text-hint-on-background);
-  --mdc-switch-unselected-handle-color: var(--fds-background);
-  --mdc-switch-unselected-track-color:  var(--fds-text-high-on-background);
-  --mdc-switch-unselected-icon-color: var(--fds-text-on-background);
+  @include fds.mdc(switch-selected-handle-color, primary);
+  @include fds.mdc(switch-selected-track-color,primary);
+  @include fds.mdc(switch-selected-focus-handle-color, primary);
+  @include fds.mdc(switch-selected-hover-handle-color, primary);
+  @include fds.mdc(switch-selected-focus-track-color, primary);
+  @include fds.mdc(switch-selected-hover-track-color, primary);
+  @include fds.mdc(switch-selected-pressed-handle-color, primary);
+  @include fds.mdc(switch-selected-pressed-track-color, primary);
 
-  --mdc-switch-disabled-unselected-track-color: var(--fds-text-medium-on-background);
-  --mdc-switch-disabled-unselected-icon-color: var(--fds-text-medium-on-background);
+  @include fds.mdc(switch-unselected-hover-track-color, text-hint-on-background);
+  @include fds.mdc(switch-unselected-handle-color, background);
+  @include fds.mdc(switch-unselected-track-color, text-high-on-background);
+  @include fds.mdc(switch-unselected-focus-handle-color, background);
+  @include fds.mdc(switch-unselected-hover-handle-color, background);
+  @include fds.mdc(switch-unselected-focus-track-color, text-high-on-background);
+  @include fds.mdc(switch-unselected-hover-track-color, text-high-on-background);
+  @include fds.mdc(switch-unselected-pressed-handle-color, background);
+  @include fds.mdc(switch-unselected-pressed-track-color, text-high-on-background);
 
-  --mdc-switch-disabled-unselected-handle-color: var(--fds-text-disabled-on-background);
-  --mdc-switch-disabled-track-opacity: 0.3;
+   @include fds.mdc(switch-disabled-unselected-track-color, text-medium-on-background);
+   @include fds.mdc(switch-disabled-unselected-handle-color, surface);
+   --mdc-switch-disabled-track-opacity: 0.3;
+
 }
 
 .mdc-switch__handle::before, .mdc-switch__handle::after {
-  border: 1px solid var(--fds-text-disabled-on-background);
+  @include fds.property(border-color,text-disabled-on-background);
 }
 
 .mdc-switch .mdc-switch__track { 
   opacity: var(--fds-track-opacity, $track-color-opacity);
 }
+
+.mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon,
+.mdc-switch.mdc-switch--unselected:enabled .mdc-switch__icon,
+.mdc-switch.mdc-switch--unselected:disabled .mdc-switch__icon {
+  fill: none;
+}
+
