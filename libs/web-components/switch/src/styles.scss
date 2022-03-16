@@ -41,7 +41,8 @@ $track-color-opacity: 0.54;
 
 .mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon,
 .mdc-switch.mdc-switch--unselected:enabled .mdc-switch__icon,
-.mdc-switch.mdc-switch--unselected:disabled .mdc-switch__icon {
+.mdc-switch.mdc-switch--unselected:disabled .mdc-switch__icon,
+.mdc-switch.mdc-switch--selected:disabled .mdc-switch__icon {
   fill: none;
 }
 
