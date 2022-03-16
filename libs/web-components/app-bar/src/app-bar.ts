@@ -1,9 +1,9 @@
-import { LitElement, html, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import '@material/mwc-top-app-bar';
-import { styles } from './styles.css';
 import '@finastra/logo';
+import '@material/mwc-top-app-bar';
+import { html, LitElement, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { EVENTS } from './constants';
+import { styles } from './styles.css';
 
 /**
  * @slot navigationIcon - Slot to add a navigation icon (e.g. hamburger menu)

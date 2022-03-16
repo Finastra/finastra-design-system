@@ -47,6 +47,11 @@
 
   slot[name="navigationIcon"]::slotted(*) {
     @include fds.padding(2,right);
+    @include fds.text-color(primary);
+  }
+
+  slot[name="actions"]::slotted(*) {
+    @include fds.text-color(primary);
   }
 }
 

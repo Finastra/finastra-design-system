@@ -10,8 +10,8 @@ export function renderAvatarSVG(): TemplateResult {
     />
     <defs>
       <linearGradient id="paint0_linear_116_7153" x1="10" y1="0" x2="10" y2="20" gradientUnits="userSpaceOnUse">
-        <stop stop-color="var(--fds-primary)" />
-        <stop offset="1" stop-color="var(--fds-secondary)" />
+        <stop stop-color="var(--svg-gradient-stop-1)" />
+        <stop offset="1" stop-color="var(--svg-gradient-stop-2)" />
       </linearGradient>
     </defs>
   </svg> `;
