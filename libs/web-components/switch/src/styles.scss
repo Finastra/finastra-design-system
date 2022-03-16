@@ -1,4 +1,5 @@
 @use '@material/mwc-switch/styles';
+$track-color-opacity: 0.54;
 
 :host {
   display: block;
@@ -6,18 +7,15 @@
   --mdc-switch-selected-track-color: var(--fds-primary);
 
   --mdc-switch-unselected-hover-track-color: var(--fds-text-hint-on-background);
-  --mdc-switch-unselected-handle-color: var(--fds-surface);
-  --mdc-switch-unselected-track-color:  var(--fds-text-hint-on-background);
+  --mdc-switch-unselected-handle-color: var(--fds-background);
+  --mdc-switch-unselected-track-color:  var(--fds-text-high-on-background);
   --mdc-switch-unselected-icon-color: var(--fds-text-on-background);
 
   --mdc-switch-disabled-unselected-track-color: var(--fds-text-medium-on-background);
   --mdc-switch-disabled-unselected-icon-color: var(--fds-text-medium-on-background);
 
-  --mdc-switch-handle-surface-color: var(--fds-text-disabled-on-background);
   --mdc-switch-disabled-unselected-handle-color: var(--fds-text-disabled-on-background);
-
-  --mdc-switch-disabled-handle-opacity: 1
-
+  --mdc-switch-disabled-track-opacity: 0.3;
 }
 
 .mdc-switch__handle::before, .mdc-switch__handle::after {
@@ -25,5 +23,5 @@
 }
 
 .mdc-switch .mdc-switch__track { 
-  opacity: 0.54;
+  opacity: var(--fds-track-opacity, $track-color-opacity);
 }
