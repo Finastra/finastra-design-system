@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit-html';
+import { Figma } from "storybook-addon-designs/blocks"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 # FDS Theme Color
 
@@ -82,7 +84,7 @@ There is 2 use cases where you would use colors:
 
 ### Examples
 
-```SCSS
+```scss
 @use '@finastra/fds-theme' as fds;
 
 .my-container {
@@ -96,7 +98,7 @@ There is 2 use cases where you would use colors:
 
 will generate:
 
-```SCSS
+```scss
 .my-container {
   background: var(--fds-background, #FAFAFA);
 }
@@ -132,7 +134,7 @@ will generate:
 
 The helper classes are the fastest way to use colors directly in the HTML.
 
-```SCSS
+```scss
 @use '@finastra/fds-theme/helpers';
 ```
 
@@ -161,13 +163,13 @@ export const TemplateHelper = (args) => { return html`
   </Story>
 </Canvas>
 
-```HTML
+```html
 <div class="fds-primary-bg">
   <p class="fds-on-primary">Accessible text</p>
 </div>
 ```
 
-```HTML
+```html
 <div class="fds-background">
   <p class="fds-primary">Text using primary color</p>
 </div>
@@ -202,3 +204,11 @@ export const TemplateHelper = (args) => { return html`
 | `.fds-on-success`             | Used for text written on success background              |
 | `.fds-on-error`               | Used for text written on error background                |
 | `.fds-on-gradient`            | Used for text written on gradient background             |
+
+### Design
+
+<Figma url="https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A3005" />
+
+export const Component = () => {
+  return <SyntaxHighlighter/>;
+};

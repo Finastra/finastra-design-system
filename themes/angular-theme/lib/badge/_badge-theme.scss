@@ -17,8 +17,16 @@
   $foreground: map.get($theme, foreground);
   $primary: map.get($theme, primary);
   $secondary: map.get($theme, accent);
+  $success: map.get($theme, success);
   $error: map.get($theme, error);
   $warn: map.get($theme, warn);
+
+  .mat-badge {
+    @include uxg-badge-color('secondary', $secondary);
+    @include uxg-badge-color('success', $success);
+    @include uxg-badge-color('error', $error);
+    @include uxg-badge-color('warn', $warn);
+  }
 
   .uxg-side-badge.mat-badge-after {
     .mat-badge-content {
@@ -30,6 +38,7 @@
     @include uxg-badge-color('primary', $primary);
     @include uxg-badge-color('accent', $secondary);
     @include uxg-badge-color('secondary', $secondary);
+    @include uxg-badge-color('success', $success);
     @include uxg-badge-color('error', $error);
     @include uxg-badge-color('warn', $warn);
   }

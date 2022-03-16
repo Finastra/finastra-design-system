@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit-html';
+import { Figma } from "storybook-addon-designs/blocks"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 # FDS Theme Elevation
 
@@ -16,7 +18,7 @@ We use 24 levels of elevation. From 0 which means there is no elevation to 24 wh
 
 ## Mixins
 
-```SCSS
+```scss
 @use '@finastra/fds-theme' as fds;
 
 .my-elevated-component {
@@ -28,7 +30,7 @@ We use 24 levels of elevation. From 0 which means there is no elevation to 24 wh
 
 Before being able to use the helper classes, you need to include them in your Sass styles.
 
-```SCSS
+```scss
 @use '@finastra/fds-theme/helpers';
 ```
 
@@ -56,3 +58,11 @@ export const TemplateHelper = (args) => { return html`
     {TemplateHelper.bind({})}
   </Story>
 </Canvas>
+
+### Design
+
+<Figma url="https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A2962" />
+
+export const Component = () => {
+  return <SyntaxHighlighter/>;
+};
