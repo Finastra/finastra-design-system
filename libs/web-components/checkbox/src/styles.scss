@@ -1,0 +1,12 @@
+@use '@material/mwc-checkbox/mwc-checkbox';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+  @include fds.mdc(theme-secondary, primary);
+  @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(checkbox-checked-color, primary);
+  @include fds.mdc(checkbox-unchecked-color, text-medium-on-background);
+  @include fds.mdc(checkbox-disabled-color, text-hint-on-background);
+  @include fds.mdc(checkbox-ink-color, on-primary);
+}
