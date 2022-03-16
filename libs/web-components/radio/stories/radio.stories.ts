@@ -30,7 +30,7 @@ Default.args = {
   checked: false
 };
 
-export const Disabled: Story = Template.bind({});
+export const Disabled: Story<Radio> = Template.bind({});
 Disabled.args = {
   checked: true,
   disabled: true
