@@ -4,7 +4,7 @@ import '../src/textarea.js';
 
 describe('Textarea', () => {
   it('loads accessibly', async () => {
-    const el: Textarea = await fixture(html`<fds-textarea></fds-textarea>`);
+    const el: Textarea = await fixture(html`<fds-textarea label="test"></fds-textarea>`);
 
     await elementUpdated(el);
     await expect(el).to.be.accessible();
