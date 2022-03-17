@@ -1030,6 +1030,18 @@
       },
       "tags": []
     },
+    "textarea": {
+      "root": "libs/web-components/textarea",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/textarea/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "toaster": {
       "projectType": "library",
       "root": "libs/angular-components/toaster",
