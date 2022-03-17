@@ -831,6 +831,18 @@
       },
       "tags": []
     },
+    "switch": {
+      "root": "libs/web-components/switch",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/switch/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "table": {
       "projectType": "library",
       "root": "libs/angular-components/table",
