@@ -5,7 +5,7 @@ import { styles } from './styles.css';
 
 /**
  * @cssprop {color} [--fds-primary=#694ED6] - Switch color
- * @cssprop {color} [--fds-track-opacity=0.54] - track color opacity
+ * @cssprop {color} [--fds-track-opacity=0.54] - Track color opacity
  * @attr [selected=false] - Whether the checkbox is checked.
  * @attr [disabled=false] - When true, the checkbox cannot be interacted with.
  */
