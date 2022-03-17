@@ -695,6 +695,18 @@
       },
       "tags": []
     },
+    "radio": {
+      "root": "libs/web-components/radio",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/radio/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "repeater": {
       "projectType": "library",
       "root": "libs/angular-components/repeater",

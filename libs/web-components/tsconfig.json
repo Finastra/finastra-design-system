@@ -72,6 +72,9 @@
       "path": "checkbox"
     },
     {
+      "path": "radio"
+    },
+    {
       "path": "switch"
     }
   ]

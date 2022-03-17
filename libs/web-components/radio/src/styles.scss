@@ -1,0 +1,12 @@
+@use '@material/mwc-radio/mwc-radio';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: inline-block;
+  outline: none;
+  @include fds.mdc(theme-secondary, primary);
+  @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(radio-checked-color, primary);
+  @include fds.mdc(radio-unchecked-color, text-medium-on-background);
+  @include fds.mdc(radio-disabled-color, text-hint-on-background);
+}
