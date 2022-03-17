@@ -1,17 +1,14 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
+import { TextAreaBase } from '@material/mwc-textarea/mwc-textarea-base';
 
 import { styles } from './styles.css';
 
 @customElement('fds-textarea')
-export class Textarea extends LitElement {
+export class Textarea extends TextAreaBase {
   static styles = styles;
 
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+  constructor() {
+    super();
   }
 }
 
