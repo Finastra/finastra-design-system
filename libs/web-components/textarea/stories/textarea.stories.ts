@@ -16,17 +16,21 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
-    }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=16553%3A22669'
+    },
   },
   cssprops
 } as Meta;
 
-const Template: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required }) => {
-  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?maxLength=${maxLength} ?charCounter=${charCounter} ?outlined=${outlined}></fsd-textarea>`;
+const Template: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required, disabled }) => {
+  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?maxLength=${maxLength} ?charCounter=${charCounter} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
 };
 
-const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required }) => {
-  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?outlined=${outlined}></fsd-textarea>`;
+const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required, disabled }) => {
+  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
 };
 
 export const Default: Story<Textarea> = Template.bind({});
@@ -40,10 +44,14 @@ export const CharacterCounter: Story<Textarea> = CounterTemplate.bind({});
 CharacterCounter.args = {
   maxLength: 18,
   charCounter: true,
-  outlined: true
 };
 
 export const Outlined: Story<Textarea> = Template.bind({});
 Outlined.args = {
   outlined: true
+};
+
+export const Disabled: Story<Textarea> = Template.bind({});
+Outlined.args = {
+  disabled: true
 };
