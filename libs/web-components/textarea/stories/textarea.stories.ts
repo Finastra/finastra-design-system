@@ -25,11 +25,11 @@ export default {
   cssprops
 } as Meta;
 
-const Template: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required, disabled }) => {
-  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?maxLength=${maxLength} ?charCounter=${charCounter} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
+const Template: Story<Textarea> = ({ label, helper, outlined, required, disabled }) => {
+  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
 };
 
-const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter = false, outlined, required, disabled }) => {
+const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter, outlined, required, disabled }) => {
   return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
 };
 
