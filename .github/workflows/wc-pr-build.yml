@@ -1,7 +1,7 @@
 name: Web Components PR
 on:
   pull_request:
-    path:
+    paths:
       - 'libs/web-components/**'
 
 jobs:
