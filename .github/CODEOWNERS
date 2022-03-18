@@ -3,8 +3,9 @@
 *   @rbordeanu @bcldvd @ttalbot
 
 # Repository management
-/scripts/   @adrian-apetrei @rbordeanu
-/tools/     @adrian-apetrei @rbordeanu
+/scripts/   @bcldvd @ttalbot
+/tools/generators/angular-component    @adrian-apetrei @rbordeanu
+/tools/generators/web-component        @bcldvd @dorsaffrigui
 
 # Themes and style files
 /themes/    @dorsaffrigui @ttalbot
@@ -30,3 +31,8 @@
 /libs/angular-components/wizard/                   @rbordeanu
 /libs/angular-components/filter/filter-group/      @adrian-apetrei
 /libs/angular-components/filter/filter-toggle/     @adrian-apetrei
+
+# Web components owners
+/libs/web-components    @bcldvd @ttalbot
+/.storybook             @bcldvd @ttalbot
+
