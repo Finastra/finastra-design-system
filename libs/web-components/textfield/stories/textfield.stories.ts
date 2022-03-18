@@ -12,13 +12,13 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
-    }
+    },
+    cssprops
   },
-  cssprops
 } as Meta;
 
-const Template: Story<Textfield> = ({ label, icon, disabled, outlined }) => {
-  return html`<fds-textfield label=${label} icon=${icon} ?disabled=${disabled} ?outlined=${outlined}></fsd-textfield>`;
+const Template: Story<Textfield> = ({ label, icon, disabled, outlined, required, iconTrailing }) => {
+  return html`<fds-textfield label=${label} icon=${icon} ?disabled=${disabled} ?outlined=${outlined} ?required=${required} iconTrailing=${iconTrailing}></fsd-textfield>`;
 };
 
 const ValidationTemplate: Story<Textfield> = ({ label, icon, type, validationMessage, disabled, outlined }) => {
@@ -29,6 +29,20 @@ export const Default: Story<Textfield> = Template.bind({});
 Default.args = {
   label: 'Default',
   icon: 'event'
+};
+
+export const IconTrailing: Story<Textfield> = Template.bind({});
+IconTrailing.args = {
+  label: 'Default',
+  icon: 'event',
+  iconTrailing: 'favorite'
+};
+
+export const Required: Story<Textfield> = Template.bind({});
+Required.args = {
+  label: 'Required',
+  icon: 'event',
+  required: true
 };
 
 export const Password: Story<Textfield> = ValidationTemplate.bind({});
