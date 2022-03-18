@@ -1,7 +1,7 @@
 # Textarea
 Text areas let users enter and edit text.
 
-It extends Material web `mwc-textarea-base`. For usage please see [mwc-textarea](https://github.com/material-components/material-web/tree/master/packages/textarea)
+It extends Material web `mwc-textarea-base`. For usage please see [mwc-textarea](https://github.com/material-components/material-web/tree/master/packages/textarea).
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/textarea?style=for-the-badge)](https://www.npmjs.com/package/@finastra/textarea)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/textarea?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/textarea')
