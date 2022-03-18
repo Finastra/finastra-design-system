@@ -21,8 +21,8 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=16553%3A22669'
     },
+    cssprops
   },
-  cssprops
 } as Meta;
 
 const Template: Story<Textarea> = ({ label, helper, outlined, required, disabled }) => {
