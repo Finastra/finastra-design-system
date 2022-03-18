@@ -40,18 +40,18 @@ Required.args = {
   required: true
 };
 
+export const Outlined: Story<Textarea> = Template.bind({});
+Outlined.args = {
+  outlined: true
+};
+
 export const CharacterCounter: Story<Textarea> = CounterTemplate.bind({});
 CharacterCounter.args = {
   maxLength: 18,
   charCounter: true,
 };
 
-export const Outlined: Story<Textarea> = Template.bind({});
-Outlined.args = {
-  outlined: true
-};
-
 export const Disabled: Story<Textarea> = Template.bind({});
-Outlined.args = {
+Disabled.args = {
   disabled: true
 };
