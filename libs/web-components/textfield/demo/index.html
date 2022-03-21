@@ -1,2 +1,18 @@
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
-<fds-textfield name="World"></fds-textfield>
+
+<fds-textfield type="password" showIconButton id="my-textfield">
+  <mwc-icon-button slot="iconButton" icon="visibility_off" onclick="myFunction(this.icon)"></mwc-icon-button>
+</fds-textfield>
+<script>
+  function myFunction(e) {
+    const textfield = document.querySelector('#my-textfield');
+    const iconButton = document.querySelector('#my-textfield mwc-icon-button');
+    if (iconButton.getAttribute('icon') == 'visibility_off') {
+      iconButton.setAttribute('icon', 'visibility_on');
+      textfield.setAttribute('type', 'text');
+    } else {
+      iconButton.setAttribute('icon', 'visibility_off');
+      textfield.setAttribute('type', 'password');
+    }
+  }
+</script>

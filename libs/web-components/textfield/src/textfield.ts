@@ -1,7 +1,8 @@
-import { customElement } from 'lit/decorators.js';
-import {TextFieldBase} from '@material/mwc-textfield/mwc-textfield-base';
+import { customElement, property } from 'lit/decorators.js';
+import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
 
 import { styles } from './styles.css';
+import { html, TemplateResult } from 'lit';
 
 /**
  * @cssprop {color} [--fds-primary=#694ED6] - Textfield color
@@ -15,14 +16,22 @@ import { styles } from './styles.css';
  * @attr [validationMessage='error'] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
  * @attr [disabled=false] - Whether or not the input should be disabled.
  * @attr [outlined=false] - Whether or not to show the material outlined variant.
+ * @slot actionButton - Slot to replace iconTrailing with an action button.
  */
 
 @customElement('fds-textfield')
 export class Textfield extends TextFieldBase {
-  static styles = [styles];  
-
+  static styles = [styles];
+  @property({ type: Boolean }) showActionButton = false;
   constructor() {
     super();
+  }
+
+  protected renderTrailingIcon(): TemplateResult | string {
+    return this.showActionButton
+      ? html`
+      <slot name="actionButton"></slot>`
+      : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
   }
 }
 

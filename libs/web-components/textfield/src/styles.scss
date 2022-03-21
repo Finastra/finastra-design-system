@@ -1,8 +1,8 @@
 @use "@material/mwc-textfield/mwc-textfield";
 @use "@finastra/fds-theme" as fds;
 
-$textfield-icon-color: var(--fds-primary, #694ED6);
-$textfield-icon-trailing-color:var(--fds-primary, #694ED6);
+$textfield-icon-color: var(--fds-primary, #694ed6);
+$textfield-icon-trailing-color: var(--fds-primary, #694ed6);
 
 :host {
   display: block;
@@ -21,22 +21,15 @@ $textfield-icon-trailing-color:var(--fds-primary, #694ED6);
   @include fds.mdc(text-field-error-color, error);
 }
 
+slot[name="actionButton"]::slotted(*) {
+  @include fds.text-color(text-high-on-background);
+  align-self: center;
+}
+
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--leading {
   color: var(--fds-icon-color, $textfield-icon-color);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--trailing {
   color: var(--fds-icon-trailing-color, $textfield-icon-trailing-color);
-}
-
-.mdc-text-field__input {
-  font: var(--fds-subtitle-1);
-}
-
-.mdc-floating-label {
-  font: var(--fds-body-1);
-}
-
-.mdc-text-field--disabled .mdc-text-field__icon--leading {
-  @include fds.text-color(text-hint-on-background);
 }
