@@ -312,6 +312,18 @@
       },
       "tags": []
     },
+    "checkbox": {
+      "root": "libs/web-components/checkbox",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/checkbox/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
@@ -695,6 +707,18 @@
       },
       "tags": []
     },
+    "radio": {
+      "root": "libs/web-components/radio",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/radio/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "repeater": {
       "projectType": "library",
       "root": "libs/angular-components/repeater",
@@ -830,6 +854,18 @@
         }
       },
       "tags": []
+    },
+    "switch": {
+      "root": "libs/web-components/switch",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/switch/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "table": {
       "projectType": "library",

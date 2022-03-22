@@ -69,6 +69,15 @@
       "path": "autocomplete"
     },
     {
+      "path": "checkbox"
+    },
+    {
+      "path": "radio"
+    },
+    {
+      "path": "switch"
+    },
+    {
       "path": "app-card"
     }
   ]
