@@ -12,10 +12,9 @@ import { html, TemplateResult } from 'lit';
  * @attr [required=false] - Displays error state if value is empty and input is blurred.
  * @attr [icon=''] - Leading icon to display in input. See mwc-icon.
  * @attr [iconTrailing=''] - Leading icon to display in input. See mwc-icon.
- * @attr [type=text] - A string specifying the type of control to render.
- * @attr [validationMessage='error'] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
+ * @attr [type=''] - A string specifying the type of control to render.
+ * @attr [validationMessage=''] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
  * @attr [disabled=false] - Whether or not the input should be disabled.
- * @attr [outlined=false] - Whether or not to show the material outlined variant.
  * @slot actionButton - Slot to replace iconTrailing with an action button.
  */
 
