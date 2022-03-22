@@ -54,7 +54,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          onlyChanged: true
           buildScriptName: wc:build:storybook
 
       - name: Compliance Check
