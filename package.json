@@ -75,7 +75,7 @@
     "prewc:storybook": "npm run wca",
     "add": "npm install --package-lock-only --no-package-lock --prefix",
     "postadd": "npm install",
-    "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes --only-changed"
+    "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes"
   },
   "husky": {
     "hooks": {
