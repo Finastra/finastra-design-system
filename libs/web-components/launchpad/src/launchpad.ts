@@ -1,4 +1,4 @@
-import '@finastra/app-card';
+import '@finastra/brand-card';
 import '@finastra/button';
 import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
@@ -82,25 +82,25 @@ export class Launchpad extends LitElement {
         <div class="menu-body">
           <div class="app-content">
             <div class="app-title">${this.title}</div>
-            <div class="appcard-list">
+            <div class="brandcard-list">
               ${this.apps && this.apps.length > 0
-                ? this.apps.map(
-                    (app: any) =>
-                      html`
-                        <div class="appcard-item">
-                          <fds-app-card
-                            @click="${() => this._handleAppCardClick(app)}"
+        ? this.apps.map(
+          (app: any) =>
+            html`
+                        <div class="brandcard-item">
+                          <fds-brand-card
+                            @click="${() => this._handleBrandCardClick(app)}"
                             label="${app[this.appNameProperty]}"
                             shortLabel="${app[this.shortAppNameProperty]}"
-                            class="appcard"
+                            class="brandcard"
                             extraDense
                             secondary
-                          ></fds-app-card>
-                          <div class="appcard-name">${app[this.appNameProperty]}</div>
+                          ></fds-brand-card>
+                          <div class="brandcard-name">${app[this.appNameProperty]}</div>
                         </div>
                       `
-                  )
-                : ''}
+        )
+        : ''}
             </div>
           </div>
           <div class="menu-tools">
@@ -120,7 +120,7 @@ export class Launchpad extends LitElement {
     `;
   }
 
-  private _handleAppCardClick(app: any) {
+  private _handleBrandCardClick(app: any) {
     window.location.replace(`${this.launchpageUrl}/applications/${app[this.appNameProperty]}`);
   }
 

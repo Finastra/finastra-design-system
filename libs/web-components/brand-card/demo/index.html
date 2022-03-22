@@ -1,0 +1,20 @@
+<script type="module" src="node_modules/@finastra/brand-card/dist/src/brand-card.js"></script>
+<style>
+  p {
+    color: var(--fds-on-background);
+    font: var(--fds-body-1);
+  }
+</style>
+
+<div style="display: flex; align-items: center; flex-direction: column">
+  <p>fds-brand-card large</p>
+  <fds-brand-card label="App name" large secondary></fds-brand-card>
+  <p>default fds-brand-card with label</p>
+  <fds-brand-card label="App name"></fds-brand-card>
+  <p>fds-brand-card with shortLabel and secondary color</p>
+  <fds-brand-card label="App name" shortLabel="APP" secondary></fds-brand-card>
+  <p>fds-brand-card dense</p>
+  <fds-brand-card label="App name" dense></fds-brand-card>
+  <p>fds-brand-card extraDense</p>
+  <fds-brand-card label="App name" extraDense secondary></fds-brand-card>
+</div>

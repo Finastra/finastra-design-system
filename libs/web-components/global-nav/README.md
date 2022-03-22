@@ -11,5 +11,5 @@ The Global Navigation ensures a consistant navigation between different apps and
 This pattern requires the following web components to be installed:
 
 ```
-npm i @finastra/app-bar @finastra/app-card @finastra/button @finastra/fds-theme @finastra/launchpad @finastra/sidenav @finastra/user-profile @material/mwc-drawer @material/mwc-icon-button
+npm i @finastra/app-bar @finastra/brand-card @finastra/button @finastra/fds-theme @finastra/launchpad @finastra/sidenav @finastra/user-profile @material/mwc-drawer @material/mwc-icon-button
 ```

@@ -45,7 +45,7 @@
       "path": "button"
     },
     {
-      "path": "app-card"
+      "path": "brand-card"
     },
     {
       "path": "avatar"
@@ -67,6 +67,9 @@
     },
     {
       "path": "autocomplete"
+    },
+    {
+      "path": "app-card"
     }
   ]
 }
