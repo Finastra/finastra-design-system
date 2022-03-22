@@ -6,7 +6,7 @@ $textfield-icon-trailing-color: var(--fds-primary, #694ed6);
 
 :host {
   display: block;
-  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(theme-primary, secondary);
   @include fds.mdc(text-field-fill-color, primary-lighter);
   @include fds.mdc(text-field-idle-line-color, primary);
   @include fds.mdc(text-field-label-ink-color, text-medium-on-background);
