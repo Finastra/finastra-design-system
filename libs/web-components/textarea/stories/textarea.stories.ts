@@ -25,12 +25,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Textarea> = ({ label, helper, outlined, required, disabled }) => {
-  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
+const Template: Story<Textarea> = ({ label, helper, required, disabled }) => {
+  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fsd-textarea>`;
 };
 
-const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter, outlined, required, disabled }) => {
-  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?outlined=${outlined} ?disabled=${disabled}></fsd-textarea>`;
+const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter, required, disabled }) => {
+  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fsd-textarea>`;
 };
 
 export const Default: Story<Textarea> = Template.bind({});
@@ -38,11 +38,6 @@ export const Default: Story<Textarea> = Template.bind({});
 export const Required: Story<Textarea> = Template.bind({});
 Required.args = {
   required: true
-};
-
-export const Outlined: Story<Textarea> = Template.bind({});
-Outlined.args = {
-  outlined: true
 };
 
 export const CharacterCounter: Story<Textarea> = CounterTemplate.bind({});
