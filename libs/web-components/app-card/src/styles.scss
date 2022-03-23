@@ -45,7 +45,7 @@
     }
 
     .published {
-      background: var(--fds-success);
+      @include fds.bg-color(success);
     }
 
     .draft {
