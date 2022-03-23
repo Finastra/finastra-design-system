@@ -57,7 +57,7 @@
     }
 
     .coming_soon {
-      background: var(--fds-gradient-horizontal);
+      @include fds.bg-color(gradient-horizontal);
     }
 
     .app-card-cover {
