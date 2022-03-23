@@ -89,7 +89,7 @@
         position: absolute;
         top: var(--fds-spacing-4);
         right: var(--fds-spacing-4);
-        background: var(--fds-background);
+        @include fds.bg-color(background);
         display: flex;
         align-items: center;
         justify-content: center;
