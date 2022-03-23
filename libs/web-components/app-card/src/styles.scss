@@ -34,9 +34,9 @@
       position: absolute;
       top: -11px;
       left: 0;
-      border-top-left-radius: var(--fds-spacing-3);
-      border-bottom-right-radius: var(--fds-spacing-3);
-      padding: 2px var(--fds-spacing-4);
+      border-top-left-radius: var(--fds-spacing-3, 16px);
+      border-bottom-right-radius: var(--fds-spacing-3, 16px);
+      padding: 2px var(--fds-spacing-4, 24px);
       width: max-content;
       transition-property: transform;
       will-change: transform;
@@ -49,11 +49,11 @@
     }
 
     .draft {
-      background: var(--fds-gray);
+      background: var(--fds-gray, #C7C8CA);
     }
 
     .in_review {
-      background: var(--fds-blue);
+      background: var(--fds-blue, #009CBD);
     }
 
     .coming_soon {
@@ -83,12 +83,12 @@
 
       .app-card-logo-container {
         border-radius: 50%;
-        box-shadow: 0 0 var(--fds-spacing-1) var(--fds-spacing-2) var(--fds-background);
+        box-shadow: 0 0 var(--fds-spacing-1, 4px) var(--fds-spacing-2, 8px) var(--fds-background, #FAFAFA);
         width: 80px;
         height: 80px;
         position: absolute;
-        top: var(--fds-spacing-4);
-        right: var(--fds-spacing-4);
+        top: var(--fds-spacing-4, 24px);
+        right: var(--fds-spacing-4, 24px);
         @include fds.bg-color(background);
         display: flex;
         align-items: center;
@@ -120,7 +120,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       width: fit-content;
-      max-width: calc(100% - var(--fds-spacing-3) * 2);
+      max-width: calc(100% - var(--fds-spacing-3, 16px) * 2);
     }
 
     .app-card-description {
