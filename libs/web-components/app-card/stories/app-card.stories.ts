@@ -48,7 +48,7 @@ ExtraDense.args = {
 };
 
 export const ComingSoon: Story<AppCard> = Template.bind({});
-CommingSoon.args = {
+ComingSoon.args = {
   application: { ...dummyApp, ...{ "flag": "COMING_SOON" } }
 };
 

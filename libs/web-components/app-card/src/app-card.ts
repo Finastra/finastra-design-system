@@ -51,7 +51,10 @@ export class AppCard extends BaseCard {
       <div ?hidden=${this.extraDense} class="app-card-cover"></div>
       <div ?hidden=${this.extraDense} class="app-card-top">
         <div class="app-card-logo-container">
-          <img loading="lazy" src="${this.application?.icon}" alt="Icon ${this.application?.name}">
+          ${this.application?.icon ?
+            html`<img loading="lazy" src="${this.application?.icon}" alt="Logo ${this.application?.name}">` :
+            html`<div class="app-card-logo-fallback" title="Logo Finastra Fallback"></div>`
+          }
         </div>
       </div>
       <div ?hidden=${!this.extraDense} class="app-card-logo-container">
