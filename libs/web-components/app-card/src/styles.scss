@@ -97,13 +97,13 @@
 
         img {
           width: 70px;
-          height: 70px;
+          height: auto;
         }
 
         .app-card-logo-fallback {
           @include fds.property(background-image, logo);
           width: 70px;
-          height: 70px;
+          height: auto;
           background-repeat: no-repeat;
           background-position: center;
         }
@@ -179,7 +179,7 @@
 
     img {
       width: 42px;
-      height: 42px;
+      height: auto;
     }
   }
 
