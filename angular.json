@@ -1054,6 +1054,18 @@
       },
       "tags": []
     },
+    "textarea": {
+      "root": "libs/web-components/textarea",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/textarea/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "textfield": {
       "root": "libs/web-components/textfield",
       "architect": {

@@ -1,0 +1,8 @@
+.tsbuildinfo
+tsconfig.json
+.eslintignore
+*.tgz
+images/*
+test/*
+*.ts
+!*.d.ts

@@ -1,0 +1,27 @@
+
+@use "@material/mwc-textfield/mwc-textfield";
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: block;
+  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(text-field-fill-color, primary-lighter);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-label-ink-color,text-medium-on-background);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-hover-line-color, primary);
+  @include fds.mdc(text-field-ink-color, on-background);
+  @include fds.mdc(ripple-color, primary-lighter);
+  @include fds.mdc(text-field-disabled-fill-color, background);
+  @include fds.mdc(text-field-disabled-ink-color, text-hint-on-background);
+
+  --mdc-ripple-hover-opacity: 1;
+}
+
+.mdc-text-field--filled .mdc-text-field__ripple::before,
+.mdc-text-field--filled .mdc-text-field__ripple::after {
+  @include fds.bg-color(primary-lighter);
+}
+.mdc-floating-label {
+  @include fds.typography(body-1);
+}
