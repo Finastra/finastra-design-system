@@ -76,6 +76,9 @@
     },
     {
       "path": "switch"
+    },
+    {
+      "path": "textarea"
     }
   ]
 }
