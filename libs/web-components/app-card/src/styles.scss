@@ -149,7 +149,7 @@ $fds-blue: #009CBD;
   width: 320px;
   height: 344px;
   .app-card {
-    width: 320px;
+    width: inherit;
     height: 344px;
     .app-card-label {
         @include fds.typography(headline-1);
