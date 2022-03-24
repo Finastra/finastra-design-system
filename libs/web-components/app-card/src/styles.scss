@@ -29,7 +29,7 @@ $fds-blue: #009CBD;
 
     .app-flag {
       @include fds.typography(subtitle-3);
-      @include fds.text-color(on-secondary);
+      //@include fds.text-color(on-secondary);
       min-width: 61px;
       text-align: center;
       transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
@@ -48,18 +48,22 @@ $fds-blue: #009CBD;
 
     .published {
       @include fds.bg-color(success);
+      @include fds.text-color(text-high-on-dark);
     }
 
     .draft {
       background: var(--fds-gray, $fds-gray);
+      @include fds.text-color(text-high-on-light);
     }
 
     .in_review {
       background: var(--fds-blue, $fds-blue);
+      @include fds.text-color(text-high-on-dark);
     }
 
     .coming_soon {
       @include fds.bg-color(gradient-horizontal);
+      @include fds.text-color(text-high-on-dark);
     }
 
     .app-card-cover {
@@ -149,8 +153,8 @@ $fds-blue: #009CBD;
   width: 320px;
   height: 344px;
   .app-card {
-    width: 320px;
-    height: 344px;
+    width: inherit;
+    height: inherit;
     .app-card-label {
         @include fds.typography(headline-1);
     }
@@ -160,7 +164,7 @@ $fds-blue: #009CBD;
 :host([extraDense]){
   width: 292px;
   .app-card {
-    width: 292px;
+    width: inherit;
     min-height: fit-content;
     display: flex;
     flex-direction: row;
