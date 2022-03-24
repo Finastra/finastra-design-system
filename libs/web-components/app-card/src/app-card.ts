@@ -1,58 +1,72 @@
-import { html, TemplateResult } from 'lit';
-import { property } from 'lit/decorators.js';
-import { customElement } from 'lit/decorators.js';
 import { BaseCard } from '@finastra/base-card';
-
+import { html, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
-import { renderPatternSVG, renderPrimarySVG, renderSecondarySVG } from './app-card-decorations';
+
+export enum FLAG_TYPES {
+  PUBLISHED = 'Published',
+  DRAFT = 'Draft',
+  IN_REVIEW = 'In Review',
+  COMING_SOON = 'Coming Soon'
+}
+
+export interface Application {
+  name: string;
+  bannerClass?: string;
+  lastModified?: string;
+  description?: string;
+  author?: string;
+  icon?: string;
+  flag?: FLAG_TYPES;
+  tags?: string[];
+  bookmarked?: boolean;
+}
 
 /**
- * @cssprop {color} [--fds-primary=#694ED6] - Color of the default ribbon
- * @cssprop {color} [--fds-secondary=#C137A2] - Color of the secondary ribbon
+ * @cssprop {color} [--fds-success=#008744] - Color of the Deployed flag.
+ * @cssprop {color} [--fds-gray=#C7C8CA] - Color of the Draft flag.
+ * @cssprop {color} [--fds-blue=#009CBD] - Color of the In Review flag.
+ * @cssprop {color} [--fds-primary=#694ED6] - Start color of the gradient for Coming Soon flag.
+ * @cssprop {color} [--fds-secondary=#C137A2] - End color of the gradient for Coming Soon flag.
  */
 @customElement('fds-app-card')
 export class AppCard extends BaseCard {
   static styles = styles;
 
-  /** App card label */
-  @property({ type: String }) label;
+  /** Application Object. */
+  @property({ type: Object, reflect: true }) application = {} as Application;
 
-  /** Optional app card displayed label */
-  @property({ type: String }) shortLabel = '';
-
-  /** Color and ribbon type */
-  @property({ type: Boolean }) secondary = false;
-
-  /** Make the card bigger */
+  /** Make the card bigger. */
   @property({ type: Boolean }) large = false;
 
-  /** Make the card smaller */
-  @property({ type: Boolean }) dense = false;
-
-  /** Make the card extra small */
+  /** Make the card extra small. */
   @property({ type: Boolean }) extraDense = false;
 
   protected renderCardContent(): TemplateResult {
-    if ([this.large, this.dense, this.extraDense].filter((val) => val === true).length > 1) {
-      console.warn('[App Card]: Cannot use multiple size attributes at the same time, default size has been applied');
-    }
-    return html`<div class="app-card" title="${this.label}">
-      ${renderPatternSVG()}
-      <span class="app-card-label">${this.shortLabel || this.formatItemName(this.label)}</span>
-      ${this.secondary ? renderSecondarySVG() : renderPrimarySVG()}
-    </div>`;
-  }
-
-  formatItemName(name: string) {
-    if (name) {
-      return name
-        .split(' ')
-        .map((str) => str.charAt(0))
-        .join('')
-        .toUpperCase()
-        .substring(0, 3);
-    }
-    return name;
+    return html`
+    <div class="app-card">
+      <div ?hidden=${!this.application?.flag} class="app-flag ${this.application.flag?.toLowerCase()}">
+        ${FLAG_TYPES[this.application.flag!]}
+      </div>
+      <div ?hidden=${this.extraDense} class="app-card-cover"></div>
+      <div ?hidden=${this.extraDense} class="app-card-top">
+        <div class="app-card-logo-container">
+          ${this.application?.icon ?
+            html`<img loading="lazy" src="${this.application?.icon}" alt="Logo ${this.application?.name}">` :
+            html`<div class="app-card-logo-fallback" title="Logo Finastra Fallback"></div>`
+          }
+        </div>
+      </div>
+      <div ?hidden=${!this.extraDense} class="app-card-logo-container">
+        <img loading="lazy" src="${this.application?.icon}">
+      </div>
+      <div>
+        <div class="app-card-name">${this.application?.name}</div>
+        <div class="app-card-author">${this.application?.author}</div>
+        <div ?hidden=${this.extraDense} class="app-card-description">${this.application?.description}</div>
+      </div>
+    </div>
+    `;
   }
 }
 

@@ -1,16 +1,17 @@
 {
-  "name": "@finastra/app-card",
-  "displayName": "App Card",
+  "name": "@finastra/brand-card",
+  "displayName": "Brand Card",
   "version": "0.0.20",
-  "description": "App Card Web Component",
+  "description": "Brand Card Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "App Card"
+    "Brand Card",
+    "Card"
   ],
   "license": "MIT",
-  "main": "dist/src/app-card.js",
-  "module": "dist/src/app-card.js",
+  "main": "dist/src/brand-card.js",
+  "module": "dist/src/brand-card.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

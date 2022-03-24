@@ -22,19 +22,19 @@
           @include fds.padding(3, right, left, bottom);
         }
 
-        .appcard-list {
+        .brandcard-list {
           display: grid;
           grid-template-columns: auto auto auto;
           grid-row-gap: 32px;
           grid-column-gap: 56px;
           @include fds.padding(3);
 
-          .appcard-item {
+          .brandcard-item {
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            .appcard {
+            .brandcard {
               display: flex;
               flex-direction: column;
               align-items: center;
@@ -42,7 +42,7 @@
               cursor: pointer;
             }
 
-            .appcard-name {
+            .brandcard-name {
               @include fds.typography(subtitle-3);
               @include fds.text-color(on-surface);
               @include fds.padding(2, top);
