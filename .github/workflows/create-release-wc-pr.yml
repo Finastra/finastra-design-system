@@ -20,6 +20,7 @@ jobs:
         with:
           ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
       - name: Setup node
         uses: actions/setup-node@v2
         with:
