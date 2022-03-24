@@ -47,23 +47,23 @@ $fds-blue: #009CBD;
     }
 
     .published {
-      @include fds.bg-color(success);
       @include fds.text-color(text-high-on-dark);
+      @include fds.bg-color(success);
     }
 
     .draft {
-      background: var(--fds-gray, $fds-gray);
       @include fds.text-color(text-high-on-light);
+      background: var(--fds-gray, $fds-gray);
     }
 
     .in_review {
-      background: var(--fds-blue, $fds-blue);
       @include fds.text-color(text-high-on-dark);
+      background: var(--fds-blue, $fds-blue);
     }
 
     .coming_soon {
-      @include fds.bg-color(gradient-horizontal);
       @include fds.text-color(text-high-on-dark);
+      @include fds.bg-color(gradient-horizontal);
     }
 
     .app-card-cover {
