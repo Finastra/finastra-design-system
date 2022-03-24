@@ -22,7 +22,7 @@ $fds-blue: #009CBD;
     justify-content: space-around;
     box-sizing: border-box;
     text-decoration: none;
-    @include fds.text-color(foreground);
+    @include fds.text-color(on-background);
     transform-style: preserve-3d;
     transition-property: box-shadow, transform;
     will-change: box-shadow, transform;
