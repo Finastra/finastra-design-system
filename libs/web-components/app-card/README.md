@@ -35,4 +35,5 @@ export interface Application {
 ```
 
 \*\* `FLAG_TYPES` is equivalent to type `"PUBLISHED"|"DRAFT"|"IN_REVIEW"|"COMING_SOON"`
+
 \*\*\* `icon` require an accessible url and the format will be 70px and 42px for the card `extraDense`. Also we recommand adding a background to the logo for dark and light theme accessibility and contrast.
