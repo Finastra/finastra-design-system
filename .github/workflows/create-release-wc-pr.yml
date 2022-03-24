@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: master
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -40,7 +41,7 @@ jobs:
         run: node ./scripts/update-release-wc-file ${{ github.event.sender.login }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v3
         with:
           commit-message: 'chore(release-wc): v${{ env.RELEASE_VERSION }}'
           delete-branch: true
