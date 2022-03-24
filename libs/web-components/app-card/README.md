@@ -36,4 +36,17 @@ export interface Application {
 
 \*\* `FLAG_TYPES` is equivalent to type `"PUBLISHED"|"DRAFT"|"IN_REVIEW"|"COMING_SOON"`
 
-\*\*\* `icon` require an accessible url and the format will be 70px and 42px for the card `extraDense`. Also we recommand adding a background to the logo for dark and light theme accessibility and contrast.
+\*\*\* `icon` require an publicly accessible url and the recommanded format is 70x70 and 42x42 for the card `extraDense`. Also we recommand adding a background (#FFFFFF) to the logo if it doesn't work for dark and light theme accessibility contrast.
+
+<div style="display:flex; flex-direction:row;justify-content: space-around;">
+  <div>
+    <img src="https://i.imgur.com/AFDwskP.png" alt="Girl in a jacket" width="250" height="300px">
+    <div style="width:100%;height:8px;background-color:#008744;"></div>
+    <p style="color:#008744;">Do</p>
+  </div>
+  <div>
+    <img src="https://i.imgur.com/TGHSH9D.png" alt="Girl in a jacket" width="250" height="300px">
+    <div style="width:100%;height:8px;background-color:#D60040;"></div>
+    <p style="color:#D60040;">Don't</p>
+  </div>
+</div>

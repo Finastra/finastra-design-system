@@ -2,12 +2,13 @@
 @use "@finastra/base-card/src" as base-card;
 @use "./cover";
 
+$fds-gray: #C7C8CA;
+$fds-blue: #009CBD;
+
 :host {
   @include base-card.core-styles();
   width: 270px;
   border-radius: 4px;
-  --fds-gray: #C7C8CA;
-  --fds-blue: #009CBD;
 
   .mdc-card {
     overflow: visible !important;
@@ -50,11 +51,11 @@
     }
 
     .draft {
-      background: var(--fds-gray, #C7C8CA);
+      background: var(--fds-gray, $fds-gray);
     }
 
     .in_review {
-      background: var(--fds-blue, #009CBD);
+      background: var(--fds-blue, $fds-blue);
     }
 
     .coming_soon {
@@ -84,26 +85,25 @@
 
       .app-card-logo-container {
         border-radius: 50%;
-        box-shadow: 0 0 var(--fds-spacing-1, 4px) var(--fds-spacing-2, 8px) var(--fds-background, #FAFAFA);
         width: 80px;
         height: 80px;
         position: absolute;
-        top: var(--fds-spacing-4, 24px);
+        top: var(--fds-spacing-3, 16px);
         right: var(--fds-spacing-4, 24px);
-        @include fds.bg-color(background);
+        @include fds.bg-color(surface);
         display: flex;
         align-items: center;
         justify-content: center;
 
         img {
           width: 70px;
-          height: auto;
+          height: 70px;
         }
 
         .app-card-logo-fallback {
           @include fds.property(background-image, logo);
           width: 70px;
-          height: auto;
+          height: 70px;
           background-repeat: no-repeat;
           background-position: center;
         }
@@ -179,7 +179,7 @@
 
     img {
       width: 42px;
-      height: auto;
+      height: 42px;
     }
   }
 

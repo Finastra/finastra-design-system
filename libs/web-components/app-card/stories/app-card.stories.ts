@@ -8,7 +8,7 @@ import { argTypes, cssprops } from './custom-element.json';
 const dummyApp = {
   "name": "Business Economics",
   "author": "Finastra",
-  "icon": "https://www.finastra.com/themes/custom/themekit/dist/logo.svg",
+  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
   "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
 };
 
