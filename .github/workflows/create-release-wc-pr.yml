@@ -40,7 +40,7 @@ jobs:
         run: node ./scripts/update-release-wc-file ${{ github.event.sender.login }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           commit-message: 'chore(release-wc): v${{ env.RELEASE_VERSION }}'
           delete-branch: true
