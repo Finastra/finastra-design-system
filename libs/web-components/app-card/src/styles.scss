@@ -62,7 +62,7 @@ $fds-blue: #009CBD;
     }
 
     .coming_soon {
-      @include fds.text-color(text-high-on-dark);
+      @include fds.text-color(on-gradient);
       @include fds.bg-color(gradient-horizontal);
     }
 
