@@ -21,8 +21,8 @@ const Template: Story<Textfield> = ({ label, icon, disabled, required, iconTrail
   return html`<fds-textfield label=${label} icon=${icon} ?disabled=${disabled} ?required=${required} iconTrailing=${iconTrailing} helper=${helper}></fds-textfield>`;
 };
 
-const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, validationMessage}) => {
-  return html`<fds-textfield label=${label} icon=${icon} type=${type} validationMessage=${validationMessage} ?helper=${helper}></fds-textfield>`;
+const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, validationMessage,pattern}) => {
+  return html`<fds-textfield label=${label} icon=${icon} type=${type} validationMessage=${validationMessage} ?helper=${helper} pattern=${pattern}></fds-textfield>`;
 };
 
 const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, showActionButton}) => {
@@ -72,6 +72,14 @@ ErrorMessage.args = {
   validationMessage: 'Not a valid email',
   label: 'Enter your email',
   icon: 'event'
+};
+
+export const Regex: Story<Textfield> = ValidationTemplate.bind({});
+Regex.args = {
+  label: 'Enter a number',
+  icon: 'event',
+  validationMessage: 'Should only be numbers',
+  pattern:"[0-9]+"
 };
 
 export const Disabled: Story<Textfield> = Template.bind({});
