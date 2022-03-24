@@ -47,7 +47,7 @@ $fds-blue: #009CBD;
     }
 
     .published {
-      @include fds.text-color(text-high-on-dark);
+      @include fds.text-color(on-success);
       @include fds.bg-color(success);
     }
 
