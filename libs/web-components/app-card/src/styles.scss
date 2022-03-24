@@ -160,7 +160,7 @@ $fds-blue: #009CBD;
 :host([extraDense]){
   width: 292px;
   .app-card {
-    width: 292px;
+    width: inherit;
     min-height: fit-content;
     display: flex;
     flex-direction: row;
