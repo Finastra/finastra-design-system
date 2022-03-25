@@ -1,13 +1,12 @@
 {
   "name": "@finastra/app-card",
   "displayName": "App Card",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "App Card Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "App Card",
-    "Card"
+    "App Card"
   ],
   "license": "MIT",
   "main": "dist/src/app-card.js",
@@ -16,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/base-card": "0.0.20",
+    "@finastra/base-card": "0.0.21",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

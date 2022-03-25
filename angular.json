@@ -233,6 +233,18 @@
       },
       "tags": ["web-components"]
     },
+    "brand-card": {
+      "root": "libs/web-components/brand-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/brand-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "breadcrumb": {
       "projectType": "library",
       "root": "libs/angular-components/breadcrumb",

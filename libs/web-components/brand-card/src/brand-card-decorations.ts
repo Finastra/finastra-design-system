@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 
 export function renderPrimarySVG(): TemplateResult {
   return html`<svg
-    class="app-card-decoration ribbon"
+    class="brand-card-decoration ribbon"
     width="327"
     height="115"
     viewBox="0 0 327 115"
@@ -55,7 +55,7 @@ export function renderPrimarySVG(): TemplateResult {
 
 export function renderSecondarySVG(): TemplateResult {
   return html`<svg
-    class="app-card-decoration ribbon"
+    class="brand-card-decoration ribbon"
     width="320"
     height="115"
     viewBox="0 0 320 115"
@@ -109,7 +109,7 @@ export function renderSecondarySVG(): TemplateResult {
 
 export function renderPatternSVG(): TemplateResult {
   return html`<svg
-    class="app-card-decoration pattern"
+    class="brand-card-decoration pattern"
     width="321"
     height="117"
     viewBox="0 0 321 117"

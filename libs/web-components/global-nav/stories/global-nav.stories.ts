@@ -1,5 +1,5 @@
 import '@finastra/app-bar';
-import '@finastra/app-card';
+import '@finastra/brand-card';
 import '@finastra/launchpad';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';

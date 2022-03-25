@@ -1,5 +1,5 @@
 <script type="module" src="node_modules/@finastra/launchpad/dist/src/launchpad.js"></script>
-<script type="module" src="node_modules/@finastra/app-card/dist/src/app-card.js"></script>
+<script type="module" src="node_modules/@finastra/brand-card/dist/src/brand-card.js"></script>
 
 <style>
   .tools-title {
@@ -38,8 +38,7 @@
   }
 </style>
 <div>
-  <fds-launchpad
-    apps='
+  <fds-launchpad apps='
       [
         {
           "name": "App",
@@ -105,12 +104,10 @@
           }
         }
       ]
-    '
-  >
+    '>
   </fds-launchpad>
   <br /><br />
-  <fds-launchpad
-    apps='
+  <fds-launchpad apps='
       [
         {
           "name": "App",
@@ -155,25 +152,24 @@
           }
         }
       ]
-    '
-  >
+    '>
     <div slot="tools">
       <div class="tools-title">Tools</div>
       <div class='tools-list'>
         <div class="tools-item">
-          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
+          <fds-brand-card class='tools' label="Tool" extraDense primary></fds-brand-card>
           <div class="tools-name">Tool</div>
         </div>
         <div class="tools-item">
-          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
+          <fds-brand-card class='tools' label="Tool" extraDense primary></fds-brand-card>
           <div class="tools-name">Tool</div>
         </div>
         <div class="tools-item">
-          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
+          <fds-brand-card class='tools' label="Tool" extraDense primary></fds-brand-card>
           <div class="tools-name">Tool</div>
         </div>
         <div class="tools-item">
-          <fds-app-card class='tools' label="Tool" extraDense primary></fds-app-card>
+          <fds-brand-card class='tools' label="Tool" extraDense primary></fds-brand-card>
           <div class="tools-name">Tool</div>
         </div>
       </div>

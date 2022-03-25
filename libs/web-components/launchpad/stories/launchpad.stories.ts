@@ -1,4 +1,4 @@
-import '@finastra/app-card';
+import '@finastra/brand-card';
 import '@finastra/launchpad';
 import { Launchpad } from '@finastra/launchpad';
 import { Meta, Story } from '@storybook/web-components';
@@ -103,19 +103,19 @@ const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppName
     <div class='tools-title'>Tools</div>
     <div class='tools-list'>
       <div class="tools-item">
-        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
+        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
         <div class='tools-name'>Tool</div>
       </div>
       <div class="tools-item">
-        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
+        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
         <div class='tools-name'>Tool</div>
       </div>
       <div class="tools-item">
-        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
+        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
         <div class='tools-name'>Tool</div>
       </div>
       <div class="tools-item">
-        <fds-app-card class='tools' label='Tool' extraDense primary></fds-app-card>
+        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
         <div class='tools-name'>Tool</div>
       </div>
     </div>
