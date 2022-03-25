@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: origin/master
           fetch-depth: 0
       - name: Setup node
         uses: actions/setup-node@v2
