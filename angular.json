@@ -1078,6 +1078,18 @@
       },
       "tags": ["web-components"]
     },
+    "textfield": {
+      "root": "libs/web-components/textfield",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/textfield/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "toaster": {
       "projectType": "library",
       "root": "libs/angular-components/toaster",

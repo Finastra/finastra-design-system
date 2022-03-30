@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/textfield",
+  "displayName": "Textfield",
+  "version": "1.0.0",
+  "description": "Textfield Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Textfield"
+  ],
+  "license": "MIT",
+  "main": "dist/src/textfield.js",
+  "module": "dist/src/textfield.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "@material/mwc-textfield": "0.25.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
