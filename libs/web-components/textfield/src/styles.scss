@@ -1,0 +1,35 @@
+@use "@material/mwc-textfield/mwc-textfield";
+@use "@finastra/fds-theme" as fds;
+
+$textfield-icon-color: var(--fds-primary, #694ed6);
+$textfield-icon-trailing-color: var(--fds-primary, #694ed6);
+
+:host {
+  display: block;
+  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(text-field-fill-color, primary-lighter);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-label-ink-color, text-medium-on-background);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-hover-line-color, primary);
+  @include fds.mdc(text-field-ink-color, on-background);
+  @include fds.mdc(text-field-outlined-idle-border-color, primary);
+  @include fds.mdc(text-field-outlined-hover-border-color, primary);
+  @include fds.mdc(ripple-color, primary-lighter);
+  @include fds.mdc(text-field-disabled-fill-color, background);
+  @include fds.mdc(text-field-disabled-ink-color, text-hint-on-background);
+  @include fds.mdc(text-field-error-color, error);
+}
+
+slot[name="actionButton"]::slotted(*) {
+  @include fds.text-color(text-high-on-background);
+  align-self: center;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--leading {
+  color: var(--fds-icon-color, $textfield-icon-color);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--trailing {
+  color: var(--fds-icon-trailing-color, $textfield-icon-trailing-color);
+}

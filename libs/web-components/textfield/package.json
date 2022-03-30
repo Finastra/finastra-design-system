@@ -1,22 +1,21 @@
 {
-  "name": "@finastra/checkbox",
-  "displayName": "Checkbox",
+  "name": "@finastra/textfield",
+  "displayName": "Textfield",
   "version": "0.0.22",
-  "description": "Checkbox Web Component",
+  "description": "Textfield Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Checkbox"
+    "Textfield"
   ],
   "license": "MIT",
-  "main": "dist/src/checkbox.js",
-  "module": "dist/src/checkbox.js",
+  "main": "dist/src/textfield.js",
+  "module": "dist/src/textfield.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/checkbox": "13.0.0",
-    "@material/mwc-checkbox": "0.25.3",
+    "@material/mwc-textfield": "0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

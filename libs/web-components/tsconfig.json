@@ -78,6 +78,9 @@
       "path": "switch"
     },
     {
+      "path": "textfield"
+    },
+    {
       "path": "textarea"
     },
     {

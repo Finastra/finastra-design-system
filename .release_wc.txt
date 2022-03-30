@@ -27,3 +27,4 @@
 - [02/23/2022] Request release v0.0.20 by dorsaffrigui 
 - [02/23/2022] Request release v0.0.20 by dorsaffrigui 
 - [03/25/2022] Request release v0.0.21 by dorsaffrigui 
+- [03/30/2022] Request release v0.0.22 by ttalbot 
