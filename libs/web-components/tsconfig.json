@@ -45,7 +45,7 @@
       "path": "button"
     },
     {
-      "path": "app-card"
+      "path": "brand-card"
     },
     {
       "path": "avatar"
@@ -82,6 +82,9 @@
     },
     {
       "path": "textarea"
+    },
+    {
+      "path": "app-card"
     }
   ]
 }

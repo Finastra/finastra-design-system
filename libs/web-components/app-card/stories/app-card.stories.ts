@@ -1,71 +1,68 @@
 const README = require('../README.md');
 import '@finastra/app-card';
-import { AppCard } from '@finastra/app-card';
+import type { AppCard } from '@finastra/app-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
+const dummyApp = {
+  "name": "Business Economics",
+  "author": "Finastra",
+  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
+  "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+};
+
 export default {
-  title: 'Components/App card',
+  title: 'Components/App Card',
   component: 'fds-app-card',
+  args: {
+    application: dummyApp
+  },
   argTypes,
-  args: {},
   parameters: {
     docs: {
       description: { component: README }
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=140%3A6969'
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=6063%3A76'
     },
     cssprops
-  },
-  decorators: []
+  }
 } as Meta;
 
-const Template: Story<AppCard> = ({ label, shortLabel = '', dense = false, extraDense = false, large = false, secondary = false }) => {
-  return html` <fds-app-card
-    label=${label}
-    shortLabel=${shortLabel}
-    ?dense=${dense}
-    ?extraDense=${extraDense}
-    ?large=${large}
-    ?secondary=${secondary}
-  >
-  </fds-app-card>`;
+const Template: Story<AppCard> = ({ application, extraDense = false, large = false }) => {
+  return html`<fds-app-card  .application=${application} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
 };
 
 export const Default: Story<AppCard> = Template.bind({});
-Default.args = {
-  label: 'Application'
-};
 
-export const Dense: Story<AppCard> = Template.bind({});
-Dense.args = {
-  label: 'Application',
-  dense: true
+export const Large: Story<AppCard> = Template.bind({});
+Large.args = {
+  large: true
 };
 
 export const ExtraDense: Story<AppCard> = Template.bind({});
 ExtraDense.args = {
-  label: 'Application',
   extraDense: true
 };
 
-export const Large: Story<AppCard> = Template.bind({});
-Large.args = {
-  label: 'Application',
-  large: true
+export const ComingSoon: Story<AppCard> = Template.bind({});
+ComingSoon.args = {
+  application: { ...dummyApp, ...{ "flag": "COMING_SOON" } }
 };
 
-export const Secondary: Story<AppCard> = Template.bind({});
-Secondary.args = {
-  label: 'Application',
-  secondary: true
+export const Published: Story<AppCard> = Template.bind({});
+Published.args = {
+  application: { ...dummyApp, ...{ "flag": "PUBLISHED" } }
 };
 
-export const ShortLabel: Story<AppCard> = Template.bind({});
-ShortLabel.args = {
-  label: 'Application',
-  shortLabel: 'APP'
+export const InReview: Story<AppCard> = Template.bind({});
+InReview.args = {
+  application: { ...dummyApp, ...{ "flag": "IN_REVIEW" } }
+};
+
+export const Draft: Story<AppCard> = Template.bind({});
+Draft.args = {
+  application: { ...dummyApp, ...{ "flag": "DRAFT" } }
 };

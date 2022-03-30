@@ -1,20 +1,14 @@
 <script type="module" src="node_modules/@finastra/app-card/dist/src/app-card.js"></script>
-<style>
-  p {
-    color: var(--fds-on-background);
-    font: var(--fds-body-1);
-  }
-</style>
-
-<div style="display: flex; align-items: center; flex-direction: column">
-  <p>fds-app-card large</p>
-  <fds-app-card label="App name" large secondary></fds-app-card>
-  <p>default fds-app-card with label</p>
-  <fds-app-card label="App name"></fds-app-card>
-  <p>fds-app-card with shortLabel and secondary color</p>
-  <fds-app-card label="App name" shortLabel="APP" secondary></fds-app-card>
-  <p>fds-app-card dense</p>
-  <fds-app-card label="App name" dense></fds-app-card>
-  <p>fds-app-card extraDense</p>
-  <fds-app-card label="App name" extraDense secondary></fds-app-card>
+<div style="display: flex; flex-direction: column; gap: 42px;">
+  <fds-app-card
+    application='{"name":"Business Economics", "author":"Finastra", "flag":"PUBLISHED", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'
+    large>
+  </fds-app-card>
+  <fds-app-card
+    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  </fds-app-card>
+  <fds-app-card
+    application='{"name":"Business Economics", "author":"Finastra", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'
+    extraDense>
+  </fds-app-card>
 </div>
