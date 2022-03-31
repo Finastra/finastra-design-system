@@ -41,7 +41,7 @@ $track-color-opacity: 0.54;
 
 .mdc-switch__handle::before,
 .mdc-switch__handle::after {
-  @include fds.property(border-color, text-disabled-on-background);
+  @include fds.property(border-color, outline);
 }
 
 .mdc-switch__track { 
