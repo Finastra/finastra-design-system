@@ -1,2 +1,27 @@
 <script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
-<fds-tab name="World"></fds-tab>
+<script type="module" src="node_modules/@material/mwc-tab-bar/mwc-tab-bar.js"></script>
+<script type="module" src="node_modules/@material/mwc-tab-indicator/mwc-tab-indicator.js"></script>
+
+<div style="display: flex; flex-direction: column">
+  <mwc-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on"></fds-tab>
+    <fds-tab label="two" icon="exit_to_app"></fds-tab>
+  </mwc-tab-bar>
+
+  <mwc-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on" stacked></fds-tab>
+    <fds-tab label="two" icon="exit_to_app" stacked></fds-tab>
+  </mwc-tab-bar>
+
+  <mwc-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on" segmented></fds-tab>
+    <fds-tab label="two" icon="exit_to_app" segmented></fds-tab>
+  </mwc-tab-bar>
+
+  <mwc-tab-bar style="background: var(--fds-background)">
+    <fds-tab label="Active" icon="location_on" classic></fds-tab>
+    <fds-tab label="two" icon="exit_to_app" classic></fds-tab>
+    <fds-tab label="two" icon="exit_to_app" classic></fds-tab>
+    <fds-tab label="two" icon="exit_to_app" classic></fds-tab>
+  </mwc-tab-bar>
+</div>

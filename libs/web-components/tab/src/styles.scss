@@ -1,7 +1,110 @@
+@use '@material/mwc-tab/mwc-tab';
+@use "@finastra/fds-theme" as fds;
+
 :host {
   display: block;
 }
 
-p {
-  color: var(--fds-tab-text-color, blue);
+.mdc-ripple-surface {
+  border-radius: 16px;
+}
+.mdc-tab {
+  font: var(--fds-subtitle-2);
+  background: var(--fds-surface);
+}
+
+.mdc-tab__content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  z-index: -1;
+}
+
+:host([segmented]) {
+  .mdc-tab--active {
+    background: var(--fds-primary-lighter);
+    border-radius: 16px;
+  }
+  mwc-tab-indicator {
+    display: none;
+  }
+
+  mwc-ripple {
+    border-radius: 16px;
+    display: block;
+    .mdc-ripple-surface--primary.mdc-ripple-upgraded {
+      border-radius: 16px;
+    }
+  }
+}
+
+:host([classic]) {
+
+  .mdc-tab {
+    border-bottom: 1px solid var(--fds-primary);
+    background:  var(--fds-background);
+  }
+
+  .mdc-tab--active::before {
+    left: -7px;
+    border-right: 1px solid var(--fds-primary);
+    border-bottom-right-radius: 6px;
+  }
+  .mdc-tab--active {
+    width: 92%;
+    height: 100%;
+    border: 1px solid;
+    border-bottom: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 0 16px;
+    margin: 0 6px 0 6px;
+    border-color: var(--fds-primary);
+    background:  var(--fds-surface);
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      border-bottom: 1px solid var(--fds-primary);
+    }
+
+    &::before {
+      box-shadow: 2px 2px 0 0 var(--fds-surface);
+    }
+
+    &::after {
+      box-shadow: -2px 2px 0 0 var(--fds-surface);
+    }
+  }
+
+  .mdc-tab--active::after {
+    right: -7px;
+    border-left: 1px solid var(--fds-primary);
+    border-bottom-left-radius: 6px;
+  }
+
+  .mdc-tab--active {
+
+    &::before {
+      box-shadow: 2px 2px 0 0 var(--fds-background);
+    }
+
+    &::after {
+      box-shadow: -2px 2px 0 0 var(--fds-background);
+    }
+  }
+
+  mwc-tab-indicator {
+    display: none;
+  }
 }

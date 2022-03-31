@@ -1,17 +1,14 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
+import { TabBase } from '@material/mwc-tab/mwc-tab-base';
 
 import { styles } from './styles.css';
 
 @customElement('fds-tab')
-export class Tab extends LitElement {
+export class Tab extends TabBase {
   static styles = styles;
 
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+  constructor() {
+    super();
   }
 }
 
