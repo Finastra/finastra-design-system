@@ -4,9 +4,11 @@ import '../src/tab.js';
 
 describe('Tab', () => {
   it('loads accessibly', async () => {
-    const el: Tab = await fixture(html`<fds-tab></fds-tab>`);
+    const el: Tab = await fixture(html`<div role="tablist">
+      <fds-tab label="Active"></fds-tab>
+    </div>`);
 
     await elementUpdated(el);
-    await expect(el).to.be.accessible();
+    await expect(el.querySelector('fds-tab')).to.be.accessible();
   });
 });
