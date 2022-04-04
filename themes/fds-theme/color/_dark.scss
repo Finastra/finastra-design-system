@@ -8,6 +8,7 @@ $primary: #917EE0 !default;
 $secondary: #E453BF !default;
 $background: #191919 !default;
 $surface: #242424 !default;
+$outline: color.change($_white, $alpha: 0.12) !default;
 $success: #26D07C !default;
 $error: #FF1A5E !default;
 $gradient: linear-gradient(var(--fds-primary, #917EE0), var(--fds-secondary, #E453BF)) !default;
@@ -25,6 +26,7 @@ $properties: (
   secondary: $secondary,
   background: $background,
   surface: $surface,
+  outline: $outline,
   success: $success,
   error: $error,
   gradient: $gradient,
