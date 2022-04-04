@@ -25,20 +25,15 @@
 }
 
 :host([segmented]) {
+  .mdc-tab {
+    overflow: hidden;
+  }
   .mdc-tab--active {
     background: var(--fds-primary-lighter);
     border-radius: 16px;
   }
   mwc-tab-indicator {
     display: none;
-  }
-
-  mwc-ripple {
-    border-radius: 16px;
-    display: block;
-    .mdc-ripple-surface--primary.mdc-ripple-upgraded {
-      border-radius: 16px;
-    }
   }
 }
 
@@ -81,7 +76,7 @@
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 0 16px;
-    margin: 0 6px 0 6px;
+    margin: 0 6px;
     border-color: var(--fds-primary);
     background:  var(--fds-surface);
 
@@ -111,7 +106,7 @@
     border-left: 1px solid var(--fds-primary);
     border-bottom-left-radius: 4px;
   }
-  
+
   mwc-tab-indicator {
     display: none;
   }
