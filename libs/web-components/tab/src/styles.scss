@@ -3,14 +3,16 @@
 
 :host {
   display: block;
+  @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
+  @include fds.mdc(tab-color-default,text-medium-on-background);
 }
 
 .mdc-ripple-surface {
-  border-radius: 16px;
+  border-radius: var(--fds-spacing-3);
 }
 .mdc-tab {
-  font: var(--fds-subtitle-2);
-  background: var(--fds-surface);
+  @include fds.typography(subtitle-2);
+  @include fds.bg-color(surface);
 }
 
 .mdc-tab__content::after {
@@ -29,8 +31,8 @@
     overflow: hidden;
   }
   .mdc-tab--active {
-    background: var(--fds-primary-lighter);
-    border-radius: 16px;
+    @include fds.bg-color(primary-lighter);
+    border-radius: var(--fds-spacing-3);
   }
   mwc-tab-indicator {
     display: none;
@@ -53,7 +55,8 @@
       bottom: 12px;
       width: 1px;
       left: 0;
-      background: var(--fds-text-hint-on-background);
+      @include fds.bg-color(text-hint-on-background);
+      
     }
   }
 }
@@ -66,19 +69,21 @@
 
   .mdc-tab--active::before {
     left: -7px;
-    border-right: 1px solid var(--fds-primary);
+    border-right: 1px solid;
+    @include fds.property(border-right-color,primary);
     border-bottom-right-radius: 6px;
   }
 
   .mdc-tab--active {
+    height: 100%;
     border: 1px solid;
     border-bottom: 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 0 16px;
     margin: 0 6px;
-    border-color: var(--fds-primary);
-    background:  var(--fds-surface);
+    @include fds.property(border-color,primary);
+    @include fds.bg-color(surface);
 
     &::before,
     &::after {
@@ -88,23 +93,24 @@
       bottom: 0;
       width: 6px;
       height: 6px;
-      background: transparent;
-      border-bottom: 1px solid var(--fds-primary);
+      border-bottom: 1px solid;
+      @include fds.property(border-bottom-color,primary);
     }
 
     &::before {
-      box-shadow: 2px 2px 0 0 var(--fds-background);
+      box-shadow: 2px 2px 0 0 var(--fds-background, #FAFAFA);
     }
 
     &::after {
-      box-shadow: -2px 2px 0 0 var(--fds-background);
+      box-shadow: -2px 2px 0 0 var(--fds-background, #FAFAFA);
     }
   }
 
   .mdc-tab--active::after {
     right: -7px;
-    border-left: 1px solid var(--fds-primary);
-    border-bottom-left-radius: 4px;
+    border-left: 1px solid;
+    @include fds.property(border-left-color, primary);
+    border-bottom-left-radius: var(--fds-spacing-1);
   }
 
   mwc-tab-indicator {
