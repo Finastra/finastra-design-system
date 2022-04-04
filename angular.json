@@ -855,6 +855,18 @@
       },
       "tags": []
     },
+    "stepper": {
+      "root": "libs/web-components/stepper",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/stepper/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "switch": {
       "root": "libs/web-components/switch",
       "architect": {

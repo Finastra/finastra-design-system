@@ -20,11 +20,10 @@ body {
   padding: 16px;
   height: 100%;
   row-gap: 16px;
-  column-gap: 48px;
+  column-gap: 16px;
   justify-items: start;
   margin: 0 auto;
   grid-template-rows: 16px auto;
-  grid-auto-flow: column;
 }
 
 fds-logo {

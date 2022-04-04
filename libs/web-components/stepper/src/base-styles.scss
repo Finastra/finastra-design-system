@@ -1,0 +1,86 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  @include fds.text-color(text-primary-on-background);
+  @include fds.typography(subtitle-3);
+  border: 1px solid;
+  @include fds.property(border-color, outline);
+}
+
+.done {
+  .circle {
+    @include fds.property(border-color, success);
+    @include fds.bg-color(success);
+    > svg {
+      @include fds.fill(on-primary);;
+    }
+  }
+
+  .line {
+    @include fds.bg-color(success);
+  }
+}
+
+
+.current {
+  .circle {
+    @include fds.property(border-color, primary);
+    @include fds.bg-color(primary);
+    @include fds.text-color(on-primary);
+
+  }
+  .line.start-line {
+    @include fds.bg-color(success);
+  }
+
+  .line.end-line {
+    @include fds.bg-color(primary);
+  }
+  .step-item-label {
+    @include fds.typography(subtitle-3);
+  }
+}
+
+.line.start-line.current {
+  @include fds.bg-color(primary);
+}
+
+:host([secondary]) {
+  .current {
+    .circle {
+      @include fds.property(border-color, secondary);
+      @include fds.bg-color(secondary);
+      @include fds.text-color(on-secondary);
+
+    }
+    .line.start-line {
+      @include fds.bg-color(success);
+    }
+
+    .line.end-line {
+      @include fds.bg-color(secondary);
+    }
+  }
+
+  .line.start-line.current {
+    @include fds.bg-color(secondary);
+  }
+}
+
+.line {
+  @include fds.bg-color(outline);
+}
+
+.line.hidden {
+  visibility: hidden;
+}
