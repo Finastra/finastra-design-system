@@ -3,16 +3,17 @@
 
 :host {
   display: block;
+}
+
+.mdc-tab {
+  @include fds.typography(subtitle-2);
+  @include fds.bg-color(surface);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
   @include fds.mdc(tab-color-default,text-medium-on-background);
 }
 
 .mdc-ripple-surface {
   border-radius: var(--fds-spacing-3);
-}
-.mdc-tab {
-  @include fds.typography(subtitle-2);
-  @include fds.bg-color(surface);
 }
 
 .mdc-tab__content::after {

@@ -1,2 +1,39 @@
+<script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
 <script type="module" src="node_modules/@finastra/tab-bar/dist/src/tab-bar.js"></script>
-<fds-tab-bar></fds-tab-bar>
+
+<div style="display: flex; flex-direction: column">
+  <fds-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active"></fds-tab>
+    <fds-tab label="Inactive"></fds-tab>
+    <fds-tab label="Inactive"></fds-tab>
+    <fds-tab label="Inactive"></fds-tab>
+  </fds-tab-bar>
+  <fds-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on"></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" seperator></fds-tab>
+    <fds-tab label="Inactive" icon="location_on" seperator></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" seperator></fds-tab>
+  </fds-tab-bar>
+
+  <fds-tab-bar style="padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on" stacked></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" stacked></fds-tab>
+    <fds-tab label="Inactive" icon="location_on" stacked></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" stacked></fds-tab>
+  </fds-tab-bar>
+
+  <fds-tab-bar style="background: var(--fds-background);padding-bottom: 16px">
+    <fds-tab label="Active" icon="location_on" segmented></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" segmented></fds-tab>
+    <fds-tab label="Inactive" icon="location_on" segmented></fds-tab>
+    <fds-tab label="Inactive" icon="exit_to_app" segmented></fds-tab>
+  </fds-tab-bar>
+
+  <fds-tab-bar style="background: var(--fds-background)">
+    <fds-tab label="Active" classic></fds-tab>
+    <fds-tab label="Inactive" classic seperator></fds-tab>
+    <fds-tab label="Inactive" classic seperator></fds-tab>
+    <fds-tab label="Inactive" classic seperator></fds-tab>
+    <fds-tab label="Inactive" classic seperator></fds-tab>
+  </fds-tab-bar>
+</div>
