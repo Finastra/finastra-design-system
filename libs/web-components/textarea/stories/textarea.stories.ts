@@ -22,7 +22,7 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=16553%3A22669'
     },
     cssprops
-  },
+  }
 } as Meta;
 
 const Template: Story<Textarea> = ({ label, helper, required, disabled }) => {
@@ -43,7 +43,7 @@ Required.args = {
 export const CharacterCounter: Story<Textarea> = CounterTemplate.bind({});
 CharacterCounter.args = {
   maxLength: 18,
-  charCounter: true,
+  charCounter: true
 };
 
 export const Disabled: Story<Textarea> = Template.bind({});

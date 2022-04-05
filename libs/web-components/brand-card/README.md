@@ -11,6 +11,7 @@ This card is aimed to be used to display an application branding in an card list
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-brand-card--default)
 
 ## Installation
+
 ```
 npm i @finastra/brand-card
 ```

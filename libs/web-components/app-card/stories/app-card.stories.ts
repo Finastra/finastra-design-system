@@ -6,10 +6,10 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 const dummyApp = {
-  "name": "Business Economics",
-  "author": "Finastra",
-  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
-  "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+  name: 'Business Economics',
+  author: 'Finastra',
+  icon: 'https://i.ibb.co/vJfF8kH/Logo-1.png',
+  description: 'Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that.'
 };
 
 export default {
@@ -32,7 +32,7 @@ export default {
 } as Meta;
 
 const Template: Story<AppCard> = ({ application, extraDense = false, large = false }) => {
-  return html`<fds-app-card  .application=${application} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
+  return html`<fds-app-card .application=${application} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
 };
 
 export const Default: Story<AppCard> = Template.bind({});
@@ -49,20 +49,20 @@ ExtraDense.args = {
 
 export const ComingSoon: Story<AppCard> = Template.bind({});
 ComingSoon.args = {
-  application: { ...dummyApp, ...{ "flag": "COMING_SOON" } }
+  application: { ...dummyApp, ...{ flag: 'COMING_SOON' } }
 };
 
 export const Published: Story<AppCard> = Template.bind({});
 Published.args = {
-  application: { ...dummyApp, ...{ "flag": "PUBLISHED" } }
+  application: { ...dummyApp, ...{ flag: 'PUBLISHED' } }
 };
 
 export const InReview: Story<AppCard> = Template.bind({});
 InReview.args = {
-  application: { ...dummyApp, ...{ "flag": "IN_REVIEW" } }
+  application: { ...dummyApp, ...{ flag: 'IN_REVIEW' } }
 };
 
 export const Draft: Story<AppCard> = Template.bind({});
 Draft.args = {
-  application: { ...dummyApp, ...{ "flag": "DRAFT" } }
+  application: { ...dummyApp, ...{ flag: 'DRAFT' } }
 };

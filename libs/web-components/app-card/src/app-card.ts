@@ -44,28 +44,27 @@ export class AppCard extends BaseCard {
 
   protected renderCardContent(): TemplateResult {
     return html`
-    <div class="app-card">
-      <div ?hidden=${!this.application?.flag} class="app-flag ${this.application.flag?.toLowerCase()}">
-        ${FLAG_TYPES[this.application.flag!]}
-      </div>
-      <div ?hidden=${this.extraDense} class="app-card-cover"></div>
-      <div ?hidden=${this.extraDense} class="app-card-top">
-        <div class="app-card-logo-container">
-          ${this.application?.icon ?
-            html`<img loading="lazy" src="${this.application?.icon}" alt="Logo ${this.application?.name}">` :
-            html`<div class="app-card-logo-fallback" title="Logo Finastra Fallback"></div>`
-          }
+      <div class="app-card">
+        <div ?hidden=${!this.application?.flag} class="app-flag ${this.application.flag?.toLowerCase()}">
+          ${FLAG_TYPES[this.application.flag!]}
+        </div>
+        <div ?hidden=${this.extraDense} class="app-card-cover"></div>
+        <div ?hidden=${this.extraDense} class="app-card-top">
+          <div class="app-card-logo-container">
+            ${this.application?.icon
+              ? html`<img loading="lazy" src="${this.application?.icon}" alt="Logo ${this.application?.name}" />`
+              : html`<div class="app-card-logo-fallback" title="Logo Finastra Fallback"></div>`}
+          </div>
+        </div>
+        <div ?hidden=${!this.extraDense} class="app-card-logo-container">
+          <img loading="lazy" src="${this.application?.icon}" />
+        </div>
+        <div>
+          <div class="app-card-name">${this.application?.name}</div>
+          <div class="app-card-author">${this.application?.author}</div>
+          <div ?hidden=${this.extraDense} class="app-card-description">${this.application?.description}</div>
         </div>
       </div>
-      <div ?hidden=${!this.extraDense} class="app-card-logo-container">
-        <img loading="lazy" src="${this.application?.icon}">
-      </div>
-      <div>
-        <div class="app-card-name">${this.application?.name}</div>
-        <div class="app-card-author">${this.application?.author}</div>
-        <div ?hidden=${this.extraDense} class="app-card-description">${this.application?.description}</div>
-      </div>
-    </div>
     `;
   }
 }

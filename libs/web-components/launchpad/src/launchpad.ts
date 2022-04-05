@@ -84,9 +84,9 @@ export class Launchpad extends LitElement {
             <div class="app-title">${this.title}</div>
             <div class="brandcard-list">
               ${this.apps && this.apps.length > 0
-        ? this.apps.map(
-          (app: any) =>
-            html`
+                ? this.apps.map(
+                    (app: any) =>
+                      html`
                         <div class="brandcard-item">
                           <fds-brand-card
                             @click="${() => this._handleBrandCardClick(app)}"
@@ -99,8 +99,8 @@ export class Launchpad extends LitElement {
                           <div class="brandcard-name">${app[this.appNameProperty]}</div>
                         </div>
                       `
-        )
-        : ''}
+                  )
+                : ''}
             </div>
           </div>
           <div class="menu-tools">

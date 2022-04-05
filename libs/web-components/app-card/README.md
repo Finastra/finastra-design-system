@@ -12,11 +12,11 @@ npm i @finastra/app-card
 
 ## API
 
-| Name          | Type           | Default | Description                         |
-| ------------- | -------------- | ------- | ----------------------------------- |
-| `application` | `Application`* | `{}`    | Application to display in the card. |
-| `large`       | `boolean`      | `false` | Make the card bigger.               |
-| `extraDense`  | `boolean`      | `false` | Make the card extra small.          |
+| Name          | Type            | Default | Description                         |
+| ------------- | --------------- | ------- | ----------------------------------- |
+| `application` | `Application`\* | `{}`    | Application to display in the card. |
+| `large`       | `boolean`       | `false` | Make the card bigger.               |
+| `extraDense`  | `boolean`       | `false` | Make the card extra small.          |
 
 \* `Application` interface c.f. below:
 
@@ -41,4 +41,3 @@ export interface Application {
 | Do                                               | Don't                                            |
 | ------------------------------------------------ | ------------------------------------------------ |
 | ![Test Image 4](https://i.imgur.com/AFDwskP.png) | ![Test Image 4](https://i.imgur.com/TGHSH9D.png) |
-

@@ -14,12 +14,18 @@
           [checked]="selections.length !== 0 && selections.length === this.dataToComponent.length"
           [indeterminate]="selections.length !== 0 && selections.length !== this.dataToComponent.length"
           color="primary"
-          aria-label='Multiselection checkbox'
+          aria-label="Multiselection checkbox"
         >
         </mat-checkbox>
       </th>
       <td mat-cell *matCellDef="let row">
-        <mat-checkbox (click)="$event.stopPropagation()" (change)="multiSelectRowClick(row)" [checked]="isRowSelected(row)" color="primary" [attr.aria-label]="'Checkbox ' + ariaRowString(row)"   >
+        <mat-checkbox
+          (click)="$event.stopPropagation()"
+          (change)="multiSelectRowClick(row)"
+          [checked]="isRowSelected(row)"
+          color="primary"
+          [attr.aria-label]="'Checkbox ' + ariaRowString(row)"
+        >
         </mat-checkbox>
       </td>
       <td mat-footer-cell *matFooterCellDef></td>

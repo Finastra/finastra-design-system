@@ -10,7 +10,7 @@ export default {
   argTypes,
   args: {
     selected: false,
-    disabled: false,
+    disabled: false
   },
   parameters: {
     docs: {

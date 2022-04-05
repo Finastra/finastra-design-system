@@ -1,4 +1,5 @@
 # Textarea
+
 Text areas let users enter and edit text.
 
 It extends Material web `mwc-textarea-base`. For usage please see [mwc-textarea](https://github.com/material-components/material-web/tree/master/packages/textarea).

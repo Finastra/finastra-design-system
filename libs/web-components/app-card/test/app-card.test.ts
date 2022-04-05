@@ -23,7 +23,11 @@ describe('AppCard', () => {
   });
 
   it('should display application', async () => {
-    const el: AppCard = await fixture(html`<fds-app-card application='{"name":"Test App", "author":"Test", "flag":"PUBLISHED", "icon":"https://test-logo.png", "description":"description test"}'></fds-app-card>`);
+    const el: AppCard = await fixture(
+      html`<fds-app-card
+        application='{"name":"Test App", "author":"Test", "flag":"PUBLISHED", "icon":"https://test-logo.png", "description":"description test"}'
+      ></fds-app-card>`
+    );
     expect(el.application.name).to.equal('Test App');
     expect(el.application.author).to.equal('Test');
     expect(el.application.flag).to.equal('PUBLISHED');

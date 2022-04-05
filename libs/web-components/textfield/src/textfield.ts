@@ -31,8 +31,7 @@ export class Textfield extends TextFieldBase {
 
   protected renderTrailingIcon(): TemplateResult | string {
     return this.showActionButton
-      ? html`
-      <slot name="actionButton"></slot>`
+      ? html` <slot name="actionButton"></slot>`
       : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
   }
 }

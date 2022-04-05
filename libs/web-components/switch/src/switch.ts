@@ -16,7 +16,6 @@ export class Switch extends SwitchBase {
   constructor() {
     super();
   }
-
 }
 
 declare global {
