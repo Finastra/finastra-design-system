@@ -29,6 +29,7 @@
 :host([segmented]) {
   .mdc-tab {
     overflow: hidden;
+    @include fds.bg-color(background)
   }
   .mdc-tab--active {
     @include fds.bg-color(primary-lighter);

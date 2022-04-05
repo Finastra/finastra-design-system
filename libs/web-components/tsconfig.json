@@ -88,6 +88,9 @@
     },
     {
       "path": "tab"
+    },
+    {
+      "path": "tab-bar"
     }
   ]
 }
