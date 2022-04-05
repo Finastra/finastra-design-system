@@ -56,7 +56,6 @@
       width: 1px;
       left: 0;
       @include fds.bg-color(text-hint-on-background);
-      
     }
   }
 }
@@ -75,7 +74,6 @@
   }
 
   .mdc-tab--active {
-    height: 100%;
     border: 1px solid;
     border-bottom: 0;
     border-top-left-radius: 6px;
