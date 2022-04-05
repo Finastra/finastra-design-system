@@ -78,8 +78,8 @@
   .mdc-tab--active {
     border: 1px solid;
     border-bottom: 0;
-    border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
     padding: 0 16px;
     margin: 0 6px;
     @include fds.property(border-color,primary);
