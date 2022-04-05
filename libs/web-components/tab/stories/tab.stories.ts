@@ -32,24 +32,3 @@ Default.args = {
   label: 'Active',
   icon: "location_on",
 };
-
-// export const Segmented: Story = Template.bind({});
-// Segmented.args = {
-//   label: 'active',
-//   icon: "location_on",
-//   segmented: true,
-// };
-
-// export const Classic: Story = Template.bind({});
-// Classic.args = {
-//   label: 'Active',
-//   icon: "location_on",
-//   classic: true
-// };
-
-// export const Stacked: Story = Template.bind({});
-// Stacked.args = {
-//   label: 'Active',
-//   icon: "location_on",
-//   stacked: true
-// };
