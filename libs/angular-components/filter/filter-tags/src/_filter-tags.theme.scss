@@ -1,9 +1,10 @@
 @use 'sass:map';
-@use '@angular/material' as mat;
-@use '@finastra/angular-theme' as fds;
+@use '@angular/material'as mat;
+@use '@finastra/angular-theme'as fds;
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
+  $foreground: map.get($theme, foreground);
   $filter-tags-background-color: fds.get-color-from-palette($primary, default, .12);
   $filter-tags-option-height: 32px;
 
@@ -22,18 +23,47 @@
       // Todo: create dense version of mat-option
       height: $filter-tags-option-height;
     }
+
+    .custom-group-option {
+      .mat-checkbox-label {
+        color: fds.get-color-from-palette($foreground, secondary-text);
+      }
+    }
+
     .selected-option-highlight,
     .search-term-highlight,
     .selected-option-highlight.mat-selected {
       background-color: $filter-tags-background-color !important;
     }
+
+    .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple {
+      opacity: 0;
+    }
   }
 }
 
 @mixin typography($config) {
+  uxg-filter-tags {
+    .filter-tags-container {
+      .show-more {
+        line-height: mat.line-height($config, body-3);
+
+        &.standard {
+          line-height: mat.line-height($config, body-1);
+        }
+      }
+    }
+  }
+
   .mat-autocomplete-panel {
     .mat-option {
       @include mat.typography-level($config, body-2);
+
+      .custom-group-option {
+        .mat-checkbox-label {
+          @include mat.typography-level($config, subtitle-2);
+        }
+      }
     }
 
     .selected-option-highlight,

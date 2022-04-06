@@ -1,17 +1,34 @@
 <div class="filter-tags-container">
   <mat-chip-list #chipList aria-label="Tags selection">
-    <mat-chip
+    <ng-container *ngFor="let tag of selectedData; let i = index">
+      <mat-chip
+        [attr.standard]="standard === '' || null"
+        [attr.dense]="standard === '' ? null : ''"
+        selected
+        *ngIf="i < displayMax"
+        [attr.aria-label]="tag.label"
+        [removable]="removable"
+        (removed)="remove(tag)"
+      >
+        {{ tag.label }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </ng-container>
+    <button
       [attr.standard]="standard === '' || null"
       [attr.dense]="standard === '' ? null : ''"
-      selected
-      *ngFor="let tag of selectedData"
-      [attr.aria-label]="tag.label"
-      [removable]="removable"
-      (removed)="remove(tag)"
+      *ngIf="selectedData.length > displayMax"
+      disableRipple
+      mat-button
+      class="show-more"
+      [class.standard]="standard === ''"
+      color="accent"
+      matTooltip="{{ showMoreTags() }}"
+      #tooltip="matTooltip"
+      [matTooltipClass]="'show-more-tags-tooltip'"
     >
-      {{ tag.label }}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip>
+      {{ '+' + (selectedData.length - displayMax) + ' more' }}
+    </button>
   </mat-chip-list>
 
   <mat-form-field aria-label="Search" floatLabel="always" class="chip-list" appearance="fill" dense>
@@ -34,29 +51,62 @@
     />
   </mat-form-field>
   <mat-autocomplete #autocomplete (optionSelected)="onSelected($event)">
-    <ng-container *ngIf="groupTags; else simpleTags">
-      <mat-optgroup *ngFor="let category of categories$ | async" [label]="category ?? ''">
+    <ng-container *ngIf="groupTags; else multiple ? checkboxTags : simpleTags">
+      <mat-optgroup *ngFor="let groupTag of categories$ | async" [class.multiple]="multiple && selectableGroups">
+        <span>{{ !multiple || !selectableGroups ? groupTag.category : '' }}</span>
+        <mat-option *ngIf="multiple && selectableGroups" [value]="groupTag">
+          <mat-checkbox
+            class="custom-group-option"
+            (click)="$event.stopPropagation()"
+            (change)="onGroupCheckboxSelected($event, groupTag)"
+            color="primary"
+            [checked]="descendantsAllSelected(groupTag)"
+            disableRipple
+          >
+            <span [innerHTML]="groupTag.category || '' | highlight: toHighlight"></span>
+          </mat-checkbox>
+        </mat-option>
+
         <ng-container
           *ngTemplateOutlet="
-            simpleTags;
+            multiple ? checkboxTags : simpleTags;
             context: {
-              categoryTags: filterTagsByCategory(filteredTags$ | async, category)
+              categoryTags: filterTagsByCategory(filteredTags$ | async, groupTag.category)
             }
           "
         ></ng-container>
       </mat-optgroup>
     </ng-container>
+
     <ng-template #simpleTags let-categoryTags="categoryTags">
       <mat-option
         *ngFor="let tag of categoryTags || (filteredTags$ | async)"
         [value]="tag"
         [ngClass]="{
-          'selected-option-highlight': applyHighlight(tag)
+          'selected-option-highlight': isSelected(tag)
         }"
         (click)="$event.stopPropagation()"
       >
         <span [innerHTML]="tag.label | highlight: toHighlight"></span>
       </mat-option>
+    </ng-template>
+
+    <ng-template #checkboxTags let-categoryTags="categoryTags">
+      <ng-container *ngFor="let tag of categoryTags || (filteredTags$ | async)">
+        <mat-option *ngIf="tag.label !== tag.category || !selectableGroups" [value]="tag">
+          <mat-checkbox
+            class="custom-option"
+            [class.group]="groupTags"
+            (click)="$event.stopPropagation()"
+            (change)="onCheckboxSelected($event, tag)"
+            color="primary"
+            [checked]="isSelected(tag)"
+            disableRipple
+          >
+            <span [innerHTML]="tag.label | highlight: toHighlight"></span>
+          </mat-checkbox>
+        </mat-option>
+      </ng-container>
     </ng-template>
   </mat-autocomplete>
 </div>

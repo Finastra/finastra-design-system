@@ -1,21 +1,12 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import {
-  Attribute,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-  ViewEncapsulation
-} from '@angular/core';
+import { Attribute, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatAutocompleteTrigger, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatAutocomplete, MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Observable, of } from 'rxjs';
+import { uniqBy } from 'lodash-es';
+import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { uniq } from 'lodash-es';
 
 export interface Tag {
   label: string;
@@ -39,7 +30,7 @@ export class FilterTagsComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  categories$!: Observable<(string | undefined)[]>;
+  categories$!: Observable<Tag[]>;
 
   toHighlight = '';
   formCtrl = new FormControl();
@@ -62,6 +53,10 @@ export class FilterTagsComponent implements OnInit {
   @Input() placeholder = 'Filter by tags';
   @Input() ariaLabel = 'Input Tag';
   @Input() groupTags = false;
+  @Input() multiple = false;
+  @Input() selectableGroups = true;
+  @Input() displayMax = 3;
+
   @Output() changes = new EventEmitter<UXGFilterChanges>();
   @Output() focused = new EventEmitter<boolean>();
 
@@ -81,11 +76,16 @@ export class FilterTagsComponent implements OnInit {
         map((tag: string | null) => {
           if (tag) {
             const filteredTags = this.filter(tag);
-            // eslint-disable-next-line @typescript-eslint/no-shadow
-            return uniq(filteredTags.map((tag) => tag.category));
+            return uniqBy(filteredTags, 'category').map((group) => ({
+              category: group.category,
+              label: group.category || ''
+            }));
           } else {
-            // eslint-disable-next-line @typescript-eslint/no-shadow
-            return uniq(this.data.map((tag) => tag.category));
+            this.toHighlight = '';
+            return uniqBy(this.data, 'category').map((group) => ({
+              category: group.category,
+              label: group.category || ''
+            }));
           }
         })
       );
@@ -97,7 +97,7 @@ export class FilterTagsComponent implements OnInit {
         if (tag) {
           return this.filter(tag);
         } else {
-          this.toHighlight = '';
+          this.toHighlight = this.groupTags ? this.toHighlight : '';
           return this.data.slice();
         }
       })
@@ -118,7 +118,7 @@ export class FilterTagsComponent implements OnInit {
 
   add(event: MatChipInputEvent) {
     if (!this.autocomplete.isOpen) {
-      const input = event.input;
+      const input = event.chipInput?.inputElement;
       const value = (event.value || '').trim();
 
       const validValue = this.data.some((el) => el.label === value);
@@ -139,8 +139,10 @@ export class FilterTagsComponent implements OnInit {
     }
   }
 
-  remove(tag: Tag) {
-    this.trigger.closePanel();
+  remove(tag: Tag, close = true) {
+    if (close) {
+      this.trigger.closePanel();
+    }
     const index = this.selectedData.indexOf(tag);
     if (index >= 0) {
       const tagAtIndex = this.selectedData.splice(index, 1);
@@ -149,13 +151,49 @@ export class FilterTagsComponent implements OnInit {
     this.toHighlight = '';
   }
 
-  onSelected(event: MatAutocompleteSelectedEvent) {
-    if (this.selectedData.indexOf(event.option.value) === -1) {
-      this.selectedData.push(event.option.value);
-      this.changes.emit({ added: [event.option.value], removed: [] });
+  onSelected(event: MatAutocompleteSelectedEvent | any) {
+    if (event.option.value.label === event.option.value.category) {
+      this.onMultipleSelected(
+        {
+          checked: !this.descendantsAllSelected(event.option.value)
+        } as MatCheckboxChange,
+        event.option.value
+      );
+    } else {
+      if (this.selectedData.indexOf(event.option.value) === -1) {
+        this.selectedData.push(event.option.value);
+        this.changes.emit({ added: [event.option.value], removed: [] });
+      } else if (this.multiple) {
+        this.remove(event.option.value);
+      }
+      this.handleParent(event.option.value);
     }
 
     this.toHighlight = '';
+    this.input.nativeElement.value = '';
+    this.formCtrl.setValue(null);
+  }
+
+  onMultipleSelected(event: MatCheckboxChange, groupTag: any) {
+    const selectTags = this.data.filter(
+      (tag) => tag.category === groupTag.category && !this.selectedData.find((sd) => sd.label === tag.label)
+    );
+    const removeTags = this.selectedData.filter((sd) => sd.category === groupTag.category);
+
+    if (event.checked) {
+      selectTags.forEach((selectedTag) => {
+        if (this.selectedData.indexOf(selectedTag) === -1) {
+          this.selectedData.push(selectedTag);
+        }
+      });
+      this.changes.emit({ added: [...selectTags], removed: [] });
+    } else {
+      const index = this.selectedData.findIndex((sd) => sd?.category === groupTag.category);
+      do {
+        this.selectedData.splice(index, 1);
+      } while (this.selectedData.findIndex((value) => value?.category === groupTag.category) !== -1);
+      this.changes.emit({ added: [], removed: [...removeTags] });
+    }
     this.input.nativeElement.value = '';
     this.formCtrl.setValue(null);
   }
@@ -175,7 +213,7 @@ export class FilterTagsComponent implements OnInit {
     this.trigger.openPanel();
   }
 
-  applyHighlight(tag: Tag) {
+  isSelected(tag: Tag) {
     const element = this.selectedData.find((el) => el.label === tag.label);
     if (element) {
       return true;
@@ -197,6 +235,50 @@ export class FilterTagsComponent implements OnInit {
 
     this.toHighlight = filterValue;
     return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
+  }
+
+  onCheckboxSelected(event: MatCheckboxChange, tag: any) {
+    if (event.checked) {
+      this.onSelected({ option: { value: tag } });
+    } else {
+      this.remove(tag, false);
+    }
+    this.handleParent(tag);
+  }
+
+  onGroupCheckboxSelected(event: MatCheckboxChange, groupTag: any) {
+    const tag = this.data.find((tag) => tag.label === groupTag.label);
+    this.getDescendats(groupTag).length ? this.onMultipleSelected(event, groupTag) : this.onCheckboxSelected(event, tag);
+  }
+
+  descendantsAllSelected(category: Tag): boolean {
+    const descendants = this.getDescendats(category);
+    const descAllSelected = descendants.length
+      ? descendants.every((child) => this.selectedData.find((el) => el.label === child.label))
+      : false;
+    return descendants.length ? descAllSelected : this.isSelected(category);
+  }
+
+  getDescendats(category: Tag): Tag[] {
+    return this.data.filter((tag) => tag.category === category.category && tag.label !== category.label);
+  }
+
+  private getParentTag(parent: any) {
+    return this.data.find((el) => el.label === parent);
+  }
+
+  private handleParent(tag: any) {
+    const parent = this.data.find((el) => el.label === tag?.category);
+    if (parent && this.descendantsAllSelected(parent)) {
+      this.onMultipleSelected({ checked: true } as MatCheckboxChange, parent);
+    } else if (parent && !this.descendantsAllSelected(parent)) {
+      this.remove(parent, false);
+    }
+  }
+
+  showMoreTags(): string {
+    const hiddenTags = this.selectedData.slice(this.displayMax);
+    return hiddenTags.map((t) => t.label).join('\n');
   }
 
   getState() {
