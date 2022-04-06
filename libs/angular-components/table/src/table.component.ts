@@ -1,30 +1,17 @@
+import { CdkDragDrop, CdkDragStart, moveItemInArray } from '@angular/cdk/drag-drop';
 import {
-  Component,
-  OnInit,
-  OnDestroy,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  SimpleChanges,
+  Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { MatTable } from '@angular/material/table';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { PageEvent } from '@angular/material/paginator';
-import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
-
-import {
-  UxgColumn,
-  UxgSort,
-  UxgPage,
-  UxgColumnType,
-  UxgTableSelectEvent,
-  UxgDefaultPaging,
-  UxgActionColumnPosition
-} from './table.models';
-import { CdkDragDrop, CdkDragStart, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { MatTable } from '@angular/material/table';
 import isEqual from 'lodash-es/isEqual';
+import {
+  UxgActionColumnPosition, UxgColumn, UxgColumnType, UxgDefaultPaging, UxgPage, UxgSort, UxgTableSelectEvent
+} from './table.models';
+
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',
@@ -356,6 +343,11 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.rowRemoved.emit({
       data: row
     });
+  }
+
+  rowNo(row: any){
+    const rowIndex = this.dataToComponent.findIndex((item) => item === row);
+    return rowIndex+1;
   }
 
   ngOnDestroy() {}
