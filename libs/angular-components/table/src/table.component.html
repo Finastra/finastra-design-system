@@ -24,7 +24,7 @@
           (change)="multiSelectRowClick(row)"
           [checked]="isRowSelected(row)"
           color="primary"
-          [attr.aria-label]="'Checkbox ' + ariaRowString(row)"
+          [attr.aria-label]="'Checkbox ' + rowNo(row)"
         >
         </mat-checkbox>
       </td>
@@ -122,7 +122,7 @@
         <button
           *ngIf="!row.uxgTableEdit && enableEdit"
           mat-icon-button
-          [attr.aria-label]="'Edit ' + ariaRowString(row)"
+          [attr.aria-label]="'Edit row ' + rowNo(row)"
           (click)="rowEditClick(row); $event.stopPropagation()"
         >
           <mat-icon class="material-icons-outlined">edit_outline</mat-icon>
@@ -130,7 +130,7 @@
         <button
           *ngIf="!row.uxgTableEdit && enableDelete"
           mat-icon-button
-          [attr.aria-label]="'Delete ' + ariaRowString(row)"
+          [attr.aria-label]="'Delete row ' + rowNo(row)"
           (click)="rowDelete(row); $event.stopPropagation()"
         >
           <mat-icon>delete_outline</mat-icon>
@@ -138,14 +138,14 @@
         <button
           *ngIf="!row.uxgTableEdit && enableSend"
           mat-icon-button
-          [attr.aria-label]="'Send ' + ariaRowString(row)"
+          [attr.aria-label]="'Send row ' + rowNo(row)"
           (click)="rowSendTriggered(row); $event.stopPropagation()"
         >
           <mat-icon class="material-icons-outlined">send_outline</mat-icon>
         </button>
         <button
           *ngIf="row.uxgTableEdit"
-          [attr.aria-label]="'Cancel ' + ariaRowString(row)"
+          [attr.aria-label]="'Cancel row ' + rowNo(row)"
           mat-icon-button
           (click)="rowEditConfirm(row); $event.stopPropagation()"
         >

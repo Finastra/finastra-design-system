@@ -344,8 +344,9 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
-  ariaRowString(row: any) {
-    return JSON.stringify(row);
+  rowNo(row: any){
+    const rowIndex = this.dataToComponent.findIndex((item) => item === row);
+    return rowIndex+1;
   }
 
   ngOnDestroy() {}
