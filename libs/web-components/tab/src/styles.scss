@@ -7,7 +7,6 @@
 
 .mdc-tab {
   @include fds.typography(subtitle-2);
-  @include fds.bg-color(surface);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
   @include fds.mdc(tab-color-default,text-medium-on-background);
 }
@@ -30,7 +29,7 @@
 :host([segmented]) {
   .mdc-tab {
     overflow: hidden;
-    @include fds.bg-color(background)
+    // @include fds.bg-color(background)
   }
   .mdc-tab--active {
     @include fds.bg-color(primary-lighter);
@@ -47,25 +46,9 @@
 }
 
 
-:host([seperator]) {
-  .mdc-tab:not(.mdc-tab--active){
-    &::before{
-      content: "";
-      display: block;
-      position: absolute;
-      top: 12px;
-      bottom: 12px;
-      width: 1px;
-      left: 0;
-      @include fds.bg-color(text-hint-on-background);
-    }
-  }
-}
-
 :host([classic]) {
   .mdc-tab {
     border-bottom: 1px solid var(--fds-primary);
-    @include fds.bg-color(background);
   }
 
   .mdc-tab--active::before {

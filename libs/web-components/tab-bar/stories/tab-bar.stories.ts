@@ -23,7 +23,7 @@ export default {
 
 
 const Template: Story = ({ label, icon, segmented, stacked, classic, activeIndex, seperator}) => {
-  return html`<fds-tab-bar ?activeIndex=${activeIndex}>
+  return html`<fds-tab-bar ?activeIndex=${activeIndex} ?seperator=${seperator}>
   <fds-tab label=${label} icon=${icon} ?segmented=${segmented} ?classic=${classic} ?stacked=${stacked}></fds-tab>
   <fds-tab label="inactive" icon=${icon} ?segmented=${segmented} ?classic=${classic} ?stacked=${stacked} ?seperator=${seperator}></fds-tab>
   <fds-tab label="inactive" icon=${icon} ?segmented=${segmented} ?classic=${classic} ?stacked=${stacked} ?seperator=${seperator}></fds-tab>
@@ -40,7 +40,7 @@ export const Segmented: Story = Template.bind({});
 Segmented.args = {
   label: 'active',
   icon: "location_on",
-  segmented: true,
+  segmented: true
 };
 
 export const Classic: Story = Template.bind({});
