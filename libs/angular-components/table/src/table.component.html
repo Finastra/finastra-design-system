@@ -60,11 +60,7 @@
         }"
       >
         <!-- view cell, display data cell according to the type -->
-        <div
-          [ngSwitch]="column.type"
-          class="uxg-table-row-view"
-          [ngClass]="{ 'uxg-cell-hidden': element.uxgTableEdit }"
-        >
+        <div [ngSwitch]="column.type" class="uxg-table-row-view" [ngClass]="{ 'uxg-cell-hidden': element.uxgTableEdit }">
           <div *ngSwitchCase="'date'">
             <mat-icon>date_range</mat-icon>
             {{ element[column.name] }}
@@ -147,7 +143,12 @@
         >
           <mat-icon class="material-icons-outlined">send_outline</mat-icon>
         </button>
-        <button *ngIf="row.uxgTableEdit" mat-icon-button [attr.aria-label]="'Cancel row ' + rowNo(row)" (click)="rowEditConfirm(row); $event.stopPropagation()">
+        <button
+          *ngIf="row.uxgTableEdit"
+          mat-icon-button
+          [attr.aria-label]="'Cancel row ' + rowNo(row)"
+          (click)="rowEditConfirm(row); $event.stopPropagation()"
+        >
           <mat-icon>done</mat-icon>
         </button>
         <button *ngIf="row.uxgTableEdit" mat-icon-button (click)="rowEditCancel(row); $event.stopPropagation()">
