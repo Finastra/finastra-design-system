@@ -2,9 +2,6 @@
 **/*.scss
 **/package-lock.json
 **/package.json
-libs/web-components/**
-.storybook/**
-tools/generators/web-component/**
 
 # additional ignores
 .history
