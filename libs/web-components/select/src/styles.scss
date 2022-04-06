@@ -1,0 +1,10 @@
+@use "@material/select/mdc-select.scss";
+@use "@finastra/fds-theme"as fds;
+
+:host {
+  display: block;
+}
+
+.mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
+  @include fds.property(color, primary);
+}

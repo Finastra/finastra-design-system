@@ -793,6 +793,18 @@
       },
       "tags": []
     },
+    "select": {
+      "root": "libs/web-components/select",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/select/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "sidenav": {
       "root": "libs/web-components/sidenav",
       "architect": {
