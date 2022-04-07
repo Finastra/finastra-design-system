@@ -1,12 +1,25 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Attribute, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Attribute,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocomplete, MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { MatChipInputEvent } from '@angular/material/chips';
+import { MatChip, MatChipInputEvent } from '@angular/material/chips';
 import { uniqBy } from 'lodash-es';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
+import { delay, map, startWith } from 'rxjs/operators';
 
 export interface Tag {
   label: string;
@@ -25,19 +38,19 @@ interface UXGFilterChanges {
   styleUrls: ['./filter-tags.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class FilterTagsComponent implements OnInit {
+export class FilterTagsComponent implements AfterViewInit, OnDestroy {
   visible = true;
   removable = true;
   addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  categories$!: Observable<Tag[]>;
 
   toHighlight = '';
   formCtrl = new FormControl();
   filteredTags$!: Observable<Tag[]>;
+  categories$!: Observable<Tag[]>;
+  subscription!: Subscription;
 
   selectedData: Tag[] = [];
-
   private _data: Tag[] = [];
 
   @Input()
@@ -63,13 +76,18 @@ export class FilterTagsComponent implements OnInit {
   @ViewChild('tagInput', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocomplete, { static: true }) autocomplete!: MatAutocomplete;
   @ViewChild(MatAutocompleteTrigger, { static: true }) trigger!: MatAutocompleteTrigger;
+  @ViewChildren(MatChip) chipList!: QueryList<MatChip>;
 
   constructor(private hostElement: ElementRef, @Attribute('standard') public standard: any) {
     this.hostElement.nativeElement.__component = this;
     this.data = [];
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.subscription = this.chipList.changes.pipe(delay(2)).subscribe((c) => {
+      this.trigger?.panelOpen ? this.trigger.updatePosition() : null;
+    });
+
     if (this.groupTags) {
       this.categories$ = this.formCtrl.valueChanges.pipe(
         startWith(null),
@@ -102,6 +120,10 @@ export class FilterTagsComponent implements OnInit {
         }
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   filterTagsByCategory(data: Tag[] | null, category: string | undefined) {
