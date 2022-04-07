@@ -34,6 +34,10 @@
   @include fds.property(color, text-medium-on-background);
 }
 
+.mdc-select:not(.mdc-select--disabled)+.mdc-select-helper-text {
+  @include fds.property(color, text-medium-on-background);
+}
+
 .mdc-select--invalid:not(.mdc-select--disabled) .mdc-line-ripple::after {
   @include fds.property(border-color, error);
 }
@@ -64,4 +68,8 @@
 
 .mdc-select.mdc-select--disabled .mdc-select__selected-text {
   @include fds.property(color, on-background);
+}
+
+.mdc-select.mdc-select--disabled+.mdc-select-helper-text {
+  @include fds.property(color, text-medium-on-background);
 }
