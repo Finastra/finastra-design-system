@@ -16,7 +16,7 @@
 }
 
 .step-item-label {
-  padding: 16px;
+  padding: var(--fds-spacing-3, 16px);
   text-align: center;
   justify-self: center;
   align-self: start;
