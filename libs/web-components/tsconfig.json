@@ -85,6 +85,12 @@
     },
     {
       "path": "app-card"
+    },
+    {
+      "path": "tab"
+    },
+    {
+      "path": "tab-bar"
     }
   ]
 }
