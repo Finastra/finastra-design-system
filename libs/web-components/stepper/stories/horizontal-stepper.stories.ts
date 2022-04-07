@@ -42,12 +42,7 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48611%3A19619'
     }
   },
-  cssprops,
-  decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
-  ]
+  cssprops
 } as Meta;
 
 const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false }) => {
