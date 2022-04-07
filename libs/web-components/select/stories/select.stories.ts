@@ -19,7 +19,7 @@ export default {
     },
     cssprops
   }
-} as unknown as Meta;
+} as Meta;
 
 const Template: Story<Select> = ({ value, label, icon, disabled = false, outlined = false, helper, required = false, validationMessage, selected, items, index }) => {
   return html`<fds-select
