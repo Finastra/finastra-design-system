@@ -1,0 +1,102 @@
+@use '@material/mwc-tab/mwc-tab';
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: block;
+}
+
+.mdc-tab {
+  @include fds.typography(subtitle-2);
+  @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
+  @include fds.mdc(tab-color-default,text-medium-on-background);
+}
+
+.mdc-ripple-surface {
+  border-radius: var(--fds-spacing-3);
+}
+
+.mdc-tab__content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  z-index: -1;
+}
+
+:host([segmented]) {
+  .mdc-tab {
+    overflow: hidden;
+    // @include fds.bg-color(background)
+  }
+  .mdc-tab--active {
+    @include fds.bg-color(primary-lighter);
+    border-radius: var(--fds-spacing-3);
+  }
+  mwc-tab-indicator {
+    display: none;
+  }
+}
+
+:host([disabled]) {
+  pointer-events: none;
+  @include fds.mdc(tab-text-label-color-default, text-hint-on-background);
+}
+
+
+:host([classic]) {
+  .mdc-tab {
+    border-bottom: 1px solid var(--fds-primary);
+  }
+
+  .mdc-tab--active::before {
+    left: -7px;
+    border-right: 1px solid;
+    @include fds.property(border-right-color,primary);
+    border-bottom-right-radius: 6px;
+  }
+
+  .mdc-tab--active {
+    border: 1px solid;
+    border-bottom: 0;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    padding: 0 16px;
+    margin: 0 6px;
+    @include fds.property(border-color,primary);
+    @include fds.bg-color(surface);
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 6px;
+      height: 6px;
+      border-bottom: 1px solid;
+      @include fds.property(border-bottom-color,primary);
+    }
+
+    &::before {
+      box-shadow: 2px 2px 0 0 var(--fds-background, #FAFAFA);
+    }
+
+    &::after {
+      box-shadow: -2px 2px 0 0 var(--fds-background, #FAFAFA);
+    }
+  }
+
+  .mdc-tab--active::after {
+    right: -7px;
+    border-left: 1px solid;
+    @include fds.property(border-left-color, primary);
+    border-bottom-left-radius: var(--fds-spacing-1);
+  }
+
+  mwc-tab-indicator {
+    display: none;
+  }
+}

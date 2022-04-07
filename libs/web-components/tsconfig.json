@@ -88,6 +88,12 @@
     },
     {
       "path": "stepper"
+    },
+    {
+      "path": "tab"
+    },
+    {
+      "path": "tab-bar"
     }
   ]
 }
