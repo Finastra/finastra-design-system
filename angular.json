@@ -867,6 +867,18 @@
       },
       "tags": []
     },
+    "stepper": {
+      "root": "libs/web-components/stepper",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/stepper/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "switch": {
       "root": "libs/web-components/switch",
       "architect": {
@@ -874,6 +886,30 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/switch/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "tab": {
+      "root": "libs/web-components/tab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/tab/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "tab-bar": {
+      "root": "libs/web-components/tab-bar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/tab-bar/src/**/*.ts"]
           }
         }
       },
