@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+:host([seperator]) {
+  .mdc-tab-bar mwc-tab-scroller {
+    ::slotted(fds-tab:not([active]):not(:first-child))::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      margin-left: 4px;
+      background: var(--fds-text-hint-on-background);
+    }
+  }
+}
