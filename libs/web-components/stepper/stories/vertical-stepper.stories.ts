@@ -34,8 +34,26 @@ export default {
       control: {
         type: 'radio'
       },
-      defaultValue: false,
-      options: ['none', 'center', 'background']
+      description: 'Display labels differently',
+      table: {
+        defaultValue: {
+          summary: 'none'
+        }
+      },
+      defaultValue: 'none',
+      options: [
+        "none",
+        "center",
+        "background"
+      ]
+    },
+    steps: {
+      description: "An array of step (label + optional description).",
+      table: {
+        defaultValue: {
+          summary: '[]'
+        }
+      }
     }
   },
   args: {

@@ -9,7 +9,6 @@ export interface Step {
 
 /**
  * @cssprop {text} [--fds-stepper-line-space=8px] - Stepper line space.
- * @attr [steps] - An array of step (label + optional description).
  * @attr {boolean} [secondary=false] - Use Secondary color.
  * @attr [currentStepIndex=-1] - Index of current active step.
  */

@@ -28,7 +28,17 @@ const demoData = [
 export default {
   title: 'Components/Stepper/Horizontal',
   component: 'fds-horizontal-stepper',
-  argTypes: argTypes,
+  argTypes: {
+    ...argTypes,
+    steps: {
+      description: "An array of step (label + optional description).",
+      table: {
+        defaultValue: {
+          summary: '[]'
+        }
+      },
+    }
+  },
   args: {
     steps: demoData,
     currentStepIndex: 1
