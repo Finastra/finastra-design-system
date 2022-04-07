@@ -7,6 +7,7 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
+  OnInit,
   Output,
   QueryList,
   ViewChild,
@@ -38,7 +39,7 @@ interface UXGFilterChanges {
   styleUrls: ['./filter-tags.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class FilterTagsComponent implements AfterViewInit, OnDestroy {
+export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   visible = true;
   removable = true;
   addOnBlur = true;
@@ -83,11 +84,7 @@ export class FilterTagsComponent implements AfterViewInit, OnDestroy {
     this.data = [];
   }
 
-  ngAfterViewInit() {
-    this.subscription = this.chipList.changes.pipe(delay(2)).subscribe((c) => {
-      this.trigger?.panelOpen ? this.trigger.updatePosition() : null;
-    });
-
+  ngOnInit() {
     if (this.groupTags) {
       this.categories$ = this.formCtrl.valueChanges.pipe(
         startWith(null),
@@ -120,6 +117,12 @@ export class FilterTagsComponent implements AfterViewInit, OnDestroy {
         }
       })
     );
+  }
+
+  ngAfterViewInit() {
+    this.subscription = this.chipList.changes.pipe(delay(2)).subscribe((c) => {
+      this.trigger?.panelOpen ? this.trigger.updatePosition() : null;
+    });
   }
 
   ngOnDestroy() {
