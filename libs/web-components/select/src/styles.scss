@@ -33,3 +33,11 @@
 .mdc-select:not(.mdc-select--disabled) .mdc-select__icon {
   @include fds.property(color, text-medium-on-background);
 }
+
+.mdc-select--invalid:not(.mdc-select--disabled) .mdc-line-ripple::after {
+  @include fds.property(border-color, error);
+}
+
+.mdc-select--invalid:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label {
+  @include fds.property(color, error);
+}
