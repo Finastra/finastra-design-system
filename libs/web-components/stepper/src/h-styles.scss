@@ -11,7 +11,7 @@
 .step-item {
   display: grid;
   grid-template-rows: 24px 1fr;
-  grid-template-columns: 1fr 24px 1fr;
+  grid-template-columns: 1fr var(--fds-spacing-4, 24px) 1fr;
   flex: 1;
 }
 
