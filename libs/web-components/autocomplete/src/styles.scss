@@ -3,7 +3,10 @@
 :host {
   display: block;
   @include fds.mdc(text-field-label-ink-color, text-medium-on-background);
-
+  @include fds.mdc(text-field-disabled-fill-color, fds-text-disabled-on-background);
+  @include fds.mdc(text-field-disabled-line-color, text-disabled-on-background);
+  @include fds.mdc(text-field-disabled-ink-color, text-hint-on-background);
+ 
   ::slotted(.mwc-list-item__hide) {
     display: none;
   }

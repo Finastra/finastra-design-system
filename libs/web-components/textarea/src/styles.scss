@@ -14,6 +14,7 @@
   @include fds.mdc(ripple-color, primary-lighter);
   @include fds.mdc(text-field-disabled-fill-color, background);
   @include fds.mdc(text-field-disabled-ink-color, text-hint-on-background);
+  @include fds.mdc(text-field-disabled-line-color, text-hint-on-background);
 
   --mdc-ripple-hover-opacity: 1;
 }
