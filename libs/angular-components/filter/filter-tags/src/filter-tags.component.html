@@ -8,7 +8,7 @@
         *ngIf="i < displayMax"
         [attr.aria-label]="tag.label"
         [removable]="removable"
-        (removed)="remove(tag)"
+        (removed)="tag.label === tag.category ? this.removeMultiple(tag) : remove(tag)"
       >
         {{ tag.label }}
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>

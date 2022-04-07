@@ -55,7 +55,7 @@ export class FilterTagsComponent implements OnInit {
   @Input() groupTags = false;
   @Input() multiple = false;
   @Input() selectableGroups = true;
-  @Input() displayMax = 3;
+  @Input() displayMax = 5;
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
   @Output() focused = new EventEmitter<boolean>();
@@ -147,8 +147,18 @@ export class FilterTagsComponent implements OnInit {
     if (index >= 0) {
       const tagAtIndex = this.selectedData.splice(index, 1);
       this.changes.emit({ added: [], removed: [...tagAtIndex] });
+      this.handleParent(tag);
     }
     this.toHighlight = '';
+  }
+
+  removeMultiple(tag: Tag) {
+    const removeTags = this.selectedData.filter((sd) => sd.category === tag.category);
+    const index = this.selectedData.findIndex((sd) => sd?.category === tag.category);
+    do {
+      this.selectedData.splice(index, 1);
+    } while (this.selectedData.findIndex((value) => value?.category === tag.category) !== -1);
+    this.changes.emit({ added: [], removed: [...removeTags] });
   }
 
   onSelected(event: MatAutocompleteSelectedEvent | any) {
@@ -163,10 +173,10 @@ export class FilterTagsComponent implements OnInit {
       if (this.selectedData.indexOf(event.option.value) === -1) {
         this.selectedData.push(event.option.value);
         this.changes.emit({ added: [event.option.value], removed: [] });
+        this.handleParent(event.option.value);
       } else if (this.multiple) {
         this.remove(event.option.value);
       }
-      this.handleParent(event.option.value);
     }
 
     this.toHighlight = '';
@@ -178,9 +188,8 @@ export class FilterTagsComponent implements OnInit {
     const selectTags = this.data.filter(
       (tag) => tag.category === groupTag.category && !this.selectedData.find((sd) => sd.label === tag.label)
     );
-    const removeTags = this.selectedData.filter((sd) => sd.category === groupTag.category);
 
-    if (event.checked) {
+    if (event.checked && selectTags?.length) {
       selectTags.forEach((selectedTag) => {
         if (this.selectedData.indexOf(selectedTag) === -1) {
           this.selectedData.push(selectedTag);
@@ -188,11 +197,7 @@ export class FilterTagsComponent implements OnInit {
       });
       this.changes.emit({ added: [...selectTags], removed: [] });
     } else {
-      const index = this.selectedData.findIndex((sd) => sd?.category === groupTag.category);
-      do {
-        this.selectedData.splice(index, 1);
-      } while (this.selectedData.findIndex((value) => value?.category === groupTag.category) !== -1);
-      this.changes.emit({ added: [], removed: [...removeTags] });
+      this.removeMultiple(groupTag);
     }
     this.input.nativeElement.value = '';
     this.formCtrl.setValue(null);
@@ -243,7 +248,6 @@ export class FilterTagsComponent implements OnInit {
     } else {
       this.remove(tag, false);
     }
-    this.handleParent(tag);
   }
 
   onGroupCheckboxSelected(event: MatCheckboxChange, groupTag: any) {
@@ -261,10 +265,6 @@ export class FilterTagsComponent implements OnInit {
 
   getDescendats(category: Tag): Tag[] {
     return this.data.filter((tag) => tag.category === category.category && tag.label !== category.label);
-  }
-
-  private getParentTag(parent: any) {
-    return this.data.find((el) => el.label === parent);
   }
 
   private handleParent(tag: any) {
