@@ -1,0 +1,57 @@
+<script type="module" src="node_modules/@finastra/stepper/dist/src/horizontal-stepper.js"></script>
+<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
+<div>Horizontal stepper</div>
+<div class="main-content">
+  <label>step 2</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="1"></fds-horizontal-stepper>
+
+  <label>step 3</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="2"></fds-horizontal-stepper>
+
+  <label>secondary</label>
+  <fds-horizontal-stepper style="width: 700px" id="hStepper" secondary currentStepIndex="3"></fds-horizontal-stepper>
+
+  <label>step 5</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="4"></fds-horizontal-stepper>
+</div>
+<br />
+<div>Vertical stepper</div>
+<label>step 2</label>
+<fds-vertical-stepper id="hStepper" currentStepIndex="1"></fds-vertical-stepper>
+
+<label>step 3</label>
+<fds-vertical-stepper label-mode="center" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
+
+<label>secondary</label>
+<fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="3"></fds-vertical-stepper>
+
+<label>step 5</label>
+<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="4"></fds-vertical-stepper>
+<script>
+  const hSteppers = document.querySelectorAll('#hStepper');
+  hSteppers.forEach((stepper) => {
+    stepper.steps = [
+      {
+        label: 'Step Success',
+        description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. '
+      },
+      {
+        label: 'Step Active',
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .'
+      },
+      {
+        label: 'Step Inactive',
+        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. '
+      },
+      {
+        label: 'Step Inactive',
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. '
+      },
+      {
+        label: 'Step Inactive',
+        description:
+          'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.'
+      }
+    ];
+  });
+</script>

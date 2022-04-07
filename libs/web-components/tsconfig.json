@@ -87,6 +87,9 @@
       "path": "app-card"
     },
     {
+      "path": "stepper"
+    },
+    {
       "path": "tab"
     },
     {

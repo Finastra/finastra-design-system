@@ -48,8 +48,9 @@
 | **Radio**        | [`@finastra/radio`](https://npmjs.com/package/@finastra/radio)               | [![latest](https://img.shields.io/npm/v/@finastra/radio.svg)](https://npmjs.com/package/@finastra/radio)               | [![README](https://img.shields.io/badge/README--56C271.svg)](./radio/README.md)        |
 | **Search Input** | [`@finastra/search-input`](https://npmjs.com/package/@finastra/search-input) | [![latest](https://img.shields.io/npm/v/@finastra/search-input.svg)](https://npmjs.com/package/@finastra/search-input) | [![README](https://img.shields.io/badge/README--56C271.svg)](./search-input/README.md) |
 | **Sidenav**      | [`@finastra/sidenav`](https://npmjs.com/package/@finastra/sidenav)           | [![latest](https://img.shields.io/npm/v/@finastra/sidenav.svg)](https://npmjs.com/package/@finastra/sidenav)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./sidenav/README.md)      |
-| **Tab**     | [`@finastra/tab`](https://npmjs.com/package/@finastra/tab)         | [![latest](https://img.shields.io/npm/v/@finastra/tab.svg)](https://npmjs.com/package/@finastra/tab)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab/README.md)     |
-| **Tab bar**     | [`@finastra/tab-bar`](https://npmjs.com/package/@finastra/tab-bar)         | [![latest](https://img.shields.io/npm/v/@finastra/tab-bar.svg)](https://npmjs.com/package/@finastra/tab-bar)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab-bar/README.md)     |
+| **Stepper**      | [`@finastra/stepper`](https://npmjs.com/package/@finastra/stepper)           | [![latest](https://img.shields.io/npm/v/@finastra/stepper.svg)](https://npmjs.com/package/@finastra/stepper)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./stepper/README.md)      |
+| **Tab**          | [`@finastra/tab`](https://npmjs.com/package/@finastra/tab)                   | [![latest](https://img.shields.io/npm/v/@finastra/tab.svg)](https://npmjs.com/package/@finastra/tab)                   | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab/README.md)          |
+| **Tab bar**      | [`@finastra/tab-bar`](https://npmjs.com/package/@finastra/tab-bar)           | [![latest](https://img.shields.io/npm/v/@finastra/tab-bar.svg)](https://npmjs.com/package/@finastra/tab-bar)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab-bar/README.md)      |
 | **Texfield**     | [`@finastra/texfield`](https://npmjs.com/package/@finastra/texfield)         | [![latest](https://img.shields.io/npm/v/@finastra/texfield.svg)](https://npmjs.com/package/@finastra/texfield)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./texfield/README.md)     |
 | **Switch**       | [`@finastra/switch`](https://npmjs.com/package/@finastra/switch)             | [![latest](https://img.shields.io/npm/v/@finastra/switch.svg)](https://npmjs.com/package/@finastra/switch)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./switch/README.md)       |
 | **User Profile** | [`@finastra/user-profile`](https://npmjs.com/package/@finastra/user-profile) | [![latest](https://img.shields.io/npm/v/@finastra/user-profile.svg)](https://npmjs.com/package/@finastra/user-profile) | [![README](https://img.shields.io/badge/README--56C271.svg)](./user-profile/README.md) |
@@ -81,7 +82,7 @@ In `local developement`, recommends active watch mode and dev-server by running 
 npm run wc:watch
 ```
 
-- Local Dev Server
+- Local Dev Server (Don't need to run watch mode)
 
 ```
 npm run wc:serve
@@ -140,7 +141,7 @@ npm run wc:generate MY_COMPONENT_NAME
 
 #### 💡 Compliance check for new web-component
 
-We recommand using the **generator** to start a new web-component. To be compliant for contribution your web-component **must** have *story* and a *test* file.
+We recommand using the **generator** to start a new web-component. To be compliant for contribution your web-component **must** have _story_ and a _test_ file.
 
 <br>
 
