@@ -91,7 +91,7 @@
     grid-column: 2/3;
     align-self: start;
     margin: var(--fds-spacing-0, 0px) var(--fds-spacing-2, 8px) var(--fds-spacing-3, 16px);
-    padding: 24px 16px;
+    padding: var(--fds-spacing-4, 24px) var(--fds-spacing-3, 16px);
     border-radius: 4px;
     @include fds.bg-color(primary-lighter);
   }
