@@ -1,30 +1,22 @@
+import { CdkDragDrop, CdkDragStart, moveItemInArray } from '@angular/cdk/drag-drop';
 import {
   Component,
-  OnInit,
-  OnDestroy,
-  Input,
-  Output,
   EventEmitter,
+  Input,
   OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
   SimpleChanges,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { MatTable } from '@angular/material/table';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { PageEvent } from '@angular/material/paginator';
-import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
-
-import {
-  UxgColumn,
-  UxgSort,
-  UxgPage,
-  UxgColumnType,
-  UxgTableSelectEvent,
-  UxgDefaultPaging,
-  UxgActionColumnPosition
-} from './table.models';
-import { CdkDragDrop, CdkDragStart, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { MatTable } from '@angular/material/table';
 import isEqual from 'lodash-es/isEqual';
+import { UxgActionColumnPosition, UxgColumn, UxgColumnType, UxgDefaultPaging, UxgPage, UxgSort, UxgTableSelectEvent } from './table.models';
+
 @Component({
   selector: 'uxg-table',
   templateUrl: './table.component.html',
@@ -55,10 +47,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplayToComponent);
     }
 
-    if (
-      (this.enableEdit || this.enableDelete) &&
-      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
-    ) {
+    if ((this.enableEdit || this.enableDelete) && this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0) {
       this.addOrUpdateActionColumnToColumnsToDisplay();
     }
   }
@@ -147,10 +136,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       this.columnsToDisplayToComponent = this.uxgMultiSelectColumn.concat(this.columnsToDisplay);
     }
 
-    if (
-      (this.enableEdit || this.enableDelete) &&
-      this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0
-    ) {
+    if ((this.enableEdit || this.enableDelete) && this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) < 0) {
       this.addOrUpdateActionColumnToColumnsToDisplay();
     }
 
@@ -358,6 +344,11 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     });
   }
 
+  rowNo(row: any) {
+    const rowIndex = this.dataToComponent.findIndex((item) => item === row);
+    return rowIndex + 1;
+  }
+
   ngOnDestroy() {}
 
   //local functions
@@ -455,9 +446,6 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   removeActionColumnsFromColumnsToDisplay() {
     if (this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1)
-      this.columnsToDisplayToComponent.splice(
-        this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]),
-        1
-      );
+      this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]), 1);
   }
 }
