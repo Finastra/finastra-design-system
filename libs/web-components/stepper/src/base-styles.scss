@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 24px;
+  width: var(--fds-spacing-4, 24px);
   height: 24px;
   border: 1px solid;
 }
