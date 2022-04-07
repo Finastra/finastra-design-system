@@ -7,7 +7,6 @@
 .circle {
   @include fds.text-color(text-primary-on-background);
   @include fds.typography(subtitle-3);
-  @include fds.property(border-color, outline);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +14,7 @@
   width: var(--fds-spacing-4, 24px);
   height: var(--fds-spacing-4, 24px);
   border: 1px solid;
+  @include fds.property(border-color, text-hint-on-background);
 }
 
 .step-item-label,
