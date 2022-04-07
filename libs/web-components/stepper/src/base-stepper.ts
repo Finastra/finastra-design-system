@@ -9,7 +9,9 @@ export interface Step {
 
 /**
  * @cssprop {text} [--fds-stepper-line-space=8px] - Stepper line space.
+ * @attr [steps] - An array of step (label + optional description).
  * @attr {boolean} [secondary=false] - Use Secondary color.
+ * @attr [currentStepIndex=-1] - Index of current active step.
  */
 export class BaseStepper extends LitElement {
   @property({ attribute: false })
@@ -25,8 +27,8 @@ export class BaseStepper extends LitElement {
       <div class="line  start-line ${classMap(startLineClass)}"></div>
       <div class="circle step-item-icon">
         ${index >= this.currentStepIndex
-          ? index + 1
-          : svg`<svg width="14" height="11" viewBox="0 0 14 11">
+        ? index + 1
+        : svg`<svg width="14" height="11" viewBox="0 0 14 11">
 <path d="M4.75012 8.12757L1.62262 5.00007L0.557617 6.05757L4.75012 10.2501L13.7501 1.25007L12.6926 0.192566L4.75012 8.12757Z"/>
 </svg>
 `}
@@ -38,17 +40,17 @@ export class BaseStepper extends LitElement {
   render() {
     return html`<div class="container">
       ${this.steps.map(
-        (step, idx) =>
-          html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex ? 'current' : ''}">
+      (step, idx) =>
+        html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex ? 'current' : ''}">
             ${this.renderIconAndLine(idx)}
             ${step.description
-              ? html`<div class="text-wrapper">
+            ? html`<div class="text-wrapper">
                   <div class="step-item-label">${step.label}</div>
                   <div class="step-item-description">${step.description}</div>
                 </div>`
-              : html`<div class="step-item-label">${step.label}</div>`}
+            : html`<div class="step-item-label">${step.label}</div>`}
           </div>`
-      )}
+    )}
     </div>`;
   }
 }
