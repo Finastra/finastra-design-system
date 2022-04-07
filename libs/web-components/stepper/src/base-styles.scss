@@ -1,28 +1,34 @@
-@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme'as fds;
 
 :host {
   display: block;
 }
 
 .circle {
+  @include fds.text-color(text-primary-on-background);
+  @include fds.typography(subtitle-3);
+  @include fds.property(border-color, outline);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  @include fds.text-color(text-primary-on-background);
-  @include fds.typography(subtitle-3);
   border: 1px solid;
-  @include fds.property(border-color, outline);
+}
+
+.step-item-label,
+.step-item-description {
+  @include fds.text-color(on-background);
 }
 
 .done {
   .circle {
     @include fds.property(border-color, success);
     @include fds.bg-color(success);
-    > svg {
-      @include fds.fill(on-primary);;
+
+    >svg {
+      @include fds.fill(on-primary);
     }
   }
 
@@ -37,8 +43,8 @@
     @include fds.property(border-color, primary);
     @include fds.bg-color(primary);
     @include fds.text-color(on-primary);
-
   }
+
   .line.start-line {
     @include fds.bg-color(success);
   }
@@ -46,6 +52,7 @@
   .line.end-line {
     @include fds.bg-color(primary);
   }
+
   .step-item-label {
     @include fds.typography(subtitle-3);
   }
@@ -63,6 +70,7 @@
       @include fds.text-color(on-secondary);
 
     }
+
     .line.start-line {
       @include fds.bg-color(success);
     }
