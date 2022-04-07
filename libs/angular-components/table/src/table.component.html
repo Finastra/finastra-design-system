@@ -14,7 +14,7 @@
           [checked]="selections.length !== 0 && selections.length === this.dataToComponent.length"
           [indeterminate]="selections.length !== 0 && selections.length !== this.dataToComponent.length"
           color="primary"
-          aria-label="Multiselection checkbox"
+          aria-label="Select all rows"
         >
         </mat-checkbox>
       </th>
@@ -24,7 +24,7 @@
           (change)="multiSelectRowClick(row)"
           [checked]="isRowSelected(row)"
           color="primary"
-          [attr.aria-label]="'Checkbox from ' + rowNo(row)"
+          [attr.aria-label]="'Select row ' + rowNo(row)"
         >
         </mat-checkbox>
       </td>
