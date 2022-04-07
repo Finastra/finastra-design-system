@@ -41,3 +41,27 @@
 .mdc-select--invalid:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label {
   @include fds.property(color, error);
 }
+
+.mdc-select--filled:not(.mdc-select--disabled):not(.mdc-select--invalid) .mdc-line-ripple::before {
+  @include fds.property(border-bottom-color, primary);
+}
+
+.mdc-select--filled.mdc-select--disabled .mdc-select__anchor {
+  @include fds.property(background-color, background);
+}
+
+.mdc-select.mdc-select--disabled .mdc-floating-label {
+  @include fds.property(color, text-medium-on-background);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__icon {
+  @include fds.property(color, text-medium-on-background);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__dropdown-icon {
+  @include fds.property(fill, text-medium-on-background);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__selected-text {
+  @include fds.property(color, on-background);
+}
