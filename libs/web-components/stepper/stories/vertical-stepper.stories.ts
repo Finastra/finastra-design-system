@@ -39,7 +39,8 @@ export default {
     }
   },
   args: {
-    steps: demoData
+    steps: demoData,
+    currentStepIndex: 1
   },
   parameters: {
     docs: {

@@ -30,7 +30,8 @@ export default {
   component: 'fds-horizontal-stepper',
   argTypes: argTypes,
   args: {
-    steps: demoData
+    steps: demoData,
+    currentStepIndex: 1
   },
   parameters: {
     docs: {
@@ -53,9 +54,4 @@ const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = fals
   return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fsd-horizontal-stepper>`;
 };
 
-// const VTemplate: Story<VerticaltalStepper> = ({ currentStepIndex, steps = demoData }) => {
-//   return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex}></fsd-vertical-stepper>`;
-// };
-
 export const Default: Story<HorizontalStepper> = HTemplate.bind({});
-// export const Vertical: Story<HorizontalStepper> = VTemplate.bind({});
