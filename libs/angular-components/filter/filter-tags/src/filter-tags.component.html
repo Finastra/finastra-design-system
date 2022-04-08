@@ -14,21 +14,19 @@
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
       </mat-chip>
     </ng-container>
-    <button
+    <mat-chip
+      *ngIf="selectedData.length > displayMax"
       [attr.standard]="standard === '' || null"
       [attr.dense]="standard === '' ? null : ''"
-      *ngIf="selectedData.length > displayMax"
+      [attr.aria-label]="selectedData.length + ' more'"
+      [removable]="false"
+      [selectable]="false"
       disableRipple
-      mat-button
-      class="show-more"
-      [class.standard]="standard === ''"
-      color="accent"
       matTooltip="{{ showMoreTags() }}"
-      #tooltip="matTooltip"
       [matTooltipClass]="'show-more-tags-tooltip'"
     >
-      {{ '+' + (selectedData.length - displayMax) + ' more' }}
-    </button>
+      {{ '+' + (selectedData.length - displayMax) }}
+    </mat-chip>
   </mat-chip-list>
 
   <mat-form-field aria-label="Search" floatLabel="always" class="chip-list" appearance="fill" dense>

@@ -43,18 +43,6 @@
 }
 
 @mixin typography($config) {
-  uxg-filter-tags {
-    .filter-tags-container {
-      .show-more {
-        line-height: mat.line-height($config, body-3);
-
-        &.standard {
-          line-height: mat.line-height($config, body-1);
-        }
-      }
-    }
-  }
-
   .mat-autocomplete-panel {
     .mat-option {
       @include mat.typography-level($config, body-2);

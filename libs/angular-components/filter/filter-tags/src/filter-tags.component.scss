@@ -12,11 +12,6 @@ uxg-filter-tags {
         width: 100%;
       }
     }
-
-    .show-more {
-      margin: fds.$uxg-spacing-1;
-      cursor: default;
-    }
   }
 }
 
@@ -25,7 +20,6 @@ uxg-filter-tags {
 }
 
 .mat-autocomplete-panel {
-
   .custom-option,
   .custom-group-option {
     position: absolute;
