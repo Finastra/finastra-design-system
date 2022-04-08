@@ -245,10 +245,7 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isSelected(tag: Tag) {
     const element = this.selectedData.find((el) => el.label === tag.label);
-    if (element) {
-      return true;
-    }
-    return false;
+    return element ? true : false;
   }
 
   private isTag(value: Tag | string): value is Tag {
@@ -256,23 +253,13 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private filter(value: Tag | string): Tag[] {
-    let filterValue: string;
-    if (this.isTag(value)) {
-      filterValue = value.label.toLowerCase();
-    } else {
-      filterValue = value.toLowerCase();
-    }
-
+    let filterValue = this.isTag(value) ? value.label.toLowerCase() : value.toLowerCase();
     this.toHighlight = filterValue;
     return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
   }
 
   onCheckboxSelected(event: MatCheckboxChange, tag: any) {
-    if (event.checked) {
-      this.onSelected({ option: { value: tag } });
-    } else {
-      this.remove(tag, false);
-    }
+    event.checked ? this.onSelected({ option: { value: tag } }) : this.remove(tag, false);
   }
 
   onGroupCheckboxSelected(event: MatCheckboxChange, groupTag: any) {
@@ -294,10 +281,10 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private handleParent(tag: any) {
     const parent = this.data.find((el) => el.label === tag?.category);
-    if (parent && this.descendantsAllSelected(parent)) {
-      this.onMultipleSelected({ checked: true } as MatCheckboxChange, parent);
-    } else if (parent && !this.descendantsAllSelected(parent)) {
-      this.remove(parent, false);
+    if (parent) {
+      this.descendantsAllSelected(parent)
+        ? this.onMultipleSelected({ checked: true } as MatCheckboxChange, parent)
+        : this.remove(parent, false);
     }
   }
 
