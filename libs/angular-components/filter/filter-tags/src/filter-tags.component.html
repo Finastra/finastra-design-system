@@ -1,11 +1,10 @@
 <div class="filter-tags-container">
   <mat-chip-list #chipList aria-label="Tags selection">
-    <ng-container *ngFor="let tag of selectedData; let i = index">
+    <ng-container *ngFor="let tag of selectedData | slice: 0:displayMax">
       <mat-chip
         [attr.standard]="standard === '' || null"
         [attr.dense]="standard === '' ? null : ''"
         selected
-        *ngIf="i < displayMax"
         [attr.aria-label]="tag.label"
         [removable]="removable"
         (removed)="tag.label === tag.category ? this.removeMultiple(tag) : remove(tag)"
