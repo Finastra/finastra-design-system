@@ -1,6 +1,6 @@
 name: Web Components PR
 on:
-  pull_request:
+  push:
     paths:
       - 'libs/web-components/**'
 
