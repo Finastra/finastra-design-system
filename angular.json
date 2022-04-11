@@ -265,6 +265,18 @@
       },
       "tags": []
     },
+    "button-toggle": {
+      "root": "libs/web-components/button-toggle",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/button-toggle/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "changelog": {
       "projectType": "library",
       "root": "libs/angular-components/changelog",
