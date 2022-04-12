@@ -1,16 +1,18 @@
-import { customElement } from 'lit/decorators.js';
+import { customElement,property } from 'lit/decorators.js';
 import { TabBarBase } from '@material/mwc-tab-bar/mwc-tab-bar-base';
 
 import { styles } from './styles.css';
 
 /**
- * @cssprop {color} [ --fds-tab-min-height=90] - Textfield color
- * @cssprop {color} [--fds-icon-color=#694ED6] - Icon color.
- * @cssprop {color} [--fds-icon-trailing-color=#694ED6] - Icon trailing color.
- * */
+ * @cssprop {color} [ --fds-tab-min-width=90] - tab min width
+ * @cssprop {color} [--fds-tab-height=48px] - tab height.
+ **/
+
 @customElement('fds-button-toggle-group')
 export class ButtonToggleGroup extends TabBarBase {
   static styles = styles;
+
+  @property({ type: Boolean }) rounded = false;
 
   constructor() {
     super();

@@ -4,22 +4,24 @@
 $icon-size: 24px;
 $icon-width: 24px;
 $icon-height: 24px;
-$tab-min-height: 90px;
+$tab-min-width: 90px;
+$tab-height: 48px;
 
 :host {
   display: block;
   border: 1px solid var(--fds-outline);
   overflow: hidden;
-  --mdc-tab-height: 48px;
-  --fds-tab-min-height: 32px;
 }
 
 .mdc-tab {
+  width: 100%;
+  height: var(--fds-tab-height, $tab-height);
+  min-width: var(--fds-tab-min-width, $tab-min-width);
+
   @include fds.typography(subtitle-2);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
   @include fds.mdc(tab-color-default,text-medium-on-background);
-  width: 100%;
-  height:
+
   mwc-tab-indicator {
     display: none;
   }
