@@ -1,17 +1,15 @@
-import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { TabBase } from '@material/mwc-tab/mwc-tab-base';
 
 import { styles } from './styles.css';
 
 @customElement('fds-button-toggle')
-export class ButtonToggle extends LitElement {
+export class ButtonToggle extends TabBase {
   static styles = styles;
-
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+  @property({ type: Boolean }) filter = false;
+  
+  constructor() {
+    super();
   }
 }
 

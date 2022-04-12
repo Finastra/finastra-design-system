@@ -42,7 +42,9 @@
 
 :host([disabled]) {
   pointer-events: none;
-  @include fds.mdc(tab-text-label-color-default, text-hint-on-background);
+  .mdc-tab {
+   @include fds.mdc(tab-text-label-color-default,text-hint-on-background);
+  }
 }
 
 

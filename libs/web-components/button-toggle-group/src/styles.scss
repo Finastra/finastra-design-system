@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.mdc-tab-bar mwc-tab-scroller {
+  ::slotted(fds-button-toggle:first-child) {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+
+  ::slotted(fds-button-toggle:last-child) {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  ::slotted(fds-button-toggle[active]) {
+    border-color: var(--fds-primary);
+    color: var(--fds-primary);
+  }
+
+  ::slotted(fds-button-toggle[active]:first-child) {
+    background: var(--fds-primary-lighter);
+    border-color: var(--fds-primary);
+  }
+  ::slotted(fds-button-toggle[active]:last-child) {
+    background: var(--fds-primary-lighter);
+  }
+}
