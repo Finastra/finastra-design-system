@@ -4,11 +4,14 @@
 $icon-size: 24px;
 $icon-width: 24px;
 $icon-height: 24px;
+$tab-min-height: 90px;
+
 :host {
   display: block;
   border: 1px solid var(--fds-outline);
   overflow: hidden;
   --mdc-tab-height: 48px;
+  --fds-tab-min-height: 32px;
 }
 
 .mdc-tab {
@@ -16,6 +19,7 @@ $icon-height: 24px;
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
   @include fds.mdc(tab-color-default,text-medium-on-background);
   width: 100%;
+  height:
   mwc-tab-indicator {
     display: none;
   }
@@ -29,7 +33,11 @@ $icon-height: 24px;
 :host([disabled]) {
   pointer-events: none;
   .mdc-tab {
-  @include fds.mdc(tab-text-label-color-default,text-hint-on-background);
+    @include fds.mdc(tab-text-label-color-default,text-hint-on-background);
+  }
+
+  .mdc-tab__icon {
+    color: var(--fds-text-hint-on-background);
   }
 }
 
@@ -39,4 +47,25 @@ $icon-height: 24px;
   --fds-icon-size: 18px;
   --fds-icon-height: 18px;
   --fds-icon-width: 18px;
+}
+
+:host([filter]) {
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  padding-bottom: 32px;
+  margin-left: 20px;
+
+  .mdc-tab {
+    border: 1px solid var(--fds-outline);
+    border-radius: 4px;
+  }
+  .mdc-tab__text-label {
+    position: absolute;
+    bottom: -24px;
+  }
+  .mdc-tab--active {
+    border-color: var(--fds-primary);
+    background: var(--fds-primary-lighter);
+  }
 }

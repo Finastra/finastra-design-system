@@ -1,21 +1,41 @@
 <script type="module" src="node_modules/@finastra/button-toggle-group/dist/src/button-toggle-group.js"></script>
 <script type="module" src="node_modules/@finastra/button-toggle/dist/src/button-toggle.js"></script>
 
-<div style="display: flex; flex-direction: column;">
-    <fds-button-toggle-group style="padding-bottom: 16px">
+<fds-button-toggle-group style="padding-bottom: 16px" rounded>
+    <fds-button-toggle icon="accessibility"></fds-button-toggle>
+    <fds-button-toggle icon="exit_to_app"></fds-button-toggle>
+    <fds-button-toggle icon="camera"></fds-button-toggle>
+</fds-button-toggle-group>
+
+<!-- <div style="display: flex; flex-direction: column;">
+    <fds-button-toggle-group style="padding-bottom: 16px" rounded>
         <fds-button-toggle label="Trend" icon="timeline" dense>
         </fds-button-toggle>
         <fds-button-toggle label="List" icon="view_list" dense></fds-button-toggle>
     </fds-button-toggle-group>
-    <fds-button-toggle-group style="padding-bottom: 16px">
+
+    <fds-button-toggle-group style="padding-bottom: 16px" rounded>
         <fds-button-toggle label="Left"></fds-button-toggle>
         <fds-button-toggle label="Middle" disabled></fds-button-toggle>
         <fds-button-toggle label="Right"></fds-button-toggle>
     </fds-button-toggle-group>
 
-    <fds-button-toggle-group style="padding-bottom: 16px">
-        <fds-button-toggle icon="accessibility"></fds-button-toggle>
-        <fds-button-toggle icon="exit_to_app"></fds-button-toggle>
-        <fds-button-toggle icon="camera"></fds-button-toggle>
+    <fds-button-toggle-group style="padding-bottom: 16px" rounded>
+        <fds-button-toggle icon="accessibility" dense></fds-button-toggle>
+        <fds-button-toggle icon="exit_to_app" dense></fds-button-toggle>
+        <fds-button-toggle icon="camera" dense></fds-button-toggle>
     </fds-button-toggle-group>
-</div>
+
+    <fds-button-toggle-group style="padding-bottom: 16px" rounded>
+        <fds-button-toggle label="Left" icon="accessibility" stacked></fds-button-toggle>
+        <fds-button-toggle label="Middle" icon="exit_to_app" stacked></fds-button-toggle>
+        <fds-button-toggle label="Right" icon="camera" stacked></fds-button-toggle>
+    </fds-button-toggle-group>
+
+    <fds-button-toggle-group style="padding-bottom: 16px">
+        <fds-button-toggle label="Left" icon="accessibility" stacked filter></fds-button-toggle>
+        <fds-button-toggle label="Middle" icon="exit_to_app" stacked filter disabled></fds-button-toggle>
+        <fds-button-toggle label="Right" icon="camera" stacked filter></fds-button-toggle>
+    </fds-button-toggle-group>
+
+</div> -->
