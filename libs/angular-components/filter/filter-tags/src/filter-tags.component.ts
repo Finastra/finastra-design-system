@@ -49,6 +49,7 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   formCtrl = new FormControl();
   filteredTags$!: Observable<Tag[]>;
   categories$!: Observable<Tag[]>;
+  categories: Tag[] = [];
   subscription!: Subscription;
 
   selectedData: Tag[] = [];
@@ -57,6 +58,7 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   set data(data: Tag[]) {
     this._data = data;
+    this.categories = this.getCategories(data);
     this.selectedData = this.data.filter((tag) => tag.isSelected);
   }
 
@@ -91,16 +93,10 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
         map((tag: string | null) => {
           if (tag) {
             const filteredTags = this.filter(tag);
-            return uniqBy(filteredTags, 'category').map((group) => ({
-              category: group.category,
-              label: group.category || ''
-            }));
+            return this.categories.filter((tag) => filteredTags.some((fTag) => fTag.category === tag.category));
           } else {
             this.toHighlight = '';
-            return uniqBy(this.data, 'category').map((group) => ({
-              category: group.category,
-              label: group.category || ''
-            }));
+            return this.categories;
           }
         })
       );
@@ -256,6 +252,13 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
     let filterValue = this.isTag(value) ? value.label.toLowerCase() : value.toLowerCase();
     this.toHighlight = filterValue;
     return this.data.filter((tag) => tag.label.toLowerCase().includes(filterValue));
+  }
+
+  private getCategories(data: Tag[]): Tag[] {
+    return uniqBy(data, 'category').map((group) => ({
+      category: group.category,
+      label: group.category || ''
+    }));
   }
 
   onCheckboxSelected(event: MatCheckboxChange, tag: any) {
