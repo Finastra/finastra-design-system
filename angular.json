@@ -844,6 +844,18 @@
       },
       "tags": []
     },
+    "slider": {
+      "root": "libs/web-components/slider",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/slider/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "status-steps": {
       "projectType": "library",
       "root": "libs/angular-components/status-steps",
