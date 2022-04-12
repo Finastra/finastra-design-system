@@ -1,4 +1,4 @@
-@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme'as fds;
 
 :host {
   display: block;
@@ -6,8 +6,8 @@
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(button-outline-color, primary);
   --mdc-typography-button-text-transform: none;
-  @include fds.mdc(button-disabled-ink-color, text-hint-on-background);
   @include fds.mdc(button-disabled-fill-color, text-disabled-on-background);
+  @include fds.mdc(button-disabled-ink-color, text-hint-on-background);
 }
 
 :host([secondary]) {
