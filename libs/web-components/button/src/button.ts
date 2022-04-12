@@ -14,10 +14,10 @@ export class Button extends LitElement {
   icon = '';
 
   @property({ type: Boolean })
-  unelevated = true;
+  outlined = false;
 
   @property({ type: Boolean })
-  outlined = false;
+  unelevated = true;
 
   @property({ type: Boolean })
   text = false;
