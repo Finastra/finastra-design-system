@@ -58,6 +58,7 @@
             (change)="onGroupCheckboxSelected($event, groupTag)"
             color="primary"
             [checked]="descendantsAllSelected(groupTag)"
+            [indeterminate]="descendantsPartiallySelected(groupTag)"
             disableRipple
           >
             <span [innerHTML]="groupTag.category || '' | highlight: toHighlight"></span>

@@ -275,6 +275,14 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
     return descendants.length ? descAllSelected : this.isSelected(category);
   }
 
+  descendantsPartiallySelected(category: Tag): boolean {
+    const descendants = this.getDescendats(category);
+    const someDescSelected = descendants.length
+      ? descendants.some((child) => this.selectedData.find((el) => el.label === child.label))
+      : false;
+    return someDescSelected && !this.descendantsAllSelected(category);
+  }
+
   getDescendats(category: Tag): Tag[] {
     return this.data.filter((tag) => tag.category === category.category && tag.label !== category.label);
   }

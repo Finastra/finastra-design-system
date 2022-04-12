@@ -39,6 +39,14 @@
     .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple {
       opacity: 0;
     }
+
+    mat-checkbox {
+      &.mat-checkbox-checked, &.mat-checkbox-indeterminate {
+        .mat-checkbox-label{
+          color: fds.get-color-from-palette($primary, default);
+        }
+      }
+    }
   }
 }
 
