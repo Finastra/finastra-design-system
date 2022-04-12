@@ -6,6 +6,7 @@ $icon-width: 24px;
 $icon-height: 24px;
 $tab-min-width: 90px;
 $tab-height: 48px;
+$tab-width: 100%;
 
 :host {
   display: block;
@@ -45,13 +46,15 @@ $tab-height: 48px;
 
 :host([dense]) {
   overflow: hidden;
-  --mdc-tab-height: 32px;
+  --fds-tab-height: 32px;
   --fds-icon-size: 18px;
   --fds-icon-height: 18px;
   --fds-icon-width: 18px;
 }
 
-:host([filter]) {
+:host([stacked]) {
+  --fds-tab-min-width: 68px;
+  --fds-tab-height: 68px;
   border: none;
   border-radius: 0;
   overflow: visible;
@@ -61,6 +64,7 @@ $tab-height: 48px;
   .mdc-tab {
     border: 1px solid var(--fds-outline);
     border-radius: 4px;
+    width: 68px;
   }
   .mdc-tab__text-label {
     position: absolute;
