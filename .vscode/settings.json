@@ -1,6 +1,6 @@
 {
   "debug.node.autoAttach": "on",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
