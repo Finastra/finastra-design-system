@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleFilterTree, sampleFilterTags, sampleToggleBtn, sampleTimeline } from './filter-panel-demo.sample-data';
-import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
 import { Tag } from '@finastra/angular-components/filter/filter-tags';
 import { ToggleBtn } from '@finastra/angular-components/filter/filter-toggle';
+import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
+import { sampleFilterTags, sampleFilterTree, sampleGroupTags, sampleTimeline, sampleToggleBtn } from './filter-panel-demo.sample-data';
 
 @Component({
   selector: 'ffdc-filter-panel-demo',
@@ -12,25 +12,13 @@ import { ToggleBtn } from '@finastra/angular-components/filter/filter-toggle';
 export class FilterPanelDemoComponent implements OnInit {
   sampleDataTree: TreeNode[] = [];
   sampleDataTags: Tag[] = [];
+  sampleGroupTags: Tag[] = [];
+  sampleMixTags: Tag[] = [];
   sampleDataToggle: ToggleBtn[] = [];
   sampleDataTimeline: ToggleBtn[] = [];
   filterExpression: string[] = [];
   groupValue = 'api';
   initialGroupState = 'api';
-  tagsSampleData = [
-    { label: 'Malauzai', isSelected: true },
-    { label: 'North America' },
-    { label: 'Money Movement' },
-    { label: 'Static Data' }
-  ];
-  sampleGroupTags = [
-    { category: 'A', label: 'Alabama' },
-    { category: 'A', label: 'Alaska', isSelected: true },
-    { category: 'A', label: 'Arizona' },
-    { category: 'A', label: 'Arkansas' },
-    { category: 'C', label: 'California' },
-    { category: 'C', label: 'Colorado' }
-  ];
 
   multiselectTagsSampleData = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
   chosenTags: string[] = [];
@@ -39,6 +27,7 @@ export class FilterPanelDemoComponent implements OnInit {
   treeFilter: string[] = [];
   tagFilter: string[] = [];
   groupTagFilter: string[] = [];
+  multiselectGroupTags: string[] = [];
   groupFilter: string[] = [];
   toggleFilter: string[] = [];
   constructor() {}
@@ -47,6 +36,8 @@ export class FilterPanelDemoComponent implements OnInit {
     this.groupValue = this.initialGroupState;
     this.sampleDataTree = sampleFilterTree;
     this.sampleDataTags = sampleFilterTags;
+    this.sampleGroupTags = sampleGroupTags;
+    this.sampleMixTags = [...sampleGroupTags, { category: 'D', label: 'D' }];
     this.sampleDataToggle = sampleToggleBtn;
     this.sampleDataTimeline = sampleTimeline;
   }
@@ -65,6 +56,10 @@ export class FilterPanelDemoComponent implements OnInit {
 
   updateGroupFilterTags(changes: string[]) {
     this.groupTagFilter = changes;
+  }
+
+  updateMultiselectGroupTags(changes: string[]) {
+    this.multiselectGroupTags = changes;
   }
 
   updateFilterToggle(changes: any[]) {

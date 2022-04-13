@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { FilterTagsComponent } from './filter-tags.component';
 import { HighlightPipe } from './highlight.pipe';
 
@@ -19,7 +21,10 @@ import { HighlightPipe } from './highlight.pipe';
     MatChipsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatButtonModule
   ],
   exports: [FilterTagsComponent, HighlightPipe]
 })

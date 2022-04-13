@@ -2,29 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [3.0.1](https://github.com/finastra/finastra-design-system/compare/v3.0.0...v3.0.1) (2022-03-10)
+## [3.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.24...v3.1.0) (2022-04-13)
 
+### [3.0.1](https://github.com/finastra/finastra-design-system/compare/v3.0.0...v3.0.1) (2022-03-10)
 
 ### Bug Fixes
 
-* **badge:** support semantic colors ([#634](https://github.com/finastra/finastra-design-system/issues/634)) ([4e3ac3a](https://github.com/finastra/finastra-design-system/commit/4e3ac3aa19d6c68e5d71204586c9ed204c35b60d))
-* **icon:** allow semantic colors ([#633](https://github.com/finastra/finastra-design-system/issues/633)) ([d9528ee](https://github.com/finastra/finastra-design-system/commit/d9528eecff08cb97248bbad18599e0b520ea4229))
+- **badge:** support semantic colors ([#634](https://github.com/finastra/finastra-design-system/issues/634)) ([4e3ac3a](https://github.com/finastra/finastra-design-system/commit/4e3ac3aa19d6c68e5d71204586c9ed204c35b60d))
+- **icon:** allow semantic colors ([#633](https://github.com/finastra/finastra-design-system/issues/633)) ([d9528ee](https://github.com/finastra/finastra-design-system/commit/d9528eecff08cb97248bbad18599e0b520ea4229))
 
 ## [3.0.0](https://github.com/finastra/finastra-design-system/compare/v0.0.20...v3.0.0) (2022-03-01)
 
 ## [2.7.0](https://github.com/finastra/finastra-design-system/compare/v2.6.1...v2.7.0) (2022-02-18)
 
-
 ### Features
 
-* **theme:** add success color to theme ([#596](https://github.com/finastra/finastra-design-system/issues/596)) ([b2fa854](https://github.com/finastra/finastra-design-system/commit/b2fa85458ee0d78040de137f58289ffd9b8e54e1))
+- **theme:** add success color to theme ([#596](https://github.com/finastra/finastra-design-system/issues/596)) ([b2fa854](https://github.com/finastra/finastra-design-system/commit/b2fa85458ee0d78040de137f58289ffd9b8e54e1))
 
 ### [2.6.1](https://github.com/finastra/finastra-design-system/compare/v0.0.18...v2.6.1) (2022-02-11)
 
-
 ### Bug Fixes
 
-* **theme:** remove quotes in define-palette ([#594](https://github.com/finastra/finastra-design-system/issues/594)) ([d35622d](https://github.com/finastra/finastra-design-system/commit/d35622dbe062824a018f417198aaeb3d8dc74565))
+- **theme:** remove quotes in define-palette ([#594](https://github.com/finastra/finastra-design-system/issues/594)) ([d35622d](https://github.com/finastra/finastra-design-system/commit/d35622dbe062824a018f417198aaeb3d8dc74565))
 
 ## [2.6.0](https://github.com/finastra/finastra-design-system/compare/v0.0.16...v2.6.0) (2022-01-25)
 
@@ -32,35 +31,31 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.4.1](https://github.com/finastra/finastra-design-system/compare/v2.4.0...v2.4.1) (2021-11-15)
 
-
 ### Bug Fixes
 
-* **input:** making error state accessible ([#453](https://github.com/finastra/finastra-design-system/issues/453)) ([24cdb29](https://github.com/finastra/finastra-design-system/commit/24cdb298f6e41470a42a9aa43e50937feca6d5d4))
+- **input:** making error state accessible ([#453](https://github.com/finastra/finastra-design-system/issues/453)) ([24cdb29](https://github.com/finastra/finastra-design-system/commit/24cdb298f6e41470a42a9aa43e50937feca6d5d4))
 
 ## [2.4.0](https://github.com/finastra/finastra-design-system/compare/v0.0.3...v2.4.0) (2021-11-05)
 
 ### [2.3.1](https://github.com/finastra/finastra-design-system/compare/v2.3.0...v2.3.1) (2021-10-01)
 
-
 ### Bug Fixes
 
-* **tabs:** styling and layout issues  ([#415](https://github.com/finastra/finastra-design-system/issues/415)) ([8bb2ba1](https://github.com/finastra/finastra-design-system/commit/8bb2ba1f60740c400b676777a5856a7cf73d961d))
+- **tabs:** styling and layout issues ([#415](https://github.com/finastra/finastra-design-system/issues/415)) ([8bb2ba1](https://github.com/finastra/finastra-design-system/commit/8bb2ba1f60740c400b676777a5856a7cf73d961d))
 
 ## [2.3.0](https://github.com/finastra/finastra-design-system/compare/v2.2.1...v2.3.0) (2021-09-28)
 
-
 ### Features
 
-* **tabs:** new tabs improvements ([#412](https://github.com/finastra/finastra-design-system/issues/412)) ([de23e66](https://github.com/finastra/finastra-design-system/commit/de23e660da95459c75136c0034b0707782cb0200))
+- **tabs:** new tabs improvements ([#412](https://github.com/finastra/finastra-design-system/issues/412)) ([de23e66](https://github.com/finastra/finastra-design-system/commit/de23e660da95459c75136c0034b0707782cb0200))
 
 ### [2.2.1](https://github.com/finastra/finastra-design-system/compare/v2.2.0...v2.2.1) (2021-09-23)
 
 ## [2.2.0](https://github.com/finastra/finastra-design-system/compare/v2.1.3...v2.2.0) (2021-09-23)
 
-
 ### Features
 
-* **tabs:** new tabs ([#409](https://github.com/finastra/finastra-design-system/issues/409)) ([b125b8a](https://github.com/finastra/finastra-design-system/commit/b125b8aa1758fd064705f9f0314d23e32b9fa550))
+- **tabs:** new tabs ([#409](https://github.com/finastra/finastra-design-system/issues/409)) ([b125b8a](https://github.com/finastra/finastra-design-system/commit/b125b8aa1758fd064705f9f0314d23e32b9fa550))
 
 ### [2.1.3](https://github.com/finastra/finastra-design-system/compare/v2.1.2...v2.1.3) (2021-09-02)
 
