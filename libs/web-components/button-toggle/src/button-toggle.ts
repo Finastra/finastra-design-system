@@ -4,6 +4,9 @@ import { TabBase } from '@material/mwc-tab/mwc-tab-base';
 import { styles } from './styles.css';
 
 /**
+ * @attr [label=''] - Text label to display in button toggle.
+ * @attr [icon=''] - Material design icon name to display.
+ * @attr {boolean} [disabled=false] - Display disabled button toggle.
  * @cssprop [--fds-toggle-min-width=30px] - tab min width
  * @cssprop [--fds-toggle-height=48px] - tab height.
  * @cssprop [--fds-toggle-width=100%] - tab width.

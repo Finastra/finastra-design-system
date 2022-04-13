@@ -41,7 +41,7 @@ const IconsTemplate: Story = ({dense=false}) => {
 </fds-button-toggle-group>`;
 };
 
-const FilterTemplate: Story = ({label,icon}) => {
+const FilterTemplate: Story = () => {
   return html`
   <fds-button-toggle-group>
       <fds-button-toggle-filter label="Left" icon="accessibility"></fds-button-toggle-filter>

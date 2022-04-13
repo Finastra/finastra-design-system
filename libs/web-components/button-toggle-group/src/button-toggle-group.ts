@@ -4,6 +4,7 @@ import { TabBarBase } from '@material/mwc-tab-bar/mwc-tab-bar-base';
 import { styles } from './styles.css';
 
 /**
+ * @attr {boolean} [dense=false] - Display dense button toggles.
  * @cssprop [--fds-toggle-min-width=30px] - tab min width
  * @cssprop [--fds-toggle-height=48px] - tab height.
  * @cssprop [--fds-toggle-width=100%] - tab width.

@@ -17,18 +17,14 @@ export default {
   }
 } as Meta;
 
-const Template: Story = ({ label, icon}) => {
+const Template: Story = ({ label, icon, disabled}) => {
   return html`
-    <fds-button-toggle-group>
-  <fds-button-toggle label=${label} icon=${icon}></fds-button-toggle>
-</fds-button-toggle-group>`;
+  <fds-button-toggle label=${label} icon=${icon} ?disabled=${disabled}></fds-button-toggle>`;
 };
 
-const FilterTemplate: Story = ({ label, icon }) => {
+const FilterTemplate: Story = ({ label, icon, disabled}) => {
   return html`
-    <fds-button-toggle-group>
-  <fds-button-toggle-filter label=${label} icon=${icon}></fds-button-toggle-filter>
-</fds-button-toggle-group>`;
+  <fds-button-toggle-filter label=${label} icon=${icon} ?disabled=${disabled}></fds-button-toggle-filter>`;
 };
 
 export const Default: Story = Template.bind({});
