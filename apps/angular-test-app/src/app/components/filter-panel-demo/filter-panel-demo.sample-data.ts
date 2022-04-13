@@ -1,6 +1,6 @@
-import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
 import { Tag } from '@finastra/angular-components/filter/filter-tags';
 import { ToggleBtn } from '@finastra/angular-components/filter/filter-toggle';
+import { TreeNode } from '@finastra/angular-components/filter/filter-tree';
 
 export const sampleFilterTree: TreeNode[] = [
   {
@@ -79,6 +79,16 @@ export const sampleFilterTags: Tag[] = [
     label: 'Static Data'
   }
 ];
+
+export const sampleGroupTags = [
+  { category: 'A', label: 'Alabama' },
+  { category: 'A', label: 'Alaska', isSelected: true },
+  { category: 'A', label: 'Arizona' },
+  { category: 'A', label: 'Arkansas' },
+  { category: 'C', label: 'California' },
+  { category: 'C', label: 'Colorado' }
+];
+
 export const sampleToggleBtn: ToggleBtn[] = [
   {
     label: 'API',
