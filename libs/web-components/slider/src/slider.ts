@@ -1,18 +1,15 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
+import { SliderSingleBase } from '@material/mwc-slider/slider-single-base';
+import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
+/**
+ * @attr [value] - Current selected value.
+ * @attr [min=0] - Minimum selectable value of the slider.
+ * @attr [max=100] - Maximum selectable value of the slider.
+ */
 @customElement('fds-slider')
-export class Slider extends LitElement {
-  static styles = styles;
-
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
-  }
+export class Slider extends SliderSingleBase {
+  static override styles = [styles];
 }
 
 declare global {
