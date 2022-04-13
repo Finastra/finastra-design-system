@@ -8,7 +8,8 @@
 .mdc-tab {
   @include fds.typography(subtitle-2);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
-  @include fds.mdc(tab-color-default,text-medium-on-background);
+  @include fds.mdc(tab-color-default, text-medium-on-background);
+  @include fds.mdc(theme-primary, primary);
 }
 
 .mdc-ripple-surface {
@@ -43,20 +44,20 @@
 :host([disabled]) {
   pointer-events: none;
   .mdc-tab {
-   @include fds.mdc(tab-text-label-color-default,text-hint-on-background);
+    @include fds.mdc(tab-text-label-color-default, text-hint-on-background);
   }
 }
 
-
 :host([classic]) {
   .mdc-tab {
-    border-bottom: 1px solid var(--fds-primary);
+    border-bottom: 1px solid;
+    @include fds.property(border-color, primary);
   }
 
   .mdc-tab--active::before {
     left: -7px;
     border-right: 1px solid;
-    @include fds.property(border-right-color,primary);
+    @include fds.property(border-right-color, primary);
     border-bottom-right-radius: 6px;
   }
 
@@ -67,7 +68,7 @@
     border-top-left-radius: 6px;
     padding: 0 16px;
     margin: 0 6px;
-    @include fds.property(border-color,primary);
+    @include fds.property(border-color, primary);
     @include fds.bg-color(surface);
 
     &::before,
@@ -79,15 +80,15 @@
       width: 6px;
       height: 6px;
       border-bottom: 1px solid;
-      @include fds.property(border-bottom-color,primary);
+      @include fds.property(border-bottom-color, primary);
     }
 
     &::before {
-      box-shadow: 2px 2px 0 0 var(--fds-background, #FAFAFA);
+      box-shadow: 2px 2px 0 0 var(--fds-background, #fafafa);
     }
 
     &::after {
-      box-shadow: -2px 2px 0 0 var(--fds-background, #FAFAFA);
+      box-shadow: -2px 2px 0 0 var(--fds-background, #fafafa);
     }
   }
 

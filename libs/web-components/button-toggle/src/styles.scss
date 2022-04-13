@@ -13,7 +13,7 @@ $toggle-width: 100%;
   border: 1px solid;
   overflow: hidden;
   @include fds.property(border-color, outline);
-  @include fds.mdc(theme-primary, primary);
+  @include fds.property(--mdc-theme-primary, primary);
 }
 
 .mdc-tab {

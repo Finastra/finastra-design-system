@@ -30,11 +30,11 @@ const FilterTemplate: Story = ({ label, icon, disabled}) => {
 export const Default: Story = Template.bind({});
 Default.args = {
   label: 'label',
-  icon: "camera"
+  icon: 'event'
 };
 
 export const Filter: Story = FilterTemplate.bind({});
 Filter.args = {
   label: 'label',
-  icon:"camera"
+  icon: 'event'
 };

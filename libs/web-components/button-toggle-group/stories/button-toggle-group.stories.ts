@@ -19,9 +19,9 @@ export default {
 
 const Template: Story = ({dense=false}) => {
   return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="accessibility" label="Left"></fds-button-toggle>
-  <fds-button-toggle icon="favorite" label="Middle" ></fds-button-toggle>
-  <fds-button-toggle icon="camera" label="Right"></fds-button-toggle>
+  <fds-button-toggle icon="event" label="Left"></fds-button-toggle>
+  <fds-button-toggle icon="edit" label="Middle" ></fds-button-toggle>
+  <fds-button-toggle icon="share" label="Right"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
@@ -35,18 +35,18 @@ const LabelTemplate: Story = ({dense=false}) => {
 
 const IconsTemplate: Story = ({dense=false}) => {
   return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="accessibility"></fds-button-toggle>
-  <fds-button-toggle icon="favorite" ></fds-button-toggle>
-  <fds-button-toggle icon="camera"></fds-button-toggle>
+  <fds-button-toggle icon="event"></fds-button-toggle>
+  <fds-button-toggle icon="edit" ></fds-button-toggle>
+  <fds-button-toggle icon="share"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
 const FilterTemplate: Story = () => {
   return html`
   <fds-button-toggle-group>
-      <fds-button-toggle-filter label="Left" icon="accessibility"></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Middle" icon="exit_to_app" disabled></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Right" icon="camera"></fds-button-toggle-filter>
+      <fds-button-toggle-filter label="Left" icon="event"></fds-button-toggle-filter>
+      <fds-button-toggle-filter label="Middle" icon="edit" disabled></fds-button-toggle-filter>
+      <fds-button-toggle-filter label="Right" icon="share"></fds-button-toggle-filter>
   </fds-button-toggle-group>`;
 };
 
