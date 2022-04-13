@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.24...v3.1.0) (2022-04-13)
+
+
+### Features
+
+* **filter:** Multiselect filter tags ([#680](https://github.com/finastra/finastra-design-system/issues/680)) ([e4ce21c](https://github.com/finastra/finastra-design-system/commit/e4ce21c8ec574aa2f49dc62c093313db96995831))
 
 ### [3.0.1](https://github.com/finastra/finastra-design-system/compare/v3.0.0...v3.0.1) (2022-03-10)
 
