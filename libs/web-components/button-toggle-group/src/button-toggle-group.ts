@@ -5,9 +5,9 @@ import { styles } from './styles.css';
 
 /**
  * @attr {boolean} [dense=false] - Make the button toggle smaller.
- * @cssprop [--fds-toggle-min-width=30px] - tab min width
- * @cssprop [--fds-toggle-height=48px] - tab height.
- * @cssprop [--fds-toggle-width=100%] - tab width.
+ * @cssprop [--fds-button-toggle-min-width=30px] - Button toggle min width
+ * @cssprop [--fds-button-toggle-height=48px] - Button toggle height.
+ * @cssprop [--fds-button-toggle-width=100%] - Button toggle width.
  * @cssprop [--fds-icon-width=24px] - icon width.
  * @cssprop [--fds-icon-height=24px] - icon height.
  * @cssprop [--fds-icon-size=24px] - icon size.

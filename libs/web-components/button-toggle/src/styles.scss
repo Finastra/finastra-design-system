@@ -4,9 +4,9 @@
 $icon-size: 24px;
 $icon-width: 24px;
 $icon-height: 24px;
-$toggle-min-width: 90px;
-$toggle-height: 48px;
-$toggle-width: 100%;
+$button-toggle-min-width: 90px;
+$button-toggle-height: 48px;
+$button-toggle-width: 100%;
 
 :host {
   display: block;
@@ -17,9 +17,9 @@ $toggle-width: 100%;
 }
 
 .mdc-tab {
-  width: var(--fds-toggle-width, $toggle-width);
-  height: var(--fds-toggle-height, $toggle-height);
-  min-width: var(--fds-toggle-min-width, $toggle-min-width);
+  width: var(--fds-button-toggle-width, $button-toggle-width);
+  height: var(--fds-button-toggle-height, $button-toggle-height);
+  min-width: var(--fds-button-toggle-min-width, $button-toggle-min-width);
 
   @include fds.typography(subtitle-2);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
