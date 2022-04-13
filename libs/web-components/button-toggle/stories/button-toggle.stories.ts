@@ -6,7 +6,7 @@ import '@finastra/button-toggle-group';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/ButtonToggle',
+  title: 'Components/Button Toggle',
   component: 'fds-button-toggle',
   argTypes,
   parameters: {
