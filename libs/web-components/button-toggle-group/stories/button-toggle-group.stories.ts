@@ -1,18 +1,14 @@
 const README = require('../README.md');
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@finastra/button-toggle-group';
 import '@finastra/button-toggle';
-import type { ButtonToggleGroup } from '@finastra/button-toggle-group';
+import '@finastra/button-toggle-group';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
   title: 'Components/ButtonToggleGroup',
   component: 'fds-button-toggle-group',
   argTypes,
-  args: {
-    name: 'World'
-  },
   parameters: {
     docs: {
       description: { component: README }
@@ -21,47 +17,51 @@ export default {
   }
 } as Meta;
 
-const RoundedTemplate: Story = ({rounded=false, label, icon, dense=false, stacked, filter}) => {
-  return html`<fds-button-toggle-group ?rounded=${rounded}>
-  <fds-button-toggle icon="accessibility" label="left" ?dense=${dense} ?stacked=${stacked} ?filter=${filter}></fds-button-toggle>
-  <fds-button-toggle icon="favorite" label="middle" ?dense=${dense} ?stacked=${stacked} ?filter=${filter}></fds-button-toggle>
-  <fds-button-toggle icon="camera" label="right" ?dense=${dense} ?stacked=${stacked} ?filter=${filter}></fds-button-toggle>
+const Template: Story = ({dense=false}) => {
+  return html`<fds-button-toggle-group ?dense=${dense}>
+  <fds-button-toggle icon="accessibility" label="Left"></fds-button-toggle>
+  <fds-button-toggle icon="favorite" label="Middle" ></fds-button-toggle>
+  <fds-button-toggle icon="camera" label="Right"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-const FilterTemplate: Story = ({ rounded, dense, stacked, filter}) => {
-  return html`<fds-button-toggle-group rounded=${rounded}>
-  <fds-button-toggle icon="accessibility" ?dense=${dense} ?stacked=${stacked} ?filter=${filter}></fds-button-toggle>
-  <fds-button-toggle icon="favorite" ?dense=${dense} ?stacked=${stacked} ?filter=${filter}></fds-button-toggle>
+const LabelTemplate: Story = ({dense=false}) => {
+  return html`<fds-button-toggle-group ?dense=${dense}>
+  <fds-button-toggle label="Left"></fds-button-toggle>
+  <fds-button-toggle label="Middle"></fds-button-toggle>
+  <fds-button-toggle label="Right"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-
-export const Default: Story = RoundedTemplate.bind({});
-Default.args = {
-  rounded: true
+const IconsTemplate: Story = ({dense=false}) => {
+  return html`<fds-button-toggle-group ?dense=${dense}>
+  <fds-button-toggle icon="accessibility"></fds-button-toggle>
+  <fds-button-toggle icon="favorite" ></fds-button-toggle>
+  <fds-button-toggle icon="camera"></fds-button-toggle>
+</fds-button-toggle-group>`;
 };
-export const Dense: Story = RoundedTemplate.bind({});
+
+const FilterTemplate: Story = ({label,icon}) => {
+  return html`
+  <fds-button-toggle-group>
+      <fds-button-toggle-filter label="Left" icon="accessibility"></fds-button-toggle-filter>
+      <fds-button-toggle-filter label="Middle" icon="exit_to_app" disabled></fds-button-toggle-filter>
+      <fds-button-toggle-filter label="Right" icon="camera"></fds-button-toggle-filter>
+  </fds-button-toggle-group>`;
+};
+
+
+export const Default: Story = Template.bind({});
+
+export const Dense: Story = Template.bind({});
 Dense.args = {
   dense: true,
-  rounded: true
 };
 
-export const Filter: Story = RoundedTemplate.bind({});
+export const Labels: Story = LabelTemplate.bind({});
+
+export const Icons: Story = IconsTemplate.bind({});
+
+export const Filter: Story = FilterTemplate.bind({});
 Filter.args = {
-  stacked: true,
-  filter: true
-};
-
-
-export const IconsDense: Story = FilterTemplate.bind({});
-IconsDense.args = {
-  dense: true,
-  rounded: true
-};
-
-
-export const Icons: Story = FilterTemplate.bind({});
-Icons.args = {
-  rounded: true
 };

@@ -4,24 +4,27 @@
 $icon-size: 24px;
 $icon-width: 24px;
 $icon-height: 24px;
-$tab-min-width: 90px;
-$tab-height: 48px;
-$tab-width: 100%;
+$toggle-min-width: 90px;
+$toggle-height: 48px;
+$toggle-width: 100%;
 
 :host {
   display: block;
-  border: 1px solid var(--fds-outline);
+  border: 1px solid;
   overflow: hidden;
+  @include fds.property(border-color, outline);
+  @include fds.mdc(theme-primary, primary);
 }
 
 .mdc-tab {
-  width: 100%;
-  height: var(--fds-tab-height, $tab-height);
-  min-width: var(--fds-tab-min-width, $tab-min-width);
+  width: var(--fds-toggle-width, $toggle-width);
+  height: var(--fds-toggle-height, $toggle-height);
+  min-width: var(--fds-toggle-min-width, $toggle-min-width);
 
   @include fds.typography(subtitle-2);
   @include fds.mdc(tab-text-label-color-default, text-medium-on-background);
-  @include fds.mdc(tab-color-default,text-medium-on-background);
+  @include fds.mdc(tab-color-default, text-medium-on-background);
+  letter-spacing: var(--fds-spacing-0, 0px);
 
   mwc-tab-indicator {
     display: none;
@@ -36,42 +39,10 @@ $tab-width: 100%;
 :host([disabled]) {
   pointer-events: none;
   .mdc-tab {
-    @include fds.mdc(tab-text-label-color-default,text-hint-on-background);
+    @include fds.mdc(tab-text-label-color-default, text-hint-on-background);
   }
 
   .mdc-tab__icon {
-    color: var(--fds-text-hint-on-background);
-  }
-}
-
-:host([dense]) {
-  overflow: hidden;
-  --fds-tab-height: 32px;
-  --fds-icon-size: 18px;
-  --fds-icon-height: 18px;
-  --fds-icon-width: 18px;
-}
-
-:host([stacked]) {
-  --fds-tab-min-width: 68px;
-  --fds-tab-height: 68px;
-  border: none;
-  border-radius: 0;
-  overflow: visible;
-  padding-bottom: 32px;
-  margin-left: 20px;
-
-  .mdc-tab {
-    border: 1px solid var(--fds-outline);
-    border-radius: 4px;
-    width: 68px;
-  }
-  .mdc-tab__text-label {
-    position: absolute;
-    bottom: -24px;
-  }
-  .mdc-tab--active {
-    border-color: var(--fds-primary);
-    background: var(--fds-primary-lighter);
+    @include fds.property(color, text-hint-on-background);
   }
 }

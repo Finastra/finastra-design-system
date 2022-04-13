@@ -1,35 +1,43 @@
+@use "@finastra/fds-theme" as fds;
+
 :host {
   display: block;
 }
+
 .mdc-tab-bar mwc-tab-scroller {
-  ::slotted(fds-button-toggle:first-child) {
-    margin-left: 0;
+  ::slotted(fds-button-toggle-filter:first-child) {
+    margin-left: var(--fds-spacing-0, 0px);
   }
 }
 
-:host([rounded]) {
 .mdc-tab-bar mwc-tab-scroller {
   ::slotted(fds-button-toggle:first-child) {
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
+    border-top-left-radius: var(--fds-spacing-4, 24px);
+    border-bottom-left-radius: var(--fds-spacing-4, 24px);
   }
 
   ::slotted(fds-button-toggle:last-child) {
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
+    border-top-right-radius: var(--fds-spacing-4, 24px);
+    border-bottom-right-radius: var(--fds-spacing-4, 24px);
   }
 
   ::slotted(fds-button-toggle[active]) {
-    border-color: var(--fds-primary);
-    color: var(--fds-primary);
+    @include fds.property(border-color, primary);
+    @include fds.property(color, primary);
   }
 
   ::slotted(fds-button-toggle[active]:first-child) {
-    background: var(--fds-primary-lighter);
-    border-color: var(--fds-primary);
+    @include fds.property(background, primary-lighter);
+    @include fds.property(border-color, primary);
   }
   ::slotted(fds-button-toggle[active]:last-child) {
-    background: var(--fds-primary-lighter);
+    @include fds.property(background, primary-lighter);
   }
 }
+
+:host([dense]) {
+  --fds-toggle-height: 32px;
+  --fds-icon-size: 18px;
+  --fds-icon-height: 18px;
+  --fds-icon-width: 18px;
 }

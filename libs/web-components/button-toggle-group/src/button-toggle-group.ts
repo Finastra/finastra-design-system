@@ -1,11 +1,15 @@
-import { customElement,property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import { TabBarBase } from '@material/mwc-tab-bar/mwc-tab-bar-base';
 
 import { styles } from './styles.css';
 
 /**
- * @cssprop [--fds-tab-min-width=30px] - tab min width
- * @cssprop [--fds-tab-height=48px] - tab height.
+ * @cssprop [--fds-toggle-min-width=30px] - tab min width
+ * @cssprop [--fds-toggle-height=48px] - tab height.
+ * @cssprop [--fds-toggle-width=100%] - tab width.
+ * @cssprop [--fds-icon-width=24px] - icon width.
+ * @cssprop [--fds-icon-height=24px] - icon height.
+ * @cssprop [--fds-icon-size=24px] - icon size.
  **/
 
 @customElement('fds-button-toggle-group')

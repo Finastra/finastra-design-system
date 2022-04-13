@@ -9,10 +9,10 @@
     "ButtonToggle"
   ],
   "license": "MIT",
-  "main": "dist/src/button-toggle.js",
-  "module": "dist/src/button-toggle.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/filter-styles.scss"
   },
   "dependencies": {
     "lit": "^2.0.0",

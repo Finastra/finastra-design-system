@@ -59,4 +59,8 @@ const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = fals
   return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fsd-horizontal-stepper>`;
 };
 
-export const Default: Story<HorizontalStepper> = HTemplate.bind({});
+const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false }) => {
+  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fsd-horizontal-stepper>`;
+};
+export const Default: Story = HTemplate.bind({});
+export const Vertical: Story = VTemplate.bind({});
