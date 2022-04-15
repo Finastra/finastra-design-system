@@ -21,13 +21,50 @@ export default {
   }
 } as Meta;
 
-const Template: Story<Slider> = ({value, min, max}) => {
-  return html`<fds-slider value=${value} min=${min} max=${max}></fds-slider>`;
+const Template: Story<Slider> = ({value, min, max, discrete, withTickMarks, step, disabled}) => {
+  return html`<fds-slider .value=${value} .min=${min} .max=${max} .step=${step} ?discrete=${discrete} ?withTickMarks=${withTickMarks} ?disabled=${disabled}></fds-slider>`;
 };
 
 export const Default: Story<Slider> = Template.bind({});
 Default.args = {
-  value: 25,
-  min: 10,
-  max: 50
+  discrete: false,
+  withTickMarks: false,
+  value: 2,
+  min: 0,
+  max: 8,
+  step: 1,
+  disabled: false
+}
+
+export const Discrete: Story<Slider> = Template.bind({});
+Discrete.args = {
+  discrete: true,
+  withTickMarks: false,
+  value: 6,
+  min: 0,
+  max: 8,
+  step: 1,
+  disabled: false
+}
+
+export const WithTicks: Story<Slider> = Template.bind({});
+WithTicks.args = {
+  discrete: true,
+  withTickMarks: true,
+  value: 4,
+  min: 0,
+  max: 8,
+  step: 1,
+  disabled: false
+}
+
+export const Disabled: Story<Slider> = Template.bind({});
+Disabled.args = {
+  discrete: false,
+  withTickMarks: false,
+  value: 2,
+  min: 0,
+  max: 8,
+  step: 1,
+  disabled: true
 }

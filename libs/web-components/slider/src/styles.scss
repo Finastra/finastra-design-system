@@ -9,4 +9,9 @@
 
 .mdc-slider {
     width: 100%;
+
+}
+
+.mdc-slider__value-indicator-text {
+    @include fds.text-color(text-high-on-dark);
 }
