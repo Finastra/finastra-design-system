@@ -2,9 +2,9 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
-    width: 200px;
     @include fds.mdc(theme-primary, primary);
     @include fds.mdc(theme-on-primary, on-primary);
+    width: 200px;
 }
 
 .mdc-slider {
