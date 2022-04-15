@@ -22,7 +22,7 @@ export default {
 } as Meta;
 
 const Template: Story<Slider> = ({value, min, max}) => {
-  return html`<fds-slider value=${value} ?min=${min} ?max=${max}></fds-slider>`;
+  return html`<fds-slider value=${value} min=${min} max=${max}></fds-slider>`;
 };
 
 export const Default: Story<Slider> = Template.bind({});

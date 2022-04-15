@@ -1,2 +1,12 @@
 @use '@material/mwc-slider/mwc-slider';
 @use '@finastra/fds-theme' as fds;
+
+:host {
+    width: 200px;
+    @include fds.mdc(theme-primary, primary);
+    @include fds.mdc(theme-on-primary, on-primary);
+}
+
+.mdc-slider {
+    width: 100%;
+}
