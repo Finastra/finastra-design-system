@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * @attr [value] - Current selected value.
+ * @attr [value=0] - Current selected value.
  * @attr [min=0] - Minimum selectable value of the slider.
  * @attr [max=100] - Maximum selectable value of the slider.
  * @attr [step=1] - The step to increase current value.
