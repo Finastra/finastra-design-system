@@ -1,7 +1,30 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-button/styles';
+
 :host {
   display: block;
+  @include fds.property(--mdc-theme-primary, primary);
+  --mdc-shape-small: 16px;
+  .mdc-button {
+    height: 24px;
+    }
 }
 
-p {
-  color: var(--fds-chip-text-color, blue);
+:host([selected]) {
+   @include fds.property(--mdc-button-outline-color, primary);
+   .mdc-button {
+    @include fds.property(background, primary-lighter);
+   }
+}
+
+:host([large]) {
+  .mdc-button {
+  height: 32px;
+  }
+}
+
+:host([dense]) {
+  .mdc-button {
+  height: 18px;
+  }
 }
