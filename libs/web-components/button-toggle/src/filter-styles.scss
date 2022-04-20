@@ -1,0 +1,25 @@
+@use './styles.scss';
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  --fds-button-toggle-height: 68px;
+  --fds-button-toggle-width: 68px;
+  --fds-button-toggle-min-width: 68px;
+  border: none;
+  padding-bottom: 32px;
+  margin-left: 20px;
+}
+
+.mdc-tab {
+  border: 1px solid;
+  border-radius: var(--fds-spacing-1, 4px);
+  @include fds.property(border-color, outline);
+}
+.mdc-tab__text-label {
+  position: absolute;
+  bottom: -24px;
+}
+.mdc-tab--active {
+  @include fds.property(border-color, primary);
+  @include fds.property(background, primary-lighter);
+}
