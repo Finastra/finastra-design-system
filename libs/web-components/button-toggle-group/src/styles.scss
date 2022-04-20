@@ -25,6 +25,7 @@
   ::slotted(fds-button-toggle[active]) {
     @include fds.property(border-color, primary);
     @include fds.property(color, primary);
+    @include fds.property(background, primary-lighter);
   }
 
   ::slotted(fds-button-toggle[active]:first-child) {
