@@ -9,30 +9,31 @@ import { styles } from './styles.css';
 export class Chip extends LitElement {
   static styles = styles;
   @property({type: String}) icon = '';
-  @property({type: String}) label = '';
-  @property({type: Boolean, reflect: true}) outlined = true;
-  @property({type: Boolean, reflect: true}) disabled = false;
-  @property({type: Boolean, reflect: true}) selected = false;
   @property({type: String}) trailingIcon = '';
+  @property({type: String}) label = '';
+  @property({type: Boolean}) outlined = true;
+  @property({type: Boolean}) disabled = false;
+  @property({type: Boolean}) selected = false;
+  @property({type: Boolean}) secondary = false;
   @property({type: Boolean}) dense = false;
   @property({type: Boolean}) large = false;
 
-  @property({type: Boolean}) expandContent = false;
   @queryAsync('mwc-ripple') ripple!: Promise<Ripple|null>;
 
   @state() protected shouldRenderRipple = false;
 
-    protected getRenderClasses(): ClassInfo {
-      return {
-        'mdc-button--outlined': this.outlined,
-        'mdc-button--dense': this.dense,
-      };
-    }
+  protected getRenderClasses(): ClassInfo {
+    return {
+      'mdc-button--outlined': this.outlined,
+      'mdc-button--dense': this.dense,
+    };
+  }
 
-    protected rippleHandlers = new RippleHandlers(() => {
-      this.shouldRenderRipple = true;
-      return this.ripple;
-    });
+  protected rippleHandlers = new RippleHandlers(() => {
+    this.shouldRenderRipple = true;
+    return this.ripple;
+  });
+
   render() {
     return html`
       <button
@@ -55,11 +56,6 @@ export class Chip extends LitElement {
           </slot>
         </span>
         <span class="mdc-button__label">${this.label}</span>
-        <span class="slot-container ${classMap({
-      flex: this.expandContent
-    })}">
-          <slot></slot>
-        </span>
         <span class="trailing-icon">
           <slot name="trailingIcon">
             ${this.trailingIcon ? this.renderIcon(this.trailingIcon) : ''}

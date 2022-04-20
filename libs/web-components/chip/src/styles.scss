@@ -27,6 +27,11 @@
       @include fds.property(color, primary);
     }
   }
+  .leading-icon .mdc-button__icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
 }
 
 :host([selected]) {
@@ -38,17 +43,35 @@
   .mdc-button__label {
     @include fds.property(color, primary);
   }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, primary);
+  }
 }
 
 :host([large]) {
   .mdc-button {
     height: 32px;
   }
+  .leading-icon .mdc-button__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+  }
 }
 
 :host([dense]) {
   .mdc-button {
     height: 18px;
+  }
+
+  .leading-icon {
+    height: 14px;
+  }
+  .leading-icon .mdc-button__icon {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
   }
 }
 
