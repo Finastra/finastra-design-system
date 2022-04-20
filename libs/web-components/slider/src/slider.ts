@@ -3,6 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
+ * @cssprop {color} [--fds-primary=#694ED6] - Color of the slider.
  * @attr [value=0] - Current selected value.
  * @attr [min=0] - Minimum selectable value of the slider.
  * @attr [max=100] - Maximum selectable value of the slider.
