@@ -10,6 +10,11 @@ import {
 } from '@nrwl/devkit';
 
 export default async function (host: Tree, schema: any) {
+
+  // Starts with fds- or fds
+  const regex=/^(fds\-|fds)/i
+  schema.name = schema.name.replace(regex,'');
+
   const normalizedNames = names(schema.name);
 
   generateFiles(host, joinPathFragments(__dirname, './files'), `./libs/web-components/${normalizedNames.fileName}`, {
