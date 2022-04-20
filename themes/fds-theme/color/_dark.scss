@@ -23,7 +23,7 @@ $on-gradient: #000000 !default;
 $properties: (
   primary: $primary,
   primary-lighter: color.change($primary, $alpha: 0.08),
-  secondary: $secondary,
+  secondary-lighter: color.change($secondary, $alpha: 0.08),
   background: $background,
   surface: $surface,
   outline: $outline,

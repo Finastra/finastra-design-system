@@ -3,28 +3,97 @@
 
 :host {
   display: block;
-  @include fds.property(--mdc-theme-primary, primary);
   --mdc-shape-small: 16px;
+  @include fds.property(--mdc-theme-primary, primary);
+  @include fds.property(--mdc-button-outline-color, text-disabled-on-background);
+  @include fds.property(--mdc-ripple-color, primary);
   .mdc-button {
     height: 24px;
+  }
+  .mdc-button:hover {
+    .mdc-button__label {
+      @include fds.property(color, primary);
     }
+  }
+
+  .mdc-button__label {
+    @include fds.typography(body-3);
+    @include fds.property(color, on-surface);
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, text-medium-on-background);
+    &:hover {
+      @include fds.property(color, primary);
+    }
+  }
 }
 
 :host([selected]) {
-   @include fds.property(--mdc-button-outline-color, primary);
-   .mdc-button {
+  @include fds.property(--mdc-button-outline-color, primary);
+
+  .mdc-button {
     @include fds.property(background, primary-lighter);
-   }
+  }
+  .mdc-button__label {
+    @include fds.property(color, primary);
+  }
 }
 
 :host([large]) {
   .mdc-button {
-  height: 32px;
+    height: 32px;
   }
 }
 
 :host([dense]) {
   .mdc-button {
-  height: 18px;
+    height: 18px;
+  }
+}
+
+:host([secondary]) {
+  --mdc-ripple-color: var(--fds-secondary);
+  @include fds.property(--mdc-ripple-color, secondary);
+  .mdc-button:hover {
+    @include fds.property(background, secondary-lighter);
+    .mdc-button__label {
+      @include fds.property(color, secondary);
+    }
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, text-medium-on-background);
+    &:hover {
+      @include fds.property(color, secondary);
+    }
+  }
+}
+
+:host([secondary][selected]) {
+  .mdc-button {
+    @include fds.property(background, secondary-lighter);
+    @include fds.property(--mdc-button-outline-color, secondary);
+    @include fds.property( --mdc-ripple-color, secondary);
+  }
+
+  .mdc-button__label {
+    @include fds.property(color, secondary);
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, secondary);
+  }
+}
+
+:host([disabled]) {
+  --mdc-button-disabled-ink-color: var(--fds-text-hint-on-background);
+  @include fds.property(--mdc-button-disabled-ink-color, text-hint-on-background);
+  .mdc-button {
+    @include fds.property(background, text-disabled-on-background);
+  }
+
+  .mdc-button__label {
+    @include fds.property(color, text-hint-on-background);
   }
 }

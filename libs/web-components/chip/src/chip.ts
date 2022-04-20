@@ -13,7 +13,7 @@ export class Chip extends LitElement {
   @property({type: Boolean, reflect: true}) outlined = true;
   @property({type: Boolean, reflect: true}) disabled = false;
   @property({type: Boolean, reflect: true}) selected = false;
-  @property({type: Boolean, attribute: 'trailingicon'}) trailingIcon = false;
+  @property({type: String}) trailingIcon = '';
   @property({type: Boolean}) dense = false;
   @property({type: Boolean}) large = false;
 
@@ -51,7 +51,7 @@ export class Chip extends LitElement {
         ${this.renderRipple()}
         <span class="leading-icon">
           <slot name="icon">
-            ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
+            ${this.icon ? this.renderIcon(this.icon) : ''}
           </slot>
         </span>
         <span class="mdc-button__label">${this.label}</span>
@@ -62,16 +62,16 @@ export class Chip extends LitElement {
         </span>
         <span class="trailing-icon">
           <slot name="trailingIcon">
-            ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
+            ${this.trailingIcon ? this.renderIcon(this.trailingIcon) : ''}
           </slot>
         </span>
       </button>`;
   }
 
-   renderIcon() {
+   renderIcon(icon:string) {
     return html`
     <mwc-icon class="mdc-button__icon">
-      ${this.icon}
+      ${icon}
     </mwc-icon>`;
   }
 
