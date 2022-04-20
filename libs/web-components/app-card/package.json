@@ -1,7 +1,7 @@
 {
   "name": "@finastra/app-card",
   "displayName": "App Card",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "App Card Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/base-card": "0.0.24",
+    "@finastra/base-card": "0.0.25",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
