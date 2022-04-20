@@ -18,7 +18,8 @@
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
     "@material/mwc-ripple": "0.25.3",
-    "@material/mwc-icon": "0.25.3"
+    "@material/mwc-icon": "0.25.3",
+    "@material/button": "13.0.0"
   },
   "publishConfig": {
     "access": "public"
