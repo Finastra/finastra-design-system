@@ -99,6 +99,15 @@
       "path": "select"
     },
     {
+      "path": "slider"
+    },
+    {
+      "path": "button-toggle"
+    },
+    {
+      "path": "button-toggle-group"
+    },
+    {
       "path": "chip"
     }
   ]
