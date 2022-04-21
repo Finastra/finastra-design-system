@@ -1,0 +1,45 @@
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: block;
+  padding: 2px;
+}
+
+.mdc-tab-bar mwc-tab-scroller {
+  ::slotted(fds-button-toggle-filter:first-child) {
+    margin-left: var(--fds-spacing-0, 0px);
+  }
+}
+
+.mdc-tab-bar mwc-tab-scroller {
+  ::slotted(fds-button-toggle:first-child) {
+    border-top-left-radius: var(--fds-spacing-4, 24px);
+    border-bottom-left-radius: var(--fds-spacing-4, 24px);
+  }
+
+  ::slotted(fds-button-toggle:last-child) {
+    border-top-right-radius: var(--fds-spacing-4, 24px);
+    border-bottom-right-radius: var(--fds-spacing-4, 24px);
+  }
+
+  ::slotted(fds-button-toggle[active]) {
+    @include fds.property(border-color, primary);
+    @include fds.property(color, primary);
+    @include fds.property(background, primary-lighter);
+  }
+
+  ::slotted(fds-button-toggle[active]:first-child) {
+    @include fds.property(background, primary-lighter);
+    @include fds.property(border-color, primary);
+  }
+  ::slotted(fds-button-toggle[active]:last-child) {
+    @include fds.property(background, primary-lighter);
+  }
+}
+
+:host([dense]) {
+  --fds-button-toggle-height: 32px;
+  --fds-icon-size: 18px;
+  --fds-icon-height: 18px;
+  --fds-icon-width: 18px;
+}

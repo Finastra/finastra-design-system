@@ -50,6 +50,7 @@
     *::selection {
       background: mat.get-color-from-palette($background, selected-text);
       color: mat.get-color-from-palette($foreground, text);
+      -webkit-text-fill-color: mat.get-color-from-palette($foreground, text);
     }
   }
 

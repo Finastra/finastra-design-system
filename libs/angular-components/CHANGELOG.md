@@ -1,31 +1,34 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.1.0](https://github.com/finastra/finastra-design-system/compare/v0.0.24...v3.1.0) (2022-04-13)
+
+### Features
+
+- **filter:** Multiselect filter tags ([#680](https://github.com/finastra/finastra-design-system/issues/680)) ([e4ce21c](https://github.com/finastra/finastra-design-system/commit/e4ce21c8ec574aa2f49dc62c093313db96995831))
 
 ### [3.0.1](https://github.com/finastra/finastra-design-system/compare/v3.0.0...v3.0.1) (2022-03-10)
 
 ## [3.0.0](https://github.com/finastra/finastra-design-system/compare/v0.0.20...v3.0.0) (2022-03-01)
 
-
 ### Features
 
-* **changelog:** use semantic colors from theme ([#608](https://github.com/finastra/finastra-design-system/issues/608)) ([651eb29](https://github.com/finastra/finastra-design-system/commit/651eb29eb8c887d24d3b1dc8e03fa4e2c8c5c04b))
+- **changelog:** use semantic colors from theme ([#608](https://github.com/finastra/finastra-design-system/issues/608)) ([651eb29](https://github.com/finastra/finastra-design-system/commit/651eb29eb8c887d24d3b1dc8e03fa4e2c8c5c04b))
 
 ## [2.7.0](https://github.com/finastra/finastra-design-system/compare/v2.6.1...v2.7.0) (2022-02-18)
 
-
 ### Features
 
-* **theme:** add success color to theme ([#596](https://github.com/finastra/finastra-design-system/issues/596)) ([b2fa854](https://github.com/finastra/finastra-design-system/commit/b2fa85458ee0d78040de137f58289ffd9b8e54e1))
+- **theme:** add success color to theme ([#596](https://github.com/finastra/finastra-design-system/issues/596)) ([b2fa854](https://github.com/finastra/finastra-design-system/commit/b2fa85458ee0d78040de137f58289ffd9b8e54e1))
 
 ### [2.6.1](https://github.com/finastra/finastra-design-system/compare/v0.0.18...v2.6.1) (2022-02-11)
 
 ## [2.6.0](https://github.com/finastra/finastra-design-system/compare/v0.0.16...v2.6.0) (2022-01-25)
 
-
 ### Features
 
-* **changelog:** Improve design ([#554](https://github.com/finastra/finastra-design-system/issues/554)) ([89f942b](https://github.com/finastra/finastra-design-system/commit/89f942b8b2751a7633fb536be04e94312bb1ea0b))
+- **changelog:** Improve design ([#554](https://github.com/finastra/finastra-design-system/issues/554)) ([89f942b](https://github.com/finastra/finastra-design-system/commit/89f942b8b2751a7633fb536be04e94312bb1ea0b))
 
 ## [2.5.0](https://github.com/finastra/finastra-design-system/compare/v0.0.13...v2.5.0) (2021-12-14)
 
@@ -33,19 +36,17 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [2.4.0](https://github.com/finastra/finastra-design-system/compare/v0.0.3...v2.4.0) (2021-11-05)
 
-
 ### Bug Fixes
 
-* **filter-tag:** display issue ([#447](https://github.com/finastra/finastra-design-system/issues/447)) ([c5db0bb](https://github.com/finastra/finastra-design-system/commit/c5db0bbe31e24305b4769bb4ea4f9c0da29088d5))
+- **filter-tag:** display issue ([#447](https://github.com/finastra/finastra-design-system/issues/447)) ([c5db0bb](https://github.com/finastra/finastra-design-system/commit/c5db0bbe31e24305b4769bb4ea4f9c0da29088d5))
 
 ### [2.3.1](https://github.com/finastra/finastra-design-system/compare/v2.3.0...v2.3.1) (2021-10-01)
 
 ## [2.3.0](https://github.com/finastra/finastra-design-system/compare/v2.2.1...v2.3.0) (2021-09-28)
 
-
 ### Bug Fixes
 
-* **account-card:** add a selected input ([#400](https://github.com/finastra/finastra-design-system/issues/400)) ([03fc023](https://github.com/finastra/finastra-design-system/commit/03fc023091c9c73b04799ee13376db62edf47bda))
+- **account-card:** add a selected input ([#400](https://github.com/finastra/finastra-design-system/issues/400)) ([03fc023](https://github.com/finastra/finastra-design-system/commit/03fc023091c9c73b04799ee13376db62edf47bda))
 
 ### [2.2.1](https://github.com/finastra/finastra-design-system/compare/v2.2.0...v2.2.1) (2021-09-23)
 
