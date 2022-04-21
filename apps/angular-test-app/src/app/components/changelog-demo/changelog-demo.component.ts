@@ -18,7 +18,7 @@ export class ChangelogDemoComponent implements OnInit {
         version: '2.0.0',
         date: '2020-07-10',
         categories: ['UX', 'Documentation'],
-        categoriesLinks: ["https://youtube.com", "https://google.com"],
+        categoriesLinks: ['https://youtube.com', 'https://google.com'],
         changes: [
           {
             category: 'UX',
@@ -28,14 +28,12 @@ export class ChangelogDemoComponent implements OnInit {
           },
           {
             category: 'UX',
-            description:
-              '<span>Lorem iit amet, consectetur adipiscing elipsum dolor sit amet, consectetur adipiscing elit. </span>',
+            description: '<span>Lorem iit amet, consectetur adipiscing elipsum dolor sit amet, consectetur adipiscing elit. </span>',
             type: 'Bugfix'
           },
           {
             category: 'Documentation',
-            description:
-              '<span>Lorem ipsum dolor sit amet, consecit amet, consectetur adipiscing elitetur adipiscing elit. </span>',
+            description: '<span>Lorem ipsum dolor sit amet, consecit amet, consectetur adipiscing elitetur adipiscing elit. </span>',
             type: 'Deprecated'
           }
         ]
@@ -48,8 +46,7 @@ export class ChangelogDemoComponent implements OnInit {
         changes: [
           {
             category: 'UX',
-            description:
-              '<span>Lorem ipsum dolor sit amet, consectetur adipiscing eliit amet, consectetur adipiscing elit. </span>',
+            description: '<span>Lorem ipsum dolor sit amet, consectetur adipiscing eliit amet, consectetur adipiscing elit. </span>',
             type: 'Update'
           },
           {
