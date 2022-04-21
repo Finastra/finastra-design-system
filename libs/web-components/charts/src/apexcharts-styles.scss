@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.apexcharts-legend-series {
+  cursor: pointer;
+  line-height: normal;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  .apexcharts-legend-text {
+    color: rgba(0, 0, 0, 0.75);
+  }
+}

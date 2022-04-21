@@ -1,0 +1,48 @@
+<script type="module" src="node_modules/@finastra/charts/dist/src/pie-chart.js"></script>
+<div class="main-content">
+    <div>Default</div>
+
+    <div class="card">
+        <fds-pie-chart id="pieChart" width="380"></fds-pie-chart>
+    </div>
+    <div>Disable selection</div>
+    <div class="card">        
+        <fds-pie-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-pie-chart>
+    </div>
+
+    <div>primary</div>
+    <div class="card">        
+        <fds-pie-chart color="primary" id="pieChart"  width="380"></fds-pie-chart>
+    </div>
+
+    <div>secondary</div>
+    <div class="card">        
+        <fds-pie-chart color="secondary" id="pieChart"  width="380"></fds-pie-chart>
+    </div>
+
+    <div>dark</div>
+    <div class="card">        
+        <fds-pie-chart color="dark" id="pieChart"  width="380"></fds-pie-chart>
+    </div>
+</div>
+<script>
+    const pieCharts = document.querySelectorAll('#pieChart');
+    pieCharts.forEach((pieChart) => {
+        pieChart.data = [44, 55, 13, 43, 22]
+        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
+        
+    })
+</script>
+<style>
+    .card {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        width: 400px
+    }
+</style>

@@ -312,6 +312,18 @@
       },
       "tags": []
     },
+    "charts": {
+      "root": "libs/web-components/charts",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/charts/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "checkbox": {
       "root": "libs/web-components/checkbox",
       "architect": {
