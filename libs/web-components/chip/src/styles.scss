@@ -7,6 +7,7 @@
   @include fds.property(--mdc-theme-primary, primary);
   @include fds.property(--mdc-button-outline-color, text-disabled-on-background);
   @include fds.property(--mdc-ripple-color, primary);
+
   .mdc-button {
     height: 24px;
   }
@@ -58,6 +59,9 @@
     height: 24px;
     font-size: 24px;
   }
+  .mdc-button__label {
+    @include fds.typography(body-2);
+  }
 }
 
 :host([dense]) {
@@ -76,7 +80,6 @@
 }
 
 :host([secondary]) {
-  --mdc-ripple-color: var(--fds-secondary);
   @include fds.property(--mdc-ripple-color, secondary);
   .mdc-button:hover {
     @include fds.property(background, secondary-lighter);
@@ -110,13 +113,12 @@
 }
 
 :host([disabled]) {
-  --mdc-button-disabled-ink-color: var(--fds-text-hint-on-background);
   @include fds.property(--mdc-button-disabled-ink-color, text-hint-on-background);
   .mdc-button {
     @include fds.property(background, text-disabled-on-background);
   }
 
   .mdc-button__label {
-    @include fds.property(color, text-hint-on-background);
+    @include fds.property(color, text-medium-on-background);
   }
 }

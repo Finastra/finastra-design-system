@@ -3,13 +3,12 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '@finastra/chip';
 import type { Chip } from '@finastra/chip';
+import { argTypes, cssprops } from './custom-element.json';
 
 export default {
   title: 'Components/Chip',
   component: 'fds-chip',
-  args: {
-    name: 'World'
-  },
+  argTypes,
   parameters: {
     docs: {
       description: { component: README }
@@ -18,6 +17,7 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A1746'
     },
+    cssprops
   }
 } as Meta;
 
@@ -73,4 +73,5 @@ Icons.args = {
   secondary: true,
   large:true,
   icon: "check",
+  trailingIcon: "cancel"
 };

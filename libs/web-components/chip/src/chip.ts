@@ -1,30 +1,54 @@
 import { LitElement, html } from 'lit';
 import { customElement, eventOptions, property, queryAsync, state } from 'lit/decorators.js';
-import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {RippleHandlers} from '@material/mwc-ripple/ripple-handlers';
-import {Ripple} from '@material/mwc-ripple/mwc-ripple';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
+import { RippleHandlers } from '@material/mwc-ripple/ripple-handlers';
+import { Ripple } from '@material/mwc-ripple/mwc-ripple';
 import { styles } from './styles.css';
 
 @customElement('fds-chip')
 export class Chip extends LitElement {
   static styles = styles;
-  @property({type: String}) icon = '';
-  @property({type: String}) trailingIcon = '';
-  @property({type: String}) label = '';
-  @property({type: Boolean}) outlined = true;
-  @property({type: Boolean}) disabled = false;
-  @property({type: Boolean}) selected = false;
-  @property({type: Boolean}) secondary = false;
-  @property({type: Boolean}) dense = false;
-  @property({type: Boolean}) large = false;
 
-  @queryAsync('mwc-ripple') ripple!: Promise<Ripple|null>;
+  /**
+   * Chip label
+  */
+  @property({ type: String }) label = '';
+  /**
+   * Material design icon name to display in the left side of the label
+  */
+  @property({ type: String }) icon = '';
+  /**
+   * Material design trailing icon name to display in the right side of the label
+  */
+  @property({ type: String }) trailingIcon = '';
+  /**
+   * Disable a chip.
+  */
+  @property({ type: Boolean }) disabled = false;
+  /**
+   * Select a chip
+  */
+  @property({ type: Boolean }) selected = false;
+  /**
+   * Use Secondary color.
+  */
+  @property({ type: Boolean }) secondary = false;
+  /**
+   * Make the chip smaller.
+  */
+  @property({ type: Boolean }) dense = false;
+  /**
+   * Make the chip bigger.
+  */
+  @property({ type: Boolean }) large = false;
+
+  @queryAsync('mwc-ripple') ripple!: Promise<Ripple | null>;
 
   @state() protected shouldRenderRipple = false;
 
   protected getRenderClasses(): ClassInfo {
     return {
-      'mdc-button--outlined': this.outlined,
+      'mdc-button--outlined': true,
       'mdc-button--dense': this.dense,
     };
   }
@@ -36,19 +60,11 @@ export class Chip extends LitElement {
 
   render() {
     return html`
-      <button
-          id="button"
-          class="mdc-button ${classMap(this.getRenderClasses())}"
-          ?disabled="${this.disabled}"
-          ?selected="${this.selected}"
-          @focus="${this.handleRippleFocus}"
-          @blur="${this.handleRippleBlur}"
-          @mousedown="${this.handleRippleActivate}"
-          @mouseenter="${this.handleRippleMouseEnter}"
-          @mouseleave="${this.handleRippleMouseLeave}"
-          @touchstart="${this.handleRippleActivate}"
-          @touchend="${this.handleRippleDeactivate}"
-          @touchcancel="${this.handleRippleDeactivate}">
+      <button id="button" class="mdc-button ${classMap(this.getRenderClasses())}" ?disabled="${this.disabled}"
+        ?selected="${this.selected}" @focus="${this.handleRippleFocus}" @blur="${this.handleRippleBlur}"
+        @mousedown="${this.handleRippleActivate}" @mouseenter="${this.handleRippleMouseEnter}"
+        @mouseleave="${this.handleRippleMouseLeave}" @touchstart="${this.handleRippleActivate}"
+        @touchend="${this.handleRippleDeactivate}" @touchcancel="${this.handleRippleDeactivate}">
         ${this.renderRipple()}
         <span class="leading-icon">
           <slot name="icon">
@@ -64,19 +80,18 @@ export class Chip extends LitElement {
       </button>`;
   }
 
-   renderIcon(icon:string) {
+  renderIcon(icon: string) {
     return html`
     <mwc-icon class="mdc-button__icon">
       ${icon}
     </mwc-icon>`;
   }
 
-   renderRipple() {
-    return  html`<mwc-ripple class="ripple" .disabled="${
-            this.disabled}"></mwc-ripple>`;
+  renderRipple() {
+    return html`<mwc-ripple class="ripple" .disabled="${this.disabled}"></mwc-ripple>`;
   }
 
-  @eventOptions({passive: true})
+  @eventOptions({ passive: true })
   protected handleRippleActivate(evt?: Event) {
     const onUp = () => {
       window.removeEventListener('mouseup', onUp);
