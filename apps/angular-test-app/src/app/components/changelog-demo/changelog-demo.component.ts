@@ -18,6 +18,7 @@ export class ChangelogDemoComponent implements OnInit {
         version: '2.0.0',
         date: '2020-07-10',
         categories: ['UX', 'Documentation'],
+        categoriesLinks: ["https://youtube.com", "https://google.com"],
         changes: [
           {
             category: 'UX',
@@ -43,6 +44,7 @@ export class ChangelogDemoComponent implements OnInit {
         version: '2.0.0',
         date: '2020-07-10',
         categories: ['UX', 'Documentation'],
+        categoriesLinks: [],
         changes: [
           {
             category: 'UX',
@@ -62,6 +64,7 @@ export class ChangelogDemoComponent implements OnInit {
         version: '1.9.0',
         date: '2020-06-12',
         categories: ['Documentation'],
+        categoriesLinks: [],
         changes: [
           {
             category: 'Documentation',

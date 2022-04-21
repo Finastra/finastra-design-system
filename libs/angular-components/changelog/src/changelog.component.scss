@@ -5,6 +5,7 @@
 
 $bullet-space: 8%;
 $bullet-center: math.div($bullet-space, 2);
+$bullet-size: 20px;
 
 @mixin changelog-layout($size) {
   .version {
@@ -52,9 +53,6 @@ $bullet-center: math.div($bullet-space, 2);
       height: 18px;
       left: calc(#{-$bullet-center} - 19px);
     }
-    @else if $size == 'none' {
-      top: fds.$uxg-spacing-1;
-    }
     @else {
       top: -39.5px;
       width: 25px;
@@ -79,7 +77,7 @@ $bullet-center: math.div($bullet-space, 2);
       bottom: -44px;
     } @else if $size == 'none' {
       top: fds.$uxg-spacing-3;
-      bottom: -48px;
+      bottom: -(fds.$uxg-spacing-4);
     } @else {
       top: -35px;
       bottom: -35px;
@@ -87,11 +85,7 @@ $bullet-center: math.div($bullet-space, 2);
   }
 
   .release-detail::after {
-    @if $size == 'xs' {
-      bottom: -44px;
-    } @else {
       bottom: -35px;
-    }
     @if $size == 'none' {
       top: fds.$uxg-spacing-3;
       bottom: -48px;
@@ -114,10 +108,12 @@ uxg-changelog {
 
   .changelog-container {
     margin: fds.$uxg-spacing-5;
+    margin-left: 0;
 
     .version {
       min-width: 100px;
       text-align: right;
+      margin-top: 32px;
 
       &.none {
         width: 0;
@@ -133,7 +129,8 @@ uxg-changelog {
       cursor: unset;
       height: unset;
       margin-bottom: fds.$uxg-spacing-4;
-      padding: fds.$uxg-spacing-4;
+      padding: fds.$uxg-spacing-4 fds.$uxg-spacing-5;
+      margin-right: fds.$uxg-spacing-4;
     }
 
     .category {
@@ -161,10 +158,10 @@ uxg-changelog {
     .first-release::before {
       content: '';
       position: absolute;
-      width: 28px;
-      height: 28px;
-      top: fds.$uxg-spacing-1;
-      left: calc(#{-$bullet-center} - 24px);
+      width: $bullet-size;
+      height: $bullet-size;
+      top: 32px;
+      left: calc(#{-$bullet-center} - #{$bullet-size});
       border-radius: 50%;
       z-index: 1;
     }
@@ -175,7 +172,7 @@ uxg-changelog {
       position: absolute;
       width: 0;
       height: 0;
-      top: fds.$uxg-spacing-3;
+      top: 32px;
       left: calc(#{-$bullet-center} - 13px);
       border-radius: 50%;
       z-index: 1;
@@ -185,8 +182,8 @@ uxg-changelog {
       content: '';
       position: absolute;
       width: 2px;
-      top: fds.$uxg-spacing-3;
-      bottom: -(fds.$uxg-spacing-5);
+      top: 32px;
+      bottom: -60px;
       left: calc(#{-$bullet-center} - 6px);
     }
 
@@ -194,8 +191,8 @@ uxg-changelog {
       content: '';
       position: absolute;
       width: 2px;
-      top: fds.$uxg-spacing-3;
-      bottom: -(fds.$uxg-spacing-5);
+      top: 32px;
+      bottom: -60px;
       left: calc(#{-$bullet-center} - 6px);
     }
 
@@ -208,9 +205,6 @@ uxg-changelog {
     .changelog-container {
       margin: fds.$uxg-spacing-4;
       @include changelog-layout('sm');
-      .layout-none {
-        @include changelog-layout('none');
-      }
     }
   }
 
@@ -218,8 +212,8 @@ uxg-changelog {
     .changelog-container {
       margin: fds.$uxg-spacing-4 fds.$uxg-spacing-2;
       @include changelog-layout('xs');
-      .layout-none {
-        @include changelog-layout('none');
+      .version  {
+        margin-top: 0;
       }
     }
 

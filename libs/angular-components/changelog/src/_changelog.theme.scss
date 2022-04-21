@@ -11,6 +11,8 @@
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
   $elevation-color: map.get($foreground, elevation);
+  $foreground: map.get($theme, foreground);
+  $divider: fds.get-color-from-palette($foreground, divider, 0.07);
 
   uxg-changelog {
     .title {
@@ -43,6 +45,11 @@
       }
     }
 
+    
+    .category {
+      color: fds.get-color-from-palette($primary, default);
+    }
+
     .title:before{
       content: "";
       position: absolute;
@@ -50,8 +57,7 @@
       right: 0;
       top: 0;
       height: 250px;
-      background-image: linear-gradient(
-        90deg, darken(fds.get-color-from-palette($primary, 800), 20% ), darken(fds.get-color-from-palette($primary, 800), 10% ) 40%, darken(fds.get-color-from-palette($secondary,  800),15%) 80%);
+      background-image: linear-gradient(90deg, #0a0014 0%, #23055a 40%, #50015a 80%, #4b0254 100%);
     }
 
     .title:after {
@@ -60,22 +66,34 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        left: 20%;
         background-repeat: no-repeat;
-        transform: scaleY(-1);
         background-position-x: 55%;
-        background-position-y: 30%;
+    }
+
+    a {
+      color: map.get($primary, default);
+      text-decoration: none;
+      &:hover {
+        color: map.get($secondary, default);
+      }
+    }
+
+    .change-detail:not(.last-change) {
+      border-bottom: 1px solid $divider;
+
     }
 
     .changelog-container {
       .release-detail,
       .last-release,
       .first-release {
+        border-radius: 6px;
         background-color: fds.get-color-from-palette($background, card);
-        @include mat.elevation(4, $elevation-color);
+        @include mat.elevation(4, $elevation-color, 0.6);
       }
 
       .change {
+
         .new {
           color: map.get($primary, default);
           border: 1px solid map.get($primary, default);
@@ -140,14 +158,18 @@
     }
 
     .date {
-      @include mat.typography-level($config, h6);
+      @include mat.typography-level($config, subtitle-1);
       white-space: nowrap;
       margin: 0;
     }
   
     .version-id {
-      @include mat.typography-level($config, h5);
+      @include mat.typography-level($config, subtitle-1);
       margin-bottom: 0;
+    }
+
+    .category {
+      @include mat.typography-level($config, h4);
     }
 
     @include flex-layout.layout-bp(xs) {
