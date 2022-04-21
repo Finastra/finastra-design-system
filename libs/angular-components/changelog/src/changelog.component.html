@@ -24,7 +24,7 @@
     <div [ngClass]="{ 'first-release': first, 'last-release': last, 'release-detail': !first && !last }" fxFlex="90" fxFlex.md="90">
       <ng-container *ngFor="let category of release.categories; let i = index">
         <div class="category">
-          <a href="{{ release.categoriesLinks[i] }}" target="_blank" class="mat-button-base">{{ category }}</a>
+          <a href="{{ release.categoriesLinks[i] }}" rel="noreferrer" target="_blank" class="mat-button-base">{{ category }}</a>
         </div>
 
         <div *ngFor="let change of release.changes; first as firstChange; last as lastChange" class="change">
