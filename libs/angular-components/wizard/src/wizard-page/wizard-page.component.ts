@@ -1,4 +1,4 @@
-import { Component, ContentChild, EventEmitter, OnInit, Output, TemplateRef, Input } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { ButtonHubService } from '../services/button-hub.service';
 import { PageCollectionService } from '../services/page-collection.service';
 import { WizardNavigationService } from '../services/wizard-navigation.service';
@@ -114,5 +114,16 @@ export class UxgWizardPageComponent {
 
   public set showTitle(val: boolean) {
     this._showTitle = val;
+  }
+
+  private _completed: boolean;
+
+  public get completed(): boolean {
+    this._completed ?? this.pageCollection.getPageIndex(this) < this.pageCollection.getPageIndex(this.navService.currentPage);
+  }
+
+  @Input('uxgWizardPageCompleted')
+  public set completed(value: boolean) {
+    this._completed = value;
   }
 }

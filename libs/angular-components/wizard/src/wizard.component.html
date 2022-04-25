@@ -84,13 +84,13 @@
         <div
           class="step"
           [ngClass]="{
-            done: pageCollection.getPageIndex(page) < currentPageId,
+            done: page.completed,
             active: page.current,
             disabled: page.disabled
           }"
           (click)="onStepClick(page)"
         >
-          <ng-container *ngIf="pageCollection.getPageIndex(page) < currentPageId; else showIndex">
+          <ng-container *ngIf="page.completed; else showIndex">
             <mat-icon>checkmark</mat-icon>
           </ng-container>
           <ng-template #showIndex>
