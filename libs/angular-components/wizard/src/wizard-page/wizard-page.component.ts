@@ -119,7 +119,7 @@ export class UxgWizardPageComponent {
   private _completed: boolean;
 
   public get completed(): boolean {
-    this._completed ?? this.pageCollection.getPageIndex(this) < this.pageCollection.getPageIndex(this.navService.currentPage);
+    return this._completed ?? this.pageCollection.getPageIndex(this) < this.pageCollection.getPageIndex(this.navService.currentPage);
   }
 
   @Input('uxgWizardPageCompleted')
