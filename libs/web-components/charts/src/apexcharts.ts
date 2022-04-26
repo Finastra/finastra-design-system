@@ -173,7 +173,8 @@ export class ApexChartsWrapper extends LitElement {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
         width: this.width,
-        events: {}
+        events: {},
+        foreColor: "#fffff"
       },
       tooltip: {
         fillSeriesColor: false,
@@ -215,6 +216,7 @@ export class ApexChartsWrapper extends LitElement {
         fontWeight: 300,
       },
       ...this.getColor(),
+      ...this.getStrokeColor(),
       series: this.series
     })  
     const config = this.extend(this.options, newOptions);
@@ -228,7 +230,23 @@ export class ApexChartsWrapper extends LitElement {
     }
     return this.init();
   }
-    
+  
+  getStrokeColor() {
+    if (this.theme === "dark") {
+      return {
+        stroke: {
+          colors: '#242424',
+        }
+      }
+    } 
+
+    return {
+      stroke: {
+        colors: '#FFFFFF',
+      }
+    }
+  }
+  
   getDataLabelColor(): string[] {
     switch (this.color) {
       case 'sequential-1':

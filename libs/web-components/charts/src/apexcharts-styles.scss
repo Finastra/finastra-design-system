@@ -1,3 +1,5 @@
+@use '@finastra/fds-theme' as fds;
+
 :host {
   display: block;
 }
@@ -10,6 +12,6 @@
   align-items: center;
 
   .apexcharts-legend-text {
-    color: rgba(0, 0, 0, 0.75);
+    @include fds.text-color(on-surface);
   }
 }

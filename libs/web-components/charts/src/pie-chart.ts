@@ -96,7 +96,6 @@ export class PieChart extends ApexChartsWrapper {
             } else {
                 this.$el.classList.remove('selected')
             }
-            console.log('vinh', selected)
         }, 0);
         
     }

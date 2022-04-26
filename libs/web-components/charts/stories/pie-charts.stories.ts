@@ -5,6 +5,7 @@ import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 const demoData = [44, 55, 13, 43, 22]
 const demoLabels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
+
 export default {
   title: 'Components/Charts/PieChart',
   component: 'fds-pie-chart',
@@ -119,5 +120,6 @@ export default {
 const Template: Story<PieChart> = ({legendHorizontalAlign = "center",legendPosition="bottom", hideDataLabel=false, width="300px", color="categorical", theme="light", height="300px", data = demoData, labels = demoLabels }) => {
   return html`<fds-pie-chart  .legendHorizontalAlign=${legendHorizontalAlign}  .legendPosition=${legendPosition} ?hide-data-label=${hideDataLabel} theme=${theme} color=${color} width=${width} height=${height}  .data=${data} .labels=${labels} ></fds-pie-chart>`;
 };
+
 
 export const Default: Story<PieChart> = Template.bind({});
