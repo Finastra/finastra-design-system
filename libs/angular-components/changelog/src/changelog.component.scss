@@ -49,9 +49,9 @@ $bullet-size: 20px;
   .first-release::before {
     @if $size == 'xs' {
       top: -36px;
-      width: 18px;
-      height: 18px;
-      left: calc(#{-$bullet-center} - 19px);
+      width: 14px;
+      height: 14px;
+      left: calc(#{-$bullet-center} - 17px);
     }
     @else {
       top: -39.5px;
