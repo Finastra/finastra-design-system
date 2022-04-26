@@ -12,6 +12,7 @@
   $background: map.get($theme, background);
   $elevation-color: map.get($foreground, elevation);
   $foreground: map.get($theme, foreground);
+  $labels_background_opacity:  0.03;
   $divider: fds.get-color-from-palette($foreground, divider, 0.07);
 
   uxg-changelog {
@@ -97,22 +98,22 @@
         .new {
           color: map.get($primary, default);
           border: 1px solid map.get($primary, default);
-          background-color: fds.get-color-from-palette($primary, 300, 0.1);
+          background-color: fds.get-color-from-palette($primary, default, $labels_background_opacity);
         }
         .update {
           color: map.get($success, default);
           border: 1px solid map.get($success, default);
-          background-color: fds.get-color-from-palette($success, default, 0.017);
+          background-color: fds.get-color-from-palette($success, default, $labels_background_opacity);
         }
         .bugfix {
           color: map.get($error, default);
           border: 1px solid map.get($error, default);
-          background-color: fds.get-color-from-palette($error, default, 0.096);
+          background-color: fds.get-color-from-palette($error, default,  $labels_background_opacity);
         }
         .deprecated {
           color: fds.get-color-from-palette($foreground, text, 0.8);
           border: 1px solid fds.get-color-from-palette($foreground, text, 0.8);
-          background-color: fds.get-color-from-palette(fds.$mat-grey, 400, 0.09);
+          background-color: fds.get-color-from-palette(fds.$mat-grey, 400,  $labels_background_opacity);
         }
       }
 
