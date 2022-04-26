@@ -20,7 +20,8 @@ export type ChartType =  'line'
 | 'rangeBar'
 | 'treemap'
 
-export type COLOR = 'primary' | 'secondary' | 'dark' | 'light'
+export type COLOR = 'semantic-1' | 'semantic-2' | 'semantic-3' | 'categorical' | 'focus-1' | 'focus-2' | 'focus-1-angular' | 'focus-2-angular'  | 'sequential-1' | 'sequential-2'
+export type THEME = 'dark' | 'light'
 
 @customElement('fds-apexcharts')
 export class ApexChartsWrapper extends LitElement {
@@ -61,7 +62,18 @@ export class ApexChartsWrapper extends LitElement {
     this.refresh();
   }
   
-  private _color: COLOR = 'light';
+  private _theme: THEME = 'light';
+  @property({type: String})
+  public get theme(): THEME {
+    return this._theme;
+  }
+  public set theme(value: THEME) {
+    this._theme = value;
+    this.refresh();
+  }
+
+   
+  private _color: COLOR = 'categorical';
   @property({type: String})
   public get color(): COLOR {
     return this._color;
@@ -202,7 +214,7 @@ export class ApexChartsWrapper extends LitElement {
         fontFamily: 'Roboto, sans-serif',
         fontWeight: 300,
       },
-      colors: this.getColor(),
+      ...this.getColor(),
       series: this.series
     })  
     const config = this.extend(this.options, newOptions);
@@ -219,32 +231,427 @@ export class ApexChartsWrapper extends LitElement {
     
   getDataLabelColor(): string[] {
     switch (this.color) {
-      case 'dark':
-        return ['#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF']
-      case 'light':
-        return ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000']
-      case 'primary':
+      case 'sequential-1':
         return ['#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
-      case 'secondary':
+      case 'sequential-2':
         return ['#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
-      default:
-        return []
+    }
+    if (this.theme === 'dark') {
+        return ['#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF']
+    } else {
+        return ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000']
     }
   }
   
-  getColor(): string[] {
-    switch (this.color) {
-      case 'dark':
-        return ['#8A72E0', '#F470B2', '#F1A423', '#FFDD22', '#97D9E6', '#505050']
-      case 'light':
-        return ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5']
-      case 'primary':
-        return ['#EDDDFF', '#CCB9F5', '#AB96EB', '#8A72E0', '#694ED6', '#5945B8', '#4A3B99', '#3A327B', '#2A285C']
-      case 'secondary':
-        return ['#FFD4FF', '#FBB3E5', '#F891CC', '#F470B2', '#F04E98', '#CA3F7F', '#A43067', '#7D214E', '#571235']
-      default:
-        return []
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getColor(): any {
+    if (this.theme === 'light') {
+      switch(this.color) {
+        case 'semantic-1':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#008744',
+                shadeTo: 'light',
+                shadeIntensity: 0.65
+              }
+            }
+          }
+        case 'semantic-2':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#D60040',
+                shadeTo: 'light',
+                shadeIntensity: 0.65
+              }
+            }
+          }
+        case 'semantic-3':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#FF600A',
+                shadeTo: 'light',
+                shadeIntensity: 0.65
+              }
+            }
+          }    
+          case 'categorical':
+            return {
+              colors:  ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5']
+            }                  
+          case 'focus-1':
+              return {
+                theme: {
+                  monochrome: {
+                    enabled: true,
+                    color: '#1379C4',
+                    shadeTo: 'light',
+                    shadeIntensity: 0.65,                    
+                  }
+                },
+                flll: {
+                  type: 'gradient' ,
+                  gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.7,
+                    opacityTo: 0.9,
+                    shade: 'light',
+                    colorStops: [
+                      {
+                        offset: 0,
+                        color: "#694ED6",
+                        opacity: 1
+                      },
+                      {
+                        offset: 100,
+                        color: "#379C4",
+                        opacity: 1
+                      },
+                    ]
+                  }
+                }
+              } 
+          case 'focus-2':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#C34DD5',
+                  shadeTo: 'light',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'light',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#F04E98",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#C34DD5",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            }    
+            
+            
+          case 'focus-1-angular':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#1379C4',
+                  shadeTo: 'light',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'light',
+                  type: 'diagonal1',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#1379C4",
+                      opacity: 1
+                    },
+                    {
+                      offset: 25,
+                      color: "#694ED6",
+                      opacity: 1
+                    },
+                    {
+                      offset: 50,
+                      color: "#694ED6",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#1379C4",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            } 
+            
+          case 'focus-2-angular':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#C34DD5',
+                  shadeTo: 'light',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'light',
+                  type: 'diagonal1',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#C34DD5",
+                      opacity: 1
+                    },
+                    {
+                      offset: 25,
+                      color: "#F04E98",
+                      opacity: 1
+                    },
+                    {
+                      offset: 50,
+                      color: "#F04E98",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#C34DD5",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            } 
+          case 'sequential-1':
+            return {
+              colors: ['#EDDDFF', '#CCB9F5', '#AB96EB', '#8A72E0', '#694ED6', '#5945B8', '#4A3B99', '#3A327B', '#2A285C']
+            }
+          case 'sequential-2':
+            return {
+              colors: ['#FFD4FF', '#FBB3E5', '#F891CC', '#F470B2', '#F04E98', '#CA3F7F', '#A43067', '#7D214E', '#571235']
+            } 
+      }
     }
+
+    if (this.theme === 'dark') {
+      switch(this.color) {
+        case 'semantic-1':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#26D07C',
+                shadeTo: 'dark',
+                shadeIntensity: 0.65
+              }
+            }
+          }
+        case 'semantic-2':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#FF1A5E',
+                shadeTo: 'dark',
+                shadeIntensity: 0.65
+              }
+            }
+          }
+        case 'semantic-3':
+          return {
+            theme: {
+              monochrome: {
+                enabled: true,
+                color: '#FF880A',
+                shadeTo: 'dark',
+                shadeIntensity: 0.65
+              }
+            }
+          }    
+          case 'categorical':
+            return {
+              color:  ['#8A72E0', '#F470B2', '#F1A423', '#FFDD22', '#97D9E6', '#505050']
+            }                  
+          case 'focus-1':
+              return {
+                theme: {
+                  monochrome: {
+                    enabled: true,
+                    color: '#168BDE',
+                    shadeTo: 'dark',
+                    shadeIntensity: 0.65,                    
+                  }
+                },
+                flll: {
+                  type: 'gradient' ,
+                  gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.7,
+                    opacityTo: 0.9,
+                    shade: 'dark',
+                    colorStops: [
+                      {
+                        offset: 0,
+                        color: "#168BDE",
+                        opacity: 1
+                      },
+                      {
+                        offset: 100,
+                        color: "#8A72E0",
+                        opacity: 1
+                      },
+                    ]
+                  }
+                }
+              } 
+          case 'focus-2':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#E259F7',
+                  shadeTo: 'dark',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'dark',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#E259F7",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#F470B2",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            }    
+            
+            
+          case 'focus-1-angular':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#168BDE',
+                  shadeTo: 'dark',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'dark',
+                  type: 'diagonal1',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#168BDE",
+                      opacity: 1
+                    },
+                    {
+                      offset: 25,
+                      color: "#8A72E0",
+                      opacity: 1
+                    },
+                    {
+                      offset: 50,
+                      color: "#8A72E0",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#168BDE",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            } 
+            
+          case 'focus-2-angular':
+            return {
+              theme: {
+                monochrome: {
+                  enabled: true,
+                  color: '#E259F7',
+                  shadeTo: 'dark',
+                  shadeIntensity: 0.65,                    
+                }
+              },
+              flll: {
+                type: 'gradient' ,
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.7,
+                  opacityTo: 0.9,
+                  shade: 'dark',
+                  type: 'diagonal1',
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "#E259F7",
+                      opacity: 1
+                    },
+                    {
+                      offset: 25,
+                      color: "#F470B2",
+                      opacity: 1
+                    },
+                    {
+                      offset: 50,
+                      color: "#F470B2",
+                      opacity: 1
+                    },
+                    {
+                      offset: 100,
+                      color: "#E259F7",
+                      opacity: 1
+                    },
+                  ]
+                }
+              }
+            } 
+          case 'sequential-1':
+            return {
+              colors: ['#EDDDFF', '#CCB9F5', '#AB96EB', '#8A72E0', '#694ED6', '#5945B8', '#4A3B99', '#3A327B', '#2A285C']
+            }
+          case 'sequential-2':
+            return {
+              colors: ['#FFD4FF', '#FBB3E5', '#F891CC', '#F470B2', '#F04E98', '#CA3F7F', '#A43067', '#7D214E', '#571235']
+            } 
+      }
+    }
+
+    return {}
   }
 
   extend(target: ApexCharts.ApexOptions, source: ApexCharts.ApexOptions) {

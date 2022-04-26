@@ -52,10 +52,20 @@ export default {
       type: "select",
       table: {
         defaultValue: {
+          summary: 'categorical'
+        }
+      }, 
+      options: ["semantic-1", "semantic-2", "semantic-3", "categorical", "focus-1", "focus-2", "focus-1-angular", "focus-2-angular", "sequential-1", "sequential-2"]
+    },
+    theme: {
+      description: "Define theme of the chart",
+      type: "select",
+      table: {
+        defaultValue: {
           summary: 'light'
         }
       }, 
-      options: ["light", "dark", "primary", "secondary"]
+      options: ["dark", "light"]
     },
     hideDataLabel: {
       control: "boolean",
@@ -106,8 +116,8 @@ export default {
   },  
 };
 
-const Template: Story<PieChart> = ({legendHorizontalAlign = "center",legendPosition="bottom", hideDataLabel=false, width="300px", color="light", height="300px", data = demoData, labels = demoLabels }) => {
-  return html`<fds-pie-chart  .legendHorizontalAlign=${legendHorizontalAlign}  .legendPosition=${legendPosition} ?hide-data-label=${hideDataLabel} color=${color} width=${width} height=${height}  .data=${data} .labels=${labels} ></fds-pie-chart>`;
+const Template: Story<PieChart> = ({legendHorizontalAlign = "center",legendPosition="bottom", hideDataLabel=false, width="300px", color="categorical", theme="light", height="300px", data = demoData, labels = demoLabels }) => {
+  return html`<fds-pie-chart  .legendHorizontalAlign=${legendHorizontalAlign}  .legendPosition=${legendPosition} ?hide-data-label=${hideDataLabel} theme=${theme} color=${color} width=${width} height=${height}  .data=${data} .labels=${labels} ></fds-pie-chart>`;
 };
 
 export const Default: Story<PieChart> = Template.bind({});
