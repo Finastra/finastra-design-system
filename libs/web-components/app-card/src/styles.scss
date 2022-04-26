@@ -12,6 +12,17 @@ $fds-blue: #009CBD;
 
   .mdc-card {
     overflow: visible !important;
+    &:hover {
+      transform: translateY(-4px);
+      transition-duration: .1s;
+      @include fds.elevation(4);
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: translateY(-2px);
+      @include fds.elevation(2);
+    }
   }
 
   .app-card {
@@ -19,7 +30,6 @@ $fds-blue: #009CBD;
     min-height: 317px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     box-sizing: border-box;
     text-decoration: none;
     @include fds.text-color(on-background);
@@ -29,7 +39,6 @@ $fds-blue: #009CBD;
 
     .app-flag {
       @include fds.typography(subtitle-3);
-      //@include fds.text-color(on-secondary);
       min-width: 61px;
       text-align: center;
       transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
@@ -83,7 +92,7 @@ $fds-blue: #009CBD;
     .app-card-top {
       flex: 1 1 100%;
       box-sizing: border-box;
-      max-height: 40%;
+      max-height: 35%;
       position: relative;
       z-index: 1;
 
@@ -137,6 +146,7 @@ $fds-blue: #009CBD;
     }
 
     .app-card-description {
+      flex: 1 1 auto;
       @include fds.typography(body-2);
       @include fds.text-color(text-high-on-background);
       @include fds.padding(4, right, bottom, left);
