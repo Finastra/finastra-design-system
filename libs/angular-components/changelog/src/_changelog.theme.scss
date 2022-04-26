@@ -182,6 +182,10 @@
           @include mat.typography-level($config, h3);
         }
       }
+
+      .category {
+        @include mat.typography-level($config, h5);
+      }
     }
   }
 }
