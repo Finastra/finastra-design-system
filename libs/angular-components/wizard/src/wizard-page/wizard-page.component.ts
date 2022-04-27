@@ -116,7 +116,7 @@ export class UxgWizardPageComponent {
     this._showTitle = val;
   }
 
-  private _completed: boolean;
+  private _completed?: boolean;
 
   public get completed(): boolean {
     return this._completed ?? this.pageCollection.getPageIndex(this) < this.pageCollection.getPageIndex(this.navService.currentPage);
