@@ -8,7 +8,17 @@ import { argTypes, cssprops } from './custom-element.json';
 export default {
   title: 'Components/Chip',
   component: 'fds-chip',
-  argTypes,
+  argTypes: {
+    ...argTypes,
+    trailingIconAction: {
+      description: "Callback called after clicking on the trailingIcon, Example: `<fds-chip id='example' label='World' trailingIcon='cancel'></fds-chip>` `<script> example.trailingIconAction=()=>{ console.log('this a trailing icon action')} </script>`",
+      table: {
+        defaultValue: {
+          summary: 'Callback'
+        }
+      },
+    }
+  },
   parameters: {
     docs: {
       description: { component: README }
