@@ -100,7 +100,7 @@
   .mdc-button {
     @include fds.property(background, secondary-lighter);
     @include fds.property(--mdc-button-outline-color, secondary);
-    @include fds.property( --mdc-ripple-color, secondary);
+    @include fds.property(--mdc-ripple-color, secondary);
   }
 
   .mdc-button__label {

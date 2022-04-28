@@ -46,8 +46,8 @@ export class Chip extends LitElement {
 
   @state() protected shouldRenderRipple = false;
 
-  trailingIconAction:any;
-  
+  trailingIconAction: any;
+
   protected getRenderClasses(): ClassInfo {
     return {
       'mdc-button--outlined': true,
@@ -82,7 +82,7 @@ export class Chip extends LitElement {
       </button>`;
   }
 
-   _handleClick() {
+  _handleClick() {
     try {
       this.trailingIconAction();
     } catch (error) {
