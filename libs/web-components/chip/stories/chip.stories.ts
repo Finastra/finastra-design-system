@@ -11,12 +11,7 @@ export default {
   argTypes: {
     ...argTypes,
     trailingIconAction: {
-      description: "Callback called after clicking on the trailingIcon, Example: `<fds-chip id='example' label='World' trailingIcon='cancel'></fds-chip>` `<script> example.trailingIconAction=()=>{ console.log('this a trailing icon action')} </script>`",
-      table: {
-        defaultValue: {
-          summary: 'Callback'
-        }
-      },
+      description: "Callback called after clicking on the trailingIcon, Example: `<fds-chip id='example' label='World' trailingIcon='cancel'></fds-chip>` `<script> example.trailingIconAction = () => { console.log('this a trailing icon action') } </script>`"
     }
   },
   parameters: {

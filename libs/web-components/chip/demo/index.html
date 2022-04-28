@@ -5,7 +5,7 @@
     <fds-chip dense label="World"></fds-chip>
     <fds-chip disabled label="World disabled" icon="account_circle"></fds-chip>
     <fds-chip label="World" icon="account_circle" trailingIcon="cancel"></fds-chip>
-    <fds-chip secondary label="World" icon="account_circle" trailingIcon="cancel"></fds-chip>
+    <fds-chip id="example" secondary label="World" icon="account_circle" trailingIcon="cancel"></fds-chip>
     <fds-chip selected secondary large label="World" icon="account_circle"></fds-chip>
     <fds-chip selected large label="World" icon="account_circle"></fds-chip>
 </div>
@@ -15,3 +15,4 @@
         padding-bottom: 16px;
     }
 </style>
+<script> example.trailingIconAction = () => { console.log('this a trailing icon action') } </script>
