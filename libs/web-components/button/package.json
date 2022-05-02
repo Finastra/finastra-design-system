@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@material/mwc-button": "0.25.3",
+    "@material/mwc-base": "0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
