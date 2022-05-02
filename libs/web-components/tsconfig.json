@@ -106,6 +106,9 @@
     },
     {
       "path": "button-toggle-group"
+    },
+    {
+      "path": "chip"
     }
   ]
 }
