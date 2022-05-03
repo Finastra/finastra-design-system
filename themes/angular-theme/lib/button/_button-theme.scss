@@ -64,9 +64,7 @@
   .mat-fab,
   .mat-mini-fab {
     &.mat-primary,
-    &.mat-accent,
-    &.mat-error,
-    &.mat-success
+    &.mat-accent
       {
       & .mat-ripple-element {
         // since the use of CSS variables,
