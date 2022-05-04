@@ -1,6 +1,6 @@
 {
   "name": "@finastra/angular-components",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/finastra/finastra-design-system.git",
@@ -19,6 +19,6 @@
     "ts-md5": "^1.2.8"
   },
   "dependencies": {
-    "@finastra/angular-theme": "3.1.1"
+    "@finastra/angular-theme": "3.2.0"
   }
 }
