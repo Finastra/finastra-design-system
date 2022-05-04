@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [3.2.0](https://github.com/finastra/finastra-design-system/compare/v0.0.26...v3.2.0) (2022-05-04)
 
-
 ### Features
 
-* **wizard:** allow pages to be marked as completed ([#701](https://github.com/finastra/finastra-design-system/issues/701)) ([aff4d73](https://github.com/finastra/finastra-design-system/commit/aff4d7386c40200e68006de9d314dc2018a71bd2))
+- **wizard:** allow pages to be marked as completed ([#701](https://github.com/finastra/finastra-design-system/issues/701)) ([aff4d73](https://github.com/finastra/finastra-design-system/commit/aff4d7386c40200e68006de9d314dc2018a71bd2))
 
 ### [3.1.1](https://github.com/finastra/finastra-design-system/compare/v0.0.25...v3.1.1) (2022-04-27)
 
