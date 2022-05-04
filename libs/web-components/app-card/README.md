@@ -4,11 +4,6 @@
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/app-card?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/app-card')
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-app-card--default)
 
-## Installation
-
-```
-npm i @finastra/app-card
-```
 
 ## API
 
@@ -42,3 +37,39 @@ export interface Application {
 | ------------------------------------------------ | ------------------------------------------------ |
 | ![Test Image 4](https://i.imgur.com/AFDwskP.png) | ![Test Image 4](https://i.imgur.com/TGHSH9D.png) |
 
+
+## Usage
+
+### Import
+
+```
+npm i @finastra/app-card
+```
+
+```ts
+import '@finastra/app-card';
+...
+<fds-app-card
+    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  </fds-app-card>
+```
+
+### Pure HTML pages
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Your awesome title</title>
+  </head>
+  <body>
+    <fds-app-card
+    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  </fds-app-card>
+    <script src="https://unpkg.com/@finastra/app-card@latest/dist/src/app-card.js?module"></script>
+  </body>
+</html>
+```
