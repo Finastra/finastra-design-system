@@ -8,6 +8,15 @@
   margin-bottom: $uxg-spacing-4;
 }
 
+.button-default-test,
+.button-stroked-test,
+.button-flat-test
+ {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: $uxg-spacing-3;
+}
+
 .mat-button-base + .mat-button-base,
 .mat-icon + .mat-icon,
 .mat-card + .mat-card,

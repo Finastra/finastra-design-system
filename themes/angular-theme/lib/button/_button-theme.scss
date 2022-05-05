@@ -5,7 +5,8 @@
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
-  $warn: map.get($theme, warn);
+  $success: map.get($theme, success);
+  $error: map.get($theme, error);
   $foreground: map.get($theme, foreground);
 
   .mat-stroked-button {
@@ -17,9 +18,44 @@
       border-color: palette.get-color-from-palette($accent, default, 0.5);
     }
 
+    &.mat-error {
+      border-color: palette.get-color-from-palette($error, default, 0.5);
+    }
+
+    &.mat-success {
+      border-color: palette.get-color-from-palette($success, default, 0.5);
+    }
+
     &[disabled] {
       background-color: palette.get-color-from-palette($foreground, text, 0.1);
       border-color: palette.get-color-from-palette($foreground, text, 0.25);
+    }
+  }
+
+  .mat-flat-button {
+    &.mat-error {
+      background: palette.get-color-from-palette($error, default);
+      color: palette.get-color-from-palette($error, default-contrast);
+    }
+    &.mat-success {
+      background: palette.get-color-from-palette($success, default);
+      color: palette.get-color-from-palette($success, default-contrast);
+    }
+  }
+
+  .mat-error {
+    color: palette.get-color-from-palette($error, default);
+
+    .mat-button-focus-overlay {
+      background: palette.get-color-from-palette($error, default);
+    }
+  }
+
+  .mat-success {
+    color: palette.get-color-from-palette($success, default);
+
+    .mat-button-focus-overlay {
+      background: palette.get-color-from-palette($success, default);
     }
   }
 
@@ -28,8 +64,8 @@
   .mat-fab,
   .mat-mini-fab {
     &.mat-primary,
-    &.mat-accent,
-    &.mat-warn {
+    &.mat-accent
+      {
       & .mat-ripple-element {
         // since the use of CSS variables,
         // opacity is already set on rgba background-color.
@@ -54,8 +90,8 @@
         opacity: 0.24;
       }
 
-      &.mat-warn .mat-button-focus-overlay {
-        background: palette.get-color-from-palette($warn, default-contrast);
+      &.mat-success .mat-button-focus-overlay {
+        background: palette.get-color-from-palette($success, default-contrast);
         opacity: 0.24;
       }
     }
