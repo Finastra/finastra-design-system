@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/finastra/finastra-design-system/compare/v0.0.26...v3.3.0) (2022-05-05)
+
+
+### Features
+
+* **button:** support error and success color ([#704](https://github.com/finastra/finastra-design-system/issues/704)) ([746ecd4](https://github.com/finastra/finastra-design-system/commit/746ecd4f8c4b30bf54a10c580af760997ca7eed5))
+
 ## [3.2.0](https://github.com/finastra/finastra-design-system/compare/v0.0.26...v3.2.0) (2022-05-04)
 
 ### [3.1.1](https://github.com/finastra/finastra-design-system/compare/v0.0.25...v3.1.1) (2022-04-27)
