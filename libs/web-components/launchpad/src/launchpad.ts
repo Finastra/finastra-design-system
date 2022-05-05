@@ -2,7 +2,6 @@ import '@finastra/brand-card';
 import '@finastra/button';
 import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
-import '@material/mwc-icon-button';
 import '@material/mwc-menu';
 import { Menu } from '@material/mwc-menu';
 import { html, LitElement } from 'lit';
