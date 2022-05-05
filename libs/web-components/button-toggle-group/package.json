@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@material/mwc-tab-bar": "0.25.3",
-    "@finastra/button-toggle":"0.0.26",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
