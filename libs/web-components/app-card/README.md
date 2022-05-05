@@ -51,7 +51,7 @@ import '@finastra/app-card';
 ...
 <fds-app-card
     application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
-  </fds-app-card>
+</fds-app-card>
 ```
 
 ### Pure HTML pages
@@ -67,8 +67,8 @@ import '@finastra/app-card';
   </head>
   <body>
     <fds-app-card
-    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
-  </fds-app-card>
+      application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+    </fds-app-card>
     <script type="module" src="https://unpkg.com/@finastra/app-card@latest/dist/src/app-card.js?module"></script>
   </body>
 </html>

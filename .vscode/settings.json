@@ -23,6 +23,7 @@
     "storybook",
     "wc:app-bar",
     "wc:user-profile",
-    "wc:global-nav"
+    "wc:global-nav",
+    "wc:*"
   ]
 }
