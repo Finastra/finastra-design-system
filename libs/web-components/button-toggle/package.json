@@ -1,7 +1,7 @@
 {
   "name": "@finastra/button-toggle",
   "displayName": "ButtonToggle",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "ButtonToggle Web Component",
   "keywords": [
     "Finastra Design System",

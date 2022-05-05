@@ -1,7 +1,7 @@
 {
   "name": "@finastra/app-bar",
   "displayName": "App Bar",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "App Bar Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/logo": "0.0.26",
+    "@finastra/logo": "0.0.27",
     "@material/mwc-top-app-bar": "^0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
