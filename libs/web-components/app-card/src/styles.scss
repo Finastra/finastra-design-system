@@ -145,6 +145,14 @@ $fds-blue: #009CBD;
       max-width: calc(100% - var(--fds-spacing-3, 16px) * 2);
     }
 
+    .app-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--fds-spacing-1, 4px);
+      @include fds.padding(4, right, left);
+      @include fds.padding(2, top);
+    }
+
     .app-card-description {
       flex: 1 1 auto;
       @include fds.typography(body-2);
@@ -209,5 +217,9 @@ $fds-blue: #009CBD;
     @include fds.padding(2, right, left);
     width: fit-content;
     max-width: 180px;
+  }
+
+  .app-card-tags {
+    display: none;
   }
 }

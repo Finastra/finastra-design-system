@@ -1,4 +1,5 @@
 import { BaseCard } from '@finastra/base-card';
+import '@finastra/chip';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -33,7 +34,7 @@ export class AppCard extends BaseCard {
   @property({ type: String }) author = "";
   @property({ type: String }) icon = "";
   @property({ type: String }) flag;
-  @property({ type: Array}) tags = [];
+  @property({ type: Array }) tags: any[] = [];
   @property({ type: Boolean }) large = false;
   @property({ type: Boolean }) extraDense = false;
 
@@ -58,6 +59,10 @@ export class AppCard extends BaseCard {
       <div>
         <div class="app-card-name">${this?.name}</div>
         <div class="app-card-author">${this?.author}</div>
+        ${this?.tags.length ?
+          html`<div class="app-card-tags">${this.tags.map((tag) => html`<fds-chip dense selected label="${tag}"></fds-chip>`)}</div>` :
+          html``
+        }
         <div ?hidden=${this.extraDense} class="app-card-description">${this?.description}</div>
       </div>
     </div>

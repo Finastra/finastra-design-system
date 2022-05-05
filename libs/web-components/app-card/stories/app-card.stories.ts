@@ -8,6 +8,7 @@ import { argTypes, cssprops } from './custom-element.json';
 const dummyApp = {
   "name": "Business Economics",
   "author": "Finastra",
+  "tags": '["Account Information", "Api", "Banking"]',
   "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
   "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
 };
@@ -28,8 +29,8 @@ export default {
   }
 } as Meta;
 
-const Template: Story<AppCard> = ({ name, author, icon, flag, description, extraDense = false, large = false }) => {
-  return html`<fds-app-card  name=${name} author=${author} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
+const Template: Story<AppCard> = ({ name, author, tags, icon, flag, description, extraDense = false, large = false }) => {
+  return html`<fds-app-card  name=${name} author=${author} tags=${tags} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
 };
 
 export const Default: Story<AppCard> = Template.bind({});
@@ -56,6 +57,16 @@ ExtraDense.args = {
   icon: dummyApp.icon,
   description: dummyApp.description,
   extraDense: true
+};
+
+export const Tags: Story<AppCard> = Template.bind({});
+Tags.args = {
+  name: dummyApp.name,
+  author: dummyApp.author,
+  tags: dummyApp.tags as any,
+  icon: dummyApp.icon,
+  description: dummyApp.description,
+  large: true
 };
 
 export const ComingSoon: Story<AppCard> = Template.bind({});
