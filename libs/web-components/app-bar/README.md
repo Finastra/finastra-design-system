@@ -32,7 +32,7 @@ import '@finastra/app-bar';
 <script type="module" src="https://unpkg.com/@finastra/app-bar@latest/dist/src/app-bar.js?module"></script>
 
 <fds-app-bar
-    appName="Example" 
+    appName="Such app" 
     logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
 </fds-app-bar>
 ```
