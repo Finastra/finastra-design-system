@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@finastra/base-card": "0.0.27",
+    "@finastra/chip": "0.0.27",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
