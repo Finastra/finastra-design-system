@@ -4,7 +4,6 @@ import { ApexChartsWrapper } from './apexcharts';
 import { styles as apexchartsStyle } from './apexcharts-styles.css';
 import { styles } from './pie-chart-styles.css';
 
-
 @customElement('fds-pie-chart')
 export class PieChart extends ApexChartsWrapper {
     static styles = [styles, apexchartsStyle]
@@ -34,7 +33,7 @@ export class PieChart extends ApexChartsWrapper {
         this._data = value;
         this.series = value
     }
-    
+
     private _labels: string[] = [];
     @property({ attribute: false })
     public get labels(): string[] {
@@ -44,7 +43,7 @@ export class PieChart extends ApexChartsWrapper {
         this._labels = value;
         this.options = {...this.options, labels: value}
     }
-    
+
     _defaultOptions = {
 
         plotOptions: {
@@ -72,7 +71,7 @@ export class PieChart extends ApexChartsWrapper {
             selection: {
                 enabled: false
             }
-        }            
+        }
     }
 
     constructor() {
@@ -97,6 +96,6 @@ export class PieChart extends ApexChartsWrapper {
                 this.$el.classList.remove('selected')
             }
         }, 0);
-        
+
     }
 }
