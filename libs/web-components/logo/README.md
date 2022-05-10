@@ -1,17 +1,33 @@
 # Logo
-
-The `<fds-logo>` component displays an image encoded in Base64 from the `--fds-logo` CSS variable.
-
-## Usage
-
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/logo?style=for-the-badge)](https://www.npmjs.com/package/@finastra/logo)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/logo?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/logo)
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-logo--default)
 
-## Installation
+The `<fds-logo>` component displays an image encoded in Base64 from the `--fds-logo` CSS variable.
+
+
+## Usage
+
+### Import
+
 ```
 npm i @finastra/logo
 ```
+
+```ts
+import '@finastra/logo';
+...
+<fds-logo dense></fds-logo>
+```
+
+### Pure HTML pages
+
+```html
+<script type="module" src="https://unpkg.com/@finastra/logo@latest/dist/src/logo.js?module"></script>
+
+<fds-logo dense></fds-logo>
+```
+
 
 ## CSS API
 
