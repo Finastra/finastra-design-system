@@ -1,7 +1,7 @@
 {
   "name": "@finastra/stepper",
   "displayName": "Stepper",
-  "version": "0.0.25",
+  "version": "0.0.28",
   "description": "Stepper Web Component",
   "keywords": [
     "Finastra Design System",

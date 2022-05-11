@@ -360,6 +360,18 @@
       },
       "tags": ["web-components"]
     },
+    "chip": {
+      "root": "libs/web-components/chip",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/chip/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",

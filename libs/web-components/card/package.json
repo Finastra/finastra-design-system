@@ -1,7 +1,7 @@
 {
   "name": "@finastra/card",
   "displayName": "Card",
-  "version": "0.0.25",
+  "version": "0.0.28",
   "description": "Card Web Component",
   "keywords": [
     "finastra design system",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/base-card": "0.0.25",
+    "@finastra/base-card": "0.0.28",
     "@material/card": "13.0.0",
     "@material/mwc-ripple": "0.25.3",
     "lit": "^2.0.0",
