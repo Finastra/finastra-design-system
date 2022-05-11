@@ -1,0 +1,31 @@
+@use '@finastra/fds-theme' as fds;
+
+$color: primary;
+
+.tippy-box[data-theme~='finastra'] {
+    @include fds.bg-color($color);
+  
+    &[data-placement^='top'] > .tippy-arrow::before {
+      @include fds.property(border-top-color, $color);
+    }
+  
+    &[data-placement^='bottom'] > .tippy-arrow::before {
+      @include fds.property(border-bottom-color, $color);
+    }
+  
+    &[data-placement^='left'] > .tippy-arrow::before {
+      @include fds.property(border-left-color, $color);
+    }
+  
+    &[data-placement^='right'] > .tippy-arrow::before {
+      @include fds.property(border-right-color, $color);
+    }
+  
+    > .tippy-backdrop {
+        @include fds.bg-color($color);
+    }
+  
+    > .tippy-svg-arrow {
+        @include fds.fill($color);
+    }
+  }
