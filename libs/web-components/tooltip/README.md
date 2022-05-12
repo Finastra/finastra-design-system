@@ -18,9 +18,9 @@ Have a look at the [official docs](https://atomiks.github.io/tippyjs/v6/getting-
 We've created a theme branded for Finastra.
 
 ```bash
-npm i @finastra/fds-theme
+npm i @finastra/tippy.js-theme
 ...
-import @finastra/fds-theme/dist/theme.css
+import @finastra/tippy.js-theme/dist/theme.css
 ```
 
 or use the CDN in the browser:
@@ -28,7 +28,7 @@ or use the CDN in the browser:
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@finastra/fds-theme@latest/dist/theme.css"
+  href="https://unpkg.com/@finastra/tippy.js-theme@latest/dist/theme.css"
 />
 ```
 
