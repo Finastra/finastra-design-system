@@ -1,0 +1,21 @@
+:host {
+  display: none;
+}
+
+ .card {
+  display: flex;
+  padding: 20px;
+  height: 100%;
+  color: white;
+  align-items: stretch;
+  flex-direction: column;
+ } 
+
+ :host([selected]) {
+   display:block;
+ }
+
+ :host([disabled]) {
+  background-color: red;
+}
+ 

@@ -1,0 +1,60 @@
+
+.row {
+  display: flex; 
+  flex-flow: row wrap; 
+  background: #00e1ff;
+  height: fit-content;
+}
+
+.col { 
+  display: flex; 
+  flex: 1 0 400px;
+  flex-flow: column; 
+  background: grey;
+}
+
+.col:nth-child(2){
+  background: #afaef2;
+}
+
+
+    .wizard {
+        display: flex;
+    }
+
+    .left {
+        background: red;
+        height: fit-content;
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        max-width: 66%;
+    }
+
+    .left .content {
+        background: white;
+    }
+
+    .right {
+        background: #afaef2;
+        height: fit-content;
+        flex: 1 1 0%;
+        box-sizing: border-box;
+    }
+
+    .form {
+        display: contents;
+        box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px -1px, rgb(0 0 0 / 11%) 0px 4px 5px 0px, rgb(0 0 0 / 9%) 0px 1px;
+        position: absolute;
+        border-radius: 6px;
+        right: 20%;
+        left: 20%;
+    }
+
+    // slot[name="wizard-page"]::slotted(*), .card {
+    //   display: flex;
+    //   padding: 20px;
+    //   height: 100%;
+    //   color: white;
+    //   align-items: stretch;
+    //   flex-direction: column;
+    // }

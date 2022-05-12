@@ -22,12 +22,18 @@
   @include fds.text-color(on-background);
 }
 
+.disabled {
+  .circle {
+   background: red;
+  }
+}
+
 .done {
   .circle {
     @include fds.property(border-color, success);
     @include fds.bg-color(success);
 
-    >svg {
+    > svg {
       @include fds.fill(on-primary);
     }
   }
@@ -36,7 +42,6 @@
     @include fds.bg-color(success);
   }
 }
-
 
 .current {
   .circle {
@@ -68,7 +73,6 @@
       @include fds.property(border-color, secondary);
       @include fds.bg-color(secondary);
       @include fds.text-color(on-secondary);
-
     }
 
     .line.start-line {

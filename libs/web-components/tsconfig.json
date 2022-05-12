@@ -109,6 +109,12 @@
     },
     {
       "path": "chip"
+    },
+    {
+      "path": "wizard"
+    },
+    {
+      "path": "wizard-page"
     }
   ]
 }

@@ -34,6 +34,9 @@ export class Button extends LitElement {
   @property({ type: Boolean })
   trailingIcon = false;
 
+  @property({ type: Boolean })
+  secondary = false;
+
   render() {
     return html`
       ${this.outlined || this.text
@@ -46,6 +49,7 @@ export class Button extends LitElement {
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
             ?trailingIcon="${this.trailingIcon}"
+            ?secondary="${this.secondary}"
           >
             <slot></slot>
           </mwc-button>`
@@ -57,6 +61,7 @@ export class Button extends LitElement {
             ?disabled="${this.disabled}"
             ?fullwidth="${this.fullwidth}"
             ?trailingIcon="${this.trailingIcon}"
+            ?secondary="${this.secondary}"
           >
             <slot></slot>
           </mwc-button>`}

@@ -5,6 +5,7 @@ import { classMap } from 'lit/directives/class-map.js';
 export interface Step {
   label: string;
   description?: string;
+  disabled: Boolean
 }
 
 /**
@@ -40,7 +41,7 @@ export class BaseStepper extends LitElement {
     return html`<div class="container">
       ${this.steps.map(
       (step, idx) =>
-        html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex ? 'current' : ''}">
+        html`<div class="step-item ${step.disabled ? 'disabled' : ''} ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled ? 'current' : ''}">
             ${this.renderIconAndLine(idx)}
             ${step.description
             ? html`<div class="text-wrapper">

@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/wizard",
+  "displayName": "Wizard",
+  "version": "1.0.0",
+  "description": "Wizard Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Wizard"
+  ],
+  "license": "MIT",
+  "main": "dist/src/wizard.js",
+  "module": "dist/src/wizard.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "@finastra/stepper": "0.0.26",
+    "@finastra/wizard-page": "1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

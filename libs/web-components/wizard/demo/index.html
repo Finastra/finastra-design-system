@@ -1,0 +1,43 @@
+<script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
+<script type="module" src="node_modules/@finastra/wizard-page/dist/src/wizard-page.js"></script>
+<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
+<script type="module" src="node_modules/@finastra/fds-button/dist/src/fds-button.js"></script>
+
+<fds-wizard title="my-wizard">
+        <fds-button slot='next' label="Next" outlined secondary>
+        </fds-button>
+        <fds-button slot='cancel' label="Cancel" text secondary>
+        </fds-button>
+        <fds-button slot='back' label="back" text secondary>
+        </fds-button>
+        <fds-button slot='save' label="save" secondary>
+        </fds-button>
+    <fds-wizard-page slot="page" id="page" title="Step 1" description="Step 1 description">
+        <p>First one
+        </p>
+    </fds-wizard-page>
+
+    <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description">
+        <p>First one
+        </p>
+    </fds-wizard-page>
+
+    <fds-wizard-page slot="page" id="page" title="Step 3" description="Step 3 description" disabled>
+        <p>First one
+        </p>
+    </fds-wizard-page>
+
+    <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description">
+        <p>First one
+        </p>
+    </fds-wizard-page>
+
+    <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description">
+        <p>First one
+        </p>
+    </fds-wizard-page>
+    <fds-wizard-page slot="page" id="page" title="Step 6" description="Step 4 description">
+        <p>First one
+        </p>
+    </fds-wizard-page>
+</fds-wizard>
