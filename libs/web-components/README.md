@@ -243,7 +243,7 @@ On **index.html**, add the following scripts:
 
 In case of a React application that uses Typescript, there's a high chance to encounter the error related to JSX.IntrinsicElements, as React only knows about standard HTML Elements.
 One of the solutions is to declare the custom web-component as part of the JSX.IntrinsicElements like this:
-```bash
+```typescript
 declare global {
  namespace JSX {
   interface IntrinsicElements {
