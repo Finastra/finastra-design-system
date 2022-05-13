@@ -171,3 +171,86 @@ npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
 ```
 
 > Version of the package will be automatically updated during release.
+
+
+## Use Web Components in React Application
+
+If you already have an existing project, feel free to skip directly to the next step. Otherwise, run this command to get started with React: 
+
+```bash
+npx create-react-app my-app
+```
+
+### Install and configure polyfill
+
+The **Web Components polyfills** are a suite of JavaScript libraries that implement [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) APIs for browsers that don't have built-in support.
+
+```bash
+npm install --save @webcomponents/webcomponentsjs vendor-copy
+```
+
+On **package.json** add the following script:
+
+```json
+"postinstall": "vendor-copy"
+```
+
+and the configuration to copy the required js files to public folder:
+
+```json
+"vendorCopy": [  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",  
+		"to": "public/vendor/custom-elements-es5-adapter.js"  
+	},  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",  
+		"to": "public/vendor/webcomponents-bundle.js"  
+	}  
+]
+```
+
+After this step, the **package.json** should contain:
+```json
+"scripts": {
+	"start": "react-scripts start",
+	"build": "react-scripts build",
+	"test": "react-scripts test",
+	"eject": "react-scripts eject",
+	"postinstall": "vendor-copy"
+},
+"vendorCopy": [  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",  
+		"to": "public/vendor/custom-elements-es5-adapter.js"  
+	},  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",  
+		"to": "public/vendor/webcomponents-bundle.js"  
+	}  
+]
+```
+
+On **index.html**, add the following scripts:
+```html
+<script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>  
+<script>if (!window.customElements) { document.write("<!--"); }</script>  
+<script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>  
+<!-- DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+```
+
+### Configuration for `property 'web-component-name' does not exist on type 'JSX.IntrinsicElements'`
+
+In case of a React application that uses Typescript, there's a high chance to encounter the error related to JSX.IntrinsicElements, as React only knows about standard HTML Elements.
+One of the solutions is to declare the custom web-component as part of the JSX.IntrinsicElements like this:
+```typescript
+declare global {
+ namespace JSX {
+  interface IntrinsicElements {
+   'web-component-name': any;
+  }
+ }
+}
+```
+
+#### Congrats! You're ready to integrate your first **Web Component**! 🎉

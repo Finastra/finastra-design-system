@@ -1,0 +1,23 @@
+.tippy-box[data-theme~=finastra] {
+  background: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra][data-placement^=top] > .tippy-arrow::before {
+  border-top-color: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra][data-placement^=bottom] > .tippy-arrow::before {
+  border-bottom-color: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra][data-placement^=left] > .tippy-arrow::before {
+  border-left-color: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra][data-placement^=right] > .tippy-arrow::before {
+  border-right-color: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra] > .tippy-backdrop {
+  background: var(--fds-primary, #694ED6);
+}
+.tippy-box[data-theme~=finastra] > .tippy-svg-arrow {
+  fill: var(--fds-primary, #694ED6);
+}
+
+/*# sourceMappingURL=theme.css.map */
