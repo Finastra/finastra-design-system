@@ -236,7 +236,7 @@ On **index.html**, add the following scripts:
 <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>  
 <script>if (!window.customElements) { document.write("<!--"); }</script>  
 <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>  
-<!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+<!-- DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
 ```
 
 ### Configuration for `property 'web-component-name' does not exist on type 'JSX.IntrinsicElements'`
