@@ -360,6 +360,18 @@
       },
       "tags": ["web-components"]
     },
+    "circular-progress": {
+      "root": "libs/web-components/circular-progress",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/circular-progress/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
@@ -669,6 +681,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/launchpad/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "linear-progress": {
+      "root": "libs/web-components/linear-progress",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/linear-progress/src/**/*.ts"]
           }
         }
       },
