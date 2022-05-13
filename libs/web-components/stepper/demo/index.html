@@ -23,34 +23,35 @@
 <fds-vertical-stepper label-mode="center" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
 
 <label>secondary</label>
-<fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="3"></fds-vertical-stepper>
+<fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="2"></fds-vertical-stepper>
 
 <label>step 5</label>
-<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="4"></fds-vertical-stepper>
+<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
 <script>
   const hSteppers = document.querySelectorAll('#hStepper');
   hSteppers.forEach((stepper) => {
     stepper.steps = [
       {
         label: 'Step Success',
-        description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. '
+        description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. ',
       },
       {
         label: 'Step Active',
-        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .'
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .',
       },
       {
         label: 'Step Inactive',
-        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. '
+        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
+        disabled: true
       },
       {
         label: 'Step Inactive',
-        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. '
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. ',
       },
       {
         label: 'Step Inactive',
         description:
-          'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.'
+          'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.',
       }
     ];
   });

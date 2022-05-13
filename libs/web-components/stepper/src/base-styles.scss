@@ -27,7 +27,7 @@
     @include fds.property(border-color, success);
     @include fds.bg-color(success);
 
-    >svg {
+    > svg {
       @include fds.fill(on-primary);
     }
   }
@@ -37,6 +37,17 @@
   }
 }
 
+.disabled {
+  .circle {
+    background: var(--fds-text-disabled-on-background);
+    @include fds.text-color(text-icon-on-background);
+  }
+
+  .step-item-label,
+  .step-item-description {
+    @include fds.text-color(text-icon-on-background);
+  }
+}
 
 .current {
   .circle {
@@ -68,7 +79,6 @@
       @include fds.property(border-color, secondary);
       @include fds.bg-color(secondary);
       @include fds.text-color(on-secondary);
-
     }
 
     .line.start-line {

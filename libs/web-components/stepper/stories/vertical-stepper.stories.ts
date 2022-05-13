@@ -15,7 +15,8 @@ const demoData = [
   },
   {
     label: 'Step Inactive',
-    description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. '
+    description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
+    disabled: true
   },
   { label: 'Step Inactive', description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. ' },
   {
