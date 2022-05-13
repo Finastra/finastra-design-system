@@ -232,7 +232,7 @@ After this step, the **package.json** should contain:
 ```
 
 On **index.html**, add the following scripts:
-```bash
+```html
 <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>  
 <script>if (!window.customElements) { document.write("<!--"); }</script>  
 <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>  
