@@ -197,7 +197,7 @@ On **package.json** add the following script:
 
 and the configuration to copy the required js files to public folder:
 
-```bash
+```json
 "vendorCopy": [  
 	{  
 		"from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",  
