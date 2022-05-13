@@ -109,6 +109,12 @@
     },
     {
       "path": "chip"
+    },
+    {
+      "path": "linear-progress"
+    },
+    {
+      "path": "circular-progress"
     }
   ]
 }

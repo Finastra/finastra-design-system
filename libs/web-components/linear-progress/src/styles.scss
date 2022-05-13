@@ -1,0 +1,6 @@
+@use '@material/mwc-linear-progress/mwc-linear-progress';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @include fds.mdc(linear-progress-buffer-color, primary-lighter);
+}
