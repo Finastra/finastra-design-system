@@ -191,7 +191,7 @@ npm install --save @webcomponents/webcomponentsjs vendor-copy
 
 On **package.json** add the following script:
 
-```bash
+```json
 "postinstall": "vendor-copy"
 ```
 
