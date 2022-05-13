@@ -211,7 +211,7 @@ and the configuration to copy the required js files to public folder:
 ```
 
 After this step, the **package.json** should contain:
-```
+```json
 "scripts": {
 	"start": "react-scripts start",
 	"build": "react-scripts build",
