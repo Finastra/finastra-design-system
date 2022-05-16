@@ -13,7 +13,7 @@
 }
 
 .mdc-ripple-surface {
-  border-radius: var(--fds-spacing-3);
+  border-radius: var(--fds-spacing-3, 16px);
 }
 
 .mdc-tab__content::after {
@@ -33,7 +33,7 @@
   }
   .mdc-tab--active {
     @include fds.bg-color(primary-lighter);
-    border-radius: var(--fds-spacing-3);
+    border-radius: var(--fds-spacing-3, 16px);
   }
   mwc-tab-indicator {
     display: none;
@@ -95,7 +95,7 @@
     right: -7px;
     border-left: 1px solid;
     @include fds.property(border-left-color, primary);
-    border-bottom-left-radius: var(--fds-spacing-1);
+    border-bottom-left-radius: var(--fds-spacing-1, 4px);
   }
 
   mwc-tab-indicator {
