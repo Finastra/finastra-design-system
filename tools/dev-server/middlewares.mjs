@@ -30,3 +30,12 @@ export async function esjRender(context, next) {
   });
   await next();
 }
+
+export async function apexchart(ctx, next) {
+  if (ctx.url === '/node_modules/apexcharts/dist/apexcharts.common.js') {
+    ctx.url = '/node_modules/apexcharts/dist/apexcharts.esm.js';
+    await next();
+  } else {
+    await next();
+  }
+}
