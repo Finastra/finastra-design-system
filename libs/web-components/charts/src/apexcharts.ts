@@ -366,7 +366,17 @@ export class ApexChartsWrapper extends LitElement {
     })
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
+    this.initWatchers();
     return this.chart.render();
+  }
+
+  initWatchers() {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      this.refresh();
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+      this.refresh();
+    });
   }
 
   refresh() {
