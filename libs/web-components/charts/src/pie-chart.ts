@@ -31,7 +31,6 @@ export class PieChart extends ApexChartsWrapper {
     }
     public set data(value: number[]) {
         this._data = value.sort((a, b) => b - a);
-        console.log(this._data);
         this.series = value
     }
 
