@@ -26,9 +26,9 @@ export class Wizard extends LitElement {
 
   protected pages = 0;
   protected save = false;
-  protected disabled:Boolean | null=null;
-  protected currentIndex=0;
-  protected maxSteps=0;
+  protected disabled: Boolean | null = null;
+  protected currentIndex = 0;
+  protected maxSteps = 0;
   protected arrayPages: any[] = [];
 
   constructor() {
@@ -68,46 +68,93 @@ export class Wizard extends LitElement {
   }
   onPagesSlotChanged() {
     const pages = this._pages.assignedNodes();
-    (pages[0] as any).setAttribute('selected',true);
-    pages.forEach((page: any) => {
-      console.log(page);
-      console.log(page.getAttribute('disabled'));
-      if(page.getAttribute('disabled')!=null) {
-        this.disabled=true;
+    (pages[0] as any).setAttribute('selected', true);
+    pages.forEach((page: any, index) => {
+      if (page.getAttribute('disabled') != null) {
+        this.disabled = true;
+      }
+      else if (page.hasAttribute('current')) {
+        this.currentIndex = index;
+        this.stepper['currentStepIndex'] = this.currentIndex;
+        page.setAttribute('selected', true);
+        (pages[0] as any).removeAttribute("selected");
       }
       this.arrayPages.push({
         'label': page.getAttribute('title'),
         'description': page.getAttribute('description'),
-        'disabled':  this.disabled
+        'disabled': this.disabled
       });
-      this.disabled=null;
+      this.disabled = null;
     });
     this.stepper['steps'] = this.arrayPages;
   }
 
-  deselect(index,pages) {
+  deselect(index, pages) {
     console.log(pages[index]);
   }
 
   _handleNextClick() {
     const pages = this._pages.assignedNodes();
-    if(this.currentIndex!==(pages.length-1)){
-      this.currentIndex=this.stepper['currentStepIndex'];
-      this.stepper['currentStepIndex']++;
-      (pages[this.currentIndex] as any).removeAttribute("selected");
-      this.currentIndex++;
-      if((pages[this.currentIndex] as any).hasAttribute('disabled')) {
-        this.stepper['currentStepIndex']++;
-        this.currentIndex++;
-      }
-      (pages[this.currentIndex] as any).setAttribute('selected',true);
+    if (this.currentIndex !== (pages.length - 1)) {
+      this.nextStep(pages);
+      this.checkNextStepDisabled(pages, this.currentIndex);
+      (pages[this.currentIndex] as any).setAttribute('selected', true);
     }
-    console.log(this.currentIndex);
-    console.log(pages.length);
-    if(this.currentIndex+1==(pages.length)){
-      this.save=true;
+    if (this.currentIndex + 1 == (pages.length)) {
+      this.save = true;
       this.requestUpdate();
     }
+  }
+
+  _handleBackClick() {
+    console.log(this.currentIndex);
+    if (this.currentIndex != 0) {
+      const pages = this._pages.assignedNodes();
+      if (this.currentIndex == (pages.length - 1)) {
+        this.save = false;
+        this.requestUpdate();
+      }
+      this.previousStep(pages);
+      this.checkPreviousStepDisabled(pages,this.currentIndex);
+      (pages[this.currentIndex] as any).setAttribute('selected', true);
+    }
+  }
+
+  checkNextStepDisabled(pages, current) {
+    if ((pages[current] as any).hasAttribute('disabled')) {
+      this.stepper['currentStepIndex']++;
+      this.currentIndex++;
+      current++;
+      this.checkNextStepDisabled(pages, current);
+    } else {
+      console.log("not disabled");
+      return;
+    }
+  }
+
+  checkPreviousStepDisabled(pages, current) {
+    if ((pages[current] as any).hasAttribute('disabled')) {
+      this.stepper['currentStepIndex']--;
+      this.currentIndex--;
+      current--;
+      this.checkPreviousStepDisabled(pages, current);
+    } else {
+      return;
+    }
+  }
+
+  nextStep(pages) {
+    this.currentIndex = this.stepper['currentStepIndex'];
+    this.stepper['currentStepIndex']++;
+    (pages[this.currentIndex] as any).removeAttribute("selected");
+    this.currentIndex++;
+  }
+
+  previousStep(pages) {
+    this.currentIndex = this.stepper['currentStepIndex'];
+    this.stepper['currentStepIndex']--;
+    (pages[this.currentIndex] as any).removeAttribute("selected");
+    this.currentIndex--;
   }
 
   _handleCancelClick() {
@@ -116,26 +163,6 @@ export class Wizard extends LitElement {
 
   _handleSaveClick() {
     console.log("save");
-  }
-
-
-  _handleBackClick() {
-    console.log(this.currentIndex);
-    if(this.currentIndex!=0) {
-      const pages = this._pages.assignedNodes();
-      if(this.currentIndex==(pages.length-1)) {
-        this.save=false;
-        this.requestUpdate();
-      }
-      this.stepper['currentStepIndex']--;
-      (pages[this.currentIndex] as any).removeAttribute("selected");
-      this.currentIndex--;
-      if((pages[this.currentIndex] as any).hasAttribute('disabled')) {
-        this.stepper['currentStepIndex']--;
-        this.currentIndex--;
-      }
-      (pages[this.currentIndex] as any).setAttribute('selected',true);
-    }
   }
 }
 

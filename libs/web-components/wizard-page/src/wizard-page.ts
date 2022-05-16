@@ -19,6 +19,9 @@ export class WizardPage extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
+  @property({ type: Boolean })
+  current = false;
+
   render() {
     return html`<div class="card">
     <h3>${this.title}</h3>

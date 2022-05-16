@@ -1,7 +1,7 @@
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
 <script type="module" src="node_modules/@finastra/wizard-page/dist/src/wizard-page.js"></script>
 <script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
-<script type="module" src="node_modules/@finastra/fds-button/dist/src/fds-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
 
 <fds-wizard title="my-wizard">
         <fds-button slot='next' label="Next" outlined secondary>
@@ -17,7 +17,7 @@
         </p>
     </fds-wizard-page>
 
-    <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description">
+    <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description" current>
         <p>First one
         </p>
     </fds-wizard-page>
@@ -27,12 +27,12 @@
         </p>
     </fds-wizard-page>
 
-    <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description">
+    <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description" disabled>
         <p>First one
         </p>
     </fds-wizard-page>
 
-    <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description">
+    <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description" disabled>
         <p>First one
         </p>
     </fds-wizard-page>
