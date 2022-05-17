@@ -82,13 +82,6 @@
     align-self: center;
     padding: var(--fds-spacing-3, 16px);
   }
-
-  .disabled {
-    .step-item-label,
-    .step-item-description {
-      @include fds.text-color(text-icon-on-background);
-    }
-  }
 }
 
 :host([label-mode="background"]) {
