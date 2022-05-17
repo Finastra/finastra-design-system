@@ -101,11 +101,4 @@
     border-radius: var(--fds-spacing-1, 4px);
     @include fds.bg-color(primary-lighter);
   }
-
-  .disabled {
-    .step-item-label,
-    .step-item-description {
-      @include fds.text-color(text-icon-on-background);
-    }
-  }
 }
