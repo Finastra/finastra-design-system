@@ -60,7 +60,6 @@
   @include fds.typography(body-1);
 }
 
-
 .step-item-description {
   @include fds.typography(body-2);
 }
@@ -96,4 +95,3 @@
     @include fds.bg-color(primary-lighter);
   }
 }
-
