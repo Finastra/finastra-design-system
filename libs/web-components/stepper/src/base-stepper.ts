@@ -5,7 +5,7 @@ import { classMap } from 'lit/directives/class-map.js';
 export interface Step {
   label: string;
   description?: string;
-  disabled: Boolean
+  disabled?: Boolean
 }
 
 /**
