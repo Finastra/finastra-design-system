@@ -43,6 +43,18 @@
   }
 }
 
+.disabled {
+  .circle {
+    background: var(--fds-text-disabled-on-background);
+    @include fds.text-color(text-icon-on-background);
+  }
+
+  .step-item-label,
+  .step-item-description {
+    @include fds.text-color(text-icon-on-background);
+  }
+}
+
 .current {
   .circle {
     @include fds.property(border-color, primary);

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { playwrightLauncher } from '@web/test-runner-playwright';
+import { apexchart } from './tools/dev-server/middlewares.mjs';
 
 const packagesPath = 'libs/web-components';
 const excludedPackages = ['_helpers'];
@@ -26,6 +27,7 @@ export default {
       timeout: '3000'
     }
   },
+  middleware: [apexchart],
   browsers: [
     //playwrightLauncher({ product: 'firefox', concurrency: 1 }),
     playwrightLauncher({ product: 'chromium' })

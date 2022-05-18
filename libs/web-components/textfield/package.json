@@ -1,7 +1,7 @@
 {
   "name": "@finastra/textfield",
   "displayName": "Textfield",
-  "version": "0.0.27",
+  "version": "0.0.29",
   "description": "Textfield Web Component",
   "keywords": [
     "Finastra Design System",

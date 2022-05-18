@@ -4,12 +4,27 @@
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/radio?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/radio')
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-radio--default)
 
-## Installation
+`fds-radio` extend [Material web's mwc-radio-base](https://github.com/material-components/material-web/tree/master/packages/radio)
+
+## Usage
+
+### Import
 
 ```
 npm i @finastra/radio
 ```
 
-## Example usage
+```ts
+import '@finastra/radio';
+...
+<fds-radio checked name="Gaga"></fds-radio>
+```
 
-`fds-radio` extend Material web `mwc-radio-base`. For usage please see [mwc-radio](https://github.com/material-components/material-web/tree/master/packages/radio)
+### Pure HTML pages
+
+```html
+<script type="module" src="https://unpkg.com/@finastra/radio@latest/dist/src/radio.js?module"></script>
+
+<fds-radio checked name="Gaga"></fds-radio>
+```
+

@@ -3,7 +3,11 @@
     "target": "es2017",
     "module": "es2015",
     "moduleResolution": "node",
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "lib": [
+      "es2017",
+      "dom",
+      "dom.iterable"
+    ],
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
@@ -12,14 +16,20 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": false,
     "outDir": "./",
     "baseUrl": ".",
     "paths": {
-      "@finastra/*": ["./*"],
-      "@fds/test-helper": ["_helpers"]
+      "@finastra/*": [
+        "./*"
+      ],
+      "@fds/test-helper": [
+        "_helpers"
+      ]
     },
     "composite": true,
     "importHelpers": true
@@ -99,6 +109,9 @@
       "path": "select"
     },
     {
+      "path": "charts"
+    },
+    {
       "path": "slider"
     },
     {
@@ -109,6 +122,12 @@
     },
     {
       "path": "chip"
+    },
+    {
+      "path": "linear-progress"
+    },
+    {
+      "path": "circular-progress"
     },
     {
       "path": "wizard"
