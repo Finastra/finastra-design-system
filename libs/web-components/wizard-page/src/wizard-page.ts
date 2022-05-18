@@ -14,9 +14,6 @@ export class WizardPage extends LitElement {
   description = '';
 
   @property({ type: Boolean })
-  selected = false;
-
-  @property({ type: Boolean })
   disabled = false;
 
   @property({ type: Boolean })

@@ -2,6 +2,9 @@
 <script type="module" src="node_modules/@finastra/wizard-page/dist/src/wizard-page.js"></script>
 <script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
 <script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<script type="module" src="node_modules/@finastra/tab-bar/dist/src/tab-bar.js"></script>
+<script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
+<script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
 
 <fds-wizard title="my-wizard">
         <fds-button slot='next' label="Next" outlined secondary>
@@ -13,8 +16,34 @@
         <fds-button slot='save' label="save" secondary>
         </fds-button>
     <fds-wizard-page slot="page" id="page" title="Step 1" description="Step 1 description">
-        <p>First one
-        </p>
+            <fds-tab-bar activeindex="0" seperator>
+              <fds-tab label="General" icon="location_on"></fds-tab>
+              <fds-tab label="Personal details" icon="location_on"></fds-tab>
+              <fds-tab label="Awaiting approvals" icon="location_on"></fds-tab>
+            </fds-tab-bar>
+            <div class="textfields">
+              <fds-textfield
+                required
+                label="First name"
+                icontrailing=""
+                helper="helper text"
+              ></fds-textfield>
+              <fds-textfield
+                label="Last name"
+                icontrailing=""
+                helper="helper text"
+              ></fds-textfield>
+              <fds-textfield
+                label="Employer"
+                icontrailing=""
+                helper="helper text"
+              ></fds-textfield>
+              <fds-textfield
+                label="Occupation"
+                icontrailing=""
+                helper="helper text"
+              ></fds-textfield>
+            </div>
     </fds-wizard-page>
 
     <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description" current>
@@ -27,12 +56,12 @@
         </p>
     </fds-wizard-page>
 
-    <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description" disabled>
+    <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description">
         <p>First one
         </p>
     </fds-wizard-page>
 
-    <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description" disabled>
+    <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description">
         <p>First one
         </p>
     </fds-wizard-page>

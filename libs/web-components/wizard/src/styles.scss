@@ -1,8 +1,9 @@
 
+@use "@finastra/fds-theme" as fds;
+
 .row {
   display: flex; 
   flex-flow: row wrap; 
-  background: #00e1ff;
   height: fit-content;
 }
 
@@ -10,20 +11,45 @@
   display: flex; 
   flex: 1 0 400px;
   flex-flow: column; 
-  background: grey;
+  background: var(--fds-surface);
 }
 
-.col:nth-child(2){
-  background: #afaef2;
+.content {
+  margin-left: 8px;
+  .stepper-content {
+    padding: 16px;
+  }
 }
 
+.actions {
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+padding-top: 16px;
+.next {
+  display: flex;
+
+  slot[name="back"]::slotted(*)  {
+    margin-right: 16px;
+  }
+}
+}
+
+.stepper{
+  background: var(--fds-background);
+  @include fds.elevation(4);
+
+  .card { 
+     padding-left: 16px;
+    padding-bottom: 16px;}
+
+}
 
     .wizard {
         display: flex;
     }
 
     .left {
-        background: red;
         height: fit-content;
         flex: 1 1 100%;
         box-sizing: border-box;
@@ -35,7 +61,6 @@
     }
 
     .right {
-        background: #afaef2;
         height: fit-content;
         flex: 1 1 0%;
         box-sizing: border-box;
