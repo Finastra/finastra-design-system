@@ -111,7 +111,9 @@ $fds-blue: #009CBD;
 
         img {
           width: auto;
-          height: 70px;
+          height: auto;
+          max-width: 70px;
+          max-height: 70px;
         }
 
         .app-card-logo-fallback {
@@ -202,7 +204,9 @@ $fds-blue: #009CBD;
 
     img {
       width: auto;
-      height: 42px;
+      height: auto;
+      max-width: 42px;
+      max-height: 42px;
     }
   }
 
