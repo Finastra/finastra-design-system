@@ -97,6 +97,7 @@ $fds-blue: #009CBD;
       z-index: 1;
 
       .app-card-logo-container {
+        overflow: hidden;
         border-radius: 50%;
         width: 80px;
         height: 80px;
@@ -109,7 +110,7 @@ $fds-blue: #009CBD;
         justify-content: center;
 
         img {
-          width: 70px;
+          width: auto;
           height: 70px;
         }
 
