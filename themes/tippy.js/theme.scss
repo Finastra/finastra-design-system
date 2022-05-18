@@ -1,31 +1,20 @@
 @use '@finastra/fds-theme' as fds;
 
-$color: primary;
+$color: rgba(0,0,0,0.54);
 
 .tippy-box[data-theme~='finastra'] {
-    @include fds.bg-color($color);
-  
-    &[data-placement^='top'] > .tippy-arrow::before {
-      @include fds.property(border-top-color, $color);
-    }
-  
-    &[data-placement^='bottom'] > .tippy-arrow::before {
-      @include fds.property(border-bottom-color, $color);
-    }
-  
-    &[data-placement^='left'] > .tippy-arrow::before {
-      @include fds.property(border-left-color, $color);
-    }
-  
-    &[data-placement^='right'] > .tippy-arrow::before {
-      @include fds.property(border-right-color, $color);
-    }
-  
-    > .tippy-backdrop {
-        @include fds.bg-color($color);
-    }
-  
-    > .tippy-svg-arrow {
-        @include fds.fill($color);
-    }
+  background-color: $color;
+  @include fds.text-color(text-high-on-dark);
+
+  .tippy-arrow::before {
+    display: none;
   }
+
+  > .tippy-box-backdrop {
+    background-color: $color;
+  }
+
+  > .tippy-box-svg-arrow {
+    fill: transparent;
+  }
+}
