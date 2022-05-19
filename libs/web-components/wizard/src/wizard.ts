@@ -1,5 +1,6 @@
 import '@finastra/button';
 import '@finastra/divider';
+import '@finastra/stepper';
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -43,30 +44,29 @@ export class Wizard extends LitElement {
     return html`
       <div class="wizard">
         ${this.reverseStepper ?
-              html`<div class='col stepper'>
-          <div class="card">
+              html`<div class='stepper'>
             <fds-vertical-stepper id="stepper" currentStepIndex="0"></fds-vertical-stepper>
-          </div>
         </div>`: ''}
-        <div class='col content'>
-          <div class="stepper-content">
+        <div class='content'>
+            <div class="pages">
             <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
+            </div>
+            <div class="footer">
             <fds-divider></fds-divider>
             <div class="actions">
-              <div class="next">
+            <div class="next">
               ${this.back ? this.renderBackSlot() : ''}
               ${this.save ? this.renderSaveSlot() : html` <slot name="next" @click="${this._handleNextClick}"></slot>`}
               </div>
+              <div class="cancel">
             <slot name="cancel" @click="${this._handleCancelClick}"></slot>
             </div>
-
-          </div>
+            </div>
+            </div>
         </div>
         ${!this.reverseStepper ?
-              html`<div class='col stepper'>
-          <div class="card">
+              html`<div class='stepper'>
             <fds-vertical-stepper id="stepper" currentStepIndex="0"></fds-vertical-stepper>
-          </div>
         </div>`: ''}
       </div>
     `;

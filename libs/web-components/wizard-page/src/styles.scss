@@ -3,12 +3,13 @@
 }
 
  .card {
-  display: flex;
-  padding: 20px;
-  height: 100%;
+  position: absolute;
+  top: 8%;
+  bottom: 5%;
+  left: 5%;
   color: var(--fds-on-background);
-  align-items: stretch;
-  flex-direction: column;
+  padding-bottom: 48px;
+  overflow: scroll;
  } 
 
  :host([current]) {

@@ -47,8 +47,19 @@
     </fds-wizard-page>
 
     <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description" current>
-        <p>First one
-        </p>
+      <div class="textfields">
+        <fds-textfield
+          required
+          label="First name"
+          icontrailing=""
+          helper="helper text"
+        ></fds-textfield>
+        <fds-textfield
+          label="Last name"
+          icontrailing=""
+          helper="helper text"
+        ></fds-textfield>
+      </div>
     </fds-wizard-page>
 
     <fds-wizard-page slot="page" id="page" title="Step 3" description="Step 3 description" disabled>

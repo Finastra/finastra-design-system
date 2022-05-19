@@ -20,9 +20,10 @@ export class WizardPage extends LitElement {
   current = false;
 
   render() {
-    return html`<div class="card">
+    return html`
+    <div class="card">
     <h3>${this.title}</h3>
-    <slot></slot>
+    <slot class="content"></slot>
 `;
   }
 }

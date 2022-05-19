@@ -1,76 +1,119 @@
-
 @use "@finastra/fds-theme" as fds;
 
-.row {
-  display: flex; 
-  flex-flow: row wrap; 
-  height: fit-content;
+:host {
+  display: block;
+  height: max-content;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+.wizard {
+  flex-direction: row;
+  display: flex;
+  min-height: 500px;
 }
 
-.col { 
-  display: flex; 
-  flex: 1 0 400px;
-  flex-flow: column; 
-  background: var(--fds-surface);
-}
+// .row {
+//   display: flex;
+//   flex-flow: row wrap;
+//   height: fit-content;
+// }
+
+// .col {
+//    background: beige;
+// }
 
 .content {
-  margin-left: 8px;
-  .stepper-content {
-    padding: 16px;
-  }
-}
-
-.actions {
-display: flex;
-flex-direction: row-reverse;
-justify-content: space-between;
-padding-top: 16px;
-.next {
+  background: var(--fds-surface);
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+  flex-direction: column;
   display: flex;
-
-  slot[name="back"]::slotted(*)  {
-    margin-right: 16px;
-  }
-}
+  min-width: 600px;
 }
 
-.stepper{
+.stepper {
+  z-index: 1;
+  flex: 1 1 30%;
+  box-sizing: border-box;
+  margin-left: 8px;
   background: var(--fds-background);
   @include fds.elevation(4);
-
-  .card { 
-     padding-left: 16px;
-    padding-bottom: 16px;}
-
+  padding-left: 16px;
+  padding-bottom: 16px;
+  min-width: 300px;
 }
 
-    .wizard {
-        display: flex;
-    }
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-    .left {
-        height: fit-content;
-        flex: 1 1 100%;
-        box-sizing: border-box;
-        max-width: 66%;
-    }
+.pages {
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+}
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--fds-surface);
+  .next {
+    display: flex;
 
-    .left .content {
-        background: white;
+    slot[name="back"]::slotted(*) {
+      margin-right: 16px;
     }
+  }
+}
 
-    .right {
-        height: fit-content;
-        flex: 1 1 0%;
-        box-sizing: border-box;
-    }
+// .stepper-content {
+//   height: 400px;
+// }
 
-    .form {
-        display: contents;
-        box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px -1px, rgb(0 0 0 / 11%) 0px 4px 5px 0px, rgb(0 0 0 / 9%) 0px 1px;
-        position: absolute;
-        border-radius: 6px;
-        right: 20%;
-        left: 20%;
-    }
+// .stepper{
+//   background: var(--fds-background);
+//   @include fds.elevation(4);
+
+//   .card {
+//      padding-left: 16px;
+//     padding-bottom: 16px;}
+
+// }
+
+//     .wizard {
+//         display: flex;
+//     }
+
+//     .left {
+//         height: fit-content;
+//         flex: 1 1 100%;
+//         box-sizing: border-box;
+//         max-width: 66%;
+//     }
+
+//     .left .content {
+//         background: white;
+//     }
+
+//     .right {
+//         height: fit-content;
+//         flex: 1 1 0%;
+//         box-sizing: border-box;
+//     }
+
+//     .form {
+//         display: contents;
+//         box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px -1px, rgb(0 0 0 / 11%) 0px 4px 5px 0px, rgb(0 0 0 / 9%) 0px 1px;
+//         position: absolute;
+//         border-radius: 6px;
+//         right: 20%;
+//         left: 20%;
+//     }
