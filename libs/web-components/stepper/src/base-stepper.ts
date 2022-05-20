@@ -12,6 +12,7 @@ export interface Step {
  * @cssprop {text} [--fds-stepper-line-space=8px] - Stepper line space.
  * @attr {boolean} [secondary=false] - Use Secondary color.
  * @attr [currentStepIndex=-1] - Index of current active step.
+ * @attr {boolean} [dark=false] - Used in case you have a dark background on your stepper.
  */
 export class BaseStepper extends LitElement {
   @property({ attribute: false })
@@ -19,6 +20,9 @@ export class BaseStepper extends LitElement {
 
   @property({ type: Number })
   currentStepIndex = -1;
+
+  @property({ type: Boolean })
+  dark = false;
 
   renderIconAndLine(index: number) {
     const startLineClass = { hidden: index === 0, current: index === (this.currentStepIndex + 1) && !this.steps[index-1].disabled, first: index === 0};
@@ -38,7 +42,7 @@ export class BaseStepper extends LitElement {
   }
 
   render() {
-    return html`<div class="container">
+    return html`<div class="container ${this.dark? 'dark-theme' : ''}">
       ${this.steps.map(
       (step, idx) =>
         html`<div class="step-item ${idx < this.currentStepIndex? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled? 'current' : ''} ${step.disabled && idx >= this.currentStepIndex ? 'disabled' : ''} ">

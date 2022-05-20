@@ -61,4 +61,21 @@ const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = fals
   return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fsd-horizontal-stepper>`;
 };
 
+const DarkTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, dark }) => {
+  return html`
+  <style>
+  .dark-bg {
+    background: #060546;
+    padding: 32px;
+  }
+</style>
+<div class="dark-bg">
+  <fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} ?dark=${dark}></fds-horizontal-stepper>
+</div>`;
+};
+
 export const Default: Story<HorizontalStepper> = HTemplate.bind({});
+export const DarkBg: Story<HorizontalStepper> = DarkTemplate.bind({});
+DarkBg.args = {
+  dark: true,
+}

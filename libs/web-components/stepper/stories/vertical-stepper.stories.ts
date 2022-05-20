@@ -73,8 +73,26 @@ export default {
   cssprops
 } as Meta;
 
-const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, labelMode = '' }) => {
-  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode}></fsd-vertical-stepper>`;
+const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, labelMode = '' ,dark}) => {
+  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode} ?dark=${dark}></fsd-vertical-stepper>`;
 };
 
+const DarkTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, labelMode = '' ,dark=true}) => {
+  return html`
+  <style>
+  .dark-bg {
+    background: #060546;
+    padding: 32px;
+  }
+</style>
+<div class="dark-bg">
+  <fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode} ?dark=${dark}></fsd-vertical-stepper>
+</div>`;
+};
+
+
 export const Default: Story<VerticalStepper> = VTemplate.bind({});
+export const DarkBg: Story<VerticalStepper> = DarkTemplate.bind({});
+DarkBg.args = {
+  dark: true,
+}

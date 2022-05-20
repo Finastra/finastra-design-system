@@ -13,6 +13,12 @@
 
   <label>step 5</label>
   <fds-horizontal-stepper id="hStepper" currentStepIndex="4"></fds-horizontal-stepper>
+
+  <label>Dark background</label>
+  <div class="dark-bg">
+    <fds-horizontal-stepper dark id="hStepper" currentStepIndex="1"></fds-horizontal-stepper>
+  </div>
+
 </div>
 <br />
 <div>Vertical stepper</div>
@@ -26,7 +32,8 @@
 <fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="2"></fds-vertical-stepper>
 
 <label>step 5</label>
-<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
+<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="2">
+</fds-vertical-stepper>
 <script>
   const hSteppers = document.querySelectorAll('#hStepper');
   hSteppers.forEach((stepper) => {
@@ -56,3 +63,10 @@
     ];
   });
 </script>
+
+<style>
+  .dark-bg {
+    background: #060546;
+    padding-top: 32px;
+  }
+</style>
