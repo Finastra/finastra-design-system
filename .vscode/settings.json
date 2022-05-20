@@ -24,6 +24,7 @@
     "wc:app-bar",
     "wc:user-profile",
     "wc:global-nav",
-    "wc:*"
+    "wc:*",
+    "wc:pie-chart"
   ]
 }

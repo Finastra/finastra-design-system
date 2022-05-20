@@ -1,0 +1,15 @@
+.tippy-box[data-theme~=finastra] {
+  background-color: rgba(0, 0, 0, 0.54);
+  color: var(--fds-text-high-on-dark, white);
+}
+.tippy-box[data-theme~=finastra] .tippy-arrow::before {
+  display: none;
+}
+.tippy-box[data-theme~=finastra] > .tippy-box-backdrop {
+  background-color: rgba(0, 0, 0, 0.54);
+}
+.tippy-box[data-theme~=finastra] > .tippy-box-svg-arrow {
+  fill: transparent;
+}
+
+/*# sourceMappingURL=theme.css.map */

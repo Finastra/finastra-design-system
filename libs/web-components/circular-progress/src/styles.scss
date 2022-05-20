@@ -1,0 +1,6 @@
+@use '@material/mwc-circular-progress/mwc-circular-progress';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @include fds.mdc(circular-progress-track-color, primary-lighter);
+}

@@ -1,12 +1,12 @@
-import { devIndex, esjRender } from './tools/dev-server/middlewares.mjs';
+import { devIndex, esjRender, apexchart } from './tools/dev-server/middlewares.mjs';
+
 export default {
   port: 4000,
   watch: true,
   open: true,
-  // appIndex: 'index.html',
   nodeResolve: true,
   plugins: [],
-  middleware: [esjRender, devIndex],
+  middleware: [esjRender, devIndex, apexchart],
   preserveSymlinks: true,
   compatibility: 'none',
   rootDir: '.',

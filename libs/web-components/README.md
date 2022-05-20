@@ -41,10 +41,13 @@
 | **Button Toggle**       | [`@finastra/button-toggle`](https://npmjs.com/package/@finastra/button-toggle)             | [![latest](https://img.shields.io/npm/v/@finastra/button-toggle.svg)](https://npmjs.com/package/@finastra/button-toggle)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./button-toggle/README.md)       |
 | **Button Toggle Group**       | [`@finastra/button-toggle-group`](https://npmjs.com/package/@finastra/button-toggle-group)             | [![latest](https://img.shields.io/npm/v/@finastra/button-toggle-group.svg)](https://npmjs.com/package/@finastra/button-toggle-group)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./button-toggle-group/README.md)       |
 | **Card**         | [`@finastra/card`](https://npmjs.com/package/@finastra/card)                 | [![latest](https://img.shields.io/npm/v/@finastra/card.svg)](https://npmjs.com/package/@finastra/card)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./card/README.md)         |
+| **Charts**         | [`@finastra/charts`](https://npmjs.com/package/@finastra/charts)                 | [![latest](https://img.shields.io/npm/v/@finastra/charts.svg)](https://npmjs.com/package/@finastra/charts)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./charts/README.md)         |
 | **Checkbox**     | [`@finastra/checkbox`](https://npmjs.com/package/@finastra/checkbox)         | [![latest](https://img.shields.io/npm/v/@finastra/checkbox.svg)](https://npmjs.com/package/@finastra/checkbox)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./checkbox/README.md)     |
 | **Chip**     | [`@finastra/chip`](https://npmjs.com/package/@finastra/chip)         | [![latest](https://img.shields.io/npm/v/@finastra/chip.svg)](https://npmjs.com/package/@finastra/chip)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./chip/README.md)     |
+| **Circular Progress**     | [`@finastra/circular-progress`](https://npmjs.com/package/@finastra/circular-progress)         | [![latest](https://img.shields.io/npm/v/@finastra/circular-progress.svg)](https://npmjs.com/package/@finastra/circular-progress)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./circular-progress/README.md)     |
 | **Divider**      | [`@finastra/divider`](https://npmjs.com/package/@finastra/divider)           | [![latest](https://img.shields.io/npm/v/@finastra/divider.svg)](https://npmjs.com/package/@finastra/divider)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./divider/README.md)      |
 | **Launchpad**    | [`@finastra/launchpad`](https://npmjs.com/package/@finastra/launchpad)       | [![latest](https://img.shields.io/npm/v/@finastra/launchpad.svg)](https://npmjs.com/package/@finastra/launchpad)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./launchpad/README.md)    |
+| **Linear Progress**     | [`@finastra/linear-progress`](https://npmjs.com/package/@finastra/linear-progress)         | [![latest](https://img.shields.io/npm/v/@finastra/linear-progress.svg)](https://npmjs.com/package/@finastra/linear-progress)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./linear-progress/README.md)     |
 | **Logo**         | [`@finastra/logo`](https://npmjs.com/package/@finastra/logo)                 | [![latest](https://img.shields.io/npm/v/@finastra/logo.svg)](https://npmjs.com/package/@finastra/logo)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./logo/README.md)         |
 | **Menu Trigger** | [`@finastra/menu-trigger`](https://npmjs.com/package/@finastra/menu-trigger) | [![latest](https://img.shields.io/npm/v/@finastra/menu-trigger.svg)](https://npmjs.com/package/@finastra/menu-trigger) | [![README](https://img.shields.io/badge/README--56C271.svg)](./menu-trigger/README.md) |
 | **Textarea**     | [`@finastra/textarea`](https://npmjs.com/package/@finastra/textarea)         | [![latest](https://img.shields.io/npm/v/@finastra/textarea.svg)](https://npmjs.com/package/@finastra/textarea)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./textarea/README.md)     |
@@ -171,3 +174,86 @@ npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
 ```
 
 > Version of the package will be automatically updated during release.
+
+
+## Use Web Components in React Application
+
+If you already have an existing project, feel free to skip directly to the next step. Otherwise, run this command to get started with React: 
+
+```bash
+npx create-react-app my-app
+```
+
+### Install and configure polyfill
+
+The **Web Components polyfills** are a suite of JavaScript libraries that implement [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) APIs for browsers that don't have built-in support.
+
+```bash
+npm install --save @webcomponents/webcomponentsjs vendor-copy
+```
+
+On **package.json** add the following script:
+
+```json
+"postinstall": "vendor-copy"
+```
+
+and the configuration to copy the required js files to public folder:
+
+```json
+"vendorCopy": [  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",  
+		"to": "public/vendor/custom-elements-es5-adapter.js"  
+	},  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",  
+		"to": "public/vendor/webcomponents-bundle.js"  
+	}  
+]
+```
+
+After this step, the **package.json** should contain:
+```json
+"scripts": {
+	"start": "react-scripts start",
+	"build": "react-scripts build",
+	"test": "react-scripts test",
+	"eject": "react-scripts eject",
+	"postinstall": "vendor-copy"
+},
+"vendorCopy": [  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",  
+		"to": "public/vendor/custom-elements-es5-adapter.js"  
+	},  
+	{  
+		"from": "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",  
+		"to": "public/vendor/webcomponents-bundle.js"  
+	}  
+]
+```
+
+On **index.html**, add the following scripts:
+```html
+<script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>  
+<script>if (!window.customElements) { document.write("<!--"); }</script>  
+<script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>  
+<!-- DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+```
+
+### Configuration for `property 'web-component-name' does not exist on type 'JSX.IntrinsicElements'`
+
+In case of a React application that uses Typescript, there's a high chance to encounter the error related to JSX.IntrinsicElements, as React only knows about standard HTML Elements.
+One of the solutions is to declare the custom web-component as part of the JSX.IntrinsicElements like this:
+```typescript
+declare global {
+ namespace JSX {
+  interface IntrinsicElements {
+   'web-component-name': any;
+  }
+ }
+}
+```
+
+#### Congrats! You're ready to integrate your first **Web Component**! 🎉

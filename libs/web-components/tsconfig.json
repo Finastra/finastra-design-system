@@ -12,6 +12,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": false,
@@ -97,6 +99,9 @@
     },
     {
       "path": "select"
+    },    
+    {
+      "path": "charts"
     },
     {
       "path": "slider"
@@ -109,6 +114,12 @@
     },
     {
       "path": "chip"
+    },
+    {
+      "path": "linear-progress"
+    },
+    {
+      "path": "circular-progress"
     }
   ]
 }

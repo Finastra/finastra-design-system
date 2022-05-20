@@ -1,7 +1,7 @@
 {
   "name": "@finastra/sidenav",
   "displayName": "Sidenav",
-  "version": "0.0.28",
+  "version": "0.0.30",
   "description": "Sidenav Web Component",
   "keywords": [
     "Finastra Design System",
