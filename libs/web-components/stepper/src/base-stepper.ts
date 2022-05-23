@@ -40,22 +40,21 @@ export class BaseStepper extends LitElement {
 
   render() {
     return html`<div class="container">
-  ${this.steps.map(
-  (step, idx) =>
-    html`<div
-    class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled ? 'current' : ''} ${step.disabled ? 'disabled' : ''} ">
-    ${this.renderIconAndLine(idx)}
-    ${step.description
-    ? html`<div class="text-wrapper">
-      <div class="step-item-label">${step.label}</div>
-      <div class="step-item-description">${step.description}</div>
-    </div>`
-    : html`<div class="step-item-label">${step.label}</div>`}
-  </div>`
-  )}
-</div>`;
+      ${this.steps.map(
+      (step, idx) =>
+      html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled? 'current' : ''} ${step.disabled? 'disabled' : ''} ">
+            ${this.renderIconAndLine(idx)}
+            ${step.description
+            ? html`<div class="text-wrapper">
+                  <div class="step-item-label">${step.label}</div>
+                  <div class="step-item-description">${step.description}</div>
+                </div>`
+            : html`<div class="step-item-label">${step.label}</div>`}
+          </div>`
+    )}
+    </div>`;
   }
-
+  
   _onStepClick(index: number) {
     if (!this.steps[index]?.disabled) {
       this.currentStepIndex = index;
