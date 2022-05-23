@@ -27,15 +27,15 @@ $track-color-opacity: 0.54;
   @include fds.mdc(switch-unselected-pressed-handle-color, background);
 
   //track color
-  @include fds.mdc(switch-unselected-hover-track-color, text-hint-on-background);
-  @include fds.mdc(switch-unselected-track-color, text-high-on-background);
-  @include fds.mdc(switch-unselected-focus-track-color, text-high-on-background);
-  @include fds.mdc(switch-unselected-hover-track-color, text-high-on-background);
-  @include fds.mdc(switch-unselected-pressed-track-color, text-high-on-background);
+  @include fds.mdc(switch-unselected-hover-track-color, on-surface-medium);
+  @include fds.mdc(switch-unselected-track-color, on-background);
+  @include fds.mdc(switch-unselected-focus-track-color, on-background);
+  @include fds.mdc(switch-unselected-hover-track-color, on-background);
+  @include fds.mdc(switch-unselected-pressed-track-color, on-background);
 
   /* disabled state */
   @include fds.mdc(switch-disabled-unselected-handle-color, surface);
-   @include fds.mdc(switch-disabled-unselected-track-color, text-medium-on-background);
+   @include fds.mdc(switch-disabled-unselected-track-color, on-surface-medium);
    --mdc-switch-disabled-track-opacity: 0.3;
 }
 

@@ -8,7 +8,7 @@
 
    mwc-icon-button  {
     display: block;
-    @include fds.mdc(ripple-color, primary-lighter);
+    @include fds.mdc(ripple-color, surface-selected);
   }
 
   #menu {
