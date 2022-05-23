@@ -1,4 +1,7 @@
 @use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+
+$stepper-bg: var(--fds-background);
 
 :host {
   display: block;
@@ -14,16 +17,6 @@
   min-height: 500px;
 }
 
-// .row {
-//   display: flex;
-//   flex-flow: row wrap;
-//   height: fit-content;
-// }
-
-// .col {
-//    background: beige;
-// }
-
 .content {
   background: var(--fds-surface);
   flex: 1 1 100%;
@@ -35,13 +28,11 @@
   min-width: 600px;
 }
 
-.stepper {
+.stepper-container {
   z-index: 1;
   flex: 1 1 30%;
   box-sizing: border-box;
-  margin-left: 8px;
-  background: var(--fds-background);
-  @include fds.elevation(4);
+  background: var(--fds-stepper-bg, $stepper-bg);
   padding-left: 16px;
   padding-bottom: 16px;
   min-width: 300px;
@@ -56,7 +47,7 @@
 
 .pages {
   height: 100%;
-  overflow: scroll;
+  //overflow: scroll;
   position: relative;
 }
 .actions {
@@ -74,46 +65,6 @@
   }
 }
 
-// .stepper-content {
-//   height: 400px;
-// }
-
-// .stepper{
-//   background: var(--fds-background);
-//   @include fds.elevation(4);
-
-//   .card {
-//      padding-left: 16px;
-//     padding-bottom: 16px;}
-
-// }
-
-//     .wizard {
-//         display: flex;
-//     }
-
-//     .left {
-//         height: fit-content;
-//         flex: 1 1 100%;
-//         box-sizing: border-box;
-//         max-width: 66%;
-//     }
-
-//     .left .content {
-//         background: white;
-//     }
-
-//     .right {
-//         height: fit-content;
-//         flex: 1 1 0%;
-//         box-sizing: border-box;
-//     }
-
-//     .form {
-//         display: contents;
-//         box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px -1px, rgb(0 0 0 / 11%) 0px 4px 5px 0px, rgb(0 0 0 / 9%) 0px 1px;
-//         position: absolute;
-//         border-radius: 6px;
-//         right: 20%;
-//         left: 20%;
-//     }
+:host([darkStepper]) {
+  --fds-stepper-bg: #060546;
+}

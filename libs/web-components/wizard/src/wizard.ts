@@ -18,35 +18,41 @@ export class Wizard extends LitElement {
   @query('[name="save"]') protected _saveAction!: HTMLSlotElement;
   @query('[name="back"]') protected _backAction!: HTMLSlotElement;
 
-  @property({ type: String })
-  title = 'Button';
-
   @property({ type: Number })
-  currentStepIndex = -1;
+  currentStepIndex = 0;
 
   @property({ type: Boolean })
   reverseStepper = false;
 
-  protected pages = 0;
+  @property({ type: Boolean })
+  darkStepper = false;
+
   protected save = false;
   protected back= false;
   protected disabled: Boolean | null = null;
   protected currentIndex = 0;
-  protected maxSteps = 0;
   protected arrayPages: any[] = [];
 
   constructor() {
     super();
+    this.addEventListener('step-click', this.onMessage)
   }
 
+  onMessage(message) {
+    if(message.type==='step-click') {
+      this.onStepClick(message.detail.value);
+    }    
+  }
 
   render() {
     return html`
       <div class="wizard">
         ${this.reverseStepper ?
-              html`<div class='stepper'>
-            <fds-vertical-stepper id="stepper" currentStepIndex="0"></fds-vertical-stepper>
-        </div>`: ''}
+              html`
+              <div class='stepper-container'>
+            <fds-vertical-stepper secondary class="${this.darkStepper? 'dark-theme' : ''}" id="stepper" currentStepIndex="0"></fds-vertical-stepper>
+        </div>
+        <fds-divider vertical></fds-divider>`: ''}
         <div class='content'>
             <div class="pages">
             <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
@@ -59,20 +65,20 @@ export class Wizard extends LitElement {
               ${this.save ? this.renderSaveSlot() : html` <slot name="next" @click="${this._handleNextClick}"></slot>`}
               </div>
               <div class="cancel">
-            <slot name="cancel" @click="${this._handleCancelClick}"></slot>
+            <slot name="cancel"></slot>
             </div>
             </div>
             </div>
         </div>
         ${!this.reverseStepper ?
-              html`<div class='stepper'>
-            <fds-vertical-stepper id="stepper" currentStepIndex="0"></fds-vertical-stepper>
+              html`
+              <fds-divider vertical></fds-divider>
+              <div class='stepper-container'>
+            <fds-vertical-stepper secondary class="${this.darkStepper? 'dark-theme' : ''}" id="stepper" currentStepIndex="0"></fds-vertical-stepper>
         </div>`: ''}
       </div>
     `;
   }
-
-
   renderSaveSlot(): TemplateResult {
     return html`<slot name="save" @click="${this._handleSaveClick}"></slot>`;
   }
@@ -103,10 +109,6 @@ export class Wizard extends LitElement {
       this.disabled = null;
     });
     this.stepper['steps'] = this.arrayPages;
-  }
-
-  deselect(index, pages) {
-    console.log(pages[index]);
   }
 
   _handleNextClick() {
@@ -167,12 +169,19 @@ export class Wizard extends LitElement {
     (pages[this.currentIndex] as any).removeAttribute("current");
     this.currentIndex++;
   }
-
+  
   previousStep(pages) {
     this.currentIndex = this.stepper['currentStepIndex'];
     this.stepper['currentStepIndex']--;
     (pages[this.currentIndex] as any).removeAttribute("current");
     this.currentIndex--;
+  }
+
+  onStepClick(index:number) {
+      (this._pages[this.currentIndex] as any).removeAttribute("current");
+      this.currentIndex=index;
+      (this._pages[this.currentIndex] as any).setAttribute('current', true);
+      this.requestUpdate();
   }
 
   _handleCancelClick() {
@@ -183,8 +192,6 @@ export class Wizard extends LitElement {
     console.log("save");
   }
 }
-
-
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,17 +1,17 @@
 :host {
   display: none;
 }
+.content {
+  overflow: scroll;
+}
 
- .card {
+.page-container {
   position: absolute;
-  top: 8%;
-  bottom: 5%;
-  left: 5%;
+  inset: 4%;
   color: var(--fds-on-background);
   padding-bottom: 48px;
-  overflow: scroll;
- } 
+}
 
- :host([current]) {
-   display:block;
- }
+:host([current]) {
+  display: block;
+}

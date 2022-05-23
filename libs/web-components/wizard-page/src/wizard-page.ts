@@ -21,9 +21,11 @@ export class WizardPage extends LitElement {
 
   render() {
     return html`
-    <div class="card">
+    <div class="page-container">
     <h3>${this.title}</h3>
-    <slot class="content"></slot>
+    <div class="content">
+    <slot></slot>
+    </div>
 `;
   }
 }
