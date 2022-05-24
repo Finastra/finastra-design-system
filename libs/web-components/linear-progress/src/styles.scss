@@ -2,5 +2,5 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
-  @include fds.mdc(linear-progress-buffer-color, primary-lighter);
+  @include fds.mdc(linear-progress-buffer-color, surface-selected);
 }

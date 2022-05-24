@@ -2,5 +2,5 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
-  @include fds.mdc(circular-progress-track-color, primary-lighter);
+  @include fds.mdc(circular-progress-track-color, surface-selected);
 }
