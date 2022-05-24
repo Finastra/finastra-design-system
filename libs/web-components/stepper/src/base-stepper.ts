@@ -25,7 +25,7 @@ export class BaseStepper extends LitElement {
     const endLineClass = { hidden: index === this.steps.length - 1, last: index === this.steps.length - 1 };
     return html`
       <div class="line  start-line ${classMap(startLineClass)}"></div>
-      <div class="circle step-item-icon" @click="${() => this._onStepClick(index)}">
+      <div class="circle step-item-icon">
         ${index >= this.currentStepIndex
         ? index + 1
         : svg`<svg width="14" height="11" viewBox="0 0 14 11">
@@ -42,7 +42,7 @@ export class BaseStepper extends LitElement {
     return html`<div class="container">
       ${this.steps.map(
       (step, idx) =>
-      html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled? 'current' : ''} ${step.disabled? 'disabled' : ''} ">
+      html`<div class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled? 'current' : ''} ${step.disabled? 'disabled' : ''}" @click="${() => this._onStepClick(idx)}">
             ${this.renderIconAndLine(idx)}
             ${step.description
             ? html`<div class="text-wrapper">

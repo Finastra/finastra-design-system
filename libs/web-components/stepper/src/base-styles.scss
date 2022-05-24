@@ -17,6 +17,14 @@
   @include fds.property(border-color, text-hint-on-background);
 }
 
+.step-item {
+  cursor: pointer;
+}
+
+.disabled.step-item {
+  pointer-events: none;
+}
+
 .step-item-label,
 .step-item-description {
   @include fds.text-color(on-background);
@@ -48,6 +56,7 @@
   .circle {
     background: var(--fds-text-disabled-on-background);
     @include fds.text-color(text-icon-on-background);
+    pointer-events: none;
   }
 
   .step-item-label,
@@ -78,6 +87,14 @@
 
 .line.start-line.current {
   @include fds.bg-color(primary);
+}
+
+// .disabled .text-wrapper {
+//   pointer-events: none;
+// }
+
+.text-wrapper {
+ //r: pointer;
 }
 
 :host([secondary]) {
