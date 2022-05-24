@@ -13,5 +13,5 @@
 }
 
 .mdc-slider__value-indicator-text {
-    @include fds.text-color(text-high-on-dark);
+    @include fds.text-color(on-dark);
 }

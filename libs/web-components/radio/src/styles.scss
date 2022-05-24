@@ -7,6 +7,6 @@
   @include fds.mdc(theme-secondary, primary);
   @include fds.mdc(ripple-color, primary);
   @include fds.mdc(radio-checked-color, primary);
-  @include fds.mdc(radio-unchecked-color, text-medium-on-background);
-  @include fds.mdc(radio-disabled-color, text-hint-on-background);
+  @include fds.mdc(radio-unchecked-color, on-surface-medium);
+  @include fds.mdc(radio-disabled-color, on-surface-disabled);
 }

@@ -1,6 +1,7 @@
 import { html, LitElement, svg } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { EVENTS } from './constants';
 
 export interface Step {
   label: string;
@@ -59,7 +60,7 @@ export class BaseStepper extends LitElement {
     if (!this.steps[index]?.disabled) {
       this.currentStepIndex = index;
       this.dispatchEvent(
-        new CustomEvent('step-click', {
+        new CustomEvent(EVENTS.STEPCLICK, {
           bubbles: true, composed: true, detail: {
             value: `${index}`
           }
