@@ -59,3 +59,8 @@ h3 {
 a {
   text-decoration: none;
 }
+
+.list-components a mwc-list-item,
+.list-components a mwc-icon {
+  color: var(--mdc-theme-on-surface);
+}

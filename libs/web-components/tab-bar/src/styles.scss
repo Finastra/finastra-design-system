@@ -14,7 +14,7 @@
       bottom: 12px;
       width: 1px;
       margin-left: 4px;
-      @include fds.property(background, text-hint-on-background);
+      @include fds.property(background, outline);
     }
   }
 }

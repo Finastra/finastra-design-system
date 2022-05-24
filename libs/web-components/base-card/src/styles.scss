@@ -16,6 +16,10 @@
     overflow: hidden;
   }
 
+  .mdc-card--outlined {
+    @include fds.property(border-color, outline);
+  }
+
   slot {
     border-radius: inherit;
   }
