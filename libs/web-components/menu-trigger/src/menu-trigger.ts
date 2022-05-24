@@ -1,13 +1,13 @@
-import { customElement, property } from 'lit/decorators.js';
-import { html } from 'lit-html';
-
-import { Button } from '@finastra/button';
+import { OutlinedButton } from '@finastra/button';
 import '@material/mwc-icon';
-
+import { html } from 'lit-html';
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
+
+
 @customElement('fds-menu-trigger')
-export class MenuTrigger extends Button {
+export class MenuTrigger extends OutlinedButton {
   static styles = styles;
 
   /**
@@ -36,10 +36,9 @@ export class MenuTrigger extends Button {
 
   render() {
     return html`
-    <fds-button
+    <fds-outlined-button
       label='${this.label}'
       icon='${this.icon}'
-      ?outlined='${this.outlined}'
       ?text='${this.text}'
       ?dense='${this.dense}'
       ?disabled='${this.disabled}'
@@ -47,7 +46,7 @@ export class MenuTrigger extends Button {
       ?secondary='${this.secondary}'
     >
       <mwc-icon class="menu-trigger-icon">${this.menuTrailingIcon}</mwc-icon>
-    </fds-button>
+    </fds-outlined-button>
     `;
   }
 

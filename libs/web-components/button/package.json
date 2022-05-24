@@ -9,10 +9,10 @@
     "Button"
   ],
   "license": "MIT",
-  "main": "dist/src/button.js",
-  "module": "dist/src/button.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/contained-styles.scss src/outlined-styles.scss src/text-styles.scss"
   },
   "dependencies": {
     "@material/mwc-base": "0.25.3",
