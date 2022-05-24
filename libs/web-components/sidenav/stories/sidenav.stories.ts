@@ -96,7 +96,7 @@ const Template: Story<Sidenav> = ({ type }) => {
       
     </div>
   </div>
-</fsd-sidenav>`;
+</fds-sidenav>`;
 };
 
 export const Default: Story<Sidenav> = Template.bind({});

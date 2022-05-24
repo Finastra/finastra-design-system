@@ -25,7 +25,7 @@ $fds-default-avatar: url($avatar-path) center center / 120% 120% no-repeat;
   justify-content: center;
   text-transform:uppercase;
   @include fds.bg-color(gradient);
-  @include fds.text-color(on-primary);
+  @include fds.text-color(on-gradient);
   @include fds.typography(body-3);
   font-size: var(--fds-avatar-font-size, 16px);
 
