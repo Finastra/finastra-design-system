@@ -1,6 +1,6 @@
 const README = require('../README.md');
 import '@finastra/wizard';
-import type { Wizard } from '@finastra/wizard';
+import { POSITION, Wizard } from '@finastra/wizard';
 import '@finastra/wizard-page';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
@@ -9,7 +9,18 @@ import { argTypes, cssprops } from './custom-element.json';
 export default {
   title: 'Components/Wizard',
   component: 'fds-wizard',
-  argTypes,
+  argTypes: {
+  ...argTypes,
+  cancelAction: {
+    description: "Callback called after clicking on the cancel button, Example: `<fds-wizard id='wizard'><fds-button slot='cancel' label='cancel'></fds-button></fds-wizard>` `<script> wizard.cancelAction = () => { console.log('this a cancel action button') } </script>`"
+  },
+  saveAction: {
+    description: "Callback called after clicking on the save button, Example: `<fds-wizard id='wizard'><fds-button slot='save' label='Save'></fds-button></fds-wizard>` `<script> wizard.saveAction = () => { console.log('this a save action button') } </script>`"
+  }
+  },
+  args: {
+    stepperPositon: POSITION.right
+  },
   parameters: {
     docs: {
       description: { component: README }
@@ -36,8 +47,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ reverseStepper = false, darkStepper = false }) => {
-  return html`<fds-wizard title="my-wizard" ?reverseStepper=${reverseStepper} ?darkStepper=${darkStepper}>
+const Template: Story<Wizard> = ({ stepperPositon = 'right'}) => {
+  return html`<fds-wizard title="my-wizard" .stepperPositon=${stepperPositon}>
   <fds-button slot='next' label="Next" outlined secondary>
   </fds-button>
   <fds-button slot='cancel' label="Cancel" text secondary>
@@ -56,8 +67,6 @@ const Template: Story<Wizard> = ({ reverseStepper = false, darkStepper = false }
       <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
       <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
       <fds-textfield label="Employer" icontrailing="" helper="helper text"></fds-textfield>
-      <fds-textfield label="Occupation" icontrailing="" helper="helper text"></fds-textfield>
-      <fds-textfield label="Occupation" icontrailing="" helper="helper text"></fds-textfield>
       <fds-textfield label="Occupation" icontrailing="" helper="helper text"></fds-textfield>
     </div>
   </fds-wizard-page>
@@ -89,5 +98,7 @@ const Template: Story<Wizard> = ({ reverseStepper = false, darkStepper = false }
 };
 
 export const Default: Story<Wizard> = Template.bind({});
+
+
 
 

@@ -33,7 +33,7 @@ $stepper-bg: var(--fds-background);
   flex: 1 1 30%;
   box-sizing: border-box;
   background: var(--fds-stepper-bg, $stepper-bg);
-  padding-left: 16px;
+  padding-left: 32px;
   padding-bottom: 16px;
   min-width: 300px;
 }
@@ -47,7 +47,7 @@ $stepper-bg: var(--fds-background);
 
 .pages {
   height: 100%;
-  //overflow: scroll;
+  overflow: scroll;
   position: relative;
 }
 .actions {
