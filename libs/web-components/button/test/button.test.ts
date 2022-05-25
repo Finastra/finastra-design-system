@@ -1,5 +1,5 @@
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
-import '../src/button.js';
+import '../src/outlined-button.js';
 import { OutlinedButton } from '../src/outlined-button.js';
 
 describe('Button', () => {
