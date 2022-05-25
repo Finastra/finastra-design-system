@@ -25,9 +25,12 @@
   pointer-events: none;
 }
 
-.step-item-label,
-.step-item-description {
+.step-item-label {
   @include fds.text-color(on-background);
+}
+
+.step-item-description {
+  @include fds.text-color(on-surface-medium);
 }
 
 .done {
