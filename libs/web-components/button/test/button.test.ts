@@ -1,10 +1,10 @@
-import { html, fixture, expect, elementUpdated } from '@open-wc/testing';
-import { Button } from '../src/button.js';
+import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import '../src/button.js';
+import { OutlinedButton } from '../src/outlined-button.js';
 
 describe('Button', () => {
   it('should be able to set outline', async () => {
-    const el: Button = await fixture(html`<fds-button outlined label="Outlined button"></fds-button><br />`);
+    const el: OutlinedButton = await fixture(html`<fds-outlined-button label="Outlined button"></fds-outlined-button><br />`);
 
     await elementUpdated(el);
     await expect(shadowRoot(el).querySelector('mwc-button')?.hasAttribute('outlined')).to.equal(true);
@@ -12,7 +12,7 @@ describe('Button', () => {
 
   describe(' - Accessibility', () => {
     it('loads accessibly', async () => {
-      const el: Button = await fixture(html`<fds-button></fds-button>`);
+      const el: OutlinedButton = await fixture(html`<fds-outlined-button></fds-outlined-button>`);
 
       await elementUpdated(el);
       await expect(el).to.be.accessible();

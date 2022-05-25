@@ -1,6 +1,6 @@
 const README = require('../README.md');
 import '@finastra/button';
-import { ContainedButton } from '@finastra/button';
+import type { ContainedButton } from '@finastra/button';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -24,7 +24,7 @@ export default {
   decorators: []
 } as Meta;
 
-const Template = ({ icon, label, dense, disabled, secondary = false, fullwidth = false }) => {
+const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false }) => {
   return html`<fds-button
     .label=${label}
     .icon=${ifDefined(icon)}
@@ -38,33 +38,33 @@ const Template = ({ icon, label, dense, disabled, secondary = false, fullwidth =
 export const Default: Story<ContainedButton> = Template.bind({});
 Default.args = {
   label: 'Contained',
-  icon: 'forum'
+  icon: 'done'
 };
 
 export const Secondary: Story<ContainedButton> = Template.bind({});
-Default.args = {
+Secondary.args = {
   label: 'Secondary',
-  icon: 'forum',
+  icon: 'bolt',
   secondary: true
 };
 
 export const Dense: Story<ContainedButton> = Template.bind({});
-Default.args = {
+Dense.args = {
   label: 'Dense',
-  icon: 'forum',
+  icon: 'chat',
   dense: true
 };
 
 export const Disabled: Story<ContainedButton> = Template.bind({});
-Default.args = {
+Disabled.args = {
   label: 'Disabled',
-  icon: 'forum',
+  icon: 'edit',
   disabled: true
 };
 
 export const Fullwidth: Story<ContainedButton> = Template.bind({});
-Default.args = {
+Fullwidth.args = {
   label: 'Full width',
-  icon: 'forum',
+  icon: 'account_balance',
   fullwidth: true
 };

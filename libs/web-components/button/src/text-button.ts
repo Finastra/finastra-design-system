@@ -5,7 +5,12 @@ import { styles } from './text-styles.css';
 @customElement('fds-text-button')
 export class TextButton extends BaseButton {
     static styles = styles;
-    override outlined: boolean = true;  
+
+    constructor() {
+      super();
+      this.text = true;
+      this.unelevated = false;
+    }
 }
 
 declare global {

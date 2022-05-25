@@ -1,1 +1,10 @@
+@use '@finastra/fds-theme' as fds;
 @use 'base-styles';
+
+:host {
+    @include fds.mdc(button-outline-color, primary);
+}
+
+:host([secondary]) {
+    @include fds.mdc(button-outline-color, secondary);
+}

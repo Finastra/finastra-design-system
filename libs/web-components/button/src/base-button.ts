@@ -3,17 +3,15 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class BaseButton extends LitElement {
+  outlined: boolean = false;
+  unelevated: boolean = true;
+  text: boolean = false;
+  
   @property({ type: String })
   label = 'Button';
 
   @property({ type: String })
   icon = '';
-
-  outlined = false;
-
-  unelevated = true;
-
-  text = false;
 
   @property({ type: Boolean })
   dense = false;

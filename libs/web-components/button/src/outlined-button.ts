@@ -5,7 +5,12 @@ import { styles } from './outlined-styles.css';
 @customElement('fds-outlined-button')
 export class OutlinedButton extends BaseButton {
     static styles = styles;
-    override outlined: boolean = true;  
+
+    constructor() {
+      super();
+      this.outlined = true;
+      this.unelevated = false;
+    }
 }
 
 declare global {

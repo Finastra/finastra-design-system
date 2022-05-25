@@ -5,7 +5,10 @@ import { styles } from './contained-styles.css';
 @customElement('fds-button')
 export class ContainedButton extends BaseButton {
     static styles = styles;
-    override outlined: boolean = true;  
+
+    constructor() {
+      super();
+    }
 }
 
 declare global {

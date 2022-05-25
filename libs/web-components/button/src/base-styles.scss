@@ -6,7 +6,6 @@
   --mdc-typography-button-text-transform: none;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(theme-on-primary, on-primary);
-  @include fds.mdc(button-outline-color, primary);
   @include fds.mdc(button-disabled-fill-color, surface-disabled);
   @include fds.mdc(button-disabled-ink-color, on-surface-disabled);
 }
@@ -14,7 +13,6 @@
 :host([secondary]) {
   @include fds.mdc(theme-primary, secondary);
   @include fds.mdc(theme-on-primary, on-secondary);
-  @include fds.mdc(button-outline-color, secondary);
 }
 
 :host([fullWidth]) {
