@@ -4,8 +4,6 @@ import { html } from 'lit-html';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
-
-
 @customElement('fds-menu-trigger')
 export class MenuTrigger extends OutlinedButton {
   static styles = styles;
@@ -19,7 +17,6 @@ export class MenuTrigger extends OutlinedButton {
    * Whether the toggle button should be using secondary.
    */
   @property({ type: Boolean }) secondary = false;
-
 
   protected menuTrailingIcon = 'expand_more';
 
@@ -39,7 +36,6 @@ export class MenuTrigger extends OutlinedButton {
     <fds-outlined-button
       label='${this.label}'
       icon='${this.icon}'
-      ?text='${this.text}'
       ?dense='${this.dense}'
       ?disabled='${this.disabled}'
       ?fullwidth='${this.fullwidth}'
