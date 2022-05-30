@@ -17,9 +17,20 @@
   @include fds.property(border-color, outline);
 }
 
-.step-item-label,
-.step-item-description {
+.step-item {
+  cursor: pointer;
+}
+
+.disabled.step-item {
+  pointer-events: none;
+}
+
+.step-item-label {
   @include fds.text-color(on-background);
+}
+
+.step-item-description {
+  @include fds.text-color(on-surface-medium);
 }
 
 .done {
@@ -37,10 +48,18 @@
   }
 }
 
+.disabled.done {
+  .circle {
+    @include fds.property(border-color, success);
+    @include fds.bg-color(success);
+  }
+}
+
 .disabled {
   .circle {
     background: var(--fds-surface-disabled);
     @include fds.text-color(on-surface-disabled);
+    pointer-events: none;
   }
 
   .step-item-label,

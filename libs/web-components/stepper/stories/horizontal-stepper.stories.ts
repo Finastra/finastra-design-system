@@ -4,6 +4,8 @@ import type { HorizontalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
+import { EVENTS } from '../src/constants';
+
 const demoData = [
   {
     label: 'Step Success',
@@ -46,6 +48,9 @@ export default {
     currentStepIndex: 1
   },
   parameters: {
+    actions: {
+      handles: [EVENTS.STEPCLICK]
+    },
     docs: {
       description: { component: README }
     },
