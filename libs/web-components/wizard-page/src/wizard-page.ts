@@ -22,9 +22,9 @@ export class WizardPage extends LitElement {
   render() {
     return html`
     <div class="page-container">
-    <h3>${this.title}</h3>
-    <div class="content">
-    <slot></slot>
+      <div class="title">${this.title}</div>
+      <div class="content">
+      <slot></slot>
     </div>
 `;
   }

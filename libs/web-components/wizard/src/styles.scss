@@ -45,11 +45,6 @@ $stepper-bg: var(--fds-background);
   right: 0;
 }
 
-.pages {
-  height: 100%;
-  overflow: scroll;
-  position: relative;
-}
 .actions {
   display: flex;
   flex-direction: row-reverse;
@@ -63,8 +58,4 @@ $stepper-bg: var(--fds-background);
       margin-right: 16px;
     }
   }
-}
-
-:host([darkStepper]) {
-  --fds-stepper-bg: #060546;
 }

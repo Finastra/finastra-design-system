@@ -10,13 +10,13 @@ export default {
   title: 'Patterns/Wizard',
   component: 'fds-wizard',
   argTypes: {
-  ...argTypes,
-  cancelAction: {
-    description: "Callback called after clicking on the cancel button, Example: `<fds-wizard id='wizard'><fds-button slot='cancel' label='cancel'></fds-button></fds-wizard>` `<script> wizard.cancelAction = () => { console.log('this a cancel action button') } </script>`"
-  },
-  saveAction: {
-    description: "Callback called after clicking on the save button, Example: `<fds-wizard id='wizard'><fds-button slot='save' label='Save'></fds-button></fds-wizard>` `<script> wizard.saveAction = () => { console.log('this a save action button') } </script>`"
-  }
+    ...argTypes,
+    cancelAction: {
+      description: "Callback called after clicking on the cancel button, Example: `<fds-wizard id='wizard'><fds-button slot='cancel' label='cancel'></fds-button></fds-wizard>` `<script> wizard.cancelAction = () => { console.log('this a cancel action button') } </script>`"
+    },
+    saveAction: {
+      description: "Callback called after clicking on the save button, Example: `<fds-wizard id='wizard'><fds-button slot='save' label='Save'></fds-button></fds-wizard>` `<script> wizard.saveAction = () => { console.log('this a save action button') } </script>`"
+    }
   },
   args: {
     stepperPositon: POSITION.right
@@ -43,11 +43,18 @@ export default {
         body.sb-main-centered #root-inner {
           padding: 0;
         }
+        .page-content {
+          display:flex;
+          justify-content: space-between;
+        }
+        .image{
+          padding-left: 16px;
+        }
       </style>`
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPositon = 'right'}) => {
+const Template: Story<Wizard> = ({ stepperPositon = 'right' }) => {
   return html`<fds-wizard title="my-wizard" .stepperPositon=${stepperPositon}>
   <fds-button slot='next' label="Next" outlined secondary>
   </fds-button>
@@ -58,16 +65,18 @@ const Template: Story<Wizard> = ({ stepperPositon = 'right'}) => {
   <fds-button slot='save' label="save" secondary>
   </fds-button>
   <fds-wizard-page slot="page" id="page" title="Step 1" description="Step 1 description">
-    <fds-tab-bar activeindex="0" seperator>
-      <fds-tab label="General" icon="location_on"></fds-tab>
-      <fds-tab label="Personal details" icon="location_on"></fds-tab>
-      <fds-tab label="Awaiting approvals" icon="location_on"></fds-tab>
-    </fds-tab-bar>
-    <div class="textfields">
-      <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
-      <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
-      <fds-textfield label="Employer" icontrailing="" helper="helper text"></fds-textfield>
-      <fds-textfield label="Occupation" icontrailing="" helper="helper text"></fds-textfield>
+    <div class="page-content">
+      <div class="textfields">
+        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+      </div>
+      <div class="image">
+        <img src="https://i.imgur.com/otY5WR9.png" />
+      </div>
     </div>
   </fds-wizard-page>
 
@@ -82,15 +91,6 @@ const Template: Story<Wizard> = ({ stepperPositon = 'right'}) => {
   </fds-wizard-page>
 
   <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description">
-    <p>First one
-    </p>
-  </fds-wizard-page>
-
-  <fds-wizard-page slot="page" id="page" title="Step 5" description="Step 4 description">
-    <p>First one
-    </p>
-  </fds-wizard-page>
-  <fds-wizard-page slot="page" id="page" title="Step 6" description="Step 4 description">
     <p>First one
     </p>
   </fds-wizard-page>
