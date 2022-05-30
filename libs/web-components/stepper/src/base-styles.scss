@@ -5,7 +5,7 @@
 }
 
 .circle {
-  @include fds.text-color(text-primary-on-background);
+  @include fds.text-color(on-background);
   @include fds.typography(subtitle-3);
   display: flex;
   justify-content: center;
@@ -14,18 +14,23 @@
   width: var(--fds-spacing-4, 24px);
   height: var(--fds-spacing-4, 24px);
   border: 1px solid;
-  @include fds.property(border-color, text-hint-on-background);
+  @include fds.property(border-color, outline);
 }
 
-.step-item-label,
-.step-item-description {
+.step-item {
+  cursor: pointer;
+}
+
+.disabled.step-item {
+  pointer-events: none;
+}
+
+.step-item-label {
   @include fds.text-color(on-background);
 }
 
-.disabled {
-  .circle {
-   background: red;
-  }
+.step-item-description {
+  @include fds.text-color(on-surface-medium);
 }
 
 .done {
@@ -43,15 +48,23 @@
   }
 }
 
+.disabled.done {
+  .circle {
+    @include fds.property(border-color, success);
+    @include fds.bg-color(success);
+  }
+}
+
 .disabled {
   .circle {
-    background: var(--fds-text-disabled-on-background);
-    @include fds.text-color(text-icon-on-background);
+    background: var(--fds-surface-disabled);
+    @include fds.text-color(on-surface-disabled);
+    pointer-events: none;
   }
 
   .step-item-label,
   .step-item-description {
-    @include fds.text-color(text-icon-on-background);
+    @include fds.text-color(on-surface-disabled);
   }
 }
 

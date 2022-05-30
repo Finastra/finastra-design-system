@@ -5,7 +5,7 @@
   display: block;
   --mdc-shape-small: 16px;
   @include fds.property(--mdc-theme-primary, primary);
-  @include fds.property(--mdc-button-outline-color, text-disabled-on-background);
+  @include fds.property(--mdc-button-outline-color, on-surface-disabled);
   @include fds.property(--mdc-ripple-color, primary);
 
   .mdc-button {
@@ -23,7 +23,7 @@
   }
 
   .mdc-button--outlined:not(:disabled) {
-    @include fds.property(color, text-medium-on-background);
+    @include fds.property(color, on-surface-medium);
     &:hover {
       @include fds.property(color, primary);
     }
@@ -39,7 +39,7 @@
   @include fds.property(--mdc-button-outline-color, primary);
 
   .mdc-button {
-    @include fds.property(background, primary-lighter);
+    @include fds.property(background, surface-selected);
   }
   .mdc-button__label {
     @include fds.property(color, primary);
@@ -89,7 +89,7 @@
   }
 
   .mdc-button--outlined:not(:disabled) {
-    @include fds.property(color, text-medium-on-background);
+    @include fds.property(color, on-surface-medium);
     &:hover {
       @include fds.property(color, secondary);
     }
@@ -113,12 +113,12 @@
 }
 
 :host([disabled]) {
-  @include fds.property(--mdc-button-disabled-ink-color, text-hint-on-background);
+  @include fds.property(--mdc-button-disabled-ink-color, on-surface-disabled);
   .mdc-button {
-    @include fds.property(background, text-disabled-on-background);
+    @include fds.property(background, surface-disabled);
   }
 
   .mdc-button__label {
-    @include fds.property(color, text-medium-on-background);
+    @include fds.property(color, on-surface-medium);
   }
 }

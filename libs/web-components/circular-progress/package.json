@@ -1,7 +1,7 @@
 {
   "name": "@finastra/circular-progress",
   "displayName": "CircularProgress",
-  "version": "0.0.29",
+  "version": "0.0.31",
   "description": "CircularProgress Web Component",
   "keywords": [
     "Finastra Design System",

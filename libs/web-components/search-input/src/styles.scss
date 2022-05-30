@@ -2,11 +2,11 @@
 @use "@finastra/fds-theme" as fds;
 
 :host {
-  @include fds.mdc(text-field-fill-color, primary-lighter);
+  @include fds.mdc(text-field-fill-color, surface-selected);
   @include fds.mdc(text-field-idle-line-color, primary);
   @include fds.mdc(text-field-hover-line-color, primary);
   @include fds.mdc(text-field-ink-color, on-background);
-  @include fds.mdc(ripple-color, primary-lighter);
+  @include fds.mdc(ripple-color, surface-selected);
 }
 
 .mdc-text-field--with-leading-icon {
@@ -34,7 +34,7 @@
   }
 
   .mdc-text-field__affix--suffix {
-    @include fds.text-color(on-background	);
+    @include fds.text-color(on-background);
   }
 }
 

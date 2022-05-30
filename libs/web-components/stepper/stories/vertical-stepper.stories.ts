@@ -3,6 +3,7 @@ import '@finastra/stepper';
 import type { VerticalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { EVENTS } from '../src/constants';
 import { argTypes, cssprops } from './custom-element.json';
 const demoData = [
   {
@@ -62,6 +63,9 @@ export default {
     currentStepIndex: 1
   },
   parameters: {
+    actions: {
+      handles: [EVENTS.STEPCLICK]
+    },
     docs: {
       description: { component: README }
     },

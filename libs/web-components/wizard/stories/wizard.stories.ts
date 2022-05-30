@@ -7,7 +7,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Wizard',
+  title: 'Patterns/Wizard',
   component: 'fds-wizard',
   argTypes: {
   ...argTypes,

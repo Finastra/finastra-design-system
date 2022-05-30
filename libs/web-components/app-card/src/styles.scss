@@ -61,12 +61,12 @@ $fds-blue: #009CBD;
     }
 
     .draft {
-      @include fds.text-color(text-high-on-light);
+      @include fds.text-color(on-light);
       background: var(--fds-gray, $fds-gray);
     }
 
     .in_review {
-      @include fds.text-color(text-high-on-dark);
+      @include fds.text-color(on-dark);
       background: var(--fds-blue, $fds-blue);
     }
 
@@ -159,7 +159,7 @@ $fds-blue: #009CBD;
     .app-card-description {
       flex: 1 1 auto;
       @include fds.typography(body-2);
-      @include fds.text-color(text-high-on-background);
+      @include fds.text-color(on-surface);
       @include fds.padding(4, right, bottom, left);
       @include fds.padding(2, top);
       text-align: left;
@@ -218,7 +218,7 @@ $fds-blue: #009CBD;
 
   .app-card-author {
     @include fds.typography(body-3);
-    @include fds.text-color(text-medium-on-background);
+    @include fds.text-color(on-surface-medium);
     @include fds.padding(2, right, left);
     width: fit-content;
     max-width: 180px;

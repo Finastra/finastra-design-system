@@ -7,8 +7,8 @@
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(theme-on-primary, on-primary);
   @include fds.mdc(button-outline-color, primary);
-  @include fds.mdc(button-disabled-fill-color, text-disabled-on-background);
-  @include fds.mdc(button-disabled-ink-color, text-hint-on-background);
+  @include fds.mdc(button-disabled-fill-color, surface-disabled);
+  @include fds.mdc(button-disabled-ink-color, on-surface-disabled);
 }
 
 :host([secondary]) {

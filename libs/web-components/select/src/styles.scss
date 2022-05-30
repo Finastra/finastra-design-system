@@ -4,14 +4,16 @@
 :host {
   display: block;
   @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(theme-text-primary-on-background, on-background);
 }
+
 
 .mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
   @include fds.property(color, primary);
 }
 
 .mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
 
 .mdc-floating-label {
@@ -19,11 +21,11 @@
 }
 
 .mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor {
-  @include fds.property(background-color, primary-lighter);
+  @include fds.property(background-color, surface-selected);
 }
 
 .mdc-select:not(.mdc-select--disabled) .mdc-select__dropdown-icon {
-  @include fds.property(fill, text-medium-on-background);
+  @include fds.property(fill, on-surface-medium);
 }
 
 .mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
@@ -31,11 +33,11 @@
 }
 
 .mdc-select:not(.mdc-select--disabled) .mdc-select__icon {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
 
 .mdc-select:not(.mdc-select--disabled)+.mdc-select-helper-text {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
 
 .mdc-select--invalid:not(.mdc-select--disabled) .mdc-line-ripple::after {
@@ -55,15 +57,15 @@
 }
 
 .mdc-select.mdc-select--disabled .mdc-floating-label {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
 
 .mdc-select.mdc-select--disabled .mdc-select__icon {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
 
 .mdc-select.mdc-select--disabled .mdc-select__dropdown-icon {
-  @include fds.property(fill, text-medium-on-background);
+  @include fds.property(fill, on-surface-medium);
 }
 
 .mdc-select.mdc-select--disabled .mdc-select__selected-text {
@@ -71,5 +73,5 @@
 }
 
 .mdc-select.mdc-select--disabled+.mdc-select-helper-text {
-  @include fds.property(color, text-medium-on-background);
+  @include fds.property(color, on-surface-medium);
 }
