@@ -24,7 +24,7 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false }) => {
+const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-outlined-button
     .label=${label}
     .icon=${ifDefined(icon)}
@@ -32,6 +32,7 @@ const Template: Story = ({ icon, label, dense, disabled, secondary = false, full
     ?dense=${dense}
     ?disabled=${disabled}
     ?fullwidth=${fullwidth}
+    ?trailingIcon=${trailingIcon}
   ></fds-outlined-button>`;
 };
 
