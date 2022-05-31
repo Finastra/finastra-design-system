@@ -686,6 +686,18 @@
       },
       "tags": []
     },
+    "guided-tour": {
+      "root": "libs/web-components/guided-tour",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/guided-tour/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "launchpad": {
       "root": "libs/web-components/launchpad",
       "architect": {

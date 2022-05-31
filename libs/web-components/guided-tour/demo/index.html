@@ -1,0 +1,29 @@
+<script type="module" src="node_modules/@finastra/guided-tour/dist/src/guided-tour.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<script >
+    let testData; 
+    var process = {env: {}};
+
+    const res = fetch("libs/web-components/guided-tour/demo/data.json", {
+      cache: "default",
+      headers: new Headers({
+        Accept: "application/json",
+      }),
+      method: "GET",
+      mode: "cors",
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("FETCH DATA:", data)
+        document.querySelector("#guided-tour-demo").data = data;
+    })
+    .catch((err) => {
+      console.error(err);
+      return err;
+    });
+</script>
+
+<fds-guided-tour id="guided-tour-demo">
+    <fds-button slot="trigger" label="Tours"></fds-button>
+</fds-guided-tour>
+<div id="test-step" style="width: 200px; height: 200px; margin-top: 16px;"></div>
