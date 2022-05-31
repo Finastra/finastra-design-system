@@ -19,7 +19,7 @@ export default {
     }
   },
   args: {
-    stepperPositon: POSITION.right
+    stepperPositon: POSITION.left
   },
   parameters: {
     docs: {
@@ -34,14 +34,12 @@ export default {
   decorators: [
     (story) => html`${story()}
       <style>
-        .sb-show-main.sb-main-centered {
-          display: block;
+        fds-wizard {
+          height: 500px;
         }
-        .sb-show-main.sb-main-centered #root {
-          padding: 0;
-        }
-        body.sb-main-centered #root-inner {
-          padding: 0;
+        .css-10skpf4 {
+          width: 100%;
+          height:100%
         }
         .page-content {
           display:flex;
@@ -49,13 +47,20 @@ export default {
         }
         .image{
           padding-left: 16px;
+          max-height: 350px;
+        }
+        .textfields fds-textfield {
+          margin-bottom: 24px;
+        }
+        p{
+          font: var(--fds-body-1);
         }
       </style>`
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPositon = 'right' }) => {
-  return html`<fds-wizard title="my-wizard" .stepperPositon=${stepperPositon}>
+const Template: Story<Wizard> = ({ stepperPositon = 'right', darkStepper="false" }) => {
+  return html`<fds-wizard .stepperPositon=${stepperPositon} ?darkStepper=${darkStepper}>
   <fds-button slot='next' label="Next" outlined secondary>
   </fds-button>
   <fds-button slot='cancel' label="Cancel" text secondary>
@@ -64,36 +69,25 @@ const Template: Story<Wizard> = ({ stepperPositon = 'right' }) => {
   </fds-button>
   <fds-button slot='save' label="save" secondary>
   </fds-button>
-  <fds-wizard-page slot="page" id="page" title="Step 1" description="Step 1 description">
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page">
     <div class="page-content">
       <div class="textfields">
-        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
-        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
-        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
-        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
-        <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
-        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield required label="Username" icon="person" helper="Please enter your username"></fds-textfield>
+        <fds-textfield label="Password" iconTrailing="lock" helper="Please enter your password"></fds-textfield>
+        <fds-textfield label="Birth date" iconTrailing="date_range"></fds-textfield>
       </div>
-      <div class="image">
-        <img src="https://i.imgur.com/otY5WR9.png" />
-      </div>
+      <img class="image" src="https://i.imgur.com/otY5WR9.png" />
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" id="page" title="Step 2" description="Step 2 description" current>
-    <p>First one
-    </p>
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences description" disabled>
+    <p>Replace with your content</p>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" id="page" title="Step 3" description="Step 3 description" disabled>
-    <p>First one
-    </p>
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation description">
+    <p>Replace with your content</p>
   </fds-wizard-page>
-
-  <fds-wizard-page slot="page" id="page" title="Step 4" description="Step 4 description">
-    <p>First one
-    </p>
-  </fds-wizard-page>
+  
 </fds-wizard>`;
 };
 

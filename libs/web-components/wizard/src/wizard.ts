@@ -12,7 +12,9 @@ export enum POSITION {
 
 /**
   * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
- */
+  * @attr {boolean} [darkStepper=false] - Dark stepper
+*/
+
 @customElement('fds-wizard')
 export class Wizard extends LitElement {
   static styles = styles;
@@ -29,13 +31,16 @@ export class Wizard extends LitElement {
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
    */
-  @property({ reflect: true }) stepperPositon: POSITION = POSITION.right;
+  @property({ reflect: true }) stepperPositon: POSITION = POSITION.left;
+
+  @property({ type: Boolean })
+  darkStepper = false;
 
   cancelAction: any;
   saveAction: any
 
   protected save = false;
-  protected back= false;
+  protected back = false;
   protected disabled: Boolean | null = null;
   protected arrayPages: any[] = [];
   protected currentStepIndex = 0;
@@ -46,45 +51,45 @@ export class Wizard extends LitElement {
   }
 
   onStepClickEvent(event) {
-    if(event.type==='step-click') {
+    if (event.type === 'step-click') {
       this.goToStepIndex(event.detail.value);
-    }    
+    }
   }
 
   render() {
     return html`
       <div class="wizard">
-        ${this.stepperPositon=='right' ?
+        ${this.stepperPositon == 'left' ?
         html`
-        <div class='stepper-container'>
-            <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+        <div class='stepper-container ${this.darkStepper ? 'dark-theme' : ''}'>
+          <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
         </div>
         <fds-divider vertical></fds-divider>
         `: ''}
         <div class='content'>
-            <div class="pages">
-              <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
-            </div>
-            <div class="footer">
-              <fds-divider></fds-divider>
-              <div class="actions">
-                  <div class="next">
-                    ${this.back ? this.renderBackSlot() : ''}
-                    ${this.save ? this.renderSaveSlot() : html` 
-                    <slot name="next" @click="${this._handleNextClick}"></slot>
-                    `}
-                  </div>
-                  <div class="cancel">
-                    <slot name="cancel" @click="${this._handleCancelClick}"></slot>
-                  </div>
+          <div class="pages">
+            <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
+          </div>
+          <div class="footer">
+            <fds-divider></fds-divider>
+            <div class="actions">
+              <div class="next">
+                ${this.back ? this.renderBackSlot() : ''}
+                ${this.save ? this.renderSaveSlot() : html`
+                <slot name="next" @click="${this._handleNextClick}"></slot>
+                `}
+              </div>
+              <div class="cancel">
+                <slot name="cancel" @click="${this._handleCancelClick}"></slot>
               </div>
             </div>
+          </div>
         </div>
-        ${this.stepperPositon=='left' ?
+        ${this.stepperPositon == 'right' ?
         html`
         <fds-divider vertical></fds-divider>
-        <div class='stepper-container'>
-            <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+        <div class='stepper-container ${this.darkStepper ? 'dark-theme' : ''}'>
+          <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
         </div>
         `: ''}
       </div>
@@ -113,16 +118,16 @@ export class Wizard extends LitElement {
     this.stepper['steps'] = this.arrayPages;
   }
 
-  checkAttributes(page: HTMLElement,index: number) {
+  checkAttributes(page: HTMLElement, index: number) {
     if (page.getAttribute('disabled') != null) {
       this.disabled = true;
     }
-    if(page.hasAttribute('current') && (this._pages[this.currentStepIndex] != page)) {
+    if (page.hasAttribute('current') && (this._pages[this.currentStepIndex] != page)) {
       this.updateCurrentPage(index);
       this.stepper['currentStepIndex'] = this.currentStepIndex;
-      this.back=true;
-      if(this.currentStepIndex == (this._pages.length-1)) {
-        this.save=true;
+      this.back = true;
+      if (this.currentStepIndex == (this._pages.length - 1)) {
+        this.save = true;
       }
     }
     this.requestUpdate();
@@ -140,14 +145,14 @@ export class Wizard extends LitElement {
   }
 
   checkPreviousStepDisabled(pages: Array<HTMLElement>, current: number) {
-      if ((pages[current] as any).hasAttribute('disabled')) {
-        this.stepper['currentStepIndex']--;
-        this.currentStepIndex--;
-        current--;
-        this.checkPreviousStepDisabled(pages, current);
-      } else {
-        return;
-      }
+    if ((pages[current] as any).hasAttribute('disabled')) {
+      this.stepper['currentStepIndex']--;
+      this.currentStepIndex--;
+      current--;
+      this.checkPreviousStepDisabled(pages, current);
+    } else {
+      return;
+    }
   }
 
   goToNextStep(pages: Array<HTMLElement>) {
@@ -156,18 +161,18 @@ export class Wizard extends LitElement {
     (pages[this.currentStepIndex] as any).removeAttribute("current");
     this.currentStepIndex++;
   }
-  
+
   goToPreviousStep(pages: Array<HTMLElement>) {
-      this.currentStepIndex = this.stepper['currentStepIndex'];
-      this.stepper['currentStepIndex']--;
-      (pages[this.currentStepIndex] as any).removeAttribute("current");
-      this.currentStepIndex--;
+    this.currentStepIndex = this.stepper['currentStepIndex'];
+    this.stepper['currentStepIndex']--;
+    (pages[this.currentStepIndex] as any).removeAttribute("current");
+    this.currentStepIndex--;
   }
 
-  goToStepIndex(index:number) {
+  goToStepIndex(index: number) {
     this.back = true;
     this.save = false;
-    if (index == (this._pages.length-1)) {
+    if (index == (this._pages.length - 1)) {
       this.save = true;
     }
     if (index == 0) {
@@ -177,14 +182,14 @@ export class Wizard extends LitElement {
     this.requestUpdate();
   }
 
-  updateCurrentPage(index:number) {
+  updateCurrentPage(index: number) {
     (this._pages[this.currentStepIndex] as any).removeAttribute("current");
-    this.currentStepIndex=index;
+    this.currentStepIndex = index;
     (this._pages[this.currentStepIndex] as any).setAttribute('current', true);
   }
 
   _handleNextClick() {
-    this.back=true;
+    this.back = true;
     if (this.currentStepIndex !== (this._pages.length - 1)) {
       this.goToNextStep(this._pages);
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
@@ -199,7 +204,7 @@ export class Wizard extends LitElement {
   _handleBackClick() {
     if (this.currentStepIndex != 0) {
       if (this.currentStepIndex == 1) {
-        this.back=false;
+        this.back = false;
       }
       if (this.currentStepIndex == (this._pages.length - 1)) {
         this.save = false;

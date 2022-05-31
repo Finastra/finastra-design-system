@@ -6,7 +6,7 @@
 <script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
 
-<fds-wizard title="my-wizard" id="wizard">
+<fds-wizard id="wizard">
   <fds-button slot='next' label="Next" outlined secondary>
   </fds-button>
   <fds-button slot='cancel' label="Cancel" text secondary>
@@ -15,10 +15,9 @@
   </fds-button>
   <fds-button slot='save' label="save" secondary>
   </fds-button>
-  <fds-wizard-page slot="page" id="page" title="Welcome" description="Welcome page">
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page">
     <div class="page-content">
       <div class="textfields">
-        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
         <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
         <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
         <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
@@ -29,7 +28,7 @@
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" id="page" title="Preferences" description="Preferences page" disabled>
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled>
     <div class="page-content">
       <div class="textfields">
         <fds-textfield required label="First name" icontrailing="" helper="helper text"></fds-textfield>
@@ -39,10 +38,16 @@
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" id="page" title="Confirmation" description="Confirmation page">
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" disabled>
     <p>First one
     </p>
   </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page">
+    <p>First one
+    </p>
+  </fds-wizard-page>
+
 </fds-wizard>
 
 <script>
@@ -51,6 +56,10 @@
 </script>
 
 <style>
+  fds-wizard {
+    height: 600px;
+    width: 1000px;
+  }
   .page-content {
     display: flex;
   }

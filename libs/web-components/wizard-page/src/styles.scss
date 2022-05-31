@@ -1,11 +1,7 @@
 @use "@finastra/fds-theme" as fds;
-
 :host {
   display: none;
   height: 100%;
-}
-.content {
-  overflow: scroll;
 }
 
 .title {
@@ -15,14 +11,11 @@
 }
 
 .page-container {
-  position: absolute;
-  left: 4%;
-  top: 4%;
   color: var(--fds-on-background);
-  overflow: scroll;
-  bottom:4%;
-  bottom:0;
-  padding-bottom: 72px;
+  padding-bottom: 32px;
+  padding-left: 48px;
+  padding-top: 32px;
+  height: calc(100% - 100px);
 }
 
 :host([current]) {
