@@ -78,7 +78,7 @@ Dense.args = {
 
 export const Disabled: Story<TextButton> = Template.bind({});
 Disabled.args = {
-  label: 'Outlined',
+  label: 'Disabled',
   icon: 'edit',
   disabled: true
 };
