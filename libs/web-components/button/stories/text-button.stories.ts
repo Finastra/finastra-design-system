@@ -71,7 +71,7 @@ Secondary.args = {
 
 export const Dense: Story<TextButton> = Template.bind({});
 Dense.args = {
-  label: 'Outlined',
+  label: 'Dense',
   icon: 'chat',
   dense: true
 };
