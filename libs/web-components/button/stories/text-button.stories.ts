@@ -58,7 +58,7 @@ const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = fa
 
 export const Default: Story<TextButton> = Template.bind({});
 Default.args = {
-  label: 'Contained',
+  label: 'Text',
   icon: 'done'
 };
 
