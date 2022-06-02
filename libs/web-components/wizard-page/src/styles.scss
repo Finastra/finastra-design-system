@@ -6,15 +6,12 @@
 
 .title {
   @include fds.typography(headline-3);
-  margin-bottom: 32px;
-  margin-top: 16px;
+  margin: var(--fds-spacing-3, 16px) 0 32px 0px;
 }
 
 .page-container {
-  color: var(--fds-on-background);
-  padding-bottom: 32px;
-  padding-left: 48px;
-  padding-top: 32px;
+  @include fds.property(color, on-background);
+  padding: 32px 0px 32px var(--fds-spacing-5, 48px);
   height: calc(100% - 100px);
 }
 

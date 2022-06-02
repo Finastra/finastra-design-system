@@ -21,7 +21,7 @@ $stepper-bg: var(--fds-background);
   height: 100%;
 }
 .content {
-  background: var(--fds-surface);
+  @include fds.property(background, surface);
   flex: 1 1 100%;
   box-sizing: border-box;
   max-width: 100%;
@@ -44,13 +44,13 @@ $stepper-bg: var(--fds-background);
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 16px;
-  background: var(--fds-surface);
+  padding: var(--fds-spacing-3, 16px);
+  @include fds.property(background, surface);
   .next {
     display: flex;
 
     slot[name="back"]::slotted(*) {
-      margin-right: 16px;
+      margin-right: var(--fds-spacing-3, 16px);
     }
   }
 }
