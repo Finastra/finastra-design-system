@@ -1,8 +1,8 @@
 const README = require('../README.md');
-import { html } from 'lit-html';
-import { Meta, Story } from '@storybook/web-components';
-import type { UserProfile } from '@finastra/user-profile';
 import '@finastra/user-profile';
+import type { UserProfile } from '@finastra/user-profile';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
@@ -43,7 +43,7 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = 
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
         <fds-button fullwidth label="Logout" icon="logout"></fds-button>
-        <fds-button text fullwidth label="View profile"></fds-button>
+        <fds-text-button text fullwidth label="View profile"></fds-text-button>
       </div>
     </fds-user-profile>`;
 };
