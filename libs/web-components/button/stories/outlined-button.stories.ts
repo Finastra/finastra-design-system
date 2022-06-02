@@ -36,6 +36,26 @@ const Template: Story = ({ icon, label, dense, disabled, secondary = false, full
   ></fds-outlined-button>`;
 };
 
+const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+  return html`
+  <style>
+    .demo-container {
+      width: 300px;
+    }
+  </style>
+  <div class="demo-container">
+    <fds-outlined-button
+      .label=${label}
+      .icon=${ifDefined(icon)}
+      ?secondary=${secondary}
+      ?dense=${dense}
+      ?disabled=${disabled}
+      ?fullwidth=${fullwidth}
+      ?trailingIcon=${trailingIcon}
+    ></fds-outlined-button>
+  </div>`;
+};
+
 export const Default: Story<OutlinedButton> = Template.bind({});
 Default.args = {
   label: 'Outlined',
@@ -63,7 +83,7 @@ Disabled.args = {
   disabled: true
 };
 
-export const FullWidth: Story<OutlinedButton> = Template.bind({});
+export const FullWidth: Story<OutlinedButton> = FullWidthTemplate.bind({});
 FullWidth.args = {
   label: 'Full width',
   icon: 'account_balance',
