@@ -45,7 +45,7 @@ export default {
           display:flex;
           justify-content: space-between;
         }
-        .image{
+        img{
           padding-left: 16px;
           max-height: 350px;
         }
@@ -59,8 +59,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPositon = 'right', darkStepper="false" }) => {
-  return html`<fds-wizard .stepperPositon=${stepperPositon} ?darkStepper=${darkStepper}>
+const Template: Story<Wizard> = ({ stepperPositon = 'right', stepperOnDark="false" }) => {
+  return html`<fds-wizard .stepperPositon=${stepperPositon} ?stepperOnDark=${stepperOnDark}>
   <fds-button slot='next' label="Next" outlined secondary>
   </fds-button>
   <fds-button slot='cancel' label="Cancel" text secondary>

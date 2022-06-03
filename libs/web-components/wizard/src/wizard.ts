@@ -12,7 +12,7 @@ export enum POSITION {
 
 /**
   * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
-  * @attr {boolean} [darkStepper=false] - Dark stepper
+  * @attr {boolean} [stepperOnDark=false] - Stepper on dark
 */
 
 @customElement('fds-wizard')
@@ -34,7 +34,7 @@ export class Wizard extends LitElement {
   @property({ reflect: true }) stepperPositon: POSITION = POSITION.left;
 
   @property({ type: Boolean })
-  darkStepper = false;
+  stepperOnDark = false;
 
   cancelAction: any;
   saveAction: any
@@ -61,7 +61,7 @@ export class Wizard extends LitElement {
       <div class="wizard">
         ${this.stepperPositon == 'left' ?
         html`
-        <div class='stepper-container ${this.darkStepper ? ' dark-theme' : '' }'>
+        <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
           <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
         </div>
         <fds-divider vertical></fds-divider>
@@ -88,7 +88,7 @@ export class Wizard extends LitElement {
         ${this.stepperPositon == 'right' ?
         html`
         <fds-divider vertical></fds-divider>
-        <div class='stepper-container ${this.darkStepper ? ' dark-theme' : '' }'>
+        <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
           <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
         </div>
         `: ''}

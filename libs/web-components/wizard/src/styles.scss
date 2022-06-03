@@ -32,11 +32,10 @@ $stepper-bg: var(--fds-background);
 
 .stepper-container {
   z-index: 1;
-  flex: 1 1 40%;
+  flex: 1 1 30%;
   box-sizing: border-box;
   background: var(--fds-stepper-bg, $stepper-bg);
-  padding-left: 32px;
-  padding-bottom: 16px;
+  padding: var(--fds-spacing-3, 16px) 0 var(--fds-spacing-3, 16px) 32px;
   overflow: scroll;
 }
 

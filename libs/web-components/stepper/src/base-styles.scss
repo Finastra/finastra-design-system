@@ -39,7 +39,7 @@
     @include fds.bg-color(success);
 
     > svg {
-      @include fds.fill(on-primary);
+      @include fds.fill(on-success);
     }
   }
 
