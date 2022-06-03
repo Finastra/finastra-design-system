@@ -61,12 +61,12 @@ export default {
 
 const Template: Story<Wizard> = ({ stepperPositon = 'right', stepperOnDark="false" }) => {
   return html`<fds-wizard .stepperPositon=${stepperPositon} ?stepperOnDark=${stepperOnDark}>
-  <fds-button slot='next' label="Next" outlined secondary>
-  </fds-button>
-  <fds-button slot='cancel' label="Cancel" text secondary>
-  </fds-button>
-  <fds-button slot='back' label="back" icon="chevron_left" text secondary>
-  </fds-button>
+  <fds-outlined-button slot='next' label="Next" secondary>
+  </fds-outlined-button>
+  <fds-text-button slot='cancel' label="Cancel" secondary>
+  </fds-text-button>
+  <fds-text-button slot='back' label="back" icon="chevron_left" secondary>
+  </fds-text-button>
   <fds-button slot='save' label="save" secondary>
   </fds-button>
   <fds-wizard-page slot="page" title="Welcome" description="Welcome page">

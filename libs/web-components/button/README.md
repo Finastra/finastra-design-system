@@ -17,13 +17,20 @@ npm i @finastra/button
 ```ts
 import '@finastra/button';
 ...
-<fds-button label="Raised button"></fds-button>
+<fds-button label="Contained button"></fds-button>
+<fds-outlined-button label="Outlined button"></fds-outlined-button>
+<fds-text-button label="Text button"></fds-text-button>
 ```
 
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/button.js?module"></script>
+<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/contained-button.js?module"></script>
+<fds-button label="Contained button"></fds-button>
 
-<fds-button label="Raised button"></fds-button>
+<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/outlined-button.js?module"></script>
+<fds-outlined-button label="Outlined button"></fds-outlined-button>
+
+<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/text-button.js?module"></script>
+<fds-text-button label="Text button"></fds-text-button>
 ```
