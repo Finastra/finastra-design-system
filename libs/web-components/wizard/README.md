@@ -9,5 +9,5 @@ A wizard is a setup process where the user is guided through a series of steps t
 ## Installation
 
 ```
-npm i @finastra/wizard
+npm i @finastra/wizard @finastra/stepper @finastra/divider
 ```
