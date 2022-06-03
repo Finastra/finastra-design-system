@@ -12,6 +12,9 @@ export class WizardPage extends LitElement {
   title = '';
 
   @property({ type: String })
+  icon = '';
+
+  @property({ type: String })
   description = '';
 
   @property({ type: Boolean })
@@ -22,11 +25,15 @@ export class WizardPage extends LitElement {
 
   render() {
     return html`
-    <div class="page-container">
+    <div class="header">
+      <div class="icon">${this.icon}</div>
       <div class="title">${this.title}</div>
+    </div>
+    <div class="page-container">
       <div class="content">
         <slot></slot>
-      </div>
+      </div>  
+    </div>
 `;
   }
 }

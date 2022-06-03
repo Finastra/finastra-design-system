@@ -18,8 +18,7 @@
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
     "@finastra/stepper": "0.0.31",
-    "@finastra/divider": "0.0.31",
-    "@finastra/wizard-page": "1.0.0"
+    "@finastra/divider": "0.0.31"
   },
   "publishConfig": {
     "access": "public"

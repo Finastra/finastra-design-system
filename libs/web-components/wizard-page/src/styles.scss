@@ -1,17 +1,40 @@
 @use "@finastra/fds-theme" as fds;
+
+$icon-path: "https://i.imgur.com/cEP8lXE.png";
+
 :host {
   display: none;
   height: 100%;
 }
 
+.header {
+  position: relative;
+  @include fds.bg-color(surface-selected);
+  margin-left: 16px;
+  border-radius: 8px;
+  display: flex;
+  padding: 16px;
+  margin-top: 16px;
+}
+.icon {
+  position: absolute;
+  height: 72px;
+  width: 72px;
+  border-radius: 50%;
+  border: solid var(--fds-surface-selected);
+  margin: 0px;
+  background: url($icon-path) center center no-repeat var(--fds-background);
+  top: -16%;
+}
 .title {
-  @include fds.typography(headline-3);
-  margin: var(--fds-spacing-3, 16px) 0 32px 0px;
+  @include fds.typography(headline-5);
+  @include fds.text-color(primary);
+  margin-left: var(--fds-spacing-6, 96px);
 }
 
 .page-container {
   @include fds.property(color, on-background);
-  padding: 32px 0px 32px var(--fds-spacing-5, 48px);
+  padding: 72px 0px 32px var(--fds-spacing-5, 48px);
   height: calc(100% - 100px);
 }
 
