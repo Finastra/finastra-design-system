@@ -33,29 +33,29 @@ export default {
   },
   decorators: [
     (story) => html`${story()}
-      <style>
-        fds-wizard {
-          height: 500px;
-        }
-        .css-10skpf4 {
-          width: 100%;
-          height:100%
-        }
-        .page-content {
-          display:flex;
-          justify-content: space-between;
-        }
-        img{
-          padding-left: 16px;
-          max-height: 350px;
-        }
-        .textfields fds-textfield {
-          margin-bottom: 24px;
-        }
-        p{
-          font: var(--fds-body-1);
-        }
-      </style>`
+<style>
+  fds-wizard {
+    height: 500px;
+  }
+  .css-10skpf4 {
+    width: 100%;
+    height:100%
+  }
+  .page-content {
+    display:flex;
+    justify-content: space-between;
+  }
+  img{
+    padding-left: 16px;
+    max-height: 350px;
+  }
+  .textfields fds-textfield {
+    margin-bottom: 24px;
+  }
+  p{
+    font: var(--fds-body-1);
+  }
+  </style>`
   ]
 } as Meta;
 
