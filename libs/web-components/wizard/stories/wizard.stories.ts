@@ -19,7 +19,7 @@ export default {
     }
   },
   args: {
-    stepperPositon: POSITION.left
+    stepperPosition: POSITION.left
   },
   parameters: {
     docs: {
@@ -59,8 +59,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPositon = 'right', stepperOnDark="false" }) => {
-  return html`<fds-wizard .stepperPositon=${stepperPositon} ?stepperOnDark=${stepperOnDark}>
+const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="false" }) => {
+  return html`<fds-wizard .stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark}>
   <fds-outlined-button slot='next' label="Next" secondary>
   </fds-outlined-button>
   <fds-text-button slot='cancel' label="Cancel" secondary>

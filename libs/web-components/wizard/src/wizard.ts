@@ -31,7 +31,7 @@ export class Wizard extends LitElement {
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
    */
-  @property({ reflect: true }) stepperPositon: POSITION = POSITION.left;
+  @property({ reflect: true }) stepperPosition: POSITION = POSITION.left;
 
   @property({ type: Boolean })
   stepperOnDark = false;
@@ -59,13 +59,8 @@ export class Wizard extends LitElement {
   render() {
     return html`
       <div class="wizard">
-        ${this.stepperPositon === 'left' ?
-        html`
-        <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-          <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
-        </div>
-        <fds-divider vertical></fds-divider>
-        `: ''}
+        ${this.stepperPosition === 'left' ?
+         html`${this.renderStepper()} <fds-divider vertical></fds-divider>` : ''}
         <div class='content'>
           <div class="pages">
             <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
@@ -85,17 +80,19 @@ export class Wizard extends LitElement {
             </div>
           </div>
         </div>
-        ${this.stepperPositon === 'right' ?
-        html`
-        <fds-divider vertical></fds-divider>
-        <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-          <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
-        </div>
-        `: ''}
+        ${this.stepperPosition === 'right' ?
+        html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
       </div>
     `;
   }
 
+  renderStepper(): TemplateResult {
+    return html`
+            <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
+              <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+            </div>
+    `
+  }
   renderSaveSlot(): TemplateResult {
     return html`<slot name="save" @click="${this._handleSaveClick}"></slot>`;
   }
@@ -149,8 +146,8 @@ export class Wizard extends LitElement {
       this.stepper['currentStepIndex']--;
       this.currentStepIndex--;
       current--;
-      if(current === 0) {
-        this.back=false;
+      if (current === 0) {
+        this.back = false;
       }
       this.checkPreviousStepDisabled(pages, current);
       this.requestUpdate();
