@@ -52,14 +52,14 @@ export class Wizard extends LitElement {
 
   onStepClickEvent(event) {
     if (event.type === 'step-click') {
-      this.goToStepIndex(event.detail.value);
+      this.goToStepIndex(+event.detail.value);
     }
   }
 
   render() {
     return html`
       <div class="wizard">
-        ${this.stepperPositon == 'left' ?
+        ${this.stepperPositon === 'left' ?
         html`
         <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
           <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
@@ -85,7 +85,7 @@ export class Wizard extends LitElement {
             </div>
           </div>
         </div>
-        ${this.stepperPositon == 'right' ?
+        ${this.stepperPositon === 'right' ?
         html`
         <fds-divider vertical></fds-divider>
         <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
@@ -119,14 +119,14 @@ export class Wizard extends LitElement {
   }
 
   checkAttributes(page: HTMLElement, index: number) {
-    if (page.getAttribute('disabled') != null) {
+    if (page.getAttribute('disabled') !== null) {
       this.disabled = true;
     }
-    if (page.hasAttribute('current') && (this._pages[this.currentStepIndex] != page)) {
+    if (page.hasAttribute('current') && (this._pages[this.currentStepIndex] !== page)) {
       this.updateCurrentPage(index);
       this.stepper['currentStepIndex'] = this.currentStepIndex;
       this.back = true;
-      if (this.currentStepIndex == (this._pages.length - 1)) {
+      if (this.currentStepIndex === (this._pages.length - 1)) {
         this.save = true;
       }
     }
@@ -149,7 +149,11 @@ export class Wizard extends LitElement {
       this.stepper['currentStepIndex']--;
       this.currentStepIndex--;
       current--;
+      if(current === 0) {
+        this.back=false;
+      }
       this.checkPreviousStepDisabled(pages, current);
+      this.requestUpdate();
     } else {
       return;
     }
@@ -172,11 +176,12 @@ export class Wizard extends LitElement {
   goToStepIndex(index: number) {
     this.back = true;
     this.save = false;
-    if (index == (this._pages.length - 1)) {
+    if ((index) === (this._pages.length - 1)) {
       this.save = true;
     }
-    if (index == 0) {
+    if (index === 0) {
       this.back = false;
+      this.requestUpdate();
     }
     this.updateCurrentPage(index);
     this.requestUpdate();
@@ -195,18 +200,18 @@ export class Wizard extends LitElement {
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
       (this._pages[this.currentStepIndex] as any).setAttribute('current', true);
     }
-    if (this.currentStepIndex + 1 == (this._pages.length)) {
+    if (this.currentStepIndex + 1 === (this._pages.length)) {
       this.save = true;
     }
     this.requestUpdate();
   }
 
   _handleBackClick() {
-    if (this.currentStepIndex != 0) {
-      if (this.currentStepIndex == 1) {
+    if (this.currentStepIndex !== 0) {
+      if (this.currentStepIndex === 1) {
         this.back = false;
       }
-      if (this.currentStepIndex == (this._pages.length - 1)) {
+      if (this.currentStepIndex === (this._pages.length - 1)) {
         this.save = false;
       }
       this.goToPreviousStep(this._pages);
