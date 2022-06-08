@@ -136,29 +136,23 @@ export class Wizard extends LitElement {
   }
 
   checkNextStepDisabled(pages: Array<HTMLElement>, current: number) {
-    if ((pages[current]).hasAttribute('disabled')) {
-      this.stepper['currentStepIndex']++;
-      this.currentStepIndex++;
-      current++;
-      this.checkNextStepDisabled(pages, current);
-    } else {
-      return;
-    }
+    if (!(pages[current]).hasAttribute('disabled')) return;
+    this.stepper['currentStepIndex']++;
+    this.currentStepIndex++;
+    current++;
+    this.checkNextStepDisabled(pages, current);
   }
 
   checkPreviousStepDisabled(pages: Array<HTMLElement>, current: number) {
-    if ((pages[current]).hasAttribute('disabled')) {
-      this.stepper['currentStepIndex']--;
-      this.currentStepIndex--;
-      current--;
-      if (current === 0) {
-        this.back = false;
-      }
-      this.checkPreviousStepDisabled(pages, current);
-      this.requestUpdate();
-    } else {
-      return;
+    if (!(pages[current]).hasAttribute('disabled')) return;
+    this.stepper['currentStepIndex']--;
+    this.currentStepIndex--;
+    current--;
+    if (current === 0) {
+      this.back = false;
     }
+    this.checkPreviousStepDisabled(pages, current);
+    this.requestUpdate();
   }
 
   goToNextStep(pages: Array<HTMLElement>) {

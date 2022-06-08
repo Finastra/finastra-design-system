@@ -30,9 +30,7 @@ export class WizardPage extends LitElement {
       <div class="title">${this.title}</div>
     </div>
     <div class="page-container">
-      <div class="content">
         <slot></slot>
-      </div>  
     </div>
 `;
   }
