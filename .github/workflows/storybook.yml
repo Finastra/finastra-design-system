@@ -30,7 +30,7 @@ jobs:
         run: |
           npm ci
           npm run wc:build:storybook
-       - name: Publish to Chromatic and auto accept changes
+      - name: Publish to Chromatic and auto accept changes
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
