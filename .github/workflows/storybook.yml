@@ -30,8 +30,8 @@ jobs:
         run: |
           npm ci
           npm run wc:build:storybook
-      - name: Deploy Storybook 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+       - name: Publish to Chromatic and auto accept changes
+        uses: chromaui/action@v1
         with:
-          branch: storybook
-          folder: storybook-static
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: true
