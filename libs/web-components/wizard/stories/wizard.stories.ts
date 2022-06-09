@@ -61,7 +61,7 @@ const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="fal
   </fds-text-button>
   <fds-button slot='save' label="save" secondary>
   </fds-button>
-  <fds-wizard-page slot="page" title="Welcome" description="Welcome page">
+  <fds-wizard-page slot="page" title="Welcome" icon="https://i.imgur.com/cEP8lXE.png" description="Welcome page" header>
     <div class="page-content">
       <div class="textfields">
         <fds-textfield required label="Username" icon="person" helper="Please enter your username"></fds-textfield>
@@ -72,11 +72,11 @@ const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="fal
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Preferences" description="Preferences description" disabled>
+  <fds-wizard-page slot="page" title="Preferences" icon="https://i.imgur.com/yHVTpn6.png" description="Preferences description" header>
     <p>Replace with your content</p>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation description">
+  <fds-wizard-page slot="page" title="Confirmation" icon="https://i.imgur.com/cEP8lXE.png" description="Confirmation description" header>
     <p>Replace with your content</p>
   </fds-wizard-page>
   

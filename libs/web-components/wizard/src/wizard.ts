@@ -18,6 +18,10 @@ export interface Page {
 
 /**
   * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
+  * @cssprop {color} [--fds-header-bg=#f3f1fc] - Header background color
+  * @cssprop {color} [--fds-title-color=#694ed5] - Header title color
+  * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
+  * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
 */
 @customElement('fds-wizard')
@@ -114,6 +118,7 @@ export class Wizard extends LitElement {
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
+      page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
       this.arrayPages.push({
         'label': page.getAttribute('title') as string,
         'description': page.getAttribute('description') as string,
@@ -164,6 +169,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']++;
     (pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex++;
+    (pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   goToPreviousStep(pages: Array<HTMLElement>) {
@@ -171,6 +177,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']--;
     (pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex--;
+    (pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   goToStepIndex(index: number) {
@@ -191,6 +198,7 @@ export class Wizard extends LitElement {
     (this._pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex = index;
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
+    (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   _handleNextClick() {
@@ -199,6 +207,7 @@ export class Wizard extends LitElement {
       this.goToNextStep(this._pages);
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
       (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
+      (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
     }
     if (this.currentStepIndex + 1 === (this._pages.length)) {
       this.save = true;
@@ -217,8 +226,12 @@ export class Wizard extends LitElement {
       this.goToPreviousStep(this._pages);
       this.checkPreviousStepDisabled(this._pages, this.currentStepIndex);
       (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
+      (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
     }
     this.requestUpdate();
+  }
+  updateStepsCounter(current) {
+    return (current+1)+"/"+this._pages.length;
   }
 }
 
