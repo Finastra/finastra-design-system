@@ -1,0 +1,10 @@
+@use '@finastra/fds-theme' as fds;
+@use "@material/data-table/data-table";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include data-table.table-styles;
+
+:host {
+  display: block;
+}

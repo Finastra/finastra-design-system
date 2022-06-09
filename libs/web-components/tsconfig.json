@@ -120,6 +120,9 @@
     },
     {
       "path": "circular-progress"
+    },
+    {
+      "path": "data-table"
     }
   ]
 }

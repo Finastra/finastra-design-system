@@ -1,0 +1,26 @@
+@use '@finastra/fds-theme' as fds;
+@use "@material/icon-button/icon-button"; // Required only for data table with column sorting.
+@use "@material/data-table/data-table";
+@use "@material/data-table/data-table-pagination";
+
+
+@include icon-button.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include data-table-pagination.core-styles;
+
+:host {
+    display: flex;
+}
+
+.fds-data-table-pagination.mdc-data-table__pagination {
+    border: 0px;
+
+    .mdc-data-table__pagination-trailing {
+        flex-wrap: nowrap !important;
+
+        .mdc-data-table__pagination-total {
+            min-width: 80px;
+        }
+    }
+}
