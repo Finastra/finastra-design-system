@@ -9,15 +9,7 @@ import { argTypes, cssprops } from './custom-element.json';
 export default {
   title: 'Patterns/Wizard',
   component: 'fds-wizard',
-  argTypes: {
-    ...argTypes,
-    cancelAction: {
-      description: "Callback called after clicking on the cancel button, Example: `<fds-wizard id='wizard'><fds-button slot='cancel' label='cancel'></fds-button></fds-wizard>` `<script> wizard.cancelAction = () => { console.log('this a cancel action button') } </script>`"
-    },
-    saveAction: {
-      description: "Callback called after clicking on the save button, Example: `<fds-wizard id='wizard'><fds-button slot='save' label='Save'></fds-button></fds-wizard>` `<script> wizard.saveAction = () => { console.log('this a save action button') } </script>`"
-    }
-  },
+  argTypes,
   args: {
     stepperPosition: POSITION.left
   },
@@ -63,7 +55,7 @@ const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="fal
   return html`<fds-wizard .stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark}>
   <fds-outlined-button slot='next' label="Next" secondary>
   </fds-outlined-button>
-  <fds-text-button slot='cancel' label="Cancel" secondary>
+  <fds-text-button slot='left-action' label="Cancel" secondary>
   </fds-text-button>
   <fds-text-button slot='back' label="back" icon="chevron_left" secondary>
   </fds-text-button>

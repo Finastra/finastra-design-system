@@ -41,14 +41,20 @@ $stepper-bg: var(--fds-background);
 
 .actions {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   padding: var(--fds-spacing-3, 16px);
   @include fds.property(background, surface);
-  .next {
+  .left,
+  .right,
+  .content {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    slot[name="back"]::slotted(*) {
+    slot[name="right-action"]::slotted(*),
+    slot[name="left-action"]::slotted(*),
+    slot[name="back"]::slotted(*)
+    {
       margin-right: var(--fds-spacing-3, 16px);
     }
   }

@@ -26,12 +26,9 @@ export class Wizard extends LitElement {
 
   @queryAssignedElements({ slot: 'page' })
   _pages!: Array<HTMLElement>;
+
   @query('#stepper') protected stepper!: HTMLElement;
 
-  @query('[name="next"]') protected _nextAction!: HTMLSlotElement;
-  @query('[name="cancel"]') protected _cancelAction!: HTMLSlotElement;
-  @query('[name="save"]') protected _saveAction!: HTMLSlotElement;
-  @query('[name="back"]') protected _backAction!: HTMLSlotElement;
 
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
@@ -40,9 +37,6 @@ export class Wizard extends LitElement {
 
   @property({ type: Boolean })
   stepperOnDark = false;
-
-  cancelAction: any;
-  saveAction: any
 
   protected save = false;
   protected back = false;
@@ -72,38 +66,48 @@ export class Wizard extends LitElement {
           </div>
           <div class="footer">
             <fds-divider></fds-divider>
-            <div class="actions">
-              <div class="next">
-                ${this.back ? this.renderBackSlot() : ''}
-                ${this.save ? this.renderSaveSlot() : html`
-                <slot name="next" @click="${this._handleNextClick}"></slot>
-                `}
-              </div>
-              <div class="cancel">
-                <slot name="cancel" @click="${this._handleCancelClick}"></slot>
-              </div>
-            </div>
+            ${this.renderActions()}
           </div>
         </div>
         ${this.stepperPosition === 'right' ?
         html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
-      </div>
-    `;
+      </div>`;
   }
 
   renderStepper(): TemplateResult {
     return html`
-            <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-              <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
-            </div>
-    `
+      <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
+        <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+      </div>`
   }
+
+  renderActions(): TemplateResult {
+    return html`
+      <div class="actions">
+        <div class="left">
+          <slot name="left-action"></slot>
+        </div>
+        <div class="content">
+          <slot name="content-action"></slot>
+        </div>
+        <div class="right">
+          <slot name="right-action"></slot>
+          ${this.back ? this.renderBackSlot() : ''}
+          ${this.save ? this.renderSaveSlot() : html`${this.renderNextSlot()}`}
+        </div>
+      </div>`;
+  }
+
   renderSaveSlot(): TemplateResult {
-    return html`<slot name="save" @click="${this._handleSaveClick}"></slot>`;
+    return html`<slot name="save"></slot>`;
   }
 
   renderBackSlot(): TemplateResult {
     return html`<slot name="back" @click="${this._handleBackClick}"></slot>`;
+  }
+
+  renderNextSlot(): TemplateResult {
+    return html`<slot name="next" @click="${this._handleNextClick}"></slot>`;
   }
 
   onPagesSlotChanged() {
@@ -215,20 +219,6 @@ export class Wizard extends LitElement {
       (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
     }
     this.requestUpdate();
-  }
-
-  _handleCancelClick() {
-    try {
-      this.cancelAction();
-    } catch (error) {
-    }
-  }
-
-  _handleSaveClick() {
-    try {
-      this.saveAction();
-    } catch (error) {
-    }
   }
 }
 

@@ -1,16 +1,15 @@
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
 <script type="module" src="node_modules/@finastra/wizard-page/dist/src/wizard-page.js"></script>
 <script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
-<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
 <script type="module" src="node_modules/@finastra/tab-bar/dist/src/tab-bar.js"></script>
 <script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
 
 <fds-wizard id="wizard">
+  <fds-text-button slot='left-action' label="Cancel" secondary>
+  </fds-text-button>
   <fds-outlined-button slot='next' label="Next" secondary>
   </fds-outlined-button>
-  <fds-text-button slot='cancel' label="Cancel" secondary>
-  </fds-text-button>
   <fds-text-button slot='back' label="back" secondary icon="chevron_left">
   </fds-text-button>
   <fds-button slot='save' label="save" secondary>
@@ -44,16 +43,12 @@
   </fds-wizard-page>
 </fds-wizard>
 
-<script>
-  wizard.saveAction = () => { console.log('this a save button action'); }
-  wizard.cancelAction = () => { console.log('this a cancel button action') }
-</script>
-
 <style>
   fds-wizard {
     height: 600px;
     width: 1000px;
   }
+
   .page-content {
     display: flex;
   }
