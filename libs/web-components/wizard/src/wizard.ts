@@ -103,11 +103,11 @@ export class Wizard extends LitElement {
   }
 
   renderSaveSlot(): TemplateResult {
-    return html`<slot name="save"></slot>`;
+    return html`<slot name="done"></slot>`;
   }
 
   renderBackSlot(): TemplateResult {
-    return html`<slot name="back" @click="${this._handleBackClick}"></slot>`;
+    return html`<slot name="previous" @click="${this._handleBackClick}"></slot>`;
   }
 
   renderNextSlot(): TemplateResult {

@@ -57,9 +57,9 @@ const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="fal
   </fds-outlined-button>
   <fds-text-button slot='left-action' label="Cancel" secondary>
   </fds-text-button>
-  <fds-text-button slot='back' label="back" icon="chevron_left" secondary>
+  <fds-text-button slot='previous' label="Back" icon="chevron_left" secondary>
   </fds-text-button>
-  <fds-button slot='save' label="save" secondary>
+  <fds-button slot='done' label="Save" secondary>
   </fds-button>
   <fds-wizard-page slot="page" title="Welcome" icon="https://i.imgur.com/cEP8lXE.png" description="Welcome page" header>
     <div class="page-content">

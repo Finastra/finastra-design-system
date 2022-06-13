@@ -53,7 +53,7 @@ $stepper-bg: var(--fds-background);
 
     slot[name="right-action"]::slotted(*),
     slot[name="left-action"]::slotted(*),
-    slot[name="back"]::slotted(*)
+    slot[name="previous"]::slotted(*)
     {
       margin-right: var(--fds-spacing-3, 16px);
     }
