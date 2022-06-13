@@ -88,7 +88,7 @@ export abstract class DataTableBase extends LitElement {
                                 ${tableHeaders}
                                 </tr>
                             </thead>
-                            <tbody class="mdc-data-table__content">
+                            <tbody class="mdc-data-table__content" tabindex="0">
                                 ${tableRows}
                             </tbody>
                         </table>
