@@ -14,7 +14,7 @@ const dummyApp = {
 };
 
 export default {
-  title: 'Components/App Card',
+  title: 'DATA DISPLAY/Card/Application',
   component: 'fds-app-card',
   argTypes,
   parameters: {

@@ -7,7 +7,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Button/Text',
+  title: 'ACTIONS/Button/Text',
   component: 'fds-text-button',
   argTypes,
   args: {},

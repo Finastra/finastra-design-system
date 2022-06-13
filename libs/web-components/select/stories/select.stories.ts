@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Select',
+  title: 'FORMS/Select',
   component: 'fds-select',
   argTypes,
   parameters: {
