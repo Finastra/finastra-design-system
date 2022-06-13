@@ -1,10 +1,41 @@
 @use '@finastra/fds-theme' as fds;
 @use "@material/data-table/data-table";
+@use "@material/icon-button/icon-button";
 
+@include icon-button.core-styles;
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 @include data-table.table-styles;
 
+
 :host {
   display: block;
+}
+.fds-data-table{
+  .mdc-data-table__table{
+    thead{
+      display: table;
+      table-layout: fixed;
+      width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+    }
+    .mdc-data-table__content{
+      max-height: 520px;
+      display: block;
+      overflow-y: auto;
+      .mdc-data-table__row {
+        display: table;
+        width: 100%;
+        table-layout: fixed;/* even columns width , fix width of table too*/
+      }
+    }
+  }
+
+  .mdc-data-table__header-cell{
+    .fds-data-table-sort-icon{
+      --mdc-icon-button-size: 24px;
+      --mdc-ripple-color: transparent;
+    }
+     
+  }
+  
 }

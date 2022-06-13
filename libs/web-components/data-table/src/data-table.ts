@@ -8,6 +8,8 @@ import { styles } from './data-table-styles.css';
  * @attr [dataSource=[]] - Array of data to display in the table.
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
+ * @attr [selectable=false] - Whether to show if a row is selected.
+ * @attr [multiSelect=false] - Whether to allow multiple rows to be selected.
  */
 
 @customElement('fds-data-table')

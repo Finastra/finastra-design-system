@@ -196,26 +196,38 @@ export default {
       table: {
         defaultValue: dataTableColumnsToDisplay
       }
+    },
+    selectable: {
+      type: 'boolean',
+      description: 'enable/disable selection',
+      table: {
+        defaultValue: false
+      }
+    },
+    multiSelect: {
+      type: 'boolean',
+      description: 'enable/disable multiselect or not selection',
+      table: {
+        defaultValue: false
+      }
     }
   },
   args: {
     dataSource: ELEMENT_DATA,
     columns: dataTableColumns,
-    columnsToDisplay: dataTableColumnsToDisplay
+    columnsToDisplay: dataTableColumnsToDisplay,
+    selectable: true,
+    multiSelect: false
   },
   parameters: {
     docs: {
       description: { component: README }
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=91884%3A21858'
     }
   },
 };
 
-const Template: Story<DataTable> = ({dataSource = ELEMENT_DATA, columns = dataTableColumns, columnsToDisplay = dataTableColumnsToDisplay }) => {
-  return html`<fds-data-table .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay}></fds-data-table>`
+const Template: Story<DataTable> = ({dataSource = ELEMENT_DATA, columns = dataTableColumns, columnsToDisplay = dataTableColumnsToDisplay, selectable = true, multiSelect = true }) => {
+  return html`<fds-data-table .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay} .selectable=${selectable} .multiSelect=${multiSelect}></fds-data-table>`
 };
 
 

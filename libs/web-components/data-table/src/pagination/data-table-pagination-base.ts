@@ -1,7 +1,8 @@
 import "@finastra/select";
+import "@material/icon-button";
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { PAGINATION_EVENTS } from "./constants";
+import { PAGINATION_EVENTS } from "../constants";
 
 export interface FdsPageEvent {
     length: number;
@@ -31,11 +32,6 @@ export abstract class DataTablePaginationBase extends LitElement {
     @property({
         type: Boolean
     }) showFirstLastButtons = false;
-
-    @property({
-        type: String
-    }) eventSufix = "";
-
 
     override render() {
         const maxPageIdx = Math.floor(this.length / this.pageSize);
@@ -102,7 +98,7 @@ export abstract class DataTablePaginationBase extends LitElement {
         this._onPaginationChanged();
     }
     _onPaginationChanged() {
-        this.dispatchEvent(new CustomEvent(PAGINATION_EVENTS.PAGINATION_CHANGED + this.eventSufix, {
+        this.dispatchEvent(new CustomEvent(PAGINATION_EVENTS.PAGINATION_CHANGED, {
             detail: {
                 pageIndex: this.pageIndex,
                 pageSize: this.pageSize,

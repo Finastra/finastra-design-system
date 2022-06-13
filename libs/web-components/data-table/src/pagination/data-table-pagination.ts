@@ -9,7 +9,6 @@ import { styles } from "./data-table-pagination-styles.css";
  * @attr [pageSize=10] - Number of items per page.
  * @attr [pageSizeOptions=[]] - Array of page sizes to display.
  * @attr [showFirstLastButtons=false] - Whether to display the first and last page buttons.
- * @attr [eventSufix=""] - Event suffix to use when emitting events.
  */
 
 @customElement('fds-data-table-pagination')

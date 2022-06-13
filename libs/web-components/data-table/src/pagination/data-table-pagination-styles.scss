@@ -22,5 +22,11 @@
         .mdc-data-table__pagination-total {
             min-width: 80px;
         }
+
+        .mdc-data-table__pagination-navigation {
+            mwc-icon-button {
+                --mdc-ripple-color: transparent;
+            }
+        }
     }
 }
