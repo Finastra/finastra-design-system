@@ -17,7 +17,7 @@ $stepper-bg: var(--fds-background);
   height: 100%;
 }
 .pages {
-  overflow: scroll;
+  overflow-y: auto;
   height: 100%;
 }
 .content {

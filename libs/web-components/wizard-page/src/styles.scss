@@ -7,7 +7,6 @@ $icon-border-color: var(--fds-surface-selected);
 
 :host {
   display: none;
-  height: 100%;
 }
 
 .header {
@@ -57,7 +56,6 @@ fds-chip {
 .page-container {
   @include fds.property(color, on-background);
   padding: 72px 0px 32px var(--fds-spacing-5, 48px);
-  height: calc(100% - 100px);
 }
 
 :host([current]) {
