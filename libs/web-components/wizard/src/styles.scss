@@ -19,6 +19,7 @@ $stepper-bg: var(--fds-background);
 .pages {
   overflow-y: auto;
   height: 100%;
+  min-height: 100%;
 }
 .content {
   @include fds.property(background, surface);
