@@ -72,7 +72,7 @@ const Template: Story<Wizard> = ({ stepperPosition = 'right', stepperOnDark="fal
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Preferences" icon="https://i.imgur.com/yHVTpn6.png" description="Preferences description" header>
+  <fds-wizard-page slot="page" title="Preferences" icon="https://i.imgur.com/yHVTpn6.png" description="Preferences description" disabled header>
     <p>Replace with your content</p>
   </fds-wizard-page>
 
