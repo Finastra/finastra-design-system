@@ -441,6 +441,18 @@
       },
       "tags": []
     },
+    "fab": {
+      "root": "libs/web-components/fab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/fab/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fds-test-app": {
       "root": "apps/fds-test-app",
       "sourceRoot": "apps/fds-test-app/src",
@@ -751,6 +763,18 @@
         }
       },
       "tags": []
+    },
+    "my-firstcomponent": {
+      "root": "libs/web-components/my-firstcomponent",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/my-firstcomponent/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "popover": {
       "projectType": "library",

@@ -99,7 +99,7 @@
     },
     {
       "path": "select"
-    },    
+    },
     {
       "path": "charts"
     },
@@ -120,6 +120,12 @@
     },
     {
       "path": "circular-progress"
+    },
+    {
+      "path": "my-firstcomponent"
+    },
+    {
+      "path": "fab"
     }
   ]
 }
