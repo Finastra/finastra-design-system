@@ -1,9 +1,7 @@
+![](../../.github/assets/banner_angular-components.png)
+
 [![@finastra/angular-components](https://img.shields.io/npm/v/@finastra/angular-components?label=angular-components&style=flat-square)](https://www.npmjs.com/package/@finastra/angular-components)
 [![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
-
-# FINASTRA Angular Components
-
-![](../../.github/assets/banner_angular-components.png)
 
 The FINASTRA Angular components are the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of components (global search, data visualization, repeater, filters...).
 
