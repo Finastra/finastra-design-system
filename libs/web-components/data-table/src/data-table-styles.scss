@@ -28,18 +28,10 @@
   .fds-data-table{
     .mdc-data-table__table{
       thead,tbody tr{
-       
         th, td, mwc-icon-button{
           @include fds.text-color(on-background);
         }
-
-        th .mdc-icon-button .material-icons{
-          font-size: var(--fds-spacing-3);
-          place-content: center;
-        }
-
       }
-
     }
   }
 }
