@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="https://www.fusionfabric.cloud/" target="blank"><img src="https://dev-to-uploads.s3.amazonaws.com/i/t2fcfqa7fxh6z927fmb1.png"  alt="FusionFabric.cloud" /></a>
-</p>
+![](../../.github/assets/banner_web-components.png)
 
   <p align="center">A set of opinionated web-components for building efficient and scalable financial applications</p>
 <p align="center">
@@ -26,8 +24,6 @@
 </p>
 
 <br/>
-
-![](../../.github/assets/banner_web-components.png)
 
 # Packages
 
