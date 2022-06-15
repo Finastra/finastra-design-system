@@ -23,6 +23,7 @@ export interface Page {
   * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
   * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
+  * @attr [currentStepIndex=0] - Index of current active step.
 */
 @customElement('fds-wizard')
 export class Wizard extends LitElement {
