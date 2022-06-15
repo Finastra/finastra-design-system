@@ -4,7 +4,7 @@
 
 # Finastra Design System
 
-![](./.github/assets/design-kit-foundations.png)
+![](./.github/assets/banner_home.png)
 
 Following monorepo is composed of several assets :
 
