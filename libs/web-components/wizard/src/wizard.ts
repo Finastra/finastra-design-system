@@ -46,7 +46,9 @@ export class Wizard extends LitElement {
   protected back = false;
   protected disabled: Boolean | null = null;
   protected arrayPages: Page[] = [];
-  protected currentStepIndex = 0;
+
+  @property({ type: Number })
+  currentStepIndex = 0;
 
   constructor() {
     super();
@@ -116,6 +118,7 @@ export class Wizard extends LitElement {
 
   onPagesSlotChanged() {
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
+    this.checkCurrentStep(this.currentStepIndex);
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
@@ -129,6 +132,38 @@ export class Wizard extends LitElement {
     this.stepper['steps'] = this.arrayPages;
   }
 
+  checkCurrentStep(current) {
+    if(!this.currentPageIsLast(current) && !this.currentPageIsFirst(current) && !this.currentPageIsDisabled(current)) {
+      this.back=true;
+    }
+
+    if(this.currentPageIsLast(current) && !this.currentPageIsDisabled(current)) {
+      this.save=true;
+      this.back=true;
+    }
+
+    if(this.currentPageIsFirst(current)) {
+      this.back=false;
+    }
+
+    if((this._pages[current]).hasAttribute('current') && this._pages[current].hasAttribute('disabled')) {
+      console.error("A current could not be disabled");
+    }
+    this.requestUpdate();
+  }
+
+  currentPageIsLast(current) {
+    return ((current) === (this._pages.length - 1));
+  }
+
+  currentPageIsDisabled(current) {
+    return (this._pages[current]).hasAttribute('disabled');
+  }
+
+  currentPageIsFirst(current) {
+    return (current === 0);
+  }
+
   checkAttributes(page: HTMLElement, index: number) {
     if (page.getAttribute('disabled') !== null) {
       this.disabled = true;
@@ -136,16 +171,13 @@ export class Wizard extends LitElement {
     if (page.hasAttribute('current') && (this._pages[this.currentStepIndex] !== page)) {
       this.updateCurrentPage(index);
       this.stepper['currentStepIndex'] = this.currentStepIndex;
-      this.back = true;
-      if (this.currentStepIndex === (this._pages.length - 1)) {
-        this.save = true;
-      }
+      this.checkCurrentStep(this.currentStepIndex);
     }
     this.requestUpdate();
   }
 
   checkNextStepDisabled(pages: Array<HTMLElement>, current: number) {
-    if (!(pages[current]).hasAttribute('disabled')) return;
+    if (!this.currentPageIsDisabled(current)) return;
     this.stepper['currentStepIndex']++;
     this.currentStepIndex++;
     current++;
@@ -153,13 +185,11 @@ export class Wizard extends LitElement {
   }
 
   checkPreviousStepDisabled(pages: Array<HTMLElement>, current: number) {
-    if (!(pages[current]).hasAttribute('disabled')) return;
+    if (!this.currentPageIsDisabled(current)) return;
     this.stepper['currentStepIndex']--;
     this.currentStepIndex--;
     current--;
-    if (current === 0) {
-      this.back = false;
-    }
+    this.checkCurrentStep(current);
     this.checkPreviousStepDisabled(pages, current);
     this.requestUpdate();
   }
@@ -169,7 +199,6 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']++;
     (pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex++;
-    (pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   goToPreviousStep(pages: Array<HTMLElement>) {
@@ -177,19 +206,12 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']--;
     (pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex--;
-    (pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   goToStepIndex(index: number) {
     this.back = true;
     this.save = false;
-    if ((index) === (this._pages.length - 1)) {
-      this.save = true;
-    }
-    if (index === 0) {
-      this.back = false;
-      this.requestUpdate();
-    }
+    this.checkCurrentStep(index);
     this.updateCurrentPage(index);
     this.requestUpdate();
   }
@@ -197,21 +219,25 @@ export class Wizard extends LitElement {
   updateCurrentPage(index: number) {
     (this._pages[this.currentStepIndex]).removeAttribute('current');
     this.currentStepIndex = index;
+    this.UpdatePage()
+  }
+
+  updateStepsCounter(current) {
+    return (current+1)+"/"+this._pages.length;
+  }
+
+  UpdatePage() {
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
     (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   _handleNextClick() {
-    this.back = true;
     if (this.currentStepIndex !== (this._pages.length - 1)) {
       this.goToNextStep(this._pages);
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
-      (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
-      (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+      this.UpdatePage()
     }
-    if (this.currentStepIndex + 1 === (this._pages.length)) {
-      this.save = true;
-    }
+    this.checkCurrentStep(this.currentStepIndex);
     this.requestUpdate();
   }
 
@@ -225,13 +251,9 @@ export class Wizard extends LitElement {
       }
       this.goToPreviousStep(this._pages);
       this.checkPreviousStepDisabled(this._pages, this.currentStepIndex);
-      (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
-      (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+      this.UpdatePage();
     }
     this.requestUpdate();
-  }
-  updateStepsCounter(current) {
-    return (current+1)+"/"+this._pages.length;
   }
 }
 
