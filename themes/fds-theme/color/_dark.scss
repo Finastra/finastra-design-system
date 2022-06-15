@@ -31,6 +31,7 @@ $properties: (
   surface: $surface,
   surface-selected: color.change($primary, $alpha: 0.08),
   surface-disabled: color.change($_white, $alpha: 0.12),
+  surface-error: color.change($error, $alpha: 0.04),
   outline: $outline,
   success: $success,
   error: $error,
