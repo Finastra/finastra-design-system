@@ -3,11 +3,12 @@ import '@finastra/data-table';
 import { DataTablePagination } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
+import { PAGINATION_EVENTS } from '../src/constants';
 
 const demoLength = 11;
 const demoPageIndex = 0;
 const demoPageSize = 5;
-const demoPageSizeOptions = [5, 10];
+const demoPageSizeOptions = [5, 10, 20];
 const showFirstLastButtons = false;
 
 export default {
@@ -59,13 +60,12 @@ export default {
     showFirstLastButtons: showFirstLastButtons
   },
   parameters: {
+    actions: {
+      handles: [PAGINATION_EVENTS.PAGINATION_CHANGED]
+    },
     docs: {
       description: { component: README }
     },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=91884%3A21858'
-    }
   },
 };
 

@@ -2,7 +2,7 @@
 @use "@material/icon-button/icon-button"; // Required only for data table with column sorting.
 @use "@material/data-table/data-table";
 @use "@material/data-table/data-table-pagination";
-
+@use '@material/mwc-button/styles';
 
 @include icon-button.core-styles;
 @include data-table.core-styles;
@@ -11,6 +11,12 @@
 
 :host {
     display: flex;
+    @include fds.mdc(theme-primary, primary);
+    @include fds.mdc(ripple-color, surface-selected);
+    @include fds.mdc(theme-text-disabled-on-light, surface-disabled);
+    mwc-icon-button{
+        @include fds.text-color(on-background);
+    }
 }
 
 .fds-data-table-pagination.mdc-data-table__pagination {
@@ -28,5 +34,8 @@
                 --mdc-ripple-color: transparent;
             }
         }
+    }
+    .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__pagination-total {
+        @include fds.text-color(on-background);
     }
 }

@@ -3,6 +3,8 @@ import '@finastra/data-table';
 import { DataTable } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
+import { DATA_TABLE_EVENTS } from '../src/constants';
+
 
 const ELEMENT_DATA = [
   {
@@ -163,11 +165,11 @@ const ELEMENT_DATA = [
 ];
 const dataTableColumns = [
   { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api' },
-  { id: 'End Point', name: 'End Point', type: 'string', align: 'left' },
+  { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true},
   { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
   { id: 'Status Code',name: 'Status Code', type: 'string', align: 'left' },
   { id: 'Error Response',name: 'Error Response', type: 'string', align: 'center' },
-  { id: 'No. of Calls',name: 'No. of Calls', type: 'number', align: 'right' }
+  { id: 'No. of Calls',name: 'No. of Calls', type: 'number', align: 'right', sortable: true }
 ];
 const dataTableColumnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
 
@@ -177,7 +179,6 @@ export default {
   argTypes: {
     dataSource: {
       type: 'array',
-
       description: "a set of data",
       table: {
         defaultValue: ELEMENT_DATA
@@ -220,6 +221,9 @@ export default {
     multiSelect: false
   },
   parameters: {
+    actions: {
+      handles: [DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED]
+    },
     docs: {
       description: { component: README }
     }
