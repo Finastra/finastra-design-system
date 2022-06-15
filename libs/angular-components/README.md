@@ -3,6 +3,8 @@
 
 # FINASTRA Angular Components
 
+![](./.github/assets/banner_angular.png)
+
 The FINASTRA Angular components are the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of components (global search, data visualization, repeater, filters...).
 
 ## How to use it? 🤔
