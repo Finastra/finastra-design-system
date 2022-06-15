@@ -132,7 +132,7 @@ export class Wizard extends LitElement {
     this.stepper['steps'] = this.arrayPages;
   }
 
-  checkCurrentStep(current) {
+  checkCurrentStep(current: number) {
     if(!this.currentPageIsLast(current) && !this.currentPageIsFirst(current) && !this.currentPageIsDisabled(current)) {
       this.back=true;
     }
@@ -152,15 +152,15 @@ export class Wizard extends LitElement {
     this.requestUpdate();
   }
 
-  currentPageIsLast(current) {
+  currentPageIsLast(current: number) {
     return ((current) === (this._pages.length - 1));
   }
 
-  currentPageIsDisabled(current) {
+  currentPageIsDisabled(current: number) {
     return (this._pages[current]).hasAttribute('disabled');
   }
 
-  currentPageIsFirst(current) {
+  currentPageIsFirst(current: number) {
     return (current === 0);
   }
 
@@ -222,8 +222,8 @@ export class Wizard extends LitElement {
     this.UpdatePage()
   }
 
-  updateStepsCounter(current) {
-    return (current+1)+"/"+this._pages.length;
+  updateStepsCounter(current: number) {
+    return (+current+1)+"/"+this._pages.length;
   }
 
   UpdatePage() {
