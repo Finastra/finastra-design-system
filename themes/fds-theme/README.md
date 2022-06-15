@@ -1,5 +1,7 @@
 # FDS Theme
 
+![](../../.github/assets/banner_web-theme.png)
+
 The FINASTRA Material Theme is a SCSS implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, spacing, elevation).
 
 ## Quick start 🤔

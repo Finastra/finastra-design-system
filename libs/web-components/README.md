@@ -27,6 +27,8 @@
 
 <br/>
 
+![](../../.github/assets/banner_web-components.png)
+
 # Packages
 
 | Name             | Package                                                                      | Version                                                                                                                | Links                                                                                  |

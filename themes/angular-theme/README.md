@@ -3,6 +3,8 @@
 
 # FINASTRA Angular Theme
 
+![](../../.github/assets/banner_angular-theme.png)
+
 The FINASTRA Angular Theme is the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, icons, logo) and UI elements (buttons, checkbox, input...).
 
 ## How to use it? 🤔
