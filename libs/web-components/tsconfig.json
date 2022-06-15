@@ -99,7 +99,7 @@
     },
     {
       "path": "select"
-    },    
+    },
     {
       "path": "charts"
     },
@@ -120,6 +120,9 @@
     },
     {
       "path": "circular-progress"
+    },
+    {
+      "path": "tabs"
     }
   ]
 }
