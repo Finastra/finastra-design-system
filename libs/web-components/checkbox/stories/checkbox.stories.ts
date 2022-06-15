@@ -5,7 +5,7 @@ import '@finastra/checkbox';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'FORMS/Checkbox',
   component: 'fds-checkbox',
   argTypes,
   args: {

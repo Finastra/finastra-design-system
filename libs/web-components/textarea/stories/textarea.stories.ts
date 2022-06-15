@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/textarea';
 import type { Textarea } from '@finastra/textarea';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Textarea',
+  title: 'FORMS/Textarea',
   component: 'fds-textarea',
   argTypes,
   args: {
