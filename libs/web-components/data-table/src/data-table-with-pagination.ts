@@ -95,6 +95,5 @@ export class DataTableWithPagination extends LitElement{
     }
     onDataTableRowSelected(e){
         this.selected = e.detail
-        console.log(this.selected)
     }
 }

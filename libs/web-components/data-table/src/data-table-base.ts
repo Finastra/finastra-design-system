@@ -267,6 +267,8 @@ export abstract class DataTableBase extends LitElement {
         }
 
         this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED, {
+            bubbles: true,
+            composed: true,
             detail: {
                 data: dataToSend,
             }

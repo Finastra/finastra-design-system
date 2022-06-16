@@ -98,7 +98,16 @@ export abstract class DataTablePaginationBase extends LitElement {
         this._onPaginationChanged();
     }
     _onPaginationChanged() {
+        this.dispatchEvent(
+            new CustomEvent(PAGINATION_EVENTS.PAGINATION_CHANGED, {
+              bubbles: true, composed: true, detail: {
+                value: `${3}`
+              }
+            })
+          )
         this.dispatchEvent(new CustomEvent(PAGINATION_EVENTS.PAGINATION_CHANGED, {
+            bubbles: true,
+            composed: true,
             detail: {
                 pageIndex: this.pageIndex,
                 pageSize: this.pageSize,

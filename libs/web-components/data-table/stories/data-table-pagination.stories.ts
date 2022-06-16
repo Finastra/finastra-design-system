@@ -13,7 +13,7 @@ const showFirstLastButtons = false;
 
 export default {
   title: 'DATA DISPLAY/Data Table/Pagination',
-  component: 'fds-data-table',
+  component: 'fds-data-table-pagination',
   argTypes: {
     length: {
       type: 'number',
@@ -50,6 +50,9 @@ export default {
         table: {
             defaultValue: false
         }
+    },
+    onFdsPaginationChanged:{
+      action:'onFdsPaginationChanged'
     }
   },
   args: {
