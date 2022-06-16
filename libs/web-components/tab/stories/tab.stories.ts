@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/tab';
 import '@finastra/tab-bar';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Tab',
+  title: 'NAVIGATION/Tabs/Tab',
   component: 'fds-tab',
   argTypes,
   parameters: {

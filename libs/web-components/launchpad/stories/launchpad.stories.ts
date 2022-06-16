@@ -10,7 +10,7 @@ const README = require('../README.md');
 const demoApps = [{ 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app1.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app2.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app3.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app4.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app5.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app6.com' } }];
 
 export default {
-  title: 'Components/Launchpad',
+  title: 'NAVIGATION/Launchpad',
   argTypes,
   args: {
     apps: demoApps

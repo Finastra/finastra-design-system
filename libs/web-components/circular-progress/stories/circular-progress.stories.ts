@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Progress Indicator/Circular Progress',
+  title: 'DATA DISPLAY/Progress Indicator/Circular Progress',
   component: 'fds-circular-progress',
   argTypes,
   parameters: {

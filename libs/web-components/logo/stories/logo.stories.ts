@@ -1,16 +1,16 @@
 const README = require('../README.md');
-import {cssprops, argTypes} from './custom-element.json';
+import '@finastra/logo';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@finastra/logo';
+import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Logo',
+  title: 'GRAPHIC ELEMENTS/Logo',
   component: 'fds-logo',
   argTypes,
   args: {
     dense: false
-  }, 
+  },
   parameters: {
     docs: {
       description: { component: README }

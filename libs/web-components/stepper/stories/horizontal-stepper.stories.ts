@@ -3,8 +3,8 @@ import '@finastra/stepper';
 import type { HorizontalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
 import { EVENTS } from '../src/constants';
+import { argTypes, cssprops } from './custom-element.json';
 
 const demoData = [
   {
@@ -30,7 +30,7 @@ const demoData = [
 ];
 
 export default {
-  title: 'Components/Stepper/Horizontal',
+  title: 'FORMS/Stepper/Horizontal',
   component: 'fds-horizontal-stepper',
   argTypes: {
     ...argTypes,

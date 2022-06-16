@@ -1,14 +1,14 @@
+import '@finastra/menu-trigger';
+import { MenuTrigger } from '@finastra/menu-trigger';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes } from './custom-element.json';
-import { MenuTrigger } from '@finastra/menu-trigger';
 
-import '@finastra/menu-trigger';
 
 const README = require('../README.md');
 
 export default {
-  title: 'Components/Menu Trigger',
+  title: 'ACTIONS/Menu Trigger',
   argTypes,
   args: {
     label: 'Launch',
