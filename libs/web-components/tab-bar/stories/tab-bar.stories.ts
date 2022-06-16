@@ -1,8 +1,8 @@
 const README = require('../README.md');
+import '@finastra/tab';
+import '@finastra/tab-bar';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@finastra/tab-bar';
-import '@finastra/tab';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
@@ -58,8 +58,8 @@ Stacked.args = {
   stacked: true
 };
 
-export const Seperated: Story = Template.bind({});
-Seperated.args = {
+export const Separated: Story = Template.bind({});
+Separated.args = {
   label: 'Active',
   icon: "location_on",
   seperator: true

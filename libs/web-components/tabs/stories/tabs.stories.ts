@@ -52,8 +52,8 @@ Classic.args = {
   headerDisplayType: 'classic'
 };
 
-export const Seperated: Story = Template.bind({});
-Seperated.args = {
+export const Separated: Story = Template.bind({});
+Separated.args = {
   selectedIndex: 0,
   seperator: true
 };
