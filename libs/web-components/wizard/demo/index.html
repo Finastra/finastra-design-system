@@ -1,0 +1,48 @@
+<script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
+<script type="module" src="node_modules/@finastra/wizard-page/dist/src/wizard-page.js"></script>
+<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
+<script type="module" src="node_modules/@finastra/tab-bar/dist/src/tab-bar.js"></script>
+<script type="module" src="node_modules/@finastra/tab/dist/src/tab.js"></script>
+<script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
+
+<fds-wizard id="wizard">
+  <fds-text-button slot='left-action' label="Cancel" secondary>
+  </fds-text-button>
+  <fds-outlined-button slot='next' label="Next" secondary>
+  </fds-outlined-button>
+  <fds-text-button slot='previous' label="Back" secondary icon="chevron_left">
+  </fds-text-button>
+  <fds-button slot='done' label="Save" secondary>
+  </fds-button>
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page" header>
+    <div class="page-content">
+      <div class="textfields">
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+      </div>
+      <div class="image">
+        <img src="https://i.imgur.com/otY5WR9.png" />
+      </div>
+    </div>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+</fds-wizard>
+
+<style>
+  fds-wizard {
+    height: 600px;
+    width: 1000px;
+  }
+
+  .page-content {
+    display: flex;
+  }
+</style>
