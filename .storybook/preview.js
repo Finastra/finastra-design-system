@@ -15,7 +15,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Welcome', 'Foundations', 'Components'],
+      order: ['Welcome', 'Design Tokens'],
       method: 'alphabetical'
     }
   },

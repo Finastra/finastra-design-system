@@ -28,7 +28,7 @@ const demoData = [
 ];
 
 export default {
-  title: 'Components/Stepper/Vertical',
+  title: 'FORMS/Stepper/Vertical',
   component: 'fds-vertical-stepper',
   argTypes: {
     ...argTypes,

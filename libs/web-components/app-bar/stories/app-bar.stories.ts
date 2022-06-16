@@ -9,7 +9,7 @@ import { EVENTS } from '../src/constants';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/App bar',
+  title: 'NAVIGATION/App Bar',
   component: 'fds-app-bar',
   argTypes,
   args: {
