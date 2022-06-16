@@ -200,7 +200,18 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 ></fds-data-table-with-pagination>
 <script>
     const dataTableWithPagination = document.querySelector('#fds-data-table-with-pagination');
-
+    dataTableWithPagination.dataSource = ELEMENT_DATA
+    dataTableWithPagination.columns = [
+        { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api' },
+        { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true },
+        { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
+        { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
+        { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },
+        { id: 'No. of Calls', name: 'No. of Calls', type: 'number', align: 'right', sortable: true }
+    ];
+    dataTableWithPagination.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
+    dataTableWithPagination.selectable=true;
+    dataTableWithPagination.multiSelect=false;
     dataTableWithPagination.length = ELEMENT_DATA.length;
     dataTableWithPagination.pageIndex = 0;
     dataTableWithPagination.pageSize = 5;
