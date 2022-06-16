@@ -281,7 +281,6 @@ const Template: Story<DataTableWithPagination> = (
                 .multiSelect=${multiSelect}
                 .pageSizeOptions=${pageSizeOptions}
                 .showFirstLastButtons=${showFirstLastButtons}
-              >
-              </fds-data-table-with-pagination>`
+              ></fds-data-table-with-pagination>`
 }
 export const DataTableComponentWithPagination: Story<DataTableWithPagination> = Template.bind({});

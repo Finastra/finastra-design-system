@@ -1,9 +1,10 @@
 const README = require('../README.md');
 import '@finastra/data-table';
 import { DataTablePagination } from '@finastra/data-table';
-import { Story } from '@storybook/web-components';
+import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { PAGINATION_EVENTS } from '../src/constants';
+import { argTypes } from './custom-element.json';
 
 const demoLength = 11;
 const demoPageIndex = 0;
@@ -15,6 +16,7 @@ export default {
   title: 'DATA DISPLAY/Data Table/Pagination',
   component: 'fds-data-table-pagination',
   argTypes: {
+    ...argTypes,
     length: {
       type: 'number',
 
@@ -51,7 +53,7 @@ export default {
             defaultValue: false
         }
     }
-  },
+  } as any,
   args: {
     length: demoLength,
     pageIndex: demoPageIndex,
@@ -71,7 +73,7 @@ export default {
       url: ' https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48606%3A19621'
     }
   },
-};
+} as Meta;
 
 
 const templatePagination: Story<DataTablePagination> = ({
@@ -81,7 +83,13 @@ const templatePagination: Story<DataTablePagination> = ({
   pageSizeOptions = demoPageSizeOptions,
   showFirstLastButtons = true
 }) => {
-  return html`<fds-data-table-pagination .length=${length} .pageIndex=${pageIndex} .pageSize=${pageSize} .pageSizeOptions=${pageSizeOptions} .showFirstLastButtons=${showFirstLastButtons}></fds-data-table-pagination>`
+  return html`<fds-data-table-pagination 
+                length=${length} 
+                pageIndex=${pageIndex} 
+                pageSize=${pageSize} 
+                .pageSizeOptions=${pageSizeOptions} 
+                showFirstLastButtons=${showFirstLastButtons}
+              ></fds-data-table-pagination>`
 } 
 
 export const Default: Story<DataTablePagination> = templatePagination.bind({});
