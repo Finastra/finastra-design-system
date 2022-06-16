@@ -20,14 +20,8 @@
     }
 
     .mdc-fab__label{
-        font-size: 14px;
-        padding-left: 7px;
-        font-weight: 700;
-        line-height: 20px;
-        height: 20px;
-        top: 14px;
-        left: 48px;
-        letter-spacing: 1.25px;
+        @include fds.typography(body-3);
+        @include fds.property(color, on-surface);
     }
 }
 
