@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Tab bar',
+  title: 'NAVIGATION/Tabs/Tab Bar',
   component: 'fds-tab-bar',
   argTypes,
   parameters: {

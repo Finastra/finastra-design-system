@@ -7,7 +7,7 @@ const demoData = [44, 55, 13, 43, 22]
 const demoLabels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
 
 export default {
-  title: 'Components/Charts/PieChart',
+  title: 'DATA DISPLAY/Charts/Pie Chart',
   component: 'fds-pie-chart',
   argTypes: {
     width: {

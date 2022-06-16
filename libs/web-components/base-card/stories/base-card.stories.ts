@@ -6,7 +6,7 @@ import { html } from 'lit';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Base card',
+  title: 'DATA DISPLAY/Card/Base',
   component: 'fds-base-card',
   argTypes,
   args: {},

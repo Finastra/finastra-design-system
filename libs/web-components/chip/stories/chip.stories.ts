@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/chip';
 import type { Chip } from '@finastra/chip';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Chip',
+  title: 'DATA DISPLAY/Chip',
   component: 'fds-chip',
   argTypes: {
     ...argTypes,

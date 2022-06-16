@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Slider',
+  title: 'FORMS/Slider',
   component: 'fds-slider',
   argTypes,
   parameters: {

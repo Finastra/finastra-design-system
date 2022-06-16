@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/User Profile',
+  title: 'NAVIGATION/User Profile',
   argTypes,
   args: {
     dense: false,
