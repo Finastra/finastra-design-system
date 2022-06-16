@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'libs/web-components/**'
+      - '.storybook/**'
 
 jobs:
   build:
