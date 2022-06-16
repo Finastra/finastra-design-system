@@ -25,6 +25,7 @@ export default {
   },
   decorators: [
     (story) => html`${story()}
+
 <style>
   fds-wizard {
     height: 500px;
@@ -47,7 +48,7 @@ export default {
   p{
     font: var(--fds-body-1);
   }
-  </style>`
+</style>`
   ]
 } as Meta;
 
@@ -61,6 +62,7 @@ const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIn
   </fds-text-button>
   <fds-button slot='done' label="Save" secondary>
   </fds-button>
+  
   <fds-wizard-page slot="page" title="Welcome" icon="https://i.imgur.com/cEP8lXE.png" description="Welcome page" header>
     <div class="page-content">
       <div class="textfields">
@@ -79,7 +81,7 @@ const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIn
   <fds-wizard-page slot="page" title="Confirmation" icon="https://i.imgur.com/cEP8lXE.png" description="Confirmation description" header>
     <p>Replace with your content</p>
   </fds-wizard-page>
-  
+
 </fds-wizard>`;
 };
 

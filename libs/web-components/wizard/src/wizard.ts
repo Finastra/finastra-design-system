@@ -154,7 +154,7 @@ export class Wizard extends LitElement {
   }
 
   currentPageIsLast(current: number) {
-    return ((current) === (this._pages.length - 1));
+    return ((current) == (this._pages.length - 1));
   }
 
   currentPageIsDisabled(current: number) {
@@ -162,7 +162,7 @@ export class Wizard extends LitElement {
   }
 
   currentPageIsFirst(current: number) {
-    return (current === 0);
+    return (current == 0);
   }
 
   checkAttributes(page: HTMLElement, index: number) {
