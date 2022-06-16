@@ -6,7 +6,7 @@ import { html } from 'lit';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Avatar',
+  title: 'GRAPHIC ELEMENTS/Avatar',
   component: 'fds-avatar',
   argTypes,
   args: {},

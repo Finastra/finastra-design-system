@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/textfield';
 import type { Textfield } from '@finastra/textfield';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Textfield',
+  title: 'FORMS/Textfield',
   component: 'fds-textfield',
   argTypes,
   parameters: {

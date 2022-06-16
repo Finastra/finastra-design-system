@@ -7,7 +7,7 @@ import '../../../../themes/tippy.js/dist/theme.css';
 const README = require('../README.md');
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'POPOVER/Tooltip',
   parameters: {
     docs: {
       description: { component: README }
@@ -22,11 +22,11 @@ export default {
       <script>
         tippy('[data-tippy-content]', {
           touch: false,
-          theme: 'finastra' 
+          theme: 'finastra'
           });
       </script>
       <style>
-        
+
       </style>`
   ]
 } as Meta;

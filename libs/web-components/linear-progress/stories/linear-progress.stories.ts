@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Progress Indicator/Linear Progress',
+  title: 'DATA DISPLAY/Progress Indicator/Linear Progress',
   component: 'fds-linear-progress',
   argTypes,
   parameters: {

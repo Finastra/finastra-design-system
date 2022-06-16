@@ -1,10 +1,8 @@
+![](./.github/assets/banner_home.png)
+
 [![@finastra/angular-theme](https://img.shields.io/npm/v/@finastra/angular-theme?label=angular-theme&style=flat-square)](https://www.npmjs.com/package/@finastra/angular-theme)
 [![@finastra/angular-components](https://img.shields.io/npm/v/@finastra/angular-components?label=angular-components&style=flat-square)](https://www.npmjs.com/package/@finastra/angular-components)
 [![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
-
-# Finastra Design System
-
-![](./.github/assets/design-kit-foundations.png)
 
 Following monorepo is composed of several assets :
 
@@ -24,4 +22,4 @@ If it's your first time contributing, use the tag [![good first issue badge](htt
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system?ref=badge_large) 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFinastra%2Ffinastra-design-system?ref=badge_large)
