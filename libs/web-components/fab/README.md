@@ -15,7 +15,7 @@ npm i @finastra/fab
 ```ts
 import '@finastra/fab';
 ...
-<fds-fab></fds-fab>
+<fds-fab extended gradient labal="Edit" icon="edit"></fds-fab>
 ```
 
 ### Pure HTML pages
@@ -23,5 +23,5 @@ import '@finastra/fab';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/fab@latest/dist/src/fab.js?module"></script>
 
-<fds-fab></fds-fab>
+<fds-fab dense label="Photos" icon="camera"></fds-fab>
 ```

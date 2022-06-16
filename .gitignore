@@ -39,6 +39,7 @@ testem.log
 /.history
 junit.xml
 finastra-design-system.iml
+pac
 
 # System Files
 .DS_Store
@@ -68,3 +69,4 @@ storybook-static
 !/libs/web-components/**/*.stories.js
 libs/web-components/**/stories/custom-element.json
 build-storybook.log
+package-lock.json
