@@ -50,13 +50,10 @@ export default {
         table: {
             defaultValue: false
         }
-    },
-    onFdsPaginationChanged:{
-      action:'onFdsPaginationChanged'
     }
   },
   args: {
-   length: demoLength,
+    length: demoLength,
     pageIndex: demoPageIndex,
     pageSize: demoPageSize,
     pageSizeOptions: demoPageSizeOptions,
@@ -75,8 +72,6 @@ export default {
     }
   },
 };
-
-
 
 
 const templatePagination: Story<DataTablePagination> = ({

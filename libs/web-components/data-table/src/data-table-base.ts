@@ -265,14 +265,15 @@ export abstract class DataTableBase extends LitElement {
                 dataToSend = row._fdsSelected? [this._getPureData(row)] : [];
             }
         }
-
-        this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED, {
-            bubbles: true,
-            composed: true,
-            detail: {
-                data: dataToSend,
-            }
-        }));
+        if(this.selectable){
+            this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED, {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    data: dataToSend,
+                }
+            }));
+        }
     }
 
     private _getPureData(data: any): any {

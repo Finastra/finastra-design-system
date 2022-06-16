@@ -1,9 +1,13 @@
 const README = require('../README.md');
 import '@finastra/data-table';
-import { DataTable } from '@finastra/data-table';
+import { DataTableWithPagination } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { DATA_TABLE_EVENTS } from '../src/constants';
+
+const demoPageSize = 5;
+const demoPageSizeOptions = [5, 10, 20];
+const showFirstLastButtons = false;
 
 const ELEMENT_DATA = [
   {
@@ -173,8 +177,8 @@ const dataTableColumns = [
 const dataTableColumnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
 
 export default {
-  title: 'DATA DISPLAY/Data Table',
-  component: 'fds-data-table',
+  title: 'DATA DISPLAY/Data Table/Table with pagination',
+  component: 'fds-data-table-with-pagination',
   argTypes: {
     dataSource: {
       type: 'array',
@@ -210,18 +214,42 @@ export default {
       table: {
         defaultValue: false
       }
-    }
+    },
+    pageSize: {
+        type: 'number',
+        description: 'the number of items per page',
+        table: {
+          defaultValue: 10
+        }
+      },
+      pageSizeOptions: {
+          type: 'array',
+          description: 'an arry of page size',
+          table: {
+              defaultValue: [5, 10]
+          }
+      },
+      showFirstLastButtons: {
+          type: 'boolean',
+          description: 'show first and last buttons',
+          table: {
+              defaultValue: false
+          }
+      },
   },
   args: {
     dataSource: ELEMENT_DATA,
     columns: dataTableColumns,
     columnsToDisplay: dataTableColumnsToDisplay,
     selectable: true,
-    multiSelect: false
+    multiSelect: false,
+    pageSize: demoPageSize,
+    pageSizeOption: demoPageSizeOptions,
+    showFirstLastButtons: showFirstLastButtons
   },
   parameters: {
     actions: {
-      handles: [DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED]
+      handles: [DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED]
     },
     docs: {
       description: { component: README }
@@ -233,9 +261,27 @@ export default {
   },
 };
 
-const Template: Story<DataTable> = ({dataSource = ELEMENT_DATA, columns = dataTableColumns, columnsToDisplay = dataTableColumnsToDisplay, selectable = true, multiSelect = true }) => {
-  return html`<fds-data-table .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay} .selectable=${selectable} .multiSelect=${multiSelect}></fds-data-table>`
-};
 
+const Template: Story<DataTableWithPagination> = (
+  {
+    dataSource = ELEMENT_DATA, 
+    columns = dataTableColumns, 
+    columnsToDisplay = dataTableColumnsToDisplay, 
+    selectable = true, 
+    multiSelect = true,
+    pageSizeOptions= demoPageSizeOptions,
+    showFirstLastButtons = true,
+  }) => {
 
-export const Default: Story<DataTable> = Template.bind({});
+  return html`<fds-data-table-with-pagination
+                .dataSource=${dataSource}
+                .columns=${columns}
+                .columnsToDisplay=${columnsToDisplay}
+                .selectable=${selectable}
+                .multiSelect=${multiSelect}
+                .pageSizeOptions=${pageSizeOptions}
+                .showFirstLastButtons=${showFirstLastButtons}
+              >
+              </fds-data-table-with-pagination>`
+}
+export const DataTableComponentWithPagination: Story<DataTableWithPagination> = Template.bind({});

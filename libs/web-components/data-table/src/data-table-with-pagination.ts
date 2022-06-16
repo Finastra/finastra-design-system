@@ -1,6 +1,7 @@
 
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { DATA_TABLE_EVENTS } from './constants';
 import './data-table';
 import { FdsTableColumn, FdsTableRow } from './data-table-base';
 import './pagination/data-table-pagination';
@@ -94,6 +95,15 @@ export class DataTableWithPagination extends LitElement{
         this.requestUpdate();
     }
     onDataTableRowSelected(e){
-        this.selected = e.detail
+        this.selected = e.detail;
+        if(this.selectable){
+            this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    data: this.selected,
+                }
+            }));
+        }
     }
 }
