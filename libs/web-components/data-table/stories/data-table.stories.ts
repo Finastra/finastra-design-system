@@ -173,7 +173,7 @@ const dataTableColumns = [
 const dataTableColumnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
 
 export default {
-  title: 'Components/Data Table',
+  title: 'DATA DISPLAY/Data Table',
   component: 'fds-data-table',
   argTypes: {
     dataSource: {

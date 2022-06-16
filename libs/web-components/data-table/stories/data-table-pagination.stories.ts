@@ -12,7 +12,7 @@ const demoPageSizeOptions = [5, 10, 20];
 const showFirstLastButtons = false;
 
 export default {
-  title: 'Components/Data Table/Pagination',
+  title: 'DATA DISPLAY/Data Table/Pagination',
   component: 'fds-data-table',
   argTypes: {
     length: {
