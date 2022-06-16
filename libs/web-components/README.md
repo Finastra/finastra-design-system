@@ -61,6 +61,7 @@
 | **Switch**       | [`@finastra/switch`](https://npmjs.com/package/@finastra/switch)             | [![latest](https://img.shields.io/npm/v/@finastra/switch.svg)](https://npmjs.com/package/@finastra/switch)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./switch/README.md)       |
 | **Textarea**     | [`@finastra/textarea`](https://npmjs.com/package/@finastra/textarea)         | [![latest](https://img.shields.io/npm/v/@finastra/textarea.svg)](https://npmjs.com/package/@finastra/textarea)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./textarea/README.md)     |
 | **Textfield**    | [`@finastra/textfield`](https://npmjs.com/package/@finastra/textfield)       | [![latest](https://img.shields.io/npm/v/@finastra/textfield.svg)](https://npmjs.com/package/@finastra/textfield)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./textfield/README.md)    |
+| **Wizard** | [`@finastra/wizard`](https://npmjs.com/package/@finastra/wizard) | [![latest](https://img.shields.io/npm/v/@finastra/wizard.svg)](https://npmjs.com/package/@finastra/wizard) | [![README](https://img.shields.io/badge/README--56C271.svg)](./wizard/README.md) |
 
 ## GRAPHIC ELEMENTS
 
