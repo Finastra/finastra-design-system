@@ -5,7 +5,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'Components/Tabs',
+  title: 'Navigation/Tabs',
   component: 'fds-tab-group',
   argTypes,
   parameters: {
