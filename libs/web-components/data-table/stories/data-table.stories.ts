@@ -1,10 +1,9 @@
 const README = require('../README.md');
 import '@finastra/data-table';
-import { DataTable } from '@finastra/data-table';
+import { DataTable, DataTableWithPagination } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { DATA_TABLE_EVENTS } from '../src/constants';
-
 
 const ELEMENT_DATA = [
   {
@@ -226,6 +225,10 @@ export default {
     },
     docs: {
       description: { component: README }
+    },
+    design: {
+      type: 'figma',
+      url: ' https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48606%3A19621'
     }
   },
 };
@@ -236,3 +239,28 @@ const Template: Story<DataTable> = ({dataSource = ELEMENT_DATA, columns = dataTa
 
 
 export const Default: Story<DataTable> = Template.bind({});
+
+
+const TemplateWithPagination: Story<DataTableWithPagination> = (
+  {
+    dataSource = ELEMENT_DATA, 
+    columns = dataTableColumns, 
+    columnsToDisplay = dataTableColumnsToDisplay, 
+    selectable = true, 
+    multiSelect = true,
+    pageSizeOptions=[5, 10, 20],
+    showFirstLastButtons = true,
+  }) => {
+
+  return html`<fds-data-table-with-pagination
+                .dataSource=${dataSource}
+                .columns=${columns}
+                .columnsToDisplay=${columnsToDisplay}
+                .selectable=${selectable}
+                .multiSelect=${multiSelect}
+                .pageSizeOptions=${pageSizeOptions}
+                .showFirstLastButtons=${showFirstLastButtons}
+              >
+              </fds-data-table-with-pagination>`
+}
+export const DataTableComponentWithPagination: Story<DataTableWithPagination> = TemplateWithPagination.bind({});

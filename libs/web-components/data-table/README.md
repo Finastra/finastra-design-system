@@ -114,7 +114,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
     dataTable.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
     dataTable.selectable=true;
     dataTable.multiSelect=false;
-    dataTable.addEventListener('fds-data-table-row-selected', (e) => {
+    dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {
        // your actions here
     })
 
@@ -144,13 +144,68 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 <fds-data-table-pagination id="fds-data-table-pagination"></fds-data-table-pagination>
 <script>
     const dataTablePagination = document.querySelector('#fds-data-table-pagination');
+    dataTablePagination.dataSource = ELEMENT_DATA
+    dataTablePagination.columns = [
+        { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api' },
+        { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true },
+        { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
+        { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
+        { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },
+        { id: 'No. of Calls', name: 'No. of Calls', type: 'number', align: 'right', sortable: true }
+    ];
+    dataTablePagination.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
+    dataTablePagination.selectable=true;
+    dataTablePagination.multiSelect=false;
     dataTablePagination.length = ELEMENT_DATA.length;
     dataTablePagination.pageIndex = 0;
     dataTablePagination.pageSize = 5;
     dataTablePagination.pageSizeOptions = [5, 10, 20]
     dataTablePagination.showFirstLastButtons = true;
-    dataTablePagination.addEventListener('fds-pagination-changed', (e) => {
+    dataTablePagination.addEventListener('onFdsPaginationChanged', (e) => {
        // your actions here
     })
+<script>
+ ```
+
+
+
+ ## Data Table Component with Pagination
+ 
+ Here is just an example component of combining `fds-data-table` and `fds-data-table-pagination`.
+ You can use it directly if it is suitable to your case. If not you can create your own component with `fds-data-table` and `fds-data-table-pagination`
+ ### Import 
+ ```import '@finastra/data-table';```
+
+ ```html
+ <fds-data-table-with-pagination 
+    [dataSource]="${data}"
+    [columns]="${columns}"
+    [columnsToDisplay]="${columnsToDisplay}"
+    [selectable]="true"
+    [multiSelect]="false"
+    [pageIndex]="0"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]"
+    [showFirstLastButtons]="true"
+></fds-data-table-with-pagination>
+ ```
+
+ ### Pure HTML pages
+
+```html
+<script type="module" src="https://unpkg.com/@finastra/data-table@latest/dist/src/data-table.js?module"></script>
+
+ <fds-data-table-with-pagination 
+   id="fds-data-table-with-pagination"
+></fds-data-table-with-pagination>
+<script>
+    const dataTableWithPagination = document.querySelector('#fds-data-table-with-pagination');
+
+    dataTableWithPagination.length = ELEMENT_DATA.length;
+    dataTableWithPagination.pageIndex = 0;
+    dataTableWithPagination.pageSize = 5;
+    dataTableWithPagination.pageSizeOptions = [5, 10, 20]
+    dataTableWithPagination.showFirstLastButtons = true;
+    dataTableWithPagination.addEventListener
 <script>
  ```

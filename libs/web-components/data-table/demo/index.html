@@ -190,7 +190,7 @@
     dataTable.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls'];
     dataTable.selectable = true;
     dataTable.multiSelect = false;
-    dataTable.addEventListener('fds-data-table-row-selected', (e) => {
+    dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {
         console.log(e.detail);
         document.querySelector('#fds-data-table-selected-rows').innerHTML = JSON.stringify(e.detail, null, 2);
     });
@@ -201,7 +201,7 @@
     dataTablePagination.pageSize = 5;
     dataTablePagination.pageSizeOptions = [5, 10, 20]
     dataTablePagination.showFirstLastButtons = true;
-    dataTablePagination.addEventListener('fds-pagination-changed', (e) => {
+    dataTablePagination.addEventListener('onFdsPaginationChanged', (e) => {
         dataTable.dataSource = ELEMENT_DATA.slice(e.detail.pageIndex * e.detail.pageSize, (e.detail.pageIndex + 1) * e.detail.pageSize);
     })
 

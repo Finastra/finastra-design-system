@@ -32,12 +32,15 @@
           @include fds.text-color(on-background);
         }
       }
+      .mdc-data-table__row--selected{
+        background-color: var(--fds-surface-selected);
+    }
     }
   }
 }
 .fds-data-table{
   .mdc-data-table__table{
-    thead{
+    thead, tbody{
       display: table;
       table-layout: fixed;
       width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
@@ -59,7 +62,5 @@
       --mdc-icon-button-size: 24px;
       --mdc-ripple-color: transparent;
     }
-     
   }
-  
 }

@@ -27,7 +27,7 @@ export interface FdsTableColumn {
 }
 
 export interface FdsTableRow {
-    selected?: boolean,
+    _fdsSelected?: boolean,
     _fdsRowId?: string
 }
 
@@ -205,7 +205,7 @@ export abstract class DataTableBase extends LitElement {
         const rowCells = columnsToDisplay.map(columnId => {
             return this._getDataTableCell(row, this._columnsData[columnId]);
         })
-        return html`<tr class="mdc-data-table__row ${this.selectable && row.selected ? 'mdc-data-table__row--selected' : ''}" 
+        return html`<tr class="mdc-data-table__row ${this.selectable && row._fdsSelected ? 'mdc-data-table__row--selected' : ''}" 
                     id="${row._fdsRowId}"
                     @click=${() => this._onRowSelected(row)}>
                 ${rowCells}
@@ -239,11 +239,13 @@ export abstract class DataTableBase extends LitElement {
             })
         }
 
-        if (this.selectable) {
+        if (this.selectable && !row._fdsSelected) {
             this.shadowRoot?.querySelector(`#${row._fdsRowId}`)?.classList.toggle('mdc-data-table__row--selected');
+        }else{
+            this.shadowRoot?.querySelector(`#${row._fdsRowId}`)?.classList.remove('mdc-data-table__row--selected');
         }
 
-        row.selected = !row.selected;
+        row._fdsSelected = !row._fdsSelected;
         let dataToSend: any = [];
         if (this.selectable) {
             if (this.multiSelect) {
@@ -260,7 +262,7 @@ export abstract class DataTableBase extends LitElement {
                     dataToSend = selectedRows.map(row => this._getPureData(row));
                 }
             } else {
-                dataToSend = [this._getPureData(row)]
+                dataToSend = row._fdsSelected? [this._getPureData(row)] : [];
             }
         }
 
@@ -273,7 +275,7 @@ export abstract class DataTableBase extends LitElement {
 
     private _getPureData(data: any): any {
         const dataCopy = { ...data } as any;
-        delete dataCopy.selected;
+        delete dataCopy._fdsSelected;
         delete dataCopy._fdsRowId;
         return dataCopy;
     }
