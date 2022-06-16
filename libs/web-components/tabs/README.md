@@ -26,5 +26,8 @@ import '@finastra/tabs';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/tabs@latest/dist/src/index.js?module"></script>
 
-<fds-tabs></fds-tabs>
+<fds-tab-group>
+    <fds-tab-item label="Tab 1">Content tab 1</fds-tab-item>
+    <fds-tab-item label="Tab 2">Content tab 2</fds-tab-item>
+</fds-tab-group>
 ```

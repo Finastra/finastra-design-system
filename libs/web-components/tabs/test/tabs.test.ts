@@ -1,8 +1,8 @@
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
-import '../src/tab-group.js';
-import { TabGroup } from '../src/tab-group.js';
+import '../src/index.js';
+import { TabGroup } from '../src/index.js';
 
-describe('Tabs', () => {
+describe('TabGroup', () => {
   it('loads accessibly', async () => {
     const el: TabGroup = await fixture(html`
     <fds-tab-group id="tabGroup">

@@ -9,6 +9,13 @@ interface TabInfo {
   label: string
 }
 
+/**
+ * @attr [headerPosition]  Position of header. Accepts one of values : `start | center | end`
+ * @attr [separator]  Add dividers between tabs
+ * @attr [selectedIndex]  Index of tab that is active.
+ * @attr [headerDisplayType]  Display type for tab button:  Accepts one of values : `classic | segmented | ''`
+ */
+
 @customElement('fds-tab-group')
 export class TabGroup extends LitElement {
   static styles = styles;
@@ -16,9 +23,11 @@ export class TabGroup extends LitElement {
   @property({ type: Number })
   selectedIndex = 0;
   
-  @property({ type: Boolean }) seperator = false;
+  @property({ type: Boolean }) separator = false;
   
-  @property({ type: String }) headerPosition = 'left';
+
+  @property({ type: String }) headerPosition = 'start';
+
   @property({ type: String }) headerDisplayType = '' ;
   
   @state()
@@ -29,11 +38,23 @@ export class TabGroup extends LitElement {
 
   private childListObserver: MutationObserver | null = null 
 
+  override connectedCallback(): void {
+    super.connectedCallback();
+    this.observeChildList()
+    this.updateTabInfo()
+  }
 
+  override disconnectedCallback(): void {
+    super.disconnectedCallback()
+    if (this.childListObserver) {
+      this.childListObserver.disconnect()
+    }
+  }
+  
   render() {
     return html`
     <div class="fds-tab-group-wrapper">
-      <fds-tab-bar class="fds-tab-group-tab-bar" position="${this.headerPosition}" ?seperator=${this.seperator} .activeIndex=${this.selectedIndex} @MDCTabBar:activated=${this.handleSelectedTab}>
+      <fds-tab-bar class="fds-tab-group-tab-bar" position="${this.headerPosition}" ?seperator=${this.separator} .activeIndex=${this.selectedIndex} @MDCTabBar:activated=${this.handleSelectedTab}>
         ${this.tabs.map(tab => html`<fds-tab ?classic=${this.headerDisplayType === 'classic'}  ?segmented=${this.headerDisplayType === 'segmented'} .label=${tab.label}></fds-tab>`)}
       </fds-tab-bar>
       <div class="fds-tab-content-wrapper">
@@ -82,7 +103,6 @@ export class TabGroup extends LitElement {
   observeChildList() {
     this.childListObserver = new MutationObserver(() => {
       this.updateTabInfo()
-      console.log('childListObserver')
     })
     this.childListObserver.observe(this, {subtree: false, childList: true});
   }
@@ -95,18 +115,6 @@ export class TabGroup extends LitElement {
   }
 
   
-  override connectedCallback(): void {
-      super.connectedCallback();
-      this.observeChildList()
-      this.updateTabInfo()
-  }
-  override disconnectedCallback(): void {
-    super.disconnectedCallback()
-    if (this.childListObserver) {
-      this.childListObserver.disconnect()
-    }
-  }
-    
 
 }
 

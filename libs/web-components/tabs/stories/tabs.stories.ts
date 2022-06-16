@@ -43,7 +43,7 @@ Default.args = {
 export const Segmented: Story = Template.bind({});
 Segmented.args = {
   selectedIndex: 0,
-  headerDisplayType: 'segmented:'
+  headerDisplayType: 'segmented'
 };
 
 export const Classic: Story = Template.bind({});
@@ -62,4 +62,11 @@ export const Center: Story = Template.bind({});
 Center.args = {
   selectedIndex: 0,
   headerPosition: 'center'
+};
+
+
+export const End: Story = Template.bind({});
+End.args = {
+  selectedIndex: 0,
+  headerPosition: 'end'
 };
