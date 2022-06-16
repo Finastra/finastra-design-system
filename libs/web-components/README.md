@@ -2,8 +2,8 @@
 
   <p align="center">A set of opinionated web-components for building efficient and scalable financial applications</p>
 <p align="center">
-    <a href="https://github.com/Finastra/finastra-design-system/actions/workflows/wc-pr-build.yml">
-        <img src="https://github.com/Finastra/finastra-design-system/actions/workflows/wc-pr-build.yml/badge.svg" alt="Build status" />
+    <a href="https://github.com/Finastra/finastra-design-system/actions/workflows/pr-build-wc.yml">
+        <img src="https://github.com/Finastra/finastra-design-system/actions/workflows/pr-build-wc.yml/badge.svg" alt="Build status" />
     </a>
     <a href="https://codecov.io/gh/Finastra/finastra-design-system">
         <img src="https://codecov.io/gh/Finastra/finastra-design-system/branch/master/graph/badge.svg?token=7jzYffsaRg"/>
