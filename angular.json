@@ -384,6 +384,18 @@
       },
       "tags": ["web-components"]
     },
+    "data-table": {
+      "root": "libs/web-components/data-table",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/data-table/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",

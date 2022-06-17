@@ -25,6 +25,7 @@
     "wc:user-profile",
     "wc:global-nav",
     "wc:*",
-    "wc:pie-chart"
+    "wc:pie-chart",
+    "wc:data-table"
   ]
 }
