@@ -69,4 +69,3 @@ storybook-static
 !/libs/web-components/**/*.stories.js
 libs/web-components/**/stories/custom-element.json
 build-storybook.log
-package-lock.json
