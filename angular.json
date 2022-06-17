@@ -384,6 +384,18 @@
       },
       "tags": ["web-components"]
     },
+    "data-table": {
+      "root": "libs/web-components/data-table",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/data-table/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
@@ -1432,6 +1444,18 @@
       },
       "tags": ["web-components"]
     },
+    "wc-wizard": {
+      "root": "libs/web-components/wizard",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/wizard/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wizard": {
       "projectType": "library",
       "root": "libs/angular-components/wizard",
@@ -1458,6 +1482,18 @@
         }
       },
       "tags": []
+    },
+    "wizard-page": {
+      "root": "libs/web-components/wizard-page",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/wizard-page/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     }
   }
 }
