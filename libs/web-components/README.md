@@ -150,7 +150,7 @@ npm run wc:serve
 npm run wc:storybook
 ```
 
-> You can also see the storybook in the browser: https://finastra.github.io/finastra-design-system/
+> You can also see the storybook in the browser ➡️ [Go to Storybook](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/welcome--page)
 
 ### Build
 
