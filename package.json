@@ -110,6 +110,8 @@
     "@material/data-table": "14.0.0",
     "@material/elevation": "^13.0.0",
     "@material/icon-button": "14.0.0",
+    "@material/mwc-fab": "^0.25.3",
+    "@material/fab": "^14.0.0",
     "@material/mwc-drawer": "0.25.3",
     "@material/mwc-icon": "^0.25.3",
     "@material/mwc-icon-button": "^0.25.3",
