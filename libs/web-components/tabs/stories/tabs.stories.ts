@@ -17,20 +17,37 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=251%3A5493'
     },
     cssprops
-  }
+  },
+  decorators: [
+    (story) => html`${story()}<style>
+        fds-tab-group {
+          width: 700px; 
+          height: 300px
+        }
+        .content {
+          padding-top: 24px
+        }
+      </style>`
+  ]
 } as Meta;
 
 
-const Template: Story = ({ selectedIndex, seperator, headerPosition, headerDisplayType }) => {
-  return html`<fds-tab-group style="width: 700px; height: 300px" .selectedIndex=${selectedIndex} .seperator=${seperator} .headerPosition=${headerPosition} .headerDisplayType=${headerDisplayType}>
+const Template: Story = ({ selectedIndex, separator, headerPosition, headerDisplayType }) => {
+  return html`<fds-tab-group selectedIndex=${selectedIndex} ?separator=${separator} headerPosition=${headerPosition} headerDisplayType=${headerDisplayType}>
   <fds-tab-item label="Dashboard">
-    Ipsum ut nulla do consequat voluptate laboris nulla. Ullamco laborum ut irure dolor consectetur ipsum consequat nisi occaecat ea. Ipsum esse deserunt adipisicing id in voluptate adipisicing eu ipsum velit aliquip aliqua veniam eiusmod. Nulla ea Lorem cillum culpa ut reprehenderit exercitation sint reprehenderit occaecat. Proident fugiat amet laborum non quis. In id voluptate commodo irure excepteur proident adipisicing cupidatat qui reprehenderit minim Lorem commodo anim.
+    <div class="content">
+      Ipsum ut nulla do consequat voluptate laboris nulla. Ullamco laborum ut irure dolor consectetur ipsum consequat nisi occaecat ea. Ipsum esse deserunt adipisicing id in voluptate adipisicing eu ipsum velit aliquip aliqua veniam eiusmod. Nulla ea Lorem cillum culpa ut reprehenderit exercitation sint reprehenderit occaecat. Proident fugiat amet laborum non quis. In id voluptate commodo irure excepteur proident adipisicing cupidatat qui reprehenderit minim Lorem commodo anim.
+    </div>
   </fds-tab-item>
   <fds-tab-item label="Evolution">
-    Do amet exercitation magna aliqua non aliquip consequat ipsum. Fugiat fugiat labore nulla officia cillum et minim excepteur. Aliquip eu do ex officia id pariatur id ea eu. Veniam consequat commodo velit fugiat exercitation laboris commodo adipisicing velit qui mollit magna veniam consequat.
+    <div class="content">
+      Do amet exercitation magna aliqua non aliquip consequat ipsum. Fugiat fugiat labore nulla officia cillum et minim excepteur. Aliquip eu do ex officia id pariatur id ea eu. Veniam consequat commodo velit fugiat exercitation laboris commodo adipisicing velit qui mollit magna veniam consequat.
+    </div>
   </fds-tab-item>
   <fds-tab-item label="Trend">
-    Ex et laboris quis proident qui duis. Id aliqua enim cupidatat adipisicing cillum et amet eiusmod. Cupidatat excepteur exercitation consequat occaecat consequat aliqua.
+    <div class="content">
+      Ex et laboris quis proident qui duis. Id aliqua enim cupidatat adipisicing cillum et amet eiusmod. Cupidatat excepteur exercitation consequat occaecat consequat aliqua.
+    </div>
   </fds-tab-item>
 </fds-tab-group>`;
 };
@@ -55,7 +72,7 @@ Classic.args = {
 export const Separated: Story = Template.bind({});
 Separated.args = {
   selectedIndex: 0,
-  seperator: true
+  separator: true
 };
 
 export const Center: Story = Template.bind({});
