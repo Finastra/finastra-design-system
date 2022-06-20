@@ -19,7 +19,6 @@
 
     .mdc-fab__label{
         @include fds.typography(button);
-        @include fds.property(color, on-surface);
     }
 }
 
