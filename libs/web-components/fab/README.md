@@ -17,7 +17,7 @@ npm i @finastra/fab
 ```ts
 import '@finastra/fab';
 ...
-<fds-fab extended gradient labal="Edit" icon="edit"></fds-fab>
+<fds-fab extended gradient label="Edit" icon="edit"></fds-fab>
 ```
 
 ### Pure HTML pages
