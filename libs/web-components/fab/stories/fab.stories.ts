@@ -1,11 +1,11 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/fab';
 import type { Fab } from '@finastra/fab';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 
 export default {
-  title: 'Components/Fab',
+  title: 'ACTIONS/Fab',
   component: 'fds-fab',
   args: {
     icon: 'add',
