@@ -1,8 +1,6 @@
 @use '@finastra/fds-theme' as fds;
 @use '@material/mwc-fab/mwc-fab';
 
-
-
 :host {
     .mdc-fab{
         @include fds.bg-color(primary);
@@ -25,7 +23,6 @@
     }
 }
 
-  
 :host([dense]) {
     .mdc-fab {
         width: 40px;

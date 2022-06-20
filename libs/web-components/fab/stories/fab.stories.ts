@@ -22,12 +22,7 @@ export default {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48601%3A19614'
-  },
-  decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
-  ]
+  }
 } as Meta;
 
 const Template: Story<Fab> = ({icon, gradient, extended, dense, label}) => {
@@ -44,20 +39,13 @@ Default.args = {
 }
 
 
-export const Dense: Story<Fab> = Template.bind({});
+export const Dense: Story<Fab> = Default.bind({});
 Dense.args = {
-  icon: 'add',
-  gradient: false,
-  extended: false,
-  dense: true,
-  label: 'Action'
+  dense: true
 }
 
-export const GradientExtended: Story<Fab> = Template.bind({});
+export const GradientExtended: Story<Fab> = Default.bind({});
 GradientExtended.args = {
-  icon: 'add',
   gradient: true,
-  extended: true,
-  dense: false,
-  label: 'Action'
+  extended: true
 }
