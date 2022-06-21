@@ -2,7 +2,7 @@
 
 Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) repository. You will find here all the assets and ressources to **build applications quickly and consistently**. It will also help you applying easily **Finastra branding and UX best practices**.
 
-# FDS for web
+# 🌍 For web
 
 ## Web theme
 
@@ -18,7 +18,7 @@ This implementation of the Finastra design system is framwork agnostic (i.e can 
 
 [Learn more](./libs/web-components/README.md)
 
-# FDS for Angular
+# 🅰️ For Angular
 
 ## Angular theme
 
@@ -36,7 +36,7 @@ An angular implementation of the Finastra design system components. It provides 
 
 [Learn more](./libs/angular-components/README.md)
 
-# Other ressources
+# 📦 Other ressources
 
 ## UI kit on Figma
 
@@ -50,7 +50,7 @@ A Microsoft Power BI theme specified in JSON.
 
 [Learn more](./themes/power-bi-theme/README.md)
 
-# Want to help?
+# 💌 Want to help?
 
 Want to file a bug, contribute some code, or improve documentation?
 Excellent! Consider reading our [contribution guidelines](./CONTRIBUTING.md).
