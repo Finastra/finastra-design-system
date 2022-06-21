@@ -453,6 +453,18 @@
       },
       "tags": []
     },
+    "fab": {
+      "root": "libs/web-components/fab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/fab/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fds-test-app": {
       "root": "apps/fds-test-app",
       "sourceRoot": "apps/fds-test-app/src",
