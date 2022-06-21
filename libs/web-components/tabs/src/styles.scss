@@ -27,6 +27,7 @@
   .fds-tab-content-wrapper {
     @include fds.property(background-color, background);
     @include fds.property(color, on-background);
+    @include fds.typography(body-1);
   }  
 }
 

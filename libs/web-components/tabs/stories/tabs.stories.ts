@@ -22,10 +22,10 @@ export default {
     (story) => html`${story()}<style>
         fds-tab-group {
           width: 700px; 
-          height: 300px
+          height: 300px;
         }
         .content {
-          padding-top: 24px
+          padding-top: 24px;
         }
       </style>`
   ]
