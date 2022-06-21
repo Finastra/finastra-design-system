@@ -33,6 +33,39 @@ Add the component in your HTML like so
 <uxg-scroll-to-top></uxg-scroll-to-top>
 ```
 
+## 💡 Components' theme
+
+For more "advanced" components, you may require to import their themes SASS mixins.
+Find below a sample of what your main styles.scss would look :
+
+```SCSS
+@use '@finastra/angular-theme' as fds;
+@use '@finastra/angular-theme/base';
+
+@use '@finastra/angular-components/global-search/src/global-search.theme' as global-search;
+
+@include fds.uxg-core();
+
+// Add components typography mixins inside this mixin
+@mixin app-typography($typography) {
+  @include global-search.typography($typography);
+}
+
+// Add components theme mixins inside this mixin
+@mixin app-theme($theme) {
+    @include fds.uxg-material-theme($theme);
+    @include global-search.theme($theme);
+}
+
+@include app-typography(fds.$typography);
+
+@include app-theme(fds.$light-theme);
+
+@media (prefers-color-scheme: dark) {
+    @include app-theme(fds.$dark-theme);
+}
+```
+
 ## 💌 Want to help?
 
 Want to file a bug, contribute some code, or improve documentation?
