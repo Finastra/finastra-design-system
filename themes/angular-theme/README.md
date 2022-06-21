@@ -3,29 +3,39 @@
 [![@finastra/angular-theme](https://img.shields.io/npm/v/@finastra/angular-theme?label=angular-theme&style=flat-square)](https://www.npmjs.com/package/@finastra/angular-theme)
 [![stackblitz](https://img.shields.io/badge/stackblitz-ffdcbot-brightgreen?style=flat-square)](https://stackblitz.com/@ffdcbot)
 
-The FINASTRA Angular Theme is the Angular implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, icons, logo) and UI elements (buttons, checkbox, input...).
+The Finastra Angular Theme is the Angular implementation of the [Finastra Design System](https://design.fusionfabric.cloud). It features Finastra's branding of foundations (color, typography, icons, logo) and UI elements (buttons, checkbox, input...).
 
-## How to use it? 🤔
+## 🤔 How to use it?
 
 You can get started in 2 simple steps:
 
-Install the dependency
+Install the dependencies
 
 ```Bash
-npm install @finastra/angular-theme
+npm install @finastra/angular-theme @angular/material
 ```
 
-Import the theme in your main stylesheet
+### With SASS
+
+The most flexible way of using the angular-theme
 
 ```SCSS
-@import '@finastra/angular-theme/all-theme';
+@use '@finastra/angular-theme' as fds;
+@use '@finastra/angular-theme/base';
+
+@include fds.uxg-core();
+@include fds.uxg-material-theme(fds.$light-theme);
 ```
 
-You'll find a more exhaustive documentation on our developer [getting started](https://design.fusionfabric.cloud/get-started/developers) page.
+### With CSS pre-built themes
 
-## Want to help? 🤗❤️
+Choose between `light`, `dark` or `all-theme`
+
+```SCSS
+@import '@finastra/angular-theme/prebuilt-theme/all-theme';
+```
+
+## 💌 Want to help?
 
 Want to file a bug, contribute some code, or improve documentation?
-Excellent!
-
-If it's your first time contributing, use the tag [![good first issue badge](https://img.shields.io/badge/-good%20first%20issue-blueviolet?style=flat-square)](https://github.com/finastra/finastra-design-system/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+Excellent! consider reading our [contribution guidelines](../../CONTRIBUTING.md)
