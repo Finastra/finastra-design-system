@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/tabs",
+  "displayName": "Tabs",
+  "version": "0.0.32",
+  "description": "Tabs Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Tabs"
+  ],
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "@finastra/tab-bar": "0.0.32",
+    "@finastra/tab": "0.0.32"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

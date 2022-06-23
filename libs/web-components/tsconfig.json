@@ -124,6 +124,9 @@
     {
       "path": "data-table"
     },
+    {      
+      "path": "tabs"
+    },
     {
       "path": "wizard"
     },

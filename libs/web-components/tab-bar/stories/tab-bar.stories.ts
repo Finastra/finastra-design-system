@@ -58,8 +58,8 @@ Stacked.args = {
   stacked: true
 };
 
-export const Seperated: Story = Template.bind({});
-Seperated.args = {
+export const Separated: Story = Template.bind({});
+Separated.args = {
   label: 'Active',
   icon: "location_on",
   seperator: true
