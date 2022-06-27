@@ -42,14 +42,11 @@
         <div class="header-text" [ngClass]="{ selectable: selectable }">
           <span class="title uxg-subtitle-1">{{ row.label }}</span>
           <span class="subtitle uxg-body-3">
-            <ng-container *ngTemplateOutlet="templateHeaderSubtitle; context: { row: row, subtitle: subtitle }">
-            </ng-container>
+            <ng-container *ngTemplateOutlet="templateHeaderSubtitle; context: { row: row, subtitle: subtitle }"> </ng-container>
           </span>
         </div>
         <div class="header-buttons">
-          <ng-container
-            *ngTemplateOutlet="templateHeaderButtons; context: { row: row, emiter: tableHeaderCallBack }"
-          ></ng-container>
+          <ng-container *ngTemplateOutlet="templateHeaderButtons; context: { row: row, emiter: tableHeaderCallBack }"></ng-container>
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
@@ -68,8 +65,7 @@
     >
     </uxg-table>
     <div class="table-buttons">
-      <ng-container *ngTemplateOutlet="templateTableButtons; context: { row: row, emiter: tableButtonsCallBack }">
-      </ng-container>
+      <ng-container *ngTemplateOutlet="templateTableButtons; context: { row: row, emiter: tableButtonsCallBack }"> </ng-container>
     </div>
   </mat-expansion-panel>
 </mat-accordion>
