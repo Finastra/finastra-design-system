@@ -23,7 +23,7 @@ export class ExpansionPanel extends LitElement {
   getExpansionItems() {
     const slotSelector = 'slot:not([name]';
     const slotEl = this.renderRoot?.querySelector<HTMLSlotElement>(slotSelector);
-    return slotEl?.assignedNodes() ?? [];
+    return slotEl?.assignedNodes().filter(node => node instanceof LitElement) ?? [];
   }
 
   closeOtherExpansionItems(current: Node) {
@@ -33,13 +33,18 @@ export class ExpansionPanel extends LitElement {
     nodes.forEach(node => {
       if (node === current) return
       node['expanded'] = false
-    })
-    
+    })  
+  }
 
-  }
   render() {
+    const nodes = this.getExpansionItems()
+    nodes.forEach(node => {
+      if (node instanceof LitElement) {
+        node.requestUpdate()
+      }      
+    })
     return html`<slot></slot>`;
-  }
+  } 
 }
 
 declare global {

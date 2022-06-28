@@ -9,8 +9,8 @@
     "ExpansionPanel"
   ],
   "license": "MIT",
-  "main": "dist/src/expansion-panel.js",
-  "module": "dist/src/expansion-panel.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/expansion-panel.scss src/expansion-panel-item.scss"
   },

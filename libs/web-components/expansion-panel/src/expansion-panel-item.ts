@@ -54,8 +54,8 @@ export class ExpansionPanelItem extends LitElement {
       'display-mode-default': this.getParent().displayMode === 'default'
     };
     return html`
-    <div class="expansion-panel-item ${classMap(classes)}" ?aria-disabled=${this.disabled} >
-      <div class="expansion-panel-item-header" @click=${this.handleHeaderClick} ?aria-disabled=${this.disabled}>
+    <div class="expansion-panel-item ${classMap(classes)}" aria-disabled="${this.disabled}" >
+      <div class="expansion-panel-item-header" @click=${this.handleHeaderClick} aria-disabled="${this.disabled}">
         <div class="expansion-panel-item-header__content">
           <span class="expansion-panel-item-header__title"><slot name="title"></slot></span>
           <span class="expansion-panel-item-header__description"><slot name="description"></slot></span>
