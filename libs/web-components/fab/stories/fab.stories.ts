@@ -17,12 +17,12 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A1974'
     }
   },
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48601%3A19614'
-  }
 } as Meta;
 
 const Template: Story<Fab> = ({icon, gradient, extended, dense, label}) => {
