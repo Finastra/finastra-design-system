@@ -1,0 +1,5 @@
+@use '@finastra/fds-theme' as fds;
+:host {
+  display: block;
+  --mdc-theme-text-primary-on-background: var(--fds-on-background) 
+}

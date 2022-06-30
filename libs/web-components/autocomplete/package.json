@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@finastra/search-input": "0.0.33",
+    "@finastra/menu": "0.0.33",
     "@material/mwc-base": "0.25.3",
     "@material/mwc-icon": "0.25.3",
     "@material/mwc-menu": "0.25.3",

@@ -734,6 +734,18 @@
       },
       "tags": ["web-components"]
     },
+    "menu": {
+      "root": "libs/web-components/menu",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/menu/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu-trigger": {
       "root": "libs/web-components/menu-trigger",
       "architect": {
