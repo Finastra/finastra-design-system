@@ -1,7 +1,7 @@
 {
   "name": "@finastra/tab-bar",
   "displayName": "TabBar",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "TabBar Web Component",
   "keywords": [
     "Finastra Design System",
