@@ -10,7 +10,7 @@
   font: var(--fds-subtitle-3);
   text-align: center;
   width: 100%;
-  border-radius: 16px;
+  border-radius: var(--fds-spacing-3, 16px);
   border: 2px solid var(--fds-surface);
   @include fds.elevation(4);
   margin: 5px;
@@ -48,9 +48,16 @@
   @include fds.property(color, on-success);
 }
 
-:host([position="edge"]) {
+:host([position="topRight"]) {
   position: absolute;
   transform: translate(50%, -50%);
   top: 0;
   right: 10px;
+}
+
+:host([position="topLeft"]) {
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 0;
+  left: -25px;
 }

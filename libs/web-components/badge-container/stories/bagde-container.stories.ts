@@ -5,7 +5,7 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 export default {
-  title: 'Components/badgeContainer',
+  title: 'DATA DISPLAY/badgeContainer',
   component: 'fds-badge-container',
   args: {
     name: 'World'

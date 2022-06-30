@@ -3,9 +3,9 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 export enum POSITION {
-  inside = 'inside',
-  edge = 'edge',
-  outside = 'outside',
+  topLeft = 'topLeft',
+  topRight = 'topRight',
+  center = 'center'
 }
 
 @customElement('fds-badge')
@@ -24,11 +24,10 @@ export class Badge extends LitElement {
   /**
    * @type {"inside"|"edge"|"outside"} badgePositon - Badge postion
    */
-  @property({ reflect: true }) position: POSITION = POSITION.inside;
+  @property({ reflect: true }) position: POSITION = POSITION.center;
 
 
   render() {
-    //const badgePostion = { inside: this.position === 'inside', edge: this.position === 'edge', outside: this.position === 'outside' };
     return html`<span class="badgeValue ${this.color?.toLowerCase()}  ${this.position?.toLowerCase()}" position=${this.position}>${this.value}</span>`;
   }
 }
