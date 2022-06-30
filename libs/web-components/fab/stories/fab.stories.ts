@@ -3,17 +3,12 @@ import '@finastra/fab';
 import type { Fab } from '@finastra/fab';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { argTypes, cssprops } from './custom-element.json';
 
 export default {
   title: 'ACTIONS/Fab',
   component: 'fds-fab',
-  args: {
-    icon: 'add',
-    gradient: false,
-    extended: false,
-    dense: true,
-    label: 'Action'
-  },
+  argTypes,
   parameters: {
     docs: {
       description: { component: README }
@@ -21,7 +16,8 @@ export default {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A1974'
-    }
+    },
+    cssprops
   },
 } as Meta;
 
@@ -31,11 +27,9 @@ const Template: Story<Fab> = ({icon, gradient, extended, dense, label}) => {
 
 export const Default: Story<Fab> = Template.bind({});
 Default.args = {
-  icon: 'add',
   gradient: false,
   extended: false,
   dense: false,
-  label: 'Action'
 }
 
 
