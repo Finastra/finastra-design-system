@@ -1,7 +1,7 @@
 {
   "name": "@finastra/textarea",
   "displayName": "Textarea",
-  "version": "0.0.32",
+  "version": "0.0.34",
   "description": "Textarea Web Component",
   "keywords": [
     "Finastra Design System",

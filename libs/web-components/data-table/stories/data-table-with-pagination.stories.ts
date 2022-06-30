@@ -184,58 +184,65 @@ export default {
       type: 'array',
       description: "a set of data",
       table: {
-        defaultValue: ELEMENT_DATA
+        defaultValue: {
+          summary: "[]"
+        }
       },
     },
     columns: {
       type: 'array',
       description: 'a set of columns settings',
       table: {
-        defaultValue: dataTableColumns
+        defaultValue: {
+          summary: "[]"
+        }
       }
     },
     columnsToDisplay: {
       type: 'array',
       description: 'a set of columns id to display',
       table: {
-        defaultValue: dataTableColumnsToDisplay
+        defaultValue: {
+          summary: "[]"
+        }
       }
     },
     selectable: {
       type: 'boolean',
       description: 'enable/disable selection',
       table: {
-        defaultValue: false
+        defaultValue: {
+          summary: false
+        }
       }
     },
     multiSelect: {
       type: 'boolean',
       description: 'enable/disable multiselect or not selection',
       table: {
-        defaultValue: false
+        defaultValue: {
+          summary: false
+        }
       }
     },
-    pageSize: {
-        type: 'number',
-        description: 'the number of items per page',
-        table: {
-          defaultValue: 10
-        }
-      },
-      pageSizeOptions: {
-          type: 'array',
-          description: 'an arry of page size',
-          table: {
-              defaultValue: [5, 10]
+    pageSizeOptions: {
+      type: 'array',
+      description: 'an arry of page size',
+      table: {
+          defaultValue: {
+            summary: "[]"
           }
-      },
-      showFirstLastButtons: {
-          type: 'boolean',
-          description: 'show first and last buttons',
-          table: {
-              defaultValue: false
+      }
+    },
+    showFirstLastButtons: {
+      type: 'boolean',
+      description: 'show first and last buttons',
+      table: {
+          defaultValue: {
+            summary: false
           }
-      },
+      }
+    },
   },
   args: {
     dataSource: ELEMENT_DATA,
@@ -243,8 +250,7 @@ export default {
     columnsToDisplay: dataTableColumnsToDisplay,
     selectable: true,
     multiSelect: false,
-    pageSize: demoPageSize,
-    pageSizeOption: demoPageSizeOptions,
+    pageSizeOptions: demoPageSizeOptions,
     showFirstLastButtons: showFirstLastButtons
   },
   parameters: {

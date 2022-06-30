@@ -4,7 +4,6 @@ import { DataTablePagination } from '@finastra/data-table';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { PAGINATION_EVENTS } from '../src/constants';
-import { argTypes } from './custom-element.json';
 
 const demoLength = 11;
 const demoPageIndex = 0;
@@ -16,41 +15,49 @@ export default {
   title: 'DATA DISPLAY/Data Table/Pagination',
   component: 'fds-data-table-pagination',
   argTypes: {
-    ...argTypes,
     length: {
       type: 'number',
-
       description: "the length of data",
       table: {
-        defaultValue: 0
+        defaultValue: {
+          summary: 0
+        }
       },
     },
     pageIndex: {
       type: 'number',
       description: 'the default page index',
       table: {
-        defaultValue: 0
+        defaultValue: {
+          summary: 0
+        }
       }
     },
     pageSize: {
       type: 'number',
       description: 'the number of items per page',
       table: {
-        defaultValue: 10
+        defaultValue: {
+          summary: 10
+        }
       }
     },
     pageSizeOptions: {
         type: 'array',
         description: 'an arry of page size',
         table: {
-            defaultValue: [5, 10]
+            defaultValue: {
+              summary: "[]"
+            }
         }
     },
     showFirstLastButtons: {
         type: 'boolean',
         description: 'show first and last buttons',
         table: {
-            defaultValue: false
+            defaultValue: {
+              summary: false
+            }
         }
     }
   } as any,
@@ -88,7 +95,7 @@ const templatePagination: Story<DataTablePagination> = ({
                 pageIndex=${pageIndex} 
                 pageSize=${pageSize} 
                 .pageSizeOptions=${pageSizeOptions} 
-                showFirstLastButtons=${showFirstLastButtons}
+                .showFirstLastButtons=${showFirstLastButtons}
               ></fds-data-table-pagination>`
 } 
 

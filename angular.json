@@ -1074,6 +1074,18 @@
       },
       "tags": []
     },
+    "tabs": {
+      "root": "libs/web-components/tabs",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/tabs/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "test": {
       "projectType": "application",
       "schematics": {

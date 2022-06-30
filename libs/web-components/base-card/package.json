@@ -1,7 +1,7 @@
 {
   "name": "@finastra/base-card",
   "displayName": "Base Card",
-  "version": "0.0.32",
+  "version": "0.0.34",
   "description": "Base Card Web Component",
   "keywords": [
     "Finastra Design System",

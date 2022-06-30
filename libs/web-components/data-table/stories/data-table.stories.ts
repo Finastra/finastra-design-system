@@ -180,35 +180,45 @@ export default {
       type: 'array',
       description: "a set of data",
       table: {
-        defaultValue: ELEMENT_DATA
+        defaultValue: {
+          summary: "[]"
+        }
       },
     },
     columns: {
       type: 'array',
       description: 'a set of columns settings',
       table: {
-        defaultValue: dataTableColumns
+        defaultValue: {
+          summary: "[]"
+        }
       }
     },
     columnsToDisplay: {
       type: 'array',
       description: 'a set of columns id to display',
       table: {
-        defaultValue: dataTableColumnsToDisplay
+        defaultValue: {
+          summary: "[]"
+        }
       }
     },
     selectable: {
       type: 'boolean',
       description: 'enable/disable selection',
       table: {
-        defaultValue: false
+        defaultValue: {
+          summary: false
+        }
       }
     },
     multiSelect: {
       type: 'boolean',
       description: 'enable/disable multiselect or not selection',
       table: {
-        defaultValue: false
+        defaultValue: {
+          summary: false
+        } 
       }
     }
   },
