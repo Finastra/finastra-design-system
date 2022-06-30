@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import '@finastra/badge';
-import type { Badge } from '@finastra/badge';
+import '@finastra/badge-container';
+import type { badgeContainer } from '@finastra/badge-container';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 export default {
-  title: 'Components/Badge',
-  component: 'fds-badge',
+  title: 'Components/badgeContainer',
+  component: 'fds-badge-container',
   args: {
     name: 'World'
   },
@@ -22,8 +22,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Badge> = ({ }) => {
-  return html`<fds-badge  .name=${name}></fsd-badge>`;
+const Template: Story<badgeContainer> = ({ name = 'World' }) => {
+  return html`<fds-badge-container  .name=${name}></fds-badge-container>`;
 };
 
-export const Default: Story<Badge> = Template.bind({});
+export const Default: Story<badgeContainer> = Template.bind({});

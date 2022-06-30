@@ -1,0 +1,24 @@
+{
+  "name": "@finastra/badge-container",
+  "displayName": "badgeContainer",
+  "version": "1.0.0",
+  "description": "badgeContainer Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "badgeContainer"
+  ],
+  "license": "MIT",
+  "main": "dist/src/badge-container.js",
+  "module": "dist/src/badge-container.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

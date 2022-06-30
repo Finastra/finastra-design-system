@@ -1,2 +1,33 @@
 <script type="module" src="node_modules/@finastra/badge/dist/src/badge.js"></script>
-<fds-badge name="World"></fds-badge>
+<script type="module" src="node_modules/@finastra/badge-container/dist/src/badge-container.js"></script>
+<script type="module" src="node_modules/@finastra/badge-container/dist/src/badge-container.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+
+<script type="module" src="node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
+
+
+<fds-badge-container>
+    <span> hello</span>
+    <fds-badge value="1" color="error"></fds-badge>
+</fds-badge-container> 
+
+<!-- <fds-badge-container>
+    <fds-button label="hello"></fds-button>
+    <fds-badge value="1" position="edge" color="error"></fds-badge>
+</fds-badge-container> -->
+
+<fds-badge-container>
+    <mwc-icon-button icon="notifications"></mwc-icon-button>
+    <fds-badge value="1" position="edge" color="error"></fds-badge>
+</fds-badge-container>
+<!-- <fds-badge value="123556666" color="outlined"></fds-badge>
+<fds-badge value="1" color="white"></fds-badge>
+<fds-badge value="123" color="secondary"></fds-badge>
+<fds-badge value="13" color="error"></fds-badge>
+<fds-badge value="1" color="success"></fds-badge> -->
+
+<style>
+fds-badge-container {
+    padding-bottom: 32px;
+}
+</style>
