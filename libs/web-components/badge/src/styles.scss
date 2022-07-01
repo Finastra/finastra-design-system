@@ -4,7 +4,6 @@
   display: block;
 }
 
-
 .badgeValue {
   display: inline-block;
   font: var(--fds-subtitle-3);
@@ -17,7 +16,7 @@
 }
 
 .outlined {
-  @include fds.property(background, surface);
+  background: transparent;
   @include fds.property(color, on-surface-medium);
   border: 1px solid var(--fds-outline);
  }
@@ -60,4 +59,24 @@
   transform: translate(50%, -50%);
   top: 0;
   left: -25px;
+}
+
+
+:host([type="indicator"]) {
+  .badgeValue {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid var(--fds-surface);
+  }
+}
+
+:host([type="indicator"][position="topRight"]) {
+  top: 6px;
+  right: 7px;
+}
+:host([type="indicator"][position="topLeft"]) {
+  top: 6px;
+  left: -14px;
 }
