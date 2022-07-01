@@ -5,6 +5,10 @@ import { ExpansionPanel } from './expansion-panel';
 
 import { styles } from './expansion-panel-item.css';
 
+/**
+ * @cssprop {text} [--fds-expansion-panel-item-header=48px] - Header height.
+ * @cssprop {text} [--fds-expansion-panel-item-header-expanded=64px] - Expanded header height.
+ */
 @customElement('fds-expansion-panel-item')
 export class ExpansionPanelItem extends LitElement {
   static styles = styles;
