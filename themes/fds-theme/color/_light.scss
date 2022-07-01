@@ -29,6 +29,7 @@ $properties: (
   secondary-lighter: color.change($secondary, $alpha: 0.08),
   background: $background,
   surface: $surface,
+  surface-hover: color.change($primary, $alpha: 0.04),
   surface-selected: color.change($primary, $alpha: 0.08),
   surface-disabled: color.change($_black, $alpha: 0.12),
   surface-error: color.change($error, $alpha: 0.04),
