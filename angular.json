@@ -206,18 +206,6 @@
       },
       "tags": ["web-components"]
     },
-    "badge-container": {
-      "root": "libs/web-components/badge-container",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/badge-container/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "banner": {
       "projectType": "library",
       "root": "libs/angular-components/banner",

@@ -2,9 +2,17 @@
 
 :host {
   display: block;
+  --mdc-icon-button-size: 24px;
 }
 
-.badgeValue {
+.container {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.badge-value {
   display: inline-block;
   font: var(--fds-subtitle-3);
   text-align: center;
@@ -47,23 +55,27 @@
   @include fds.property(color, on-success);
 }
 
-:host([position="topRight"]) {
-  position: absolute;
-  transform: translate(50%, -50%);
-  top: 0;
-  right: 10px;
+:host([position="topLeft"]) {
+  .badge {
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 0;
+    left: -25px;
+  }
 }
 
-:host([position="topLeft"]) {
-  position: absolute;
-  transform: translate(50%, -50%);
-  top: 0;
-  left: -25px;
+:host([position="topRight"]) {
+  .badge {
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 0;
+    right: 10px;
+  }
 }
 
 
 :host([type="indicator"]) {
-  .badgeValue {
+  .badge-value {
     height: 6px;
     width: 6px;
     border-radius: 50%;
@@ -73,10 +85,15 @@
 }
 
 :host([type="indicator"][position="topRight"]) {
-  top: 6px;
-  right: 7px;
+  .badge {
+    top: 6px;
+    right: 7px;
+  }
 }
+
 :host([type="indicator"][position="topLeft"]) {
-  top: 6px;
-  left: -14px;
+  .badge {
+    top: 6px;
+    left: -14px;
+  }
 }
