@@ -1,5 +1,6 @@
 @use '@finastra/fds-theme' as fds;
 :host {
   display: block;
-  --mdc-theme-text-primary-on-background: var(--fds-on-background) 
+  --mdc-theme-text-primary-on-background: var(--fds-on-background); 
+  --mdc-ripple-color: var(--fds-surface-hover); 
 }

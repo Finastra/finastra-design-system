@@ -15,10 +15,18 @@ export default {
     }
   },
   decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
-  ]
+    (story) => html`${story()}
+      <script>
+        const menu = document.getElementById('basicMenu');
+        const button = document.getElementById('basicButton');
+
+        menu.anchor = button;  
+        button.addEventListener('click', function() {
+          menu.open = !menu.open;
+        });
+      </script>
+      `  
+    ]
 } as Meta;
 
 const Template: Story<Menu> = () => {
@@ -28,11 +36,9 @@ const Template: Story<Menu> = () => {
         <fds-menu id="basicMenu">
           <mwc-list-item>one</mwc-list-item>
           <mwc-list-item>two</mwc-list-item>
-          <mwc-list-item>three</mwc-list-item>
           <mwc-list-item disabled><div>four</div></mwc-list-item>
           <li divider></li>
-          <mwc-list-item>aaa</mwc-list-item>
-          <mwc-list-item>bbb</mwc-list-item>
+          <mwc-list-item>five</mwc-list-item>
         </fds-menu>
     </div>
   `;
