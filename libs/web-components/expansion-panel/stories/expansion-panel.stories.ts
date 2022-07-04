@@ -47,12 +47,7 @@ export default {
       description: { component: README }
     },
     cssprops
-  },
-  decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
-  ]
+  }
 } as Meta;
 
 const Template: Story<ExpansionPanel> = ({ displayMode = 'default', multi = false, hideToggleIcon = false, toggleIconPosition="after" }) => {

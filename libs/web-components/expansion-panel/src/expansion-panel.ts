@@ -8,15 +8,27 @@ export class ExpansionPanel extends LitElement {
   static styles = styles;
 
   @property({ type: String })
+  /**
+   * The display mode used for all expansion panel items.
+   */
   displayMode: 'default' | 'flat' = 'default';
 
   @property({ type: Boolean })
+  /**
+   * Whether the expansion indicator should be hidden.
+   */  
   hideToggleIcon = false;
 
   @property({ type: Boolean })
+  /**
+   * Whether the expansion should allow multiple expanded items
+   */    
   multi = false;
 
   @property({ type: String })
+  /**
+   * The position of toggle indicator for all expansion items
+  */    
   toggleIconPosition: 'before' | 'after' = 'after';
 
 

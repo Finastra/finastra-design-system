@@ -14,14 +14,23 @@ export class ExpansionPanelItem extends LitElement {
   static styles = styles;
 
   @property({ type: Boolean }) 
+  /**
+   * Whether the expansion item should be disabled
+   */
   disabled = false;
 
   @property({ type: Boolean }) 
+  /**
+   * Whether the expansion item is expaned
+   */
   expanded = false;
 
   private _hideToggleIcon = false;
   
   @property({ type: Boolean })
+  /**
+   * Whether the expension indicator is hidden
+   */  
   public get hideToggleIcon() {
     return this._hideToggleIcon || this.getParent().hideToggleIcon;
   }
@@ -33,6 +42,9 @@ export class ExpansionPanelItem extends LitElement {
   private _toggleIconPosition?: 'before' | 'after';
 
   @property({ type: String })
+  /**
+   * The position of toggle indicator
+   */  
   public get toggleIconPosition(): 'before' | 'after' {
     return this._toggleIconPosition || this.getParent().toggleIconPosition;
   }
