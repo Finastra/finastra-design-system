@@ -15,7 +15,7 @@ npm i @finastra/icon-button
 ```ts
 import '@finastra/icon-button';
 ...
-<fds-icon-button></fds-icon-button>
+<fds-icon-button icon="code"></fds-icon-button>
 ```
 
 ### Pure HTML pages
@@ -23,5 +23,5 @@ import '@finastra/icon-button';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/icon-button@latest/dist/src/icon-button.js?module"></script>
 
-<fds-icon-button></fds-icon-button>
+<fds-icon-button icon="code"></fds-icon-button>
 ```

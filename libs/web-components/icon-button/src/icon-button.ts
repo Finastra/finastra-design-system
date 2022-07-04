@@ -1,18 +1,16 @@
-import { LitElement, html } from 'lit';
+import { IconButtonBase } from '@material/mwc-icon-button/mwc-icon-button-base.js';
 import { customElement, property } from 'lit/decorators.js';
-
 import { styles } from './styles.css';
 
 @customElement('fds-icon-button')
-export class IconButton extends LitElement {
-  static styles = styles;
+export class IconButton extends IconButtonBase {
+  static override styles = [styles];
 
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
-  }
+  /**
+   * Use the smaller button size
+   */
+  @property({ type: Boolean })
+  dense = false;
 }
 
 declare global {

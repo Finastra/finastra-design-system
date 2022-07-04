@@ -1,12 +1,12 @@
 {
   "name": "@finastra/icon-button",
-  "displayName": "IconButton",
+  "displayName": "Icon Button",
   "version": "1.0.0",
-  "description": "IconButton Web Component",
+  "description": "Icon Button Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "IconButton"
+    "Icon Button"
   ],
   "license": "MIT",
   "main": "dist/src/icon-button.js",
@@ -15,6 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
+    "@material/mwc-icon-button": "^0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
