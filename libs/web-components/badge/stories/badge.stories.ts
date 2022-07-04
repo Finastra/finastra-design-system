@@ -5,7 +5,6 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes } from "./custom-element.json";
 
-
 export default {
   title: 'DATA DISPLAY/Badge',
   component: 'fds-badge',

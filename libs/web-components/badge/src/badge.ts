@@ -23,7 +23,6 @@ export class Badge extends LitElement {
 
   @property({ reflect: true }) position: POSITION = POSITION.center;
 
-
   render() {
     return html`
     <div class="container">
