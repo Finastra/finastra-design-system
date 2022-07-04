@@ -4,16 +4,52 @@ import { Badge, COLOR, POSITION, TYPE } from '@finastra/badge';
 import '@finastra/badge-container';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
 
 export default {
   title: 'DATA DISPLAY/Badge',
   component: 'fds-badge',
-  argTypes,
-  args: {
-    position: POSITION.center,
-    color: COLOR.outlined,
-    type: TYPE.none
+  argTypes: {
+    color: {
+      description: "Badge color",
+      type: "select",
+      table: {
+        defaultValue: {
+          summary: 'outlined'
+        }
+      },
+      options: ["primary","secondary","success","error","white","outlined"]
+    },
+    position: {
+      description: "Badge position",
+      type: "select",
+      table: {
+        defaultValue: {
+          summary: 'center'
+        }
+      },
+      options: ["topLeft","topRight","center"]
+    },
+    type: {
+      description: "Badge type",
+      type: "select",
+      table: {
+        defaultValue: {
+          summary: ''
+        }
+      },
+      options: ["", "indicator"]
+    },
+    value: {
+      control: "text",
+      type: 'string',
+
+      description: "Badge value",
+      table: {
+        defaultValue: {
+          summary: ''
+        }
+      },
+    },
   },
   parameters: {
     docs: {

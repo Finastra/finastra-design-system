@@ -1,4 +1,5 @@
-# badgeContainer
+# BadgeContainer
+Badge container is used to wrap the [fds-badge](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/data-display-badge--default) with another ui element.
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/badge-container?style=for-the-badge)](https://www.npmjs.com/package/@finastra/badge-container)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/badge-container?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/badge-container')
