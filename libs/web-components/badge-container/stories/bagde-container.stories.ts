@@ -48,15 +48,14 @@ const ButtonTemplate: Story<badgeContainer> = ({}) => {
   </fds-badge-container>`;
 };
 
-const IndicatorTemplate: Story<badgeContainer> = ({}) => {
+const LeftIndicatorTemplate: Story<badgeContainer> = ({}) => {
   return html`<fds-badge-container>
     <mwc-icon-button icon="bookmark_border"></mwc-icon-button>
     <fds-badge type='indicator' color="success" position="topLeft"></fds-badge>
   </fds-badge-container>`;
 };
 
-
-const IndicatorRightTemplate: Story<badgeContainer> = ({}) => {
+const RightIndicatorTemplate: Story<badgeContainer> = ({}) => {
   return html`<fds-badge-container>
     <mwc-icon-button icon="bookmark_border"></mwc-icon-button>
     <fds-badge type='indicator' color="success" position="topRight"></fds-badge>
@@ -69,7 +68,7 @@ export const WithIconButton: Story = IconButtonTemplate.bind({});
 
 export const WithButton: Story = ButtonTemplate.bind({});
 
-export const WithIndicator: Story = IndicatorTemplate.bind({});
+export const LeftIndicator: Story = LeftIndicatorTemplate.bind({});
 
-export const RightTemplate: Story = IndicatorRightTemplate.bind({});
+export const RightIndicator: Story = RightIndicatorTemplate.bind({});
 

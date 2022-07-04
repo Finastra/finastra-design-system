@@ -1,6 +1,6 @@
 const README = require('../README.md');
 import '@finastra/badge';
-import { Badge, COLOR, POSITION, TYPE } from '@finastra/badge';
+import { Badge } from '@finastra/badge';
 import '@finastra/badge-container';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
