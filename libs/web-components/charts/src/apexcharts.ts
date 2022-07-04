@@ -52,14 +52,21 @@ export interface ChartTheme {
   sequential1LabelColor: string[];
   sequential2: string[];
   sequential2LabelColor: string[];
-
 }
+
+/**
+ * @attr {boolean} [hide-data-label=false] - Hide labels
+ * @attr {string} [height=100%] - Height of the chart
+ * @attr {string} [width=100%] - Width of the chart
+ * @attr {left | center | right} [legendHorizontalAlign=center] - Define the horizontal alignment of legend
+ * @attr {top | right | bottom | left} [legendPosition=bottom] - Define the position of the legend
+ * @attr {semantic-1 | semantic-2 | semantic-3 | categorical | focus-1 | focus-2 | focus-1-angular | focus-2-angular  | sequential-1 | sequential-2} [color=categorical] - Define palette used by the chart
+ */
 @customElement('fds-apexcharts')
 export class ApexChartsWrapper extends LitElement {
   static styles = [styles];
 
   private _type: ChartType = 'line';
-  @property({ type: String })
   public get type(): ChartType {
     return this._type;
   }
@@ -92,7 +99,6 @@ export class ApexChartsWrapper extends LitElement {
     this._width = value;
     this.refresh();
   }
-
 
   private _color: COLOR = 'categorical';
   @property({type: String})

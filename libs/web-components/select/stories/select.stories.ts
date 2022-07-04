@@ -3,7 +3,7 @@ import '@finastra/select';
 import type { Select } from '@finastra/select';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-select.json';
 
 export default {
   title: 'FORMS/Select',

@@ -4,7 +4,7 @@ import type { ContainedButton } from '@finastra/button';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-button.json';
 
 export default {
   title: 'ACTIONS/Button/Contained',

@@ -3,7 +3,7 @@ import '@finastra/launchpad';
 import { Launchpad } from '@finastra/launchpad';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
+import { argTypes } from './sb-generated/fds-launchpad.json';
 
 
 const README = require('../README.md');
