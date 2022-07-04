@@ -4,9 +4,9 @@ import { COLOR, POSITION, TYPE } from './badge.interface';
 import { styles } from './styles.css';
 
 /**
- * @attr [value=''] - Badge value.
+ * @attr [value=''] - Badge value
  * @attr {"primary"|"secondary"|"success"|"error"|"white"|"outlined"} color - Badge color
- * @attr {"topLeft"|"topRight"|"center"} position - Badge postion
+ * @attr {"topLeft"|"topRight"|"center"} position - Badge position
  * @attr {""|"indicator"} type - Badge type
  */
 

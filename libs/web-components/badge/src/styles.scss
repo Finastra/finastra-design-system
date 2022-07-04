@@ -25,7 +25,7 @@
 }
 
 .outlined {
-  background: transparent;
+  @include fds.property(background, background);
   @include fds.property(color, on-surface-medium);
   border: 1px solid;
   @include fds.property(border-color, outline);
