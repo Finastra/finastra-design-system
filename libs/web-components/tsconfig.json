@@ -138,6 +138,9 @@
     },
     {
       "path": "expansion-panel"
+    },
+    {
+      "path": "badge"
     }
   ]
 }
