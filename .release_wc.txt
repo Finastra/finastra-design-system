@@ -39,3 +39,4 @@
 - [05/30/2022] Request release v0.0.31 by dorsaffrigui 
 - [06/20/2022] Request release v0.0.32 by dorsaffrigui 
 - [06/28/2022] Request release v0.0.33 by dorsaffrigui 
+- [06/30/2022] Request release v0.0.34 by dorsaffrigui 

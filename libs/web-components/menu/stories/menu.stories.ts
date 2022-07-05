@@ -7,7 +7,7 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
 export default {
-  title: 'Components/Menu',
+  title: 'FORMS/Menu',
   component: 'fds-menu',
   parameters: {
     docs: {

@@ -19,7 +19,7 @@ export default {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=827%3A5864'
+      url: 'https://www.figma.com/file/6BBm9XAsO9lQZQ4xBM4cGr/Patterns-%26-apps?node-id=402%3A10987'
     },
     cssprops
   },
