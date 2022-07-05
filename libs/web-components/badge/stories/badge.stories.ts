@@ -3,6 +3,7 @@ import '@finastra/badge';
 import { Badge } from '@finastra/badge';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { COLOR, POSITION, TYPE } from '../src/badge.interface';
 import { argTypes } from "./custom-element.json";
 
 export default {
@@ -11,9 +12,9 @@ export default {
   argTypes,
   args: {
     value: "12",
-    color: "success",
-    position: "center",
-    type: ""
+    color: COLOR.success,
+    position: POSITION.center,
+    type: TYPE.none
   },
   parameters: {
     docs: {
@@ -62,14 +63,18 @@ const RightIndicatorTemplate: Story<Badge> = ({value, color, position,type}) => 
 };
 
 export const WithButton: Story = ButtonTemplate.bind({});
+WithButton.args = {
+  position: POSITION.topRight
+}
 
 export const LeftIndicator: Story = LeftIndicatorTemplate.bind({});
 LeftIndicator.args = {
-  type: "indicator",
-  position: "topLeft"
+  type: TYPE.indicator,
+  position: POSITION.topLeft
 };
+
 export const RightIndicator: Story = RightIndicatorTemplate.bind({})
 RightIndicator.args = {
-  type: "indicator",
-  position: "topRight"
+  type: TYPE.indicator,
+  position: POSITION.topRight
 };

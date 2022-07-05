@@ -18,7 +18,9 @@ npm i @finastra/badge
 ```ts
 import '@finastra/badge';
 ...
-<fds-badge value="123"></fds-badge>
+<fds-badge value="123">
+    <span> Success </span>
+</fds-badge>
 ```
 
 ### Pure HTML pages
@@ -26,5 +28,7 @@ import '@finastra/badge';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/badge@latest/dist/src/badge.js?module"></script>
 
-<fds-badge value="123"></fds-badge>
+<fds-badge value="123">
+    <span> Success </span>
+</fds-badge>
 ```
