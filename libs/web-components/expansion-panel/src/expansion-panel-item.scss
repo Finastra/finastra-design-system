@@ -26,7 +26,7 @@
     &:not([aria-disabled="true"]) {
       cursor: pointer;
       &:hover {
-        @include fds.property(background, on-surface-hover);
+        @include fds.property(background, surface-hover);
       }
     }
 

@@ -7,28 +7,28 @@ import { styles } from './expansion-panel.css';
 export class ExpansionPanel extends LitElement {
   static styles = styles;
 
-  @property({ type: String })
   /**
    * The display mode used for all expansion panel items.
    */
+  @property({ type: String })
   displayMode: 'default' | 'flat' = 'default';
 
-  @property({ type: Boolean })
   /**
    * Whether the expansion indicator should be hidden.
    */  
+  @property({ type: Boolean })
   hideToggleIcon = false;
 
-  @property({ type: Boolean })
   /**
    * Whether the expansion should allow multiple expanded items
    */    
+  @property({ type: Boolean })
   multi = false;
 
-  @property({ type: String })
   /**
    * The position of toggle indicator for all expansion items
-  */    
+   */    
+  @property({ type: String })
   toggleIconPosition: 'before' | 'after' = 'after';
 
 

@@ -13,16 +13,16 @@ import { styles } from './expansion-panel-item.css';
 export class ExpansionPanelItem extends LitElement {
   static styles = styles;
 
-  @property({ type: Boolean }) 
   /**
    * Whether the expansion item should be disabled
    */
+  @property({ type: Boolean }) 
   disabled = false;
 
-  @property({ type: Boolean }) 
   /**
    * Whether the expansion item is expaned
-   */
+   */  
+  @property({ type: Boolean }) 
   expanded = false;
 
   private _hideToggleIcon = false;

@@ -17,18 +17,21 @@ export default {
         "default",
         "flat"
       ],
+      description: 'The display mode used for all expansion panel items.',
       defaultValue: 'default'
     },
     hideToggleIcon: {
       control: {
           type: "boolean"
       },
+      description: 'Whether the expansion indicator should be hidden.',
       defaultValue: false
     },
     multi: {
       control: {
           type: "boolean"
       },
+      description: 'Whether the expansion should allow multiple expanded items.',
       defaultValue: false
     },
     toggleIconPosition: {
@@ -39,6 +42,7 @@ export default {
         "before",
         "after"
       ],
+      description: 'The position of toggle indicator for all expansion items.',
       defaultValue: 'after'
     },
   },
