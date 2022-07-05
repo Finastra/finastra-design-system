@@ -1,0 +1,20 @@
+@use '@material/mwc-icon-button/mwc-icon-button';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @include fds.text-color(on-surface);
+  @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled)
+}
+
+:host([dense]) {
+  --mdc-icon-button-size: 30px;
+  --mdc-icon-size: 18px;
+}
+
+:host([primary]) {
+  @include fds.text-color(primary);
+}
+
+:host([secondary]) {
+  @include fds.text-color(secondary);
+}

@@ -734,6 +734,18 @@
       },
       "tags": []
     },
+    "icon-button": {
+      "root": "libs/web-components/icon-button",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon-button/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "launchpad": {
       "root": "libs/web-components/launchpad",
       "architect": {

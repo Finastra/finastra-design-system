@@ -24,7 +24,7 @@ export default {
 } as Meta;
 
 const Template: Story<<%=className%>> = ({ name = 'World' }) => {
-  return html`<fds-<%= fileName %>  .name=${name}></fsd-<%= fileName %>>`;
+  return html`<fds-<%= fileName %>  .name=${name}></fds-<%= fileName %>>`;
 };
 
 export const Default: Story<<%=className%>> = Template.bind({});
