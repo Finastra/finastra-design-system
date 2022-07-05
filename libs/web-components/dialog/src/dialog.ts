@@ -1,17 +1,18 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
+import { DialogBase } from '@material/mwc-dialog/mwc-dialog-base';
+import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
-
+/** 
+* @attr [heading=''] - Title.
+* @attr [open=false] - Opens.
+* @attr [hideActions=false] - Hide actions.
+*/
 @customElement('fds-dialog')
-export class Dialog extends LitElement {
+export class Dialog extends DialogBase {
   static styles = styles;
 
-  @property({ type: String })
-  name = '';
-
-  render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+  constructor() {
+    super();
+    this.open = false;
   }
 }
 

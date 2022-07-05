@@ -1,7 +1,34 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-dialog/mwc-dialog';
+
 :host {
   display: block;
 }
 
-p {
-  color: var(--fds-dialog-text-color, blue);
+.mdc-dialog .mdc-dialog__title {
+  @include fds.typography(subtitle-1);
+  @include fds.property(color, on-background);
+  padding: var(--fds-spacing-4, 24px) 0 var(--fds-spacing-3, 16px) 32px;
 }
+
+.mdc-dialog__actions {
+   padding-right: var(--fds-spacing-3, 16px);
+   padding-bottom: var(--fds-spacing-4, 24px);
+
+  span {
+    margin-right: var(--fds-spacing-3, 16px);
+  }
+}
+
+.mdc-dialog__surface {
+  @include fds.property(background, background);
+}
+
+.mdc-dialog .mdc-dialog__content {
+  @include fds.typography(body-2);
+  @include fds.property(color, on-background);
+  padding: 0px 32px 20px 32px;
+}
+
+
+
