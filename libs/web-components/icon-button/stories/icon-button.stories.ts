@@ -45,18 +45,18 @@ Secondary.args = {
   secondary: true
 }
 
-export const Dense: Story<IconButton> = Template.bind({});
-Dense.args = {
-  disabled: false,
-  dense: true,
-  primary: false,
-  secondary: false
-}
-
 export const Disabled: Story<IconButton> = Template.bind({});
 Disabled.args = {
   disabled: true,
   dense: false,
+  primary: false,
+  secondary: false
+}
+
+export const Dense: Story<IconButton> = Template.bind({});
+Dense.args = {
+  disabled: false,
+  dense: true,
   primary: false,
   secondary: false
 }
