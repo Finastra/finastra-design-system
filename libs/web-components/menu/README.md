@@ -35,4 +35,16 @@ import '@material/mwc-list/mwc-list-item';
         <mwc-list-item>five</mwc-list-item>
     </fds-menu>
 </div>
+
+<script>
+  const menu = document.getElementById('basicMenu');
+  const button = document.getElementById('basicButton');
+
+  // anchor must share a parent with menu that is `position: relative`
+  menu.anchor = button;  
+  button.addEventListener('click', function() {
+    menu.open = !menu.open;
+  });
+</script>
+
 ```
