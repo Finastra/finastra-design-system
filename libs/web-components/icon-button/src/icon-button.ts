@@ -11,6 +11,18 @@ export class IconButton extends IconButtonBase {
    */
   @property({ type: Boolean })
   dense = false;
+
+  /**
+   * Use the primary color
+   */
+  @property({ type: Boolean })
+  primary = false;
+
+  /**
+   * Use the secondary color
+   */
+  @property({ type: Boolean })
+  secondary = false;
 }
 
 declare global {

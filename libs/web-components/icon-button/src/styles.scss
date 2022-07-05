@@ -10,3 +10,11 @@
   --mdc-icon-button-size: 30px;
   --mdc-icon-size: 18px;
 }
+
+:host([primary]) {
+  @include fds.text-color(primary);
+}
+
+:host([secondary]) {
+  @include fds.text-color(secondary);
+}
