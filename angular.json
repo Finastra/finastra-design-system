@@ -396,6 +396,18 @@
       },
       "tags": ["web-components"]
     },
+    "dialog": {
+      "root": "libs/web-components/dialog",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/dialog/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
