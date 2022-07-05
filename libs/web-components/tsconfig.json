@@ -124,7 +124,7 @@
     {
       "path": "data-table"
     },
-    {      
+    {
       "path": "tabs"
     },
     {
@@ -135,6 +135,15 @@
     },
     {
       "path": "fab"
+    },
+    {
+      "path": "icon-button"
+    },
+    {
+      "path": "expansion-panel"
+    },
+    {
+      "path": "badge"
     }
   ]
 }
