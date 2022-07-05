@@ -58,9 +58,9 @@ export interface ChartTheme {
  * @attr {boolean} [hide-data-label=false] - Hide labels
  * @attr {string} [height=100%] - Height of the chart
  * @attr {string} [width=100%] - Width of the chart
- * @attr {left | center | right} [legendHorizontalAlign=center] - Define the horizontal alignment of legend
- * @attr {top | right | bottom | left} [legendPosition=bottom] - Define the position of the legend
- * @attr {semantic-1 | semantic-2 | semantic-3 | categorical | focus-1 | focus-2 | focus-1-angular | focus-2-angular  | sequential-1 | sequential-2} [color=categorical] - Define palette used by the chart
+ * @attr {left|center|right} [legendHorizontalAlign=center] - Define the horizontal alignment of legend
+ * @attr {top|right|bottom|left} [legendPosition=bottom] - Define the position of the legend
+ * @attr {semantic-1|semantic-2|semantic-3|categorical|focus-1|focus-2|focus-1-angular|focus-2-angular |sequential-1|sequential-2} [color=categorical] - Define palette used by the chart
  */
 @customElement('fds-apexcharts')
 export class ApexChartsWrapper extends LitElement {

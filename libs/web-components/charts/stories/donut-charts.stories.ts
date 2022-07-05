@@ -29,8 +29,8 @@ export default {
   },
 };
 
-const Template: Story<DonutChart> = ({legendHorizontalAlign = "center",legendPosition="bottom", hideDataLabel=false, width="300px", color="categorical", height="300px", data = demoData, labels = demoLabels }) => {
-  return html`<fds-donut-chart  .legendHorizontalAlign=${legendHorizontalAlign}  .legendPosition=${legendPosition} ?hide-data-label=${hideDataLabel} color=${color} width=${width} height=${height}  .data=${data} .labels=${labels} ></fds-pie-chart>`;
+const Template: Story<DonutChart> = (args) => {
+  return html`<fds-donut-chart .legendHorizontalAlign=${args.legendHorizontalAlign}  .legendPosition=${args.legendPosition} ?hide-data-label=${args['hide-data-label']} ?disable-selection=${args['disable-selection']} color=${args.color} width=${args.width} height=${args.height} .data=${args.data} .labels=${args.labels} ></fds-pie-chart>`;
 };
 
 
