@@ -1,8 +1,8 @@
-import { customElement, property } from 'lit/decorators.js';
 import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
+import { customElement, property } from 'lit/decorators.js';
 
-import { styles } from './styles.css';
 import { html, TemplateResult } from 'lit';
+import { styles } from './styles.css';
 
 /**
  * @cssprop {color} [--fds-primary=#694ED6] - Textfield color
@@ -27,6 +27,7 @@ export class Textfield extends TextFieldBase {
   @property({ type: Boolean }) showActionButton = false;
   constructor() {
     super();
+    this.outlined = true;
   }
 
   protected renderTrailingIcon(): TemplateResult | string {
