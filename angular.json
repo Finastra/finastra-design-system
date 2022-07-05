@@ -465,6 +465,18 @@
       },
       "tags": []
     },
+    "expansion-panel": {
+      "root": "libs/web-components/expansion-panel",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/expansion-panel/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fab": {
       "root": "libs/web-components/fab",
       "architect": {

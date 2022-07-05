@@ -124,7 +124,7 @@
     {
       "path": "data-table"
     },
-    {      
+    {
       "path": "tabs"
     },
     {
@@ -135,6 +135,9 @@
     },
     {
       "path": "fab"
+    },
+    {
+      "path": "expansion-panel"
     },
     {
       "path": "badge"
