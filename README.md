@@ -1,7 +1,7 @@
 ![](./.github/assets/banner_home.png)
 
 Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) repository. You will find here all the assets and ressources to **build applications quickly and consistently**. It will also help you easily applying **Finastra branding and UX best practices**.
-
+ 
 # 🌍 For web
 
 ## Web theme
