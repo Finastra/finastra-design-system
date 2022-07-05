@@ -29,34 +29,22 @@ Default.args = {
   secondary: false
 }
 
-export const Primary: Story<IconButton> = Template.bind({});
+export const Primary: Story<IconButton> = Default.bind({});
 Primary.args = {
-  disabled: false,
-  dense: false,
-  primary: true,
-  secondary: false
+  primary: true
 }
 
-export const Secondary: Story<IconButton> = Template.bind({});
+export const Secondary: Story<IconButton> = Default.bind({});
 Secondary.args = {
-  disabled: false,
-  dense: false,
-  primary: false,
   secondary: true
 }
 
-export const Disabled: Story<IconButton> = Template.bind({});
+export const Disabled: Story<IconButton> = Default.bind({});
 Disabled.args = {
-  disabled: true,
-  dense: false,
-  primary: false,
-  secondary: false
+  disabled: true
 }
 
-export const Dense: Story<IconButton> = Template.bind({});
+export const Dense: Story<IconButton> = Default.bind({});
 Dense.args = {
-  disabled: false,
-  dense: true,
-  primary: false,
-  secondary: false
+  dense: true
 }
