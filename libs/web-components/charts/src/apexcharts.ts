@@ -194,10 +194,50 @@ export class ApexChartsWrapper extends LitElement {
       middle1: '#F04E98',
       middle2: '#C34DD5'
     },
-    sequential1: ['#EDDDFF', '#CCB9F5', '#AB96EB', '#8A72E0', '#694ED6', '#5945B8', '#4A3B99', '#3A327B', '#2A285C'],
-    sequential1LabelColor: ['#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-    sequential2: ['#FFD4FF', '#FBB3E5', '#F891CC', '#F470B2', '#F04E98', '#CA3F7F', '#A43067', '#7D214E', '#571235'],
-    sequential2LabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
+    sequential1: [
+      "#2A285C",
+      "#3A327B",
+      "#4A3B99",
+      "#5945B8",
+      "#694ED6",
+      "#8A72E0",
+      "#AB96EB",
+      "#CCB9F5",
+      "#EDDDFF"
+  ],
+    sequential1LabelColor: [
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000"
+  ],
+    sequential2: [
+      "#571235",
+      "#7D214E",
+      "#A43067",
+      "#CA3F7F",
+      "#F04E98",
+      "#F470B2",
+      "#F891CC",
+      "#FBB3E5",
+      "#FFD4FF"
+  ],
+    sequential2LabelColor: [
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000"
+  ]
   }
 
   private _chartTheme = this.defaultTheme;
