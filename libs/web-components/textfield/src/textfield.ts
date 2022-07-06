@@ -16,7 +16,7 @@ import { styles } from './styles.css';
  * @attr [type=''] - A string specifying the type of control to render.
  * @attr [validationMessage=''] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
  * @attr [disabled=false] - Whether or not the input should be disabled.
- * @attr [helper=''] - Helper text to display below the input. Display default only when focused.
+ * @attr [helper=''] - Helper text to display below the input.
  * @attr [pattern=''] - A JavaScript regular expression. The textfield value must match this pattern.
  * @attr [showActionButton=false] - Enable the use of a the actionButton slot.
  * @slot actionButton - Slot to replace iconTrailing with an action button.
@@ -30,6 +30,7 @@ export class Textfield extends TextFieldBase {
   constructor() {
     super();
     this.outlined = true;
+    this.helperPersistent = true;
   }
 
   protected renderTrailingIcon(): TemplateResult | string {
@@ -37,6 +38,23 @@ export class Textfield extends TextFieldBase {
       ? html`
       <slot name="actionButton"></slot>`
       : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
+  }
+
+  protected override renderLabel(): TemplateResult | string {
+    return !this.label ?
+        '' :
+        html`
+      <span class="fds-text-field__label">
+        ${this.label}
+        ${this.renderRequired()}
+      </span>
+    `;
+  }
+
+  protected renderRequired(): TemplateResult | string {
+    return !this.required ?
+    '' :
+    '*';
   }
 }
 

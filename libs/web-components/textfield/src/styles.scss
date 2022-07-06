@@ -8,12 +8,21 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 :host {
   display: block;
   @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(theme-error, error);
   @include fds.mdc(text-field-outlined-idle-border-color, outline);
   @include fds.mdc(text-field-outlined-hover-border-color, on-surface);
   @include fds.mdc(text-field-outlined-disabled-border-color, outline);
   @include fds.mdc(text-field-ink-color, on-surface);
   @include fds.mdc(text-field-label-ink-color, on-surface-medium);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+
+  .fds-text-field__label {
+    @include fds.text-color(on-surface-medium);
+    @include fds.typography(body-2);
+    position: relative;
+    top: -26px;
+    left: -12px;
+  }
 
   .mdc-text-field--outlined {
     @include fds.bg-color(surface);
@@ -26,10 +35,6 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     &::placeholder {
       @include fds.typography(body-2);
     }
-  }
-  
-  .mdc-floating-label {
-    @include fds.typography(body-2);
   }
 
   .mdc-text-field--disabled {
@@ -52,7 +57,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     @include fds.typography(subtitle-3);
   }
 
-  .mdc-floating-label {
+  .fds-text-field__label {
     @include fds.typography(body-3);
   }
 }

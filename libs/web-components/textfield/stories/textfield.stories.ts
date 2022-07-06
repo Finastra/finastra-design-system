@@ -37,21 +37,21 @@ export const Default: Story<Textfield> = Template.bind({});
 Default.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  icon: 'person',
-  helper: "helper text"
+  icon: 'person_outline',
+  helper: "Helper text"
 };
 
 export const Dense: Story<Textfield> = Default.bind({});
 Dense.args = {
   dense: true,
-  icon: 'person'
+  icon: 'person_outline'
 };
 
 export const Password: Story<Textfield> = ActionButtonTemplate.bind({});
 Password.args = {
   label: 'Enter your password',
   type: 'password',
-  helper: "helper text",
+  helper: "Helper text",
   showActionButton: true,
   icon: 'visibility_off'
 };
