@@ -1,8 +1,9 @@
+@use "sass:color";
 @use "@material/mwc-textfield/mwc-textfield";
 @use "@finastra/fds-theme" as fds;
 
 $textfield-icon-color: var(--fds-primary, #694ed6);
-$textfield-icon-trailing-color: var(--fds-primary, #694ed6);
+$textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, $alpha: 0.54),);
 
 :host {
   display: block;
@@ -12,22 +13,53 @@ $textfield-icon-trailing-color: var(--fds-primary, #694ed6);
   @include fds.mdc(text-field-outlined-disabled-border-color, outline);
   @include fds.mdc(text-field-ink-color, on-surface);
   @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+
+  .mdc-text-field--outlined {
+    @include fds.bg-color(surface);
+    height: 48px;
+  }
+
+  .mdc-text-field__input {
+    @include fds.typography(subtitle-2);
+    
+    &::placeholder {
+      @include fds.typography(body-2);
+    }
+  }
+  
+  .mdc-floating-label {
+    @include fds.typography(body-2);
+  }
+
+  .mdc-text-field--disabled {
+    @include fds.bg-color(surface-disabled);
+  }
+
+  .mdc-text-field.mdc-text-field--focused .mdc-notched-outline {
+    --mdc-notched-outline-stroke-width: 1px !important;
+  }
+}
+
+:host([dense]) {
+  --mdc-icon-size: 18px;
+
+  .mdc-text-field--outlined {
+    height: 40px;
+  }
+  
+  .mdc-text-field__input {
+    @include fds.typography(subtitle-3);
+  }
+
+  .mdc-floating-label {
+    @include fds.typography(body-3);
+  }
 }
 
 slot[name="actionButton"]::slotted(*) {
   @include fds.text-color(on-background);
   align-self: center;
-}
-
-.mdc-text-field--outlined {
-  height: 48px;
-}
-
-.mdc-text-field--outlined.mdc-text-field--with-leading-icon {
-  @include fds.bg-color(surface);
-}
-.mdc-text-field--outlined.mdc-text-field--with-leading-icon.mdc-text-field--disabled {
-  @include fds.bg-color(surface-disabled);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--leading {
@@ -38,8 +70,6 @@ slot[name="actionButton"]::slotted(*) {
   color: var(--fds-icon-trailing-color, $textfield-icon-trailing-color);
 }
 
-
-.mdc-text-field--disabled .mdc-text-field__icon--leading {
+.mdc-text-field--disabled .mdc-text-field__icon {
   color: var(--fds-on-surface-disabled);
 }
-

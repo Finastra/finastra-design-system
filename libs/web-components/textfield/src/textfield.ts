@@ -9,6 +9,7 @@ import { styles } from './styles.css';
  * @cssprop {color} [--fds-icon-color=#694ED6] - Icon color.
  * @cssprop {color} [--fds-icon-trailing-color=#694ED6] - Icon trailing color.
  * @attr [label='textfield'] - Sets floating label value.
+ * @attr [placeholder='textfield'] - Sets placeholder value displayed when input is empty.
  * @attr [required=false] - Displays error state if value is empty and input is blurred.
  * @attr [icon=''] - Leading icon to display in input. See `mwc-icon`.
  * @attr [iconTrailing=''] - Leading icon to display in input. See `mwc-icon`.
@@ -25,6 +26,7 @@ import { styles } from './styles.css';
 export class Textfield extends TextFieldBase {
   static styles = [styles];
   @property({ type: Boolean }) showActionButton = false;
+  @property({ type: Boolean }) dense = false;
   constructor() {
     super();
     this.outlined = true;

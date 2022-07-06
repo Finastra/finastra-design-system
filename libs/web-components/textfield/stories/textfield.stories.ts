@@ -17,8 +17,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Textfield> = ({ label, icon, disabled, required, iconTrailing,helper}) => {
-  return html`<fds-textfield label=${label} icon=${icon} ?disabled=${disabled} ?required=${required} iconTrailing=${iconTrailing} helper=${helper}></fds-textfield>`;
+const Template: Story<Textfield> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing,helper}) => {
+  return html`<fds-textfield label=${label} placeholder=${placeholder} icon=${icon} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper}></fds-textfield>`;
 };
 
 const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, validationMessage,pattern}) => {
@@ -35,9 +35,16 @@ const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, sho
 
 export const Default: Story<Textfield> = Template.bind({});
 Default.args = {
-  label: 'Default',
-  icon: 'event',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  icon: 'person',
   helper: "helper text"
+};
+
+export const Dense: Story<Textfield> = Default.bind({});
+Dense.args = {
+  dense: true,
+  icon: 'person'
 };
 
 export const Password: Story<Textfield> = ActionButtonTemplate.bind({});
