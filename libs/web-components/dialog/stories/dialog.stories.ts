@@ -26,7 +26,7 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Dialog> = (heading,open,hideActions) => {
+const Template: Story<Dialog> = ({ open, heading, hideActions}) => {
   return html`
 <fds-button label="open" onClick="myFunction()"></fds-button>
 <fds-dialog id="myDropdown" heading=${heading} .open=${open} ?hideActions=${hideActions}>
@@ -44,8 +44,6 @@ const Template: Story<Dialog> = (heading,open,hideActions) => {
   </fds-text-button>
   </fds-dialog>`;
 };
-
-
 
 export const Default: Story<Dialog> = Template.bind({});
 Default.args = {

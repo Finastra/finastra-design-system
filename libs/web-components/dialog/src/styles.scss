@@ -3,11 +3,11 @@
 
 :host {
   display: block;
+  @include fds.property(--mdc-dialog-heading-ink-color,on-background);
 }
 
 .mdc-dialog .mdc-dialog__title {
   @include fds.typography(subtitle-1);
-  @include fds.property(color, on-background);
   padding: var(--fds-spacing-4, 24px) 0 var(--fds-spacing-3, 16px) 32px;
 }
 
