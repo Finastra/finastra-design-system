@@ -137,7 +137,13 @@
       "path": "fab"
     },
     {
+      "path": "icon-button"
+    },
+    {
       "path": "expansion-panel"
+    },
+    {
+      "path": "badge"
     },
     {
       "path": "dialog"
