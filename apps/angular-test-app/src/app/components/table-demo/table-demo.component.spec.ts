@@ -8,9 +8,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TableDemoComponent', () => {
   let component: TableDemoComponent;
@@ -23,7 +23,7 @@ describe('TableDemoComponent', () => {
           UxgTableModule,
           CommonModule,
           MatPaginatorModule,
-          BrowserAnimationsModule,
+          NoopAnimationsModule,
           MatSlideToggleModule,
           MatSelectModule,
           MatFormFieldModule,
