@@ -194,6 +194,18 @@
       },
       "tags": []
     },
+    "badge": {
+      "root": "libs/web-components/badge",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/badge/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "banner": {
       "projectType": "library",
       "root": "libs/angular-components/banner",
@@ -453,6 +465,18 @@
       },
       "tags": []
     },
+    "expansion-panel": {
+      "root": "libs/web-components/expansion-panel",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/expansion-panel/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fab": {
       "root": "libs/web-components/fab",
       "architect": {
@@ -709,6 +733,18 @@
         }
       },
       "tags": []
+    },
+    "icon-button": {
+      "root": "libs/web-components/icon-button",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon-button/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "launchpad": {
       "root": "libs/web-components/launchpad",
