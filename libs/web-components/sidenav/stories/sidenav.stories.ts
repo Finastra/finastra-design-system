@@ -6,7 +6,7 @@ import '@material/mwc-icon';
 import '@material/mwc-list';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
+import { argTypes } from './sb-generated/fds-sidenav.json';
 
 export default {
   title: 'NAVIGATION/Sidenav',
