@@ -277,6 +277,18 @@
       },
       "tags": []
     },
+    "wc:breadcrumb": {
+      "root": "libs/web-components/breadcrumb",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/breadcrumb/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "button-toggle": {
       "root": "libs/web-components/button-toggle",
       "architect": {
