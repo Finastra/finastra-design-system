@@ -3,7 +3,7 @@ import '@finastra/user-profile';
 import type { UserProfile } from '@finastra/user-profile';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-user-profile.json';
 
 export default {
   title: 'NAVIGATION/User Profile',

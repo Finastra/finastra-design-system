@@ -3,7 +3,7 @@ import '@finastra/base-card';
 import { BaseCard } from '@finastra/base-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-base-card.json';
 
 export default {
   title: 'DATA DISPLAY/Card/Base',

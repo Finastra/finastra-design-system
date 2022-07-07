@@ -69,7 +69,7 @@
     "wc:clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
     "wc:bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
     "workspace-generator": "nx workspace-generator",
-    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/custom-element.json",
+    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
     "prewc:build:storybook": "npm run wca",
     "prewc:storybook": "npm run wca",
