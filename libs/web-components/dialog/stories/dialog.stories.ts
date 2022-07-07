@@ -17,17 +17,18 @@ export default {
   },
   decorators: [
     (story) => html`${story()}
-<script>
-  function showDialog(){
-    document.getElementById("dialog").show();
-  }
-</script>`
+  <style>
+    .message {
+      font: var(--fds-body-1);
+      color: var(--fds-on-background);
+    }
+  </style>`
   ]
 } as Meta;
 
 const Template: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimClickAction, escapeKeyAction}) => {
   return html`
-<fds-button label="Open" onClick="showDialog()"></fds-button>
+<span class="message">Use the open property in the table below to enable the preview !</span>
 <fds-dialog id="dialog" heading=${heading} ?open=${open} ?hideActions=${hideActions} ?stacked=${stacked} ?scrimClickAction=${scrimClickAction} ?escapeKeyAction=${escapeKeyAction}>
   <span class="body">Body 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </span>
   <fds-button
