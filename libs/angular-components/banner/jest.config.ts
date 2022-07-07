@@ -1,11 +1,12 @@
-const name = 'filter-tags';
-const suiteName = 'FilterTagsComponentModule';
+/* eslint-disable */
+const name = 'banner';
+const suiteName = 'BannerModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../../../jest.preset.js',
-  coverageDirectory: `../../../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'filter-tags'
+  displayName: 'banner'
 };

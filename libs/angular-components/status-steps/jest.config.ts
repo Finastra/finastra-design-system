@@ -1,11 +1,12 @@
-const name = 'wizard';
-const suiteName = 'WizardModule';
+/* eslint-disable */
+const name = 'status-steps';
+const suiteName = 'StatusStepperModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
-  coverageDirectory: '../../../coverage/libs/components/wizard',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'wizard'
+  displayName: 'status-steps'
 };

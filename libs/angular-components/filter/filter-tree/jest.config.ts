@@ -1,11 +1,12 @@
-const name = 'global-nav';
-const suiteName = 'GlobalNavModule';
+/* eslint-disable */
+const name = 'filter-tree';
+const suiteName = 'FilterTreeComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../../jest.preset.js',
-  coverageDirectory: `../../../coverage/libs/${name}`,
+  preset: '../../../../jest.preset.js',
+  coverageDirectory: `../../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'global-nav'
+  displayName: 'filter-tree'
 };

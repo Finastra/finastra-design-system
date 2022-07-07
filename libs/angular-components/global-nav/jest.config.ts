@@ -1,11 +1,12 @@
-const name = 'angular-test-app';
-const suiteName = 'AppComponentModule';
+/* eslint-disable */
+const name = 'global-nav';
+const suiteName = 'GlobalNavModule';
 
-module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+export default {
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../jest.preset.js',
-  coverageDirectory: `../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'test'
+  displayName: 'global-nav'
 };

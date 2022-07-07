@@ -1,8 +1,10 @@
-const name = 'toaster';
-const suiteName = 'ToasterModule';
+/* eslint-disable */
+const name = 'avatar';
+const suiteName = 'AvatarModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -19,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'toaster'
+  displayName: 'avatar'
 };

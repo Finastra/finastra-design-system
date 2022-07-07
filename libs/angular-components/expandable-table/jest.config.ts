@@ -1,7 +1,8 @@
-const name = 'avatar';
-const suiteName = 'AvatarModule';
+/* eslint-disable */
+const name = 'expandable-table';
+const suiteName = 'ExpandableTable';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'avatar'
+  displayName: 'expandable-table'
 };

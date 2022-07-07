@@ -1,7 +1,8 @@
-const name = 'scroll-to-top';
-const suiteName = 'ScrollToTopComponentModule';
+/* eslint-disable */
+const name = 'global-search';
+const suiteName = 'UxgGlobalSearchModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'scroll-to-top'
+  displayName: 'global-search'
 };
