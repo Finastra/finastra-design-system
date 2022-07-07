@@ -16,25 +16,23 @@ describe('TableDemoComponent', () => {
   let component: TableDemoComponent;
   let fixture: ComponentFixture<TableDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          UxgTableModule,
-          CommonModule,
-          MatPaginatorModule,
-          NoopAnimationsModule,
-          MatSlideToggleModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatSidenavModule,
-          MatRadioModule,
-          FormsModule
-        ],
-        declarations: [TableDemoComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        UxgTableModule,
+        CommonModule,
+        MatPaginatorModule,
+        NoopAnimationsModule,
+        MatSlideToggleModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatSidenavModule,
+        MatRadioModule,
+        FormsModule
+      ],
+      declarations: [TableDemoComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TableDemoComponent);
