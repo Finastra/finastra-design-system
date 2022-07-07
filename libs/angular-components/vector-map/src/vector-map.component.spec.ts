@@ -1,5 +1,5 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -73,7 +73,7 @@ describe('VectorMapModule', () => {
           MatFormFieldModule,
           MatInputModule,
           PaletteModule,
-          BrowserAnimationsModule
+          NoopAnimationsModule
         ],
         declarations: [VectorMapComponent, PlotlyComponent]
       }).compileComponents();

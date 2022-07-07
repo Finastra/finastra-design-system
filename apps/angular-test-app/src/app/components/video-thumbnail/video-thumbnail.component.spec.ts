@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { VideoThumbnailModule } from '@finastra/angular-components/video-thumbnail';
@@ -23,7 +23,7 @@ describe('VideoThumbnailDemoComponent', () => {
         imports: [
           ToasterModule,
           CommonModule,
-          BrowserAnimationsModule,
+          NoopAnimationsModule,
           MatSelectModule,
           MatFormFieldModule,
           MatButtonModule,

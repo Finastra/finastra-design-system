@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 
@@ -29,7 +29,7 @@ describe('VectorMapDemoComponent', () => {
           MatInputModule,
           PaletteModule,
           VectorMapModule,
-          BrowserAnimationsModule
+          NoopAnimationsModule
         ],
         declarations: [VectorMapDemoComponent],
         providers: [

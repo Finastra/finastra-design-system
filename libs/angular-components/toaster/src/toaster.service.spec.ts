@@ -6,7 +6,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { ToasterContainerComponent } from './toaster-container.component';
 import { ToasterModule } from './toaster.module';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -16,7 +16,7 @@ describe('ToasterService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ToasterModule, BrowserAnimationsModule, HttpClientTestingModule],
+      imports: [ToasterModule, NoopAnimationsModule, HttpClientTestingModule],
       providers: [
         { provide: TOASTER_CONFIG, useValue: new InjectionToken<ToasterConfig>('Default toaster config') },
         ToasterContainerRegistry,

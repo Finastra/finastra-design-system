@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 import { ExpandableTableComponent } from './expandable-table.component';
 import { SimpleChange, ChangeDetectionStrategy } from '@angular/core';
@@ -52,7 +52,7 @@ fdescribe('ExpandableTableComponent', () => {
           MatIconModule,
           MatInputModule,
           MatFormFieldModule,
-          BrowserAnimationsModule,
+          NoopAnimationsModule,
           MatTableModule,
           MatCheckboxModule,
           MatDialogModule,

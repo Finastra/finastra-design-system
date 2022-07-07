@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiselectTagsComponent, MultiselectTag } from './multiselect-tags.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -30,7 +30,7 @@ describe('MultiselectTagsModule', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [WrapperComponent, MultiselectTagsComponent],
-      imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule, BrowserAnimationsModule]
+      imports: [ReactiveFormsModule, CommonModule, MatIconModule, MatChipsModule, NoopAnimationsModule]
     }).compileComponents();
     fixture = TestBed.createComponent(WrapperComponent);
     wrapper = fixture.componentInstance;

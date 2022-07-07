@@ -8,7 +8,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
 import { By } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterTreeComponent, TreeNode } from './filter-tree.component';
 
 describe('FilterTreeModule', () => {
@@ -23,7 +23,7 @@ describe('FilterTreeModule', () => {
       TestBed.configureTestingModule({
         imports: [
           CommonModule,
-          BrowserAnimationsModule,
+          NoopAnimationsModule,
           FormsModule,
           ReactiveFormsModule,
           MatCheckboxModule,
