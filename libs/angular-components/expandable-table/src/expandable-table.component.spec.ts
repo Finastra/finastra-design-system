@@ -41,30 +41,28 @@ fdescribe('ExpandableTableComponent', () => {
   let component: ExpandableTableComponent;
   let fixture: ComponentFixture<ExpandableTableComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [ExpandableTableComponent],
-        imports: [
-          MatProgressBarModule,
-          MatButtonModule,
-          MatExpansionModule,
-          MatIconModule,
-          MatInputModule,
-          MatFormFieldModule,
-          NoopAnimationsModule,
-          MatTableModule,
-          MatCheckboxModule,
-          MatDialogModule,
-          UxgTableModule
-        ]
-      })
-        .overrideComponent(ExpandableTableComponent, {
-          set: { changeDetection: ChangeDetectionStrategy.Default }
-        })
-        .compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ExpandableTableComponent],
+      imports: [
+        MatProgressBarModule,
+        MatButtonModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatInputModule,
+        MatFormFieldModule,
+        NoopAnimationsModule,
+        MatTableModule,
+        MatCheckboxModule,
+        MatDialogModule,
+        UxgTableModule
+      ]
     })
-  );
+      .overrideComponent(ExpandableTableComponent, {
+        set: { changeDetection: ChangeDetectionStrategy.Default }
+      })
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ExpandableTableComponent);

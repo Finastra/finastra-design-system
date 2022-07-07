@@ -15,24 +15,22 @@ describe('ToasterDemoComponent', () => {
   let component: ToasterDemoComponent;
   let fixture: ComponentFixture<ToasterDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          ToasterModule,
-          CommonModule,
-          NoopAnimationsModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatButtonModule,
-          MatInputModule,
-          MatCheckboxModule,
-          FormsModule
-        ],
-        declarations: [ToasterDemoComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        ToasterModule,
+        CommonModule,
+        NoopAnimationsModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCheckboxModule,
+        FormsModule
+      ],
+      declarations: [ToasterDemoComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ToasterDemoComponent);

@@ -18,51 +18,49 @@ describe('FilterTreeModule', () => {
   let filterTreeDe: DebugElement;
   let filterTreeEl: Element;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          CommonModule,
-          NoopAnimationsModule,
-          FormsModule,
-          ReactiveFormsModule,
-          MatCheckboxModule,
-          MatChipsModule,
-          MatIconModule,
-          MatButtonModule,
-          MatTreeModule,
-          MatIconModule
-        ],
-        declarations: [FilterTreeComponent]
-      }).compileComponents();
-      fixture = TestBed.createComponent(FilterTreeComponent);
-      component = fixture.componentInstance;
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        CommonModule,
+        NoopAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTreeModule,
+        MatIconModule
+      ],
+      declarations: [FilterTreeComponent]
+    }).compileComponents();
+    fixture = TestBed.createComponent(FilterTreeComponent);
+    component = fixture.componentInstance;
 
-      filterTreeDe = fixture.debugElement.query(By.css('.filter-tree'));
-      filterTreeEl = filterTreeDe.nativeElement;
+    filterTreeDe = fixture.debugElement.query(By.css('.filter-tree'));
+    filterTreeEl = filterTreeDe.nativeElement;
 
-      expectedFilterTreeDataSource = [
-        {
-          label: 'Consumer Banking',
-          children: [
-            {
-              label: 'Alerts'
-            },
-            {
-              label: 'Customer Management'
-            },
-            {
-              label: 'Money Movement'
-            }
-          ]
-        }
-      ];
+    expectedFilterTreeDataSource = [
+      {
+        label: 'Consumer Banking',
+        children: [
+          {
+            label: 'Alerts'
+          },
+          {
+            label: 'Customer Management'
+          },
+          {
+            label: 'Money Movement'
+          }
+        ]
+      }
+    ];
 
-      component.data = expectedFilterTreeDataSource;
-      component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
-      fixture.detectChanges();
-    })
-  );
+    component.data = expectedFilterTreeDataSource;
+    component.ngOnChanges({ data: new SimpleChange(null, expectedFilterTreeDataSource, true) });
+    fixture.detectChanges();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterTreeComponent);
@@ -96,10 +94,7 @@ describe('FilterTreeModule', () => {
   }
 
   it('should contain mock items', () => {
-    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource)
-      .join('')
-      .replace(/\s/g, '')
-      .toLowerCase();
+    const expectedTreeNodeItemsLabels = flattenObject(expectedFilterTreeDataSource).join('').replace(/\s/g, '').toLowerCase();
     const treeElContent = filterTreeEl.textContent
       ? filterTreeEl.textContent.replace('expand_more', '').replace(/\s/g, '').toLowerCase()
       : '';

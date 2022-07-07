@@ -62,23 +62,21 @@ describe('VectorMapModule', () => {
     ]
   };
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          CommonModule,
-          MatTooltipModule,
-          FlexLayoutModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatInputModule,
-          PaletteModule,
-          NoopAnimationsModule
-        ],
-        declarations: [VectorMapComponent, PlotlyComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        CommonModule,
+        MatTooltipModule,
+        FlexLayoutModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        PaletteModule,
+        NoopAnimationsModule
+      ],
+      declarations: [VectorMapComponent, PlotlyComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapComponent);

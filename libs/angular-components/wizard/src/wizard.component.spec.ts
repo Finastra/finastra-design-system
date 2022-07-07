@@ -10,15 +10,13 @@ describe('UxgWizardComponent', () => {
   let component: UxgWizardComponent;
   let fixture: ComponentFixture<UxgWizardComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, MatIconModule, MatDividerModule],
-        declarations: [UxgWizardComponent],
-        schemas: [NO_ERRORS_SCHEMA]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, MatIconModule, MatDividerModule],
+      declarations: [UxgWizardComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UxgWizardComponent);

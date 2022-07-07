@@ -17,30 +17,28 @@ describe('VideoThumbnailDemoComponent', () => {
   let component: VideoThumbnailDemoComponent;
   let fixture: ComponentFixture<VideoThumbnailDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          ToasterModule,
-          CommonModule,
-          NoopAnimationsModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatButtonModule,
-          MatInputModule,
-          MatCheckboxModule,
-          FormsModule,
-          VideoThumbnailModule,
-          MatDialogModule
-        ],
-        providers: [
-          { provide: MAT_DIALOG_DATA, useValue: {} },
-          { provide: MatDialogRef, useValue: {} }
-        ],
-        declarations: [VideoThumbnailDemoComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        ToasterModule,
+        CommonModule,
+        NoopAnimationsModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCheckboxModule,
+        FormsModule,
+        VideoThumbnailModule,
+        MatDialogModule
+      ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ],
+      declarations: [VideoThumbnailDemoComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VideoThumbnailDemoComponent);

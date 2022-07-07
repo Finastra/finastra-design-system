@@ -9,14 +9,12 @@ describe('WizardDemoComponent', () => {
   let component: WizardDemoComponent;
   let fixture: ComponentFixture<WizardDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, MatIconModule, WizardModule],
-        declarations: [WizardDemoComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule, MatIconModule, WizardModule],
+      declarations: [WizardDemoComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WizardDemoComponent);

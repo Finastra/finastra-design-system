@@ -17,35 +17,33 @@ describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
   let fixture: ComponentFixture<VectorMapDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          CommonModule,
-          MatTooltipModule,
-          FlexLayoutModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatInputModule,
-          PaletteModule,
-          VectorMapModule,
-          NoopAnimationsModule
-        ],
-        declarations: [VectorMapDemoComponent],
-        providers: [
-          {
-            provide: LazyloadScriptService,
-            useValue: {
-              load: () => {
-                return of((global as any).Plotly);
-              }
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        CommonModule,
+        MatTooltipModule,
+        FlexLayoutModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        PaletteModule,
+        VectorMapModule,
+        NoopAnimationsModule
+      ],
+      declarations: [VectorMapDemoComponent],
+      providers: [
+        {
+          provide: LazyloadScriptService,
+          useValue: {
+            load: () => {
+              return of((global as any).Plotly);
             }
           }
-        ],
-        teardown: { destroyAfterEach: false }
-      }).compileComponents();
-    })
-  );
+        }
+      ],
+      teardown: { destroyAfterEach: false }
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapDemoComponent);

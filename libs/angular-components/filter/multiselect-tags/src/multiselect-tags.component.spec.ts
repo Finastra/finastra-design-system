@@ -9,10 +9,7 @@ import { MultiselectTagsComponent, MultiselectTag } from './multiselect-tags.com
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  template: `
-    <uxg-multiselect-tags [data]="data" (changes)="updateMultiselectTags($event)" #demoMultiselectTags>
-    </uxg-multiselect-tags>
-  `
+  template: ` <uxg-multiselect-tags [data]="data" (changes)="updateMultiselectTags($event)" #demoMultiselectTags> </uxg-multiselect-tags> `
 })
 class WrapperComponent implements OnInit {
   data: MultiselectTag[] = [{ label: 'API' }, { label: 'SPI', isSelected: true }, { label: 'Service API' }];
