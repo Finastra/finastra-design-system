@@ -28,7 +28,7 @@ export default {
 
 const Template: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimClickAction, escapeKeyAction}) => {
   return html`
-<span class="message">Use the open property in the table below to enable the preview !</span>
+<span class="message">👇 Use the <strong>open</strong> property in the table below to enable the preview 👇</span>
 <fds-dialog id="dialog" heading=${heading} ?open=${open} ?hideActions=${hideActions} ?stacked=${stacked} ?scrimClickAction=${scrimClickAction} ?escapeKeyAction=${escapeKeyAction}>
   <span class="body">Body 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </span>
   <fds-button
