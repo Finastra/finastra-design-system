@@ -34,14 +34,12 @@ const Template: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimCli
       secondary
       label="Yes"
       slot="primaryAction"
-      dialogAction="ok">
-  </fds-button>
+      dialogAction="ok"></fds-button>
   <fds-text-button
       label="No"
-      slot="secondaryAction",
+      slot="secondaryAction"
       dialogAction="cancel"
-  >
-  </fds-text-button>
+  ></fds-text-button>
 </fds-dialog>`;
 };
 

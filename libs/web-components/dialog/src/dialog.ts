@@ -5,7 +5,8 @@ import { styles } from './styles.css';
 * @cssprop [--fds-dialog-max-height=calc(100% - 32px)] - Sets dialog max height
 * @cssprop [--fds-dialog-max-width=560px]- Sets dialog max width
 * @cssprop [--fds-dialog-min-width=280px]- Sets dialog min width
-$ @cssprop [--fds-dialog-z-index=7] - Sets the z-index of the dialog and scrim
+* @cssprop [--fds-dialog-z-index=7] - Sets the z-index of the dialog and scrim
+* @cssprop [--fds-dialog-content-padding=0px 32px 16px 32px]- Sets the content padding
 * @cssprop {color} [--fds-dialog-scrim-color=rgba(0, 0, 0, 0.12)] - Color of the scrim
 * @slot primaryAction - Footer area containing the dialog's primary action button.
 * @slot secondaryAction - Footer area containing the dialog's secondary action button.

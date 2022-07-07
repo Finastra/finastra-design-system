@@ -6,6 +6,7 @@ $dialog-z-index: 7;
 $dialog-max-height: calc(100% - 32px);
 $dialog-max-width: 560px;
 $dialog-min-width: 280px;
+$dialog-content-padding: 0px 32px var(--fds-spacing-3, 16px) 32px;
 
 :host {
   display: block;
@@ -36,7 +37,7 @@ $dialog-min-width: 280px;
   .mdc-dialog__content {
     @include fds.typography(body-2);
     @include fds.property(color, on-background);
-    padding: 0px 32px 20px 32px;
+    padding: var(--fds-dialog-content-padding, $dialog-content-padding);
   }
 
   .mdc-dialog__surface {
