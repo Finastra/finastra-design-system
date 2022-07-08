@@ -9,6 +9,9 @@ import { styles } from './styles.css';
 export class Breadcrumb extends LitElement {
   static styles = styles;
 
+  /**
+   *  A list of items to display
+   */
   @property({ type: Array })
   items: string[] = [];
 
