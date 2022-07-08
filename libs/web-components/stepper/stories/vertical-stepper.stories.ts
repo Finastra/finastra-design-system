@@ -4,7 +4,7 @@ import type { VerticalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { EVENTS } from '../src/constants';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-vertical-stepper.json';
 const demoData = [
   {
     label: 'Step Success',

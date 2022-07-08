@@ -3,7 +3,7 @@ import '@finastra/expansion-panel';
 import type { ExpansionPanel } from '@finastra/expansion-panel';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { cssprops } from './custom-element.json';
+import { cssprops } from './sb-generated/fds-expansion-panel.json';
 
 export default {
   title: 'DATA DISPLAY/ExpansionPanel',
