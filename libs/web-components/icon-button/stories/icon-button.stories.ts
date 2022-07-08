@@ -3,7 +3,7 @@ import '@finastra/icon-button';
 import type { IconButton } from '@finastra/icon-button';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-icon-button.json';
 
 export default {
   title: 'ACTIONS/Icon Button',

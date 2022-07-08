@@ -1,8 +1,8 @@
 const README = require('../README.md');
+import '@finastra/checkbox';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@finastra/checkbox';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-checkbox.json';
 
 export default {
   title: 'FORMS/Checkbox',

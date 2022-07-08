@@ -4,7 +4,7 @@ import { Badge } from '@finastra/badge';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { COLOR, POSITION, TYPE } from '../src/badge.interface';
-import { argTypes } from "./custom-element.json";
+import { argTypes } from "./sb-generated/fds-badge.json";
 
 export default {
   title: 'DATA DISPLAY/Badge',

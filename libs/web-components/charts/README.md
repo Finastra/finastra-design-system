@@ -26,15 +26,4 @@ import '@finastra/charts';
 
 ### Pure HTML pages
 
-```html
-<script type="module" src="https://unpkg.com/@finastra/charts@latest/dist/src/charts.js?module"></script>
-
-<fds-pie-chart id="pieChart" width="380"></fds-pie-chart>
-<script>
-    const pieCharts = document.querySelectorAll('#pieChart');
-    pieCharts.forEach((pieChart) => {
-        pieChart.data = [44, 55, 13, 43, 22];
-        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki'];
-    })
-</script>
-```
+> This component cannot be imported through CDNs, as it's underlying library [Apex Chart](https://apexcharts.com/) doesn't provide an ES module.
