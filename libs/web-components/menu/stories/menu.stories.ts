@@ -5,14 +5,17 @@ import type { Menu } from '@finastra/menu';
 import '@material/mwc-list/mwc-list-item';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { argTypes, cssprops } from './sb-generated/fds-menu.json';
 
 export default {
-  title: 'FORMS/Menu',
+  title: 'NAVIGATION/Menu',
   component: 'fds-menu',
+  argTypes,
   parameters: {
     docs: {
       description: { component: README }
-    }
+    },
+    cssprops
   },
   decorators: [
     (story) => html`${story()}
@@ -25,9 +28,9 @@ export default {
           menu.open = !menu.open;
         });
       </script>
-      `  
-    ]
-} as Meta;
+      `
+  ]
+} as unknown as Meta;
 
 const Template: Story<Menu> = () => {
   return html`
