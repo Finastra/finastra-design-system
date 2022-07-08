@@ -20,7 +20,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Breadcrumb> = ({ items = ['Link 1', 'Link 2', 'Link 3'] }) => {
+const Template: Story<Breadcrumb> = ({ items }) => {
   return html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`;
 };
 

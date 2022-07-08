@@ -13,7 +13,7 @@ export class Breadcrumb extends LitElement {
   items: string[] = [];
 
   handleItemClick(item: string, index: number):void {
-    this.dispatchEvent(new CustomEvent('select', {
+    this.dispatchEvent(new CustomEvent('selected', {
       bubbles: true,
       cancelable: true,
         detail: {
