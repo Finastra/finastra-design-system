@@ -36,6 +36,7 @@ $uxg-table-row-height: 44px;
 
         .mat-icon {
           margin-right: $uxg-table-cell-icon-margin;
+          overflow: visible;
         }
       }
     }
