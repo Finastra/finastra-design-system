@@ -52,14 +52,21 @@ export interface ChartTheme {
   sequential1LabelColor: string[];
   sequential2: string[];
   sequential2LabelColor: string[];
-
 }
+
+/**
+ * @attr {boolean} [hide-data-label=false] - Hide labels
+ * @attr {string} [height=100%] - Height of the chart
+ * @attr {string} [width=100%] - Width of the chart
+ * @attr {left|center|right} [legendHorizontalAlign=center] - Define the horizontal alignment of legend
+ * @attr {top|right|bottom|left} [legendPosition=bottom] - Define the position of the legend
+ * @attr {semantic-1|semantic-2|semantic-3|categorical|focus-1|focus-2|focus-1-angular|focus-2-angular |sequential-1|sequential-2} [color=categorical] - Define palette used by the chart
+ */
 @customElement('fds-apexcharts')
 export class ApexChartsWrapper extends LitElement {
   static styles = [styles];
 
   private _type: ChartType = 'line';
-  @property({ type: String })
   public get type(): ChartType {
     return this._type;
   }
@@ -92,7 +99,6 @@ export class ApexChartsWrapper extends LitElement {
     this._width = value;
     this.refresh();
   }
-
 
   private _color: COLOR = 'categorical';
   @property({type: String})
@@ -188,10 +194,50 @@ export class ApexChartsWrapper extends LitElement {
       middle1: '#F04E98',
       middle2: '#C34DD5'
     },
-    sequential1: ['#EDDDFF', '#CCB9F5', '#AB96EB', '#8A72E0', '#694ED6', '#5945B8', '#4A3B99', '#3A327B', '#2A285C'],
-    sequential1LabelColor: ['#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-    sequential2: ['#FFD4FF', '#FBB3E5', '#F891CC', '#F470B2', '#F04E98', '#CA3F7F', '#A43067', '#7D214E', '#571235'],
-    sequential2LabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
+    sequential1: [
+      "#2A285C",
+      "#3A327B",
+      "#4A3B99",
+      "#5945B8",
+      "#694ED6",
+      "#8A72E0",
+      "#AB96EB",
+      "#CCB9F5",
+      "#EDDDFF"
+  ],
+    sequential1LabelColor: [
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000"
+  ],
+    sequential2: [
+      "#571235",
+      "#7D214E",
+      "#A43067",
+      "#CA3F7F",
+      "#F04E98",
+      "#F470B2",
+      "#F891CC",
+      "#FBB3E5",
+      "#FFD4FF"
+  ],
+    sequential2LabelColor: [
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#FFFFFF",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000",
+      "#000000"
+  ]
   }
 
   private _chartTheme = this.defaultTheme;

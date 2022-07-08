@@ -3,7 +3,7 @@ import '@finastra/icon-button';
 import type { IconButton } from '@finastra/icon-button';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-icon-button.json';
 
 export default {
   title: 'ACTIONS/Icon Button',
@@ -12,6 +12,10 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=107363%3A34403'
     },
     cssprops
   }
@@ -24,8 +28,8 @@ const Template: Story<IconButton> = ({ icon = 'code', dense, disabled, primary, 
 export const Default: Story<IconButton> = Template.bind({});
 Default.args = {
   disabled: false,
-  dense: false,
   primary: false,
+  dense: false,
   secondary: false
 }
 

@@ -1,4 +1,7 @@
 {
-  "version": "0.0.34",
-  "packages": ["themes/fds-theme", "libs/web-components/*"]
+  "version": "0.0.35",
+  "packages": [
+    "themes/fds-theme",
+    "libs/web-components/*"
+  ]
 }

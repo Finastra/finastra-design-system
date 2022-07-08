@@ -25,6 +25,7 @@
     "wc:global-nav",
     "wc:*",
     "wc:pie-chart",
-    "wc:data-table"
+    "wc:data-table",
+    "wc:donut-chart"
   ]
 }

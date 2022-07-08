@@ -3,7 +3,7 @@ import '@finastra/autocomplete';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-autocomplete.json';
 
 export default {
   title: 'FORMS/Autocomplete',
