@@ -5,7 +5,7 @@ Badges are small status descriptors for UI elements. A badge consists of a small
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/badge?style=for-the-badge)](https://www.npmjs.com/package/@finastra/badge)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/badge?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/badge')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-badge--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/data-display-badge--default)
 
 ## Usage
 
