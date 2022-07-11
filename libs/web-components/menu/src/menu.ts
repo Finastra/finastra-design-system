@@ -4,12 +4,11 @@ import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /** 
-* @cssprop [--fds-dialog-max-height=calc(100% - 32px)] - Sets dialog max height
-* @cssprop [--fds-dialog-max-width=560px]- Sets dialog max width
-* @cssprop [--fds-dialog-min-width=280px]- Sets dialog min width
-* @cssprop [--fds-dialog-z-index=7] - Sets the z-index of the dialog and scrim
-* @cssprop [--fds-dialog-content-padding=0px 32px 16px 32px]- Sets the content padding
-* @cssprop {color} [--fds-dialog-scrim-color=rgba(0, 0, 0, 0.12)] - Color of the scrim
+* @cssprop [--fds-menu-item-height=48px] - Height of single-line list-items in the menu.
+* @cssprop [--fds-menu-min-width=112px]- Menu min-width.
+* @cssprop [--fds-menu-max-width=calc(100vw - 32px)]- Menu max-width.
+* @cssprop [--fds-menu-max-height=calc(100vh - 32px)] - Menu max-height.
+* @cssprop [--fds-menu-z-index=8]- Z-index of the popup menu surface.
 
 * @attr [open=false] - Whether the menu should open and display.
 * @attr [anchor=null] - Determines from which element the floating menu should calculate sizing and position offsets. In the default case, both mwc-menu and the anchor should share a parent with position:relative. Changing anchor typically requires absolute or fixed.
