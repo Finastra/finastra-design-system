@@ -17,7 +17,28 @@ npm i @finastra/dialog
 ```ts
 import '@finastra/dialog';
 ...
-<fds-dialog></fds-dialog>
+<fds-button label="open" onclick="openDialog()"></fds-button>
+<fds-dialog id="myDropdown" heading="Title">
+  <span>Content</span>
+  <fds-button
+      secondary
+      label="Yes"
+      slot="primaryAction"
+      dialogAction="ok">
+  </fds-button>
+  <fds-text-button
+      label="No"
+      slot="secondaryAction"
+      dialogAction="cancel">
+  </fds-text-button>
+</fds-dialog>
+
+
+<script>
+  function openDialog() {
+    document.getElementById("myDropdown").show();
+  }
+</script>
 ```
 
 ### Pure HTML pages
@@ -25,5 +46,26 @@ import '@finastra/dialog';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/dialog@latest/dist/src/dialog.js?module"></script>
 
-<fds-dialog></fds-dialog>
+<fds-button label="open" onclick="myFunction()"></fds-button>
+<fds-dialog id="myDropdown" heading="Title">
+  <span>Content</span>
+  <fds-button
+      secondary
+      label="Yes"
+      slot="primaryAction"
+      dialogAction="ok">
+  </fds-button>
+  <fds-text-button
+      label="No"
+      slot="secondaryAction"
+      dialogAction="cancel">
+  </fds-text-button>
+</fds-dialog>
+
+
+<script>
+  function myFunction() {
+    document.getElementById("myDropdown").show();
+  }
+</script>
 ```

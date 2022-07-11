@@ -3,7 +3,7 @@
 <script type="module" src="node_modules/@finastra/button/dist/src/text-button.js"></script>
 <script type="module" src="node_modules/@finastra/radio/dist/src/radio.js"></script>
 
-<fds-button label="open" onclick="myFunction()"></fds-button>
+<fds-button label="open" onclick="openDialog()"></fds-button>
 <fds-dialog id="myDropdown" heading="Title">
   <span class="body">Body 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </span>
   <fds-button
@@ -17,14 +17,14 @@
       slot="secondaryAction"
       dialogAction="cancel">
   </fds-text-button>
-  </fds-dialog>
+</fds-dialog>
 
 
-  <script>
-    function myFunction() {
-      document.getElementById("myDropdown").show();
-    }
-  </script>
+<script>
+  function openDialog() {
+    document.getElementById("myDropdown").show();
+  }
+</script>
 
   <style>
   </style>
