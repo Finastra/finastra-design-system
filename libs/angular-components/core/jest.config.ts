@@ -1,7 +1,8 @@
-const name = 'global-search';
-const suiteName = 'UxgGlobalSearchModule';
+/* eslint-disable */
+const name = 'core';
+const suiteName = 'UXGFilterModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'global-search'
+  displayName: 'angular-core'
 };

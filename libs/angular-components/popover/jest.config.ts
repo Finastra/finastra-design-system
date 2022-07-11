@@ -1,7 +1,8 @@
-const name = 'repeater';
-const suiteName = 'RepeaterComponentModule';
+/* eslint-disable */
+const name = 'popover';
+const suiteName = 'PopoverComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'repeater'
+  displayName: 'popover'
 };

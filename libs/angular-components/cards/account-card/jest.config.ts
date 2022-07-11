@@ -1,10 +1,12 @@
-const name = 'skeleton-text';
-const suiteName = 'SkeletonTextModule';
+/* eslint-disable */
+const name = 'account-card';
+const suiteName = 'AccountCardModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  preset: '../../../jest.preset.js',
-  coverageDirectory: `../../../coverage/libs/${name}`,
+
+  preset: '../../../../jest.preset.js',
+  coverageDirectory: `../../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -19,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'skeleton-text'
+  displayName: 'account-card'
 };

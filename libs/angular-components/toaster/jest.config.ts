@@ -1,11 +1,11 @@
-const name = 'filter-group';
-const suiteName = 'FilterGroupComponentModule';
+/* eslint-disable */
+const name = 'toaster';
+const suiteName = 'ToasterModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-
-  preset: '../../../../jest.preset.js',
-  coverageDirectory: `../../../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +20,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'filter-group'
+  displayName: 'toaster'
 };

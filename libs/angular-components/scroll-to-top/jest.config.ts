@@ -1,11 +1,12 @@
-const name = 'filter-toggle';
-const suiteName = 'FilterToggleComponentModule';
+/* eslint-disable */
+const name = 'scroll-to-top';
+const suiteName = 'ScrollToTopComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../../../jest.preset.js',
-  coverageDirectory: `../../../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'filter-toggle'
+  displayName: 'scroll-to-top'
 };

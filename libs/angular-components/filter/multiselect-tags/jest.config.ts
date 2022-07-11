@@ -1,11 +1,12 @@
-const name = 'popover';
-const suiteName = 'PopoverComponentModule';
+/* eslint-disable */
+const name = 'multiselect-tags';
+const suiteName = 'MultiselectTagsComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../../jest.preset.js',
-  coverageDirectory: `../../../coverage/libs/${name}`,
+  preset: '../../../../jest.preset.js',
+  coverageDirectory: `../../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'popover'
+  displayName: 'multiselect-tags'
 };

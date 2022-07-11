@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": []
+    "types": [],
+    "target": "es2020"
   },
   "include": ["**/*.ts"],
   "exclude": ["**/*.spec.ts"]

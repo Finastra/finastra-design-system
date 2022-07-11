@@ -1,9 +1,9 @@
-const name = 'banner';
-const suiteName = 'BannerModule';
+/* eslint-disable */
+const name = 'video-thumbnail';
+const suiteName = 'VideoThumbnailModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -20,5 +20,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'banner'
+  displayName: 'video-thumbnail'
 };

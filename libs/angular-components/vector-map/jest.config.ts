@@ -1,11 +1,11 @@
-const name = 'account-card';
-const suiteName = 'AccountCardModule';
+/* eslint-disable */
+const name = 'vector-map';
+const suiteName = 'VectorMapModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-
-  preset: '../../../../jest.preset.js',
-  coverageDirectory: `../../../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +20,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'account-card'
+  displayName: 'vector-map'
 };
