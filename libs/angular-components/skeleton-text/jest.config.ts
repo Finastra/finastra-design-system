@@ -1,9 +1,9 @@
-const name = 'core';
-const suiteName = 'UXGFilterModule';
+/* eslint-disable */
+const name = 'skeleton-text';
+const suiteName = 'SkeletonTextModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -20,5 +20,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'angular-core'
+  displayName: 'skeleton-text'
 };

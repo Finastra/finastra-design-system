@@ -1,11 +1,12 @@
-const name = 'multiselect-tags';
-const suiteName = 'MultiselectTagsComponentModule';
+/* eslint-disable */
+const name = 'wizard';
+const suiteName = 'WizardModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
-  preset: '../../../../jest.preset.js',
-  coverageDirectory: `../../../../coverage/libs/${name}`,
+  preset: '../../../jest.preset.js',
+  coverageDirectory: '../../../coverage/libs/components/wizard',
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'multiselect-tags'
+  displayName: 'wizard'
 };

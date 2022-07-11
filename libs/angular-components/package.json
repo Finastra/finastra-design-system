@@ -1,17 +1,17 @@
 {
   "name": "@finastra/angular-components",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/finastra/finastra-design-system.git",
     "directory": "libs/angular-components"
   },
   "peerDependencies": {
-    "@angular/common": "^13.0.3",
-    "@angular/core": "^13.0.3",
-    "@angular/forms": "^13.0.3",
-    "@angular/cdk": "^13.0.3",
-    "@angular/flex-layout": "13.0.0-beta.36",
+    "@angular/common": "14.0.5",
+    "@angular/core": "14.0.5",
+    "@angular/forms": "14.0.5",
+    "@angular/cdk": "^14.0.4",
+    "@angular/flex-layout": "^14.0.0-beta.40",
     "lodash-es": "^4.17.21",
     "angular-plotly.js": "^4.0.0",
     "plotly.js": "^1.58.4",
@@ -19,6 +19,6 @@
     "ts-md5": "^1.2.8"
   },
   "dependencies": {
-    "@finastra/angular-theme": "3.3.0"
+    "@finastra/angular-theme": "3.4.0"
   }
 }

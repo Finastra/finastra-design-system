@@ -1,11 +1,12 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit-html';
-import { Figma } from "storybook-addon-designs/blocks"
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { Figma } from 'storybook-addon-designs/blocks';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 # FDS Theme Typography
 
-<Meta title="Design Tokens/Typography"
+<Meta
+  title="Design Tokens/Typography"
   parameters={{
     viewMode: 'docs',
     previewTabs: {
@@ -30,20 +31,22 @@ Make sure to copy the code below into the `<head>` of your html.
 
 ### Example
 
-export const TemplateCustomProp = (args) => { return html`
-<style>
-  .my-title {
-    font: var(--fds-headline-3);
-    color: var(--fds-on-surface);
-  }
-  .my-text {
-    font: var(--fds-body-1);
-    color: var(--fds-on-surface);
-  }
-</style>
-<p class="my-title">Hello World!</p>
-<p class="my-text">The future of finance is open</p>
-` };
+export const TemplateCustomProp = (args) => {
+  return html`
+    <style>
+      .my-title {
+        font: var(--fds-headline-3);
+        color: var(--fds-on-surface);
+      }
+      .my-text {
+        font: var(--fds-body-1);
+        color: var(--fds-on-surface);
+      }
+    </style>
+    <p class="my-title">Hello World!</p>
+    <p class="my-text">The future of finance is open</p>
+  `;
+};
 
 <Canvas>
   <Story name="Custom properties" args={{}}>
@@ -74,7 +77,8 @@ export const TemplateCustomProp = (args) => { return html`
 ## Mixins
 
 ```scss
-@mixin typography($style) {}
+@mixin typography($style) {
+}
 ```
 
 Where `$style` is any of the [available text styles](#available-text-styles).
@@ -119,9 +123,9 @@ Before being able to use typography helper classes, you will have to include the
 
 ### Example
 
-export const TemplateHelper = (args) => { return html`
-<h1 class="fds-headline-1 fds-on-surface">This is headline 1</h1>
-` };
+export const TemplateHelper = (args) => {
+  return html` <h1 class="fds-headline-1 fds-on-surface">This is headline 1</h1> `;
+};
 
 <Canvas withSource="open">
   <Story name="Helper classes" args={{}}>
@@ -133,7 +137,6 @@ export const TemplateHelper = (args) => { return html`
 
 <Figma url="https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A49" />
 
-
 export const Component = () => {
-  return <SyntaxHighlighter/>;
+  return <SyntaxHighlighter />;
 };

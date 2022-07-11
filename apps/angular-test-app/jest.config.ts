@@ -1,11 +1,12 @@
-const name = 'expandable-table';
-const suiteName = 'ExpandableTable';
+/* eslint-disable */
+const name = 'angular-test-app';
+const suiteName = 'AppComponentModule';
 
-module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+export default {
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
 
-  preset: '../../../jest.preset.js',
-  coverageDirectory: `../../../coverage/libs/${name}`,
+  preset: '../../jest.preset.js',
+  coverageDirectory: `../../coverage/libs/${name}`,
   reporters: [
     'default',
     [
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'expandable-table'
+  displayName: 'test'
 };

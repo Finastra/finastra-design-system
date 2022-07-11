@@ -1,5 +1,5 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -62,23 +62,21 @@ describe('VectorMapModule', () => {
     ]
   };
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          CommonModule,
-          MatTooltipModule,
-          FlexLayoutModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatInputModule,
-          PaletteModule,
-          BrowserAnimationsModule
-        ],
-        declarations: [VectorMapComponent, PlotlyComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        CommonModule,
+        MatTooltipModule,
+        FlexLayoutModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        PaletteModule,
+        NoopAnimationsModule
+      ],
+      declarations: [VectorMapComponent, PlotlyComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapComponent);
