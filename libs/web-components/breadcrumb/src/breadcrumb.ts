@@ -3,15 +3,13 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { styles } from './styles.css';
 
-
-
+/**
+ * @attr {Array} [items=[]] - A list of items to display
+ */
 @customElement('fds-breadcrumb')
 export class Breadcrumb extends LitElement {
   static styles = styles;
 
-  /**
-   *  A list of items to display
-   */
   @property({ type: Array })
   items: string[] = [];
 

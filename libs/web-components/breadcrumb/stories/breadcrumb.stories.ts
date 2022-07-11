@@ -24,7 +24,7 @@ export default {
 } as Meta;
 
 const Template: Story<Breadcrumb> = ({ items }) => {
-  return html`<fds-breadcrumb items=${items}></fds-breadcrumb>`;
+  return html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`;
 };
 
 export const Default: Story<Breadcrumb> = Template.bind({});
