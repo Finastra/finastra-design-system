@@ -13,6 +13,10 @@ export default {
     docs: {
       description: { component: README }
     },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=105319%3A31992'
+    },
     cssprops
   },
 } as Meta;

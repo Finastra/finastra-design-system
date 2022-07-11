@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterToggleComponent } from './filter-toggle.component';
 
 describe('FilterToggleComponent', () => {
@@ -14,14 +14,7 @@ describe('FilterToggleComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [FilterToggleComponent],
-      imports: [
-        ReactiveFormsModule,
-        CommonModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatExpansionModule,
-        MatButtonToggleModule
-      ]
+      imports: [ReactiveFormsModule, CommonModule, NoopAnimationsModule, MatIconModule, MatExpansionModule, MatButtonToggleModule]
     }).compileComponents();
     fixture = TestBed.createComponent(FilterToggleComponent);
     component = fixture.componentInstance;

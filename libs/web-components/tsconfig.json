@@ -147,6 +147,9 @@
     },
     {
       "path": "dialog"
+    },
+    {
+      "path": "breadcrumb"
     }
   ]
 }
