@@ -13,6 +13,9 @@ export default {
     items: ['Link 1', 'Link 2', 'Link 3']
   },
   parameters: {
+    actions: {
+      handles: ['selected']
+    },
     docs: {
       description: { component: README }
     },
@@ -21,7 +24,7 @@ export default {
 } as Meta;
 
 const Template: Story<Breadcrumb> = ({ items }) => {
-  return html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`;
+  return html`<fds-breadcrumb items=${items}></fds-breadcrumb>`;
 };
 
 export const Default: Story<Breadcrumb> = Template.bind({});
