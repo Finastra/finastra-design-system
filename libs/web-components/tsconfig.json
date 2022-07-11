@@ -146,6 +146,9 @@
       "path": "badge"
     },
     {
+      "path": "dialog"
+    },
+    {
       "path": "breadcrumb"
     }
   ]
