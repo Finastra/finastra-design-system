@@ -1,7 +1,8 @@
-const name = 'video-thumbnail';
-const suiteName = 'VideoThumbnailModule';
+/* eslint-disable */
+const name = 'user-profile-menu';
+const suiteName = 'UxgUserProfileMenuModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
@@ -19,5 +20,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'video-thumbnail'
+  displayName: 'user-profile-menu'
 };

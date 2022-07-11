@@ -1,7 +1,8 @@
-const name = 'chart';
-const suiteName = 'ChartModule';
+/* eslint-disable */
+const name = 'repeater';
+const suiteName = 'RepeaterComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'chart'
+  displayName: 'repeater'
 };

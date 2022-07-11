@@ -6,7 +6,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterTagsComponent } from './filter-tags.component';
 import { HighlightPipe } from './highlight.pipe';
 
@@ -25,7 +25,7 @@ describe('FilterTagsModule', () => {
         MatAutocompleteModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule
+        NoopAnimationsModule
       ]
     }).compileComponents();
     fixture = TestBed.createComponent(FilterTagsComponent);

@@ -1,7 +1,8 @@
-const name = 'status-steps';
-const suiteName = 'StatusStepperModule';
+/* eslint-disable */
+const name = 'chart';
+const suiteName = 'ChartModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'status-steps'
+  displayName: 'chart'
 };

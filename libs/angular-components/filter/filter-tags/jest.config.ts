@@ -1,7 +1,8 @@
-const name = 'filter-tree';
-const suiteName = 'FilterTreeComponentModule';
+/* eslint-disable */
+const name = 'filter-tags';
+const suiteName = 'FilterTagsComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../../jest.preset.js',
@@ -20,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'filter-tree'
+  displayName: 'filter-tags'
 };

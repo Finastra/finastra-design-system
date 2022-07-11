@@ -1,8 +1,10 @@
-const name = 'vector-map';
-const suiteName = 'VectorMapModule';
+/* eslint-disable */
+const name = 'entity-menu';
+const suiteName = 'EntityMenuModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+
   preset: '../../../jest.preset.js',
   coverageDirectory: `../../../coverage/libs/${name}`,
   reporters: [
@@ -19,5 +21,5 @@ module.exports = {
       }
     ]
   ],
-  displayName: 'vector-map'
+  displayName: 'entity-menu'
 };

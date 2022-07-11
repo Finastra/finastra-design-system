@@ -1,7 +1,8 @@
+/* eslint-disable */
 const name = 'table';
 const suiteName = 'TableComponentModule';
 
-module.exports = {
+export default {
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
 
   preset: '../../../jest.preset.js',

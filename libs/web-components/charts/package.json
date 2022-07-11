@@ -1,7 +1,7 @@
 {
   "name": "@finastra/charts",
   "displayName": "Charts",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Charts Web Component",
   "keywords": [
     "Finastra Design System",
