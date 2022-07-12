@@ -77,7 +77,7 @@ export class Textfield extends TextFieldBase {
 
   protected renderLabelOutside(): TemplateResult | string {
     return html`
-      <span class="fds-text-field__label">
+      <span id="label" class="fds-text-field__label">
         ${this.label}
         ${this.renderRequired()}
       </span>
