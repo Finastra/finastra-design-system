@@ -17,11 +17,23 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   @include fds.mdc(text-field-label-ink-color, on-surface-medium);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
 
-  .fds-text-field__label {
+  .mdc-notched-outline--notched .mdc-notched-outline__notch {
+    border-top: 1px solid red !important;
+  }
+
+  .fds-text-field__label,
+  .mdc-floating-label {
     display: block;
     @include fds.text-color(on-surface-medium);
     @include fds.typography(body-2);
     @include fds.margin(2, bottom);
+  }
+
+  .mdc-floating-label--float-above {
+    max-width: 100% !important;
+    text-overflow: unset !important;
+    transform: translateY(-18px)
+          scale(0.94) !important;
   }
 
   .mdc-text-field--outlined {
@@ -37,6 +49,12 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     }
   }
 
+  .mdc-text-field.fds-text-field--label-inside {
+    .mdc-text-field__input {
+      @include fds.margin(2, top);
+    }
+  }
+
   .mdc-text-field:not(.fds-text-field--label-inside) {
     .mdc-text-field__input::placeholder {
       opacity: 1 !important;
@@ -47,8 +65,8 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     @include fds.bg-color(surface-disabled);
   }
 
-  .mdc-text-field.mdc-text-field--focused .mdc-notched-outline {
-    --mdc-notched-outline-stroke-width: 1px !important;
+  .mdc-text-field.mdc-text-field--focused {
+    @include fds.bg-color(surface-selected);
   }
 }
 
