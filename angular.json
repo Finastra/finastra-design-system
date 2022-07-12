@@ -289,6 +289,18 @@
       },
       "tags": ["web-components"]
     },
+    "card": {
+      "root": "libs/web-components/card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "changelog": {
       "projectType": "library",
       "root": "libs/angular-components/changelog",
@@ -1397,15 +1409,12 @@
       "tags": ["web-components"]
     },
     "wc-card": {
-      "projectType": "library",
-      "root": "libs/web-components/card",
-      "sourceRoot": "libs/web-components/card",
-      "prefix": "fds",
+      "root": "libs/web-components/wc-card",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
+            "lintFilePatterns": ["libs/web-components/wc-card/src/**/*.ts"]
           }
         }
       },

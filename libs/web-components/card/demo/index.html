@@ -1,125 +1,157 @@
-<script type="module" src="node_modules/@finastra/card/dist/src/card.js"></script>
-<script type="module">
-  import '@material/mwc-button';
-  import '@material/mwc-icon-button';
-</script>
+<script type="module" src="node_modules/@finastra/card/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/divider/dist/src/divider.js"></script>
+<script type="module" src="node_modules/@finastra/linear-progress/dist/src/linear-progress.js"></script>
+
 <style>
   .card-container {
     display: flex;
-    flex-wrap: wrap;
-    padding: 16px;
-    row-gap: 16px;
-    column-gap: 16px;
-  }
-
-  .card-item {
-    width: 350px;
-  }
-
-  .solution-card-content {
-    padding: 16px;
-  }
-
-  .card__header {
-    display: flex;
-    flex-direction: row;
-    padding: 16px;
-  }
-
-  .card__header-text {
-    display: flex;
     flex-direction: column;
+    gap: 32px;
   }
 
-  .card__title {
-    font: var(--fds-headline-4);
-    color: var(--fds-text-high-on-background);
+  fds-card {
+    max-width: 400px;
   }
 
-  .card__subtitle {
-    font: var(--fds-subtitle-1);
-    color: var(--fds-text-high-on-background);
-  }
-
-  .card__secondary {
-    font: var(--fds-body-2);
-    color: var(--fds-text-high-on-background);
-    padding: 0 1rem 8px;
-  }
-
-  .card__image {
-    --fds-card-media-background-image: url('https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg');
+  .example-header-image {
+    background-image: url('https://cdn2.thecatapi.com/images/zvfTwDY54.jpg');
+    background-size: cover;
   }
 </style>
+
 <div class="card-container">
-  <fds-card
-    class="card-item"
-    mediaAspectRatio="16-9"
-    style="
-      --fds-card-media-background-image: url('https://p01p10401017001.blob.core.windows.net/apis-info/solutions/consumer-banking/cover.png');
-    "
-  >
-    <div slot="media">
-      <div class="solution-card-content">
-        <div>US Consumer Banking</div>
-        <div>Finastra</div>
-        <div>Services for accessing account holder data and addressing the needs of a financial institution’s customerg</div>
+
+  <fds-card>
+    <fds-card-header>
+      <div class="example-header-image"></div>
+      <div class="card-header-text">
+        <fds-card-title>Header</fds-card-title>
+        <fds-card-subtitle>Subhead</fds-card-subtitle>
       </div>
-    </div>
+    </fds-card-header>
+    <img src="https://cdn2.thecatapi.com/images/jb.jpg">
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-actions>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-card-actions>
   </fds-card>
 
-  <fds-card style="width: 300px; height: 100px" outlined> </fds-card>
-
-  <div style="height: 16px"></div>
-
-  <fds-card class="card-item">
-    <div slot="primary-action">
-      <div class="card__header">
-        <div class="card__header-text">
-          <div class="card__title">Our Changing Planet</div>
-          <div class="card__subtitle">by Kurt Wagner</div>
-        </div>
-      </div>
-      <div class="card__secondary mdc-typography mdc-typography--body2">
-        Visit ten places on our planet that are undergoing the biggest changes today.
-      </div>
-    </div>
-    <mwc-button slot="button-action">Read</mwc-button>
-    <mwc-button slot="button-action">Bookmark</mwc-button>
-    <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
-    <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
-    <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
+  <fds-card outlined>
+    <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657130406/Top_npiwin.png">
+    <fds-card-title>Header</fds-card-title>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-divider></fds-divider>
+    <fds-card-actions align="end">
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-card-actions>
+    <fds-card-footer>
+      <fds-linear-progress indeterminate></fds-linear-progress>
+    </fds-card-footer>
   </fds-card>
 
-  <div style="height: 16px">fullBleed</div>
+  <fds-card selectable>
+    <fds-card-title>Header</fds-card-title>
+    <fds-card-subtitle>Subhead</fds-card-subtitle>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+  </fds-card>
 
-  <fds-card fullBleed>
-    <div slot="primary-action">
-      <div class="card__header">
-        <div class="card__header-text">
-          <div class="card__title">Our Changing Planet</div>
-          <div class="card__subtitle">by Kurt Wagner</div>
-        </div>
+  <fds-card disabled>
+    <fds-card-title>Header</fds-card-title>
+    <fds-card-subtitle>Subhead</fds-card-subtitle>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-actions>
+      <fds-text-button label="Button" disabled></fds-text-button>
+      <fds-text-button label="Button" disabled></fds-text-button>
+    </fds-card-actions>
+  </fds-card>
+
+  <style>
+    .risk-card {
+      max-width: 259px;
+    }
+
+    .risk-card-content {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .risk-card-header {
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+    }
+
+    .risk-card-title {
+      font: var(--fds-headline-6);
+      color: var(--fds-primary);
+      opacity: 50%;
+    }
+
+    .risk-card-subtitle {
+      font: var(--fds-subtitle-1);
+      color: var(--fds-primary);
+    }
+  </style>
+
+  <fds-card class="risk-card">
+    <fds-card-content class="risk-card-content">
+      <div class="risk-card-header">
+        <div class="risk-card-title">Payments</div>
+        <div class="risk-card-subtitle">$682.5</div>
       </div>
-      <div class="card__secondary mdc-typography mdc-typography--body2">
-        Visit ten places on our planet that are undergoing the biggest changes today.
+      <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657179712/Icon_ttk6u2.png" width="56">
+    </fds-card-content>
+  </fds-card>
+
+  <style>
+    .analytics-card {
+      max-width: 204px;
+    }
+
+    .analytics-title {
+      color: var(--fds-primary);
+      margin-bottom: var(--fds-spacing-3);
+    }
+
+    .analytics-card-content {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .analytics-card-main {
+      font: var(--fds-headline-5);
+      color: var(--fds-on-surface);
+      margin-bottom: var(--fds-spacing-1);
+    }
+
+    .analytics-card-secondary {
+      font: var(--fds-body-3);
+      color: var(--fds-on-surface-medium);
+    }
+
+    .analytics-card-sub {
+      font: var(--fds-subtitle-3);
+      color: var(--fds-success);
+    }
+  </style>
+
+  <fds-card class="analytics-card">
+    <fds-card-title class="analytics-title">Total balance</fds-card-title>
+    <fds-card-content class="analytics-card-content">
+      <div class="analytics-card-figures">
+        <div class="analytics-card-main">$64.59M</div>
+        <div class="analytics-card-secondary">Up 73% from last year</div>
       </div>
-    </div>
-    <mwc-button slot="button-action">All Business Headlines</mwc-button>
+      <div>
+        <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657180731/Vector_cjotqu.png" width="26">
+        <div class="analytics-card-sub">73%</div>
+      </div>
+    </fds-card-content>
   </fds-card>
 
-  <div style="height: 16px">Media</div>
-  <fds-card class="card__image" mediaAspectRatio="16-9">
-    <div slot="media"></div>
-  </fds-card>
-  <div style="height: 16px">Media</div>
-
-  <fds-card class="card__image" mediaAspectRatio="16-9">
-    <div slot="media"></div>
-    <mwc-button slot="button-action">Read</mwc-button>
-    <mwc-button slot="button-action">Bookmark</mwc-button>
-    <mwc-icon-button slot="icon-action" icon="favorite"></mwc-icon-button>
-    <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
-    <mwc-icon-button slot="icon-action" icon="more_vert"></mwc-icon-button>
-  </fds-card>
 </div>

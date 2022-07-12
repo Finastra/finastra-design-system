@@ -10,9 +10,20 @@ export class BaseCard extends LitElement {
    * Line border
    */
   @property({ type: Boolean }) outlined = false;
+  @property({ type: Boolean }) selectable = false;
+  @property({ type: Boolean }) disabled = false;
 
   protected render(): TemplateResult {
-    const classes = { 'mdc-card--outlined': this.outlined };
+
+    if (this.disabled && this.selectable) {
+      this.selectable = false;
+    }
+
+    const classes = {
+      'mdc-card--outlined': this.outlined,
+      'mdc-card--selectable': this.selectable,
+      'mdc-card--disabled': this.disabled,
+     };
     return html`<div class="mdc-card ${classMap(classes)}">${this.renderCardContent()}</div>`;
   }
 
