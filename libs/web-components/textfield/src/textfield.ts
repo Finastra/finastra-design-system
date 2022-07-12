@@ -2,6 +2,7 @@ import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
 import { customElement, property } from 'lit/decorators.js';
 
 import { html, TemplateResult } from 'lit';
+import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './styles.css';
 
 /**
@@ -27,10 +28,44 @@ export class Textfield extends TextFieldBase {
   static styles = [styles];
   @property({ type: Boolean }) showActionButton = false;
   @property({ type: Boolean }) dense = false;
+  @property({ type: Boolean }) labelInside = false;
   constructor() {
     super();
     this.outlined = true;
     this.helperPersistent = true;
+  }
+
+  override render(): TemplateResult {
+    const shouldRenderCharCounter = this.charCounter && this.maxLength !== -1;
+    const shouldRenderHelperText =
+        !!this.helper || !!this.validationMessage || shouldRenderCharCounter;
+
+    /** @classMap */
+    const classes = {
+      'mdc-text-field--disabled': this.disabled,
+      'mdc-text-field--no-label': !this.label,
+      'mdc-text-field--filled': !this.outlined,
+      'mdc-text-field--outlined': this.outlined,
+      'mdc-text-field--with-leading-icon': this.icon,
+      'mdc-text-field--with-trailing-icon': this.iconTrailing,
+      'mdc-text-field--end-aligned': this.endAligned,
+      'fds-text-field--label-inside': this.labelInside
+    };
+
+    return html`
+      ${!this.labelInside ? this.renderLabelOutside() : ''}
+      <label class="mdc-text-field ${classMap(classes)}">
+        ${this.renderRipple()}
+        ${this.renderOutline()}
+        ${this.renderLeadingIcon()}
+        ${this.renderPrefix()}
+        ${this.renderInput(shouldRenderHelperText)}
+        ${this.renderSuffix()}
+        ${this.renderTrailingIcon()}
+        ${this.renderLineRipple()}
+      </label>
+      ${this.renderHelperText(shouldRenderHelperText, shouldRenderCharCounter)}
+    `;
   }
 
   protected renderTrailingIcon(): TemplateResult | string {
@@ -40,15 +75,23 @@ export class Textfield extends TextFieldBase {
       : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
   }
 
-  protected override renderLabel(): TemplateResult | string {
-    return !this.label ?
-        '' :
-        html`
+  protected renderLabelOutside(): TemplateResult | string {
+    return html`
       <span class="fds-text-field__label">
         ${this.label}
         ${this.renderRequired()}
       </span>
     `;
+  }
+
+  protected override renderOutline(): TemplateResult|string {
+    return !this.outlined ? '' : html`
+      <mwc-notched-outline
+          .width=${this.outlineWidth}
+          .open=${this.outlineOpen}
+          class="mdc-notched-outline">
+        ${this.labelInside ? this.renderLabel() : ''}
+      </mwc-notched-outline>`;
   }
 
   protected renderRequired(): TemplateResult | string {

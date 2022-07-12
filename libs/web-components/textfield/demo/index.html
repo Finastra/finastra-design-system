@@ -1,8 +1,23 @@
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
 
-<fds-textfield type="password" showActionButton id="my-textfield">
-  <mwc-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this.icon)"></mwc-icon-button>
-</fds-textfield>
+<div>
+  <fds-textfield type="password" showActionButton id="my-textfield" dense>
+    <mwc-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this.icon)"></mwc-icon-button>
+  </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" icon="person_outline" helper="fill it like this" dense>
+  </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" icon="lock_outline" dense>
+  </fds-textfield>
+
+  <fds-textfield type="password" showActionButton id="my-textfield">
+    <mwc-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this.icon)"></mwc-icon-button>
+  </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" icon="person_outline" helper="fill it like this" labelInside>
+  </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" icon="lock_outline">
+  </fds-textfield>
+</div>
+
 <script>
   function myFunction(e) {
     const textfield = document.querySelector('#my-textfield');
