@@ -7,51 +7,52 @@
 
   .account-content {
     display: flex;
-    gap: var(--fds-spacing-2);
+    gap: var(--fds-spacing-2, 8px);
   }
 
   .account-icon {
-    margin-top: var(--fds-spacing-1);
+    @include fds.margin(1, top);
     border-radius: 50%;
     width: 38px;
     height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--fds-primary-lighter);
+    @include fds.property(background-color, primary-lighter);
 
     mwc-icon {
-      color: var(--fds-primary);
+      @include fds.text-color(primary);
     }
   }
 
   .account-name {
-    font: var(--fds-body-1);
-    color: var(--fds-on-surface);
+    @include fds.typography(body-1);
+    @include fds.text-color(on-surface);
   }
 
   .account-balance {
-    font: var(--fds-headline-5);
-    color: var(--fds-on-surface);
+    @include fds.typography(headline-5);
+    @include fds.text-color(on-surface);
     margin-top: var(--fds-spacing-4);
   }
 
   .account-number {
-    font: var(--fds-body-3);
-    color: var(--fds-on-surface-medium);
+    @include fds.typography(body-3);
+    @include fds.text-color(on-surface-medium);
     padding: var(--fds-spacing-2) var(--fds-spacing-3);
   }
 
   .mdc-card--disabled .account-name,
   .mdc-card--disabled .account-balance,
   .mdc-card--disabled .account-number {
-    color: var(--fds-on-surface-disabled) !important;
+    @include fds.text-color(on-surface-disabled);
   }
 
   .mdc-card--disabled .account-icon {
-    background-color: var(--fds-on-surface-disabled);
+    @include fds.property(background-color, on-surface-disabled);
+
     mwc-icon {
-      color: var(--fds-on-surface-disabled) !important;
+      @include fds.text-color(on-surface-disabled);
     }
   }
 }
