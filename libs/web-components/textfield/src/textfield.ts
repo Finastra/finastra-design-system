@@ -17,6 +17,7 @@ import { styles } from './styles.css';
  * @attr [type=''] - A string specifying the type of control to render.
  * @attr [validationMessage=''] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
  * @attr [disabled=false] - Whether or not the input should be disabled.
+ * @attr [dense=false] - Smaller text field size.
  * @attr [helper=''] - Helper text to display below the input.
  * @attr [labelInside=false] - Is the label included in the text field.
  * @attr [pattern=''] - A JavaScript regular expression. The textfield value must match this pattern.
