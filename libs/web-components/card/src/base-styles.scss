@@ -14,23 +14,23 @@
     @include fds.bg-color(surface);
     height: 100%;
     overflow: hidden;
-    padding: var(--fds-spacing-3, 16px);
+    @include fds.padding(3);
   }
 
   .mdc-card--selectable {
     &:hover {
       cursor: pointer;
-      background: var(--fds-surface-hover, #694ED604);
+      @include fds.property(background, surface-hover);
     }
 
     &:active {
-      background: var(--fds-surface-selected, #694ED608);
+      @include fds.property(background, surface-selected);
     }
   }
 
   .mdc-card--disabled {
     cursor: not-allowed;
-    background: var(--fds-surface-disabled, #0000001C)
+    @include fds.property(background, surface-disabled);
   }
 
   .mdc-card--outlined {

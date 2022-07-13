@@ -13,17 +13,6 @@ $fds-blue: #009CBD;
   .mdc-card {
     padding: 0 !important;
     overflow: visible !important;
-    // &:hover {
-    //   transform: translateY(-4px);
-    //   transition-duration: .1s;
-    //   @include fds.elevation(4);
-    //   cursor: pointer;
-    // }
-
-    // &:active {
-    //   transform: translateY(-2px);
-    //   @include fds.elevation(2);
-    // }
   }
 
   .app-card {
