@@ -1,4 +1,4 @@
-import { BaseCard } from '@finastra/base-card';
+import { BaseCard } from '@finastra/card';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { renderPrimarySVG, renderSecondarySVG } from './brand-card-decorations';

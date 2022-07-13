@@ -1,11 +1,16 @@
 @use "@finastra/fds-theme" as fds;
-@use "@finastra/base-card/src" as base-card;
+@use "@finastra/card/src" as base-card;
 
 
 :host{
     @include base-card.core-styles();
     width: 160px;
     height: 120px;
+
+    .mdc-card {
+      padding: 0 !important;
+    }
+
     .brand-card {
         width: 160px;
         height: 120px;

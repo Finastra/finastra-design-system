@@ -1,9 +1,14 @@
 import { html, LitElement, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './base-styles.css';
 
-@customElement('fds-base-card')
+/**
+  * @attr {boolean} [outlined=false] - Change the card style to outlined, default style is elevated.
+  * @attr {boolean} [selectable=false] - Change the card style to an action card.
+  * @attr {boolean} [disabled=false] - Disabled style of the card.
+*/
+
 export class BaseCard extends LitElement {
   static styles = styles;
 

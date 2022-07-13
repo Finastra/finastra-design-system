@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'DATA DISPLAY/Card/Default',
+  title: 'DATA DISPLAY/Cards/Card',
   component: 'fds-card',
   argTypes,
   parameters: {
@@ -25,13 +25,86 @@ export default {
       fds-card {
         max-width: 400px;
       }
+      .example-header-image {
+        background-image: url('https://cdn2.thecatapi.com/images/zvfTwDY54.jpg');
+        background-size: cover;
+      }
     </style>`
   ]
 } as Meta;
 
 const Template: Story<Card> = ({outlined, selectable, disabled}) => {
-  return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fds-card>`;
+  return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
+    <fds-card-header>
+      <div class="example-header-image"></div>
+      <div class="card-header-text">
+        <fds-card-title>Header</fds-card-title>
+        <fds-card-subtitle>Subhead</fds-card-subtitle>
+      </div>
+    </fds-card-header>
+    <img src="https://cdn2.thecatapi.com/images/jb.jpg">
+    <fds-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    </fds-card-content>
+    <fds-card-actions>
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+    </fds-card-actions>
+  </fds-card>`;
 };
 
 export const Default: Story<Card> = Template.bind({});
 Default.args = {};
+
+const TemplateOutlined: Story<Card> = ({outlined, selectable, disabled}) => {
+  return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
+    <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657130406/Top_npiwin.png">
+    <fds-card-title>Header</fds-card-title>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-divider></fds-divider>
+    <fds-card-actions align="end">
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+    </fds-card-actions>
+  </fds-card>`;
+};
+
+export const Outlined: Story<Card> = TemplateOutlined.bind({});
+Outlined.args = {
+  outlined: true
+};
+
+const TemplateSelectable: Story<Card> = ({outlined, selectable, disabled}) => {
+  return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
+    <fds-card-header>
+      <div class="example-header-image"></div>
+      <div class="card-header-text">
+        <fds-card-title>Header</fds-card-title>
+        <fds-card-subtitle>Subhead</fds-card-subtitle>
+      </div>
+    </fds-card-header>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+  </fds-card>`;
+};
+
+export const Selectable: Story<Card> = TemplateSelectable.bind({});
+Selectable.args = {
+  selectable: true
+};
+
+const TemplateDisabled: Story<Card> = ({outlined, selectable, disabled}) => {
+  return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
+    <fds-card-title>Header</fds-card-title>
+    <fds-card-subtitle>Subhead</fds-card-subtitle>
+    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-actions>
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+    </fds-card-actions>
+  </fds-card>`;
+};
+
+export const Disabled: Story<Card> = TemplateDisabled.bind({});
+Disabled.args = {
+  disabled: true
+};

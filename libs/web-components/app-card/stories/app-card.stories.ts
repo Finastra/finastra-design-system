@@ -9,12 +9,12 @@ const dummyApp = {
   "name": "Business Economics",
   "author": "Finastra",
   "tags": '["Account Information", "Api", "Banking"]',
-  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
+  "icon": "https://www.finastra.com/themes/custom/themekit/dist/logo.svg",
   "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
 };
 
 export default {
-  title: 'DATA DISPLAY/Card/Application',
+  title: 'DATA DISPLAY/Cards/App Card',
   component: 'fds-app-card',
   argTypes,
   parameters: {

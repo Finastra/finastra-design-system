@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './custom-element.json';
 
 export default {
-  title: 'DATA DISPLAY/Card/Brand',
+  title: 'DATA DISPLAY/Cards/Brand Card',
   component: 'fds-brand-card',
   argTypes,
   args: {},
