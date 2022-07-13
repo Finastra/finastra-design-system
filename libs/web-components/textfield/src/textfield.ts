@@ -86,12 +86,9 @@ export class Textfield extends TextFieldBase {
 
   protected override renderOutline(): TemplateResult|string {
     return !this.outlined ? '' : html`
-      <mwc-notched-outline
-          .width=${this.outlineWidth}
-          .open=${this.outlineOpen}
-          class="mdc-notched-outline">
+      <div class="fds-text-field__outline">
         ${this.labelInside ? this.renderLabel() : ''}
-      </mwc-notched-outline>`;
+      </div>`;
   }
 
   protected renderRequired(): TemplateResult | string {
