@@ -96,6 +96,18 @@ export class Textfield extends TextFieldBase {
     '' :
     '*';
   }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    for(const child of Array.from(this.children)) {
+      if(child.slot === "actionButton" && this.disabled) {
+        child.setAttribute("disabled", "true");
+      }
+      else if(child.slot === "actionButton") {
+        child.removeAttribute("disabled");
+      }
+    }
+  }
 }
 
 declare global {
