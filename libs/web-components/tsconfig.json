@@ -38,9 +38,6 @@
       "path": "search-input"
     },
     {
-      "path": "base-card"
-    },
-    {
       "path": "card"
     },
     {
@@ -135,6 +132,21 @@
     },
     {
       "path": "fab"
+    },
+    {
+      "path": "icon-button"
+    },
+    {
+      "path": "expansion-panel"
+    },
+    {
+      "path": "badge"
+    },
+    {
+      "path": "dialog"
+    },
+    {
+      "path": "breadcrumb"
     },
     {
       "path": "account-card"

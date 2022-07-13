@@ -1,4 +1,5 @@
 <script type="module" src="node_modules/@finastra/charts/dist/src/pie-chart.js"></script>
+<script type="module" src="node_modules/@finastra/charts/dist/src/donut-chart.js"></script>
 <div class="main-content">
     <div>Default</div>
 
@@ -23,6 +24,32 @@
     <div>dark</div>
     <div class="card">        
         <fds-pie-chart theme="dark" id="pieChart"  width="380"></fds-pie-chart>
+    </div>
+</div>
+<div class="main-content">
+    <div>Default</div>
+
+    <div class="card">
+        <fds-donut-chart id="pieChart" width="380"></fds-donut-chart>
+    </div>
+    <div>Disable selection</div>
+    <div class="card">        
+        <fds-donut-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-donut-chart>
+    </div>
+
+    <div>sequential-1'</div>
+    <div class="card">        
+        <fds-donut-chart color="sequential-1'" id="pieChart"  width="380"></fds-donut-chart>
+    </div>
+
+    <div>sequential-2'</div>
+    <div class="card">        
+        <fds-donut-chart color="sequential-2'" id="pieChart"  width="380"></fds-donut-chart>
+    </div>
+
+    <div>dark</div>
+    <div class="card">        
+        <fds-donut-chart theme="dark" id="pieChart"  width="380"></fds-pie-chart>
     </div>
 </div>
 <script>

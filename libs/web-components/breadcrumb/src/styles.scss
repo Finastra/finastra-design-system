@@ -1,0 +1,22 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--fds-spacing-2, 8px) + 2px);
+  li {
+    @include fds.typography(body-2);
+    @include fds.property(color, on-surface);
+    cursor: pointer;
+    &:not(:last-child)::after {
+      content: '/';
+      padding-left: var(--fds-spacing-2, 8px);
+    }
+  }
+}

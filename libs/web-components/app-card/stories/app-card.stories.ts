@@ -3,18 +3,18 @@ import '@finastra/app-card';
 import type { AppCard } from '@finastra/app-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-app-card.json';
 
 const dummyApp = {
   "name": "Business Economics",
   "author": "Finastra",
   "tags": '["Account Information", "Api", "Banking"]',
-  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
+  "icon": "https://www.finastra.com/themes/custom/themekit/dist/logo.svg",
   "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
 };
 
 export default {
-  title: 'DATA DISPLAY/Card/Application',
+  title: 'DATA DISPLAY/Cards/App Card',
   component: 'fds-app-card',
   argTypes,
   parameters: {

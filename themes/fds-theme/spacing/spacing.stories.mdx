@@ -1,10 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit-html';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 # FDS Theme Spacing
 
-<Meta title="Design Tokens/Spacing"
+<Meta
+  title="Design Tokens/Spacing"
   parameters={{
     viewMode: 'docs',
     previewTabs: {
@@ -17,24 +18,26 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 ### Example
 
-export const TemplateCustomProp = (args) => { return html`
-<style>
-  .spacing {
-    padding: var(--fds-spacing-4);
-    margin: var(--fds-spacing-3);
-  }
-  .demo-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-    background: var(--fds-secondary);
-    color: var(--fds-on-secondary);
-  }
-</style>
-<div class="spacing demo-layout fds-body-1">Hello World!</div>
-` };
+export const TemplateCustomProp = (args) => {
+  return html`
+    <style>
+      .spacing {
+        padding: var(--fds-spacing-4);
+        margin: var(--fds-spacing-3);
+      }
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background: var(--fds-secondary);
+        color: var(--fds-on-secondary);
+      }
+    </style>
+    <div class="spacing demo-layout fds-body-1">Hello World!</div>
+  `;
+};
 
 <Canvas withSource="open">
   <Story name="Custom properties" args={{}}>
@@ -103,34 +106,35 @@ Where:
 
 ### Examples
 
-export const TemplateHelper = (args) => { return html`
-<style>
-  .demo-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-    background: var(--fds-primary);
-    color: var(--fds-on-primary);
-  }
-</style>
-<div class="${args.class} demo-layout fds-body-1">Hello World!</div>
-` };
+export const TemplateHelper = (args) => {
+  return html`
+    <style>
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background: var(--fds-primary);
+        color: var(--fds-on-primary);
+      }
+    </style>
+    <div class="${args.class} demo-layout fds-body-1">Hello World!</div>
+  `;
+};
 
 <Canvas withSource="open">
-  <Story name="Margin helper" args={{class:'fds-m-4'}}>
+  <Story name="Margin helper" args={{ class: 'fds-m-4' }}>
     {TemplateHelper.bind({})}
   </Story>
 </Canvas>
 
 <Canvas withSource="open">
-  <Story name="Padding helper" args={{class:'fds-pt-5'}}>
+  <Story name="Padding helper" args={{ class: 'fds-pt-5' }}>
     {TemplateHelper.bind({})}
   </Story>
 </Canvas>
-
 
 export const Component = () => {
-  return <SyntaxHighlighter/>;
+  return <SyntaxHighlighter />;
 };

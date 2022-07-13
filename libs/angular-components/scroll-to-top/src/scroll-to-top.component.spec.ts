@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ScrollToTopComponent } from './scroll-to-top.component';
@@ -11,7 +11,7 @@ describe('ScrollToTopComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatButtonModule, MatIconModule, BrowserAnimationsModule],
+      imports: [MatButtonModule, MatIconModule, NoopAnimationsModule],
       declarations: [ScrollToTopComponent]
     }).compileComponents();
     fixture = TestBed.createComponent(ScrollToTopComponent);

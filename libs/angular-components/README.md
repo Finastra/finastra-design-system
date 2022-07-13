@@ -5,7 +5,7 @@
 
 The Finastra Angular components are the Angular implementation of the [Finastra Design System](https://design.fusionfabric.cloud). It features Finastra's branding of components (global search, data visualization, repeater, filters...).
 
-## 🤔 How to use it? 
+## 🤔 How to use it?
 
 You can get started in 3 simple steps:
 

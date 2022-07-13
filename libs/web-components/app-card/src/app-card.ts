@@ -1,4 +1,4 @@
-import { BaseCard } from '@finastra/base-card';
+import { BaseCard } from '@finastra/card';
 import '@finastra/chip';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -37,6 +37,11 @@ export class AppCard extends BaseCard {
   @property({ type: Array }) tags: any[] = [];
   @property({ type: Boolean }) large = false;
   @property({ type: Boolean }) extraDense = false;
+
+  constructor() {
+    super();
+    this.selectable = true;
+  }
 
   protected renderCardContent(): TemplateResult {
     return html`

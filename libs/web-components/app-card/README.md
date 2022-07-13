@@ -26,7 +26,13 @@ npm i @finastra/app-card
 import '@finastra/app-card';
 ...
 <fds-app-card
-    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  name="Business Economics"
+  author="Finastra"
+  tags='["Account Information", "Api", "Banking"]'
+  flag="PUBLISHED"
+  icon="https://www.finastra.com/themes/custom/themekit/dist/logo.svg"
+  description="Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+  large>
 </fds-app-card>
 ```
 
@@ -36,6 +42,12 @@ import '@finastra/app-card';
 <script type="module" src="https://unpkg.com/@finastra/app-card@latest/dist/src/app-card.js?module"></script>
 
 <fds-app-card
-  application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  name="Business Economics"
+  author="Finastra"
+  tags='["Account Information", "Api", "Banking"]'
+  flag="PUBLISHED"
+  icon="https://www.finastra.com/themes/custom/themekit/dist/logo.svg"
+  description="Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+  large>
 </fds-app-card>
 ```

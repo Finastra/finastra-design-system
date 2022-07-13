@@ -2,7 +2,7 @@ import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
+import { argTypes } from './sb-generated/fds-menu-trigger.json';
 
 
 const README = require('../README.md');
