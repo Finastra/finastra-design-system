@@ -357,6 +357,26 @@
     background: var(--fds-background);
   }
 
+  p, li, table {
+    font: var(--fds-body-1, normal normal var(--fds-body-1-font-weight, 300) var(--fds-body-1-font-size, 1rem)/var(--fds-body-1-line-height, 1.5rem) var(--fds-body-1-font-family, Roboto)) !important;
+  }
+
+  h1 {
+    font: var(--fds-headline-1, normal normal var(--fds-headline-1-font-weight, 800) var(--fds-headline-1-font-size, 3.1875rem)/var(--fds-headline-1-line-height, 4.4375rem) var(--fds-headline-1-font-family, Spartan)) !important;
+  }
+
+  h3 {
+    font: var(--fds-headline-3, normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan)) !important;
+  }
+
+  h2 { /* Is actually fds-headline-3 */
+    font: var(--fds-headline-3, normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan)) !important;
+  }
+
+  h4 {
+    font: var(--fds-headline-4, normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan)) !important
+  }
+
   .sbdocs-title {
     display: none;
   }
@@ -408,13 +428,19 @@
   /* doc text input color */
   .docblock-argstable-body tr td textarea,
   .docblock-argstable-body tr td label input[type='number'],
-  .docblock-argstable-body tr td:nth-child(4) button {
+  .docblock-argstable-body tr td:nth-child(4) button,
+  .docblock-argstable-body #control-color {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface) !important;
   }
   .docblock-argstable tr td textarea:focus {
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
   }
+
+  .docblock-argstable-body #control-color:focus {
+    box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
+
 
   /* slot text color + icon */
   .css-s7utv5,
@@ -582,10 +608,85 @@
     color: var(--fds-primary) !important;
     box-shadow: var(--fds-text-disabled-on-background) 0 0 0 1px inset !important;
   }
+
   .docblock-argstable-head th button:hover {
     background-color: var(--fds-primary-lighter) !important;
     color: var(--fds-primary) !important;
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
+
+  /*  code snippet colors */
+  .language-ts .token.string {
+    color: var(--fds-success) !important;
+  }
+
+  .language-html .token.string{
+    color: var(--fds-error) !important;
+  } 
+
+  .language-html .token.operator {
+    color: var(--fds-on-background) !important;
+  }
+
+  .language-html  .token.attr-value {
+    color: var(--fds-primary) !important;
+  }
+  .css-14b0it4 * .token.attr-value {
+    color: var(--fds-on-dark) !important;
+  }
+
+  .css-9paetf pre {
+    color: var(--fds-secondary) !important;
+  }
+
+  .css-zj0253 * .token.function {
+    color: var(--fds-success) !important;
+  }
+  .css-zj0253 * .token.constant {
+    color: var(--fds-success) !important;
+  }
+
+  .css-zj0253 * .token.keyword {
+    color: var(--fds-primary) !important;
+  }
+
+  .css-zj0253 * .token.punctuation {
+    color: var(--fds-on-background) !important;
+  }
+
+  .css-zj0253 * .token.property {
+    color: var(--fds-success) !important;
+  }
+
+  .language-bash .token.function {
+    color: var(--fds-success) !important;
+  }
+  .language-bash .token.punctuation {
+    color: var(--fds-secondary) !important;
+  }
+
+  .language-js .token.string {
+    color: var(--fds-primary) !important;
+  }
+
+  .language-js .token.punctuation {
+    color: var(--fds-on-background) !important;
+  }
+
+  .css-9paetf .language-html .token.tag {
+    color: var(--fds-secondary) !important;
+  }
+
+  .css-9paetf .language-html .token.tag.token.attr-value  {
+    color: var(--fds-success) !important;
+  }
+
+  .css-9paetf .language-html .token.tag.token.attr-name  {
+    color: var(--fds-primary) !important;
+  }
+
+  .sbdocs-preview .language-html .token.operator {
+    color: var(--fds-on-dark) !important;
   }</style><style>#root[hidden],
       #docs-root[hidden] {
         display: none !important;
@@ -609,4 +710,4 @@
           
       
           
-            window['STORIES'] = [{"titlePrefix":"","directory":"./libs/web-components","files":"**/stories/*.stories.{ts,js,md,mdx}","importPathMatcher":"^\\.[\\\\/](?:libs\\/web-components(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)stories\\/(?!\\.)(?=.)[^/]*?\\.stories\\.(ts|js|md|mdx))$"},{"titlePrefix":"","directory":"./themes/fds-theme","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:themes\\/fds-theme(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"}];</script><script src="runtime~main.c30191e5.iframe.bundle.js"></script><script src="544.3d7d101b.iframe.bundle.js"></script><script src="main.50b50e08.iframe.bundle.js"></script></body></html>
+            window['STORIES'] = [{"titlePrefix":"","directory":"./libs/web-components","files":"**/stories/*.stories.{ts,js,md,mdx}","importPathMatcher":"^\\.[\\\\/](?:libs\\/web-components(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)stories\\/(?!\\.)(?=.)[^/]*?\\.stories\\.(ts|js|md|mdx))$"},{"titlePrefix":"","directory":"./themes/fds-theme","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:themes\\/fds-theme(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"}];</script><script src="runtime~main.6c14b363.iframe.bundle.js"></script><script src="984.a1ec6121.iframe.bundle.js"></script><script src="main.8a2eb8af.iframe.bundle.js"></script></body></html>
