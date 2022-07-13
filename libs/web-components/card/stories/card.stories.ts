@@ -3,7 +3,7 @@ import '@finastra/card';
 import type { Card } from '@finastra/card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-card.json';
 
 export default {
   title: 'DATA DISPLAY/Cards/Card',
