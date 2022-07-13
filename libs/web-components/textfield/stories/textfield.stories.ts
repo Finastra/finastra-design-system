@@ -3,7 +3,7 @@ import '@finastra/textfield';
 import type { Textfield } from '@finastra/textfield';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-textfield.json';
 
 export default {
   title: 'FORMS/Textfield',
@@ -12,6 +12,10 @@ export default {
   parameters: {
     docs: {
       description: { component: README }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=105319%3A31992'
     },
     cssprops
   },

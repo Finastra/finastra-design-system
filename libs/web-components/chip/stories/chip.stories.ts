@@ -3,7 +3,7 @@ import '@finastra/chip';
 import type { Chip } from '@finastra/chip';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-chip.json';
 
 export default {
   title: 'DATA DISPLAY/Chip',

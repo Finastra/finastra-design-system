@@ -3,7 +3,7 @@ import '@finastra/textarea';
 import type { Textarea } from '@finastra/textarea';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-textarea.json';
 
 export default {
   title: 'FORMS/Textarea',

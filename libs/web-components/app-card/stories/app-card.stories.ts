@@ -3,7 +3,7 @@ import '@finastra/app-card';
 import type { AppCard } from '@finastra/app-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-app-card.json';
 
 const dummyApp = {
   "name": "Business Economics",

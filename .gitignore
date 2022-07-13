@@ -67,4 +67,5 @@ storybook-static
 **/tsc-out
 !/libs/web-components/**/*.stories.js
 libs/web-components/**/stories/custom-element.json
+libs/web-components/**/stories/sb-generated
 build-storybook.log

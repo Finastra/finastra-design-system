@@ -97,13 +97,19 @@
   /* doc text input color */
   .docblock-argstable-body tr td textarea,
   .docblock-argstable-body tr td label input[type='number'],
-  .docblock-argstable-body tr td:nth-child(4) button {
+  .docblock-argstable-body tr td:nth-child(4) button,
+  .docblock-argstable-body #control-color {
     background: var(--fds-surface) !important;
     color: var(--fds-on-surface) !important;
   }
   .docblock-argstable tr td textarea:focus {
     box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
   }
+
+  .docblock-argstable-body #control-color:focus {
+    box-shadow: var(--fds-primary) 0 0 0 1px inset !important;
+  }
+
 
   /* slot text color + icon */
   .css-s7utv5,
@@ -348,4 +354,7 @@
     color: var(--fds-primary) !important;
   }
 
+  .sbdocs-preview .language-html .token.operator {
+    color: var(--fds-on-dark) !important;
+  }
 </style>

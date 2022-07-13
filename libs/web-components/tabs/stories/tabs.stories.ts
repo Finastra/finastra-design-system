@@ -2,7 +2,7 @@ const README = require('../README.md');
 import '@finastra/tabs';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-tab-group.json';
 
 export default {
   title: 'Navigation/Tabs',
