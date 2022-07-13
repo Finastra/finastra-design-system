@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include fds.property(background-color, primary-lighter);
+    @include fds.bg-color(primary-lighter);
 
     mwc-icon {
       @include fds.text-color(primary);
@@ -33,13 +33,14 @@
   .account-balance {
     @include fds.typography(headline-5);
     @include fds.text-color(on-surface);
-    margin-top: var(--fds-spacing-4);
+    @include fds.margin(4, top);
   }
 
   .account-number {
     @include fds.typography(body-3);
     @include fds.text-color(on-surface-medium);
-    padding: var(--fds-spacing-2) var(--fds-spacing-3);
+    @include fds.padding(2, top, bottom);
+    @include fds.padding(3, right, left);
   }
 
   .mdc-card--disabled .account-name,
@@ -49,7 +50,7 @@
   }
 
   .mdc-card--disabled .account-icon {
-    @include fds.property(background-color, on-surface-disabled);
+    @include fds.bg-color(on-surface-disabled);
 
     mwc-icon {
       @include fds.text-color(on-surface-disabled);
