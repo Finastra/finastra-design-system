@@ -3,7 +3,7 @@ import '@finastra/account-card';
 import type { AccountCard } from '@finastra/account-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-account-card.json';
 
 export default {
   title: 'DATA DISPLAY/Cards/Account Card',
@@ -21,7 +21,7 @@ export default {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=563%3A5956'
+      url: 'https://www.figma.com/file/6BBm9XAsO9lQZQ4xBM4cGr/Patterns-%26-apps?node-id=407%3A17290'
     },
     cssprops
   },
