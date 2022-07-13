@@ -1396,6 +1396,18 @@
       },
       "tags": []
     },
+    "wc-account-card": {
+      "root": "libs/web-components/account-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/account-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wc-avatar": {
       "root": "libs/web-components/avatar",
       "architect": {

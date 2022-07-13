@@ -1,0 +1,57 @@
+@use "@finastra/card/src" as base-card;
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  min-width: 230px;
+  @include base-card.core-styles();
+
+  .account-content {
+    display: flex;
+    gap: var(--fds-spacing-2);
+  }
+
+  .account-icon {
+    margin-top: var(--fds-spacing-1);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fds-primary-lighter);
+
+    mwc-icon {
+      color: var(--fds-primary);
+    }
+  }
+
+  .account-name {
+    font: var(--fds-body-1);
+    color: var(--fds-on-surface);
+  }
+
+  .account-balance {
+    font: var(--fds-headline-5);
+    color: var(--fds-on-surface);
+    margin-top: var(--fds-spacing-4);
+  }
+
+  .account-number {
+    font: var(--fds-body-3);
+    color: var(--fds-on-surface-medium);
+    padding: var(--fds-spacing-2) var(--fds-spacing-3);
+  }
+
+  .mdc-card--disabled .account-name,
+  .mdc-card--disabled .account-balance,
+  .mdc-card--disabled .account-number {
+    color: var(--fds-on-surface-disabled) !important;
+  }
+
+  .mdc-card--disabled .account-icon {
+    background-color: var(--fds-on-surface-disabled);
+    mwc-icon {
+      color: var(--fds-on-surface-disabled) !important;
+    }
+  }
+}

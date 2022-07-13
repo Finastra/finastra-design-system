@@ -135,6 +135,9 @@
     },
     {
       "path": "fab"
+    },
+    {
+      "path": "account-card"
     }
   ]
 }

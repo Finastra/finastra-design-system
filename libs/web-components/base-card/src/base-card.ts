@@ -1,9 +1,8 @@
 import { html, LitElement, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './styles.css';
 
-@customElement('fds-base-card')
 export class BaseCard extends LitElement {
   static styles = styles;
   /**
