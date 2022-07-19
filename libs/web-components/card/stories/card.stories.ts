@@ -47,8 +47,8 @@ const Template: Story<Card> = ({outlined, selectable, disabled}) => {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     </fds-card-content>
     <fds-card-actions>
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
     </fds-card-actions>
   </fds-card>`;
 };
@@ -63,8 +63,8 @@ const TemplateOutlined: Story<Card> = ({outlined, selectable, disabled}) => {
     <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
     <fds-divider></fds-divider>
     <fds-card-actions align="end">
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
     </fds-card-actions>
   </fds-card>`;
 };
@@ -98,8 +98,8 @@ const TemplateDisabled: Story<Card> = ({outlined, selectable, disabled}) => {
     <fds-card-subtitle>Subhead</fds-card-subtitle>
     <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
     <fds-card-actions>
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
-      <fds-text-button label="Button" ?disabled=${disabled}></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
     </fds-card-actions>
   </fds-card>`;
 };
