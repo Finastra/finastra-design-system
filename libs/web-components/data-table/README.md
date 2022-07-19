@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/data-table?style=for-the-badge)](https://www.npmjs.com/package/@finastra/data-table)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/data-table?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/data-table')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-data-table-default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-data-table--default)
 
 Table component allow user display a set of data. 
 

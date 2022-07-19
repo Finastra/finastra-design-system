@@ -147,6 +147,12 @@
     },
     { 
       "path": "menu"
+    },
+    {
+      "path": "dialog"
+    },
+    {
+      "path": "breadcrumb"
     }
   ]
 }
