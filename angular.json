@@ -831,6 +831,18 @@
       },
       "tags": ["web-components"]
     },
+    "menu": {
+      "root": "libs/web-components/menu",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/menu/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu-trigger": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/menu-trigger",
