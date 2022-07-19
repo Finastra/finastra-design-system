@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/circular-progress?style=for-the-badge)](https://www.npmjs.com/package/@finastra/circular-progress)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/circular-progress?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/circular-progress')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/data-display-progress-indicator-circular-progress--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-progress-indicator-circular-progress--default)
 
 ## Usage
 
