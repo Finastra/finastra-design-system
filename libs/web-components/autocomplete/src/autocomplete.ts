@@ -1,3 +1,4 @@
+import '@finastra/menu';
 import '@finastra/search-input';
 import '@material/mwc-icon';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
@@ -216,7 +217,7 @@ export class Autocomplete extends LitElement {
           @input=${this.onSearchInputChange}
         ></fds-search-input>
 
-        <mwc-menu
+        <fds-menu
           activatable
           wrapFocus
           class="mdc-menu"
@@ -232,7 +233,7 @@ export class Autocomplete extends LitElement {
           @selected=${this.onMenuSelected}
         >
           <slot></slot>
-        </mwc-menu>
+        </fds-menu>
       </div>
     `;
   }
