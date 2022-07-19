@@ -15,7 +15,7 @@
     <a href="https://gitpod.io/#https://github.com/Finastra/finastra-design-system">
         <img src="https://img.shields.io/badge/Gitpod-✨-blue?logo=gitpod">
     </a>
-    <a href="https://master--62216556f4e751003a75d602.chromatic.com/" alt="Storybook">
+    <a href="https://finastra.github.io/finastra-design-system/" alt="Storybook">
         <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/>
     </a>
     <a href="https://twitter.com/FinastraFS">
@@ -150,7 +150,7 @@ npm run wc:serve
 npm run wc:storybook
 ```
 
-> You can also see the storybook in the browser ➡️ [Go to Storybook](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/welcome--page)
+> You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)
 
 ### Build
 
