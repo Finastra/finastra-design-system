@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 @customElement('fds-card-subtitle')
 export class CardSubTitle extends LitElement {
@@ -8,10 +9,20 @@ export class CardSubTitle extends LitElement {
       font: var(--fds-body-2);
       color: var(--fds-on-surface, #000000);
     }
+
+    .mdc-card-subtitle--disabled {
+      color: var(--fds-on-surface-disabled, #0000001D);
+    }
   `;
 
+  @property({ type: Boolean }) disabled = false;
+
   render() {
-    return html`<slot></slot>`;
+    const classes = {
+      'mdc-card-subtitle--disabled': this.disabled,
+    };
+
+    return html`<span class="${classMap(classes)}"><slot></slot></span>`;
   }
 }
 

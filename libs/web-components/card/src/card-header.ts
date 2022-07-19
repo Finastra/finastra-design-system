@@ -1,6 +1,6 @@
 
 import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('fds-card-header')
 export class CardHeader extends LitElement {
@@ -26,8 +26,31 @@ export class CardHeader extends LitElement {
     }
   `;
 
-  render() {
+  @property({ type: Boolean }) disabled = false;
+
+  protected render() {
     return html`<slot></slot>`;
+  }
+
+  protected updated(changedProperties) {
+    super.updated(changedProperties);
+    for (const child of Array.from(this.children)) {
+      if (this.disabled) {
+        child.setAttribute("disabled", `${this.disabled}`);
+        if(child.children.length > 1) {
+          for (const subchild of Array.from(child.children)) {
+            subchild.setAttribute("disabled", `${this.disabled}`);
+          }
+        }
+      } else {
+        child.removeAttribute('disabled');
+        if(child.children.length > 1) {
+          for (const subchild of Array.from(child.children)) {
+            subchild.removeAttribute("disabled");
+          }
+        }
+      }
+    }
   }
 }
 

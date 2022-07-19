@@ -26,12 +26,23 @@ export class BaseCard extends LitElement {
       'mdc-card--outlined': this.outlined,
       'mdc-card--selectable': this.selectable,
       'mdc-card--disabled': this.disabled,
-     };
+    };
     return html`<div class="mdc-card ${classMap(classes)}">${this.renderCardContent()}</div>`;
   }
 
   protected renderCardContent(): TemplateResult {
     return html``;
+  }
+
+  protected updated(changedProperties) {
+    super.updated(changedProperties);
+    for (const child of Array.from(this.children)) {
+      if (this.disabled) {
+        child.setAttribute("disabled", `${this.disabled}`);
+      } else {
+        child.removeAttribute('disabled');
+      }
+    }
   }
 }
 
