@@ -1,15 +1,10 @@
-import { css, html, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styles } from './card-content-styles.css';
 
 @customElement('fds-card-content')
 export class CardContent extends LitElement {
-  static styles = css`
-    :host {
-      font: var(--fds-body-2);
-      color: var(--fds-on-surface-medium, #00000036);
-      margin-bottom: var(--fds-spacing-3, 16px);
-    }
-  `;
+  static styles = styles;
 
   @property({ type: Boolean }) disabled = false;
 

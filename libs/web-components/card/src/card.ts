@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { BaseCard } from './base-card';
-import { styles } from './styles.css';
+import { styles } from './card-styles.css';
 
 /**
   * @slot default - Slot to add content to the card, see the documentation for more details.
