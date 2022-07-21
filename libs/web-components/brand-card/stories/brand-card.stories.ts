@@ -9,7 +9,13 @@ export default {
   title: 'DATA DISPLAY/Cards/Brand Card',
   component: 'fds-brand-card',
   argTypes,
-  args: {},
+  args: {
+    shortLabel : '',
+    dense: false, 
+    extraDense: false,
+    large: false,
+    secondary: false
+  },
   parameters: {
     docs: {
       description: { component: README }
@@ -23,7 +29,7 @@ export default {
   decorators: []
 } as any as Meta;
 
-const Template: Story<BrandCard> = ({ label, shortLabel = '', dense = false, extraDense = false, large = false, secondary = false }) => {
+const Template: Story<BrandCard> = ({ label, shortLabel,  dense , extraDense , large , secondary, outlined, selectable, disabled  }) => {
   return html` <fds-brand-card
     label=${label}
     shortLabel=${shortLabel}
@@ -31,6 +37,9 @@ const Template: Story<BrandCard> = ({ label, shortLabel = '', dense = false, ext
     ?extraDense=${extraDense}
     ?large=${large}
     ?secondary=${secondary}
+    ?outlined=${outlined}
+    ?selectable=${selectable} 
+    ?disabled=${disabled}
   >
   </fds-brand-card>`;
 };

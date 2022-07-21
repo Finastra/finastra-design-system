@@ -29,8 +29,8 @@ export default {
   }
 } as Meta;
 
-const Template: Story<AppCard> = ({ name, author, tags, icon, flag, description, extraDense = false, large = false }) => {
-  return html`<fds-app-card  name=${name} author=${author} tags=${tags} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
+const Template: Story<AppCard> = ({ name, author, tags, icon, flag, description, extraDense, large, outlined, disabled, selectable }) => {
+  return html`<fds-app-card  name=${name} author=${author} tags=${tags} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large} ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fds-app-card>`;
 };
 
 export const Default: Story<AppCard> = Template.bind({});
