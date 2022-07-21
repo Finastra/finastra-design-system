@@ -243,19 +243,6 @@
       },
       "tags": []
     },
-    "base-card": {
-      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-      "root": "libs/web-components/base-card",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "brand-card": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/brand-card",
@@ -323,6 +310,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/button-toggle-group/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
       },
@@ -1528,22 +1528,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/avatar/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
-    "wc-card": {
-      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-      "projectType": "library",
-      "root": "libs/web-components/card",
-      "sourceRoot": "libs/web-components/card",
-      "prefix": "fds",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
       },

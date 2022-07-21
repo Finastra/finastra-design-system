@@ -9,15 +9,13 @@
     "card"
   ],
   "license": "MIT",
-  "main": "dist/src/card.js",
-  "module": "dist/src/card.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/card-styles.scss src/base-styles.scss src/card-header-styles.scss src/card-title-styles.scss src/card-subtitle-styles.scss src/card-content-styles.scss"
   },
   "dependencies": {
-    "@finastra/base-card": "0.0.35",
     "@material/card": "13.0.0",
-    "@material/mwc-ripple": "0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

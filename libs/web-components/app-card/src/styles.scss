@@ -1,5 +1,5 @@
 @use "@finastra/fds-theme" as fds;
-@use "@finastra/base-card/src" as base-card;
+@use "@finastra/card/src" as base-card;
 @use "./cover";
 
 $fds-gray: #C7C8CA;
@@ -11,18 +11,8 @@ $fds-blue: #009CBD;
   border-radius: 4px;
 
   .mdc-card {
+    padding: 0 !important;
     overflow: visible !important;
-    &:hover {
-      transform: translateY(-4px);
-      transition-duration: .1s;
-      @include fds.elevation(4);
-      cursor: pointer;
-    }
-
-    &:active {
-      transform: translateY(-2px);
-      @include fds.elevation(2);
-    }
   }
 
   .app-card {

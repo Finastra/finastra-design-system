@@ -9,12 +9,12 @@ const dummyApp = {
   "name": "Business Economics",
   "author": "Finastra",
   "tags": '["Account Information", "Api", "Banking"]',
-  "icon": "https://i.ibb.co/vJfF8kH/Logo-1.png",
+  "icon": "https://www.finastra.com/themes/custom/themekit/dist/logo.svg",
   "description": "Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
 };
 
 export default {
-  title: 'DATA DISPLAY/Card/Application',
+  title: 'DATA DISPLAY/Cards/App Card',
   component: 'fds-app-card',
   argTypes,
   parameters: {
@@ -29,8 +29,8 @@ export default {
   }
 } as Meta;
 
-const Template: Story<AppCard> = ({ name, author, tags, icon, flag, description, extraDense = false, large = false }) => {
-  return html`<fds-app-card  name=${name} author=${author} tags=${tags} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large}></fds-app-card>`;
+const Template: Story<AppCard> = ({ name, author, tags, icon, flag, description, extraDense, large, outlined, disabled, selectable }) => {
+  return html`<fds-app-card  name=${name} author=${author} tags=${tags} icon=${icon} flag=${flag} description=${description} ?extraDense=${extraDense} ?large=${large} ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fds-app-card>`;
 };
 
 export const Default: Story<AppCard> = Template.bind({});

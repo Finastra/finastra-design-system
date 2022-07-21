@@ -1,0 +1,22 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: flex;
+  align-items: center;
+  @include fds.margin(4, bottom);
+}
+
+slot::slotted(div:first-child) {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+slot::slotted(div:last-child) {
+  display: flex;
+  flex-direction: column;
+  @include fds.margin(0, top, bottom);
+  @include fds.margin(3, right, left);
+}
