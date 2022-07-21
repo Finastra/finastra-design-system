@@ -21,8 +21,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Textfield> = ({ label, icon, disabled, required, iconTrailing,helper}) => {
-  return html`<fds-textfield label=${label} icon=${icon} ?disabled=${disabled} ?required=${required} iconTrailing=${iconTrailing} helper=${helper}></fds-textfield>`;
+const Template: Story<Textfield> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside}) => {
+  return html`<fds-textfield label=${label} placeholder=${placeholder} icon=${icon} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
 };
 
 const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, validationMessage,pattern}) => {
@@ -31,7 +31,7 @@ const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, valid
 
 const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, showActionButton}) => {
   return html`
-    <fds-textfield showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
+    <fds-textfield icon="lock_outline" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
   <mwc-icon-button slot="actionButton" icon=${icon}></mwc-icon-button>
 </fds-textfield>
    `;
@@ -39,16 +39,23 @@ const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, sho
 
 export const Default: Story<Textfield> = Template.bind({});
 Default.args = {
-  label: 'Default',
-  icon: 'event',
-  helper: "helper text"
+  label: 'Label',
+  placeholder: 'Placeholder',
+  icon: 'person_outline',
+  helper: "Helper text"
+};
+
+export const Dense: Story<Textfield> = Default.bind({});
+Dense.args = {
+  dense: true,
+  icon: 'person_outline'
 };
 
 export const Password: Story<Textfield> = ActionButtonTemplate.bind({});
 Password.args = {
   label: 'Enter your password',
   type: 'password',
-  helper: "helper text",
+  helper: "Helper text",
   showActionButton: true,
   icon: 'visibility_off'
 };
@@ -58,7 +65,7 @@ IconTrailing.args = {
   label: 'Icon trailing',
   helper: "helper text",
   icon: 'event',
-  iconTrailing: "favorite"
+  iconTrailing: "favorite_outline"
 };
 
 export const Required: Story<Textfield> = Template.bind({});
@@ -75,7 +82,7 @@ ErrorMessage.args = {
   type: 'email',
   validationMessage: 'Not a valid email',
   label: 'Enter your email',
-  icon: 'event'
+  icon: 'mail_outline'
 };
 
 export const Regex: Story<Textfield> = ValidationTemplate.bind({});
@@ -92,3 +99,12 @@ Disabled.args = {
   icon: 'event',
   disabled: true
 };
+
+export const LabelInside: Story<Textfield> = Template.bind({});
+LabelInside.args = {
+  label: 'Label',
+  labelInside: true,
+  placeholder: 'Placeholder',
+  icon: 'person_outline',
+  helper: "Helper text"
+}
