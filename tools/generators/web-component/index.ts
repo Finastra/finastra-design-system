@@ -10,7 +10,7 @@ export default async function (host: Tree, schema: any) {
   schema.name = schema.name.replace(regex,'');
 
   const normalizedNames = names(schema.name);
-  const version = require('./libs/web-components/button/package.json').version
+  const version = require(joinPathFragments(host.root, './libs/web-components/button/package.json')).version
   generateFiles(host, joinPathFragments(__dirname, './files'), `./libs/web-components/${normalizedNames.fileName}`, {
     ...normalizedNames,
     version
