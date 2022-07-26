@@ -4,7 +4,7 @@ const config = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'fds-button-full.js',
+    filename: 'fds-button.js',
   },
   mode: 'production',
   module: {
