@@ -1,7 +1,7 @@
 {
   "name": "@finastra/menu-trigger",
   "displayName": "MenuTrigger",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "MenuTrigger Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "0.0.35",
+    "@finastra/button": "0.0.36",
     "@material/mwc-icon": "0.25.3",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
