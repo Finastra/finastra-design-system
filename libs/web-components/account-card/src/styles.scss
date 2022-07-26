@@ -50,7 +50,7 @@
   }
 
   .mdc-card--disabled .account-icon {
-    @include fds.bg-color(on-surface-disabled);
+    @include fds.bg-color(surface-disabled);
 
     mwc-icon {
       @include fds.text-color(on-surface-disabled);
