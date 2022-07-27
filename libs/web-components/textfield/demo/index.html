@@ -18,6 +18,14 @@
   <fds-textfield label="Label" showActionButton placeholder="Placeholder" icon="lock_outline" disabled>
     <fds-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this)"></fds-icon-button>
   </fds-textfield>
+
+
+  <fds-textfield type="date" iconTrailing="calendar_today" onclick="showPicker(this)" dense></fds-textfield>
+
+  <fds-textfield type="datetime-local" iconTrailing="calendar_today" onclick="showPicker(this)" dense></fds-textfield>
+
+  <fds-textfield type="date" iconTrailing="calendar_today" onclick="showPicker(this)" dense disabled></fds-textfield>
+
 </div>
 
 <script>
@@ -30,5 +38,18 @@
       e.setAttribute('icon', 'visibility_off');
       textfield.setAttribute('type', 'password');
     }
+  }
+
+  function showPicker(e) {
+    const childNodes = Array.from(e.shadowRoot.childNodes);
+    childNodes.forEach((childNode) => {
+      if (childNode.nodeName === 'LABEL') {
+        childNode.childNodes.forEach(subchild => {
+          if(subchild.nodeName === 'INPUT') {
+            subchild.showPicker();
+          }
+        })
+      }
+    })
   }
 </script>

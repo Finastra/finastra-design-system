@@ -31,3 +31,15 @@ import '@finastra/textfield';
 <fds-textfield label="Field me in">
 </fds-textfield>
 ```
+
+### Native pickers
+
+Date pickers and Time pickers allow selecting a value from a standart format.
+
+The **Textfield** support date `type="date"`, time `type="time"` and date&time `type="datetime-local"` pickers. See [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) for more information about the different `input` types.
+
+#### Example
+
+```html
+<fds-textfield type="date" iconTrailing="calendar_today"></fds-textfield>
+```
