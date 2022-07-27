@@ -12,7 +12,9 @@
   "main": "dist/src/switch.js",
   "module": "dist/src/switch.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
+    "postbuild:style": "npm run build"
   },
   "dependencies": {
     "@material/mwc-switch": "0.25.3",

@@ -13,7 +13,9 @@
   "main": "dist/src/brand-card.js",
   "module": "dist/src/brand-card.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
+    "postbuild:style": "npm run build"
   },
   "dependencies": {
     "@finastra/card": "0.0.35",

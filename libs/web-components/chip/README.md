@@ -24,7 +24,7 @@ import '@finastra/chip';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/chip@latest/dist/src/chip.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/chip/dist/fds-chip.js"></script>
 
 <fds-chip selected label="Munk"></fds-chip>
 ```

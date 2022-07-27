@@ -31,7 +31,7 @@ import '@finastra/user-profile';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/user-profile@latest/dist/src/user-profile.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/user-profile/dist/user-profile.js"></script>
 
 <fds-user-profile userName="Adnen Manai">
     <div slot="userInfo">adnen.manai@finastra.com</div>

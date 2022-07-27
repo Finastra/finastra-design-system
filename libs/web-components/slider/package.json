@@ -12,7 +12,9 @@
   "main": "dist/src/slider.js",
   "module": "dist/src/slider.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
+    "postbuild:style": "npm run build"
   },
   "dependencies": {
     "@material/mwc-slider": "^0.25.3",

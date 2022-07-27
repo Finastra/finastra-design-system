@@ -23,7 +23,8 @@ import '@finastra/icon-button';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/icon-button@latest/dist/src/icon-button.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/icon-button/dist/fds-icon-button.js"></script>
 
 <fds-icon-button icon="code"></fds-icon-button>
 ```

@@ -23,7 +23,7 @@ import '@finastra/logo';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/logo@latest/dist/src/logo.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/logo/dist/fds-logo.js"></script>
 
 <fds-logo dense></fds-logo>
 ```

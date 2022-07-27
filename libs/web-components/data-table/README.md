@@ -68,7 +68,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/data-table@latest/dist/src/data-table.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/data-table/dist/fds-data-table.js"></script>
 
 <fds-data-table id="data-table"></fds-data-table>
 <script>
@@ -116,8 +116,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
     dataTable.multiSelect=false;
     dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {
        // your actions here
-    })
-
+    });
 </script>
 ```
 
@@ -139,7 +138,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/data-table@latest/dist/src/data-table.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/data-table-pagination/dist/fds-data-table-pagination.js"></script>
 
 <fds-data-table-pagination id="fds-data-table-pagination"></fds-data-table-pagination>
 <script>
@@ -181,7 +180,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
  ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/data-table@latest/dist/src/data-table.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/data-table-with-pagination/dist/fds-data-table-with-pagination.js"></script>
 
  <fds-data-table-with-pagination 
    id="fds-data-table-with-pagination"

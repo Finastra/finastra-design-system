@@ -43,12 +43,12 @@ this.steps = [
 
 ```html
 <!-- Horizontal Stepper -->
-<script type="module" src="https://unpkg.com/@finastra/stepper@latest/dist/src/horizontal-stepper.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/stepper/dist/horizontal-stepper.js"></script>
 
 <fds-horizontal-stepper class="stepper" currentStepIndex="1"></fds-horizontal-stepper>
 
 <!-- Vertical Stepper -->
-<script type="module" src="https://unpkg.com/@finastra/stepper@latest/dist/src/vertical-stepper.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/stepper/dist/vertical-stepper.js"></script>
 
 <fds-vertical-stepper class="stepper" currentStepIndex="1"></fds-vertical-stepper>
 

@@ -12,7 +12,9 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/card-styles.scss src/base-styles.scss src/card-header-styles.scss src/card-title-styles.scss src/card-subtitle-styles.scss src/card-content-styles.scss"
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/card-styles.scss src/base-styles.scss src/card-header-styles.scss src/card-title-styles.scss src/card-subtitle-styles.scss src/card-content-styles.scss",
+    "postbuild:style": "npm run build"
   },
   "dependencies": {
     "@material/card": "13.0.0",

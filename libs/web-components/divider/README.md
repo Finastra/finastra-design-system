@@ -23,7 +23,7 @@ import '@finastra/divider';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/divider@latest/dist/src/divider.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/divider/dist/fds-divider.js"></script>
 
 <fds-divider inset="both"></fds-divider>
 ```

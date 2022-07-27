@@ -33,7 +33,8 @@ import '@finastra/launchpad';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/launchpad@latest/dist/src/launchpad.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/launchpad/dist/fds-launchpad.js"></script>
 
 <fds-launchpad id="launchpad"></fds-launchpad>
 <script>
