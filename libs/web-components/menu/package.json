@@ -1,7 +1,7 @@
 {
   "name": "@finastra/menu",
   "displayName": "Menu",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Menu Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,9 +17,9 @@
     "postbuild:style": "npm run build"
   },
   "dependencies": {
+    "@material/mwc-menu": "0.25.3",
     "lit": "^2.0.0",
-    "tslib": "^2.0.1",
-    "@material/mwc-menu": "0.25.3"
+    "tslib": "^2.0.1"
   },
   "publishConfig": {
     "access": "public"

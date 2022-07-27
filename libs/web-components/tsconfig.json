@@ -134,7 +134,7 @@
       "path": "fab"
     },
     {
-     "path": "icon-button"
+      "path": "icon-button"
     },
     {
       "path": "expansion-panel"
@@ -142,7 +142,7 @@
     {
       "path": "badge"
     },
-    { 
+    {
       "path": "menu"
     },
     {
@@ -150,6 +150,9 @@
     },
     {
       "path": "breadcrumb"
+    },
+    {
+      "path": "account-card"
     }
   ]
 }

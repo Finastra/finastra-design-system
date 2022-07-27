@@ -1,26 +1,26 @@
 {
-  "name": "@finastra/tabs",
-  "displayName": "Tabs",
-  "version": "0.0.36",
-  "description": "Tabs Web Component",
+  "name": "@finastra/account-card",
+  "displayName": "AccountCard",
+  "version": "1.0.0",
+  "description": "AccountCard Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Tabs"
+    "AccountCard"
   ],
   "license": "MIT",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "dist/src/account-card.js",
+  "module": "dist/src/account-card.js",
   "scripts": {
     "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
     "postbuild:style": "npm run build"
   },
   "dependencies": {
-    "@finastra/tab": "0.0.36",
-    "@finastra/tab-bar": "0.0.36",
     "lit": "^2.0.0",
-    "tslib": "^2.0.1"
+    "tslib": "^2.0.1",
+    "@finastra/divider": "^0.0.34",
+    "@material/mwc-icon": "^0.26.1"
   },
   "publishConfig": {
     "access": "public"

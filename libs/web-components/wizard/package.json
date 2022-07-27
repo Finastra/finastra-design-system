@@ -1,7 +1,7 @@
 {
   "name": "@finastra/wizard",
   "displayName": "Wizard",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Wizard Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,8 +17,8 @@
     "postbuild:style": "npm run build"
   },
   "dependencies": {
-    "@finastra/divider": "0.0.35",
-    "@finastra/stepper": "0.0.35",
+    "@finastra/divider": "0.0.36",
+    "@finastra/stepper": "0.0.36",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

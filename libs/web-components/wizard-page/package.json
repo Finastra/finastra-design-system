@@ -1,7 +1,7 @@
 {
   "name": "@finastra/wizard-page",
   "displayName": "WizardPage",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "WizardPage Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,7 +17,7 @@
     "postbuild:style": "npm run build"
   },
   "dependencies": {
-    "@finastra/chip": "0.0.35",
+    "@finastra/chip": "0.0.36",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

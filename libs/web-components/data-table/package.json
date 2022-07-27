@@ -1,7 +1,7 @@
 {
   "name": "@finastra/data-table",
   "displayName": "Data Table",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Data Table Web Component",
   "keywords": [
     "Finastra Design System",
