@@ -1,0 +1,80 @@
+@use "@finastra/fds-theme" as fds;
+@use "@material/mwc-textfield/mwc-textfield";
+@use "@finastra/textfield";
+
+:host {
+    @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+    @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+    @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+    @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+    @include fds.mdc(text-field-fill-color, surface-selected);
+    @include fds.mdc(text-field-idle-line-color, primary);
+    @include fds.mdc(text-field-hover-line-color, primary);
+    @include fds.mdc(text-field-ink-color, on-background);
+    @include fds.mdc(ripple-color, surface-selected);
+
+    .fds-global-search {
+        .fds-global-search-wrapper{
+            background: var(--fds-background);
+            .fds-global-search-container{
+                display: none;
+
+                &.fds-global-search-container-open{
+                    display: flex !important;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+ 
+}
+
+.fds-global-search {
+    // position: fixed;
+    display: inline-flex;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    &.open{
+        z-index: 1000;
+    }
+
+    .fds-global-search-wrapper{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 1000;
+        padding: 24px;
+        border-radius: 24px;
+
+        pointer-events: auto;
+        .fds-global-search-textfield{
+            --mdc-shape-small: 24px;
+            .fds-global-search-clear{
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.fds-global-search-backdrop{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity .4s cubic-bezier(.25,.8,.25,1);
+    background: rgba(0,0,0,.32);
+    opacity: 1;
+}

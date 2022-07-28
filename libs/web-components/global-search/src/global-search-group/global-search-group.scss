@@ -1,0 +1,48 @@
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+  @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+ 
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+
+
+  .fds-search-item:hover{
+    background-color: var(--fds-surface-selected);
+  }
+}
+
+
+.fds-global-search-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .fds-global-search-group-title{
+    font: var(--fds-subtitle-1);
+    color: var(--fds-text-high-on-background);
+    margin: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .fds-search-item{
+    display: flex;
+    place-content: space-between;
+    cursor: pointer;
+    font: var(--fds-body-2);
+    color: var(--fds-text-high-on-background);
+    .fds-search-item-detail{
+      display: flex;
+      align-items: center;
+    }
+  }
+}

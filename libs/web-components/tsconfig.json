@@ -7,8 +7,8 @@
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
@@ -67,18 +67,7 @@
     {
       "path": "launchpad"
     },
-    {
-      "path": "autocomplete"
-    },
-    {
-      "path": "checkbox"
-    },
-    {
-      "path": "radio"
-    },
-    {
-      "path": "switch"
-    },
+    
     {
       "path": "textfield"
     },
@@ -144,6 +133,9 @@
     },
     {
       "path": "badge"
+    },
+    {
+      "path": "global-search"
     }
   ]
 }

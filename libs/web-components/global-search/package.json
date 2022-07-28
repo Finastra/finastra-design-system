@@ -1,0 +1,29 @@
+{
+  "name": "@finastra/global-search",
+  "displayName": "Global Search",
+  "version": "0.0.32",
+  "description": "Global Search Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Global Search"
+  ],
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/global-search.scss src/global-search-group/global-search-group.scss src/global-search-page/global-search-page.scss"
+  },
+  "dependencies": {
+    "@finastra/button": "0.0.36",
+    "@finastra/search-input": "0.0.36",
+    "@finastra/icon-button": "0.0.36",
+    "@finastra/textfield": "0.0.36",
+    "@material/mwc-icon-button": "0.25.3",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

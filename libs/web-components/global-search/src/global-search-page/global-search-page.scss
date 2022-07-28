@@ -1,0 +1,66 @@
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: block;
+  width: 100%;
+  @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+  @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+ 
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+  .fds-global-search-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  
+    .fds-global-search-page-title{
+      font: var(--fds-subtitle-1);
+      color: var(--fds-text-high-on-background);
+      margin: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .fds-global-search-page-list{
+        display: flex;
+        flex-direction: row;
+        .fds-global-search-page-item{
+            cursor: pointer;
+            text-decoration: none!important;
+            color: unset;
+            display: flex;
+            flex-direction: column;
+            place-content: column;
+            align-items: center;
+            width: 96px;
+            padding: 8px 24px;
+
+          .fds-global-search-page-logo-container{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+
+            .fds-global-search-page-logo{
+                  border-radius: 50%;
+                  width: 50px;
+                  height: 50px;
+              }
+            }
+            .fds-global-search-page-name{
+              font: var(--fds-caption);
+              color: var(--fds-text-high-on-background);
+            }
+        }
+    }
+  }
+  
+}
+
