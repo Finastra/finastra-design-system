@@ -1,0 +1,73 @@
+@use '@finastra/fds-theme' as fds;
+
+$circle-default-size: 40px;
+$rectangle-default-size: 160px;
+:host {
+  display: block;
+  overflow: hidden;
+  width: var(--fds-skeleton-width, 162px);
+  height: var(--fds-skeleton-height, 162px);
+  // @include fds.bg-color(outline);
+  //--fds-skeleton-placeholder-color: var(--fds-surface);
+  --fds-skeleton-placeholder-color: #676879;  
+  background-color: var(--fds-skeleton-background, #ecedf5);
+  &::before {
+    display: inline-block;
+    content:"";
+    opacity: 0.1;
+    background-image: linear-gradient(90deg, transparent 0%, var(--fds-skeleton-placeholder-color) 30%, var(--fds-skeleton-placeholder-color) 70%, transparent 100%);
+    width: 300%;
+    height: 300%;
+    margin-bottom: 20px;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shine;
+    animation-timing-function: cubic-bezier(0, 0, 0.35, 1);
+  }
+  @keyframes shine {
+    0% {
+      margin-left: -500%;
+    }
+    100% {
+      margin-left: 500%;
+    }
+  }  
+}
+
+:host([type="circle"]) {
+  --fds-skeleton-width : #{$circle-default-size};
+  --fds-skeleton-height : #{$circle-default-size};
+  border-radius: 50%;
+}
+
+:host([type="rectangle"]) {
+  --fds-skeleton-width : #{$rectangle-default-size};
+  --fds-skeleton-height : #{$rectangle-default-size};
+}
+
+:host([type="text"][size="h1"] ) {
+  --fds-skeleton-height : 51px;
+}
+:host([type="text"][size="h2"] ) {
+  --fds-skeleton-height : 41px;
+}
+:host([type="text"][size="h3"] ) {
+  --fds-skeleton-height : 28px;
+}
+:host([type="text"][size="h4"] ) {
+  --fds-skeleton-height : 21px;
+}
+:host([type="text"][size="h5"] ) {
+  --fds-skeleton-height : 16px;
+}
+:host([type="text"][size="h6"] ) {
+  --fds-skeleton-height : 13px;
+}
+:host([type="text"][size="small"] ) {
+  --fds-skeleton-height : 12px;
+}
+:host([type="text"]) {
+  --fds-skeleton-height : 16px;
+}
+
