@@ -1520,6 +1520,18 @@
       },
       "tags": []
     },
+    "wc-account-card": {
+      "root": "libs/web-components/account-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/account-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wc-avatar": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/avatar",

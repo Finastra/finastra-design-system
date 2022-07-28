@@ -153,6 +153,9 @@
     },
     {
       "path": "skeleton"
+    },
+    {
+      "path": "account-card"
     }
   ]
 }
