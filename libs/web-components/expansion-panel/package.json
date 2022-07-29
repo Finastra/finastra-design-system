@@ -13,8 +13,7 @@
   "module": "dist/src/index.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/expansion-panel.scss src/expansion-panel-item.scss",
-    "postbuild:style": "npm run build"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/expansion-panel.scss src/expansion-panel-item.scss"
   },
   "dependencies": {
     "lit": "^2.0.0",

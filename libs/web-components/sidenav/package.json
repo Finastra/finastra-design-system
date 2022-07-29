@@ -13,8 +13,7 @@
   "module": "dist/src/sidenav.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
-    "postbuild:style": "npm run build"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "@finastra/app-bar": "0.0.36",

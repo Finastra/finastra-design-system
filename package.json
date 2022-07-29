@@ -58,6 +58,7 @@
     "wc:build:style": "npm run build:style -w libs/web-components",
     "wc:build:ts": "tsc --build libs/web-components",
     "wc:build:storybook": "npm run build:fds-theme && npm run wc:build && build-storybook -o storybook-static",
+    "wc:build:bundle":"npm run build -w libs/web-components",
     "wc:compliance:check": "node ./scripts/compliance-check.js",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",

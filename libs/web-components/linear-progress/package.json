@@ -13,8 +13,7 @@
   "module": "dist/src/linear-progress.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
-    "postbuild:style": "npm run build"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "@material/mwc-linear-progress": "^0.26.1",

@@ -13,8 +13,7 @@
   "module": "dist/src/fab.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss",
-    "postbuild:style": "npm run build"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "@material/fab": "^14.0.0",
