@@ -45,7 +45,7 @@ $rectangle-default-size: 160px;
 }
 
 :host([type="text"][size="h1"] ) {
-  --fds-skeleton-height : 51px;
+  --fds-skeleton-height : var(--fds-headline-1-font-size, 51px);
 }
 :host([type="text"][size="h2"] ) {
   --fds-skeleton-height : 41px;
