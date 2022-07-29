@@ -1,74 +1,73 @@
-import { html, fixture, expect, elementUpdated } from '@open-wc/testing';
+import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
+import { CardFooter } from '../src/card-footer.js';
+import { CardHeader } from '../src/card-header.js';
+import { CardSubTitle } from '../src/card-subtitle.js';
+import { CardTitle } from '../src/card-title.js';
 import { Card } from '../src/card.js';
-import '../src/card.js';
+import '../src/index.js';
+import { CardActions, CardContent } from '../src/index.js';
 
 describe('Card', () => {
   it('should have default options', async () => {
     const el: Card = await fixture(html`<fds-card></fds-card>`);
     expect(el.outlined).to.equal(false);
-    expect(el.fullBleed).to.equal(false);
+    expect(el.disabled).to.equal(false);
   });
 
-  it('should be able to display medias without a primary action', async () => {
-    const el: Card = await fixture(html`<fds-card
-      class="card-item"
-      mediaAspectRatio="16-9"
-      style="
-          --fds-card-media-background-image: url('');
-        "
-    >
-      <div slot="media"></div>
-    </fds-card>`);
-    expect(shadowRoot(el).querySelectorAll('.mdc-card__primary-action').length > 0).to.equal(false);
+  it('should be outlined', async () => {
+    const el: Card = await fixture(html`<fds-card outlined></fds-card>`);
+    expect(el.outlined).to.equal(true);
+    expect(el.disabled).to.equal(false);
   });
 
-  it('should be able to display medias', async () => {
-    const el: Card = await fixture(html`<fds-card
-      class="card-item"
-      mediaAspectRatio="16-9"
-      mediaPrimaryAction="true"
-      style="
-          --fds-card-media-background-image: url('');
-        "
-    >
-      <div slot="media"></div>
-    </fds-card>`);
-    expect(shadowRoot(el).querySelectorAll('.mdc-card__primary-action').length > 0).to.equal(true);
-  });
-
-  it('should be able to display icons in dedicated slot', async () => {
-    const el: Card = await fixture(html`<fds-card>
-      <mwc-icon-button slot="icon-action" icon="share"></mwc-icon-button>
-    </fds-card>`);
-    expect(el.querySelectorAll('.mdc-card__action--icon').length > 0).to.equal(true);
-  });
-
-  it('should be able to display buttons in dedicated slot', async () => {
-    const el: Card = await fixture(html`<fds-card>
-      <mwc-button slot="button-action">Click</mwc-button>
-    </fds-card>`);
-    expect(el.querySelectorAll('.mdc-card__action--button').length > 0).to.equal(true);
-  });
-
-  it('should be able to display stuff in primary action slot', async () => {
-    const el: Card = await fixture(html`<fds-card>
-      <div slot="primary-action">
-        <div>Bla bla bla</div>
-      </div>
-    </fds-card>`);
-    expect(shadowRoot(el).querySelectorAll('.mdc-card__primary-action').length > 0).to.equal(true);
+  it('should be disabled', async () => {
+    const el: Card = await fixture(html`<fds-card disabled></fds-card>`);
+    expect(el.outlined).to.equal(false);
+    expect(el.disabled).to.equal(true);
   });
 
   describe('Accessibility', () => {
-    it('should load accessibly', async () => {
+    it('should load card accessibly', async () => {
       const el: Card = await fixture(html`<fds-card></fds-card>`);
 
       await elementUpdated(el);
       await expect(el).to.be.accessible();
     });
+
+    it('should load header accessibly', async () => {
+      const el: CardHeader = await fixture(html`<fds-card-header></fds-card-header>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
+
+    it('should load title accessibly', async () => {
+      const el: CardTitle = await fixture(html`<fds-card-title></fds-card-title>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
+
+    it('should load subtitle accessibly', async () => {
+      const el: CardSubTitle = await fixture(html`<fds-card-subtitle></fds-card-subtitle>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
+
+    it('should load content accessibly', async () => {
+      const el: CardContent = await fixture(html`<fds-card-content></fds-card-content>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
+
+    it('should load action accessibly', async () => {
+      const el: CardActions = await fixture(html`<fds-card-action></fds-card-action>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
+
+    it('should load footer accessibly', async () => {
+      const el: CardFooter = await fixture(html`<fds-card-footer></fds-card-footer>`);
+      await elementUpdated(el);
+      await expect(el).to.be.accessible();
+    });
   });
 });
-
-function shadowRoot(el: Element) {
-  return el.shadowRoot ? el.shadowRoot : el;
-}

@@ -1,7 +1,7 @@
 {
   "name": "@finastra/tabs",
   "displayName": "Tabs",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Tabs Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,8 +15,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/tab": "0.0.35",
-    "@finastra/tab-bar": "0.0.35",
+    "@finastra/tab": "0.0.36",
+    "@finastra/tab-bar": "0.0.36",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

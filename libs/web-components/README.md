@@ -15,7 +15,7 @@
     <a href="https://gitpod.io/#https://github.com/Finastra/finastra-design-system">
         <img src="https://img.shields.io/badge/Gitpod-✨-blue?logo=gitpod">
     </a>
-    <a href="https://master--62216556f4e751003a75d602.chromatic.com/" alt="Storybook">
+    <a href="https://finastra.github.io/finastra-design-system/" alt="Storybook">
         <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/>
     </a>
     <a href="https://twitter.com/FinastraFS">
@@ -92,7 +92,6 @@
 | --------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Account Card**      | [`@finastra/account-card`](https://npmjs.com/package/@finastra/account-card)           | N/A                                                                                                                              | TBD                                                                                         |
 | **App Card**          | [`@finastra/app-card`](https://npmjs.com/package/@finastra/app-card)                   | [![latest](https://img.shields.io/npm/v/@finastra/app-card.svg)](https://npmjs.com/package/@finastra/app-card)                   | [![README](https://img.shields.io/badge/README--56C271.svg)](./app-card/README.md)          |
-| **Base Card**         | [`@finastra/base-card`](https://npmjs.com/package/@finastra/base-card)                 | [![latest](https://img.shields.io/npm/v/@finastra/base-card.svg)](https://npmjs.com/package/@finastra/base-card)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./base-card/README.md)         |
 | **Brand Card**        | [`@finastra/brand-card`](https://npmjs.com/package/@finastra/brand-card)               | [![latest](https://img.shields.io/npm/v/@finastra/brand-card.svg)](https://npmjs.com/package/@finastra/brand-card)               | [![README](https://img.shields.io/badge/README--56C271.svg)](./brand-card/README.md)        |
 | **Card**              | [`@finastra/card`](https://npmjs.com/package/@finastra/card)                           | [![latest](https://img.shields.io/npm/v/@finastra/card.svg)](https://npmjs.com/package/@finastra/card)                           | [![README](https://img.shields.io/badge/README--56C271.svg)](./card/README.md)              |
 | **Charts**            | [`@finastra/charts`](https://npmjs.com/package/@finastra/charts)                       | [![latest](https://img.shields.io/npm/v/@finastra/charts.svg)](https://npmjs.com/package/@finastra/charts)                       | [![README](https://img.shields.io/badge/README--56C271.svg)](./charts/README.md)            |
@@ -150,7 +149,7 @@ npm run wc:serve
 npm run wc:storybook
 ```
 
-> You can also see the storybook in the browser ➡️ [Go to Storybook](https://master--62216556f4e751003a75d602.chromatic.com/?path=/story/welcome--page)
+> You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)
 
 ### Build
 

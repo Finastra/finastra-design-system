@@ -74,10 +74,10 @@ You can use FDS theme without Sass by using a pre-built theme
 
 ## Usage
 
-- [Color](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-color--custom-properties)
-- [Elevation](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-elevation--helper-classes)
-- [Spacing](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-spacing--custom-properties)
-- [Typography](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-typography--custom-properties)
+- [Color](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-color--custom-properties)
+- [Elevation](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-elevation--helper-classes)
+- [Spacing](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-spacing--custom-properties)
+- [Typography](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-typography--custom-properties)
 
 ## Want to help? 🤗❤️
 

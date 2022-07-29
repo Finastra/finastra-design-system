@@ -38,9 +38,6 @@
       "path": "search-input"
     },
     {
-      "path": "base-card"
-    },
-    {
       "path": "card"
     },
     {
@@ -136,6 +133,21 @@
     },
     {
       "path": "global-search"
+    },
+    {
+      "path": "menu"
+    },
+    {
+      "path": "dialog"
+    },
+    {
+      "path": "breadcrumb"
+    },
+    {
+      "path": "skeleton"
+    },
+    {
+      "path": "account-card"
     }
   ]
 }

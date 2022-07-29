@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/charts?style=for-the-badge)](https://www.npmjs.com/package/@finastra/charts)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/charts?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/charts')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-charts-default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-charts-donut-chart--default)
 
 This package contains a wrapper for [Apex Charts](https://apexcharts.com/) in Web Components as well as a implementation of a Pie Chart.
 

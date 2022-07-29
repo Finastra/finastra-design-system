@@ -243,19 +243,6 @@
       },
       "tags": []
     },
-    "base-card": {
-      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-      "root": "libs/web-components/base-card",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "brand-card": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/brand-card",
@@ -311,6 +298,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/button-toggle-group/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
       },
@@ -425,6 +425,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/data-table/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "dialog": {
+      "root": "libs/web-components/dialog",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/dialog/src/**/*.ts"]
           }
         }
       },
@@ -819,6 +831,18 @@
       },
       "tags": ["web-components"]
     },
+    "menu": {
+      "root": "libs/web-components/menu",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/menu/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu-trigger": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/menu-trigger",
@@ -1002,6 +1026,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/sidenav/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "skeleton": {
+      "root": "libs/web-components/skeleton",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/skeleton/src/**/*.ts"]
           }
         }
       },
@@ -1496,6 +1532,18 @@
       },
       "tags": []
     },
+    "wc-account-card": {
+      "root": "libs/web-components/account-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/account-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wc-avatar": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/avatar",
@@ -1504,22 +1552,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/avatar/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
-    "wc-card": {
-      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-      "projectType": "library",
-      "root": "libs/web-components/card",
-      "sourceRoot": "libs/web-components/card",
-      "prefix": "fds",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
           }
         }
       },
@@ -1581,6 +1613,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/wizard/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "wc:breadcrumb": {
+      "root": "libs/web-components/breadcrumb",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/breadcrumb/src/**/*.ts"]
           }
         }
       },

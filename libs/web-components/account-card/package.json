@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/account-card",
+  "displayName": "AccountCard",
+  "version": "1.0.0",
+  "description": "AccountCard Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "AccountCard"
+  ],
+  "license": "MIT",
+  "main": "dist/src/account-card.js",
+  "module": "dist/src/account-card.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "@finastra/divider": "^0.0.34",
+    "@material/mwc-icon": "^0.26.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
