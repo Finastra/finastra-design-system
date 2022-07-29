@@ -7,15 +7,13 @@ $rectangle-default-size: 160px;
   overflow: hidden;
   width: var(--fds-skeleton-width, 162px);
   height: var(--fds-skeleton-height, 162px);
-  // @include fds.bg-color(outline);
-  //--fds-skeleton-placeholder-color: var(--fds-surface);
-  --fds-skeleton-placeholder-color: #676879;  
-  background-color: var(--fds-skeleton-background, #ecedf5);
+  --fds-skeleton-placeholder-color:  var(--fds-on-surface-medium);   
+  background-color: var(--fds-skeleton-background, var(--fds-surface-selected));
   &::before {
     display: inline-block;
     content:"";
     opacity: 0.1;
-    background-image: linear-gradient(90deg, transparent 0%, var(--fds-skeleton-placeholder-color) 30%, var(--fds-skeleton-placeholder-color) 70%, transparent 100%);
+    background-image: linear-gradient(90deg, transparent 0%, var(--fds-skeleton-placeholder-color, --fds-on-surface-medium) 30%, var(--fds-skeleton-placeholder-color, --fds-on-surface-medium) 70%, transparent 100%);
     width: 300%;
     height: 300%;
     margin-bottom: 20px;

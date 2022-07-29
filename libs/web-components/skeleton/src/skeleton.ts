@@ -12,8 +12,8 @@ export const enum SKELETON_TYPE {
 /**
  * @cssprop [--fds-skeleton-width=162px] - Height of the skeleton
  * @cssprop [--fds-skeleton-height=162px]- Width of the skeleton
- * @cssprop [--fds-skeleton-placeholder-color=#676879]- Color of placeholder.
- * @cssprop [--fds-skeleton-background=#ecedf5] - Background color of the skeleton.
+ * @cssprop [--fds-skeleton-placeholder-color=var(--fds-on-surface-medium)]- Color of placeholder.
+ * @cssprop [--fds-skeleton-background=var(--fds-surface-selected)] - Background color of the skeleton.
  *
  * @attr {string} [height] - Height of the skeleton
  * @attr {string} [width] - Width of the skeleton
