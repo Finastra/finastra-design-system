@@ -1019,6 +1019,18 @@
       },
       "tags": ["web-components"]
     },
+    "skeleton": {
+      "root": "libs/web-components/skeleton",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/skeleton/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "skeleton-text": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
