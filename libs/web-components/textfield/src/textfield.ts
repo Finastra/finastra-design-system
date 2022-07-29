@@ -9,7 +9,7 @@ import { styles } from './styles.css';
  * @cssprop {color} [--fds-primary=#694ED6] - Textfield color
  * @cssprop {color} [--fds-icon-color=#694ED6] - Icon color.
  * @cssprop {color} [--fds-icon-trailing-color=#694ED6] - Icon trailing color.
- * @cssprop {string} [--fds-text-field-radius=4px] - Border radius of the outline.
+ * @cssprop {text} [--fds-text-field-radius=4px] - Border radius of the outline.
  * @attr [label='textfield'] - Sets floating label value.
  * @attr [placeholder='textfield'] - Sets placeholder value displayed when input is empty.
  * @attr [required=false] - Displays error state if value is empty and input is blurred.
