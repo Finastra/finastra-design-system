@@ -5,8 +5,6 @@
 $textfield-icon-color: var(--fds-primary, #694ed6);
 $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, $alpha: 0.54));
 
-
-
 :host {
   padding-top: 24px;
   display: block;
@@ -28,7 +26,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     max-width: 100%;
     border-style: solid;
     border-width: 1px;
-    border-radius: 4px;
+    border-radius: var(--fds-text-field-radius, 4px);
     pointer-events: none;
   }
 
