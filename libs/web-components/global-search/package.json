@@ -1,7 +1,7 @@
 {
   "name": "@finastra/global-search",
   "displayName": "Global Search",
-  "version": "0.0.32",
+  "version": "0.0.36",
   "description": "Global Search Web Component",
   "keywords": [
     "Finastra Design System",
