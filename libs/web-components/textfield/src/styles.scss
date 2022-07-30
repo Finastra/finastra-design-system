@@ -77,6 +77,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 
   .mdc-text-field--outlined {
     @include fds.bg-color(surface);
+    border-radius: var(--fds-text-field-radius, 4px);
     height: 48px;
   }
 

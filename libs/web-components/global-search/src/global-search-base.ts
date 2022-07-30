@@ -1,4 +1,4 @@
-import '@finastra/divider';
+import '@finastra/linear-progress';
 import '@finastra/textfield';
 import '@material/mwc-icon-button';
 import { html, LitElement } from 'lit';
@@ -11,7 +11,16 @@ export class FdsGlobalSearchBase extends LitElement {
     @property({type: String}) value = '';
     @property({type: Boolean}) loading = false;
     @property({type: String}) placeholder = '';
-    @property({type: Boolean}) enableRecentSearch = true;
+
+    private _enableRecentSearch = true;
+    @property({type: Boolean}) 
+    set enableRecentSearch(status){
+        this._enableRecentSearch = status;
+        this.requestUpdate();
+    } 
+    get enableRecentSearch(){
+        return this._enableRecentSearch;
+    }
 
     private isOpen = false;
     private overlay: any = null;
@@ -52,13 +61,14 @@ export class FdsGlobalSearchBase extends LitElement {
                         outlined 
                         tabindex="-1"
                         value=${this.value}
+                        placeholder=${this.placeholder}
                         @focus=${() => this.onGlobalSearchInputFocus()}
                         @input=${() => this.onSearchInputChanged()}
                         >
                         <mwc-icon-button slot="actionButton" class="${this.value ? '': 'fds-global-search-clear'}" icon="close" @click=${(e) => this.clearInput(e)} ></mwc-icon-button>
                         <mwc-icon-button slot="actionButton" icon="search" @click=${(e) => this.triggerSearchWithText(e)}></mwc-icon-button>
                     </fds-textfield>
-    
+                    ${this.loading ? html`<fds-linear-progress indeterminate></fds-linear-progress>`: ''}
                     <div class="fds-global-search-container ${this.isOpen? 'fds-global-search-container-open': ''}">
                         ${ this.renderRecentSearch()}
                         <slot name="searches"></slot>
@@ -71,7 +81,7 @@ export class FdsGlobalSearchBase extends LitElement {
     }
 
     renderRecentSearch(){
-        if(!this.recentSearch){
+        if(!this.recentSearch || !this.enableRecentSearch){
             return ''
         }
 
@@ -131,17 +141,28 @@ export class FdsGlobalSearchBase extends LitElement {
     triggerSearchWithText(e){
         e.preventDefault();
         this.addNewRecentSearch();
+
+        this.value = this.getSearchInputValue();
+        const inputEvent = new CustomEvent(FDS_GLOBAL_SEARCH_ITEM_SELECTED, {
+            bubbles: true,
+            composed: true,
+            detail: this.value
+        })
+        this.dispatchEvent(inputEvent)
     }
 
     onGlobalSearchInputFocus(){
         if(!this.isOpen){
             this.isOpen = true;
-            this.toggleGlobalSearch()
+            this.toggleGlobalSearch();
+            this.requestUpdate();
         }
     }
     
     addNewRecentSearch(searchText?: string){
         const text = searchText? searchText : this.getSearchInputValue();
+        if(!text) return ;
+        
         const recentSearchIdx = this.recentSearch.findIndex(item => item.text === text);
         if(recentSearchIdx < 0){
             this.recentSearch.unshift({
@@ -198,8 +219,9 @@ export class FdsGlobalSearchBase extends LitElement {
     private getOverlayElement(){
         const overlay = window.document.createElement('div');
         overlay.id = 'fds-global-search-overlay'
+        overlay.classList.add('fds-global-search-backdrop');
         overlay.style.cssText = `
-            background: rgba(0,0,0,.32);
+            background-color: var(--fds-dialog-scrim-color, var(--fds-surface-disabled));
             position: absolute;
             top: 0;
             bottom: 0;

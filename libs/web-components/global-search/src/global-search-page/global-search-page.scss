@@ -18,7 +18,7 @@
   
     .fds-global-search-page-title{
       font: var(--fds-subtitle-1);
-      color: var(--fds-text-high-on-background);
+      color: var(--fds-on-background, rgba(0, 0, 0, 0.75));
       margin: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -56,7 +56,7 @@
             }
             .fds-global-search-page-name{
               font: var(--fds-caption);
-              color: var(--fds-text-high-on-background);
+              color: var(--fds-on-background, rgba(0, 0, 0, 0.75));
             }
         }
     }

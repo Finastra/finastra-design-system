@@ -1,18 +1,10 @@
 @use "@finastra/fds-theme" as fds;
 @use "@material/mwc-textfield/mwc-textfield";
-@use "@finastra/textfield";
+
 
 :host {
-    @include fds.mdc(text-field-label-ink-color, on-surface-medium);
-    @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
-    @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
-    @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
-    @include fds.mdc(text-field-fill-color, surface-selected);
-    @include fds.mdc(text-field-idle-line-color, primary);
-    @include fds.mdc(text-field-hover-line-color, primary);
-    @include fds.mdc(text-field-ink-color, on-background);
-    @include fds.mdc(ripple-color, surface-selected);
 
+    --fds-text-field-radius: 28px;
     .fds-global-search {
         .fds-global-search-wrapper{
             background: var(--fds-background);
@@ -26,6 +18,9 @@
                 }
 
             }
+        }
+        fds-linear-progress{
+            width: 100%;
         }
     }
  
@@ -54,10 +49,12 @@
         z-index: 1000;
         padding: 24px;
         border-radius: 24px;
-
         pointer-events: auto;
+        background: var(--fds-background, #FAFAFA);
+        
         .fds-global-search-textfield{
-            --mdc-shape-small: 24px;
+
+            padding-top: 0px;
             .fds-global-search-clear{
                 visibility: hidden;
             }

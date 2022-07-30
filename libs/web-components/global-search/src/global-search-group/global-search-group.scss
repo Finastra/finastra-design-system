@@ -28,7 +28,7 @@
 
   .fds-global-search-group-title{
     font: var(--fds-subtitle-1);
-    color: var(--fds-text-high-on-background);
+    color: var(--fds-on-background, rgba(0, 0, 0, 0.75));
     margin: 0px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -39,7 +39,7 @@
     place-content: space-between;
     cursor: pointer;
     font: var(--fds-body-2);
-    color: var(--fds-text-high-on-background);
+    color: var(--fds-on-background, rgba(0, 0, 0, 0.75));
     .fds-search-item-detail{
       display: flex;
       align-items: center;
