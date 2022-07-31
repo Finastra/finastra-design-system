@@ -12,7 +12,7 @@
     "sass": "1.33.0"
   },
   "peerDependencies": {
-    "@material/elevation": "^13.0.0"
+    "@material/elevation": "^14.0.0"
   },
   "scripts": {
     "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
