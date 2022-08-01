@@ -2,8 +2,8 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ExpansionPanel } from './expansion-panel';
-
 import { styles } from './expansion-panel-item.css';
+
 
 /**
  * @cssprop {text} [--fds-expansion-panel-item-header=48px] - Header height.
@@ -59,7 +59,7 @@ export class ExpansionPanelItem extends LitElement {
     if (this.expanded) {
       this.getParent().closeOtherExpansionItems(this)
     }
-    this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', {bubbles: true, cancelable: true}))
+   //this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', {bubbles: true, cancelable: true}))
   }
   
   render() {

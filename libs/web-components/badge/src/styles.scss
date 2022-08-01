@@ -1,8 +1,9 @@
 @use "@finastra/fds-theme" as fds;
 
+$icon-button-size: 24px;
 :host {
   display: block;
-  --mdc-icon-button-size: 24px;
+  --mdc-icon-button-size: var(--fds-icon-button-size,$icon-button-size);
 }
 
 .container {

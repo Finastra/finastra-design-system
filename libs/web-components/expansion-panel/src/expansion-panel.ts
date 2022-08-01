@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
 import { styles } from './expansion-panel.css';
+
 
 @customElement('fds-expansion-panel')
 export class ExpansionPanel extends LitElement {
@@ -35,16 +35,19 @@ export class ExpansionPanel extends LitElement {
   getExpansionItems() {
     const slotSelector = 'slot:not([name]';
     const slotEl = this.renderRoot?.querySelector<HTMLSlotElement>(slotSelector);
-    return slotEl?.assignedNodes().filter(node => node instanceof LitElement) ?? [];
+    return slotEl?.assignedNodes().filter(node => {node instanceof LitElement;
+    console.log(node)}) ?? [];
   }
 
   closeOtherExpansionItems(current: Node) {
     if (this.multi) return
-    const nodes = this.getExpansionItems()
+    const nodes = this.getExpansionItems();
+    console.log(nodes);
 
     nodes.forEach(node => {
-      if (node === current) return
+     if (node === current) return
       node['expanded'] = false
+
     })  
   }
 

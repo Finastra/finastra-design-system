@@ -1,8 +1,12 @@
 @use '@material/mwc-icon-button/mwc-icon-button';
 @use '@finastra/fds-theme' as fds;
 
+$icon-button-bg: var(--fds-surface-selected);
+$icon-button-text: var(--fds-on-surface);
+
 :host {
-  @include fds.text-color(on-surface);
+ // @include fds.text-color(on-surface);
+  color:  var(--fds-icon-button-text, $icon-button-text);
   @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled)
 }
 

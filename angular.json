@@ -277,18 +277,6 @@
       },
       "tags": []
     },
-    "wc:breadcrumb": {
-      "root": "libs/web-components/breadcrumb",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/breadcrumb/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "button-toggle": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/button-toggle",
@@ -791,6 +779,18 @@
         }
       },
       "tags": []
+    },
+    "icon-bar": {
+      "root": "libs/web-components/icon-bar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon-bar/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "icon-button": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
@@ -1589,6 +1589,18 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/web-components/wizard/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "wc:breadcrumb": {
+      "root": "libs/web-components/breadcrumb",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/breadcrumb/src/**/*.ts"]
           }
         }
       },

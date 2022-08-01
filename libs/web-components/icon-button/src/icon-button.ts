@@ -3,6 +3,8 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
+  * @cssprop {color} [--fds-icon-button-bg=rgba(105, 78, 214, 0.08);] - Checkbox color
+  * @cssprop {color} [--fds-icon-button-text=#694ED6] - Checkbox color
   * @attr [icon='code'] - Icon used in the button.
   * @attr [disabled=false] - Make the button disabled.
   * @attr [primary=false] - Use the primary color.
@@ -11,7 +13,7 @@ import { styles } from './styles.css';
 */
 @customElement('fds-icon-button')
 export class IconButton extends IconButtonBase {
-  static override styles = [styles];
+  static styles = styles;
 
   @property({ type: Boolean })
   dense = false;
@@ -21,6 +23,10 @@ export class IconButton extends IconButtonBase {
 
   @property({ type: Boolean })
   secondary = false;
+
+  @property({ type: Boolean })
+  bg = false;
+
 }
 
 declare global {
