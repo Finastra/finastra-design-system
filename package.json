@@ -108,7 +108,7 @@
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@material/data-table": "^14.0.0",
-    "@material/elevation": "^14.0.0",
+    "@material/elevation": "^13.0.0",
     "@material/fab": "^14.0.0",
     "@material/icon-button": "14.0.0",
     "@material/mwc-drawer": "0.25.3",
