@@ -4,7 +4,7 @@ import { DataTableBase } from './data-table-base';
 import { styles } from './data-table-styles.css';
 
 /**
- * 
+ *
  * @attr [dataSource=[]] - Array of data to display in the table.
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
