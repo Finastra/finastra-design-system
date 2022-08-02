@@ -4,7 +4,7 @@ import { FdsGlobalSearch, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITE
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypes } from './sb-generated/fds-global-search.json';
+import { argTypes, cssprops } from './sb-generated/fds-global-search.json';
 
 export default {
   title: 'FORMS/GlobalSearch',
@@ -28,7 +28,8 @@ export default {
     design:{
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system'
-    }
+    },
+    cssprops
   }
 } as Meta;
 
@@ -44,7 +45,7 @@ const Template: Story<FdsGlobalSearch> = ({
     .loading=${ifDefined(loading)} 
     .placeholder=${ifDefined(placeholder)} 
     .enableRecentSearch=${ifDefined(enableRecentSearch)} 
-    style="width: 100%; height: 60px">
+    style="width: 100%; height: 60px;--fds-global-search-width: 300px;">
     <fds-global-search-group 
       slot="searches"
       title="Trending Searches"

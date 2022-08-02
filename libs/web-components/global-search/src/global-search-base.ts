@@ -26,6 +26,7 @@ export class FdsGlobalSearchBase extends LitElement {
     private overlay: any = null;
     private recentSearch: FdsSearchItem[] = [];
     private wrapperElement: any = null;
+    private wrapperContainerElement: any = null;
     private textFieldElement: any = null;
     
     constructor(){
@@ -54,7 +55,7 @@ export class FdsGlobalSearchBase extends LitElement {
     render() {
        return html`
              <div class="fds-global-search">
-                <div class="fds-global-search-wrapper ${this.isOpen? 'open': ''}">
+                <div class="fds-global-search-wrapper">
                     <fds-textfield showActionButton 
                         id="fds-global-seatch-textfield"
                         class="fds-global-search-textfield"
@@ -63,16 +64,19 @@ export class FdsGlobalSearchBase extends LitElement {
                         value=${this.value}
                         placeholder=${this.placeholder}
                         @focus=${() => this.onGlobalSearchInputFocus()}
-                        @input=${() => this.onSearchInputChanged()}
+                        @input=${() => this.onGlobalSearchInputChanged()}
+                        @blur=${() => this.onGlobalSearchInputBlur()}
                         >
                         <mwc-icon-button slot="actionButton" class="${this.value ? '': 'fds-global-search-clear'}" icon="close" @click=${(e) => this.clearInput(e)} ></mwc-icon-button>
                         <mwc-icon-button slot="actionButton" icon="search" @click=${(e) => this.triggerSearchWithText(e)}></mwc-icon-button>
                     </fds-textfield>
                     ${this.loading ? html`<fds-linear-progress indeterminate></fds-linear-progress>`: ''}
                     <div class="fds-global-search-container ${this.isOpen? 'fds-global-search-container-open': ''}">
-                        ${ this.renderRecentSearch()}
-                        <slot name="searches"></slot>
-                        <slot name="pages"></slot>
+                        <div class="fds-global-search-block">
+                            ${ this.renderRecentSearch()}
+                            <slot name="searches"></slot>
+                            <slot name="pages"></slot>
+                        </div>
                     </div>
                 </div>
     
@@ -100,20 +104,7 @@ export class FdsGlobalSearchBase extends LitElement {
             </fds-global-search-group>
         `
     }
-
-    onSearchInputChanged(){
-        this.isOpen = true;
-        
-        this.value = this.getSearchInputValue();
-        const inputEvent = new CustomEvent(FDS_GLOBAL_SEARCH_INPUT_CHANGED, {
-            bubbles: true,
-            composed: true,
-            detail: this.value
-        })
-        this.dispatchEvent(inputEvent)
-        this.requestUpdate();
-    }
-
+    
     getRecentList(): FdsSearchItem[]{
         if(this.recentSearch.length === 0){
             let recentSearchText: [] = [];
@@ -132,10 +123,48 @@ export class FdsGlobalSearchBase extends LitElement {
         }
         return this.recentSearch;
     }
-    
+
+    onGlobalSearchInputFocus(){
+        if(!this.isOpen){
+            this.isOpen = true;
+            this.toggleGlobalSearch();
+            this.requestUpdate();
+        }
+        this.notifyWapperElementFocused(true);
+    }
+
+    onGlobalSearchInputBlur(){
+        this.notifyWapperElementFocused(false);
+    }
+
+    onGlobalSearchInputChanged(){
+        this.isOpen = true;
+        
+        this.value = this.getSearchInputValue();
+        const inputEvent = new CustomEvent(FDS_GLOBAL_SEARCH_INPUT_CHANGED, {
+            bubbles: true,
+            composed: true,
+            detail: this.value
+        })
+        this.dispatchEvent(inputEvent)
+        this.requestUpdate();
+    }
+
     clearInput(e){
         e.preventDefault();
         this.value = '';
+    }
+
+    notifyWapperElementFocused(focused: boolean){
+        if(!this.wrapperElement){
+            this.wrapperElement = this.shadowRoot?.querySelector('.fds-global-search-wrapper');
+        }
+
+        if(focused){
+            this.wrapperElement.classList.add('fds-global-search-input-focus')
+        }else{
+            this.wrapperElement.classList.remove('fds-global-search-input-focus')
+        }
     }
     
     triggerSearchWithText(e){
@@ -151,14 +180,6 @@ export class FdsGlobalSearchBase extends LitElement {
         this.dispatchEvent(inputEvent)
     }
 
-    onGlobalSearchInputFocus(){
-        if(!this.isOpen){
-            this.isOpen = true;
-            this.toggleGlobalSearch();
-            this.requestUpdate();
-        }
-    }
-    
     addNewRecentSearch(searchText?: string){
         const text = searchText? searchText : this.getSearchInputValue();
         if(!text) return ;
@@ -196,7 +217,10 @@ export class FdsGlobalSearchBase extends LitElement {
 
     toggleGlobalSearch(){
         if(!this.wrapperElement){
-            this.wrapperElement = this.shadowRoot?.querySelector('.fds-global-search-container');
+            this.wrapperElement = this.shadowRoot?.querySelector('.fds-global-search-wrapper');
+        }
+        if(!this.wrapperContainerElement){
+            this.wrapperContainerElement = this.shadowRoot?.querySelector('.fds-global-search-container');
         }
         
         if(!this.overlay) {
@@ -210,9 +234,12 @@ export class FdsGlobalSearchBase extends LitElement {
         }
 
         if(this.isOpen){
-            this.wrapperElement?.classList.add('fds-global-search-container-open')
+            this.wrapperElement?.classList.add('open');
+            this.wrapperContainerElement?.classList.add('fds-global-search-container-open');
         }else{
-            this.wrapperElement?.classList.remove('fds-global-search-container-open')
+            this.wrapperElement?.classList.remove('open');
+            this.wrapperContainerElement.classList.remove('open');
+            this.wrapperContainerElement?.classList.remove('fds-global-search-container-open');
         }
     }
 

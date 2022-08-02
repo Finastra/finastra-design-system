@@ -3,13 +3,35 @@
 
 
 :host {
-
-    --fds-text-field-radius: 28px;
+    --fds-text-field-radius: var(--fds-spacing-4);
+    --fds-label: 'none';
     .fds-global-search {
+        width: var(--fds-global-search-width, 250px);
         .fds-global-search-wrapper{
-            background: var(--fds-background);
+            @include fds.property(background, background);
+            @include fds.property(border-color, primary);
+
+            &.open{
+                z-index: 1000;
+                border-top: 0px;
+                border-color: var(--fds-primary, #694ED6);
+                border-width: 1px;
+                border-style: solid;
+                &.fds-global-search-input-focus{
+                    border-top: 0px;
+                }
+            }
+
+
             .fds-global-search-container{
                 display: none;
+
+                .fds-global-search-block{
+                    margin-top: calc( 2 * var(--fds-spacing-1)) !important;
+                    margin-left: calc( 2 * var(--fds-spacing-2)) !important;
+                    margin-right: calc( 2 * var(--fds-spacing-2)) !important;
+    
+                }
 
                 &.fds-global-search-container-open{
                     display: flex !important;
@@ -35,43 +57,25 @@
     width: 100%;
     height: 100%;
 
-
-    &.open{
-        z-index: 1000;
-    }
-
     .fds-global-search-wrapper{
+        width: var(--fds-global-search-width, 250px);
         justify-content: center;
         align-items: center;
         display: flex;
         flex-direction: column;
         position: absolute;
         z-index: 1000;
-        padding: 24px;
-        border-radius: 24px;
+        // padding: var(--fds-spacing-4);
+        border-radius:  var(--fds-spacing-4);
         pointer-events: auto;
-        background: var(--fds-background, #FAFAFA);
+        @include fds.property(background, background);
         
         .fds-global-search-textfield{
-
-            padding-top: 0px;
+            width: var(--fds-global-search-width, 250px);
+            padding-top: var(--fds-spacing-0);
             .fds-global-search-clear{
                 visibility: hidden;
             }
         }
     }
-}
-
-.fds-global-search-backdrop{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    pointer-events: none;
-    -webkit-tap-highlight-color: transparent;
-    transition: opacity .4s cubic-bezier(.25,.8,.25,1);
-    background: rgba(0,0,0,.32);
-    opacity: 1;
 }
