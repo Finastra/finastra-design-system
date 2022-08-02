@@ -18,24 +18,7 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=105319%3A31992'
     },
     cssprops
-  },
-  decorators: [
-    (story) => html`${story()}
-    <script>
-    function showPicker(e) {
-      const childNodes = Array.from(e.shadowRoot.childNodes);
-      childNodes.forEach((childNode) => {
-        if (childNode.nodeName === 'LABEL') {
-          childNode.childNodes.forEach(subchild => {
-            if(subchild.nodeName === 'INPUT') {
-              subchild.showPicker();
-            }
-          })
-        }
-      })
-    }
-    </script>`
-  ]
+  }
 } as Meta;
 
 const Template: Story<Textfield> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside}) => {
@@ -55,7 +38,7 @@ const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, sho
 };
 
 const NativeDatePickerTemplate: Story<Textfield> = ({ value, label, placeholder, icon, type, disabled, dense, required, iconTrailing, helper, labelInside}) => {
-  return html`<fds-textfield value=${value} label=${label} placeholder=${placeholder} icon=${icon} type=${type} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside} onclick="showPicker(this)"></fds-textfield>`;
+  return html`<fds-textfield value=${value} label=${label} placeholder=${placeholder} icon=${icon} type=${type} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
 };
 
 export const Default: Story<Textfield> = Template.bind({});

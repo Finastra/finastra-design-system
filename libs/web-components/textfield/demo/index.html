@@ -20,11 +20,11 @@
   </fds-textfield>
 
 
-  <fds-textfield type="date" iconTrailing="calendar_today" onclick="showPicker(this)" dense></fds-textfield>
+  <fds-textfield type="date" iconTrailing="calendar_today" dense></fds-textfield>
 
-  <fds-textfield type="datetime-local" iconTrailing="calendar_today" onclick="showPicker(this)" dense></fds-textfield>
+  <fds-textfield type="datetime-local" iconTrailing="calendar_today" dense></fds-textfield>
 
-  <fds-textfield type="date" iconTrailing="calendar_today" onclick="showPicker(this)" dense disabled></fds-textfield>
+  <fds-textfield type="date" iconTrailing="calendar_today" dense disabled></fds-textfield>
 
 </div>
 
@@ -38,18 +38,5 @@
       e.setAttribute('icon', 'visibility_off');
       textfield.setAttribute('type', 'password');
     }
-  }
-
-  function showPicker(e) {
-    const childNodes = Array.from(e.shadowRoot.childNodes);
-    childNodes.forEach((childNode) => {
-      if (childNode.nodeName === 'LABEL') {
-        childNode.childNodes.forEach(subchild => {
-          if(subchild.nodeName === 'INPUT') {
-            subchild.showPicker();
-          }
-        })
-      }
-    })
   }
 </script>
