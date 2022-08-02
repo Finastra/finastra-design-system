@@ -17,8 +17,8 @@
     "postbuild:style": "npm run build"
   },
   "dependencies": {
-    "@material/mwc-base": "0.25.3",
-    "@material/mwc-button": "0.25.3",
+    "@material/mwc-base": "^0.26.1",
+    "@material/mwc-button": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

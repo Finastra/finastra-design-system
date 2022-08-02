@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@material/fab": "^14.0.0",
-    "@material/mwc-fab": "^0.25.3",
+    "@material/mwc-fab": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

@@ -163,7 +163,7 @@ export class Autocomplete extends LitElement {
   }
 
   protected onMenuSelected() {
-    const selectedItem = this.menuElement?.selected as ListItem;
+    const selectedItem = this.menuElement?.selected as unknown as ListItem;
     if (selectedItem) {
       this.value = selectedItem.value;
     }
