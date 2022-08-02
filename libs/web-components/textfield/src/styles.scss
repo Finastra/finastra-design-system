@@ -5,10 +5,7 @@
 $textfield-icon-color: var(--fds-primary, #694ed6);
 $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, $alpha: 0.54));
 
-
-
 :host {
-  padding-top: 24px;
   display: block;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(theme-error, error);
@@ -28,7 +25,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     max-width: 100%;
     border-style: solid;
     border-width: 1px;
-    border-radius: 4px;
+    border-radius: var(--fds-text-field-radius, 4px);
     pointer-events: none;
   }
 
@@ -79,6 +76,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 
   .mdc-text-field--outlined {
     @include fds.bg-color(surface);
+    border-radius: var(--fds-text-field-radius, 4px);
     height: 48px;
   }
 

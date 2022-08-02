@@ -152,6 +152,9 @@
       "path": "breadcrumb"
     },
     {
+      "path": "skeleton"
+    },
+    {
       "path": "account-card"
     }
   ]
