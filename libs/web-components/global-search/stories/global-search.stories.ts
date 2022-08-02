@@ -45,7 +45,7 @@ const Template: Story<FdsGlobalSearch> = ({
     .loading=${ifDefined(loading)} 
     .placeholder=${ifDefined(placeholder)} 
     .enableRecentSearch=${ifDefined(enableRecentSearch)} 
-    style="width: 100%; height: 60px;--fds-global-search-width: 300px;">
+    style="width: 100%; height: 60px;">
     <fds-global-search-group 
       slot="searches"
       title="Trending Searches"
