@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-switch": "0.25.3",
+    "@material/mwc-switch": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
