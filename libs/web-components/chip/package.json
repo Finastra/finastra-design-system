@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@material/button": "^13.0.0",
-    "@material/mwc-button": "0.25.3",
-    "@material/mwc-icon": "0.25.3",
-    "@material/mwc-ripple": "0.25.3",
+    "@material/mwc-button": "^0.26.1",
+    "@material/mwc-icon": "^0.26.1",
+    "@material/mwc-ripple": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
