@@ -19,8 +19,8 @@
   "dependencies": {
     "@finastra/avatar": "0.0.36",
     "@finastra/divider": "0.0.36",
-    "@material/mwc-icon-button": "0.25.3",
-    "@material/mwc-menu": "0.25.3",
+    "@material/mwc-icon-button": "^0.26.1",
+    "@material/mwc-menu": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

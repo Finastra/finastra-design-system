@@ -4,6 +4,8 @@ on:
     paths:
       - 'libs/web-components/**'
       - '.storybook/**'
+      - 'themes/fds-theme/**'
+      - 'package.json'
 
 jobs:
   build:
