@@ -59,7 +59,7 @@ export class ExpansionPanelItem extends LitElement {
     if (this.expanded) {
       this.getParent().closeOtherExpansionItems(this)
     }
-   //this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', {bubbles: true, cancelable: true}))
+   this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', {bubbles: true, cancelable: true}))
   }
   
   render() {
