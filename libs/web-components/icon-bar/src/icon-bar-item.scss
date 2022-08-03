@@ -1,13 +1,10 @@
 @use "@finastra/fds-theme" as fds;
 
-$icon-button-bg: var(--fds-surface-selected);
-$icon-button-text: var(--fds-on-primary);
-
 :host {
   display: block;
   background: var(--fds-surface-selected);
   border-radius: 50%;
-  --fds-icon-button-text: var(--fds-primary);
+  --fds-icon-button-color: var(--fds-primary);
   --mdc-icon-size: 28px;
   margin-bottom: 16px;
 }
@@ -15,6 +12,6 @@ $icon-button-text: var(--fds-on-primary);
 
 .current {
     background: var(--fds-gradient);
-    --fds-icon-button-text: var(--fds-on-primary);
+    --fds-icon-button-color: var(--fds-on-primary);
     border-radius: 50%;
 }

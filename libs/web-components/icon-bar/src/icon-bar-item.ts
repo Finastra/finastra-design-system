@@ -21,7 +21,7 @@ export class IconBarItem extends IconButton {
     constructor() {
         super();
         this.icon = 'apps';
-      }
+     }
 
       render() {
         return html`
@@ -34,7 +34,7 @@ export class IconBarItem extends IconButton {
       }
 
       renderStepper() {
-        const classes = { 
+        const classes = {
           current: this.current, 
         };
         return html`<fds-icon-button class="${classMap(classes)}"
