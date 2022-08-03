@@ -24,7 +24,7 @@ import '@finastra/brand-card';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/brand-card@latest/dist/src/brand-card.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/brand-card/dist/fds-brand-card.js"></script>
 
 <fds-brand-card label="App name"></fds-brand-card>
 ```

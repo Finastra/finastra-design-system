@@ -58,7 +58,7 @@ import '@finastra/card';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/card@latest/dist/src/card.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/card/dist/fds-card.js"></script>
 
 <style>
   fds-card {

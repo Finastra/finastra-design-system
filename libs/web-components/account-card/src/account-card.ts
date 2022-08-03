@@ -1,5 +1,6 @@
 import { BaseCard } from "@finastra/card";
 import '@finastra/divider';
+import '@material/mwc-icon';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';

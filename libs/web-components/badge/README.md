@@ -26,7 +26,7 @@ import '@finastra/badge';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/badge@latest/dist/src/badge.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/badge/dist/fds-badge.js"></script>
 
 <fds-badge value="123">
     <span> Success </span>

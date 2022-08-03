@@ -12,6 +12,7 @@
   "main": "dist/src/menu.js",
   "module": "dist/src/menu.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

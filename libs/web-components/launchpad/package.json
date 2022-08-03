@@ -12,6 +12,7 @@
   "main": "dist/src/launchpad.js",
   "module": "dist/src/launchpad.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

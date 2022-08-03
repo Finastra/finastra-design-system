@@ -44,7 +44,8 @@ import '@finastra/dialog';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/dialog@latest/dist/src/dialog.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/button/dist/fds-button.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/dialog/dist/fds-dialog.js"></script>
 
 <fds-button label="open" onclick="myFunction()"></fds-button>
 <fds-dialog id="myDropdown" heading="Title">

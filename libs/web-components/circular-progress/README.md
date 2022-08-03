@@ -17,13 +17,13 @@ npm i @finastra/circular-progress
 ```ts
 import '@finastra/circular-progress';
 ...
-<fds-circular-progress></fds-circular-progress>
+<fds-circular-progress indeterminate="true"></fds-circular-progress>
 ```
 
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/circular-progress@latest/dist/src/circular-progress.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/circular-progress/dist/fds-circular-progress.js"></script>
 
-<fds-circular-progress></fds-circular-progress>
+<fds-circular-progress indeterminate></fds-circular-progress>
 ```

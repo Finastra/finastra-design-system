@@ -28,7 +28,7 @@ import '@finastra/select';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/select@latest/dist/src/select.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/select/dist/fds-select.js"></script>
 
 <fds-select>
     <mwc-list-item value="1">Item 1</mwc-list-item>

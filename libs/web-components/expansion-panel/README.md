@@ -54,7 +54,7 @@ import '@finastra/expansion-panel';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/expansion-panel@latest/dist/src/index.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/expansion-panel/dist/fds-expansion-panel.js"></script>
 
  <fds-expansion-panel>
     <fds-expansion-panel-item>

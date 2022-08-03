@@ -25,12 +25,10 @@ import '@finastra/button';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/contained-button.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/button/dist/fds-button.js"></script>
 <fds-button label="Contained button"></fds-button>
 
-<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/outlined-button.js?module"></script>
 <fds-outlined-button label="Outlined button"></fds-outlined-button>
 
-<script type="module" src="https://unpkg.com/@finastra/button@latest/dist/src/text-button.js?module"></script>
 <fds-text-button label="Text button"></fds-text-button>
 ```

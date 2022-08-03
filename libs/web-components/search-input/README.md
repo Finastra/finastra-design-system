@@ -23,7 +23,8 @@ import '@finastra/search-input';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/search-input@latest/dist/src/search-input.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/search-input/dist/fds-search-input.js"></script>
 
 <fds-search-input label="Search"></fds-search-input>
 ```
