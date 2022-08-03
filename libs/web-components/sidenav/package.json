@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@finastra/app-bar": "0.0.36",
-    "@material/mwc-drawer": "^0.25.3",
+    "@material/mwc-drawer": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

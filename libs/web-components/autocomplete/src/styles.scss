@@ -6,7 +6,7 @@
   @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
   @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
- 
+
   ::slotted(.mwc-list-item__hide) {
     display: none;
   }

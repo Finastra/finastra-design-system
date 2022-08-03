@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { html, fixture, expect, elementUpdated, triggerFocusFor, triggerBlurFor, oneEvent } from '@open-wc/testing';
-import { Autocomplete } from '../src/autocomplete.js';
 import { Menu } from '@material/mwc-menu';
-import '../src/autocomplete.js';
+import { elementUpdated, expect, fixture, html, oneEvent, triggerBlurFor, triggerFocusFor } from '@open-wc/testing';
 import { SearchInput } from '../../search-input/dist/src/search-input.js';
+import '../src/autocomplete.js';
+import { Autocomplete } from '../src/autocomplete.js';
 
 describe('Autocomplete', () => {
   let element: Autocomplete;
@@ -21,7 +21,7 @@ describe('Autocomplete', () => {
     await expect(element).to.be.accessible();
   });
 
-  it('should focused and blured', async () => {
+  it('should focus and blur', async () => {
     await triggerFocusFor(element);
     expect(document.activeElement === element).to.be.true;
 
