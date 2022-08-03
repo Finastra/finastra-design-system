@@ -32,8 +32,8 @@ import '@finastra/tab';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/tab@latest/dist/src/tab.js?module"></script>
-<script type="module" src="https://unpkg.com/@finastra/tab-bar@latest/dist/src/tab-bar.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/tab/dist/tab.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/tab-bar/dist/tab-bar.js"></script>
 
 <fds-tab-bar seperator>
     <fds-tab label="Active"></fds-tab>

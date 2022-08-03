@@ -57,7 +57,7 @@ export class Textfield extends TextFieldBase {
 
     return html`
       ${!this.labelInside ? this.renderLabelOutside() : ''}
-      <label class="mdc-text-field ${classMap(classes)}">
+      <label class="mdc-text-field ${classMap(classes)}" @click="${this._handleClick}">
         ${this.renderRipple()}
         ${this.renderOutline()}
         ${this.renderLeadingIcon()}
@@ -69,6 +69,16 @@ export class Textfield extends TextFieldBase {
       </label>
       ${this.renderHelperText(shouldRenderHelperText, shouldRenderCharCounter)}
     `;
+  }
+
+  protected _handleClick(e) {
+    if (!this.disabled && (this.type === "date" || "datetime-local" || "month" || "week" || "time")) {
+      e.path.forEach(p => {
+        if (p.nodeName === "INPUT") {
+          p.showPicker();
+        }
+      });
+    }
   }
 
   protected renderTrailingIcon(): TemplateResult | string {

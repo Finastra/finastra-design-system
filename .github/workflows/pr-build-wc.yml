@@ -38,6 +38,8 @@ jobs:
         run: npm run build:devkit
       - name: Build web components
         run: npm run wc:build
+      - name: Build web components bundles
+        run: npm run wc:build:bundle
 
       # Test
       - name: Unit tests

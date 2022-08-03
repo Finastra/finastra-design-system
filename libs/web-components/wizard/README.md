@@ -6,8 +6,84 @@ A wizard is a setup process where the user is guided through a series of steps t
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/wizard?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/wizard')
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/forms-wizard--default)
 
-## Installation
+## Usage
+
+### Import
 
 ```
 npm i @finastra/wizard @finastra/wizard-page
+```
+
+```ts
+import '@finastra/wizard';
+import '@finastra/wizard-page';
+...
+<fds-wizard id="wizard">
+  <fds-text-button slot='left-action' label="Cancel" secondary>
+  </fds-text-button>
+  <fds-outlined-button slot='next' label="Next" secondary>
+  </fds-outlined-button>
+  <fds-text-button slot='previous' label="Back" secondary icon="chevron_left">
+  </fds-text-button>
+  <fds-button slot='done' label="Save" secondary>
+  </fds-button>
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page" header>
+    <div class="page-content">
+      <div class="textfields">
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+      </div>
+      <div class="image">
+        <img src="https://i.imgur.com/otY5WR9.png" />
+      </div>
+    </div>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+</fds-wizard>
+```
+
+### Pure HTML pages
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@finastra/wizard/dist/wizard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/wizard-page/dist/wizard-page.js"></script>
+
+<fds-wizard id="wizard">
+  <fds-text-button slot='left-action' label="Cancel" secondary>
+  </fds-text-button>
+  <fds-outlined-button slot='next' label="Next" secondary>
+  </fds-outlined-button>
+  <fds-text-button slot='previous' label="Back" secondary icon="chevron_left">
+  </fds-text-button>
+  <fds-button slot='done' label="Save" secondary>
+  </fds-button>
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page" header>
+    <div class="page-content">
+      <div class="textfields">
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+      </div>
+      <div class="image">
+        <img src="https://i.imgur.com/otY5WR9.png" />
+      </div>
+    </div>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+</fds-wizard>
 ```
