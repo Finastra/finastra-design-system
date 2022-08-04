@@ -1,0 +1,20 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-list/mwc-list-item';
+
+// --mdc-theme-primary	Color of the activated ripple and primary text color when activated.
+// --mdc-theme-on-surface	Disabled text color.
+// --mdc-theme-text-icon-on-background	Color of the graphic icon (if graphic is text icon).
+// --mdc-theme-text-primary-on-background	Color of the primary text if not activated.
+// --mdc-theme-text-secondary-on-background	Color of the secondary text if not activated.
+// --mdc-theme-hint-on-background
+
+:host {
+  @include fds.typography(subtitle-1);
+  @include fds.property(--mdc-theme-primary, primary);
+  @include fds.property(--mdc-theme-secondary, primary);
+  @include fds.property(--mdc-checkbox-checked-color, primary);
+  @include fds.property(--mdc-theme-on-surface, on-surface-disabled);
+  @include fds.property(--mdc-theme-text-icon-on-background, on-background);
+  @include fds.property(--mdc-theme-text-primary-on-background, on-background);
+  @include fds.property(--mdc-theme-text-secondary-on-background, on-background);
+}
