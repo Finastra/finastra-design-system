@@ -1,11 +1,25 @@
 <script type="module" src="node_modules/@finastra/global-search/dist/src/index.js"></script>
 
 <div style="display: flex; flex-direction: column;">
-  <fds-global-search id="fds-global-search">
-    <!-- <fds-global-search-group slot="searches" id="fds-global-search-recent-group"></fds-global-search-group> -->
-    <fds-global-search-group slot="searches" id="fds-global-search-trending-group"></fds-global-search-group>
-    <fds-global-search-page slot="pages" id="fds-global-search-page"></fds-global-search-page>
-  </fds-global-search>
+  <div  style="display: flex; flex-direction: row;">
+    <fds-global-search id="fds-global-search">
+      <!-- <fds-global-search-group slot="searches" id="fds-global-search-recent-group"></fds-global-search-group> -->
+      <fds-global-search-group slot="searches" id="fds-global-search-trending-group"></fds-global-search-group>
+      <fds-global-search-page slot="pages" id="fds-global-search-page"></fds-global-search-page>
+    </fds-global-search>
+    <div style="display: flex; margin-left: 20px;">
+      <div>
+        input value: <span id="input-value"></span>
+      </div>
+     
+    </div>
+  </div>
+  <div style="margin-top: 20px;">
+    <div>
+      selected value: <span id="selected-value"></span>
+    </div>
+  </div>
+  
 </div>
 <style>
     .main-content {
@@ -16,13 +30,13 @@
     }
     fds-global-search{
       --fds-global-search-width: 400px;
-      width: 268px;
-      height: 100px;
+      height: 100%
     }
 </style>
 
 <script>
-
+  const inputValue = window.document.querySelector('#input-value');
+  const selectedValue = window.document.querySelector('#selected-value');
   const globalSearch = window.document.querySelector('#fds-global-search');
   globalSearch.placeholder="Search the maketplace";
   globalSearch.enableRecentSearch=true;
@@ -48,16 +62,23 @@
       name: "CloudMargin"
     }
   ]
+  globalSearch.addEventListener('onSearchInputChanged', (e) =>{
+    console.log('global search input changed')
+    const data = e.detail;
+
+    inputValue.innerHTML = data + ' (current value)';
+  })
 
   globalSearch.addEventListener('onFdsGlobalSearchItemSelected', (e) =>{
     console.log('global search item selected')
     const data = e.detail;
-    console.log(data);
+
+    selectedValue.innerHTML = data + ' (Global Search item selected)';
   })
-  globalSearch.addEventListener('onFdsGlobalSearchResultSelected', (e) =>{
-    console.log('global search result selected')
+  globalSearch.addEventListener('onFdsGlobalSearchPageSelected', (e) =>{
+    console.log('global search page selected')
     const data = e.detail;
-    console.log(data);
+    selectedValue.innerHTML = data + ' (Global Search page selected)';
   })
 
 </script>

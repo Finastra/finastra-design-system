@@ -40,37 +40,40 @@ const Template: Story<FdsGlobalSearch> = ({
   enableRecentSearch
 }) => {
   return html`
-  <fds-global-search 
-    .value=${ifDefined(value)} 
-    .loading=${ifDefined(loading)} 
-    .placeholder=${ifDefined(placeholder)} 
-    .enableRecentSearch=${ifDefined(enableRecentSearch)} 
-    style="width: 100%; height: 60px;">
-    <fds-global-search-group 
-      slot="searches"
-      title="Trending Searches"
-      .items=${ [{
-                icon: 'trending_up',
-                text: 'enterprise risk',
-              },{
-                icon: 'trending_up',
-                text: 'customer service',
-              }]} >
-    </fds-global-search-group>
-    <fds-global-search-page 
-      slot="pages" 
-      title=${"Popular applications"}
-      .items=${
-        [
-          {
-            logo: '//us1-cdn.openchannel.io/59bfc432ca753d60bf995c46/public/603e561d130c5a04da2d3d7c.jpg',
-            name: "CloudMargin"
-          }
-        ]
-      }
-      >
-    </fds-global-search-page>
-  </fds-global-search>`;
+  <div>
+    <fds-global-search 
+      .value=${ifDefined(value)} 
+      .loading=${ifDefined(loading)} 
+      .placeholder=${ifDefined(placeholder)} 
+      .enableRecentSearch=${ifDefined(enableRecentSearch)} 
+      style="width: 100%; height: 60px;">
+      <fds-global-search-group 
+        slot="searches"
+        title="Trending Searches"
+        .items=${ [{
+                  icon: 'trending_up',
+                  text: 'enterprise risk',
+                },{
+                  icon: 'trending_up',
+                  text: 'customer service',
+                }]} >
+      </fds-global-search-group>
+      <fds-global-search-page 
+        slot="pages" 
+        title=${"Popular applications"}
+        .items=${
+          [
+            {
+              logo: '//us1-cdn.openchannel.io/59bfc432ca753d60bf995c46/public/603e561d130c5a04da2d3d7c.jpg',
+              name: "CloudMargin"
+            }
+          ]
+        }
+        >
+      </fds-global-search-page>
+    </fds-global-search>
+  </div>
+`;
 };
 
 export const Default: Story = Template.bind({});

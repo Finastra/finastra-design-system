@@ -7,6 +7,7 @@
     --fds-label: 'none';
     .fds-global-search {
         width: var(--fds-global-search-width, 250px);
+        height: var(--fds-spacing-5);
         .fds-global-search-wrapper{
             @include fds.property(background, background);
             @include fds.property(border-color, primary);
