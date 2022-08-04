@@ -12,28 +12,28 @@ describe('ExpansionPanel', () => {
           <div slot="title">Setting</div>
           <div slot="description">Global setting</div>
           <div class="content">
-              Nisi ullamco reprehenderit id ea fugiat Lorem cupidatat ea esse nostrud excepteur.
+              content
           </div>
       </fds-expansion-panel-item>
       <fds-expansion-panel-item>
           <div slot="title">Security</div>
           <div slot="description">Security parametre</div>
           <div class="content">
-              Nisi ullamco reprehenderit id ea fugiat Lorem cupidatat ea esse nostrud excepteur.
+              content
           </div>
       </fds-expansion-panel-item>
       <fds-expansion-panel-item disabled>
           <div slot="title">Private</div>
           <div slot="description">Security parametre</div>
           <div class="content">
-              Nisi ullamco reprehenderit id ea fugiat Lorem cupidatat ea esse nostrud excepteur.
+              content
           </div>
       </fds-expansion-panel-item>
       <fds-expansion-panel-item>
           <div slot="title">Hobbies</div>
           <div slot="description">Hobbies parametre</div>
           <div class="content">
-              Nisi ullamco reprehenderit id ea fugiat Lorem cupidatat ea esse nostrud excepteur.
+              content
           </div>
       </fds-expansion-panel-item>
     </fds-expansion-panel>`);

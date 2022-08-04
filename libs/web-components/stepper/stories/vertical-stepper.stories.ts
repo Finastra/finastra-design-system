@@ -8,22 +8,22 @@ import { argTypes, cssprops } from './sb-generated/fds-vertical-stepper.json';
 const demoData = [
   {
     label: 'Step Success',
-    description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. '
+    description: 'Example of content for an successfully filled out step'
   },
   {
     label: 'Step Active',
-    description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .'
+    description: 'Example of content for an active step'
   },
   {
     label: 'Step Disabled',
-    description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
+    description: 'Example of content for a disabled step',
     disabled: true
   },
-  { label: 'Step Inactive', description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. ' },
+  { label: 'Step Inactive', description: 'Example of content for an inactive step' },
   {
     label: 'Step Inactive',
     description:
-      'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.'
+    'Example of content for an inactive step'
   }
 ];
 
