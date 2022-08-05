@@ -1,5 +1,6 @@
 import '@finastra/divider';
 import { IconButton } from '@finastra/icon-button';
+import '@popperjs/core';
 import { html } from 'lit-html';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -13,10 +14,11 @@ export class IconBarItem extends IconButton {
     @property({ type: Boolean })
     current = false;
 
+    @property({ type: String })
+    notification = '';
 
     @property({ type: String })
-    notif = '';
-
+    label = '';
     
     constructor() {
         super();
@@ -25,30 +27,35 @@ export class IconBarItem extends IconButton {
 
       render() {
         return html`
-        ${this.notif?
-        html`
-        <fds-badge value="${this.notif}" position="topRight" color="secondary">
-        ${this.renderStepper()} 
-        </fds-badge>` : html`${this.renderStepper()}`}
+          ${this.notification?
+          html`
+          <fds-badge data-tippy-content="This is a tooltip" value="${this.notification}" position="topRight" color="secondary">
+          ${this.renderIconButtons()} 
+          </fds-badge>
+          ` : html`${this.renderIconButtons()}`}
         `;
       }
 
-      renderStepper() {
+      renderIconButtons() {
         const classes = {
-          current: this.current, 
+          current: this.current
         };
-        return html`<fds-icon-button class="${classMap(classes)}"
-        @click="${this.handleItemClick}"
-        icon='${this.icon}'
-        ?dense='${this.dense}'
-        ?primary='${this.primary}'
-        ?secondary='${this.secondary}'
-      >
-      </fds-icon-button>
+        return html`
+        <div class="iconButton ${classMap(classes)}'">
+          <fds-icon-button
+            @click="${this.handleIconClick}"
+            icon='${this.icon}'
+            ?dense='${this.dense}'
+            ?primary='${this.primary}'
+            ?secondary='${this.secondary}'
+          >
+          </fds-icon-button>  
+          <span class="label">${this.label}</span>
+        </div>
       `
       }
 
-      handleItemClick() {
+      handleIconClick() {
         if(this.current) {
           return;
         }

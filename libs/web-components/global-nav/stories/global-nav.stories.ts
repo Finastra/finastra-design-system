@@ -50,6 +50,13 @@ export default {
           color: var(--fds-on-background);
           font: var(--fds-body-1);
         }
+        .icon-bar-content {
+          display: flex;flex-direction: row;
+        }
+        fds-icon-bar {
+            margin-right: 32px;
+            margin-left: -16px;
+        }
         fds-button {
           padding-left: var(--fds-spacing-3);
         }
@@ -358,5 +365,102 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
 
 export const WithButtons: Story = WithButtonsTemplate.bind({});
 WithButtons.args = {
+  appName: 'App with explicit logout'
+};
+
+const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
+  return html`<fds-sidenav type="modal">
+  <div slot="sidenavContent">
+    <div class="fds-sidenav-header">
+      <fds-logo></fds-logo>
+    </div>
+    <div class="fds-sidenav-list">
+      <mwc-list activatable>
+        <mwc-list-item selected activated graphic="icon">
+          <span>Home</span>
+          <mwc-icon slot="graphic">home</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Applications</span>
+          <mwc-icon slot="graphic">dashboard</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Tools</span>
+          <mwc-icon slot="graphic">extension</mwc-icon>
+        </mwc-list-item>
+        <mwc-list-item graphic="icon">
+          <span>Settings</span>
+          <mwc-icon slot="graphic">settings</mwc-icon>
+        </mwc-list-item>
+      </mwc-list>
+    </div>
+  </div>
+  <div slot="appContent">
+      <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
+        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+
+        <fds-launchpad
+          .apps=${apps}
+          slot="actions"
+        >
+        </fds-launchpad>
+
+        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
+        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+        <fds-user-profile slot="actions" userName="Raya Hristova">
+          <div slot="userInfo">raya.hristova@finastra.com</div>
+          <div slot="actions">
+            <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+            <fds-button text fullwidth label="View profile"></fds-button>
+          </div>
+        </fds-user-profile>
+        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-button label="Logout" icon="logout" slot="actions"></fds-button>
+      </fds-app-bar>
+      <div class="main-content">
+        <div class="icon-bar-content">
+          <fds-icon-bar>
+            <fds-icon-bar-item data-tippy-content="This is a tooltip" current icon="home" notification="2"></fds-icon-bar-item>
+            <fds-icon-bar-item label="Account" data-tippy-content="This is a tooltip" icon="credit_card"></fds-icon-bar-item>
+            <fds-icon-bar-item label="Calendar" data-tippy-content="This is a tooltip" icon="event" notification="1"></fds-icon-bar-item>
+
+            <fds-icon-bar-item data-tippy-content="This is a tooltip" slot="footer" icon="add"></fds-icon-bar-item>
+          </fds-icon-bar>
+          <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</fsd-sidenav>`;
+
+};
+
+export const WithIconBar: Story = WithIconBarTemplate.bind({});
+WithIconBar.args = {
   appName: 'App with explicit logout'
 };

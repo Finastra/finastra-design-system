@@ -2,16 +2,44 @@
 
 :host {
   display: block;
-  background: var(--fds-surface-selected);
-  border-radius: 50%;
+  @include fds.property(background, surface-selected);
   --fds-icon-button-color: var(--fds-primary);
-  --mdc-icon-size: 28px;
+  --fds-icon-size: 32px;
+  border-radius: 50%;
   margin-bottom: 16px;
 }
 
-
 .current {
-    background: var(--fds-gradient);
+  fds-icon-button {
+    @include fds.property(background, gradient);
     --fds-icon-button-color: var(--fds-on-primary);
     border-radius: 50%;
+  }
+
+  .label {
+    @include fds.property(color, secondary);
+  }
+}
+
+.iconButton {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  @include fds.typography(body-3);
+  @include fds.property(color, on-surface-medium);
+
+}
+
+:host([label]) {
+  margin-bottom: 38px;
 }

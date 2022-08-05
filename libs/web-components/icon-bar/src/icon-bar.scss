@@ -2,12 +2,20 @@
 
 :host {
   display: block;
+  position: relative;
+  margin: 0;
   background: var(--fds-surface);
-  height: fit-content;
   @include fds.elevation(2);
   border-radius: 8px;
   padding: 32px 16px 8px 16px;
-  --fds-icon-button-size: 48px
+  --fds-icon-button-size: 48px;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
+
+.hey {
+  margin: 0 auto;
 }
 
 slot[name="footer"]::slotted(*) {
@@ -15,4 +23,15 @@ slot[name="footer"]::slotted(*) {
   fds-icon-bar-item {
     margin-bottom:0px;
   }
+}
+
+
+:host([large]) {
+padding-left: 32px;
+padding-right: 32px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }
