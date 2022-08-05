@@ -18,3 +18,13 @@
 :host([fullWidth]) {
   flex: 1;
 }
+
+mwc-button[dense] {
+  --mdc-typography-button-font-family: var(--fds-button-3-font-family, var(--fds-font-family, Roboto, sans-serif));
+  --mdc-typography-button-font-size: var(--fds-button-3-font-size, 12px);
+  --mdc-typography-button-line-height: var(--fds-button-3-line-height, 18px);
+  --mdc-typography-button-font-weight: var(--fds-button-3-font-weight, 700);
+  --mdc-typography-button-letter-spacing: var(--fds-button-3-letter-spacing, 1.25px);
+  --mdc-typography-button-text-decoration: var(--fds-button-3-text-decoration, none);
+  --mdc-typography-button-text-transform: var(--fds-button-3-text-transform, none);
+}
