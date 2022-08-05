@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from "lit";
 import { property } from "lit/decorators.js";
-import { FdsSearchPageItem, FDS_GLOBAL_SEARCH_PAGE_SELECTED } from "../global-search.model";
+import { FdsSearchPageItem, FdsSearchPageSelectedItem, FDS_GLOBAL_SEARCH_PAGE_SELECTED } from "../global-search.model";
 
 
 export class FdsGlobalSearchPageBase extends LitElement{
@@ -27,7 +27,7 @@ export class FdsGlobalSearchPageBase extends LitElement{
                             <div class="fds-global-search-page-logo-container">
                                 <img src="${item.logo}" alt="logo" class="fds-global-search-page-logo">
                             </div>
-                            <span class="fds-global-search-page-name">${item.name}</span>
+                            <span class="fds-global-search-page-name">${item.text}</span>
                         </a>
                     `;
                 })}
@@ -39,7 +39,11 @@ export class FdsGlobalSearchPageBase extends LitElement{
         this.dispatchEvent(new CustomEvent(FDS_GLOBAL_SEARCH_PAGE_SELECTED, {
             bubbles: true,
             composed: true,
-            detail: item.name
+            detail: {
+                id: item.id,
+                text: item.text,
+                logo: item.logo,
+            } as FdsSearchPageSelectedItem
         }))
     }
 }

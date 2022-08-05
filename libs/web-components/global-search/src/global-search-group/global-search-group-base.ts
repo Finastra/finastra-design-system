@@ -1,13 +1,15 @@
 import '@finastra/icon-button';
 import { html, LitElement, TemplateResult } from "lit";
 import { property } from "lit/decorators.js";
-import { FdsSearchItem, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED } from '../global-search.model';
+import { FdsSearchItem, FdsSearchRemovedItem, FdsSearchSelectedItem, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED } from '../global-search.model';
 
 
 
 export class FdsGlobalSearchGroupBase extends LitElement{
 
     @property({type: String}) title = "";
+    @property({type: String}) icon ='';
+    @property({type: Boolean})  displayCloseBtn?: boolean;
     @property({type: Array}) items: FdsSearchItem[] = [];
 
 
@@ -33,13 +35,13 @@ export class FdsGlobalSearchGroupBase extends LitElement{
                return html`
                     <a class="fds-search-item" @click=${() => this.onClick(item)}>
                         <span class="fds-search-item-detail">
-                             <fds-icon-button dense=true .icon=${item.icon} .disabled=${true}></fds-icon-button>
+                             <fds-icon-button dense=true .icon=${this.icon} .disabled=${true}></fds-icon-button>
                              <span>${item.text}</span>
                         </span>
 
                         ${
-                            item.displayCloseBtn? 
-                            html` <fds-icon-button dense=true icon="clear" @click=${(e) =>this.removeItem(item, e)}></fds-icon-button>`
+                            this.displayCloseBtn? 
+                            html` <fds-icon-button dense=true class="fds-global-search-group-remove-btn" icon="clear" @click=${(e) =>this.removeItem(item, e)}></fds-icon-button>`
                             : ''
                         }
                     </a>
@@ -52,7 +54,11 @@ export class FdsGlobalSearchGroupBase extends LitElement{
         this.dispatchEvent(new CustomEvent(FDS_GLOBAL_SEARCH_ITEM_SELECTED, {
             bubbles: true,
             composed: true,
-            detail: item.text
+            detail: {
+                id: item.id,
+                text: item.text,
+                title: this.title
+            } as FdsSearchSelectedItem
         }))
     }
 
@@ -62,7 +68,11 @@ export class FdsGlobalSearchGroupBase extends LitElement{
         this.dispatchEvent(new CustomEvent(FDS_GLOBAL_SEARCH_ITEM_REMOVED, {
             bubbles: true,
             composed: true,
-            detail:item.text
+            detail: {
+                id: item.id,
+                text: item.text,
+                title: this.title
+            } as FdsSearchRemovedItem
         }))
     }
 

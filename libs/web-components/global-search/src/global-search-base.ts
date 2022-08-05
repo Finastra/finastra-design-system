@@ -1,6 +1,6 @@
+import '@finastra/divider';
+import '@finastra/icon-button';
 import '@finastra/linear-progress';
-import '@finastra/textfield';
-import '@material/mwc-icon-button';
 import { html, LitElement } from 'lit';
 import { property } from "lit/decorators.js";
 import { FdsSearchItem, FDS_GLOBAL_RECENT_SEARCH_KEY, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED, FDS_GLOBAL_SEARCH_PAGE_SELECTED, MAX_RECENT_SEARCH } from './global-search.model';
@@ -28,17 +28,18 @@ export class FdsGlobalSearchBase extends LitElement {
     private wrapperElement: any = null;
     private wrapperContainerElement: any = null;
     private textFieldElement: any = null;
+    private clearButtonElement: any = null;
     
     constructor(){
         super();
         this.addEventListener(FDS_GLOBAL_SEARCH_ITEM_REMOVED, (event)=>{
             const itemToRemove = (event as any).detail;
-            this.recentSearch = this.recentSearch.filter(item => item.text !== itemToRemove);
+            this.recentSearch = this.recentSearch.filter(item => item.text !== itemToRemove.text);
             this.updateRecentSearch();
             this.requestUpdate();
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_ITEM_SELECTED, (e) =>{
-            this.addNewRecentSearch((e as any).detail);
+            this.addNewRecentSearch((e as any).detail.text);
             this.closeGlobalSearch();
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_PAGE_SELECTED, () =>{
@@ -56,26 +57,35 @@ export class FdsGlobalSearchBase extends LitElement {
        return html`
              <div class="fds-global-search">
                 <div class="fds-global-search-wrapper">
-                    <fds-textfield showActionButton 
-                        id="fds-global-seatch-textfield"
-                        class="fds-global-search-textfield"
-                        outlined 
-                        tabindex="-1"
-                        value=${this.value}
-                        placeholder=${this.placeholder}
-                        @focus=${() => this.onGlobalSearchInputFocus()}
-                        @input=${() => this.onGlobalSearchInputChanged()}
-                        @blur=${() => this.onGlobalSearchInputBlur()}
-                        >
-                        <mwc-icon-button slot="actionButton" class="${this.value ? '': 'fds-global-search-clear'}" icon="close" @click=${(e) => this.clearInput(e)} ></mwc-icon-button>
-                        <mwc-icon-button slot="actionButton" icon="search" @click=${(e) => this.triggerSearchWithText(e)}></mwc-icon-button>
-                    </fds-textfield>
+                    <div class="fds-global-search-text-container">
+                        <div class="fds-global-search-text-field">
+                            <div class="fds-global-search-text-action">
+                                <fds-icon-button primary=true icon="search" @click=${(e) => this.triggerSearchWithText(e)}></fds-icon-button>
+                            </div>
+                            <div class="fds-global-search-text-input">
+                                <input 
+                                    id="fds-global-search-textfield"
+                                    placeholder="${this.placeholder}"
+                                    value="${this.value}"
+                                    tabindex="-1"
+                                    @focus=${() => this.onGlobalSearchInputFocus()}
+                                    @input=${() => this.onGlobalSearchInputChanged()}
+                                    @blur=${() => this.onGlobalSearchInputBlur()}
+                                    />
+                            </div>
+                            <div class="fds-global-search-text-action">
+                                <fds-icon-button  id="fds-global-search-clear-btn" class="${this.value? '' : 'fds-global-search-action-hide'}" dense icon="close" @click=${(e) => this.clearInput(e)} ></fds-icon-button>
+                            </div>
+                        </div>
+                        <fds-divider></fds-divider>
+                    </div>
                     ${this.loading ? html`<fds-linear-progress indeterminate></fds-linear-progress>`: ''}
                     <div class="fds-global-search-container ${this.isOpen? 'fds-global-search-container-open': ''}">
                         <div class="fds-global-search-block">
                             ${ this.renderRecentSearch()}
                             <slot name="searches"></slot>
                             <slot name="pages"></slot>
+                            <slot name=“summary></slot>
                         </div>
                     </div>
                 </div>
@@ -99,6 +109,8 @@ export class FdsGlobalSearchBase extends LitElement {
             <fds-global-search-group 
                 id="fds-global-search-recent"
                 title="Recent searches"
+                icon="history"
+                displayCloseBtn=true
                 .items=${recentList}
             >
             </fds-global-search-group>
@@ -115,7 +127,6 @@ export class FdsGlobalSearchBase extends LitElement {
             }
             this.recentSearch = recentSearchText.map( text => {
                 return {
-                    icon: 'history',
                     text: text,
                     displayCloseBtn: true
                 }
@@ -141,6 +152,13 @@ export class FdsGlobalSearchBase extends LitElement {
         this.isOpen = true;
         
         this.value = this.getSearchInputValue();
+
+        if(this.value){
+            this.toggleSearchClearButton(true);
+        }else{
+            this.toggleSearchClearButton(false);
+        }
+
         const inputEvent = new CustomEvent(FDS_GLOBAL_SEARCH_INPUT_CHANGED, {
             bubbles: true,
             composed: true,
@@ -153,6 +171,10 @@ export class FdsGlobalSearchBase extends LitElement {
     clearInput(e){
         e.preventDefault();
         this.value = '';
+        const inputElement = this.getSearchInputElement();
+        if(inputElement){
+            inputElement.value = '';
+        }
     }
 
     notifyWapperElementFocused(focused: boolean){
@@ -187,9 +209,7 @@ export class FdsGlobalSearchBase extends LitElement {
         const recentSearchIdx = this.recentSearch.findIndex(item => item.text === text);
         if(recentSearchIdx < 0){
             this.recentSearch.unshift({
-                icon: 'history',
-                text: text,
-                displayCloseBtn: true,
+                text: text
             })
 
             this.recentSearch = this.recentSearch.slice(0, MAX_RECENT_SEARCH);
@@ -208,11 +228,15 @@ export class FdsGlobalSearchBase extends LitElement {
     }
     
     getSearchInputValue(){
-        if(!this.textFieldElement){
-            this.textFieldElement = this.shadowRoot?.querySelector('.fds-global-search-textfield');
-        }
+        const value = this.getSearchInputElement() ? this.getSearchInputElement().value : '';
+        return value;
+    }
 
-        return this.textFieldElement.value;
+    getSearchInputElement(){
+        if(!this.textFieldElement){
+            this.textFieldElement = this.shadowRoot?.querySelector('#fds-global-search-textfield');
+        }
+        return this.textFieldElement;
     }
 
     toggleGlobalSearch(){
@@ -240,6 +264,17 @@ export class FdsGlobalSearchBase extends LitElement {
             this.wrapperElement?.classList.remove('open');
             this.wrapperContainerElement.classList.remove('open');
             this.wrapperContainerElement?.classList.remove('fds-global-search-container-open');
+        }
+    }
+
+    toggleSearchClearButton(display: boolean){
+        if(!this.clearButtonElement){
+            this.clearButtonElement = this.shadowRoot?.querySelector('#fds-global-search-clear-btn')
+        }
+        if(display){
+            this.clearButtonElement.classList.remove('fds-global-search-action-hide');
+        }else{
+            this.clearButtonElement.classList.add('fds-global-search-action-hide');
         }
     }
 

@@ -15,7 +15,11 @@
 
 
   .fds-search-item:hover{
-    @include fds.property(background-color, surface-selected)
+    @include fds.bg-color(surface-hover);
+    border-radius: var(--fds-spacing-1);
+    .fds-global-search-group-remove-btn{
+      visibility: visible;
+    }
   }
 }
 
@@ -27,7 +31,7 @@
   width: 100%;
 
   .fds-global-search-group-title{
-    @include fds.typography(subtitle-1);
+    @include fds.typography(subtitle-2);
     @include fds.property(color, on-background);
     margin:  var(--fds-spacing-0);
     padding-top:  var(--fds-spacing-2);
@@ -40,9 +44,13 @@
     cursor: pointer;
     @include fds.typography(body-2);
     @include fds.property(color, on-background);
+    padding: var(--fds-spacing-1);
     .fds-search-item-detail{
       display: flex;
       align-items: center;
+    }
+    .fds-global-search-group-remove-btn{
+      visibility: hidden;
     }
   }
 }

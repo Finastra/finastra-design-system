@@ -7,7 +7,7 @@
   @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
   @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
- 
+
   ::slotted(.mwc-list-item__hide) {
     display: none;
   }
@@ -15,9 +15,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-bottom: var(--fds-spacing-2);
   
     .fds-global-search-page-title{
-      @include fds.typography(subtitle-1);
+      @include fds.typography(subtitle-2);
       @include fds.property(color, on-background);
       margin:  var(--fds-spacing-0);
       padding-top:  var(--fds-spacing-2);
@@ -58,8 +59,12 @@
               @include fds.property(color, on-background);
             }
         }
+        
+        .fds-global-search-page-item:hover{
+          @include fds.bg-color(surface-hover);
+          border-radius: var(--fds-spacing-1);
+        }
     }
   }
-  
 }
 

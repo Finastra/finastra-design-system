@@ -50,11 +50,10 @@ const Template: Story<FdsGlobalSearch> = ({
       <fds-global-search-group 
         slot="searches"
         title="Trending Searches"
+        icon="trending_up"
         .items=${ [{
-                  icon: 'trending_up',
                   text: 'enterprise risk',
                 },{
-                  icon: 'trending_up',
                   text: 'customer service',
                 }]} >
       </fds-global-search-group>
@@ -65,7 +64,7 @@ const Template: Story<FdsGlobalSearch> = ({
           [
             {
               logo: '//us1-cdn.openchannel.io/59bfc432ca753d60bf995c46/public/603e561d130c5a04da2d3d7c.jpg',
-              name: "CloudMargin"
+              text: "CloudMargin"
             }
           ]
         }
