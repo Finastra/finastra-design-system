@@ -2,14 +2,20 @@
 @use '@finastra/fds-theme' as fds;
 
 $icon-button-color: var(--fds-on-surface);
+$icon-button-size: 48px;
 
 :host { 
   color: var(--fds-icon-button-color, $icon-button-color);
-  @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled)
+  @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled);
+  
+  .mdc-icon-button {
+    width: var(--fds-icon-button-size,$icon-button-size);
+    height: var(--fds-icon-button-size,$icon-button-size);
+  }
 }
 
 :host([dense]) {
-  --mdc-icon-button-size: 30px;
+ --fds-icon-button-size: 30px;
   --mdc-icon-size: 18px;
 }
 
