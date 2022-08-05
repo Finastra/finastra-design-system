@@ -41,9 +41,8 @@ export class IconBarItem extends IconButton {
           current: this.current
         };
         return html`
-        <div class="iconButton ${classMap(classes)}'">
+        <div @click="${this.handleIconClick}" class="iconButton ${classMap(classes)}'">
           <fds-icon-button
-            @click="${this.handleIconClick}"
             icon='${this.icon}'
             ?dense='${this.dense}'
             ?primary='${this.primary}'

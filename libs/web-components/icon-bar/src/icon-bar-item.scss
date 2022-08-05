@@ -7,6 +7,10 @@
   --fds-icon-size: 32px;
   border-radius: 50%;
   margin-bottom: 16px;
+
+  fds-badge {
+    --fds-icon-button-size: 32px;
+  }
 }
 
 .current {
@@ -18,6 +22,7 @@
 
   .label {
     @include fds.property(color, secondary);
+    cursor: pointer;
   }
 }
 
@@ -30,7 +35,7 @@
 .label {
   position: absolute;
   bottom: -24px;
-  left: 0;
+  left: -6px;
   right: 0;
   margin-left: auto;
   margin-right: auto;
