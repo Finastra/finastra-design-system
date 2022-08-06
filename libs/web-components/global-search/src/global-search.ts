@@ -11,7 +11,7 @@ import { styles } from './global-search.css';
  * @attr [enableRecentSearch=true] - Whether display recent search section. 
  * @slot searches - Slot to place a set of search items. We provide another web component:fds-global-search-group.
  * @slot pages - Slot to place a set of search pages with icon.We provide another web component: fds-global-search-page.
- * @slot pages - Slot to place a summary of search result.
+ * @slot summary - Slot to place a summary of search result.
  */
 @customElement('fds-global-search')
 export class FdsGlobalSearch extends FdsGlobalSearchBase {

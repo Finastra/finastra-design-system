@@ -5,24 +5,27 @@
     .fds-global-search {
         width: var(--fds-global-search-width, 400px);
         height: var(--fds-spacing-5);
-        .fds-global-search-wrapper{
+
+        .fds-global-search-wrapper {
             @include fds.property(background, background);
             @include fds.property(border-color, primary);
 
-            &.open{
+            &.open {
                 z-index: 1000;
                 border-color: var(--fds-primary, #694ED6);
                 border-width: 1px;
                 border-style: solid;
                 position: absolute;
-                &.fds-global-search-input-focus{
+
+                &.fds-global-search-input-focus {
                     border-width: 1px;
                 }
 
-                .fds-global-search-text-field{
+                .fds-global-search-text-field {
                     border: none;
                 }
-                fds-divider{
+
+                fds-divider {
                     visibility: visible;
                     margin-left: var(--fds-spacing-4) !important;
                     margin-right: var(--fds-spacing-4) !important;
@@ -30,18 +33,18 @@
             }
 
 
-            .fds-global-search-container{
+            .fds-global-search-container {
                 display: none;
 
-                .fds-global-search-block{
-                    margin-top:  var(--fds-spacing-2) !important;
+                .fds-global-search-block {
+                    margin-top: var(--fds-spacing-2) !important;
                     padding-left: var(--fds-spacing-4) !important;
                     padding-right: var(--fds-spacing-4) !important;
                     margin-bottom: var(--fds-spacing-2) !important;
-    
+
                 }
 
-                &.fds-global-search-container-open{
+                &.fds-global-search-container-open {
                     display: flex !important;
                     flex-direction: column;
                     width: 100%;
@@ -49,11 +52,12 @@
 
             }
         }
-        fds-linear-progress{
+
+        fds-linear-progress {
             width: 100%;
         }
     }
- 
+
 }
 
 .fds-global-search {
@@ -65,7 +69,7 @@
     width: 100%;
     height: 100%;
 
-    .fds-global-search-wrapper{
+    .fds-global-search-wrapper {
         width: var(--fds-global-search-width, 400px);
         justify-content: center;
         align-items: center;
@@ -73,15 +77,16 @@
         flex-direction: column;
         z-index: 1000;
         // padding: var(--fds-spacing-4);
-        border-radius:  var(--fds-spacing-4);
+        border-radius: var(--fds-spacing-4);
         pointer-events: auto;
         @include fds.property(background, background);
-        
 
-        .fds-global-search-text-container{
+
+        .fds-global-search-text-container {
             width: 100%;
             height: var(--fds-spacing-5);
-            .fds-global-search-text-field{
+
+            .fds-global-search-text-field {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -93,34 +98,40 @@
                 border-width: 1px;
                 border-style: solid;
                 border-radius: var(--fds-spacing-4);
-                .fds-global-search-text-input{
+
+                .fds-global-search-text-input {
                     height: 100%;
                     width: 100%;
-                    input{
+
+                    input {
                         border: none;
                         width: 100%;
                         height: 100%;
-                        font-size: calc( 2 * var( --fds-spacing-2) ) !important;
+                        font-size: calc(2 * var(--fds-spacing-2)) !important;
                         background: transparent;
-    
+
                     }
-                    input:focus-visible, input:focus{
+
+                    input:focus-visible,
+                    input:focus {
                         outline: none;
                     }
 
-                    input::placeholder{
+                    input::placeholder {
                         @include fds.typography(body-2);
                     }
                 }
-                .fds-global-search-text-action{
+
+                .fds-global-search-text-action {
                     display: flex;
-                    .fds-global-search-action-hide{
+
+                    .fds-global-search-action-hide {
                         display: none;
                     }
                 }
             }
 
-            fds-divider{
+            fds-divider {
                 visibility: hidden;
             }
         }

@@ -1,21 +1,21 @@
-export interface FdsSearchItem{
+export interface FdsSearchItem {
     id?: String,
     text?: String,
 }
 
-export interface FdsSearchSelectedItem extends FdsSearchItem{
+export interface FdsSearchSelectedItem extends FdsSearchItem {
     title?: String
 }
 
-export type FdsSearchRemovedItem  = FdsSearchSelectedItem
+export type FdsSearchRemovedItem = FdsSearchSelectedItem
 
-export interface FdsSearchPageItem{
+export interface FdsSearchPageItem {
     id?: string;
     text?: string;
     logo?: string;
 }
 
-export interface FdsSearchPageSelectedItem extends FdsSearchPageItem{
+export interface FdsSearchPageSelectedItem extends FdsSearchPageItem {
     title?: string
 }
 
