@@ -31,6 +31,7 @@ export class FdsGlobalSearchSummaryBase extends LitElement{
             composed: true,
             detail: {
                 text: this.searchText,
+                title: 'summary'
             } as FdsSearchSelectedItem
         }))
     }

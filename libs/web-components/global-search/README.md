@@ -26,11 +26,13 @@ Developer can use ```fds-global-search-group``` for searches slot, ```fds-global
     <li>resultCount: number, how many results exist for current search text. </li>
 </ul>
 
+Install package:
 ```
 npm i @finastra/global-search
 ```
 
-```ts
+Import component to your project:
+```
 import '@finastra/global-search';
 ```
 
@@ -64,6 +66,7 @@ import '@finastra/global-search';
 ```
 
 ### Pure HTML pages
+A demo code can be find here: [demo](https://github.com/Finastra/finastra-design-system/blob/master/libs/web-components/global-search/demo/index.html)
 
 ```html
 <script type="module" src="https://unpkg.com/@finastra/global-search@latest/dist/src/global-search.js?module"></script>

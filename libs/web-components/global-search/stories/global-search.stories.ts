@@ -11,7 +11,7 @@ export default {
   component: 'fds-global-search',
   argTypes,
   args: {
-    placeholder: 'Search the result',
+    placeholder: 'Search the marketplace',
   },
   parameters: {
     actions: {

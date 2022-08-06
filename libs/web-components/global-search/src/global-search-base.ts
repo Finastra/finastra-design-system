@@ -3,7 +3,7 @@ import '@finastra/icon-button';
 import '@finastra/linear-progress';
 import { html, LitElement } from 'lit';
 import { property } from "lit/decorators.js";
-import { FdsSearchItem, FDS_GLOBAL_RECENT_SEARCH_KEY, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED, FDS_GLOBAL_SEARCH_PAGE_SELECTED, MAX_RECENT_SEARCH } from './global-search.model';
+import { FdsSearchItem, FdsSearchSelectedItem, FDS_GLOBAL_RECENT_SEARCH_KEY, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED, FDS_GLOBAL_SEARCH_PAGE_SELECTED, MAX_RECENT_SEARCH } from './global-search.model';
 
 
 export class FdsGlobalSearchBase extends LitElement {
@@ -33,13 +33,17 @@ export class FdsGlobalSearchBase extends LitElement {
     constructor(){
         super();
         this.addEventListener(FDS_GLOBAL_SEARCH_ITEM_REMOVED, (event)=>{
-            const itemToRemove = (event as any).detail;
-            this.recentSearch = this.recentSearch.filter(item => item.text !== itemToRemove.text);
-            this.updateRecentSearch();
-            this.requestUpdate();
+            if(this.enableRecentSearch){
+                const itemToRemove = (event as any).detail;
+                this.recentSearch = this.recentSearch.filter(item => item.text !== itemToRemove.text);
+                this.updateRecentSearch();
+                this.requestUpdate();
+            }
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_ITEM_SELECTED, (e) =>{
-            this.addNewRecentSearch((e as any).detail.text);
+            if(this.enableRecentSearch){
+                this.addNewRecentSearch((e as any).detail.text);
+            }
             this.closeGlobalSearch();
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_PAGE_SELECTED, () =>{
@@ -47,7 +51,19 @@ export class FdsGlobalSearchBase extends LitElement {
         })
         this.addEventListener('keypress', (e)=>{
             if(e.key === 'Enter' && this.isOpen){
-                this.addNewRecentSearch();
+                if(this.enableRecentSearch){
+                    this.addNewRecentSearch();
+                }
+                this.dispatchEvent(new CustomEvent(FDS_GLOBAL_SEARCH_ITEM_SELECTED, {
+                    bubbles: true,
+                    composed: true,
+                    detail: {
+                        id: '',
+                        text: this.getSearchInputValue(),
+                        title: 'Enter from search bar'
+                    } as FdsSearchSelectedItem
+                }))
+
                 this.closeGlobalSearch();
             }
         })
@@ -70,7 +86,6 @@ export class FdsGlobalSearchBase extends LitElement {
                                     tabindex="-1"
                                     @focus=${() => this.onGlobalSearchInputFocus()}
                                     @input=${() => this.onGlobalSearchInputChanged()}
-                                    @blur=${() => this.onGlobalSearchInputBlur()}
                                     />
                             </div>
                             <div class="fds-global-search-text-action">
@@ -118,6 +133,9 @@ export class FdsGlobalSearchBase extends LitElement {
     }
     
     getRecentList(): FdsSearchItem[]{
+        if(!this.enableRecentSearch){
+            return [];
+        }
         if(this.recentSearch.length === 0){
             let recentSearchText: [] = [];
             try{
@@ -127,8 +145,7 @@ export class FdsGlobalSearchBase extends LitElement {
             }
             this.recentSearch = recentSearchText.map( text => {
                 return {
-                    text: text,
-                    displayCloseBtn: true
+                    text: text
                 }
             })
         }
@@ -141,11 +158,6 @@ export class FdsGlobalSearchBase extends LitElement {
             this.toggleGlobalSearch();
             this.requestUpdate();
         }
-        this.notifyWapperElementFocused(true);
-    }
-
-    onGlobalSearchInputBlur(){
-        this.notifyWapperElementFocused(false);
     }
 
     onGlobalSearchInputChanged(){
@@ -177,21 +189,12 @@ export class FdsGlobalSearchBase extends LitElement {
         }
     }
 
-    notifyWapperElementFocused(focused: boolean){
-        if(!this.wrapperElement){
-            this.wrapperElement = this.shadowRoot?.querySelector('.fds-global-search-wrapper');
-        }
-
-        if(focused){
-            this.wrapperElement.classList.add('fds-global-search-input-focus')
-        }else{
-            this.wrapperElement.classList.remove('fds-global-search-input-focus')
-        }
-    }
     
     triggerSearchWithText(e){
         e.preventDefault();
-        this.addNewRecentSearch();
+        if(this.enableRecentSearch){
+            this.addNewRecentSearch();
+        }
 
         this.value = this.getSearchInputValue();
         const inputEvent = new CustomEvent(FDS_GLOBAL_SEARCH_ITEM_SELECTED, {
@@ -203,7 +206,12 @@ export class FdsGlobalSearchBase extends LitElement {
     }
 
     addNewRecentSearch(searchText?: string){
+        if(!this.enableRecentSearch){
+            return ;
+        }
+        
         const text = searchText? searchText : this.getSearchInputValue();
+
         if(!text) return ;
         
         const recentSearchIdx = this.recentSearch.findIndex(item => item.text === text);
@@ -219,7 +227,9 @@ export class FdsGlobalSearchBase extends LitElement {
     }
     
     updateRecentSearch(){
-        localStorage.setItem(FDS_GLOBAL_RECENT_SEARCH_KEY, JSON.stringify(this.recentSearch.map(item => item.text)));
+        if(this.enableRecentSearch){
+            localStorage.setItem(FDS_GLOBAL_RECENT_SEARCH_KEY, JSON.stringify(this.recentSearch.map(item => item.text)));
+        }
     }
 
     closeGlobalSearch(){
@@ -253,14 +263,10 @@ export class FdsGlobalSearchBase extends LitElement {
  
         if(this.isOpen){
             this.overlay.style['display'] = 'flex';
-        }else{
-            this.overlay.style['display'] = 'none';
-        }
-
-        if(this.isOpen){
             this.wrapperElement?.classList.add('open');
             this.wrapperContainerElement?.classList.add('fds-global-search-container-open');
         }else{
+            this.overlay.style['display'] = 'none';
             this.wrapperElement?.classList.remove('open');
             this.wrapperContainerElement.classList.remove('open');
             this.wrapperContainerElement?.classList.remove('fds-global-search-container-open');

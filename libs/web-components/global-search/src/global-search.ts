@@ -4,7 +4,7 @@ import { FdsGlobalSearchBase } from './global-search-base';
 import { styles } from './global-search.css';
 
 /**
- * @cssprop {text} [--fds-global-search-width=250px] - length of global search component.
+ * @cssprop {text} [--fds-global-search-width=400px] - length of global search component.
  * @attr [value=""] -  Sets value displayed in input.
  * @attr [placeholder=""] - Sets placeholder value displayed when input is empty.
  * @attr [loading=false] - Whether or not display the loading bar. 

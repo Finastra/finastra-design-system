@@ -83,10 +83,11 @@
 
       summary.searchText = data;
       summary.style['display'] = 'flex';
+    }else{
+      summary.resultCount = 0;
+      summary.searchText = "";
+      summary.style['display'] = 'none';
     }
-    summary.resultCount = 0;
-    summary.searchText = "";
-    summary.style['display'] = 'none';
   })
 
   globalSearch.addEventListener('onFdsGlobalSearchItemSelected', (e) =>{
