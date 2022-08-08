@@ -89,7 +89,7 @@ const Template: Story<ExpansionPanel> = ({ displayMode = 'default', multi = fals
             <fds-divider></fds-divider>
             <div class="actions">
               <fds-text-button label="CANCEL" secondary></fds-text-button>
-              <fds-button label="SAVE"></fds-button>
+              <fds-button dense label="Save"></fds-button>
             </div>
         </div>
     </fds-expansion-panel-item>
