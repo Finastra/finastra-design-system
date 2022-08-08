@@ -29,7 +29,8 @@ slot[name="footer"]::slotted(*) {
 
 
 :host([large]) {
-  padding: 0 32px 0 32px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .footer {
