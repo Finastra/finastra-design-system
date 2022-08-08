@@ -3,7 +3,6 @@ import { html, LitElement } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 import { styles } from './icon-bar.css';
 
-
 /**
   * @attr [large=false] - Make the icon bar larger.
 */
@@ -13,10 +12,9 @@ export class IconBar extends LitElement {
   static styles = styles;
 
   @queryAssignedElements({ slot: 'footer' })
-  _pages!: Array<HTMLElement>;
+  _footer!: Array<HTMLElement>;
 
   @property({ type: Boolean }) large = false;
-
 
   render() {
     const nodes = this.getItemsTest();
@@ -27,8 +25,8 @@ export class IconBar extends LitElement {
       }      
     })
     return html`
-      <slot class="hey"></slot>
-      ${this._pages ? this.renderFooter() : html`<div></div>`}
+      <slot class="header"></slot>
+      ${this._footer? this.renderFooter() : html`<div></div>`}
     `;
   } 
 
@@ -40,24 +38,29 @@ export class IconBar extends LitElement {
       </div>
     `
   }
+  
   deselectOthers(current: Node) {  
     const nodes = this.getItemsTest();  
     nodes.forEach((node,index) => {
         if (node === current) {
-          this.dispatchEvent(new CustomEvent('selected', {
-            bubbles: true,
-            cancelable: true,
-              detail: {
-                index
-              }
-            }
-            ));
+          this.dispatchSelectedEvent(index);
           return;
         }
         else {
           node['current'] = false;
         }
      })
+  }
+
+  dispatchSelectedEvent(index) {
+    this.dispatchEvent(new CustomEvent('selected', {
+      bubbles: true,
+      cancelable: true,
+        detail: {
+          index
+        }
+      }
+      ));
   }
   
   getItemsTest() {
