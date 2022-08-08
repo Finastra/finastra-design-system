@@ -57,6 +57,7 @@
             border-radius: 50%;
             width: var(--fds-spacing-5);
             height: var(--fds-spacing-5);
+            @include fds.elevation(4);
           }
         }
 
