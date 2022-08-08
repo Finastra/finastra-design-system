@@ -109,6 +109,7 @@
                         height: 100%;
                         font-size: calc(2 * var(--fds-spacing-2)) !important;
                         background: transparent;
+                        color: var(--fds-on-background);
 
                     }
 
@@ -133,6 +134,10 @@
 
             fds-divider {
                 visibility: hidden;
+            }
+
+            fds-icon-button {
+                color: var(--fds-on-background);
             }
         }
     }
