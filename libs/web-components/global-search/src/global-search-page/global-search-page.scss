@@ -40,24 +40,21 @@
         align-items: center;
         width: var(--fds-spacing-6);
         padding: var(--fds-spacing-2) var(--fds-spacing-4);
-        ;
 
         .fds-global-search-page-logo-container {
           width: var(--fds-spacing-5);
-          ;
           height: var(--fds-spacing-5);
-          ;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: var(--fds-spacing-1);
+          @include fds.elevation(4);
 
           .fds-global-search-page-logo {
             border-radius: 50%;
             width: var(--fds-spacing-5);
             height: var(--fds-spacing-5);
-            @include fds.elevation(4);
           }
         }
 

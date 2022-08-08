@@ -9,13 +9,10 @@
         .fds-global-search-wrapper {
             @include fds.property(background, background);
             @include fds.property(border-color, primary);
+            position: absolute;
 
             &.open {
                 z-index: 1000;
-                border-color: var(--fds-primary, #694ED6);
-                border-width: 1px;
-                border-style: solid;
-                position: absolute;
 
                 &.fds-global-search-input-focus {
                     border-width: 1px;
@@ -76,7 +73,9 @@
         display: flex;
         flex-direction: column;
         z-index: 1000;
-        // padding: var(--fds-spacing-4);
+        border-color: var(--fds-primary, #694ED6);
+        border-width: 1px;
+        border-style: solid;
         border-radius: var(--fds-spacing-4);
         pointer-events: auto;
         @include fds.property(background, background);
@@ -94,10 +93,10 @@
                 height: 100%;
                 padding-left: var(--fds-spacing-4) !important;
                 padding-right: var(--fds-spacing-4) !important;
-                border-color: var(--fds-primary, #694ED6);
-                border-width: 1px;
-                border-style: solid;
-                border-radius: var(--fds-spacing-4);
+                // border-color: var(--fds-primary, #694ED6);
+                // border-width: 1px;
+                // border-style: solid;
+                // border-radius: var(--fds-spacing-4);
 
                 .fds-global-search-text-input {
                     height: 100%;

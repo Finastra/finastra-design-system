@@ -41,9 +41,11 @@ export class FdsGlobalSearchBase extends LitElement {
             }
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_ITEM_SELECTED, (e) => {
+            const selectedText = (e as any).detail.text;
             if (this.enableRecentSearch) {
-                this.addNewRecentSearch((e as any).detail.text);
+                this.addNewRecentSearch(selectedText);
             }
+            this.setInput(selectedText)
             this.closeGlobalSearch();
         })
         this.addEventListener(FDS_GLOBAL_SEARCH_PAGE_SELECTED, () => {
@@ -172,6 +174,20 @@ export class FdsGlobalSearchBase extends LitElement {
         })
         this.dispatchEvent(inputEvent)
         this.requestUpdate();
+    }
+
+    setInput(text:string){
+        this.value = text;
+        const inputElement = this.getSearchInputElement();
+        if (inputElement) {
+            inputElement.value = text;
+        }
+
+        if(this.value){
+            this.toggleSearchClearButton(true);
+        }else{
+            this.toggleSearchClearButton(false)
+        }
     }
 
     clearInput(e) {
