@@ -35,8 +35,8 @@
 .label {
   position: absolute;
   bottom: -24px;
-  left: -6px;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
