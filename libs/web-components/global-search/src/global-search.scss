@@ -129,6 +129,9 @@
                     .fds-global-search-action-hide {
                         display: none;
                     }
+                    .fds-global-search-clear-btn {
+                        color: var(--fds-on-background);
+                    }
                 }
             }
 
@@ -136,9 +139,6 @@
                 visibility: hidden;
             }
 
-            fds-icon-button {
-                color: var(--fds-on-background);
-            }
         }
     }
 }
