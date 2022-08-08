@@ -12,10 +12,11 @@
   "main": "dist/src/textarea.js",
   "module": "dist/src/textarea.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-textarea": "0.25.3",
+    "@material/mwc-textarea": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

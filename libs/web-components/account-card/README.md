@@ -25,7 +25,8 @@ import '@finastra/account-card';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/account-card@latest/dist/src/account-card.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/account-card/dist/fds-account-card.js"></script>
 
 <fds-account-card name="France" balance="50000" currency="EUR" number="DE89 3704 0044 0532 0130 00"></fds-account-card>
 ```

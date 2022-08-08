@@ -23,7 +23,7 @@ import '@finastra/checkbox';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/checkbox@latest/dist/src/checkbox.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/checkbox/dist/fds-checkbox.js"></script>
 
 <fds-checkbox checked></fds-checkbox>
 ```

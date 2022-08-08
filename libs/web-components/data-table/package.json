@@ -13,14 +13,16 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/data-table-styles.scss src/pagination/data-table-pagination-styles.scss"
   },
   "dependencies": {
     "@material/button": "13.0.0",
     "@material/data-table": "14.0.0",
     "@material/icon-button": "14.0.0",
-    "@material/mwc-icon": "0.25.3",
-    "@material/mwc-ripple": "0.25.3",
+    "@material/mwc-button": "^0.26.1",
+    "@material/mwc-icon": "^0.26.1",
+    "@material/mwc-ripple": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

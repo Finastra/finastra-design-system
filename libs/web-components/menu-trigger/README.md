@@ -24,7 +24,8 @@ import '@finastra/menu-trigger';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/menu-trigger@latest/dist/src/menu-trigger.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/menu-trigger/dist/fds-menu-trigger.js"></script>
 
 <fds-menu-trigger label="Develop"></fds-menu-trigger>
 ```

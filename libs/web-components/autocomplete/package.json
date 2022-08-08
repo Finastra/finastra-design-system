@@ -12,16 +12,21 @@
   "main": "dist/src/autocomplete.js",
   "module": "dist/src/autocomplete.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "@finastra/menu": "0.0.36",
     "@finastra/search-input": "0.0.36",
-    "@material/mwc-base": "0.25.3",
-    "@material/mwc-icon": "0.25.3",
-    "@material/mwc-menu": "0.25.3",
+    "@material/mwc-base": "^0.26.1",
+    "@material/mwc-icon": "^0.26.1",
+    "@material/mwc-menu": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "@material/mwc-button": "^0.26.1",
+    "@material/mwc-base": "^0.26.1"
   },
   "publishConfig": {
     "access": "public"

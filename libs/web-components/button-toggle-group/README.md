@@ -28,8 +28,9 @@ import '@finastra/button-toggle-group';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/button-toggle@latest/dist/src/button-toggle.js?module"></script>
-<script type="module" src="https://unpkg.com/@finastra/button-toggle-group@latest/dist/src/button-toggle-group.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle/dist/fds-button-toggle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle-group/dist/fds-button-toggle-group.js"></script>
 
 <fds-button-toggle-group style="padding-bottom: 16px">
     <fds-button-toggle icon="accessibility"></fds-button-toggle>

@@ -26,7 +26,7 @@ import '@finastra/slider';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/slider@latest/dist/src/slider.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/slider/dist/fds-slider.js"></script>
 
 <fds-slider value="25" min="10" max="50"></fds-slider>
 ```

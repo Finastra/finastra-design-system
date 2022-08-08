@@ -1,6 +1,6 @@
 {
   "name": "@finastra/angular-theme",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Angular Material implementation of the Finastra Design System",
   "license": "MIT",
   "repository": {
@@ -9,6 +9,6 @@
     "directory": "themes/angular-theme"
   },
   "peerDependencies": {
-    "@angular/material": "14.0.4"
+    "@angular/material": "^14.1.0"
   }
 }

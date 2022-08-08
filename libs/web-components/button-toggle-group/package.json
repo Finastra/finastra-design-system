@@ -12,10 +12,11 @@
   "main": "dist/src/button-toggle-group.js",
   "module": "dist/src/button-toggle-group.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-tab-bar": "0.25.3",
+    "@material/mwc-tab-bar": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

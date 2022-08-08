@@ -24,7 +24,7 @@ import '@finastra/tab';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/tab@latest/dist/src/tab.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/tab/dist/tab.js"></script>
 
 <fds-tab label="Active"></fds-tab>
 ```
