@@ -3,22 +3,56 @@
 <script type="module" src="node_modules/@finastra/divider/dist/src/divider.js"></script>
 
 <style>
+  .list-container {
+    width: 340px;
+  }
+
   h4 {
     color: var(--fds-on-background);
     font: var(--fds-headline-4);
     margin: 8px 0;
   }
+
+  .body2 {
+    font: var(--fds-body-2);
+  }
 </style>
 
-<div>
+<div class="list-container">
 
   <h4>Basic List</h4>
 
   <fds-list id="basic">
-    <fds-list-item selected>Item 0</fds-list-item>
-    <fds-list-item>Item 1</fds-list-item>
-    <fds-list-item>Item 2</fds-list-item>
-    <fds-list-item>Item 3</fds-list-item>
+    <fds-list-item><span class="body2">Body 2</span></fds-list-item>
+    <fds-list-item>Subtitle 1</fds-list-item>
+  </fds-list>
+
+  <h4>Advanced List</h4>
+
+  <fds-list id="advanced">
+    <fds-list-item twoline graphic="avatar" noninteractive>
+      <span>User Name</span>
+      <span slot="secondary">user@domain.tld</span>
+      <mwc-icon slot="graphic" class="inverted">tag_faces</mwc-icon>
+    </fds-list-item>
+    <fds-divider></fds-divider>
+    <fds-list-item graphic="icon">
+      <slot>FAQ</slot>
+      <mwc-icon slot="graphic">help_outline</mwc-icon>
+    </fds-list-item>
+    <fds-list-item graphic="icon">
+      <slot>Sign out</slot>
+      <mwc-icon slot="graphic">exit_to_app</mwc-icon>
+    </fds-list-item>
+  </fds-list>
+
+  <h4>Noninteractive List</h4>
+
+  <fds-list id="basic">
+    <fds-list-item selected noninteractive>Item 0</fds-list-item>
+    <fds-list-item noninteractive>Item 1</fds-list-item>
+    <fds-list-item noninteractive>Item 2</fds-list-item>
+    <fds-list-item noninteractive>Item 3</fds-list-item>
   </fds-list>
 
   <h4>Activatable List</h4>
@@ -64,7 +98,7 @@
       <span slot="secondary">Secondary line</span>
     </fds-list-item>
     <fds-divider></fds-divider>
-    <fds-list-item twoline>
+    <fds-list-item twoline disabled>
       <span>Item 1</span>
       <span slot="secondary">Secondary line</span>
     </fds-list-item>
@@ -88,5 +122,15 @@
     <fds-divider></fds-divider>
     <fds-check-list-item left selected>Item 2 (left)</fds-check-list-item>
     <fds-check-list-item left>Item 3 (left)</fds-check-list-item>
+  </fds-list>
+
+  <h4>Radio List</h4>
+
+  <fds-list>
+    <fds-radio-list-item group="a" selected>Item 0</fds-radio-list-item>
+    <fds-radio-list-item group="a">Item 1</fds-radio-list-item>
+    <fds-divider></fds-divider>
+    <fds-radio-list-item left group="a">Item 2 (left)</fds-radio-list-item>
+    <fds-radio-list-item left group="a">Item 3 (left)</fds-radio-list-item>
   </fds-list>
 </div>
