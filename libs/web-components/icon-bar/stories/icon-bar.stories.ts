@@ -6,12 +6,9 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-icon-bar.json';
 
 export default {
-  title: 'Components/IconBar',
+  title: 'Navigation/Icon Bar',
   component: 'fds-icon-bar',
   argTypes,
-  args: {
-    name: 'World'
-  },
   parameters: {
     actions: {
       handles: ['selected']
@@ -25,21 +22,27 @@ export default {
     }
   },
   decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
+    (story) => html`${story()}
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+  tippy('[data-tippy-content]', {
+  touch: false,
+  theme: 'finastra'
+  });
+</script>`
   ],
   cssprops
 } as Meta;
 
 const Template: Story<IconBar> = ({ large, }) => {
-  return html`
-    <fds-icon-bar ?large=${large}>
-      <fds-icon-bar-item data-tippy-content="This is a tooltip" current icon="home" notification="2"></fds-icon-bar-item>
-      <fds-icon-bar-item label="Account" data-tippy-content="This is a tooltip" icon="credit_card"></fds-icon-bar-item>
-      <fds-icon-bar-item label="Calendar" data-tippy-content="This is a tooltip" icon="event" notification="1"></fds-icon-bar-item>
-      <fds-icon-bar-item data-tippy-content="This is a tooltip" slot="footer" icon="add"></fds-icon-bar-item>
-    </fds-icon-bar>`;
+  return html`<fds-icon-bar ?large=${large}>
+  <fds-icon-bar-item label="Home" data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
+  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="add"></fds-icon-bar-item>
+</fds-icon-bar>`;
 };
 
 export const Default: Story<IconBar> = Template.bind({});

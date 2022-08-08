@@ -3,6 +3,11 @@ import { html, LitElement } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 import { styles } from './icon-bar.css';
 
+
+/**
+  * @attr [large=false] - Make the icon bar larger.
+*/
+
 @customElement('fds-icon-bar')
 export class IconBar extends LitElement {
   static styles = styles;

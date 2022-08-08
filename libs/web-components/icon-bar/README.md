@@ -1,4 +1,5 @@
-# IconBar
+# Icon Bar
+The icon bar comprises a series of tabs that each link to a different content area or view.
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/icon-bar?style=for-the-badge)](https://www.npmjs.com/package/@finastra/icon-bar)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/icon-bar?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/icon-bar')

@@ -4,14 +4,16 @@
   display: block;
   position: relative;
   margin: 0;
+  @include fds.padding-x(3);
+  @include fds.padding(2, bottom);
+  padding-top: 32px;
   background: var(--fds-surface);
   @include fds.elevation(2);
-  border-radius: 8px;
-  padding: 32px 16px 8px 16px;
-  --fds-icon-button-size: 32px;
+  border-radius: var(--fds-spacing-2, 8px);
   height: auto;
   min-height: 100%;
   padding-bottom: 6rem;
+  --fds-icon-button-size: 38px;
 }
 
 .hey {
@@ -19,16 +21,15 @@
 }
 
 slot[name="footer"]::slotted(*) {
-  margin-top: 16px;
+  @include fds.margin(3, top);
   fds-icon-bar-item {
-    margin-bottom:0px;
+    @include fds.margin(0, bottom);
   }
 }
 
 
 :host([large]) {
-padding-left: 32px;
-padding-right: 32px;
+  padding: 0 32px 0 32px;
 }
 
 .footer {

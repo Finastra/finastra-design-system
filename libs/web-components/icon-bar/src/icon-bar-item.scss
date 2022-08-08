@@ -4,12 +4,13 @@
   display: block;
   @include fds.property(background, surface-selected);
   --fds-icon-button-color: var(--fds-primary);
-  --fds-icon-size: 32px;
+  --fds-icon-size: 38px;
   border-radius: 50%;
   margin-bottom: 16px;
+  @include fds.margin(3, bottom);
 
   fds-badge {
-    --fds-icon-button-size: 32px;
+    --fds-icon-button-size: 38px;
   }
 }
 
@@ -34,11 +35,9 @@
 
 .label {
   position: absolute;
-  bottom: -24px;
+  bottom: calc(var(--fds-spacing-4) * -1);
   left: 50%;
   transform: translateX(-50%);
-  margin-left: auto;
-  margin-right: auto;
   width: fit-content;
   @include fds.typography(body-3);
   @include fds.property(color, on-surface-medium);
