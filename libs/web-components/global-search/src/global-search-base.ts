@@ -177,6 +177,10 @@ export class FdsGlobalSearchBase extends LitElement {
     }
 
     setInput(text:string){
+        if(!text){
+            text = "";
+        }
+
         this.value = text;
         const inputElement = this.getSearchInputElement();
         if (inputElement) {
@@ -249,7 +253,7 @@ export class FdsGlobalSearchBase extends LitElement {
 
     getSearchInputValue() {
         const value = this.getSearchInputElement() ? this.getSearchInputElement().value : '';
-        return value;
+        return value ? value : '';
     }
 
     getSearchInputElement() {
