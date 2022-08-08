@@ -88,7 +88,7 @@ const Template: Story<ExpansionPanel> = ({ displayMode = 'default', multi = fals
             Add a form to input the location
             <fds-divider></fds-divider>
             <div class="actions">
-              <fds-text-button label="CANCEL" secondary></fds-text-button>
+              <fds-text-button dense label="Cancel" secondary></fds-text-button>
               <fds-button dense label="Save"></fds-button>
             </div>
         </div>
