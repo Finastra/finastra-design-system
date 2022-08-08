@@ -8,7 +8,7 @@ import { argTypes, cssprops } from './sb-generated/fds-vertical-stepper.json';
 const demoData = [
   {
     label: 'Step Success',
-    description: 'Example of content for an successfully filled out step'
+    description: 'Example of content for a successfully filled out step'
   },
   {
     label: 'Step Active',
