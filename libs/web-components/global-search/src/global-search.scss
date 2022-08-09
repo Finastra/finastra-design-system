@@ -125,7 +125,7 @@
                         display: none;
                     }
                     .fds-global-search-clear-btn {
-                        color: var(--fds-on-background);
+                        @include fds.text-color(on-background);
                     }
                 }
             }
