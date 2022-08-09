@@ -13,7 +13,7 @@ export class IconBarItem extends IconButton {
 
     @property({ type: Boolean })
     current = false;
-
+ 
     @property({ type: String })
     notification = '';
 
@@ -59,6 +59,9 @@ export class IconBarItem extends IconButton {
       handleIconClick() {
         if(this.current) {
           return;
+        }
+        if(this.getParent().removeNotification) {
+          this.removeAttribute("notification");
         }
         this.current = !this.current;
         this.getParent().deselectOthers(this);

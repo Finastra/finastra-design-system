@@ -16,10 +16,6 @@
   --fds-icon-button-size: 38px;
 }
 
-.header {
-  margin: 0 auto;
-}
-
 slot[name="footer"]::slotted(*) {
   @include fds.margin(3, top);
   fds-icon-bar-item {

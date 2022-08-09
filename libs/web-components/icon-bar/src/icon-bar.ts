@@ -5,6 +5,7 @@ import { styles } from './icon-bar.css';
 
 /**
   * @attr [large=false] - Make the icon bar larger.
+  * @attr [removeNotification=false] - Removes the notification on item click.
 */
 
 @customElement('fds-icon-bar')
@@ -16,6 +17,9 @@ export class IconBar extends LitElement {
 
   @property({ type: Boolean }) large = false;
 
+  @property({ type: Boolean })
+  removeNotification= false;
+
   render() {
     const nodes = this.getItemsTest();
     nodes.forEach( node => {
@@ -25,7 +29,7 @@ export class IconBar extends LitElement {
       }      
     })
     return html`
-      <slot class="header"></slot>
+      <slot></slot>
       ${this._footer? this.renderFooter() : html`<div></div>`}
     `;
   } 
