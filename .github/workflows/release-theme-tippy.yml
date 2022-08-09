@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build tippy theme
-        run: npm run build:fds-theme
+        run: npm run build:tippy-theme
       
       # Publish
       - name: Publish package
