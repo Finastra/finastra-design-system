@@ -36,7 +36,6 @@ export class DonutChart extends ApexChartsWrapper {
         return this._data;
     }
     public set data(value: number[]) {
-        this._data = value.sort((a, b) => b - a);
         this.series = value
     }
 
