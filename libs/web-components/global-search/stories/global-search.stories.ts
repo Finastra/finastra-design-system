@@ -7,7 +7,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypes, cssprops } from './sb-generated/fds-global-search.json';
 
 export default {
-  title: 'FORMS/Global Search',
+  title: 'NAVIGATION/Global Search',
   component: 'fds-global-search',
   argTypes,
   args: {
