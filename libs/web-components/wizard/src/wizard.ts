@@ -2,7 +2,7 @@ import '@finastra/button';
 import '@finastra/divider';
 import '@finastra/stepper';
 import { html, LitElement, TemplateResult } from 'lit';
-import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
+import { customElement, property, query, queryAssignedElements, state } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 export enum POSITION {
@@ -46,6 +46,8 @@ export class Wizard extends LitElement {
   protected save = false;
   protected back = false;
   protected disabled: Boolean | null = null;
+
+  @state()
   protected arrayPages: Page[] = [];
 
   @property({ type: Number })
@@ -84,7 +86,7 @@ export class Wizard extends LitElement {
   renderStepper(): TemplateResult {
     return html`
       <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-        <fds-vertical-stepper secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+        <fds-vertical-stepper .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
       </div>`
   }
 
@@ -130,7 +132,6 @@ export class Wizard extends LitElement {
       });
       this.disabled = null;
     });
-    this.stepper['steps'] = this.arrayPages;
   }
 
   checkCurrentStep(current: number) {
