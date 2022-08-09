@@ -1,25 +1,20 @@
 {
-  "name": "@finastra/chip",
-  "displayName": "Chip",
+  "name": "@finastra/icon",
+  "displayName": "Icon",
   "version": "0.0.36",
-  "description": "Chip Web Component",
+  "description": "Icon Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Chip"
+    "Icon"
   ],
   "license": "MIT",
-  "main": "dist/src/chip.js",
-  "module": "dist/src/chip.js",
+  "main": "dist/src/icon.js",
+  "module": "dist/src/icon.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/icon": "0.0.36",
-    "@material/button": "^13.0.0",
-    "@material/mwc-button": "^0.26.1",
-    "@material/mwc-ripple": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

@@ -1,6 +1,6 @@
 import { BaseCard } from "@finastra/card";
 import '@finastra/divider';
-import '@material/mwc-icon';
+import '@finastra/icon';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -33,7 +33,7 @@ export class AccountCard extends BaseCard {
     return html`
     <fds-card-content class="account-content">
       <div class="account-icon">
-        <mwc-icon aria-label="${this.iconAriaLabel}">${this.icon}</mwc-icon>
+        <fds-icon aria-label="${this.iconAriaLabel}">${this.icon}</fds-icon>
       </div>
       <div>
         <div class="account-name">${this.name}</div>

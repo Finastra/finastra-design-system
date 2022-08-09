@@ -780,6 +780,18 @@
       },
       "tags": []
     },
+    "icon": {
+      "root": "libs/web-components/icon",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "icon-button": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/icon-button",
