@@ -29,7 +29,8 @@ export default {
 <script>
   tippy('[data-tippy-content]', {
   touch: false,
-  theme: 'finastra'
+  theme: 'finastra',
+  placement: 'right-end',
   });
 </script>`
   ],

@@ -38,8 +38,10 @@ export class IconBarItem extends IconButton {
 
       renderIconButtons() {
         const classes = {
-          current: this.current
+          current: this.current,
+          large: this.getParent().getAttribute('large') == ''
         };
+
         return html`
         <div @click="${this.handleIconClick}" class="iconButton ${classMap(classes)}">
           <fds-icon-button
@@ -48,8 +50,8 @@ export class IconBarItem extends IconButton {
             ?primary='${this.primary}'
             ?secondary='${this.secondary}'
           >
-          </fds-icon-button>  
-          <span class="label">${this.label}</span>
+          </fds-icon-button>
+          ${this.isLarge()? this.renderLabel() : '' }
         </div>
       `
       }
@@ -65,6 +67,17 @@ export class IconBarItem extends IconButton {
 
       getParent() : IconBar {
         return this.parentElement as IconBar
+      }
+
+      isLarge() {
+        if(this.getParent().getAttribute('large')=='') {
+          return true;
+        };
+        return false;
+      }
+
+      renderLabel() {
+        return html`<span class="label">${this.label}</span>`
       }
 }
 

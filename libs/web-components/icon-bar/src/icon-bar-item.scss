@@ -6,7 +6,6 @@
   --fds-icon-button-color: var(--fds-primary);
   --fds-icon-size: 38px;
   border-radius: 50%;
-  margin-bottom: 16px;
   @include fds.margin(3, bottom);
 
   fds-badge {
@@ -35,15 +34,17 @@
 
 .label {
   position: absolute;
+  margin-bottom: 38px;
   bottom: calc(var(--fds-spacing-4) * -1);
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
   @include fds.typography(body-3);
   @include fds.property(color, on-surface-medium);
-
 }
 
-:host([label]) {
-  margin-bottom: 38px;
+.large {
+  .label {
+    margin-bottom: 0px;
+  }
 }

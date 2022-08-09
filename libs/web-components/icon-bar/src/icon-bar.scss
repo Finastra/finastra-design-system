@@ -31,6 +31,14 @@ slot[name="footer"]::slotted(*) {
 :host([large]) {
   padding-left: 32px;
   padding-right: 32px;
+
+  ::slotted(fds-icon-bar-item) {
+      margin-bottom: 38px;
+  }
+
+  slot[name="footer"]::slotted(*) {
+    margin-bottom: 16px;
+  }
 }
 
 .footer {
