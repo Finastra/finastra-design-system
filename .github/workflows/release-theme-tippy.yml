@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'themes/tippy.js/**'
 
 jobs:
   publish:
