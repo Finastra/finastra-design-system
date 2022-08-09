@@ -39,7 +39,7 @@ import '@finastra/app-card';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/app-card@latest/dist/src/app-card.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/app-card/dist/fds-app-card.js"></script>
 
 <fds-app-card
   name="Business Economics"

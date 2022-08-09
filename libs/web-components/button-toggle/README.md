@@ -25,7 +25,10 @@ import '@finastra/button-toggle';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/button-toggle@latest/dist/src/button-toggle.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle/dist/fds-button-toggle.js"></script>
 
 <fds-button-toggle label="toggle" icon="camera"></fds-button-toggle>
+
+ <fds-button-toggle-filter label="label" icon="event"></fds-button-toggle-filter>
 ```

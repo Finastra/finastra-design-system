@@ -19,13 +19,13 @@ npm i @finastra/linear-progress
 ```ts
 import '@finastra/linear-progress';
 ...
-<fds-linear-progress></fds-linear-progress>
+<fds-linear-progress indeterminate></fds-linear-progress>
 ```
 
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/linear-progress@latest/dist/src/linear-progress.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/linear-progress/dist/fds-linear-progress.js"></script>
 
-<fds-linear-progress></fds-linear-progress>
+<fds-linear-progress indeterminate></fds-linear-progress>
 ```

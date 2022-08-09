@@ -1,24 +1,10 @@
 const path = require('path');
+const config = require('../base-webpack.config.cjs');
 
-const config = {
-  entry: './src/index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
+config.entry = path.resolve(__dirname, './src/index.ts'),
+config.output = {
     filename: 'fds-button.js',
-  },
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-};
+    path: path.resolve(__dirname, 'dist'),
+},
 
 module.exports = config;

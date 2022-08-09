@@ -34,7 +34,7 @@ import '@finastra/sidenav';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/sidenav@latest/dist/src/sidenav.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/sidenav/dist/fds-sidenav.js"></script>
 
 <fds-sidenav type="">
    <div slot="sidenavContent">

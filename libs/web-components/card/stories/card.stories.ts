@@ -44,7 +44,7 @@ const Template: Story<Card> = ({outlined, selectable, disabled}) => {
     </fds-card-header>
     <img src="https://cdn2.thecatapi.com/images/jb.jpg">
     <fds-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    Add your card content here
     </fds-card-content>
     <fds-card-actions>
       <fds-text-button label="Button"></fds-text-button>
@@ -60,7 +60,7 @@ const TemplateOutlined: Story<Card> = ({outlined, selectable, disabled}) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
     <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657130406/Top_npiwin.png">
     <fds-card-title>Header</fds-card-title>
-    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-content>Add your card content here</fds-card-content>
     <fds-divider></fds-divider>
     <fds-card-actions align="end">
       <fds-text-button label="Button"></fds-text-button>
@@ -83,7 +83,7 @@ const TemplateSelectable: Story<Card> = ({outlined, selectable, disabled}) => {
         <fds-card-subtitle>Subhead</fds-card-subtitle>
       </div>
     </fds-card-header>
-    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-content>Add your card content here</fds-card-content>
   </fds-card>`;
 };
 
@@ -96,7 +96,7 @@ const TemplateDisabled: Story<Card> = ({outlined, selectable, disabled}) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
     <fds-card-title>Header</fds-card-title>
     <fds-card-subtitle>Subhead</fds-card-subtitle>
-    <fds-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</fds-card-content>
+    <fds-card-content>Add your card content here</fds-card-content>
     <fds-card-actions>
       <fds-text-button label="Button"></fds-text-button>
       <fds-text-button label="Button"></fds-text-button>

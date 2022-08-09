@@ -22,7 +22,7 @@ import '@finastra/skeleton';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/skeleton@latest/dist/src/skeleton.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/skeleton/dist/fds-skeleton.js"></script>
 
 <fds-skeleton></fds-skeleton>
 ```

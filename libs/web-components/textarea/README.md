@@ -25,7 +25,7 @@ import '@finastra/textarea';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/textarea@latest/dist/src/textarea.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/textarea/dist/textarea.js"></script>
 
 <fds-textarea name="World"></fds-textarea>
 ```

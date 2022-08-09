@@ -29,7 +29,7 @@ import '@finastra/app-bar';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/app-bar@latest/dist/src/app-bar.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/app-bar/dist/fds-app-bar.js"></script>
 
 <fds-app-bar
     appName="Such app" 

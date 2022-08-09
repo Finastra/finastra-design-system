@@ -23,11 +23,8 @@ import '@finastra/fab';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/fab@latest/dist/src/fab.js?module"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script src="https://cdn.jsdelivr.net/npm/@finastra/fab/dist/fds-fab.js"></script>
 
 <fds-fab dense label="Photos" icon="camera"></fds-fab>
 ```
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security

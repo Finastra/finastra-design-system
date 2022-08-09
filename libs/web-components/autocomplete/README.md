@@ -28,7 +28,7 @@ import '@finastra/autocomplete';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/autocomplete@latest/dist/src/autocomplete.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/autocomplete/dist/fds-autocomplete.js"></script>
 
 <fds-autocomplete name="World">
     <mwc-list-item value="One">One</mwc-list-item>
