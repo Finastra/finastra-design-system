@@ -36,17 +36,17 @@ const Template: Story = ({ selectedIndex, separator, headerPosition, headerDispl
   return html`<fds-tab-group selectedIndex=${selectedIndex} ?separator=${separator} headerPosition=${headerPosition} headerDisplayType=${headerDisplayType}>
   <fds-tab-item label="Dashboard">
     <div class="content">
-      Ipsum ut nulla do consequat voluptate laboris nulla. Ullamco laborum ut irure dolor consectetur ipsum consequat nisi occaecat ea. Ipsum esse deserunt adipisicing id in voluptate adipisicing eu ipsum velit aliquip aliqua veniam eiusmod. Nulla ea Lorem cillum culpa ut reprehenderit exercitation sint reprehenderit occaecat. Proident fugiat amet laborum non quis. In id voluptate commodo irure excepteur proident adipisicing cupidatat qui reprehenderit minim Lorem commodo anim.
+      Content for the <b>Dashboard</b> tab
     </div>
   </fds-tab-item>
   <fds-tab-item label="Evolution">
     <div class="content">
-      Do amet exercitation magna aliqua non aliquip consequat ipsum. Fugiat fugiat labore nulla officia cillum et minim excepteur. Aliquip eu do ex officia id pariatur id ea eu. Veniam consequat commodo velit fugiat exercitation laboris commodo adipisicing velit qui mollit magna veniam consequat.
+    Content for the <b>Evolution</b> tab
     </div>
   </fds-tab-item>
   <fds-tab-item label="Trend">
     <div class="content">
-      Ex et laboris quis proident qui duis. Id aliqua enim cupidatat adipisicing cillum et amet eiusmod. Cupidatat excepteur exercitation consequat occaecat consequat aliqua.
+    Content for the <b>Trend</b> tab
     </div>
   </fds-tab-item>
 </fds-tab-group>`;

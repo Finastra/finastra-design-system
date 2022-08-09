@@ -46,7 +46,7 @@ import '@finastra/card';
   </fds-card-header>
   <img src="https://cdn2.thecatapi.com/images/jb.jpg">
   <fds-card-content>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    Add your card content here
   </fds-card-content>
   <fds-card-actions>
     <fds-text-button label="Button"></fds-text-button>
@@ -81,7 +81,7 @@ import '@finastra/card';
   </fds-card-header>
   <img src="https://cdn2.thecatapi.com/images/jb.jpg">
   <fds-card-content>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    Add your card content here
   </fds-card-content>
   <fds-card-actions>
     <fds-text-button label="Button"></fds-text-button>

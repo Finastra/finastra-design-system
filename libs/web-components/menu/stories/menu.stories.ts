@@ -53,11 +53,11 @@ const Template: Story<Menu> = (args) => {
           ?fullwidth=${args.fullwidth}
           ?stayOpenOnBodyClick=${args.stayOpenOnBodyClick}          
           >
-          <mwc-list-item>one</mwc-list-item>
-          <mwc-list-item>two</mwc-list-item>
-          <mwc-list-item disabled><div>four</div></mwc-list-item>
+          <mwc-list-item>Preview</mwc-list-item>
+          <mwc-list-item disabled><div>Share</div></mwc-list-item>
+          <mwc-list-item disabled><div>Get Link</div></mwc-list-item>
           <li divider></li>
-          <mwc-list-item>five</mwc-list-item>
+          <mwc-list-item>Download</mwc-list-item>
         </fds-menu>
     </div>
   `;
