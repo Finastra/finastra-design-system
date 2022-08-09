@@ -16,7 +16,7 @@ const demoApps = [
 ];
 
 export default {
-  title: 'NAVIGATION/Pattern/Global Nav',
+  title: 'PATTERN/Global Nav',
   parameters: {
     docs: {
       description: { component: README }
