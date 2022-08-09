@@ -104,7 +104,7 @@
                         height: 100%;
                         font-size: calc(2 * var(--fds-spacing-2)) !important;
                         background: transparent;
-                        color: var(--fds-on-background);
+                        @include fds.text-color(on-background);
 
                     }
 
