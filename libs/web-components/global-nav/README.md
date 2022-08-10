@@ -4,7 +4,7 @@ The Global Navigation ensures a consistant navigation between different apps and
 
 ## Demo
 
-[Here](https://finastra.github.io/finastra-design-system/?path=/story/navigation-pattern-global-nav--default) are available templates for the global navigation pattern.
+[Here](https://finastra.github.io/finastra-design-system/?path=/story/pattern-global-nav--default) are available templates for the global navigation pattern.
 
 ## Install
 
