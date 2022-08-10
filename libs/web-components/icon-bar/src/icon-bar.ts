@@ -20,17 +20,21 @@ export class IconBar extends LitElement {
   @property({ type: Boolean })
   removeNotification= false;
 
-  render() {
-    const nodes = this.getItemsTest();
-    nodes.forEach( node => {
+  private footer= false;
 
+  render() {
+    const nodes = this.getItems();
+    nodes.forEach( node => {
       if (node instanceof LitElement) {
         node.requestUpdate();
       }      
     })
     return html`
       <slot></slot>
-      ${this._footer? this.renderFooter() : html`<div></div>`}
+      <div class="footer">
+         ${this.footer ? html` <fds-divider></fds-divider>` : ''}
+        <slot name="footer" @slotchange=${this.onFooterSlotChanged}></slot>
+      </div>
     `;
   } 
 
@@ -42,9 +46,17 @@ export class IconBar extends LitElement {
       </div>
     `
   }
-  
+
+  onFooterSlotChanged() {
+    this.footer=false;
+    if(this._footer.length !== 0 ) {
+      this.footer=true;
+    }
+    this.requestUpdate();
+  }
+
   deselectOthers(current: Node) {  
-    const nodes = this.getItemsTest();  
+    const nodes = this.getItems();  
     nodes.forEach((node,index) => {
         if (node === current) {
           this.dispatchSelectedEvent(index);
@@ -67,7 +79,7 @@ export class IconBar extends LitElement {
       ));
   }
   
-  getItemsTest() {
+  getItems() {
     const slotArray : Node[] = [];
     const slotSelector='slot';
     const slotEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(slotSelector);

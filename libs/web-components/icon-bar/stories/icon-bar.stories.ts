@@ -32,7 +32,13 @@ export default {
   theme: 'finastra',
   placement: 'right-end',
   });
-</script>`
+</script>
+<style>
+  fds-icon-bar {
+    min-height: 400px;
+  }
+</style>
+`
   ],
   cssprops
 } as Meta;

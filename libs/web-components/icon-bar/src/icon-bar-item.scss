@@ -11,12 +11,16 @@
   fds-badge {
     --fds-icon-button-size: 38px;
   }
+
+  fds-icon-button {
+    color: var(--fds-primary);
+  }
 }
 
 .current {
   fds-icon-button {
     @include fds.property(background, gradient);
-    --fds-icon-button-color: var(--fds-on-primary);
+    color: var(--fds-on-primary);
     border-radius: 50%;
   }
 
