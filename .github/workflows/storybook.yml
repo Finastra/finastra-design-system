@@ -33,6 +33,8 @@ jobs:
         run: |
           npm ci
           npm run wc:build:storybook
+      - name: Build tippy theme
+        run: npm run build:tippy-theme
       - name: Publish to Chromatic and auto accept changes
         uses: chromaui/action@v1
         with:
