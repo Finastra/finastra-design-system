@@ -10,6 +10,7 @@
   "workspaces": [
     "themes/angular-theme",
     "themes/fds-theme",
+    "themes/tippy.js",
     "libs/web-components/*"
   ],
   "scripts": {
@@ -29,6 +30,7 @@
     "build:fds-test-app": "ng build fds-test-app",
     "build:theme": "ng build angular-theme --prod",
     "build:fds-theme": "npm run build -w themes/fds-theme",
+    "build:tippy-theme": "npm run build -w themes/tippy.js",
     "build:scripts": "tsc --project scripts/tsconfig.json",
     "changelog:components": "cd libs/angular-components && npx standard-version",
     "changelog:theme": "cd themes/angular-theme && npx standard-version",
