@@ -831,6 +831,18 @@
       },
       "tags": ["web-components"]
     },
+    "list": {
+      "root": "libs/web-components/list",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/list/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu": {
       "root": "libs/web-components/menu",
       "architect": {

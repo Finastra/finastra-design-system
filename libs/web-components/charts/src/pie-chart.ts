@@ -30,8 +30,8 @@ export class PieChart extends ApexChartsWrapper {
         return this._data;
     }
     public set data(value: number[]) {
-        this._data = value.sort((a, b) => b - a);
-        this.series = value
+        this._data = value;
+        this.series = this._data;
     }
 
     private _labels: string[] = [];

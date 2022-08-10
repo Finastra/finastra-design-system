@@ -27,10 +27,14 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - name: Build tippy theme
+        run: npm run build:tippy-theme
       - name: Build Storybook
         run: |
           npm ci
           npm run wc:build:storybook
+      - name: Build tippy theme
+        run: npm run build:tippy-theme
       - name: Publish to Chromatic and auto accept changes
         uses: chromaui/action@v1
         with:

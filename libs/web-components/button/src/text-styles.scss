@@ -1,1 +1,6 @@
 @use 'base-styles';
+
+mwc-button {
+ --mdc-button-horizontal-padding :  var(--fds-spacing-3, 16px);
+}
+  

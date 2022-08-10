@@ -45,16 +45,18 @@ const Template: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimCli
   return html`
 <span class="message">👇 Use the <strong>open</strong> property in the table below to enable the preview 👇</span>
 <fds-dialog id="dialog" heading=${heading} ?open=${open} ?hideActions=${hideActions} ?stacked=${stacked} ?scrimClickAction=${scrimClickAction} ?escapeKeyAction=${escapeKeyAction}>
-  <span class="body">Body 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </span>
-  <fds-button
-    secondary
-    label="Yes"
-    slot="primaryAction"
-    dialogAction="ok"></fds-button>
+  <span class="body">
+    This will reset your settings to the defaults.
+  </span>
   <fds-text-button
-    label="No"
+    label="Cancel"
     slot="secondaryAction"
     dialogAction="cancel"></fds-text-button>
+  <fds-button
+    secondary
+    label="Accept"
+    slot="primaryAction"
+    dialogAction="ok"></fds-button>
 </fds-dialog>`;
 };
 
@@ -62,7 +64,23 @@ const ScrollableTemplate: Story<Dialog> = ({ open, heading, hideActions, stacked
   return html`
 <span class="message">👇 Use the <strong>open</strong> property in the table below to enable the preview 👇</span>
 <fds-dialog heading=${heading} ?open=${open} ?hideActions=${hideActions} ?stacked=${stacked} ?scrimClickAction=${scrimClickAction} ?escapeKeyAction=${escapeKeyAction}>
-  <p>Lorem ipsum dolor sit amet. Qui harum dolorem et vero asperiores vel nulla ullam aut quisquam omnis ea aspernatur odio. Sed delectus itaque sed recusandae alias ab fuga ullam et suscipit nisi. Non odio ducimus et nisi odio ut recusandae animi. Sed inventore minima est praesentium eveniet id accusamus esse sit eveniet tenetur eos corrupti dignissimos sed vitae omnis qui consequatur vitae! </p><p>Aut maxime placeat sed maiores porro et rerum internos 33 dolorum error cum repudiandae repellat ut nesciunt dolor non voluptatem nihil. Non aliquid aliquam sed nihil odio et laudantium doloribus aut natus vitae sit molestiae suscipit sed asperiores velit ea internos enim. Et eaque quae aut autem placeat ea odio galisum et facilis corporis hic assumenda maxime. </p><p>Ut quae maiores a officiis blanditiis in numquam ducimus ut quasi repudiandae quo excepturi accusantium qui perspiciatis omnis. Ut incidunt modi et voluptates autem et velit maxime id fugit omnis sit voluptas voluptatem et natus fugiat. Hic amet maxime et iusto voluptas qui tenetur deserunt At magni Quis et dolor sunt et dolores delectus. Et error delectus aut dolor porro sed saepe tempora. </p><p>Ea  dolorem sed rerum deserunt a rerum cupiditate? Qui voluptatem ipsum vel nulla eius a reprehenderit totam. </p><p>Est rerum similique ut perspiciatis quisquam ut tenetur libero. Aut repudiandae quia a voluptatem adipisci et autem sunt eos odio illum qui nulla natus est quas quia. </p>
+  <p>Finastra* (“we”, “us” or “Finastra”) is a leading provider of financial services software  that the world's financial institutions rely on every day to help them grow and succeed. Our customers, consumers, prospects, registered users, applicants for employment, and others with whom we do business entrust us with their personal data and personally identifiable information (“Personal Information”) and they expect us to protect that Personal Information with the same level of care we do our own. This is fundamental to the way we do business.</p>
+
+<p>This Finastra Privacy Policy External (the “Policy”) describes the practices we have adopted with respect to processing Personal Information including the collection, use, storage or disclosure of Personal Information, (i) on our websites that link to this Policy (collectively the “Sites”); (ii) when you interact with our support centre or other online forums; (ii) when you participate in our webinars, events and demonstrations; (iii) when you purchase our products or services (“Services”); or (iv) when you interact with us as a vendor, partner or sub-contractor, except where there are specific privacy requirements for a Service and a separate policy has been published for that particular Service.</p>
+
+<h3>SCOPE</h3>
+
+<p>Whether acting as a data controller, a data processor or data intermediary, Finastra is required to comply with all applicable laws and regulations protecting the privacy of Personal Information in the jurisdictions where Finastra conducts business.</p>
+
+<p>We may amend this Policy from time to time, should it become necessary or advisable to do so to comply with regulatory requirements or best practices. The most recent modification date of this Policy will appear at the top of this page. If we materially change our practices in processing Personal Information, we will post an updated policy in place of this Policy.</p>
+
+<h3>GENERAL DEFINITIONS</h3>
+
+<p>These definitions may vary slightly according to local data privacy laws.</p>
+
+<p>“Personal Information” is any information relating to an identified or identifiable natural person (which in some jurisdictions may include individuals who are recently deceased, and whether or not the information is true) or to a legal entity (to the extent protected under applicable data protection law), recorded in any medium including but not limited to electronic, paper, or voice recordings. It may include information such as name, address, date of birth, identification numbers, financial information and any other identifiable personal information. Personal Information may include non-identifiable information which, when combined with other information to which Finastra is likely to have access, can be used to identify an individual.</p>
+
+<p>Individuals or entities that are identified or identifiable by Personal Information are referred to as “data subjects”.</p>
   <fds-button
     label="Accept"
     slot="primaryAction"
@@ -85,7 +103,8 @@ const Form: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimClickAc
     id="text-field"
     minlength="3"
     maxlength="64"
-    placeholder="First name"
+    placeholder="Type your first name"
+    label="First name"
     required></fds-textfield>
   <fds-button
     label="Confirm"
@@ -101,7 +120,7 @@ const Form: Story<Dialog> = ({ open, heading, hideActions, stacked, scrimClickAc
 
 export const Default: Story<Dialog> = Template.bind({});
 Default.args = {
-  heading: "Title"
+  heading: "Reset settings ?"
 };
 
 export const Scrollable: Story<Dialog> = ScrollableTemplate.bind({});
