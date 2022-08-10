@@ -1,5 +1,6 @@
 <script type="module" src="node_modules/@finastra/charts/dist/src/pie-chart.js"></script>
 <script type="module" src="node_modules/@finastra/charts/dist/src/donut-chart.js"></script>
+<div>PieChart</div>
 <div class="main-content">
     <div>Default</div>
 
@@ -26,6 +27,7 @@
         <fds-pie-chart theme="dark" id="pieChart"  width="380"></fds-pie-chart>
     </div>
 </div>
+<div>Donut Chart</div>
 <div class="main-content">
     <div>Default</div>
 
@@ -55,14 +57,17 @@
 <script>
     const pieCharts = document.querySelectorAll('#pieChart');
     pieCharts.forEach((pieChart) => {
-        pieChart.data = [44, 55, 13, 43, 22]
-        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
+        //  pieChart.data = [44, 55, 13, 43, 2, 12]
+        pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28]
+        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon']
+
+        // pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
         
     })
 </script>
 <style>
     .card {
-        background-color: #fff;
+        background-color: var(--fds-surface);
         padding: 40px;
         border-radius: 8px;
         display: flex;

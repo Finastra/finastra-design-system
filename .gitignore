@@ -61,6 +61,7 @@ themes/angular-theme/prebuilt-theme
 /libs/web-components/**/package-lock.json
 **/*.tsbuildinfo*
 /themes/fds-theme/prebuilt/**
+/themes/tippy.js/dist
 compile
 storybook-static
 **/coverage

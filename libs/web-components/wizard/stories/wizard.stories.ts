@@ -87,6 +87,11 @@ const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIn
 
 export const Default: Story<Wizard> = Template.bind({});
 
+export const Right: Story<Wizard> = Template.bind({});
+Right.args = {
+  stepperPosition: POSITION.right
+}
+
 
 
 

@@ -18,3 +18,7 @@
 :host([fullWidth]) {
   flex: 1;
 }
+
+mwc-button[dense] {
+  --mdc-typography-button-font-size: 12px;
+}

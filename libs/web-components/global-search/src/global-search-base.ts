@@ -1,6 +1,5 @@
 import '@finastra/divider';
 import '@finastra/icon-button';
-import '@finastra/linear-progress';
 import { html, LitElement } from 'lit';
 import { property } from "lit/decorators.js";
 import { FdsSearchItem, FdsSearchSelectedItem, FDS_GLOBAL_RECENT_SEARCH_KEY, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED, FDS_GLOBAL_SEARCH_PAGE_SELECTED, MAX_RECENT_SEARCH } from './global-search.model';

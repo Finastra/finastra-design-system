@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@finastra/divider": "0.0.36",
-    "@finastra/linear-progress": "0.0.36",
     "@finastra/icon-button": "0.0.36",
     "lit": "2.0.2",
     "tslib": "^2.0.1"

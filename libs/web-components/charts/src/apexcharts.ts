@@ -435,7 +435,7 @@ export class ApexChartsWrapper extends LitElement {
   getStrokeColor() {
     return {
       stroke: {
-        colors: this.chartTheme.strokeColor,
+        colors: [this.chartTheme.strokeColor],
       }
     }
   }
