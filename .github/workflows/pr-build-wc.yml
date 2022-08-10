@@ -40,6 +40,8 @@ jobs:
         run: npm run wc:build
       - name: Build web components bundles
         run: npm run wc:build:bundle
+      - name: Build tippy theme
+        run: npm run build:tippy-theme
 
       # Test
       - name: Unit tests
