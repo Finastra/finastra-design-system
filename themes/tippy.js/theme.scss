@@ -4,7 +4,7 @@ $color: rgba(0,0,0,0.54);
 
 .tippy-box[data-theme~='finastra'] {
   background-color: $color;
-  @include fds.text-color(text-high-on-dark);
+  @include fds.text-color(on-dark);
   @include fds.typography(body-3);
 
   .tippy-arrow::before {
