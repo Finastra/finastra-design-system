@@ -3,7 +3,7 @@ import { property } from "lit/decorators.js";
 import { FdsSearchPageItem, FdsSearchPageSelectedItem, FDS_GLOBAL_SEARCH_PAGE_SELECTED } from "../global-search.model";
 
 
-export class FdsGlobalSearchPageBase extends LitElement{
+export class GlobalSearchPageBase extends LitElement{
 
     @property({type: String}) title = "";
     @property({type: Array}) items: FdsSearchPageItem[] = [];

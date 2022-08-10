@@ -3,7 +3,7 @@ import { property } from "lit/decorators.js";
 import { FdsSearchSelectedItem, FDS_GLOBAL_SEARCH_ITEM_SELECTED } from "../global-search.model";
 
 
-export class FdsGlobalSearchSummaryBase extends LitElement {
+export class GlobalSearchSummaryBase extends LitElement {
 
     @property({ type: String }) searchText = '';
     @property({ type: Number }) resultCount = 0;

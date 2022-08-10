@@ -5,7 +5,7 @@ import { FdsSearchItem, FdsSearchRemovedItem, FdsSearchSelectedItem, FDS_GLOBAL_
 
 
 
-export class FdsGlobalSearchGroupBase extends LitElement{
+export class GlobalSearchGroupBase extends LitElement{
 
     @property({type: String}) title = "";
     @property({type: String}) icon ='';

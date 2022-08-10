@@ -9,8 +9,7 @@
         flex-direction: row;
         place-content: space-between;
         align-items: center;
-        padding-top: var(--fds-spacing-1);
-        padding-bottom: var(--fds-spacing-1);
+        @include fds.padding-y(1);
     }
 
     .fds-global-search-summray-no-result {
@@ -18,8 +17,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding-top: var(--fds-spacing-1);
-        padding-bottom: var(--fds-spacing-1);
+        @include fds.padding-y(1);
     }
 
     .fds-global-search-summary-result:hover {
@@ -27,8 +25,7 @@
         border-radius: var(--fds-spacing-1);
         margin-left: calc(0px - var(--fds-spacing-2));
         margin-right: calc(0px - var(--fds-spacing-2));
-        padding-left: var(--fds-spacing-2);
-        padding-right: var(--fds-spacing-2);
+        @include fds.padding-x(2);
         cursor: pointer;
     }
 

@@ -6,10 +6,9 @@ import { property } from "lit/decorators.js";
 import { FdsSearchItem, FdsSearchSelectedItem, FDS_GLOBAL_RECENT_SEARCH_KEY, FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GLOBAL_SEARCH_ITEM_SELECTED, FDS_GLOBAL_SEARCH_PAGE_SELECTED, MAX_RECENT_SEARCH } from './global-search.model';
 
 
-export class FdsGlobalSearchBase extends LitElement {
+export class GlobalSearchBase extends LitElement {
 
     @property({ type: String }) value = '';
-    @property({ type: Boolean }) loading = false;
     @property({ type: String }) placeholder = '';
 
     private _enableRecentSearch = true;
@@ -78,24 +77,24 @@ export class FdsGlobalSearchBase extends LitElement {
                     <div class="fds-global-search-text-container">
                         <div class="fds-global-search-text-field">
                             <div class="fds-global-search-text-action">
-                                <fds-icon-button primary=true icon="search" @click=${(e)=> this.triggerSearchWithText(e)}>
+                                <fds-icon-button primary=true icon="search" @click=${(e) => this.triggerSearchWithText(e)}>
                                 </fds-icon-button>
                             </div>
                             <div class="fds-global-search-text-input">
                                 <input id="fds-global-search-textfield" placeholder="${this.placeholder}" value="${this.value}"
-                                    tabindex="-1" @focus=${()=> this.onGlobalSearchInputFocus()}
+                                    tabindex="-1" @focus=${() => this.onGlobalSearchInputFocus()}
                                 @input=${() => this.onGlobalSearchInputChanged()}
                                 />
                             </div>
                             <div class="fds-global-search-text-action">
                                 <fds-icon-button id="fds-global-search-clear-btn"
-                                    class="${this.value ? '' : 'fds-global-search-action-hide'}" dense icon="close" @click=${(e)=>
-                                    this.clearInput(e)} ></fds-icon-button>
+                                    class="${this.value ? '' : 'fds-global-search-action-hide'}" dense icon="close" @click=${(e) =>
+                this.clearInput(e)} ></fds-icon-button>
                             </div>
                         </div>
                         <fds-divider></fds-divider>
                     </div>
-                    ${this.loading ? html`<fds-linear-progress indeterminate></fds-linear-progress>` : ''}
+            
                     <div class="fds-global-search-container ${this.isOpen ? 'fds-global-search-container-open' : ''}">
                         <div class="fds-global-search-block">
                             ${this.renderRecentSearch()}
@@ -176,8 +175,8 @@ export class FdsGlobalSearchBase extends LitElement {
         this.requestUpdate();
     }
 
-    setInput(text:string){
-        if(!text){
+    setInput(text: string) {
+        if (!text) {
             text = "";
         }
 
@@ -187,9 +186,9 @@ export class FdsGlobalSearchBase extends LitElement {
             inputElement.value = text;
         }
 
-        if(this.value){
+        if (this.value) {
             this.toggleSearchClearButton(true);
-        }else{
+        } else {
             this.toggleSearchClearButton(false)
         }
     }
@@ -276,11 +275,13 @@ export class FdsGlobalSearchBase extends LitElement {
         }
 
         if (this.isOpen) {
-            this.overlay.style['display'] = 'flex';
+            this.overlay?.classList.remove('close');
+            this.overlay?.classList.add('open');
             this.wrapperElement?.classList.add('open');
             this.wrapperContainerElement?.classList.add('fds-global-search-container-open');
         } else {
-            this.overlay.style['display'] = 'none';
+            this.overlay?.classList.remove('open');
+            this.overlay?.classList.add('close');
             this.wrapperElement?.classList.remove('open');
             this.wrapperContainerElement.classList.remove('open');
             this.wrapperContainerElement?.classList.remove('fds-global-search-container-open');
@@ -302,25 +303,58 @@ export class FdsGlobalSearchBase extends LitElement {
         const overlay = window.document.createElement('div');
         overlay.id = 'fds-global-search-overlay'
         overlay.classList.add('fds-global-search-backdrop');
-        overlay.style.cssText = `
-            background-color: var(--fds-dialog-scrim-color, var(--fds-surface-disabled));
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            height: 300vh;
-            z-index: 999;
-            pointer-events: auto;
-            -webkit-tap-highlight-color: transparent;
-            transition: opacity .4s cubic-bezier(.25,.8,.25,1);
-            opacity: 1;`
+        overlay.classList.add('close');
         overlay.onclick = () => {
             this.isOpen = false;
             this.toggleGlobalSearch()
         }
+
+        const overlayStyleElement = window.document.createElement('style');
+        overlayStyleElement.type = "text/css";
+        const overlayStyle = `
+            .fds-global-search-backdrop{
+                background-color: var(--fds-dialog-scrim-color, var(--fds-surface-disabled));
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 0px;
+                z-index: 999;
+                display: flex;
+                pointer-events: auto;
+            }
+            .fds-global-search-backdrop.open{
+                height: 300vh;
+                animation: fade-in 300ms ease-in;
+            }
+            .fds-global-search-backdrop.close{
+                animation: fade-out 300ms ease-out;
+            }
+
+            @keyframes fade-in{
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity:1;
+                }
+            }
+            @keyframes fade-out {
+                0% {
+                  opacity: 1;
+                }
+                100% {
+                  opacity: 0;
+                  height: 0px;
+                }
+            }
+        `;
+        overlayStyleElement.appendChild(window.document.createTextNode(overlayStyle))
+
+        window.document.getElementsByTagName('head')[0].append(overlayStyleElement);
         window.document.body.appendChild(overlay);
+
         return overlay;
     }
 }

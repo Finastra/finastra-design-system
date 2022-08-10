@@ -10,9 +10,11 @@
             @include fds.property(background, background);
             @include fds.property(border-color, primary);
             position: absolute;
+            height: var(--fds-spacing-5);
 
             &.open {
                 z-index: 1000;
+                height: unset;
 
                 &.fds-global-search-input-focus {
                     border-width: 1px;
@@ -24,8 +26,7 @@
 
                 fds-divider {
                     visibility: visible;
-                    margin-left: var(--fds-spacing-4) !important;
-                    margin-right: var(--fds-spacing-4) !important;
+                    @include fds.margin-x(4);
                 }
             }
 
@@ -34,11 +35,8 @@
                 display: none;
 
                 .fds-global-search-block {
-                    margin-top: var(--fds-spacing-2) !important;
-                    padding-left: var(--fds-spacing-4) !important;
-                    padding-right: var(--fds-spacing-4) !important;
-                    margin-bottom: var(--fds-spacing-2) !important;
-
+                    @include fds.margin-y(2);
+                    @include fds.padding-x(4);
                 }
 
                 &.fds-global-search-container-open {
@@ -46,7 +44,6 @@
                     flex-direction: column;
                     width: 100%;
                 }
-
             }
         }
 
@@ -54,11 +51,9 @@
             width: 100%;
         }
     }
-
 }
 
 .fds-global-search {
-    // position: fixed;
     display: inline-flex;
     pointer-events: none;
     top: 0;
@@ -91,8 +86,7 @@
                 align-items: center;
                 place-content: space-between;
                 height: 100%;
-                padding-left: var(--fds-spacing-4) !important;
-                padding-right: var(--fds-spacing-4) !important;
+                @include fds.padding-x(4);
 
                 .fds-global-search-text-input {
                     height: 100%;
@@ -124,6 +118,7 @@
                     .fds-global-search-action-hide {
                         display: none;
                     }
+
                     .fds-global-search-clear-btn {
                         @include fds.text-color(on-background);
                     }

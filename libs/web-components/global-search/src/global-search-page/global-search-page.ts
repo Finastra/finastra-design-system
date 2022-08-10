@@ -1,5 +1,5 @@
 import { customElement } from "lit/decorators.js";
-import { FdsGlobalSearchPageBase } from "./global-search-page-base";
+import { GlobalSearchPageBase } from "./global-search-page-base";
 import { styles } from "./global-search-page.css";
 
 /**
@@ -8,12 +8,12 @@ import { styles } from "./global-search-page.css";
  */
 
 @customElement('fds-global-search-page')
-export class FdsGlobalSearchPage extends FdsGlobalSearchPageBase {
+export class GlobalSearchPage extends GlobalSearchPageBase {
     static override styles = [styles];
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'fds-global-search-page': FdsGlobalSearchPage;
+        'fds-global-search-page': GlobalSearchPage;
     }
 }

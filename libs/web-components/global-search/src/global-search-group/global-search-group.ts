@@ -1,6 +1,6 @@
 
 import { customElement } from 'lit/decorators.js';
-import { FdsGlobalSearchGroupBase } from './global-search-group-base';
+import { GlobalSearchGroupBase } from './global-search-group-base';
 import { styles } from './global-search-group.css';
 
 /**
@@ -9,11 +9,11 @@ import { styles } from './global-search-group.css';
  */
 
 @customElement('fds-global-search-group')
-export class FdsGlobalSearchGroup extends FdsGlobalSearchGroupBase {
+export class GlobalSearchGroup extends GlobalSearchGroupBase {
     static styles = styles;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'fds-global-search-item': FdsGlobalSearchGroup;
+        'fds-global-search-item': GlobalSearchGroup;
     }
 }
