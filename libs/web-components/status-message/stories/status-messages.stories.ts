@@ -50,23 +50,23 @@ export default {
 
         .message-title {
           font: var(--fds-headline-3);
-          color: var(--fds-on-surface);
+          color: var(--fds-on-surface, #000000);
           max-width: 480px;
           text-align: center;
-          margin-top: var(--fds-spacing-3);
-          margin-bottom: var(--fds-spacing-3);
+          margin-top: var(--fds-spacing-3, 16px);
+          margin-bottom: var(--fds-spacing-3, 16px);
         }
 
         .message-description {
           font: var(--fds-body-1);
-          color: var(--fds-on-surface-medium);
+          color: var(--fds-on-surface-medium, #0000008A);
           text-align: center;
           max-width: 808px;
         }
 
         .message-action {
-          margin-top: var(--fds-spacing-4);
-          margin-bottom: var(--fds-spacing-4);
+          margin-top: var(--fds-spacing-4, 24px);
+          margin-bottom: var(--fds-spacing-4, 24px);
         }
 
         .message-icon-container {
@@ -91,11 +91,11 @@ export default {
         }
 
         .message-icon.success {
-          color: var(--fds-success);
+          color: var(--fds-success, #008744);
         }
 
         .message-icon.error {
-          color: var(--fds-error);
+          color: var(--fds-error, #E40046);
         }
 
         .message-input {
@@ -103,7 +103,7 @@ export default {
           justify-content: space-around;
           align-items: center;
           width: 540px;
-          margin-top: var(--fds-spacing-5);
+          margin-top: var(--fds-spacing-5, 48px);
         }
 
         .message-input fds-textfield {
