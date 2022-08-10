@@ -43,6 +43,9 @@ export class Icon extends LitElement {
   @property({ type: Boolean })
   gradient = false;
 
+  @property({ type: Boolean })
+  disabled = false;
+
   render() {
     return html`<span><slot></slot></span>`;
   }

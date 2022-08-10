@@ -36,3 +36,7 @@
 :host([gradient]) {
   @include fds.text-color(gradient);
 }
+
+:host([disabled]) {
+  @include fds.text-color(on-surface-disabled);
+}

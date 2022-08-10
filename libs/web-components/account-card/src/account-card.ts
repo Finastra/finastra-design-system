@@ -33,7 +33,11 @@ export class AccountCard extends BaseCard {
     return html`
     <fds-card-content class="account-content">
       <div class="account-icon">
-        <fds-icon aria-label="${this.iconAriaLabel}">${this.icon}</fds-icon>
+        ${
+          this.disabled
+          ? html`<fds-icon aria-label="${this.iconAriaLabel}" disabled>${this.icon}</fds-icon>`
+          : html`<fds-icon aria-label="${this.iconAriaLabel}" primary>${this.icon}</fds-icon>`
+        }
       </div>
       <div>
         <div class="account-name">${this.name}</div>

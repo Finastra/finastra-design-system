@@ -19,10 +19,6 @@
     justify-content: center;
     align-items: center;
     @include fds.bg-color(primary-lighter);
-
-    mwc-icon {
-      @include fds.text-color(primary);
-    }
   }
 
   .account-name {
@@ -51,9 +47,5 @@
 
   .mdc-card--disabled .account-icon {
     @include fds.bg-color(surface-disabled);
-
-    mwc-icon {
-      @include fds.text-color(on-surface-disabled);
-    }
   }
 }
