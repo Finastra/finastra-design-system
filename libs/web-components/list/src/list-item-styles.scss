@@ -4,7 +4,6 @@
 :host {
   @include fds.typography(subtitle-1);
   @include fds.mdc(theme-primary, primary);
-  @include fds.mdc(theme-secondary, secondary);
   @include fds.mdc(theme-on-surface, on-surface-disabled);
   @include fds.mdc(theme-text-icon-on-background, on-background);
   @include fds.mdc(theme-text-hint-on-background, on-background);
@@ -23,5 +22,11 @@
     width: auto;
     height: auto;
     display: flex;
+  }
+}
+
+:host([activated]) {
+  slot[name="graphic"]::slotted(*), slot[name="meta"]::slotted(*) {
+    @include fds.text-color(primary);
   }
 }
