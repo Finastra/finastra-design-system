@@ -3,11 +3,6 @@ import '@finastra/textfield';
 import '@material/mwc-icon';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import link from './assets/link.svg';
-import login from './assets/login.svg';
-import notfound from './assets/notfound.svg';
-import password from './assets/password.svg';
-import profile from './assets/profile.svg';
 
 
 const README = require('../README.md');
@@ -36,7 +31,7 @@ export default {
     statusIcon: 'done',
     label: 'action',
     icon: 'done',
-    image: profile,
+    image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_profile_r4rzd0.svg',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing sodales tellus habitant feugiat vitae faucibus nec elit mauris non sapien consequat ornare amet, ac. Tempor ullamcorper senectus.'
   },
   decorators: [
@@ -49,7 +44,7 @@ export default {
         }
 
         .message-title {
-          font: var(--fds-headline-3);
+          font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
           color: var(--fds-on-surface, #000000);
           max-width: 480px;
           text-align: center;
@@ -58,7 +53,7 @@ export default {
         }
 
         .message-description {
-          font: var(--fds-body-1);
+          font: normal normal var(--fds-body-1-font-weight, 300) var(--fds-body-1-font-size, 1rem)/var(--fds-body-1-line-height, 1.5rem) var(--fds-body-1-font-family, Roboto);
           color: var(--fds-on-surface-medium, #0000008A);
           text-align: center;
           max-width: 808px;
@@ -98,16 +93,35 @@ export default {
           color: var(--fds-error, #E40046);
         }
 
+        .message-image {
+          width: 100%;
+          max-width: 408px;
+        }
+
         .message-input {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          width: 540px;
+          width: 100%;
+          max-width: 540px;
           margin-top: var(--fds-spacing-5, 48px);
+          flex-wrap: wrap;
+          gap: var(--fds-spacing-3, 16px);
         }
 
         .message-input fds-textfield {
-          width: 440px;
+          max-width: 440px;
+          width: 100%;
+        }
+
+        @media only screen and (max-width: 440px) {
+          .message-title {
+            font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan);
+          }
+
+          .message-description {
+            font: normal normal var(--fds-body-2-font-weight, 300) var(--fds-body-2-font-size, 0.875rem)/var(--fds-body-2-line-height, 1.3125rem) var(--fds-body-2-font-family, Roboto);
+          }
         }
       </style>`
   ]
@@ -122,7 +136,7 @@ const Template: Story = ({status, statusIcon, title, description, icon, label, i
     <div class="message-title">${title}</div>
     <div class="message-description">${description}</div>
     ${hasAction ? html`<fds-button class="message-action" label="${label}" icon="${icon}"></fds-button>` : null}
-    ${hasMedia ? html`<img src=${image}/>` : null}
+    ${hasMedia ? html`<img class="message-image" src=${image}/>` : null}
   </section>
   `;
 };
@@ -140,7 +154,7 @@ LinkSent.args = {
   status: Status.Success,
   title: 'We will send you a link where you can change your password.',
   hasAction: false,
-  image: link
+  image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_link_doslxz.svg'
 }
 
 export const FailedLogin: Story = Template.bind({});
@@ -150,7 +164,7 @@ FailedLogin.args = {
   title: 'We failed to log you.',
   label: 'Retry',
   icon: 'refresh',
-  image: login
+  image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_login_xh8t2b.svg'
 }
 
 export const PageNotFound: Story = Template.bind({});
@@ -159,17 +173,17 @@ PageNotFound.args = {
   statusIcon: 'error',
   title: 'Page not found',
   hasAction: false,
-  image: notfound
+  image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_notfound_seulkw.svg'
 }
 
 const InputTemplate: Story = ({title, description, image, hasMedia, hasInput}) => {
   return html`
   <section class="message-body">
-    ${hasMedia ? html`<img src=${image}/>` : null}
+    ${hasMedia ? html`<img class="message-image" src=${image}/>` : null}
     <div class="message-title">${title}</div>
     <div class="message-description">${description}</div>
     <div class="message-input">
-      <fds-textfield placeholder="Your e-mail" icon="person_outline"></fds-textfield>
+      <fds-textfield type="email" label="Your e-mail" icon="person_outline" labelinside></fds-textfield>
       <fds-button label="Send"></fds-button>
     </div>
   </section>
@@ -179,6 +193,6 @@ const InputTemplate: Story = ({title, description, image, hasMedia, hasInput}) =
 export const PasswordReset: Story = InputTemplate.bind({});
 PasswordReset.args = {
   title: 'Enter your email address to reset your password.',
-  image: password,
+  image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_password_amz8of.svg',
   hasInput: true
 }
