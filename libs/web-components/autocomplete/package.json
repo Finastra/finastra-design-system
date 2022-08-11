@@ -1,7 +1,7 @@
 {
   "name": "@finastra/autocomplete",
   "displayName": "Autocomplete",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "Autocomplete Web Component",
   "keywords": [
     "Finastra Design System",
@@ -16,8 +16,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/menu": "0.0.36",
-    "@finastra/search-input": "0.0.36",
+    "@finastra/menu": "0.0.37",
+    "@finastra/search-input": "0.0.37",
     "@material/mwc-base": "^0.26.1",
     "@material/mwc-icon": "^0.26.1",
     "@material/mwc-menu": "^0.26.1",
@@ -25,8 +25,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@material/mwc-button": "^0.26.1",
-    "@material/mwc-base": "^0.26.1"
+    "@material/mwc-base": "^0.26.1",
+    "@material/mwc-button": "^0.26.1"
   },
   "publishConfig": {
     "access": "public"

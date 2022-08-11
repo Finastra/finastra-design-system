@@ -1,7 +1,7 @@
 {
   "name": "@finastra/button-toggle-group",
   "displayName": "ButtonToggleGroup",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "ButtonToggleGroup Web Component",
   "keywords": [
     "Finastra Design System",
