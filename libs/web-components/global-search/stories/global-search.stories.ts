@@ -42,7 +42,7 @@ const Template: Story<GlobalSearch> = ({
   <div>
     <fds-global-search 
       value=${ifDefined(value)} 
-      .placeholder=${ifDefined(placeholder)} 
+      placeholder=${ifDefined(placeholder)} 
       ?enableRecentSearch=${ifDefined(enableRecentSearch)} 
       style="width: 100%; height: 60px;">
       <fds-global-search-group 
