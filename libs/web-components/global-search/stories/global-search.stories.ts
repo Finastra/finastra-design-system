@@ -30,7 +30,16 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system'
     },
     cssprops
+  },
+  decorators: [
+    (story) => html`${story()}
+<style>
+  fds-global-search {
+    width: 100%; 
+    height: 60px;
   }
+</style>`
+  ]
 } as Meta;
 
 const Template: Story<GlobalSearch> = ({
@@ -43,8 +52,8 @@ const Template: Story<GlobalSearch> = ({
     <fds-global-search 
       value=${ifDefined(value)} 
       placeholder=${ifDefined(placeholder)} 
-      ?enableRecentSearch=${ifDefined(enableRecentSearch)} 
-      style="width: 100%; height: 60px;">
+      ?enableRecentSearch=${ifDefined(enableRecentSearch)}
+      >
       <fds-global-search-group 
         slot="searches"
         title="Trending Searches"

@@ -88,7 +88,8 @@ export class GlobalSearchBase extends LitElement {
                             <div class="fds-global-search-text-action">
                                 <fds-icon-button id="fds-global-search-clear-btn"
                                     class="${this.value ? '' : 'fds-global-search-action-hide'}" dense icon="close" @click=${(e) =>
-                this.clearInput(e)} ></fds-icon-button>
+                                    this.clearInput(e)} >
+                                </fds-icon-button>
                             </div>
                         </div>
                         <fds-divider></fds-divider>
