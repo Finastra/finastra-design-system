@@ -1,23 +1,21 @@
 {
-  "name": "@finastra/account-card",
-  "displayName": "AccountCard",
+  "name": "@finastra/icon",
+  "displayName": "Icon",
   "version": "0.0.37",
-  "description": "AccountCard Web Component",
+  "description": "Icon Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "AccountCard"
+    "Icon"
   ],
   "license": "MIT",
-  "main": "dist/src/account-card.js",
-  "module": "dist/src/account-card.js",
+  "main": "dist/src/icon.js",
+  "module": "dist/src/icon.js",
   "scripts": {
     "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/divider": "0.0.37",
-    "@finastra/icon": "0.0.37",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

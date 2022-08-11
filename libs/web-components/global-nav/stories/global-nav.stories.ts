@@ -1,5 +1,6 @@
 import '@finastra/app-bar';
 import '@finastra/brand-card';
+import '@finastra/icon';
 import '@finastra/launchpad';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
@@ -92,19 +93,19 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
       <mwc-list activatable>
         <mwc-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
+          <fds-icon slot="graphic">home</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
+          <fds-icon slot="graphic">dashboard</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
+          <fds-icon slot="graphic">extension</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
+          <fds-icon slot="graphic">settings</fds-icon>
         </mwc-list-item>
       </mwc-list>
     </div>
@@ -189,19 +190,19 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
       <mwc-list activatable>
         <mwc-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
+          <fds-icon slot="graphic">home</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
+          <fds-icon slot="graphic">dashboard</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
+          <fds-icon slot="graphic">extension</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
+          <fds-icon slot="graphic">settings</fds-icon>
         </mwc-list-item>
       </mwc-list>
     </div>
@@ -286,19 +287,19 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
       <mwc-list activatable>
         <mwc-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
+          <fds-icon slot="graphic">home</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
+          <fds-icon slot="graphic">dashboard</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
+          <fds-icon slot="graphic">extension</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
+          <fds-icon slot="graphic">settings</fds-icon>
         </mwc-list-item>
       </mwc-list>
     </div>

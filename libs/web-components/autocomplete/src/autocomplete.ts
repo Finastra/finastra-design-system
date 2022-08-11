@@ -1,6 +1,6 @@
 import '@finastra/menu';
 import '@finastra/search-input';
-import '@material/mwc-icon';
+import '@finastra/icon';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import '@material/mwc-menu';
 import { Menu } from '@material/mwc-menu';

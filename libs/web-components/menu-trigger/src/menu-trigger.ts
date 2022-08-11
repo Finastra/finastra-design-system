@@ -1,5 +1,5 @@
 import { OutlinedButton } from '@finastra/button';
-import '@material/mwc-icon';
+import '@finastra/icon';
 import { html } from 'lit-html';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -41,7 +41,7 @@ export class MenuTrigger extends OutlinedButton {
       ?fullwidth='${this.fullwidth}'
       ?secondary='${this.secondary}'
     >
-      <mwc-icon class="menu-trigger-icon">${this.menuTrailingIcon}</mwc-icon>
+      <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
     </fds-outlined-button>
     `;
   }

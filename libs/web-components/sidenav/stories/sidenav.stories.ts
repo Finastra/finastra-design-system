@@ -1,8 +1,8 @@
 const README = require('../README.md');
+import '@finastra/icon';
 import '@finastra/logo';
 import '@finastra/sidenav';
 import { DRAWER_TYPES, Sidenav } from '@finastra/sidenav';
-import '@material/mwc-icon';
 import '@material/mwc-list';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
@@ -60,19 +60,19 @@ const Template: Story<Sidenav> = ({ type }) => {
       <mwc-list activatable>
         <mwc-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
+          <fds-icon slot="graphic">home</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
+          <fds-icon slot="graphic">dashboard</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
+          <fds-icon slot="graphic">extension</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
+          <fds-icon slot="graphic">settings</fds-icon>
         </mwc-list-item>
       </mwc-list>
     </div>

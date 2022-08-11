@@ -161,7 +161,10 @@
       "path": "account-card"
     },
     {
+      "path": "icon"
+    },
+    {  
       "path": "list"
-    }
+    }  
   ]
 }

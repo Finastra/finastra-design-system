@@ -1,4 +1,5 @@
 const README = require('../README.md');
+import '@finastra/icon';
 import '@finastra/user-profile';
 import type { UserProfile } from '@finastra/user-profile';
 import { Meta, Story } from '@storybook/web-components';
@@ -87,11 +88,11 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
         <div class="item-list">
           <mwc-list-item graphic="icon">
             <span>item one</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
+            <fds-icon slot="graphic">dashboard</fds-icon>
           </mwc-list-item>
           <mwc-list-item graphic="icon">
             <span>item two</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
+            <fds-icon slot="graphic">dashboard</fds-icon>
           </mwc-list-item>
         </div>
         <fds-divider></fds-divider>

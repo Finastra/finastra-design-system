@@ -18,8 +18,8 @@
   "dependencies": {
     "@finastra/menu": "0.0.37",
     "@finastra/search-input": "0.0.37",
+    "@finastra/icon": "0.0.37",
     "@material/mwc-base": "^0.26.1",
-    "@material/mwc-icon": "^0.26.1",
     "@material/mwc-menu": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"

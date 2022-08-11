@@ -17,8 +17,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
+    "@finastra/icon": "0.0.37",
     "@material/mwc-circular-progress": "^0.26.1",
-    "@material/mwc-icon": "^0.26.1",
     "@material/mwc-icon-button": "^0.26.1",
     "@material/mwc-textfield": "^0.26.1",
     "lit": "^2.0.0",
