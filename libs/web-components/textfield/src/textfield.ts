@@ -1,9 +1,9 @@
 import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
-import { customElement, property } from 'lit/decorators.js';
-
 import { html, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './styles.css';
+
 
 /**
  * @cssprop {color} [--fds-primary=#694ED6] - Textfield color
@@ -89,12 +89,12 @@ export class Textfield extends TextFieldBase {
   }
 
   protected renderLabelOutside(): TemplateResult | string {
-    return html`
-      <span id="label" class="fds-text-field__label">
-        ${this.label}
-        ${this.renderRequired()}
-      </span>
-    `;
+      return this.label? html`
+        <span id="label" class="fds-text-field__label">
+          ${this.label}
+          ${this.renderRequired()}
+        </span>
+      ` : ``;
   }
 
   protected override renderOutline(): TemplateResult|string {
