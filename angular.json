@@ -527,6 +527,18 @@
       },
       "tags": ["web-components"]
     },
+    "fds-global-search": {
+      "root": "libs/web-components/global-search",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/global-search/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fds-test-app": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/fds-test-app",
@@ -780,13 +792,13 @@
       },
       "tags": []
     },
-    "icon-bar": {
-      "root": "libs/web-components/icon-bar",
+    "icon": {
+      "root": "libs/web-components/icon",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web-components/icon-bar/src/**/*.ts"]
+            "lintFilePatterns": ["libs/web-components/icon/src/**/*.ts"]
           }
         }
       },

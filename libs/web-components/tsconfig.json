@@ -143,6 +143,9 @@
       "path": "badge"
     },
     {
+      "path": "global-search"
+    },
+    {
       "path": "menu"
     },
     {
@@ -158,6 +161,9 @@
       "path": "account-card"
     },
     {
+      "path": "icon"
+    },
+    {  
       "path": "list"
     },
     {

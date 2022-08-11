@@ -86,7 +86,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 
   .mdc-text-field__input {
     @include fds.typography(subtitle-2);
-    
+
     &::placeholder {
       @include fds.typography(body-2);
     }
@@ -119,12 +119,12 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 }
 
 :host([dense]) {
-  --mdc-icon-size: 18px;
+  --fds-icon-size: 18px;
 
   .mdc-text-field--outlined {
     height: 40px;
   }
-  
+
   .mdc-text-field__input {
     @include fds.typography(subtitle-3);
   }

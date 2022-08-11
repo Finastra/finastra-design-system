@@ -17,7 +17,7 @@
   align-self: center;
   transition: visibility 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   --mdc-icon-button-size: 32px;
-  --mdc-icon-size: 18px;
+  --fds-icon-size: 18px;
 
   &.fds-search-input-clear-button--show {
     visibility: visible
