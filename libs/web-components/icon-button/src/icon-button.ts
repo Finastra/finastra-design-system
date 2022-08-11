@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
-  * @cssprop {color} [--fds-icon-button-color=#00000]-Icon button color
   * @attr [icon='code'] - Icon used in the button.
   * @attr [disabled=false] - Make the button disabled.
   * @attr [primary=false] - Use the primary color.
