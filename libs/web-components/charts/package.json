@@ -1,7 +1,7 @@
 {
   "name": "@finastra/charts",
   "displayName": "Charts",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "Charts Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,7 +12,7 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build":"",
+    "build": "",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/apexcharts-styles.scss src/pie-chart-styles.scss"
   },
   "dependencies": {
