@@ -1,7 +1,7 @@
 {
   "name": "@finastra/account-card",
   "displayName": "AccountCard",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "AccountCard Web Component",
   "keywords": [
     "Finastra Design System",
@@ -16,8 +16,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/divider": "0.0.37",
-    "@finastra/icon": "0.0.37",
+    "@finastra/divider": "0.0.38",
+    "@finastra/icon": "0.0.38",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

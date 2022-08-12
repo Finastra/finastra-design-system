@@ -1,7 +1,7 @@
 {
   "name": "@finastra/expansion-panel",
   "displayName": "ExpansionPanel",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "ExpansionPanel Web Component",
   "keywords": [
     "Finastra Design System",
