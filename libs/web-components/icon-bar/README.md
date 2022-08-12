@@ -16,7 +16,12 @@ npm i @finastra/icon-bar
 ```ts
 import '@finastra/icon-bar';
 ...
-<fds-icon-bar></fds-icon-bar>
+<fds-icon-bar>
+  <fds-icon-bar-item data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
+  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings"></fds-icon-bar-item>
+</fds-icon-bar>
 ```
 
 ### Pure HTML pages
@@ -24,5 +29,10 @@ import '@finastra/icon-bar';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/icon-bar@latest/dist/src/icon-bar.js?module"></script>
 
-<fds-icon-bar></fds-icon-bar>
+<fds-icon-bar>
+  <fds-icon-bar-item data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
+  <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
+  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings"></fds-icon-bar-item>
+</fds-icon-bar>
 ```
