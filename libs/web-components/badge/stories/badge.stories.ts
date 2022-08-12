@@ -46,19 +46,19 @@ export const Default: Story<Badge> = Template.bind({});
 
 const ButtonTemplate: Story<Badge> = ({value, color, position,type}) => {
   return html`<fds-badge value=${value} color=${color} position=${position} type=${type}>
-  <fds-button label="button" icon="notifications"></fds-button>
+  <fds-button primary label="button" icon="notifications"></fds-button>
 </fds-badge>`;
 };
 
 const LeftIndicatorTemplate: Story<Badge> = ({value, color, position,type}) => {
   return html`<fds-badge value=${value} color=${color} position=${position} type=${type}>
-  <mwc-icon-button icon="bookmark_border"></mwc-icon-button>
+  <fds-icon-button primary icon="bookmark_border"></fds-icon-button>
 </fds-badge>`;
 };
 
 const RightIndicatorTemplate: Story<Badge> = ({value, color, position,type}) => {
   return html` <fds-badge value=${value} color=${color} position=${position} type=${type}>
-  <mwc-icon-button icon="bookmark_border"></mwc-icon-button>
+  <fds-icon-button primary icon="bookmark_border"></fds-icon-button>
 </fds-badge>`;
 };
 

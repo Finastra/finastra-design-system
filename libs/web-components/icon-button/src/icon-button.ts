@@ -11,7 +11,7 @@ import { styles } from './styles.css';
 */
 @customElement('fds-icon-button')
 export class IconButton extends IconButtonBase {
-  static override styles = [styles];
+  static styles = styles;
 
   @property({ type: Boolean })
   dense = false;
