@@ -1681,19 +1681,6 @@
         }
       },
       "tags": []
-    },
-    "wizard-page": {
-      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-      "root": "libs/web-components/wizard-page",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/wizard-page/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
     }
   }
 }

@@ -2,8 +2,7 @@
 import '@finastra/chip';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { styles } from './styles.css';
-
+import { styles } from './wizard-page.css';
 
 @customElement('fds-wizard-page')
 export class WizardPage extends LitElement {
