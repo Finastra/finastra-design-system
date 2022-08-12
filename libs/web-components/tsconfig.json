@@ -165,6 +165,9 @@
     },
     {  
       "path": "list"
+    },
+    {
+      "path": "icon-bar"
     }  
   ]
 }

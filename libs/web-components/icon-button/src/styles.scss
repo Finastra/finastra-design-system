@@ -1,14 +1,21 @@
 @use '@material/mwc-icon-button/mwc-icon-button';
 @use '@finastra/fds-theme' as fds;
 
-:host {
+$icon-button-size: var(--fds-spacing-5);
+
+:host { 
   @include fds.text-color(on-surface);
-  @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled)
+  @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled);
+  
+  .mdc-icon-button {
+    width: var(--fds-icon-button-size, $icon-button-size);
+    height: var(--fds-icon-button-size, $icon-button-size);
+  }
 }
 
 :host([dense]) {
-  --mdc-icon-button-size: 30px;
-  --fds-icon-size: 18px;
+ --fds-icon-button-size: 30px;
+ --fds-icon-size: 18px;
 }
 
 :host([primary]) {
