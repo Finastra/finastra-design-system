@@ -1,7 +1,7 @@
-import { customElement, property } from 'lit/decorators.js';
 import { TabBase } from '@material/mwc-tab/mwc-tab-base';
+import { customElement, property } from 'lit/decorators.js';
+import { styles } from './tab.css';
 
-import { styles } from './styles.css';
 
 /**
  * @attr [label=''] - Text label to display in tab.
