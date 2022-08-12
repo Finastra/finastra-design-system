@@ -1,12 +1,11 @@
 const README = require('../README.md');
-import '@finastra/button-toggle';
 import '@finastra/button-toggle-group';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
 
 export default {
-  title: 'ACTIONS/Toggle/Button Toggle Group',
+  title: 'ACTIONS/Toggle',
   component: 'fds-button-toggle-group',
   argTypes,
   parameters: {

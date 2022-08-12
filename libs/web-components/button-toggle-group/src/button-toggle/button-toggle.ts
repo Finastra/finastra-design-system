@@ -1,7 +1,7 @@
-import { customElement } from 'lit/decorators.js';
 import { TabBase } from '@material/mwc-tab/mwc-tab-base';
-
+import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
+
 
 /**
  * @attr [label=''] - Text label to display in button toggle.

@@ -29,7 +29,6 @@ import '@finastra/button-toggle-group';
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle/dist/fds-button-toggle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle-group/dist/fds-button-toggle-group.js"></script>
 
 <fds-button-toggle-group style="padding-bottom: 16px">
