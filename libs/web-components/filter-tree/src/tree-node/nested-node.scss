@@ -1,0 +1,19 @@
+@use "@finastra/fds-theme" as fds;
+
+:host {
+  display: block;
+}
+
+p {
+  color: var(--fds-filter-tree-text-color, blue);
+}
+
+
+ul {
+  list-style:none;
+
+  li {
+    margin-top: 11px;
+    @include fds.typography(subtitle-1);
+  }
+}

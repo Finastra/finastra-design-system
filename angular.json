@@ -736,6 +736,18 @@
       },
       "tags": []
     },
+    "fds-filter-tree": {
+      "root": "libs/web-components/filter-tree",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/filter-tree/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "global-nav": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",

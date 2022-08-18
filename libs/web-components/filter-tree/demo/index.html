@@ -1,0 +1,57 @@
+<script type="module" src="node_modules/@finastra/filter-tree/dist/src/filter-tree.js"></script>
+<script type="module" src="node_modules/@finastra/list/dist/src/list.js"></script>
+
+
+<fds-filter-tree id="filter"></fds-filter-tree>
+<script>
+
+const test = [
+  {
+    label: 'Consumer Banking',
+  },
+  {
+    label: 'Corporate Banking',
+  },
+  {
+    label: 'Financial Toolbox'
+  },
+  {
+    label: 'Lending',
+  },
+  {
+    label: 'Payment',
+  }
+];
+
+const sampleFilterTree= [
+  {
+    label: 'Consumer Banking',
+  },
+  {
+    label: 'Corporate Banking',
+    children: [
+      {
+        label: 'Account Information',
+      },
+      {
+        label: 'Back Office',
+      },
+      {
+        label: 'Payments'
+      }
+    ]
+  },
+  {
+    label: 'Financial Toolbox'
+  },
+  {
+    label: 'Lending',
+  },
+  {
+    label: 'Payment',
+  }
+];
+
+    const filter = document.getElementById('filter');
+    filter.items = sampleFilterTree;
+</script>
