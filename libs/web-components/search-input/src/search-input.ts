@@ -1,44 +1,58 @@
-import { customElement, property } from 'lit/decorators.js';
+import '@finastra/circular-progress';
+import '@finastra/icon';
+import '@finastra/icon-button';
+import '@finastra/textfield';
+import { BaseTextField } from '@finastra/textfield';
 import { html, TemplateResult } from 'lit';
-import { TextFieldBase } from '@material/mwc-textfield/mwc-textfield-base';
-import { classMap } from 'lit/directives/class-map.js';
-
-import '@material/mwc-icon-button';
-import '@material/mwc-circular-progress';
-
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
- * The `Search Input` component
+ * @cssprop {color} [--fds-primary=#694ED6] - TextField color
+ * @cssprop {color} [--fds-icon-color=#694ED6] - Icon color.
+ * @cssprop {color} [--fds-icon-trailing-color=#694ED6] - Icon trailing color.
+ * @cssprop {text} [--fds-text-field-radius=4px] - Border radius of the outline.
+ * @attr [loading=false] - Display searchInput loader.
+ * @attr [showClearButton=true] - Show clear button.
+ * @attr [label=''] - Sets floating label value.
+ * @attr [placeholder='Search ...'] - Sets placeholder value displayed when input is empty.
+ * @attr [required=false] - Displays error state if value is empty and input is blurred.
+ * @attr [icon='search'] - Leading icon to display in input. See `fds-icon`.
+ * @attr [type=''] - A string specifying the type of control to render.
+ * @attr [validationMessage=''] - Message to show in the error color when the textfield is invalid. (Helper text will not be visible)
+ * @attr [disabled=false] - Whether or not the input should be disabled.
+ * @attr [dense=false] - Smaller text field size.
+ * @attr [helper=''] - Helper text to display below the input.
+ * @attr [labelInside=false] - Is the label included in the text field.
  */
+
 @customElement('fds-search-input')
-export class SearchInput extends TextFieldBase {
+export class SearchInput extends BaseTextField {
   static styles = styles;
 
-  @property({ type: String }) icon = 'search';
-  @property({ type: Boolean }) showClearButton = true;
   @property({ type: Boolean }) loading = false;
+  @property({ type: Boolean }) showClearButton = true;
+
+  constructor() {
+    super();
+    this.showActionButton = true;
+    this.icon = 'search';
+  }
+
+  protected override renderTrailingIcon(): TemplateResult | string {
+    return this.loading ? this.renderLoadingButton() : this.renderClearButton()
+  }
+
+  protected renderLoadingButton(): TemplateResult {
+    return html`<fds-circular-progress class="circular-loader" indeterminate density="-6"></fds-circular-progress>`
+  }
 
   protected renderClearButton(): TemplateResult | string {
-    const clearButtonclasses = {
-      'fds-search-input-clear-button--show': !!this.value,
-      'fds-search-input-clear-button--hide': !this.value
-    };
-    return this.showClearButton
-      ? html`<mwc-icon-button
-          @click=${this.clear}
-          class="mdc-text-field__affix--suffix fds-search-input-clear-button ${classMap(clearButtonclasses)}"
-          icon="clear"
-        ></mwc-icon-button>`
-      : ``;
-  }
-
-  protected renderLoadingButton() : TemplateResult {
-    return html`<mwc-circular-progress indeterminate density="-6" class="mdc-text-field__affix--suffix" ></mwc-circular-progress>`
-  }
-
-  protected renderTrailingIcon(): TemplateResult | string {
-    return this.loading ? this.renderLoadingButton() : this.renderClearButton()
+    return (this.value.length && this.showClearButton)
+      ? this.disabled
+        ? html`<fds-icon-button class="clear-icon" icon="close" @click="${this.clear}" disabled></fds-icon-button>`
+        : html`<fds-icon-button class="clear-icon" icon="close" @click="${this.clear}"></fds-icon-button>`
+      : '';
   }
 
   private clear() {

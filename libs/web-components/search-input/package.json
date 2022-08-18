@@ -17,10 +17,10 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
+    "@finastra/circular-progress": "0.0.39",
     "@finastra/icon": "0.0.39",
-    "@material/mwc-circular-progress": "^0.26.1",
-    "@material/mwc-icon-button": "^0.26.1",
-    "@material/mwc-textfield": "^0.26.1",
+    "@finastra/icon-button": "0.0.39",
+    "@finastra/textfield": "0.0.39",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
