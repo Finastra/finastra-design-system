@@ -128,17 +128,19 @@
 
 ## Web component development
 
+### Build
+
+First run the following commands to build all components
+
+```bash
+npm run wc:build:storybook
+```
+
+> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
+
 ### Local developement
 
-In `local developement`, recommends active watch mode and dev-server by running each commands below in a separate terminal/shell.
-
-- Watch mode
-
-```
-npm run wc:watch
-```
-
-- Local Dev Server (Don't need to run watch mode)
+- Local Dev Server (it also start the watch mode)
 
 ```
 npm run wc:serve
@@ -152,25 +154,13 @@ npm run wc:storybook
 
 > You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)
 
-### Build
+For `local developement`, we recommend using build in watch mode:
 
-Run the following commands to build all components
+- Watch mode
 
-```bash
-# Build component style (scss -> ts)
-npm run wc:build:style
-
-# Build component typescript (ts -> js)
-npm run wc:build:ts
-
-# Shortcut running both above commands
-npm run wc:build
-
-# Storybook
-npm run wc:build:storybook
 ```
-
-> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
+npm run wc:watch
+```
 
 ### Running tests
 
