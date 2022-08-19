@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Menu } from "@finastra/menu";
 import { SearchInput } from '@finastra/search-input';
-import { elementUpdated, expect, fixture, html, oneEvent, triggerBlurFor, triggerFocusFor } from '@open-wc/testing';
+import { elementUpdated, expect, fixture, html, triggerBlurFor, triggerFocusFor } from '@open-wc/testing';
 import '../src/autocomplete.js';
 import { Autocomplete } from '../src/autocomplete.js';
 
@@ -27,34 +27,6 @@ describe('Autocomplete', () => {
 
     await triggerBlurFor(element);
     expect(document.activeElement === element).to.be.false;
-  });
-
-  it('should navigate using keyboard', async () => {
-    const textInput = element.shadowRoot?.querySelector('.formElement');
-    await triggerFocusFor(element);
-    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Down' }));
-    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
-    expect(menu?.index).to.equal(0);
-
-    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Down' }));
-    expect(menu?.index).to.equal(1);
-
-    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Up' }));
-    expect(menu?.index).to.equal(0);
-
-    textInput?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Esc' }));
-    await menu?.updateComplete;
-    expect(menu?.open).to.equal(false);
-  });
-
-  it('should close menu on click outside', async () => {
-    await triggerFocusFor(element);
-    const menu: Menu | undefined | null = element.shadowRoot?.querySelector('.mdc-menu');
-    expect(menu?.open).to.equal(true);
-    await oneEvent(menu!, 'opened');
-    document.body.dispatchEvent(new MouseEvent('click'));
-    await element?.updateComplete;
-    expect(menu?.open).to.equal(false);
   });
 
   it('should filter menu', async () => {
