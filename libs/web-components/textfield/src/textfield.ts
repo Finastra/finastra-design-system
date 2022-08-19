@@ -1,5 +1,5 @@
 import { customElement } from 'lit/decorators.js';
-import { BaseTextField } from './base-textfield.js';
+import { BaseTextField } from './base-textfield';
 import { styles } from './styles.css';
 
 /**
