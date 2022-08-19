@@ -1,4 +1,3 @@
-import '@finastra/icon';
 import { ListItem } from "@finastra/list";
 import '@finastra/menu';
 import { Menu } from "@finastra/menu";

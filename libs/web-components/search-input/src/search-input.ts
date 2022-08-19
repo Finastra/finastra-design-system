@@ -1,5 +1,4 @@
 import '@finastra/circular-progress';
-import '@finastra/icon';
 import '@finastra/icon-button';
 import { BaseTextField } from '@finastra/textfield';
 import { html, TemplateResult } from 'lit';
