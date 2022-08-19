@@ -1,7 +1,6 @@
 import '@finastra/circular-progress';
 import '@finastra/icon';
 import '@finastra/icon-button';
-import '@finastra/textfield';
 import { BaseTextField } from '@finastra/textfield';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
