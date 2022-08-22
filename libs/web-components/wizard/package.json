@@ -9,11 +9,11 @@
     "Wizard"
   ],
   "license": "MIT",
-  "main": "dist/src/wizard.js",
-  "module": "dist/src/wizard.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/wizard-page.scss"
   },
   "dependencies": {
     "@finastra/divider": "0.0.39",

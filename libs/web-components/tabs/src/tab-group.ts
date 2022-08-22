@@ -1,9 +1,9 @@
-import '@finastra/tab';
-import '@finastra/tab-bar';
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { styles } from './styles.css';
+import "./tab-bar/tab-bar";
 import { TabItem } from './tab-item';
+import "./tab/tab";
 
 interface TabInfo {
   label: string

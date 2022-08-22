@@ -1,7 +1,7 @@
 import { customElement, property } from 'lit/decorators.js';
 import { TabBarBase } from '@material/mwc-tab-bar/mwc-tab-bar-base';
 
-import { styles } from './styles.css';
+import { styles } from './tab-bar.css';
 
  /**
  * @attr [activeIndex=0] - Index of tab that is active.
