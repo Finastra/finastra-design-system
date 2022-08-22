@@ -32,6 +32,17 @@ const sampleFilterTree= [
     children: [
       {
         label: 'Account Information',
+        children: [
+      {
+        label: 'Account Information',
+      },
+      {
+        label: 'Back Office',
+      },
+      {
+        label: 'Payments'
+      }
+    ]
       },
       {
         label: 'Back Office',
@@ -54,4 +65,5 @@ const sampleFilterTree= [
 
     const filter = document.getElementById('filter');
     filter.items = sampleFilterTree;
+
 </script>
