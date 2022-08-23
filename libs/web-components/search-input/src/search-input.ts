@@ -3,6 +3,7 @@ import '@finastra/icon-button';
 import { BaseTextField } from '@finastra/textfield';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './styles.css';
 
 /**
@@ -46,11 +47,14 @@ export class SearchInput extends BaseTextField {
   }
 
   protected renderClearButton(): TemplateResult | string {
-    return (this.value.length && this.showClearButton)
-      ? this.disabled
-        ? html`<fds-icon-button class="clear-icon" icon="close" @click="${this.clear}" disabled></fds-icon-button>`
-        : html`<fds-icon-button class="clear-icon" icon="close" @click="${this.clear}"></fds-icon-button>`
-      : '';
+    const showClearButton = this.value.length && this.showClearButton;
+    const clearButtonclasses = {
+      'fds-search-input-clear-button--show': !!showClearButton,
+      'fds-search-input-clear-button--hide': !showClearButton
+    };
+    return this.disabled
+        ? html`<fds-icon-button class="clear-icon ${classMap(clearButtonclasses)}" icon="close" @click="${this.clear}" disabled></fds-icon-button>`
+        : html`<fds-icon-button class="clear-icon ${classMap(clearButtonclasses)}" icon="close" @click="${this.clear}"></fds-icon-button>`
   }
 
   private clear() {

@@ -6,6 +6,14 @@
     @include fds.text-color(on-surface-medium);
     margin-right: -14px;
     align-self: center;
+
+    &.fds-search-input-clear-button--show {
+      visibility: visible
+    }
+  
+    &.fds-search-input-clear-button--hide {
+      visibility: hidden;
+    }
   }
 
   .circular-loader {
