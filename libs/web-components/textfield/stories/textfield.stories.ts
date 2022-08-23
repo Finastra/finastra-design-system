@@ -1,12 +1,12 @@
 const README = require('../README.md');
 import '@finastra/textfield';
-import type { Textfield } from '@finastra/textfield';
+import type { TextField } from '@finastra/textfield';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-textfield.json';
 
 export default {
-  title: 'FORMS/Textfield',
+  title: 'FORMS/TextField',
   component: 'fds-textfield',
   argTypes,
   parameters: {
@@ -21,15 +21,15 @@ export default {
   }
 } as Meta;
 
-const Template: Story<Textfield> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside}) => {
+const Template: Story<TextField> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside}) => {
   return html`<fds-textfield label=${label} placeholder=${placeholder} icon=${icon} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
 };
 
-const ValidationTemplate: Story<Textfield> = ({ label, icon, helper, type, validationMessage, pattern}) => {
+const ValidationTemplate: Story<TextField> = ({ label, icon, helper, type, validationMessage, pattern}) => {
   return html`<fds-textfield label=${label} icon=${icon} type=${type} validationMessage=${validationMessage} ?helper=${helper} pattern=${pattern}></fds-textfield>`;
 };
 
-const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, showActionButton}) => {
+const ActionButtonTemplate: Story<TextField> = ({ label, icon, type, helper, showActionButton}) => {
   return html`
     <fds-textfield icon="lock_outline" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
   <mwc-icon-button slot="actionButton" icon=${icon}></mwc-icon-button>
@@ -37,11 +37,11 @@ const ActionButtonTemplate: Story<Textfield> = ({ label, icon, type, helper, sho
    `;
 };
 
-const NativeDatePickerTemplate: Story<Textfield> = ({ value, label, placeholder, icon, type, disabled, dense, required, iconTrailing, helper, labelInside}) => {
+const NativeDatePickerTemplate: Story<TextField> = ({ value, label, placeholder, icon, type, disabled, dense, required, iconTrailing, helper, labelInside}) => {
   return html`<fds-textfield value=${value} label=${label} placeholder=${placeholder} icon=${icon} type=${type} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
 };
 
-export const Default: Story<Textfield> = Template.bind({});
+export const Default: Story<TextField> = Template.bind({});
 Default.args = {
   label: 'Label',
   placeholder: 'Placeholder',
@@ -49,13 +49,13 @@ Default.args = {
   helper: "Helper text"
 };
 
-export const Dense: Story<Textfield> = Default.bind({});
+export const Dense: Story<TextField> = Default.bind({});
 Dense.args = {
   dense: true,
   icon: 'person_outline'
 };
 
-export const Password: Story<Textfield> = ActionButtonTemplate.bind({});
+export const Password: Story<TextField> = ActionButtonTemplate.bind({});
 Password.args = {
   label: 'Enter your password',
   type: 'password',
@@ -64,7 +64,7 @@ Password.args = {
   icon: 'visibility_off'
 };
 
-export const IconTrailing: Story<Textfield> = Template.bind({});
+export const IconTrailing: Story<TextField> = Template.bind({});
 IconTrailing.args = {
   label: 'Icon trailing',
   helper: "helper text",
@@ -72,7 +72,7 @@ IconTrailing.args = {
   iconTrailing: "favorite_outline"
 };
 
-export const Required: Story<Textfield> = Template.bind({});
+export const Required: Story<TextField> = Template.bind({});
 Required.args = {
   label: 'Required',
   icon: 'event',
@@ -81,7 +81,7 @@ Required.args = {
 };
 
 
-export const ErrorMessage: Story<Textfield> = ValidationTemplate.bind({});
+export const ErrorMessage: Story<TextField> = ValidationTemplate.bind({});
 ErrorMessage.args = {
   type: 'email',
   validationMessage: 'Not a valid email',
@@ -89,7 +89,7 @@ ErrorMessage.args = {
   icon: 'mail_outline'
 };
 
-export const Regex: Story<Textfield> = ValidationTemplate.bind({});
+export const Regex: Story<TextField> = ValidationTemplate.bind({});
 Regex.args = {
   label: 'Enter a number',
   icon: 'event',
@@ -97,14 +97,14 @@ Regex.args = {
   pattern:"[0-9]+"
 };
 
-export const Disabled: Story<Textfield> = Template.bind({});
+export const Disabled: Story<TextField> = Template.bind({});
 Disabled.args = {
   label: 'Disabled',
   icon: 'event',
   disabled: true
 };
 
-export const LabelInside: Story<Textfield> = Template.bind({});
+export const LabelInside: Story<TextField> = Template.bind({});
 LabelInside.args = {
   label: 'Label',
   labelInside: true,
@@ -113,7 +113,7 @@ LabelInside.args = {
   helper: "Helper text"
 }
 
-export const NativeDatePicker: Story<Textfield> = NativeDatePickerTemplate.bind({});
+export const NativeDatePicker: Story<TextField> = NativeDatePickerTemplate.bind({});
 NativeDatePicker.args = {
   dense: true,
   type: 'date',
@@ -122,7 +122,7 @@ NativeDatePicker.args = {
   value: '2017-05-24'
 };
 
-export const NativeTimePicker: Story<Textfield> = NativeDatePickerTemplate.bind({});
+export const NativeTimePicker: Story<TextField> = NativeDatePickerTemplate.bind({});
 NativeTimePicker.args = {
   dense: true,
   type: 'time',
@@ -131,7 +131,7 @@ NativeTimePicker.args = {
   value: '07:30'
 };
 
-export const NativeDateTimePicker: Story<Textfield> = NativeDatePickerTemplate.bind({});
+export const NativeDateTimePicker: Story<TextField> = NativeDatePickerTemplate.bind({});
 NativeDateTimePicker.args = {
   dense: true,
   type: 'datetime-local',
@@ -140,7 +140,7 @@ NativeDateTimePicker.args = {
   value: '2017-05-24T10:30'
 };
 
-export const NativeDatePickerDisabled: Story<Textfield> = NativeDatePickerTemplate.bind({});
+export const NativeDatePickerDisabled: Story<TextField> = NativeDatePickerTemplate.bind({});
 NativeDatePickerDisabled.args = {
   dense: true,
   type: 'date',

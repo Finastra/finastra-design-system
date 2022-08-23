@@ -57,7 +57,7 @@
     "update:check": "ng update",
     "wc:build": "npm run wc:build:style && npm run wc:build:ts -- --verbose",
     "wc:build:style": "npm run build:style -w libs/web-components",
-    "wc:build:ts": "tsc --build libs/web-components",
+    "wc:build:ts": "tsc --build libs/web-components/list libs/web-components/menu libs/web-components/textfield libs/web-components",
     "prewc:build:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run wc:build",
     "wc:build:storybook": "build-storybook -o storybook-static",
     "wc:build:bundle":"npm run build -w libs/web-components",
