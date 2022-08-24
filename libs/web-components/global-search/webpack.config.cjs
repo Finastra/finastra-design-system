@@ -1,9 +1,9 @@
 const path = require('path');
 const config = require('../base-webpack.config.cjs');
 
-config.entry = path.resolve(__dirname, './src/wizard-page.ts'),
+config.entry = path.resolve(__dirname, './src/global-search.ts'),
 config.output = {
-    filename: 'fds-wizard-page.js',
+    filename: 'fds-global-search.js',
     path: path.resolve(__dirname, 'dist'),
 },
 

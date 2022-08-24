@@ -17,7 +17,7 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@finastra/list": "0.0.39"
+    "@finastra/list": "0.0.40"
   },
   "publishConfig": {
     "access": "public"

@@ -3,7 +3,7 @@ const config = require('../base-webpack.config.cjs');
 
 config.entry = path.resolve(__dirname, './src/index.ts'),
 config.output = {
-    filename: 'fds-button-toggle.js',
+    filename: 'fds-icon-bar.js',
     path: path.resolve(__dirname, 'dist'),
 },
 

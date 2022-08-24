@@ -89,12 +89,6 @@
       "path": "stepper"
     },
     {
-      "path": "tab"
-    },
-    {
-      "path": "tab-bar"
-    },
-    {
       "path": "select"
     },
     {
@@ -102,9 +96,6 @@
     },
     {
       "path": "slider"
-    },
-    {
-      "path": "button-toggle"
     },
     {
       "path": "button-toggle-group"
@@ -126,9 +117,6 @@
     },
     {
       "path": "wizard"
-    },
-    {
-      "path": "wizard-page"
     },
     {
       "path": "fab"

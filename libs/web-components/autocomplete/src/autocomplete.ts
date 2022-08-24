@@ -1,9 +1,7 @@
+import { ListItem } from "@finastra/list";
 import '@finastra/menu';
+import { Menu } from "@finastra/menu";
 import '@finastra/search-input';
-import '@finastra/icon';
-import { ListItem } from '@material/mwc-list/mwc-list-item';
-import '@material/mwc-menu';
-import { Menu } from '@material/mwc-menu';
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

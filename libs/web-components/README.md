@@ -32,7 +32,6 @@
 | Name                    | Package                                                                                    | Version                                                                                                                              | Links                                                                                         |
 | ----------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | **Button**              | [`@finastra/button`](https://npmjs.com/package/@finastra/button)                           | [![latest](https://img.shields.io/npm/v/@finastra/button.svg)](https://npmjs.com/package/@finastra/button)                           | [![README](https://img.shields.io/badge/README--56C271.svg)](./button/README.md)              |
-| **Button Toggle**       | [`@finastra/button-toggle`](https://npmjs.com/package/@finastra/button-toggle)             | [![latest](https://img.shields.io/npm/v/@finastra/button-toggle.svg)](https://npmjs.com/package/@finastra/button-toggle)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./button-toggle/README.md)       |
 | **Button Toggle Group** | [`@finastra/button-toggle-group`](https://npmjs.com/package/@finastra/button-toggle-group) | [![latest](https://img.shields.io/npm/v/@finastra/button-toggle-group.svg)](https://npmjs.com/package/@finastra/button-toggle-group) | [![README](https://img.shields.io/badge/README--56C271.svg)](./button-toggle-group/README.md) |
 | **Icon Button**         | [`@finastra/icon-button`](https://npmjs.com/package/@finastra/icon-button)                 | [![latest](https://img.shields.io/npm/v/@finastra/icon-button.svg)](https://npmjs.com/package/@finastra/icon-button)                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./icon-button/README.md)         |
 | **FAB**                 | [`@finastra/fab`](https://npmjs.com/package/@finastra/fab)                                 | [![latest](https://img.shields.io/npm/v/@finastra/fab.svg)](https://npmjs.com/package/@finastra/fab)                                 | [![README](https://img.shields.io/badge/README--56C271.svg)](./fab/README.md)                 | 
@@ -60,7 +59,7 @@
 | **Stepper**      | [`@finastra/stepper`](https://npmjs.com/package/@finastra/stepper)           | [![latest](https://img.shields.io/npm/v/@finastra/stepper.svg)](https://npmjs.com/package/@finastra/stepper)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./stepper/README.md)      |
 | **Switch**       | [`@finastra/switch`](https://npmjs.com/package/@finastra/switch)             | [![latest](https://img.shields.io/npm/v/@finastra/switch.svg)](https://npmjs.com/package/@finastra/switch)             | [![README](https://img.shields.io/badge/README--56C271.svg)](./switch/README.md)       |
 | **Textarea**     | [`@finastra/textarea`](https://npmjs.com/package/@finastra/textarea)         | [![latest](https://img.shields.io/npm/v/@finastra/textarea.svg)](https://npmjs.com/package/@finastra/textarea)         | [![README](https://img.shields.io/badge/README--56C271.svg)](./textarea/README.md)     |
-| **Textfield**    | [`@finastra/textfield`](https://npmjs.com/package/@finastra/textfield)       | [![latest](https://img.shields.io/npm/v/@finastra/textfield.svg)](https://npmjs.com/package/@finastra/textfield)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./textfield/README.md)    |
+| **TextField**    | [`@finastra/textfield`](https://npmjs.com/package/@finastra/textfield)       | [![latest](https://img.shields.io/npm/v/@finastra/textfield.svg)](https://npmjs.com/package/@finastra/textfield)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./textfield/README.md)    |
 | **Wizard** | [`@finastra/wizard`](https://npmjs.com/package/@finastra/wizard) | [![latest](https://img.shields.io/npm/v/@finastra/wizard.svg)](https://npmjs.com/package/@finastra/wizard) | [![README](https://img.shields.io/badge/README--56C271.svg)](./wizard/README.md) |
 
 ## GRAPHIC ELEMENTS
@@ -82,8 +81,7 @@
 | **Global Search**      | [`@finastra/global-search`](https://npmjs.com/package/@finastra/global-search)           | [![latest](https://img.shields.io/npm/v/@finastra/global-search.svg)](https://npmjs.com/package/@finastra/global-search)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./global-search/README.md)      |                                                                               |
 | **Icon Bar**       | [`@finastra/icon-bar`](https://npmjs.com/package/@finastra/icon-bar)             | N/A                                                                                                                    | TBD                                                                                    |
 | **Launchpad**      | [`@finastra/launchpad`](https://npmjs.com/package/@finastra/launchpad)           | [![latest](https://img.shields.io/npm/v/@finastra/launchpad.svg)](https://npmjs.com/package/@finastra/launchpad)       | [![README](https://img.shields.io/badge/README--56C271.svg)](./launchpad/README.md)    |
-| **Sidenav**        | [`@finastra/sidenav`](https://npmjs.com/package/@finastra/sidenav)               | [![latest](https://img.shields.io/npm/v/@finastra/sidenav.svg)](https://npmjs.com/package/@finastra/sidenav)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./sidenav/README.md)      |
-| **Tab**            | [`@finastra/tab`](https://npmjs.com/package/@finastra/tab)                       | [![latest](https://img.shields.io/npm/v/@finastra/tab.svg)](https://npmjs.com/package/@finastra/tab)                   | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab/README.md)          |
+| **Sidenav**        | [`@finastra/sidenav`](https://npmjs.com/package/@finastra/sidenav)               | [![latest](https://img.shields.io/npm/v/@finastra/sidenav.svg)](https://npmjs.com/package/@finastra/sidenav)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./sidenav/README.md)      |     |
 | **Tab bar**        | [`@finastra/tab-bar`](https://npmjs.com/package/@finastra/tab-bar)               | [![latest](https://img.shields.io/npm/v/@finastra/tab-bar.svg)](https://npmjs.com/package/@finastra/tab-bar)           | [![README](https://img.shields.io/badge/README--56C271.svg)](./tab-bar/README.md)      |
 | **User Profile**   | [`@finastra/user-profile`](https://npmjs.com/package/@finastra/user-profile)     | [![latest](https://img.shields.io/npm/v/@finastra/user-profile.svg)](https://npmjs.com/package/@finastra/user-profile) | [![README](https://img.shields.io/badge/README--56C271.svg)](./user-profile/README.md) |
 
@@ -128,17 +126,19 @@
 
 ## Web component development
 
+### Build
+
+First run the following commands to build all components
+
+```bash
+npm run wc:build:storybook
+```
+
+> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
+
 ### Local developement
 
-In `local developement`, recommends active watch mode and dev-server by running each commands below in a separate terminal/shell.
-
-- Watch mode
-
-```
-npm run wc:watch
-```
-
-- Local Dev Server (Don't need to run watch mode)
+- Local Dev Server (it also start the watch mode)
 
 ```
 npm run wc:serve
@@ -152,25 +152,13 @@ npm run wc:storybook
 
 > You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)
 
-### Build
+For `local developement`, we recommend using build in watch mode:
 
-Run the following commands to build all components
+- Watch mode
 
-```bash
-# Build component style (scss -> ts)
-npm run wc:build:style
-
-# Build component typescript (ts -> js)
-npm run wc:build:ts
-
-# Shortcut running both above commands
-npm run wc:build
-
-# Storybook
-npm run wc:build:storybook
 ```
-
-> Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
+npm run wc:watch
+```
 
 ### Running tests
 
