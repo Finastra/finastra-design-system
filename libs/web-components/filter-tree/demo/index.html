@@ -25,44 +25,22 @@ const test = [
 
 const sampleFilterTree= [
   {
-    label: 'Consumer Banking',
-  },
-  {
     label: 'Corporate Banking',
     children: [
       {
-        label: 'Account Information',
+        label: 'Financial Toolbox',
         children: [
-      {
-        label: 'Account Information',
+          {
+          label: 'Account Information'
+          }
+        ]
       },
       {
         label: 'Back Office',
-      },
-      {
-        label: 'Payments'
       }
     ]
-      },
-      {
-        label: 'Back Office',
-      },
-      {
-        label: 'Payments'
-      }
-    ]
-  },
-  {
-    label: 'Financial Toolbox'
-  },
-  {
-    label: 'Lending',
-  },
-  {
-    label: 'Payment',
   }
 ];
-
     const filter = document.getElementById('filter');
     filter.items = sampleFilterTree;
 

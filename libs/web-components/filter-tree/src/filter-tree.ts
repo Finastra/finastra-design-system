@@ -8,6 +8,7 @@ export interface TreeNode {
   children?: TreeNode[];
   parent?: TreeNode;
   isSelected?: boolean;
+  level?: number
 }
 
 @customElement('fds-filter-tree')
@@ -16,62 +17,94 @@ export class FilterTree extends LitElement {
 
   @query('fds-filter') protected filter!: HTMLDivElement;
 
+  @query('fds-check-list-item') protected checkListItem!: HTMLDivElement;
+
   left=false;
+  itemArray= [];
+
+  call=0
 
   constructor() {
     super();
   }
 
-  @property({ type: Array })
-  items: TreeNode[] = [];
 
+  private _items: TreeNode[] = [];
+  @property({ attribute: false })
+  public get items(): TreeNode[] {
+      return this._items;
+  }
+  public set items(value: TreeNode[]) {
+      this._items = value
+  }
+  
  async connectedCallback() {
     await super.connectedCallback();
-    const list = await this.shadowRoot?.getElementById('list');
-
-    list?.addEventListener('selected', (event) =>  {
-      console.log(event);
-    });
   }
 
   render() {
     return html`
-      ${this.renderChildren(this.items,0)}
+      ${this.renderChildren(this.items)}
     `;
   }
 
-  
-  renderChildren(items: TreeNode[], level = 0) {
+  renderChildren(items: TreeNode[]) {
     return html`
-    <ul>
-      <fds-list id="list" multi>
+      <ul id="list" multi>
         ${items.map((item) => {
         return html`
-        <li>
-          <fds-check-list-item left> ${item.label} </fds-check-list-item>
-          ${item.children ? html` ${this.renderChildren(item.children, level+1)} `: ''}
-        </li>
+          <fds-check-list-item  left @request-selected="${() => this.onRequestSelected(item)}"> ${item.label} </fds-check-list-item>
+          ${item.children ? html` ${this.renderChildren(item.children)} `: ''}
         `
       })}
-      </fds-list>
-    </ul> `
+      </ul> `
   }
 
-  // getParentNode(currentNode: TreeNode): TreeNode | null {
-  //   let parentNode: TreeNode | null = null;
-  //   this.items.forEach((node) => {
-  //     if (node.children && node.children.length > 0) {
-  //       node.children.forEach((child) => {
-  //         if (currentNode.label === child.label) {
-  //           parentNode = node;
-  //         }
-  //       });
-  //     }
-  //   });
-  //   return parentNode;
-  // }
-}
+  onRequestSelected(item: TreeNode) {
+    if(this.getNodeByLabel(item.label).getAttribute('selected') == null) {
+      if(item.children){
+        this.selectChildren(item.children);
+        return;
+      }
+    }
+    else{
+      if(item.children){
+        this.deselectChildren(item.children);
+        return;
+      }
+    }
+  }
 
+   selectChildren(item: TreeNode[]) {
+      item.forEach((itemChild) => {
+        this.getNodeByLabel(itemChild.label).setAttribute('selected','true');
+        if(itemChild.children){
+          this.selectChildren(itemChild.children);
+        }
+    })
+  }
+  
+  deselectChildren(item: TreeNode[]) {
+      item.forEach((itemChild) => {
+        this.getNodeByLabel(itemChild.label).removeAttribute('selected');
+        if(itemChild.children){
+          this.deselectChildren(itemChild.children);
+        }
+    })
+  }
+
+getNodeByLabel(index) {
+  let selected ;
+  const itemSelector='fds-check-list-item';
+  const slotEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(itemSelector);
+    slotEl.forEach((node) => {
+        if(node.innerText == index) {
+          selected = node;
+        }
+    })
+  return selected;
+ }
+}
 
 declare global {
   interface HTMLElementTagNameMap {
