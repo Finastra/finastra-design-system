@@ -41,22 +41,25 @@ export class FilterTree extends LitElement {
       <ul id="list" multi>
         ${items.map((item) => {
         return html`
-          <fds-check-list-item  left @request-selected="${() => this.onRequestSelected(item)}"> ${item.label} </fds-check-list-item>
+          <fds-check-list-item  left @request-selected="${(event) => this.onRequestSelected(item, event)}"> ${item.label} </fds-check-list-item>
           ${item.children ? html` ${this.renderChildren(item.children)} `: ''}
         `
       })}
       </ul> `
   }
 
-  onRequestSelected(item: TreeNode) {
-    if(this.getNodeByLabel(item.label).getAttribute('selected') == null) {
-      if(item.children){
-        this.selectChildren(item.children);
+  onRequestSelected(item: TreeNode, event) {
+    const eventType = event.detail.source;
+    if(eventType === 'interaction'){
+      if(this.getNodeByLabel(item.label).getAttribute('selected') == null) {
+        if(item.children){
+          this.selectChildren(item.children);
+        }
       }
-    }
-    else{
-      if(item.children){
-        this.deselectChildren(item.children);
+      else{
+        if(item.children){
+          this.deselectChildren(item.children);
+        }
       }
     }
   }
