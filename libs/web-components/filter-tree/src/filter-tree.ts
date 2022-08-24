@@ -15,19 +15,11 @@ export interface TreeNode {
 export class FilterTree extends LitElement {
   static styles = styles;
 
-  @query('fds-filter') protected filter!: HTMLDivElement;
-
   @query('fds-check-list-item') protected checkListItem!: HTMLDivElement;
-
-  left=false;
-  itemArray= [];
-
-  call=0
 
   constructor() {
     super();
   }
-
 
   private _items: TreeNode[] = [];
   @property({ attribute: false })
@@ -38,10 +30,6 @@ export class FilterTree extends LitElement {
       this._items = value
   }
   
- async connectedCallback() {
-    await super.connectedCallback();
-  }
-
   render() {
     return html`
       ${this.renderChildren(this.items)}
@@ -64,13 +52,11 @@ export class FilterTree extends LitElement {
     if(this.getNodeByLabel(item.label).getAttribute('selected') == null) {
       if(item.children){
         this.selectChildren(item.children);
-        return;
       }
     }
     else{
       if(item.children){
         this.deselectChildren(item.children);
-        return;
       }
     }
   }
@@ -96,8 +82,8 @@ export class FilterTree extends LitElement {
 getNodeByLabel(index) {
   let selected ;
   const itemSelector='fds-check-list-item';
-  const slotEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(itemSelector);
-    slotEl.forEach((node) => {
+  const itemEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(itemSelector);
+  itemEl.forEach((node) => {
         if(node.innerText == index) {
           selected = node;
         }
