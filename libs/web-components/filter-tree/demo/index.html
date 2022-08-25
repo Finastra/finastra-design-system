@@ -5,38 +5,38 @@
 <fds-filter-tree id="filter"></fds-filter-tree>
 <script>
 
-const test = [
-  {
+const sampleFilterTree = [
+{
     label: 'Consumer Banking',
-  },
-  {
-    label: 'Corporate Banking',
-  },
-  {
-    label: 'Financial Toolbox'
-  },
-  {
-    label: 'Lending',
-  },
-  {
-    label: 'Payment',
-  }
-];
+    children: [
+      {
+        label: 'Alerts'
+      },
+      {
+        label: 'Customer Management'
+      },
+      {
+        label: 'Money Movement',
+        children: [
+          {
+            label: 'Lending'
+          }
+        ]
 
-const sampleFilterTree= [
+      }
+    ]
+  },
   {
     label: 'Corporate Banking',
     children: [
       {
-        label: 'Financial Toolbox',
-        children: [
-          {
-          label: 'Account Information'
-          }
-        ]
+        label: 'Account Information'
       },
       {
-        label: 'Back Office',
+        label: 'Back Office'
+      },
+      {
+        label: 'Payments'
       }
     ]
   }
