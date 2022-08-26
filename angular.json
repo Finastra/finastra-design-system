@@ -549,7 +549,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/fds-test-app",
-            "deployUrl": "/fds-theme/",
+            "baseHref": "/fds-theme/",
             "index": "apps/fds-test-app/src/index.html",
             "main": "apps/fds-test-app/src/index.ts",
             "tsConfig": "apps/fds-test-app/tsconfig.app.json",
