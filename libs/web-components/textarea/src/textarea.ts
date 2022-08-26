@@ -1,6 +1,5 @@
-import { customElement } from 'lit/decorators.js';
 import { TextAreaBase } from '@material/mwc-textarea/mwc-textarea-base';
-
+import { customElement } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 /**
@@ -19,6 +18,7 @@ export class Textarea extends TextAreaBase {
 
   constructor() {
     super();
+    this.outlined = true;
   }
 }
 
