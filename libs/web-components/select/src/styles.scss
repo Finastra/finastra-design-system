@@ -3,7 +3,6 @@
 
 :host {
   display: block;
-  @include fds.margin(4, top);
   @include fds.mdc(ripple-color, primary);
   @include fds.mdc(theme-text-primary-on-background, on-background);
 }
