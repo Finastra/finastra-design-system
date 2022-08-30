@@ -9,15 +9,16 @@
     "FilterTree"
   ],
   "license": "MIT",
-  "main": "dist/src/filter-tree.js",
-  "module": "dist/src/filter-tree.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@finastra/list": "0.0.40"
+    "@finastra/list": "0.0.40",
+    "@material/mwc-formfield": "^0.26.1"
   },
   "publishConfig": {
     "access": "public"

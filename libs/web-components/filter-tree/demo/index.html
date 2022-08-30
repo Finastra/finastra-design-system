@@ -5,43 +5,103 @@
 <fds-filter-tree id="filter"></fds-filter-tree>
 <script>
 
-const sampleFilterTree = [
+const test = [
 {
     label: 'Consumer Banking',
     children: [
       {
-        label: 'Alerts'
+        label: 'Alerts',
+        children: [
+      {
+        label: 'H'
+      },
+      {
+        label: 'Customer',
+        children: [
+      {
+        label: 'dHh'
+      },
+      {
+        label: 'Ctomer'
+      },
+      {
+        label: 'Mony'
+      }
+    ]
+      },
+      {
+        label: 'Money'
+      }
+    ]
       },
       {
         label: 'Customer Management'
       },
       {
-        label: 'Money Movement',
-        children: [
-          {
-            label: 'Lending'
-          }
-        ]
-
+        label: 'Money Movement'
       }
     ]
   },
   {
+    label: 'Financial Toolbox'
+  },
+  {
+    label: 'Lending',
+    children: [
+      {
+        label: 'Data Management'
+      },
+      {
+        label: 'Integration'
+      },
+      {
+        label: 'Lending Tools'
+      }
+    ]
+  },
+  {
+    label: 'Payment',
+    children: [
+      {
+        label: 'Fees & Billings'
+      },
+      {
+        label: 'Payment Initiation'
+      },
+      {
+        label: 'Payment Request'
+      }
+    ]
+  }
+];
+
+
+const sampleFilterTree= [
+  {
     label: 'Corporate Banking',
     children: [
       {
-        label: 'Account Information'
+        label: 'Financial Toolbox',
+        children: [
+          {
+          label: 'Account Information',
+          children: [
+          {
+          label: 'Account sz',
+
+          }
+        ]
+
+          }
+        ]
       },
       {
-        label: 'Back Office'
-      },
-      {
-        label: 'Payments'
+        label: 'Financial j',
       }
     ]
   }
 ];
     const filter = document.getElementById('filter');
-    filter.items = sampleFilterTree;
+    filter.items = test;
 
 </script>
