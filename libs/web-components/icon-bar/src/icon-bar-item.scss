@@ -4,12 +4,11 @@
   display: block;
   @include fds.property(background, surface-selected);
   --fds-icon-button-color: var(--fds-primary);
-  --fds-icon-size: 38px;
   border-radius: 50%;
   @include fds.margin(3, bottom);
 
   fds-badge {
-    --fds-icon-button-size: 38px;
+    --fds-icon-button-size: 32px;
   }
 
   fds-icon-button {
