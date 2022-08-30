@@ -26,7 +26,7 @@ export default {
 
 
 const Template: Story = ({ inset = undefined, vertical = false }) => {
-  return html`<fds-divider style='flex: 1; height: 50px;' inset=${ifDefined(inset)} ?vertical=${vertical}></fsd-divider>`;
+  return html`<fds-divider style='flex: 1; height: 50px; width: 700px' inset=${ifDefined(inset)} ?vertical=${vertical}></fsd-divider>`;
 };
 
 export const Default: Story<Divider> = Template.bind({});
