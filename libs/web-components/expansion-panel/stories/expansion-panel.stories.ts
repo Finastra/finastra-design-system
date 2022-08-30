@@ -3,49 +3,12 @@ import '@finastra/expansion-panel';
 import type { ExpansionPanel } from '@finastra/expansion-panel';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { cssprops } from './sb-generated/fds-expansion-panel.json';
+import { argTypes, cssprops } from './sb-generated/fds-expansion-panel.json';
 
 export default {
   title: 'DATA DISPLAY/ExpansionPanel',
   component: 'fds-expansion-panel',
-  argTypes: {
-    displayMode: {
-      control: {
-          type: "radio"
-      },
-      options: [
-        "default",
-        "flat"
-      ],
-      description: 'The display mode used for all expansion panel items.',
-      defaultValue: 'default'
-    },
-    hideToggleIcon: {
-      control: {
-          type: "boolean"
-      },
-      description: 'Whether the expansion indicator should be hidden.',
-      defaultValue: false
-    },
-    multi: {
-      control: {
-          type: "boolean"
-      },
-      description: 'Whether the expansion should allow multiple expanded items.',
-      defaultValue: false
-    },
-    toggleIconPosition: {
-      control: {
-          type: "radio"
-      },
-      options: [
-        "before",
-        "after"
-      ],
-      description: 'The position of toggle indicator for all expansion items.',
-      defaultValue: 'after'
-    },
-  },
+  argTypes,
   parameters: {
     docs: {
       description: { component: README }

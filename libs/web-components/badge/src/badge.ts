@@ -8,6 +8,7 @@ import { styles } from './styles.css';
  * @attr {"primary"|"secondary"|"success"|"error"|"white"|"outlined"} color - Badge color
  * @attr {"topLeft"|"topRight"|"center"} position - Badge position
  * @attr {""|"indicator"} type - Badge type
+ * @slot default - Content of the badge
  */
 
 @customElement('fds-badge')
