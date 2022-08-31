@@ -3,24 +3,35 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './apexcharts-styles.css';
 
-export type ChartType =  'line'
-| 'area'
-| 'bar'
-| 'histogram'
-| 'pie'
-| 'donut'
-| 'radialBar'
-| 'scatter'
-| 'bubble'
-| 'heatmap'
-| 'candlestick'
-| 'boxPlot'
-| 'radar'
-| 'polarArea'
-| 'rangeBar'
-| 'treemap'
+export type ChartType =
+  | 'line'
+  | 'area'
+  | 'bar'
+  | 'histogram'
+  | 'pie'
+  | 'donut'
+  | 'radialBar'
+  | 'scatter'
+  | 'bubble'
+  | 'heatmap'
+  | 'candlestick'
+  | 'boxPlot'
+  | 'radar'
+  | 'polarArea'
+  | 'rangeBar'
+  | 'treemap';
 
-export type COLOR = 'semantic-1' | 'semantic-2' | 'semantic-3' | 'categorical' | 'focus-1' | 'focus-2' | 'focus-1-angular' | 'focus-2-angular'  | 'sequential-1' | 'sequential-2'
+export type COLOR =
+  | 'semantic-1'
+  | 'semantic-2'
+  | 'semantic-3'
+  | 'categorical'
+  | 'focus-1'
+  | 'focus-2'
+  | 'focus-1-angular'
+  | 'focus-2-angular'
+  | 'sequential-1'
+  | 'sequential-2';
 export interface ChartTheme {
   strokeColor: string;
   semanticPalette1: string;
@@ -29,24 +40,28 @@ export interface ChartTheme {
   categoricalPalette: string[];
   categoricalLabelColor: string[];
   focus1: {
-    start: string
-    end: string
+    start: string;
+    end: string;
+    neutral: string;
   };
-  focus2:  {
-    start: string
-    end: string
+  focus2: {
+    start: string;
+    end: string;
+    neutral: string;
   };
-  focus1Angular:  {
-    start: string
-    end: string
-    middle1: string
-    middle2: string
+  focus1Angular: {
+    start: string;
+    end: string;
+    middle1: string;
+    middle2: string;
+    neutral: string;
   };
   focus2Angular: {
-    start: string
-    end: string
-    middle1: string
-    middle2: string
+    start: string;
+    end: string;
+    middle1: string;
+    middle2: string;
+    neutral: string;
   };
   sequential1: string[];
   sequential1LabelColor: string[];
@@ -75,7 +90,6 @@ export class ApexChartsWrapper extends LitElement {
     this.refresh();
   }
 
-
   private _series: ApexAxisChartSeries | ApexNonAxisChartSeries = [];
   @property({ attribute: false })
   public get series(): ApexAxisChartSeries | ApexNonAxisChartSeries {
@@ -101,7 +115,7 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private _color: COLOR = 'categorical';
-  @property({type: String})
+  @property({ type: String })
   public get color(): COLOR {
     return this._color;
   }
@@ -121,7 +135,7 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private _hideDataLabel = false;
-  @property({type: Boolean, attribute: 'hide-data-label'})
+  @property({ type: Boolean, attribute: 'hide-data-label' })
   public get hideDataLabel(): boolean {
     return this._hideDataLabel;
   }
@@ -130,8 +144,7 @@ export class ApexChartsWrapper extends LitElement {
     this.refresh();
   }
 
-
-  private _legendPosition:  'top' | 'right' | 'bottom' | 'left' = 'bottom';
+  private _legendPosition: 'top' | 'right' | 'bottom' | 'left' = 'bottom';
   @property()
   public get legendPosition() {
     return this._legendPosition;
@@ -141,7 +154,7 @@ export class ApexChartsWrapper extends LitElement {
     this.refresh();
   }
 
-  private _legendHorizontalAlign:  'left' | 'center' | 'right' = 'center';
+  private _legendHorizontalAlign: 'left' | 'center' | 'right' = 'center';
   @property()
   public get legendHorizontalAlign() {
     return this._legendHorizontalAlign;
@@ -150,7 +163,6 @@ export class ApexChartsWrapper extends LitElement {
     this._legendHorizontalAlign = value;
     this.refresh();
   }
-
 
   private _options: ApexCharts.ApexOptions = {};
 
@@ -168,7 +180,7 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private defaultTheme: ChartTheme = {
-    strokeColor: "#FFFFFF",
+    strokeColor: '#FFFFFF',
     semanticPalette1: '#008744',
     semanticPalette2: '#D60040',
     semanticPalette3: '#FF600A',
@@ -177,68 +189,32 @@ export class ApexChartsWrapper extends LitElement {
     focus1: {
       start: '#1379C4',
       end: '#694ED6',
+      neutral: '#E5E5E5'
     },
     focus2: {
-      start: '#1379C4',
-      end: '#694ED6',
+      start: '#C34DD5',
+      end: '#F04E98',
+      neutral: '#E5E5E5'
     },
     focus1Angular: {
       start: '#1379C4',
       end: '#694ED6',
       middle1: '#694ED6',
-      middle2: '#1379C4'
+      middle2: '#1379C4',
+      neutral: '#E5E5E5'
     },
     focus2Angular: {
       start: '#C34DD5',
       end: '#F04E98',
       middle1: '#F04E98',
-      middle2: '#C34DD5'
+      middle2: '#C34DD5',
+      neutral: '#E5E5E5'
     },
-    sequential1: [
-      "#2A285C",
-      "#3A327B",
-      "#4A3B99",
-      "#5945B8",
-      "#694ED6",
-      "#8A72E0",
-      "#AB96EB",
-      "#CCB9F5",
-      "#EDDDFF"
-  ],
-    sequential1LabelColor: [
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#000000",
-      "#000000",
-      "#000000",
-      "#000000"
-  ],
-    sequential2: [
-      "#571235",
-      "#7D214E",
-      "#A43067",
-      "#CA3F7F",
-      "#F04E98",
-      "#F470B2",
-      "#F891CC",
-      "#FBB3E5",
-      "#FFD4FF"
-  ],
-    sequential2LabelColor: [
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#FFFFFF",
-      "#000000",
-      "#000000",
-      "#000000",
-      "#000000",
-      "#000000"
-  ]
-  }
+    sequential1: ['#2A285C', '#3A327B', '#4A3B99', '#5945B8', '#694ED6', '#8A72E0', '#AB96EB', '#CCB9F5', '#EDDDFF'],
+    sequential1LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000'],
+    sequential2: ['#571235', '#7D214E', '#A43067', '#CA3F7F', '#F04E98', '#F470B2', '#F891CC', '#FBB3E5', '#FFD4FF'],
+    sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000']
+  };
 
   private _chartTheme = this.defaultTheme;
   public get chartTheme(): ChartTheme {
@@ -248,25 +224,25 @@ export class ApexChartsWrapper extends LitElement {
     this._chartTheme = value;
   }
 
-  $el: HTMLElement | null = null
-  chart: ApexCharts | null = null
+  $el: HTMLElement | null = null;
+  chart: ApexCharts | null = null;
 
-  _defaultOptions: ApexCharts.ApexOptions = {}
+  _defaultOptions: ApexCharts.ApexOptions = {};
   override disconnectedCallback() {
-    super.disconnectedCallback()
+    super.disconnectedCallback();
     if (this.chart) {
-      this.chart.destroy()
+      this.chart.destroy();
     }
   }
 
   override connectedCallback() {
-    super.connectedCallback()
+    super.connectedCallback();
 
     this.loadChartThemeFromCssVariables();
   }
 
   protected firstUpdated(): void {
-    this.init()
+    this.init();
   }
 
   render() {
@@ -275,25 +251,25 @@ export class ApexChartsWrapper extends LitElement {
 
   createChartEl() {
     this.$el = document.createElement('div');
-    this.$el.classList.add(`fds-${this.type}-chart`)
-    return this.$el
+    this.$el.classList.add(`fds-${this.type}-chart`);
+    return this.$el;
   }
 
   loadChartThemeFromCssVariables() {
     const styles = getComputedStyle(this);
-    const cssChartTheme: Partial<ChartTheme> = {}
-    const strokeColor = styles.getPropertyValue('--fds-surface')
-    const semanticPalette1 = styles.getPropertyValue('--fds-chart-semantic-palette1')
-    const semanticPalette2 = styles.getPropertyValue('--fds-chart-semantic-palette2')
-    const semanticPalette3 = styles.getPropertyValue('--fds-chart-semantic-palette3')
-    const categoricalPalette = styles.getPropertyValue('--fds-chart-categorical-palette')
-    const focus1Palette = styles.getPropertyValue('--fds-chart-focus1-palette')
-    const focus2Palette = styles.getPropertyValue('--fds-chart-focus2-palette')
-    const focus1AngularPalette = styles.getPropertyValue('--fds-chart-focus1-angular-palette')
-    const focus2AngularPalette = styles.getPropertyValue('--fds-chart-focus2-angular-palette')
-    const sequential1 = styles.getPropertyValue('--fds-chart-sequential-1')
-    const sequential2 = styles.getPropertyValue('--fds-chart-sequential-2')
-    const categoricalLabelCcolor = styles.getPropertyValue('--fds-chart-categorical-label-color')
+    const cssChartTheme: Partial<ChartTheme> = {};
+    const strokeColor = styles.getPropertyValue('--fds-surface');
+    const semanticPalette1 = styles.getPropertyValue('--fds-chart-semantic-palette1');
+    const semanticPalette2 = styles.getPropertyValue('--fds-chart-semantic-palette2');
+    const semanticPalette3 = styles.getPropertyValue('--fds-chart-semantic-palette3');
+    const categoricalPalette = styles.getPropertyValue('--fds-chart-categorical-palette');
+    const focus1Palette = styles.getPropertyValue('--fds-chart-focus1-palette');
+    const focus2Palette = styles.getPropertyValue('--fds-chart-focus2-palette');
+    const focus1AngularPalette = styles.getPropertyValue('--fds-chart-focus1-angular-palette');
+    const focus2AngularPalette = styles.getPropertyValue('--fds-chart-focus2-angular-palette');
+    const sequential1 = styles.getPropertyValue('--fds-chart-sequential-1');
+    const sequential2 = styles.getPropertyValue('--fds-chart-sequential-2');
+    const categoricalLabelCcolor = styles.getPropertyValue('--fds-chart-categorical-label-color');
 
     if (semanticPalette1) {
       cssChartTheme.semanticPalette1 = semanticPalette1.trim();
@@ -305,19 +281,21 @@ export class ApexChartsWrapper extends LitElement {
       cssChartTheme.semanticPalette3 = semanticPalette3.trim();
     }
     if (categoricalPalette) {
-      cssChartTheme.categoricalPalette = categoricalPalette.trim().split(',')
+      cssChartTheme.categoricalPalette = categoricalPalette.trim().split(',');
     }
     if (focus1Palette) {
       cssChartTheme.focus1 = {
         start: focus1Palette.trim().split(',')[0],
-        end: focus1Palette.trim().split(',')[1]
-      }
+        end: focus1Palette.trim().split(',')[1],
+        neutral: focus1Palette.trim().split(',')[2]
+      };
     }
     if (focus2Palette) {
       cssChartTheme.focus2 = {
         start: focus2Palette.trim().split(',')[0],
-        end: focus2Palette.trim().split(',')[1]
-      }
+        end: focus2Palette.trim().split(',')[1],
+        neutral: focus2Palette.trim().split(',')[2]
+      };
     }
 
     if (focus1AngularPalette) {
@@ -325,8 +303,9 @@ export class ApexChartsWrapper extends LitElement {
         start: focus1AngularPalette.trim().split(',')[0],
         end: focus1AngularPalette.trim().split(',')[1],
         middle1: focus1AngularPalette.trim().split(',')[2],
-        middle2: focus1AngularPalette.trim().split(',')[3]
-        }
+        middle2: focus1AngularPalette.trim().split(',')[3],
+        neutral: focus1AngularPalette.trim().split(',')[4]
+      };
     }
 
     if (focus2AngularPalette) {
@@ -334,62 +313,63 @@ export class ApexChartsWrapper extends LitElement {
         start: focus2AngularPalette.trim().split(',')[0],
         end: focus2AngularPalette.trim().split(',')[1],
         middle1: focus2AngularPalette.trim().split(',')[2],
-        middle2: focus2AngularPalette.trim().split(',')[3]
-      }
+        middle2: focus2AngularPalette.trim().split(',')[3],
+        neutral: focus2AngularPalette.trim().split(',')[4]
+      };
     }
 
     if (sequential1) {
-      cssChartTheme.sequential1 = sequential1.trim().split(',')
+      cssChartTheme.sequential1 = sequential1.trim().split(',');
     }
     if (sequential2) {
-      cssChartTheme.sequential2 = sequential2.trim().split(',')
+      cssChartTheme.sequential2 = sequential2.trim().split(',');
     }
 
     if (categoricalLabelCcolor) {
-      cssChartTheme.categoricalLabelColor = categoricalLabelCcolor.trim().split(',')
+      cssChartTheme.categoricalLabelColor = categoricalLabelCcolor.trim().split(',');
     }
 
     if (strokeColor) {
       cssChartTheme.strokeColor = strokeColor.trim();
     }
 
-    this.chartTheme = this.extend(this.defaultTheme, cssChartTheme)
+    this.chartTheme = this.extend(this.defaultTheme, cssChartTheme);
   }
 
   init() {
     if (!this.$el) return;
-    this.loadChartThemeFromCssVariables()
+    this.loadChartThemeFromCssVariables();
     const newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
       chart: {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
         width: this.width,
         events: {},
-        foreColor: "#fffff"
+        foreColor: '#fffff'
       },
       tooltip: {
         fillSeriesColor: false,
         marker: {
-          show: false,
+          show: false
         },
         style: {
           fontSize: '12px',
-          fontFamily: 'Roboto, sans-serif',
-        },
+          fontFamily: 'Roboto, sans-serif'
+        }
       },
       dataLabels: {
         enabled: !this.hideDataLabel,
         style: {
-            fontSize: '12px',
-            fontFamily: 'Roboto, sans-serif',
-            fontWeight: 300,
-            colors: this.getDataLabelColor(),
+          fontSize: '12px',
+          fontFamily: 'Roboto, sans-serif',
+          fontWeight: 300,
+          colors: this.getDataLabelColor()
         },
         background: {
-         enabled: false,
-         dropShadow: {
-           enabled: false
-         }
+          enabled: false,
+          dropShadow: {
+            enabled: false
+          }
         },
         dropShadow: {
           enabled: false
@@ -404,12 +384,12 @@ export class ApexChartsWrapper extends LitElement {
         },
         fontSize: '12px',
         fontFamily: 'Roboto, sans-serif',
-        fontWeight: 300,
+        fontWeight: 300
       },
       ...this.getColor(),
       ...this.getStrokeColor(),
       series: this.series
-    })
+    });
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
     this.initWatchers();
@@ -427,7 +407,7 @@ export class ApexChartsWrapper extends LitElement {
 
   refresh() {
     if (this.chart) {
-      this.chart.destroy()
+      this.chart.destroy();
     }
     return this.init();
   }
@@ -435,25 +415,24 @@ export class ApexChartsWrapper extends LitElement {
   getStrokeColor() {
     return {
       stroke: {
-        colors: [this.chartTheme.strokeColor],
+        colors: [this.chartTheme.strokeColor]
       }
-    }
+    };
   }
-
 
   getDataLabelColor(): string[] {
     switch (this.color) {
       case 'sequential-1':
-        return this.chartTheme.sequential1LabelColor
+        return this.chartTheme.sequential1LabelColor;
       case 'sequential-2':
-        return this.chartTheme.sequential2LabelColor
+        return this.chartTheme.sequential2LabelColor;
     }
-    return this.chartTheme.categoricalLabelColor
+    return this.chartTheme.categoricalLabelColor;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getColor(): any {
-    switch(this.color) {
+    switch (this.color) {
       case 'semantic-1':
         return {
           theme: {
@@ -464,7 +443,7 @@ export class ApexChartsWrapper extends LitElement {
               shadeIntensity: 0.65
             }
           }
-        }
+        };
       case 'semantic-2':
         return {
           theme: {
@@ -475,7 +454,7 @@ export class ApexChartsWrapper extends LitElement {
               shadeIntensity: 0.65
             }
           }
-        }
+        };
       case 'semantic-3':
         return {
           theme: {
@@ -486,179 +465,152 @@ export class ApexChartsWrapper extends LitElement {
               shadeIntensity: 0.65
             }
           }
-        }
-        case 'categorical':
-          return {
-            colors:  this.chartTheme.categoricalPalette
-          }
-        case 'focus-1':
-            return {
-              theme: {
-                monochrome: {
-                  enabled: true,
-                  color: this.chartTheme.focus1.start,
-                  shadeTo: 'light',
-                  shadeIntensity: 0.65,
+        };
+      case 'categorical':
+        return {
+          colors: this.chartTheme.categoricalPalette
+        };
+      case 'focus-1':
+        return {
+          colors: [this.chartTheme.focus1.start, this.chartTheme.focus1.neutral],
+          fill: {
+            type: ['gradient', 'solid'],
+            gradient: {
+              shadeIntensity: 1,
+              type: 'horizontal',
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              shade: 'light',
+              colorStops: [
+                {
+                  offset: 0,
+                  color: this.chartTheme.focus1.start
+                },
+                {
+                  offset: 100,
+                  color: this.chartTheme.focus1.end
                 }
-              },
-              flll: {
-                type: 'gradient' ,
-                gradient: {
-                  shadeIntensity: 1,
-                  opacityFrom: 0.7,
-                  opacityTo: 0.9,
-                  shade: 'light',
-                  colorStops: [
-                    {
-                      offset: 0,
-                      color: this.chartTheme.focus1.start,
-                      opacity: 1
-                    },
-                    {
-                      offset: 100,
-                      color: this.chartTheme.focus1.end,
-                      opacity: 1
-                    },
-                  ]
+              ]
+            },
+            pattern: {
+              style: 'circles'
+            }
+          }
+        };
+      case 'focus-2':
+        return {
+          colors: [this.chartTheme.focus2.start, this.chartTheme.focus2.neutral],
+          fill: {
+            type: ['gradient', 'solid'],
+            gradient: {
+              shadeIntensity: 1,
+              type: 'horizontal',
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              shade: 'light',
+              colorStops: [
+                {
+                  offset: 0,
+                  color: this.chartTheme.focus2.start
+                },
+                {
+                  offset: 100,
+                  color: this.chartTheme.focus2.end
                 }
-              }
-            }
-        case 'focus-2':
-          return {
-            theme: {
-              monochrome: {
-                enabled: true,
-                color: this.chartTheme.focus2.start,
-                shadeTo: 'light',
-                shadeIntensity: 0.65,
-              }
+              ]
             },
-            flll: {
-              type: 'gradient' ,
-              gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                shade: 'light',
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: this.chartTheme.focus2.start,
-                    opacity: 1
-                  },
-                  {
-                    offset: 100,
-                    color: this.chartTheme.focus2.end,
-                    opacity: 1
-                  },
-                ]
-              }
+            pattern: {
+              style: 'circles'
             }
           }
+        };
 
-
-        case 'focus-1-angular':
-          return {
-            theme: {
-              monochrome: {
-                enabled: true,
-                color: this.chartTheme.focus1Angular.start,
-                shadeTo: 'light',
-                shadeIntensity: 0.65,
-              }
+      case 'focus-1-angular':
+        return {
+          colors: [this.chartTheme.focus1Angular.start, this.chartTheme.focus1Angular.neutral],
+          fill: {
+            type: ['gradient', 'solid'],
+            gradient: {
+              shadeIntensity: 1,
+              type: 'horizontal',
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              shade: 'light',
+              colorStops: [
+                {
+                  offset: 0,
+                  color: this.chartTheme.focus1Angular.start
+                },
+                {
+                  offset: 25,
+                  color: this.chartTheme.focus1Angular.middle1
+                },
+                {
+                  offset: 50,
+                  color: this.chartTheme.focus1Angular.middle2
+                },
+                {
+                  offset: 100,
+                  color: this.chartTheme.focus1Angular.end
+                }
+              ]
             },
-            flll: {
-              type: 'gradient' ,
-              gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                shade: 'light',
-                type: 'diagonal1',
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: this.chartTheme.focus1Angular.start,
-                    opacity: 1
-                  },
-                  {
-                    offset: 25,
-                    color: this.chartTheme.focus1Angular.end,
-                    opacity: 1
-                  },
-                  {
-                    offset: 50,
-                    color: this.chartTheme.focus1Angular.middle1,
-                    opacity: 1
-                  },
-                  {
-                    offset: 100,
-                    color: this.chartTheme.focus1Angular.middle2,
-                    opacity: 1
-                  },
-                ]
-              }
+            pattern: {
+              style: 'circles'
             }
           }
+        };
 
-        case 'focus-2-angular':
-          return {
-            theme: {
-              monochrome: {
-                enabled: true,
-                color: this.chartTheme.focus2Angular.start,
-                shadeTo: 'light',
-                shadeIntensity: 0.65,
-              }
+      case 'focus-2-angular':
+        return {
+          colors: [this.chartTheme.focus2Angular.start, this.chartTheme.focus2Angular.neutral],
+          fill: {
+            type: ['gradient', 'solid'],
+            gradient: {
+              shadeIntensity: 1,
+              type: 'horizontal',
+              opacityFrom: 0.7,
+              opacityTo: 0.9,
+              shade: 'light',
+              colorStops: [
+                {
+                  offset: 0,
+                  color: this.chartTheme.focus2Angular.start
+                },
+                {
+                  offset: 25,
+                  color: this.chartTheme.focus2Angular.middle1
+                },
+                {
+                  offset: 50,
+                  color: this.chartTheme.focus2Angular.middle2
+                },
+                {
+                  offset: 100,
+                  color: this.chartTheme.focus2Angular.end
+                }
+              ]
             },
-            flll: {
-              type: 'gradient' ,
-              gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.7,
-                opacityTo: 0.9,
-                shade: 'light',
-                type: 'diagonal1',
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: this.chartTheme.focus2Angular.start,
-                    opacity: 1
-                  },
-                  {
-                    offset: 25,
-                    color: this.chartTheme.focus2Angular.end,
-                    opacity: 1
-                  },
-                  {
-                    offset: 50,
-                    color: this.chartTheme.focus2Angular.middle1,
-                    opacity: 1
-                  },
-                  {
-                    offset: 100,
-                    color: this.chartTheme.focus2Angular.middle2,
-                    opacity: 1
-                  },
-                ]
-              }
+            pattern: {
+              style: 'circles'
             }
           }
-        case 'sequential-1':
-          return {
-            colors: this.chartTheme.sequential1
-          }
-        case 'sequential-2':
-          return {
-            colors: this.chartTheme.sequential2
-          }
+        };
+      case 'sequential-1':
+        return {
+          colors: this.chartTheme.sequential1
+        };
+      case 'sequential-2':
+        return {
+          colors: this.chartTheme.sequential2
+        };
     }
   }
 
   extend<T>(target: T, source: Partial<T>) {
-    const output: T = {...target};
+    const output: T = { ...target };
     if (this.isObject(target) && this.isObject(source)) {
-      Object.keys(source).forEach(key => {
+      Object.keys(source).forEach((key) => {
         if (this.isObject(source[key])) {
           if (!(key in target)) {
             Object.assign(output, {
@@ -679,9 +631,6 @@ export class ApexChartsWrapper extends LitElement {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isObject(item: any) {
-    return (
-      item && typeof item === "object" && !Array.isArray(item) && item != null
-    );
+    return item && typeof item === 'object' && !Array.isArray(item) && item != null;
   }
 }
-
