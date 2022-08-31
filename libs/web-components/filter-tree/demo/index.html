@@ -8,9 +8,11 @@
 const test = [
 {
     label: 'Consumer Banking',
+    isSelected: true,
     children: [
       {
         label: 'Alerts',
+        isSelected: true,
         children: [
       {
         label: 'H'
@@ -75,32 +77,6 @@ const test = [
   }
 ];
 
-
-const sampleFilterTree= [
-  {
-    label: 'Corporate Banking',
-    children: [
-      {
-        label: 'Financial Toolbox',
-        children: [
-          {
-          label: 'Account Information',
-          children: [
-          {
-          label: 'Account sz',
-
-          }
-        ]
-
-          }
-        ]
-      },
-      {
-        label: 'Financial j',
-      }
-    ]
-  }
-];
     const filter = document.getElementById('filter');
     filter.items = test;
 

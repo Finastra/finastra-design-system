@@ -13,3 +13,16 @@ ul {
 li {
   list-style:none;
 }
+
+.show {
+  display: inherit;
+  transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hide {
+  display: none;
+}
+
+mwc-formfield {
+  @include fds.typography(body-2);
+}
