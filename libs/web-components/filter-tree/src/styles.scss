@@ -7,7 +7,6 @@
 ul {
   list-style:none;
   display: grid;
-
 }
 
 li {
@@ -15,12 +14,17 @@ li {
 }
 
 .show {
-  display: inherit;
-  transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s ease-out;
 }
 
 .hide {
-  display: none;
+  height: 0px;
+  opacity: 0;
+  visibility: visible;
+  animation: 0.1s ease-in;
 }
 
 mwc-formfield {
