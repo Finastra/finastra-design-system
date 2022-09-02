@@ -17,7 +17,27 @@ npm i @finastra/filter-tree
 ```ts
 import '@finastra/filter-tree';
 ...
-<fds-filter-tree></fds-filter-tree>
+<fds-filter-tree items=[
+  {
+    label: 'Consumer Banking',
+    children: [
+      {
+        label: 'Alerts',
+        isSelected: true
+      },
+      {
+        label: 'Customer Management'
+      }
+    ],
+  },
+  {
+    label: 'Money Movement'
+  },
+  {
+    label: 'Financial Toolbox'
+  }
+]>
+</fds-filter-tree>
 ```
 
 ### Pure HTML pages
@@ -25,5 +45,24 @@ import '@finastra/filter-tree';
 ```html
 <script type="module" src="https://unpkg.com/@finastra/filter-tree@latest/dist/src/filter-tree.js?module"></script>
 
-<fds-filter-tree></fds-filter-tree>
+<fds-filter-tree items=[
+  {
+    label: 'Consumer Banking',
+    children: [
+      {
+        label: 'Alerts',
+        isSelected: true
+      },
+      {
+        label: 'Customer Management'
+      }
+    ],
+  },
+  {
+    label: 'Money Movement'
+  },
+  {
+    label: 'Financial Toolbox'
+  }
+]></fds-filter-tree>
 ```
