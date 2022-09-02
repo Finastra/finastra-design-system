@@ -1,32 +1,75 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/filter-tree';
 import type { FilterTree } from '@finastra/filter-tree';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-filter-tree.json';
+const demoData = [
+  {
+    label: 'Consumer Banking',
+    children: [
+      {
+        label: 'Alerts'
+      },
+      {
+        label: 'Customer Management'
+      }
+    ],
+  },
+  {
+    label: 'Money Movement'
+  },
+  {
+    label: 'Financial Toolbox'
+  }
+];
 
 export default {
   title: 'Components/FilterTree',
   component: 'fds-filter-tree',
   argTypes,
   args: {
-    name: 'World'
+    items: demoData
   },
   parameters: {
+    actions: {
+      handles: ['filter-tree-update']
+    },
     docs: {
       description: { component: README }
     }
   },
   decorators: [
-    (story) => html`${story()}<style>
-        /* Add you styles here */
-      </style>`
+    (story) => html`${story()}
+<script>
+  const demoData = [
+  {
+    label: 'Consumer Banking',
+    children: [
+      {
+        label: 'Alerts'
+      },
+      {
+        label: 'Customer Management'
+      }
+    ],
+  },
+  {
+    label: 'Money Movement'
+  },
+  {
+    label: 'Financial Toolbox'
+  }
+];
+      const filter = document.getElementById('filter');
+       filter.items = demoData;
+</script>`
   ],
   cssprops
 } as Meta;
 
-const Template: Story<FilterTree> = ({ name = 'World' }) => {
-  return html`<fds-filter-tree .name=${name}></fds-filter-tree>`;
+const Template: Story<FilterTree> = ({ }) => {
+  return html`<fds-filter-tree id="filter"></fds-filter-tree>`;
 };
 
 export const Default: Story<FilterTree> = Template.bind({});

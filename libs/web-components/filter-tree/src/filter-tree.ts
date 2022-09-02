@@ -1,26 +1,9 @@
 import "@finastra/list";
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { FlatTreeNode, TreeNode, TreeState } from "./interfaces";
 import { styles } from './styles.css';
 import "./tree-item/tree-item";
-
-export interface TreeNode {
-  label: string;
-  children?: TreeNode[];
-  isSelected?: boolean;
-  level?: number,
-}
-
-export interface FlatTreeNode {
-  item: string;
-  level: number;
-  selected: boolean;
-}
-
-export interface TreeState {
-  added: TreeNode[],
-  removed: TreeNode[]
-}
 
 @customElement('fds-filter-tree')
 export class FilterTree extends LitElement {
@@ -30,6 +13,9 @@ export class FilterTree extends LitElement {
     super();
   }
 
+    /**
+   * List of items.
+   */
   @property({ type: Array }) items: TreeNode[] = [];
 
   private tab: FlatTreeNode[] = [];
@@ -246,8 +232,11 @@ export class FilterTree extends LitElement {
       this.notifyParent(this.getParentNode(this.toFlatTreeNode(item)) as FlatTreeNode);
     }
 
+    console.log(this.tabState);
     this.dispatchEvent(
       new CustomEvent('filter-tree-update', {
+        bubbles: true,
+        composed: true,
         detail: {
           data: `${this.tabState}`
         }
