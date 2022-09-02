@@ -1,7 +1,7 @@
 {
   "name": "@finastra/breadcrumb",
   "displayName": "Breadcrumb",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Breadcrumb Web Component",
   "keywords": [
     "Finastra Design System",

@@ -3,6 +3,15 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { styles } from './expansion-panel.css';
 
+/**
+ * @cssprop {text} [--fds-expansion-panel-item-header=48px] - Header height.
+ * @cssprop {text} [--fds-expansion-panel-item-header-expanded=64px] - Expanded header height.
+ * @attr {"default"|"flat"} [displayMode=default] - The display mode used for all expansion panel items.
+ * @attr {"before"|"after"} [toggleIconPosition=after] - The position of toggle indicator for all expansion items
+ * @slot title - Content to display in the title.
+ * @slot description - Content to display in the description.
+ * @slot default - Content to display in the body.
+ */
 @customElement('fds-expansion-panel')
 export class ExpansionPanel extends LitElement {
   static styles = styles;

@@ -42,7 +42,7 @@ function mapArgTypes(attributes, slots) {
   if (slots) {
     sl = slots.reduce((prev, next) => {
       prev[next.name] = {
-        table: { category: 'slot' },
+        table: { category: 'slots' },
         ...(next.description ? { description: next.description } : {})
       };
       return prev;

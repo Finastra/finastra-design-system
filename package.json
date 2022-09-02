@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -60,7 +60,7 @@
     "wc:build:ts": "tsc --build libs/web-components/list libs/web-components/menu libs/web-components/textfield libs/web-components",
     "prewc:build:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run wc:build",
     "wc:build:storybook": "build-storybook -o storybook-static",
-    "wc:build:bundle":"npm run build -w libs/web-components",
+    "wc:build:bundle": "npm run build -w libs/web-components",
     "wc:compliance:check": "node ./scripts/compliance-check.js",
     "wc:format": "",
     "wc:generate": "nx workspace-generator web-component",
