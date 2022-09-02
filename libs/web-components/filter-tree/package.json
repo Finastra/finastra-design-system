@@ -17,8 +17,7 @@
   "dependencies": {
     "lit": "^2.0.0",
     "tslib": "^2.0.1",
-    "@finastra/list": "0.0.40",
-    "@finastra/icon-button": "0.0.40",
+    "@finastra/icon-button": "0.0.41",
     "@material/mwc-formfield": "^0.26.1"
   },
   "publishConfig": {
