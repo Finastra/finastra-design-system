@@ -3,7 +3,7 @@ import "@finastra/icon-button";
 import "@material/mwc-formfield";
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
+import { styles } from './tree-item.css';
 export type SelectionSource = 'interaction' | 'property';
 export interface RequestSelectedDetail {
   selected: boolean;
@@ -12,8 +12,10 @@ export interface RequestSelectedDetail {
 
 @customElement('fds-tree-item')
 export class TreeItem extends LitElement {
+  static styles = styles;
 
   @property({ type: String }) label = '';
+  @property({ type: Number }) id = '';
   @property({ type: Boolean }) indeterminate = false;
 
   @property({ type: Boolean }) expanded = false;
@@ -26,11 +28,13 @@ export class TreeItem extends LitElement {
 
   render() {
     return html`
+    <div class="filter-item">
     <mwc-formfield label=${this.label}>
       <fds-checkbox @change=${this.onChange} ?checked=${this.selected} ?indeterminate=${this.indeterminate}></fds-checkbox>
     </mwc-formfield>
     ${this.hideExpandIcon ? 
-      html`<fds-icon-button icon=${this.expandIcon} @click="${this.toggleList}"></fds-icon-button>` : ''}
+      html`<fds-icon-button icon=${this.expandIcon} @click="${this.toggleList}"></fds-icon-button>
+      </div>` : ''}
     `
   }
 

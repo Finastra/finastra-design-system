@@ -13,19 +13,19 @@ export class FilterTree extends LitElement {
     super();
   }
 
-    /**
+  /**
    * List of items.
    */
   @property({ type: Array }) items: TreeNode[] = [];
 
-  private tab: FlatTreeNode[] = [];
   private flatTree: FlatTreeNode[] = [];
+  private flatTreeTransf: FlatTreeNode[] = [];
   private tabState: TreeState = { added: [], removed: [] };
   private indeterminate = false;
 
 
   render() {
-    this.flatTree = this.flatTreetransformer(this.items, 0, []);
+    this.flatTreeTransf = this.flatTreeTransformer(this.items, 0, []);
     return html`
       ${this.renderChildren(this.items)}
     `;
@@ -34,12 +34,12 @@ export class FilterTree extends LitElement {
   renderChildren(items: TreeNode[]) {
     return html`
       <ul>
-        ${items.map((item) => {
+        ${items.map((item, index) => {
         return html`
-        <fds-tree-item ?expanded=${this.haveChildren(item)} ?hideExpandIcon=${this.haveChildren(item)}
-          @expand-click="${(event) => this.onExpandClick(item, event)}" ?selected=${item.isSelected}
-          ?indeterminate=${this.indeterminate} @request-selected="${(event) => this.onRequestSelected(item, event)}"
-          label=${item.label}>
+        <fds-tree-item id='${item.level}-${index}' ?expanded=${this.haveChildren(item)}
+          ?hideExpandIcon=${this.haveChildren(item)} ?selected=${item.isSelected} ?indeterminate=${this.indeterminate}
+          label=${item.label} @expand-click="${(event) => this.onExpandClick(item, index, event)}"
+          @request-selected="${(event) => this.onRequestSelected(item, index, event)}">
         </fds-tree-item>
         ${item.children ? html` ${this.renderChildren(item.children)} ` : ''}
         `
@@ -48,7 +48,7 @@ export class FilterTree extends LitElement {
   }
 
   firstUpdated() {
-    this.tab = this.flatTree;
+    this.flatTree = this.flatTreeTransf;
     this.init(this.items);
   }
 
@@ -60,9 +60,9 @@ export class FilterTree extends LitElement {
   }
 
   init(items: TreeNode[]) {
-    items.forEach((child) => {
+    items.forEach((child, index) => {
       if (child.isSelected) {
-        this.initSelection(child);
+        this.initSelection(child, index);
       }
       if (child.children) {
         this.init(child.children as TreeNode[])
@@ -70,31 +70,31 @@ export class FilterTree extends LitElement {
     })
   }
 
-  onRequestSelected(item: TreeNode, event: any) {
+  onRequestSelected(item: TreeNode, index: number, event: any) {
     const eventType = event.detail.source;
     if (eventType === 'interaction') {
       this.tabState.added = [];
       this.tabState.removed = [];
-      this.checkDescendants(item);
+      this.checkDescendants(item, index);
     }
   }
 
-  onExpandClick(item: TreeNode, event: any) {
+  onExpandClick(item: TreeNode, index: number, event: any) {
     if (event.detail) {
-      this.getNodeElementByLabel(item.label).setAttribute('expanded', event.detail);
-      this.getNodeElementByLabel(item.label).nextElementSibling.className = "show";
+      this.getNodeElementById(item.level + "-" + index).setAttribute('expanded', event.detail);
+      this.getNodeElementById(item.level + "-" + index).nextElementSibling.className = "show";
     }
     else {
-      this.getNodeElementByLabel(item.label).removeAttribute('expanded');
-      this.getNodeElementByLabel(item.label).nextElementSibling.className = "hide";
+      this.getNodeElementById(item.level + "-" + index).removeAttribute('expanded');
+      this.getNodeElementById(item.level + "-" + index).nextElementSibling.className = "hide";
     }
   }
 
   selectChildren(items: TreeNode[]) {
-    items.forEach((itemChild) => {
-      this.getNodeElementByLabel(itemChild.label).removeAttribute('indeterminate');
-      this.getNodeElementByLabel(itemChild.label).setAttribute('selected', 'true');
-      this.tab[this.findIndex(this.toFlatTreeNode(itemChild))].selected = true;
+    items.forEach((itemChild, index) => {
+      this.getNodeElementById(itemChild.level + "-" + index).removeAttribute('indeterminate');
+      this.getNodeElementById(itemChild.level + "-" + index).setAttribute('selected', 'true');
+      this.flatTree[this.findIndex(this.toFlatTreeNode(itemChild, index))].selected = true;
 
       if (itemChild.children) {
         this.selectChildren(itemChild.children);
@@ -103,35 +103,42 @@ export class FilterTree extends LitElement {
   }
 
   deselectChildren(items: TreeNode[]) {
-    items.forEach((itemChild) => {
-      this.getNodeElementByLabel(itemChild.label).removeAttribute('selected');
-      this.tab[this.findIndex(this.toFlatTreeNode(itemChild))].selected = false;
+    items.forEach((itemChild, index) => {
+      this.getNodeElementById(itemChild.level + "-" + index).removeAttribute('selected');
+      this.flatTree[this.findIndex(this.toFlatTreeNode(itemChild, index))].selected = false;
       if (itemChild.children) {
         this.deselectChildren(itemChild.children);
       }
     })
   }
 
-  getNodeElementByLabel(label: string) {
+  getNodeElementById(id: string) {
     let selected;
     const itemEl = this.renderRoot?.querySelectorAll('fds-tree-item');
     itemEl.forEach((node) => {
-      if (node.getAttribute('label') == label) {
+      if (node.getAttribute('id') === id) {
         selected = node;
       }
     })
     return selected;
   }
 
-  flatTreetransformer(items: TreeNode[], level = 0, flatTree: FlatTreeNode[]) {
-    items.forEach(element => {
+  flatTreeTransformer(items: TreeNode[], level = 0, flatTreeTransf: FlatTreeNode[]) {
+    items.forEach((element, index) => {
       element.level = level;
-      let flatItem = { item: element.label, level: element.level, selected: element.isSelected }
-      flatTree.push(flatItem as FlatTreeNode);
+      element.expandable = false;
+      if (element.isSelected == undefined) {
+        element.isSelected = false;
+      }
+      if (element.children) {
+        element.expandable = true;
+      }
+      let flatItem = { item: element.label, level: element.level, selected: element.isSelected, expandable: element.expandable, id: element.level + '-' + index }
+      flatTreeTransf.push(flatItem as FlatTreeNode);
       if (element.children)
-        this.flatTreetransformer(element.children, level + 1, flatTree);
+        this.flatTreeTransformer(element.children, level + 1, flatTreeTransf);
     });
-    return flatTree;
+    return flatTreeTransf;
   }
 
   getParentNode(node: FlatTreeNode): FlatTreeNode | null {
@@ -141,10 +148,10 @@ export class FilterTree extends LitElement {
       return null;
     }
 
-    const startIndex = this.flatTree.indexOf(node);
+    const startIndex = this.flatTreeTransf.indexOf(node);
 
     for (let i = startIndex; i >= 0; i--) {
-      const currentNode = this.flatTree[i];
+      const currentNode = this.flatTreeTransf[i];
       if ((currentNode.level) < currentLevel) {
         return currentNode;
       }
@@ -152,10 +159,10 @@ export class FilterTree extends LitElement {
     return null;
   }
 
-  toFlatTreeNode(item: TreeNode): FlatTreeNode {
+  toFlatTreeNode(item: TreeNode, index): FlatTreeNode {
     let selected;
-    this.flatTree.forEach((node) => {
-      if (node.item == item.label) {
+    this.flatTreeTransf.forEach((node) => {
+      if (node.id == (item.level + '-' + index)) {
         selected = node;
       }
     })
@@ -166,45 +173,47 @@ export class FilterTree extends LitElement {
     let nodeIndex = 0;
     let descendants: FlatTreeNode[] = [];
 
-    this.tab.forEach((data, index) => {
-      if (data.item === node.item) {
+    this.flatTree.forEach((data, index) => {
+      if (data.id === node.id) {
         nodeIndex = index;
       }
     });
 
-    for (let i = nodeIndex + 1; i < this.tab.length; i++) {
-
-      if (this.tab[i].level == this.tab[nodeIndex].level) {
+    for (let i = nodeIndex + 1; i < this.flatTree.length; i++) {
+      if (!this.flatTree[nodeIndex].expandable) {
+        return descendants;
+      }
+      else if (this.flatTree[i].level <= this.flatTree[nodeIndex].level) {
         return descendants;
       }
       else {
-        descendants.push({ item: this.tab[i].item, level: this.tab[i].level, selected: this.tab[i].selected })
+        descendants.push({ item: this.flatTree[i].item, level: this.flatTree[i].level, selected: this.flatTree[i].selected, expandable: this.flatTree[i].expandable, id: this.flatTree[i].id })
       }
     }
     return descendants;
   }
 
-  checkDescendants(item: TreeNode) {
-    let nodeElement = this.getNodeElementByLabel(item.label);
-    let index = this.findIndex(this.toFlatTreeNode(item));
+  checkDescendants(item: TreeNode, indexInTreeNode) {
+    let nodeElement = this.getNodeElementById(item.level + "-" + indexInTreeNode);
+    let indexInFlatTree = this.findIndex(this.toFlatTreeNode(item, indexInTreeNode));
 
 
     if (nodeElement.getAttribute('selected') == null) {
-      this.onSelect(item, nodeElement, index, 'select');
+      this.onSelect(item, nodeElement, indexInTreeNode, indexInFlatTree, 'select');
     }
 
     if (nodeElement.getAttribute('selected') == '' || nodeElement.getAttribute('selected')) {
-      this.onSelect(item, nodeElement, index, 'deselect');
+      this.onSelect(item, nodeElement, indexInTreeNode, indexInFlatTree, 'deselect');
     }
     this.requestUpdate();
   }
 
-  onSelect(item: TreeNode, nodeEl: HTMLElement, index: number, eventType:string) {
+  onSelect(item: TreeNode, nodeEl: HTMLElement, indexInTreeNode: number, indexInFlatTreeNode: number, eventType: string) {
 
     switch (eventType) {
       case 'select': {
-        this.tab[index].selected = true;
-        item.isSelected=true;
+        this.flatTree[indexInFlatTreeNode].selected = true;
+        item.isSelected = true;
         this.tabState.added.push(item);
         this.checkIndeterminate(nodeEl);
         if (item.children) {
@@ -213,8 +222,8 @@ export class FilterTree extends LitElement {
         break;
       }
       case 'deselect': {
-        this.tab[index].selected = false;
-        item.isSelected=false;
+        this.flatTree[indexInFlatTreeNode].selected = false;
+        item.isSelected = false;
         this.tabState.removed.push(item);
         this.checkIndeterminate(nodeEl);
 
@@ -228,21 +237,18 @@ export class FilterTree extends LitElement {
       }
     }
 
-    if (this.getParentNode(this.toFlatTreeNode(item))) {
-      this.notifyParent(this.getParentNode(this.toFlatTreeNode(item)) as FlatTreeNode);
+    if (this.getParentNode(this.toFlatTreeNode(item, indexInTreeNode))) {
+      this.notifyParent(this.getParentNode(this.toFlatTreeNode(item, indexInTreeNode)) as FlatTreeNode);
     }
 
-    console.log(this.tabState);
     this.dispatchEvent(
-      new CustomEvent('filter-tree-update', {
+      new CustomEvent('filter-tree-check', {
         bubbles: true,
-        composed: true,
-        detail: {
-          data: `${this.tabState}`
-        }
+        composed: true, 'detail': this.tabState
       })
     )
   }
+
 
   checkIndeterminate(nodeEl: HTMLElement) {
     if (nodeEl.getAttribute('indeterminate') == '' || nodeEl.getAttribute('indeterminate')) {
@@ -250,30 +256,30 @@ export class FilterTree extends LitElement {
     }
   }
 
-  initSelection(item: TreeNode) {
-    let nodeEl = this.getNodeElementByLabel(item.label);
-    let index = this.findIndex(this.toFlatTreeNode(item));
-    this.onSelect(item,nodeEl,index,'select');
+  initSelection(item: TreeNode, indexInTreeNode) {
+    let nodeEl = this.getNodeElementById(item.level + "-" + indexInTreeNode);
+    let indexInFlatTreeNode = this.findIndex(this.toFlatTreeNode(item, indexInTreeNode));
+    this.onSelect(item, nodeEl, indexInTreeNode, indexInFlatTreeNode, 'select');
   }
 
   notifyParent(node: FlatTreeNode) {
-    let index = this.findIndex(node);
+    let indexInFlatTree = this.findIndex(node);
     if (this.descendantsAllSelected(node)) {
-      if (this.getNodeElementByLabel(node.item).getAttribute('indeterminate')) {
-        this.getNodeElementByLabel(node.item).removeAttribute('indeterminate');
+      if (this.getNodeElementById(node.id).getAttribute('indeterminate')) {
+        this.getNodeElementById(node.id).removeAttribute('indeterminate');
       }
-      this.getNodeElementByLabel(node.item).setAttribute('selected', 'true');
-      this.tab[index].selected = true;
+      this.getNodeElementById(node.id).setAttribute('selected', 'true');
+      this.flatTree[indexInFlatTree].selected = true;
     }
     else if (this.descendantsPartiallySelected(node)) {
-      this.getNodeElementByLabel(node.item).setAttribute('indeterminate', 'true');
-      this.getNodeElementByLabel(node.item).removeAttribute('selected');
-      this.tab[index].selected = false;
+      this.getNodeElementById(node.id).setAttribute('indeterminate', 'true');
+      this.getNodeElementById(node.id).removeAttribute('selected');
+      this.flatTree[indexInFlatTree].selected = false;
     }
     else if (!this.descendantsAllSelected(node)) {
-      this.getNodeElementByLabel(node.item).removeAttribute('selected');
-      this.getNodeElementByLabel(node.item).removeAttribute('indeterminate');
-      this.tab[index].selected = false;
+      this.getNodeElementById(node.id).removeAttribute('selected');
+      this.getNodeElementById(node.id).removeAttribute('indeterminate');
+      this.flatTree[indexInFlatTree].selected = false;
     }
     if (this.getParentNode(node)) {
       this.notifyParent(this.getParentNode(node) as FlatTreeNode);
@@ -299,8 +305,8 @@ export class FilterTree extends LitElement {
 
   findIndex(node: FlatTreeNode) {
     let i;
-    this.tab.forEach((data, index) => {
-      if (data.item === node.item) {
+    this.flatTree.forEach((data, index) => {
+      if (data.id === node.id) {
         i = index;
       }
     });

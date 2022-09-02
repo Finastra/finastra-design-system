@@ -12,7 +12,7 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/tree-item/tree-item.scss"
   },
   "dependencies": {
     "lit": "^2.0.0",

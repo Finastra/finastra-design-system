@@ -9,7 +9,8 @@ const demoData = [
     label: 'Consumer Banking',
     children: [
       {
-        label: 'Alerts'
+        label: 'Alerts',
+        isSelected: true
       },
       {
         label: 'Customer Management'
@@ -25,7 +26,7 @@ const demoData = [
 ];
 
 export default {
-  title: 'Components/FilterTree',
+  title: 'DATA DISPLAY/Filter Tree',
   component: 'fds-filter-tree',
   argTypes,
   args: {
@@ -33,7 +34,7 @@ export default {
   },
   parameters: {
     actions: {
-      handles: ['filter-tree-update']
+      handles: ['filter-tree-check']
     },
     docs: {
       description: { component: README }
@@ -47,7 +48,8 @@ export default {
     label: 'Consumer Banking',
     children: [
       {
-        label: 'Alerts'
+        label: 'Alerts',
+        isSelected: true
       },
       {
         label: 'Customer Management'
