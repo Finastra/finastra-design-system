@@ -26,6 +26,7 @@ export class FilterTree extends LitElement {
 
   render() {
     this.flatTreeTransf = this.flatTreeTransformer(this.items, 0, []);
+    this.flatTree = this.flatTreeTransf;
     return html`
       ${this.renderChildren(this.items)}
     `;
@@ -36,19 +37,21 @@ export class FilterTree extends LitElement {
       <ul>
         ${items.map((item, index) => {
         return html`
-        <fds-tree-item id='${item.level}-${index}' ?expanded=${this.haveChildren(item)}
-          ?hideExpandIcon=${this.haveChildren(item)} ?selected=${item.isSelected} ?indeterminate=${this.indeterminate}
-          label=${item.label} @expand-click="${(event) => this.onExpandClick(item, index, event)}"
-          @request-selected="${(event) => this.onRequestSelected(item, index, event)}">
-        </fds-tree-item>
-        ${item.children ? html` ${this.renderChildren(item.children)} ` : ''}
+        <li>
+          <fds-tree-item id='${item.level}-${index}' ?expanded=${this.haveChildren(item)}
+            ?hideExpandIcon=${this.haveChildren(item)} ?selected=${item.isSelected} ?indeterminate=${this.indeterminate}
+            label=${item.label} @expand-click="${(event) => this.onExpandClick(item, index, event)}"
+            @request-selected="${(event) => this.onRequestSelected(item, index, event)}">
+          </fds-tree-item>
+          ${item.children ? html`${this.renderChildren(item.children)}` : ''}
+        </li>
         `
       })}
       </ul>`
   }
 
   firstUpdated() {
-    this.flatTree = this.flatTreeTransf;
+    // this.flatTree = this.flatTreeTransf;
     this.init(this.items);
   }
 

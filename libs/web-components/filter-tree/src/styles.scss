@@ -14,17 +14,17 @@ li {
 }
 
 .show {
-  height: 100%;
+  height: inherit;
   opacity: 1;
   visibility: visible;
-  transition: 0.2s ease-out;
+  transition: 0.1s ease;
 }
 
 .hide {
   height: 0px;
   opacity: 0;
   visibility: visible;
-  animation: 0.1s ease-in;
+  animation: 0.1s ease;
 }
 
 mwc-formfield {
