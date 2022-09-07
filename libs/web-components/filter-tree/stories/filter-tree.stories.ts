@@ -71,7 +71,7 @@ export default {
 } as Meta;
 
 const Template: Story<FilterTree> = ({ }) => {
-  return html`<fds-filter-tree id="filter"></fds-filter-tree>`;
+  return html`<fds-filter-tree id="filter" .items=${demoData}></fds-filter-tree>`;
 };
 
 export const Default: Story<FilterTree> = Template.bind({});
