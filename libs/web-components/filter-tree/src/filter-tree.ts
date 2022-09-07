@@ -98,6 +98,7 @@ export class FilterTree extends LitElement {
       this.getNodeElementById(itemChild.level + "-" + index).removeAttribute('indeterminate');
       this.getNodeElementById(itemChild.level + "-" + index).setAttribute('selected', 'true');
       this.flatTree[this.findIndex(this.toFlatTreeNode(itemChild, index))].selected = true;
+      itemChild.isSelected = true;
 
       if (itemChild.children) {
         this.selectChildren(itemChild.children);
@@ -109,6 +110,7 @@ export class FilterTree extends LitElement {
     items.forEach((itemChild, index) => {
       this.getNodeElementById(itemChild.level + "-" + index).removeAttribute('selected');
       this.flatTree[this.findIndex(this.toFlatTreeNode(itemChild, index))].selected = false;
+      itemChild.isSelected = false;
       if (itemChild.children) {
         this.deselectChildren(itemChild.children);
       }
