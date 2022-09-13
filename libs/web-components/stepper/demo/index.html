@@ -2,30 +2,30 @@
 <script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
 <div>Horizontal stepper</div>
 <div class="main-content">
-  <label>step 2</label>
+  <label>Step 2</label>
   <fds-horizontal-stepper id="hStepper" currentStepIndex="1"></fds-horizontal-stepper>
 
-  <label>step 3</label>
+  <label>Step 3</label>
   <fds-horizontal-stepper id="hStepper" currentStepIndex="2"></fds-horizontal-stepper>
 
-  <label>secondary</label>
+  <label>Secondary</label>
   <fds-horizontal-stepper style="width: 700px" id="hStepper" secondary currentStepIndex="3"></fds-horizontal-stepper>
 
-  <label>step 5</label>
+  <label>Step 5</label>
   <fds-horizontal-stepper id="hStepper" currentStepIndex="4"></fds-horizontal-stepper>
 </div>
 <br />
 <div>Vertical stepper</div>
-<label>step 2</label>
+<label>Step 2</label>
 <fds-vertical-stepper id="hStepper" currentStepIndex="1"></fds-vertical-stepper>
 
-<label>step 3</label>
+<label>Step 3</label>
 <fds-vertical-stepper label-mode="center" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
 
 <label>secondary</label>
 <fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="2"></fds-vertical-stepper>
 
-<label>step 5</label>
+<label>Step 5</label>
 <fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
 <script>
   const hSteppers = document.querySelectorAll('#hStepper');
@@ -33,25 +33,24 @@
     stepper.steps = [
       {
         label: 'Step Success',
-        description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. ',
+        description: 'Content of success step',
       },
       {
         label: 'Step Active',
-        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .',
+        description: 'Content of active step',
       },
       {
         label: 'Step Disabled',
-        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
+        description: 'Content of disabled step',
         disabled: true
       },
       {
         label: 'Step Inactive',
-        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. ',
+        description: 'Content of inactive step',
       },
       {
         label: 'Step Inactive',
-        description:
-          'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.',
+        description: 'Content of inactive step',
       }
     ];
   });

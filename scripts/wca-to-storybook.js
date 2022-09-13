@@ -1,16 +1,20 @@
-const { readFileSync, writeFileSync } = require('fs');
-const { join } = require('path');
+const { readFileSync, writeFileSync, existsSync, mkdirSync } = require('fs');
+const { join, basename, dirname } = require('path');
 const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
 async function main() {
   const paths = await getPaths('../libs/web-components/*/src/*.ts');
   paths.forEach((path) => {
-    const { attributes, slots, cssProperties } = getContent(path);
-    const argTypes = mapArgTypes(attributes, slots);
-    const cssprops = mapCssProps(cssProperties);
-    const newFile = JSON.stringify({ argTypes, cssprops }, null, 2);
-    writeFileSync(path, newFile, READ_WRITE_OPTS);
+    getContent(path).forEach(tag => {
+      const { attributes, slots, cssProperties, name } = tag;
+      const argTypes = mapArgTypes(attributes, slots);
+      const cssprops = mapCssProps(cssProperties);
+      const newFile = JSON.stringify({ argTypes, cssprops }, null, 2);
+      const dir = dirname(path).split(path.sep).pop();
+      const namedPath = join(dir, `${name}.json`);
+      writeFileSync(namedPath, newFile, READ_WRITE_OPTS);
+    })
   });
 }
 
@@ -22,13 +26,13 @@ async function getPaths(paths) {
   const filteredPaths = tsPaths.filter((path) => !path.includes('.css.ts'));
   const rootFolders = filteredPaths.map((path) => path.split('/').slice(0, -2).join('/'));
   const uniqueFolders = [...new Set(rootFolders)];
-  const customElementsPaths = uniqueFolders.map((path) => join(path, 'stories/custom-element.json'));
+  const customElementsPaths = uniqueFolders.map((path) => join(path, 'stories/sb-generated/custom-element.json'));
   return customElementsPaths;
 }
 
 function getContent(path) {
   const wcaOutput = readFileSync(path, READ_WRITE_OPTS);
-  return JSON.parse(wcaOutput).tags[0];
+  return JSON.parse(wcaOutput).tags;
 }
 
 function mapArgTypes(attributes, slots) {
@@ -38,7 +42,7 @@ function mapArgTypes(attributes, slots) {
   if (slots) {
     sl = slots.reduce((prev, next) => {
       prev[next.name] = {
-        table: { category: 'slot' },
+        table: { category: 'slots' },
         ...(next.description ? { description: next.description } : {})
       };
       return prev;
@@ -98,6 +102,7 @@ function sanitizeControl(control) {
     }
   } else {
     if (control === 'string') control = 'text';
+    if (control && control.toLowerCase() === 'array') control = 'array';
     return control || 'text';
   }
 }

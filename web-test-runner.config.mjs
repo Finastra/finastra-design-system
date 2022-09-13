@@ -15,10 +15,10 @@ export default {
     report: true,
     reportDir: 'wc-coverage',
     threshold: {
-      statements: 90,
+      statements: 80,
       branches: 65,
       functions: 80,
-      lines: 90
+      lines: 80
     },
     exclude: ['**/node_modules/**', '**/*.css.ts']
   },

@@ -3,10 +3,10 @@ import '@finastra/autocomplete';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-autocomplete.json';
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'FORMS/Autocomplete',
   component: 'fds-autocomplete',
   argTypes,
   args: {
@@ -32,11 +32,11 @@ const Template: Story = ({
   useInnerFilter,
   placeholder
 }) => {
-  return html`<fds-autocomplete .value=${ifDefined(value)} .ariaLabel=${ifDefined(ariaLabel)} .required=${ifDefined(
+  return html`<fds-autocomplete .value=${ifDefined(value)} ?ariaLabel=${ifDefined(ariaLabel)} ?required=${ifDefined(
     required
-  )} .disabled=${ifDefined(disabled)} .minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)} .icon=${ifDefined(
+  )} ?disabled=${ifDefined(disabled)} ?minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)} icon=${ifDefined(
     icon
-  )} .showClearButton=${ifDefined(showClearButton)} .useInnerFilter=${useInnerFilter} .placeholder=${ifDefined(placeholder)}>
+  )} ?showClearButton=${ifDefined(showClearButton)} .useInnerFilter=${useInnerFilter} .placeholder=${ifDefined(placeholder)}>
  <mwc-list-item value="One">One</mwc-list-item>
  <mwc-list-item value="Two">Two</mwc-list-item>
  <mwc-list-item value="Three">Three</mwc-list-item>

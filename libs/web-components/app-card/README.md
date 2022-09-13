@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/app-card?style=for-the-badge)](https://www.npmjs.com/package/@finastra/app-card)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/app-card?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/app-card')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-app-card--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-card-application--default)
 
 
 > `FLAG_TYPES` value can be `"PUBLISHED"|"DRAFT"|"IN_REVIEW"|"COMING_SOON"`
@@ -26,16 +26,28 @@ npm i @finastra/app-card
 import '@finastra/app-card';
 ...
 <fds-app-card
-    application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  name="Business Economics"
+  author="Finastra"
+  tags='["Account Information", "Api", "Banking"]'
+  flag="PUBLISHED"
+  icon="https://www.finastra.com/themes/custom/themekit/dist/logo.svg"
+  description="Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+  large>
 </fds-app-card>
 ```
 
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/app-card@latest/dist/src/app-card.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/app-card/dist/fds-app-card.js"></script>
 
 <fds-app-card
-  application='{"name":"Business Economics", "author":"Finastra", "flag":"COMING_SOON", "icon":"https://www.finastra.com/themes/custom/themekit/dist/logo.svg", "description":"Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."}'>
+  name="Business Economics"
+  author="Finastra"
+  tags='["Account Information", "Api", "Banking"]'
+  flag="PUBLISHED"
+  icon="https://www.finastra.com/themes/custom/themekit/dist/logo.svg"
+  description="Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
+  large>
 </fds-app-card>
 ```

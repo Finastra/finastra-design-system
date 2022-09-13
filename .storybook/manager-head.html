@@ -1,10 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spartan:wght@800&display=swap" rel="stylesheet" />
+
 <style>
+  .light-theme {
+    background: var(--fds-primary-lighter);
+  }
+
   .dark-theme .sidebar-item[data-selected="true"] {
     color: var(--fds-on-primary);
   }
 
   .dark-theme .sidebar-item[data-selected="true"] svg {
     color: var(--fds-on-primary);
+  }
+
+  #storybook-explorer-tree a, #storybook-explorer-tree div:not(.sidebar-subheading) button {
+    font: var(--fds-caption, normal normal var(--fds-caption-font-weight, 400) var(--fds-caption-font-size, 0.75rem)/var(--fds-caption-line-height, 1.125rem) var(--fds-caption-font-family, Roboto)) !important;
+  }
+
+  #storybook-explorer-tree div.sidebar-subheading button {
+    font: inherit !important;
   }
 </style>
 

@@ -1,11 +1,11 @@
 const README = require('../README.md');
+import '@finastra/switch';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@finastra/switch';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-switch.json';
 
 export default {
-  title: 'Components/Switch',
+  title: 'FORMS/Switch',
   component: 'fds-switch',
   argTypes,
   args: {

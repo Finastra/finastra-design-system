@@ -6,7 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 # FDS Theme Color
 
 <Meta
-  title="Foundations/Color"
+  title="Design Tokens/Color"
   parameters={{
     viewMode: 'docs',
     previewTabs: {
@@ -42,7 +42,7 @@ export const TemplateCustomProp = (args) => {
         height: 50px;
       }
     </style>
-    <div class="my-primary-container demo-layout">Hello World!</div>
+    <div class="my-primary-container demo-layout fds-body-1">Hello World!</div>
   `;
 };
 
@@ -62,8 +62,10 @@ export const TemplateCustomProp = (args) => {
 | `--fds-secondary-lighter`   | Secondary lighter color (default 8% opacity)          |
 | `--fds-background`          | Background color (default #FAFAFA)                    |
 | `--fds-surface`             | Surface color (default #FFFFFF)                       |
+| `--fds-surface-hover`       | Surface hover color (default primary 4% opacity)      |
 | `--fds-surface-selected`    | Surface selected color (default primary 8% opacity)   |
 | `--fds-surface-disabled`    | Surface disabled color (default #000000 12% opacity)  |
+| `--fds-surface-error`       | Surface error color (default error 4% opacity)        |
 | `--fds-outline`             | Outline color (default #000000 12% opacity)           |
 | `--fds-success`             | Success color (default #008744)                       |
 | `--fds-error`               | Error color (default #E40046)                         |
@@ -72,7 +74,7 @@ export const TemplateCustomProp = (args) => {
 | `--fds-gradient-horizontal` | 90 degree linear gradient of primary and secondary    |
 | `--fds-on-primary`          | On primary text color (default #FFFFFF)               |
 | `--fds-on-secondary`        | On secondary text color (default #FFFFFF)             |
-| `--fds-on-background`       | on background text color (default #000000)            |
+| `--fds-on-background`       | on background text color (default #000000 75% opacity)|
 | `--fds-on-surface`          | On surface text color (default #000000)               |
 | `--fds-on-surface-medium`   | Medium emphasis text color (default #000 54% opacity) |
 | `--fds-on-surface-disabled` | Disabled text color (default #000000 29% opacity)     |
@@ -168,8 +170,10 @@ will generate
 | `secondary-lighter`   | Secondary lighter color (default 8% opacity)          |
 | `background`          | Background color (default #FAFAFA)                    |
 | `surface`             | Surface color (default #FFFFFF)                       |
+| `surface-hover`       | Surface hover color (default primary 4% opacity)      |
 | `surface-selected`    | Surface selected color (default primary 8% opacity)   |
 | `surface-disabled`    | Surface disabled color (default #000000 12% opacity)  |
+| `surface-error`       | Surface error color (default error 4% opacity)        |
 | `outline`             | Outline color (default #000000 12% opacity)           |
 | `success`             | Success color (default #008744)                       |
 | `error`               | Error color (default #E40046)                         |
@@ -178,7 +182,7 @@ will generate
 | `gradient-horizontal` | 90 degree linear gradient of primary and secondary    |
 | `on-primary`          | On primary text color (default #FFFFFF)               |
 | `on-secondary`        | On secondary text color (default #FFFFFF)             |
-| `on-background`       | on background text color (default #000000)            |
+| `on-background`       | on background text color (default #000000 75% opacity)|
 | `on-surface`          | On surface text color (default #000000)               |
 | `on-surface-medium`   | Medium emphasis text color (default #000 54% opacity) |
 | `on-surface-disabled` | Disabled text color (default #000000 29% opacity)     |
@@ -249,8 +253,10 @@ export const TemplateHelper = (args) => {
 | `.fds-secondary-lighter-bg`   | Used for container's background in secondary lighter color |
 | `.fds-background`             | Used for application background color                      |
 | `.fds-surface`                | Used for content surface color (i.e. card background)      |
+| `.fds-surface-hover`          | Surface hover color (default primary 4% opacity)           |
 | `.fds-surface-selected`       | Surface selected color (default primary 8% opacity)        |
 | `.fds-surface-disabled`       | Surface disabled color (default #000000 12% opacity)       |
+| `.fds-surface-error`          | Surface error color (default error 4% opacity)             |
 | `.fds-outline`                | Used for border-color                                      |
 | `.fds-success`                | Used for text success feedback                             |
 | `.fds-success-bg`             | Used for container's background success feedback           |

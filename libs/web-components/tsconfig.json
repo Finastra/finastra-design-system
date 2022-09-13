@@ -38,9 +38,6 @@
       "path": "search-input"
     },
     {
-      "path": "base-card"
-    },
-    {
       "path": "card"
     },
     {
@@ -92,22 +89,13 @@
       "path": "stepper"
     },
     {
-      "path": "tab"
-    },
-    {
-      "path": "tab-bar"
-    },
-    {
       "path": "select"
-    },    
+    },
     {
       "path": "charts"
     },
     {
       "path": "slider"
-    },
-    {
-      "path": "button-toggle"
     },
     {
       "path": "button-toggle-group"
@@ -123,6 +111,57 @@
     },
     {
       "path": "guided-tour"
+    },
+    {
+      "path": "data-table"
+    },
+    {
+      "path": "tabs"
+    },
+    {
+      "path": "wizard"
+    },
+    {
+      "path": "fab"
+    },
+    {
+      "path": "icon-button"
+    },
+    {
+      "path": "expansion-panel"
+    },
+    {
+      "path": "badge"
+    },
+    {
+      "path": "global-search"
+    },
+    {
+      "path": "menu"
+    },
+    {
+      "path": "dialog"
+    },
+    {
+      "path": "breadcrumb"
+    },
+    {
+      "path": "skeleton"
+    },
+    {
+      "path": "account-card"
+    },
+    {
+      "path": "icon"
+    },
+    {
+      "path": "list"
+    },
+    {
+      "path": "icon-bar"
+    },
+    {
+      "path": "filter-tree"
     }
   ]
 }

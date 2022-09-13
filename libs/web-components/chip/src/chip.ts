@@ -1,8 +1,8 @@
-import { LitElement, html } from 'lit';
+import { Ripple } from '@material/mwc-ripple/mwc-ripple';
+import { RippleHandlers } from '@material/mwc-ripple/ripple-handlers';
+import { html, LitElement } from 'lit';
 import { customElement, eventOptions, property, queryAsync, state } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
-import { RippleHandlers } from '@material/mwc-ripple/ripple-handlers';
-import { Ripple } from '@material/mwc-ripple/mwc-ripple';
 import { styles } from './styles.css';
 
 @customElement('fds-chip')
@@ -91,9 +91,9 @@ export class Chip extends LitElement {
 
   renderIcon(icon: string) {
     return html`
-    <mwc-icon class="mdc-button__icon">
+    <fds-icon class="mdc-button__icon">
       ${icon}
-    </mwc-icon>`;
+    </fds-icon>`;
   }
 
   renderRipple() {

@@ -1,12 +1,6 @@
 import {
-  Tree,
-  formatFiles,
-  installPackagesTask,
-  generateFiles,
-  joinPathFragments,
-  names,
-  updateJson,
-  addProjectConfiguration
+  addProjectConfiguration, formatFiles, generateFiles, installPackagesTask, joinPathFragments,
+  names, Tree, updateJson
 } from '@nrwl/devkit';
 
 export default async function (host: Tree, schema: any) {
@@ -16,9 +10,10 @@ export default async function (host: Tree, schema: any) {
   schema.name = schema.name.replace(regex,'');
 
   const normalizedNames = names(schema.name);
-
+  const version = require(joinPathFragments(host.root, './libs/web-components/button/package.json')).version
   generateFiles(host, joinPathFragments(__dirname, './files'), `./libs/web-components/${normalizedNames.fileName}`, {
-    ...normalizedNames
+    ...normalizedNames,
+    version
   });
   updateJson(host, `./libs/web-components/tsconfig.json`, (json) => {
     json.references.push({ path: normalizedNames.fileName });

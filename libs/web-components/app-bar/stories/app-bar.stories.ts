@@ -6,10 +6,10 @@ import '@finastra/user-profile';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { EVENTS } from '../src/constants';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-app-bar.json';
 
 export default {
-  title: 'Components/App bar',
+  title: 'NAVIGATION/App Bar',
   component: 'fds-app-bar',
   argTypes,
   args: {

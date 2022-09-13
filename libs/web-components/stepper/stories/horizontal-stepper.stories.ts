@@ -3,32 +3,28 @@ import '@finastra/stepper';
 import type { HorizontalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { EVENTS } from '../src/constants';
+import { argTypes, cssprops } from './sb-generated/fds-horizontal-stepper.json';
+
 const demoData = [
   {
-    label: 'Step Success',
-    description: 'Ad in dolore eu anim est excepteur ex. Ullamco irure voluptate laboris cupidatat non excepteur minim nulla dolor. '
+    label: 'Step Success'
   },
   {
-    label: 'Step Active',
-    description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .'
+    label: 'Step Active'
   },
   {
     label: 'Step Disabled',
-    description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
     disabled: true
   },
-  { label: 'Step Inactive',
-   description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. ' },
+  { label: 'Step Inactive' },
   {
-    label: 'Step Inactive',
-    description:
-      'Exercitation eiusmod Lorem officia incididunt. Reprehenderit nisi consequat nostrud fugiat esse amet id voluptate elit elit et sit qui deserunt.'
+    label: 'Step Inactive'
   }
 ];
 
 export default {
-  title: 'Components/Stepper/Horizontal',
+  title: 'FORMS/Stepper/Horizontal',
   component: 'fds-horizontal-stepper',
   argTypes: {
     ...argTypes,
@@ -46,6 +42,9 @@ export default {
     currentStepIndex: 1
   },
   parameters: {
+    actions: {
+      handles: [EVENTS.STEPCLICK]
+    },
     docs: {
       description: { component: README }
     },

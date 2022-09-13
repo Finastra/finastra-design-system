@@ -1,7 +1,7 @@
 {
   "name": "@finastra/slider",
   "displayName": "Slider",
-  "version": "0.0.30",
+  "version": "0.0.42",
   "description": "Slider Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,10 +12,11 @@
   "main": "dist/src/slider.js",
   "module": "dist/src/slider.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-slider": "^0.25.3",
+    "@material/mwc-slider": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

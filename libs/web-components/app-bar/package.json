@@ -1,7 +1,7 @@
 {
   "name": "@finastra/app-bar",
   "displayName": "App Bar",
-  "version": "0.0.30",
+  "version": "0.0.42",
   "description": "App Bar Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,11 +12,12 @@
   "main": "dist/src/app-bar.js",
   "module": "dist/src/app-bar.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/logo": "0.0.30",
-    "@material/mwc-top-app-bar": "^0.25.3",
+    "@finastra/logo": "0.0.42",
+    "@material/mwc-top-app-bar": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

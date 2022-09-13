@@ -1,7 +1,7 @@
 {
   "name": "@finastra/menu-trigger",
   "displayName": "MenuTrigger",
-  "version": "0.0.30",
+  "version": "0.0.42",
   "description": "MenuTrigger Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,13 +12,18 @@
   "main": "dist/src/menu-trigger.js",
   "module": "dist/src/menu-trigger.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "0.0.30",
-    "@material/mwc-icon": "0.25.3",
+    "@finastra/button": "0.0.42",
+    "@finastra/icon": "0.0.42",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "@material/mwc-base": "^0.26.1",
+    "@material/mwc-button": "^0.26.1"
   },
   "publishConfig": {
     "access": "public"

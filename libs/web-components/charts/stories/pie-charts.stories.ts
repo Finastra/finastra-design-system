@@ -3,11 +3,11 @@ import '@finastra/charts';
 import type { PieChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-const demoData = [44, 55, 13, 43, 22]
-const demoLabels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
+const demoData = [28, 20, 15, 9, 10, 10, 20]
+const demoLabels = ['Housing', 'Daily spending', 'Taxes', 'Other savings', 'Retirement', 'Insurance', 'Debt']
 
 export default {
-  title: 'Components/Charts/PieChart',
+  title: 'DATA DISPLAY/Charts/Pie Chart',
   component: 'fds-pie-chart',
   argTypes: {
     width: {

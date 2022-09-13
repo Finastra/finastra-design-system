@@ -3,14 +3,14 @@ import '@finastra/launchpad';
 import { Launchpad } from '@finastra/launchpad';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
+import { argTypes } from './sb-generated/fds-launchpad.json';
 
 
 const README = require('../README.md');
-const demoApps = [{ 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app1.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app2.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app3.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app4.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app5.com' } }, { 'name': 'App', 'shortName': 'App', 'sso-initiation-urls': { 'web': 'https://app6.com' } }];
+const demoApps = [ { "name": "Cash & Liquidity Management", "sso-initiation-urls": { "web": "https://app1.com" } }, { "name": "Corporate Payments", "sso-initiation-urls": { "web": "https://app2.com" } }, { "name": "Treasury Management", "sso-initiation-urls": { "web": "https://app3.com" } }, { "name": "Risk & Compliance", "sso-initiation-urls": { "web": "https://app4.com" } } ];
 
 export default {
-  title: 'Components/Launchpad',
+  title: 'NAVIGATION/Launchpad',
   argTypes,
   args: {
     apps: demoApps
@@ -103,20 +103,16 @@ const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppName
     <div class='tools-title'>Tools</div>
     <div class='tools-list'>
       <div class="tools-item">
-        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Tool</div>
+        <fds-brand-card class='tools' label='Designer' extraDense primary></fds-brand-card>
+        <div class='tools-name'>Designer</div>
       </div>
       <div class="tools-item">
-        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Tool</div>
+        <fds-brand-card class='tools' label='Link editor' extraDense primary></fds-brand-card>
+        <div class='tools-name'>Link editor</div>
       </div>
       <div class="tools-item">
-        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Tool</div>
-      </div>
-      <div class="tools-item">
-        <fds-brand-card class='tools' label='Tool' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Tool</div>
+        <fds-brand-card class='tools' label='Flow editor' extraDense primary></fds-brand-card>
+        <div class='tools-name'>Flow editor</div>
       </div>
     </div>
   </div>

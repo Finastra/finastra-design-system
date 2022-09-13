@@ -1,7 +1,7 @@
 {
   "name": "@finastra/button-toggle-group",
   "displayName": "ButtonToggleGroup",
-  "version": "0.0.30",
+  "version": "0.0.42",
   "description": "ButtonToggleGroup Web Component",
   "keywords": [
     "Finastra Design System",
@@ -9,13 +9,15 @@
     "ButtonToggleGroup"
   ],
   "license": "MIT",
-  "main": "dist/src/button-toggle-group.js",
-  "module": "dist/src/button-toggle-group.js",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/button-toggle/styles.scss src/button-toggle/filter-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-tab-bar": "0.25.3",
+    "@material/mwc-tab": "^0.26.1",
+    "@material/mwc-tab-bar": "^0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

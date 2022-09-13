@@ -1,12 +1,12 @@
 const README = require('../README.md');
-import { Meta, Story } from '@storybook/web-components';
-import { html } from 'lit-html';
 import '@finastra/textarea';
 import type { Textarea } from '@finastra/textarea';
-import { argTypes, cssprops } from './custom-element.json';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
+import { argTypes, cssprops } from './sb-generated/fds-textarea.json';
 
 export default {
-  title: 'Components/Textarea',
+  title: 'FORMS/Textarea',
   component: 'fds-textarea',
   argTypes,
   args: {
@@ -26,11 +26,11 @@ export default {
 } as Meta;
 
 const Template: Story<Textarea> = ({ label, helper, required, disabled }) => {
-  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fsd-textarea>`;
+  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fds-textarea>`;
 };
 
 const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter, required, disabled }) => {
-  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fsd-textarea>`;
+  return html`<fds-textarea charCounter=${charCounter} maxLength=${maxLength} ?required=${required} label=${label} helper=${helper} ?disabled=${disabled}></fds-textarea>`;
 };
 
 export const Default: Story<Textarea> = Template.bind({});

@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/stepper?style=for-the-badge)](https://www.npmjs.com/package/@finastra/stepper)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/stepper?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/stepper')
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-stepper--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/forms-stepper-horizontal--default)
 
 
 Steppers display progress through a sequence of logical and numbered steps.
@@ -43,12 +43,12 @@ this.steps = [
 
 ```html
 <!-- Horizontal Stepper -->
-<script type="module" src="https://unpkg.com/@finastra/stepper@latest/dist/src/horizontal-stepper.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/stepper/dist/horizontal-stepper.js"></script>
 
 <fds-horizontal-stepper class="stepper" currentStepIndex="1"></fds-horizontal-stepper>
 
 <!-- Vertical Stepper -->
-<script type="module" src="https://unpkg.com/@finastra/stepper@latest/dist/src/vertical-stepper.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/stepper/dist/vertical-stepper.js"></script>
 
 <fds-vertical-stepper class="stepper" currentStepIndex="1"></fds-vertical-stepper>
 

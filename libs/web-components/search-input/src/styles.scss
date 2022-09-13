@@ -1,43 +1,22 @@
-@use "@material/mwc-textfield/mwc-textfield";
+@use "@finastra/textfield/src/styles";
 @use "@finastra/fds-theme" as fds;
 
 :host {
-  @include fds.mdc(text-field-fill-color, surface-selected);
-  @include fds.mdc(text-field-idle-line-color, primary);
-  @include fds.mdc(text-field-hover-line-color, primary);
-  @include fds.mdc(text-field-ink-color, on-background);
-  @include fds.mdc(ripple-color, surface-selected);
-}
+  .clear-icon {
+    @include fds.text-color(on-surface-medium);
+    margin-right: -14px;
+    align-self: center;
 
-.mdc-text-field--with-leading-icon {
-  padding-right: 4px;
-}
-
-.fds-search-input-clear-button {
-  align-self: center;
-  transition: visibility 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  --mdc-icon-button-size: 32px;
-  --mdc-icon-size: 18px;
-
-  &.fds-search-input-clear-button--show {
-    visibility: visible
+    &.fds-search-input-clear-button--show {
+      visibility: visible
+    }
+  
+    &.fds-search-input-clear-button--hide {
+      visibility: hidden;
+    }
   }
 
-  &.fds-search-input-clear-button--hide {
-    visibility: hidden;
+  .circular-loader {
+    align-self: center;
   }
-}
-
-.mdc-text-field:not(.mdc-text-field--disabled)  {
-  .mdc-text-field__icon--leading {
-    @include fds.text-color(primary);
-  }
-
-  .mdc-text-field__affix--suffix {
-    @include fds.text-color(on-background);
-  }
-}
-
-.mdc-text-field__input {
-  @include fds.typography(subtitle-1);
 }

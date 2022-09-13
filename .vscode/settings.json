@@ -7,8 +7,7 @@
   },
   "workbench.colorCustomizations": {
     "activityBar.border": "#c137a2",
-    "menubar.selectionForeground": "#ffffff",
-    "titleBar.border": "#c137a2"
+    "menubar.selectionForeground": "#ffffff"
   },
   "conventionalCommits.scopes": [
     "wc:app-card",
@@ -25,6 +24,9 @@
     "wc:user-profile",
     "wc:global-nav",
     "wc:*",
-    "wc:pie-chart"
+    "wc:pie-chart",
+    "wc:data-table",
+    "wc:dialog",
+    "wc:donut-chart"
   ]
 }

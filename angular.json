@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "account-card": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/cards/account-card",
       "sourceRoot": "libs/angular-components/cards/account-card",
@@ -19,7 +20,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/cards/account-card/jest.config.js"
+            "jestConfig": "libs/angular-components/cards/account-card/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/cards/account-card"]
         }
@@ -32,6 +33,7 @@
       "tags": []
     },
     "angular-components": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components",
       "sourceRoot": "libs/angular-components/",
@@ -70,6 +72,7 @@
       "tags": []
     },
     "angular-core": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/core",
       "sourceRoot": "libs/angular-components/core",
@@ -84,7 +87,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/core/jest.config.js"
+            "jestConfig": "libs/angular-components/core/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/core"]
         }
@@ -97,6 +100,7 @@
       "tags": []
     },
     "angular-theme": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "themes/angular-theme",
       "sourceRoot": "themes/angular-theme/",
@@ -131,6 +135,7 @@
       "tags": []
     },
     "app-bar": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/app-bar",
       "architect": {
         "lint": {
@@ -143,6 +148,7 @@
       "tags": ["web-components"]
     },
     "app-card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/app-card",
       "architect": {
         "lint": {
@@ -155,6 +161,7 @@
       "tags": ["web-components"]
     },
     "autocomplete": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/autocomplete",
       "architect": {
         "lint": {
@@ -167,6 +174,7 @@
       "tags": ["web-components"]
     },
     "avatar": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/avatar",
       "sourceRoot": "libs/angular-components/avatar/src",
@@ -181,7 +189,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/avatar/jest.config.js",
+            "jestConfig": "libs/angular-components/avatar/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/angular-components/avatar"]
@@ -194,7 +202,21 @@
       },
       "tags": []
     },
+    "badge": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/badge",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/badge/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "banner": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/banner",
       "sourceRoot": "libs/angular-components/banner",
@@ -209,7 +231,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/banner/jest.config.js"
+            "jestConfig": "libs/angular-components/banner/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/banner"]
         }
@@ -221,19 +243,8 @@
       },
       "tags": []
     },
-    "base-card": {
-      "root": "libs/web-components/base-card",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/base-card/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "brand-card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/brand-card",
       "architect": {
         "lint": {
@@ -246,6 +257,7 @@
       "tags": ["web-components"]
     },
     "breadcrumb": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/breadcrumb",
       "sourceRoot": "libs/angular-components/breadcrumb",
@@ -266,6 +278,7 @@
       "tags": []
     },
     "button-toggle": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/button-toggle",
       "architect": {
         "lint": {
@@ -278,6 +291,7 @@
       "tags": ["web-components"]
     },
     "button-toggle-group": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/button-toggle-group",
       "architect": {
         "lint": {
@@ -289,7 +303,21 @@
       },
       "tags": ["web-components"]
     },
+    "card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "changelog": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/changelog",
       "sourceRoot": "libs/angular-components/changelog",
@@ -310,6 +338,7 @@
       "tags": []
     },
     "chart": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/chart",
       "sourceRoot": "libs/angular-components/chart",
@@ -324,7 +353,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/chart/jest.config.js"
+            "jestConfig": "libs/angular-components/chart/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/chart"]
         }
@@ -337,6 +366,7 @@
       "tags": []
     },
     "charts": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/charts",
       "architect": {
         "lint": {
@@ -349,6 +379,7 @@
       "tags": ["web-components"]
     },
     "checkbox": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/checkbox",
       "architect": {
         "lint": {
@@ -361,6 +392,7 @@
       "tags": ["web-components"]
     },
     "chip": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/chip",
       "architect": {
         "lint": {
@@ -373,6 +405,7 @@
       "tags": ["web-components"]
     },
     "circular-progress": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/circular-progress",
       "architect": {
         "lint": {
@@ -384,7 +417,33 @@
       },
       "tags": ["web-components"]
     },
+    "data-table": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/data-table",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/data-table/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "dialog": {
+      "root": "libs/web-components/dialog",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/dialog/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "entity-menu": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/entity-menu",
       "sourceRoot": "libs/angular-components/entity-menu",
@@ -399,7 +458,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/entity-menu/jest.config.js"
+            "jestConfig": "libs/angular-components/entity-menu/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/entity-menu"]
         }
@@ -412,6 +471,7 @@
       "tags": []
     },
     "expandable-table": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/expandable-table",
       "sourceRoot": "libs/angular-components/expandable-table",
@@ -429,7 +489,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/expandable-table/jest.config.js"
+            "jestConfig": "libs/angular-components/expandable-table/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/expandable-table"]
         }
@@ -441,7 +501,46 @@
       },
       "tags": []
     },
+    "expansion-panel": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/expansion-panel",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/expansion-panel/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "fab": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/fab",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/fab/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "fds-global-search": {
+      "root": "libs/web-components/global-search",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/global-search/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "fds-test-app": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/fds-test-app",
       "sourceRoot": "apps/fds-test-app/src",
       "projectType": "application",
@@ -450,7 +549,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/fds-test-app",
-            "deployUrl": "/fds-theme/",
+            "baseHref": "/fds-theme/",
             "index": "apps/fds-test-app/src/index.html",
             "main": "apps/fds-test-app/src/index.ts",
             "tsConfig": "apps/fds-test-app/tsconfig.app.json",
@@ -478,6 +577,7 @@
       "tags": []
     },
     "fds-theme": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "themes/fds-theme",
       "sourceRoot": "themes/fds-theme/",
@@ -513,6 +613,7 @@
       "tags": []
     },
     "filter-group": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-group",
       "sourceRoot": "libs/angular-components/filter/filter-group",
@@ -530,7 +631,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-group/jest.config.js"
+            "jestConfig": "libs/angular-components/filter/filter-group/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/filter/filter-group"]
         }
@@ -543,6 +644,7 @@
       "tags": []
     },
     "filter-tags": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-tags",
       "sourceRoot": "libs/angular-components/filter/filter-tags",
@@ -560,7 +662,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.js"
+            "jestConfig": "libs/angular-components/filter/filter-tags/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/filter/filter-tags"]
         }
@@ -573,6 +675,7 @@
       "tags": []
     },
     "filter-toggle": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-toggle",
       "sourceRoot": "libs/angular-components/filter/filter-toggle",
@@ -590,7 +693,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.js"
+            "jestConfig": "libs/angular-components/filter/filter-toggle/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/filter/filter-toggle"]
         }
@@ -603,6 +706,7 @@
       "tags": []
     },
     "filter-tree": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/filter/filter-tree",
       "sourceRoot": "libs/angular-components/filter/filter-tree",
@@ -620,7 +724,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.js"
+            "jestConfig": "libs/angular-components/filter/filter-tree/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/filter/filter-tree"]
         }
@@ -632,7 +736,20 @@
       },
       "tags": []
     },
+    "fds-filter-tree": {
+      "root": "libs/web-components/filter-tree",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/filter-tree/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "global-nav": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/global-nav",
       "sourceRoot": "libs/angular-components/global-nav",
@@ -647,7 +764,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/global-nav/jest.config.js"
+            "jestConfig": "libs/angular-components/global-nav/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/global-nav"]
         }
@@ -660,6 +777,7 @@
       "tags": []
     },
     "global-search": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/global-search",
       "sourceRoot": "libs/angular-components/global-search",
@@ -674,7 +792,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/global-search/jest.config.js"
+            "jestConfig": "libs/angular-components/global-search/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/global-search"]
         }
@@ -698,7 +816,33 @@
       },
       "tags": ["web-components"]
     },
+    "icon": {
+      "root": "libs/web-components/icon",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "icon-button": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/icon-button",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/icon-button/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "launchpad": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/launchpad",
       "architect": {
         "lint": {
@@ -711,6 +855,7 @@
       "tags": ["web-components"]
     },
     "linear-progress": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/linear-progress",
       "architect": {
         "lint": {
@@ -722,7 +867,32 @@
       },
       "tags": ["web-components"]
     },
+    "list": {
+      "root": "libs/web-components/list",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/list/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "menu": {
+      "root": "libs/web-components/menu",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/menu/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "menu-trigger": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/menu-trigger",
       "architect": {
         "lint": {
@@ -735,6 +905,7 @@
       "tags": ["web-components"]
     },
     "multiselect-tags": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/filter/multiselect-tags",
       "sourceRoot": "libs/angular-components/filter/multiselect-tags",
@@ -752,7 +923,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.js"
+            "jestConfig": "libs/angular-components/filter/multiselect-tags/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/filter/multiselect-tags"]
         }
@@ -765,6 +936,7 @@
       "tags": []
     },
     "popover": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/popover",
       "sourceRoot": "libs/angular-components/popover",
@@ -779,7 +951,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/popover/jest.config.js"
+            "jestConfig": "libs/angular-components/popover/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/popover"]
         }
@@ -792,6 +964,7 @@
       "tags": []
     },
     "radio": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/radio",
       "architect": {
         "lint": {
@@ -804,6 +977,7 @@
       "tags": ["web-components"]
     },
     "repeater": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/repeater",
       "sourceRoot": "libs/angular-components/repeater",
@@ -818,7 +992,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/repeater/jest.config.js"
+            "jestConfig": "libs/angular-components/repeater/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/repeater"]
         }
@@ -831,6 +1005,7 @@
       "tags": []
     },
     "scroll-to-top": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/scroll-to-top",
       "sourceRoot": "libs/angular-components/scroll-to-top",
@@ -845,7 +1020,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/scroll-to-top/jest.config.js"
+            "jestConfig": "libs/angular-components/scroll-to-top/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/scroll-to-top"]
         }
@@ -858,6 +1033,7 @@
       "tags": []
     },
     "search-input": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/search-input",
       "sourceRoot": "libs/angular-components/search-input",
@@ -878,6 +1054,7 @@
       "tags": []
     },
     "select": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/select",
       "architect": {
         "lint": {
@@ -890,6 +1067,7 @@
       "tags": ["web-components"]
     },
     "sidenav": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/sidenav",
       "architect": {
         "lint": {
@@ -901,7 +1079,20 @@
       },
       "tags": ["web-components"]
     },
+    "skeleton": {
+      "root": "libs/web-components/skeleton",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/skeleton/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "skeleton-text": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/skeleton-text",
       "sourceRoot": "libs/angular-components/skeleton-text",
@@ -916,7 +1107,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/skeleton-text/jest.config.js"
+            "jestConfig": "libs/angular-components/skeleton-text/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/skeleton-text"]
         }
@@ -929,6 +1120,7 @@
       "tags": []
     },
     "slider": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/slider",
       "architect": {
         "lint": {
@@ -941,6 +1133,7 @@
       "tags": ["web-components"]
     },
     "status-steps": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/status-steps",
       "sourceRoot": "libs/angular-components/status-steps/src",
@@ -956,7 +1149,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/angular-components/status-steps"],
           "options": {
-            "jestConfig": "libs/angular-components/status-steps/jest.config.js",
+            "jestConfig": "libs/angular-components/status-steps/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -964,6 +1157,7 @@
       "tags": []
     },
     "stepper": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/stepper",
       "architect": {
         "lint": {
@@ -976,6 +1170,7 @@
       "tags": ["web-components"]
     },
     "switch": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/switch",
       "architect": {
         "lint": {
@@ -987,31 +1182,8 @@
       },
       "tags": ["web-components"]
     },
-    "tab": {
-      "root": "libs/web-components/tab",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/tab/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
-    "tab-bar": {
-      "root": "libs/web-components/tab-bar",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/tab-bar/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "table": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/table",
       "sourceRoot": "libs/angular-components/table",
@@ -1026,7 +1198,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/table/jest.config.js"
+            "jestConfig": "libs/angular-components/table/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/table"]
         }
@@ -1038,7 +1210,21 @@
       },
       "tags": []
     },
+    "tabs": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/tabs",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/tabs/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "test": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "schematics": {
         "@nrwl/workspace:component": {
@@ -1176,7 +1362,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/angular-test-app/jest.config.js"
+            "jestConfig": "apps/angular-test-app/jest.config.ts"
           },
           "outputs": ["coverage/apps/angular-test-app"]
         }
@@ -1184,6 +1370,7 @@
       "tags": []
     },
     "test-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/angular-test-app-e2e",
       "sourceRoot": "apps/angular-test-app-e2e/src",
       "projectType": "application",
@@ -1211,6 +1398,7 @@
       "tags": []
     },
     "textarea": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/textarea",
       "architect": {
         "lint": {
@@ -1223,6 +1411,7 @@
       "tags": ["web-components"]
     },
     "textfield": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/textfield",
       "architect": {
         "lint": {
@@ -1235,6 +1424,7 @@
       "tags": ["web-components"]
     },
     "toaster": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/toaster",
       "sourceRoot": "libs/angular-components/toaster",
@@ -1249,7 +1439,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/toaster/jest.config.js"
+            "jestConfig": "libs/angular-components/toaster/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/toaster"]
         }
@@ -1262,6 +1452,7 @@
       "tags": []
     },
     "user-profile": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/user-profile",
       "architect": {
         "lint": {
@@ -1274,6 +1465,7 @@
       "tags": ["web-components"]
     },
     "user-profile-menu": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/user-profile-menu",
       "sourceRoot": "libs/angular-components/user-profile-menu",
@@ -1291,7 +1483,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/user-profile-menu/jest.config.js"
+            "jestConfig": "libs/angular-components/user-profile-menu/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/user-profile-menu"]
         }
@@ -1304,6 +1496,7 @@
       "tags": []
     },
     "vector-map": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/vector-map",
       "sourceRoot": "libs/angular-components/vector-map",
@@ -1318,7 +1511,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/vector-map/jest.config.js"
+            "jestConfig": "libs/angular-components/vector-map/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/vector-map"]
         }
@@ -1331,6 +1524,7 @@
       "tags": []
     },
     "video-thumbnail": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/video-thumbnail",
       "sourceRoot": "libs/angular-components/video-thumbnail",
@@ -1348,7 +1542,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.js"
+            "jestConfig": "libs/angular-components/video-thumbnail/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/video-thumbnail"]
         }
@@ -1360,7 +1554,20 @@
       },
       "tags": []
     },
+    "wc-account-card": {
+      "root": "libs/web-components/account-card",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/account-card/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wc-avatar": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/web-components/avatar",
       "architect": {
         "lint": {
@@ -1372,22 +1579,8 @@
       },
       "tags": ["web-components"]
     },
-    "wc-card": {
-      "projectType": "library",
-      "root": "libs/web-components/card",
-      "sourceRoot": "libs/web-components/card",
-      "prefix": "fds",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/web-components/card/src/**/*.ts"]
-          }
-        }
-      },
-      "tags": ["web-components"]
-    },
     "wc-divider": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/web-components/divider",
       "sourceRoot": "libs/web-components/divider",
@@ -1403,6 +1596,7 @@
       "tags": ["web-components"]
     },
     "wc-logo": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/web-components/logo",
       "sourceRoot": "libs/web-components/logo",
@@ -1418,6 +1612,7 @@
       "tags": ["web-components"]
     },
     "wc-search-input": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/web-components/search-input",
       "sourceRoot": "libs/web-components/search-input",
@@ -1432,7 +1627,33 @@
       },
       "tags": ["web-components"]
     },
+    "wc-wizard": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/web-components/wizard",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/wizard/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
+    "wc:breadcrumb": {
+      "root": "libs/web-components/breadcrumb",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/breadcrumb/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "wizard": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/angular-components/wizard",
       "sourceRoot": "libs/angular-components/wizard",
@@ -1447,7 +1668,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/angular-components/wizard/jest.config.js"
+            "jestConfig": "libs/angular-components/wizard/jest.config.ts"
           },
           "outputs": ["coverage/libs/angular-components/wizard"]
         }

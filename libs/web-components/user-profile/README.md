@@ -2,7 +2,7 @@
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/user-profile?style=for-the-badge)](https://www.npmjs.com/package/@finastra/user-profile)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/user-profile?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/user-profile)
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/components-user-profile--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/navigation-user-profile--default)
 
 
 The user profile web component shows detailed information about a user.
@@ -31,7 +31,7 @@ import '@finastra/user-profile';
 ### Pure HTML pages
 
 ```html
-<script type="module" src="https://unpkg.com/@finastra/user-profile@latest/dist/src/user-profile.js?module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/user-profile/dist/user-profile.js"></script>
 
 <fds-user-profile userName="Adnen Manai">
     <div slot="userInfo">adnen.manai@finastra.com</div>

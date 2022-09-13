@@ -3,10 +3,10 @@ import '@finastra/slider';
 import type { Slider } from '@finastra/slider';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-slider.json';
 
 export default {
-  title: 'Components/Slider',
+  title: 'FORMS/Slider',
   component: 'fds-slider',
   argTypes,
   parameters: {

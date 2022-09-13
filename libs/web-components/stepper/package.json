@@ -1,7 +1,7 @@
 {
   "name": "@finastra/stepper",
   "displayName": "Stepper",
-  "version": "0.0.30",
+  "version": "0.0.42",
   "description": "Stepper Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,6 +12,7 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/h-styles.scss src/v-styles.scss"
   },
   "dependencies": {

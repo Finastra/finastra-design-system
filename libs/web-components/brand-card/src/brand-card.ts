@@ -1,7 +1,7 @@
-import { BaseCard } from '@finastra/base-card';
+import { BaseCard } from '@finastra/card';
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { renderPatternSVG, renderPrimarySVG, renderSecondarySVG } from './brand-card-decorations';
+import { renderPrimarySVG, renderSecondarySVG } from './brand-card-decorations';
 import { styles } from './styles.css';
 
 
@@ -36,7 +36,6 @@ export class BrandCard extends BaseCard {
       console.warn('[Brand Card]: Cannot use multiple size attributes at the same time, default size has been applied');
     }
     return html`<div class="brand-card" title="${this.label}">
-      ${renderPatternSVG()}
       <span class="brand-card-label">${this.shortLabel || this.formatItemName(this.label)}</span>
       ${this.secondary ? renderSecondarySVG() : renderPrimarySVG()}
     </div>`;

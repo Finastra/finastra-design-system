@@ -1,8 +1,7 @@
+import { ListItem } from "@finastra/list";
+import '@finastra/menu';
+import { Menu } from "@finastra/menu";
 import '@finastra/search-input';
-import '@material/mwc-icon';
-import { ListItem } from '@material/mwc-list/mwc-list-item';
-import '@material/mwc-menu';
-import { Menu } from '@material/mwc-menu';
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -162,7 +161,7 @@ export class Autocomplete extends LitElement {
   }
 
   protected onMenuSelected() {
-    const selectedItem = this.menuElement?.selected as ListItem;
+    const selectedItem = this.menuElement?.selected as unknown as ListItem;
     if (selectedItem) {
       this.value = selectedItem.value;
     }
@@ -216,7 +215,7 @@ export class Autocomplete extends LitElement {
           @input=${this.onSearchInputChange}
         ></fds-search-input>
 
-        <mwc-menu
+        <fds-menu
           activatable
           wrapFocus
           class="mdc-menu"
@@ -232,7 +231,7 @@ export class Autocomplete extends LitElement {
           @selected=${this.onMenuSelected}
         >
           <slot></slot>
-        </mwc-menu>
+        </fds-menu>
       </div>
     `;
   }

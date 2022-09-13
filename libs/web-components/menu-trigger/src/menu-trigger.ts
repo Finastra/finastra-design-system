@@ -1,13 +1,11 @@
-import { customElement, property } from 'lit/decorators.js';
+import { OutlinedButton } from '@finastra/button';
+import '@finastra/icon';
 import { html } from 'lit-html';
-
-import { Button } from '@finastra/button';
-import '@material/mwc-icon';
-
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 @customElement('fds-menu-trigger')
-export class MenuTrigger extends Button {
+export class MenuTrigger extends OutlinedButton {
   static styles = styles;
 
   /**
@@ -19,7 +17,6 @@ export class MenuTrigger extends Button {
    * Whether the toggle button should be using secondary.
    */
   @property({ type: Boolean }) secondary = false;
-
 
   protected menuTrailingIcon = 'expand_more';
 
@@ -36,18 +33,16 @@ export class MenuTrigger extends Button {
 
   render() {
     return html`
-    <fds-button
+    <fds-outlined-button
       label='${this.label}'
       icon='${this.icon}'
-      ?outlined='${this.outlined}'
-      ?text='${this.text}'
       ?dense='${this.dense}'
       ?disabled='${this.disabled}'
       ?fullwidth='${this.fullwidth}'
       ?secondary='${this.secondary}'
     >
-      <mwc-icon class="menu-trigger-icon">${this.menuTrailingIcon}</mwc-icon>
-    </fds-button>
+      <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
+    </fds-outlined-button>
     `;
   }
 

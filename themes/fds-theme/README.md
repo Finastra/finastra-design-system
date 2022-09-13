@@ -1,6 +1,6 @@
-# FDS Theme
+![](../../.github/assets/banner_web-theme.png)
 
-The FINASTRA Material Theme is a SCSS implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, spacing, elevation).
+The FINASTRA Theme is a SCSS implementation of the [FINASTRA Design System](https://design.fusionfabric.cloud). It features FINASTRA's branding of foundations (color, typography, spacing, elevation).
 
 ## Quick start 🤔
 
@@ -19,8 +19,11 @@ Use the theme in your app's main stylesheet to get the custom properties initial
 ```
 
 ## Theming 🖌️
-Fds theme supports both **light** and **dark** theme.
+
+FDS theme supports both **light** and **dark** theme.
+
 ### SASS
+
 If you are coding in **SASS** you have 3 different ways to load the theme of your preference
 
 - By loading only **custom properties**
@@ -58,20 +61,23 @@ If you are coding in **SASS** you have 3 different ways to load the theme of you
 ```
 
 ### Using a pre-built theme
-You can use Fds theme without Sass by using a pre-built theme
+
+You can use FDS theme without Sass by using a pre-built theme
 
 ```CSS
 @import '@finastra/fds-theme/prebuilt/light';
 /* or */
 @import '@finastra/fds-theme/prebuilt/dark';
+/* or */
+@import '@finastra/fds-theme/prebuilt/all-themes';
 ```
 
 ## Usage
 
-- [Color](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-color--custom-properties)
-- [Elevation](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-elevation--helper-classes)
-- [Spacing](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-spacing--custom-properties)
-- [Typography](https://finastra.github.io/finastra-design-system/?path=/docs/foundations-typography--custom-properties)
+- [Color](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-color--custom-properties)
+- [Elevation](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-elevation--helper-classes)
+- [Spacing](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-spacing--custom-properties)
+- [Typography](https://finastra.github.io/finastra-design-system/?path=/docs/design-tokens-typography--custom-properties)
 
 ## Want to help? 🤗❤️
 

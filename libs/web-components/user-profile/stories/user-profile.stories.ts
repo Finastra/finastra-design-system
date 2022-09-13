@@ -1,12 +1,13 @@
 const README = require('../README.md');
-import { html } from 'lit-html';
-import { Meta, Story } from '@storybook/web-components';
-import type { UserProfile } from '@finastra/user-profile';
+import '@finastra/icon';
 import '@finastra/user-profile';
-import { argTypes, cssprops } from './custom-element.json';
+import type { UserProfile } from '@finastra/user-profile';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
+import { argTypes, cssprops } from './sb-generated/fds-user-profile.json';
 
 export default {
-  title: 'Components/User Profile',
+  title: 'NAVIGATION/User Profile',
   argTypes,
   args: {
     dense: false,
@@ -43,7 +44,7 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = 
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
         <fds-button fullwidth label="Logout" icon="logout"></fds-button>
-        <fds-button text fullwidth label="View profile"></fds-button>
+        <fds-text-button text fullwidth label="View profile"></fds-text-button>
       </div>
     </fds-user-profile>`;
 };
@@ -87,11 +88,11 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
         <div class="item-list">
           <mwc-list-item graphic="icon">
             <span>item one</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
+            <fds-icon slot="graphic">dashboard</fds-icon>
           </mwc-list-item>
           <mwc-list-item graphic="icon">
             <span>item two</span>
-            <mwc-icon slot="graphic">dashboard</mwc-icon>
+            <fds-icon slot="graphic">dashboard</fds-icon>
           </mwc-list-item>
         </div>
         <fds-divider></fds-divider>

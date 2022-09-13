@@ -3,10 +3,10 @@ import '@finastra/avatar';
 import { Avatar } from '@finastra/avatar';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
-import { argTypes, cssprops } from './custom-element.json';
+import { argTypes, cssprops } from './sb-generated/fds-avatar.json';
 
 export default {
-  title: 'Components/Avatar',
+  title: 'GRAPHIC ELEMENTS/Avatar',
   component: 'fds-avatar',
   argTypes,
   args: {},

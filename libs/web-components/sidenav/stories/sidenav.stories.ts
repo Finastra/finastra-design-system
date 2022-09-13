@@ -1,15 +1,15 @@
 const README = require('../README.md');
+import '@finastra/icon';
 import '@finastra/logo';
 import '@finastra/sidenav';
 import { DRAWER_TYPES, Sidenav } from '@finastra/sidenav';
-import '@material/mwc-icon';
 import '@material/mwc-list';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './custom-element.json';
+import { argTypes } from './sb-generated/fds-sidenav.json';
 
 export default {
-  title: 'Components/Sidenav',
+  title: 'NAVIGATION/Sidenav',
   argTypes,
   args: {
     type: DRAWER_TYPES.NONE
@@ -60,19 +60,19 @@ const Template: Story<Sidenav> = ({ type }) => {
       <mwc-list activatable>
         <mwc-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
+          <fds-icon slot="graphic">home</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
+          <fds-icon slot="graphic">dashboard</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
+          <fds-icon slot="graphic">extension</fds-icon>
         </mwc-list-item>
         <mwc-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
+          <fds-icon slot="graphic">settings</fds-icon>
         </mwc-list-item>
       </mwc-list>
     </div>
@@ -93,7 +93,7 @@ const Template: Story<Sidenav> = ({ type }) => {
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      
+
     </div>
   </div>
 </fds-sidenav>`;

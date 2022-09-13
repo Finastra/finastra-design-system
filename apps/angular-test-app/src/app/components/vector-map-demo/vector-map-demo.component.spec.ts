@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 
@@ -17,35 +17,33 @@ describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
   let fixture: ComponentFixture<VectorMapDemoComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          CommonModule,
-          MatTooltipModule,
-          FlexLayoutModule,
-          MatSelectModule,
-          MatFormFieldModule,
-          MatInputModule,
-          PaletteModule,
-          VectorMapModule,
-          BrowserAnimationsModule
-        ],
-        declarations: [VectorMapDemoComponent],
-        providers: [
-          {
-            provide: LazyloadScriptService,
-            useValue: {
-              load: () => {
-                return of((global as any).Plotly);
-              }
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        CommonModule,
+        MatTooltipModule,
+        FlexLayoutModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        PaletteModule,
+        VectorMapModule,
+        NoopAnimationsModule
+      ],
+      declarations: [VectorMapDemoComponent],
+      providers: [
+        {
+          provide: LazyloadScriptService,
+          useValue: {
+            load: () => {
+              return of((global as any).Plotly);
             }
           }
-        ],
-        teardown: { destroyAfterEach: false }
-      }).compileComponents();
-    })
-  );
+        }
+      ],
+      teardown: { destroyAfterEach: false }
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VectorMapDemoComponent);
