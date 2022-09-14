@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { styles } from './icon-bar.css';
 
 /**
-  * @attr [large=false] - Make the icon bar larger.
+  * @attr [showLabels=false] - Show or hide the items labels.
   * @attr [removeNotification=false] - Removes the notification on item click.
 */
 
@@ -15,7 +15,7 @@ export class IconBar extends LitElement {
   @queryAssignedElements({ slot: 'footer' })
   _footer!: Array<HTMLElement>;
 
-  @property({ type: Boolean }) large = false;
+  @property({ type: Boolean }) showLabels = false;
 
   @property({ type: Boolean })
   removeNotification = false;

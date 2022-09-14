@@ -40,7 +40,7 @@ export class IconBarItem extends IconButton {
   renderIconButtons() {
     const classes = {
       current: this.current,
-      large: this.getParent().getAttribute('large') == ''
+      showLabels: this.getParent().getAttribute('showLabels') == ''
     };
 
     return html`
@@ -52,7 +52,7 @@ export class IconBarItem extends IconButton {
             ?secondary='${this.secondary}'
           >
           </fds-icon-button>
-          ${this.isLarge() ? this.renderLabel() : ''}
+          ${this.showLabels() ? this.renderLabel() : ''}
         </div>
       `
   }
@@ -73,8 +73,9 @@ export class IconBarItem extends IconButton {
     return this.parentElement as IconBar
   }
 
-  isLarge() {
-    if (this.getParent().getAttribute('large') == '') {
+  showLabels() {
+    if (this.getParent().getAttribute('showLabels') == '') {
+      console.log(this.getParent().getAttribute('showLabels'));
       return true;
     };
     return false;
