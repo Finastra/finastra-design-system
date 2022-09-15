@@ -19,7 +19,7 @@
     "@finastra/brand-card": "0.0.42",
     "@finastra/button": "0.0.42",
     "@finastra/menu-trigger": "0.0.42",
-    "@material/mwc-menu": "^0.26.1",
+    "@material/mwc-menu": "0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

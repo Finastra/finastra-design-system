@@ -16,8 +16,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/button-toggle/styles.scss src/button-toggle/filter-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-tab": "^0.26.1",
-    "@material/mwc-tab-bar": "^0.26.1",
+    "@material/mwc-tab": "0.26.1",
+    "@material/mwc-tab-bar": "0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
