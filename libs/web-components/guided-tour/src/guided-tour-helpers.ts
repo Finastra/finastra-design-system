@@ -4,7 +4,7 @@ export function newCustomEvent(type: string, detail = {}) {
   return new CustomEvent(type, {
     detail,
     bubbles: true,
-    composed: true,
+    composed: true
   });
 }
 
@@ -13,7 +13,7 @@ export function makeOverlayPath(width = 0, height = 0, x = 0, y = 0, r = 0) {
   height = height + r * 2;
   x = x - r;
   y = y - r;
-  const {innerWidth: w, innerHeight: h} = window;
+  const { innerWidth: w, innerHeight: h } = window;
   return `M${w},${h}\
           H0\
           V0\
@@ -44,7 +44,7 @@ export function getElement(selector: string): Promise<any> {
     });
     observer.observe(document.body, {
       childList: true,
-      subtree: true,
+      subtree: true
     });
   });
 }
@@ -56,7 +56,7 @@ export function getCenterPopperOptions() {
     modifiers: [
       {
         name: 'applyStyles',
-        fn({state}: any) {
+        fn({ state }: any) {
           Object.keys(state.elements).forEach((name) => {
             if (name !== 'popper') {
               return;
@@ -65,56 +65,41 @@ export function getCenterPopperOptions() {
               position: 'fixed',
               left: '50%',
               top: '50%',
-              transform: 'translate(-50%, -50%)',
+              transform: 'translate(-50%, -50%)'
             };
 
             const attributes = state.attributes[name] || {};
             const element = state.elements[name];
 
             Object.assign(element.style, style);
-            element?.animate(
-              getSlideKeyframe('top', '-50%', '-50%', '15%'),
-              ANIMATION_OPTIONS
-            );
+            element?.animate(getSlideKeyframe('top', '-50%', '-50%', '15%'), ANIMATION_OPTIONS);
             Object.keys(attributes).forEach((name) => {
               const value = attributes[name];
               if (value === false) {
                 element.removeAttribute(name);
               } else {
-                element.setAttribute(
-                  name,
-                  value === true
-                    ? ''
-                    : name === 'data-popper-placement'
-                    ? 'center'
-                    : value
-                );
+                element.setAttribute(name, value === true ? '' : name === 'data-popper-placement' ? 'center' : value);
               }
             });
           });
-        },
+        }
       },
       {
         name: 'computeStyles',
         options: {
-          adaptive: false,
-        },
-      },
-    ],
+          adaptive: false
+        }
+      }
+    ]
   };
 
   return popperOptions;
 }
 
-export function getSlideKeyframe(
-  from: Placement,
-  targetX: string,
-  targetY: string,
-  offset = '24px'
-): Keyframe[] {
+export function getSlideKeyframe(from: Placement, targetX: string, targetY: string, offset = '24px'): Keyframe[] {
   const endFrame = {
     transform: `translate(${targetX}, ${targetY})`,
-    opacity: '1',
+    opacity: '1'
   };
 
   let result: Keyframe[];
@@ -125,9 +110,9 @@ export function getSlideKeyframe(
       result = [
         {
           transform: `translate(${targetX}, calc(${targetY} - ${offset})`,
-          opacity: '0',
+          opacity: '0'
         },
-        endFrame,
+        endFrame
       ];
       break;
     case 'bottom':
@@ -136,9 +121,9 @@ export function getSlideKeyframe(
       result = [
         {
           transform: `translate(${targetX}, calc(${targetY} + ${offset}))`,
-          opacity: '0',
+          opacity: '0'
         },
-        endFrame,
+        endFrame
       ];
       break;
     case 'left':
@@ -147,9 +132,9 @@ export function getSlideKeyframe(
       result = [
         {
           transform: `translate(calc(${targetX} - ${offset}), ${targetY})`,
-          opacity: '0',
+          opacity: '0'
         },
-        endFrame,
+        endFrame
       ];
       break;
     case 'right':
@@ -158,9 +143,9 @@ export function getSlideKeyframe(
       result = [
         {
           transform: `translate(calc(${targetX} + ${offset}), ${targetY})`,
-          opacity: '0',
+          opacity: '0'
         },
-        endFrame,
+        endFrame
       ];
       break;
     case 'auto':
@@ -170,12 +155,12 @@ export function getSlideKeyframe(
       result = [
         {
           transform: `scale(0.9)`,
-          opacity: '0',
+          opacity: '0'
         },
         {
           transform: `scale(1)`,
-          opacity: '1',
-        },
+          opacity: '1'
+        }
       ];
       break;
   }
@@ -186,5 +171,5 @@ export const ANIMATION_OPTIONS: KeyframeAnimationOptions = {
   duration: 450,
   easing: 'ease-in-out',
   iterations: 1,
-  fill: 'forwards',
+  fill: 'forwards'
 };
