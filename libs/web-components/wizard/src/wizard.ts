@@ -32,9 +32,15 @@ export class Wizard extends LitElement {
   @queryAssignedElements({ slot: 'page' })
   _pages!: Array<HTMLElement>;
 
+  @queryAssignedElements({ slot: 'next' })
+  _next!: Array<HTMLElement>;
+
+  @queryAssignedElements({ slot: 'previous' })
+  _back!: Array<HTMLElement>;
+
   @query('#stepper') protected stepper!: HTMLElement;
 
-
+  
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
    */
@@ -46,6 +52,7 @@ export class Wizard extends LitElement {
   protected save = false;
   protected back = false;
   protected disabled: Boolean | null = null;
+  protected allNextDisabled = true;
 
   @state()
   protected arrayPages: Page[] = [];
@@ -181,9 +188,11 @@ export class Wizard extends LitElement {
   checkNextStepDisabled(pages: Array<HTMLElement>, current: number) {
     if (!this.currentPageIsDisabled(current)) return;
     this.stepper['currentStepIndex']++;
-    this.currentStepIndex++;
-    current++;
-    this.checkNextStepDisabled(pages, current);
+    if(current !== (this._pages.length - 1)) {
+      this.currentStepIndex++;
+      current++;
+      this.checkNextStepDisabled(pages, current);
+    }
   }
 
   checkPreviousStepDisabled(pages: Array<HTMLElement>, current: number) {
@@ -234,6 +243,14 @@ export class Wizard extends LitElement {
   }
 
   _handleNextClick() {
+    if(this._next[0]?.getAttribute('disabled') !== null) {
+      return;
+    }
+
+    if(this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
+      throw new Error('The wizard has no next page to go to.');
+    }
+
     if (this.currentStepIndex !== (this._pages.length - 1)) {
       this.goToNextStep(this._pages);
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
@@ -244,6 +261,9 @@ export class Wizard extends LitElement {
   }
 
   _handleBackClick() {
+    if(this._back[0]?.getAttribute('disabled') !== null) {
+      return;
+    }
     if (this.currentStepIndex !== 0) {
       if (this.currentStepIndex === 1) {
         this.back = false;
@@ -256,6 +276,20 @@ export class Wizard extends LitElement {
       this.UpdatePage();
     }
     this.requestUpdate();
+  }
+
+  CheckIfAllNextStepsDisabled(current: number) {
+    if(current !== (this._pages.length - 1)) {
+      current++;
+      if(!this.currentPageIsDisabled(current)) {
+        this.allNextDisabled=false;
+      }
+      else {
+        this.allNextDisabled=true;
+        this.CheckIfAllNextStepsDisabled(current);
+      }
+    }
+    return this.allNextDisabled;
   }
 }
 
