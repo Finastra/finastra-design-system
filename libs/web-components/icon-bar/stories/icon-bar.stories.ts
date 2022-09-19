@@ -44,12 +44,12 @@ export default {
   cssprops
 } as Meta;
 
-const Template: Story<IconBar> = ({ large, removeNotification}) => {
-  return html`<fds-icon-bar ?large=${large} ?removeNotification=${removeNotification}>
+const Template: Story<IconBar> = ({ showLabels, hideNotification}) => {
+  return html`<fds-icon-bar ?showLabels=${showLabels} ?hideNotification=${hideNotification}>
   <fds-icon-bar-item label="Home" data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
   <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
   <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
-  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings"></fds-icon-bar-item>
+  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings" dense></fds-icon-bar-item>
 </fds-icon-bar>`;
 };
 
