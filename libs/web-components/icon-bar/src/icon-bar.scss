@@ -22,7 +22,7 @@ slot[name="footer"]::slotted(*) {
   }
 }
 
-:host([large]) {
+:host([showLabels]) {
   padding-left: 32px;
   padding-right: 32px;
 

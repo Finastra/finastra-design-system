@@ -5,7 +5,7 @@ import { styles } from './icon-bar.css';
 
 /**
   * @attr [showLabels=false] - Show or hide the items labels.
-  * @attr [removeNotification=false] - Removes the notification on item click.
+  * @attr [hideNotification=false] - Removes the notification on item click.
 */
 
 @customElement('fds-icon-bar')
@@ -18,7 +18,7 @@ export class IconBar extends LitElement {
   @property({ type: Boolean }) showLabels = false;
 
   @property({ type: Boolean })
-  removeNotification = false;
+  hideNotification = false;
 
   private footer = false;
 

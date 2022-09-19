@@ -61,7 +61,7 @@ export class IconBarItem extends IconButton {
     if (this.current) {
       return;
     }
-    if (this.getParent().removeNotification) {
+    if (this.getParent().hideNotification) {
       this.removeAttribute("notification");
     }
     this.current = !this.current;
