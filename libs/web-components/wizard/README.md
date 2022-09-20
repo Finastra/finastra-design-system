@@ -16,7 +16,6 @@ npm i @finastra/wizard @finastra/button @finastra/textfield
 
 ```ts
 import '@finastra/wizard';
-import '@finastra/button';
 import '@finastra/textfield';
 ...
 <fds-wizard id="wizard">
@@ -54,7 +53,8 @@ import '@finastra/textfield';
 ### Pure HTML pages
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/wizard/dist/wizard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/wizard/dist/fds-wizard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@finastra/textfield/dist/fds-textfield.js"></script>
 
 <fds-wizard id="wizard">
   <fds-text-button slot='left-action' label="Cancel" secondary>
