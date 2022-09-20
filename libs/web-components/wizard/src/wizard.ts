@@ -24,6 +24,19 @@ export interface Page {
   * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
   * @attr [currentStepIndex=0] - Index of current active step.
+  * @slot page - Defines a new page inside the wizard that generates a new step automatically.
+    It is Used with the fds-wizard-page web component that could contain: 
+  - title: to define a title to the step
+  - icon: to define a link to your hosted icon to be displayed next to the title
+  - description: to define a description to your step
+  - disabled : to disable the step
+  - header: to enable the header display (default is false)
+  - current: to set the step to current
+  - stepsCounter: to make the step counter visible in the header
+  * @slot next - Slot to place an element that manages the transition to the next step.
+  * @slot previous - Slot to place an element that manages the transition to the previous step.
+  * @slot save - Slot to place an element that appears in the last step. The developer could add his own logic in the onClick Event.
+  * @slot left-action - Slot to place an element in the left side of the wizard actions bar.
 */
 @customElement('fds-wizard')
 export class Wizard extends LitElement {

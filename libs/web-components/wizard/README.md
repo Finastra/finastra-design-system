@@ -11,11 +11,13 @@ A wizard is a setup process where the user is guided through a series of steps t
 ### Import
 
 ```
-npm i @finastra/wizard
+npm i @finastra/wizard @finastra/button @finastra/textfield
 ```
 
 ```ts
 import '@finastra/wizard';
+import '@finastra/button';
+import '@finastra/textfield';
 ...
 <fds-wizard id="wizard">
   <fds-text-button slot='left-action' label="Cancel" secondary>
