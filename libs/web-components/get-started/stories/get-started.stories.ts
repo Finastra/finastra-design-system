@@ -22,14 +22,14 @@ export default {
 const Template: Story = ({title, description, image, hasMedia, link}) => {
   return html`
   <style>
-    .section-body {
+    .message-body {
       display: flex;
       gap: var(--fds-spacing-5, 48px);
       flex-wrap: wrap;
       justify-content: center;
     }
 
-    .section-title {
+    .message-title {
       font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
       color: var(--fds-on-surface, #000000);
       max-width: 460px;
@@ -37,19 +37,19 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
       margin-bottom: var(--fds-spacing-3, 16px);
     }
 
-    .section-description {
+    .message-description {
       font: normal normal var(--fds-body-1-font-weight, 300) var(--fds-body-1-font-size, 1rem)/var(--fds-body-1-line-height, 1.5rem) var(--fds-body-1-font-family, Roboto);
       color: var(--fds-on-surface-medium, #0000008A);
       text-align: left;
       max-width: 460px;
     }
 
-    .section-link a {
+    .message-link a {
       color: var(--fds-primary, #694ED6);
       font: normal normal var(--fds-body-1-font-weight, 300) var(--fds-body-1-font-size, 1rem)/var(--fds-body-1-line-height, 1.5rem) var(--fds-body-1-font-family, Roboto);
     }
 
-    .section-actions {
+    .message-actions {
       display: flex;
       gap: var(--fds-spacing-3, 16px);
       margin: auto;
@@ -59,55 +59,55 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
       max-width: 480px;
     }
 
-    .section-image {
+    .message-image {
       width: 100%;
       max-width: 408px;
     }
 
     @media only screen and (max-width: 1315px) {
-      .section-title, .section-description {
+      .message-title, .message-description {
         text-align: center;
         max-width: 800px;
       }
 
-      .section-link {
+      .message-link {
         display: flex;
         justify-content: center;
       }
     }
 
     @media only screen and (max-width: 440px) {
-      .section-title {
+      .message-title {
         text-align: center;
         font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan);
       }
 
-      .section-description {
+      .message-description {
         text-align: center;
         font: normal normal var(--fds-body-2-font-weight, 300) var(--fds-body-2-font-size, 0.875rem)/var(--fds-body-2-line-height, 1.3125rem) var(--fds-body-2-font-family, Roboto);
       }
 
-      .section-link {
+      .message-link {
         display: flex;
         justify-content: center;
       }
 
-      .section-link a {
+      .message-link a {
         text-align: center;
       }
     }
   </style>
 
-  <section class="section-body">
-    ${hasMedia ? html`<img class="section-image" src=${image}/>` : null}
+  <section class="message-body">
+    ${hasMedia ? html`<img class="message-image" src=${image}/>` : null}
     <div>
-      <div class="section-title">${title}</div>
-      <div class="section-description">${description}</div>
-      <div class="section-actions">
+      <div class="message-title">${title}</div>
+      <div class="message-description">${description}</div>
+      <div class="message-actions">
         <fds-outlined-button fullwidth label="Explore APIs"></fds-outlined-button>
         <fds-button fullwidth label="Register application" icon="play_arrow"></fds-button>
       </div>
-      <div class="section-link">
+      <div class="message-link">
         <a href="${link}">How register an application?</a>
       </div>
     </div>
