@@ -1,22 +1,17 @@
-import { Placement } from "@popperjs/core";
+import { Placement } from '@popperjs/core';
 
-export enum NextStepTrigger {
-    nextClick = 'Trigger next step on next button click',
-    elementClick = 'Trigger next step on element click'
-}
 export interface TourStep {
-    selector: string;
-    title: string;
-    description?: string;
-    nextStepTrigger: NextStepTrigger;
-    nextChangeUrl: boolean;
-    hidePreviousBtn?: boolean;
-    placement?: Placement | "center";
+  selector?: string;
+  title: string;
+  description?: string;
+  placement?: Placement;
+  margin?: number;
+  radius?: number;
+  offsetX?: number;
+  offsetY?: number;
 }
+
 export interface Tour {
-    id: string;
-    name: string;
-    description?: string;
-    startingUrl: string;
-    steps: TourStep[];
+  stepInfo?: string;
+  steps: TourStep[];
 }

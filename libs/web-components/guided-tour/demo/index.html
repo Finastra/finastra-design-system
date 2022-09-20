@@ -1,9 +1,6 @@
 <script type="module" src="node_modules/@finastra/guided-tour/dist/src/guided-tour.js"></script>
-<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
 
-<fds-guided-tour id="guided-tour-demo">
-  <fds-button slot="trigger" label="Tours"></fds-button>
-</fds-guided-tour>
+<fds-guided-tour id="guided-tour-demo"></fds-guided-tour>
 <script>
   let testData;
   var process = { env: {} };
@@ -18,11 +15,10 @@
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log('FETCH DATA:', data);
-      const guidedTour: any = document.getElementById('guided-tour-demo');
+      const guidedTour = document.getElementById('guided-tour-demo');
       if (guidedTour) {
         guidedTour.data = data;
-        guidedTour.start();
+        guidedTour.show = true;
       }
     })
     .catch((err) => {

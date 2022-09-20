@@ -50,7 +50,7 @@ export function getElement(selector: string): Promise<any> {
 }
 
 export function getCenterPopperOptions() {
-  let popperOptions = {
+  const popperOptions = {
     placement: 'top',
     strategy: 'fixed',
     modifiers: [
@@ -173,3 +173,13 @@ export const ANIMATION_OPTIONS: KeyframeAnimationOptions = {
   iterations: 1,
   fill: 'forwards'
 };
+
+export function strTemplate(template: string, context: {[key: string] : string | number}): string {
+  const templateRegex = /(\\)?\$\{([^\{\}\\]+)\}/g;
+
+  return template.replace(templateRegex, matched => {
+    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.*)\}/)![1];
+    
+    return context.hasOwnProperty(exp) ? String(context[exp]) : matched
+  })
+}
