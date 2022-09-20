@@ -18,6 +18,7 @@
   "dependencies": {
     "@finastra/divider": "0.0.42",
     "@finastra/stepper": "0.0.42",
+    "@finastra/chip": "0.0.42",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

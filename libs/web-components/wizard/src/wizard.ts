@@ -1,4 +1,3 @@
-import '@finastra/button';
 import '@finastra/divider';
 import '@finastra/stepper';
 import { html, LitElement, TemplateResult } from 'lit';
