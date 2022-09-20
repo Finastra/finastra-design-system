@@ -11,7 +11,7 @@ A wizard is a setup process where the user is guided through a series of steps t
 ### Import
 
 ```
-npm i @finastra/wizard @finastra/button @finastra/textfield
+npm i @finastra/wizard @finastra/textfield
 ```
 
 ```ts
