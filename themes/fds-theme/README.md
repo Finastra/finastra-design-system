@@ -15,7 +15,7 @@ npm install @finastra/fds-theme
 Use the theme in your app's main stylesheet to get the custom properties initialized, including Sass mixins for color, spacing, elevation and typography.
 
 ```SCSS
-@use '@finastra/fds-theme';
+@use '@finastra/fds-theme/all-themes';
 ```
 
 ## Theming 🖌️
