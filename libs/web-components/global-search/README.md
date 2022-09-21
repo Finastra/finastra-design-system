@@ -69,7 +69,11 @@ import '@finastra/global-search';
 A demo code can be find here: [demo](https://github.com/Finastra/finastra-design-system/blob/master/libs/web-components/global-search/demo/index.html)
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spartan:wght@800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
 <script src="https://cdn.jsdelivr.net/npm/@finastra/global-search/dist/fds-global-search.js"></script>
 
  <fds-global-search-group 

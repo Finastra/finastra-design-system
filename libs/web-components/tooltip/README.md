@@ -26,6 +26,10 @@ import @finastra/tippy.js-theme/dist/theme.css
 or use the CDN in the browser:
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spartan:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link
   rel="stylesheet"
   href="https://unpkg.com/@finastra/tippy.js-theme@latest/dist/theme.css"
