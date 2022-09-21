@@ -1,6 +1,11 @@
+import '@finastra/button';
+import '@finastra/card';
+import { arrow, computePosition, offset } from '@floating-ui/dom';
 import { html, LitElement, PropertyValues, svg } from 'lit';
-import { customElement, property, query } from 'lit/decorators.js';
-import { until } from 'lit/directives/until.js';
+import { customElement, property, queryAsync, state } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
+import type { StyleInfo } from 'lit/directives/style-map';
+import { styleMap } from 'lit/directives/style-map.js';
 import { strTemplate } from './guided-tour-helpers';
 import { Tour } from './guided-tour.model';
 import { styles } from './styles.css';
@@ -14,19 +19,19 @@ export class GuidedTour extends LitElement {
   @property({ type: Array }) data: Tour = { steps: [] };
   @property({ type: Boolean, reflect: true }) show = false;
   @property({ type: Number }) currentStepIndex = 0;
-  @property({ type: Number }) showStepInfo = false;
+  @property({ type: Boolean }) showStepInfo = false;
 
-  // @query('#menu') protected menu!: Menu;
-  @query('#anchor') protected anchor!: HTMLDivElement;
-  @query('#spotlight-element') spotlightElement!: Element;
-  @query('#guide-tooltip') tooltipElement!: HTMLElement;
+  @queryAsync('.step-card') stepCardElement!: Promise<HTMLElement>;
+  @queryAsync('.step-card__arrow') stepCardArrowElement!: Promise<HTMLElement>;
 
-  currentStepElement: Element | null = null;
+  currentStepElement: Element | null | undefined = undefined;
+  @state() cardPosition: StyleInfo = {};
+  @state() arrowPosition: StyleInfo = {};
   oldBodyOverflowValue = '';
 
   private renderStepInfo() {
     const template = this.data.stepInfo || STEP_INFO_TEMPLATE;
-    const context = { currentStep: this.currentStepIndex + 1, totalSteps: this.data.steps.length + 1 };
+    const context = { currentStep: this.currentStepIndex + 1, totalSteps: this.data.steps.length };
     return html`
       <div class="step-info">
         <span>${strTemplate(template, context)}</span>
@@ -49,17 +54,20 @@ export class GuidedTour extends LitElement {
     const currentStep = this.data.steps[this.currentStepIndex];
 
     const r = currentStep.radius ?? 4;
-    const margin = currentStep.margin ?? 8;
+    const marginLeft = currentStep.marginLeft ?? 0;
+    const marginRight = currentStep.marginRight ?? 0;
+    const marginTop = currentStep.marginTop ?? 0;
+    const marginBottom = currentStep.marginBottom ?? 0;
 
-    const x = Math.max(itemClientRect.x - margin, 0);
-    const y = Math.max(itemClientRect.y - margin, 0);
-    const w = itemClientRect.width + margin * 2;
-    const h = itemClientRect.height + margin * 2;
+    const x = Math.max(itemClientRect.x - marginLeft, 0);
+    const y = Math.max(itemClientRect.y - marginTop, 0);
+    const w = itemClientRect.width + marginLeft + marginRight;
+    const h = itemClientRect.height + marginBottom + marginTop;
 
     return svg`
-        <path class="backdrop" d=" M 0,0 H ${vw} V ${vh} H 0 z
+        <path class="backdrop" d=" M ${vw}, ${vh} V ${-vh} H ${-vw} V ${vh} H ${vw} z
         M ${x + r} ${y}\
-        h ${Math.max(w - r, 0)} 
+        h ${Math.max(w - 2 * r, 0)} 
         a ${r} ${r} 0, 0, 1 ${r} ${r}\
         v ${h - r * 2}
         a ${r} ${r} 0, 0, 1 ${-r} ${r}\
@@ -69,32 +77,107 @@ export class GuidedTour extends LitElement {
         a ${r} ${r} 0, 0, 1 ${r} ${-r}\
         z" 
         />
-      
     `;
   }
 
-  private renderElementHighlight() {
-    return html`
-      <svg class="overlay">${this.currentStepElement ? this.overlayBackdropWidthHeighlightElement() : this.overlayBackdrop()}</svg>
-    `;
-  }
-  private async asyncRender() {
+  private renderStepCardArrow(show = false) {
     const currentStep = this.data.steps[this.currentStepIndex];
+    const placement = currentStep.placement ?? 'bottom';
+    const staticSide = 'step-card__arrow-' + placement.split('-')[0];
+    console.log(staticSide);
+    const classes = {
+      'step-card--hide': !show,
+      'step-card__arrow': true,
+      [staticSide]: true
+    };
+    return html`<div class=${classMap(classes)} style=${styleMap(this.arrowPosition)}></div>`;
+  }
 
+  private async calculatePosition() {
+    const currentStep = this.data.steps[this.currentStepIndex];
+    this.currentStepElement = undefined;
     if (currentStep.selector) {
       this.currentStepElement = await this.getElement(currentStep.selector);
+    } else {
+      this.currentStepElement = null;
     }
-    return html` ${this.renderElementHighlight()}
-      <div>
-        ${this.showStepInfo ? this.renderStepInfo() : ''}
-        <div>${currentStep.description}</div>
-      </div>`;
+    const stepCard = await this.stepCardElement;
+    const stepCardArrow = await this.stepCardArrowElement;
+    const cardPosition: StyleInfo = { left: '50%', top: '50%', transform: 'translate(-50%, -50%)' };
+    const arrowPosition: StyleInfo = { display: 'none' };
+    if (this.currentStepElement) {
+      const { x, y, middlewareData } = await computePosition(this.currentStepElement, stepCard, {
+        placement: currentStep.placement ?? 'bottom',
+        middleware: [
+          offset({ crossAxis: currentStep.crossAxis ?? 0, mainAxis: currentStep.mainAxis ?? 0 }),
+          arrow({ element: stepCardArrow })
+        ]
+      });
+      cardPosition.left = `${x}px`;
+      cardPosition.top = `${y}px`;
+      cardPosition.transform = undefined;
+      const { x: arrowX, y: arrowY } = middlewareData.arrow ?? {};
+
+      arrowPosition.left = arrowX !== undefined ? `${arrowX}px` : undefined;
+      arrowPosition.top = arrowY !== undefined ? `${arrowY}px` : undefined;
+      arrowPosition.display = undefined;
+    }
+    this.cardPosition = cardPosition;
+    this.arrowPosition = arrowPosition;
   }
 
   override render() {
     const currentStep = this.data.steps[this.currentStepIndex];
     if (!this.show || !currentStep) return html``;
-    return html`${until(this.asyncRender())} `;
+
+    const show = this.currentStepElement !== undefined;
+    const classes = {
+      'step-card--hide': !show,
+      'step-card': true
+    };
+
+    const isLastStep = this.data.steps.length === this.currentStepIndex + 1;
+    const isFirstStep = this.currentStepIndex === 0;
+    const hasNextStep = this.currentStepIndex < this.data.steps.length - 1;
+    const hasBackStep = !isFirstStep;
+
+    return html` <div class="guided-tour-container">
+      <svg class="overlay">${this.currentStepElement ? this.overlayBackdropWidthHeighlightElement() : this.overlayBackdrop()}</svg>
+      <div class=${classMap(classes)} style=${styleMap(this.cardPosition)}>
+        <fds-card>
+          <div class="card-content">
+            ${this.showStepInfo ? this.renderStepInfo() : ''}
+            <div class="step-title">${currentStep.title}</div>
+            <div class="step-description">${currentStep.description}</div>
+            <div class="step-button-container">
+              ${!isLastStep
+                ? html`<slot name="skip-button" @click=${this.stop}>
+                    <fds-text-button label="Skip"></fds-text-button>
+                  </slot>`
+                : ''}
+              ${hasBackStep
+                ? html` <slot name="back-button" @click=${this.back}>
+                    <fds-button label="Back"></fds-button>
+                  </slot>`
+                : ''}
+              ${hasNextStep
+                ? html` <slot name="next-button" @click=${this.next}>
+                    <fds-button label="Next"></fds-button>
+                  </slot>`
+                : ''}
+              ${isLastStep
+                ? html`
+                    <slot name="done-button" @click=${this.stop}>
+                      <fds-button label="Done"></fds-button>
+                    </slot>
+                  `
+                : ''}
+            </div>
+          </div>
+        </fds-card>
+        ${this.renderStepCardArrow(show)}
+      </div>
+    </div>`;
   }
 
   start(currentTourIndex: number = 0) {
@@ -107,11 +190,18 @@ export class GuidedTour extends LitElement {
   }
 
   override update(changedProperties: PropertyValues) {
+    // change show
     if (changedProperties.has('show')) {
       if (this.show) {
         this.fixScrollbar();
+        this.calculatePosition();
       } else {
         this.resetScrollbar();
+      }
+    } else {
+      // change only currentStepIndex
+      if (changedProperties.has('currentStepIndex') && this.show) {
+        this.calculatePosition();
       }
     }
     super.update(changedProperties);
@@ -145,70 +235,14 @@ export class GuidedTour extends LitElement {
       });
     });
   }
-  // private async _nextStep() {
-  // const activeStep = this.currentTour.steps[this.currentStep];
-  // const nextStep = this.currentTour.steps[this.currentStep + 1];
-  // this.dispatchEvent(newCustomEvent('onNextClick', activeStep));
-  // if (nextStep && !activeStep?.nextChangeUrl) {
-  //   this._showTour = false;
-  //   nextStep.selector ? await getElement(nextStep?.selector) : null;
-  //   this._showTour = true;
-  // }
-  // this.currentStep++;
-  // this._setTourState(this._showTour, this.currentStep, this.currentTour);
-  // }
 
-  // private async _previousStep() {
-  // const activeStep = this.currentTour.steps[this.currentStep];
-  // const previousStep = this.currentTour.steps[this.currentStep - 1];
-  // this.dispatchEvent(newCustomEvent('onBackClick', activeStep));
-  // if (previousStep && !previousStep?.nextChangeUrl) {
-  //   this._showTour = false;
-  //   previousStep.selector ? await getElement(previousStep.selector) : null;
-  //   this._showTour = true;
-  // }
-  // this.currentStep--;
-  // this._setTourState(this._showTour, this.currentStep, this.currentTour);
-  // if (previousStep?.nextChangeUrl) {
-  //   this._showTour = false;
-  //   history.back();
-  // }
-  // }
+  private next() {
+    this.currentStepIndex++;
+  }
 
-  // private _completeTour() {
-  // this._showTour = false;
-  // this.currentStep = 0;
-  // this._setBodyOverflow(this.bodyOverflow);
-  // window.sessionStorage.removeItem('guided-tour-info');
-  // this.requestUpdate();
-  // }
-
-  // renderTourStep(tour: Tour, currentStep: number) {
-  // const tourStep = tour.steps[currentStep];
-  // const lastStep = tour.steps.length;
-  // return html`<fds-guided-tour-step
-  //   @close-step="${this._completeTour}"
-  //   @next-step="${this._nextStep}"
-  //   @previous-step="${this._previousStep}"
-  //   .step=${tourStep}
-  //   ?isLast="${this.currentStep === lastStep - 1}"
-  //   ?isFirst="${this.currentStep === 0}"
-  // ></fds-guided-tour-step>`;
-  // }
-
-  // private _getTourState() {
-  //   const tourInfo = window.sessionStorage.getItem('guided-tour-info');
-  //   return tourInfo ? JSON.parse(tourInfo) : null;
-  // }
-
-  // private _setTourState(tourInProgress: boolean, currentStep: number, tour: Tour) {
-  //   const tourInfo = { tourInProgress, tour, currentStep };
-  //   window.sessionStorage.setItem('guided-tour-info', JSON.stringify(tourInfo));
-  // }
-
-  // private _setBodyOverflow(value: string) {
-  //   (document.querySelector('body') as HTMLBodyElement).style.overflow = value;
-  // }
+  private back() {
+    this.currentStepIndex--;
+  }
 }
 
 declare global {

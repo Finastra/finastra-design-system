@@ -1,14 +1,17 @@
-import { Placement } from '@popperjs/core';
+import { Placement } from '@floating-ui/dom';
 
 export interface TourStep {
   selector?: string;
   title: string;
   description?: string;
   placement?: Placement;
-  margin?: number;
+  marginTop?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  marginBottom?: number;
   radius?: number;
-  offsetX?: number;
-  offsetY?: number;
+  mainAxis?: number;
+  crossAxis?: number;
 }
 
 export interface Tour {

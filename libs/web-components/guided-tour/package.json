@@ -1,7 +1,7 @@
 {
   "name": "@finastra/guided-tour",
   "displayName": "GuidedTour",
-  "version": "1.0.0",
+  "version": "0.0.42",
   "description": "GuidedTour Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,13 +12,14 @@
   "main": "dist/src/guided-tour.js",
   "module": "dist/src/guided-tour.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/guided-tour-step.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "0.0.30",
     "@material/mwc-icon-button": "0.25.3",
     "@material/mwc-menu": "0.25.3",
-    "@popperjs/core": "^2.11.5",
+    "@floating-ui/dom": "1.0.2",
+    "@finastra/card": "0.0.42",
+    "@finastra/button": "0.0.42",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
