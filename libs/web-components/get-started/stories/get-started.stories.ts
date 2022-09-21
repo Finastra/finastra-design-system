@@ -132,12 +132,13 @@ const WelcomeTemplate: Story = ({title, description, images, link}) => {
       flex-wrap: wrap;
       justify-content: center;
       overflow: hidden;
+      padding: var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
     }
 
     .section-title {
       font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
       color: var(--fds-on-surface, #000000);
-      text-align: center;
+      align-self: center;
       max-width: 800px;
       margin-top: var(--fds-spacing-3, 16px);
       margin-bottom: var(--fds-spacing-3, 16px);
@@ -213,6 +214,10 @@ const WelcomeTemplate: Story = ({title, description, images, link}) => {
       .section-description {
         text-align: center;
         font: normal normal var(--fds-body-2-font-weight, 300) var(--fds-body-2-font-size, 0.875rem)/var(--fds-body-2-line-height, 1.3125rem) var(--fds-body-2-font-family, Roboto);
+      }
+
+      .section-image {
+        max-width: 184px;
       }
 
       .section-actions {
