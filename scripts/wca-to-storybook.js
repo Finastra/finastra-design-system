@@ -1,5 +1,5 @@
-const { readFileSync, writeFileSync, existsSync, mkdirSync } = require('fs');
-const { join, basename, dirname } = require('path');
+const { readFileSync, writeFileSync } = require('fs');
+const { join, dirname, posix } = require('path');
 const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
@@ -21,7 +21,7 @@ async function main() {
 main();
 
 async function getPaths(paths) {
-  const eatThat = join(__dirname, paths);
+  const eatThat = posix.join(__dirname, paths);
   const tsPaths = await globby(eatThat);
   const filteredPaths = tsPaths.filter((path) => !path.includes('.css.ts'));
   const rootFolders = filteredPaths.map((path) => path.split('/').slice(0, -2).join('/'));
