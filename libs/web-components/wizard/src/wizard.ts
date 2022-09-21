@@ -65,6 +65,7 @@ export class Wizard extends LitElement {
   protected back = false;
   protected disabled: Boolean | null = null;
   protected allNextDisabled = true;
+  protected allBackDisabled = true;
 
   @state()
   protected arrayPages: Page[] = [];
@@ -276,6 +277,9 @@ export class Wizard extends LitElement {
     if(this._back[0]?.getAttribute('disabled') !== null) {
       return;
     }
+    if(this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
+      throw new Error('The wizard has no previous page to go to.');
+    }
     if (this.currentStepIndex !== 0) {
       if (this.currentStepIndex === 1) {
         this.back = false;
@@ -302,6 +306,20 @@ export class Wizard extends LitElement {
       }
     }
     return this.allNextDisabled;
+  }
+
+  CheckIfAllBackStepsDisabled(current: number) {
+    if(current !== 0) {
+      current--;
+      if(!this.currentPageIsDisabled(current)) {
+        this.allBackDisabled=false;
+      }
+      else {
+        this.allBackDisabled=true;
+        this.CheckIfAllBackStepsDisabled(current);
+      }
+    }
+    return this.allBackDisabled;
   }
 }
 
