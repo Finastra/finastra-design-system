@@ -44,12 +44,6 @@ export class Wizard extends LitElement {
   @queryAssignedElements({ slot: 'page' })
   _pages!: Array<HTMLElement>;
 
-  @queryAssignedElements({ slot: 'next' })
-  _next!: Array<HTMLElement>;
-
-  @queryAssignedElements({ slot: 'previous' })
-  _back!: Array<HTMLElement>;
-
   @query('#stepper') protected stepper!: HTMLElement;
 
   
@@ -256,10 +250,6 @@ export class Wizard extends LitElement {
   }
 
   _handleNextClick() {
-    if(this._next[0]?.getAttribute('disabled') !== null) {
-      return;
-    }
-
     if(this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
       throw new Error('The wizard has no next page to go to.');
     }
@@ -274,9 +264,6 @@ export class Wizard extends LitElement {
   }
 
   _handleBackClick() {
-    if(this._back[0]?.getAttribute('disabled') !== null) {
-      return;
-    }
     if(this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
       throw new Error('The wizard has no previous page to go to.');
     }
