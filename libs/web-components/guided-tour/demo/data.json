@@ -1,6 +1,4 @@
 {
-  "id": "tour-1",
-  "name": "Tour 1",
   "stepInfo": "Step ${currentStep} of ${totalSteps}",
   "steps": [
     {

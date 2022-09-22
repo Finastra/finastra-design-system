@@ -1,6 +1,6 @@
 @use '@finastra/fds-theme'as fds;
 
-:host {
+:host([show]) {
   display: flex;
   position: fixed;
   top: 0;

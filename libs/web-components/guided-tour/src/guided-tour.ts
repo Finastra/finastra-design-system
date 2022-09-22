@@ -6,17 +6,34 @@ import { customElement, property, queryAsync, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import type { StyleInfo } from 'lit/directives/style-map';
 import { styleMap } from 'lit/directives/style-map.js';
-import { strTemplate } from './guided-tour-helpers';
 import { Tour } from './guided-tour.model';
 import { styles } from './styles.css';
 
 const STEP_INFO_TEMPLATE = 'Step ${currentStep} of ${totalSteps}';
 
+export function strTemplate(template: string, context: { [key: string]: string | number }): string {
+  const templateRegex = /(\\)?\$\{([^\{\}\\]+)\}/g;
+
+  return template.replace(templateRegex, (matched) => {
+    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.*)\}/)![1];
+
+    return context.hasOwnProperty(exp) ? String(context[exp]) : matched;
+  });
+}
+
+/**
+ * @cssprop [--fds-guided-tour-card-max-width=500px] - Max width of panel information.
+ *
+ * @attr [data]-Data for component.
+ * @attr [show=false] - Whether the tour should display.
+ * @attr [currentStepIndex=0] - Current step in the tour.
+ * @attr [showStepInfo=false] -  Whether the step info should display.
+ */
 @customElement('fds-guided-tour')
 export class GuidedTour extends LitElement {
   static styles = styles;
 
-  @property({ type: Array }) data: Tour = { steps: [] };
+  @property() data: Tour = { steps: [] };
   @property({ type: Boolean, reflect: true }) show = false;
   @property({ type: Number }) currentStepIndex = 0;
   @property({ type: Boolean }) showStepInfo = false;
@@ -84,7 +101,6 @@ export class GuidedTour extends LitElement {
     const currentStep = this.data.steps[this.currentStepIndex];
     const placement = currentStep.placement ?? 'bottom';
     const staticSide = 'step-card__arrow-' + placement.split('-')[0];
-    console.log(staticSide);
     const classes = {
       'step-card--hide': !show,
       'step-card__arrow': true,
@@ -236,11 +252,11 @@ export class GuidedTour extends LitElement {
     });
   }
 
-  private next() {
+  next() {
     this.currentStepIndex++;
   }
 
-  private back() {
+  back() {
     this.currentStepIndex--;
   }
 }
