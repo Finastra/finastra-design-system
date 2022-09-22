@@ -31,7 +31,8 @@ describe('Wizard', () => {
     const next = await (el).querySelector("#next") as HTMLElement;
     next.click();
 
-    expect(await shadowRoot(el).querySelector("fds-vertical-stepper")?.getAttribute("currentStepIndex")).equal('1');
+    await elementUpdated(el);
+    expect(el.shadowRoot?.querySelector("fds-vertical-stepper")?.getAttribute("currentStepIndex"))?.equal('1');
   });
 
   it('should go to previous step', async () => {
@@ -51,11 +52,8 @@ describe('Wizard', () => {
 
     const back = await (el).querySelector("#back") as HTMLElement;
     back.click();
-
-    expect(await shadowRoot(el).querySelector("fds-vertical-stepper")?.getAttribute("currentStepIndex")).equal('0');
+    
+    await elementUpdated(el);
+    expect(el.shadowRoot?.querySelector("fds-vertical-stepper")?.getAttribute("currentStepIndex"))?.equal('0');
   });
-
-  function shadowRoot(el: Element) {
-    return el.shadowRoot ? el.shadowRoot : el;
-  }
 });
