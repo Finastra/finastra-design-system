@@ -3,10 +3,10 @@
 
 $icon-button-size: var(--fds-spacing-5);
 
-:host { 
+:host {
   @include fds.text-color(on-surface);
   @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled);
-  
+
   .mdc-icon-button {
     width: var(--fds-icon-button-size, $icon-button-size);
     height: var(--fds-icon-button-size, $icon-button-size);
@@ -15,7 +15,7 @@ $icon-button-size: var(--fds-spacing-5);
 
 :host([dense]) {
  --fds-icon-button-size: 30px;
- --fds-icon-size: 18px;
+ --mdc-icon-size: 18px;
 }
 
 :host([primary]) {

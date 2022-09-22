@@ -1,7 +1,7 @@
 {
   "name": "@finastra/linear-progress",
   "displayName": "LinearProgress",
-  "version": "0.0.42",
+  "version": "0.0.44",
   "description": "LinearProgress Web Component",
   "keywords": [
     "Finastra Design System",

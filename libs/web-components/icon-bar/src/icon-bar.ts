@@ -4,8 +4,8 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { styles } from './icon-bar.css';
 
 /**
-  * @attr [large=false] - Make the icon bar larger.
-  * @attr [removeNotification=false] - Removes the notification on item click.
+  * @attr [showLabels=false] - Show or hide the items labels.
+  * @attr [hideNotification=false] - Removes the notification on item click.
 */
 
 @customElement('fds-icon-bar')
@@ -15,19 +15,19 @@ export class IconBar extends LitElement {
   @queryAssignedElements({ slot: 'footer' })
   _footer!: Array<HTMLElement>;
 
-  @property({ type: Boolean }) large = false;
+  @property({ type: Boolean }) showLabels = false;
 
   @property({ type: Boolean })
-  removeNotification= false;
+  hideNotification = false;
 
-  private footer= false;
+  private footer = false;
 
   render() {
     const nodes = this.getItems();
-    nodes.forEach( node => {
+    nodes.forEach(node => {
       if (node instanceof LitElement) {
         node.requestUpdate();
-      }      
+      }
     })
     return html`
       <slot></slot>
@@ -36,9 +36,9 @@ export class IconBar extends LitElement {
         <slot name="footer" @slotchange=${this.onFooterSlotChanged}></slot>
       </div>
     `;
-  } 
+  }
 
-  renderFooter(){
+  renderFooter() {
     return html`
       <div class="footer">
         <fds-divider></fds-divider>
@@ -48,47 +48,47 @@ export class IconBar extends LitElement {
   }
 
   onFooterSlotChanged() {
-    this.footer=false;
-    if(this._footer.length !== 0 ) {
-      this.footer=true;
+    this.footer = false;
+    if (this._footer.length !== 0) {
+      this.footer = true;
     }
     this.requestUpdate();
   }
 
-  deselectOthers(current: Node) {  
-    const nodes = this.getItems();  
-    nodes.forEach((node,index) => {
-        if (node === current) {
-          this.dispatchSelectedEvent(index);
-          return;
-        }
-        else {
-          node['current'] = false;
-        }
-     })
+  deselectOthers(current: Node) {
+    const nodes = this.getItems();
+    nodes.forEach((node, index) => {
+      if (node === current) {
+        this.dispatchSelectedEvent(index);
+        return;
+      }
+      else {
+        node['current'] = false;
+      }
+    })
   }
 
   dispatchSelectedEvent(index) {
     this.dispatchEvent(new CustomEvent('selected', {
       bubbles: true,
       cancelable: true,
-        detail: {
-          index
-        }
+      detail: {
+        index
       }
-      ));
+    }
+    ));
   }
-  
+
   getItems() {
-    const slotArray : Node[] = [];
-    const slotSelector='slot';
+    const slotArray: Node[] = [];
+    const slotSelector = 'slot';
     const slotEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(slotSelector);
     slotEl.forEach((node) => {
-      node?.assignedNodes().filter(node =>{
+      node?.assignedNodes().filter(node => {
         slotArray.push(node);
-        });
-     })
-     return slotArray.filter(node => node instanceof LitElement) ?? [];;
+      });
+    })
+    return slotArray.filter(node => node instanceof LitElement) ?? [];;
   }
 }
 

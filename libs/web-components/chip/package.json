@@ -1,7 +1,7 @@
 {
   "name": "@finastra/chip",
   "displayName": "Chip",
-  "version": "0.0.42",
+  "version": "0.0.44",
   "description": "Chip Web Component",
   "keywords": [
     "Finastra Design System",
@@ -16,7 +16,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/icon": "0.0.42",
+    "@finastra/icon": "0.0.44",
     "@material/button": "^13.0.0",
     "@material/mwc-button": "0.26.1",
     "@material/mwc-ripple": "0.26.1",

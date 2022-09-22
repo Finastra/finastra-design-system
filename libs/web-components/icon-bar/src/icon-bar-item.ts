@@ -1,3 +1,4 @@
+import '@finastra/badge';
 import '@finastra/divider';
 import { IconButton } from '@finastra/icon-button';
 import '@popperjs/core';
@@ -9,40 +10,40 @@ import { styles } from './icon-bar-item.css';
 
 @customElement('fds-icon-bar-item')
 export class IconBarItem extends IconButton {
-    static styles = styles;
+  static styles = styles;
 
-    @property({ type: Boolean })
-    current = false;
- 
-    @property({ type: String })
-    notification = '';
+  @property({ type: Boolean })
+  current = false;
 
-    @property({ type: String })
-    label = '';
-    
-    constructor() {
-        super();
-        this.icon = 'apps';
-     }
+  @property({ type: String })
+  notification = '';
 
-      render() {
-        return html`
-          ${this.notification?
-          html`
+  @property({ type: String })
+  label = '';
+
+  constructor() {
+    super();
+    this.icon = 'apps';
+  }
+
+  render() {
+    return html`
+          ${this.notification ?
+        html`
           <fds-badge data-tippy-content="This is a tooltip" value="${this.notification}" position="topRight" color="secondary">
-          ${this.renderIconButtons()} 
+          ${this.renderIconButtons()}
           </fds-badge>
           ` : html`${this.renderIconButtons()}`}
         `;
-      }
+  }
 
-      renderIconButtons() {
-        const classes = {
-          current: this.current,
-          large: this.getParent().getAttribute('large') == ''
-        };
+  renderIconButtons() {
+    const classes = {
+      current: this.current,
+      showLabels: this.getParent().getAttribute('showLabels') == ''
+    };
 
-        return html`
+    return html`
         <div @click="${this.handleIconClick}" class="iconButton ${classMap(classes)}">
           <fds-icon-button
             icon='${this.icon}'
@@ -51,41 +52,42 @@ export class IconBarItem extends IconButton {
             ?secondary='${this.secondary}'
           >
           </fds-icon-button>
-          ${this.isLarge()? this.renderLabel() : '' }
+          ${this.showLabels() ? this.renderLabel() : ''}
         </div>
       `
-      }
+  }
 
-      handleIconClick() {
-        if(this.current) {
-          return;
-        }
-        if(this.getParent().removeNotification) {
-          this.removeAttribute("notification");
-        }
-        this.current = !this.current;
-        this.getParent().deselectOthers(this);
-        this.requestUpdate();
-      }
+  handleIconClick() {
+    if (this.current) {
+      return;
+    }
+    if (this.getParent().hideNotification) {
+      this.removeAttribute("notification");
+    }
+    this.current = !this.current;
+    this.getParent().deselectOthers(this);
+    this.requestUpdate();
+  }
 
-      getParent() : IconBar {
-        return this.parentElement as IconBar
-      }
+  getParent(): IconBar {
+    return this.parentElement as IconBar
+  }
 
-      isLarge() {
-        if(this.getParent().getAttribute('large')=='') {
-          return true;
-        };
-        return false;
-      }
+  showLabels() {
+    if (this.getParent().getAttribute('showLabels') == '') {
+      console.log(this.getParent().getAttribute('showLabels'));
+      return true;
+    };
+    return false;
+  }
 
-      renderLabel() {
-        return html`<span class="label">${this.label}</span>`
-      }
+  renderLabel() {
+    return html`<span class="label">${this.label}</span>`
+  }
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'fds-icon-bar-item': IconBarItem;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-icon-bar-item': IconBarItem;
+  }
 }

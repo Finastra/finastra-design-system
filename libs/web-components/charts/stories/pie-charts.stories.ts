@@ -113,3 +113,8 @@ const Template: Story<PieChart> = ({legendHorizontalAlign = "center",legendPosit
 
 
 export const Default: Story<PieChart> = Template.bind({});
+export const Focus1: Story<PieChart> = Template.bind({}, {color: 'focus-1', data: [28, 20], labels:  ['Housing', 'Daily spending']});
+export const Focus2: Story<PieChart> = Template.bind({}, {color: 'focus-2', data: [28, 20], labels:  ['Housing', 'Daily spending']});
+
+export const Focus1Angular: Story<PieChart> = Template.bind({}, {color: 'focus-1-angular', data: [28, 20], labels:  ['Housing', 'Daily spending']});
+export const Focus2Angular: Story<PieChart> = Template.bind({}, {color: 'focus-2-angular', data: [28, 20], labels:  ['Housing', 'Daily spending']});
