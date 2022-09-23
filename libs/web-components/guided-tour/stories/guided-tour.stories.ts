@@ -148,4 +148,32 @@ const Template: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInf
   </div>`;
 };
 
+const TemplateWidthSlotButton: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInfo }) => {
+  return html`<div class="app">
+    <fds-app-bar appName="FDS">
+      <mwc-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></mwc-icon-button>
+
+      <mwc-icon-button data-tour="notification" icon="notifications_none" slot="actions"></mwc-icon-button>
+      <mwc-icon-button data-tour="help" icon="help_outline" slot="actions"></mwc-icon-button>
+      <fds-user-profile data-tour="user-profile" slot="actions" userName="Raya Hristova" shortName="R">
+        <div slot="userInfo">raya.hristova@finastra.com</div>
+        <div slot="actions">
+          <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+          <fds-button text fullwidth label="View profile"></fds-button>
+        </div>
+      </fds-user-profile>
+      <mwc-icon-button data-tour="more" icon="more_vert" slot="actions"></mwc-icon-button>
+    </fds-app-bar>
+
+    <fds-guided-tour id="guidedtour" .data=${data} currentStepIndex=${currentStepIndex} ?show=${show} ?showStepInfo=${showStepInfo}>
+      <mwc-icon-button slot="skip-button" icon="logout"></mwc-icon-button>
+      <mwc-icon-button slot="next-button" icon="arrow_forward"></mwc-icon-button>
+      <mwc-icon-button slot="back-button" icon="arrow_back"></mwc-icon-button>
+      <mwc-icon-button slot="done-button" icon="check"></mwc-icon-button>
+    </fds-guided-tour>
+    <fds-button data-tour="start" id="start" label="Start Tours"></fds-button>
+  </div>`;
+};
+
 export const Default: Story<GuidedTour> = Template.bind({});
+export const SlotButton: Story<GuidedTour> = TemplateWidthSlotButton.bind({});

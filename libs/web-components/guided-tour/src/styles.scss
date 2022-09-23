@@ -60,6 +60,7 @@
     right: -24px;
     transform: rotate(90deg);
   }
+
   .step-card--hide {
     opacity: 0;
   }
@@ -69,6 +70,7 @@
     flex-direction: column;
     gap: var(--fds-spacing-2, 8px);  
   }
+
   .step-info {
     @include fds.text-color(secondary);
     @include fds.typography(body-3);
@@ -79,15 +81,23 @@
     @include fds.text-color(on-surface);
     @include fds.typography(headline-5);
   }
+
   .step-description {
     @include fds.text-color(on-surface);
     @include fds.typography(body-3);
   }
+
   .step-button-container {
     margin-top: var(--fds-spacing-2, 8px); 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: var(--fds-spacing-2, 8px);
+    gap: var(--fds-spacing-3, 16px);
+
+    ::slotted([slot="skip-button"]),
+    .skip-button {
+      margin-right: auto;
+    }
   }
+
 }

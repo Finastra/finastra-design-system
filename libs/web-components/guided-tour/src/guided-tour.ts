@@ -28,6 +28,11 @@ export function strTemplate(template: string, context: { [key: string]: string |
  * @attr [show=false] - Whether the tour should display.
  * @attr [currentStepIndex=0] - Current step in the tour.
  * @attr [showStepInfo=false] -  Whether the step info should display.
+ *
+ * @slot skip-button - Content for skip button.
+ * @slot back-button - Content for back button.
+ * @slot next-button - Content for next button.
+ * @slot done-button - Content for done button.
  */
 @customElement('fds-guided-tour')
 export class GuidedTour extends LitElement {
@@ -145,7 +150,6 @@ export class GuidedTour extends LitElement {
   override render() {
     const currentStep = this.data.steps[this.currentStepIndex];
     if (!this.show || !currentStep) return html``;
-
     const show = this.currentStepElement !== undefined;
     const classes = {
       'step-card--hide': !show,
@@ -168,12 +172,12 @@ export class GuidedTour extends LitElement {
             <div class="step-button-container">
               ${!isLastStep
                 ? html`<slot name="skip-button" @click=${this.stop}>
-                    <fds-text-button label="Skip"></fds-text-button>
+                    <fds-text-button class="skip-button" label="Skip"></fds-text-button>
                   </slot>`
                 : ''}
               ${hasBackStep
                 ? html` <slot name="back-button" @click=${this.back}>
-                    <fds-button label="Back"></fds-button>
+                    <fds-outlined-button label="Back"></fds-outlined-button>
                   </slot>`
                 : ''}
               ${hasNextStep
@@ -203,12 +207,14 @@ export class GuidedTour extends LitElement {
 
   stop() {
     this.show = false;
+    this.currentStepIndex = 0;
   }
 
   override update(changedProperties: PropertyValues) {
     // change show
     if (changedProperties.has('show')) {
       if (this.show) {
+        this.focus();
         this.fixScrollbar();
         this.calculatePosition();
       } else {
