@@ -120,17 +120,19 @@ export class Wizard extends LitElement {
   }
 
   onPagesSlotChanged() {
+    let steps: Page[]=[];
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
     this.checkCurrentStep(this.currentStepIndex);
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
-      this.arrayPages.push({
+      steps.push({
         'label': page.getAttribute('title') as string,
         'description': page.getAttribute('description') as string,
         'disabled': this.disabled as Boolean
       });
       this.disabled = null;
+      this.arrayPages=steps;
     });
   }
 
