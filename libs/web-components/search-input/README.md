@@ -19,7 +19,7 @@ npm i @finastra/search-input
 ```ts
 import '@finastra/search-input';
 ...
-<fds-search-input label="Search"></fds-search-input>
+<fds-search-input showClearButton label="Search"></fds-search-input>
 ```
 
 ### Pure HTML pages
@@ -28,5 +28,5 @@ import '@finastra/search-input';
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <script src="https://cdn.jsdelivr.net/npm/@finastra/search-input/dist/fds-search-input.js"></script>
 
-<fds-search-input label="Search"></fds-search-input>
+<fds-search-input showClearButton label="Search"></fds-search-input>
 ```
