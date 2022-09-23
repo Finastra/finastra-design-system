@@ -9,7 +9,7 @@ import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-guided-tour.json';
 
 export default {
-  title: 'NAVIGATION/GuidedTour',
+  title: 'NAVIGATION/Guided Tour',
   component: 'fds-guided-tour',
   argTypes,
   args: {
