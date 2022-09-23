@@ -251,7 +251,7 @@ export class Wizard extends LitElement {
 
   _handleNextClick() {
     if(this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
-      throw new Error('The wizard has no next page to go to.');
+     return;
     }
 
     if (this.currentStepIndex !== (this._pages.length - 1)) {
@@ -265,7 +265,7 @@ export class Wizard extends LitElement {
 
   _handleBackClick() {
     if(this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
-      throw new Error('The wizard has no previous page to go to.');
+      return;
     }
     if (this.currentStepIndex !== 0) {
       if (this.currentStepIndex === 1) {
