@@ -1,22 +1,23 @@
 {
-  "name": "@finastra/textarea",
-  "displayName": "Textarea",
+  "name": "@finastra/guided-tour",
+  "displayName": "GuidedTour",
   "version": "1.0.0",
-  "description": "Textarea Web Component",
+  "description": "GuidedTour Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Textarea"
+    "GuidedTour"
   ],
   "license": "MIT",
-  "main": "dist/src/textarea.js",
-  "module": "dist/src/textarea.js",
+  "main": "dist/src/guided-tour.js",
+  "module": "dist/src/guided-tour.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-textarea": "0.26.1",
+    "@floating-ui/dom": "1.0.2",
+    "@finastra/card": "1.0.0",
+    "@finastra/button": "1.0.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

@@ -804,6 +804,18 @@
       },
       "tags": []
     },
+    "guided-tour": {
+      "root": "libs/web-components/guided-tour",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/guided-tour/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "icon": {
       "root": "libs/web-components/icon",
       "architect": {
