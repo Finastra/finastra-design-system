@@ -1,7 +1,7 @@
 {
   "name": "@finastra/data-table",
   "displayName": "Data Table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Data Table Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,7 +17,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/data-table-styles.scss src/pagination/data-table-pagination-styles.scss"
   },
   "dependencies": {
-    "@finastra/icon": "1.0.0",
+    "@finastra/icon": "1.0.1",
     "@material/button": "13.0.0",
     "@material/data-table": "14.0.0",
     "@material/icon-button": "14.0.0",
