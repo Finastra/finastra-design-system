@@ -110,6 +110,9 @@
       "path": "circular-progress"
     },
     {
+      "path": "guided-tour"
+    },
+    {
       "path": "data-table"
     },
     {

@@ -2,7 +2,7 @@
 **/*.scss
 **/package-lock.json
 **/package.json
-libs/web-components/**
+# libs/web-components/**
 .storybook/**
 tools/generators/web-component/**
 

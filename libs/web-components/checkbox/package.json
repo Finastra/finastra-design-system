@@ -1,7 +1,7 @@
 {
   "name": "@finastra/checkbox",
   "displayName": "Checkbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checkbox Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@material/checkbox": "13.0.0",
-    "@material/mwc-checkbox": "^0.26.1",
+    "@material/mwc-checkbox": "0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

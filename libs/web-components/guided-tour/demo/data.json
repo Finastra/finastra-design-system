@@ -1,0 +1,33 @@
+{
+  "stepInfo": "Step ${currentStep} of ${totalSteps}",
+  "steps": [
+    {
+      "selector": "body > div > mwc-list > a:nth-child(1) > mwc-list-item",
+      "title": "Step 1 title",
+      "description": "Lorem ipsum dolor sit amet. Ab rerum totam et vero error est commodi autem et dolores magnam sed harum quibusdam sed tempore eligendi et quos perspiciatis. Eos autem natus eum iusto sunt sit laborum dolores At reprehenderit cumque. ",
+      "marginRight": -10,
+      "marginTop": -5,
+      "marginBottom": -5,
+      "marginLeft": -5,
+      "placement": "right",
+      "mainAxis": 10,
+      "crossAxis": 10
+    },
+    {
+      "selector": "body > div > mwc-list > a:nth-child(3) > mwc-list-item",
+      "title": "Step 2 title",
+      "description": "Lorem ipsum dolor sit amet. Ab rerum totam et vero error est commodi autem et dolores magnam sed harum quibusdam sed tempore eligendi et quos perspiciatis. Eos autem natus eum iusto sunt sit laborum dolores At reprehenderit cumque. ",
+      "placement": "right",
+      "marginRight": -10,
+      "marginTop": -5,
+      "marginBottom": -5,
+      "marginLeft": -5,
+      "mainAxis": 10
+    },
+    {
+      "title": "Step 3 title",
+      "description": "Lorem ipsum dolor sit amet. Ab rerum totam et vero error est commodi autem et dolores magnam sed harum quibusdam sed tempore eligendi et quos perspiciatis. Eos autem natus eum iusto sunt sit laborum dolores At reprehenderit cumque. ",
+      "placement": "bottom"
+    }
+  ]
+}

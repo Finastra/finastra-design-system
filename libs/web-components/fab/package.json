@@ -1,7 +1,7 @@
 {
   "name": "@finastra/fab",
   "displayName": "Fab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fab Web Component",
   "keywords": [
     "Finastra Design System",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@material/fab": "^13.0.0",
-    "@material/mwc-fab": "^0.26.1",
+    "@material/mwc-fab": "0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
