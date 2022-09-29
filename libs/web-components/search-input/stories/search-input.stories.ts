@@ -29,7 +29,8 @@ export const Default: Story<SearchInput> = Template.bind({});
 Default.args = {
   placeholder: 'Search ...',
   value: 'Banking',
-  icon: 'search'
+  icon: 'search',
+  showClearButton: true
 }
 
 export const Loading: Story<SearchInput> = Template.bind({});
