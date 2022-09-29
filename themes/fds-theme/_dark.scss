@@ -1,8 +1,5 @@
-@use './color/dark';
 @use './mixins';
 
 $class: ':root' !default;
 
-@include mixins.wrap($class) {
-    @include mixins.custom-properties(dark.$properties);
-}
+@include mixins.use-dark-theme($class);

@@ -1,7 +1,7 @@
 @use 'sass:string';
-@use './color/light';
-@use './color/dark';
-@use './color/mixins' as colors;
+@use './scheme';
+@use './color/mixins' as color;
+@use './logo/mixins' as logo;
 @use './elevation/mixins' as elevation;
 @use './typography/mixins' as typography;
 @use './spacing/mixins' as spacing;
@@ -9,8 +9,9 @@
 /// Loads all custom properties
 ///
 /// @param {map} $properties - Map with your theme colors
-@mixin custom-properties($properties) {
-    @include colors.custom-properties($properties);
+@mixin custom-properties($scheme) {
+    @include color.custom-properties($scheme);
+    @include logo.custom-properties($scheme);
     @include elevation.custom-properties();
     @include typography.custom-properties();
     @include spacing.custom-properties();
@@ -23,9 +24,9 @@
 ///     .my-container {
 ///        @include fds.use-theme-light();
 ///     }
-@mixin use-light-theme() {
-    @include wrap() {
-        @include custom-properties(light.$properties);
+@mixin use-light-theme($class: null) {
+    @include wrap($class) {
+        @include custom-properties(scheme.light());
     }
 }
 
@@ -36,9 +37,9 @@
 ///     .my-container {
 ///        @include fds.use-theme-dark();
 ///     }
-@mixin use-dark-theme() {
-    @include wrap() {
-        @include custom-properties(dark.$properties);
+@mixin use-dark-theme($class: null) {
+    @include wrap($class) {
+        @include custom-properties(scheme.dark());
     }
 }
 
