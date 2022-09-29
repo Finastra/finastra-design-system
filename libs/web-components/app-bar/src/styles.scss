@@ -25,7 +25,7 @@
       @include fds.typography(headline-6);
       @include fds.text-color(on-background);
       @include fds.padding(3,right,left);
-      @include fds.padding(1,top,bottom);
+      @include fds.padding(1,top);
     }
 
     .app-bar-content {
