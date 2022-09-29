@@ -1,8 +1,5 @@
-@use './color/light';
 @use './mixins';
 
 $class: ':root' !default;
 
-@include mixins.wrap($class) {
-    @include mixins.custom-properties(light.$properties);
-}
+@include mixins.use-light-theme($class);

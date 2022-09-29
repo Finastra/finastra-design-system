@@ -1,6 +1,8 @@
 @use 'sass:map';
 @use 'sass:string';
 @use './light';
+@use './dark';
+@use '../scheme';
 
 /// Loads the colors' custom properties.
 ///
@@ -9,7 +11,8 @@
 ///      background: var(--fds-surface);
 ///      color: var(--fds-on-surface);
 ///   }
-@mixin custom-properties($properties: light.$properties) {
+@mixin custom-properties($scheme: scheme.light()) {
+  $properties: if(scheme.isLight($scheme), light.$properties, dark.$properties);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
     --mdc-theme-#{$style}: var(--fds-#{$style},#{$variable});
