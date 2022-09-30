@@ -26,7 +26,7 @@ export default {
 } as Meta;
 
 const Template: Story = ({ checked, indeterminate, disabled }) => {
-  return html`<fds-checkbox ?checked=${checked} ?indeterminate=${indeterminate} ?disabled=${disabled}></fsd-checkbox>`;
+  return html`<fds-checkbox ?checked=${checked} ?indeterminate=${indeterminate} ?disabled=${disabled}></fds-checkbox>`;
 };
 
 export const Default: Story = Template.bind({});
