@@ -78,7 +78,7 @@ export default {
 } as Meta;
 
 const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, labelMode = '' }) => {
-  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode}></fsd-vertical-stepper>`;
+  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode}></fds-vertical-stepper>`;
 };
 
 export const Default: Story<VerticalStepper> = VTemplate.bind({});
