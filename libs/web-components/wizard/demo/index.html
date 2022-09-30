@@ -1,7 +1,9 @@
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard-page.js"></script>
-<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/outlined-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/text-button.js"></script>
 
 <fds-wizard id="wizard">
   <fds-text-button slot='left-action' label="Cancel" secondary>
@@ -25,11 +27,11 @@
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled header>
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" header>
     <p>put your content here</p>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" disabled header>
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" header>
     <p>put your content here</p>
   </fds-wizard-page>
 </fds-wizard>
