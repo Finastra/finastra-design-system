@@ -27,7 +27,7 @@ export default {
 } as Meta;
 
 const Template: Story<Chip> = ({ label, icon, selected, disabled, secondary,dense, large,trailingIcon  }) => {
-  return html`<fds-chip  .label=${label} icon=${icon} trailingIcon=${trailingIcon} ?selected=${selected} ?disabled=${disabled} ?secondary=${secondary} ?dense=${dense} ?large=${large}></fsd-chip>`;
+  return html`<fds-chip  .label=${label} icon=${icon} trailingIcon=${trailingIcon} ?selected=${selected} ?disabled=${disabled} ?secondary=${secondary} ?dense=${dense} ?large=${large}></fds-chip>`;
 };
 
 export const Default: Story<Chip> = Template.bind({});
