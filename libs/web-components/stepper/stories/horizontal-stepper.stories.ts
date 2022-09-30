@@ -57,7 +57,7 @@ export default {
 } as Meta;
 
 const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false }) => {
-  return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fsd-horizontal-stepper>`;
+  return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fds-horizontal-stepper>`;
 };
 
 export const Default: Story<HorizontalStepper> = HTemplate.bind({});
