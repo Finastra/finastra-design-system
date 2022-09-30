@@ -40,7 +40,7 @@ const Template: Story = ({
  <mwc-list-item value="One">One</mwc-list-item>
  <mwc-list-item value="Two">Two</mwc-list-item>
  <mwc-list-item value="Three">Three</mwc-list-item>
-</fsd-autocomplete>`;
+</fds-autocomplete>`;
 };
 
 export const Default: Story = Template.bind({});
