@@ -29,7 +29,7 @@ export default {
 } as Meta;
 
 const Template: Story<AccountCard> = ({ name, balance, currency, number, icon, iconAriaLabel, outlined, selectable, disabled}) => {
-  return html`<fds-account-card name=${name} balance=${balance} currency=${currency} number=${number} icon=${icon} iconAriaLabel=${iconAriaLabel} ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fsd-account-card>`;
+  return html`<fds-account-card name=${name} balance=${balance} currency=${currency} number=${number} icon=${icon} iconAriaLabel=${iconAriaLabel} ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fds-account-card>`;
 };
 
 export const Default: Story<AccountCard> = Template.bind({});
