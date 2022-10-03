@@ -339,13 +339,12 @@ export class ApexChartsWrapper extends LitElement {
   init() {
     if (!this.$el) return;
     this.loadChartThemeFromCssVariables();
-    const newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
+    let newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
       chart: {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
         width: this.width,
-        events: {},
-        foreColor: '#fffff'
+        events: {}
       },
       tooltip: {
         fillSeriesColor: false,
@@ -390,6 +389,13 @@ export class ApexChartsWrapper extends LitElement {
       ...this.getStrokeColor(),
       series: this.series
     });
+
+    console.log(this.getColor());
+
+    if (this.type !== 'radialBar') {
+      newOptions.chart!.foreColor = '#fffff';
+    }
+
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
     this.initWatchers();

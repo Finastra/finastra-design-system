@@ -64,7 +64,7 @@
   <div>Default</div>
 
   <div class="card">
-    <fds-radial-bar-chart color="focus-1" id="radialBarChart" width="380"></fds-radial-bar-chart>
+    <fds-radial-bar-chart id="radialBarChart" width="380"></fds-radial-bar-chart>
   </div>
 </div>
 <script>
@@ -73,25 +73,17 @@
     const radialBarCharts = document.querySelectorAll('#radialBarChart');
 
     pieCharts.forEach((pieChart) => {
-        //  pieChart.data = [44, 55, 13, 43, 2, 12]
-        pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28]
-        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon']
-
-        // pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
-
+        pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28];
+        pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon'];
     })
     pieChartsFocus.forEach((pieChart) => {
-        //  pieChart.data = [44, 55, 13, 43, 2, 12]
-        //console.log(pieChart)
-        pieChart.data = [44, 55]
-        pieChart.labels = ['Apple', 'Mango']
-
-        // pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
-
+        pieChart.data = [44, 55];
+        pieChart.labels = ['Apple', 'Mango'];
     })
+
     radialBarCharts.forEach((radialBarChart) => {
-      radialBarChart.data = [70];
-      radialBarChart.labels = ['Sanity percentage'];
+      radialBarChart.data = [80];
+      radialBarChart.labels = ['Confidence Score (%)'];
     })
 </script>
 <style>
