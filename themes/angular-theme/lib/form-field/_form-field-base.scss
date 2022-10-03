@@ -15,6 +15,42 @@ $infix-border-top-dense: 0.661em;
 $infix-top-no-label: -0.35em;
 $infix-padding-bottom-no-label: 0.469em;
 
+.mat-form-field-appearance-outline {
+  .mat-form-field-wrapper {
+    .mat-form-field-infix {
+      padding: 0.95em 0 0.95em 0;
+    }
+  }
+  
+  &.mat-focused {
+    .mat-form-field-outline-thick {
+      .mat-form-field-outline-start.mat-form-field-outline-start,
+      .mat-form-field-outline-end.mat-form-field-outline-end {
+        border-width: 2px;
+      }
+    }
+  }
+
+  .mat-form-field-outline-thick {
+    .mat-form-field-outline-start.mat-form-field-outline-start,
+    .mat-form-field-outline-end.mat-form-field-outline-end {
+      border-width: 1px;
+    }
+  }
+
+  .mat-form-field-outline {
+    border-radius: 6px;
+
+    .mat-form-field-outline-gap {
+      display: none;
+    }
+  }
+
+  &.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label.mat-form-field-label {
+    transform: translateY(-1em) scale(0.75);
+  }
+}
+
 .mat-form-field-appearance-legacy {
   .mat-form-field-flex {
     align-items: flex-end;

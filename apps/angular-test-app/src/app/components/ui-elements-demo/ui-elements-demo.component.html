@@ -494,20 +494,20 @@
   <h3 class="uxg-display-3">Inputs</h3>
   <h5 class="uxg-h5">Fill Input</h5>
   <div class="example-row">
-    <mat-form-field floatLabel="never" appearance="fill">
+    <mat-form-field floatLabel="never" appearance="outline">
       <mat-icon color="primary" matPrefix>favorite</mat-icon>
       <input matInput placeholder="Placeholder" />
       <mat-icon color="primary" matSuffix>favorite</mat-icon>
     </mat-form-field>
   </div>
   <div class="example-row">
-    <mat-form-field floatLabel="never" appearance="fill">
+    <mat-form-field floatLabel="never" appearance="outline">
       <input matInput placeholder="Placeholder" />
       <mat-hint>Helper text</mat-hint>
     </mat-form-field>
   </div>
   <div class="example-row">
-    <mat-form-field floatLabel="never" class="example-full-width" appearance="fill">
+    <mat-form-field floatLabel="never" class="example-full-width" appearance="outline">
       <mat-icon color="primary" matPrefix>search</mat-icon>
       <mat-label>Search...</mat-label>
       <input type="search" matInput />
@@ -516,7 +516,7 @@
 
   <h5 class="uxg-h5">Input With Icon Button</h5>
   <div class="example-container" dense>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" />
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -525,7 +525,7 @@
     </mat-form-field>
   </div>
   <div>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Amount</mat-label>
       <input matInput type="number" value="0" class="example-right-align" />
       <span matPrefix>$&nbsp;</span>
@@ -535,7 +535,7 @@
 
   <h5 class="uxg-h5">Error Message</h5>
   <div class="example-container">
-    <mat-form-field #ff1 appearance="fill">
+    <mat-form-field #ff1 appearance="outline">
       <mat-icon matPrefix>lock_outlined</mat-icon>
       <mat-label>Enter your email</mat-label>
       <input matInput placeholder="pat@example.com" [formControl]="email" required />
@@ -547,18 +547,18 @@
   <h5 class="uxg-h5">Dense Inputs</h5>
   <div class="example-container">
     <div class="example-row">
-      <mat-form-field dense appearance="fill">
+      <mat-form-field dense appearance="outline">
         <input matInput value="this is value" />
       </mat-form-field>
     </div>
     <div class="example-row">
-      <mat-form-field dense appearance="fill">
+      <mat-form-field dense appearance="outline">
         <mat-icon color="primary" matPrefix dense>search</mat-icon>
         <input matInput value="this is value" />
       </mat-form-field>
     </div>
     <div class="example-row">
-      <mat-form-field dense appearance="fill">
+      <mat-form-field dense appearance="outline">
         <mat-label>Label</mat-label>
         <input matInput />
         <mat-hint>Helper text</mat-hint>
@@ -566,7 +566,7 @@
     </div>
     <div>
       <form class="example-form">
-        <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
+        <mat-form-field dense floatLabel="never" class="example-full-width" appearance="outline">
           <mat-icon color="primary" matPrefix dense>search</mat-icon>
           <mat-label>Search...</mat-label>
           <input type="search" matInput />
@@ -575,7 +575,7 @@
     </div>
 
     <div>
-      <mat-form-field dense appearance="fill">
+      <mat-form-field dense appearance="outline">
         <mat-label>Enter your password</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" />
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -584,7 +584,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field dense appearance="fill">
+      <mat-form-field dense appearance="outline">
         <mat-label>Amount</mat-label>
         <input matInput type="number" value="0" class="example-right-align" />
         <span matPrefix>$&nbsp;</span>
@@ -594,7 +594,7 @@
   </div>
 
   <div class="example-container">
-    <mat-form-field #ff2 dense appearance="fill">
+    <mat-form-field #ff2 dense appearance="outline">
       <mat-icon matPrefix dense>lock_outlined</mat-icon>
       <mat-label>Enter your email</mat-label>
       <input matInput placeholder="pat@example.com" [formControl]="email" required />
@@ -607,7 +607,7 @@
   <h5 class="uxg-h5">Select</h5>
   <div class="example-row">
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Font size</mat-label>
         <mat-select value="16px">
           <mat-option value="10px">10px</mat-option>
@@ -621,7 +621,7 @@
     </div>
     <div>
       <p class="uxg-body-3">No label</p>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-select value="16px">
           <mat-option value="10px">10px</mat-option>
           <mat-option value="12px">12px</mat-option>
@@ -637,7 +637,7 @@
   <h5 class="uxg-h5">Dense select</h5>
   <div class="example-row">
     <div>
-      <mat-form-field appearance="fill" dense>
+      <mat-form-field appearance="outline" dense>
         <mat-label>Font size</mat-label>
         <mat-select value="16px">
           <mat-option value="10px">10px</mat-option>
@@ -651,7 +651,7 @@
     </div>
     <div>
       <p class="uxg-body-3">Multi-select, no default value</p>
-      <mat-form-field appearance="fill" dense>
+      <mat-form-field appearance="outline" dense>
         <mat-label> Colors </mat-label>
         <mat-select multiple>
           <mat-option value="Violet">Violet</mat-option>
