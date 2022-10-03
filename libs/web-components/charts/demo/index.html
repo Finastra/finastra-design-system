@@ -1,5 +1,4 @@
-<script type="module" src="node_modules/@finastra/charts/dist/src/pie-chart.js"></script>
-<script type="module" src="node_modules/@finastra/charts/dist/src/donut-chart.js"></script>
+<script type="module" src="node_modules/@finastra/charts/dist/src/index.js"></script>
 <div>PieChart</div>
 <div class="main-content">
     <div>Default</div>
@@ -8,28 +7,28 @@
         <fds-pie-chart id="pieChart" width="380"></fds-pie-chart>
     </div>
     <div>Disable selection</div>
-    <div class="card">        
+    <div class="card">
         <fds-pie-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-pie-chart>
     </div>
 
     <div>sequential-1'</div>
-    <div class="card">        
+    <div class="card">
         <fds-pie-chart color="sequential-1'" id="pieChart"  width="380"></fds-pie-chart>
     </div>
 
     <div>sequential-2'</div>
-    <div class="card">        
+    <div class="card">
         <fds-pie-chart color="sequential-2'" id="pieChart"  width="380"></fds-pie-chart>
     </div>
 
 
     <div>Focus</div>
-    <div class="card">        
+    <div class="card">
         <fds-pie-chart color="focus-1" id="pieChartFocus"  width="380"></fds-pie-chart>
     </div>
 
     <div>dark</div>
-    <div class="card">        
+    <div class="card">
         <fds-pie-chart theme="dark" id="pieChart"  width="380"></fds-pie-chart>
     </div>
 </div>
@@ -41,44 +40,58 @@
         <fds-donut-chart id="pieChart" width="380"></fds-donut-chart>
     </div>
     <div>Disable selection</div>
-    <div class="card">        
+    <div class="card">
         <fds-donut-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-donut-chart>
     </div>
 
     <div>sequential-1'</div>
-    <div class="card">        
+    <div class="card">
         <fds-donut-chart color="sequential-1'" id="pieChart"  width="380"></fds-donut-chart>
     </div>
 
     <div>sequential-2'</div>
-    <div class="card">        
+    <div class="card">
         <fds-donut-chart color="sequential-2'" id="pieChart"  width="380"></fds-donut-chart>
     </div>
 
     <div>dark</div>
-    <div class="card">        
+    <div class="card">
         <fds-donut-chart theme="dark" id="pieChart"  width="380"></fds-pie-chart>
     </div>
+</div>
+<div>Radial Bar Chart</div>
+<div class="main-content">
+  <div>Default</div>
+
+  <div class="card">
+    <fds-radial-bar-chart color="focus-1" id="radialBarChart" width="380"></fds-radial-bar-chart>
+  </div>
 </div>
 <script>
     const pieCharts = document.querySelectorAll('#pieChart');
     const pieChartsFocus = document.querySelectorAll('#pieChartFocus');
+    const radialBarCharts = document.querySelectorAll('#radialBarChart');
+
     pieCharts.forEach((pieChart) => {
         //  pieChart.data = [44, 55, 13, 43, 2, 12]
         pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28]
         pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon']
 
         // pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
-        
+
     })
     pieChartsFocus.forEach((pieChart) => {
         //  pieChart.data = [44, 55, 13, 43, 2, 12]
-        console.log(pieChart)
+        //console.log(pieChart)
         pieChart.data = [44, 55]
         pieChart.labels = ['Apple', 'Mango']
 
         // pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']
-        
+
+    })
+    radialBarCharts.forEach((radialBarChart) => {
+      radialBarChart.data = [70];
+      radialBarChart.labels = ['Sanity percentage'];
     })
 </script>
 <style>
