@@ -70,8 +70,21 @@
 
 @mixin typography($config) {
   .mat-form-field-appearance-outline {
+    &[dense] {
+      .mat-input-element {
+        @include mat.typography-level($config, subtitle-3);
+      }
+      .mat-input-element::placeholder {
+        @include mat.typography-level($config, body-3);
+      }
+      @include mat.typography-level($config, body-3);
+    }
+
     .mat-input-element {
       @include mat.typography-level($config, subtitle-2);
+    }
+    .mat-input-element::placeholder {
+      @include mat.typography-level($config, body-2);
     }
     @include mat.typography-level($config, body-2);
   }
