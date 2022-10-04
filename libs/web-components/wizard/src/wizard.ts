@@ -7,24 +7,24 @@ import { styles } from './styles.css';
 
 export enum POSITION {
   right = 'right',
-  left = 'left',
+  left = 'left'
 }
 
 export interface Page {
   label: string;
   description?: string;
-  disabled?: Boolean;
+  disabled?: Boolean | null;
 }
 
 /**
-  * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
-  * @cssprop {color} [--fds-header-bg=#f3f1fc] - Header background color
-  * @cssprop {color} [--fds-title-color=#694ed5] - Header title color
-  * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
-  * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
-  * @attr {boolean} [stepperOnDark=false] - Stepper on dark
-  * @attr [currentStepIndex=0] - Index of current active step.
-*/
+ * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
+ * @cssprop {color} [--fds-header-bg=#f3f1fc] - Header background color
+ * @cssprop {color} [--fds-title-color=#694ed5] - Header title color
+ * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
+ * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
+ * @attr {boolean} [stepperOnDark=false] - Stepper on dark
+ * @attr [currentStepIndex=0] - Index of current active step.
+ */
 @customElement('fds-wizard')
 export class Wizard extends LitElement {
   static styles = styles;
@@ -34,7 +34,6 @@ export class Wizard extends LitElement {
 
   @query('#stepper') protected stepper!: HTMLElement;
 
-
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
    */
@@ -42,6 +41,9 @@ export class Wizard extends LitElement {
 
   @property({ type: Boolean })
   stepperOnDark = false;
+
+  @property({ type: Boolean })
+  linear = false;
 
   protected save = false;
   protected back = false;
@@ -55,7 +57,7 @@ export class Wizard extends LitElement {
 
   constructor() {
     super();
-    this.addEventListener('step-click', this.onStepClickEvent)
+    this.addEventListener('step-click', this.onStepClickEvent);
   }
 
   onStepClickEvent(event) {
@@ -65,46 +67,41 @@ export class Wizard extends LitElement {
   }
 
   render() {
-    return html`
-      <div class="wizard">
-        ${this.stepperPosition === 'left' ?
-         html`${this.renderStepper()} <fds-divider vertical></fds-divider>` : ''}
-        <div class='content'>
-          <div class="pages">
-            <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
-          </div>
-          <div class="footer">
-            <fds-divider></fds-divider>
-            ${this.renderActions()}
-          </div>
-        </div>
-        ${this.stepperPosition === 'right' ?
-        html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
-      </div>`;
+    return html`<div class="wizard">
+  ${this.stepperPosition === 'left' ? html`${this.renderStepper()} <fds-divider vertical></fds-divider>` : ''}
+  <div class="content">
+    <div class="pages">
+      <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
+    </div>
+    <div class="footer">
+      <fds-divider></fds-divider>
+      ${this.renderActions()}
+    </div>
+  </div>
+  ${this.stepperPosition === 'right' ? html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
+</div>`;
   }
 
   renderStepper(): TemplateResult {
-    return html`
-      <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-        <fds-vertical-stepper .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
-      </div>`
+    return html`<div class="stepper-container ${this.stepperOnDark ? ' dark-theme' : ''}">
+  <fds-vertical-stepper .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}>
+  </fds-vertical-stepper>
+</div>`;
   }
 
   renderActions(): TemplateResult {
-    return html`
-      <div class="actions">
-        <div class="left">
-          <slot name="left-action"></slot>
-        </div>
-        <div class="content">
-          <slot name="content-action"></slot>
-        </div>
-        <div class="right">
-          <slot name="right-action"></slot>
-          ${this.back ? this.renderBackSlot() : ''}
-          ${this.save ? this.renderSaveSlot() : html`${this.renderNextSlot()}`}
-        </div>
-      </div>`;
+    return html`<div class="actions">
+  <div class="left">
+    <slot name="left-action"></slot>
+  </div>
+  <div class="content">
+    <slot name="content-action"></slot>
+  </div>
+  <div class="right">
+    <slot name="right-action"></slot>
+    ${this.back ? this.renderBackSlot() : ''} ${this.save ? this.renderSaveSlot() : html`${this.renderNextSlot()}`}
+  </div>
+</div>`;
   }
 
   renderSaveSlot(): TemplateResult {
@@ -120,59 +117,62 @@ export class Wizard extends LitElement {
   }
 
   onPagesSlotChanged() {
-    let steps: Page[]=[];
-    (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
+    let steps: Page[] = [];
+    this._pages[this.currentStepIndex].setAttribute('current', 'true');
     this.checkCurrentStep(this.currentStepIndex);
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
       steps.push({
-        'label': page.getAttribute('title') as string,
-        'description': page.getAttribute('description') as string,
-        'disabled': this.disabled as Boolean
+        label: page.getAttribute('title') as string,
+        description: page.getAttribute('description') as string,
+        disabled: this.linear ? true : this.disabled
       });
       this.disabled = null;
-      this.arrayPages=steps;
+      this.arrayPages = steps;
+      if (this.linear) {
+        this.arrayPages[this.currentStepIndex].disabled = false;
+      }
     });
   }
 
   checkCurrentStep(current: number) {
-    if(!this.currentPageIsLast(current) && !this.currentPageIsFirst(current) && !this.currentPageIsDisabled(current)) {
-      this.back=true;
+    if (!this.currentPageIsLast(current) && !this.currentPageIsFirst(current) && !this.currentPageIsDisabled(current)) {
+      this.back = true;
     }
 
-    if(this.currentPageIsLast(current) && !this.currentPageIsDisabled(current)) {
-      this.save=true;
-      this.back=true;
+    if (this.currentPageIsLast(current) && !this.currentPageIsDisabled(current)) {
+      this.save = true;
+      this.back = true;
     }
 
-    if(this.currentPageIsFirst(current)) {
-      this.back=false;
+    if (this.currentPageIsFirst(current)) {
+      this.back = false;
     }
 
-    if((this._pages[current]).hasAttribute('current') && this._pages[current].hasAttribute('disabled')) {
-      console.error("A current could not be disabled");
+    if (this._pages[current].hasAttribute('current') && this._pages[current].hasAttribute('disabled')) {
+      console.error('A current could not be disabled');
     }
     this.requestUpdate();
   }
 
   currentPageIsLast(current: number) {
-    return ((current) == (this._pages.length - 1));
+    return current == this._pages.length - 1;
   }
 
   currentPageIsDisabled(current: number) {
-    return (this._pages[current]).hasAttribute('disabled');
+    return this._pages[current].hasAttribute('disabled');
   }
 
   currentPageIsFirst(current: number) {
-    return (current == 0);
+    return current == 0;
   }
 
   checkAttributes(page: HTMLElement, index: number) {
     if (page.getAttribute('disabled') !== null) {
       this.disabled = true;
     }
-    if (page.hasAttribute('current') && (this._pages[this.currentStepIndex] !== page)) {
+    if (page.hasAttribute('current') && this._pages[this.currentStepIndex] !== page) {
       this.updateCurrentPage(index);
       this.stepper['currentStepIndex'] = this.currentStepIndex;
       this.checkCurrentStep(this.currentStepIndex);
@@ -201,14 +201,14 @@ export class Wizard extends LitElement {
   goToNextStep(pages: Array<HTMLElement>) {
     this.currentStepIndex = this.stepper['currentStepIndex'];
     this.stepper['currentStepIndex']++;
-    (pages[this.currentStepIndex]).removeAttribute('current');
+    pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex++;
   }
 
   goToPreviousStep(pages: Array<HTMLElement>) {
     this.currentStepIndex = this.stepper['currentStepIndex'];
     this.stepper['currentStepIndex']--;
-    (pages[this.currentStepIndex]).removeAttribute('current');
+    pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex--;
   }
 
@@ -221,28 +221,44 @@ export class Wizard extends LitElement {
   }
 
   updateCurrentPage(index: number) {
-    (this._pages[this.currentStepIndex]).removeAttribute('current');
+    this._pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex = index;
-    this.UpdatePage()
+    this.UpdatePage();
   }
 
   updateStepsCounter(current: number) {
-    return (+current+1)+"/"+this._pages.length;
+    return +current + 1 + '/' + this._pages.length;
   }
 
   UpdatePage() {
-    (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
-    (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+    this._pages[this.currentStepIndex].setAttribute('current', 'true');
+    this._pages[this.currentStepIndex].setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
-  _handleNextClick() {
-    if (this.currentStepIndex !== (this._pages.length - 1)) {
+  checkNextStep() {
+    if (this.currentStepIndex !== this._pages.length - 1) {
       this.goToNextStep(this._pages);
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
-      this.UpdatePage()
+      this.UpdatePage();
     }
     this.checkCurrentStep(this.currentStepIndex);
     this.requestUpdate();
+  }
+
+  _handleNextClick() {
+    if (this.linear) {
+      if ((this._pages[(this.currentStepIndex + 1)].getAttribute('disabled')) === "") {
+        this._pages[this.currentStepIndex + 1].removeAttribute('disabled');
+      }
+
+      if (this._pages[this.currentStepIndex].getAttribute('completed')) {
+        this.arrayPages[this.currentStepIndex + 1].disabled = false;
+        this.checkNextStep();
+      }
+    }
+    else {
+      this.checkNextStep();
+    }
   }
 
   _handleBackClick() {
@@ -250,7 +266,7 @@ export class Wizard extends LitElement {
       if (this.currentStepIndex === 1) {
         this.back = false;
       }
-      if (this.currentStepIndex === (this._pages.length - 1)) {
+      if (this.currentStepIndex === this._pages.length - 1) {
         this.save = false;
       }
       this.goToPreviousStep(this._pages);

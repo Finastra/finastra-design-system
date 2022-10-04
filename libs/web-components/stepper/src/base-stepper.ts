@@ -38,7 +38,7 @@ export class BaseStepper extends LitElement {
       <div class="line end-line ${classMap(endLineClass)}"></div>
     `;
   }
-
+  
   render() {
     return html`<div class="container">
       ${this.steps.map(

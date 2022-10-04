@@ -29,6 +29,9 @@ export class WizardPage extends LitElement {
   @property({ type: Boolean })
   current = false;
 
+  @property({ type: Boolean })
+  completed = false;
+
   render() {
     return html`
       ${this.header ?
