@@ -1,4 +1,5 @@
 const README = require('../README.md');
+import '@finastra/icon-button';
 import '@finastra/textfield';
 import type { TextField } from '@finastra/textfield';
 import { Meta, Story } from '@storybook/web-components';
@@ -32,7 +33,7 @@ const ValidationTemplate: Story<TextField> = ({ label, icon, helper, type, valid
 const ActionButtonTemplate: Story<TextField> = ({ label, icon, type, helper, showActionButton}) => {
   return html`
     <fds-textfield icon="lock_outline" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
-  <mwc-icon-button slot="actionButton" icon=${icon}></mwc-icon-button>
+  <fds-icon-button slot="actionButton" icon=${icon}></fds-icon-button>
 </fds-textfield>
    `;
 };

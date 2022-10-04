@@ -6,7 +6,7 @@
   @include fds.property(--svg-gradient-stop-1, primary);
   @include fds.property(--svg-gradient-stop-2, secondary);
 
-   mwc-icon-button  {
+   fds-icon-button  {
     display: block;
     @include fds.mdc(ripple-color, surface-selected);
   }

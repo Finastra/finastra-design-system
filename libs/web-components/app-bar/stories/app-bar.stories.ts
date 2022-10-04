@@ -52,10 +52,10 @@ export default {
 
 const Template: Story<AppBar> = ({ appName, logoRedirectUri = '', prominent = false, transparent = false }) => {
   return html` <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-    <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-    <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
@@ -63,7 +63,7 @@ const Template: Story<AppBar> = ({ appName, logoRedirectUri = '', prominent = fa
         <fds-button text fullwidth label="View profile"></fds-button>
       </div>
     </fds-user-profile>
-    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
   </fds-app-bar>`;
 };
 
@@ -81,13 +81,13 @@ Transparent.args = {
 
 const NavigationalTemplate: Story<AppBar> = ({ appName, logoRedirectUri = '', prominent = false, transparent = false }) => {
   return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
     <fds-button text label="Tab 1" slot="navigation"></fds-button>
     <fds-button text label="Tab 2" slot="navigation"></fds-button>
 
-    <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-    <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
@@ -95,7 +95,7 @@ const NavigationalTemplate: Story<AppBar> = ({ appName, logoRedirectUri = '', pr
         <fds-button text fullwidth label="View profile"></fds-button>
       </div>
     </fds-user-profile>
-    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
   </fds-app-bar>`;
 };
 
@@ -108,10 +108,10 @@ Prominent.args = {
 
 const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri = '', prominent = false, transparent = false }) => {
   return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-    <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-    <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-    <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
@@ -119,7 +119,7 @@ const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri =
         <fds-button text fullwidth label="View profile"></fds-button>
       </div>
     </fds-user-profile>
-    <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
     <fds-button secondary label="Sign in" slot="actions"></fds-button>
     <fds-button outlined label="Sign up" slot="actions"></fds-button>
   </fds-app-bar>`;

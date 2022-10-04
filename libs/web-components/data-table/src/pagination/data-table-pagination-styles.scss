@@ -14,7 +14,7 @@
     @include fds.mdc(theme-primary, primary);
     @include fds.mdc(ripple-color, surface-selected);
     @include fds.mdc(theme-text-disabled-on-light, surface-disabled);
-    mwc-icon-button{
+    fds-icon-button{
         @include fds.text-color(on-background);
     }
 }
@@ -30,7 +30,7 @@
         }
 
         .mdc-data-table__pagination-navigation {
-            mwc-icon-button {
+            fds-icon-button {
                 --mdc-ripple-color: transparent;
             }
         }

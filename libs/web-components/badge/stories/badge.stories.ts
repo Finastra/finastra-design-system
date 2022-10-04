@@ -28,7 +28,7 @@ export default {
     font: var(--fds-body-1);
     color: var(--fds-on-background);
   }
-  fds-badge mwc-icon-button {
+  fds-badge fds-icon-button {
     color: var(--fds-primary);
   }
 </style>`
