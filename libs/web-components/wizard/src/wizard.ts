@@ -23,6 +23,8 @@ export interface Page {
   * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
   * @attr [currentStepIndex=0] - Index of current active step.
+  * @attr [linear=false] - Used to create a linear stepper that requires the user to complete previous steps before proceeding to following steps. Note that a wizard page is considered as completed when its property completed is true.
+  * @attr [stepperPosition=left] - Position of the stepper.
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
     It is Used with the fds-wizard-page web component that could contain: 
   - title: to define a title to the step

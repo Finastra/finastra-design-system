@@ -58,8 +58,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIndex }) => {
-  return html`<fds-wizard .stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark} .currentStepIndex=${currentStepIndex}>
+const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIndex, linear }) => {
+  return html`<fds-wizard .stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark} .currentStepIndex=${currentStepIndex} ?linear=${linear}>
   <fds-outlined-button slot='next' label="Next" secondary>
   </fds-outlined-button>
   <fds-text-button slot='left-action' label="Cancel" secondary>
