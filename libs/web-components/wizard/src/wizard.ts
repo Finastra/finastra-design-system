@@ -1,4 +1,3 @@
-import '@finastra/button';
 import '@finastra/divider';
 import '@finastra/stepper';
 import { html, LitElement, TemplateResult } from 'lit';
@@ -17,14 +16,28 @@ export interface Page {
 }
 
 /**
- * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
- * @cssprop {color} [--fds-header-bg=#f3f1fc] - Header background color
- * @cssprop {color} [--fds-title-color=#694ed5] - Header title color
- * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
- * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
- * @attr {boolean} [stepperOnDark=false] - Stepper on dark
- * @attr [currentStepIndex=0] - Index of current active step.
- */
+  * @cssprop {color} [--fds-stepper-bg=#fafafa] - Stepper background color
+  * @cssprop {color} [--fds-header-bg=#f3f1fc] - Header background color
+  * @cssprop {color} [--fds-title-color=#694ed5] - Header title color
+  * @cssprop {color} [--fds-icon-border-color=#f3f1fc] - Header icon border color
+  * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
+  * @attr {boolean} [stepperOnDark=false] - Stepper on dark
+  * @attr [currentStepIndex=0] - Index of current active step.
+  * @slot page - Defines a new page inside the wizard that generates a new step automatically.
+    It is Used with the fds-wizard-page web component that could contain: 
+  - title: to define a title to the step
+  - icon: to define a link to your hosted icon to be displayed next to the title
+  - description: to define a description to your step
+  - disabled : to disable the step
+  - header: to enable the header display (default is false)
+  - current: to set the step to current
+  - stepsCounter: to make the step counter visible in the header
+  - completed: used when linear mode is on to indicate that the step is valid and the next one is unlocked.
+  * @slot next - Slot to place an element that manages the transition to the next step.
+  * @slot previous - Slot to place an element that manages the transition to the previous step.
+  * @slot save - Slot to place an element that appears in the last step. The developer could add his own logic in the onClick Event.
+  * @slot left-action - Slot to place an element in the left side of the wizard actions bar.
+*/
 @customElement('fds-wizard')
 export class Wizard extends LitElement {
   static styles = styles;
@@ -48,6 +61,8 @@ export class Wizard extends LitElement {
   protected save = false;
   protected back = false;
   protected disabled: Boolean | null = null;
+  protected allNextDisabled = true;
+  protected allBackDisabled = true;
 
   @state()
   protected arrayPages: Page[] = [];
@@ -119,7 +134,7 @@ export class Wizard extends LitElement {
   onPagesSlotChanged() {
     let steps: Page[] = [];
     this._pages[this.currentStepIndex].setAttribute('current', 'true');
-    this.checkCurrentStep(this.currentStepIndex);
+    this.updateActionsState(this.currentStepIndex);
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
@@ -136,7 +151,7 @@ export class Wizard extends LitElement {
     });
   }
 
-  checkCurrentStep(current: number) {
+  updateActionsState(current: number) {
     if (!this.currentPageIsLast(current) && !this.currentPageIsFirst(current) && !this.currentPageIsDisabled(current)) {
       this.back = true;
     }
@@ -175,7 +190,7 @@ export class Wizard extends LitElement {
     if (page.hasAttribute('current') && this._pages[this.currentStepIndex] !== page) {
       this.updateCurrentPage(index);
       this.stepper['currentStepIndex'] = this.currentStepIndex;
-      this.checkCurrentStep(this.currentStepIndex);
+      this.updateActionsState(this.currentStepIndex);
     }
     this.requestUpdate();
   }
@@ -183,9 +198,11 @@ export class Wizard extends LitElement {
   checkNextStepDisabled(pages: Array<HTMLElement>, current: number) {
     if (!this.currentPageIsDisabled(current)) return;
     this.stepper['currentStepIndex']++;
-    this.currentStepIndex++;
-    current++;
-    this.checkNextStepDisabled(pages, current);
+    if(current !== (this._pages.length - 1)) {
+      this.currentStepIndex++;
+      current++;
+      this.checkNextStepDisabled(pages, current);
+    }
   }
 
   checkPreviousStepDisabled(pages: Array<HTMLElement>, current: number) {
@@ -193,7 +210,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']--;
     this.currentStepIndex--;
     current--;
-    this.checkCurrentStep(current);
+    this.updateActionsState(current);
     this.checkPreviousStepDisabled(pages, current);
     this.requestUpdate();
   }
@@ -215,7 +232,7 @@ export class Wizard extends LitElement {
   goToStepIndex(index: number) {
     this.back = true;
     this.save = false;
-    this.checkCurrentStep(index);
+    this.updateActionsState(index);
     this.updateCurrentPage(index);
     this.requestUpdate();
   }
@@ -241,19 +258,25 @@ export class Wizard extends LitElement {
       this.checkNextStepDisabled(this._pages, this.currentStepIndex);
       this.UpdatePage();
     }
-    this.checkCurrentStep(this.currentStepIndex);
+    this.updateActionsState(this.currentStepIndex);
     this.requestUpdate();
   }
 
   _handleNextClick() {
+    if(this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
+      return;
+    }
+  
     if (this.linear) {
-      if ((this._pages[(this.currentStepIndex + 1)].getAttribute('disabled')) === "") {
-        this._pages[this.currentStepIndex + 1].removeAttribute('disabled');
-      }
-
-      if (this._pages[this.currentStepIndex].getAttribute('completed')) {
-        this.arrayPages[this.currentStepIndex + 1].disabled = false;
+      if (this._pages[this.currentStepIndex]?.getAttribute('completed')) {
+        if ((this._pages[(+this.currentStepIndex)+1].getAttribute('disabled')) === "") {
+          this._pages[(+this.currentStepIndex)+1].removeAttribute('disabled');
+        }
+        this.arrayPages[(+this.currentStepIndex)+1].disabled = false;
         this.checkNextStep();
+      }
+      else {
+        return;
       }
     }
     else {
@@ -262,6 +285,9 @@ export class Wizard extends LitElement {
   }
 
   _handleBackClick() {
+    if(this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
+      return;
+    }
     if (this.currentStepIndex !== 0) {
       if (this.currentStepIndex === 1) {
         this.back = false;
@@ -274,6 +300,34 @@ export class Wizard extends LitElement {
       this.UpdatePage();
     }
     this.requestUpdate();
+  }
+
+  CheckIfAllNextStepsDisabled(current: number) {
+    if(current !== (this._pages.length - 1)) {
+      current++;
+      if(!this.currentPageIsDisabled(current)) {
+        this.allNextDisabled=false;
+      }
+      else {
+        this.allNextDisabled=true;
+        this.CheckIfAllNextStepsDisabled(current);
+      }
+    }
+    return this.allNextDisabled;
+  }
+
+  CheckIfAllBackStepsDisabled(current: number) {
+    if(current !== 0) {
+      current--;
+      if(!this.currentPageIsDisabled(current)) {
+        this.allBackDisabled=false;
+      }
+      else {
+        this.allBackDisabled=true;
+        this.CheckIfAllBackStepsDisabled(current);
+      }
+    }
+    return this.allBackDisabled;
   }
 }
 

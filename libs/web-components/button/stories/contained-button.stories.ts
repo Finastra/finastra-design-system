@@ -26,8 +26,8 @@ export default {
 
 const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-button
-    .label=${label}
-    .icon=${ifDefined(icon)}
+    label=${label}
+    icon=${ifDefined(icon)}
     ?secondary=${secondary}
     ?dense=${dense}
     ?disabled=${disabled}
@@ -45,8 +45,8 @@ const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = fa
   </style>
   <div class="demo-container">
     <fds-button
-      .label=${label}
-      .icon=${ifDefined(icon)}
+      label=${label}
+      icon=${ifDefined(icon)}
       ?secondary=${secondary}
       ?dense=${dense}
       ?disabled=${disabled}

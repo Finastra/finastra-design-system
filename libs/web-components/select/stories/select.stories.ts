@@ -40,7 +40,7 @@ const Template: Story<Select> = ({ value, label, icon, disabled = false, dense= 
     <fds-list-item value="2">CEO</fds-list-item>
     <fds-list-item value="3">Sales Manager</fds-list-item>
     <fds-list-item value="4">Support Manager</fds-list-item>
-  </fsd-select>`;
+  </fds-select>`;
 };
 
 export const Default: Story<Select> = Template.bind({});
@@ -66,7 +66,7 @@ const GraphicTemplate: Story<Select> = ({ value, label, icon, disabled = false, 
     <fds-list-item graphic="icon" value="2">CEO</fds-list-item>
     <fds-list-item graphic="icon" value="3">Sales Manager</fds-list-item>
     <fds-list-item graphic="icon" value="4">Support Manager</fds-list-item>
-</fsd-select>`;
+</fds-select>`;
 };
 
 export const Graphic: Story<Select> = GraphicTemplate.bind({});
@@ -101,7 +101,7 @@ const ValidationTemplate: Story<Select> = ({ value, label, icon, disabled = fals
     <fds-list-item graphic="icon" value="2">CEO</fds-list-item>
     <fds-list-item graphic="icon" value="3">Sales Manager</fds-list-item>
     <fds-list-item graphic="icon" value="4">Support Manager</fds-list-item>
-</fsd-select>`;
+</fds-select>`;
 };
 
 export const Validation: Story<Select> = ValidationTemplate.bind({});

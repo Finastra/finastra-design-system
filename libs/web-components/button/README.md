@@ -4,9 +4,9 @@
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/button?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/button)
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/actions-button-contained--default)
 
-An `<fds-button>` represents an action a user can take. fds-buttons can be clicked or tapped to perform an action or to navigate to another page.
-
 ## Usage
+
+An `<fds-button>` represents an action a user can take. fds-buttons can be clicked or tapped to perform an action or to navigate to another page.
 
 ### Import
 

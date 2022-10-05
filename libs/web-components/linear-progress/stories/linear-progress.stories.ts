@@ -31,7 +31,7 @@ export default {
 } as Meta;
 
 const Template: Story<LinearProgress> = ({ progress, indeterminate = false }) => {
-  return html`<fds-linear-progress  progress=${progress} ?indeterminate=${indeterminate}></fsd-linear-progress>`;
+  return html`<fds-linear-progress  progress=${progress} ?indeterminate=${indeterminate}></fds-linear-progress>`;
 };
 
 export const Default: Story<LinearProgress> = Template.bind({});

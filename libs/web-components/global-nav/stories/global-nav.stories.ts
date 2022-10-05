@@ -166,7 +166,7 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
         </p>
       </div>
     </div>
-</fsd-sidenav>`;
+</fds-sidenav>`;
 };
 
 export const Default: Story = Template.bind({});
@@ -270,7 +270,7 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
         </p>
       </div>
     </div>
-</fsd-sidenav>`;
+</fds-sidenav>`;
 };
 
 export const WithTabs: Story = WithTabsTemplate.bind({});
@@ -361,7 +361,7 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         </p>
       </div>
     </div>
-</fsd-sidenav>`;
+</fds-sidenav>`;
 };
 
 export const WithButtons: Story = WithButtonsTemplate.bind({});
@@ -457,7 +457,7 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         </div>
       </div>
   </div>
-</fsd-sidenav>`;
+</fds-sidenav>`;
 
 };
 

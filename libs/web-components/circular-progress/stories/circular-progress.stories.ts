@@ -22,7 +22,7 @@ export default {
 } as Meta;
 
 const Template: Story<CircularProgress> = ({ progress, indeterminate = false }) => {
-  return html`<fds-circular-progress  progress=${progress} ?indeterminate=${indeterminate}></fsd-circular-progress>`;
+  return html`<fds-circular-progress  progress=${progress} ?indeterminate=${indeterminate}></fds-circular-progress>`;
 };
 
 export const Default: Story<CircularProgress> = Template.bind({});

@@ -30,11 +30,11 @@ export class SearchInput extends BaseTextField {
   static styles = styles;
 
   @property({ type: Boolean }) loading = false;
-  @property({ type: Boolean }) showClearButton = true;
+  @property({ type: Boolean }) showClearButton = false;
 
   constructor() {
     super();
-    this.showActionButton = true;
+    this.showActionButton = false;
     this.icon = 'search';
   }
 
