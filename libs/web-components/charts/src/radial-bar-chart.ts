@@ -37,19 +37,17 @@ export class RadialBarChart extends ApexChartsWrapper {
       plotOptions: {
         radialBar: {
           hollow: {
-            margin: 0,
             size: "60%"
           },
           track: {
-            background: 'var(--fds-on-surface-disabled, #0000004a)',
-            opacity: 0.2
+            background: 'var(--fds-outline, #0000001f)'
           },
           dataLabels: {
             name: {
-              offsetY: 32,
+              offsetY: 24,
             },
             value: {
-              offsetY: -12,
+              offsetY: -16,
               formatter: function (val) {
                 return val;
               }
