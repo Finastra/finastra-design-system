@@ -14,7 +14,7 @@ describe('UserProfile', () => {
     const el: UserProfile = await fixture(html`<fds-user-profile></fds-user-profile>`);
 
     await elementUpdated(el);
-    shadowRoot(el).querySelector('fds-icon-button')?.click();
+    await shadowRoot(el).querySelector('fds-icon-button')?.click();
     expect(el.divider).to.be.false;
   });
 
@@ -22,7 +22,7 @@ describe('UserProfile', () => {
     const el: UserProfile = await fixture(html`<fds-user-profile dense></fds-user-profile>`);
 
     await elementUpdated(el);
-    shadowRoot(el).querySelector('fds-icon-button')?.click();
+    await shadowRoot(el).querySelector('fds-icon-button')?.click();
     expect(shadowRoot(el).querySelector('mwc-menu div')).to.have.class('header-dense');
   });
 
@@ -36,7 +36,7 @@ describe('UserProfile', () => {
     </fds-user-profile>`);
 
     await elementUpdated(el);
-    shadowRoot(el).querySelector('fds-icon-button')?.click();
+    await shadowRoot(el).querySelector('fds-icon-button')?.click();
     expect(el.divider).to.be.true;
   });
 });
