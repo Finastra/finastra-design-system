@@ -47,13 +47,6 @@ export default {
     font: var(--fds-body-1);
   }
 </style>
-
-<script>
-  const validateBtn = document.getElementById('validate');
-    validateBtn.addEventListener('click', function () {
-    document.getElementById('page').setAttribute("completed",'true');
-  });
-</script>
 `
   ]
 } as Meta;
@@ -123,7 +116,15 @@ const LinearTemplate: Story<Wizard> = ({ stepperPosition, stepperOnDark, current
   <fds-wizard-page slot="page" title="Confirmation"  description="Confirmation page"  header>
     <p>put your content here</p>
   </fds-wizard-page>
-</fds-wizard>`;
+</fds-wizard>
+
+<script>
+  const validateBtn = document.getElementById('validate');
+    validateBtn.addEventListener('click', function () {
+    document.getElementById('page').setAttribute("completed",'true');
+  });
+</script>
+`;
 };
 export const Default: Story<Wizard> = Template.bind({});
 
