@@ -11,7 +11,7 @@ export enum POSITION {
 
 export interface Page {
   label: string;
-  description?: string;
+  description?: string | null;
   disabled?: Boolean;
 }
 
@@ -100,7 +100,7 @@ export class Wizard extends LitElement {
   renderStepper(): TemplateResult {
     return html`
       <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-        <fds-vertical-stepper .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
+        <fds-vertical-stepper label-mode="center" .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
       </div>`
   }
 
