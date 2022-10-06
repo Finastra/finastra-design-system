@@ -3,6 +3,7 @@ import '@finastra/app-bar';
 import '@finastra/button';
 import '@finastra/guided-tour';
 import type { GuidedTour } from '@finastra/guided-tour';
+import '@finastra/icon-button';
 import '@finastra/user-profile';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
@@ -123,10 +124,10 @@ export default {
 const Template: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInfo }) => {
   return html`<div class="app">
     <fds-app-bar appName="FDS">
-      <mwc-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></mwc-icon-button>
+      <fds-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></fds-icon-button>
 
-      <mwc-icon-button data-tour="notification" icon="notifications_none" slot="actions"></mwc-icon-button>
-      <mwc-icon-button data-tour="help" icon="help_outline" slot="actions"></mwc-icon-button>
+      <fds-icon-button data-tour="notification" icon="notifications_none" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="help" icon="help_outline" slot="actions"></fds-icon-button>
       <fds-user-profile data-tour="user-profile" slot="actions" userName="Raya Hristova" shortName="R">
         <div slot="userInfo">raya.hristova@finastra.com</div>
         <div slot="actions">
@@ -134,7 +135,7 @@ const Template: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInf
           <fds-button text fullwidth label="View profile"></fds-button>
         </div>
       </fds-user-profile>
-      <mwc-icon-button data-tour="more" icon="more_vert" slot="actions"></mwc-icon-button>
+      <fds-icon-button data-tour="more" icon="more_vert" slot="actions"></fds-icon-button>
     </fds-app-bar>
 
     <fds-guided-tour
@@ -151,10 +152,10 @@ const Template: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInf
 const TemplateWidthSlotButton: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInfo }) => {
   return html`<div class="app">
     <fds-app-bar appName="FDS">
-      <mwc-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></mwc-icon-button>
+      <fds-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></fds-icon-button>
 
-      <mwc-icon-button data-tour="notification" icon="notifications_none" slot="actions"></mwc-icon-button>
-      <mwc-icon-button data-tour="help" icon="help_outline" slot="actions"></mwc-icon-button>
+      <fds-icon-button data-tour="notification" icon="notifications_none" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="help" icon="help_outline" slot="actions"></fds-icon-button>
       <fds-user-profile data-tour="user-profile" slot="actions" userName="Raya Hristova" shortName="R">
         <div slot="userInfo">raya.hristova@finastra.com</div>
         <div slot="actions">
@@ -162,14 +163,14 @@ const TemplateWidthSlotButton: Story<GuidedTour> = ({ data, show, currentStepInd
           <fds-button text fullwidth label="View profile"></fds-button>
         </div>
       </fds-user-profile>
-      <mwc-icon-button data-tour="more" icon="more_vert" slot="actions"></mwc-icon-button>
+      <fds-icon-button data-tour="more" icon="more_vert" slot="actions"></fds-icon-button>
     </fds-app-bar>
 
     <fds-guided-tour id="guidedtour" .data=${data} currentStepIndex=${currentStepIndex} ?show=${show} ?showStepInfo=${showStepInfo}>
-      <mwc-icon-button slot="skip-button" icon="logout"></mwc-icon-button>
-      <mwc-icon-button slot="next-button" icon="arrow_forward"></mwc-icon-button>
-      <mwc-icon-button slot="back-button" icon="arrow_back"></mwc-icon-button>
-      <mwc-icon-button slot="done-button" icon="check"></mwc-icon-button>
+      <fds-icon-button slot="skip-button" icon="logout"></fds-icon-button>
+      <fds-icon-button slot="next-button" icon="arrow_forward"></fds-icon-button>
+      <fds-icon-button slot="back-button" icon="arrow_back"></fds-icon-button>
+      <fds-icon-button slot="done-button" icon="check"></fds-icon-button>
     </fds-guided-tour>
     <fds-button data-tour="start" id="start" label="Start Tours"></fds-button>
   </div>`;

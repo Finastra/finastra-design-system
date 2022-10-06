@@ -52,3 +52,4 @@
 - [09/20/2022] Request release v0.0.44 by bcldvd 
 - [09/22/2022] Request release v1.0.0 by ttalbot 
 - [09/27/2022] Request release v1.0.1 by dorsaffrigui 
+- [10/06/2022] Request release v1.0.2 by dorsaffrigui 

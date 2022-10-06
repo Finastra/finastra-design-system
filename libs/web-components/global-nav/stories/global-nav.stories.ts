@@ -1,6 +1,7 @@
 import '@finastra/app-bar';
 import '@finastra/brand-card';
 import '@finastra/icon';
+import '@finastra/icon-button';
 import '@finastra/launchpad';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
@@ -119,7 +120,7 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
   </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
         <fds-launchpad
           .apps=${apps}
@@ -127,9 +128,9 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
         >
         </fds-launchpad>
 
-        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="search" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -137,7 +138,7 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
             <fds-button text fullwidth label="View profile"></fds-button>
           </div>
         </fds-user-profile>
-        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
       </fds-app-bar>
       <div class="main-content">
         <p>
@@ -220,7 +221,7 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
   </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
         <fds-button text label="Tab 1" slot="navigation"></fds-button>
         <fds-button text label="Tab 2" slot="navigation"></fds-button>
@@ -231,9 +232,9 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
         >
         </fds-launchpad>
 
-        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="search" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -241,7 +242,7 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
             <fds-button text fullwidth label="View profile"></fds-button>
           </div>
         </fds-user-profile>
-        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
       </fds-app-bar>
       <div class="main-content">
         <p>
@@ -313,7 +314,7 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
   </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
         <fds-launchpad
           .apps=${apps}
@@ -321,9 +322,9 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         >
         </fds-launchpad>
 
-        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="search" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -331,7 +332,7 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
             <fds-button text fullwidth label="View profile"></fds-button>
           </div>
         </fds-user-profile>
-        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
         <fds-button label="Logout" icon="logout" slot="actions"></fds-button>
       </fds-app-bar>
       <div class="main-content">
@@ -398,7 +399,7 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
   </div>
   <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
         <fds-launchpad
           .apps=${apps}
@@ -406,9 +407,9 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         >
         </fds-launchpad>
 
-        <mwc-icon-button icon="search" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="notifications_none" slot="actions"></mwc-icon-button>
-        <mwc-icon-button icon="help_outline" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="search" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -416,7 +417,7 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
             <fds-button text fullwidth label="View profile"></fds-button>
           </div>
         </fds-user-profile>
-        <mwc-icon-button icon="more_vert" slot="actions"></mwc-icon-button>
+        <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
         <fds-button label="Logout" icon="logout" slot="actions"></fds-button>
       </fds-app-bar>
       <div class="main-content">
