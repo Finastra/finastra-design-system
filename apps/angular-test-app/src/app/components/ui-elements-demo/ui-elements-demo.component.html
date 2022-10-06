@@ -580,25 +580,25 @@
     </mat-form-field>
   </form>
 
-    <div class="example-row">
-      <mat-form-field dense appearance="outline">
-        <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
+  <div class="example-row">
+    <mat-form-field dense appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 
-    <div class="example-row">
-      <mat-form-field dense appearance="outline">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" value="0" class="example-right-align" />
-        <span matPrefix>$&nbsp;</span>
-        <span matSuffix>.00</span>
-      </mat-form-field>
-    </div>
-    <br />
+  <div class="example-row">
+    <mat-form-field dense appearance="outline">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" value="0" class="example-right-align" />
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </div>
+  <br />
 
   <div class="example-row">
     <mat-form-field #ff2 dense appearance="outline">
@@ -717,53 +717,53 @@
   </div>
   <br />
   <h5 class="uxg-h5">Dense Inputs</h5>
-    <div class="example-row">
-      <mat-form-field dense appearance="fill">
-        <mat-label>This is label</mat-label>
-        <input matInput value="this is value" />
-      </mat-form-field>
-    </div>
-    <div class="example-row">
-      <mat-form-field dense appearance="fill">
-        <mat-icon color="primary" matPrefix dense>search</mat-icon>
-        <mat-label>This is label</mat-label>
-        <input matInput value="this is value" />
-      </mat-form-field>
-    </div>
-    <div class="example-row">
-      <mat-form-field dense appearance="fill">
-        <mat-label>Label</mat-label>
-        <input matInput />
-        <mat-hint>Helper text</mat-hint>
-      </mat-form-field>
-    </div>
-    <br />
-    <form class="example-row">
-      <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
-        <mat-icon color="primary" matPrefix dense>search</mat-icon>
-        <mat-label>Search...</mat-label>
-        <input type="search" matInput />
-      </mat-form-field>
-    </form>
+  <div class="example-row">
+    <mat-form-field dense appearance="fill">
+      <mat-label>This is label</mat-label>
+      <input matInput value="this is value" />
+    </mat-form-field>
+  </div>
+  <div class="example-row">
+    <mat-form-field dense appearance="fill">
+      <mat-icon color="primary" matPrefix dense>search</mat-icon>
+      <mat-label>This is label</mat-label>
+      <input matInput value="this is value" />
+    </mat-form-field>
+  </div>
+  <div class="example-row">
+    <mat-form-field dense appearance="fill">
+      <mat-label>Label</mat-label>
+      <input matInput />
+      <mat-hint>Helper text</mat-hint>
+    </mat-form-field>
+  </div>
+  <br />
+  <form class="example-row">
+    <mat-form-field dense floatLabel="never" class="example-full-width" appearance="fill">
+      <mat-icon color="primary" matPrefix dense>search</mat-icon>
+      <mat-label>Search...</mat-label>
+      <input type="search" matInput />
+    </mat-form-field>
+  </form>
 
-    <div class="example-row">
-      <mat-form-field dense appearance="fill">
-        <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-    <div class="example-row">
-      <mat-form-field dense appearance="fill">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" value="0" class="example-right-align" />
-        <span matPrefix>$&nbsp;</span>
-        <span matSuffix>.00</span>
-      </mat-form-field>
-    </div>
-    <br />
+  <div class="example-row">
+    <mat-form-field dense appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon dense>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="example-row">
+    <mat-form-field dense appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" value="0" class="example-right-align" />
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </div>
+  <br />
 
   <div class="example-row">
     <mat-form-field #ff2 dense appearance="fill">
