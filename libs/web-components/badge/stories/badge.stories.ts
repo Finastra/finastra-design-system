@@ -24,12 +24,9 @@ export default {
   decorators: [
     (story) => html`${story()}
 <style>
-  fds-badge span {
+  .fds-body-1 {
     font: var(--fds-body-1);
     color: var(--fds-on-background);
-  }
-  fds-badge fds-icon-button {
-    color: var(--fds-primary);
   }
 </style>`
   ]
@@ -37,7 +34,7 @@ export default {
 
 const Template: Story<Badge> = ({value, color, position,type }) => {
   return html`<fds-badge value=${value} color=${color} position=${position} type=${type}>
-  <span> Success </span>
+  <span class="fds-body-1"> Success </span>
 </fds-badge>
     `;
 };
