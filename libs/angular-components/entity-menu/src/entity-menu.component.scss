@@ -15,10 +15,20 @@
     }
 
     .solution-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: fds.$uxg-spacing-3;
+      
 
+      .grid-holder{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: fds.$uxg-spacing-3;
+        &.overflow{
+          overflow-y: auto;
+          overflow-x: hidden;
+          max-height: 400px;
+          padding-right: fds.$uxg-spacing-3;
+        }
+      }
+   
       .solution-item {
         display: flex;
         flex-direction: column;

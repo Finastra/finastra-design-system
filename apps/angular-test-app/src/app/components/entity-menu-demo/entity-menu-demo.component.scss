@@ -9,11 +9,14 @@ uxg-entity-menu {
 }
 mat-expansion-panel {
     width: 400px;
-    .description {
+     .description {
         overflow-wrap: break-word;
-    }
+    }   
 }
-
+.entity-menu-demo-fields{
+    display: flex;
+    flex-direction: column;
+}
 .documentation {
     width: 50%;
     border-collapse: collapse;

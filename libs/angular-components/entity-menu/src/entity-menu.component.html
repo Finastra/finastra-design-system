@@ -4,7 +4,8 @@
 
 <mat-menu #menu="matMenu" class="container-list">
   <h6 class="uxg-h6 solutions-title">{{ title || 'Title' }}</h6>
-  <div class="solution-list">
+  <div class="solution-list" >
+    <div class="grid-holder" [ngClass]="{'overflow' : overflow}">      
     <div
       *ngFor="let item of items"
       class="solution-item"
@@ -19,6 +20,8 @@
       </mat-card>
       <h5 class="uxg-subtitle-4 solution-name">{{ item.name || 'Solution Name' }}</h5>
     </div>
+    
+  </div>
   </div>
   <ng-content select="uxg-entity-menu-actions"></ng-content>
 </mat-menu>

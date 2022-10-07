@@ -109,16 +109,19 @@ export class EntityMenuDemoComponent implements OnInit {
   dataSource2 = PRODUCT_LIST;
   columns = CT_COLUMNS;
   columns2 = PR_COLUMNS;
+  isOverflow = false;
 
   currentTemplate: any = this.templatesData[0];
   title = this.currentTemplate.displayName;
   columnsExample = this.columns;
   dataSourceExample = this.dataSource;
   columnsMatcherExample = this.currentTemplate.columnsMatcher;
+  overflow = this.isOverflow;
 
   actionDescription!: string;
   actionEvent!: MouseEvent;
 
+  
   ngOnInit(): void {
     this.updateTemplate();
   }
@@ -132,17 +135,24 @@ export class EntityMenuDemoComponent implements OnInit {
     this.actionEvent = data.$event;
   }
 
-  updateTemplate() {
+  updateTemplate(event:any=null) {
+
+    this.overflow = (event && event.checked!==undefined ) ? event.checked : this.overflow;
+
     if (this.currentTemplate.dataSource === '1') {
-      this.dataSourceExample = this.dataSource;
+      this.dataSourceExample = this.overflow ? this.multiplyDataSource(this.dataSource) : this.dataSource;
       this.columnsExample = this.columns;
     } else {
-      this.dataSourceExample = this.dataSource2;
+      this.dataSourceExample = this.overflow ? this.multiplyDataSource(this.dataSource2) : this.dataSource2;
       this.columnsExample = this.columns2;
     }
 
     this.columnsMatcherExample = this.currentTemplate.columnsMatcher;
     this.title = this.currentTemplate.displayName;
+  }
+
+  multiplyDataSource(data:any){
+    return data.concat(data).concat(data);
   }
 
   updateColumnMatcher(data: any) {

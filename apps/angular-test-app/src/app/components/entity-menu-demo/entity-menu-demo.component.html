@@ -4,6 +4,7 @@
       <mat-panel-title> SELECT DATA </mat-panel-title>
     </mat-expansion-panel-header>
 
+    <div class="entity-menu-demo-fields">
     <mat-form-field>
       <mat-label>select data</mat-label>
       <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
@@ -22,6 +23,8 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-checkbox class="example-margin" (change)="updateTemplate($event)">No data limit</mat-checkbox>
+  </div>
     <div class="description" fxLayout="column" *ngIf="actionDescription">
       <h3>Output:</h3>
       <p>
@@ -36,6 +39,7 @@
   <uxg-entity-menu
     [title]="title"
     [data]="dataSourceExample"
+    [overflow]="overflow"
     [property]="columnsMatcherExample"
     [abbreviationLength]="length"
     (itemClick)="displayItem($event)"
