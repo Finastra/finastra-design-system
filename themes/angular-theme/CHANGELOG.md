@@ -6,10 +6,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [3.7.0](https://github.com/finastra/finastra-design-system/compare/v1.0.2...v3.7.0) (2022-10-07)
 
-
 ### Features
 
-* **textfield:** applying v2 outline style ([#883](https://github.com/finastra/finastra-design-system/issues/883)) ([1b3dc14](https://github.com/finastra/finastra-design-system/commit/1b3dc14fac5c55c8ba69b29e30c66cbdf98e2d5c))
+- **textfield:** applying v2 outline style ([#883](https://github.com/finastra/finastra-design-system/issues/883)) ([1b3dc14](https://github.com/finastra/finastra-design-system/commit/1b3dc14fac5c55c8ba69b29e30c66cbdf98e2d5c))
 
 ## [3.6.0](https://github.com/finastra/finastra-design-system/compare/v0.0.44...v3.6.0) (2022-09-26)
 
