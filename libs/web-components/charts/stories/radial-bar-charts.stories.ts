@@ -15,8 +15,10 @@ export default {
     width: '300px',
     height: '300px',
     data: [80],
-    labels: ['Confidence Score (%)'],
+    labels: ['Confidence Score'],
     color: 'categorical',
+    hideLabels: false,
+    totalLabel: 'Total'
   },
   parameters: {
     docs: {
@@ -30,13 +32,20 @@ export default {
 };
 
 const Template: Story<RadialBarChart> = (args) => {
-  return html`<fds-radial-bar-chart width=${args.width} height=${args.height} color=${args.color} .data=${args.data} .labels=${args.labels} ></fds-radial-bar-chart>`;
+  return html`<fds-radial-bar-chart width=${args.width} height=${args.height} total-label=${args.totalLabel} color=${args.color} .data=${args.data} .labels=${args.labels} ?hide-labels=${args.hideLabels}></fds-radial-bar-chart>`;
 };
 
 
 export const Default: Story<RadialBarChart> = Template.bind({});
 
-export const Sementic1: Story<RadialBarChart> = Template.bind({});
-Sementic1.args = {
-  color: 'semantic-1'
+export const HideLabel: Story<RadialBarChart> = Template.bind({});
+HideLabel.args = {
+  color: 'semantic-1',
+  hideLabels: true
+};
+
+export const Multi: Story<RadialBarChart> = Template.bind({});
+Multi.args = {
+  data: [84, 60, 90],
+  labels: ['Sales', 'Marketing', 'Designer']
 };
