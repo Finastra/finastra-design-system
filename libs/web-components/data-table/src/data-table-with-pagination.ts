@@ -3,11 +3,11 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { DATA_TABLE_EVENTS } from './constants';
 import './data-table';
-import { FdsTableColumn, FdsTableRow } from './data-table-base';
+import { FdsTableColumn, FdsTableRow } from './model';
 import './pagination/data-table-pagination';
 
 @customElement('fds-data-table-with-pagination')
-export class DataTableWithPagination extends LitElement{
+export class DataTableWithPagination extends LitElement {
 
     private pageSize = 5;
 
@@ -29,7 +29,15 @@ export class DataTableWithPagination extends LitElement{
 
     @property({
         type: Boolean
+    }) showSingleSelectRadioBox = false;
+
+    @property({
+        type: Boolean
     }) multiSelect = false;
+
+    @property({
+        type: Boolean
+    }) showMultiSelectCheckBox = false;
 
     @property({
         type: Number
@@ -38,14 +46,14 @@ export class DataTableWithPagination extends LitElement{
     private _pageSizeOptions: number[] = [];
     @property({
         type: Array
-    }) 
-    set pageSizeOptions(options){
+    })
+    set pageSizeOptions(options) {
         this._pageSizeOptions = options
-        if(options.length > 0) {
+        if (options.length > 0) {
             this.pageSize = options[0]
         }
-    } 
-    get pageSizeOptions(){
+    }
+    get pageSizeOptions() {
         return this._pageSizeOptions;
     }
 
@@ -56,47 +64,41 @@ export class DataTableWithPagination extends LitElement{
     private selected: FdsTableRow[] = [];
 
 
-    override render(){
+    override render() {
         return html`
         <div style="display:flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    place-content: flex-end flex-start;
-                    align-items: flex-end;
-                    ">
-            <fds-data-table
-                .dataSource=${this.getDataByPagination()}
-                .columns=${this.columns}
-                .columnsToDisplay=${this.columnsToDisplay}
-                .selectable=${this.selectable}
-                .multiSelect=${this.multiSelect}
-                @onFdsDataTableRowSelected=${this.onDataTableRowSelected}
-            >
+                            flex-direction: column;
+                            justify-content: center;
+                            place-content: flex-end flex-start;
+                            align-items: flex-end;
+                            ">
+            <fds-data-table .dataSource=${this.getDataByPagination()} .columns=${this.columns}
+                .columnsToDisplay=${this.columnsToDisplay} .selectable=${this.selectable}
+                .showSingleSelectRadioBox=${this.showSingleSelectRadioBox} .multiSelect=${this.multiSelect}
+                .showMultiSelectCheckBox=${this.showMultiSelectCheckBox} @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
             </fds-data-table>
-            <fds-data-table-pagination
-                .length=${this.dataSource.length}
-                .pageIndex=${this.pageIndex}
-                .pageSize=${this.pageSizeOptions.length > 0 ? this.pageSizeOptions[0] : 5}
+            <fds-data-table-pagination .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
+                .pageSize=${this.pageSizeOptions.length> 0 ? this.pageSizeOptions[0] : 5}
                 .pageSizeOptions=${this.pageSizeOptions}
                 .showFirstLastButtons=${this.showFirstLastButtons}
                 @onFdsPaginationChanged=${this.onDataTablePaginationChanged}
-            >
+                >
             </fds-data-table-pagination>
         </div>
           
         `
     }
-    getDataByPagination(){
+    getDataByPagination() {
         return [...this.dataSource].slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize)
     }
-    onDataTablePaginationChanged(e){
+    onDataTablePaginationChanged(e) {
         this.pageIndex = e.detail.pageIndex;
         this.pageSize = e.detail.pageSize;
         this.requestUpdate();
     }
-    onDataTableRowSelected(e){
+    onDataTableRowSelected(e) {
         this.selected = e.detail;
-        if(this.selectable){
+        if (this.selectable) {
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
                 bubbles: true,
                 composed: true,

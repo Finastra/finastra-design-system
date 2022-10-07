@@ -18,6 +18,10 @@
   },
   "dependencies": {
     "@finastra/icon": "1.0.1",
+    "@finastra/checkbox": "1.0.1",
+    "@finastra/chip": "1.0.1",
+    "@finastra/radio": "1.0.1",
+    "@finastra/linear-progress": "1.0.1",
     "@material/button": "13.0.0",
     "@material/data-table": "14.0.0",
     "@material/icon-button": "14.0.0",

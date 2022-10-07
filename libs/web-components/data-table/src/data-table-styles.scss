@@ -1,7 +1,9 @@
 @use '@finastra/fds-theme' as fds;
+@use "@material/checkbox";
 @use "@material/data-table/data-table";
 @use "@material/icon-button/icon-button";
 
+@include checkbox.core-styles;
 @include icon-button.core-styles;
 @include data-table.core-styles;
 @include data-table.theme-baseline;
@@ -43,7 +45,21 @@
     thead, tbody{
       display: table;
       table-layout: fixed;
-      width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+      width: calc( 100% - 1em );/* scrollbar is average 1em/16px width, remove it from thead width */
+      tr{
+        .mdc-data-table__cell--checkbox, 
+        .mdc-data-table__header-cell--checkbox, 
+        .mdc-data-table__header-cell--radiobox,
+        .mdc-data-table__cell--radiobox  {
+          min-width:  var(--fds-spacing-5, 48px);
+          width:  var(--fds-spacing-5, 48px);
+        }
+
+        .mdc-data-table__cell--radiobox,
+        .mdc-data-table__header-cell--radiobox{
+          width: 64px;
+        }
+      }
     }
     .mdc-data-table__content{
       max-height: 520px;
