@@ -134,8 +134,8 @@ export abstract class DataTableBase extends LitElement {
         }
         return html`
         <th class="mdc-data-table__header-cell 
-                                                ${headerType ? headerType : ''} 
-                                                ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
+                                                                ${headerType ? headerType : ''} 
+                                                                ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
             role="columnheader" scope="col" data-column-id=${column.id}>
         
             ${column.sortable ? html`
@@ -146,8 +146,8 @@ export abstract class DataTableBase extends LitElement {
                 </div>
         
                 <mwc-icon-button class="mdc-icon-button 
-                                                        material-icons mdc-data-table__sort-icon-button 
-                                                        fds-data-table-sort-icon"
+                                                                        material-icons mdc-data-table__sort-icon-button 
+                                                                        fds-data-table-sort-icon"
                     aria-label="Sort by ${column.displayName ? column.displayName : column.name}"
                     aria-describedby="${column.id}-status-label" icon="${this._getSortIcon(column.id)}">
                 </mwc-icon-button>
@@ -251,7 +251,10 @@ export abstract class DataTableBase extends LitElement {
     }
 
     private _onRowSelected(row: FdsTableRow) {
-        if (this.showMultiSelectCheckBox || this.showSingleSelectRadioBox) return;
+        if (!this.selectable ||
+            (this.selectable && this.multiSelect && this.showMultiSelectCheckBox) ||
+            (this.showSingleSelectRadioBox && this.selectable && !this.multiSelect)
+        ) return;
         if (this.selectable && !this.multiSelect) {
             const rowToDeselect = this._dataSource.find(dataItem => dataItem._fdsSelected && dataItem._fdsRowId !== row._fdsRowId);
             if (rowToDeselect) {
