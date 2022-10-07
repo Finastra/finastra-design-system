@@ -1,8 +1,8 @@
 import "@finastra/checkbox";
 import "@finastra/chip";
+import "@finastra/icon-button";
 import "@finastra/linear-progress";
 import "@finastra/radio";
-import "@material/icon-button";
 import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { DATA_TABLE_EVENTS, FDS_TABLE_DATA_ROW_PREFIX, FDS_TABLE_HEADER_CHECKBOX, FDS_TABLE_RADIO_GROUP, FDS_TABLE_ROW_CHECKBOX_SUFFIX, FDS_TABLE_ROW_RADIO_SUFFIX } from "./constants";
@@ -145,12 +145,10 @@ export abstract class DataTableBase extends LitElement {
                     ${column.displayName ? column.displayName : column.name}
                 </div>
         
-                <mwc-icon-button class="mdc-icon-button 
-                                                                        material-icons mdc-data-table__sort-icon-button 
-                                                                        fds-data-table-sort-icon"
+                <fds-icon-button class="fds-data-table-sort-icon"
                     aria-label="Sort by ${column.displayName ? column.displayName : column.name}"
                     aria-describedby="${column.id}-status-label" icon="${this._getSortIcon(column.id)}">
-                </mwc-icon-button>
+                </fds-icon-button>
                 <div class="mdc-data-table__sort-status-label" aria-hidden="true" id="carbs-status-label"></div>
             </div>`
             : column.displayName ? column.displayName : column.name}

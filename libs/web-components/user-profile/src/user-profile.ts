@@ -1,6 +1,6 @@
 import '@finastra/avatar';
 import '@finastra/divider';
-import '@material/mwc-icon-button';
+import '@finastra/icon-button';
 import '@material/mwc-menu';
 import { Menu } from '@material/mwc-menu';
 import { html, LitElement } from 'lit';
@@ -44,7 +44,7 @@ export class UserProfile extends LitElement {
   public divider = true;
 
   render() {
-    return html` <mwc-icon-button @click="${this._showMenu}" id="anchor" aria-label="avatar button"> ${renderAvatarSVG()} </mwc-icon-button>
+    return html` <fds-icon-button @click="${this._showMenu}" id="anchor" aria-label="avatar button"> ${renderAvatarSVG()} </fds-icon-button>
       <mwc-menu id="menu" fullwidth>
         ${this.dense
           ? html`
