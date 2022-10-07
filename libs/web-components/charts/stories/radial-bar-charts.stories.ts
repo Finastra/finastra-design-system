@@ -9,7 +9,11 @@ export default {
   title: 'DATA DISPLAY/Charts/Radial Bar Chart',
   component: 'fds-radial-bar-chart',
   argTypes: {
-    color: argTypes.color
+    data: argTypes.data,
+    color: argTypes.color,
+    height: argTypes.height,
+    labels: argTypes.labels,
+    width: argTypes.width
   },
   args: {
     width: '300px',
