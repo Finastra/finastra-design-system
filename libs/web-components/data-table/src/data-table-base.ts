@@ -217,11 +217,13 @@ export abstract class DataTableBase extends LitElement {
             rowPrexFixCell.push(
                 html`
                 <td class="mdc-data-table__cell mdc-data-table__cell--radiobox">
-                    <fds-radio @change=${()=> this._onRadioButtonSelected(row)}
-                        name=${FDS_TABLE_RADIO_GROUP}
-                        id=${row._fdsRowId + FDS_TABLE_ROW_RADIO_SUFFIX}
-                        ?checked=${row._fdsSelected}
-                        ></fds-radio>
+                    <div class="mdc-data-table__cell--radiobox-container">
+                        <fds-radio @change=${()=> this._onRadioButtonSelected(row)}
+                            name=${FDS_TABLE_RADIO_GROUP}
+                            id=${row._fdsRowId + FDS_TABLE_ROW_RADIO_SUFFIX}
+                            ?checked=${row._fdsSelected}
+                            ></fds-radio>
+                    </div>
                 </td>`
             );
         }

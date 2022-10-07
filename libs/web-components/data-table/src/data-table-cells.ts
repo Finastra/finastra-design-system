@@ -55,7 +55,7 @@ export class FdsTableCellStore {
     private _getLinearProgressTemplate(progress: FdsTableLinearProgress) {
         const data = this._getPercentageNumber(progress);
         return html`
-            <div>
+            <div class="fds-data-table-linear-progress">
                 <span>${data.percentage}</span>
                 <fds-linear-progress .progress=${data.number}></fds-linear-progress>
             </div>

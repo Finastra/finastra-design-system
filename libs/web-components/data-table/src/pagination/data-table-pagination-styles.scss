@@ -1,10 +1,8 @@
 @use '@finastra/fds-theme' as fds;
-@use "@material/icon-button/icon-button"; // Required only for data table with column sorting.
 @use "@material/data-table/data-table";
 @use "@material/data-table/data-table-pagination";
-@use '@material/mwc-button/styles';
 
-@include icon-button.core-styles;
+
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 @include data-table-pagination.core-styles;

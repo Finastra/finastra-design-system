@@ -44,7 +44,7 @@ export abstract class DataTablePaginationBase extends LitElement {
                         <div class="mdc-data-table__pagination-rows-per-page-label">
                             Rows per page
                         </div>
-                        <fds-select dense class="fds-select" value="${this.pageSize ? this.pageSize : this.pageSizeOptions[0]}">
+                        <fds-select dense class="fds-select" value="${this.pageSize ? this.pageSize : this.pageSizeOptions[0]}" .outlined=${false}>
                             ${this.getPageSizeOptionsItems(this.pageSizeOptions)}
                         </fds-select>
                     </div>

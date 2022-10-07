@@ -236,10 +236,12 @@
     dataTable.columns = columns;
     dataTable.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls', 'Revenue', 'Status', 'Confidence Score'];
     dataTable.selectable = true;
-    dataTable.multiSelect = true;
-    dataTable.showMultiSelectCheckBox = true;
     // dataTable.multiSelect = false;
     // dataTable.showSingleSelectRadioBox = true;
+    dataTable.multiSelect = true;
+    dataTable.showMultiSelectCheckBox = true;
+
+
     dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {
         console.log(e.detail);
         document.querySelector('#fds-data-table-selected-rows').innerHTML = JSON.stringify(e.detail, null, 2);

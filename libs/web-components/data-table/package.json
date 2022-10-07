@@ -24,6 +24,7 @@
     "@finastra/chip": "1.0.2",
     "@finastra/radio": "1.0.2",
     "@finastra/linear-progress": "1.0.2",
+    "@material/data-table": "14.0.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

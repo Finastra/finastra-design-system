@@ -1,10 +1,6 @@
 @use '@finastra/fds-theme' as fds;
-@use "@material/checkbox";
 @use "@material/data-table/data-table";
-@use "@material/icon-button/icon-button";
 
-@include checkbox.core-styles;
-@include icon-button.core-styles;
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 @include data-table.table-styles;
@@ -27,54 +23,86 @@
   @include fds.mdc(text-field-error-color, error);
   @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
 
-  .fds-data-table{
-    .mdc-data-table__table{
-      thead,tbody tr{
-        th, td, fds-icon-button{
+  .fds-data-table {
+    .mdc-data-table__table {
+
+      thead,
+      tbody tr {
+
+        th,
+        td,
+        fds-icon-button {
           @include fds.text-color(on-background);
         }
       }
-      .mdc-data-table__row--selected{
+
+      .mdc-data-table__row--selected {
         background-color: var(--fds-surface-selected);
-    }
+      }
     }
   }
 }
-.fds-data-table{
-  .mdc-data-table__table{
-    thead, tbody{
+
+.fds-data-table {
+  .mdc-data-table__table {
+
+    thead,
+    tbody {
       display: table;
       table-layout: fixed;
-      width: calc( 100% - 1em );/* scrollbar is average 1em/16px width, remove it from thead width */
-      tr{
-        .mdc-data-table__cell--checkbox, 
-        .mdc-data-table__header-cell--checkbox, 
+      width: calc(100% - 1em);
+
+      /* scrollbar is average 1em/16px width, remove it from thead width */
+      tr {
+
+        .mdc-data-table__cell--checkbox,
+        .mdc-data-table__header-cell--checkbox,
         .mdc-data-table__header-cell--radiobox,
-        .mdc-data-table__cell--radiobox  {
-          min-width:  var(--fds-spacing-5, 48px);
-          width:  var(--fds-spacing-5, 48px);
+        .mdc-data-table__cell--radiobox {
+          min-width: var(--fds-spacing-5, 48px);
+          width: var(--fds-spacing-5, 48px);
         }
 
-        .mdc-data-table__cell--radiobox,
-        .mdc-data-table__header-cell--radiobox{
-          width: 64px;
+        .mdc-data-table__cell--radiobox{
+          .mdc-data-table__cell--radiobox-container {
+            display: flex;
+            place-content: center;
+          }
         }
       }
     }
-    .mdc-data-table__content{
+
+    .mdc-data-table__content {
       max-height: 520px;
       display: block;
       overflow-y: auto;
+
       .mdc-data-table__row {
         display: table;
         width: 100%;
-        table-layout: fixed;/* even columns width , fix width of table too*/
+        table-layout: fixed;
+
+        /* even columns width , fix width of table too*/
+        .mdc-data-table__cell {
+
+          //customzied column css should be centralized here
+          .fds-data-table-linear-progress {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            fds-linear-progress {
+              width: 100%;
+            }
+          }
+        }
       }
     }
   }
 
-  .mdc-data-table__header-cell{
-    .fds-data-table-sort-icon{
+  .mdc-data-table__header-cell {
+    .fds-data-table-sort-icon {
       --mdc-icon-button-size: 24px;
       --mdc-ripple-color: transparent;
     }
