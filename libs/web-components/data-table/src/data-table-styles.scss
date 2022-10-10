@@ -22,8 +22,9 @@
   @include fds.mdc(ripple-color, surface-selected);
   @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
-  @include fds.mdc(text-field-error-color, error);
   @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-error-color, error);
+
 
   .fds-data-table{
     .mdc-data-table__table{
