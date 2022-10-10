@@ -28,6 +28,7 @@ $stepper-bg: var(--fds-surface);
   position: relative;
   flex-direction: column;
   display: flex;
+  padding-right: var(--fds-spacing-5, 48px);
 }
 
 .stepper-container {
@@ -46,7 +47,7 @@ $stepper-bg: var(--fds-surface);
 .actions {
   display: flex;
   justify-content: space-between;
-  padding: var(--fds-spacing-3, 16px);
+  padding: var(--fds-spacing-4, 24px);
   @include fds.property(background, surface);
   .left,
   .right,
