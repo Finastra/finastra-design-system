@@ -22,7 +22,7 @@ $stepper-bg: var(--fds-surface);
 }
 .content {
   @include fds.property(background, surface);
-  flex: 1 1 100%;
+  flex: 1 1 90%;
   box-sizing: border-box;
   max-width: 100%;
   position: relative;
@@ -35,8 +35,12 @@ $stepper-bg: var(--fds-surface);
   flex: 1 1 30%;
   box-sizing: border-box;
   background: var(--fds-stepper-bg, $stepper-bg);
-  padding: var(--fds-spacing-3, 16px) 0 var(--fds-spacing-3, 16px) 32px;
+  padding: var(--fds-spacing-5, 48px) 0 var(--fds-spacing-3, 16px) 64px;
   overflow: scroll;
+
+  .steps-counter {
+    @include fds.typography(headline-5);
+  }
 }
 
 .actions {
@@ -53,8 +57,7 @@ $stepper-bg: var(--fds-surface);
 
     slot[name="right-action"]::slotted(*),
     slot[name="left-action"]::slotted(*),
-    slot[name="previous"]::slotted(*)
-    {
+    slot[name="previous"]::slotted(*) {
       margin-right: var(--fds-spacing-3, 16px);
     }
   }
@@ -67,4 +70,3 @@ $stepper-bg: var(--fds-surface);
   height: 100%;
   overflow-y: auto;
 }
-

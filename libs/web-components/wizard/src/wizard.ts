@@ -23,6 +23,7 @@ export interface Page {
   * @cssprop {color} [--fds-icon-bg=#fafafa] - Header icon background color
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
   * @attr [currentStepIndex=0] - Index of current active step.
+  * @attr {boolean} [stepsCounter=false] - make the step counter visible in the stepper.
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
     It is Used with the fds-wizard-page web component that could contain: 
   - title: to define a title to the step
@@ -31,7 +32,6 @@ export interface Page {
   - disabled : to disable the step
   - header: to enable the header display (default is false)
   - current: to set the step to current
-  - stepsCounter: to make the step counter visible in the header
   * @slot next - Slot to place an element that manages the transition to the next step.
   * @slot previous - Slot to place an element that manages the transition to the previous step.
   * @slot save - Slot to place an element that appears in the last step. The developer could add his own logic in the onClick Event.
@@ -46,7 +46,9 @@ export class Wizard extends LitElement {
 
   @query('#stepper') protected stepper!: HTMLElement;
 
-  
+  @property({ type: Boolean })
+  stepsCounter = false;
+
   /**
    * @type {"left"|"right"} stepperPositon - Stepper postion
    */
@@ -101,11 +103,19 @@ export class Wizard extends LitElement {
 
   renderStepper(): TemplateResult {
     return html`
-      <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
+         <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
+         ${this.stepsCounter ? this.renderCounterInStepper() : ''}
         <fds-vertical-stepper label-mode="center" .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
       </div>`
   }
 
+  renderCounterInStepper(): TemplateResult {
+    return html`
+      <div class="steps-counter">
+        Steps ${this.updateStepsCounter(this.currentStepIndex)}
+      </div>
+    `
+  }
   renderActions(): TemplateResult {
     return html`
       <div class="actions">
@@ -142,6 +152,7 @@ export class Wizard extends LitElement {
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+      this.stepper.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
       steps.push({
         'label': page.getAttribute('title') as string,
         'description': page.getAttribute('description') as string,
@@ -251,6 +262,7 @@ export class Wizard extends LitElement {
   UpdatePage() {
     (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
     (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+    this.stepper.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
   _handleNextClick() {
