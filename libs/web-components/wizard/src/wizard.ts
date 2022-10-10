@@ -24,6 +24,7 @@ export interface Page {
   * @attr {boolean} [stepperOnDark=false] - Stepper on dark
   * @attr [currentStepIndex=0] - Index of current active step.
   * @attr {boolean} [stepsCounter=false] - make the step counter visible in the stepper.
+  * @attr {"topLeft"|"topRight"|"center"} stepperPosition - Stepper position
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
     It is Used with the fds-wizard-page web component that could contain: 
   - title: to define a title to the step
