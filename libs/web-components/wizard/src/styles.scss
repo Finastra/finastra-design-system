@@ -1,7 +1,7 @@
 @use "@finastra/fds-theme" as fds;
 @use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
 
-$stepper-bg: var(--fds-background);
+$stepper-bg: var(--fds-surface);
 
 :host {
   display: block;
@@ -11,10 +11,10 @@ $stepper-bg: var(--fds-background);
   width: 100%;
 }
 .wizard {
-  flex-direction: row;
   display: flex;
   width: 100%;
   height: 100%;
+  flex-direction: column;
 }
 .pages {
   overflow-y: auto;
@@ -59,3 +59,12 @@ $stepper-bg: var(--fds-background);
     }
   }
 }
+
+.wizard-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+

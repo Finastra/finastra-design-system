@@ -81,20 +81,22 @@ export class Wizard extends LitElement {
   render() {
     return html`
       <div class="wizard">
+        <div class="wizard-container">
         ${this.stepperPosition === 'left' ?
-         html`${this.renderStepper()} <fds-divider vertical></fds-divider>` : ''}
+         html`${this.renderStepper()}` : ''}
         <div class='content'>
           <div class="pages">
             <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
           </div>
-          <div class="footer">
-            <fds-divider></fds-divider>
-            ${this.renderActions()}
-          </div>
         </div>
         ${this.stepperPosition === 'right' ?
         html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
-      </div>`;
+      </div>
+      <div class="footer">
+            <fds-divider></fds-divider>
+            ${this.renderActions()}
+    </div>
+    </div>`;
   }
 
   renderStepper(): TemplateResult {
