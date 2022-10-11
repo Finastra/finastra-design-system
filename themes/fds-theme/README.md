@@ -32,6 +32,8 @@ If you are coding in **SASS** you have 3 different ways to load the theme of you
 @use '@finastra/fds-theme/light';
 //or
 @use '@finastra/fds-theme/dark';
+//or
+@use '@finastra/fds-theme/all-themes';
 ```
 
 - By using **mixins** directly inside your container
@@ -43,6 +45,8 @@ If you are coding in **SASS** you have 3 different ways to load the theme of you
     @include fds.use-light-theme();
     //or
     @include fds.use-dark-theme();
+    //or
+    @include fds.use-all-themes();
   }
 ```
 
@@ -52,12 +56,14 @@ If you are coding in **SASS** you have 3 different ways to load the theme of you
 @use '@finastra/fds-theme/light' with ($class: 'light-theme');
 //or
 @use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+//or
+@use '@finastra/fds-theme/all-themes' with ($class: 'my-container');
 ```
 
 > Note that you should use the same class name in your html
 
 ```HTML
-<my-container class="light-theme"></my-container>
+<div class="light-theme"></div>
 ```
 
 ### Using a pre-built theme
