@@ -20,7 +20,7 @@
     "@finastra/avatar": "1.0.2",
     "@finastra/divider": "1.0.2",
     "@finastra/icon-button": "1.0.2",
-    "@material/mwc-menu": "0.26.1",
+    "@finastra/menu": "1.0.2",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

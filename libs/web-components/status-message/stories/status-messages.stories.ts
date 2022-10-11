@@ -1,6 +1,6 @@
 import '@finastra/button';
+import '@finastra/icon';
 import '@finastra/textfield';
-import '@material/mwc-icon';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 
@@ -131,7 +131,7 @@ const Template: Story = ({status, statusIcon, title, description, icon, label, i
   return html`
   <section class="message-body">
     <div class="message-icon-container ${status}">
-      <mwc-icon class="message-icon ${status}">${statusIcon}</mwc-icon>
+      <fds-icon class="message-icon ${status}">${statusIcon}</fds-icon>
     </div>
     <div class="message-title">${title}</div>
     <div class="message-description">${description}</div>
