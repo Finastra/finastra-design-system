@@ -1,7 +1,7 @@
 @use "@finastra/fds-theme" as fds;
 @use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
 
-$stepper-bg: var(--fds-surface);
+$stepper-bg: transparent;
 
 :host {
   display: block;
@@ -21,7 +21,6 @@ $stepper-bg: var(--fds-surface);
   height: 100%;
 }
 .content {
-  @include fds.property(background, surface);
   flex: 1 1 90%;
   box-sizing: border-box;
   max-width: 100%;
@@ -50,7 +49,6 @@ $stepper-bg: var(--fds-surface);
   display: flex;
   justify-content: space-between;
   padding: var(--fds-spacing-4, 24px);
-  @include fds.property(background, surface);
   .left,
   .right,
   .content {
