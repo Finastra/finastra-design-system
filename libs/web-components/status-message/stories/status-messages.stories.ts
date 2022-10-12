@@ -131,7 +131,7 @@ const Template: Story = ({status, statusIcon, title, description, icon, label, i
   return html`
   <section class="message-body">
     <div class="message-icon-container ${status}">
-      <fds-icon class="message-icon ${status}">${statusIcon}</fds-icon>
+      <fds-icon large class="message-icon ${status}">${statusIcon}</fds-icon>
     </div>
     <div class="message-title">${title}</div>
     <div class="message-description">${description}</div>
@@ -160,7 +160,7 @@ LinkSent.args = {
 export const FailedLogin: Story = Template.bind({});
 FailedLogin.args = {
   status: Status.Error,
-  statusIcon: 'error',
+  statusIcon: 'error_outline',
   title: 'We failed to log you.',
   label: 'Retry',
   icon: 'refresh',
@@ -170,7 +170,7 @@ FailedLogin.args = {
 export const PageNotFound: Story = Template.bind({});
 PageNotFound.args = {
   status: Status.Error,
-  statusIcon: 'error',
+  statusIcon: 'error_outline',
   title: 'Page not found',
   hasAction: false,
   image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_notfound_seulkw.svg'
