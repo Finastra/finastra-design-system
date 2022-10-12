@@ -4,24 +4,27 @@
       <mat-panel-title> SELECT DATA </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <mat-form-field>
-      <mat-label>select data</mat-label>
-      <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
-        <mat-option *ngFor="let template of templatesData" [value]="template">
-          {{ template.displayName }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="entity-menu-demo-fields">
+      <mat-form-field>
+        <mat-label>select data</mat-label>
+        <mat-select [(ngModel)]="currentTemplate" [value]="currentTemplate" (selectionChange)="updateTemplate()">
+          <mat-option *ngFor="let template of templatesData" [value]="template">
+            {{ template.displayName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>select field</mat-label>
-      <mat-select (selectionChange)="updateColumnMatcher($event.value)" [(value)]="columnsMatcherExample">
-        <mat-option *ngFor="let column of columnsExample" [value]="column.title">
-          {{ column.title }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>select field</mat-label>
+        <mat-select (selectionChange)="updateColumnMatcher($event.value)" [(value)]="columnsMatcherExample">
+          <mat-option *ngFor="let column of columnsExample" [value]="column.title">
+            {{ column.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
+      <mat-checkbox class="example-margin" (change)="updateTemplate($event)">No data limit</mat-checkbox>
+    </div>
     <div class="description" fxLayout="column" *ngIf="actionDescription">
       <h3>Output:</h3>
       <p>
@@ -36,6 +39,7 @@
   <uxg-entity-menu
     [title]="title"
     [data]="dataSourceExample"
+    [overflow]="overflow"
     [property]="columnsMatcherExample"
     [abbreviationLength]="length"
     (itemClick)="displayItem($event)"
@@ -48,14 +52,10 @@
 
 <h2>Description</h2>
 The entity-menu component is a floating panel containing list of options.
-<p>
-  it takes mainly a <code>data</code> (datasource) and a <code>title</code> as input and displays the options in cards.
-</p>
+<p>it takes mainly a <code>data</code> (datasource) and a <code>title</code> as input and displays the options in cards.</p>
 <p>If you want to :</p>
 <p>- Match a datasource column with one of your template data, you should provide <code>columnsMatcher</code> input.</p>
-<p>
-  - Change the abbreviation length of the options' title, you should modify the <code>abbreviationLength</code> input.
-</p>
+<p>- Change the abbreviation length of the options' title, you should modify the <code>abbreviationLength</code> input.</p>
 <h2>Inputs</h2>
 <table class="documentation">
   <tbody>
@@ -88,6 +88,12 @@ The entity-menu component is a floating panel containing list of options.
       <td>number</td>
       <td>1</td>
       <td>The number of initials you want to extract from the title</td>
+    </tr>
+    <tr>
+      <td>overflow</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Allow the data to exceed 9 items</td>
     </tr>
   </tbody>
 </table>
