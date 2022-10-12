@@ -41,6 +41,8 @@ $stepper-bg: var(--fds-surface);
 
   .steps-counter {
     @include fds.typography(headline-5);
+    @include fds.property(color, on-background);
+    padding-bottom: var(--fds-spacing-3, 16px);
   }
 }
 

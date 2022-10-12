@@ -96,8 +96,8 @@ export class Wizard extends LitElement {
         html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
       </div>
       <div class="footer">
-            <fds-divider></fds-divider>
-            ${this.renderActions()}
+        <fds-divider></fds-divider>
+        ${this.renderActions()}
     </div>
     </div>`;
   }
@@ -113,7 +113,7 @@ export class Wizard extends LitElement {
   renderCounterInStepper(): TemplateResult {
     return html`
       <div class="steps-counter">
-        Steps ${this.updateStepsCounter(this.currentStepIndex)}
+        Step ${this.updateStepsCounter(this.currentStepIndex)}
       </div>
     `
   }

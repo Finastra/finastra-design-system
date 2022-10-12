@@ -13,7 +13,7 @@ $icon-border-color: var(--fds-surface-selected);
   display: flex;
   position: relative;
   background: var(--fds-header-bg, $header-bg);
-  margin: 48px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
+  margin: 40px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
   border-radius: var(--fds-spacing-1, 8px);
   padding: var(--fds-spacing-3, 16px);
 }
