@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '16'
       - name: Cache Node.js modules
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}-
+          with:
+            path: ${{ steps.npm-cache-dir.outputs.dir }}
+            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-node-
 
       # Setup
       - name: Install Dependencies
