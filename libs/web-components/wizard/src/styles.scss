@@ -32,11 +32,11 @@ $stepper-bg: transparent;
 
 .stepper-container {
   z-index: 1;
+  overflow: scroll;
   flex: 1 1 30%;
   box-sizing: border-box;
   background: var(--fds-stepper-bg, $stepper-bg);
   padding: var(--fds-spacing-5, 48px) 0 var(--fds-spacing-3, 16px) 64px;
-  overflow: scroll;
 
   .steps-counter {
     @include fds.typography(headline-5);
