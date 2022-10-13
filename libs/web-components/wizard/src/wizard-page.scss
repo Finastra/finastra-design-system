@@ -13,7 +13,7 @@ $icon-border-color: var(--fds-surface-selected);
   display: flex;
   position: relative;
   background: var(--fds-header-bg, $header-bg);
-  margin: var(--fds-spacing-3, 16px) var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
+  margin: 40px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
   border-radius: var(--fds-spacing-1, 8px);
   padding: var(--fds-spacing-3, 16px);
 }
@@ -55,7 +55,7 @@ fds-chip {
 }
 .page-container {
   @include fds.property(color, on-background);
-  padding: 72px 0px 32px var(--fds-spacing-5, 48px);
+  padding: 72px var(--fds-spacing-5, 48px) 32px var(--fds-spacing-5, 48px);
 }
 
 :host([current]) {
