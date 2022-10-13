@@ -11,7 +11,7 @@
   "devDependencies": {
     "sass": "1.33.0"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@material/elevation": "^13.0.0"
   },
   "scripts": {
