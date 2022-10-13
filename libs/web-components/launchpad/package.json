@@ -18,8 +18,8 @@
   "dependencies": {
     "@finastra/brand-card": "1.0.2",
     "@finastra/button": "1.0.2",
+    "@finastra/menu": "1.0.2",
     "@finastra/menu-trigger": "1.0.2",
-    "@material/mwc-menu": "0.26.1",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

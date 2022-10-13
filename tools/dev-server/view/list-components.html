@@ -1,10 +1,10 @@
-<mwc-list class="list-components">
+<fds-list class="list-components">
   <% pkgs.forEach(function(pkg){ %>
   <a href="<%=pkg.demoPath%>">
-    <mwc-list-item graphic="icon">
+    <fds-list-item graphic="icon">
       <%=pkg.name%>
-      <mwc-icon slot="graphic"><%=pkg.icon%></mwc-icon>
-    </mwc-list-item>
+      <fds-icon slot="graphic"><%=pkg.icon%></fds-icon>
+    </fds-list-item>
   </a>
   <% }); %>
-</mwc-list>
+</fds-list>
