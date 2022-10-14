@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [3.7.2](https://github.com/finastra/finastra-design-system/compare/v3.7.0...v3.7.2) (2022-10-14)
 
-
 ### Bug Fixes
 
-* **form-field:** error background too large for appearance outline ([#900](https://github.com/finastra/finastra-design-system/issues/900)) ([29f8b47](https://github.com/finastra/finastra-design-system/commit/29f8b4790159d5002e85f9f385332f2b4b620d30))
+- **form-field:** error background too large for appearance outline ([#900](https://github.com/finastra/finastra-design-system/issues/900)) ([29f8b47](https://github.com/finastra/finastra-design-system/commit/29f8b4790159d5002e85f9f385332f2b4b620d30))
 
 ### [3.7.1](https://github.com/finastra/finastra-design-system/compare/v3.7.0...v3.7.1) (2022-10-07)
 
