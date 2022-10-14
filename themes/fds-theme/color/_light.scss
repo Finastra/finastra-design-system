@@ -38,10 +38,10 @@ $properties: (
   surface-info: color.change($primary, $alpha: 0.03),
   surface-warning: color.change($error, $alpha: 0.02),
   outline: $outline,
-  outline-success: color.change($success, $alpha: 0.5)
-  outline-error: color.change($error, $alpha: 0.5)
-  outline-info: color.change($primary, $alpha: 0.4)
-  outline-warning: color.change($warning, $alpha: 0.3)
+  outline-success: color.change($success, $alpha: 0.5),
+  outline-error: color.change($error, $alpha: 0.5),
+  outline-info: color.change($primary, $alpha: 0.4),
+  outline-warning: color.change($warning, $alpha: 0.3),
   success: $success,
   error: $error,
   info: $primary,
