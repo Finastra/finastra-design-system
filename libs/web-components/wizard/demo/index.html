@@ -1,10 +1,12 @@
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard.js"></script>
 <script type="module" src="node_modules/@finastra/wizard/dist/src/wizard-page.js"></script>
+<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
 <script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
-<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
-<script type="module" src="node_modules/@finastra/button/dist/src/outlined-button.js"></script>
 <script type="module" src="node_modules/@finastra/button/dist/src/text-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/outlined-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
 
+<div>
 <fds-wizard id="wizard">
   <fds-text-button slot='left-action' label="Cancel" secondary>
   </fds-text-button>
@@ -27,7 +29,7 @@
     </div>
   </fds-wizard-page>
 
-  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" header>
+  <fds-wizard-page slot="page" title="Preferences" description="Preferences page" disabled header>
     <p>put your content here</p>
   </fds-wizard-page>
 
@@ -36,13 +38,65 @@
   </fds-wizard-page>
 </fds-wizard>
 
+<fds-wizard linear id="wizard">
+  <fds-text-button slot='left-action' label="Cancel" secondary>
+  </fds-text-button>
+  <fds-outlined-button slot='next' label="Next" secondary>
+  </fds-outlined-button>
+  <fds-text-button slot='previous' label="Back" secondary icon="chevron_left">
+  </fds-text-button>
+  <fds-button slot='done' label="Save" secondary>
+  </fds-button>
+  <fds-wizard-page slot="page" title="Welcome" description="Welcome page" header id="page1">
+    <div class="page-content">
+      <div class="textfields">
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+        <fds-textfield id="hey" label="Last name" icontrailing="" helper="helper text"></fds-textfield>
+      </div>
+      <div class="image">
+        <img src="https://i.imgur.com/otY5WR9.png" />
+      </div>
+      <fds-button label="validate" onclick="complete1()">
+
+      </fds-button>
+    </div>
+  </fds-wizard-page>
+
+  <fds-wizard-page disabled slot="page" title="Preferences"  description="Preferences page" header id="page2">
+    <p>put your content here</p>
+    <fds-button label="validate" onclick="complete2()">
+    </fds-button>
+  </fds-wizard-page>
+
+  <fds-wizard-page slot="page" title="Confirmation" description="Confirmation page" header>
+    <p>put your content here</p>
+  </fds-wizard-page>
+</fds-wizard>
+</div>
+
 <style>
   fds-wizard {
     height: 600px;
     width: 1000px;
+    padding-bottom: 20%;
   }
 
   .page-content {
     display: flex;
   }
 </style>
+
+<script>
+    const page1 = document.querySelector('#page1');
+    const page2 = document.querySelector('#page2');
+
+    function complete1() {
+      page1.setAttribute("completed",'true');
+    }
+
+    function complete2() {
+      console.log("validate");
+      page2.setAttribute("completed",'true');
+    }
+</script>
