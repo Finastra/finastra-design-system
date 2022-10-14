@@ -1,7 +1,5 @@
 @use './mixins';
 
-@include mixins.use-light-theme();
+$class: ':root' !default;
 
-@media (prefers-color-scheme: dark) {
-    @include mixins.use-dark-theme();
-}
+@include mixins.use-all-themes($class);

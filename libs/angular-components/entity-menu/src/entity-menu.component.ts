@@ -1,13 +1,4 @@
-import {
-  Component,
-  ViewEncapsulation,
-  Input,
-  Output,
-  EventEmitter,
-  OnInit,
-  SimpleChanges,
-  OnChanges
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 export interface EntityMenuItemWEvent {
   value: any;
@@ -26,14 +17,15 @@ export class EntityMenuComponent implements OnInit, OnChanges {
   @Input() title = '';
   @Input() property?: string;
   @Input() abbreviationLength = 3;
+  @Input() overflow = false;
 
   @Output() itemClick = new EventEmitter<EntityMenuItemWEvent>();
 
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data || changes.property) {
-      this.items = this.mapData(this.data.slice(0, 9), this.property);
+    if (changes.data || changes.property || changes.overflow) {
+      this.items = this.overflow ? this.mapData(this.data, this.property) : this.mapData(this.data.slice(0, 9), this.property);
     }
   }
 
