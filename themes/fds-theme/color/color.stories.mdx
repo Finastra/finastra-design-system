@@ -65,10 +65,19 @@ export const TemplateCustomProp = (args) => {
 | `--fds-surface-hover`       | Surface hover color (default primary 4% opacity)      |
 | `--fds-surface-selected`    | Surface selected color (default primary 8% opacity)   |
 | `--fds-surface-disabled`    | Surface disabled color (default #000000 12% opacity)  |
-| `--fds-surface-error`       | Surface error color (default error 4% opacity)        |
+| `--fds-surface-success`     | Surface success color (default success 3% opacity)    |
+| `--fds-surface-error`       | Surface error color (default error 3% opacity)        |
+| `--fds-surface-info`        | Surface info color (default primary 3% opacity)       |
+| `--fds-surface-warning`     | Surface warning color (default warning 2% opacity)    |
 | `--fds-outline`             | Outline color (default #000000 12% opacity)           |
+| `--fds-outline-success`     | Outline success color (default success 50% opacity)   |
+| `--fds-outline-error`       | Outline error color (default error 50% opacity)       |
+| `--fds-outline-info`        | Outline info color (default primary 40% opacity)      |
+| `--fds-outline-warning`     | Outline warning color (default warning 30% opacity)   |
 | `--fds-success`             | Success color (default #008744)                       |
 | `--fds-error`               | Error color (default #E40046)                         |
+| `--fds-info`                | Info color (default primary)                          |
+| `--fds-warning`             | Warning color (default #FF600A)                       |
 | `--fds-gradient`            | Linear gradient of primary and secondary              |
 | `--fds-gradient-vertical`   | Linear gradient of primary and secondary              |
 | `--fds-gradient-horizontal` | 90 degree linear gradient of primary and secondary    |
@@ -173,10 +182,19 @@ will generate
 | `surface-hover`       | Surface hover color (default primary 4% opacity)      |
 | `surface-selected`    | Surface selected color (default primary 8% opacity)   |
 | `surface-disabled`    | Surface disabled color (default #000000 12% opacity)  |
-| `surface-error`       | Surface error color (default error 4% opacity)        |
+| `surface-success`     | Surface success color (default success 3% opacity)    |
+| `surface-error`       | Surface error color (default error 3% opacity)        |
+| `surface-info`        | Surface info color (default primary 3% opacity)       |
+| `surface-warning`     | Surface warning color (default warning 2% opacity)    |
 | `outline`             | Outline color (default #000000 12% opacity)           |
+| `outline-success`     | Outline success color (default success 50% opacity)   |
+| `outline-error`       | Outline error color (default error 50% opacity)       |
+| `outline-info`        | Outline info color (default primary 40% opacity)      |
+| `outline-warning`     | Outline warning color (default warning 30% opacity)   |
 | `success`             | Success color (default #008744)                       |
 | `error`               | Error color (default #E40046)                         |
+| `info`                | Info color (default primary)                          |
+| `warning`             | Warning color (default #FF600A)                       |
 | `gradient`            | Linear gradient of primary and secondary              |
 | `gradient-vertical`   | Linear gradient of primary and secondary              |
 | `gradient-horizontal` | 90 degree linear gradient of primary and secondary    |
@@ -256,12 +274,23 @@ export const TemplateHelper = (args) => {
 | `.fds-surface-hover`          | Surface hover color (default primary 4% opacity)           |
 | `.fds-surface-selected`       | Surface selected color (default primary 8% opacity)        |
 | `.fds-surface-disabled`       | Surface disabled color (default #000000 12% opacity)       |
-| `.fds-surface-error`          | Surface error color (default error 4% opacity)             |
+| `.fds-surface-success`        | Surface success color (default success 3% opacity)         |
+| `.fds-surface-error`          | Surface error color (default error 3% opacity)             |
+| `.fds-surface-info`           | Surface info color (default primary 3% opacity)            |
+| `.fds-surface-warning`        | Surface warning color (default warning 2% opacity)         |
 | `.fds-outline`                | Used for border-color                                      |
+| `.fds-outline-success`        | Outline success color (default success 50% opacity)        |
+| `.fds-outline-error`          | Outline error color (default error 50% opacity)            |
+| `.fds-outline-info`           | Outline info color (default primary 40% opacity)           |
+| `.fds-outline-warning`        | Outline warning color (default warning 30% opacity)        |
 | `.fds-success`                | Used for text success feedback                             |
 | `.fds-success-bg`             | Used for container's background success feedback           |
 | `.fds-error`                  | Used for text error feedback                               |
 | `.fds-error-bg`               | Used for container's background error feedback             |
+| `.fds-info`                   | Used for text info feedback                                |
+| `.fds-info-bg`                | Used for container's background info feedback              |
+| `.fds-warning`                | Used for text warning feedback                             |
+| `.fds-warning-bg`             | Used for container's background warning feedback           |
 | `.fds-gradient`               | Used for text written in gradient                          |
 | `.fds-gradient-bg`            | Used for container's background in gradient                |
 | `.fds-gradient-vertical`      | Used for text written in gradient                          |
