@@ -24,12 +24,10 @@ jobs:
       - name: Cache Node.js modules
         uses: actions/cache@v3
         with:
-          with:
-            path: ${{ steps.npm-cache-dir.outputs.dir }}
-            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-node-
-
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       # Setup
       - name: Install Dependencies
         run: npm ci --loglevel=error
