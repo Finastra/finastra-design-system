@@ -9,9 +9,6 @@ export default {
   title: 'FORMS/Wizard',
   component: 'fds-wizard',
   argTypes,
-  args: {
-    stepperPosition: POSITION.left
-  },
   parameters: {
     docs: {
       description: { component: README }
@@ -51,8 +48,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIndex, linear }) => {
-  return html`<fds-wizard .stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark} .currentStepIndex=${currentStepIndex} ?linear=${linear}>
+const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIndex, stepsCounter }) => {
+  return html`<fds-wizard stepperPosition=${stepperPosition} ?stepperOnDark=${stepperOnDark} .currentStepIndex=${currentStepIndex} ?stepsCounter=${stepsCounter} >
   <fds-outlined-button slot='next' label="Next" secondary>
   </fds-outlined-button>
   <fds-text-button slot='left-action' label="Cancel" secondary>

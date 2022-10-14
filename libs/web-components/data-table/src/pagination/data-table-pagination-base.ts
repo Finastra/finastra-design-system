@@ -1,5 +1,5 @@
+import "@finastra/icon-button";
 import "@finastra/select";
-import "@material/icon-button";
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { PAGINATION_EVENTS } from "../constants";
@@ -57,13 +57,13 @@ export abstract class DataTablePaginationBase extends LitElement {
                     </span>
                     
                     ${this.showFirstLastButtons ?
-                html`<mwc-icon-button icon="first_page"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(0)}></mwc-icon-button>` : ``}
+                html`<fds-icon-button icon="first_page"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(0)}></fds-icon-button>` : ``}
                     
-                    <mwc-icon-button icon="chevron_left"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(this.pageIndex - 1)}></mwc-icon-button>
-                    <mwc-icon-button icon="chevron_right"   .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(this.pageIndex + 1)}></mwc-icon-button>
+                    <fds-icon-button icon="chevron_left"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(this.pageIndex - 1)}></fds-icon-button>
+                    <fds-icon-button icon="chevron_right"   .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(this.pageIndex + 1)}></fds-icon-button>
                     
                     ${this.showFirstLastButtons ?
-                html`<mwc-icon-button icon="last_page"  .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(Math.floor(this.length / this.pageSize))}></mwc-icon-button>` : ``}
+                html`<fds-icon-button icon="last_page"  .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(Math.floor(this.length / this.pageSize))}></fds-icon-button>` : ``}
                     
                 </div>
             </div>

@@ -1,0 +1,14 @@
+@use '@finastra/fds-theme' as fds;
+
+.apexcharts-datalabels-group {
+
+  .apexcharts-datalabel-value {
+    @include fds.typography(headline-2);
+    @include fds.fill(on-background);
+  }
+
+  .apexcharts-datalabel-label {
+    @include fds.typography(body-3);
+    @include fds.fill(on-surface-medium);
+  }
+}

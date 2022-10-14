@@ -10,8 +10,8 @@ uxg-table {
     height: 100%;
     
     .uxg-data-table {
-        max-height: none;
         max-width: inherit;
+        max-height: none;
         overflow: auto;
     }
 
