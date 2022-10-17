@@ -43,6 +43,22 @@
     }
 }
 
+/// Loads the light and dark theme custom properties inside your container.
+///
+/// @example
+///   @use '@finastra/fds-theme' as fds;
+///     .my-container {
+///        @include fds.use-all-themes();
+///     }
+@mixin use-all-themes($class: null) {
+    @include wrap($class) {
+        @include custom-properties(scheme.light());
+        @media (prefers-color-scheme: dark) {
+            @include custom-properties(scheme.dark());
+        }
+    }
+}
+
 /// Use this mixin to include any content block inside your class or root.
 ///
 /// @param {string} $class - The class name to validate
@@ -71,7 +87,7 @@
         @error 'You must specify a name to your class';
     }
 
-    @if string.index($class, '.') != 1 and $class != ':root' and $class != 'root' {
+    @if string.index($class, '.') != 1 and string.index($class, ':') != 1 {
         $class: '.' + $class;
     }
 

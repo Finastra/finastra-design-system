@@ -43,13 +43,15 @@
     .mat-form-field-ripple {
       background-color: map.get($primary, default);
     }
+
+    &.mat-form-field-invalid {
+      .mat-form-field-flex {
+        background-color: $error-background;
+      }
+    }
   }
 
   .mat-form-field.mat-form-field-invalid {
-    .mat-form-field-flex {
-      background-color: $error-background;
-    }
-
     .mat-input-element {
       caret-color: map.get($error, default);
     }

@@ -11,6 +11,7 @@ $surface: #242424 !default;
 $outline: color.change($_white, $alpha: 0.12) !default;
 $success: #26D07C !default;
 $error: #FF1A5E !default;
+$warning: #FF880A !default;
 $gradient: linear-gradient(var(--fds-primary, #917EE0), var(--fds-secondary, #E453BF)) !default;
 $on-primary: #000000 !default;
 $on-secondary: #000000 !default;
@@ -32,10 +33,19 @@ $properties: (
   surface-hover: color.change($primary, $alpha: 0.04),
   surface-selected: color.change($primary, $alpha: 0.08),
   surface-disabled: color.change($_white, $alpha: 0.12),
+  surface-success: color.change($success, $alpha: 0.03),
   surface-error: color.change($error, $alpha: 0.04),
+  surface-info: color.change($primary, $alpha: 0.03),
+  surface-warning: color.change($warning, $alpha: 0.02),
   outline: $outline,
+  outline-success: color.change($success, $alpha: 0.5),
+  outline-error: color.change($error, $alpha: 0.5),
+  outline-info: color.change($primary, $alpha: 0.4),
+  outline-warning: color.change($warning, $alpha: 0.3),
   success: $success,
   error: $error,
+  info: $primary,
+  warning: $warning,
   gradient: $gradient,
   gradient-horizontal: string.insert($gradient, '90deg ,', string.index($gradient, '(') + 1),
   gradient-vertical: $gradient,
