@@ -1,6 +1,7 @@
 const README = require('../README.md');
 import '@finastra/list';
 import type { List } from '@finastra/list';
+import '@material/mwc-icon';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-list.json';
@@ -37,28 +38,28 @@ const BasicTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Application</slot>
-      <fds-icon slot="graphic">settings</fds-icon>
-      <fds-icon slot="meta">chevron_right</fds-icon>
+      <mwc-icon slot="graphic">settings</mwc-icon>
+      <mwc-icon slot="meta">chevron_right</mwc-icon>
     </fds-list-item>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Appearance</slot>
-      <fds-icon slot="graphic">settings</fds-icon>
-      <fds-icon slot="meta">chevron_right</fds-icon>
+      <mwc-icon slot="graphic">settings</mwc-icon>
+      <mwc-icon slot="meta">chevron_right</mwc-icon>
     </fds-list-item>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Services / Packages</slot>
-      <fds-icon slot="graphic">settings</fds-icon>
-      <fds-icon slot="meta">chevron_right</fds-icon>
+      <mwc-icon slot="graphic">settings</mwc-icon>
+      <mwc-icon slot="meta">chevron_right</mwc-icon>
     </fds-list-item>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Data Sources</slot>
-      <fds-icon slot="graphic">settings</fds-icon>
-      <fds-icon slot="meta">chevron_right</fds-icon>
+      <mwc-icon slot="graphic">settings</mwc-icon>
+      <mwc-icon slot="meta">chevron_right</mwc-icon>
     </fds-list-item>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Accounts</slot>
-      <fds-icon slot="graphic">settings</fds-icon>
-      <fds-icon slot="meta">chevron_right</fds-icon>
+      <mwc-icon slot="graphic">settings</mwc-icon>
+      <mwc-icon slot="meta">chevron_right</mwc-icon>
     </fds-list-item>
   </fds-list>`;
 };
@@ -67,11 +68,11 @@ const DefaultTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item graphic="avatar" ?noninteractive=${noninteractive}>
       <span>Add more widgets</span>
-      <fds-icon slot="graphic">library_add</fds-icon>
+      <mwc-icon slot="graphic">library_add</mwc-icon>
     </fds-list-item>
     <fds-list-item graphic="avatar" ?noninteractive=${noninteractive}>
       <span>Watch tutorials</span>
-      <fds-icon slot="graphic">movie</fds-icon>
+      <mwc-icon slot="graphic">movie</mwc-icon>
     </fds-list-item>
   </fds-list>`;
 };
@@ -79,28 +80,28 @@ const DefaultTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
 const TwoLineTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item twoline graphic="icon" hasMeta>
-      <fds-icon slot="graphic">credit_card</fds-icon>
+      <mwc-icon slot="graphic">credit_card</mwc-icon>
       <span>Bank Transfer</span>
       <span slot="secondary">US7893 55669 KO566 778</span>
       <span class="transaction income" slot="meta">+ $ 2,563.45</span>
     </fds-list-item>
     <fds-divider></fds-divider>
     <fds-list-item twoline graphic="icon" hasMeta>
-      <fds-icon slot="graphic">credit_card</fds-icon>
+      <mwc-icon slot="graphic">credit_card</mwc-icon>
       <span>Loan car</span>
       <span slot="secondary">US7893 55669 KO566 778</span>
       <span class="transaction" slot="meta">- $ 643.12</span>
     </fds-list-item>
     <fds-divider></fds-divider>
     <fds-list-item twoline graphic="icon" hasMeta>
-      <fds-icon slot="graphic">credit_card</fds-icon>
+      <mwc-icon slot="graphic">credit_card</mwc-icon>
       <span>Travel agency</span>
       <span slot="secondary">US7893 55669 KO566 778</span>
       <span class="transaction" slot="meta">- $ 1,823.78</span>
     </fds-list-item>
     <fds-divider></fds-divider>
     <fds-list-item twoline graphic="icon" hasMeta>
-      <fds-icon slot="graphic">credit_card</fds-icon>
+      <mwc-icon slot="graphic">credit_card</mwc-icon>
       <span>Refund</span>
       <span slot="secondary">US7893 55669 KO566 778</span>
       <span class="transaction income" slot="meta">+ $ 356.45</span>
