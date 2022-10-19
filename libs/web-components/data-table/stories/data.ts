@@ -49,7 +49,6 @@ export const ELEMENT_DATA = [
             currency: '€',
             amount: 4
         },
-        _class: 'hello',
         Status: {
             label: 'Denied'
         },

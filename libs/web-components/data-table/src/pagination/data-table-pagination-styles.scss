@@ -23,9 +23,7 @@
 
             .mdc-data-table__pagination-rows-per-page{
                 fds-select{
-                    --mdc-select-outlined-idle-border-color: transparent;
-                    --mdc-notched-outline-border-color: transparent;
-                    --mdc-ripple-color: transparent;
+                    max-width: 100px;
                 }
             }
     
