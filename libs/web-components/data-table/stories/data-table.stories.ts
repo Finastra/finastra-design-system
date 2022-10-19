@@ -130,8 +130,8 @@ const Template: Story<DataTable> = ({
 };
 
 
-export const Default: Story<DataTable> = Template.bind({});
-export const Dense: Story<DataTable> = Template.bind({});
+export const DataTableDefault: Story<DataTable> = Template.bind({});
+export const DataTableDense: Story<DataTable> = Template.bind({});
 Dense.args = {
   dense: true
 };

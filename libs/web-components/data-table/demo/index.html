@@ -17,7 +17,10 @@
 
     const ELEMENT_DATA = [
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 1',
             'Date Time': '01-10-2019',
             'Day of Week': 'Monday',
@@ -36,7 +39,10 @@
             // _style: 'background: red'
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 2',
             'Date Time': '02-01-2019',
             'Day of Week': 'Monday',
@@ -54,7 +60,10 @@
             "Confidence Score": '50%'
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 3',
             'Date Time': '03-01-2019',
             'Day of Week': 'Monday',
@@ -72,7 +81,10 @@
             "Confidence Score": 0
         },
         {
-            API: 'Exchange Rates',
+            API:{
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 4',
             'Date Time': '04-01-2019',
             'Day of Week': 'Monday',
@@ -90,7 +102,10 @@
             "Confidence Score": 0.9
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 5',
             'Date Time': '05-01-2019',
             'Day of Week': 'Monday',
@@ -108,7 +123,10 @@
             "Confidence Score": 1
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 6',
             'Date Time': '06-01-2019',
             'Day of Week': 'Monday',
@@ -126,7 +144,10 @@
             "Confidence Score": 0.7
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 7',
             'Date Time': '07-01-2019',
             'Day of Week': 'Monday',
@@ -144,7 +165,10 @@
             "Confidence Score": 0.3
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 8',
             'Date Time': '08-01-2019',
             'Day of Week': 'Monday',
@@ -162,7 +186,10 @@
             "Confidence Score": 0.8
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 9',
             'Date Time': '09-01-2019',
             'Day of Week': 'Monday',
@@ -180,7 +207,10 @@
             "Confidence Score": 0.8
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 10',
             'Date Time': '10-01-2019',
             'Day of Week': 'Monday',
@@ -198,7 +228,10 @@
             "Confidence Score": 0.8
         },
         {
-            API: 'Exchange Rates',
+            API: {
+                text: 'Exchange Rates',
+                link: 'https://design.fusionfabric.cloud'
+            },
             'End Point': 'End point 11',
             'Date Time': '11-01-2019',
             'Day of Week': 'Monday',
@@ -219,10 +252,8 @@
 
 
     const columns = [
-        { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api', 
-        // _style: 'background: red' 
-        },
-        { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true },
+        { id: 'API', name: 'API', type: 'link', align: 'center', displayName: 'Display Api' },
+        { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true,         _style: 'font-weight: bold'  },
         { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
         { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
         { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },

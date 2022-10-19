@@ -48,3 +48,8 @@ export interface FdsTableChip{
 // number should between [0, 1], 
 // accept type: number: 0.8 or string: '80%'
 export type FdsTableLinearProgress = number | string;
+
+export interface FdsTableLink {
+    text: string;
+    link: string;
+}

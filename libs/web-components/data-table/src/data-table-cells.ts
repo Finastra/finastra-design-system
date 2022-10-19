@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { FdsColumnType, FdsTableChip, FdsTableColumn, FdsTableLinearProgress, FdsTableRow, FdsTableTypeDouble } from "./model";
+import { FdsColumnType, FdsTableChip, FdsTableColumn, FdsTableLinearProgress, FdsTableLink, FdsTableRow, FdsTableTypeDouble } from "./model";
 
 export class FdsTableCellStore {
     private _row: FdsTableRow;
@@ -38,6 +38,8 @@ export class FdsTableCellStore {
                 return this._getLinearProgressTemplate(this._row[this._column.id]);
             case FdsColumnType.chip:
                 return this._getChipTemplate(this._row[this._column.id]);
+            case FdsColumnType.link:
+                return this._getLinkTemplate(this._row[this._column.id]);
             default:
                 return this._row[this._column.id];
         }
@@ -64,6 +66,16 @@ export class FdsTableCellStore {
             </div>
         `;
     }
+
+    private _getLinkTemplate(link: FdsTableLink){
+        return html`
+            <a class="fds-data-table-link"
+                @click=${() => window.open(link.link, '_blank')}>
+                <span>${link.text}</span>
+            </a>
+        `
+    }
+
     private _getPercentageNumber(progress: FdsTableLinearProgress) {
         let percentage: string;
         let number: number;
