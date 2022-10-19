@@ -61,6 +61,10 @@ export class DataTableWithPagination extends LitElement {
         type: Boolean
     }) showFirstLastButtons = false;
 
+    @property({
+        type: Boolean
+    }) dense = false;
+
     private selected: FdsTableRow[] = [];
 
 
@@ -72,12 +76,16 @@ export class DataTableWithPagination extends LitElement {
                             place-content: flex-end flex-start;
                             align-items: flex-end;
                             ">
-            <fds-data-table .dataSource=${this.getDataByPagination()} .columns=${this.columns}
+            <fds-data-table
+                ?dense='${this.dense}'
+                .dataSource=${this.getDataByPagination()} .columns=${this.columns}
                 .columnsToDisplay=${this.columnsToDisplay} .selectable=${this.selectable}
                 .showSingleSelectRadioBox=${this.showSingleSelectRadioBox} .multiSelect=${this.multiSelect}
                 .showMultiSelectCheckBox=${this.showMultiSelectCheckBox} @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
             </fds-data-table>
-            <fds-data-table-pagination .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
+            <fds-data-table-pagination 
+                ?dense='${this.dense}'
+                .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
                 .pageSize=${this.pageSizeOptions.length> 0 ? this.pageSizeOptions[0] : 5}
                 .pageSizeOptions=${this.pageSizeOptions}
                 .showFirstLastButtons=${this.showFirstLastButtons}

@@ -5,8 +5,8 @@
     <div>Default</div>
 
     <div class="card">
-        <fds-data-table id="fds-data-table"></fds-data-table>
-        <fds-data-table-pagination id="fds-data-table-pagination"></fds-data-table-pagination>
+        <fds-data-table dense id="fds-data-table"></fds-data-table>
+        <fds-data-table-pagination dense id="fds-data-table-pagination"></fds-data-table-pagination>
     </div>
     <div>
         <label id="fds-data-table-selected-rows"></label>
@@ -32,7 +32,8 @@
             Status: {
                 label: 'Approved'
             },
-            "Confidence Score": 0.8
+            "Confidence Score": 0.8,
+            // _style: 'background: red'
         },
         {
             API: 'Exchange Rates',
@@ -219,7 +220,9 @@
 
 
     const columns = [
-        { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api' },
+        { id: 'API', name: 'API', type: 'string', align: 'center', displayName: 'Display Api', 
+        // _style: 'background: red' 
+        },
         { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true },
         { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
         { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },

@@ -76,6 +76,15 @@ export default {
         }
       }
     },
+    dense: {
+      type: 'boolean',
+      description: 'show table in a smaller size',
+      table: {
+        defaultValue: {
+          summary: false
+        }
+      }
+    }
   },
   args: {
     dataSource: dataTableDataSource,
@@ -84,7 +93,8 @@ export default {
     selectable: true,
     showSingleSelectRadioBox: false,
     multiSelect: false,
-    showMultiSelectCheckBox: false
+    showMultiSelectCheckBox: false,
+    dense: false
   },
   parameters: {
     actions: {
@@ -107,10 +117,13 @@ const Template: Story<DataTable> = ({
   selectable = true,
   showSingleSelectRadioBox = false,
   multiSelect = true,
-  showMultiSelectCheckBox = true
+  showMultiSelectCheckBox = true,
+  dense = false
 }) => {
   return html`
-  <fds-data-table .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay}
+  <fds-data-table 
+    ?dense='${dense}'
+    .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay}
     .selectable=${selectable} .showSingleSelectRadioBox=${showSingleSelectRadioBox} .multiSelect=${multiSelect}
     .showMultiSelectCheckBox=${showMultiSelectCheckBox}></fds-data-table>
   `
@@ -118,3 +131,7 @@ const Template: Story<DataTable> = ({
 
 
 export const Default: Story<DataTable> = Template.bind({});
+export const Dense: Story<DataTable> = Template.bind({});
+Dense.args = {
+  dense: true
+};

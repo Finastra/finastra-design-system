@@ -99,6 +99,15 @@ export default {
           }
       }
     },
+    dense: {
+      type: 'boolean',
+      description: 'show table in a smaller size',
+      table: {
+        defaultValue: {
+          summary: false
+        }
+      }
+    }
   },
   args: {
     dataSource: dataTableDataSource,
@@ -109,7 +118,8 @@ export default {
     multiSelect: false,
     showMultiSelectCheckBox: false,
     pageSizeOptions: demoPageSizeOptions,
-    showFirstLastButtons: showFirstLastButtons
+    showFirstLastButtons: showFirstLastButtons,
+    dense: false
   },
   parameters: {
     actions: {
@@ -137,9 +147,11 @@ const Template: Story<DataTableWithPagination> = (
     showMultiSelectCheckBox = true,
     pageSizeOptions= demoPageSizeOptions,
     showFirstLastButtons = true,
+    dense = false
   }) => {
 
   return html`<fds-data-table-with-pagination
+                ?dense='${dense}'
                 .dataSource=${dataSource}
                 .columns=${columns}
                 .columnsToDisplay=${columnsToDisplay}
@@ -152,3 +164,8 @@ const Template: Story<DataTableWithPagination> = (
               ></fds-data-table-with-pagination>`
 }
 export const DataTableComponentWithPagination: Story<DataTableWithPagination> = Template.bind({});
+
+export const Dense: Story<DataTableWithPagination> = Template.bind({});
+Dense.args = {
+  dense: true
+};

@@ -15,25 +15,47 @@
     fds-icon-button{
         @include fds.text-color(on-background);
     }
-}
+    .fds-data-table-pagination.mdc-data-table__pagination {
+        border: 0px;
+    
+        .mdc-data-table__pagination-trailing {
+            flex-wrap: nowrap !important;
 
-.fds-data-table-pagination.mdc-data-table__pagination {
-    border: 0px;
-
-    .mdc-data-table__pagination-trailing {
-        flex-wrap: nowrap !important;
-
-        .mdc-data-table__pagination-total {
-            min-width: 80px;
-        }
-
-        .mdc-data-table__pagination-navigation {
-            fds-icon-button {
-                --mdc-ripple-color: transparent;
+            .mdc-data-table__pagination-rows-per-page{
+                fds-select{
+                    --mdc-select-outlined-idle-border-color: transparent;
+                    --mdc-notched-outline-border-color: transparent;
+                    --mdc-ripple-color: transparent;
+                }
+            }
+    
+            .fds-pagination-text{
+                @include fds.typography(subtitle-1);
+                @include fds.text-color(on-surface);
+            }
+    
+            .mdc-data-table__pagination-total {
+                min-width: 80px;
+            }
+    
+            .mdc-data-table__pagination-navigation {
+                fds-icon-button {
+                    --mdc-ripple-color: transparent;
+                }
             }
         }
     }
-    .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__pagination-total {
-        @include fds.text-color(on-background);
+}
+
+
+
+:host([dense]){
+    .fds-data-table-pagination.mdc-data-table__pagination{
+        .mdc-data-table__pagination-trailing {
+            .fds-pagination-text{
+                @include fds.typography(subtitle-3);
+            }
+        }
     }
 }
+

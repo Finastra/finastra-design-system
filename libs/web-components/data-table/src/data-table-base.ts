@@ -47,6 +47,8 @@ export abstract class DataTableBase extends LitElement {
         type: Boolean
     }) showMultiSelectCheckBox = false;
 
+    @property({ type: Boolean }) dense = false;
+
     private _columnsData = {};
     private _sortColumnId = '';
     private _sortDirection: FdsColumnSortDirection = FdsColumnSortDirection.none;
@@ -102,6 +104,7 @@ export abstract class DataTableBase extends LitElement {
                 html`      
                 <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
                     <fds-checkbox id=${FDS_TABLE_HEADER_CHECKBOX} @change=${(event)=> this._tableHeaderCheckboxChanged(event)}
+                        ?dense='${this.dense}'
                         color="primary"
                         aria-label="Select all rows"
                         >
@@ -114,7 +117,7 @@ export abstract class DataTableBase extends LitElement {
             headerCells.push(
                 html`
                 <th class="mdc-data-table__header-cell mdc-data-table__header-cell--radiobox" role="columnheader" scope="col">
-                    <fds-radio style="display: none;"></fds-radio>
+                    <fds-radio style="display: none;" ?dense='${this.dense}'></fds-radio>
                 </th>`
             )
         }
@@ -136,7 +139,8 @@ export abstract class DataTableBase extends LitElement {
         <th class="mdc-data-table__header-cell 
                                                                 ${headerType ? headerType : ''} 
                                                                 ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
-            role="columnheader" scope="col" data-column-id=${column.id}>
+            role="columnheader" scope="col" data-column-id=${column.id}
+            style=${column._style}>
         
             ${column.sortable ? html`
             <div class="mdc-data-table__header-cell-wrapper" @click=${()=> this._sortByColumn(column.id)}>
@@ -146,6 +150,7 @@ export abstract class DataTableBase extends LitElement {
                 </div>
         
                 <fds-icon-button class="fds-data-table-sort-icon"
+                    ?dense='${this.dense}'
                     aria-label="Sort by ${column.displayName ? column.displayName : column.name}"
                     aria-describedby="${column.id}-status-label" icon="${this._getSortIcon(column.id)}">
                 </fds-icon-button>
@@ -194,7 +199,8 @@ export abstract class DataTableBase extends LitElement {
         rowCells = [...rowPrefixCells, ...rowDataCells];
         return html`
         <tr class="mdc-data-table__row ${this.selectable && row._fdsSelected ? 'mdc-data-table__row--selected' : ''}"
-            id="${row._fdsRowId}" @click=${()=> this._onRowSelected(row)}>
+            id="${row._fdsRowId}" @click=${()=> this._onRowSelected(row)}
+            style=${row._style}>
             ${rowCells}
         </tr>`
     }
@@ -206,6 +212,7 @@ export abstract class DataTableBase extends LitElement {
                 html`
                 <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
                     <fds-checkbox @change=${(event)=> this._tableRowCheckboxChanged(event, row)}
+                        ?dense='${this.dense}'
                         id=${row._fdsRowId + FDS_TABLE_ROW_CHECKBOX_SUFFIX}
                         ?checked=${row._fdsSelected}
                         ></fds-checkbox>
@@ -219,6 +226,7 @@ export abstract class DataTableBase extends LitElement {
                 <td class="mdc-data-table__cell mdc-data-table__cell--radiobox">
                     <div class="mdc-data-table__cell--radiobox-container">
                         <fds-radio @change=${()=> this._onRadioButtonSelected(row)}
+                            ?dense='${this.dense}'
                             name=${FDS_TABLE_RADIO_GROUP}
                             id=${row._fdsRowId + FDS_TABLE_ROW_RADIO_SUFFIX}
                             ?checked=${row._fdsSelected}
@@ -231,7 +239,7 @@ export abstract class DataTableBase extends LitElement {
     }
 
     private _getDataTableCell(row: FdsTableRow, column: FdsTableColumn) {
-        const tableCellStore = new FdsTableCellStore(row, column);
+        const tableCellStore = new FdsTableCellStore(row, column, this.dense);
         return tableCellStore.getTableDataCellTemplate();
     }
 

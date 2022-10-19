@@ -3,6 +3,7 @@ export enum FdsColumnType {
     string = 'string',
     number = 'number',
     date = 'date',
+    link = 'link',
     typedouble = 'typedouble',
     cellTemplate = 'cellTemplate',
     checkbox = 'checkbox',
@@ -22,11 +23,16 @@ export interface FdsTableColumn {
     align?: 'left' | 'right' | 'center'; // text align in cell
     displayName?: string;
     sortable: boolean; // can sort this column;
+    bold?: boolean;
+    _style?: string; // customized style for one column
 }
-
+export interface FdsTableDataItem {
+    _style?: string;  // customized style for one row
+}
 export interface FdsTableRow {
     _fdsSelected?: boolean,
     _fdsRowId?: string
+    _style?: string;
 }
 
 export interface FdsTableTypeDouble {

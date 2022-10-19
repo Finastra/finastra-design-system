@@ -33,6 +33,8 @@ export abstract class DataTablePaginationBase extends LitElement {
         type: Boolean
     }) showFirstLastButtons = false;
 
+    @property({type: Boolean}) dense = false;
+
     override render() {
         const maxPageIdx = Math.floor(this.length / this.pageSize);
         return html`
@@ -41,10 +43,10 @@ export abstract class DataTablePaginationBase extends LitElement {
                 ${this.pageSizeOptions.length > 0 ?
                 html`
                     <div class="mdc-data-table__pagination-rows-per-page">
-                        <div class="mdc-data-table__pagination-rows-per-page-label">
+                        <div class="mdc-data-table__pagination-rows-per-page-label fds-pagination-text">
                             Rows per page
                         </div>
-                        <fds-select dense class="fds-select" value="${this.pageSize ? this.pageSize : this.pageSizeOptions[0]}" .outlined=${false}>
+                        <fds-select ?dense='${this.dense}' value="${this.pageSize ? this.pageSize : this.pageSizeOptions[0]}" ?outlined='${false}'>
                             ${this.getPageSizeOptionsItems(this.pageSizeOptions)}
                         </fds-select>
                     </div>
@@ -52,18 +54,18 @@ export abstract class DataTablePaginationBase extends LitElement {
             }
  
                 <div class="mdc-data-table__pagination-navigation">
-                    <span class="mdc-data-table__pagination-total mdc-typography mdc-typography--body2">
+                    <span class="mdc-data-table__pagination-total mdc-typography mdc-typography--body2 fds-pagination-text">
                     ${this.pageIndex * this.pageSize + 1} - ${Math.min(this.pageIndex * this.pageSize + 1 + this.pageSize - 1, this.length)} of ${this.length}
                     </span>
                     
                     ${this.showFirstLastButtons ?
-                html`<fds-icon-button icon="first_page"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(0)}></fds-icon-button>` : ``}
+                html`<fds-icon-button icon="first_page" ?dense='${this.dense}' .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(0)}></fds-icon-button>` : ``}
                     
-                    <fds-icon-button icon="chevron_left"  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(this.pageIndex - 1)}></fds-icon-button>
-                    <fds-icon-button icon="chevron_right"   .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(this.pageIndex + 1)}></fds-icon-button>
+                    <fds-icon-button icon="chevron_left" ?dense='${this.dense}'  .disabled=${this.pageIndex <= 0} @click=${() => this.goToPage(this.pageIndex - 1)}></fds-icon-button>
+                    <fds-icon-button icon="chevron_right" ?dense='${this.dense}'  .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(this.pageIndex + 1)}></fds-icon-button>
                     
                     ${this.showFirstLastButtons ?
-                html`<fds-icon-button icon="last_page"  .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(Math.floor(this.length / this.pageSize))}></fds-icon-button>` : ``}
+                html`<fds-icon-button icon="last_page" ?dense='${this.dense}' .disabled=${this.pageIndex >= maxPageIdx} @click=${() => this.goToPage(Math.floor(this.length / this.pageSize))}></fds-icon-button>` : ``}
                     
                 </div>
             </div>

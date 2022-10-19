@@ -5,7 +5,6 @@
 @include data-table.theme-baseline;
 @include data-table.table-styles;
 
-
 :host {
   display: block;
   @include fds.mdc(theme-primary, primary);
@@ -23,89 +22,120 @@
   @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
   @include fds.mdc(text-field-error-color, error);
 
-
   .fds-data-table {
     .mdc-data-table__table {
 
-      thead,
-      tbody tr {
+      box-sizing: border-box;
+      background: var(--fds-surface, #FFFFFF);
+      border: var(--fds-data-table-border-width, 1px) solid var(--fds-outline, rgba(0, 0, 0, 0.12));
 
-        th,
-        td,
-        fds-icon-button {
-          @include fds.text-color(on-background);
+      .mdc-data-table__header-row,
+      .mdc-data-table__row{
+        height: 56px;
+      }
+
+      thead tr{
+        background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+      }
+
+      thead,
+      tbody {
+        display: table;
+        table-layout: fixed;
+        // width: calc(100% - 1em);
+        tr:nth-child(even){
+          background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+        }
+        /* scrollbar is average 1em/16px width, remove it from thead width */
+        tr {
+
+          th,
+          td,
+          fds-icon-button {
+            @include fds.text-color(on-background);
+          }
+  
+          .mdc-data-table__cell--checkbox,
+          .mdc-data-table__header-cell--checkbox,
+          .mdc-data-table__header-cell--radiobox,
+          .mdc-data-table__cell--radiobox {
+            min-width: var(--fds-spacing-5, 48px);
+            width: var(--fds-spacing-5, 48px);
+          }
+  
+          .mdc-data-table__cell--radiobox{
+            .mdc-data-table__cell--radiobox-container {
+              display: flex;
+              place-content: center;
+            }
+          }
         }
       }
 
       .mdc-data-table__row--selected {
-        background-color: var(--fds-surface-selected);
+        background-color: var(--fds-surface-selected) !important;
+      }
+
+      .mdc-data-table__content {
+        max-height: 520px;
+        display: block;
+        overflow-y: auto;
+  
+        .mdc-data-table__row {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+  
+          /* even columns width , fix width of table too*/
+          .mdc-data-table__cell {
+            @include fds.typography(body-1);
+            @include fds.text-color(on-surface);
+            //customzied column css should be centralized here
+            .fds-data-table-linear-progress {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+  
+              fds-linear-progress {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .mdc-data-table__header-cell {
+        @include fds.typography(subtitle-1);
+        @include fds.text-color(on-surface);
+        .fds-data-table-sort-icon {
+          --mdc-icon-button-size: 24px;
+          --mdc-ripple-color: transparent;
+        }
       }
     }
   }
 }
 
-.fds-data-table {
-  .mdc-data-table__table {
+:host([dense]) {
+  .fds-data-table{
+    .mdc-data-table__table {
+      
+      .mdc-data-table__header-row,
+      .mdc-data-table__row{
+        height: 40px;
+      }
 
-    thead,
-    tbody {
-      display: table;
-      table-layout: fixed;
-      width: calc(100% - 1em);
+      .mdc-data-table__header-cell {
+        @include fds.typography(subtitle-3);
+      }
 
-      /* scrollbar is average 1em/16px width, remove it from thead width */
-      tr {
-
-        .mdc-data-table__cell--checkbox,
-        .mdc-data-table__header-cell--checkbox,
-        .mdc-data-table__header-cell--radiobox,
-        .mdc-data-table__cell--radiobox {
-          min-width: var(--fds-spacing-5, 48px);
-          width: var(--fds-spacing-5, 48px);
-        }
-
-        .mdc-data-table__cell--radiobox{
-          .mdc-data-table__cell--radiobox-container {
-            display: flex;
-            place-content: center;
+      .mdc-data-table__content {
+        .mdc-data-table__row{
+          .mdc-data-table__cell{
+            @include fds.typography(body-3);
           }
         }
       }
-    }
-
-    .mdc-data-table__content {
-      max-height: 520px;
-      display: block;
-      overflow-y: auto;
-
-      .mdc-data-table__row {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-
-        /* even columns width , fix width of table too*/
-        .mdc-data-table__cell {
-
-          //customzied column css should be centralized here
-          .fds-data-table-linear-progress {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            fds-linear-progress {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .mdc-data-table__header-cell {
-    .fds-data-table-sort-icon {
-      --mdc-icon-button-size: 24px;
-      --mdc-ripple-color: transparent;
     }
   }
 }

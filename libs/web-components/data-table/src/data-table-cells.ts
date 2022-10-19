@@ -4,10 +4,12 @@ import { FdsColumnType, FdsTableChip, FdsTableColumn, FdsTableLinearProgress, Fd
 export class FdsTableCellStore {
     private _row: FdsTableRow;
     private _column: FdsTableColumn;
+    private dense = false;
 
-    constructor(row: FdsTableRow, column: FdsTableColumn) {
+    constructor(row: FdsTableRow, column: FdsTableColumn, dense: boolean) {
         this._row = row;
         this._column = column;
+        this.dense = dense;
     }
 
     getTableDataCellTemplate() {
@@ -22,9 +24,10 @@ export class FdsTableCellStore {
                 cellType = "";
                 break;
         }
-        return html`<td class="mdc-data-table__cell ${cellType}">
-    ${this._getCellTemplateByType()}
-</td>`
+        return html`
+        <td class="mdc-data-table__cell ${cellType}" style=${this._column._style}>
+            ${this._getCellTemplateByType()}
+        </td>`
     }
 
     private _getCellTemplateByType() {
@@ -48,7 +51,7 @@ export class FdsTableCellStore {
 
     private _getChipTemplate(data: FdsTableChip) {
         return html`
-            <fds-chip dense .label=${data.label} .icon=${data.icon}></fds-chip>
+            <fds-chip ?dense='${this.dense}' .label=${data.label} .icon=${data.icon}></fds-chip>
         `;
     }
 
