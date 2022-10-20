@@ -1,0 +1,29 @@
+@use "@finastra/fds-theme" as fds;
+
+.message { 
+    flex-direction: row;
+    display: flex;
+
+
+    ::slotted([slot="title"]) {
+        padding-bottom: var(--fds-spacing-1,4px);
+        @include fds.text-color(on-surface);
+        @include fds.typography(subtitle-2);
+
+    }
+    ::slotted([slot="description"]) {
+        @include fds.text-color(on-surface-medium);
+        @include fds.typography(body-2);
+    }
+  }
+
+  .message-icon {
+    display: flex;
+    justify-content: center;
+    background: var(--fds-surface);
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 32px;
+  }

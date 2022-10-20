@@ -41,6 +41,12 @@ export class Icon extends LitElement {
   error = false;
 
   @property({ type: Boolean })
+  warning = false;
+
+  @property({ type: Boolean })
+  info = false;
+
+  @property({ type: Boolean })
   gradient = false;
 
   @property({ type: Boolean })

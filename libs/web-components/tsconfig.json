@@ -162,6 +162,9 @@
     },
     {
       "path": "filter-tree"
+    },
+    {
+      "path": "alert-message"
     }
   ]
 }

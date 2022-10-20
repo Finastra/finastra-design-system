@@ -1,0 +1,53 @@
+<script type="module" src="node_modules/@finastra/alert-message/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<script type="module" src="node_modules/@finastra/icon/dist/src/icon.js"></script>
+<div>
+  <fds-alert-message type="success">
+    <fds-alert-description>
+    <fds-icon success slot="icon">done</fds-icon>
+      <div slot="title"> Success </div>
+      <div slot="description"> A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner. </div>
+    </fds-alert-description>
+    <fds-alert-actions>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-alert-actions>
+  </fds-alert-message>
+
+
+  <fds-alert-message type="error">
+    <fds-alert-description>
+      <fds-icon slot="icon" error>error_outline</fds-icon>
+      <div slot="title"> Success </div>
+      <div slot="description"> A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner. </div>
+    </fds-alert-description>
+    <fds-alert-actions>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-alert-actions>
+  </fds-alert-message>
+
+  <fds-alert-message type="warning">
+    <fds-alert-description>
+      <fds-icon slot="icon" warning>warning</fds-icon>
+      <div slot="title"> Success </div>
+      <div slot="description"> A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner. </div>
+    </fds-alert-description>
+    <fds-alert-actions>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-alert-actions>
+  </fds-alert-message>
+
+  <fds-alert-message type="info">
+    <fds-alert-description>
+      <fds-icon slot="icon" primary>info_outline</fds-icon>
+      <div slot="title"> Success </div>
+      <div slot="description"> A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner. </div>
+    </fds-alert-description>
+    <fds-alert-actions>
+      <fds-text-button label="Button"></fds-text-button>
+      <fds-text-button label="Button"></fds-text-button>
+    </fds-alert-actions>
+  </fds-alert-message>
+</div>
