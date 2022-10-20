@@ -60,11 +60,11 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
     font: var(--fds-body-1);
     color: var(--fds-on-background);
   }
-  fds-user-profile mwc-list-item {
+  fds-user-profile fds-list-item {
     color: var(--fds-on-background);
     margin-top: calc(var(--fds-spacing-3) * -1);
   }
-  fds-user-profile mwc-list-item + mwc-list-item{
+  fds-user-profile fds-list-item + fds-list-item{
     margin-top: var(--fds-spacing-0);
   }
   fds-user-profile fds-divider {
@@ -86,14 +86,14 @@ const ComplexTemplate: Story<UserProfile> = ({ userName = 'Raya Hristova', short
       <div slot="actions">
       <div slot="actions">
         <div class="item-list">
-          <mwc-list-item graphic="icon">
+          <fds-list-item graphic="icon">
             <span>item one</span>
             <fds-icon slot="graphic">dashboard</fds-icon>
-          </mwc-list-item>
-          <mwc-list-item graphic="icon">
+          </fds-list-item>
+          <fds-list-item graphic="icon">
             <span>item two</span>
             <fds-icon slot="graphic">dashboard</fds-icon>
-          </mwc-list-item>
+          </fds-list-item>
         </div>
         <fds-divider></fds-divider>
         <fds-button fullwidth label="Logout" icon="logout"></fds-button>

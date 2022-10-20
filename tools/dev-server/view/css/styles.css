@@ -60,7 +60,7 @@ a {
   text-decoration: none;
 }
 
-.list-components a mwc-list-item,
-.list-components a mwc-icon {
+.list-components a fds-list-item,
+.list-components a fds-icon {
   color: var(--mdc-theme-on-surface);
 }

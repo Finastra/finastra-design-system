@@ -1,8 +1,8 @@
 import '@finastra/avatar';
 import '@finastra/divider';
 import '@finastra/icon-button';
-import '@material/mwc-menu';
-import { Menu } from '@material/mwc-menu';
+import '@finastra/menu';
+import { Menu } from '@finastra/menu';
 import { html, LitElement } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -45,7 +45,7 @@ export class UserProfile extends LitElement {
 
   render() {
     return html` <fds-icon-button @click="${this._showMenu}" id="anchor" aria-label="avatar button"> ${renderAvatarSVG()} </fds-icon-button>
-      <mwc-menu id="menu" fullwidth>
+      <fds-menu id="menu" fullwidth>
         ${this.dense
           ? html`
               <div class="header-dense">
@@ -65,7 +65,7 @@ export class UserProfile extends LitElement {
               ${this.divider ? html` <fds-divider></fds-divider>` : ''}
               <slot name="actions" id="actions"> </slot>
             `}
-      </mwc-menu>`;
+      </fds-menu>`;
   }
 
   connectedCallback() {

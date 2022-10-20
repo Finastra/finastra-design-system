@@ -1,9 +1,9 @@
 const README = require('../README.md');
 import '@finastra/icon';
+import '@finastra/list';
 import '@finastra/logo';
 import '@finastra/sidenav';
 import { DRAWER_TYPES, Sidenav } from '@finastra/sidenav';
-import '@material/mwc-list';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes } from './sb-generated/fds-sidenav.json';
@@ -57,35 +57,35 @@ const Template: Story<Sidenav> = ({ type }) => {
       <fds-logo></fds-logo>
     </div>
     <div class="fds-sidenav-list">
-      <mwc-list activatable>
-        <mwc-list-item selected activated graphic="icon">
+      <fds-list activatable>
+        <fds-list-item selected activated graphic="icon">
           <span>Home</span>
           <fds-icon slot="graphic">home</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Applications</span>
           <fds-icon slot="graphic">dashboard</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Tools</span>
           <fds-icon slot="graphic">extension</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Settings</span>
           <fds-icon slot="graphic">settings</fds-icon>
-        </mwc-list-item>
-      </mwc-list>
+        </fds-list-item>
+      </fds-list>
     </div>
   </div>
   <div slot="navigation" class="navigation">
-    <mwc-list activatable>
-      <mwc-list-item graphic="icon">
+    <fds-list activatable>
+      <fds-list-item graphic="icon">
         <span>Tab 1</span>
-      </mwc-list-item>
-      <mwc-list-item graphic="icon">
+      </fds-list-item>
+      <fds-list-item graphic="icon">
         <span>Tab 2</span>
-      </mwc-list-item>
-    </mwc-list>
+      </fds-list-item>
+    </fds-list>
   </div>
   <div slot="appContent">
     <div class="main-content">

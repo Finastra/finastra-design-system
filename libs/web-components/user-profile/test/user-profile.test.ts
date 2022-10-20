@@ -25,7 +25,7 @@ describe('UserProfile', () => {
     await elementUpdated(el);
     let iconButton = shadowRoot(el).querySelector('fds-icon-button') as HTMLElement;
     iconButton?.click();
-    expect(shadowRoot(el).querySelector('mwc-menu div')).to.have.class('header-dense');
+    expect(shadowRoot(el).querySelector('fds-menu div')).to.have.class('header-dense');
   });
 
   it('Should display divider when actions slot is defined', async () => {
