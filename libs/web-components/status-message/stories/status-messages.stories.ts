@@ -44,7 +44,7 @@ export default {
     }
 
     .message-title {
-      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
+      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, 'League Spartan');
       color: var(--fds-on-surface, #000000);
       max-width: 480px;
       text-align: center;
@@ -116,7 +116,7 @@ export default {
 
     @media only screen and (max-width: 440px) {
       .message-title {
-        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan);
+        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, 'League Spartan');
       }
 
       .message-description {

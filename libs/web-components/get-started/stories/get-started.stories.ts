@@ -29,7 +29,7 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
     }
 
     .message-title {
-      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
+      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, 'League Spartan');
       color: var(--fds-on-surface, #000000);
       max-width: 460px;
       margin-top: var(--fds-spacing-3, 16px);
@@ -78,7 +78,7 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
     @media only screen and (max-width: 440px) {
       .message-title {
         text-align: center;
-        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan);
+        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, 'League Spartan');
       }
 
       .message-description {
@@ -135,7 +135,7 @@ const WelcomeTemplate: Story = ({title, description, images, link}) => {
     }
 
     .section-title {
-      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, Spartan);
+      font: normal normal var(--fds-headline-3-font-weight, 800) var(--fds-headline-3-font-size, 1.75rem)/var(--fds-headline-3-line-height, 2.4375rem) var(--fds-headline-3-font-family, 'League Spartan');
       color: var(--fds-on-surface, #000000);
       align-self: center;
       max-width: 800px;
@@ -207,7 +207,7 @@ const WelcomeTemplate: Story = ({title, description, images, link}) => {
     @media only screen and (max-width: 440px) {
       .section-title {
         text-align: center;
-        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, Spartan);
+        font: normal normal var(--fds-headline-4-font-weight, 800) var(--fds-headline-4-font-size, 1.3125rem)/var(--fds-headline-4-line-height, 1.8125rem) var(--fds-headline-4-font-family, 'League Spartan');
       }
 
       .section-description {
