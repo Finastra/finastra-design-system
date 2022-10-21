@@ -1,28 +1,52 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
-  display: block;
-  --mdc-shape-small: 22px;
-  --mdc-typography-button-text-transform: none;
-  @include fds.mdc(theme-primary, primary);
-  @include fds.mdc(theme-on-primary, on-primary);
-  @include fds.mdc(button-disabled-fill-color, surface-disabled);
-  @include fds.mdc(button-disabled-ink-color, on-surface-disabled);
+  display: inline-flex;
+  outline: none;
+  --fds-button-radius: 18px;
+  --fds-button-radius-large: 24px;
 }
 
-:host([secondary]) {
-  @include fds.mdc(theme-primary, secondary);
-  @include fds.mdc(theme-on-primary, on-secondary);
+:host>button {
+  @include fds.typography('button-2');
+  @include fds.text-color('on-primary');
+  @include fds.padding-x(3);
+  @include fds.padding-y(2);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  --fds-icon-color: var(--fds-on-primary);
+  --fds-icon-size: 18px;
+  border-radius: var(--fds-button-radius);
+  border: none;
+  cursor: pointer;
 }
 
-:host([fullWidth]) {
-  flex: 1;
+:host>button>fds-icon {
+  margin-right: var(--fds-spacing-2);
 }
 
-:host([disabled]) {
-  pointer-events: none;
+:host([gradient])>button {
+  background: var(--fds-gradient);
+  color: var(--fds-on-gradient);
 }
 
-mwc-button[dense] {
-  --mdc-typography-button-font-size: 12px;
+:host([fullWidth]),
+:host([fullWidth])>button {
+  width: 100%;
+}
+
+:host([dense])>button {
+  @include fds.typography('button-3');
+
+  padding: 6px var(--fds-spacing-3);
+}
+
+:host([large])>button {
+  @include fds.typography('button-1');
+
+  padding: 10px var(--fds-spacing-4);
+  border-radius: var(--fds-button-radius-large);
+  --fds-icon-size: 24px;
 }

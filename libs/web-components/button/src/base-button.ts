@@ -1,11 +1,13 @@
-import '@material/mwc-button';
-import { html, LitElement } from 'lit';
+import '@finastra/icon';
+import { CSSResultGroup, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import { styles } from './base-styles.css';
 
 export class BaseButton extends LitElement {
   outlined: boolean = false;
   unelevated: boolean = true;
   text: boolean = false;
+  static styles: CSSResultGroup = [styles];
   
   /**
    * The label displayed inside the button
@@ -45,17 +47,16 @@ export class BaseButton extends LitElement {
   trailingIcon = false;
 
   render() {
-    return html`<mwc-button
-            label="${this.label}"
-            icon="${this.icon}"
-            ?unelevated="${this.unelevated}"
-            ?outlined="${this.outlined}"
-            ?text="${this.text}"
-            ?dense="${this.dense}"
-            ?disabled="${this.disabled}"
-            ?fullwidth="${this.fullwidth}"
-            ?trailingIcon="${this.trailingIcon}"
-          >
-            <slot></slot>
-          </mwc-button>`}
+    return html`<button
+      ?disabled="${this.disabled}"
+      ?trailingIcon="${this.trailingIcon}"
+    >
+      ${this.icon ? this.renderIcon() : ''}
+      ${this.label}
+    </button>`
+  }
+
+  protected renderIcon() {
+    return html` <fds-icon> ${this.icon} </fds-icon>`;
+  }
 }

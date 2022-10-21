@@ -1,1 +1,18 @@
-@use 'base-styles';
+@use '@finastra/fds-theme' as fds;
+
+:host>button {
+    @include fds.bg-color('primary');
+    @include fds.text-color('on-primary');
+}
+
+:host([secondary])>button {
+    background-color: var(--fds-secondary);
+    color: var(--fds-on-secondary);
+}
+
+:host([disabled])>button {
+    @include fds.bg-color('surface-disabled');
+    @include fds.text-color('on-surface-disabled');
+  
+    --fds-icon-color: var(--fds-on-surface-disabled);
+}

@@ -119,9 +119,27 @@ $properties: (
     text-decoration: inherit,
     text-transform: inherit,
   ),
-  button: (
+  button-1: (
+    font-family: $font-family,
+    font-size: px-to-rem(16px),
+    line-height: px-to-rem(20px),
+    font-weight: 700,
+    letter-spacing: 1.25px,
+    text-decoration: inherit,
+    text-transform: none,
+  ),
+  button-2: (
     font-family: $font-family,
     font-size: px-to-rem(14px),
+    line-height: px-to-rem(20px),
+    font-weight: 700,
+    letter-spacing: 1.25px,
+    text-decoration: inherit,
+    text-transform: none,
+  ),
+  button-3: (
+    font-family: $font-family,
+    font-size: px-to-rem(12px),
     line-height: px-to-rem(20px),
     font-weight: 700,
     letter-spacing: 1.25px,

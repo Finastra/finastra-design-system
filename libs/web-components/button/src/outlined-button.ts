@@ -4,7 +4,7 @@ import { styles } from './outlined-styles.css';
 
 @customElement('fds-outlined-button')
 export class OutlinedButton extends BaseButton {
-    static styles = styles;
+    static styles = [BaseButton.styles, styles];
 
     constructor() {
       super();

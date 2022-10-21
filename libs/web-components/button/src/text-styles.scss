@@ -1,6 +1,13 @@
-@use 'base-styles';
+@use '@finastra/fds-theme' as fds;
 
-mwc-button {
- --mdc-button-horizontal-padding :  var(--fds-spacing-3, 16px);
+:host>button {
+    border: none;
 }
-  
+
+:host([secondary])>button {
+    border: none;
+}
+
+:host([disabled])>button {
+    border: none;
+}
