@@ -14,7 +14,7 @@ The full document can be found [here](https://github.com/material-components/mat
 
 ```
 npm i @finastra/menu
-npm i @material/mwc-list;
+npm i @finastra/list;
 npm i @finastra/button;
 
 ```
@@ -22,17 +22,17 @@ npm i @finastra/button;
 ```ts
 import '@finastra/menu';
 import '@finastra/button';
-import '@material/mwc-list/mwc-list-item';
+import '@finastra/list';
 
 ...
 <div style="position: relative;">
     <fds-button id="basicButton" raised label="Open Basic Menu"></fds-button>
     <fds-menu id="basicMenu">
-        <mwc-list-item>one</mwc-list-item>
-        <mwc-list-item>two</mwc-list-item>
-        <mwc-list-item disabled><div>four</div></mwc-list-item>
+        <fds-list-item>one</fds-list-item>
+        <fds-list-item>two</fds-list-item>
+        <fds-list-item disabled><div>four</div></fds-list-item>
         <li divider></li>
-        <mwc-list-item>five</mwc-list-item>
+        <fds-list-item>five</fds-list-item>
     </fds-menu>
 </div>
 
@@ -58,11 +58,11 @@ import '@material/mwc-list/mwc-list-item';
 <div style="position: relative;">
     <fds-button id="basicButton" raised label="Open Basic Menu"></fds-button>
     <fds-menu id="basicMenu">
-        <mwc-list-item>one</mwc-list-item>
-        <mwc-list-item>two</mwc-list-item>
-        <mwc-list-item disabled><div>four</div></mwc-list-item>
+        <fds-list-item>one</fds-list-item>
+        <fds-list-item>two</fds-list-item>
+        <fds-list-item disabled><div>four</div></fds-list-item>
         <li divider></li>
-        <mwc-list-item>five</mwc-list-item>
+        <fds-list-item>five</fds-list-item>
     </fds-menu>
 </div>
 

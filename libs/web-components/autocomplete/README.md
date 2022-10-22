@@ -19,9 +19,9 @@ npm i @finastra/autocomplete
 import '@finastra/autocomplete';
 ...
 <fds-autocomplete name="World">
-    <mwc-list-item value="One">One</mwc-list-item>
-    <mwc-list-item value="Two">Two</mwc-list-item>
-    <mwc-list-item value="Three">Three</mwc-list-item>
+    <fds-list-item value="One">One</fds-list-item>
+    <fds-list-item value="Two">Two</fds-list-item>
+    <fds-list-item value="Three">Three</fds-list-item>
 </fds-autocomplete>
 ```
 
@@ -31,8 +31,8 @@ import '@finastra/autocomplete';
 <script src="https://cdn.jsdelivr.net/npm/@finastra/autocomplete/dist/fds-autocomplete.js"></script>
 
 <fds-autocomplete name="World">
-    <mwc-list-item value="One">One</mwc-list-item>
-    <mwc-list-item value="Two">Two</mwc-list-item>
-    <mwc-list-item value="Three">Three</mwc-list-item>
+    <fds-list-item value="One">One</fds-list-item>
+    <fds-list-item value="Two">Two</fds-list-item>
+    <fds-list-item value="Three">Three</fds-list-item>
 </fds-autocomplete>
 ```

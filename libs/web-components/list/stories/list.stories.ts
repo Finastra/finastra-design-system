@@ -1,6 +1,7 @@
 const README = require('../README.md');
 import '@finastra/list';
 import type { List } from '@finastra/list';
+import '@material/mwc-icon';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { argTypes, cssprops } from './sb-generated/fds-list.json';

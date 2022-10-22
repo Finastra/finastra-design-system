@@ -3,6 +3,7 @@ import '@finastra/brand-card';
 import '@finastra/icon';
 import '@finastra/icon-button';
 import '@finastra/launchpad';
+import '@finastra/list';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
@@ -98,24 +99,24 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
       <fds-logo></fds-logo>
     </div>
     <div class="fds-sidenav-list">
-      <mwc-list activatable>
-        <mwc-list-item selected activated graphic="icon">
+      <fds-list activatable>
+        <fds-list-item selected activated graphic="icon">
           <span>Home</span>
           <fds-icon slot="graphic">home</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Applications</span>
           <fds-icon slot="graphic">dashboard</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Tools</span>
           <fds-icon slot="graphic">extension</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Settings</span>
           <fds-icon slot="graphic">settings</fds-icon>
-        </mwc-list-item>
-      </mwc-list>
+        </fds-list-item>
+      </fds-list>
     </div>
   </div>
   <div slot="appContent">
@@ -195,24 +196,24 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
       <fds-logo></fds-logo>
     </div>
     <div class="fds-sidenav-list">
-      <mwc-list activatable>
-        <mwc-list-item selected activated graphic="icon">
+      <fds-list activatable>
+        <fds-list-item selected activated graphic="icon">
           <span>Home</span>
           <fds-icon slot="graphic">home</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Applications</span>
           <fds-icon slot="graphic">dashboard</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Tools</span>
           <fds-icon slot="graphic">extension</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Settings</span>
           <fds-icon slot="graphic">settings</fds-icon>
-        </mwc-list-item>
-      </mwc-list>
+        </fds-list-item>
+      </fds-list>
     </div>
   </div>
   <div slot="navigation">
@@ -292,24 +293,24 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
       <fds-logo></fds-logo>
     </div>
     <div class="fds-sidenav-list">
-      <mwc-list activatable>
-        <mwc-list-item selected activated graphic="icon">
+      <fds-list activatable>
+        <fds-list-item selected activated graphic="icon">
           <span>Home</span>
           <fds-icon slot="graphic">home</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Applications</span>
           <fds-icon slot="graphic">dashboard</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Tools</span>
           <fds-icon slot="graphic">extension</fds-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Settings</span>
           <fds-icon slot="graphic">settings</fds-icon>
-        </mwc-list-item>
-      </mwc-list>
+        </fds-list-item>
+      </fds-list>
     </div>
   </div>
   <div slot="appContent">
@@ -377,24 +378,24 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
       <fds-logo></fds-logo>
     </div>
     <div class="fds-sidenav-list">
-      <mwc-list activatable>
-        <mwc-list-item selected activated graphic="icon">
+      <fds-list activatable>
+        <fds-list-item selected activated graphic="icon">
           <span>Home</span>
-          <mwc-icon slot="graphic">home</mwc-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+          <fds-icon slot="graphic">home</fds-icon>
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Applications</span>
-          <mwc-icon slot="graphic">dashboard</mwc-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+          <fds-icon slot="graphic">dashboard</fds-icon>
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Tools</span>
-          <mwc-icon slot="graphic">extension</mwc-icon>
-        </mwc-list-item>
-        <mwc-list-item graphic="icon">
+          <fds-icon slot="graphic">extension</fds-icon>
+        </fds-list-item>
+        <fds-list-item graphic="icon">
           <span>Settings</span>
-          <mwc-icon slot="graphic">settings</mwc-icon>
-        </mwc-list-item>
-      </mwc-list>
+          <fds-icon slot="graphic">settings</fds-icon>
+        </fds-list-item>
+      </fds-list>
     </div>
   </div>
   <div slot="appContent">

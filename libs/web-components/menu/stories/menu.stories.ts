@@ -1,8 +1,8 @@
 const README = require('../README.md');
 import '@finastra/button';
+import '@finastra/list';
 import '@finastra/menu';
 import type { Menu } from '@finastra/menu';
-import '@material/mwc-list/mwc-list-item';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -53,11 +53,11 @@ const Template: Story<Menu> = (args) => {
           ?fullwidth=${args.fullwidth}
           ?stayOpenOnBodyClick=${args.stayOpenOnBodyClick}          
           >
-          <mwc-list-item>Preview</mwc-list-item>
-          <mwc-list-item disabled><div>Share</div></mwc-list-item>
-          <mwc-list-item disabled><div>Get Link</div></mwc-list-item>
+          <fds-list-item>Preview</fds-list-item>
+          <fds-list-item disabled><div>Share</div></fds-list-item>
+          <fds-list-item disabled><div>Get Link</div></fds-list-item>
           <li divider></li>
-          <mwc-list-item>Download</mwc-list-item>
+          <fds-list-item>Download</fds-list-item>
         </fds-menu>
     </div>
   `;
