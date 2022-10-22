@@ -25,7 +25,6 @@
   .fds-data-table {
     .mdc-data-table__table {
 
-      box-sizing: border-box;
       background: var(--fds-surface, #FFFFFF);
       border: var(--fds-data-table-border-width, 1px) solid var(--fds-outline, rgba(0, 0, 0, 0.12));
 
@@ -36,21 +35,64 @@
 
       thead tr{
         background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+        &.right div {
+          display: flex;
+          flex-direction: row-reverse;
+          place-content: center flex-start;
+          align-items: center;
+      }
+      &.left div {
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+      }
+      &.center div {
+          display: flex;
+          place-content: center;
+          align-items: center;
+      }
       }
 
       thead,
       tbody {
-        display: table;
-        table-layout: fixed;
         // width: calc(100% - 1em);
         tr:nth-child(even){
           background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
         }
         /* scrollbar is average 1em/16px width, remove it from thead width */
         tr {
-
+          width: 100%;
           th,
-          td,
+          td {
+            width: 100%;
+            text-overflow: unset;
+            max-width:100%;
+            white-space:nowrap;
+
+            &.left {
+              text-align: left;
+            }
+            &.right {
+                text-align: right;
+            }
+            &.center {
+                text-align: center;
+            }
+
+            &.right div {
+              float: right;
+              text-align: initial;
+          }
+          &.left div {
+              float: left;
+              text-align: initial;
+          }
+          &.center div {
+              float: center;
+              text-align: initial;
+          }
+          }
+
           fds-icon-button {
             @include fds.text-color(on-background);
           }
@@ -78,13 +120,10 @@
 
       .mdc-data-table__content {
         max-height: 520px;
-        display: block;
         overflow-y: auto;
   
         .mdc-data-table__row {
-          display: table;
-          width: 100%;
-          table-layout: fixed;
+  
   
           /* even columns width , fix width of table too*/
           .mdc-data-table__cell {

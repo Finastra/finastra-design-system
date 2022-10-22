@@ -125,7 +125,15 @@ const Template: Story<DataTable> = ({
     ?dense='${dense}'
     .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay}
     .selectable=${selectable} .showSingleSelectRadioBox=${showSingleSelectRadioBox} .multiSelect=${multiSelect}
-    .showMultiSelectCheckBox=${showMultiSelectCheckBox}></fds-data-table>
+    .showMultiSelectCheckBox=${showMultiSelectCheckBox}>
+    <template id="fds-table-customized">
+      <div style="width: fit-content">
+          <span>
+              {path} | {type}
+          </span>
+      </div>
+    </template>
+  </fds-data-table>
   `
 };
 

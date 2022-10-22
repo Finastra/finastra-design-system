@@ -128,7 +128,7 @@ export abstract class DataTableBase extends LitElement {
         let headerType = "";
         switch (column.type) {
             case FdsColumnType.number:
-            case FdsColumnType.typedouble:
+            case FdsColumnType.type_double:
                 headerType = "mdc-data-table__header-cell--numeric";
                 break;
             default:
@@ -136,29 +136,40 @@ export abstract class DataTableBase extends LitElement {
                 break;
         }
         return html`
-        <th class="mdc-data-table__header-cell 
-                                                                ${headerType ? headerType : ''} 
-                                                                ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
+        <th class="mdc-data-table__header-cell ${headerType} ${column.align} ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
             role="columnheader" scope="col" data-column-id=${column.id}
             style=${column._style}>
-        
-            ${column.sortable ? html`
-            <div class="mdc-data-table__header-cell-wrapper" @click=${()=> this._sortByColumn(column.id)}>
-        
-                <div class="mdc-data-table__header-cell-label">
-                    ${column.displayName ? column.displayName : column.name}
-                </div>
-        
-                <fds-icon-button class="fds-data-table-sort-icon"
-                    ?dense='${this.dense}'
-                    aria-label="Sort by ${column.displayName ? column.displayName : column.name}"
-                    aria-describedby="${column.id}-status-label" icon="${this._getSortIcon(column.id)}">
-                </fds-icon-button>
-                <div class="mdc-data-table__sort-status-label" aria-hidden="true" id="carbs-status-label"></div>
-            </div>`
-            : column.displayName ? column.displayName : column.name}
-        
+            ${column.sortable ? this._getDataTableSortableHeaderCell(column)
+                : column.displayName ? column.displayName : column.name}
         </th>`
+    }
+
+    private _getDataTableSortableHeaderCell(column: FdsTableColumn){
+        const numberTypeColumn = [FdsColumnType.number];
+        let sortIconPosition = 'right';
+
+        const sortableIconElement = html`
+           <fds-icon-button class="fds-data-table-sort-icon"
+                ?dense='${this.dense}'
+                aria-label="Sort by ${column.displayName ? column.displayName : column.name}"
+                aria-describedby="${column.id}-status-label" icon="${this._getSortIcon(column.id)}">
+            </fds-icon-button>
+        `;
+
+        if(numberTypeColumn.indexOf(column.type) > -1) {
+            sortIconPosition = 'left';
+        }
+
+        return html`
+        <div class="mdc-data-table__header-cell-wrapper" @click=${()=> this._sortByColumn(column.id)}>
+            ${sortIconPosition === 'left' ? sortableIconElement : '' }
+            <div class="mdc-data-table__header-cell-label">
+                ${column.displayName ? column.displayName : column.name}
+            </div>
+            ${sortIconPosition === 'right' ? '': sortableIconElement}
+ 
+            <div class="mdc-data-table__sort-status-label" aria-hidden="true" id="carbs-status-label"></div>
+        </div>`;
     }
 
     private _getSortedDataSource(dataSource: FdsTableRow[]): FdsTableRow[] {

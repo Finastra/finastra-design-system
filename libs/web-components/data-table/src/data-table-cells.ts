@@ -16,23 +16,28 @@ export class FdsTableCellStore {
         let cellType = "";
         switch (this._column.type) {
             case FdsColumnType.number:
-            case FdsColumnType.typedouble:
+            case FdsColumnType.type_double:
                 cellType = "mdc-data-table__cell--numeric";
                 break;
-
+            case FdsColumnType.cell_template:
+                cellType = "fds-data-table-cell-template";
+                break;
             default:
                 cellType = "";
                 break;
         }
+
+
+        
         return html`
-        <td class="mdc-data-table__cell ${cellType}" style=${this._column._style}>
+        <td class="mdc-data-table__cell ${cellType} ${this._column.align}" style=${this._column._style ? this._column._style : ''}>
             ${this._getCellTemplateByType()}
         </td>`
     }
 
     private _getCellTemplateByType() {
         switch (this._column.type) {
-            case FdsColumnType.typedouble:
+            case FdsColumnType.type_double:
                 return this._getTypeDoubleTemplate(this._row[this._column.id]);
             case FdsColumnType.linear_progress:
                 return this._getLinearProgressTemplate(this._row[this._column.id]);
@@ -40,6 +45,8 @@ export class FdsTableCellStore {
                 return this._getChipTemplate(this._row[this._column.id]);
             case FdsColumnType.link:
                 return this._getLinkTemplate(this._row[this._column.id]);
+            case FdsColumnType.cell_template: 
+                return this._getCustomizedCellTemplate(this._row[this._column.id]);
             default:
                 return this._row[this._column.id];
         }
@@ -74,6 +81,26 @@ export class FdsTableCellStore {
                 <span>${link.text}</span>
             </a>
         `
+    }
+
+    private _getCustomizedCellTemplate(customized: any) {
+       
+        if(this._column.cellTemplateId){
+            const element = (document.getElementById(this._column?.cellTemplateId) as any).cloneNode(true);
+            if(element){
+                for(const key in customized){
+                    element.innerHTML = element.innerHTML.replace(new RegExp("\\{" + key + "\\}", "gi"), customized[key]);
+                }
+                
+                const customizedCell = element?.content?.cloneNode(true);
+                return html`
+                    ${customizedCell}
+                `;
+            }
+        }
+
+        return html``
+
     }
 
     private _getPercentageNumber(progress: FdsTableLinearProgress) {

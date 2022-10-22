@@ -4,8 +4,8 @@ export enum FdsColumnType {
     number = 'number',
     date = 'date',
     link = 'link',
-    typedouble = 'typedouble',
-    cellTemplate = 'cellTemplate',
+    type_double = 'type_double',
+    cell_template = 'cell_template',
     checkbox = 'checkbox',
     chip = 'chip',
     linear_progress = 'linear_progress'
@@ -22,8 +22,9 @@ export interface FdsTableColumn {
     type: FdsColumnType; // the data type of this column => can apply different template to this column
     align?: 'left' | 'right' | 'center'; // text align in cell
     displayName?: string;
-    sortable: boolean; // can sort this column;
+    sortable?: boolean; // can sort this column;
     bold?: boolean;
+    cellTemplateId?: string;
     _style?: string; // customized style for one column
 }
 export interface FdsTableDataItem {
@@ -35,6 +36,10 @@ export interface FdsTableRow {
     _style?: string;
 }
 
+export interface FdsTableLink {
+    text: string;
+    link: string;
+}
 export interface FdsTableTypeDouble {
     amount: number;
     currency: string;
@@ -48,8 +53,3 @@ export interface FdsTableChip{
 // number should between [0, 1], 
 // accept type: number: 0.8 or string: '80%'
 export type FdsTableLinearProgress = number | string;
-
-export interface FdsTableLink {
-    text: string;
-    link: string;
-}

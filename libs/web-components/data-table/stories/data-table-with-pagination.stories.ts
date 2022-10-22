@@ -161,7 +161,15 @@ const Template: Story<DataTableWithPagination> = (
                 .showMultiSelectCheckBox=${showMultiSelectCheckBox}
                 .pageSizeOptions=${pageSizeOptions}
                 .showFirstLastButtons=${showFirstLastButtons}
-              ></fds-data-table-with-pagination>`
+              >
+              <template id="fds-table-customized">
+                <div style="width: fit-content">
+                    <span>
+                        {path} | {type}
+                    </span>
+                </div>
+              </template>
+              </fds-data-table-with-pagination>`
 }
 export const DataTableComponentWithPagination: Story<DataTableWithPagination> = Template.bind({});
 

@@ -20,7 +20,11 @@
                 label: 'Approved'
             },
             "Confidence Score": 0.8,
-            // _style: 'background: red'
+            // _style: 'background: red',
+            apiDetail: {
+                type: 'B2E',
+                path: '/foo/bar/3'
+            }
         },
         {
             API: {
@@ -41,7 +45,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": '50%'
+            "Confidence Score": '50%',
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/2'
+            }
         },
         {
             API: {
@@ -62,7 +70,11 @@
             Status: {
                 label: 'Denied'
             },
-            "Confidence Score": 0
+            "Confidence Score": 0,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API:{
@@ -83,7 +95,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 0.9
+            "Confidence Score": 0.9,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -104,7 +120,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 1
+            "Confidence Score": 1,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -125,7 +145,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 0.7
+            "Confidence Score": 0.7,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -146,7 +170,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 0.3
+            "Confidence Score": 0.3,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -167,7 +195,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 0.8
+            "Confidence Score": 0.8,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -188,7 +220,11 @@
             Status: {
                 label: 'Denied'
             },
-            "Confidence Score": 0.8
+            "Confidence Score": 0.8,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -209,7 +245,11 @@
             Status: {
                 label: 'Rejected'
             },
-            "Confidence Score": 0.8
+            "Confidence Score": 0.8,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         },
         {
             API: {
@@ -230,22 +270,26 @@
             Status: {
                 label: 'Approved'
             },
-            "Confidence Score": 0.8
+            "Confidence Score": 0.8,
+            apiDetail: {
+                type: 'B2C',
+                path: '/foo/bar/1'
+            }
         }
     ];
 
 
  export const columns = [
-        { id: 'API', name: 'API', type: 'link', align: 'center', displayName: 'Display Api' },
-        { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true,         _style: 'font-weight: bold'  },
-        { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
-        { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
-        { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },
-        { id: 'No. of Calls', name: 'No. of Calls', type: 'number', align: 'right', sortable: true },
-        { id: 'Revenue', name: 'Revenue', type: 'typedouble', align: 'right', sortable: true},
-        { id: 'Status', name: 'Status', type: 'chip', align: 'center'},
-        { id: 'Confidence Score', name : 'Confidence Score', type: 'linear_progress', align: 'center'}
-    ];
+    { id: 'API', name: 'API', type: 'link', align: 'center', displayName: 'Display Api' },
+    { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true, _style: 'font-weight: bold'  },
+    { id: 'Hour of Day', name: 'Hour of Day', type: 'string', align: 'left' },
+    { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
+    { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },
+    { id: 'No. of Calls', name: 'No. of Calls', type: 'number', align: 'right', sortable: true },
+    { id: 'Revenue', name: 'Revenue', type: 'type_double', align: 'right', sortable: true},
+    { id: 'Status', name: 'Status', type: 'chip', align: 'center'},
+    { id: 'Confidence Score', name : 'Confidence Score', type: 'linear_progress', align: 'center'},
+    { id: 'apiDetail', name: 'Api Detail', type: 'cell_template', align: 'center', cellTemplateId: 'fds-table-customized' }
+];
 
-
-export const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls', 'Revenue', 'Status', 'Confidence Score'];
+export const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls', 'Revenue', 'Status', 'Confidence Score', 'apiDetail'];
