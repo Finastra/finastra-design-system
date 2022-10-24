@@ -21,7 +21,7 @@
     "@finastra/icon": "1.0.5",
     "@finastra/icon-button": "1.0.5",
     "@material/data-table": "14.0.0",
-    "@material/mwc-ripple": "0.26.1",
+    "@material/mwc-ripple": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@finastra/icon": "1.0.5",
-    "@material/button": "^13.0.0",
-    "@material/mwc-button": "0.26.1",
-    "@material/mwc-ripple": "0.26.1",
+    "@material/button": "14.0.0",
+    "@material/mwc-button": "0.27.0",
+    "@material/mwc-ripple": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

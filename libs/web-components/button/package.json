@@ -16,7 +16,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/contained-styles.scss src/outlined-styles.scss src/text-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-button": "0.26.1",
+    "@material/mwc-button": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

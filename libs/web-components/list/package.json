@@ -16,7 +16,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/list-styles.scss src/control-list-item-styles.scss src/list-item-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-list": "0.26.1",
+    "@material/mwc-list": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
