@@ -16,7 +16,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/card-styles.scss src/base-styles.scss src/card-header-styles.scss src/card-title-styles.scss src/card-subtitle-styles.scss src/card-content-styles.scss"
   },
   "dependencies": {
-    "@material/card": "13.0.0",
+    "@material/card": "14.0.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
