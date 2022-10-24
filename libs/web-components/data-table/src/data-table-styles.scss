@@ -159,7 +159,7 @@
             }
 
             .fds-data-table-link{
-              color: -webkit-link;
+              color: var(--fds-primary, --webkit-link);
               cursor: pointer;
               text-decoration: underline;
             }
