@@ -21,12 +21,3 @@ import '@finastra/icon';
 
 <fds-icon>bolt</fds-icon>
 ```
-
-### Pure HTML pages
-
-```html
-<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
-<script type="module" src="https://unpkg.com/@finastra/icon@latest/dist/src/icon.js?module"></script>
-
-<fds-icon>bolt</fds-icon>
-```

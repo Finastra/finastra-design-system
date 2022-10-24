@@ -20,11 +20,3 @@ import '@finastra/avatar';
 ...
 <fds-avatar large name="Adnen Manai"></fds-avatar>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/avatar/dist/fds-avatar.js"></script>
-
-<fds-avatar large name="Adnen Manai"></fds-avatar>
-```

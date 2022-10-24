@@ -40,33 +40,3 @@ import '@finastra/dialog';
   }
 </script>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/button/dist/fds-button.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@finastra/dialog/dist/fds-dialog.js"></script>
-
-<fds-button label="open" onclick="myFunction()"></fds-button>
-<fds-dialog id="myDropdown" heading="Title">
-  <span>Content</span>
-  <fds-button
-      secondary
-      label="Yes"
-      slot="primaryAction"
-      dialogAction="ok">
-  </fds-button>
-  <fds-text-button
-      label="No"
-      slot="secondaryAction"
-      dialogAction="cancel">
-  </fds-text-button>
-</fds-dialog>
-
-
-<script>
-  function myFunction() {
-    document.getElementById("myDropdown").show();
-  }
-</script>
-```

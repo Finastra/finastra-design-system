@@ -29,21 +29,3 @@ import '@finastra/launchpad';
     }}]'>
 </fds-launchpad>
 ```
-
-### Pure HTML pages
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/launchpad/dist/fds-launchpad.js"></script>
-
-<fds-launchpad id="launchpad"></fds-launchpad>
-<script>
-    document.getElementById('launchpad').apps = [{
-    "name": "App",
-    "shortName": "App",
-    "sso-initiation-urls": {
-    "web": "https://app1.com"
-    }}];
-</script>
-```
-

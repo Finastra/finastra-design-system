@@ -27,17 +27,3 @@ import '@finastra/user-profile';
     </div>
 </fds-user-profile>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/user-profile/dist/user-profile.js"></script>
-
-<fds-user-profile userName="Adnen Manai">
-    <div slot="userInfo">adnen.manai@finastra.com</div>
-    <div slot="actions">
-      Actions go here
-    </div>
-</fds-user-profile>
-```
-

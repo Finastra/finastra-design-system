@@ -19,11 +19,3 @@ import '@finastra/circular-progress';
 ...
 <fds-circular-progress indeterminate="true"></fds-circular-progress>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/circular-progress/dist/fds-circular-progress.js"></script>
-
-<fds-circular-progress indeterminate></fds-circular-progress>
-```

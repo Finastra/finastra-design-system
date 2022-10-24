@@ -19,11 +19,3 @@ import '@finastra/checkbox';
 ...
 <fds-checkbox checked></fds-checkbox>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/checkbox/dist/fds-checkbox.js"></script>
-
-<fds-checkbox checked></fds-checkbox>
-```
