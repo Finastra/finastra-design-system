@@ -6,9 +6,7 @@
   max-width: 700px;
 }
 
-
-.env-message {
-  max-width: 600px;
+.container {
   align-self: center;
   border: 1.5px solid;
   border-radius: 8px;
@@ -25,47 +23,67 @@
     }
   }
 
-  .message-icon-container {
+  .message {
+    flex-direction: row;
     display: flex;
-    justify-content: center;
-    background: var(--fds-surface);
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-right: 32px;
+    margin-bottom: 8px;
+    .message-icon {
+      display: flex;
+      justify-content: center;
+      background: var(--fds-surface);
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 32px;
+    }
+  }
+
+  .title {
+    padding-bottom: var(--fds-spacing-1, 4px);
+    @include fds.text-color(on-surface);
+    @include fds.typography(subtitle-2);
+  }
+  .message {
+    @include fds.text-color(on-surface-medium);
+    @include fds.typography(body-2);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+
+  ::slotted([slot="secondaryAction"]) {
+    margin-right: 8px;
   }
 }
 
 
 :host([type="success"]) {
-  .env-message {
+  .container {
     @include fds.property(background, surface-success);
     @include fds.property(border-color, outline-success);
   }
 }
 
 :host([type="error"]) {
-  .env-message {
+  .container {
     @include fds.property(background, surface-error);
     @include fds.property(border-color, outline-error);
   }
 }
 
-  :host([type="warning"]) {
-    .env-message {
-      @include fds.property(background, surface-warning);
-      @include fds.property(border-color, outline-warning);
+:host([type="warning"]) {
+  .container {
+    @include fds.property(background, surface-warning);
+    @include fds.property(border-color, outline-warning);
+  }
+}
 
-      ::slotted([slot="icon"]) {
-        color:red
-      }
-    }
+:host([type="info"]) {
+  .container {
+    @include fds.property(background, surface-info);
+    @include fds.property(border-color, outline-info);
   }
-  
-  :host([type="info"]) {
-    .env-message {
-      @include fds.property(background, surface-info);
-      @include fds.property(border-color, outline-info);
-    }
-  }
+}

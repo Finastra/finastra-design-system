@@ -13,7 +13,7 @@
   "module": "dist/src/alert-message.js",
   "scripts": {
     "build": "webpack",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/alert-description.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
     "lit": "^2.0.0",
