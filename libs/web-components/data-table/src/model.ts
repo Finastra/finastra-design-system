@@ -3,12 +3,11 @@ export enum FdsColumnType {
     string = 'string',
     number = 'number',
     date = 'date',
-    link = 'link',
     type_double = 'type_double',
-    cell_template = 'cell_template',
-    checkbox = 'checkbox',
+    link = 'link',
     chip = 'chip',
-    linear_progress = 'linear_progress'
+    linear_progress = 'linear_progress',
+    cell_template = 'cell_template',
 }
 
 export enum FdsColumnSortDirection {
@@ -16,24 +15,24 @@ export enum FdsColumnSortDirection {
     asc = 'asc',
     desc = 'desc'
 }
+
 export interface FdsTableColumn {
-    id: string;
+    id: string; //unique id for table column
     name: string; // column name
     type: FdsColumnType; // the data type of this column => can apply different template to this column
     align?: 'left' | 'right' | 'center'; // text align in cell
-    displayName?: string;
+    displayName?: string; // column display name if not provided, name will display
     sortable?: boolean; // can sort this column;
-    bold?: boolean;
-    cellTemplateId?: string;
+    cellTemplateId?: string; // used for customized cell
     _style?: string; // customized style for one column
 }
 export interface FdsTableDataItem {
-    _style?: string;  // customized style for one row
+    _fdsTableRowStyle?: string;  // customized style for one row
 }
 export interface FdsTableRow {
     _fdsSelected?: boolean,
     _fdsRowId?: string
-    _style?: string;
+    _fdsTableRowStyle?: string;
 }
 
 export interface FdsTableLink {

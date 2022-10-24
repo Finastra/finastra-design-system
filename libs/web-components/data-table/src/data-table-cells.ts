@@ -1,5 +1,6 @@
 import { html } from "lit";
 import { FdsColumnType, FdsTableChip, FdsTableColumn, FdsTableLinearProgress, FdsTableLink, FdsTableRow, FdsTableTypeDouble } from "./model";
+import { getCellClassByType } from "./utils";
 
 export class FdsTableCellStore {
     private _row: FdsTableRow;
@@ -13,22 +14,8 @@ export class FdsTableCellStore {
     }
 
     getTableDataCellTemplate() {
-        let cellType = "";
-        switch (this._column.type) {
-            case FdsColumnType.number:
-            case FdsColumnType.type_double:
-                cellType = "mdc-data-table__cell--numeric";
-                break;
-            case FdsColumnType.cell_template:
-                cellType = "fds-data-table-cell-template";
-                break;
-            default:
-                cellType = "";
-                break;
-        }
+        const cellType = getCellClassByType(this._column);
 
-
-        
         return html`
         <td class="mdc-data-table__cell ${cellType} ${this._column.align}" style=${this._column._style ? this._column._style : ''}>
             ${this._getCellTemplateByType()}
@@ -37,6 +24,8 @@ export class FdsTableCellStore {
 
     private _getCellTemplateByType() {
         switch (this._column.type) {
+            case FdsColumnType.date: 
+                return this._getDateTemplate(this._row[this._column.id]);
             case FdsColumnType.type_double:
                 return this._getTypeDoubleTemplate(this._row[this._column.id]);
             case FdsColumnType.linear_progress:
@@ -50,6 +39,11 @@ export class FdsTableCellStore {
             default:
                 return this._row[this._column.id];
         }
+    }
+    private _getDateTemplate(date: string){
+        return html`
+            <fds-icon>date_range_outline</fds-icon> ${date}
+        `;
     }
     private _getTypeDoubleTemplate(data: FdsTableTypeDouble) {
         return html`

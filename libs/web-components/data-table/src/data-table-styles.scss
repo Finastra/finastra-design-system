@@ -6,6 +6,7 @@
 @include data-table.table-styles;
 
 :host {
+
   display: block;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(text-field-fill-color, surface-selected);
@@ -55,6 +56,11 @@
 
       thead,
       tbody {
+        fds-icon{
+          vertical-align: middle;
+          max-width: 18px;
+          --fds-icon-size: 18px;
+        }
         // width: calc(100% - 1em);
         tr:nth-child(even){
           background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
@@ -68,6 +74,15 @@
             text-overflow: unset;
             max-width:100%;
             white-space:nowrap;
+            text-align: center;
+
+            &.fds-table__cell--date{
+              text-align: left;
+            }
+
+            &.mdc-data-table__cell--numeric{
+              text-align: right;
+            }
 
             &.left {
               text-align: left;
@@ -82,15 +97,17 @@
             &.right div {
               float: right;
               text-align: initial;
-          }
-          &.left div {
-              float: left;
-              text-align: initial;
-          }
-          &.center div {
-              float: center;
-              text-align: initial;
-          }
+            }
+            &.left div {
+                float: left;
+                text-align: initial;
+            }
+            &.center div {
+                float: center;
+                text-align: initial;
+            }
+
+
           }
 
           fds-icon-button {
@@ -119,7 +136,7 @@
       }
 
       .mdc-data-table__content {
-        max-height: 520px;
+        max-height: 560px;
         overflow-y: auto;
   
         .mdc-data-table__row {
@@ -162,6 +179,10 @@
 }
 
 :host([dense]) {
+  fds-icon{
+    --fds-icon-size: 13.5px;
+  }
+
   .fds-data-table{
     .mdc-data-table__table {
       
@@ -169,12 +190,22 @@
       .mdc-data-table__row{
         height: 40px;
       }
+      thead, tbody{
+        fds-icon{
+          max-width: 15px;
+          --fds-icon-size: 13.5px;
+        }
+      }
 
       .mdc-data-table__header-cell {
         @include fds.typography(subtitle-3);
       }
 
       .mdc-data-table__content {
+        max-height: 400px;
+        &.fds-data-table-select-enabled{
+          max-height: 490px;
+        }
         .mdc-data-table__row{
           .mdc-data-table__cell{
             @include fds.typography(body-3);

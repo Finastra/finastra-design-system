@@ -1,5 +1,6 @@
 import "@finastra/checkbox";
 import "@finastra/chip";
+import "@finastra/icon";
 import "@finastra/icon-button";
 import "@finastra/linear-progress";
 import "@finastra/radio";
@@ -8,6 +9,7 @@ import { property } from 'lit/decorators.js';
 import { DATA_TABLE_EVENTS, FDS_TABLE_DATA_ROW_PREFIX, FDS_TABLE_HEADER_CHECKBOX, FDS_TABLE_RADIO_GROUP, FDS_TABLE_ROW_CHECKBOX_SUFFIX, FDS_TABLE_ROW_RADIO_SUFFIX } from "./constants";
 import { FdsTableCellStore } from "./data-table-cells";
 import { FdsColumnSortDirection, FdsColumnType, FdsTableColumn, FdsTableRow } from "./model";
+import { getCellClassByType } from "./utils";
 
 export abstract class DataTableBase extends LitElement {
 
@@ -75,7 +77,11 @@ export abstract class DataTableBase extends LitElement {
                                     ${tableHeaders}
                                 </tr>
                             </thead>
-                            <tbody class="mdc-data-table__content" tabindex="0">
+                            <tbody class="mdc-data-table__content 
+                                ${this.selectable && 
+                                    ((this.multiSelect && this.showMultiSelectCheckBox) || 
+                                    (!this.multiSelect && this.showSingleSelectRadioBox)) ? 
+                                    'fds-data-table-select-enabled':''}" tabindex="0">
                                 ${tableRows}
                             </tbody>
                         </table>
@@ -125,20 +131,14 @@ export abstract class DataTableBase extends LitElement {
     }
 
     private _getDataTableHeaderCell(column: FdsTableColumn) {
-        let headerType = "";
-        switch (column.type) {
-            case FdsColumnType.number:
-            case FdsColumnType.type_double:
-                headerType = "mdc-data-table__header-cell--numeric";
-                break;
-            default:
-                headerType = "";
-                break;
-        }
+        const headerType = getCellClassByType(column);
         return html`
         <th class="mdc-data-table__header-cell ${headerType} ${column.align} ${column.sortable ? 'mdc-data-table__header-cell--with-sort' : ''}"
             role="columnheader" scope="col" data-column-id=${column.id}
             style=${column._style}>
+            ${column.type === FdsColumnType.date ? html`
+                <fds-icon>date_range_outline</fds-icon>
+            ` : ''}
             ${column.sortable ? this._getDataTableSortableHeaderCell(column)
                 : column.displayName ? column.displayName : column.name}
         </th>`
@@ -211,7 +211,7 @@ export abstract class DataTableBase extends LitElement {
         return html`
         <tr class="mdc-data-table__row ${this.selectable && row._fdsSelected ? 'mdc-data-table__row--selected' : ''}"
             id="${row._fdsRowId}" @click=${()=> this._onRowSelected(row)}
-            style=${row._style}>
+            style=${row._fdsTableRowStyle}>
             ${rowCells}
         </tr>`
     }

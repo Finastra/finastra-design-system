@@ -208,3 +208,126 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
     })
 <script>
  ```
+
+
+## Advanced feature
+
+If you want not only text contents in table component instead more complex contents, table component can also provide support for you!
+### Style for table
+
+As the style for web component is under the shadow dom, normally the external css style will not apply to table component.
+But we want to provide more possible for developer in case their designer want other style.
+#### Style for rows
+If you want to apply special style for a table row, you can just assgin value to  ```_fdsTableRowStyle``` to your data array, it accepts a css style string. 
+We provide an interface ```FdsTableDataItem``` if you want make your data row with an type.
+```
+FdsTableDataItem {
+    _fdsTableRowStyle?: string;
+}
+```
+#### Style for columns
+The same for columns, if you want to apply some style to the columns, you can assign value to ```_style``` to your column definition, it accepts a css style string. 
+You can check ``FdsTableColumn`` interface. There are some properties which you may not know. You will get it in the next section.
+```
+export interface FdsTableColumn {
+    id: string; //unique id for table column
+    name: string; // column name
+    type: FdsColumnType; // the data type of this column **check the cell type section for more info
+    align?: 'left' | 'right' | 'center'; // text align in cell, center as default value
+    displayName?: string; // column display name if not provided, name will display
+    sortable?: boolean; // can sort this column or not;
+    cellTemplateId?: string; // used for customized cell, check it in the Cell Type section
+    _style?: string; // customized style for one column
+}
+```
+### Cell Type
+While table is used to display data, you may need some special cell include string, number and date. We will provide some special cell types for you if you want: 
+```
+export enum FdsColumnType {
+    string = 'string',
+    number = 'number',
+    date = 'date',
+    type_double = 'type_double',
+    link = 'link',
+    chip = 'chip',
+    linear_progress = 'linear_progress',
+    cell_template = 'cell_template',
+}
+```
+#### Basic Cell Type
+``string``,  ``number`` and ``date`` type are general used basic cell types.
+
+By default the align for all cell is center. However you can set the align direction by yourself in the column definition. 
+But we highly recommand that you should put align to left for number type cell.
+#### Type Double Cell
+``type_double`` cell is common used in finance scenarios such like ``3 €``.
+You can give the data with the spec:
+```
+export interface FdsTableTypeDouble {
+    amount: number;
+    currency: string;
+}
+```
+
+By default ``type_double`` type cell is align to right.
+#### Link Cell
+``link`` cell is used to put a link inside the table cell.
+```
+export interface FdsTableLink {
+    text: string;
+    link: string;
+}
+```
+#### Chip Cell 
+``chip`` cell is used to put a chip inside the table cell.
+```
+export interface FdsTableChip{
+    label: string;
+    color?: 'success' | 'info' | 'error';
+    icon?: string;
+}
+```
+#### Linear Progress Cell 
+``linear_progress`` cell is used to put a linear process cell inside the table cell.
+
+```
+export type FdsTableLinearProgress = number | string;
+
+```
+
+You can set the value as number between [0, 1] or you can give the value with string in a percentage format for example: '80%';
+
+### Customized Cell with simple template 
+``cell_template`` cell is used when none of our predefined cell can meet your requriements. However it is an **experimental feature**. As web component is stand alone to any framework, so if you want to use the component from any other framework like angular or react. There may be issues if you use a framework component as cell template. So far cell template doesn't support complex user case. But you can create any template which native html can support. 
+
+You can assign any data to the ``cell_template`` column as it is intended to give the freedom of creation. 
+
+To map the template to table cell, you should set ``cellTemplateId`` to your column definition. So that table component can know which template to load. 
+
+To dynamic assign data into your template you need to use ``{}``to wrap your varaible. We highly recommand you use ``template`` element to wrap your template since the content in ``template`` will not display unless you cal it.
+
+ Example for template: 
+```
+<fds-data-table>
+    <template id="fds-cell-template">
+        <span>{name}</span><!-- name should be a property in the data object -->
+    </template>
+</fds-data-table>
+```
+
+Example for column definition: 
+```
+    { 
+        ....
+        type: 'cell_template', 
+        cellTemplateId: 'fds-cell-template',
+        ...
+    }
+```
+
+Example for data: 
+```
+    any {
+        name: 'cell template cell here!' // data where the template will access
+    }
+```
