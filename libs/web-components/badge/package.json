@@ -12,7 +12,6 @@
   "main": "dist/src/badge.js",
   "module": "dist/src/badge.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

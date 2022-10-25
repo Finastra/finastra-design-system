@@ -13,7 +13,6 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/data-table-styles.scss src/pagination/data-table-pagination-styles.scss"
   },
   "dependencies": {
