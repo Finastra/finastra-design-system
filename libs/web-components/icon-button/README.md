@@ -19,12 +19,3 @@ import '@finastra/icon-button';
 ...
 <fds-icon-button icon="code"></fds-icon-button>
 ```
-
-### Pure HTML pages
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/icon-button/dist/fds-icon-button.js"></script>
-
-<fds-icon-button icon="code"></fds-icon-button>
-```

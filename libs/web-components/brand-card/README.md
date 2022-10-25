@@ -20,11 +20,3 @@ import '@finastra/brand-card';
 ...
 <fds-brand-card label="App name"></fds-brand-card>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/brand-card/dist/fds-brand-card.js"></script>
-
-<fds-brand-card label="App name"></fds-brand-card>
-```

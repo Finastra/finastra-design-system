@@ -22,11 +22,3 @@ import '@finastra/slider';
 ...
 <fds-slider value="25" min="10" max="50"></fds-slider>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/slider/dist/fds-slider.js"></script>
-
-<fds-slider value="25" min="10" max="50"></fds-slider>
-```

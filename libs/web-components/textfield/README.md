@@ -22,14 +22,6 @@ import '@finastra/textfield';
 <fds-textfield label="Field me in"></fds-textfield>
 ```
 
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/textfield/dist/textfield.js"></script>
-
-<fds-textfield label="Field me in"></fds-textfield>
-```
-
 ### Native pickers
 
 Date pickers and Time pickers allow selecting a value from a standard format.

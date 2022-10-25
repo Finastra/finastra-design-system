@@ -12,7 +12,6 @@
   "main": "dist/src/checkbox.js",
   "module": "dist/src/checkbox.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

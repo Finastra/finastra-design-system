@@ -21,11 +21,3 @@ import '@finastra/textarea';
 ...
 <fds-textarea name="World"></fds-textarea>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/textarea/dist/textarea.js"></script>
-
-<fds-textarea name="World"></fds-textarea>
-```

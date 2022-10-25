@@ -13,7 +13,6 @@
   "main": "dist/src/search-input.js",
   "module": "dist/src/search-input.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

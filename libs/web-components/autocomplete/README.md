@@ -24,15 +24,3 @@ import '@finastra/autocomplete';
     <fds-list-item value="Three">Three</fds-list-item>
 </fds-autocomplete>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/autocomplete/dist/fds-autocomplete.js"></script>
-
-<fds-autocomplete name="World">
-    <fds-list-item value="One">One</fds-list-item>
-    <fds-list-item value="Two">Two</fds-list-item>
-    <fds-list-item value="Three">Three</fds-list-item>
-</fds-autocomplete>
-```

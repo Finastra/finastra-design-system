@@ -22,13 +22,3 @@ import '@finastra/badge';
     <span> Success </span>
 </fds-badge>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/badge/dist/fds-badge.js"></script>
-
-<fds-badge value="123">
-    <span> Success </span>
-</fds-badge>
-```

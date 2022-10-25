@@ -18,11 +18,3 @@ import '@finastra/<%= fileName %>';
 ...
 <fds-<%= fileName %>></fds-<%= fileName %>>
 ```
-
-### Pure HTML pages
-
-```html
-<script type="module" src="https://unpkg.com/@finastra/<%= fileName %>@latest/dist/src/<%= fileName %>.js?module"></script>
-
-<fds-<%= fileName %>></fds-<%= fileName %>>
-```

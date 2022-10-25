@@ -25,14 +25,3 @@ import '@finastra/app-bar';
     logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
 </fds-app-bar>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/app-bar/dist/fds-app-bar.js"></script>
-
-<fds-app-bar
-    appName="Such app" 
-    logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
-</fds-app-bar>
-```

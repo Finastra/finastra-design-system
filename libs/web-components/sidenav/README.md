@@ -30,22 +30,3 @@ import '@finastra/sidenav';
   </div>
 </fds-sidenav>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/sidenav/dist/fds-sidenav.js"></script>
-
-<fds-sidenav type="">
-   <div slot="sidenavContent">
-    Sidenav content
-  </div>
-  <div slot="navigation">
-    Navigation content
-  </div>
-  <div slot="appContent">
-    App Content
-  </div>
-</fds-sidenav>
-```
-

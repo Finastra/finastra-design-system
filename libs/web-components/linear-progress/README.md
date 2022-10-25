@@ -21,11 +21,3 @@ import '@finastra/linear-progress';
 ...
 <fds-linear-progress indeterminate></fds-linear-progress>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/linear-progress/dist/fds-linear-progress.js"></script>
-
-<fds-linear-progress indeterminate></fds-linear-progress>
-```
