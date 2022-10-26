@@ -49,6 +49,7 @@
   .actions {
     display: flex;
     flex-direction: row-reverse;
+    margin-top: 12px;
   
     ::slotted([slot="secondaryAction"]) {
       margin-right: var(--fds-spacing-2, 8px);
@@ -82,6 +83,7 @@
   }
   .actions  {
     align-self: center;
+    margin-top: 0px;
   }
 }
 
