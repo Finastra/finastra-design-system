@@ -54,38 +54,3 @@ import '@finastra/card';
   </fds-card-actions>
 </fds-card>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/card/dist/fds-card.js"></script>
-
-<style>
-  fds-card {
-    max-width: 400px;
-  }
-
-  .example-header-image {
-    background-image: url('https://cdn2.thecatapi.com/images/zvfTwDY54.jpg');
-    background-size: cover;
-  }
-</style>
-
-<fds-card>
-  <fds-card-header>
-    <div class="example-header-image"></div>
-    <div class="card-header-text">
-      <fds-card-title>Header</fds-card-title>
-      <fds-card-subtitle>Subhead</fds-card-subtitle>
-    </div>
-  </fds-card-header>
-  <img src="https://cdn2.thecatapi.com/images/jb.jpg">
-  <fds-card-content>
-    Add your card content here
-  </fds-card-content>
-  <fds-card-actions>
-    <fds-text-button label="Button"></fds-text-button>
-    <fds-text-button label="Button"></fds-text-button>
-  </fds-card-actions>
-</fds-card>
-```

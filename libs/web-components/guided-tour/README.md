@@ -32,33 +32,6 @@ this.data = {
 <fds-guided-tour showStepInfo data="${this.data}" show id="guided-tour-demo"></fds-guided-tour>
 ```
 
-### Pure HTML pages
-
-```
-<script type="module" src="https://cdn.jsdelivr.net/npm/@finastra/guided-tour/dist/src/guided-tour.js"></script>
-
-<fds-guided-tour showStepInfo id="guided-tour-demo"></fds-guided-tour>
-<script>
-    const data =  {
-        steps: [
-            {
-                title: 'Step 1'
-                description: 'Lorem ipsum dolor sit amet. Ab rerum totam et vero error est commodi autem et dolores magnam sed harum quibusdam sed tempore eligendi et quos perspiciatis. Eos autem natus eum iusto sunt sit laborum dolores At reprehenderit cumque. '
-            },
-            {
-                title: 'Step 2'
-                description: 'Lorem ipsum dolor sit amet. Ab rerum totam et vero error est commodi autem et dolores magnam sed harum quibusdam sed tempore eligendi et quos perspiciatis. Eos autem natus eum iusto sunt sit laborum dolores At reprehenderit cumque. '
-            }
-        ]
-    }
-
-    const guidedTour = document.getElementById('guided-tour-demo');
-    guidedTour.data = data;
-    guidedTour.show = true;
-</script>
-
-```
-
 ## Data Interface
 
 ```ts

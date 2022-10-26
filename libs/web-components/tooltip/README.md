@@ -23,15 +23,6 @@ npm i @finastra/tippy.js-theme
 import @finastra/tippy.js-theme/dist/theme.css
 ```
 
-or use the CDN in the browser:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@finastra/tippy.js-theme@latest/dist/theme.css"
-/>
-```
-
 Once loaded, declare it like any other theme:
 
 ```js

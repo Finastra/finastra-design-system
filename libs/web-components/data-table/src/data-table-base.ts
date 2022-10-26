@@ -166,7 +166,7 @@ export abstract class DataTableBase extends LitElement {
             <div class="mdc-data-table__header-cell-label">
                 ${column.displayName ? column.displayName : column.name}
             </div>
-            ${sortIconPosition === 'right' ? '': sortableIconElement}
+            ${sortIconPosition === 'right' ? sortableIconElement: '' }
  
             <div class="mdc-data-table__sort-status-label" aria-hidden="true" id="carbs-status-label"></div>
         </div>`;

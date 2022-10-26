@@ -285,7 +285,7 @@ export const columns = [
     { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
     { id: 'Error Response', name: 'Error Response', type: 'string', align: 'center' },
     { id: 'No. of Calls', name: 'No. of Calls', type: 'number', align: 'right', sortable: true },
-    { id: 'Revenue', name: 'Revenue', type: 'type_double', align: 'right', sortable: true},
+    { id: 'Revenue', name: 'Revenue', type: 'type_double', align: 'right'},
     { id: 'Status', name: 'Status', type: 'chip', align: 'center'},
     { id: 'Confidence Score', name : 'Confidence Score', type: 'linear_progress', align: 'center'},
     { id: 'apiDetail', name: 'Api Detail', type: 'cell_template', align: 'center', cellTemplateId: 'fds-table-customized' }

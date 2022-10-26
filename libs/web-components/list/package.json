@@ -1,7 +1,7 @@
 {
   "name": "@finastra/list",
   "displayName": "List",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "List Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,11 +12,10 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/list-styles.scss src/control-list-item-styles.scss src/list-item-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-list": "0.26.1",
+    "@material/mwc-list": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

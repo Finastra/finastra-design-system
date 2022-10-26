@@ -1,7 +1,7 @@
 {
   "name": "@finastra/menu-trigger",
   "displayName": "MenuTrigger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "MenuTrigger Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,12 +12,11 @@
   "main": "dist/src/menu-trigger.js",
   "module": "dist/src/menu-trigger.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "1.0.5",
-    "@finastra/icon": "1.0.5",
+    "@finastra/button": "1.0.6",
+    "@finastra/icon": "1.0.6",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

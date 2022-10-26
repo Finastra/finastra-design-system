@@ -1,7 +1,7 @@
 {
   "name": "@finastra/textarea",
   "displayName": "Textarea",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Textarea Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,11 +12,10 @@
   "main": "dist/src/textarea.js",
   "module": "dist/src/textarea.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-textarea": "0.26.1",
+    "@material/mwc-textarea": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

@@ -24,16 +24,3 @@ import '@finastra/button-toggle-group';
     <fds-button-toggle icon="camera"></fds-button-toggle>
 </fds-button-toggle-group>
 ```
-
-### Pure HTML pages
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/button-toggle-group/dist/fds-button-toggle-group.js"></script>
-
-<fds-button-toggle-group style="padding-bottom: 16px">
-    <fds-button-toggle icon="accessibility"></fds-button-toggle>
-    <fds-button-toggle icon="exit_to_app"></fds-button-toggle>
-    <fds-button-toggle icon="camera"></fds-button-toggle>
-</fds-button-toggle-group>
-```

@@ -20,11 +20,3 @@ import '@finastra/chip';
 ...
 <fds-chip selected label="Munk"></fds-chip>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/chip/dist/fds-chip.js"></script>
-
-<fds-chip selected label="Munk"></fds-chip>
-```

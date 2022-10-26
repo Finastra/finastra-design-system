@@ -1,7 +1,7 @@
 {
   "name": "@finastra/skeleton",
   "displayName": "Skeleton",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Skeleton Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,7 +12,6 @@
   "main": "dist/src/skeleton.js",
   "module": "dist/src/skeleton.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

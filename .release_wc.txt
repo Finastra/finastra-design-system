@@ -56,3 +56,4 @@
 - [10/14/2022] Request release v1.0.3 by dorsaffrigui 
 - [10/17/2022] Request release v1.0.4 by dorsaffrigui 
 - [10/24/2022] Request release v1.0.5 by ttalbot 
+- [10/24/2022] Request release v1.0.6 by ttalbot 
