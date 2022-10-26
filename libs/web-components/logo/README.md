@@ -20,15 +20,6 @@ import '@finastra/logo';
 <fds-logo dense></fds-logo>
 ```
 
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/logo/dist/fds-logo.js"></script>
-
-<fds-logo dense></fds-logo>
-```
-
-
 ## CSS API
 
 Here is the list of CSS custom properties, aka CSS Variables:

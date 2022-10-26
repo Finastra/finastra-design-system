@@ -1,5 +1,6 @@
 const README = require('../README.md');
 import '@finastra/autocomplete';
+import '@finastra/list';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -37,9 +38,9 @@ const Template: Story = ({
   )} ?disabled=${ifDefined(disabled)} ?minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)} icon=${ifDefined(
     icon
   )} ?showClearButton=${ifDefined(showClearButton)} .useInnerFilter=${useInnerFilter} .placeholder=${ifDefined(placeholder)}>
- <mwc-list-item value="One">One</mwc-list-item>
- <mwc-list-item value="Two">Two</mwc-list-item>
- <mwc-list-item value="Three">Three</mwc-list-item>
+ <fds-list-item value="One">One</fds-list-item>
+ <fds-list-item value="Two">Two</fds-list-item>
+ <fds-list-item value="Three">Three</fds-list-item>
 </fds-autocomplete>`;
 };
 

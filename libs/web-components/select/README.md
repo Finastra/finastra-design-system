@@ -19,21 +19,8 @@ npm i @finastra/select
 import '@finastra/select';
 ...
 <fds-select>
-    <mwc-list-item value="1">Item 1</mwc-list-item>
-    <mwc-list-item value="2">Item 2</mwc-list-item>
-    <mwc-list-item value="3">Item 3</mwc-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
 </fds-select>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/select/dist/fds-select.js"></script>
-
-<fds-select>
-    <mwc-list-item value="1">Item 1</mwc-list-item>
-    <mwc-list-item value="2">Item 2</mwc-list-item>
-    <mwc-list-item value="3">Item 3</mwc-list-item>
-</fds-select>
-```
-

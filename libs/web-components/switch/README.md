@@ -22,11 +22,3 @@ import '@finastra/switch';
 ...
 <fds-switch selected></fds-switch>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/switch/dist/switch.js"></script>
-
-<fds-switch selected></fds-switch>
-```

@@ -1,7 +1,7 @@
 {
   "name": "@finastra/sidenav",
   "displayName": "Sidenav",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Sidenav Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,12 +12,11 @@
   "main": "dist/src/sidenav.js",
   "module": "dist/src/sidenav.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/app-bar": "1.0.4",
-    "@material/mwc-drawer": "0.26.1",
+    "@finastra/app-bar": "1.0.6",
+    "@material/mwc-drawer": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

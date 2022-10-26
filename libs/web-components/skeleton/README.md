@@ -18,11 +18,3 @@ import '@finastra/skeleton';
 ...
 <fds-skeleton></fds-skeleton>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/skeleton/dist/fds-skeleton.js"></script>
-
-<fds-skeleton></fds-skeleton>
-```

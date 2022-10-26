@@ -19,11 +19,3 @@ import '@finastra/divider';
 ...
 <fds-divider inset="both"></fds-divider>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/divider/dist/fds-divider.js"></script>
-
-<fds-divider inset="both"></fds-divider>
-```

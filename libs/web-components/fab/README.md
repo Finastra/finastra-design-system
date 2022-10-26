@@ -19,12 +19,3 @@ import '@finastra/fab';
 ...
 <fds-fab extended gradient label="Edit" icon="edit"></fds-fab>
 ```
-
-### Pure HTML pages
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/fab/dist/fds-fab.js"></script>
-
-<fds-fab dense label="Photos" icon="camera"></fds-fab>
-```

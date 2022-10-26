@@ -11,5 +11,5 @@ Status Messages patterns are exemple of status message for a web or mobile appli
 This pattern requires the following web components to be installed:
 
 ```
-npm i @finastra/button @finastra/textfield @material/mwc-icon
+npm i @finastra/button @finastra/textfield @finastra/icon
 ```

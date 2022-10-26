@@ -35,19 +35,3 @@ import '@finastra/app-card';
   large>
 </fds-app-card>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/app-card/dist/fds-app-card.js"></script>
-
-<fds-app-card
-  name="Business Economics"
-  author="Finastra"
-  tags='["Account Information", "Api", "Banking"]'
-  flag="PUBLISHED"
-  icon="https://www.finastra.com/themes/custom/themekit/dist/logo.svg"
-  description="Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that."
-  large>
-</fds-app-card>
-```

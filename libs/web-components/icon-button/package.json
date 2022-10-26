@@ -1,7 +1,7 @@
 {
   "name": "@finastra/icon-button",
   "displayName": "Icon Button",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Icon Button Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,11 +12,10 @@
   "main": "dist/src/icon-button.js",
   "module": "dist/src/icon-button.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-icon-button": "0.26.1",
+    "@material/mwc-icon-button": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

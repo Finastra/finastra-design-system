@@ -1,9 +1,8 @@
 import '@finastra/brand-card';
 import '@finastra/button';
+import { Menu } from '@finastra/menu';
 import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
-import '@material/mwc-menu';
-import { Menu } from '@material/mwc-menu';
 import { html, LitElement } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { styles } from './styles.css';
@@ -77,7 +76,7 @@ export class Launchpad extends LitElement {
   render() {
     return html`
       <fds-menu-trigger @click="${() => this.launchpad!.show()}" outlined id="trigger" dense></fds-menu-trigger>
-      <mwc-menu id="launchpad" fullwidth @closed=${this._onClosed}>
+      <fds-menu id="launchpad" fullwidth @closed=${this._onClosed}>
         <div class="menu-body">
           <div class="app-content">
             <div class="app-title">${this.title}</div>
@@ -115,7 +114,7 @@ export class Launchpad extends LitElement {
             icon="chevron_left"
           ></fds-button>
         </div>
-      </mwc-menu>
+      </fds-menu>
     `;
   }
 

@@ -20,13 +20,3 @@ import '@finastra/radio';
 <fds-radio checked name="Gaga" value="Freddie"></fds-radio>
 <fds-radio checked name="Gaga" value="Mercury"></fds-radio>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/radio/dist/fds-radio.js"></script>
-
-<fds-radio checked name="Gaga" value="Freddie"></fds-radio>
-<fds-radio checked name="Gaga" value="Mercury"></fds-radio>
-```
-

@@ -1,6 +1,6 @@
 {
   "name": "@finastra/divider",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Divider Web Component",
   "keywords": [
     "finastra design system",
@@ -13,7 +13,6 @@
   "main": "dist/src/divider.js",
   "module": "dist/src/divider.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {

@@ -43,19 +43,3 @@ import '@finastra/expansion-panel';
 
 </fds-expansion-panel>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/expansion-panel/dist/fds-expansion-panel.js"></script>
-
- <fds-expansion-panel>
-    <fds-expansion-panel-item>
-        <div slot="title">User profile</div>
-        <div slot="description">User profile description</div>
-        <div class="content">
-            User profile content
-        </div>
-    </fds-expansion-panel-item>
-</fds-expansion-panel>
-```

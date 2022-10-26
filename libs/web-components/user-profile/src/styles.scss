@@ -2,7 +2,7 @@
 
 :host {
   display: inline-block;
-  --mdc-menu-min-width: 300px;
+  --fds-menu-min-width: 300px;
   @include fds.property(--svg-gradient-stop-1, primary);
   @include fds.property(--svg-gradient-stop-2, secondary);
 
