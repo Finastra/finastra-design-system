@@ -71,6 +71,13 @@ Secondary.args = {
   secondary: true
 };
 
+export const TrailingIcon: Story<OutlinedButton> = Template.bind({});
+TrailingIcon.args = {
+  label: 'Contained',
+  icon: 'arrow_forward',
+  trailingIcon: true
+};
+
 export const Dense: Story<OutlinedButton> = Template.bind({});
 Dense.args = {
   label: 'Dense',

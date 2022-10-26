@@ -5,6 +5,7 @@
   outline: none;
   --fds-button-radius: 18px;
   --fds-button-radius-large: 24px;
+  --fds-button-overlay: white;
 }
 
 :host>button {
@@ -15,22 +16,40 @@
 
   --fds-icon-color: var(--fds-on-primary, #694ED6);
   --fds-icon-size: 18px;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--fds-button-radius);
   border: none;
+  outline: none;
   cursor: pointer;
 
   &::after {
-    background: white;
+    border-radius: var(--fds-button-radius);
+    background: var(--fds-button-overlay);
     content: '';
-    // inset: 0;
+    inset: 0;
     position: absolute;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+  }
+
+  &:hover::after {
+    opacity: 0.04;
+  }
+
+  &:focus::after {
+    opacity: 0.12;
   }
 }
 
-:host>button>fds-icon {
+:host>button>fds-icon:last-child {
+  margin-left: var(--fds-spacing-2);
+}
+
+:host>button>fds-icon:first-child {
   margin-right: var(--fds-spacing-2);
 }
 
@@ -54,6 +73,12 @@
   @include fds.typography('button-1');
 
   --fds-icon-size: 24px;
+  --fds-button-radius: var(--fds-button-radius-large);
   padding: 10px var(--fds-spacing-4);
-  border-radius: var(--fds-button-radius-large);
+}
+
+:host([disabled])>button {
+  &:hover::after {
+    opacity: 0;
+  }
 }

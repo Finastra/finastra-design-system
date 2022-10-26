@@ -3,21 +3,25 @@
 :host>button {
     @include fds.text-color('primary');
     
+    --fds-icon-color: var(--fds-primary);
+    --fds-button-overlay: var(--fds-primary);
     padding-top: calc(var(--fds-spacing-2) - 1px);
     padding-bottom: calc(var(--fds-spacing-2) - 1px);
     background-color: transparent;
     border: 1px solid var(--fds-primary);
-    --fds-icon-color: var(--fds-primary);
 }
 
 :host([secondary])>button {
     @include fds.text-color('secondary');
-    border: 1px solid var(--fds-secondary);
+
     --fds-icon-color: var(--fds-secondary);
+    --fds-button-overlay: var(--fds-secondary);
+    border: 1px solid var(--fds-secondary);
 }
 
 :host([disabled])>button {
     @include fds.text-color('on-surface-disabled');
-    border: 1px solid var(--fds-on-surface-disabled);
+
     --fds-icon-color: var(--fds-on-surface-disabled);
+    border: 1px solid var(--fds-on-surface-disabled);
 }
