@@ -96,9 +96,6 @@ export class AlertMessage extends LitElement {
     this.remove();
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-  }
 }
 
 declare global {
