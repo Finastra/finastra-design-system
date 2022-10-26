@@ -29,6 +29,12 @@ export class BaseButton extends LitElement {
   dense = false;
 
   /**
+   * Use the larger button size
+   */
+   @property({ type: Boolean })
+   large = false;
+
+  /**
    * Is the button disabled or not
    */
   @property({ type: Boolean })
