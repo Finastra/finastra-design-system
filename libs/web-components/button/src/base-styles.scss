@@ -46,16 +46,16 @@
 }
 
 :host>button>fds-icon:last-child {
-  margin-left: var(--fds-spacing-2);
+  @include fds.margin(2, left);
 }
 
 :host>button>fds-icon:first-child {
-  margin-right: var(--fds-spacing-2);
+  @include fds.margin(2, right);
 }
 
 :host([gradient])>button {
-  background: var(--fds-gradient);
-  color: var(--fds-on-gradient);
+  @include fds.bg-color('gradient');
+  @include fds.text-color('on-gradient');
 }
 
 :host([fullWidth]),

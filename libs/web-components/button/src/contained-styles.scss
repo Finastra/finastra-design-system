@@ -6,8 +6,8 @@
 }
 
 :host([secondary])>button {
-    background-color: var(--fds-secondary);
-    color: var(--fds-on-secondary);
+    @include fds.bg-color('secondary');
+    @include fds.text-color('on-secondary');
 }
 
 :host([disabled])>button {
