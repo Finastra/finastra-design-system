@@ -21,14 +21,3 @@ import '@finastra/button';
 <fds-outlined-button label="Outlined button"></fds-outlined-button>
 <fds-text-button label="Text button"></fds-text-button>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/button/dist/fds-button.js"></script>
-<fds-button label="Contained button"></fds-button>
-
-<fds-outlined-button label="Outlined button"></fds-outlined-button>
-
-<fds-text-button label="Text button"></fds-text-button>
-```

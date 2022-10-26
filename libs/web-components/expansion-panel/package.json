@@ -1,7 +1,7 @@
 {
   "name": "@finastra/expansion-panel",
   "displayName": "ExpansionPanel",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "ExpansionPanel Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,7 +12,6 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/expansion-panel.scss src/expansion-panel-item.scss"
   },
   "dependencies": {

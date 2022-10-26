@@ -30,14 +30,3 @@ import '@finastra/list';
   <fds-list-item>Item 2</fds-list-item>
 </fds-list>
 ```
-
-### Pure HTML pages
-
-```html
-<script type="module" src="https://unpkg.com/@finastra/list@latest/dist/src/index.js?module"></script>
-
-<fds-list>
-  <fds-list-item>Item 1</fds-list-item>
-  <fds-list-item>Item 2</fds-list-item>
-</fds-list>
-```

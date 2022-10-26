@@ -64,36 +64,3 @@ import '@finastra/global-search';
     > </fds-global-search-page>
 </fds-global-search>
 ```
-
-### Pure HTML pages
-A demo code can be find here: [demo](https://github.com/Finastra/finastra-design-system/blob/master/libs/web-components/global-search/demo/index.html)
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script src="https://cdn.jsdelivr.net/npm/@finastra/global-search/dist/fds-global-search.js"></script>
-
- <fds-global-search-group 
-        slot="searches"
-        title="Trending Searches"
-        icon = "trending_up"
-        items=${ [{
-                    text: 'enterprise risk',
-                },{
-                    text: 'customer service',
-                }]
-                }
-        >  </fds-global-search-group>
-    <fds-global-search-page 
-        slot="pages"
-        title=${"Popular applications"}
-        .items=${
-            [
-            {
-                logo: '//us1-cdn.openchannel.io/59bfc432ca753d60bf995c46/public/603e561d130c5a04da2d3d7c.jpg',
-                text: "CloudMargin"
-            }
-            ]
-        }
-    > </fds-global-search-page>
-```
-

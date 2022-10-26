@@ -1,7 +1,7 @@
 {
   "name": "@finastra/icon-bar",
   "displayName": "IconBar",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "IconBar Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,11 +12,10 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/icon-bar.scss src/icon-bar-item.scss"
   },
   "dependencies": {
-    "@finastra/icon-button": "1.0.4",
+    "@finastra/icon-button": "1.0.6",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

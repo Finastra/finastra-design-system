@@ -23,7 +23,3 @@ import '@finastra/charts';
 ...
 <fds-pie-chart width="380" data='[44, 55, 13, 43, 22]' label="['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']"></fds-pie-chart>
 ```
-
-### Pure HTML pages
-
-> This component cannot be imported through CDNs, as it's underlying library [Apex Chart](https://apexcharts.com/) doesn't provide an ES module.

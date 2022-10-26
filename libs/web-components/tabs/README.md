@@ -20,14 +20,3 @@ import '@finastra/tabs';
     <fds-tab-item label="Tab 2">Content tab 2</fds-tab-item>
 </fds-tab-group>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/tabs/dist/tabs.js"></script>
-
-<fds-tab-group>
-    <fds-tab-item label="Tab 1">Content tab 1</fds-tab-item>
-    <fds-tab-item label="Tab 2">Content tab 2</fds-tab-item>
-</fds-tab-group>
-```

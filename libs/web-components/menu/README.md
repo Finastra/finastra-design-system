@@ -48,32 +48,3 @@ import '@finastra/list';
 </script>
 
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/button/dist/fds-button.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@finastra/menu/dist/fds-menu.js"></script>
-
-<div style="position: relative;">
-    <fds-button id="basicButton" raised label="Open Basic Menu"></fds-button>
-    <fds-menu id="basicMenu">
-        <fds-list-item>one</fds-list-item>
-        <fds-list-item>two</fds-list-item>
-        <fds-list-item disabled><div>four</div></fds-list-item>
-        <li divider></li>
-        <fds-list-item>five</fds-list-item>
-    </fds-menu>
-</div>
-
-<script>
-  const menu = document.getElementById('basicMenu');
-  const button = document.getElementById('basicButton');
-
-  // anchor must share a parent with menu that is `position: relative`
-  menu.anchor = button;  
-  button.addEventListener('click', function() {
-    menu.open = !menu.open;
-  });
-</script>
-```

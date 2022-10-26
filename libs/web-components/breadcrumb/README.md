@@ -18,15 +18,3 @@ import '@finastra/breadcrumb';
 ...
 <fds-breadcrumb items="['Link 1', 'Link 2']"></fds-breadcrumb>
 ```
-
-### Pure HTML pages
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@finastra/breadcrumb/dist/fds-breadcrumb.js"></script>
-
-<fds-breadcrumb id="breadcrumb"></fds-breadcrumb>
-<script>
-    const breadcrumb = document.getElementById('breadcrumb');
-    breadcrumb.items = ['Link 1', 'Link 2', 'Link 3']
-</script>
-```
