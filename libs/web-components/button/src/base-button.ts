@@ -50,7 +50,6 @@ export class BaseButton extends LitElement {
     return html`<button
       aria-label="${this.label || this.icon}"
       ?disabled="${this.disabled}"
-      ?trailingIcon="${this.trailingIcon}"
     >
       ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
       <span>${this.label}</span>
