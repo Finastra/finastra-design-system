@@ -10,32 +10,31 @@
   align-self: center;
   border: 1.5px solid;
   border-radius: 8px;
-  margin: 32px 0 32px 0;
   padding: var(--fds-spacing-4, 24px);
   align-items: center;
+  position: relative;
 
-  .description {
-    .title {
-      @include fds.typography(subtitle-1);
-    }
-    .subtitle {
-      @include fds.typography(body-1);
-    }
+  .close-btn {
+    position: absolute;
+    cursor:pointer;
+    right: 20px;
+    top: 20px;
+    @include fds.property(color, on-surface-medium);
+    --fds-icon-size: 16px;
   }
 
   .message {
     flex-direction: row;
     display: flex;
-    margin-bottom: 8px;
-    .message-icon {
+    .icon {
       display: flex;
       justify-content: center;
-      background: var(--fds-surface);
+      @include fds.property(background, surface);
       align-items: center;
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      margin-right: 32px;
+      margin-right: var(--fds-spacing-3, 16px);
     }
   }
 
@@ -44,21 +43,49 @@
     @include fds.text-color(on-surface);
     @include fds.typography(subtitle-2);
   }
-  .message {
+  .subtitle {
     @include fds.text-color(on-surface-medium);
     @include fds.typography(body-2);
   }
-}
 
-.actions {
-  display: flex;
-  flex-direction: row-reverse;
-
-  ::slotted([slot="secondaryAction"]) {
-    margin-right: 8px;
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+  
+    ::slotted([slot="secondaryAction"]) {
+      margin-right: var(--fds-spacing-2, 8px);
+    }
   }
 }
 
+.singleLine {
+  .description {
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    padding-bottom: 0px
+  }
+  .subtitle {
+    margin-left: var(--fds-spacing-3, 16px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+  }
+
+  .alert {
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon-container {
+    align-self: center;
+  }
+  .actions  {
+    align-self: center;
+  }
+}
 
 :host([type="success"]) {
   .container {
@@ -85,5 +112,22 @@
   .container {
     @include fds.property(background, surface-info);
     @include fds.property(border-color, outline-info);
+  }
+}
+
+:host([dense]) {
+  .container {
+    padding: var(--fds-spacing-3, 16px);
+    --fds-icon-size: 20px;
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .title {
+      @include fds.typography(subtitle-3);
+    }
+    .subtitle {
+      @include fds.typography(body-3);
+    }
   }
 }
