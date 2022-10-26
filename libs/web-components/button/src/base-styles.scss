@@ -13,14 +13,21 @@
   @include fds.padding-x(3);
   @include fds.padding-y(2);
 
+  --fds-icon-color: var(--fds-on-primary, #694ED6);
+  --fds-icon-size: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  --fds-icon-color: var(--fds-on-primary);
-  --fds-icon-size: 18px;
   border-radius: var(--fds-button-radius);
   border: none;
   cursor: pointer;
+
+  &::after {
+    background: white;
+    content: '';
+    // inset: 0;
+    position: absolute;
+  }
 }
 
 :host>button>fds-icon {
@@ -46,7 +53,7 @@
 :host([large])>button {
   @include fds.typography('button-1');
 
+  --fds-icon-size: 24px;
   padding: 10px var(--fds-spacing-4);
   border-radius: var(--fds-button-radius-large);
-  --fds-icon-size: 24px;
 }

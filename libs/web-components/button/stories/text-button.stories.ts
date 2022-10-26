@@ -24,19 +24,20 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-text-button
     .label=${label}
     .icon=${ifDefined(icon)}
     ?secondary=${secondary}
     ?dense=${dense}
+    ?large=${large}
     ?disabled=${disabled}
     ?fullwidth=${fullwidth}
     ?trailingIcon=${trailingIcon}
   ></fds-text-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`
   <style>
     .demo-container {
@@ -49,6 +50,7 @@ const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = fa
       .icon=${ifDefined(icon)}
       ?secondary=${secondary}
       ?dense=${dense}
+      ?large=${large}
       ?disabled=${disabled}
       ?fullwidth=${fullwidth}
       ?trailingIcon=${trailingIcon}
@@ -74,6 +76,13 @@ Dense.args = {
   label: 'Dense',
   icon: 'chat',
   dense: true
+};
+
+export const Large: Story<TextButton> = Template.bind({});
+Large.args = {
+  label: 'Large',
+  icon: 'lock',
+  large: true
 };
 
 export const Disabled: Story<TextButton> = Template.bind({});

@@ -24,19 +24,20 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-outlined-button
     .label=${label}
     .icon=${ifDefined(icon)}
     ?secondary=${secondary}
     ?dense=${dense}
+    ?large=${large}
     ?disabled=${disabled}
     ?fullwidth=${fullwidth}
     ?trailingIcon=${trailingIcon}
   ></fds-outlined-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
   return html`
   <style>
     .demo-container {
@@ -49,6 +50,7 @@ const FullWidthTemplate: Story = ({ icon, label, dense, disabled, secondary = fa
       .icon=${ifDefined(icon)}
       ?secondary=${secondary}
       ?dense=${dense}
+      ?large=${large}
       ?disabled=${disabled}
       ?fullwidth=${fullwidth}
       ?trailingIcon=${trailingIcon}
@@ -71,14 +73,21 @@ Secondary.args = {
 
 export const Dense: Story<OutlinedButton> = Template.bind({});
 Dense.args = {
-  label: 'Outlined',
+  label: 'Dense',
   icon: 'chat',
   dense: true
 };
 
+export const Large: Story<OutlinedButton> = Template.bind({});
+Large.args = {
+  label: 'Large',
+  icon: 'lock',
+  large: true
+};
+
 export const Disabled: Story<OutlinedButton> = Template.bind({});
 Disabled.args = {
-  label: 'Outlined',
+  label: 'Disabled',
   icon: 'edit',
   disabled: true
 };
