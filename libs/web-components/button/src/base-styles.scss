@@ -3,8 +3,11 @@
 :host {
   display: inline-flex;
   outline: none;
+  --fds-icon-size: 18px;
+  --fds-icon-size-large: 24px;
   --fds-button-radius: 18px;
   --fds-button-radius-large: 24px;
+  --fds-button-dense-padding-y: 6px;
   --fds-button-overlay: white;
 }
 
@@ -15,7 +18,6 @@
   @include fds.padding-y(2);
 
   --fds-icon-color: var(--fds-on-primary, #694ED6);
-  --fds-icon-size: 18px;
   position: relative;
   width: 100%;
   display: inline-flex;
@@ -67,15 +69,15 @@
   @include fds.typography('button-3');
   @include fds.padding-x(3);
 
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: var(--fds-button-dense-padding-y);
+  padding-bottom: var(--fds-button-dense-padding-y);
 }
 
 :host([large])>button {
   @include fds.typography('button-1');
   @include fds.padding-x(4);
 
-  --fds-icon-size: 24px;
+  --fds-icon-size: var(--fds-icon-size-large);
   --fds-button-radius: var(--fds-button-radius-large);
   padding-top: 10px;
   padding-bottom: 10px;
