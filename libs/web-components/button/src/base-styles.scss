@@ -17,6 +17,7 @@
   --fds-icon-color: var(--fds-on-primary, #694ED6);
   --fds-icon-size: 18px;
   position: relative;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -58,8 +59,7 @@
   @include fds.text-color('on-gradient');
 }
 
-:host([fullWidth]),
-:host([fullWidth])>button {
+:host([fullWidth]) {
   width: 100%;
 }
 
