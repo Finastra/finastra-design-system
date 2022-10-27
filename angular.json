@@ -32,6 +32,18 @@
       },
       "tags": []
     },
+    "alert-message": {
+      "root": "libs/web-components/alert-message",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/alert-message/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "angular-components": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
