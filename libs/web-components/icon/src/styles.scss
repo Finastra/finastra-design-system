@@ -33,6 +33,14 @@
   @include fds.text-color(error);
 }
 
+:host([warning]) {
+  @include fds.text-color(warning);
+}
+
+:host([info]) {
+  @include fds.text-color(surface-info);
+}
+
 :host([gradient]) {
   @include fds.text-color(gradient);
 }

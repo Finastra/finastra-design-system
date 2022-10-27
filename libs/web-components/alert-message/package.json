@@ -1,21 +1,22 @@
 {
-  "name": "@finastra/slider",
-  "displayName": "Slider",
+  "name": "@finastra/alert-message",
+  "displayName": "AlertMessage",
   "version": "1.0.7",
-  "description": "Slider Web Component",
+  "description": "AlertMessage Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "Slider"
+    "AlertMessage"
   ],
   "license": "MIT",
-  "main": "dist/src/slider.js",
-  "module": "dist/src/slider.js",
+  "main": "dist/src/alert-message.js",
+  "module": "dist/src/alert-message.js",
   "scripts": {
+    "build": "webpack",
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@material/mwc-slider": "0.27.0",
+    "@finastra/icon": "1.0.7",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
