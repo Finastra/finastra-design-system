@@ -99,9 +99,7 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
       }
 
       .message-actions>fds-button,
-      .message-actions>fds-outlined-button,
-      .message-actions>fds-button>button,
-      .message-actions>fds-outlined-button>button {
+      .message-actions>fds-outlined-button {
         width: 100%;
       }
     }
