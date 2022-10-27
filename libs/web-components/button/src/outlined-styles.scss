@@ -6,8 +6,8 @@
     
     --fds-icon-color: var(--fds-primary);
     --fds-button-overlay: var(--fds-primary);
-    padding-top: calc(var(--fds-spacing-2) - 1px);
-    padding-bottom: calc(var(--fds-spacing-2) - 1px);
+    padding-top: calc(var(--fds-spacing-2, 8px) - 1px);
+    padding-bottom: calc(var(--fds-spacing-2, 8px) - 1px);
     background-color: transparent;
     border-width: 1px;
 }
