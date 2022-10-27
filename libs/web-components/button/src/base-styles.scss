@@ -85,6 +85,8 @@
 }
 
 :host([disabled])>button {
+  pointer-events: none;
+  
   &:hover::after {
     opacity: 0;
   }
