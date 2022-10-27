@@ -5,8 +5,8 @@
     
     padding-top: calc(var(--fds-spacing-2, 8px) - 1px);
     padding-bottom: calc(var(--fds-spacing-2, 8px) - 1px);
-    border-style: solid;
     border-width: 1px;
+    border-style: solid;
     box-sizing: border-box;
 }
 
@@ -17,6 +17,11 @@
 :host([dense])>button {
     padding-top: calc(var(--fds-button-dense-padding-y) - 1px);
     padding-bottom: calc(var(--fds-button-dense-padding-y) - 1px);
+}
+
+:host([large])>button {
+    padding-top: calc(var(--fds-button-large-padding-y) - 1px);
+    padding-bottom: calc(var(--fds-button-large-padding-y) - 1px);
 }
 
 :host([disabled])>button {

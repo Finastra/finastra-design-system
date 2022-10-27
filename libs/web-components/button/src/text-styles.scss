@@ -17,6 +17,4 @@
 
 :host([disabled])>button {
     @include fds.text-color('on-surface-disabled');
-
-    --fds-icon-color: var(--fds-on-surface-disabled);
 }

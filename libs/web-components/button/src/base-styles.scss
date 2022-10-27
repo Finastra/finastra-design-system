@@ -8,6 +8,7 @@
   --fds-button-radius: 18px;
   --fds-button-radius-large: 24px;
   --fds-button-dense-padding-y: 6px;
+  --fds-button-large-padding-y: 10px;
   --fds-button-overlay: white;
 }
 
@@ -79,8 +80,8 @@
 
   --fds-icon-size: var(--fds-icon-size-large);
   --fds-button-radius: var(--fds-button-radius-large);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: var(--fds-button-large-padding-y);
+  padding-bottom: var(--fds-button-large-padding-y);
 }
 
 :host([disabled])>button {
