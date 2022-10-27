@@ -65,20 +65,20 @@
 
 :host([dense])>button {
   @include fds.typography('button-3');
-  @include fds.padding-y(3);
+  @include fds.padding-x(3);
 
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 :host([large])>button {
   @include fds.typography('button-1');
-  @include fds.padding-y(4);
+  @include fds.padding-x(4);
 
   --fds-icon-size: 24px;
   --fds-button-radius: var(--fds-button-radius-large);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 :host([disabled])>button {
