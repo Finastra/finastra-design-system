@@ -54,6 +54,10 @@
       }
       }
 
+      tbody tr:hover{
+        background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+      }
+
       thead,
       tbody {
         fds-icon{
