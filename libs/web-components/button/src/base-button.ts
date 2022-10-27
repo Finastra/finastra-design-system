@@ -59,6 +59,7 @@ export class BaseButton extends LitElement {
     >
       ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
       <span>${this.label}</span>
+      <slot></slot>
       ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
     </button>`
   }
