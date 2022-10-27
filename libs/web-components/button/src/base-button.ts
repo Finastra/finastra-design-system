@@ -58,7 +58,7 @@ export class BaseButton extends LitElement {
       ?disabled="${this.disabled}"
     >
       ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
-      <span>${this.label}</span>
+      ${this.label}
       <slot></slot>
       ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
     </button>`
