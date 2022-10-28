@@ -12,7 +12,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTable } from '@angular/material/table';
 import isEqual from 'lodash-es/isEqual';
 import { UxgActionColumnPosition, UxgColumn, UxgColumnType, UxgDefaultPaging, UxgPage, UxgSort, UxgTableSelectEvent } from './table.models';
@@ -25,6 +25,7 @@ import { UxgActionColumnPosition, UxgColumn, UxgColumnType, UxgDefaultPaging, Ux
 })
 export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   @Input()
   get data() {
@@ -32,7 +33,20 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
   set data(data: Array<any>) {
     this._data = data;
+    
     this.dataToComponent = data;
+
+    if (this.pageEnable) {
+      if(this.paging) {
+        this.applyPaging();
+      }else{
+        this.applyDefaultPaging();
+      }
+      if(this.paginator) {
+        this.paginator.firstPage();
+        console.log("paginate")
+      }
+    }
   }
 
   @Input()
@@ -56,6 +70,20 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() showTotalRows = false;
   @Input() showTableHeader = true;
   @Input() totalData: any = null;
+
+  _sort: UxgSort = {active:"", direction:"asc"};
+
+  @Input()
+  get sort() {
+    return this._sort;
+  }
+  set sort(sort:UxgSort) {    
+    if(sort.active.length){
+      this.sortData(sort);
+    }
+    this._sort = sort;
+  }
+
 
   // table config
   @Input() stickyHeader = true;
@@ -208,7 +236,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (this.sortChanged.observers.length > 0) {
       this.sortChanged.emit($event);
     } else {
+      console.log(this.dataToComponent);
       this.dataToComponent = this.localSort($event);
+      console.log(this.dataToComponent);
+
     }
   }
 
@@ -355,6 +386,13 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   applyDefaultPaging() {
     const defaultPaging = { ...UxgDefaultPaging, ...{ length: this.dataToComponent.length } };
     this.paging = defaultPaging;
+    this.applyPaging();
+  }
+
+  applyPaging(){
+    if(!this.paging){
+      return;
+    }
     this.localPaging({
       pageIndex: this.paging.pageIndex || 0,
       pageSize: this.paging.pageSize || 5,
@@ -448,4 +486,6 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1)
       this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]), 1);
   }
+
+
 }

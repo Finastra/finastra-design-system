@@ -10,6 +10,7 @@
       [totalData]="totalData"
       [stickyFooter]="stickyFooter"
       [pageEnable]="pageEnable"
+      [sort]="sortInfo"
       (sortChanged)="sortData($event)"
       [singleSelect]="singleSelect"
       [multiSelect]="!singleSelect"
@@ -75,6 +76,22 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <div class="set-selection-area" fxLayout="column" fxLayoutAlign="start start">    
+      <h5>Sort</h5>
+      <mat-form-field>
+        <mat-select placeholder="active" (selectionChange)="setActive($event)">
+          <mat-option *ngFor="let option of columnsToDisplay" [value]="option">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>        
+      <mat-form-field>
+        <mat-select placeholder="order" (selectionChange)="setDirection($event)">
+          <mat-option value="asc">asc</mat-option>
+          <mat-option value="desc">desc</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    
     <div *ngIf="actionDescription" class="interaction-information">
       <h4>Information:</h4>
       {{ actionDescription }}
