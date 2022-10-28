@@ -26,16 +26,16 @@
   .fds-data-table {
     .mdc-data-table__table {
 
-      background: var(--fds-surface, #FFFFFF);
-      border: var(--fds-data-table-border-width, 1px) solid var(--fds-outline, rgba(0, 0, 0, 0.12));
-
+      @include fds.bg-color(surface);
+      border: var(--fds-data-table-border-width, 1px) solid;
+      @include fds.property('border-color', outline);
       .mdc-data-table__header-row,
       .mdc-data-table__row{
         height: 56px;
       }
 
       thead tr{
-        background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+        @include fds.bg-color(surface-hover);
         &.right div {
           display: flex;
           flex-direction: row-reverse;
@@ -55,7 +55,7 @@
       }
 
       tbody tr:hover{
-        background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+        @include fds.bg-color(surface-hover);
       }
 
       thead,
@@ -67,7 +67,7 @@
         }
         // width: calc(100% - 1em);
         tr:nth-child(even){
-          background-color: var(--fds-surface-hover, rgba(105,78,214, 0.04));
+          @include fds.bg-color(surface-hover);
         }
         /* scrollbar is average 1em/16px width, remove it from thead width */
         tr {
@@ -132,11 +132,11 @@
               place-content: center;
             }
           }
-        }
-      }
 
-      .mdc-data-table__row--selected {
-        background-color: var(--fds-surface-selected) !important;
+          &.mdc-data-table__row--selected {
+            @include fds.bg-color(surface-selected);
+          }
+        }
       }
 
       .mdc-data-table__content {
