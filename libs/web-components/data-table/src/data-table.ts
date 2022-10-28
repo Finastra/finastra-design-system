@@ -5,11 +5,16 @@ import { styles } from './data-table-styles.css';
 
 /**
  *
+ * @cssprop [--fds-data-table-border-width=1px] - Size of the border width
  * @attr [dataSource=[]] - Array of data to display in the table.
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
  * @attr [selectable=false] - Whether to show if a row is selected.
  * @attr [multiSelect=false] - Whether to allow multiple rows to be selected.
+ * @attr [showSingleSelectRadioBox=false] - Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false 
+ * @attr [showMultiSelectCheckBox=false] - Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true.
+ * @attr [dense=false] - Wether display data table in a smaller size
+ * 
  */
 
 @customElement('fds-data-table')

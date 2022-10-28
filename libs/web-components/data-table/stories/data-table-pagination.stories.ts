@@ -59,6 +59,15 @@ export default {
               summary: false
             }
         }
+    },
+    dense: {
+      type: 'boolean',
+      description: 'show table in a smaller size',
+      table: {
+        defaultValue: {
+          summary: false
+        }
+      }
     }
   } as any,
   args: {
@@ -66,7 +75,8 @@ export default {
     pageIndex: demoPageIndex,
     pageSize: demoPageSize,
     pageSizeOptions: demoPageSizeOptions,
-    showFirstLastButtons: showFirstLastButtons
+    showFirstLastButtons: showFirstLastButtons,
+    dense:false
   },
   parameters: {
     actions: {
@@ -88,9 +98,11 @@ const templatePagination: Story<DataTablePagination> = ({
   pageIndex = demoPageIndex,
   pageSize = demoPageSize,
   pageSizeOptions = demoPageSizeOptions,
-  showFirstLastButtons = true
+  showFirstLastButtons = true,
+  dense = false
 }) => {
   return html`<fds-data-table-pagination 
+                ?dense='${dense}'
                 length=${length} 
                 pageIndex=${pageIndex} 
                 pageSize=${pageSize} 
@@ -100,3 +112,7 @@ const templatePagination: Story<DataTablePagination> = ({
 } 
 
 export const Default: Story<DataTablePagination> = templatePagination.bind({});
+export const Dense: Story<DataTablePagination> = templatePagination.bind({});
+Dense.args = {
+  dense: true
+};

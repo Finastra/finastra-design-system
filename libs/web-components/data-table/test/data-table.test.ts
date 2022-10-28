@@ -45,7 +45,6 @@ const ELEMENT_DATA = [
       currency: 'EUR',
       amount: 4
       },
-      _class: 'hello'
   },
   {
       API: 'Exchange Rates',
