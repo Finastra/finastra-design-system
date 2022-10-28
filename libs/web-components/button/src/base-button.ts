@@ -1,11 +1,13 @@
-import '@material/mwc-button';
-import { html, LitElement } from 'lit';
+import '@finastra/icon';
+import { CSSResultGroup, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import { styles } from './base-styles.css';
 
 export class BaseButton extends LitElement {
   outlined: boolean = false;
   unelevated: boolean = true;
   text: boolean = false;
+  static styles: CSSResultGroup = [styles];
   
   /**
    * The label displayed inside the button
@@ -27,6 +29,12 @@ export class BaseButton extends LitElement {
   dense = false;
 
   /**
+   * Use the larger button size
+   */
+   @property({ type: Boolean })
+   large = false;
+
+  /**
    * Is the button disabled or not
    */
   @property({ type: Boolean })
@@ -45,17 +53,18 @@ export class BaseButton extends LitElement {
   trailingIcon = false;
 
   render() {
-    return html`<mwc-button
-            label="${this.label}"
-            icon="${this.icon}"
-            ?unelevated="${this.unelevated}"
-            ?outlined="${this.outlined}"
-            ?text="${this.text}"
-            ?dense="${this.dense}"
-            ?disabled="${this.disabled}"
-            ?fullwidth="${this.fullwidth}"
-            ?trailingIcon="${this.trailingIcon}"
-          >
-            <slot></slot>
-          </mwc-button>`}
+    return html`<button
+      aria-label="${this.label || this.icon}"
+      ?disabled="${this.disabled}"
+    >
+      ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
+      ${this.label}
+      <slot></slot>
+      ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
+    </button>`
+  }
+
+  protected renderIcon() {
+    return html` <fds-icon> ${this.icon} </fds-icon>`;
+  }
 }

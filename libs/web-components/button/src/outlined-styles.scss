@@ -1,10 +1,29 @@
 @use '@finastra/fds-theme' as fds;
-@use 'base-styles';
 
-:host {
-    @include fds.mdc(button-outline-color, primary);
+:host>button {
+    @include fds.property('border-color', primary);
+    
+    padding-top: calc(var(--fds-spacing-2, 8px) - 1px);
+    padding-bottom: calc(var(--fds-spacing-2, 8px) - 1px);
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
 }
 
-:host([secondary]) {
-    @include fds.mdc(button-outline-color, secondary);
+:host([secondary])>button {
+    @include fds.property('border-color', secondary);
+}
+
+:host([dense])>button {
+    padding-top: calc(var(--fds-button-dense-padding-y) - 1px);
+    padding-bottom: calc(var(--fds-button-dense-padding-y) - 1px);
+}
+
+:host([large])>button {
+    padding-top: calc(var(--fds-button-large-padding-y) - 1px);
+    padding-bottom: calc(var(--fds-button-large-padding-y) - 1px);
+}
+
+:host([disabled])>button {
+    @include fds.property('border-color', on-surface-disabled);
 }

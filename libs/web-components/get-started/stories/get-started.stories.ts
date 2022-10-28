@@ -50,12 +50,11 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
 
     .message-actions {
       display: flex;
+      justify-content: flex-start;
       gap: var(--fds-spacing-3, 16px);
-      margin: auto;
       margin-top: var(--fds-spacing-5, 48px);
       margin-bottom: 32px;
       flex-wrap: wrap;
-      max-width: 480px;
     }
 
     .message-image {
@@ -71,6 +70,10 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
 
       .message-link {
         display: flex;
+        justify-content: center;
+      }
+
+      .message-actions {
         justify-content: center;
       }
     }
@@ -94,6 +97,11 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
       .message-link a {
         text-align: center;
       }
+
+      .message-actions>fds-button,
+      .message-actions>fds-outlined-button {
+        width: 100%;
+      }
     }
   </style>
 
@@ -103,8 +111,8 @@ const Template: Story = ({title, description, image, hasMedia, link}) => {
       <div class="message-title">${title}</div>
       <div class="message-description">${description}</div>
       <div class="message-actions">
-        <fds-outlined-button fullwidth label="Explore APIs"></fds-outlined-button>
-        <fds-button fullwidth label="Register application" icon="play_arrow"></fds-button>
+        <fds-outlined-button label="Explore APIs"></fds-outlined-button>
+        <fds-button label="Register application" icon="play_arrow"></fds-button>
       </div>
       <div class="message-link">
         <a href="${link}">How register an application?</a>
