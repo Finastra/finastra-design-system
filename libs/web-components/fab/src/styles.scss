@@ -18,7 +18,7 @@
     }
 
     .mdc-fab__label{
-        @include fds.typography(button);
+        @include fds.typography(button-1);
     }
 }
 

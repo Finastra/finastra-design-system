@@ -1,7 +1,7 @@
 {
   "name": "@finastra/button",
   "displayName": "Button",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Button Web Component",
   "keywords": [
     "Finastra Design System",
@@ -12,10 +12,9 @@
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "scripts": {
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/contained-styles.scss src/outlined-styles.scss src/text-styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/base-styles.scss src/contained-styles.scss src/outlined-styles.scss src/text-styles.scss"
   },
   "dependencies": {
-    "@material/mwc-button": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

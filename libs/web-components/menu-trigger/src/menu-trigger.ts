@@ -6,7 +6,7 @@ import { styles } from './styles.css';
 
 @customElement('fds-menu-trigger')
 export class MenuTrigger extends OutlinedButton {
-  static styles = styles;
+  static styles = [OutlinedButton.styles, styles];
 
   /**
    * Whether the toggle is activated.
