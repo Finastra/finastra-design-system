@@ -14,6 +14,11 @@ import { getCellClassByType } from "./utils";
 export abstract class DataTableBase extends LitElement {
 
     private _dataSource: FdsTableRow[] = [];
+    private _selectable = false;
+    private _multiSelect = false;
+    private _showSingleSelectRadioBox= false;
+    private _showMultiSelectCheckBox= false;
+
     @property({
         type: Array,
     })
@@ -35,19 +40,52 @@ export abstract class DataTableBase extends LitElement {
 
     @property({
         type: Boolean
-    }) selectable = false;
+    }) 
+    set selectable(selectable: boolean){
+        this._selectable = selectable;
+    }
+    get selectable(): boolean{
+        return this._selectable;
+    }
 
     @property({
         type: Boolean
-    }) showSingleSelectRadioBox = false;
+    }) 
+    set multiSelect(multiSelect: boolean){
+        this._multiSelect = multiSelect;
+    } 
+    get multiSelect(): boolean {
+        return this._multiSelect;
+    }
 
     @property({
         type: Boolean
-    }) multiSelect = false;
+    }) 
+    set showSingleSelectRadioBox(showRadioBox: boolean){
+        this._showSingleSelectRadioBox = showRadioBox;
+        if(showRadioBox){
+            this.selectable = true;
+            this.multiSelect = false;
+        }
+    }
+    get showSingleSelectRadioBox(): boolean{
+        return this._showSingleSelectRadioBox;
+    }
 
     @property({
         type: Boolean
-    }) showMultiSelectCheckBox = false;
+    }) 
+    set showMultiSelectCheckBox(showCheckBox: boolean){
+        this._showMultiSelectCheckBox = showCheckBox;
+        if(showCheckBox){
+            this.selectable = true;
+            this.multiSelect = true;
+        }
+    }
+
+    get showMultiSelectCheckBox():boolean {
+        return this._showMultiSelectCheckBox;
+    }
 
     @property({ type: Boolean }) dense = false;
 
@@ -90,7 +128,7 @@ export abstract class DataTableBase extends LitElement {
 
     override updated() {
         this._dataSource.forEach(row => {
-            this._handleSelected(row, false);
+            this._handleSelected(row, row._fdsSelected);
         })
         this._checkIfAllRowSelected();
     }
@@ -357,7 +395,11 @@ export abstract class DataTableBase extends LitElement {
     }
     private _selectRow(row: FdsTableRow) {
         row._fdsSelected = true;
-        this.shadowRoot?.querySelector(`#${row._fdsRowId}`)?.classList.toggle('mdc-data-table__row--selected');
+        const classList = this.shadowRoot?.querySelector(`#${row._fdsRowId}`)?.classList;
+        if(!classList?.contains('mdc-data-table__row--selected')){
+            classList?.add('mdc-data-table__row--selected');
+        }
+
         const checkboxToUpdate = this.shadowRoot?.querySelector(`#${row._fdsRowId + FDS_TABLE_ROW_CHECKBOX_SUFFIX}`) as any;
         if (checkboxToUpdate) {
             checkboxToUpdate.checked = true;
@@ -375,7 +417,7 @@ export abstract class DataTableBase extends LitElement {
 
     private _formatFdsDataSource(data: FdsTableRow[]): FdsTableRow[] {
         return data.map((rowData, index) => {
-            return { ...rowData, '_fdsRowId': FDS_TABLE_DATA_ROW_PREFIX + index, _fdsSelected: false };
+            return { ...rowData, '_fdsRowId': FDS_TABLE_DATA_ROW_PREFIX + index, _fdsSelected: rowData._fdsSelected? rowData._fdsSelected : false };
         });
     }
 

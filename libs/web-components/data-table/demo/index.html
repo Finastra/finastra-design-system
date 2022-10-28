@@ -48,7 +48,8 @@
             apiDetail: {
                 type: 'B2E',
                 path: '/foo/bar/3'
-            }
+            },
+            _fdsSelected: true
         },
         {
             API: {
@@ -325,7 +326,7 @@
     // dataTable.multiSelect = false;
     // dataTable.showSingleSelectRadioBox = true;
     dataTable.multiSelect = true;
-    dataTable.showMultiSelectCheckBox = true;
+    // dataTable.showMultiSelectCheckBox = true;
 
 
     dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {

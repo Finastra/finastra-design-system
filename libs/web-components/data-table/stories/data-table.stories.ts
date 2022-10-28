@@ -143,3 +143,24 @@ export const DataTableDense: Story<DataTable> = Template.bind({});
 DataTableDense.args = {
   dense: true
 };
+
+export const DataTableSingleSelectRadioBox: Story<DataTable> = Template.bind({});
+DataTableSingleSelectRadioBox.args = {
+  dense: true,
+  showSingleSelectRadioBox: true
+}
+
+
+export const DataTableMultiSelectNormal: Story<DataTable> = Template.bind({});
+DataTableMultiSelectNormal.args = {
+  dense: true,
+  selectable: true,
+  multiSelect: true,
+  showMultiSelectCheckBox: false
+}
+
+export const DataTableMultipleSelectCheckBox: Story<DataTable> = Template.bind({});
+DataTableMultipleSelectCheckBox.args = {
+  dense: true,
+  showMultiSelectCheckBox: true
+}
