@@ -3,7 +3,7 @@ import '@finastra/charts';
 import type { RadialBarChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes } from './sb-generated/fds-radial-bar-chart.json';
+import { argTypes, cssprops } from './sb-generated/fds-radial-bar-chart.json';
 
 export default {
   title: 'DATA DISPLAY/Charts/Radial Bar Chart',
@@ -31,7 +31,8 @@ export default {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=93523%3A25288'
-    }
+    },
+    cssprops
   },
 };
 

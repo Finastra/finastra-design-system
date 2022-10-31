@@ -1,14 +1,19 @@
 @use '@finastra/fds-theme' as fds;
 
+$value-size: var(--fds-headline-2-font-size);
+$label-size: var(--fds-body-3-font-size);
+
 .apexcharts-datalabels-group {
 
   .apexcharts-datalabel-value {
     @include fds.typography(headline-2);
+    font-size: var(--fds-value-size, $value-size);
     @include fds.fill(on-background);
   }
 
   .apexcharts-datalabel-label {
     @include fds.typography(body-3);
+    font-size: var(--fds-label-size, $label-size);
     @include fds.fill(on-surface-medium);
   }
 }
