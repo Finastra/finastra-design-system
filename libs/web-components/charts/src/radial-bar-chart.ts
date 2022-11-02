@@ -10,8 +10,8 @@ import { styles } from './radial-bar-chart-styles.css';
  * @attr {Array} [data=[]] - Data of the chart
  * @attr {String} [total-label=''] - Total label, visible only with multiple data
  * @attr {Boolean} [hide-labels=false] - Hide the labels and display only the value,
- * @cssprop [--fds-value-size = 2rem] - Label size
- * @cssprop [--fds-label-size = 0.75rem] - Label size
+ * @cssprop [--fds-radial-value = var(--fds-headline-2)] - Label size
+ * @cssprop [--fds-radial-label = var(--fds-body-3)] - Label size
  */
 @customElement('fds-radial-bar-chart')
 export class RadialBarChart extends ApexChartsWrapper {
