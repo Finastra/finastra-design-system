@@ -43,6 +43,9 @@ export default {
   p{
     font: var(--fds-body-1);
   }
+  fds-alert-message {
+    padding-bottom: 32px;
+  }
 </style>
 `
   ]
@@ -75,7 +78,20 @@ const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIn
   </fds-wizard-page>
 
   <fds-wizard-page slot="page" title="Confirmation" icon="https://i.imgur.com/cEP8lXE.png" description="Confirmation description" header>
-    <p>Replace with your content</p>
+    <fds-alert-message type="info" title="You're almost done" description="A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner." icon="" layout="multiLines"></fds-alert-message>
+    <fds-card>
+      <fds-card-header>
+        <fds-avatar name="raya hristova"></fds-avatar>
+        <div class="card-header-text">
+          <fds-card-title>Raya Hristova</fds-card-title>
+          <fds-card-subtitle>raya.hristova@finastra.com</fds-card-subtitle>
+        </div>
+      </fds-card-header>
+      <fds-card-actions align="end">
+        <fds-text-button label="Edit"></fds-text-button>
+        <fds-button label="Confirm"></fds-button>
+      </fds-card-actions>
+    </fds-card>
   </fds-wizard-page>
 
 </fds-wizard>`;
