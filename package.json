@@ -163,7 +163,6 @@
     "angular-plotly.js": "^4.0.0",
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.3",
-    "canvas": "^2.9.3",
     "chromatic": "^6.5.1",
     "command-line-args": "^5.1.1",
     "commander": "^7.2.0",
