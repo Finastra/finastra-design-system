@@ -31,7 +31,7 @@ $stepper-bg: transparent;
 
 .stepper-container {
   z-index: 1;
-  overflow: scroll;
+  overflow: auto;
   flex: 1 1 30%;
   box-sizing: border-box;
   background: var(--fds-stepper-bg, $stepper-bg);
