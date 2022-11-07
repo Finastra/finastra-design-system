@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.8.0](https://github.com/finastra/finastra-design-system/compare/v1.1.1...v3.8.0) (2022-11-07)
+
+
+### Features
+
+* Expose appearance for filter and search ([#924](https://github.com/finastra/finastra-design-system/issues/924)) ([cf2f585](https://github.com/finastra/finastra-design-system/commit/cf2f5850af2eec400038f702a1d97af8136a092e))
+
 ### [3.7.2](https://github.com/finastra/finastra-design-system/compare/v3.7.0...v3.7.2) (2022-10-14)
 
 ### [3.7.1](https://github.com/finastra/finastra-design-system/compare/v3.7.0...v3.7.1) (2022-10-07)
