@@ -72,7 +72,7 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() multiple = false;
   @Input() selectableGroups = true;
   @Input() displayMax = 5;
-  @Input() appearance: "fill"|"outline"|"standard"|"legacy" = "fill";
+  @Input() appearance: 'fill' | 'outline' | 'standard' | 'legacy' = 'fill';
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
   @Output() focused = new EventEmitter<boolean>();

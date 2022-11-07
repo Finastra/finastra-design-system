@@ -1,7 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import {
-  Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation
-} from '@angular/core';
+import { Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -39,7 +37,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   @Input() query = '';
   @Input() placeholder = 'Search';
   @Input() debounceTime = 400;
-  @Input() appearance: "fill"|"outline"|"standard"|"legacy" = "fill";
+  @Input() appearance: 'fill' | 'outline' | 'standard' | 'legacy' = 'fill';
 
   @Input() hint?: string;
 
@@ -49,11 +47,9 @@ export class UxgSearchInputComponent implements OnDestroy {
   private termSubscription: Subscription;
 
   constructor(@Attribute('dense') public dense: any) {
-    this.termSubscription = this.term$
-      .pipe(debounceTime(this.debounceTime), distinctUntilChanged())
-      .subscribe((query) => {
-        this.search.emit(query);
-      });
+    this.termSubscription = this.term$.pipe(debounceTime(this.debounceTime), distinctUntilChanged()).subscribe((query) => {
+      this.search.emit(query);
+    });
   }
 
   ngOnDestroy() {
