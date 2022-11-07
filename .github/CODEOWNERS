@@ -4,7 +4,7 @@
 
 # Repository management
 /scripts/   @bcldvd @ttalbot
-/tools/generators/angular-component    @adrian-apetrei @rbordeanu
+/tools/generators/angular-component    @rbordeanu
 /tools/generators/web-component        @bcldvd @dorsaffrigui
 
 # Themes and style files
@@ -25,12 +25,9 @@
 /libs/angular-components/table/                    @Ping-YUAN
 /libs/angular-components/popover/                  @rbordeanu
 /libs/angular-components/repeater/                 @xmonvoisin
-/libs/angular-components/filter/filter-tags/       @adrian-apetrei
 /libs/angular-components/filter/filter-tree/       @Pi5rr5
 /libs/angular-components/vector-map/               @rbordeanu
 /libs/angular-components/wizard/                   @rbordeanu
-/libs/angular-components/filter/filter-group/      @adrian-apetrei
-/libs/angular-components/filter/filter-toggle/     @adrian-apetrei
 
 # Web components owners
 /libs/web-components    @bcldvd @ttalbot
