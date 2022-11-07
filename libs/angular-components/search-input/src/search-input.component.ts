@@ -1,16 +1,9 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import {
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  Input,
-  Output,
-  EventEmitter,
-  OnDestroy,
-  Attribute
+  Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation
 } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'uxg-search-input',
@@ -46,6 +39,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   @Input() query = '';
   @Input() placeholder = 'Search';
   @Input() debounceTime = 400;
+  @Input() appearance: "fill"|"outline"|"standard"|"legacy" = "fill";
 
   @Input() hint?: string;
 
