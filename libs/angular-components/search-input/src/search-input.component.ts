@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation } from '@angular/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -37,7 +38,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   @Input() query = '';
   @Input() placeholder = 'Search';
   @Input() debounceTime = 400;
-  @Input() appearance: 'fill' | 'outline' | 'standard' | 'legacy' = 'fill';
+  @Input() appearance: MatFormFieldAppearance = 'fill';
 
   @Input() hint?: string;
 

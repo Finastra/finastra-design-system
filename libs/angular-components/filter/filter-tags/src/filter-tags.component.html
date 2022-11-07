@@ -28,7 +28,7 @@
     </mat-chip>
   </mat-chip-list>
 
-  <mat-form-field aria-label="Search" floatLabel="never" class="chip-list" appearance="{{ appearance }}" dense>
+  <mat-form-field aria-label="Search" floatLabel="never" class="chip-list" [appearance]="appearance" dense>
     <mat-icon matPrefix dense class="search-icon">search</mat-icon>
     <mat-label>{{ placeholder }}</mat-label>
     <input

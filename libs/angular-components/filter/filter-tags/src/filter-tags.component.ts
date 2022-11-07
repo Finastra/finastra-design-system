@@ -18,6 +18,7 @@ import { FormControl } from '@angular/forms';
 import { MatAutocomplete, MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatChip, MatChipInputEvent } from '@angular/material/chips';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { uniqBy } from 'lodash-es';
 import { Observable, Subscription } from 'rxjs';
 import { delay, map, startWith } from 'rxjs/operators';
@@ -72,7 +73,7 @@ export class FilterTagsComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() multiple = false;
   @Input() selectableGroups = true;
   @Input() displayMax = 5;
-  @Input() appearance: 'fill' | 'outline' | 'standard' | 'legacy' = 'fill';
+  @Input() appearance: MatFormFieldAppearance = 'fill';
 
   @Output() changes = new EventEmitter<UXGFilterChanges>();
   @Output() focused = new EventEmitter<boolean>();
