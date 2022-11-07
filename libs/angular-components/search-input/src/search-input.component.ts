@@ -1,16 +1,8 @@
-import {
-  Component,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  Input,
-  Output,
-  EventEmitter,
-  OnDestroy,
-  Attribute
-} from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Attribute, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation } from '@angular/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { Subject, Subscription } from 'rxjs';
-import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'uxg-search-input',
@@ -46,6 +38,7 @@ export class UxgSearchInputComponent implements OnDestroy {
   @Input() query = '';
   @Input() placeholder = 'Search';
   @Input() debounceTime = 400;
+  @Input() appearance: MatFormFieldAppearance = 'fill';
 
   @Input() hint?: string;
 
@@ -55,11 +48,9 @@ export class UxgSearchInputComponent implements OnDestroy {
   private termSubscription: Subscription;
 
   constructor(@Attribute('dense') public dense: any) {
-    this.termSubscription = this.term$
-      .pipe(debounceTime(this.debounceTime), distinctUntilChanged())
-      .subscribe((query) => {
-        this.search.emit(query);
-      });
+    this.termSubscription = this.term$.pipe(debounceTime(this.debounceTime), distinctUntilChanged()).subscribe((query) => {
+      this.search.emit(query);
+    });
   }
 
   ngOnDestroy() {
