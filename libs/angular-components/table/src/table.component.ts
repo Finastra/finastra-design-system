@@ -44,7 +44,6 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
       }
       if(this.paginator) {
         this.paginator.firstPage();
-        console.log("paginate")
       }
     }
   }
@@ -236,10 +235,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (this.sortChanged.observers.length > 0) {
       this.sortChanged.emit($event);
     } else {
-      console.log(this.dataToComponent);
       this.dataToComponent = this.localSort($event);
-      console.log(this.dataToComponent);
-
     }
   }
 
