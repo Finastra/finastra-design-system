@@ -66,7 +66,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 
 ### Events
 
-| Event Name | Description |
+| Event | Description |
 | ------- | ------- |
 | ```onFdsDataTableRowSelected```| Selected data can be founded from ```event.detail``` with array format |
 
@@ -91,13 +91,17 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 
 | Event | Description |
 | ------- | ------- |
-| ``onFdsPaginationChanged``| Page event can be founded in ``event.detail`` with format
-    ```{
-        pageIndex: number ,
-        pageSize: number,
-        length: number,
-        previousPageIndex: number
-    }``` |
+| ``onFdsPaginationChanged``| Page event can be founded in ``event.detail`` |
+
+PageEvent Detail format:
+```
+ {
+    pageIndex: number ,
+    pageSize: number,
+    length: number,
+    previousPageIndex: number
+ }
+``` 
 
 ## Data Table Component with Pagination
 
