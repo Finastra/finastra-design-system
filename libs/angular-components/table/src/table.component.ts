@@ -33,16 +33,16 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
   set data(data: Array<any>) {
     this._data = data;
-    
+
     this.dataToComponent = data;
 
     if (this.pageEnable) {
-      if(this.paging) {
+      if (this.paging) {
         this.applyPaging();
-      }else{
+      } else {
         this.applyDefaultPaging();
       }
-      if(this.paginator) {
+      if (this.paginator) {
         this.paginator.firstPage();
       }
     }
@@ -70,19 +70,18 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() showTableHeader = true;
   @Input() totalData: any = null;
 
-  _sort: UxgSort = {active:"", direction:"asc"};
+  _sort: UxgSort = { active: '', direction: 'asc' };
 
   @Input()
   get sort() {
     return this._sort;
   }
-  set sort(sort:UxgSort) {    
-    if(sort.active.length){
+  set sort(sort: UxgSort) {
+    if (sort.active.length) {
       this.sortData(sort);
     }
     this._sort = sort;
   }
-
 
   // table config
   @Input() stickyHeader = true;
@@ -385,8 +384,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     this.applyPaging();
   }
 
-  applyPaging(){
-    if(!this.paging){
+  applyPaging() {
+    if (!this.paging) {
       return;
     }
     this.localPaging({
@@ -482,6 +481,4 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]) > -1)
       this.columnsToDisplayToComponent.splice(this.columnsToDisplayToComponent.indexOf(this.uxgTableActionColumn[0]), 1);
   }
-
-
 }
