@@ -87,9 +87,6 @@ export class DataTableWithPagination extends LitElement {
         type: Boolean
     }) dense = false;
 
-    private selected: FdsTableRow[] = [];
-
-
     override render() {
         return html`
         <div class="fds-data-table-with-pagination-wrapper">
@@ -122,14 +119,11 @@ export class DataTableWithPagination extends LitElement {
         this.requestUpdate();
     }
     onDataTableRowSelected(e) {
-        this.selected = e.detail;
         if (this.selectable) {
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
                 bubbles: true,
                 composed: true,
-                detail: {
-                    data: this.selected,
-                }
+                detail: e.detail
             }));
         }
     }

@@ -10,5 +10,16 @@
         fds-data-table{
             width: 100%;
         }
+        fds-data-table-pagination{
+            margin-top: var(--fds-spacing-2, 8px);;
+        }
+    }
+}
+
+:host([dense]) {
+    .fds-data-table-with-pagination-wrapper{
+        fds-data-table-pagination{
+            margin-top: var(--fds-spacing-1, 4px);;
+        }
     }
 }
