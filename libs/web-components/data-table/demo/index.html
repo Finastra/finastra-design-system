@@ -1,5 +1,7 @@
 <script type="module" src="node_modules/@finastra/data-table/dist/src/data-table.js"></script>
 <script type="module" src="node_modules/@finastra/data-table/dist/src/pagination/data-table-pagination.js"></script>
+<script type="module" src="node_modules/@finastra/data-table/dist/src/data-table-with-pagination.js"></script>
+
 
 <div class="main-content">
     <div>Default</div>
@@ -18,6 +20,10 @@
     </div>
     <div>
         <label id="fds-data-table-selected-rows"></label>
+    </div>
+    <div>Data table with pagination</div>
+    <div class="card">
+       <fds-data-table-with-pagination dense id="fds-data-table-with-pagination"></fds-data-table-with-pagination>
     </div>
 
 </div>
@@ -344,6 +350,14 @@
         dataTable.dataSource = ELEMENT_DATA.slice(e.detail.pageIndex * e.detail.pageSize, (e.detail.pageIndex + 1) * e.detail.pageSize);
     })
 
+    const dataTableWithPagination = document.querySelector("#fds-data-table-with-pagination");
+    dataTableWithPagination.dataSource = ELEMENT_DATA;
+    dataTableWithPagination.columns = columns;
+    dataTableWithPagination.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls', 'Revenue', 'Status', 'Confidence Score', 'apiDetail'];
+    dataTableWithPagination.selectable = true;
+    dataTableWithPagination.multiSelect = true;
+    dataTableWithPagination.pageSizeOptions = [5, 10, 20];
+    dataTableWithPagination.showFirstLastButtons = true;
 </script>
 <style>
     main-content {
