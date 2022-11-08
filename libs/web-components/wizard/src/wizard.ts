@@ -49,6 +49,8 @@ export class Wizard extends LitElement {
 
   @query('#stepper') protected stepper!: HTMLElement;
 
+  @query('.wizard-container') protected wizardContainer!: HTMLElement;
+
   @property({ type: Boolean })
   stepsCounter = false;
 
@@ -150,7 +152,7 @@ export class Wizard extends LitElement {
   }
 
   onPagesSlotChanged() {
-    let steps: Page[] = [];
+    const steps: Page[] = [];
     this._pages[this.currentStepIndex].setAttribute('current', 'true');
     this.updateActionsState(this.currentStepIndex);
     this._pages.forEach((page: HTMLElement, index: number) => {
@@ -239,6 +241,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']++;
     pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex++;
+    this.wizardContainer.scrollTop=0;
   }
 
   goToPreviousStep(pages: Array<HTMLElement>) {
@@ -246,6 +249,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']--;
     pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex--;
+    this.wizardContainer.scrollTop=0;
   }
 
   goToStepIndex(index: number) {
@@ -259,6 +263,7 @@ export class Wizard extends LitElement {
   updateCurrentPage(index: number) {
     this._pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex = index;
+    this.wizardContainer.scrollTop=0;
     this.UpdatePage();
   }
 
