@@ -200,6 +200,24 @@ This JSDoc can be extracted (via [wca](https://github.com/runem/web-component-an
 During release, JSDoc is extracted for every web component, and injected into each README.md file of said web component in a neat table format.
 You can inject the content to test how it will render prior to pushing your content, via `npm run wca:md`.
 
+The script will look for the following delimiter to inject the content of documentation between them:
+```md
+<!-- DOC -->
+<!-- /DOC -->
+```
+
+When working with multiple components, by default it will display the first found component inside the default delimiter. You can specify which component to output where by passing the tagName of your component as a parameter inside the delimiters:
+
+```md
+<!-- DOC:fds-special-component -->
+<!-- /DOC:fds-special-component -->
+
+Some doc that won't get overriden
+
+<!-- DOC:fds-special-component-2 -->
+<!-- /DOC:fds-special-component-2 -->
+```
+
 #### Documentation in Storybook
 
 While working with Storybook, this same JSDoc can be extracted and injected in storybook in order to facilitate writing stories, and avoiding duplication of content.

@@ -2,7 +2,6 @@ const { readFileSync, writeFileSync } = require('fs');
 const { join, posix } = require('path');
 const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
-const START_TAG = '<!-- DOC -->';
 const END_TAG = '<!-- /DOC -->';
 
 async function main() {
@@ -28,26 +27,51 @@ async function getPaths(paths) {
 }
 
 function getContent(path) {
-  const carriageReturn = '\n';
   const wcaOutput = readFileSync(path, READ_WRITE_OPTS);
-  const [, ...rest] = wcaOutput.split(carriageReturn);
-  return rest.join(carriageReturn);
+  const parts = wcaOutput.split(/^#(?!#)\s(.*)\n/gm);
+  parts.shift();
+  const contents = new Map();
+  parts.forEach((part, index) => {
+    if (index%2 === 0) {
+      contents.set(part, '');
+    } else {
+      contents.set(parts[index - 1], part)
+    }
+  });
+  return contents;
 }
 
 function injectInReadme(path, content) {
   try {
     let README = readFileSync(path, READ_WRITE_OPTS);
-    const startPosition = README.indexOf(START_TAG) + START_TAG.length;
-    const endPosition = README.indexOf(END_TAG);
-    if (README.indexOf(START_TAG) !== -1 && endPosition !== -1) {
-        README = README.slice(0, startPosition) + sanitizeMd(content) + README.slice(endPosition);
-        writeFileSync(path, README, READ_WRITE_OPTS);
+    if (content.size === 1) {
+      README = injectAtPosition(README, content.entries().next().value[1])
+    } else {
+      content.forEach((item, key) => {
+        README = injectAtPosition(README, item, key)
+      })
     }
+    writeFileSync(path, README, READ_WRITE_OPTS);
   } catch (err) {
     console.log(`Error injecting readme for path ${path}`);
+    console.log(err)
   }
+}
+
+function injectAtPosition(README, content, key) {
+  const startPosition = README.indexOf(tag(false, key)) + tag(false, key).length;
+  const endPosition = README.indexOf(tag(true, key));
+  if (README.indexOf(tag(false, key)) !== -1 && endPosition !== -1) {
+    README = README.slice(0, startPosition) + sanitizeMd(content) + README.slice(endPosition);
+  }
+  return README;
 }
 
 function sanitizeMd(content) {
   return content.replace(/##/g, '####');
+}
+
+function tag(end, key) {
+  const variant = key ? `:${key}` : ''
+  return `<!-- ${end ? '/': ''}DOC${variant} -->`;
 }

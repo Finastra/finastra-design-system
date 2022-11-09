@@ -70,6 +70,35 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 | ------- | ------- |
 | ```onFdsDataTableRowSelected```| Selected data can be founded from ```event.detail``` with array format |
 
+<!-- DOC:fds-data-table -->
+#### Properties
+
+| Property                   | Attribute                  | Type               | Default    | Description                                      |
+|----------------------------|----------------------------|--------------------|------------|--------------------------------------------------|
+| `columns`                  | `columns`                  | `FdsTableColumn[]` | []         | Array of column definitions.                     |
+| `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
+| `dataSource`               | `dataSource`               | `FdsTableRow[]`    | "[]"       | Array of data to display in the table.           |
+| `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
+| `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
+| `override`                 |                            |                    |            |                                                  |
+| `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
+| `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
+| `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
+| `styles`                   |                            | `CSSResult[]`      | ["styles"] |                                                  |
+
+#### Events
+
+| Event                                     | Description                |
+|-------------------------------------------|----------------------------|
+| `onFdsDataTableWithPaginationRowSelected` | Fired when selecting a row |
+
+#### CSS Custom Properties
+
+| Property                        | Default | Description              |
+|---------------------------------|---------|--------------------------|
+| `--fds-data-table-border-width` | "1px"   | Size of the border width |
+<!-- /DOC:fds-data-table -->
+
 ## Pagination Usage
 
 ### Import
@@ -131,6 +160,53 @@ PageEvent Detail format:
 | Event | Description |
 | ------- | ------- |
 | ```onFdsDataTableWithPaginationRowSelected```| Selected data can be founded from ```event.detail``` with array format |
+
+
+<!-- DOC:fds-data-table-with-pagination -->
+This component is a simple example combining fds-data-table with fds-data-table-pagination component.
+If it can meet your requirements, you can use it directly with it. 
+If it can't meet your requirements, you can use fds-data-table with fds-data-table-pagination to compose your own logic.
+
+#### Properties
+
+| Property                   | Attribute                  | Type               | Default    | Description                                      |
+|----------------------------|----------------------------|--------------------|------------|--------------------------------------------------|
+| `columns`                  | `columns`                  | `FdsTableColumn[]` | []         | Array of column definitions.                     |
+| `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
+| `dataSource`               | `dataSource`               | `FdsTableRow[]`    | []         | Array of data to display in the table.           |
+| `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
+| `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
+| `override`                 |                            |                    |            |                                                  |
+| `pageIndex`                | `pageIndex`                | `number`           | 0          |                                                  |
+| `pageSizeOptions`          | `pageSizeOptions`          | `number[]`         | "[]"       | Array of page sizes to display, pageSize will take the first element otherwise pageSize will be 5. |
+| `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
+| `showFirstLastButtons`     | `showFirstLastButtons`     | `boolean`          | false      | Whether to display the first and last page buttons. |
+| `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
+| `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
+| `styles`                   |                            | `array`            | ["styles"] |                                                  |
+
+#### Methods
+
+| Method                         | Type                |
+|--------------------------------|---------------------|
+| `getDataByPagination`          | `(): FdsTableRow[]` |
+| `onDataTablePaginationChanged` | `(e: any): void`    |
+| `onDataTableRowSelected`       | `(e: any): void`    |
+
+#### Events
+
+| Event                       | Description                |
+|-----------------------------|----------------------------|
+| `onFdsDataTableRowSelected` | Fired when selecting a row |
+
+#### CSS Custom Properties
+
+| Property                        | Default | Description              |
+|---------------------------------|---------|--------------------------|
+| `--fds-data-table-border-width` | "1px"   | Size of the border width |
+
+
+<!-- /DOC:fds-data-table-with-pagination -->
 
 ## Advanced feature
 
@@ -280,79 +356,3 @@ Example for data:
         name: 'cell template cell here!' // data where the template will access
     }
 ```
-
-
-### Documentation
-<!-- DOC -->
-This component is a simple example combining fds-data-table with fds-data-table-pagination component.
-If it can meet your requirements, you can use it directly with it. 
-If it can't meet your requirements, you can use fds-data-table with fds-data-table-pagination to compose your own logic.
-
-#### Properties
-
-| Property                   | Attribute                  | Type               | Default    | Description                                      |
-|----------------------------|----------------------------|--------------------|------------|--------------------------------------------------|
-| `columns`                  | `columns`                  | `FdsTableColumn[]` | []         | Array of column definitions.                     |
-| `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
-| `dataSource`               | `dataSource`               | `FdsTableRow[]`    | []         | Array of data to display in the table.           |
-| `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
-| `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
-| `override`                 |                            |                    |            |                                                  |
-| `pageIndex`                | `pageIndex`                | `number`           | 0          |                                                  |
-| `pageSizeOptions`          | `pageSizeOptions`          | `number[]`         | "[]"       | Array of page sizes to display, pageSize will take the first element otherwise pageSize will be 5. |
-| `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
-| `showFirstLastButtons`     | `showFirstLastButtons`     | `boolean`          | false      | Whether to display the first and last page buttons. |
-| `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
-| `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                   |                            | `array`            | ["styles"] |                                                  |
-
-#### Methods
-
-| Method                         | Type                |
-|--------------------------------|---------------------|
-| `getDataByPagination`          | `(): FdsTableRow[]` |
-| `onDataTablePaginationChanged` | `(e: any): void`    |
-| `onDataTableRowSelected`       | `(e: any): void`    |
-
-#### Events
-
-| Event                       | Description                |
-|-----------------------------|----------------------------|
-| `onFdsDataTableRowSelected` | Fired when selecting a row |
-
-#### CSS Custom Properties
-
-| Property                        | Default | Description              |
-|---------------------------------|---------|--------------------------|
-| `--fds-data-table-border-width` | "1px"   | Size of the border width |
-
-
-# fds-data-table
-
-#### Properties
-
-| Property                   | Attribute                  | Type               | Default    | Description                                      |
-|----------------------------|----------------------------|--------------------|------------|--------------------------------------------------|
-| `columns`                  | `columns`                  | `FdsTableColumn[]` | []         | Array of column definitions.                     |
-| `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
-| `dataSource`               | `dataSource`               | `FdsTableRow[]`    | "[]"       | Array of data to display in the table.           |
-| `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
-| `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
-| `override`                 |                            |                    |            |                                                  |
-| `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
-| `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
-| `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                   |                            | `CSSResult[]`      | ["styles"] |                                                  |
-
-#### Events
-
-| Event                                     | Description                |
-|-------------------------------------------|----------------------------|
-| `onFdsDataTableWithPaginationRowSelected` | Fired when selecting a row |
-
-#### CSS Custom Properties
-
-| Property                        | Default | Description              |
-|---------------------------------|---------|--------------------------|
-| `--fds-data-table-border-width` | "1px"   | Size of the border width |
-<!-- /DOC -->

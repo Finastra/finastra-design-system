@@ -22,9 +22,11 @@ import '@finastra/button';
 <fds-text-button label="Text button"></fds-text-button>
 ```
 
-
 ### Documentation
-<!-- DOC -->
+
+### Button
+
+<!-- DOC:fds-button -->
 #### Properties
 
 | Property       | Attribute      | Type      | Default  | Description                                      |
@@ -41,8 +43,11 @@ import '@finastra/button';
 | `unelevated`   |                | `boolean` | true     |                                                  |
 
 
-# fds-outlined-button
+<!-- /DOC:fds-button -->
 
+### Outlined Button
+
+<!-- DOC:fds-outlined-button -->
 #### Properties
 
 | Property       | Attribute      | Type      | Default  | Description                                      |
@@ -59,8 +64,11 @@ import '@finastra/button';
 | `unelevated`   |                | `boolean` | true     |                                                  |
 
 
-# fds-text-button
+<!-- /DOC:fds-outlined-button -->
 
+### Text Button
+
+<!-- DOC:fds-text-button -->
 #### Properties
 
 | Property       | Attribute      | Type      | Default  | Description                                      |
@@ -75,4 +83,4 @@ import '@finastra/button';
 | `text`         |                | `boolean` | false    |                                                  |
 | `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
 | `unelevated`   |                | `boolean` | true     |                                                  |
-<!-- /DOC -->
+<!-- /DOC:fds-text-button -->
