@@ -122,7 +122,7 @@
     "@material/mwc-list": "0.27.0",
     "@material/mwc-top-app-bar-fixed": "0.27.0",
     "@material/mwc-top-app-bar": "0.27.0",
-    "@nrwl/angular": "14.5.1",
+    "@nrwl/angular": "14.8.6",
     "@nrwl/cli": "14.5.1",
     "@nrwl/cypress": "14.5.1",
     "@nrwl/devkit": "14.5.1",
