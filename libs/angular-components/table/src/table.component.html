@@ -5,8 +5,10 @@
     cdkDropListGroup
     [dataSource]="dataToComponent"
     [matSortActive]="sort.active"
-    [matSortDirection]="sort.direction"  
-    (matSortChange)="sortData($event)" class="mat-elevation-z8 main-data-table" >
+    [matSortDirection]="sort.direction"
+    (matSortChange)="sortData($event)"
+    class="mat-elevation-z8 main-data-table"
+  >
     <ng-container matColumnDef="uxg-table-select-row" *ngIf="multiSelect">
       <th mat-header-cell *matHeaderCellDef>
         <mat-checkbox
