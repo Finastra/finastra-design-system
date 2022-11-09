@@ -7,10 +7,11 @@ async function main() {
   const paths = await getPaths('../libs/web-components/*/src/*.ts');
   paths.forEach((path) => {
     getContent(path).forEach(tag => {
-      const { attributes, slots, cssProperties, name } = tag;
+      const { attributes, slots, cssProperties, name, events } = tag;
       const argTypes = mapArgTypes(attributes, slots);
       const cssprops = mapCssProps(cssProperties);
-      const newFile = JSON.stringify({ argTypes, cssprops }, null, 2);
+      const actions = mapEvents(events);
+      const newFile = JSON.stringify({ argTypes, cssprops, actions }, null, 2);
       const dir = dirname(path).split(path.sep).pop();
       const namedPath = join(dir, `${name}.json`);
       writeFileSync(namedPath, newFile, READ_WRITE_OPTS);
@@ -86,6 +87,13 @@ function mapCssProps(cssProperties) {
     };
     return prev;
   }, {});
+}
+
+function mapEvents(events) {
+  if (!events) return {};
+  return {
+    handles: events.map(event => event.name)
+  };
 }
 
 function sanitizeControl(control) {

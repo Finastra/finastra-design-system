@@ -3,8 +3,8 @@ import '@finastra/data-table';
 import { DataTable } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
-import { DATA_TABLE_EVENTS } from '../src/constants';
 import { columns, columnsToDisplay, ELEMENT_DATA } from './data';
+import { actions } from './sb-generated/fds-data-table.json';
 
 const dataTableDataSource = ELEMENT_DATA;
 const dataTableColumns = columns;
@@ -97,9 +97,7 @@ export default {
     dense: false
   },
   parameters: {
-    actions: {
-      handles: [DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED]
-    },
+    actions,
     docs: {
       description: { component: README }
     },

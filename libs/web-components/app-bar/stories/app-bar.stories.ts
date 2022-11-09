@@ -5,8 +5,7 @@ import '@finastra/button';
 import '@finastra/user-profile';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { EVENTS } from '../src/constants';
-import { argTypes, cssprops } from './sb-generated/fds-app-bar.json';
+import { actions, argTypes, cssprops } from './sb-generated/fds-app-bar.json';
 
 export default {
   title: 'NAVIGATION/App Bar',
@@ -16,9 +15,7 @@ export default {
     appName: 'Finastra'
   },
   parameters: {
-    actions: {
-      handles: [EVENTS.NAVIGATION]
-    },
+    actions,
     docs: {
       description: { component: README }
     },
