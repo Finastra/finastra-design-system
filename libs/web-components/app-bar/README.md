@@ -25,3 +25,44 @@ import '@finastra/app-bar';
     logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
 </fds-app-bar>
 ```
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property          | Attribute         | Type      | Default | Description                                  |
+|-------------------|-------------------|-----------|---------|----------------------------------------------|
+| `appName`         | `appName`         | `string`  | ""      | Application's name                           |
+| `logoRedirectUri` | `logoRedirectUri` | `string`  | ""      | Set the logo redirect Uri                    |
+| `prominent`       | `prominent`       | `boolean` | false   | Extend the app bar                           |
+| `transparent`     | `transparent`     | `boolean` | false   | Give a transparent background to the app bar |
+
+#### Methods
+
+| Method                  | Type                             |
+|-------------------------|----------------------------------|
+| `handleNavigationClick` | `(): void`                       |
+| `navigateToLogoUri`     | `(): void`                       |
+| `renderNavigationSlot`  | `(): TemplateResult<ResultType>` |
+
+#### Events
+
+| Event              | Description                          |
+|--------------------|--------------------------------------|
+| `MDCTopAppBar:nav` | Fired when clicking on burger button |
+
+#### Slots
+
+| Name             | Description                                      |
+|------------------|--------------------------------------------------|
+| `actions`        | Slot to add content in the right side of the app bar |
+| `content`        | Slot to add content in the center of the app bar |
+| `navigation`     | Slot to add content in the left of the app bar, just after the app name or in the second line in prominent app bar |
+| `navigationIcon` | Slot to add a navigation icon (e.g. hamburger menu) |
+
+#### CSS Custom Properties
+
+| Property     | Description                                    |
+|--------------|------------------------------------------------|
+| `--fds-logo` | String representing an image encoded in base64 |
+<!-- /DOC -->
