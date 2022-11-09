@@ -29,3 +29,19 @@ import '@finastra/launchpad';
     }}]'>
 </fds-launchpad>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property               | Attribute              | Type     | Default                             | Description                                      |
+|------------------------|------------------------|----------|-------------------------------------|--------------------------------------------------|
+| `appNameProperty`      | `appNameProperty`      | `string` | "name"                              | Name of application name property of type string that will be used by the product card. |
+| `apps`                 | `apps`                 | `array`  | []                                  | List of apps.                                    |
+| `baseUrl`              | `baseUrl`              | `string` | "https://myapps.fusionfabric.cloud" | Base url of the Launchpage.                      |
+| `channelType`          | `channelType`          | `string` | ""                                  | If channelType is empty, the Launchpad will try to extract it from the window.location. |
+| `shortAppNameProperty` | `shortAppNameProperty` | `string` | ""                                  | Name of the short application name property used by the product card. |
+| `tenantId`             | `tenantId`             | `string` | ""                                  | If tenantId is empty, the Launchpad will try to extract it from the window.location. |
+| `title`                | `title`                | `string` | "Apps"                              | Title used by the menu trigger.                  |
+<!-- /DOC -->

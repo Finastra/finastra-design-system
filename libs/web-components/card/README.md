@@ -54,3 +54,93 @@ import '@finastra/card';
   </fds-card-actions>
 </fds-card>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property     | Attribute    | Type      | Default | Description                                      |
+|--------------|--------------|-----------|---------|--------------------------------------------------|
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
+
+
+# fds-card-actions
+
+#### Properties
+
+| Property   | Attribute  | Type       | Default |
+|------------|------------|------------|---------|
+| `align`    | `align`    | `Position` | "start" |
+| `disabled` | `disabled` | `boolean`  | false   |
+
+
+# fds-card-content
+
+#### Properties
+
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `disabled` | `disabled` | `boolean` | false   |
+
+
+# fds-card-footer
+
+#### Properties
+
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `disabled` | `disabled` | `boolean` | false   |
+
+
+# fds-card-header
+
+#### Properties
+
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `disabled` | `disabled` | `boolean` | false   |
+
+
+# fds-card-subtitle
+
+#### Properties
+
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `disabled` | `disabled` | `boolean` | false   |
+
+
+# fds-card-title
+
+#### Properties
+
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `disabled` | `disabled` | `boolean` | false   |
+
+
+# fds-card
+
+#### Properties
+
+| Property     | Attribute    | Type      | Default | Description                                      |
+|--------------|--------------|-----------|---------|--------------------------------------------------|
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
+
+#### Methods
+
+| Method              | Type                    |
+|---------------------|-------------------------|
+| `renderCardContent` | `(): TemplateResult<1>` |
+
+#### Slots
+
+| Name      | Description                                      |
+|-----------|--------------------------------------------------|
+| `default` | Slot to add content to the card, see the documentation for more details. |
+<!-- /DOC -->

@@ -35,3 +35,33 @@ import '@finastra/app-card';
   large>
 </fds-app-card>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property      | Attribute     | Type      | Default | Description                                      |
+|---------------|---------------|-----------|---------|--------------------------------------------------|
+| `author`      | `author`      | `string`  | ""      | Application author.                              |
+| `description` | `description` | `string`  | ""      | Application description.                         |
+| `disabled`    | `disabled`    | `boolean` | false   | Disabled style of the card.                      |
+| `extraDense`  | `extraDense`  | `boolean` | false   | Make the card extra small.                       |
+| `flag`        | `flag`        |           | ""      | Application flag should be `PUBLISHED` \| `DRAFT` \| `IN_REVIEW` \| `COMING_SOON`. |
+| `icon`        | `icon`        | `string`  | ""      | Application icon url.                            |
+| `large`       | `large`       | `boolean` | false   | Make the card bigger.                            |
+| `name`        | `name`        | `string`  | ""      | Application name.                                |
+| `outlined`    | `outlined`    | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `selectable`  | `selectable`  | `boolean` | true    | Change the card style to an action card.         |
+| `tags`        | `tags`        | `array`   | []      | Application tags.                                |
+
+#### CSS Custom Properties
+
+| Property          | Type  | Default   | Description                                      |
+|-------------------|-------|-----------|--------------------------------------------------|
+| `--fds-blue`      | color | "#009CBD" | Color of the In Review flag.                     |
+| `--fds-gray`      | color | "#C7C8CA" | Color of the Draft flag.                         |
+| `--fds-primary`   | color | "#694ED6" | Start color of the gradient for Coming Soon flag. |
+| `--fds-secondary` | color | "#C137A2" | End color of the gradient for Coming Soon flag.  |
+| `--fds-success`   | color | "#008744" | Color of the Deployed flag.                      |
+<!-- /DOC -->

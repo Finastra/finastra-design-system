@@ -64,3 +64,55 @@ import '@finastra/global-search';
     > </fds-global-search-page>
 </fds-global-search>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property             | Attribute            | Type      | Default | Description                                      |
+|----------------------|----------------------|-----------|---------|--------------------------------------------------|
+| `enableRecentSearch` | `enableRecentSearch` | `boolean` | true    | Whether display recent search section.           |
+| `placeholder`        | `placeholder`        | `string`  | ""      | Sets placeholder value displayed when input is empty. |
+| `value`              | `value`              | `string`  | ""      | Sets value displayed in input.                   |
+
+#### Methods
+
+| Method                       | Type                                       |
+|------------------------------|--------------------------------------------|
+| `addNewRecentSearch`         | `(searchText?: string \| undefined): void` |
+| `clearInput`                 | `(e: any): void`                           |
+| `closeGlobalSearch`          | `(): void`                                 |
+| `getRecentList`              | `(): FdsSearchItem[]`                      |
+| `getSearchInputElement`      | `(): any`                                  |
+| `getSearchInputValue`        | `(): any`                                  |
+| `onGlobalSearchInputChanged` | `(): void`                                 |
+| `onGlobalSearchInputFocus`   | `(): void`                                 |
+| `renderRecentSearch`         | `(): TemplateResult<1> \| ""`              |
+| `setInput`                   | `(text: string): void`                     |
+| `toggleGlobalSearch`         | `(): void`                                 |
+| `toggleSearchClearButton`    | `(display: boolean): void`                 |
+| `triggerSearchWithText`      | `(e: any): void`                           |
+| `updateRecentSearch`         | `(): void`                                 |
+
+#### Events
+
+| Event                           | Type                                 |
+|---------------------------------|--------------------------------------|
+| `onFdsGlobalSearchItemSelected` | `CustomEvent<FdsSearchSelectedItem>` |
+| `onSearchInputChanged`          | `CustomEvent<string>`                |
+
+#### Slots
+
+| Name       | Description                                      |
+|------------|--------------------------------------------------|
+| `pages`    | Slot to place a set of search pages with icon.We provide another web component: fds-global-search-page. |
+| `searches` | Slot to place a set of search items. We provide another web component:fds-global-search-group. |
+| `summary`  | Slot to place a summary of search result.        |
+
+#### CSS Custom Properties
+
+| Property                    | Type | Default | Description                        |
+|-----------------------------|------|---------|------------------------------------|
+| `--fds-global-search-width` | text | "400px" | length of global search component. |
+<!-- /DOC -->

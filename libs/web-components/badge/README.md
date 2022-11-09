@@ -22,3 +22,22 @@ import '@finastra/badge';
     <span> Success </span>
 </fds-badge>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property   | Attribute  | Type                                             | Default    | Description    |
+|------------|------------|--------------------------------------------------|------------|----------------|
+| `color`    | `color`    | `"primary"\|"secondary"\|"success"\|"error"\|"white"\|"outlined"` | "outlined" | Badge color    |
+| `position` | `position` | `"topLeft"\|"topRight"\|"center"`                | "center"   | Badge position |
+| `type`     | `type`     | `""\|"indicator"`                                | ""         | Badge type     |
+| `value`    | `value`    | `string`                                         | ""         | Badge value    |
+
+#### Slots
+
+| Name      | Description          |
+|-----------|----------------------|
+| `default` | Content of the badge |
+<!-- /DOC -->

@@ -23,3 +23,62 @@ import '@finastra/icon-bar';
   <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings"></fds-icon-bar-item>
 </fds-icon-bar>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property        | Attribute      | Type                      | Default | Description               |
+|-----------------|----------------|---------------------------|---------|---------------------------|
+| `ariaHasPopup`  |                | `AriaHasPopup`            |         |                           |
+| `ariaLabel`     |                | `string`                  |         |                           |
+| `buttonElement` |                | `HTMLElement`             |         |                           |
+| `current`       | `current`      | `boolean`                 | false   |                           |
+| `dense`         | `dense`        | `boolean`                 | false   | Make the button smaller.  |
+| `disabled`      | `disabled`     | `boolean`                 | false   | Make the button disabled. |
+| `icon`          | `icon`         | `string`                  | "apps"  | Icon used in the button.  |
+| `label`         | `label`        | `string`                  | ""      |                           |
+| `notification`  | `notification` | `string`                  | ""      |                           |
+| `primary`       | `primary`      | `boolean`                 | false   | Use the primary color.    |
+| `ripple`        |                | `Promise<Ripple \| null>` |         |                           |
+| `secondary`     | `secondary`    | `boolean`                 | false   | Use the secondary color.  |
+
+#### Methods
+
+| Method              | Type                    |
+|---------------------|-------------------------|
+| `blur`              | `(): void`              |
+| `focus`             | `(): void`              |
+| `getParent`         | `(): IconBar`           |
+| `handleIconClick`   | `(): void`              |
+| `renderIconButtons` | `(): TemplateResult<1>` |
+| `renderLabel`       | `(): TemplateResult<1>` |
+| `showLabels`        | `(): boolean`           |
+
+
+# fds-icon-bar
+
+#### Properties
+
+| Property           | Attribute          | Type      | Default | Description                             |
+|--------------------|--------------------|-----------|---------|-----------------------------------------|
+| `hideNotification` | `hideNotification` | `boolean` | false   | Removes the notification on item click. |
+| `showLabels`       | `showLabels`       | `boolean` | false   | Show or hide the items labels.          |
+
+#### Methods
+
+| Method                  | Type                    |
+|-------------------------|-------------------------|
+| `deselectOthers`        | `(current: Node): void` |
+| `dispatchSelectedEvent` | `(index: any): void`    |
+| `getItems`              | `(): Node[]`            |
+| `onFooterSlotChanged`   | `(): void`              |
+| `renderFooter`          | `(): TemplateResult<1>` |
+
+#### Events
+
+| Event      | Type                           |
+|------------|--------------------------------|
+| `selected` | `CustomEvent<{ index: any; }>` |
+<!-- /DOC -->

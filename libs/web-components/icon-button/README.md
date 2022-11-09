@@ -19,3 +19,28 @@ import '@finastra/icon-button';
 ...
 <fds-icon-button icon="code"></fds-icon-button>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property        | Attribute   | Type                      | Default | Description               |
+|-----------------|-------------|---------------------------|---------|---------------------------|
+| `ariaHasPopup`  |             | `AriaHasPopup`            |         |                           |
+| `ariaLabel`     |             | `string`                  |         |                           |
+| `buttonElement` |             | `HTMLElement`             |         |                           |
+| `dense`         | `dense`     | `boolean`                 | false   | Make the button smaller.  |
+| `disabled`      | `disabled`  | `boolean`                 | false   | Make the button disabled. |
+| `icon`          | `icon`      | `string`                  | "code"  | Icon used in the button.  |
+| `primary`       | `primary`   | `boolean`                 | false   | Use the primary color.    |
+| `ripple`        |             | `Promise<Ripple \| null>` |         |                           |
+| `secondary`     | `secondary` | `boolean`                 | false   | Use the secondary color.  |
+
+#### Methods
+
+| Method  | Type       |
+|---------|------------|
+| `blur`  | `(): void` |
+| `focus` | `(): void` |
+<!-- /DOC -->

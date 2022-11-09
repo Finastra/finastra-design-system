@@ -20,3 +20,29 @@ import '@finastra/chip';
 ...
 <fds-chip selected label="Munk"></fds-chip>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property             | Attribute      | Type                      | Default | Description                                      |
+|----------------------|----------------|---------------------------|---------|--------------------------------------------------|
+| `dense`              | `dense`        | `boolean`                 | false   | Make the chip smaller.                           |
+| `disabled`           | `disabled`     | `boolean`                 | false   | Disable a chip.                                  |
+| `icon`               | `icon`         | `string`                  | ""      | Material design icon name to display in the left side of the label |
+| `label`              | `label`        | `string`                  | ""      | Chip label                                       |
+| `large`              | `large`        | `boolean`                 | false   | Make the chip bigger.                            |
+| `ripple`             |                | `Promise<Ripple \| null>` |         |                                                  |
+| `secondary`          | `secondary`    | `boolean`                 | false   | Use Secondary color.                             |
+| `selected`           | `selected`     | `boolean`                 | false   | Select a chip                                    |
+| `trailingIcon`       | `trailingIcon` | `string`                  | ""      | Material design trailing icon name to display in the right side of the label |
+| `trailingIconAction` |                |                           |         |                                                  |
+
+#### Methods
+
+| Method         | Type                                |
+|----------------|-------------------------------------|
+| `renderIcon`   | `(icon: string): TemplateResult<1>` |
+| `renderRipple` | `(): TemplateResult<1>`             |
+<!-- /DOC -->

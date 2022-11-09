@@ -24,3 +24,39 @@ import '@finastra/autocomplete';
     <fds-list-item value="Three">Three</fds-list-item>
 </fds-autocomplete>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property              | Attribute             | Type      | Default |
+|-----------------------|-----------------------|-----------|---------|
+| `ariaDescribedBy`     | `aria-describedby`    | `string`  | ""      |
+| `ariaLabel`           | `aria-label`          | `string`  | ""      |
+| `ariaLabelledBy`      | `aria-labelledby`     | `string`  | ""      |
+| `disabled`            | `disabled`            | `boolean` | false   |
+| `icon`                | `icon`                | `string`  | ""      |
+| `loading`             | `loading`             | `boolean` | false   |
+| `minLengthToOpenMenu` | `minLengthToOpenMenu` | `number`  | 0       |
+| `placeholder`         | `placeholder`         | `string`  | ""      |
+| `required`            | `required`            | `boolean` | false   |
+| `showClearButton`     | `showClearButton`     | `boolean` | false   |
+| `useInnerFilter`      | `useInnerFilter`      | `boolean` | true    |
+| `value`               | `value`               | `string`  | ""      |
+
+#### Methods
+
+| Method  | Type       |
+|---------|------------|
+| `blur`  | `(): void` |
+| `focus` | `(): void` |
+
+#### Events
+
+| Event   | Type                  |
+|---------|-----------------------|
+| `blur`  |                       |
+| `focus` |                       |
+| `input` | `CustomEvent<string>` |
+<!-- /DOC -->
