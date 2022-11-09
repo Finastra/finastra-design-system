@@ -3,8 +3,8 @@ import '@finastra/data-table';
 import { DataTableWithPagination } from '@finastra/data-table';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit';
-import { DATA_TABLE_EVENTS } from '../src/constants';
 import { columns, columnsToDisplay, ELEMENT_DATA } from './data';
+import { actions } from "./sb-generated/fds-data-table-with-pagination.json";
 
 const demoPageSize = 5;
 const demoPageSizeOptions = [5, 10, 20];
@@ -122,9 +122,7 @@ export default {
     dense: false
   },
   parameters: {
-    actions: {
-      handles: [DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED]
-    },
+    actions,
     docs: {
       description: { component: README }
     },
