@@ -15,6 +15,7 @@ import { styles } from './data-table-styles.css';
  * @attr [showMultiSelectCheckBox=false] - Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true.
  * @attr [dense=false] - Wether display data table in a smaller size
  * 
+ * @fires onFdsDataTableWithPaginationRowSelected - Fired when selecting a row
  */
 
 @customElement('fds-data-table')
