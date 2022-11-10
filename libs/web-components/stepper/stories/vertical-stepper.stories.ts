@@ -19,11 +19,15 @@ const demoData = [
     description: 'Example of content for a disabled step',
     disabled: true
   },
-  { label: 'Step Inactive', description: 'Example of content for an inactive step' },
   {
-    label: 'Step Inactive',
-    description:
-    'Example of content for an inactive step'
+    label: 'Step Error',
+    description: 'Example of content for an error step',
+    error: true
+  },
+  {
+    label: 'Step Custom Active Icon',
+    description: 'Example of content for an active step custom icon',
+    activeStepIcon: 'sync'
   }
 ];
 
@@ -77,8 +81,18 @@ export default {
   cssprops
 } as Meta;
 
-const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, labelMode = '' }) => {
-  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} .labelMode=${labelMode}></fds-vertical-stepper>`;
+const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, readonly = false, hideIndex= false, labelMode = '' }) => {
+  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} ?readonly=${readonly} ?hideIndex=${hideIndex} .labelMode=${labelMode}></fds-vertical-stepper>`;
 };
 
 export const Default: Story<VerticalStepper> = VTemplate.bind({});
+
+export const Readonly: Story<VerticalStepper> = VTemplate.bind({});
+Readonly.args = {
+  readonly: true
+};
+
+export const HideIndex: Story<VerticalStepper> = VTemplate.bind({});
+HideIndex.args = {
+  hideIndex: true
+};

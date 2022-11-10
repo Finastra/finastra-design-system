@@ -17,9 +17,13 @@ const demoData = [
     label: 'Step Disabled',
     disabled: true
   },
-  { label: 'Step Inactive' },
   {
-    label: 'Step Inactive'
+    label: 'Step Error',
+    error: true
+  },
+  {
+    label: 'Step Custom Active Icon',
+    activeStepIcon: 'sync'
   }
 ];
 
@@ -56,8 +60,18 @@ export default {
   cssprops
 } as Meta;
 
-const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false }) => {
-  return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary}></fds-horizontal-stepper>`;
+const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, readonly = false, hideIndex= false, }) => {
+  return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} ?readonly=${readonly} ?hideIndex=${hideIndex}></fds-horizontal-stepper>`;
 };
 
 export const Default: Story<HorizontalStepper> = HTemplate.bind({});
+
+export const Readonly: Story<HorizontalStepper> = HTemplate.bind({});
+Readonly.args = {
+  readonly: true
+};
+
+export const HideIndex: Story<HorizontalStepper> = HTemplate.bind({});
+HideIndex.args = {
+  hideIndex: true
+};

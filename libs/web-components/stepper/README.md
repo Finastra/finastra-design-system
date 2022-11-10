@@ -26,11 +26,18 @@ this.steps = [
     },
     {
         label: 'Step Active',
-        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .'
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .',
+        disabled: true
+    },
+    {
+        label: 'Step Active',
+        description: 'Aute velit incididunt ex veniam aliqua. Ullamco ullamco reprehenderit laborum aliquip dolor. Do elit sint ullamco .',
+        error: true
     },
     {
         label: 'Step Inactive',
-        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. '
+        description: 'Sunt mollit quis anim laboris amet laboris irure magna. Fugiat ullamco ea qui consequat laborum. ',
+        activeStepIcon: 'sync'
     }
 ];
 ...
