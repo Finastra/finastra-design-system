@@ -63,3 +63,4 @@
 - [11/08/2022] Request release v1.1.2 by dorsaffrigui 
 - [11/09/2022] Request release v1.1.3 by dorsaffrigui 
 - [11/10/2022] Request release v1.2.0 by Pi5rr5 
+- [11/10/2022] Request release v1.2.1 by ttalbot 
