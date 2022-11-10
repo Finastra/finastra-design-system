@@ -10,6 +10,7 @@
       [totalData]="totalData"
       [stickyFooter]="stickyFooter"
       [pageEnable]="pageEnable"
+      [sort]="sortInfo"
       (sortChanged)="sortData($event)"
       [singleSelect]="singleSelect"
       [multiSelect]="!singleSelect"
@@ -31,18 +32,14 @@
       <h4>Customized options</h4>
       <div fxLayout="row">
         <div fxLayout="column" fxLayoutAlign="space-between start">
-          <mat-slide-toggle [color]="" [checked]="dragEnable" (change)="enableDrag($event)"
-            >Enable Drag Columns</mat-slide-toggle
-          >
+          <mat-slide-toggle [color]="" [checked]="dragEnable" (change)="enableDrag($event)">Enable Drag Columns</mat-slide-toggle>
           <mat-slide-toggle [checked]="totalEnable" (change)="enableTotal($event)">Enable total</mat-slide-toggle>
           <mat-slide-toggle [checked]="pageEnable" (change)="enablePaging($event)">Enable paging</mat-slide-toggle>
           <mat-slide-toggle *ngIf="pageEnable" [checked]="customizedPage" (change)="enableCustomizedPaging($event)"
             >Enable customized paging
           </mat-slide-toggle>
 
-          <mat-slide-toggle [checked]="enableTableEdit" (change)="enableTableEditChanged($event)"
-            >Enable table edit</mat-slide-toggle
-          >
+          <mat-slide-toggle [checked]="enableTableEdit" (change)="enableTableEditChanged($event)">Enable table edit</mat-slide-toggle>
           <mat-slide-toggle [checked]="enableTableRowDelete" (change)="enableTableRowDeleteChanged($event)"
             >Enable table remove</mat-slide-toggle
           >
@@ -75,6 +72,21 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <div class="set-selection-area" fxLayout="column" fxLayoutAlign="start start">
+      <h5>Sort</h5>
+      <mat-form-field>
+        <mat-select placeholder="active" (selectionChange)="setActive($event)">
+          <mat-option *ngFor="let option of columnsToDisplay" [value]="option">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="order" (selectionChange)="setDirection($event)">
+          <mat-option value="asc">asc</mat-option>
+          <mat-option value="desc">desc</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <div *ngIf="actionDescription" class="interaction-information">
       <h4>Information:</h4>
       {{ actionDescription }}
@@ -91,21 +103,18 @@
 
 <h3>Table component</h3>
 <p>
-  The <code>uxg-table</code> component is based on the <code>mat-table</code> from angular material and also integrated
-  with finastra design system
+  The <code>uxg-table</code> component is based on the <code>mat-table</code> from angular material and also integrated with finastra design
+  system
 </p>
 <p>There are three necessary inputs: <code>data</code>/<code>columns</code>/<code>columnsToDisplay</code></p>
 <p>The <code>data</code> is a data array which contains the data to display in the table.</p>
 <p>The <code>columns</code> is an array which contains the configuration of each columns.</p>
 <p>The <code>columnsToDisplay</code> is an array which columns should display in the table.</p>
 <p>
-  If you want to add a specific class to a row. you can add an attribute "_class" and assign the class name string to
-  it. This class will be added to the row and you can customize it by yourself
+  If you want to add a specific class to a row. you can add an attribute "_class" and assign the class name string to it. This class will be
+  added to the row and you can customize it by yourself
 </p>
-<p>
-  There are others input and output that you can use to control the dispay style of table and interact with the table
-  component.
-</p>
+<p>There are others input and output that you can use to control the dispay style of table and interact with the table component.</p>
 <p>See more below:</p>
 
 <h2>Properties</h2>
@@ -173,6 +182,13 @@
         showTableHeader: boolean
       </td>
       <td>If you want to show table headers, Default <code>true</code>.</td>
+    </tr>
+    <tr>
+      <td>
+        @Input()<br />
+        sort: UxgSort
+      </td>
+      <td>If to set the sort options of the table.</td>
     </tr>
     <tr>
       <td>
@@ -246,15 +262,15 @@
     <tr>
       <td>@Input()<br />enableSend</td>
       <td>
-        If you want to apply a customized event to row that is not the same with click on the row. you can enable this
-        configuraiton and then use the output <code>rowSendEvent</code> to customized your own actions
+        If you want to apply a customized event to row that is not the same with click on the row. you can enable this configuraiton and
+        then use the output <code>rowSendEvent</code> to customized your own actions
       </td>
     </tr>
     <tr>
       <td>@Input()<br />actionColumnPosition: UxgActionColumnPosition</td>
       <td>
-        by default action columnn located at end of the table(UxgActionColumnPosition.end), if you want to change it you
-        can set it to 'UxgActionColumnPosition.start'
+        by default action columnn located at end of the table(UxgActionColumnPosition.end), if you want to change it you can set it to
+        'UxgActionColumnPosition.start'
       </td>
     </tr>
     <tr>
@@ -376,8 +392,8 @@
 </table>
 <h3>UxgColumnType</h3>
 <p>
-  With the type you can specify the disply type and predefined align. For type <code>cellTemplate</code> You can used to
-  add new template to customize your own cell. See more in advanced section
+  With the type you can specify the disply type and predefined align. For type <code>cellTemplate</code> You can used to add new template to
+  customize your own cell. See more in advanced section
 </p>
 <table class="documentation">
   <tbody>
@@ -501,8 +517,7 @@
 
 <p>From table component, we will provide two paramters to your template <code>element</code> <code>column</code></p>
 <p>
-  With those two object, you can do what you want, <code>element</code> contains row data. <code>column</code> contains
-  column definiation
+  With those two object, you can do what you want, <code>element</code> contains row data. <code>column</code> contains column definiation
 </p>
 <p>Here is an template exmaple, we want to display the revenue with currency.</p>
 
@@ -523,8 +538,7 @@
 <ng-template #tableCellTypedCurrencyEdit let-element="element" let-column="column"> edit cell </ng-template>
 
 <ng-template #tableCellTable let-element="element" let-column="column" let-emiter="emiter">
-  <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false">
-  </uxg-table>
+  <uxg-table [data]="subData" [columns]="subColumns" [columnsToDisplay]="subColumnsToDisplay" [showTableHeader]="false"> </uxg-table>
 </ng-template>
 
 <ng-template #tableCellAction let-element="element" let-column="column" let-emiter="emiter">

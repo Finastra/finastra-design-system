@@ -1,22 +1,14 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  EventEmitter,
-  ViewEncapsulation,
-  ViewChild,
-  TemplateRef
-} from '@angular/core';
-import {
-  UxgTableSelectEvent,
-  TableComponent,
-  UxgSort,
-  UxgColumnType,
-  UxgColumn,
-  UxgPage,
-  UxgActionColumnPosition
-} from '@finastra/angular-components/table';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import {
+  TableComponent,
+  UxgActionColumnPosition,
+  UxgColumn,
+  UxgColumnType,
+  UxgPage,
+  UxgSort,
+  UxgTableSelectEvent
+} from '@finastra/angular-components/table';
 
 const ELEMENT_DATA: any[] = [
   {
@@ -218,6 +210,9 @@ export class TableDemoComponent implements OnInit {
   enableTableEdit = true;
   enableTableRowDelete = true;
   enableTableSendEvent = true;
+  sortInfo = { active: '', direction: 'asc' };
+  sortInfoActive = '';
+  sortInfoDirection = 'asc';
 
   cellTemplateEmiter = new EventEmitter<any>();
   actionInfo = '';
@@ -445,5 +440,19 @@ export class TableDemoComponent implements OnInit {
 
   updateActionsDescription(data: any) {
     this.actionDescription = JSON.stringify(data);
+  }
+
+  setActive($event: any) {
+    this.sortInfoActive = $event.value;
+    this.updateSort();
+  }
+
+  setDirection($event: any) {
+    this.sortInfoDirection = $event.value;
+    this.updateSort();
+  }
+
+  updateSort() {
+    this.sortInfo = { active: this.sortInfoActive, direction: this.sortInfoDirection };
   }
 }
