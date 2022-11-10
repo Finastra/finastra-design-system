@@ -25,6 +25,7 @@ import { delay, map, startWith } from 'rxjs/operators';
 
 export interface Tag {
   label: string;
+  value?: string;
   isSelected?: boolean;
   category?: string;
 }
