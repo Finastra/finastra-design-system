@@ -37,12 +37,5 @@ import '@finastra/chip';
 | `secondary`          | `secondary`    | `boolean`                 | false   | Use Secondary color.                             |
 | `selected`           | `selected`     | `boolean`                 | false   | Select a chip                                    |
 | `trailingIcon`       | `trailingIcon` | `string`                  | ""      | Material design trailing icon name to display in the right side of the label |
-| `trailingIconAction` |                |                           |         |                                                  |
-
-#### Methods
-
-| Method         | Type                                |
-|----------------|-------------------------------------|
-| `renderIcon`   | `(icon: string): TemplateResult<1>` |
-| `renderRipple` | `(): TemplateResult<1>`             |
+| `trailingIconAction` |                |                           |         | Override this callback with what you want to happen whenever there's a click on the trailing icon |
 <!-- /DOC -->

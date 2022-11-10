@@ -46,6 +46,9 @@ export class Chip extends LitElement {
 
   @state() protected shouldRenderRipple = false;
 
+  /**
+   * Override this callback with what you want to happen whenever there's a click on the trailing icon
+   */
   trailingIconAction: any;
 
   protected getRenderClasses(): ClassInfo {
@@ -89,14 +92,14 @@ export class Chip extends LitElement {
     }
   }
 
-  renderIcon(icon: string) {
+  private renderIcon(icon: string) {
     return html`
     <fds-icon class="mdc-button__icon">
       ${icon}
     </fds-icon>`;
   }
 
-  renderRipple() {
+  private renderRipple() {
     return html`<mwc-ripple class="ripple" .disabled="${this.disabled}"></mwc-ripple>`;
   }
 
