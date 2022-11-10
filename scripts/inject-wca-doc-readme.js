@@ -2,7 +2,6 @@ const { readFileSync, writeFileSync } = require('fs');
 const { join, posix } = require('path');
 const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
-const END_TAG = '<!-- /DOC -->';
 
 async function main() {
   const paths = await getPaths('../libs/web-components/*/src/*.ts');
