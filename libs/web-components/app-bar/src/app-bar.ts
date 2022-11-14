@@ -55,15 +55,15 @@ export class AppBar extends LitElement {
     </div>`;
   }
 
-  renderNavigationSlot(): TemplateResult {
+  private renderNavigationSlot(): TemplateResult {
     return html`<slot name="navigation" class="bar-block"></slot>`;
   }
 
-  handleNavigationClick() {
+  private handleNavigationClick() {
     this.dispatchEvent(new Event(EVENTS.NAVIGATION, { bubbles: true, cancelable: true }));
   }
 
-  navigateToLogoUri() {
+  private navigateToLogoUri() {
     location.href = this.logoRedirectUri;
   }
 }

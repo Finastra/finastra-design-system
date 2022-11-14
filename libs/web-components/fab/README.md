@@ -19,3 +19,31 @@ import '@finastra/fab';
 ...
 <fds-fab extended gradient label="Edit" icon="edit"></fds-fab>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property             | Attribute  | Type                      | Default    | Description                |
+|----------------------|------------|---------------------------|------------|----------------------------|
+| `dense`              | `dense`    | `boolean`                 | false      | Make the fab smaller.      |
+| `disabled`           |            | `boolean`                 |            |                            |
+| `exited`             |            | `boolean`                 |            |                            |
+| `extended`           | `extended` | `boolean`                 | false      | Make the fab extended.     |
+| `gradient`           | `gradient` | `boolean`                 | false      | Apply gradient color.      |
+| `icon`               | `icon`     | `string`                  | "add"      | Fab icon.                  |
+| `label`              | `label`    | `string`                  | "Action"   | Label in the extended fab. |
+| `mini`               |            | `boolean`                 |            |                            |
+| `reducedTouchTarget` |            | `boolean`                 |            |                            |
+| `ripple`             |            | `Promise<Ripple \| null>` |            |                            |
+| `showIconAtEnd`      |            | `boolean`                 |            |                            |
+| `styles`             |            | `CSSResult[]`             | ["styles"] |                            |
+
+#### CSS Custom Properties
+
+| Property          | Type  | Default   | Description      |
+|-------------------|-------|-----------|------------------|
+| `--fds-primary`   | color | "#694ED6" | Primary color.   |
+| `--fds-secondary` | color | "#C137A2" | Secondary color. |
+<!-- /DOC -->

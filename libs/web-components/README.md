@@ -189,6 +189,72 @@ We recommand using the **generator** to start a new web-component. To be complia
 
 <br>
 
+### Documenting your Web Component
+
+The only source of truth of your wc documentation should be [JSDoc](https://jsdoc.app/) alongside your component's code.
+
+This JSDoc can be extracted (via [wca](https://github.com/runem/web-component-analyzer)), and injected in both Storybook and your README, so that you don't have to write the same thing 3 times.
+
+#### Documentation in README.md
+
+During release, JSDoc is extracted for every web component, and injected into each README.md file of said web component in a neat table format.
+You can inject the content to test how it will render prior to pushing your content, via `npm run wca:md`.
+
+The script will look for the following delimiter to inject the content of documentation between them:
+```md
+<!-- DOC -->
+<!-- /DOC -->
+```
+
+When working with multiple components, by default it will display the first found component inside the default delimiter. You can specify which component to output where by passing the tagName of your component as a parameter inside the delimiters:
+
+```md
+<!-- DOC:fds-special-component -->
+<!-- /DOC:fds-special-component -->
+
+Some doc that won't get overriden
+
+<!-- DOC:fds-special-component-2 -->
+<!-- /DOC:fds-special-component-2 -->
+```
+
+#### Documentation in Storybook
+
+While working with Storybook, this same JSDoc can be extracted and injected in storybook in order to facilitate writing stories, and avoiding duplication of content.
+
+`npm run wca` is launched prior to executing `npm run wc:storybook` and will extract JSDoc in a JSON format, and transform it to storybook compatible exports. This extract will by default be created in your component's `stories` folder, under `{name}.json`; `name` being the name of your web component.
+
+In your storybook story, you can import `argTypes` (props), `cssprops` (css custom properties), and `actions` (events) and provide them to your story config.
+
+Example: 
+```ts
+const README = require('../README.md');
+import { AppBar } from '@finastra/app-bar';
+import { Meta, Story } from '@storybook/web-components';
+import { actions, argTypes, cssprops } from './sb-generated/fds-app-bar.json';
+
+export default {
+  title: 'NAVIGATION/App Bar',
+  component: 'fds-app-bar',
+  argTypes,
+  args: {
+    appName: 'Finastra'
+  },
+  parameters: {
+    actions,
+    docs: {
+      description: { component: README }
+    },
+    cssprops
+  },
+} as Meta;
+```
+(this is a simplified example of a story, keep the content that was generated when using the wc generator)
+
+> If you're adding or modifying your JSDoc while storybook watcher is running, you either have to stop it and run it again, or regenerate extract of JSDoc via `npm run wca` in a separate terminal (Storybook watcher will see the changes and relaunch)
+
+<br>
+
 ### Adding local dependencies
 
 Whenever you need to use a component inside another component, you'll need to add it as a dependency in its package.json file.

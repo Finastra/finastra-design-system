@@ -45,3 +45,62 @@ this.steps = [
 
 <fds-vertical-stepper currentStepIndex="1" steps="${this.steps}"></fds-vertical-stepper>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Attributes
+
+| Attribute   | Type      | Default | Description          |
+|-------------|-----------|---------|----------------------|
+| `secondary` | `boolean` | false   | Use Secondary color. |
+
+#### Properties
+
+| Property           | Attribute          | Type     | Default | Description                   |
+|--------------------|--------------------|----------|---------|-------------------------------|
+| `currentStepIndex` | `currentStepIndex` | `number` | -1      | Index of current active step. |
+| `steps`            |                    | `Step[]` | []      |                               |
+
+#### Methods
+
+| Method              | Type                                 |
+|---------------------|--------------------------------------|
+| `renderIconAndLine` | `(index: number): TemplateResult<1>` |
+
+#### CSS Custom Properties
+
+| Property                   | Type | Default | Description         |
+|----------------------------|------|---------|---------------------|
+| `--fds-stepper-line-space` | text | "8px"   | Stepper line space. |
+
+
+# fds-vertical-stepper
+
+#### Attributes
+
+| Attribute                                        | Type      | Default | Description          |
+|--------------------------------------------------|-----------|---------|----------------------|
+| `labelMode] - Position of the label relative to the steps. Available values ["none", "center", "background"` |           |         |                      |
+| `secondary`                                      | `boolean` | false   | Use Secondary color. |
+
+#### Properties
+
+| Property           | Attribute          | Type     | Default | Description                   |
+|--------------------|--------------------|----------|---------|-------------------------------|
+| `currentStepIndex` | `currentStepIndex` | `number` | -1      | Index of current active step. |
+| `labelMode`        | `label-mode`       | `string` | ""      |                               |
+| `steps`            |                    | `Step[]` | []      |                               |
+
+#### Methods
+
+| Method              | Type                                 |
+|---------------------|--------------------------------------|
+| `renderIconAndLine` | `(index: number): TemplateResult<1>` |
+
+#### CSS Custom Properties
+
+| Property                   | Type | Default | Description         |
+|----------------------------|------|---------|---------------------|
+| `--fds-stepper-line-space` | text | "8px"   | Stepper line space. |
+<!-- /DOC -->

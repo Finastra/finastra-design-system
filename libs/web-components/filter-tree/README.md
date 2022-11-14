@@ -39,3 +39,45 @@ import '@finastra/filter-tree';
 ]>
 </fds-filter-tree>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property | Attribute | Type         | Default | Description    |
+|----------|-----------|--------------|---------|----------------|
+| `items`  | `items`   | `TreeNode[]` | []      | List of items. |
+
+#### Methods
+
+| Method                         | Type                                             |
+|--------------------------------|--------------------------------------------------|
+| `checkDescendants`             | `(item: TreeNode, indexInTreeNode: any): void`   |
+| `checkIndeterminate`           | `(nodeEl: HTMLElement): void`                    |
+| `descendantsAllSelected`       | `(node: FlatTreeNode): boolean`                  |
+| `descendantsPartiallySelected` | `(node: FlatTreeNode): boolean`                  |
+| `deselectChildren`             | `(items: TreeNode[]): void`                      |
+| `findIndex`                    | `(node: FlatTreeNode): any`                      |
+| `flatTreeTransformer`          | `(items: TreeNode[], level: number \| undefined, flatTreeTransf: FlatTreeNode[]): FlatTreeNode[]` |
+| `getDescendants`               | `(node: FlatTreeNode): FlatTreeNode[]`           |
+| `getNodeElementById`           | `(id: string): any`                              |
+| `getParentNode`                | `(node: FlatTreeNode): FlatTreeNode \| null`     |
+| `haveChildren`                 | `(item: TreeNode): boolean`                      |
+| `init`                         | `(items: TreeNode[]): void`                      |
+| `initSelection`                | `(item: TreeNode, indexInTreeNode: any): void`   |
+| `isSelected`                   | `(node: FlatTreeNode): boolean`                  |
+| `notifyParent`                 | `(node: FlatTreeNode): void`                     |
+| `onExpandClick`                | `(item: TreeNode, index: number, event: any): void` |
+| `onRequestSelected`            | `(item: TreeNode, index: number, event: any): void` |
+| `onSelect`                     | `(item: TreeNode, nodeEl: HTMLElement, indexInTreeNode: number, indexInFlatTreeNode: number, eventType: string): void` |
+| `renderChildren`               | `(items: TreeNode[]): any`                       |
+| `selectChildren`               | `(items: TreeNode[]): void`                      |
+| `toFlatTreeNode`               | `(item: TreeNode, index: any): FlatTreeNode`     |
+
+#### Events
+
+| Event               | Type                     |
+|---------------------|--------------------------|
+| `filter-tree-check` | `CustomEvent<TreeState>` |
+<!-- /DOC -->

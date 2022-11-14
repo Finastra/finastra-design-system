@@ -18,3 +18,25 @@ import '@finastra/breadcrumb';
 ...
 <fds-breadcrumb items="['Link 1', 'Link 2']"></fds-breadcrumb>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property | Attribute | Type    | Default | Description                |
+|----------|-----------|---------|---------|----------------------------|
+| `items`  | `items`   | `Array` | []      | A list of items to display |
+
+#### Methods
+
+| Method            | Type                                  |
+|-------------------|---------------------------------------|
+| `handleItemClick` | `(item: string, index: number): void` |
+
+#### Events
+
+| Event      | Type                                            |
+|------------|-------------------------------------------------|
+| `selected` | `CustomEvent<{ item: string; index: number; }>` |
+<!-- /DOC -->

@@ -20,3 +20,26 @@ import '@finastra/alert-message';
   <fds-alert-message type="success" title="Success" description="A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner.">
   </fds-alert-message>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property          | Attribute         | Type                            | Default      | Description                                      |
+|-------------------|-------------------|---------------------------------|--------------|--------------------------------------------------|
+| `dense`           | `dense`           | `boolean`                       | false        | dense .                                          |
+| `description`     | `description`     | `string`                        | ""           | Alert description.                               |
+| `icon`            | `icon`            | `string`                        | ""           | Alert Icon.                                      |
+| `layout`          | `layout`          | `multiLines\|singleLine`        | "multiLines" | Define the layout type                           |
+| `showCloseButton` | `showCloseButton` | `boolean`                       | false        | Display the close button to dismiss the alert message. |
+| `title`           | `title`           | `string`                        | ""           | Alert title.                                     |
+| `type`            | `type`            | `info\|error\|success\|warning` | "success"    | Define the alert type                            |
+| `withoutIcon`     | `withoutIcon`     | `boolean`                       | false        | Remove the Icon from the alert message.          |
+
+#### Methods
+
+| Method       | Type                    |
+|--------------|-------------------------|
+| `renderIcon` | `(): TemplateResult<1>` |
+<!-- /DOC -->

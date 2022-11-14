@@ -20,3 +20,34 @@ import '@finastra/brand-card';
 ...
 <fds-brand-card label="App name"></fds-brand-card>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property     | Attribute    | Type      | Default | Description                                      |
+|--------------|--------------|-----------|---------|--------------------------------------------------|
+| `dense`      | `dense`      | `boolean` | false   | Make the card smaller                            |
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| `extraDense` | `extraDense` | `boolean` | false   | Make the card extra small                        |
+| `label`      | `label`      |           |         | App card label                                   |
+| `large`      | `large`      | `boolean` | false   | Make the card bigger                             |
+| `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `secondary`  | `secondary`  | `boolean` | false   | Color and ribbon type                            |
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
+| `shortLabel` | `shortLabel` | `string`  | ""      | Optional app card displayed label                |
+
+#### Methods
+
+| Method           | Type                     |
+|------------------|--------------------------|
+| `formatItemName` | `(name: string): string` |
+
+#### CSS Custom Properties
+
+| Property          | Type  | Default   | Description                   |
+|-------------------|-------|-----------|-------------------------------|
+| `--fds-primary`   | color | "#694ED6" | Color of the default ribbon   |
+| `--fds-secondary` | color | "#C137A2" | Color of the secondary ribbon |
+<!-- /DOC -->
