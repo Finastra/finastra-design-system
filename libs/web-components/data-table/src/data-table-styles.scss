@@ -24,7 +24,7 @@
   @include fds.mdc(text-field-error-color, error);
 
   .fds-data-table {
-    max-height: 615px;
+    max-height: var(--fds-data-table-max-height, 615px);
     border: var(--fds-data-table-border-width, 1px) solid;
     @include fds.property('border-color', outline);
 
@@ -208,10 +208,10 @@
   }
 
   .fds-data-table {
-    max-height: 439px;
+    max-height: var(--fds-data-table-max-height, 439px);
 
     &.fds-data-table-select-enabled {
-      max-height: 538px;
+      max-height: var(--fds-data-table-max-height, 538px);
     }
 
     .mdc-data-table__table {
