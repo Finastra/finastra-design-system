@@ -37,14 +37,6 @@ import '@finastra/app-bar';
 | `prominent`       | `prominent`       | `boolean` | false   | Extend the app bar                           |
 | `transparent`     | `transparent`     | `boolean` | false   | Give a transparent background to the app bar |
 
-#### Methods
-
-| Method                  | Type                             |
-|-------------------------|----------------------------------|
-| `handleNavigationClick` | `(): void`                       |
-| `navigateToLogoUri`     | `(): void`                       |
-| `renderNavigationSlot`  | `(): TemplateResult<ResultType>` |
-
 #### Events
 
 | Event              | Description                          |

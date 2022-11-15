@@ -1,4 +1,5 @@
-import { html, LitElement, svg } from 'lit';
+import '@finastra/icon';
+import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { EVENTS } from './constants';
@@ -6,12 +7,16 @@ import { EVENTS } from './constants';
 export interface Step {
   label: string;
   description?: string;
+  activeStepIcon?: string;
   disabled?: Boolean;
+  error?: Boolean;
 }
 
 /**
  * @cssprop {text} [--fds-stepper-line-space=8px] - Stepper line space.
  * @attr {boolean} [secondary=false] - Use Secondary color.
+ * @attr {boolean} [readonly=false] - Read only mode.
+ * @attr {boolean} [hideIndex=false] - Hide the index of each steps.
  * @attr [currentStepIndex=-1] - Index of current active step.
  */
 export class BaseStepper extends LitElement {
@@ -19,41 +24,65 @@ export class BaseStepper extends LitElement {
   steps: Step[] = [];
 
   @property({ type: Number })
-  currentStepIndex = -1;
+  currentStepIndex = 0;
 
-  renderIconAndLine(index: number) {
+  @property({ type: Boolean })
+  readonly = false;
+
+  @property({ type: Boolean })
+  hideIndex = false;
+
+  renderIconAndLine(step: Step, index: number) {
     const startLineClass = {
       hidden: index === 0,
-      current: index === this.currentStepIndex + 1 && !this.steps[index - 1].disabled,
+      current: index === this.currentStepIndex + 1 && !this.steps[index - 1]?.disabled,
+      error: this.steps[index - 1]?.error ? true : false,
       first: index === 0
     };
     const endLineClass = { hidden: index === this.steps.length - 1, last: index === this.steps.length - 1 };
     return html`
-      <div class="line  start-line ${classMap(startLineClass)}"></div>
+      <div class="line start-line ${classMap(startLineClass)}"></div>
       <div class="circle step-item-icon">
-        ${index >= this.currentStepIndex
-          ? index + 1
-          : svg`<svg width="14" height="11" viewBox="0 0 14 11">
-          <path
-            d="M4.75012 8.12757L1.62262 5.00007L0.557617 6.05757L4.75012 10.2501L13.7501 1.25007L12.6926 0.192566L4.75012 8.12757Z" />
-        </svg>
-        `}
+        ${this.renderIcon(step, index)}
       </div>
       <div class="line end-line ${classMap(endLineClass)}"></div>
     `;
   }
-  
+
+  renderIcon(step: Step, index: number) {
+
+    if (index >= this.currentStepIndex) {
+      const activeStepIcon = this.steps[this.currentStepIndex]?.activeStepIcon;
+      if (index === this.currentStepIndex && this.steps[this.currentStepIndex]?.error) {
+        return html`<fds-icon>error_outline</fds-icon>`;
+      } else if(index === this.currentStepIndex && activeStepIcon) {
+        return html`<fds-icon>${activeStepIcon}</fds-icon>`;
+      } else {
+        return this.hideIndex ? null:index + 1;
+      }
+    } else {
+      if (step?.error) {
+        return html`<fds-icon>error_outline</fds-icon>`;
+      } else {
+        return html`<fds-icon>done</fds-icon>`;
+      }
+    }
+  }
+
   render() {
     return html`<div class="container">
       ${this.steps.map(
         (step, idx) =>
           html`<div
-            class="step-item ${idx < this.currentStepIndex ? 'done' : ''} ${idx === this.currentStepIndex && !step.disabled
-              ? 'current'
-              : ''} ${step.disabled ? 'disabled' : ''}"
+            class="step-item
+              ${idx < this.currentStepIndex ? 'done' : ''}
+              ${idx === this.currentStepIndex && !step.disabled ? 'current' : ''}
+              ${step.disabled ? 'disabled' : ''}
+              ${step.error ? 'error' : ''}
+              ${this.readonly ? 'readonly' : ''}"
             @click="${() => this._onStepClick(idx)}"
           >
-            ${this.renderIconAndLine(idx)}
+            ${this.renderIconAndLine(step, idx)}
             <div class="text-wrapper">
               ${step.description
                 ? html`
@@ -67,7 +96,7 @@ export class BaseStepper extends LitElement {
   }
 
   _onStepClick(index: number) {
-    if (!this.steps[index]?.disabled) {
+    if (!this.steps[index]?.disabled && !this.readonly) {
       this.currentStepIndex = index;
       this.dispatchEvent(
         new CustomEvent(EVENTS.STEPCLICK, {

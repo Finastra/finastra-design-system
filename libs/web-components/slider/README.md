@@ -22,3 +22,41 @@ import '@finastra/slider';
 ...
 <fds-slider value="25" min="10" max="50"></fds-slider>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property                         | Attribute       | Modifiers | Type                                            | Default    | Description                                      |
+|----------------------------------|-----------------|-----------|-------------------------------------------------|------------|--------------------------------------------------|
+| `ariaDescribedBy`                |                 |           | `string`                                        |            |                                                  |
+| `ariaLabel`                      |                 |           | `string`                                        |            |                                                  |
+| `ariaLabelledBy`                 |                 |           | `string`                                        |            |                                                  |
+| `disabled`                       | `disabled`      |           | `boolean`                                       | false      | Disabled state for the component. When `disabled` is set to `true`, the<br />component will not be added to form submission. |
+| `discrete`                       | `discrete`      |           | `boolean`                                       | false      | display value above the thumb.                   |
+| `max`                            | `max`           |           | `number`                                        | 100        | Maximum selectable value of the slider.          |
+| `min`                            | `min`           |           | `number`                                        | 0          | Minimum selectable value of the slider.          |
+| `name`                           |                 |           | `string`                                        |            |                                                  |
+| `ripple`                         |                 | readonly  | `Promise<RippleInterface \| null> \| undefined` |            | Implement ripple getter for Ripple integration with mwc-formfield |
+| `step`                           | `step`          |           | `number`                                        | 1          | The step to increase current value.              |
+| `styles`                         |                 |           | `CSSResult[]`                                   | ["styles"] |                                                  |
+| `value`                          | `value`         |           | `number`                                        | 0          | Current selected value.                          |
+| `valueEnd`                       |                 |           | `number`                                        |            |                                                  |
+| `valueToAriaTextTransform`       |                 |           | `((value: number) => string) \| null`           |            |                                                  |
+| `valueToValueIndicatorTransform` |                 |           | `(value: number) => string`                     |            |                                                  |
+| `withTickMarks`                  | `withTickMarks` |           | `boolean`                                       | false      | display tick marks for each step on the track.   |
+
+#### Methods
+
+| Method   | Type                                             |
+|----------|--------------------------------------------------|
+| `click`  | `(): void`                                       |
+| `layout` | `(skipUpdateUI?: boolean \| undefined): Promise<void>` |
+
+#### CSS Custom Properties
+
+| Property        | Type  | Default   | Description          |
+|-----------------|-------|-----------|----------------------|
+| `--fds-primary` | color | "#694ED6" | Color of the slider. |
+<!-- /DOC -->

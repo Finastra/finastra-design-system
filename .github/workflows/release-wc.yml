@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Generate WC Documentation
-        run: npm run wca:wd
+        run: npm run wca:md
       - name: Build fds theme
         run: npm run build:fds-theme
       - name: Build web components
@@ -68,7 +68,7 @@ jobs:
           release_name: v${{ env.RELEASE_VERSION }}
           body: ''
           draft: false
-          prerelease: true
+          prerelease: false
       - name: Authenticate with Registry
         run: |
           echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc

@@ -22,3 +22,34 @@ import '@finastra/switch';
 ...
 <fds-switch selected></fds-switch>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property         | Attribute  | Modifiers | Type                      | Default    | Description                                      |
+|------------------|------------|-----------|---------------------------|------------|--------------------------------------------------|
+| `ariaLabel`      |            |           | `string`                  |            |                                                  |
+| `ariaLabelledBy` |            |           | `string`                  |            |                                                  |
+| `disabled`       | `disabled` |           | `boolean`                 | false      | Indicates whether or not the switch is disabled. |
+| `name`           |            |           | `string`                  |            |                                                  |
+| `processing`     |            |           | `boolean`                 |            | Indicates whether or not the switch is processing and showing a loading<br />indicator. A disabled switch cannot be processing. |
+| `ripple`         |            | readonly  | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield |
+| `selected`       | `selected` |           | `boolean`                 | false      | If true, the switch is on. If false, the switch is off. |
+| `styles`         |            |           | `CSSResult[]`             | ["styles"] |                                                  |
+| `value`          |            |           | `string`                  |            |                                                  |
+
+#### Methods
+
+| Method  | Type       |
+|---------|------------|
+| `click` | `(): void` |
+
+#### CSS Custom Properties
+
+| Property              | Type  | Default   | Description         |
+|-----------------------|-------|-----------|---------------------|
+| `--fds-primary`       | color | "#694ED6" | Switch color        |
+| `--fds-track-opacity` | color | 0.54      | Track color opacity |
+<!-- /DOC -->

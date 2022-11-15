@@ -56,3 +56,47 @@ export interface Tour {
 ```
 
 - `stepInfo` property is a string template. Its default value is : `Step ${currentStep} of ${totalSteps}`
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property               | Attribute          | Type                           | Default      | Description                           |
+|------------------------|--------------------|--------------------------------|--------------|---------------------------------------|
+| `arrowPosition`        |                    | `StyleInfo`                    | {}           |                                       |
+| `cardPosition`         |                    | `StyleInfo`                    | {}           |                                       |
+| `currentStepElement`   |                    | `Element \| null \| undefined` | "undefined"  |                                       |
+| `currentStepIndex`     | `currentStepIndex` | `number`                       | 0            | Current step in the tour.             |
+| `data`                 | `data`             | `Tour`                         | {"steps":[]} | Data for component.                   |
+| `oldBodyOverflowValue` |                    | `string`                       | ""           |                                       |
+| `override`             |                    |                                |              |                                       |
+| `show`                 | `show`             | `boolean`                      | false        | Whether the tour should display.      |
+| `showStepInfo`         | `showStepInfo`     | `boolean`                      | false        | Whether the step info should display. |
+| `stepCardArrowElement` |                    | `Promise<HTMLElement>`         |              |                                       |
+| `stepCardElement`      |                    | `Promise<HTMLElement>`         |              |                                       |
+
+#### Methods
+
+| Method  | Type                                |
+|---------|-------------------------------------|
+| `back`  | `(): void`                          |
+| `next`  | `(): void`                          |
+| `start` | `(currentTourIndex?: number): void` |
+| `stop`  | `(): void`                          |
+
+#### Slots
+
+| Name          | Description              |
+|---------------|--------------------------|
+| `back-button` | Content for back button. |
+| `done-button` | Content for done button. |
+| `next-button` | Content for next button. |
+| `skip-button` | Content for skip button. |
+
+#### CSS Custom Properties
+
+| Property                           | Default | Description                     |
+|------------------------------------|---------|---------------------------------|
+| `--fds-guided-tour-card-max-width` | "500px" | Max width of panel information. |
+<!-- /DOC -->

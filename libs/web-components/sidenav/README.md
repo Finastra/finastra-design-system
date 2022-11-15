@@ -30,3 +30,27 @@ import '@finastra/sidenav';
   </div>
 </fds-sidenav>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property | Attribute | Type                         | Default |
+|----------|-----------|------------------------------|---------|
+| `type`   | `type`    | `""\|"dismissible"\|"modal"` | ""      |
+
+#### Methods
+
+| Method                | Type       |
+|-----------------------|------------|
+| `registerEventLister` | `(): void` |
+
+#### Slots
+
+| Name             | Description            |
+|------------------|------------------------|
+| `appContent`     | Content of the app     |
+| `navigation`     | Navigational elements  |
+| `sidenavContent` | Content of the sidenav |
+<!-- /DOC -->

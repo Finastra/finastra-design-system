@@ -67,16 +67,20 @@ export const sampleFilterTree: TreeNode[] = [
 export const sampleFilterTags: Tag[] = [
   {
     label: 'Malauzai',
+    value: 'MLZ',
     isSelected: true
   },
   {
-    label: 'North America'
+    label: 'North America',
+    value: 'NA'
   },
   {
-    label: 'Money Movement'
+    label: 'Money Movement',
+    value: 'MM'
   },
   {
-    label: 'Static Data'
+    label: 'Static Data',
+    value: 'SD'
   }
 ];
 

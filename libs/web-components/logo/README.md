@@ -39,3 +39,21 @@ url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdm
 ```
 
 <br/>
+
+
+### Documentation
+<!-- DOC -->
+#### Attributes
+
+| Attribute | Type      | Default | Description            |
+|-----------|-----------|---------|------------------------|
+| `dense`   | `boolean` | false   | Logo in a smaller size |
+
+#### CSS Custom Properties
+
+| Property            | Default | Description                                    |
+|---------------------|---------|------------------------------------------------|
+| `--fds-logo`        |         | String representing an image encoded in base64 |
+| `--fds-logo-height` | "60px"  |                                                |
+| `--fds-logo-width`  | "122px" |                                                |
+<!-- /DOC -->

@@ -27,3 +27,23 @@ import '@finastra/user-profile';
     </div>
 </fds-user-profile>
 ```
+
+
+### Documentation
+<!-- DOC -->
+#### Properties
+
+| Property    | Attribute   | Type      | Default | Description                                      |
+|-------------|-------------|-----------|---------|--------------------------------------------------|
+| `dense`     | `dense`     | `boolean` | false   | Align the default avatar with user info          |
+| `divider`   |             | `boolean` | true    |                                                  |
+| `shortName` | `shortName` | `string`  | ""      | Use this property to override the initials       |
+| `userName`  | `userName`  | `string`  | ""      | Name of the avatar, used to generate the initials (Displayed on hover) |
+
+#### Slots
+
+| Name       | Description                     |
+|------------|---------------------------------|
+| `actions`  | Actions that a user can perform |
+| `userInfo` | The user info                   |
+<!-- /DOC -->
