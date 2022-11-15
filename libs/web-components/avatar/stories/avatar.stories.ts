@@ -3,6 +3,7 @@ import '@finastra/avatar';
 import { Avatar } from '@finastra/avatar';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-avatar.json';
 
 export default {
@@ -12,7 +13,7 @@ export default {
   args: {},
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

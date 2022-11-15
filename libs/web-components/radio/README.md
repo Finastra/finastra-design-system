@@ -22,7 +22,7 @@ import '@finastra/radio';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

@@ -243,7 +243,7 @@ export default {
   parameters: {
     actions,
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     cssprops
   },

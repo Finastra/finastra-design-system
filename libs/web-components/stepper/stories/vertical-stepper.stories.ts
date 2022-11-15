@@ -3,8 +3,10 @@ import '@finastra/stepper';
 import type { VerticalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { EVENTS } from '../src/constants';
 import { argTypes, cssprops } from './sb-generated/fds-vertical-stepper.json';
+
 const demoData = [
   {
     label: 'Step Success',
@@ -71,7 +73,7 @@ export default {
       handles: [EVENTS.STEPCLICK]
     },
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

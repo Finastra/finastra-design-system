@@ -21,7 +21,7 @@ import '@finastra/divider';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

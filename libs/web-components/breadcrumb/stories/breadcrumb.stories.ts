@@ -3,6 +3,7 @@ import '@finastra/breadcrumb';
 import type { Breadcrumb } from '@finastra/breadcrumb';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-breadcrumb.json';
 
 export default {
@@ -17,7 +18,7 @@ export default {
       handles: ['selected']
     },
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     cssprops
   },

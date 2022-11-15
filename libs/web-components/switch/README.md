@@ -24,7 +24,7 @@ import '@finastra/switch';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

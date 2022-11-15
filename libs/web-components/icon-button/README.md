@@ -21,7 +21,7 @@ import '@finastra/icon-button';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

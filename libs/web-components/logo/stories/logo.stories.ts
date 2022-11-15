@@ -2,6 +2,7 @@ const README = require('../README.md');
 import '@finastra/logo';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-logo.json';
 
 export default {
@@ -13,7 +14,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

@@ -3,6 +3,7 @@ import '@finastra/icon';
 import type { Icon } from '@finastra/icon';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-icon.json';
 
 export default {
@@ -11,7 +12,7 @@ export default {
   argTypes,
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

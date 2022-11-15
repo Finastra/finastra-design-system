@@ -26,7 +26,7 @@ import '@finastra/app-bar';
 </fds-app-bar>
 ```
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

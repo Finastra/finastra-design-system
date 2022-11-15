@@ -22,7 +22,7 @@ import '@finastra/alert-message';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

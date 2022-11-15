@@ -50,7 +50,7 @@ import '@finastra/list';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

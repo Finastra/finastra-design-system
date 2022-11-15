@@ -3,6 +3,7 @@ import '@finastra/data-table';
 import { DataTablePagination } from '@finastra/data-table';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { PAGINATION_EVENTS } from '../src/constants';
 
 const demoLength = 11;
@@ -83,7 +84,7 @@ export default {
       handles: [PAGINATION_EVENTS.PAGINATION_CHANGED]
     },
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

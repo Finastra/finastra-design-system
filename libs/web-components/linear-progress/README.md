@@ -23,7 +23,7 @@ import '@finastra/linear-progress';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

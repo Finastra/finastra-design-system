@@ -23,7 +23,7 @@ import '@finastra/account-card';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

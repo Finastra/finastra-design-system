@@ -3,6 +3,7 @@ import '@finastra/icon';
 import '@finastra/textfield';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 
 
 const README = require('../README.md');
@@ -17,7 +18,7 @@ export default {
   title: 'PATTERN/Status Message',
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

@@ -4,6 +4,7 @@ import { FDS_GLOBAL_SEARCH_INPUT_CHANGED, FDS_GLOBAL_SEARCH_ITEM_REMOVED, FDS_GL
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-global-search.json';
 
 export default {
@@ -23,7 +24,7 @@ export default {
       ]
     },
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design:{
       type: 'figma',

@@ -21,7 +21,7 @@ import '@finastra/circular-progress';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

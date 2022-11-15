@@ -26,7 +26,7 @@ import '@finastra/select';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

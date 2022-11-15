@@ -20,7 +20,7 @@ import '@finastra/breadcrumb';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

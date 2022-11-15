@@ -52,7 +52,7 @@ import '@finastra/button';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

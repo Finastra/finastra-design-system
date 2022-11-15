@@ -7,6 +7,7 @@ import '@finastra/list';
 import '@finastra/sidenav';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
 
 const README = require('../README.md');
 const demoApps = [
@@ -22,7 +23,7 @@ export default {
   title: 'PATTERN/Global Nav',
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: wcaDocRemover(README) }
     },
     design: {
       type: 'figma',

@@ -23,7 +23,7 @@ import '@finastra/textarea';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

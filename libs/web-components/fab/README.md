@@ -21,7 +21,7 @@ import '@finastra/fab';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 
