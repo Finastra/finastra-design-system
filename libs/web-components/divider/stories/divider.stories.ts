@@ -4,7 +4,7 @@ import { Divider } from '@finastra/divider';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-divider.json';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   args: {},
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     cssprops,
     design: {

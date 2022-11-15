@@ -3,7 +3,7 @@ import '@finastra/radio';
 import type { Radio } from '@finastra/radio';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-radio.json';
 
 export default {
@@ -12,7 +12,7 @@ export default {
   argTypes,
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

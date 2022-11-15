@@ -3,7 +3,7 @@ import '@finastra/filter-tree';
 import type { FilterTree } from '@finastra/filter-tree';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-filter-tree.json';
 
 const demoData = [
@@ -39,7 +39,7 @@ export default {
       handles: ['filter-tree-check']
     },
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     }
   },
   decorators: [

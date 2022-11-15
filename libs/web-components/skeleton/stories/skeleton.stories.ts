@@ -4,7 +4,7 @@ import type { Skeleton } from '@finastra/skeleton';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-skeleton.json';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   argTypes,
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     cssprops
   },

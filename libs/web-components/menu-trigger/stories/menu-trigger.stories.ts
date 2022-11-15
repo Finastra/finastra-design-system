@@ -2,7 +2,7 @@ import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-menu-trigger.json';
 
 
@@ -17,7 +17,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

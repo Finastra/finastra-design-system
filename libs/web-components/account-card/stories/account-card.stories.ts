@@ -3,7 +3,7 @@ import '@finastra/account-card';
 import type { AccountCard } from '@finastra/account-card';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-account-card.json';
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

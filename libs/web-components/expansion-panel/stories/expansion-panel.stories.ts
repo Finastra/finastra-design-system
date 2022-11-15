@@ -3,7 +3,7 @@ import '@finastra/expansion-panel';
 import type { ExpansionPanel } from '@finastra/expansion-panel';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-expansion-panel.json';
 
 export default {
@@ -12,7 +12,7 @@ export default {
   argTypes,
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     cssprops
   },

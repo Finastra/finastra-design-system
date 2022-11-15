@@ -3,7 +3,7 @@ import '@finastra/charts';
 import type { PieChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 const demoData = [28, 20, 15, 9, 10, 10, 20];
 const demoLabels = ['Housing', 'Daily spending', 'Taxes', 'Other savings', 'Retirement', 'Insurance', 'Debt'];
 
@@ -99,7 +99,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

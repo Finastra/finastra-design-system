@@ -232,6 +232,7 @@ const README = require('../README.md');
 import { AppBar } from '@finastra/app-bar';
 import { Meta, Story } from '@storybook/web-components';
 import { actions, argTypes, cssprops } from './sb-generated/fds-app-bar.json';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 
 export default {
   title: 'NAVIGATION/App Bar',
@@ -243,7 +244,7 @@ export default {
   parameters: {
     actions,
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     cssprops
   },

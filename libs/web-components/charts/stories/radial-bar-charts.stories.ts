@@ -3,7 +3,7 @@ import '@finastra/charts';
 import type { RadialBarChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-radial-bar-chart.json';
 
 export default {
@@ -27,7 +27,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

@@ -3,7 +3,7 @@ import '@finastra/icon-bar';
 import type { IconBar } from '@finastra/icon-bar';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import '../../../../themes/tippy.js/dist/theme.css';
 import { argTypes, cssprops } from './sb-generated/fds-icon-bar.json';
 
@@ -16,7 +16,7 @@ export default {
       handles: ['selected']
     },
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

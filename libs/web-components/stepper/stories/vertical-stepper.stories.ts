@@ -3,7 +3,7 @@ import '@finastra/stepper';
 import type { VerticalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { wcaDocRemover } from '../../../../scripts/markdown-sanitizers';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { EVENTS } from '../src/constants';
 import { argTypes, cssprops } from './sb-generated/fds-vertical-stepper.json';
 
@@ -73,7 +73,7 @@ export default {
       handles: [EVENTS.STEPCLICK]
     },
     docs: {
-      description: { component: wcaDocRemover(README) }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',
