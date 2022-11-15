@@ -1,13 +1,19 @@
-module.exports.wcaApiDocRemover = function (markdown) {
+function wcaApiDocRemover(markdown) {
   const regex = /(<!-- DOC.* -->)(.*)(<!-- \/DOC.* -->)/gms;
   return markdown.replace(regex, '');
 };
 
-module.exports.storybookButton = function (markdown) {
+function storybookButton(markdown) {
   const regex = /\[\!\[Storybook\](.*)/gm;
   return markdown.replace(regex, '');
 };
 
-module.exports.allSanitizers = function(markdown) {
-  return this.storybookButton(this.wcaApiDocRemover(markdown));
+function allSanitizers(markdown) {
+  return storybookButton(wcaApiDocRemover(markdown));
+}
+
+module.exports = {
+  wcaApiDocRemover,
+  storybookButton,
+  allSanitizers
 }
