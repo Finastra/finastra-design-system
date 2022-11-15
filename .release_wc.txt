@@ -65,3 +65,4 @@
 - [11/10/2022] Request release v1.2.0 by Pi5rr5 
 - [11/10/2022] Request release v1.2.1 by ttalbot 
 - [11/15/2022] Request release v1.2.2 by ttalbot 
+- [11/15/2022] Request release v1.2.3 by ttalbot 
