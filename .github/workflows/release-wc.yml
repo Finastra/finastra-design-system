@@ -68,7 +68,7 @@ jobs:
           release_name: v${{ env.RELEASE_VERSION }}
           body: ''
           draft: false
-          prerelease: true
+          prerelease: false
       - name: Authenticate with Registry
         run: |
           echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
