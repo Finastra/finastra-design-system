@@ -34,6 +34,20 @@ jobs:
         run: |
           RELEASE_VERSION=$(node -p 'require("./lerna.json").version')
           echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
+      - name: Authenticate with Registry
+        run: |
+          echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+          git update-index --assume-unchanged .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
+      - name: Revert WC Documentation
+        run: git reset --soft HEAD~
+      - name: Publish
+        run: |
+          npx lerna publish from-package --yes
       - name: Tag Check
         id: tag_check
         run: |
@@ -69,15 +83,3 @@ jobs:
           body: ''
           draft: false
           prerelease: false
-      - name: Authenticate with Registry
-        run: |
-          echo "@finastra:registry=https://registry.npmjs.org/" > .npmrc
-          echo "registry=https://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
-          git update-index --assume-unchanged .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
-      - name: Publish
-        run: |
-          npx lerna publish from-package --yes
