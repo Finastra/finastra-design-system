@@ -4,9 +4,6 @@ import { property } from 'lit/decorators.js';
 import { styles } from './base-styles.css';
 
 export class BaseButton extends LitElement {
-  outlined: boolean = false;
-  unelevated: boolean = true;
-  text: boolean = false;
   static styles: CSSResultGroup = [styles];
   
   /**
@@ -31,8 +28,8 @@ export class BaseButton extends LitElement {
   /**
    * Use the larger button size
    */
-   @property({ type: Boolean })
-   large = false;
+  @property({ type: Boolean })
+  large = false;
 
   /**
    * Is the button disabled or not
