@@ -44,7 +44,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Revert WC Documentation
-        run: git reset --soft HEAD~
+        run: git checkout .
       - name: Publish
         run: |
           npx lerna publish from-package --yes
