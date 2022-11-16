@@ -43,11 +43,11 @@ jobs:
           git update-index --assume-unchanged .npmrc
         env:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
-      - name: Revert WC Documentation
-        run: git checkout .
       - name: Publish
         run: |
           npx lerna publish from-package --yes
+      - name: Revert WC Documentation
+        run: git checkout .
       - name: Tag Check
         id: tag_check
         run: |
