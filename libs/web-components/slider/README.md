@@ -40,7 +40,7 @@ import '@finastra/slider';
 | `name`                           |                 |           | `string`                                        |            |                                                  |
 | `ripple`                         |                 | readonly  | `Promise<RippleInterface \| null> \| undefined` |            | Implement ripple getter for Ripple integration with mwc-formfield |
 | `step`                           | `step`          |           | `number`                                        | 1          | The step to increase current value.              |
-| `styles`                         |                 |           | `CSSResult[]`                                   | ["styles"] |                                                  |
+| `styles`                         |                 |           | `array`                                         | ["styles"] |                                                  |
 | `value`                          | `value`         |           | `number`                                        | 0          | Current selected value.                          |
 | `valueEnd`                       |                 |           | `number`                                        |            |                                                  |
 | `valueToAriaTextTransform`       |                 |           | `((value: number) => string) \| null`           |            |                                                  |

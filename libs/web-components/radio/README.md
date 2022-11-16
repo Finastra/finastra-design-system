@@ -38,7 +38,7 @@ import '@finastra/radio';
 | `name`                | `name`               |           | `string`                  | ""         | Name of the input for form submission, and identifier for the selection group. Only one radio button can be checked for a given selection group. |
 | `reducedTouchTarget`  | `reducedTouchTarget` |           | `boolean`                 | false      | Touch target extends beyond visual boundary of a component by default.<br />Set to `true` to remove touch target added to the component. |
 | `ripple`              |                      |           | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield |
-| `styles`              |                      |           | `CSSResult[]`             | ["styles"] |                                                  |
+| `styles`              |                      |           | `array`                   | ["styles"] |                                                  |
 | `value`               | `value`              |           | `string`                  | ""         | Value of the input for form submission.          |
 
 #### Methods

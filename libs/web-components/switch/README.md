@@ -37,7 +37,7 @@ import '@finastra/switch';
 | `processing`     |            |           | `boolean`                 |            | Indicates whether or not the switch is processing and showing a loading<br />indicator. A disabled switch cannot be processing. |
 | `ripple`         |            | readonly  | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield |
 | `selected`       | `selected` |           | `boolean`                 | false      | If true, the switch is on. If false, the switch is off. |
-| `styles`         |            |           | `CSSResult[]`             | ["styles"] |                                                  |
+| `styles`         |            |           | `array`                   | ["styles"] |                                                  |
 | `value`          |            |           | `string`                  |            |                                                  |
 
 #### Methods

@@ -47,7 +47,7 @@ import '@finastra/select';
 | `required`                | `required`          |           | `boolean`                                        | false      | Displays error state if value is empty and input is blurred. |
 | `ripple`                  |                     | readonly  | `Promise<RippleInterface \| null> \| undefined`  |            | Implement ripple getter for Ripple integration with mwc-formfield |
 | `selected`                | `selected`          |           | `ListItemBase \| null`                           | null       | Selected list item element type ListItemBase.    |
-| `styles`                  |                     |           | `CSSResult[]`                                    | ["styles"] |                                                  |
+| `styles`                  |                     |           | `array`                                          | ["styles"] |                                                  |
 | `validateOnInitialRender` |                     |           | `boolean`                                        |            |                                                  |
 | `validationMessage`       | `validationMessage` |           | `string`                                         | ""         | Message to show in the error color when the textfield is invalid. (Helper text will not be visible). |
 | `validity`                |                     | readonly  | `ValidityState`                                  |            |                                                  |
