@@ -1,7 +1,7 @@
 {
   "name": "@finastra/user-profile",
   "displayName": "User Profile",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "icon": "badge",
   "description": "UserProfile Web Component",
   "keywords": [
@@ -16,10 +16,10 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/avatar": "1.2.5",
-    "@finastra/divider": "1.2.5",
-    "@finastra/icon-button": "1.2.5",
-    "@finastra/menu": "1.2.5",
+    "@finastra/avatar": "1.2.6",
+    "@finastra/divider": "1.2.6",
+    "@finastra/icon-button": "1.2.6",
+    "@finastra/menu": "1.2.6",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
