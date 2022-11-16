@@ -45,7 +45,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
       - name: Publish
         run: |
-          npx lerna publish from-package --yes
+          npx lerna publish from-package --yes --no-git-reset
       - name: Revert WC Documentation
         run: git checkout .
       - name: Tag Check
