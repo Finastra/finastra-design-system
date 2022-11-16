@@ -1,6 +1,6 @@
 {
   "name": "@finastra/search-input",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Search Input Web Component",
   "keywords": [
     "finastra design system",
@@ -16,10 +16,10 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/circular-progress": "1.2.4",
-    "@finastra/icon": "1.2.4",
-    "@finastra/icon-button": "1.2.4",
-    "@finastra/textfield": "1.2.4",
+    "@finastra/circular-progress": "1.2.5",
+    "@finastra/icon": "1.2.5",
+    "@finastra/icon-button": "1.2.5",
+    "@finastra/textfield": "1.2.5",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
