@@ -24,8 +24,6 @@ jobs:
           registry-url: https://check.npmjs.org/
       - name: Install dependencies
         run: npm ci
-      - name: Generate WC Documentation
-        run: npm run wca:md
       - name: Build fds theme
         run: npm run build:fds-theme
       - name: Build web components
@@ -43,8 +41,6 @@ jobs:
           git update-index --assume-unchanged .npmrc
         env:
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
-      - name: Revert WC Documentation
-        run: git checkout .
       - name: Publish
         run: |
           npx lerna publish from-package --yes

@@ -311,7 +311,7 @@
 
 
     const columns = [
-        { id: 'API', name: 'API', type: 'link', align: 'center', displayName: 'Display Api' },
+        { id: 'API', name: 'API', type: 'link', align: 'left', displayName: 'Display Api' },
         { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true, _style: 'font-weight: bold'  },
         { id: 'Hour of Day', name: 'Hour of Day', type: 'date', align: 'left' },
         { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
@@ -381,9 +381,15 @@
 
     .card fds-data-table{
         width: 100%;
+        --fds-data-table-max-height: none;
     }
 
     .card fds-data-table-pagination {
         padding-top: 8px;
+    }
+
+    .card fds-data-table-with-pagination {
+        width: 100%;
+        --fds-data-table-max-height: 390px;
     }
 </style>

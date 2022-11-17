@@ -37,10 +37,7 @@ import '@finastra/button';
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
 | `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
 | `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `outlined`     |                | `boolean` | false    |                                                  |
-| `text`         |                | `boolean` | false    |                                                  |
 | `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
-| `unelevated`   |                | `boolean` | true     |                                                  |
 
 
 <!-- /DOC:fds-button -->
@@ -58,10 +55,7 @@ import '@finastra/button';
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
 | `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
 | `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `outlined`     |                | `boolean` | false    |                                                  |
-| `text`         |                | `boolean` | false    |                                                  |
 | `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
-| `unelevated`   |                | `boolean` | true     |                                                  |
 
 
 <!-- /DOC:fds-outlined-button -->
@@ -79,8 +73,5 @@ import '@finastra/button';
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
 | `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
 | `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `outlined`     |                | `boolean` | false    |                                                  |
-| `text`         |                | `boolean` | false    |                                                  |
 | `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
-| `unelevated`   |                | `boolean` | true     |                                                  |
 <!-- /DOC:fds-text-button -->

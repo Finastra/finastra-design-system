@@ -108,18 +108,18 @@ export abstract class DataTableBase extends LitElement {
         });
 
         return html`
-                    <div class="mdc-data-table__table-container fds-data-table">
+                    <div class="mdc-data-table__table-container fds-data-table
+                                                ${this.selectable &&
+                                    ((this.multiSelect && this.showMultiSelectCheckBox) ||
+                                        (!this.multiSelect && this.showSingleSelectRadioBox)) ?
+                                    'fds-data-table-select-enabled' : ''}">
                         <table class="mdc-data-table__table" aria-label="Dessert calories">
                             <thead>
                                 <tr class="mdc-data-table__header-row">
                                     ${tableHeaders}
                                 </tr>
                             </thead>
-                            <tbody class="mdc-data-table__content 
-                                ${this.selectable && 
-                                    ((this.multiSelect && this.showMultiSelectCheckBox) || 
-                                    (!this.multiSelect && this.showSingleSelectRadioBox)) ? 
-                                    'fds-data-table-select-enabled':''}" tabindex="0">
+                            <tbody class="mdc-data-table__content" tabindex="0">
                                 ${tableRows}
                             </tbody>
                         </table>
