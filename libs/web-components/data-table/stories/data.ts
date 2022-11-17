@@ -279,7 +279,7 @@ export const ELEMENT_DATA = [
 
 
 export const columns = [
-    { id: 'API', name: 'API', type: 'link', align: 'center', displayName: 'Display Api' },
+    { id: 'API', name: 'API', type: 'link', align: 'left', displayName: 'Display API' },
     { id: 'End Point', name: 'End Point', type: 'string', align: 'left', sortable: true, _style: 'font-weight: bold'  },
     { id: 'Hour of Day', name: 'Hour of Day', type: 'date', align: 'left' },
     { id: 'Status Code', name: 'Status Code', type: 'string', align: 'left' },
@@ -288,7 +288,7 @@ export const columns = [
     { id: 'Revenue', name: 'Revenue', type: 'type_double', align: 'right'},
     { id: 'Status', name: 'Status', type: 'chip', align: 'center'},
     { id: 'Confidence Score', name : 'Confidence Score', type: 'linear_progress', align: 'center'},
-    { id: 'apiDetail', name: 'Api Detail', type: 'cell_template', align: 'center', cellTemplateId: 'fds-table-customized' }
+    { id: 'apiDetail', name: 'API Detail', type: 'cell_template', align: 'center', cellTemplateId: 'fds-table-customized' }
 ];
 
 

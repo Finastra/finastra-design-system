@@ -6,6 +6,7 @@ import { styles } from './data-table-styles.css';
 /**
  *
  * @cssprop [--fds-data-table-border-width=1px] - Size of the border width
+ * @cssprop [--fds-data-table-max-height=615px] - Max height of table. By default there will be max 10 rows displayed which means 615px for normal size. 439px for dense size. 538px for dense size with checkbox or radiobox. 
  * @attr [dataSource=[]] - Array of data to display in the table.
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
