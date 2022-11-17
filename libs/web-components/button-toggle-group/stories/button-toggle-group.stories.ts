@@ -30,9 +30,9 @@ const Template: Story = ({dense=false}) => {
 
 const LabelTemplate: Story = ({dense=false}) => {
   return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle label="Left"></fds-button-toggle>
-  <fds-button-toggle label="Middle"></fds-button-toggle>
-  <fds-button-toggle label="Right"></fds-button-toggle>
+  <fds-button-toggle label="5D"></fds-button-toggle>
+  <fds-button-toggle label="1M"></fds-button-toggle>
+  <fds-button-toggle label="1Y"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
@@ -44,16 +44,6 @@ const IconsTemplate: Story = ({dense=false}) => {
 </fds-button-toggle-group>`;
 };
 
-const FilterTemplate: Story = () => {
-  return html`
-  <fds-button-toggle-group>
-      <fds-button-toggle-filter label="Left" icon="event"></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Middle" icon="edit" disabled></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Right" icon="share"></fds-button-toggle-filter>
-  </fds-button-toggle-group>`;
-};
-
-
 export const Default: Story = Template.bind({});
 
 export const Dense: Story = Template.bind({});
@@ -64,7 +54,3 @@ Dense.args = {
 export const Labels: Story = LabelTemplate.bind({});
 
 export const Icons: Story = IconsTemplate.bind({});
-
-export const Filter: Story = FilterTemplate.bind({});
-Filter.args = {
-};

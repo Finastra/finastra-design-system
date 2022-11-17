@@ -1,48 +1,27 @@
-@use '@material/mwc-tab/mwc-tab';
 @use "@finastra/fds-theme" as fds;
 
-$icon-size: 24px;
-$icon-width: 24px;
-$icon-height: 24px;
-$button-toggle-min-width: 90px;
-$button-toggle-height: 48px;
-$button-toggle-width: 100%;
-
-:host {
-  display: block;
-  border: 1px solid;
-  overflow: hidden;
-  @include fds.property(border-color, outline);
-  @include fds.property(--mdc-theme-primary, primary);
-}
-
-.mdc-tab {
-  width: var(--fds-button-toggle-width, $button-toggle-width);
-  height: var(--fds-button-toggle-height, $button-toggle-height);
-  min-width: var(--fds-button-toggle-min-width, $button-toggle-min-width);
-
+:host>button {
   @include fds.typography(subtitle-2);
-  @include fds.mdc(tab-text-label-color-default, on-surface-medium);
-  @include fds.mdc(tab-color-default, on-surface-medium);
-  letter-spacing: var(--fds-spacing-0, 0px);
+  @include fds.text-color(on-surface-medium);
+  @include fds.padding-x(3);
 
-  mwc-tab-indicator {
-    display: none;
-  }
-  .mdc-tab__icon {
-    width: var(--fds-icon-width, $icon-width);
-    height: var(--fds-icon-height, $icon-height);
-    font-size: var(--fds-icon-size, $icon-size);
-  }
+  display: inline-flex;
+  align-items: baseline;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-:host([disabled]) {
-  pointer-events: none;
-  .mdc-tab {
-    @include fds.mdc(tab-text-label-color-default, on-surface-disabled);
-  }
+:host fds-icon {
+  @include fds.margin(2, right);
 
-  .mdc-tab__icon {
-    @include fds.property(color, on-surface-disabled);
-  }
+  width: 18px;
+  position: relative;
+  top: 3px;
+}
+
+:host(.selected)>button {
+  @include fds.text-color(primary);
 }

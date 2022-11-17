@@ -1,5 +1,6 @@
-import { TabBase } from '@material/mwc-tab/mwc-tab-base';
-import { customElement } from 'lit/decorators.js';
+import '@finastra/icon';
+import { html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 
@@ -16,11 +17,44 @@ import { styles } from './styles.css';
  **/
 
 @customElement('fds-button-toggle')
-export class ButtonToggle extends TabBase {
+export class ButtonToggle extends LitElement {
   static styles = styles;
+
+  /**
+   * The label displayed inside the button
+   */
+   @property({ type: String })
+   label = 'Button';
+
+  /**
+   * Is the button disabled or not
+   */
+   @property({ type: Boolean })
+   disabled = false;
+
+   /**
+   * The name of the icon displayed before the label
+   * Use trailingIcon to true to display this icon after the label
+   */
+  @property({ type: String })
+  icon = '';
   
   constructor() {
     super();
+  }
+
+  render() {
+    return html`<button
+      aria-label="${this.label || this.icon}"
+      ?disabled="${this.disabled}"
+    >
+      ${this.icon ? this.renderIcon() : ''}
+      ${this.label}
+    </button>`
+  }
+
+  protected renderIcon() {
+    return html` <fds-icon dense> ${this.icon} </fds-icon>`;
   }
 }
 

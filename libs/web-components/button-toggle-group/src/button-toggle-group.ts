@@ -1,5 +1,5 @@
-import { customElement } from 'lit/decorators.js';
-import { TabBarBase } from '@material/mwc-tab-bar/mwc-tab-bar-base';
+import { html, LitElement, PropertyValueMap } from 'lit';
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
 import { styles } from './styles.css';
 
@@ -14,11 +14,55 @@ import { styles } from './styles.css';
  **/
 
 @customElement('fds-button-toggle-group')
-export class ButtonToggleGroup extends TabBarBase {
+export class ButtonToggleGroup extends LitElement {
   static styles = styles;
+
+  @queryAssignedElements()
+  toggleButtons!: Array<HTMLElement>;
+
+  @property({ type: Number })
+  selectedIndex = 0;
 
   constructor() {
     super();
+  }
+  
+  render() {
+    return html`<div role="group">
+      <slot @click="${this._select}"></slot>
+    </div>`
+  }
+
+  protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
+    const firstButton = this.toggleButtons[0];
+    firstButton.classList.add('selected');
+  }
+
+  updated(changedProps) {
+    super.updated(changedProps);
+    const firstButton = this.toggleButtons[0] as LitElement;
+
+    requestAnimationFrame(() => {
+      const rect = firstButton.getBoundingClientRect();
+      this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
+    });
+  }
+
+  private _select(e: Event) {
+    const target: HTMLElement = e.target as HTMLElement;
+    const rect:DOMRect = target.getBoundingClientRect();
+    
+    this._resetSelection();
+    target.classList.add('selected');
+    
+    this.style.setProperty('--fds-toggle-selection-x', (target.offsetLeft - 5) + 'px');
+    this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
+  }
+
+  private _resetSelection() {
+    this.toggleButtons.forEach(button => {
+      button.classList.remove('selected');
+    });
   }
 }
 
