@@ -9,6 +9,7 @@ function storybookButton(markdown) {
 };
 
 function allSanitizers(markdown) {
+  return markdown;
   return storybookButton(wcaApiDocRemover(markdown));
 }
 
