@@ -20,27 +20,26 @@ export default {
   }
 } as Meta;
 
-const Template: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="event" label="Left"></fds-button-toggle>
-  <fds-button-toggle icon="edit" label="Middle" ></fds-button-toggle>
-  <fds-button-toggle icon="share" label="Right"></fds-button-toggle>
+const Template: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
+  <fds-button-toggle icon="mail_outline" label="Messages" ></fds-button-toggle>
+  <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-const LabelTemplate: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
+const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
   <fds-button-toggle label="5D"></fds-button-toggle>
   <fds-button-toggle label="1M"></fds-button-toggle>
   <fds-button-toggle label="1Y"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-const IconsTemplate: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="event"></fds-button-toggle>
-  <fds-button-toggle icon="edit" ></fds-button-toggle>
-  <fds-button-toggle icon="share"></fds-button-toggle>
+const IconsTemplate: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  <fds-button-toggle icon="grid_view"></fds-button-toggle>
+  <fds-button-toggle icon="format_list_bulleted" ></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 

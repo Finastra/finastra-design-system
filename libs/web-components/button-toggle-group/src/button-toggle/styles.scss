@@ -12,16 +12,42 @@
   background: transparent;
   cursor: pointer;
   transition: color 0.2s ease;
+  user-select: none;
 }
 
 :host fds-icon {
   @include fds.margin(2, right);
 
+  --fds-icon-size: 18px;
   width: 18px;
   position: relative;
   top: 3px;
+
+  &:only-child {
+    margin: 0 !important;
+    top: 2px;
+  }
 }
 
 :host(.selected)>button {
   @include fds.text-color(primary);
+}
+
+// :host(:not(.selected))>button:hover {
+  // @include fds.text-color(on-surface);
+  // @include fds.bg-color(background);
+// }
+
+:host([dense])>button {
+  @include fds.typography(subtitle-3);
+
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+:host([dense]) fds-icon {
+  @include fds.margin(1, right);
+
+  --fds-icon-size: 16px;
+  width: 16px;
 }

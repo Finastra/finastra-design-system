@@ -24,13 +24,19 @@ export class ButtonToggle extends LitElement {
    * The label displayed inside the button
    */
    @property({ type: String })
-   label = 'Button';
+   label = '';
 
   /**
    * Is the button disabled or not
    */
    @property({ type: Boolean })
    disabled = false;
+
+  /**
+   * Is the button dense or not
+   */
+   @property({ type: Boolean })
+   dense = false;
 
    /**
    * The name of the icon displayed before the label
@@ -46,15 +52,20 @@ export class ButtonToggle extends LitElement {
   render() {
     return html`<button
       aria-label="${this.label || this.icon}"
+      ?dense="${this.dense}"
       ?disabled="${this.disabled}"
     >
       ${this.icon ? this.renderIcon() : ''}
-      ${this.label}
+      ${this.label ? this.renderLabel() : ''}
     </button>`
   }
 
   protected renderIcon() {
-    return html` <fds-icon dense> ${this.icon} </fds-icon>`;
+    return html` <fds-icon> ${this.icon} </fds-icon>`;
+  }
+
+  protected renderLabel() {
+    return html` <span> ${this.label} </span>`;
   }
 }
 
