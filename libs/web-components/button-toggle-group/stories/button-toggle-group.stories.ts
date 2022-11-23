@@ -2,20 +2,21 @@ const README = require('../README.md');
 import '@finastra/button-toggle-group';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import { argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
+import { actions, argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
 
 export default {
   title: 'ACTIONS/Toggle',
   component: 'fds-button-toggle-group',
   argTypes,
   parameters: {
+    actions,
     docs: {
       description: { component: README }
     },
     cssprops,
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=94522%3A28102'
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=106565%3A34024&t=keDm0ux9sZfv2aTY-0'
     }
   }
 } as Meta;
@@ -38,8 +39,8 @@ const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
 
 const IconsTemplate: Story = ({dense=false, selectedIndex=0}) => {
   return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
-  <fds-button-toggle icon="grid_view"></fds-button-toggle>
-  <fds-button-toggle icon="format_list_bulleted" ></fds-button-toggle>
+  <fds-button-toggle icon="grid_view" value="grid"></fds-button-toggle>
+  <fds-button-toggle icon="format_list_bulleted" value="list" ></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 

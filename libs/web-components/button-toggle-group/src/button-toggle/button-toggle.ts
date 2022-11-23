@@ -4,18 +4,6 @@ import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
 
-/**
- * @attr [label=''] - Text label to display in button toggle.
- * @attr [icon=''] - Material design icon name to display.
- * @attr {boolean} [disabled=false] - Disable button toggle.
- * @cssprop [--fds-button-toggle-min-width=30px] - Button toggle min width
- * @cssprop [--fds-button-toggle-height=48px] - Button toggle height.
- * @cssprop [--fds-button-toggle-width=100%] - Button toggle width.
- * @cssprop [--fds-icon-width=24px] - Icon width.
- * @cssprop [--fds-icon-height=24px] - Icon height.
- * @cssprop [--fds-icon-size=24px] - Icon size.
- **/
-
 @customElement('fds-button-toggle')
 export class ButtonToggle extends LitElement {
   static styles = styles;
@@ -25,6 +13,12 @@ export class ButtonToggle extends LitElement {
    */
    @property({ type: String })
    label = '';
+
+   /**
+   * The value associated to this button
+   */
+   @property({ type: String })
+   value = '';
 
   /**
    * Is the button disabled or not
@@ -54,6 +48,7 @@ export class ButtonToggle extends LitElement {
       aria-label="${this.label || this.icon}"
       ?dense="${this.dense}"
       ?disabled="${this.disabled}"
+      @click="${this._handleClick}"
     >
       ${this.icon ? this.renderIcon() : ''}
       ${this.label ? this.renderLabel() : ''}
@@ -66,6 +61,10 @@ export class ButtonToggle extends LitElement {
 
   protected renderLabel() {
     return html` <span> ${this.label} </span>`;
+  }
+
+  private _handleClick() {
+    this.dispatchEvent(new CustomEvent('FDSToggle:click', { bubbles: true, composed: true }));
   }
 }
 

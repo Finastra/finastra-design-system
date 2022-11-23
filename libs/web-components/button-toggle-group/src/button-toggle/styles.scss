@@ -33,11 +33,6 @@
   @include fds.text-color(primary);
 }
 
-// :host(:not(.selected))>button:hover {
-  // @include fds.text-color(on-surface);
-  // @include fds.bg-color(background);
-// }
-
 :host([dense])>button {
   @include fds.typography(subtitle-3);
 
