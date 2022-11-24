@@ -3,6 +3,7 @@ import '@finastra/linear-progress';
 import type { LinearProgress } from '@finastra/linear-progress';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-linear-progress.json';
 
 export default {
@@ -11,7 +12,7 @@ export default {
   argTypes,
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

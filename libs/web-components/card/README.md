@@ -56,7 +56,7 @@ import '@finastra/card';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

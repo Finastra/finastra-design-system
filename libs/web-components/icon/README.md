@@ -23,7 +23,7 @@ import '@finastra/icon';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

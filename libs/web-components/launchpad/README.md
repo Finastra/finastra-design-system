@@ -31,7 +31,7 @@ import '@finastra/launchpad';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

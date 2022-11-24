@@ -19,6 +19,6 @@ import '@finastra/<%= fileName %>';
 <fds-<%= fileName %>></fds-<%= fileName %>>
 ```
 
-### Documentation
+### API
 <!-- DOC -->
 <!-- /DOC -->

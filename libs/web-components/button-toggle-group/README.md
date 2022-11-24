@@ -26,7 +26,7 @@ import '@finastra/button-toggle-group';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Attributes
 

@@ -35,7 +35,7 @@ The **TextField** support date `type="date"`, time `type="time"` and date&time `
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

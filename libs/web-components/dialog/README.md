@@ -42,7 +42,7 @@ import '@finastra/dialog';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

@@ -22,7 +22,7 @@ import '@finastra/avatar';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

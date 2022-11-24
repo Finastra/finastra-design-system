@@ -26,7 +26,7 @@ import '@finastra/autocomplete';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

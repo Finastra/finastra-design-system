@@ -22,7 +22,7 @@ import '@finastra/button';
 <fds-text-button label="Text button"></fds-text-button>
 ```
 
-### Documentation
+### API
 
 ### Button
 

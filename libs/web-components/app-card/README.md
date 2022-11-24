@@ -37,7 +37,7 @@ import '@finastra/app-card';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

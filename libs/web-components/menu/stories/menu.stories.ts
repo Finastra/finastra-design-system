@@ -6,6 +6,7 @@ import type { Menu } from '@finastra/menu';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-menu.json';
 
 export default {
@@ -17,7 +18,7 @@ export default {
       handles: ['opened', 'closing', 'closed', 'action', 'selected']
     },
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     cssprops
   },

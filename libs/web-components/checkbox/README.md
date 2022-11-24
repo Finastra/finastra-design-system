@@ -21,7 +21,7 @@ import '@finastra/checkbox';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

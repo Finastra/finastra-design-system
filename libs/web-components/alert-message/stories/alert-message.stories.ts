@@ -3,6 +3,7 @@ import '@finastra/alert-message';
 import { AlertMessage, ALERT_LAYOUT } from '@finastra/alert-message';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-alert-message.json';
 
 export default {
@@ -14,7 +15,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     }
   },
   cssprops
