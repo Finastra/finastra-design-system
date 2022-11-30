@@ -172,6 +172,8 @@ Or in watch mode
 npm run wc:test:watch
 ```
 
+in watch mode you can focus on a specific test by pressing `f`
+
 ### Generating new web components
 
 ```
