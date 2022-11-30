@@ -3,6 +3,7 @@ import '@finastra/charts';
 import type { DonutChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-donut-chart.json';
 const demoData = [28, 20, 15, 9, 10, 10, 20]
 const demoLabels = ['Housing', 'Daily spending', 'Taxes', 'Other savings', 'Retirement', 'Insurance', 'Debt']
@@ -20,7 +21,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

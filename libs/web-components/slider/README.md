@@ -24,7 +24,7 @@ import '@finastra/slider';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

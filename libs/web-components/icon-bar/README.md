@@ -25,7 +25,7 @@ import '@finastra/icon-bar';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

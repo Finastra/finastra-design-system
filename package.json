@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "3.8.1",
+  "version": "3.9.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -75,7 +75,7 @@
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
     "wca:md": "wca analyze 'libs/web-components/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
-    "postwca:md":"node ./scripts/inject-wca-doc-readme.js",
+    "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "add": "npm install --package-lock-only --no-package-lock --prefix",
     "postadd": "npm install",
     "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes"

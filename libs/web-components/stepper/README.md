@@ -47,7 +47,7 @@ this.steps = [
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Attributes
 

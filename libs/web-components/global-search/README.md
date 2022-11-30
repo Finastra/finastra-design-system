@@ -66,7 +66,7 @@ import '@finastra/global-search';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

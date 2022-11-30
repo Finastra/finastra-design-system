@@ -41,7 +41,7 @@ import '@finastra/filter-tree';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

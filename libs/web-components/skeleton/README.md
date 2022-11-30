@@ -20,7 +20,7 @@ import '@finastra/skeleton';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

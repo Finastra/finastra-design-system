@@ -46,6 +46,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
         this.paginator.firstPage();
       }
     }
+
+    this.applySort();
   }
 
   @Input()
@@ -77,10 +79,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     return this._sort;
   }
   set sort(sort: UxgSort) {
-    if (sort.active.length) {
-      this.sortData(sort);
-    }
     this._sort = sort;
+    this.applySort();
   }
 
   // table config
@@ -169,14 +169,22 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     if (this.pageEnable && !this.paging) {
       this.applyDefaultPaging();
     }
+
+    this.applySort();
   }
 
+  applySort(): void {
+    if (this.sort && this.sort.active.length) {
+      this.sortData(this.sort, false);
+    }
+  }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data && !changes.data.isFirstChange()) {
       this.table.renderRows();
       if (this.pageEnable && !this.paging) {
         this.applyDefaultPaging();
       }
+      this.applySort();
     }
 
     if (changes.pageEnable && !changes.pageEnable.isFirstChange()) {
@@ -230,8 +238,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  sortData($event: UxgSort) {
-    if (this.sortChanged.observers.length > 0) {
+  sortData($event: UxgSort, emit: boolean = true) {
+    if (this.sortChanged.observers.length > 0 && emit) {
       this.sortChanged.emit($event);
     } else {
       this.dataToComponent = this.localSort($event);
@@ -319,7 +327,6 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   columnDragStarted($event: CdkDragStart, index: number) {
     index = this.resetIndexWithMultiSelectRow(index);
-
     this.previousIndex = index;
   }
 

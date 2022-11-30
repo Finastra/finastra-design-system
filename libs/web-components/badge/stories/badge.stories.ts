@@ -3,6 +3,7 @@ import '@finastra/badge';
 import { Badge } from '@finastra/badge';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { COLOR, POSITION, TYPE } from '../src/badge.interface';
 import { argTypes } from "./sb-generated/fds-badge.json";
 
@@ -18,7 +19,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     }
   },
   decorators: [

@@ -58,7 +58,7 @@ export interface Tour {
 - `stepInfo` property is a string template. Its default value is : `Step ${currentStep} of ${totalSteps}`
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

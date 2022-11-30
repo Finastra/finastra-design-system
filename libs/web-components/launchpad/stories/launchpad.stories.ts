@@ -3,6 +3,7 @@ import '@finastra/launchpad';
 import { Launchpad } from '@finastra/launchpad';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-launchpad.json';
 
 
@@ -17,7 +18,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

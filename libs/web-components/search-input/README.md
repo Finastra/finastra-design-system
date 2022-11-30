@@ -23,7 +23,7 @@ import '@finastra/search-input';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Attributes
 

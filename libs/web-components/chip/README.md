@@ -22,7 +22,7 @@ import '@finastra/chip';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

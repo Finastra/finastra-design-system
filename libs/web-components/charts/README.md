@@ -25,7 +25,7 @@ import '@finastra/charts';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

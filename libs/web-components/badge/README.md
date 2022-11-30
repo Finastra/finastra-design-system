@@ -24,7 +24,7 @@ import '@finastra/badge';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

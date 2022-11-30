@@ -29,7 +29,7 @@ import '@finastra/user-profile';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

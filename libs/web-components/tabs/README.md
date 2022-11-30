@@ -22,7 +22,7 @@ import '@finastra/tabs';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

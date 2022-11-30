@@ -45,7 +45,7 @@ import '@finastra/expansion-panel';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

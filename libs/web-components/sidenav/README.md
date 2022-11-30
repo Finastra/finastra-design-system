@@ -32,7 +32,7 @@ import '@finastra/sidenav';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

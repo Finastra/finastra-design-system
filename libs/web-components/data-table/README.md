@@ -94,9 +94,10 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 
 #### CSS Custom Properties
 
-| Property                        | Default | Description              |
-|---------------------------------|---------|--------------------------|
-| `--fds-data-table-border-width` | "1px"   | Size of the border width |
+| Property                        | Default | Description                                      |
+|---------------------------------|---------|--------------------------------------------------|
+| `--fds-data-table-border-width` | "1px"   | Size of the border width                         |
+| `--fds-data-table-max-height`   | "615px" | Max height of table. By default there will be max 10 rows displayed which means 615px for normal size. 439px for dense size. 538px for dense size with checkbox or radiobox. |
 <!-- /DOC:fds-data-table -->
 
 ## Pagination Usage
@@ -201,9 +202,10 @@ If it can't meet your requirements, you can use fds-data-table with fds-data-tab
 
 #### CSS Custom Properties
 
-| Property                        | Default | Description              |
-|---------------------------------|---------|--------------------------|
-| `--fds-data-table-border-width` | "1px"   | Size of the border width |
+| Property                        | Default | Description                                      |
+|---------------------------------|---------|--------------------------------------------------|
+| `--fds-data-table-border-width` | "1px"   | Size of the border width                         |
+| `--fds-data-table-max-height`   | "615px" | Max height of table. By default there will be max 10 rows displayed which means 615px for normal size. 439px for dense size. 538px for dense size with checkbox or radiobox. |
 
 
 <!-- /DOC:fds-data-table-with-pagination -->

@@ -2,6 +2,7 @@ import '@finastra/menu-trigger';
 import { MenuTrigger } from '@finastra/menu-trigger';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-menu-trigger.json';
 
 
@@ -16,7 +17,7 @@ export default {
   },
   parameters: {
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     design: {
       type: 'figma',

@@ -1,7 +1,7 @@
 # Card
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/card?style=for-the-badge)](https://www.npmjs.com/package/@finastra/card)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/card?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/card)
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-card-brand--default)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-cards-card--default)
 
 This component is based on [base-card](./src/base-card.ts), it follow the principals of [Material Design Cards](https://m3.material.io/components/cards/guidelines).
 This component can be used alone, it also provids a number of card sections including:
@@ -56,7 +56,7 @@ import '@finastra/card';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

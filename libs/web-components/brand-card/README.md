@@ -22,7 +22,7 @@ import '@finastra/brand-card';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 

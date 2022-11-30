@@ -22,7 +22,7 @@ import '@finastra/menu-trigger';
 ```
 
 
-### Documentation
+### API
 <!-- DOC -->
 #### Properties
 
