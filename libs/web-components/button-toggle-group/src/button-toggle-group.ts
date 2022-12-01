@@ -49,13 +49,12 @@ export class ButtonToggleGroup extends LitElement {
       return;
     }
     
-    this.value = selectedButton.getAttribute('value') || selectedButton.getAttribute('label') || selectedButton.getAttribute('icon') || '';
-    
     if (changedProperties.has('selectedIndex')) {
       this._select(selectedButton);
 
       requestAnimationFrame(() => {
         const rect = selectedButton.getBoundingClientRect();
+        this.style.setProperty('--fds-toggle-selection-x', (selectedButton.offsetLeft - 5) + 'px');
         this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
       });
     }
@@ -76,6 +75,8 @@ export class ButtonToggleGroup extends LitElement {
     
     this.style.setProperty('--fds-toggle-selection-x', (button.offsetLeft - 5) + 'px');
     this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
+
+    this.value = button.getAttribute('value') || button.getAttribute('label') || button.getAttribute('icon') || '';
   }
 
   private _resetSelection() {
