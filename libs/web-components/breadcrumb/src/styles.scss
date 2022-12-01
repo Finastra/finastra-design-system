@@ -22,5 +22,10 @@ ul {
       padding-left: var(--fds-spacing-2, 8px);
 			color: var(--fds-breadcrumb-divider-color, auto);
     }
+
+    a {
+      @include fds.text-color(on-surface);
+      text-decoration: none;
+    }
   }
 }
