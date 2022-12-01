@@ -20,7 +20,7 @@ ul {
     &:not(:last-child)::after {
       content: var(--fds-breadcrumb-divider, '/');
       padding-left: var(--fds-spacing-2, 8px);
-			color: var(--fds-breadcrumb-divider-color, auto);
+			color: var(--fds-breadcrumb-divider-color, inherit);
     }
 
     a {
