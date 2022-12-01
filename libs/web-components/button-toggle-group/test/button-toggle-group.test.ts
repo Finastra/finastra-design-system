@@ -47,7 +47,7 @@ describe('ButtonToggleGroup', () => {
     expect(el.value).equal('test2');
   });
 
-  it('should change selection', async () => {
+  xit('should change selection', async () => {
     let el = await fixture(html`
       <fds-button-toggle-group>
         <fds-button-toggle label="test1"></fds-button-toggle>
