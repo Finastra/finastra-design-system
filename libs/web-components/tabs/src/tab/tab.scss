@@ -10,7 +10,7 @@
   @include fds.mdc(tab-text-label-color-default, on-surface-medium);
   @include fds.mdc(tab-color-default, on-surface-medium);
   @include fds.mdc(theme-primary, primary);
-  text-transform: none;
+  text-transform: capitalize;
 }
 
 .mdc-ripple-surface {
