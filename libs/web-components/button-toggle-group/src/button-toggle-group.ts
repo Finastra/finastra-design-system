@@ -36,7 +36,7 @@ export class ButtonToggleGroup extends LitElement {
   }
   
   render() {
-    return html`<div role="group">
+    return html`<div role="radiogroup">
       <slot @FDSToggle:click="${this._handleClick}"></slot>
     </div>`
   }

@@ -46,3 +46,8 @@
   --fds-icon-size: 16px;
   width: 16px;
 }
+
+// :host(:not(.selected))>button:focus {
+  // @include fds.text-color(primary);
+  // @include fds.bg-color(surface);
+// }

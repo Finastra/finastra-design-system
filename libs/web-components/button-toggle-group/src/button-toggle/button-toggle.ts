@@ -7,6 +7,8 @@ import { styles } from './styles.css';
 @customElement('fds-button-toggle')
 export class ButtonToggle extends LitElement {
   static styles = styles;
+  static override shadowRootOptions:
+      ShadowRootInit = {mode: 'open', delegatesFocus: true};
 
   /**
    * The label displayed inside the button
@@ -39,6 +41,7 @@ export class ButtonToggle extends LitElement {
 
   render() {
     return html`<button
+      role='radio'
       aria-label="${this.label || this.icon}"
       ?dense="${this.dense}"
       @click="${this._handleClick}"

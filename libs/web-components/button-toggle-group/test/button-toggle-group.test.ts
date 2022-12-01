@@ -48,36 +48,24 @@ describe('ButtonToggleGroup', () => {
   });
 
   it('should change selection', async () => {
-    const el: ButtonToggleGroup = await fixture(html`
+    let el = await fixture(html`
       <fds-button-toggle-group>
         <fds-button-toggle label="test1"></fds-button-toggle>
-        <fds-button-toggle value="test2"></fds-button-toggle>
+        <fds-button-toggle value="success"></fds-button-toggle>
       </fds-button-toggle-group>
     `);
-    
+
+    let toggle: ButtonToggleGroup = shadowRoot(el);
     const button: ButtonToggle = el.children[1] as ButtonToggle;
-    console.log(button);
     await elementUpdated(el);
-    await elementUpdated(button);
-    
-    const htmlButton = shadowRoot(button).querySelector('button') as HTMLElement;
-    htmlButton?.click();
-    console.log(shadowRoot(button));
-    console.log(htmlButton);
 
-    // el.addEventListener('change', () => {
-    //   expect(button.classList.contains('selected')).to.be.true;
-    //   expect(el.selectedIndex).equal(1);
-    //   expect(el.value).equal('test2');
-    //   done();
-    // })
-
+    button.click(); // this is not dispatching 'change' event
     expect(button.classList.contains('selected')).to.be.true;
-    expect(el.selectedIndex).equal(1);
-    expect(el.value).equal('test2');
+    expect(toggle.selectedIndex).equal(1);
+    expect(toggle.value).equal('success');
   });
 });
 
-function shadowRoot(el: Element) {
-  return el.shadowRoot ? el.shadowRoot : el;
+function shadowRoot(el) {
+  return el.shadowRoot || el;
 }

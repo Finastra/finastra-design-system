@@ -1,5 +1,13 @@
 @use "@finastra/fds-theme" as fds;
 
+@media (prefers-reduced-motion: no-preference) {
+  :host>div::before {
+    transition-property: transform, width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+}
+
 :host {
   --fds-toggle-selection-x: 0px;
   --fds-toggle-selection-width: 50px;
@@ -35,9 +43,6 @@
   border-style: solid;
   border-width: 1px;
   margin: 4px 0;
-  transition-property: transform, width;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
 }
 
 :host([dense])>div {
