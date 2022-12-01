@@ -21,12 +21,6 @@ export class ButtonToggle extends LitElement {
    value = '';
 
   /**
-   * Is the button disabled or not
-   */
-   @property({ type: Boolean })
-   disabled = false;
-
-  /**
    * Is the button dense or not
    */
    @property({ type: Boolean })
@@ -47,7 +41,6 @@ export class ButtonToggle extends LitElement {
     return html`<button
       aria-label="${this.label || this.icon}"
       ?dense="${this.dense}"
-      ?disabled="${this.disabled}"
       @click="${this._handleClick}"
     >
       ${this.icon ? this.renderIcon() : ''}

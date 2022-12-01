@@ -18,13 +18,12 @@ export class ButtonToggleGroup extends LitElement {
    * Index of current selection, starts at 0
    */
   @property({ type: Number })
-  selectedIndex = 0;
+  selectedIndex: number = 0;
 
   /**
    * Current selected value
    */
-  // @property({ type: String })
-  value;
+  value: string = '';
   
   /**
    * Make the button toggle smaller
@@ -50,7 +49,7 @@ export class ButtonToggleGroup extends LitElement {
       return;
     }
     
-    this.value = selectedButton.getAttribute('value') || selectedButton.getAttribute('label') || selectedButton.getAttribute('icon');
+    this.value = selectedButton.getAttribute('value') || selectedButton.getAttribute('label') || selectedButton.getAttribute('icon') || '';
     
     if (changedProperties.has('selectedIndex')) {
       this._select(selectedButton);
