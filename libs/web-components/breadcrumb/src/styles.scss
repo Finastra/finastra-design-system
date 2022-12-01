@@ -10,13 +10,17 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   gap: calc(var(--fds-spacing-2, 8px) + 2px);
+  padding: 0;
+  margin: 0;
+
   li {
     @include fds.typography(body-2);
     @include fds.property(color, on-surface);
-    cursor: pointer;
+
     &:not(:last-child)::after {
-      content: '/';
+      content: var(--divider, '/');
       padding-left: var(--fds-spacing-2, 8px);
+			color: var(--divider-color, auto);
     }
   }
 }
