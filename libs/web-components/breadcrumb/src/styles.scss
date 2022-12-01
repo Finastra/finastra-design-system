@@ -18,9 +18,9 @@ ul {
     @include fds.property(color, on-surface);
 
     &:not(:last-child)::after {
-      content: var(--divider, '/');
+      content: var(--fds-breadcrumb-divider, '/');
       padding-left: var(--fds-spacing-2, 8px);
-			color: var(--divider-color, auto);
+			color: var(--fds-breadcrumb-divider-color, auto);
     }
   }
 }

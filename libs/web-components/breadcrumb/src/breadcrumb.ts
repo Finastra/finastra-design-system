@@ -11,8 +11,8 @@ export interface Crumb {
 /**
  * @attr {Array} [items=[]] - A list of items to display
  * 
- * @cssprop [--divider=''/''] - Set the character used as divider between items
- * @cssprop {color} [--divider-color=auto] - Set the character used as divider between items
+ * @cssprop [--fds-breadcrumb-divider=''/''] - Set the character used as divider between items
+ * @cssprop {color} [--fds-breadcrumb-divider-color=auto] - Set the character used as divider between items
  */
 @customElement('fds-breadcrumb')
 export class Breadcrumb extends LitElement {

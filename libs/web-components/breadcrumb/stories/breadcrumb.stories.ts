@@ -48,8 +48,8 @@ WithStyle.decorators = [
   (story) => html`${story()}<style>
       fds-breadcrumb {
         background: #12022a;
-        --divider: '>';
-        --divider-color: #ccc;
+        --fds-breadcrumb-divider: '>';
+        --fds-breadcrumb-divider-color: #ccc;
         padding: 16px;
       }
 
