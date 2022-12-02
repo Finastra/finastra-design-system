@@ -22,7 +22,7 @@ function getLinkToReadme(componentPath) {
 function getPathToComponent(markdown) {
   let regex = /https:\/\/www\.npmjs\.com\/package\/@finastra\/(.*)\)/gm;
   const matches = regex.exec(markdown);
-  return matches.length > 0 ? matches[1] : '';
+  return (matches && matches.length > 0) ? matches[1] : '';
 }
 
 function allSanitizers(markdown) {
