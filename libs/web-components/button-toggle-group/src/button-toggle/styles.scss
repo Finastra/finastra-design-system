@@ -17,11 +17,13 @@
 
 :host fds-icon {
   @include fds.margin(2, right);
+  @include fds.text-color(on-surface-disabled);
 
   --fds-icon-size: 18px;
   width: 18px;
   position: relative;
   top: 3px;
+  transition: color 0.2s ease;
 
   &:only-child {
     margin: 0 !important;
@@ -29,7 +31,8 @@
   }
 }
 
-:host(.selected)>button {
+:host(.selected)>button,
+:host(.selected) fds-icon {
   @include fds.text-color(primary);
 }
 

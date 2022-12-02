@@ -54,7 +54,6 @@ export class ButtonToggleGroup extends LitElement {
 
       requestAnimationFrame(() => {
         const rect = selectedButton.getBoundingClientRect();
-        this.style.setProperty('--fds-toggle-selection-x', (selectedButton.offsetLeft - 5) + 'px');
         this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
       });
     }
