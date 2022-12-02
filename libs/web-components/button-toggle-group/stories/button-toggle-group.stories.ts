@@ -2,6 +2,7 @@ const README = require('../README.md');
 import '@finastra/button-toggle-group';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { actions, argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
 
 export default {
