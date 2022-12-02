@@ -11,7 +11,7 @@ export default {
   parameters: {
     actions,
     docs: {
-      description: { component: README }
+      description: { component: allSanitizers(README) }
     },
     cssprops,
     design: {
