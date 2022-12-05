@@ -8,8 +8,8 @@ import { styles } from './wizard-page.css';
 export class WizardPage extends LitElement {
   static styles = styles;
 
-  @property({ type: String })
-  title = '';
+  @property({ type: String, attribute: 'page-title' })
+  pageTitle = '';
 
   @property({ type: String })
   icon = '';
@@ -38,7 +38,7 @@ export class WizardPage extends LitElement {
         html`
         <div class="header">
           ${this.renderIcon()}
-          <div class="title ${this.icon ? 'title-with-icon' : ''}">${this.title}</div>
+          <div class="title ${this.icon ? 'title-with-icon' : ''}">${this.pageTitle}</div>
           ${this.renderStepsCounter()}
         </div>` : ''}
         <div class="page-container">
