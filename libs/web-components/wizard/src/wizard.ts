@@ -28,7 +28,7 @@ export interface Page {
   * @attr {"topLeft"|"topRight"|"center"} stepperPosition - Stepper position
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
     It is Used with the fds-wizard-page web component that could contain: 
-  - title: to define a title to the step
+  - page-title: to define a title to the step
   - icon: to define a link to your hosted icon to be displayed next to the title
   - description: to define a description to your step
   - disabled : to disable the step
@@ -89,54 +89,52 @@ export class Wizard extends LitElement {
   }
 
   render() {
-    return html`
-      <div class="wizard">
-        <div class="wizard-container">
-        ${this.stepperPosition === 'left' ?
-         html`${this.renderStepper()}` : ''}
-        <div class='content'>
+    return html` <div class="wizard">
+      <div class="wizard-container">
+        ${this.stepperPosition === 'left' ? html`${this.renderStepper()}` : ''}
+        <div class="content">
           <div class="pages">
             <slot name="page" @slotchange=${this.onPagesSlotChanged}></slot>
           </div>
         </div>
-        ${this.stepperPosition === 'right' ?
-        html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
+        ${this.stepperPosition === 'right' ? html` <fds-divider vertical></fds-divider> ${this.renderStepper()}` : ''}
       </div>
       <div class="footer">
         <fds-divider></fds-divider>
         ${this.renderActions()}
-    </div>
+      </div>
     </div>`;
   }
 
   renderStepper(): TemplateResult {
-    return html`
-         <div class='stepper-container ${this.stepperOnDark ? ' dark-theme' : '' }'>
-         ${this.stepsCounter ? this.renderCounterInStepper() : ''}
-        <fds-vertical-stepper label-mode="center" .steps=${this.arrayPages} secondary id="stepper" currentStepIndex=${this.currentStepIndex}></fds-vertical-stepper>
-      </div>`
+    return html` <div class="stepper-container ${this.stepperOnDark ? ' dark-theme' : ''}">
+      ${this.stepsCounter ? this.renderCounterInStepper() : ''}
+      <fds-vertical-stepper
+        label-mode="center"
+        .steps=${this.arrayPages}
+        secondary
+        id="stepper"
+        currentStepIndex=${this.currentStepIndex}
+      ></fds-vertical-stepper>
+    </div>`;
   }
 
   renderCounterInStepper(): TemplateResult {
-    return html`
-      <div class="steps-counter">
-        Step ${this.updateStepsCounter(this.currentStepIndex)}
-      </div>
-    `
+    return html` <div class="steps-counter">Step ${this.updateStepsCounter(this.currentStepIndex)}</div> `;
   }
   renderActions(): TemplateResult {
     return html`<div class="actions">
-  <div class="left">
-    <slot name="left-action"></slot>
-  </div>
-  <div class="content">
-    <slot name="content-action"></slot>
-  </div>
-  <div class="right">
-    <slot name="right-action"></slot>
-    ${this.back ? this.renderBackSlot() : ''} ${this.save ? this.renderSaveSlot() : html`${this.renderNextSlot()}`}
-  </div>
-</div>`;
+      <div class="left">
+        <slot name="left-action"></slot>
+      </div>
+      <div class="content">
+        <slot name="content-action"></slot>
+      </div>
+      <div class="right">
+        <slot name="right-action"></slot>
+        ${this.back ? this.renderBackSlot() : ''} ${this.save ? this.renderSaveSlot() : html`${this.renderNextSlot()}`}
+      </div>
+    </div>`;
   }
 
   renderSaveSlot(): TemplateResult {
@@ -160,7 +158,7 @@ export class Wizard extends LitElement {
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
       this.stepper.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
       steps.push({
-        label: page.getAttribute('title') as string,
+        label: page.getAttribute('page-title') as string,
         description: page.getAttribute('description') as string,
         disabled: this.linear ? true : this.disabled
       });
@@ -219,7 +217,7 @@ export class Wizard extends LitElement {
   checkNextStepDisabled(pages: Array<HTMLElement>, current: number) {
     if (!this.currentPageIsDisabled(current)) return;
     this.stepper['currentStepIndex']++;
-    if(current !== (this._pages.length - 1)) {
+    if (current !== this._pages.length - 1) {
       this.currentStepIndex++;
       current++;
       this.checkNextStepDisabled(pages, current);
@@ -241,7 +239,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']++;
     pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex++;
-    this.wizardContainer.scrollTop=0;
+    this.wizardContainer.scrollTop = 0;
   }
 
   goToPreviousStep(pages: Array<HTMLElement>) {
@@ -249,7 +247,7 @@ export class Wizard extends LitElement {
     this.stepper['currentStepIndex']--;
     pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex--;
-    this.wizardContainer.scrollTop=0;
+    this.wizardContainer.scrollTop = 0;
   }
 
   goToStepIndex(index: number) {
@@ -263,7 +261,7 @@ export class Wizard extends LitElement {
   updateCurrentPage(index: number) {
     this._pages[this.currentStepIndex].removeAttribute('current');
     this.currentStepIndex = index;
-    this.wizardContainer.scrollTop=0;
+    this.wizardContainer.scrollTop = 0;
     this.UpdatePage();
   }
 
@@ -272,8 +270,8 @@ export class Wizard extends LitElement {
   }
 
   UpdatePage() {
-    (this._pages[this.currentStepIndex]).setAttribute('current', 'true');
-    (this._pages[this.currentStepIndex]).setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
+    this._pages[this.currentStepIndex].setAttribute('current', 'true');
+    this._pages[this.currentStepIndex].setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
     this.stepper.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
   }
 
@@ -288,29 +286,27 @@ export class Wizard extends LitElement {
   }
 
   _handleNextClick() {
-    if(this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
+    if (this.CheckIfAllNextStepsDisabled(this.currentStepIndex)) {
       return;
     }
-  
+
     if (this.linear) {
       if (this._pages[this.currentStepIndex]?.getAttribute('completed')) {
-        if ((this._pages[(+this.currentStepIndex)+1].getAttribute('disabled')) === "") {
-          this._pages[(+this.currentStepIndex)+1].removeAttribute('disabled');
+        if (this._pages[+this.currentStepIndex + 1].getAttribute('disabled') === '') {
+          this._pages[+this.currentStepIndex + 1].removeAttribute('disabled');
         }
-        this.arrayPages[(+this.currentStepIndex)+1].disabled = false;
+        this.arrayPages[+this.currentStepIndex + 1].disabled = false;
         this.checkNextStep();
-      }
-      else {
+      } else {
         return;
       }
-    }
-    else {
+    } else {
       this.checkNextStep();
     }
   }
 
   _handleBackClick() {
-    if(this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
+    if (this.CheckIfAllBackStepsDisabled(this.currentStepIndex)) {
       return;
     }
     if (this.currentStepIndex !== 0) {
@@ -328,13 +324,12 @@ export class Wizard extends LitElement {
   }
 
   CheckIfAllNextStepsDisabled(current: number) {
-    if(current !== (this._pages.length - 1)) {
+    if (current !== this._pages.length - 1) {
       current++;
-      if(!this.currentPageIsDisabled(current)) {
-        this.allNextDisabled=false;
-      }
-      else {
-        this.allNextDisabled=true;
+      if (!this.currentPageIsDisabled(current)) {
+        this.allNextDisabled = false;
+      } else {
+        this.allNextDisabled = true;
         this.CheckIfAllNextStepsDisabled(current);
       }
     }
@@ -342,13 +337,12 @@ export class Wizard extends LitElement {
   }
 
   CheckIfAllBackStepsDisabled(current: number) {
-    if(current !== 0) {
+    if (current !== 0) {
       current--;
-      if(!this.currentPageIsDisabled(current)) {
-        this.allBackDisabled=false;
-      }
-      else {
-        this.allBackDisabled=true;
+      if (!this.currentPageIsDisabled(current)) {
+        this.allBackDisabled = false;
+      } else {
+        this.allBackDisabled = true;
         this.CheckIfAllBackStepsDisabled(current);
       }
     }
