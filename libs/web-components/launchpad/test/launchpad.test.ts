@@ -12,7 +12,7 @@ describe('Launchpad', () => {
   it('should open', async () => {
     const el: Launchpad = await fixture(html`<fds-launchpad></fds-launchpad>`);
     await elementUpdated(el);
-    const triggerButton = shadowRoot(el).querySelector('#trigger') as HTMLElement | null;
+    const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
     await triggerButton?.click();
     await expect(shadowRoot(el).querySelector('fds-menu'))?.to.be.accessible();
   });
@@ -20,7 +20,7 @@ describe('Launchpad', () => {
   it('should contain the tools', async () => {
     const el: Launchpad = await fixture(html`<fds-launchpad><div slot="tools"><h3>test</h3></div></fds-launchpad>`);
     await elementUpdated(el);
-    const triggerButton = shadowRoot(el).querySelector('#trigger') as HTMLElement | null;
+    const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
     await triggerButton?.click();
     await expect(shadowRoot(el).querySelector('fds-menu .menu-body .menu-tools'))?.to.be.accessible();
   });
