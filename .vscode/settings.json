@@ -27,6 +27,7 @@
     "wc:pie-chart",
     "wc:data-table",
     "wc:dialog",
-    "wc:donut-chart"
+    "wc:donut-chart",
+    "wc:breadcrumb"
   ]
 }

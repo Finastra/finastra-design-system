@@ -16,7 +16,20 @@ npm i @finastra/breadcrumb
 ```ts
 import '@finastra/breadcrumb';
 ...
-<fds-breadcrumb items="['Link 1', 'Link 2']"></fds-breadcrumb>
+<fds-breadcrumb items="[
+    {
+        label: 'Home',
+        link: '#'
+    },
+    {
+        label: 'Link 2',
+        link: '#link-2'
+    },
+    {
+        label: 'Link 3',
+        link: '#link-2/link-3'
+    }
+]"></fds-breadcrumb>
 ```
 
 

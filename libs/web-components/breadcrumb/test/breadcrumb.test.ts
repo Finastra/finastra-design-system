@@ -2,19 +2,34 @@ import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testin
 import '../src/breadcrumb.js';
 import { Breadcrumb } from '../src/breadcrumb.js';
 
+const items = [
+  {
+    label: 'Home',
+    link: '#'
+  },
+  {
+    label: 'Link 2',
+    link: '#link-2'
+  },
+  {
+    label: 'Link 3',
+    link: '#link-2/link-3'
+  }
+];
+
 describe('Breadcrumb', () => {
   it('loads accessibly', async () => {
-    const el: Breadcrumb = await fixture(html`<fds-breadcrumb .items=${['Link 1', 'Link 2', 'Link 3']}></fds-breadcrumb>`);
+    const el: Breadcrumb = await fixture(html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`);
 
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });
 
   it('should dispatch selected event', async () => {
-    const el: Breadcrumb = await fixture(html`<fds-breadcrumb .items=${['Link 1', 'Link 2', 'Link 3']}></fds-breadcrumb>`);
+    const el: Breadcrumb = await fixture(html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`);
     await elementUpdated(el);
     setTimeout(() => {
-      el.shadowRoot?.querySelector('li')?.dispatchEvent(new Event('click'))
+      el.shadowRoot?.querySelector('a')?.dispatchEvent(new Event('click'))
     });
     const {detail} = await oneEvent(el, 'selected');
     expect(detail).to.exist;
