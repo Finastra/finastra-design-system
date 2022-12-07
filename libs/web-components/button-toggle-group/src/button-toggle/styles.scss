@@ -1,56 +1,48 @@
+@use '@material/mwc-tab/mwc-tab';
 @use "@finastra/fds-theme" as fds;
 
-:host>button {
-  @include fds.typography(subtitle-2);
-  @include fds.text-color(on-surface-medium);
-  @include fds.padding-x(3);
+$icon-size: 24px;
+$icon-width: 24px;
+$icon-height: 24px;
+$button-toggle-min-width: 90px;
+$button-toggle-height: 48px;
+$button-toggle-width: 100%;
 
-  display: inline-flex;
-  align-items: baseline;
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  user-select: none;
+:host {
+  display: block;
+  border: 1px solid;
+  overflow: hidden;
+  @include fds.property(border-color, outline);
+  @include fds.property(--mdc-theme-primary, primary);
 }
 
-:host fds-icon {
-  @include fds.margin(2, right);
-  @include fds.text-color(on-surface-disabled);
+.mdc-tab {
+  width: var(--fds-button-toggle-width, $button-toggle-width);
+  height: var(--fds-button-toggle-height, $button-toggle-height);
+  min-width: var(--fds-button-toggle-min-width, $button-toggle-min-width);
 
-  --fds-icon-size: 18px;
-  width: 18px;
-  position: relative;
-  top: 3px;
-  transition: color 0.2s ease;
+  @include fds.typography(subtitle-2);
+  @include fds.mdc(tab-text-label-color-default, on-surface-medium);
+  @include fds.mdc(tab-color-default, on-surface-medium);
+  letter-spacing: var(--fds-spacing-0, 0px);
 
-  &:only-child {
-    margin: 0 !important;
-    top: 2px;
+  mwc-tab-indicator {
+    display: none;
+  }
+  .mdc-tab__icon {
+    width: var(--fds-icon-width, $icon-width);
+    height: var(--fds-icon-height, $icon-height);
+    font-size: var(--fds-icon-size, $icon-size);
   }
 }
 
-:host(.selected)>button,
-:host(.selected) fds-icon {
-  @include fds.text-color(primary);
+:host([disabled]) {
+  pointer-events: none;
+  .mdc-tab {
+    @include fds.mdc(tab-text-label-color-default, on-surface-disabled);
+  }
+
+  .mdc-tab__icon {
+    @include fds.property(color, on-surface-disabled);
+  }
 }
-
-:host([dense])>button {
-  @include fds.typography(subtitle-3);
-
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-:host([dense]) fds-icon {
-  @include fds.margin(1, right);
-
-  --fds-icon-size: 16px;
-  width: 16px;
-}
-
-// :host(:not(.selected))>button:focus {
-  // @include fds.text-color(primary);
-  // @include fds.bg-color(surface);
-// }
