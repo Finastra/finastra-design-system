@@ -3,57 +3,47 @@ import '@finastra/button-toggle-group';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-import { argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
+import { actions, argTypes, cssprops } from './sb-generated/fds-button-toggle-group.json';
 
 export default {
   title: 'ACTIONS/Toggle',
   component: 'fds-button-toggle-group',
   argTypes,
   parameters: {
+    actions,
     docs: {
       description: { component: allSanitizers(README) }
     },
     cssprops,
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=94522%3A28102'
+      url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=106565%3A34024&t=keDm0ux9sZfv2aTY-0'
     }
   }
 } as Meta;
 
-const Template: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="event" label="Left"></fds-button-toggle>
-  <fds-button-toggle icon="edit" label="Middle" ></fds-button-toggle>
-  <fds-button-toggle icon="share" label="Right"></fds-button-toggle>
+const Template: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
+  <fds-button-toggle icon="mail_outline" label="Messages" ></fds-button-toggle>
+  <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-const LabelTemplate: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle label="Left"></fds-button-toggle>
-  <fds-button-toggle label="Middle"></fds-button-toggle>
-  <fds-button-toggle label="Right"></fds-button-toggle>
+const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  <fds-button-toggle label="5D"></fds-button-toggle>
+  <fds-button-toggle label="1M"></fds-button-toggle>
+  <fds-button-toggle label="1Y"></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
 
-const IconsTemplate: Story = ({dense=false}) => {
-  return html`<fds-button-toggle-group ?dense=${dense}>
-  <fds-button-toggle icon="event"></fds-button-toggle>
-  <fds-button-toggle icon="edit" ></fds-button-toggle>
-  <fds-button-toggle icon="share"></fds-button-toggle>
+const IconsTemplate: Story = ({dense=false, selectedIndex=0}) => {
+  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  <fds-button-toggle icon="grid_view" value="grid"></fds-button-toggle>
+  <fds-button-toggle icon="format_list_bulleted" value="list" ></fds-button-toggle>
 </fds-button-toggle-group>`;
 };
-
-const FilterTemplate: Story = () => {
-  return html`
-  <fds-button-toggle-group>
-      <fds-button-toggle-filter label="Left" icon="event"></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Middle" icon="edit" disabled></fds-button-toggle-filter>
-      <fds-button-toggle-filter label="Right" icon="share"></fds-button-toggle-filter>
-  </fds-button-toggle-group>`;
-};
-
 
 export const Default: Story = Template.bind({});
 
@@ -65,7 +55,3 @@ Dense.args = {
 export const Labels: Story = LabelTemplate.bind({});
 
 export const Icons: Story = IconsTemplate.bind({});
-
-export const Filter: Story = FilterTemplate.bind({});
-Filter.args = {
-};

@@ -1,45 +1,58 @@
 @use "@finastra/fds-theme" as fds;
 
+@media (prefers-reduced-motion: no-preference) {
+  :host>div::before {
+    transition-property: transform, width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+}
+
 :host {
+  --fds-toggle-selection-x: 0px;
+  --fds-toggle-selection-width: 50px;
+  position: relative;
+}
+
+:host>div {
+  @include fds.property(border-color, outline);
+  @include fds.padding-x(1);
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 44px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+:host>div::before {
+  @include fds.property(border-color, primary);
+  @include fds.bg-color(surface-selected);
+
+  content: '';
+  z-index: 0;
   display: block;
-  padding: 2px;
+  box-sizing: border-box;
+  position: absolute;
+  height: 36px;
+  width: var(--fds-toggle-selection-width);
+  transform: translateX(var(--fds-toggle-selection-x));
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 4px 0;
 }
 
-.mdc-tab-bar mwc-tab-scroller {
-  ::slotted(fds-button-toggle-filter:first-child) {
-    margin-left: var(--fds-spacing-0, 0px);
-  }
+:host([dense])>div {
+  height: 38px;
 }
 
-.mdc-tab-bar mwc-tab-scroller {
-  ::slotted(fds-button-toggle:first-child) {
-    border-top-left-radius: var(--fds-spacing-4, 24px);
-    border-bottom-left-radius: var(--fds-spacing-4, 24px);
-  }
-
-  ::slotted(fds-button-toggle:last-child) {
-    border-top-right-radius: var(--fds-spacing-4, 24px);
-    border-bottom-right-radius: var(--fds-spacing-4, 24px);
-  }
-
-  ::slotted(fds-button-toggle[active]) {
-    @include fds.property(border-color, primary);
-    @include fds.property(color, primary);
-    @include fds.property(background, surface-selected);
-  }
-
-  ::slotted(fds-button-toggle[active]:first-child) {
-    @include fds.property(background, surface-selected);
-    @include fds.property(border-color, primary);
-  }
-  ::slotted(fds-button-toggle[active]:last-child) {
-    @include fds.property(background, surface-selected);
-  }
+:host([dense])>div::before {
+  height: 30px;
 }
 
-:host([dense]) {
-  --fds-button-toggle-height: 32px;
-  --fds-icon-size: 18px;
-  --fds-icon-height: 18px;
-  --fds-icon-width: 18px;
+::slotted(*) {
+  z-index: 1;
 }
