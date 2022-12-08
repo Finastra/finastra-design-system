@@ -2,6 +2,16 @@ import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import '../src/launchpad.js';
 import { Launchpad } from '../src/launchpad.js';
 
+const TEST_DATA = [
+  {
+    "name": "App",
+    "shortName": "App",
+    "sso-initiation-urls": {
+      "web": "https://app1.com"
+    }
+  }
+];
+
 describe('Launchpad', () => {
   it('loads accessibly', async () => {
     const el: Launchpad = await fixture(html`<fds-launchpad></fds-launchpad>`);
@@ -15,6 +25,16 @@ describe('Launchpad', () => {
     const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
     await triggerButton?.click();
     await expect(shadowRoot(el).querySelector('fds-menu'))?.to.be.accessible();
+  });
+
+  it('should have accessible app', async () => {
+    const el: Launchpad = await fixture(html`<fds-launchpad .apps=${TEST_DATA}></fds-launchpad>`);
+    await elementUpdated(el);
+    const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
+    await triggerButton?.click();
+    const appCard = shadowRoot(el).querySelector('.brandcard');
+    appCard?.dispatchEvent(new MouseEvent('click'))
+    await expect(shadowRoot(el).querySelector('fds-menu .menu-body .brandcard'))?.to.be.accessible();
   });
 
   it('should contain the tools', async () => {
