@@ -8,14 +8,15 @@ import { styles } from './radial-bar-chart-styles.css';
  *
  * @attr {Array} [labels=[]] - Labels correspond to value in data array
  * @attr {Array} [data=[]] - Data of the chart
- * @attr {String} [total-label=''] - Total label, visible only with multiple data
- * @attr {Boolean} [hide-labels=false] - Hide the labels and display only the value,
- * @cssprop [--fds-radial-value = var(--fds-headline-2)] - Label size
- * @cssprop [--fds-radial-label = var(--fds-body-3)] - Label size
+ * @attr {string} [total-label=''] - Total label, visible only with multiple data
+ * @attr {boolean} [hide-labels=false] - Hide the labels and display only the value
+ * @attr {boolean} [dense=false] - Radial Chart in a smaller size
+ * @attr {boolean} [extra-dense=false] - Radial Chart in an extra smaller size
+ * @attr {boolean} [large=false] - Radial Chart in a larger size
  */
 @customElement('fds-radial-bar-chart')
 export class RadialBarChart extends ApexChartsWrapper {
-  static styles = [styles, apexchartsStyle]
+  static styles = [styles, apexchartsStyle];
 
   private _data: number[] = [];
   @property({ attribute: false })
@@ -38,7 +39,7 @@ export class RadialBarChart extends ApexChartsWrapper {
   }
   public set labels(value: string[]) {
     this._labels = value;
-    this.options = { ...this.options, labels: value }
+    this.options = { ...this.options, labels: value };
   }
 
   private _totalLabel: string = 'Total';
@@ -61,15 +62,52 @@ export class RadialBarChart extends ApexChartsWrapper {
   }
   public set hideLabels(value: boolean) {
     this._hideLabels = value;
-
-    if (value) {
+    if ((this as Element).getAttribute('dense') !== null || (this as Element).getAttribute('extra-dense') !== null) {
       this._defaultOptions.plotOptions.radialBar.dataLabels.name.show = false;
-      this._defaultOptions.plotOptions.radialBar.dataLabels.value.offsetY = 16;
     } else {
-      this._defaultOptions.plotOptions.radialBar.dataLabels.name.show = true;
-      this._defaultOptions.plotOptions.radialBar.dataLabels.value.offsetY = -16;
+      if (value) {
+        this.setRadialBarDataLabels(false, 16);
+      } else {
+        this.setRadialBarDataLabels(true, -16);
+      }
     }
+
     this.refresh();
+  }
+
+  private _dense = false;
+  @property({ type: Boolean, attribute: 'dense' })
+  public get dense(): boolean {
+    return this._dense;
+  }
+  public set dense(value: boolean) {
+    this.setDense(value, '226', 10);
+    this._dense = value;
+  }
+
+  private _extraDense = false;
+  @property({ type: Boolean, attribute: 'extra-dense' })
+  public get extraDense(): boolean {
+    return this._extraDense;
+  }
+  public set extraDense(value: boolean) {
+    if (this.data.length > 1) {
+      this.setDense(value, '170', 7);
+    } else {
+      this.setDense(value, '126', 7);
+    }
+
+    this._extraDense = value;
+  }
+
+  private _large = false;
+  @property({ type: Boolean, attribute: 'large' })
+  public get large(): boolean {
+    return this._large;
+  }
+  public set large(value: boolean) {
+    this.setLarge(value, '518px');
+    this._large = value;
   }
 
   _defaultOptions = {
@@ -77,8 +115,8 @@ export class RadialBarChart extends ApexChartsWrapper {
       radialBar: {
         hollow: {
           margin: 0,
-          size: "60%",
-          background: "var(--fds-surface, #FFFFFF)"
+          size: '60%',
+          background: 'var(--fds-surface, #FFFFFF)'
         },
         track: {
           background: 'var(--fds-outline, #0000001f)',
@@ -92,13 +130,53 @@ export class RadialBarChart extends ApexChartsWrapper {
           value: {
             offsetY: -16
           },
-          total : {
+          total: {
             show: false,
             label: 'Total'
           }
         }
       }
     }
+  };
+
+  private resetToDefault() {
+    (this as Element).setAttribute('height', '408px');
+    (this as Element).setAttribute('width', '408px');
+    if (this.hideLabels && (this as Element).getAttribute('hide-labels') == null) {
+      this.hideLabels = false;
+    }
+  }
+
+  private setDense(dense, size, offsetY) {
+    if (dense) {
+      this.hideLabels = true;
+      (this as Element).setAttribute('height', size);
+      (this as Element).setAttribute('width', size);
+      this._defaultOptions.plotOptions.radialBar.dataLabels.value.offsetY = offsetY;
+    } else {
+      this.resetToDefault();
+    }
+  }
+
+  private setLarge(large, size) {
+    if (large) {
+      (this as Element).setAttribute('height', size);
+      (this as Element).setAttribute('width', size);
+    } else {
+      this.resetToDefault();
+    }
+  }
+
+  private setRadialBarDataLabels(show, offsetY) {
+    this._defaultOptions.plotOptions.radialBar.dataLabels.name.show = show;
+    this._defaultOptions.plotOptions.radialBar.dataLabels.value.offsetY = offsetY;
+  }
+
+  protected updated(changedProperties) {
+    if (!this.dense && !this.large && !this.extraDense) {
+      this.resetToDefault();
+    }
+    super.updated(changedProperties);
   }
 
   constructor() {

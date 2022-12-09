@@ -1,18 +1,35 @@
 @use '@finastra/fds-theme' as fds;
 
-
-$label-font: var(--fds-body-3);
-$value-font: var(--fds-headline-2);
-
 .apexcharts-datalabels-group {
-
   .apexcharts-datalabel-value {
-    font: var(--fds-radial-value, $value-font);
+    @include fds.typography(headline-3);
     @include fds.fill(on-background);
   }
 
   .apexcharts-datalabel-label {
-    font: var(--fds-radial-label, $label-font);
+    @include fds.typography(body-3);
     @include fds.fill(on-surface-medium);
+  }
+}
+
+:host([dense]) {
+  .apexcharts-datalabel-value {
+    @include fds.typography(headline-4);
+  }
+}
+
+:host([extra-dense]) {
+  .apexcharts-datalabel-value {
+    @include fds.typography(subtitle-1);
+  }
+}
+
+:host([large]) {
+  .apexcharts-datalabel-value {
+    @include fds.typography(headline-1);
+  }
+
+  .apexcharts-datalabel-label {
+    @include fds.typography(body-2);
   }
 }
