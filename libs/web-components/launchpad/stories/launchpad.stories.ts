@@ -17,6 +17,9 @@ export default {
     apps: demoApps
   },
   parameters: {
+    actions: {
+      handles: ['selected', 'launchpage']
+    },
     docs: {
       description: { component: allSanitizers(README) }
     },
@@ -41,23 +44,20 @@ ${story()}`
   ]
 } as Meta;
 
-const Template: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
+const Template: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title }) => {
   return html`
 <fds-launchpad
   .apps=${apps}
   .appNameProperty=${appNameProperty}
   .shortAppNameProperty=${shortAppNameProperty}
   .title=${title}
-  .baseUrl=${baseUrl}
-  .tenantId=${tenantId}
-  .channelType=${channelType}
 >
   <div slot='tools'></div>
 </fds-launchpad>
   `;
 };
 
-const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title, baseUrl, tenantId, channelType }) => {
+const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title }) => {
   return html`
 <style>
   .tools-title {
@@ -96,9 +96,6 @@ const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppName
   .appNameProperty=${appNameProperty}
   .shortAppNameProperty=${shortAppNameProperty}
   .title=${title}
-  .baseUrl=${baseUrl}
-  .tenantId=${tenantId}
-  .channelType=${channelType}
 >
   <div slot='tools'>
     <div class='tools-title'>Tools</div>

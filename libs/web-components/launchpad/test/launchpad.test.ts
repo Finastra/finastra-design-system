@@ -1,4 +1,4 @@
-import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
+import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import '../src/launchpad.js';
 import { Launchpad } from '../src/launchpad.js';
 
@@ -27,14 +27,13 @@ describe('Launchpad', () => {
     await expect(shadowRoot(el).querySelector('fds-menu'))?.to.be.accessible();
   });
 
-  it('should have accessible app', async () => {
-    const el: Launchpad = await fixture(html`<fds-launchpad .apps=${TEST_DATA}></fds-launchpad>`);
-    await elementUpdated(el);
-    const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
-    await triggerButton?.click();
-    const appCard = shadowRoot(el).querySelector('.brandcard');
-    appCard?.dispatchEvent(new MouseEvent('click'))
-    await expect(shadowRoot(el).querySelector('fds-menu .menu-body .brandcard'))?.to.be.accessible();
+  it('should dispatch selected event', async () => {
+    const el: Launchpad = await fixture(html`<fds-launchpad .apps=${TEST_DATA}></fds-launchpad>`);await elementUpdated(el);
+    setTimeout(() => {
+      el.shadowRoot?.querySelector('fds-brand-card')?.dispatchEvent(new Event('click'))
+    });
+    const {detail} = await oneEvent(el, 'selected');
+    expect(detail).to.exist;
   });
 
   it('should contain the tools', async () => {

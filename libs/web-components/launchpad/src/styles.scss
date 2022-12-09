@@ -10,7 +10,7 @@
 
     .menu-body {
       max-height: 462px;
-      overflow-y: scroll;
+      overflow-y: auto;
 
       .app-content {
         @include fds.padding(5, right, left);
