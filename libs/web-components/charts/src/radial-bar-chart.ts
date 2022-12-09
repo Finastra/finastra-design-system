@@ -81,7 +81,7 @@ export class RadialBarChart extends ApexChartsWrapper {
     return this._dense;
   }
   public set dense(value: boolean) {
-    this.setDense(value, '226', 10);
+    this.setDense(value, '263', 10);
     this._dense = value;
   }
 
@@ -91,12 +91,7 @@ export class RadialBarChart extends ApexChartsWrapper {
     return this._extraDense;
   }
   public set extraDense(value: boolean) {
-    if (this.data.length > 1) {
-      this.setDense(value, '170', 7);
-    } else {
-      this.setDense(value, '126', 7);
-    }
-
+    this.setDense(value, '163', 7);
     this._extraDense = value;
   }
 
@@ -106,7 +101,7 @@ export class RadialBarChart extends ApexChartsWrapper {
     return this._large;
   }
   public set large(value: boolean) {
-    this.setLarge(value, '518px');
+    this.setLarge(value, '555px');
     this._large = value;
   }
 
@@ -140,8 +135,8 @@ export class RadialBarChart extends ApexChartsWrapper {
   };
 
   private resetToDefault() {
-    (this as Element).setAttribute('height', '408px');
-    (this as Element).setAttribute('width', '408px');
+    (this as Element).setAttribute('height', '445px');
+    (this as Element).setAttribute('width', '445px');
     if (this.hideLabels && (this as Element).getAttribute('hide-labels') == null) {
       this.hideLabels = false;
     }
