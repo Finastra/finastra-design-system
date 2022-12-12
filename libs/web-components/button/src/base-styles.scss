@@ -84,10 +84,12 @@
   padding-bottom: var(--fds-button-large-padding-y);
 }
 
-:host([disabled])>button {
+:host([disabled]) {
   pointer-events: none;
-  
-  &:hover::after {
-    opacity: 0;
+
+  >button {
+    &:hover::after {
+      opacity: 0;
+    }
   }
 }
