@@ -81,7 +81,7 @@ export class RadialBarChart extends ApexChartsWrapper {
     return this._dense;
   }
   public set dense(value: boolean) {
-    this.setDense(value, '263', 10);
+    this.setDense(value, '263', 12);
     this._dense = value;
   }
 

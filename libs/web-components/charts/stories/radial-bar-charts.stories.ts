@@ -54,6 +54,24 @@ HideLabel.args = {
   hideLabels: true
 };
 
+export const ExtraDense: Story<RadialBarChart> = Template.bind({});
+ExtraDense.args = {
+  extraDense: true,
+  hideLabels: true
+};
+
+export const Dense: Story<RadialBarChart> = Template.bind({});
+Dense.args = {
+  dense: true,
+  hideLabels: true
+};
+
+export const Large: Story<RadialBarChart> = Template.bind({});
+Large.args = {
+  large: true,
+  hideLabels: true
+};
+
 export const Multi: Story<RadialBarChart> = Template.bind({});
 Multi.args = {
   data: [84, 60, 90],

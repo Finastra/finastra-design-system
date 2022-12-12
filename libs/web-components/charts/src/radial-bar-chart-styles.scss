@@ -2,7 +2,7 @@
 
 .apexcharts-datalabels-group {
   .apexcharts-datalabel-value {
-    @include fds.typography(headline-3);
+    @include fds.typography(headline-2);
     @include fds.fill(on-background);
   }
 
@@ -14,13 +14,13 @@
 
 :host([dense]) {
   .apexcharts-datalabel-value {
-    @include fds.typography(headline-4);
+    @include fds.typography(headline-3);
   }
 }
 
 :host([extra-dense]) {
   .apexcharts-datalabel-value {
-    @include fds.typography(subtitle-1);
+    @include fds.typography(headline-4);
   }
 }
 
