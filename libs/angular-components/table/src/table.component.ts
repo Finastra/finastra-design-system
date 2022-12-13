@@ -36,7 +36,7 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
     this.dataToComponent = data;
 
-    if (this.pageEnable) {
+    if (this.pageEnable && !this.pageChanged) {
       if (this.paging) {
         this.applyPaging();
       } else {
