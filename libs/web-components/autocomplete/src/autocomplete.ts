@@ -20,7 +20,7 @@ export class Autocomplete extends LitElement {
   @query('select') protected nativeSelectElement!: HTMLSelectElement | null;
   @query('.fds-autocomplete') protected anchorElement!: HTMLDivElement | null;
   @query('.mdc-menu') protected menuElement!: Menu | null;
-  @query('slot') protected listItemSlot!: HTMLSlotElement;
+  @query('fds-menu slot') protected listItemSlot!: HTMLSlotElement;
 
   @property({ type: String }) icon = '';
   @property({ type: Boolean }) loading = false;
@@ -90,14 +90,16 @@ export class Autocomplete extends LitElement {
    * Filter suggestion menu by value.
    */
   protected _innerFilter() {
-    const listItems = this.listItemSlot.assignedNodes().filter((item) => (item as Element).tagName === 'MWC-LIST-ITEM');
+    const listItems = this.listItemSlot.assignedNodes().filter((item) => {
+      return (item as HTMLElement).localName === 'fds-list-item';
+    });
     let count = 0;
     listItems.forEach((item) => {
       const listItem = item as ListItem;
-      if (!listItem.value || listItem.value.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1) {
-        listItem.classList.add('mwc-list-item__hide');
+      if (!listItem.getAttribute("value") || listItem.getAttribute("value")?.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1) {
+        listItem.classList.add('fds-list-item__hide');
       } else {
-        listItem.classList.remove('mwc-list-item__hide');
+        listItem.classList.remove('fds-list-item__hide');
         count++;
       }
     });
