@@ -28,33 +28,18 @@ import '@finastra/button-toggle-group';
 
 ### API
 <!-- DOC -->
-#### Attributes
-
-| Attribute | Type      | Default | Description                     |
-|-----------|-----------|---------|---------------------------------|
-| `dense`   | `boolean` | false   | Make the button toggle smaller. |
-
 #### Properties
 
-| Property      | Type     |
-|---------------|----------|
-| `activeIndex` | `number` |
+| Property        | Attribute       | Type             | Default | Description                             |
+|-----------------|-----------------|------------------|---------|-----------------------------------------|
+| `dense`         | `dense`         | `boolean`        | false   | Make the button toggle smaller          |
+| `selectedIndex` | `selectedIndex` | `number`         | 0       | Index of current selection, starts at 0 |
+| `toggleButtons` |                 | `ButtonToggle[]` |         |                                         |
+| `value`         |                 | `string`         | ""      | Current selected value                  |
 
-#### Methods
+#### Events
 
-| Method                | Type                    |
-|-----------------------|-------------------------|
-| `click`               | `(): void`              |
-| `scrollIndexIntoView` | `(index: number): void` |
-
-#### CSS Custom Properties
-
-| Property                        | Default | Description             |
-|---------------------------------|---------|-------------------------|
-| `--fds-button-toggle-height`    | "48px"  | Button toggle height.   |
-| `--fds-button-toggle-min-width` | "30px"  | Button toggle min width |
-| `--fds-button-toggle-width`     | "100%"  | Button toggle width.    |
-| `--fds-icon-height`             | "24px"  | icon height.            |
-| `--fds-icon-size`               | "24px"  | icon size.              |
-| `--fds-icon-width`              | "24px"  | icon width.             |
+| Event    | Description                       |
+|----------|-----------------------------------|
+| `change` | Fired when selected value change. |
 <!-- /DOC -->
