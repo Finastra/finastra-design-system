@@ -12,18 +12,22 @@ export default {
   argTypes: {
     data: argTypes.data,
     color: argTypes.color,
-    height: argTypes.height,
     labels: argTypes.labels,
-    width: argTypes.width
+    totalLabel: argTypes['total-label'],
+    hideLabels: argTypes['hide-labels'],
+    dense: argTypes.dense,
+    extraDense: argTypes['extra-dense'],
+    large: argTypes.large
   },
   args: {
-    width: '300px',
-    height: '300px',
     data: [80],
     labels: ['Confidence Score'],
     color: 'categorical',
     hideLabels: false,
-    totalLabel: 'Total'
+    totalLabel: 'Total',
+    dense: false,
+    large: false,
+    extraDense: false
   },
   parameters: {
     docs: {
@@ -38,7 +42,7 @@ export default {
 };
 
 const Template: Story<RadialBarChart> = (args) => {
-  return html`<fds-radial-bar-chart width=${args.width} height=${args.height} total-label=${args.totalLabel} color=${args.color} .data=${args.data} .labels=${args.labels} ?hide-labels=${args.hideLabels}></fds-radial-bar-chart>`;
+  return html`<fds-radial-bar-chart ?extra-dense=${args.extraDense} ?dense=${args.dense} ?large=${args.large} total-label=${args.totalLabel} color=${args.color} .data=${args.data} .labels=${args.labels} ?hide-labels=${args.hideLabels}></fds-radial-bar-chart>`;
 };
 
 
@@ -47,6 +51,24 @@ export const Default: Story<RadialBarChart> = Template.bind({});
 export const HideLabel: Story<RadialBarChart> = Template.bind({});
 HideLabel.args = {
   color: 'semantic-1',
+  hideLabels: true
+};
+
+export const ExtraDense: Story<RadialBarChart> = Template.bind({});
+ExtraDense.args = {
+  extraDense: true,
+  hideLabels: true
+};
+
+export const Dense: Story<RadialBarChart> = Template.bind({});
+Dense.args = {
+  dense: true,
+  hideLabels: true
+};
+
+export const Large: Story<RadialBarChart> = Template.bind({});
+Large.args = {
+  large: true,
   hideLabels: true
 };
 
