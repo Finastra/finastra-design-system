@@ -41,15 +41,16 @@ import '@finastra/breadcrumb';
 |----------|-----------|---------|---------|----------------------------|
 | `items`  | `items`   | `Array` | []      | A list of items to display |
 
-#### Methods
-
-| Method            | Type                                  |
-|-------------------|---------------------------------------|
-| `handleItemClick` | `(item: string, index: number): void` |
-
 #### Events
 
-| Event      | Type                                            |
-|------------|-------------------------------------------------|
-| `selected` | `CustomEvent<{ item: string; index: number; }>` |
+| Event      | Type                            |
+|------------|---------------------------------|
+| `selected` | `CustomEvent<{ item: Crumb; }>` |
+
+#### CSS Custom Properties
+
+| Property                         | Type  | Default | Description                                     |
+|----------------------------------|-------|---------|-------------------------------------------------|
+| `--fds-breadcrumb-divider`       |       | "'/'"   | Set the character used as divider between items |
+| `--fds-breadcrumb-divider-color` | color | "auto"  | Set the character used as divider between items |
 <!-- /DOC -->
