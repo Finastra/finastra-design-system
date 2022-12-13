@@ -46,6 +46,7 @@
     "lint": "nx run-many --target=lint --all --exclude=angular-components",
     "ng": "nx",
     "nx": "nx",
+    "prerelease:angular": "node scripts/pre-angular-release.js",
     "release:angular": "npx standard-version -an",
     "start": "ng serve",
     "start:fds-test-app": "ng serve fds-test-app",
