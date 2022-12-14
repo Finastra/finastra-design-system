@@ -27,7 +27,7 @@ export interface Page {
   * @attr {boolean} [stepsCounter=false] - make the step counter visible in the stepper.
   * @attr {"topLeft"|"topRight"|"center"} stepperPosition - Stepper position
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
-    It is Used with the fds-wizard-page web component that could contain: 
+    It is Used with the fds-wizard-page web component that could contain:
   - page-title: to define a title to the step
   - icon: to define a link to your hosted icon to be displayed next to the title
   - description: to define a description to your step
@@ -127,7 +127,7 @@ export class Wizard extends LitElement {
       <div class="left">
         <slot name="left-action"></slot>
       </div>
-      <div class="content">
+      <div class="center">
         <slot name="content-action"></slot>
       </div>
       <div class="right">
