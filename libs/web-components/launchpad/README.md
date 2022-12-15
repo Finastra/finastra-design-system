@@ -35,10 +35,17 @@ import '@finastra/launchpad';
 <!-- DOC -->
 #### Properties
 
-| Property               | Attribute              | Type     | Default                             | Description                                      |
-|------------------------|------------------------|----------|-------------------------------------|--------------------------------------------------|
-| `appNameProperty`      | `appNameProperty`      | `string` | "name"                              | Name of application name property of type string that will be used by the product card. |
-| `apps`                 | `apps`                 | `array`  | []                                  | List of ux-apps.                                    |
-| `shortAppNameProperty` | `shortAppNameProperty` | `string` | ""                                  | Name of the short application name property used by the product card. |
-| `title`                | `title`                | `string` | "Apps"                              | Title used by the menu trigger.                  |
+| Property               | Attribute              | Type      | Default     | Description                                      |
+|------------------------|------------------------|-----------|-------------|--------------------------------------------------|
+| `appNameProperty`      | `appNameProperty`      | `string`  | "name"      | Name of application name property of type string that will be used by the product card. |
+| `apps`                 | `apps`                 | `UxApp[]` | []          | List of ux-apps.                                 |
+| `shortAppNameProperty` | `shortAppNameProperty` | `string`  | "shortName" | Name of the short application name property used by the product card. |
+| `title`                | `title`                | `string`  | "Apps"      | Title used by the menu trigger.                  |
+
+#### Events
+
+| Event        | Type                           |
+|--------------|--------------------------------|
+| `launchpage` |                                |
+| `selected`   | `CustomEvent<{ app: UxApp; }>` |
 <!-- /DOC -->
