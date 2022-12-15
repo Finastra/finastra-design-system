@@ -34,9 +34,8 @@ const Template: Story<UserProfile> = ({ userName = 'Raya Hristova', shortName = 
       }
       fds-user-profile fds-button {
         line-height: 0px;
-        padding: var(--fds-spacing-0) var(--fds-spacing-3) var(--fds-spacing-2) var(--fds-spacing-3);
       }
-      fds-user-profile fds-button + fds-button {
+      fds-user-profile fds-button + fds-button, fds-user-profile fds-button + fds-text-button {
         margin-top: var(--fds-spacing-2);
       }
     </style>
