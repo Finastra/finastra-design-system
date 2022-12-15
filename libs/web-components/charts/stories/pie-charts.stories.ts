@@ -98,7 +98,7 @@ export default {
     labels: demoLabels,
   },
   parameters: {
-    chromatic: { disableSnapshot: true },
+    chromatic: { delay: 1000 },
     docs: {
       description: { component: allSanitizers(README) }
     },
