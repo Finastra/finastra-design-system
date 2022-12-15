@@ -20,6 +20,7 @@ export default {
     color: 'categorical',
   },
   parameters: {
+    chromatic: { disableSnapshot: true },
     docs: {
       description: { component: allSanitizers(README) }
     },

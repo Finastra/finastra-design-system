@@ -30,6 +30,7 @@ export default {
     extraDense: false
   },
   parameters: {
+    chromatic: { disableSnapshot: true },
     docs: {
       description: { component: allSanitizers(README) }
     },
