@@ -31,7 +31,7 @@ describe('ButtonToggleGroup', () => {
 
   it('should set selection', async () => {
     const el: ButtonToggleGroup = await fixture(html`
-      <fds-button-toggle-group selectedIndex="1">
+      <fds-button-toggle-group selected-index="1">
         <fds-button-toggle label="test1"></fds-button-toggle>
         <fds-button-toggle icon="test2"></fds-button-toggle>
       </fds-button-toggle-group>
@@ -56,9 +56,8 @@ describe('ButtonToggleGroup', () => {
     `);
 
     let toggle: ButtonToggleGroup = shadowRoot(el);
+    await elementUpdated(toggle);
     const button: ButtonToggle = el.children[1] as ButtonToggle;
-    await elementUpdated(el);
-
     button.click(); // this is not dispatching 'change' event
     expect(button.classList.contains('selected')).to.be.true;
     expect(toggle.selectedIndex).equal(1);
