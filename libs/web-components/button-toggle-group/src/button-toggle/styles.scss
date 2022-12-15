@@ -16,9 +16,9 @@
   user-select: none;
   height: 36px;
   border-radius: 16px;
+  background-color: transparent;
   transition-property: background-color;
   transition-duration: 0.3s;
-  background-color: transparent;
 }
 
 :host fds-icon {
