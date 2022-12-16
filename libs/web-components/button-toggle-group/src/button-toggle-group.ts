@@ -17,7 +17,7 @@ export class ButtonToggleGroup extends LitElement {
   /**
    * Index of current selection, starts at 0
    */
-  @property({ type: Number })
+  @property({ type: Number, attribute: 'selected-index' })
   selectedIndex: number = 0;
 
   /**
@@ -33,6 +33,9 @@ export class ButtonToggleGroup extends LitElement {
 
   constructor() {
     super();
+    document.fonts.ready.then(() => {
+      this._updateSelection();
+    });
   }
   
   render() {
@@ -41,7 +44,7 @@ export class ButtonToggleGroup extends LitElement {
     </div>`
   }
 
-  updated(changedProperties: Map<string, any>) {
+  async updated(changedProperties: Map<string, any>) {
     super.updated(changedProperties);
     const selectedButton = this.toggleButtons[this.selectedIndex] as ButtonToggle;
     
@@ -50,38 +53,37 @@ export class ButtonToggleGroup extends LitElement {
     }
     
     if (changedProperties.has('selectedIndex')) {
+      await this.updateComplete;
       this._select(selectedButton);
-
-      requestAnimationFrame(() => {
-        const rect = selectedButton.getBoundingClientRect();
-        this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
-      });
     }
 
     if (changedProperties.has('dense')) {
       this.toggleButtons.forEach((btn) => {
         this.dense ? btn.setAttribute('dense', 'true') : btn.removeAttribute('dense');
       });
-      this._select(selectedButton);
+      this._updateSelection();
     }
   }
 
   private _select(button: ButtonToggle) {
-    const rect:DOMRect = button.getBoundingClientRect();
-
     this._resetSelection();
-    button.classList.add('selected');
-    
-    this.style.setProperty('--fds-toggle-selection-x', (button.offsetLeft - 5) + 'px');
-    this.style.setProperty('--fds-toggle-selection-width', (rect.width) + 'px');
-
+    this._updateSelection();
     this.value = button.getAttribute('value') || button.getAttribute('label') || button.getAttribute('icon') || '';
+    button.classList.add('selected');
   }
 
   private _resetSelection() {
     this.toggleButtons.forEach(button => {
       button.classList.remove('selected');
     });
+  }
+
+  private _updateSelection() {
+    const selection = this.toggleButtons[this.selectedIndex] as ButtonToggle;
+    const rect:DOMRect = selection?.getBoundingClientRect();
+    
+    this.style.setProperty('--fds-toggle-selection-x', (selection?.offsetLeft - 5) + 'px');
+    this.style.setProperty('--fds-toggle-selection-width', (rect?.width) + 'px');
   }
 
   private _handleClick(e: Event) {

@@ -20,6 +20,7 @@ export default {
     color: 'categorical',
   },
   parameters: {
+    chromatic: { delay: 1000 },
     docs: {
       description: { component: allSanitizers(README) }
     },

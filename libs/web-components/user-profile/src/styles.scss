@@ -37,7 +37,8 @@
     }
 
     slot[name="actions"]::slotted(*) {
-      @include fds.padding(3,top);
+      @include fds.padding(3);
+      @include fds.padding(0, bottom);
       @include fds.text-color(on-background);
     }
 

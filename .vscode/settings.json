@@ -28,6 +28,7 @@
     "wc:data-table",
     "wc:dialog",
     "wc:donut-chart",
-    "wc:breadcrumb"
+    "wc:breadcrumb",
+    "chromatic"
   ]
 }

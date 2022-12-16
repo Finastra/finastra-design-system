@@ -10,6 +10,7 @@ export default {
   component: 'fds-button-toggle-group',
   argTypes,
   parameters: {
+    chromatic: { delay: 1000 },
     actions,
     docs: {
       description: { component: allSanitizers(README) }
@@ -23,7 +24,7 @@ export default {
 } as Meta;
 
 const Template: Story = ({dense=false, selectedIndex=0}) => {
-  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
   <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
   <fds-button-toggle icon="mail_outline" label="Messages" ></fds-button-toggle>
   <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
@@ -31,7 +32,7 @@ const Template: Story = ({dense=false, selectedIndex=0}) => {
 };
 
 const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
-  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
   <fds-button-toggle label="5D"></fds-button-toggle>
   <fds-button-toggle label="1M"></fds-button-toggle>
   <fds-button-toggle label="1Y"></fds-button-toggle>
@@ -39,7 +40,7 @@ const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
 };
 
 const IconsTemplate: Story = ({dense=false, selectedIndex=0}) => {
-  return html`<fds-button-toggle-group ?dense=${dense} selectedIndex=${selectedIndex}>
+  return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
   <fds-button-toggle icon="grid_view" value="grid"></fds-button-toggle>
   <fds-button-toggle icon="format_list_bulleted" value="list" ></fds-button-toggle>
 </fds-button-toggle-group>`;
