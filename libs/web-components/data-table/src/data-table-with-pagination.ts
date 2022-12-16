@@ -154,10 +154,12 @@ export class DataTableWithPagination extends LitElement {
     private recodeSelectionToDataSource(selectedData: FdsTableRow[]) {
         const selectedIdsInCurrentPage = this._selectedRowIdsByPage[this.pageIndex] = selectedData.map(item => (item._fdsRowId as string));
         for (let i = this.pageIndex * this.pageSize; i <= Math.min((this.pageIndex + 1) * this.pageSize, this.dataSource.length) - 1; i++) {
-            if (selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
-                this.dataSource[i]._fdsSelected = true;
-            } else {
-                this.dataSource[i]._fdsSelected = false;
+            if (!this.dataSource[i]._fdsSelectDisabled) {
+                if ( selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
+                    this.dataSource[i]._fdsSelected = true;
+                } else {
+                    this.dataSource[i]._fdsSelected = false;
+                }
             }
         }
     }
