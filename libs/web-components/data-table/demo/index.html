@@ -55,7 +55,8 @@
                 type: 'B2E',
                 path: '/foo/bar/3'
             },
-            _fdsSelected: true
+            _fdsSelected: true,
+            _fdsSelectDisabled: true,
         },
         {
             API: {
@@ -80,7 +81,8 @@
             apiDetail: {
                 type: 'B2C',
                 path: '/foo/bar/2'
-            }
+            },
+            _fdsSelectDisabled: true,
         },
         {
             API: {
@@ -332,10 +334,11 @@
     // dataTable.multiSelect = false;
     // dataTable.showSingleSelectRadioBox = true;
     dataTable.multiSelect = true;
-    // dataTable.showMultiSelectCheckBox = true;
+    dataTable.showMultiSelectCheckBox = true;
 
 
     dataTable.addEventListener('onFdsDataTableRowSelected', (e) => {
+        console.log('data from table without pagination');
         console.log(e.detail);
         document.querySelector('#fds-data-table-selected-rows').innerHTML = JSON.stringify(e.detail, null, 2);
     });
@@ -356,8 +359,14 @@
     dataTableWithPagination.columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Error Response', 'No. of Calls', 'Revenue', 'Status', 'Confidence Score', 'apiDetail'];
     dataTableWithPagination.selectable = true;
     dataTableWithPagination.multiSelect = true;
+    // dataTableWithPagination.showSingleSelectRadioBox = true;
+    dataTableWithPagination.showMultiSelectCheckBox = true;
     dataTableWithPagination.pageSizeOptions = [5, 10, 20];
     dataTableWithPagination.showFirstLastButtons = true;
+    dataTableWithPagination.addEventListener('onFdsDataTableWithPaginationRowSelected', (e) => {
+        console.log('data from table with pagination');
+        console.log(e.detail)
+    })
 </script>
 <style>
     main-content {

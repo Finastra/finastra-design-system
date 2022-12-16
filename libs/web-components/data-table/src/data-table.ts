@@ -14,6 +14,7 @@ import { styles } from './data-table-styles.css';
  * @attr [multiSelect=false] - Whether to allow multiple rows to be selected.
  * @attr [showSingleSelectRadioBox=false] - Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false 
  * @attr [showMultiSelectCheckBox=false] - Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true.
+ * @attr [emitPureData=true] - Whether event should emit only user data without fds data table used properties such like _fdsRowId/_fdsRowSelected etc.
  * @attr [dense=false] - Wether display data table in a smaller size
  * 
  * @fires onFdsDataTableWithPaginationRowSelected - Fired when selecting a row

@@ -1,4 +1,5 @@
-import { FdsColumnType, FdsTableColumn } from "./model";
+import { FDS_TABLE_DATA_ROW_PREFIX } from "./constants";
+import { FdsColumnType, FdsTableColumn, FdsTableRow } from "./model";
 
 export function getCellClassByType(column: FdsTableColumn): string{
     let cellType = "";
@@ -18,4 +19,24 @@ export function getCellClassByType(column: FdsTableColumn): string{
             break;
     }
     return cellType;
+}
+
+export function formatFdsDataSource(data: FdsTableRow[]): FdsTableRow[] {
+    return data.map((rowData, index) => {
+        return { 
+            ...rowData, 
+            _fdsRowId: rowData._fdsRowId? rowData._fdsRowId : FDS_TABLE_DATA_ROW_PREFIX + index, 
+            _fdsSelected: rowData._fdsSelected? rowData._fdsSelected : false,
+            _fdsSelectDisabled: rowData._fdsSelectDisabled? rowData._fdsSelectDisabled: false
+        };
+    });
+}
+
+export function getFdsDataTablePureData(data: FdsTableRow): any {
+    const dataCopy = { ...data };
+    delete dataCopy._fdsRowId;
+    delete dataCopy._fdsSelected;
+    delete dataCopy._fdsSelectDisabled;
+    delete dataCopy._fdsTableRowStyle;
+    return dataCopy;
 }

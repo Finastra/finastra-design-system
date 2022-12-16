@@ -23,7 +23,9 @@ export const ELEMENT_DATA = [
         apiDetail: {
             type: 'B2E',
             path: '/foo/bar/3'
-        }
+        },
+        _fdsSelected: true,
+        _fdsSelectDisabled: true,
     },
     {
         API: {
@@ -48,7 +50,8 @@ export const ELEMENT_DATA = [
         apiDetail: {
             type: 'B2C',
             path: '/foo/bar/2'
-        }
+        },
+        _fdsSelectDisabled: true,
     },
     {
         API: {

@@ -4,8 +4,9 @@ import { customElement, property } from 'lit/decorators.js';
 import { DATA_TABLE_EVENTS } from './constants';
 import './data-table';
 import { styles } from './data-table-with-pagination-styles.css';
-import { FdsTableColumn, FdsTableRow } from './model';
+import { FdsSelectedRowIdsByPage, FdsTableColumn, FdsTableRow } from './model';
 import './pagination/data-table-pagination';
+import { formatFdsDataSource, getFdsDataTablePureData } from './utils';
 
 /**
  * This component is a simple example combining fds-data-table with fds-data-table-pagination component.
@@ -34,11 +35,19 @@ export class DataTableWithPagination extends LitElement {
 
     static override styles = [styles];
 
+    private _selectedRowIdsByPage: FdsSelectedRowIdsByPage = {};
     private pageSize = 5;
 
+    private _dataSource: FdsTableRow[] = [];
     @property({
         type: Array,
-    }) dataSource: FdsTableRow[] = [];
+    })
+    set dataSource(data) {
+        this._dataSource = formatFdsDataSource(data);
+    }
+    get dataSource(): FdsTableRow[] {
+        return this._dataSource;
+    }
 
     @property({
         type: Array,
@@ -51,6 +60,10 @@ export class DataTableWithPagination extends LitElement {
     @property({
         type: Boolean
     }) selectable = false;
+
+    @property({
+        type: Boolean
+    }) recordSelectionCrossPages = false;
 
     @property({
         type: Boolean
@@ -93,17 +106,14 @@ export class DataTableWithPagination extends LitElement {
     override render() {
         return html`
         <div class="fds-data-table-with-pagination-wrapper">
-            <fds-data-table
-                ?dense='${this.dense}'
-                .dataSource=${this.getDataByPagination()} .columns=${this.columns}
+            <fds-data-table ?dense='${this.dense}' .dataSource=${this.getDataByPagination()} .columns=${this.columns}
                 .columnsToDisplay=${this.columnsToDisplay} .selectable=${this.selectable}
                 .showSingleSelectRadioBox=${this.showSingleSelectRadioBox} .multiSelect=${this.multiSelect}
-                .showMultiSelectCheckBox=${this.showMultiSelectCheckBox} @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
+                .emitPureData=${false} .showMultiSelectCheckBox=${this.showMultiSelectCheckBox}
+                @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
             </fds-data-table>
-            <fds-data-table-pagination 
-                ?dense='${this.dense}'
-                .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
-                .pageSize=${this.pageSizeOptions.length> 0 ? this.pageSizeOptions[0] : 5}
+            <fds-data-table-pagination ?dense='${this.dense}' .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
+                .pageSize=${this.pageSizeOptions.length > 0 ? this.pageSizeOptions[0] : 5}
                 .pageSizeOptions=${this.pageSizeOptions}
                 .showFirstLastButtons=${this.showFirstLastButtons}
                 @onFdsPaginationChanged=${this.onDataTablePaginationChanged}
@@ -122,12 +132,27 @@ export class DataTableWithPagination extends LitElement {
         this.requestUpdate();
     }
     onDataTableRowSelected(e) {
+        this.recodeSelectionToDataSource(e.detail.data);
         if (this.selectable) {
+            const allSelectedRows = this.dataSource.filter(row => row._fdsSelected && !row._fdsSelectDisabled).map(item => getFdsDataTablePureData(item));
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
                 bubbles: true,
                 composed: true,
-                detail: e.detail
+                detail: {
+                    data: allSelectedRows
+                }
             }));
+        }
+    }
+
+    private recodeSelectionToDataSource(selectedData: FdsTableRow[]) {
+        const selectedIdsInCurrentPage = this._selectedRowIdsByPage[this.pageIndex] = selectedData.map(item => (item._fdsRowId as string));
+        for (let i = this.pageIndex * this.pageSize; i <= (this.pageIndex + 1) * this.pageSize - 1; i++) {
+            if (selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
+                this.dataSource[i]._fdsSelected = true;
+            } else {
+                this.dataSource[i]._fdsSelected = false;
+            }
         }
     }
 }

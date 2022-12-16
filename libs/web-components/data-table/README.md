@@ -79,12 +79,13 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 | `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
 | `dataSource`               | `dataSource`               | `FdsTableRow[]`    | "[]"       | Array of data to display in the table.           |
 | `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
+| `emitPureData`             | `emitPureData`             | `boolean`          | true       | Whether event should emit only user data without fds data table used properties such like _fdsRowId/_fdsRowSelected etc. |
 | `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
 | `override`                 |                            |                    |            |                                                  |
 | `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
 | `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
 | `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                   |                            | `array`            | ["styles"] |                                                  |
+| `styles`                   |                            | `CSSResult[]`      | ["styles"] |                                                  |
 
 #### Events
 
@@ -100,6 +101,31 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 | `--fds-data-table-max-height`   | "615px" | Max height of table. By default there will be max 10 rows displayed which means 615px for normal size. 439px for dense size. 538px for dense size with checkbox or radiobox. |
 <!-- /DOC:fds-data-table -->
 
+
+Interfaces: 
+```
+
+export interface FdsTableColumn {
+    id: string; //unique id for table column
+    name: string; // column name
+    type: FdsColumnType; // the data type of this column => can apply different template to this column
+    align?: 'left' | 'right' | 'center'; // text align in cell
+    displayName?: string; // column display name if not provided, name will display
+    sortable?: boolean; // can sort this column;
+    cellTemplateId?: string; // used for customized cell
+    _style?: string; // customized style for one column
+}
+
+export interface FdsTableDataItem {
+    _fdsTableRowStyle?: string;  // customized style for one row
+}
+
+export interface FdsTableRow extends FdsTableDataItem {
+    _fdsSelected?: boolean, //identify if current row is selected or not
+    _fdsSelectDisabled?: boolean, //identify if current row is selectable or not
+    _fdsRowId?: string, //a unique id for current row. 
+}
+```
 ## Pagination Usage
 
 ### Import
@@ -170,21 +196,22 @@ If it can't meet your requirements, you can use fds-data-table with fds-data-tab
 
 #### Properties
 
-| Property                   | Attribute                  | Type               | Default    | Description                                      |
-|----------------------------|----------------------------|--------------------|------------|--------------------------------------------------|
-| `columns`                  | `columns`                  | `FdsTableColumn[]` | []         | Array of column definitions.                     |
-| `columnsToDisplay`         | `columnsToDisplay`         | `string[]`         | []         | Array of column ids to display.                  |
-| `dataSource`               | `dataSource`               | `FdsTableRow[]`    | []         | Array of data to display in the table.           |
-| `dense`                    | `dense`                    | `boolean`          | false      | Wether display data table in a smaller size      |
-| `multiSelect`              | `multiSelect`              | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
-| `override`                 |                            |                    |            |                                                  |
-| `pageIndex`                | `pageIndex`                | `number`           | 0          |                                                  |
-| `pageSizeOptions`          | `pageSizeOptions`          | `number[]`         | "[]"       | Array of page sizes to display, pageSize will take the first element otherwise pageSize will be 5. |
-| `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
-| `showFirstLastButtons`     | `showFirstLastButtons`     | `boolean`          | false      | Whether to display the first and last page buttons. |
-| `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
-| `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                   |                            | `array`            | ["styles"] |                                                  |
+| Property                    | Attribute                   | Type               | Default    | Description                                      |
+|-----------------------------|-----------------------------|--------------------|------------|--------------------------------------------------|
+| `columns`                   | `columns`                   | `FdsTableColumn[]` | []         | Array of column definitions.                     |
+| `columnsToDisplay`          | `columnsToDisplay`          | `string[]`         | []         | Array of column ids to display.                  |
+| `dataSource`                | `dataSource`                | `FdsTableRow[]`    | "[]"       | Array of data to display in the table.           |
+| `dense`                     | `dense`                     | `boolean`          | false      | Wether display data table in a smaller size      |
+| `multiSelect`               | `multiSelect`               | `boolean`          | false      | Whether to allow multiple rows to be selected.   |
+| `override`                  |                             |                    |            |                                                  |
+| `pageIndex`                 | `pageIndex`                 | `number`           | 0          |                                                  |
+| `pageSizeOptions`           | `pageSizeOptions`           | `number[]`         | "[]"       | Array of page sizes to display, pageSize will take the first element otherwise pageSize will be 5. |
+| `recordSelectionCrossPages` | `recordSelectionCrossPages` | `boolean`          | false      |                                                  |
+| `selectable`                | `selectable`                | `boolean`          | false      | Whether to show if a row is selected.            |
+| `showFirstLastButtons`      | `showFirstLastButtons`      | `boolean`          | false      | Whether to display the first and last page buttons. |
+| `showMultiSelectCheckBox`   | `showMultiSelectCheckBox`   | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
+| `showSingleSelectRadioBox`  | `showSingleSelectRadioBox`  | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
+| `styles`                    |                             | `CSSResult[]`      | ["styles"] |                                                  |
 
 #### Methods
 
