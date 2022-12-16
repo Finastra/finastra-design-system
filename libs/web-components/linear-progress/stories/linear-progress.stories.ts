@@ -45,3 +45,6 @@ Indeterminate.args = {
   progress: 0,
   indeterminate: true
 };
+Indeterminate.parameters = {
+  chromatic: { disableSnapshot: true },
+};

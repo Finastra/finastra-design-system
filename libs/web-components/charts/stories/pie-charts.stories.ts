@@ -88,7 +88,7 @@ export default {
           summary: 'center'
         }
       },
-      options: ["right", "left", "center"]
+      options: ['right', 'left', 'center']
     },
   },
   args: {
@@ -98,6 +98,7 @@ export default {
     labels: demoLabels,
   },
   parameters: {
+    chromatic: { delay: 1000 },
     docs: {
       description: { component: allSanitizers(README) }
     },

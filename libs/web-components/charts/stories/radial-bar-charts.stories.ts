@@ -30,6 +30,7 @@ export default {
     extraDense: false
   },
   parameters: {
+    chromatic: { delay: 1000 },
     docs: {
       description: { component: allSanitizers(README) }
     },
