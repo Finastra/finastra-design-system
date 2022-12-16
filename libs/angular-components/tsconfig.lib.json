@@ -4,7 +4,8 @@
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "types": [],
-    "target": "es2020"
+    "target": "ES2022",
+    "useDefineForClassFields": false
   },
   "include": ["**/*.ts"],
   "exclude": ["**/*.spec.ts"]
