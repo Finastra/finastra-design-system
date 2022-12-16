@@ -88,7 +88,7 @@ export default {
           summary: 'center'
         }
       },
-      options: ["right", "left", "center"]
+      options: ['right', 'left', 'center']
     },
   },
   args: {
