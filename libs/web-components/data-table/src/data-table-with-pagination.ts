@@ -20,6 +20,7 @@ import { formatFdsDataSource, getFdsDataTablePureData } from './utils';
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
  * @attr [selectable=false] - Whether to show if a row is selected.
+ * @attr [recordSelectionCrossPages=false] - Wether selection cross pages is enabled
  * @attr [multiSelect=false] - Whether to allow multiple rows to be selected.
  * @attr [showSingleSelectRadioBox=false] - Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false 
  * @attr [showMultiSelectCheckBox=false] - Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true.
@@ -149,7 +150,7 @@ export class DataTableWithPagination extends LitElement {
 
     private recodeSelectionToDataSource(selectedData: FdsTableRow[]) {
         const selectedIdsInCurrentPage = this._selectedRowIdsByPage[this.pageIndex] = selectedData.map(item => (item._fdsRowId as string));
-        for (let i = this.pageIndex * this.pageSize; i <= (this.pageIndex + 1) * this.pageSize - 1; i++) {
+        for (let i = this.pageIndex * this.pageSize; i <= Math.min((this.pageIndex + 1) * this.pageSize, this.dataSource.length) - 1; i++) {
             if (selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
                 this.dataSource[i]._fdsSelected = true;
             } else {

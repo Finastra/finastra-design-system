@@ -206,7 +206,7 @@ If it can't meet your requirements, you can use fds-data-table with fds-data-tab
 | `override`                  |                             |                    |            |                                                  |
 | `pageIndex`                 | `pageIndex`                 | `number`           | 0          |                                                  |
 | `pageSizeOptions`           | `pageSizeOptions`           | `number[]`         | "[]"       | Array of page sizes to display, pageSize will take the first element otherwise pageSize will be 5. |
-| `recordSelectionCrossPages` | `recordSelectionCrossPages` | `boolean`          | false      |                                                  |
+| `recordSelectionCrossPages` | `recordSelectionCrossPages` | `boolean`          | false      | Wether selection cross pages is enabled          |
 | `selectable`                | `selectable`                | `boolean`          | false      | Whether to show if a row is selected.            |
 | `showFirstLastButtons`      | `showFirstLastButtons`      | `boolean`          | false      | Whether to display the first and last page buttons. |
 | `showMultiSelectCheckBox`   | `showMultiSelectCheckBox`   | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
