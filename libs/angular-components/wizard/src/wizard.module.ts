@@ -7,12 +7,11 @@ import { UxgWizardButtonComponent } from './wizard-button/wizard-button.componen
 import { UxgWizardPageDescriptionComponent } from './wizard-page/wizard-page-description.directive';
 import { UxgWizardPageTitleComponent } from './wizard-page/wizard-page-title.directive';
 import { UxgWizardPageComponent } from './wizard-page/wizard-page.component';
-import { UxgWizardComponent } from './wizard.component';
 import { UxgWizardTitleComponent } from './wizard-title.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { UxgWizardComponent } from './wizard.component';
 
 @NgModule({
-  imports: [CommonModule, FlexLayoutModule, MatIconModule, MatButtonModule, MatDividerModule],
+  imports: [CommonModule, MatIconModule, MatButtonModule, MatDividerModule],
   declarations: [
     UxgWizardComponent,
     UxgWizardTitleComponent,

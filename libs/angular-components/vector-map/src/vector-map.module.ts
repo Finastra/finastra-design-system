@@ -1,25 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { VectorMapComponent } from './vector-map.component';
-import { PlotlyViaCDNModule, PlotlyService } from 'angular-plotly.js';
 import { LazyloadScriptService } from '@finastra/angular-components/core';
+import { PlotlyService, PlotlyViaCDNModule } from 'angular-plotly.js';
+import { VectorMapComponent } from './vector-map.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTooltipModule,
-    FlexLayoutModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule,
-    PlotlyViaCDNModule
-  ],
+  imports: [CommonModule, MatTooltipModule, MatSelectModule, MatFormFieldModule, MatInputModule, PlotlyViaCDNModule],
   declarations: [VectorMapComponent],
   exports: [VectorMapComponent]
 })

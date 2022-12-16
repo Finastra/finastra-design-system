@@ -1,5 +1,5 @@
 <div class="filter-tags-container">
-  <mat-chip-list #chipList aria-label="Tags selection">
+  <mat-chip-listbox #chipList aria-label="Tags selection">
     <ng-container *ngFor="let tag of selectedData | slice: 0:displayMax">
       <mat-chip
         [attr.standard]="standard === '' || null"
@@ -26,7 +26,7 @@
     >
       {{ '+' + (selectedData.length - displayMax) }}
     </mat-chip>
-  </mat-chip-list>
+  </mat-chip-listbox>
 
   <mat-form-field aria-label="Search" floatLabel="never" class="chip-list" [appearance]="appearance" dense>
     <mat-icon matPrefix dense class="search-icon">search</mat-icon>

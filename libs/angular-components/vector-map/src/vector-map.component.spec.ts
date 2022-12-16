@@ -1,18 +1,17 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatSelectModule } from '@angular/material/select';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { PaletteModule } from '@finastra/angular-components/core';
+import { of } from 'rxjs';
 import { VectorMapComponent } from './vector-map.component';
 import { VectorMapCountry, VectorMapDataSource } from './vector-map.models';
-import { of } from 'rxjs';
 
 // Created PlotlyDemoComponent because of issues when Testing with the
 // PlotlyComponent
@@ -64,16 +63,7 @@ describe('VectorMapModule', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        MatTooltipModule,
-        FlexLayoutModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatInputModule,
-        PaletteModule,
-        NoopAnimationsModule
-      ],
+      imports: [CommonModule, MatTooltipModule, MatSelectModule, MatFormFieldModule, MatInputModule, PaletteModule, NoopAnimationsModule],
       declarations: [VectorMapComponent, PlotlyComponent]
     }).compileComponents();
   }));

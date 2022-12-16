@@ -1,7 +1,6 @@
 @use 'sass:math';
 
 @use '@finastra/angular-theme' as fds;
-@use '@angular/flex-layout/core/sass/layout-bp' as flex-layout;
 
 $bullet-space: 8%;
 $bullet-center: math.div($bullet-space, 2);
@@ -198,40 +197,6 @@ uxg-changelog {
 
     .layout-column {
       @include changelog-layout('sm');
-    }
-  }
-
-  @include flex-layout.layout-bp(sm) {
-    .changelog-container {
-      margin: fds.$uxg-spacing-4;
-      @include changelog-layout('sm');
-    }
-  }
-
-  @include flex-layout.layout-bp(xs) {
-    .changelog-container {
-      margin: fds.$uxg-spacing-4 fds.$uxg-spacing-2;
-      @include changelog-layout('xs');
-      .version  {
-        margin-top: 0;
-      }
-    }
-
-    .title {
-      padding: 2rem 1rem;
-
-      .changelog-icon {
-        width: 90px;
-        height: 90px;
-      }
-    }
-  }
-
-  @include flex-layout.layout-bp(lt-md) {
-    .title {
-      .creator {
-        max-width: 400px;
-      }
     }
   }
 }

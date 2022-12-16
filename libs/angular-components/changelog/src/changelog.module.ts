@@ -1,10 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { UXGChangelogComponent } from './changelog.component';
-import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [CommonModule, FlexLayoutModule],
+  imports: [CommonModule],
   declarations: [UXGChangelogComponent],
   exports: [UXGChangelogComponent]
 })

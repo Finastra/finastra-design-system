@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { WizardNavigationService } from '../services/wizard-navigation.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonHubService } from '../services/button-hub.service';
-import { MediaObserver } from '@angular/flex-layout';
+import { WizardNavigationService } from '../services/wizard-navigation.service';
 
 export type UxgWizardButtonType = 'cancel' | 'previous' | 'next' | 'done' | 'custom';
 
@@ -26,11 +25,7 @@ export class UxgWizardButtonComponent {
 
   @Output('uxgWizardButtonClicked') wasClicked = new EventEmitter<string>(false);
 
-  constructor(
-    public navService: WizardNavigationService,
-    public buttonService: ButtonHubService,
-    public media: MediaObserver
-  ) {}
+  constructor(public navService: WizardNavigationService, public buttonService: ButtonHubService) {}
 
   private checkDefaultType(value: UxgWizardButtonType, type: string) {
     return value === type;

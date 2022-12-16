@@ -1,17 +1,16 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { CommonModule } from '@angular/common';
 
-import { VectorMapDemoComponent } from './vector-map-demo.component';
+import { LazyloadScriptService, PaletteModule } from '@finastra/angular-components/core';
 import { VectorMapModule } from '@finastra/angular-components/vector-map';
-import { PaletteModule, LazyloadScriptService } from '@finastra/angular-components/core';
 import { of } from 'rxjs';
+import { VectorMapDemoComponent } from './vector-map-demo.component';
 
 describe('VectorMapDemoComponent', () => {
   let component: VectorMapDemoComponent;
@@ -22,7 +21,6 @@ describe('VectorMapDemoComponent', () => {
       imports: [
         CommonModule,
         MatTooltipModule,
-        FlexLayoutModule,
         MatSelectModule,
         MatFormFieldModule,
         MatInputModule,

@@ -96,7 +96,7 @@ export class ToasterContainer {
 }
 
 export function patch<T>(container: ComponentRef<T>, containerContext: Object): ComponentRef<T> {
-  Object.assign(container.instance, containerContext);
+  Object.assign(container.instance as Object, containerContext);
   container.changeDetectorRef.detectChanges();
   return container;
 }
@@ -201,10 +201,7 @@ export class ToasterContainerRegistry {
   providedIn: 'root'
 })
 export class ToasterService {
-  constructor(
-    @Inject(TOASTER_CONFIG) private globalConfig: ToasterConfig,
-    private containerRegistry: ToasterContainerRegistry
-  ) {}
+  constructor(@Inject(TOASTER_CONFIG) private globalConfig: ToasterConfig, private containerRegistry: ToasterContainerRegistry) {}
 
   /**
    * Shows toast with message and user config.
