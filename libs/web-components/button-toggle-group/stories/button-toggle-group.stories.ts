@@ -10,6 +10,7 @@ export default {
   component: 'fds-button-toggle-group',
   argTypes,
   parameters: {
+    chromatic: { delay: 1000 },
     actions,
     docs: {
       description: { component: allSanitizers(README) }
