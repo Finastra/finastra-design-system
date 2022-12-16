@@ -89,9 +89,9 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 
 #### Events
 
-| Event                                     | Description                |
-|-------------------------------------------|----------------------------|
-| `onFdsDataTableWithPaginationRowSelected` | Fired when selecting a row |
+| Event                       | Description                |
+|-----------------------------|----------------------------|
+| `onFdsDataTableRowSelected` | Fired when selecting a row |
 
 #### CSS Custom Properties
 
@@ -223,9 +223,9 @@ If it can't meet your requirements, you can use fds-data-table with fds-data-tab
 
 #### Events
 
-| Event                       | Description                |
-|-----------------------------|----------------------------|
-| `onFdsDataTableRowSelected` | Fired when selecting a row |
+| Event                                     | Description                |
+|-------------------------------------------|----------------------------|
+| `onFdsDataTableWithPaginationRowSelected` | Fired when selecting a row |
 
 #### CSS Custom Properties
 
