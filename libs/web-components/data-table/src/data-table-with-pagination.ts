@@ -27,7 +27,7 @@ import { formatFdsDataSource, getFdsDataTablePureData } from './utils';
  * @attr [showFirstLastButtons=false] - Whether to display the first and last page buttons.
  * @attr [dense=false] - Wether display data table in a smaller size
  * 
- * @fires onFdsDataTableRowSelected - Fired when selecting a row
+ * @fires onFdsDataTableWithPaginationRowSelected - Fired when selecting a row
  * 
  */
 @customElement('fds-data-table-with-pagination')

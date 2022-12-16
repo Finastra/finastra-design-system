@@ -17,7 +17,7 @@ import { styles } from './data-table-styles.css';
  * @attr [emitPureData=true] - Whether event should emit only user data without fds data table used properties such like _fdsRowId/_fdsRowSelected etc.
  * @attr [dense=false] - Wether display data table in a smaller size
  * 
- * @fires onFdsDataTableWithPaginationRowSelected - Fired when selecting a row
+ * @fires onFdsDataTableRowSelected - Fired when selecting a row
  */
 
 @customElement('fds-data-table')
