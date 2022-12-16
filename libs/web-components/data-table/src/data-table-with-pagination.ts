@@ -133,16 +133,19 @@ export class DataTableWithPagination extends LitElement {
         this.requestUpdate();
     }
     onDataTableRowSelected(e) {
+        let selectedData: any [] = [];
         if (this.recordSelectionCrossPages) {
             this.recodeSelectionToDataSource(e.detail.data);
+            selectedData = this.dataSource.filter(row => row._fdsSelected && !row._fdsSelectDisabled).map(item => getFdsDataTablePureData(item));
+        } else {
+            selectedData = e.detail.data;
         }
         if (this.selectable) {
-            const allSelectedRows = this.dataSource.filter(row => row._fdsSelected && !row._fdsSelectDisabled).map(item => getFdsDataTablePureData(item));
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
                 bubbles: true,
                 composed: true,
                 detail: {
-                    data: allSelectedRows
+                    data: selectedData
                 }
             }));
         }
