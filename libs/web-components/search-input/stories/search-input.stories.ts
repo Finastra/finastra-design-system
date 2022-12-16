@@ -40,7 +40,10 @@ Loading.args = {
   value: 'Banking',
   icon: 'search',
   loading: true
-}
+};
+Loading.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 export const Disabled: Story<SearchInput> = Template.bind({});
 Disabled.args = {
@@ -48,4 +51,4 @@ Disabled.args = {
   value: 'Banking',
   icon: 'search',
   disabled: true
-}
+};
