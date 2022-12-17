@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { DATA_TABLE_EVENTS } from './constants';
 import './data-table';
 import { styles } from './data-table-with-pagination-styles.css';
-import { FdsSelectedRowIdsByPage, FdsTableColumn, FdsTableRow } from './model';
+import { FdsTableColumn, FdsTableRow } from './model';
 import './pagination/data-table-pagination';
 import { formatFdsDataSource, getFdsDataTablePureData } from './utils';
 
@@ -36,7 +36,6 @@ export class DataTableWithPagination extends LitElement {
 
     static override styles = [styles];
 
-    private _selectedRowIdsByPage: FdsSelectedRowIdsByPage = {};
     private pageSize = 5;
 
     private _dataSource: FdsTableRow[] = [];
@@ -152,7 +151,7 @@ export class DataTableWithPagination extends LitElement {
     }
 
     private recodeSelectionToDataSource(selectedData: FdsTableRow[]) {
-        const selectedIdsInCurrentPage = this._selectedRowIdsByPage[this.pageIndex] = selectedData.map(item => (item._fdsRowId as string));
+        const selectedIdsInCurrentPage = selectedData.map(item => (item._fdsRowId as string));
         for (let i = this.pageIndex * this.pageSize; i <= Math.min((this.pageIndex + 1) * this.pageSize, this.dataSource.length) - 1; i++) {
             if (!this.dataSource[i]._fdsSelectDisabled) {
                 if ( selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
