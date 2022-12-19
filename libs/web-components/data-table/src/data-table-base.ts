@@ -6,10 +6,10 @@ import "@finastra/linear-progress";
 import "@finastra/radio";
 import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
-import { DATA_TABLE_EVENTS, FDS_TABLE_DATA_ROW_PREFIX, FDS_TABLE_HEADER_CHECKBOX, FDS_TABLE_RADIO_GROUP, FDS_TABLE_ROW_CHECKBOX_SUFFIX, FDS_TABLE_ROW_RADIO_SUFFIX } from "./constants";
+import { DATA_TABLE_EVENTS, FDS_TABLE_HEADER_CHECKBOX, FDS_TABLE_RADIO_GROUP, FDS_TABLE_ROW_CHECKBOX_SUFFIX, FDS_TABLE_ROW_RADIO_SUFFIX } from "./constants";
 import { FdsTableCellStore } from "./data-table-cells";
 import { FdsColumnSortDirection, FdsColumnType, FdsTableColumn, FdsTableRow } from "./model";
-import { getCellClassByType } from "./utils";
+import { formatFdsDataSource, getCellClassByType, getFdsDataTablePureData } from "./utils";
 
 export abstract class DataTableBase extends LitElement {
 
@@ -86,6 +86,8 @@ export abstract class DataTableBase extends LitElement {
     get showMultiSelectCheckBox():boolean {
         return this._showMultiSelectCheckBox;
     }
+
+    @property({ type: Boolean }) emitPureData = true;
 
     @property({ type: Boolean }) dense = false;
 
@@ -264,6 +266,7 @@ export abstract class DataTableBase extends LitElement {
                         ?dense='${this.dense}'
                         id=${row._fdsRowId + FDS_TABLE_ROW_CHECKBOX_SUFFIX}
                         ?checked=${row._fdsSelected}
+                        ?disabled=${row._fdsSelectDisabled}
                         ></fds-checkbox>
                 </td>`
             );
@@ -279,6 +282,7 @@ export abstract class DataTableBase extends LitElement {
                             name=${FDS_TABLE_RADIO_GROUP}
                             id=${row._fdsRowId + FDS_TABLE_ROW_RADIO_SUFFIX}
                             ?checked=${row._fdsSelected}
+                            ?disabled=${row._fdsSelectDisabled}
                             ></fds-radio>
                     </div>
                 </td>`
@@ -334,7 +338,7 @@ export abstract class DataTableBase extends LitElement {
 
     private _tableHeaderCheckboxChanged(event) {
         const selectStatus = event.target.checked;
-        const rowToChange = this._dataSource.filter(row => row._fdsSelected !== selectStatus);
+        const rowToChange = this._dataSource.filter(row => !row._fdsSelectDisabled && row._fdsSelected !== selectStatus);
 
         rowToChange.forEach(row => {
             this._handleSelected(row, selectStatus);
@@ -354,16 +358,21 @@ export abstract class DataTableBase extends LitElement {
 
     private _checkIfAllRowSelected() {
         let selectRowCount = 0;
+        let selectableRowCount = 0;
         this._dataSource.forEach(row => {
-            if (row._fdsSelected) {
+            if (!row._fdsSelectDisabled){
+                selectableRowCount++;
+            }
+
+            if (!row._fdsSelectDisabled && row._fdsSelected) {
                 selectRowCount++;
             }
         })
         if (!this._headerCheckBox) {
             this._headerCheckBox = this.shadowRoot?.querySelector('#' + FDS_TABLE_HEADER_CHECKBOX);
         }
-        if (this._headerCheckBox) {
-            if (this._dataSource.length === selectRowCount) {
+        if (this._headerCheckBox && selectableRowCount > 0) {
+            if (selectableRowCount === selectRowCount) {
                 this._headerCheckBox.checked = true;
                 this._headerCheckBox.indeterminate = false;
             } else if (selectRowCount === 0) {
@@ -416,9 +425,7 @@ export abstract class DataTableBase extends LitElement {
     }
 
     private _formatFdsDataSource(data: FdsTableRow[]): FdsTableRow[] {
-        return data.map((rowData, index) => {
-            return { ...rowData, '_fdsRowId': FDS_TABLE_DATA_ROW_PREFIX + index, _fdsSelected: rowData._fdsSelected? rowData._fdsSelected : false };
-        });
+        return formatFdsDataSource(data);
     }
 
     private _sortByColumn(columnId: string) {
@@ -437,12 +444,6 @@ export abstract class DataTableBase extends LitElement {
         this.requestUpdate();
     }
 
-    private _getPureData(data: FdsTableRow): any {
-        const dataCopy = { ...data };
-        delete dataCopy._fdsSelected;
-        delete dataCopy._fdsRowId;
-        return dataCopy;
-    }
 
     private _dispatchSelectedData() {
         let dataToSend: any = [];
@@ -452,12 +453,11 @@ export abstract class DataTableBase extends LitElement {
                 const selectedRows: any[] = []
                 selectedRowElements.forEach(row => {
                     const rowData = this.dataSource.find(data => data._fdsRowId === row.id);
-                    if (rowData) {
+                    if (rowData && !rowData._fdsSelectDisabled) {
                         selectedRows.push(rowData);
                     }
-
                 });
-                dataToSend = selectedRows.map(row => this._getPureData(row));
+                dataToSend = this.emitPureData? selectedRows.map(row => getFdsDataTablePureData(row)) : selectedRows;
             }
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_ROW_SELECTED, {
                 bubbles: true,

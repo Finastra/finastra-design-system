@@ -29,10 +29,14 @@ export interface FdsTableColumn {
 export interface FdsTableDataItem {
     _fdsTableRowStyle?: string;  // customized style for one row
 }
-export interface FdsTableRow {
+export interface FdsTableRow extends FdsTableDataItem {
     _fdsSelected?: boolean,
-    _fdsRowId?: string
-    _fdsTableRowStyle?: string;
+    _fdsSelectDisabled?: boolean,//default false
+    _fdsRowId?: string,
+}
+
+export interface FdsSelectedRowIdsByPage{
+    [pageIndex: string]: string[]//_fdsRowId[]
 }
 
 export interface FdsTableLink {

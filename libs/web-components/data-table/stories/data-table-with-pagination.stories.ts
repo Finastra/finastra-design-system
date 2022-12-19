@@ -55,6 +55,15 @@ export default {
         }
       }
     },
+    recordSelectionCrossPages: {
+      type: 'boolean',
+      description: 'enable selection cross pages',
+      table: {
+        defaultValue: {
+          summary: false
+        }
+      }
+    },
     showSingleSelectRadioBox: {
       type: 'boolean',
       description: 'enable single select radio column or not',
@@ -115,6 +124,7 @@ export default {
     columns: dataTableColumns,
     columnsToDisplay: dataTableColumnsToDisplay,
     selectable: true,
+    recordSelectionCrossPages: false,
     showSingleSelectRadioBox: false,
     multiSelect: false,
     showMultiSelectCheckBox: false,
@@ -141,6 +151,7 @@ const Template: Story<DataTableWithPagination> = (
     columns = dataTableColumns, 
     columnsToDisplay = dataTableColumnsToDisplay, 
     selectable = true, 
+    recordSelectionCrossPages = false,
     showSingleSelectRadioBox = false,
     multiSelect = true,
     showMultiSelectCheckBox = true,
@@ -155,6 +166,7 @@ const Template: Story<DataTableWithPagination> = (
                 .columns=${columns}
                 .columnsToDisplay=${columnsToDisplay}
                 .selectable=${selectable}
+                .recordSelectionCrossPages=${recordSelectionCrossPages}
                 .showSingleSelectRadioBox=${showSingleSelectRadioBox} 
                 .multiSelect=${multiSelect}
                 .showMultiSelectCheckBox=${showMultiSelectCheckBox}

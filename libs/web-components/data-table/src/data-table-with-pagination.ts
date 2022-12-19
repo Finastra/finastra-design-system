@@ -6,6 +6,7 @@ import './data-table';
 import { styles } from './data-table-with-pagination-styles.css';
 import { FdsTableColumn, FdsTableRow } from './model';
 import './pagination/data-table-pagination';
+import { formatFdsDataSource, getFdsDataTablePureData } from './utils';
 
 /**
  * This component is a simple example combining fds-data-table with fds-data-table-pagination component.
@@ -19,6 +20,7 @@ import './pagination/data-table-pagination';
  * @attr [columns=[]] - Array of column definitions.
  * @attr [columnsToDisplay=[]] - Array of column ids to display.
  * @attr [selectable=false] - Whether to show if a row is selected.
+ * @attr [recordSelectionCrossPages=false] - Wether selection cross pages is enabled
  * @attr [multiSelect=false] - Whether to allow multiple rows to be selected.
  * @attr [showSingleSelectRadioBox=false] - Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false 
  * @attr [showMultiSelectCheckBox=false] - Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true.
@@ -26,7 +28,7 @@ import './pagination/data-table-pagination';
  * @attr [showFirstLastButtons=false] - Whether to display the first and last page buttons.
  * @attr [dense=false] - Wether display data table in a smaller size
  * 
- * @fires onFdsDataTableRowSelected - Fired when selecting a row
+ * @fires onFdsDataTableWithPaginationRowSelected - Fired when selecting a row
  * 
  */
 @customElement('fds-data-table-with-pagination')
@@ -36,9 +38,16 @@ export class DataTableWithPagination extends LitElement {
 
     private pageSize = 5;
 
+    private _dataSource: FdsTableRow[] = [];
     @property({
         type: Array,
-    }) dataSource: FdsTableRow[] = [];
+    })
+    set dataSource(data) {
+        this._dataSource = formatFdsDataSource(data);
+    }
+    get dataSource(): FdsTableRow[] {
+        return this._dataSource;
+    }
 
     @property({
         type: Array,
@@ -51,6 +60,10 @@ export class DataTableWithPagination extends LitElement {
     @property({
         type: Boolean
     }) selectable = false;
+
+    @property({
+        type: Boolean
+    }) recordSelectionCrossPages = false;
 
     @property({
         type: Boolean
@@ -93,17 +106,14 @@ export class DataTableWithPagination extends LitElement {
     override render() {
         return html`
         <div class="fds-data-table-with-pagination-wrapper">
-            <fds-data-table
-                ?dense='${this.dense}'
-                .dataSource=${this.getDataByPagination()} .columns=${this.columns}
+            <fds-data-table ?dense='${this.dense}' .dataSource=${this.getDataByPagination()} .columns=${this.columns}
                 .columnsToDisplay=${this.columnsToDisplay} .selectable=${this.selectable}
                 .showSingleSelectRadioBox=${this.showSingleSelectRadioBox} .multiSelect=${this.multiSelect}
-                .showMultiSelectCheckBox=${this.showMultiSelectCheckBox} @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
+                .emitPureData=${false} .showMultiSelectCheckBox=${this.showMultiSelectCheckBox}
+                @onFdsDataTableRowSelected=${this.onDataTableRowSelected}>
             </fds-data-table>
-            <fds-data-table-pagination 
-                ?dense='${this.dense}'
-                .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
-                .pageSize=${this.pageSizeOptions.length> 0 ? this.pageSizeOptions[0] : 5}
+            <fds-data-table-pagination ?dense='${this.dense}' .length=${this.dataSource.length} .pageIndex=${this.pageIndex}
+                .pageSize=${this.pageSizeOptions.length > 0 ? this.pageSizeOptions[0] : 5}
                 .pageSizeOptions=${this.pageSizeOptions}
                 .showFirstLastButtons=${this.showFirstLastButtons}
                 @onFdsPaginationChanged=${this.onDataTablePaginationChanged}
@@ -122,12 +132,34 @@ export class DataTableWithPagination extends LitElement {
         this.requestUpdate();
     }
     onDataTableRowSelected(e) {
+        let selectedData: any [] = [];
+        if (this.recordSelectionCrossPages) {
+            this.recodeSelectionToDataSource(e.detail.data);
+            selectedData = this.dataSource.filter(row => row._fdsSelected && !row._fdsSelectDisabled).map(item => getFdsDataTablePureData(item));
+        } else {
+            selectedData = e.detail.data;
+        }
         if (this.selectable) {
             this.dispatchEvent(new CustomEvent(DATA_TABLE_EVENTS.DATA_TABLE_WITH_PAGINATION_ROW_SELECTED, {
                 bubbles: true,
                 composed: true,
-                detail: e.detail
+                detail: {
+                    data: selectedData
+                }
             }));
+        }
+    }
+
+    private recodeSelectionToDataSource(selectedData: FdsTableRow[]) {
+        const selectedIdsInCurrentPage = selectedData.map(item => (item._fdsRowId as string));
+        for (let i = this.pageIndex * this.pageSize; i <= Math.min((this.pageIndex + 1) * this.pageSize, this.dataSource.length) - 1; i++) {
+            if (!this.dataSource[i]._fdsSelectDisabled) {
+                if ( selectedIdsInCurrentPage.includes((this.dataSource[i]._fdsRowId as string))) {
+                    this.dataSource[i]._fdsSelected = true;
+                } else {
+                    this.dataSource[i]._fdsSelected = false;
+                }
+            }
         }
     }
 }
