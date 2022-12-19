@@ -32,6 +32,9 @@ export class WizardPage extends LitElement {
   @property({ type: Boolean })
   completed = false;
 
+  @property({ type: String, attribute: 'next-label' })
+  nextBtnLabel = '';
+
   render() {
     return html`
       ${this.header ?

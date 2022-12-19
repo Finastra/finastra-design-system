@@ -29,6 +29,7 @@ export interface Page {
   * @slot page - Defines a new page inside the wizard that generates a new step automatically.
     It is Used with the fds-wizard-page web component that could contain:
   - page-title: to define a title to the step
+  - next-label: to change the next button label for a specific page
   - icon: to define a link to your hosted icon to be displayed next to the title
   - description: to define a description to your step
   - disabled : to disable the step
@@ -46,6 +47,9 @@ export class Wizard extends LitElement {
 
   @queryAssignedElements({ slot: 'page' })
   _pages!: Array<HTMLElement>;
+
+  @queryAssignedElements({ slot: 'next' })
+  _nextBtn!: HTMLElement;
 
   @query('#stepper') protected stepper!: HTMLElement;
 
@@ -70,6 +74,7 @@ export class Wizard extends LitElement {
   protected disabled: Boolean | null = null;
   protected allNextDisabled = true;
   protected allBackDisabled = true;
+  protected initialNextLabel= '';
 
   @state()
   protected arrayPages: Page[] = [];
@@ -150,9 +155,16 @@ export class Wizard extends LitElement {
   }
 
   onPagesSlotChanged() {
-    const steps: Page[] = [];
     this._pages[this.currentStepIndex].setAttribute('current', 'true');
     this.updateActionsState(this.currentStepIndex);
+    if(this._nextBtn[0]) {
+      this.initialNextLabel = this._nextBtn[0].label;
+    }
+    this.initAllPages();
+  }
+
+  initAllPages() {
+    const steps: Page[] = [];
     this._pages.forEach((page: HTMLElement, index: number) => {
       this.checkAttributes(page, index);
       page.setAttribute('stepsCounter', this.updateStepsCounter(this.currentStepIndex));
@@ -347,6 +359,17 @@ export class Wizard extends LitElement {
       }
     }
     return this.allBackDisabled;
+  }
+
+  updated() {
+    if( this._nextBtn[0] && this.initialNextLabel) {
+      if(this._pages[this.currentStepIndex].getAttribute('next-label') !== null) {
+        this._nextBtn[0].label = this._pages[this.currentStepIndex].getAttribute('next-label');
+      }
+      else {
+        this._nextBtn[0].label= this.initialNextLabel
+      }
+    }
   }
 }
 
