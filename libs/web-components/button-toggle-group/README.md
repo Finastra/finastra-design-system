@@ -30,12 +30,12 @@ import '@finastra/button-toggle-group';
 <!-- DOC -->
 #### Properties
 
-| Property        | Attribute       | Type             | Default | Description                             |
-|-----------------|-----------------|------------------|---------|-----------------------------------------|
-| `dense`         | `dense`         | `boolean`        | false   | Make the button toggle smaller          |
-| `selectedIndex` | `selectedIndex` | `number`         | 0       | Index of current selection, starts at 0 |
-| `toggleButtons` |                 | `ButtonToggle[]` |         |                                         |
-| `value`         |                 | `string`         | ""      | Current selected value                  |
+| Property        | Attribute        | Type             | Default | Description                             |
+|-----------------|------------------|------------------|---------|-----------------------------------------|
+| `dense`         | `dense`          | `boolean`        | false   | Make the button toggle smaller          |
+| `selectedIndex` | `selected-index` | `number`         | 0       | Index of current selection, starts at 0 |
+| `toggleButtons` |                  | `ButtonToggle[]` |         |                                         |
+| `value`         |                  | `string`         | ""      | Current selected value                  |
 
 #### Events
 
