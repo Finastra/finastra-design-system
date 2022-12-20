@@ -85,7 +85,7 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 | `selectable`               | `selectable`               | `boolean`          | false      | Whether to show if a row is selected.            |
 | `showMultiSelectCheckBox`  | `showMultiSelectCheckBox`  | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
 | `showSingleSelectRadioBox` | `showSingleSelectRadioBox` | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                   |                            | `CSSResult[]`      | ["styles"] |                                                  |
+| `styles`                   |                            | `array`            | ["styles"] |                                                  |
 
 #### Events
 
@@ -211,7 +211,7 @@ If it can't meet your requirements, you can use fds-data-table with fds-data-tab
 | `showFirstLastButtons`      | `showFirstLastButtons`      | `boolean`          | false      | Whether to display the first and last page buttons. |
 | `showMultiSelectCheckBox`   | `showMultiSelectCheckBox`   | `boolean`          | false      | Whether to show select checkbox column. When showMultiSelectCheckBox=true implicits selectable=true multiSelect=true. |
 | `showSingleSelectRadioBox`  | `showSingleSelectRadioBox`  | `boolean`          | false      | Whether to show single select radio box column. When showSingleSelectRadioBox=true implicits selectable=true multiSelect=false |
-| `styles`                    |                             | `CSSResult[]`      | ["styles"] |                                                  |
+| `styles`                    |                             | `array`            | ["styles"] |                                                  |
 
 #### Methods
 

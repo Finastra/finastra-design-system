@@ -1,7 +1,7 @@
 {
   "name": "@finastra/filter-tree",
   "displayName": "FilterTree",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "description": "FilterTree Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/tree-item/tree-item.scss"
   },
   "dependencies": {
-    "@finastra/icon-button": "1.2.14",
+    "@finastra/icon-button": "1.2.15",
     "@material/mwc-formfield": "0.27.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
