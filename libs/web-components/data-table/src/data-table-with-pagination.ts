@@ -44,6 +44,7 @@ export class DataTableWithPagination extends LitElement {
     })
     set dataSource(data) {
         this._dataSource = formatFdsDataSource(data);
+        this.requestUpdate();
     }
     get dataSource(): FdsTableRow[] {
         return this._dataSource;
