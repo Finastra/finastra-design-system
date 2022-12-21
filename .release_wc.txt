@@ -78,3 +78,4 @@
 - [12/15/2022] Request release v1.2.13 by Pi5rr5 
 - [12/15/2022] Request release v1.2.14 by bcldvd 
 - [12/20/2022] Request release v1.2.15 by dorsaffrigui 
+- [12/21/2022] Request release v1.2.16 by bcldvd 
