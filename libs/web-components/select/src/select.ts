@@ -115,6 +115,7 @@ export class Select extends SelectBase {
           .width=${this.outlineWidth}
           .open=${false}
           class="mdc-notched-outline">
+          ${this.labelInside ? this.renderLabel() : ''}
       </mwc-notched-outline>`;
   }
 

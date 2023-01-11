@@ -18,9 +18,15 @@
 
 .mdc-select--outlined .mdc-select__anchor {
   height: 48px;
+}
 
+.fds-select--label-inside {
   .mdc-floating-label--float-above {
-    transform: translateY(-48px) translateX(-16px) scale(1);
+    transform: translateY(-18px) !important;
+  }
+
+  .mdc-select__selected-text-container {
+    padding-top: 15px;
   }
 }
 
