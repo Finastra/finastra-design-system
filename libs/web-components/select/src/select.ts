@@ -20,6 +20,7 @@ import { styles } from './styles.css';
  * @attr [items=[]] - List of selectable items.
  * @attr [index=-1] - Index of selected list item.
  * @attr [dense=false] - Smaller select field size.
+ * @attr [labelInside=false] - Keep the label in the input.
  * @slot default - Content to display in the selects internal <mwc-menu> element.
  */
 
