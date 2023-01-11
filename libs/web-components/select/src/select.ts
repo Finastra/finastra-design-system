@@ -1,6 +1,8 @@
 import { SelectBase } from '@material/mwc-select/mwc-select-base';
 import { html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './styles.css';
 
 /**
@@ -25,9 +27,82 @@ import { styles } from './styles.css';
 export class Select extends SelectBase {
   static override styles = [styles];
   @property({ type: Boolean }) dense = false;
+  @property({ type: Boolean }) labelInside = false;
   constructor() {
     super();
     this.outlined = true;
+  }
+
+  override render() {
+    const classes = {
+      'mdc-select--disabled': this.disabled,
+      'mdc-select--no-label': !this.label,
+      'mdc-select--filled': !this.outlined,
+      'mdc-select--outlined': this.outlined,
+      'mdc-select--with-leading-icon': !!this.icon,
+      'mdc-select--required': this.required,
+      'mdc-select--invalid': !this.isUiValid,
+      'fds-select--label-inside': this.labelInside
+    };
+
+    const labelledby = !!this.label ? 'label' : undefined;
+    const describedby = this.shouldRenderHelperText ? 'helper-text' : undefined;
+
+    return html`
+      ${!this.labelInside ? this.renderLabelOutside() : ''}
+      <div
+          class="mdc-select ${classMap(classes)}">
+        <input
+            class="formElement"
+            name="${this.name}"
+            .value="${this.value}"
+            hidden
+            ?disabled="${this.disabled}"
+            ?required=${this.required}>
+        <!-- @ts-ignore -->
+        <div class="mdc-select__anchor"
+            aria-autocomplete="none"
+            role="combobox"
+            aria-expanded=${this.menuOpen}
+            aria-invalid=${!this.isUiValid}
+            aria-haspopup="listbox"
+            aria-labelledby=${ifDefined(labelledby)}
+            aria-required=${this.required}
+            aria-describedby=${ifDefined(describedby)}
+            @click=${this.onClick}
+            @focus=${this.onFocus}
+            @blur=${this.onBlur}
+            @keydown=${this.onKeydown}>
+          ${this.renderRipple()}
+          ${this.outlined ? this.renderOutline() : this.renderLabel()}
+          ${this.renderLeadingIcon()}
+          <span class="mdc-select__selected-text-container">
+            <span class="mdc-select__selected-text">${this.selectedText}</span>
+          </span>
+          <span class="mdc-select__dropdown-icon">
+            <svg
+                class="mdc-select__dropdown-icon-graphic"
+                viewBox="7 10 10 5"
+                focusable="false">
+              <polygon
+                  class="mdc-select__dropdown-icon-inactive"
+                  stroke="none"
+                  fill-rule="evenodd"
+                  points="7 10 12 15 17 10">
+              </polygon>
+              <polygon
+                  class="mdc-select__dropdown-icon-active"
+                  stroke="none"
+                  fill-rule="evenodd"
+                  points="7 15 12 10 17 15">
+              </polygon>
+            </svg>
+          </span>
+          ${this.renderLineRipple()}
+        </div>
+        ${this.renderMenu()}
+      </div>
+      ${this.renderHelperText()}`;
   }
 
   protected override renderOutline() {
@@ -40,8 +115,27 @@ export class Select extends SelectBase {
           .width=${this.outlineWidth}
           .open=${false}
           class="mdc-notched-outline">
-        ${this.renderLabel()}
       </mwc-notched-outline>`;
+  }
+
+  protected renderLabelOutside() {
+    if (!this.label) {
+      return nothing;
+    }
+
+    return html`
+      <span class="fds-select__label" id="label">
+        ${this.label}
+        ${this.renderRequired()}
+      </span>
+    `;
+  }
+
+  protected renderRequired() {
+    if (!this.required) {
+      return nothing;
+    }
+    return '*';
   }
 }
 
