@@ -38,7 +38,7 @@ import '@finastra/fab';
 | `reducedTouchTarget` |            | `boolean`                 |            |                            |
 | `ripple`             |            | `Promise<Ripple \| null>` |            |                            |
 | `showIconAtEnd`      |            | `boolean`                 |            |                            |
-| `styles`             |            | `array`                   | ["styles"] |                            |
+| `styles`             |            | `CSSResult[]`             | ["styles"] |                            |
 
 #### CSS Custom Properties
 

@@ -37,7 +37,7 @@ import '@finastra/checkbox';
 | `name`               |                 |           | `string`                  |            |                                                  |
 | `reducedTouchTarget` |                 |           | `boolean`                 |            | Touch target extends beyond visual boundary of a component by default.<br />Set to `true` to remove touch target added to the component. |
 | `ripple`             |                 |           | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield |
-| `styles`             |                 |           | `array`                   | ["styles"] |                                                  |
+| `styles`             |                 |           | `CSSResult[]`             | ["styles"] |                                                  |
 | `value`              |                 |           | `string`                  |            |                                                  |
 
 #### Methods

@@ -45,12 +45,14 @@ import '@finastra/app-card';
 |---------------|---------------|-----------|---------|--------------------------------------------------|
 | `author`      | `author`      | `string`  | ""      | Application author.                              |
 | `description` | `description` | `string`  | ""      | Application description.                         |
+| `disabled`    | `disabled`    | `boolean` | false   | Disabled style of the card.                      |
 | `extraDense`  | `extraDense`  | `boolean` | false   | Make the card extra small.                       |
 | `flag`        | `flag`        |           | ""      | Application flag should be `PUBLISHED` \| `DRAFT` \| `IN_REVIEW` \| `COMING_SOON`. |
 | `icon`        | `icon`        | `string`  | ""      | Application icon url.                            |
 | `large`       | `large`       | `boolean` | false   | Make the card bigger.                            |
 | `name`        | `name`        | `string`  | ""      | Application name.                                |
-| `selectable`  |               | `boolean` | true    |                                                  |
+| `outlined`    | `outlined`    | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `selectable`  | `selectable`  | `boolean` | true    | Change the card style to an action card.         |
 | `tags`        | `tags`        | `array`   | []      | Application tags.                                |
 
 #### CSS Custom Properties

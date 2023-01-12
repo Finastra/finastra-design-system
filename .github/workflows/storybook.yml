@@ -34,13 +34,13 @@ jobs:
       - name: Build tippy theme
         run: npm run build:tippy-theme
       - name: Build Storybook
-        run: npm run wc:build:storybook
+        run: npm run build:storybook
       - name: Publish to Chromatic and auto accept changes
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           autoAcceptChanges: true
-          buildScriptName: wc:build:storybook
+          buildScriptName: build:storybook
       - name: Deploy Storybook 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:

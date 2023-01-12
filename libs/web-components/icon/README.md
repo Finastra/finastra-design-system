@@ -27,20 +27,20 @@ import '@finastra/icon';
 <!-- DOC -->
 #### Properties
 
-| Property      | Attribute     | Type      | Default    | Description                    |
-|---------------|---------------|-----------|------------|--------------------------------|
-| `dense`       | `dense`       | `boolean` | false      | Dense size of the icon `18px`. |
-| `disabled`    | `disabled`    | `boolean` | false      |                                |
-| `error`       | `error`       | `boolean` | false      | Use error color.               |
-| `extra_large` | `extra_large` | `boolean` | false      | Dense size of the icon `48px`. |
-| `gradient`    | `gradient`    | `boolean` | false      | Use gradient color.            |
-| `info`        | `info`        | `boolean` | false      |                                |
-| `large`       | `large`       | `boolean` | false      | Large size of the icon `36px`. |
-| `primary`     | `primary`     | `boolean` | false      | Use primary color.             |
-| `secondary`   | `secondary`   | `boolean` | false      | Use secondary color.           |
-| `styles`      |               | `array`   | ["styles"] |                                |
-| `success`     | `success`     | `boolean` | false      | Use success color.             |
-| `warning`     | `warning`     | `boolean` | false      |                                |
+| Property      | Attribute     | Type          | Default    | Description                    |
+|---------------|---------------|---------------|------------|--------------------------------|
+| `dense`       | `dense`       | `boolean`     | false      | Dense size of the icon `18px`. |
+| `disabled`    | `disabled`    | `boolean`     | false      |                                |
+| `error`       | `error`       | `boolean`     | false      | Use error color.               |
+| `extra_large` | `extra_large` | `boolean`     | false      | Dense size of the icon `48px`. |
+| `gradient`    | `gradient`    | `boolean`     | false      | Use gradient color.            |
+| `info`        | `info`        | `boolean`     | false      |                                |
+| `large`       | `large`       | `boolean`     | false      | Large size of the icon `36px`. |
+| `primary`     | `primary`     | `boolean`     | false      | Use primary color.             |
+| `secondary`   | `secondary`   | `boolean`     | false      | Use secondary color.           |
+| `styles`      |               | `CSSResult[]` | ["styles"] |                                |
+| `success`     | `success`     | `boolean`     | false      | Use success color.             |
+| `warning`     | `warning`     | `boolean`     | false      |                                |
 
 #### Slots
 

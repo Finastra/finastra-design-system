@@ -27,15 +27,15 @@ import '@finastra/linear-progress';
 <!-- DOC -->
 #### Properties
 
-| Property        | Attribute       | Type      | Default                                          | Description                                      |
-|-----------------|-----------------|-----------|--------------------------------------------------|--------------------------------------------------|
-| `ariaLabel`     |                 | `string`  |                                                  |                                                  |
-| `buffer`        |                 | `number`  |                                                  |                                                  |
-| `closed`        |                 | `boolean` |                                                  |                                                  |
-| `indeterminate` | `indeterminate` | `boolean` | false                                            | Sets the linear-progress into its indeterminate state. |
-| `progress`      | `progress`      | `number`  | "0] - Sets the primary progress bar's value. Value should be between [0, 1" | .                                                |
-| `reverse`       |                 | `boolean` |                                                  |                                                  |
-| `styles`        |                 | `array`   | ["styles"]                                       |                                                  |
+| Property        | Attribute       | Type          | Default                                          | Description                                      |
+|-----------------|-----------------|---------------|--------------------------------------------------|--------------------------------------------------|
+| `ariaLabel`     |                 | `string`      |                                                  |                                                  |
+| `buffer`        |                 | `number`      |                                                  |                                                  |
+| `closed`        |                 | `boolean`     |                                                  |                                                  |
+| `indeterminate` | `indeterminate` | `boolean`     | false                                            | Sets the linear-progress into its indeterminate state. |
+| `progress`      | `progress`      | `number`      | "0] - Sets the primary progress bar's value. Value should be between [0, 1" | .                                                |
+| `reverse`       |                 | `boolean`     |                                                  |                                                  |
+| `styles`        |                 | `CSSResult[]` | ["styles"]                                       |                                                  |
 
 #### Methods
 

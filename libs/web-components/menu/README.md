@@ -76,7 +76,7 @@ import '@finastra/list';
 | `selected`            | `selected`            |           | `ListItemBase \| ListItemBase[] \| null`         | null                   | Proxies to mwc-list's selected property.         |
 | `slotElement`         |                       |           | `HTMLSlotElement \| null`                        |                        |                                                  |
 | `stayOpenOnBodyClick` | `stayOpenOnBodyClick` |           | `boolean`                                        | false                  | Prevents the menu from closing when clicking outside the menu. |
-| `styles`              |                       |           | `array`                                          | ["baseStyle","styles"] |                                                  |
+| `styles`              |                       |           | `CSSResult[]`                                    | ["baseStyle","styles"] |                                                  |
 | `wrapFocus`           | `wrapFocus`           |           | `boolean`                                        | false                  | Proxies to mwc-list's wrapFocus property.        |
 | `x`                   | `x`                   |           | `number \| null`                                 | null                   | Sets horizontal position when absolute. When given an anchor, sets horizontal position relative to anchor at given corner. Requires y not to be null. |
 | `y`                   | `y`                   |           | `number \| null`                                 | null                   | Sets vertical position when absolute. When given an anchor, sets vertical position relative to anchor at given corner. Requires x not to be null. |

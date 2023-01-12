@@ -26,14 +26,17 @@ import '@finastra/brand-card';
 <!-- DOC -->
 #### Properties
 
-| Property     | Attribute    | Type      | Default | Description                       |
-|--------------|--------------|-----------|---------|-----------------------------------|
-| `dense`      | `dense`      | `boolean` | false   | Make the card smaller             |
-| `extraDense` | `extraDense` | `boolean` | false   | Make the card extra small         |
-| `label`      | `label`      |           |         | App card label                    |
-| `large`      | `large`      | `boolean` | false   | Make the card bigger              |
-| `secondary`  | `secondary`  | `boolean` | false   | Color and ribbon type             |
-| `shortLabel` | `shortLabel` | `string`  | ""      | Optional app card displayed label |
+| Property     | Attribute    | Type      | Default | Description                                      |
+|--------------|--------------|-----------|---------|--------------------------------------------------|
+| `dense`      | `dense`      | `boolean` | false   | Make the card smaller                            |
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| `extraDense` | `extraDense` | `boolean` | false   | Make the card extra small                        |
+| `label`      | `label`      |           |         | App card label                                   |
+| `large`      | `large`      | `boolean` | false   | Make the card bigger                             |
+| `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
+| `secondary`  | `secondary`  | `boolean` | false   | Color and ribbon type                            |
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
+| `shortLabel` | `shortLabel` | `string`  | ""      | Optional app card displayed label                |
 
 #### Methods
 

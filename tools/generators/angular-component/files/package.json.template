@@ -1,5 +1,0 @@
-{
-  "name": "@finastra/angular-components/<%= filename %>",
-  "version": "<%= version %>",
-  "author": "<%= author %>"
-}
