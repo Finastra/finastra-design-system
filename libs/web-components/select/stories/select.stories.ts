@@ -62,13 +62,14 @@ LabelInside.args = {
   labelInside: true
 }
 
-const GraphicTemplate: Story<Select> = ({ value, label, icon, disabled = false, dense = false, helper, required = false, validationMessage, selected, items, index }) => {
+const GraphicTemplate: Story<Select> = ({ value, label, icon, disabled = false, dense = false, helper, required = false, validationMessage, selected, items, index, labelInside = false }) => {
   return html`<fds-select
   .value=${value}
   .label=${label}
   .icon=${icon}
   ?disabled=${disabled}
   ?dense=${dense}
+  ?labelInside=${labelInside}
   .helper=${helper}
   ?required=${required}
   ?validationMessage=${validationMessage}
@@ -111,13 +112,14 @@ Disabled.args = {
   disabled: true
 };
 
-const ValidationTemplate: Story<Select> = ({ value, label, icon, disabled = false, dense = false, helper, required = false, validationMessage, selected, items, index }) => {
+const ValidationTemplate: Story<Select> = ({ value, label, icon, disabled = false, dense = false, helper, required = false, validationMessage, selected, items, index, labelInside = false }) => {
   return html`<fds-select
   .value=${value}
   .label=${label}
   .icon=${icon}
   ?disabled=${disabled}
   ?dense=${dense}
+  ?labelInside=${labelInside}
   .helper=${helper}
   ?required=${required}
   ?validationMessage=${validationMessage}

@@ -22,7 +22,7 @@
 
 .fds-select--label-inside {
   .mdc-floating-label--float-above {
-    transform: translateY(-18px) !important;
+    transform: translateY(-16px) !important;
   }
 
   .mdc-select__selected-text-container {
@@ -35,12 +35,8 @@
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
-:host([dense]) .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
-  transform: translateY(-44px) translateX(-48px) scale(1) !important;
-}
-
-:host(:not([dense])) .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
-  transform: translateY(-48px) translateX(-48px) scale(1) !important;
+:host .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
+  transform: translateY(-16px) !important;
 }
 
 :host([dense]) {
@@ -71,6 +67,7 @@
 .mdc-select--focused:not(.mdc-select--invalid) .mdc-notched-outline {
   @include fds.bg-color(surface-selected);
   @include fds.mdc(notched-outline-border-color, primary);
+  --mdc-notched-outline-stroke-width: 2px;
 }
 
 .mdc-select.mdc-select--focused.mdc-select--invalid {
@@ -98,7 +95,7 @@
 }
 
 .mdc-select .mdc-select__selected-text {
-  @include fds.typography(subtitle-1);
+  @include fds.typography(subtitle-2);
 }
 
 :host([dense]) .mdc-floating-label {
@@ -106,7 +103,7 @@
 }
 
 :host([dense]) .mdc-select .mdc-select__selected-text {
-  @include fds.typography(subtitle-2);
+  @include fds.typography(subtitle-3);
 }
 
 :host([disabled]) .fds-select__label {

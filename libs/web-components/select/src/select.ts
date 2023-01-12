@@ -9,7 +9,7 @@ import { styles } from './styles.css';
  * @cssprop {color} [--fds-primary=#694ED6] - Primary color.
  * @cssprop {color} [--fds-error=#E40046] - Error color.
  * @attr [value=''] - The select control's value determined by the value property of the currently selected list item.
- * @attr [label=''] - Sets floating label value.
+ * @attr [label=''] - Sets label value.
  * @attr [icon=''] - Leading icon to display in input. See `mwc-icon`.
  * @attr [disabled=false] - Whether or not the input should be disabled.
  * @attr [outlined=false] - Whether or not to show the material outlined variant.
