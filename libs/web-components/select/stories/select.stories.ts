@@ -127,11 +127,26 @@ const ValidationTemplate: Story<Select> = ({ value, label, icon, disabled = fals
   ?items=${items}
   ?index=${index}>
     <fds-list-item selected></fds-list-item>
-    <fds-list-item graphic="icon" value="0">HR Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="1">IT Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="2">CEO</fds-list-item>
-    <fds-list-item graphic="icon" value="3">Sales Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="4">Support Manager</fds-list-item>
+    <fds-list-item graphic="icon" value="0">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      HR Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="1">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      IT Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="2">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      CEO
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="3">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Sales Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="4">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Support Manager
+    </fds-list-item>
 </fds-select>`;
 };
 
