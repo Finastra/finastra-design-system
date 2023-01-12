@@ -56,7 +56,8 @@ export class BaseTextField extends TextFieldBase {
       this.type === "week" || 
       this.type === "time"
     )) {
-      (<any>this.formElement).showPicker();
+      let input = this.formElement as any;
+      input.showPicker();
     }
   }
 
