@@ -63,7 +63,7 @@ export default {
       control: "boolean",
       type: 'boolean',
 
-      description: "Height of the chart",
+      description: "Hide data labels",
       table: {
         defaultValue: {
           summary: false

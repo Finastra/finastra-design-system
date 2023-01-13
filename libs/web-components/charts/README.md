@@ -180,6 +180,50 @@ import '@finastra/charts';
 | `loadChartThemeFromCssVariables` | `(): void`                               |
 | `refresh`                        | `(): Promise<void> \| undefined`         |
 
+# fds-line-chart
+
+#### Properties
+
+| Property                | Attribute               | Type                                             | Default       | Description                               |
+|-------------------------|-------------------------|--------------------------------------------------|---------------|-------------------------------------------|
+| `$el`                   |                         | `HTMLElement \| null`                            | null          |                                           |
+| `chart`                 |                         | `ApexCharts \| null`                             | null          |                                           |
+| `chartTheme`            |                         | `ChartTheme`                                     |               |                                           |
+| `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart          |
+| `data`                  |                         | `number[]`                                       |               |                                           |
+| `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                       |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                               |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend         |
+| `options`               |                         | `ApexOptions`                                    |               |                                           |
+| `override`              |                         |                                                  |               |                                           |
+| `lineSeries`            |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                           |
+| `type`                  |                         | `string`                                         | "pie"         |                                           |
+| `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
+| `xaxis`                 | `xaxis`                 | `number[]`                                       |               |                                           |
+| `yaxis`                 | `yaxis`                 | `number[]`                                       |               |                                           |
+| `hideToolbar`           | `hide-toolbar`          | `boolean`                                        | false         | Hide toolbar                              |
+| `stroke`                | `stroke`                | `Object`                                         |               |                                           |
+| `strokeCurve`           | `stroke-curve`          | `string`                                         |               | Define curve type                         |
+| `tooltip`               | `tooltip`               | `Object`                                         |               | Define chart's tooltip                    |
+| `markers`               | `markers`               | `Object`                                         |               | Define chart's markers                    |
+
+#### Methods
+
+| Method                           | Type                                     |
+|----------------------------------|------------------------------------------|
+| `createChartEl`                  | `(): HTMLElement`                        |
+| `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
+| `getColor`                       | `(): any`                                |
+| `getDataLabelColor`              | `(): string[]`                           |
+| `getStrokeColor`                 | `(): { stroke: { colors: string[]; }; }` |
+| `init`                           | `(): Promise<void> \| undefined`         |
+| `initWatchers`                   | `(): void`                               |
+| `isObject`                       | `(item: any): boolean`                   |
+| `loadChartThemeFromCssVariables` | `(): void`                               |
+| `refresh`                        | `(): Promise<void> \| undefined`         |
+| `toggleSelected`                 | `(): void`                               |
+
 #### CSS Custom Properties
 
 | Property              | Default                  | Description |

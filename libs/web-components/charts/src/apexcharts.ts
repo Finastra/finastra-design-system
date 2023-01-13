@@ -165,7 +165,6 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private _options: ApexCharts.ApexOptions = {};
-
   @property({ attribute: false })
   public get options(): ApexCharts.ApexOptions {
     return this._options;
@@ -185,7 +184,7 @@ export class ApexChartsWrapper extends LitElement {
     semanticPalette2: '#D60040',
     semanticPalette3: '#FF600A',
     categoricalPalette: ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5'],
-    categoricalLabelColor: ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
+    categoricalLabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000'], // first value overwrites data label on line chart, so for what we need #FFFFFF only at 1st position?
     focus1: {
       start: '#1379C4',
       end: '#694ED6',
@@ -269,7 +268,7 @@ export class ApexChartsWrapper extends LitElement {
     const focus2AngularPalette = styles.getPropertyValue('--fds-chart-focus2-angular-palette');
     const sequential1 = styles.getPropertyValue('--fds-chart-sequential-1');
     const sequential2 = styles.getPropertyValue('--fds-chart-sequential-2');
-    const categoricalLabelCcolor = styles.getPropertyValue('--fds-chart-categorical-label-color');
+    const categoricalLabelColor = styles.getPropertyValue('--fds-chart-categorical-label-color');
 
     if (semanticPalette1) {
       cssChartTheme.semanticPalette1 = semanticPalette1.trim();
@@ -325,14 +324,14 @@ export class ApexChartsWrapper extends LitElement {
       cssChartTheme.sequential2 = sequential2.trim().split(',');
     }
 
-    if (categoricalLabelCcolor) {
-      cssChartTheme.categoricalLabelColor = categoricalLabelCcolor.trim().split(',');
+    if (categoricalLabelColor) {
+      cssChartTheme.categoricalLabelColor = categoricalLabelColor.trim().split(',');
     }
 
     if (strokeColor) {
-      cssChartTheme.strokeColor = strokeColor.trim();
+        cssChartTheme.strokeColor = strokeColor.trim();
     }
-
+    
     this.chartTheme = this.extend(this.defaultTheme, cssChartTheme);
   }
 
@@ -358,6 +357,7 @@ export class ApexChartsWrapper extends LitElement {
       },
       dataLabels: {
         enabled: !this.hideDataLabel,
+        offsetY: 10,
         style: {
           fontSize: '12px',
           fontFamily: 'Roboto, sans-serif',
@@ -390,9 +390,11 @@ export class ApexChartsWrapper extends LitElement {
       series: this.series
     });
 
-    if (this.type !== 'radialBar') {
-      newOptions.chart!.foreColor = '#fffff';
-    }
+    // whole condition doesnt make sense
+    // even with proper #ffffff and current configuration you will have broken legends text for other chart 
+    // if (this.type !== 'radialBar') {
+    //   newOptions.chart!.foreColor = '#ffffff';
+    // } 
 
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
@@ -417,7 +419,13 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   getStrokeColor() {
-    return {
+    if(this.type === 'line'){
+      return {
+        stroke: {
+          color: this.chartTheme.categoricalPalette
+        }
+      };  
+    } else return {
       stroke: {
         colors: [this.chartTheme.strokeColor]
       }
