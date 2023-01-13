@@ -37,7 +37,6 @@ const Switch: Story<Formfield> = ({label, alignEnd, spaceBetween, nowrap }) => {
 </fds-formfield>`;
 };
 
-
 export const CheckboxTemplate: Story<Formfield> = Checkbox.bind({});
 CheckboxTemplate.args = {
   label: "Accept terms and conditions"
@@ -57,3 +56,5 @@ export const SwitchTemplate: Story<Formfield> = Switch.bind({});
 SwitchTemplate.args = {
   label: "On"
 };
+
+

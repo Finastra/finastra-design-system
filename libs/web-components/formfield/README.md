@@ -6,7 +6,7 @@
 
 ## Usage
 
-A form field is a text caption for MWC input elements including [fds-checkbox](https://finastra.github.io/finastra-design-system/?path=/docs/forms-checkbox--default), [fds-radio](https://finastra.github.io/finastra-design-system/?path=/docs/forms-radio--default), and [fds-switch](https://finastra.github.io/finastra-design-system/?path=/docs/forms-switch--default).
+A form field is a text caption for FDS input elements including [fds-checkbox](https://finastra.github.io/finastra-design-system/?path=/docs/forms-checkbox--default), [fds-radio](https://finastra.github.io/finastra-design-system/?path=/docs/forms-radio--default), and [fds-switch](https://finastra.github.io/finastra-design-system/?path=/docs/forms-switch--default).
 
 It is equivalent to the native <label> element in that it forwards user interaction events to the input element. For example, tapping on the label causes the associated input element to toggle and focus.
 
