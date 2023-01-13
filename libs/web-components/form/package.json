@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/form",
+  "displayName": "Form",
+  "version": "1.2.17",
+  "description": "Form Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Form"
+  ],
+  "license": "MIT",
+  "main": "dist/src/form.js",
+  "module": "dist/src/form.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "@material/mwc-formfield": "^0.27.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

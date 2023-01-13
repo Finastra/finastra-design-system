@@ -49,10 +49,14 @@ export class BaseButton extends LitElement {
   @property({ type: Boolean })
   trailingIcon = false;
 
+  @property({ type: String })
+  type: 'button' | 'reset' | 'submit' = 'button';
+
   render() {
     return html`<button
       aria-label="${this.label || this.icon}"
       ?disabled="${this.disabled}"
+      type="${this.type}"
     >
       ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
       ${this.label}

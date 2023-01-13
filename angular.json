@@ -760,6 +760,18 @@
       },
       "tags": []
     },
+    "form": {
+      "root": "libs/web-components/form",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/form/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "global-nav": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",

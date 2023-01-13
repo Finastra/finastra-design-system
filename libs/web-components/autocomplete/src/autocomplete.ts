@@ -31,6 +31,7 @@ export class Autocomplete extends LitElement {
   @property({ type: Boolean }) useInnerFilter = true;
   @property({ type: Boolean }) disabled = false;
   @property({ type: String }) placeholder = '';
+  @property({ type: String }) name = '';
 
   @property({ type: String, attribute: 'aria-label' })
   ariaLabel = '';
