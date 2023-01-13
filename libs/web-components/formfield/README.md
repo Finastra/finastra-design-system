@@ -20,8 +20,11 @@ npm i @finastra/formfield
 
 ```ts
 import '@finastra/formfield';
+import '@finastra/checkbox';
 ...
-<fds-formfield></fds-formfield>
+<fds-formfield label="Accept terms and conditions">
+    <fds-checkbox checked></fds-checkbox>
+</fds-formfield>
 ```
 
 ### API
