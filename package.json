@@ -46,7 +46,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": ""    
+    "*.ts": "npm run lint"    
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
