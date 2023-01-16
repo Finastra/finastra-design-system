@@ -8,6 +8,28 @@ import { styles } from './line-chart-styles.css';
 export class LineChart extends ApexChartsWrapper {
   static styles = [styles, apexchartsStyle]
 
+  private _xaxis: ApexXAxis | undefined;
+  @property({ attribute: false })
+  public get xaxis(): any {
+    return this._xaxis;
+  }
+  public set xaxis(value: ApexXAxis) {
+    this._xaxis = value;
+    this.options = { ...this.options, xaxis: value }
+    this.refresh();
+  }
+
+  private _yaxis: ApexYAxis | undefined;
+  @property({ attribute: false })
+  public get yaxis(): any {
+    return this._yaxis;
+  }
+  public set yaxis(value: ApexYAxis) {
+    this._yaxis = value;
+    this.options = { ...this.options, yaxis: value }
+    this.refresh();
+  }
+
   private _hideToolbar = true;
   @property({ type: Boolean, attribute: 'hide-toolbar' })
   public get hideToolbar(): boolean {
@@ -36,7 +58,7 @@ export class LineChart extends ApexChartsWrapper {
 
   private _strokeCurve: any = 'straight';
   @property({ type: String, attribute: 'stroke-curve' })
-  public get strokeCurve(): any {
+  public get strokeCurve() {
     return this._strokeCurve;
   }
   public set strokeCurve(value: any) {
@@ -54,6 +76,7 @@ export class LineChart extends ApexChartsWrapper {
       },
     },
     stroke: {
+      width: 3,
       curve: this.strokeCurve
     },
   }

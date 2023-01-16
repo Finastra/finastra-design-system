@@ -1,10 +1,9 @@
 const README = require('../README.md');
-import '@finastra/charts';
 import type { LineChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-// import { argTypes, cssprops } from './sb-generated/fds-radial-bar-chart.json';
+import { argTypes, cssprops } from './sb-generated/fds-line-chart.json';
 
 const demoSeries = [
   {
@@ -44,111 +43,26 @@ export default {
   title: 'DATA DISPLAY/Charts/Line Chart',
   component: 'fds-line-chart',
   argTypes: {
-    width: {
-      control: "text",
-      type: 'string',
-
-      description: "Width of the chart",
-      table: {
-        defaultValue: {
-          summary: '100%'
-        }
-      },
-    },
-    height: {
-      control: "text",
-      type: 'string',
-
-      description: "Height of the chart",
-      table: {
-        defaultValue: {
-          summary: '100%'
-        }
-      },
-    },
-    series: {
-      description: "Data of the chart",
-      table: {
-        defaultValue: {
-          summary: '[]'
-        }
-      },
-    },
-    color: {
-      description: "Define type color of the chart",
-      type: "select",
-      table: {
-        defaultValue: {
-          summary: 'categorical'
-        }
-      },
-      // options: ["semantic-1", "semantic-2", "semantic-3", "categorical", "focus-1", "focus-2", "focus-1-angular", "focus-2-angular", "sequential-1", "sequential-2"]
-    },
-    // hideDataLabel: {
-    //   control: "boolean",
-    //   type: 'boolean',
-
-    //   description: "Hide data labels",
-    //   table: {
-    //     defaultValue: {
-    //       summary: false
-    //     }
-    //   },
-    // },
-    // hideToolbar: {
-    //   control: "boolean",
-    //   type: 'boolean',
-
-    //   description: "Hide chart's toolbar",
-    //   table: {
-    //     defaultValue: {
-    //       summary: false
-    //     }
-    //   },
-    // },
-    strokeCurve: {
-      description: "Define the stroke curve type",
-      type: "select",
-      table: {
-        defaultValue: {
-          summary: 'straight'
-        }
-      },
-      options: ["straight", "smooth", "stepline"]
-    },
-    legendPosition: {
-      description: "Define the position of legend",
-      type: "select",
-      table: {
-        defaultValue: {
-          summary: 'bottom'
-        }
-      },
-      options: ["top", "right", "bottom", "left"]
-    },
-    legendHorizontalAlign: {
-      description: "Define the horizontal alignment of legend",
-      type: "select",
-      table: {
-        defaultValue: {
-          summary: 'center'
-        }
-      },
-      options: ['right', 'left', 'center']
-    }   
+    legendPosition: argTypes.legendPosition,
+    hideToolbar: argTypes['hide-toolbar'],
+    legendHorizontalAlign: argTypes.legendHorizontalAlign,
+    hideDataLabel: argTypes['hide-data-label'],
+    color: argTypes.color,
+    width: argTypes.width,
+    height: argTypes.height
   },
   args: {
+    legendPosition: 'bottom',
+    strokeCurve: 'straight',
+    hideToolbar: false,
+    legendHorizontalAlign: 'left',
+    hideDataLabel: false,
+    color: 'categorical',
     width: '300px',
     height: '300px',
     series: demoSeries,
     xaxis: demoXaxis,
-    yaxis: demoYaxis,
-    hideToolbar: false,
-    color: 'categorical',
-    legendHorizontalAlign: 'center',
-    legendPosition: 'bottom',
-    hideDataLabel: false,
-    strokeCurve: 'straight'
+    yaxis: demoYaxis
   },
   parameters: {
     chromatic: { delay: 1000 },
@@ -157,16 +71,15 @@ export default {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/F40kn56iadty0uqbctUxuZ/Design-Revamp?node-id=2294%3A15572&t=cIUpvlpQ9nExM3oq-0'
+      url: ''
     },
-    // cssprops
+    cssprops
   },
 };
 
-const Template: Story<LineChart> = ({ legendHorizontalAlign = "center", legendPosition = "bottom", hideDataLabel = false, hideToolbar=false, strokeCurve='straight', width = "600px", color = "categorical", height = "600px", series = demoSeries, xaxis = demoXaxis, yaxis = demoYaxis}) => {
-  return html`<fds-line-chart .legendHorizontalAlign=${legendHorizontalAlign} .legendPosition=${legendPosition}
-  ?hide-data-label=${hideDataLabel} ?hide-toolbar=${hideToolbar} ?stroke-curve=${strokeCurve} color=${color} width=${width} height=${height} .series=${series} .xaxis=${xaxis} .yaxis=${yaxis}>
+const Template: Story<LineChart> = (args) => {
+  return html`<fds-line-chart ?stroke-curve=${args.strokeCurve} ?hide-data-label=${args.hideDataLabel} .legendHorizontalAlign=${args.legendHorizontalAlign}  .legendPosition=${args.legendPosition} ?hide-toolbar=${args.hideToolbar} color=${args.color} width=${args.width} height=${args.height} .series=${args.series} .xaxis=${args.xaxis} .yaxis=${args.yaxis}>
 </fds-line-chart>`;
 };
 
-export const Default: Story<LineChart> = Template.bind({}, {color: 'categorical', series: demoSeries, xaxis: demoXaxis, yaxis: demoYaxis});
+export const Default: Story<LineChart> = Template.bind({});
