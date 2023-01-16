@@ -433,7 +433,9 @@ export class ApexChartsWrapper extends LitElement {
       case 'sequential-2':
         return this.chartTheme.sequential2LabelColor;
     }
-    return this.chartTheme.categoricalLabelColor;
+    if(this.type === 'line'){
+      return this.chartTheme.categoricalPalette;
+    } else return this.chartTheme.categoricalLabelColor;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
