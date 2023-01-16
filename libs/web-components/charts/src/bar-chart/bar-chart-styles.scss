@@ -1,0 +1,19 @@
+@use '@finastra/fds-theme' as fds;
+
+
+fds-bar-chart {
+  .apexcharts-toolbar{
+    display: none;
+  }
+}
+// :host([dense]) {
+ 
+// }
+
+// :host([extra-dense]) {
+  
+// }
+
+// :host([large]) {
+ 
+// }

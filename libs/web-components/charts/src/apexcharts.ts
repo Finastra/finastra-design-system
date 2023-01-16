@@ -349,7 +349,7 @@ export class ApexChartsWrapper extends LitElement {
       tooltip: {
         fillSeriesColor: false,
         marker: {
-          show: false
+          show: true
         },
         style: {
           fontSize: '12px',
@@ -390,9 +390,10 @@ export class ApexChartsWrapper extends LitElement {
       series: this.series
     });
 
-    if (this.type !== 'radialBar') {
-      newOptions.chart!.foreColor = '#fffff';
-    }
+    // if (this.type !== 'radialBar') {
+    //   newOptions.chart!.foreColor = '#fffff';
+    // }
+    newOptions.chart!.foreColor = '##373d3f';
 
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
@@ -608,6 +609,7 @@ export class ApexChartsWrapper extends LitElement {
         return {
           colors: this.chartTheme.sequential2
         };
+        
     }
   }
 
