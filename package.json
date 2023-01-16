@@ -37,7 +37,7 @@
     "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes",
     "prepare": "husky install",
-    "lint": "eslint . --ext .ts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .ts --fix"
 
   },
   "husky": {
@@ -80,8 +80,8 @@
     "@types/parse-git-config": "3.0.1",
     "@types/sass": "^1.16.0",
     "@types/smoothscroll-polyfill": "0.3.1",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "@web/dev-server": "0.1.30",
     "@web/dev-server-rollup": "0.3.15",
     "@web/test-runner": "0.13.27",
@@ -96,8 +96,7 @@
     "cpx": "^1.5.0",
     "css-loader": "^6.5.0",
     "dotenv": "10.0.0",
-    "eslint": "7.28.0",
-    "eslint-config-prettier": "8.3.0",
+    "eslint": "8.31.0",    
     "fs-extra": "^10.0.0",
     "git-config-path": "^2.0.0",
     "globby": "^11.1.0",

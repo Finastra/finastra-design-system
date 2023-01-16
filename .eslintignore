@@ -1,0 +1,8 @@
+node_modules/
+*.tgz
+*.tsbuildinfo
+.DS_Store
+.vscode/
+*.stories.*
+**/dist/*
+*.css.ts

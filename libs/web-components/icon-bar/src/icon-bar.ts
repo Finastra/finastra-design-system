@@ -88,7 +88,7 @@ export class IconBar extends LitElement {
         slotArray.push(node);
       });
     })
-    return slotArray.filter(node => node instanceof LitElement) ?? [];;
+    return slotArray.filter(node => node instanceof LitElement) ?? [];
   }
 }
 

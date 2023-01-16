@@ -1,37 +1,36 @@
 {
   "root": true,
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "module",
-    "project": "./tsconfig.*?.json"
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
-  "ignorePatterns": ["**/*"],
   "plugins": ["@typescript-eslint"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-prototype-builtins": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
-      ],
-      "rules": {
-        "no-prototype-builtins": "off",
-        "arrow-body-style": "off",
-        "no-case-declarations": "off",
-
-        "@typescript-eslint/no-unused-expressions": "off",
-        "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-parameter-properties": "off",
-        "@typescript-eslint/no-empty-function": "off"
-      },
-      "plugins": ["@typescript-eslint"]
+      "files": ["web-dev-server.config.js", "web-test-runner.config.js"],
+      "env": {
+        "node": true
+      }
     }
   ]
 }

@@ -76,7 +76,7 @@ export class IconBarItem extends IconButton {
   showLabels() {
     if (this.getParent().getAttribute('showLabels') == '') {
       return true;
-    };
+    }
     return false;
   }
 

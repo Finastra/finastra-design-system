@@ -339,7 +339,7 @@ export class ApexChartsWrapper extends LitElement {
   init() {
     if (!this.$el) return;
     this.loadChartThemeFromCssVariables();
-    let newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
+    const newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
       chart: {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
