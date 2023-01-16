@@ -184,7 +184,7 @@ export class ApexChartsWrapper extends LitElement {
     semanticPalette2: '#D60040',
     semanticPalette3: '#FF600A',
     categoricalPalette: ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5'],
-    categoricalLabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000'], // first value overwrites data label on line chart, so for what we need #FFFFFF only at 1st position?
+    categoricalLabelColor: ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'], 
     focus1: {
       start: '#1379C4',
       end: '#694ED6',
@@ -389,12 +389,6 @@ export class ApexChartsWrapper extends LitElement {
       ...this.getStrokeColor(),
       series: this.series
     });
-
-    // whole condition doesnt make sense
-    // even with proper #ffffff and current configuration you will have broken legends text for other chart 
-    // if (this.type !== 'radialBar') {
-    //   newOptions.chart!.foreColor = '#ffffff';
-    // } 
 
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
