@@ -1144,6 +1144,18 @@
       },
       "tags": ["web-components"]
     },
+    "spark-line": {
+      "root": "libs/web-components/spark-line",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/spark-line/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
+    },
     "status-steps": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
