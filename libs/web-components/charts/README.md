@@ -24,31 +24,32 @@ import '@finastra/charts';
 <fds-pie-chart width="380" data='[44, 55, 13, 43, 22]' label="['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki']"></fds-pie-chart>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property                | Attribute               | Type                                             | Default       | Description                               |
-|-------------------------|-------------------------|--------------------------------------------------|---------------|-------------------------------------------|
-| `$el`                   |                         | `HTMLElement \| null`                            | null          |                                           |
-| `chart`                 |                         | `ApexCharts \| null`                             | null          |                                           |
-| `chartTheme`            |                         | `ChartTheme`                                     |               |                                           |
+| Property                | Attribute               | Type                                                                                                                               | Default       | Description                               |
+| ----------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------- |
+| `$el`                   |                         | `HTMLElement \| null`                                                                                                              | null          |                                           |
+| `chart`                 |                         | `ApexCharts \| null`                                                                                                               | null          |                                           |
+| `chartTheme`            |                         | `ChartTheme`                                                                                                                       |               |                                           |
 | `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart          |
-| `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                       |
-| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                               |
-| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend |
-| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend         |
-| `options`               |                         | `ApexOptions`                                    |               |                                           |
-| `override`              |                         |                                                  |               |                                           |
-| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                           |
-| `type`                  |                         | `ChartType`                                      |               |                                           |
-| `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
+| `height`                | `height`                | `string`                                                                                                                           | "100%"        | Height of the chart                       |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                                                                                                          | false         | Hide labels                               |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                                                                                                              | "center"      | Define the horizontal alignment of legend |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                                                                                                         | "bottom"      | Define the position of the legend         |
+| `options`               |                         | `ApexOptions`                                                                                                                      |               |                                           |
+| `override`              |                         |                                                                                                                                    |               |                                           |
+| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`                                                                                    |               |                                           |
+| `type`                  |                         | `ChartType`                                                                                                                        |               |                                           |
+| `width`                 | `width`                 | `string`                                                                                                                           | "100%"        | Width of the chart                        |
 
 #### Methods
 
 | Method                           | Type                                     |
-|----------------------------------|------------------------------------------|
+| -------------------------------- | ---------------------------------------- |
 | `createChartEl`                  | `(): HTMLElement`                        |
 | `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
 | `getColor`                       | `(): any`                                |
@@ -59,35 +60,34 @@ import '@finastra/charts';
 | `isObject`                       | `(item: any): boolean`                   |
 | `loadChartThemeFromCssVariables` | `(): void`                               |
 | `refresh`                        | `(): Promise<void> \| undefined`         |
-
 
 # fds-donut-chart
 
 #### Properties
 
-| Property                | Attribute               | Type                                             | Default       | Description                               |
-|-------------------------|-------------------------|--------------------------------------------------|---------------|-------------------------------------------|
-| `$el`                   |                         | `HTMLElement \| null`                            | null          |                                           |
-| `chart`                 |                         | `ApexCharts \| null`                             | null          |                                           |
-| `chartTheme`            |                         | `ChartTheme`                                     |               |                                           |
+| Property                | Attribute               | Type                                                                                                                               | Default       | Description                               |
+| ----------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------- |
+| `$el`                   |                         | `HTMLElement \| null`                                                                                                              | null          |                                           |
+| `chart`                 |                         | `ApexCharts \| null`                                                                                                               | null          |                                           |
+| `chartTheme`            |                         | `ChartTheme`                                                                                                                       |               |                                           |
 | `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart          |
-| `data`                  | `data`                  | `Array`                                          | "[]"          | Data of the chart                         |
-| `disableSelection`      | `disable-selection`     | `boolean`                                        | false         | Disable selection                         |
-| `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                       |
-| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                               |
-| `labels`                | `labels`                | `Array`                                          | "[]"          | Labels correspond to value in data array  |
-| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend |
-| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend         |
-| `options`               |                         | `ApexOptions`                                    |               |                                           |
-| `override`              |                         |                                                  |               |                                           |
-| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                           |
-| `type`                  |                         | `string`                                         | "donut"       |                                           |
-| `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
+| `data`                  | `data`                  | `Array`                                                                                                                            | "[]"          | Data of the chart                         |
+| `disableSelection`      | `disable-selection`     | `boolean`                                                                                                                          | false         | Disable selection                         |
+| `height`                | `height`                | `string`                                                                                                                           | "100%"        | Height of the chart                       |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                                                                                                          | false         | Hide labels                               |
+| `labels`                | `labels`                | `Array`                                                                                                                            | "[]"          | Labels correspond to value in data array  |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                                                                                                              | "center"      | Define the horizontal alignment of legend |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                                                                                                         | "bottom"      | Define the position of the legend         |
+| `options`               |                         | `ApexOptions`                                                                                                                      |               |                                           |
+| `override`              |                         |                                                                                                                                    |               |                                           |
+| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`                                                                                    |               |                                           |
+| `type`                  |                         | `string`                                                                                                                           | "donut"       |                                           |
+| `width`                 | `width`                 | `string`                                                                                                                           | "100%"        | Width of the chart                        |
 
 #### Methods
 
 | Method                           | Type                                     |
-|----------------------------------|------------------------------------------|
+| -------------------------------- | ---------------------------------------- |
 | `createChartEl`                  | `(): HTMLElement`                        |
 | `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
 | `getColor`                       | `(): any`                                |
@@ -99,35 +99,34 @@ import '@finastra/charts';
 | `loadChartThemeFromCssVariables` | `(): void`                               |
 | `refresh`                        | `(): Promise<void> \| undefined`         |
 | `toggleSelected`                 | `(): void`                               |
-
 
 # fds-pie-chart
 
 #### Properties
 
-| Property                | Attribute               | Type                                             | Default       | Description                               |
-|-------------------------|-------------------------|--------------------------------------------------|---------------|-------------------------------------------|
-| `$el`                   |                         | `HTMLElement \| null`                            | null          |                                           |
-| `chart`                 |                         | `ApexCharts \| null`                             | null          |                                           |
-| `chartTheme`            |                         | `ChartTheme`                                     |               |                                           |
+| Property                | Attribute               | Type                                                                                                                               | Default       | Description                               |
+| ----------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------- |
+| `$el`                   |                         | `HTMLElement \| null`                                                                                                              | null          |                                           |
+| `chart`                 |                         | `ApexCharts \| null`                                                                                                               | null          |                                           |
+| `chartTheme`            |                         | `ChartTheme`                                                                                                                       |               |                                           |
 | `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart          |
-| `data`                  |                         | `number[]`                                       |               |                                           |
-| `disableSelection`      | `disable-selection`     | `boolean`                                        |               |                                           |
-| `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                       |
-| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                               |
-| `labels`                |                         | `string[]`                                       |               |                                           |
-| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend |
-| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend         |
-| `options`               |                         | `ApexOptions`                                    |               |                                           |
-| `override`              |                         |                                                  |               |                                           |
-| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                           |
-| `type`                  |                         | `string`                                         | "pie"         |                                           |
-| `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
+| `data`                  |                         | `number[]`                                                                                                                         |               |                                           |
+| `disableSelection`      | `disable-selection`     | `boolean`                                                                                                                          |               |                                           |
+| `height`                | `height`                | `string`                                                                                                                           | "100%"        | Height of the chart                       |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                                                                                                          | false         | Hide labels                               |
+| `labels`                |                         | `string[]`                                                                                                                         |               |                                           |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                                                                                                              | "center"      | Define the horizontal alignment of legend |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                                                                                                         | "bottom"      | Define the position of the legend         |
+| `options`               |                         | `ApexOptions`                                                                                                                      |               |                                           |
+| `override`              |                         |                                                                                                                                    |               |                                           |
+| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`                                                                                    |               |                                           |
+| `type`                  |                         | `string`                                                                                                                           | "pie"         |                                           |
+| `width`                 | `width`                 | `string`                                                                                                                           | "100%"        | Width of the chart                        |
 
 #### Methods
 
 | Method                           | Type                                     |
-|----------------------------------|------------------------------------------|
+| -------------------------------- | ---------------------------------------- |
 | `createChartEl`                  | `(): HTMLElement`                        |
 | `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
 | `getColor`                       | `(): any`                                |
@@ -140,35 +139,34 @@ import '@finastra/charts';
 | `refresh`                        | `(): Promise<void> \| undefined`         |
 | `toggleSelected`                 | `(): void`                               |
 
-
 # fds-radial-bar-chart
 
 #### Properties
 
-| Property                | Attribute               | Type                                             | Default       | Description                                  |
-|-------------------------|-------------------------|--------------------------------------------------|---------------|----------------------------------------------|
-| `$el`                   |                         | `HTMLElement \| null`                            | null          |                                              |
-| `chart`                 |                         | `ApexCharts \| null`                             | null          |                                              |
-| `chartTheme`            |                         | `ChartTheme`                                     |               |                                              |
+| Property                | Attribute               | Type                                                                                                                               | Default       | Description                                  |
+| ----------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------- |
+| `$el`                   |                         | `HTMLElement \| null`                                                                                                              | null          |                                              |
+| `chart`                 |                         | `ApexCharts \| null`                                                                                                               | null          |                                              |
+| `chartTheme`            |                         | `ChartTheme`                                                                                                                       |               |                                              |
 | `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart             |
-| `data`                  | `data`                  | `Array`                                          | "[]"          | Data of the chart                            |
-| `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                          |
-| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                                  |
-| `hideLabels`            | `hide-labels`           | `Boolean`                                        | false         | Hide the labels and display only the value,  |
-| `labels`                | `labels`                | `Array`                                          | "[]"          | Labels correspond to value in data array     |
-| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend    |
-| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend            |
-| `options`               |                         | `ApexOptions`                                    |               |                                              |
-| `override`              |                         |                                                  |               |                                              |
-| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                              |
-| `totalLabel`            | `total-label`           | `String`                                         | ""            | Total label, visible only with multiple data |
-| `type`                  |                         | `string`                                         | "radialBar"   |                                              |
-| `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                           |
+| `data`                  | `data`                  | `Array`                                                                                                                            | "[]"          | Data of the chart                            |
+| `height`                | `height`                | `string`                                                                                                                           | "100%"        | Height of the chart                          |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                                                                                                          | false         | Hide labels                                  |
+| `hideLabels`            | `hide-labels`           | `Boolean`                                                                                                                          | false         | Hide the labels and display only the value,  |
+| `labels`                | `labels`                | `Array`                                                                                                                            | "[]"          | Labels correspond to value in data array     |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                                                                                                              | "center"      | Define the horizontal alignment of legend    |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                                                                                                         | "bottom"      | Define the position of the legend            |
+| `options`               |                         | `ApexOptions`                                                                                                                      |               |                                              |
+| `override`              |                         |                                                                                                                                    |               |                                              |
+| `series`                |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`                                                                                    |               |                                              |
+| `totalLabel`            | `total-label`           | `String`                                                                                                                           | ""            | Total label, visible only with multiple data |
+| `type`                  |                         | `string`                                                                                                                           | "radialBar"   |                                              |
+| `width`                 | `width`                 | `string`                                                                                                                           | "100%"        | Width of the chart                           |
 
 #### Methods
 
 | Method                           | Type                                     |
-|----------------------------------|------------------------------------------|
+| -------------------------------- | ---------------------------------------- |
 | `createChartEl`                  | `(): HTMLElement`                        |
 | `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
 | `getColor`                       | `(): any`                                |
@@ -183,7 +181,8 @@ import '@finastra/charts';
 #### CSS Custom Properties
 
 | Property              | Default                  | Description |
-|-----------------------|--------------------------|-------------|
+| --------------------- | ------------------------ | ----------- |
 | `--fds-radial-label ` | " var(--fds-body-3)"     | Label size  |
 | `--fds-radial-value ` | " var(--fds-headline-2)" | Label size  |
+
 <!-- /DOC -->

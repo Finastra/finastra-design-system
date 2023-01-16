@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: flex;
@@ -13,7 +13,6 @@
     display: none;
   }
 
-
   .fds-search-item:hover {
     @include fds.bg-color(surface-hover);
     border-radius: var(--fds-spacing-1);
@@ -23,7 +22,6 @@
     }
   }
 }
-
 
 .fds-global-search-group {
   position: relative;

@@ -35,7 +35,7 @@ export default {
   cssprops
 } as Meta;
 
-const BasicTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
+const BasicTemplate: Story<List> = ({ activatable, multi, noninteractive }) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item graphic="icon" hasMeta ?noninteractive=${noninteractive}>
       <slot>Application</slot>
@@ -65,7 +65,7 @@ const BasicTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   </fds-list>`;
 };
 
-const DefaultTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
+const DefaultTemplate: Story<List> = ({ activatable, multi, noninteractive }) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item graphic="avatar" ?noninteractive=${noninteractive}>
       <span>Add more widgets</span>
@@ -78,7 +78,7 @@ const DefaultTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   </fds-list>`;
 };
 
-const TwoLineTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
+const TwoLineTemplate: Story<List> = ({ activatable, multi, noninteractive }) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-list-item twoline graphic="icon" hasMeta>
       <mwc-icon slot="graphic">credit_card</mwc-icon>
@@ -110,7 +110,7 @@ const TwoLineTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   </fds-list>`;
 };
 
-const CheckTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
+const CheckTemplate: Story<List> = ({ activatable, multi, noninteractive }) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-check-list-item left selected>Customer Experience</fds-check-list-item>
     <fds-divider></fds-divider>
@@ -122,7 +122,7 @@ const CheckTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
   </fds-list>`;
 };
 
-const RadioTemplate: Story<List> = ({activatable, multi, noninteractive}) => {
+const RadioTemplate: Story<List> = ({ activatable, multi, noninteractive }) => {
   return html`<fds-list ?activatable=${activatable} ?multi=${multi} ?noninteractive=${noninteractive}>
     <fds-radio-list-item selected left group="a">All</fds-radio-list-item>
     <fds-radio-list-item left group="a">Live</fds-radio-list-item>
@@ -137,24 +137,24 @@ export const Default: Story<List> = DefaultTemplate.bind({});
 export const Activatable: Story<List> = BasicTemplate.bind({});
 Activatable.args = {
   activatable: true
-}
+};
 
 export const ActivatableMulti: Story<List> = BasicTemplate.bind({});
 ActivatableMulti.args = {
   activatable: true,
   multi: true
-}
+};
 
 export const Noninteractive: Story<List> = BasicTemplate.bind({});
 Noninteractive.args = {
   noninteractive: true
-}
+};
 
 export const TwoLine: Story<List> = TwoLineTemplate.bind({});
 
 export const Check: Story<List> = CheckTemplate.bind({});
 Check.args = {
   multi: true
-}
+};
 
 export const Radio: Story<List> = RadioTemplate.bind({});

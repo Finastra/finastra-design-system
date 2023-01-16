@@ -1,6 +1,6 @@
-@use "sass:color";
-@use "@material/mwc-textfield/mwc-textfield";
-@use "@finastra/fds-theme" as fds;
+@use 'sass:color';
+@use '@material/mwc-textfield/mwc-textfield';
+@use '@finastra/fds-theme' as fds;
 
 $textfield-icon-color: var(--fds-primary, #694ed6);
 $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, $alpha: 0.54));
@@ -34,7 +34,8 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     display: inline-block;
   }
 
-  .mdc-text-field:hover:not(.mdc-text-field--focused):not(.mdc-text-field--disabled):not(.mdc-text-field--invalid) .fds-text-field__outline {
+  .mdc-text-field:hover:not(.mdc-text-field--focused):not(.mdc-text-field--disabled):not(.mdc-text-field--invalid)
+    .fds-text-field__outline {
     @include fds.property(border-color, on-surface-medium);
   }
 
@@ -138,7 +139,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   @include fds.text-color(on-surface-disabled);
 }
 
-slot[name="actionButton"]::slotted(*) {
+slot[name='actionButton']::slotted(*) {
   @include fds.text-color(on-surface-medium);
   margin-right: -14px;
   align-self: center;

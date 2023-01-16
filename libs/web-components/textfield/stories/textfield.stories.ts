@@ -23,24 +23,65 @@ export default {
   }
 } as Meta;
 
-const Template: Story<TextField> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside}) => {
-  return html`<fds-textfield label=${label} placeholder=${placeholder} icon=${icon} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
+const Template: Story<TextField> = ({ label, placeholder, icon, disabled, dense, required, iconTrailing, helper, labelInside }) => {
+  return html`<fds-textfield
+    label=${label}
+    placeholder=${placeholder}
+    icon=${icon}
+    ?disabled=${disabled}
+    ?dense=${dense}
+    ?required=${required}
+    iconTrailing=${iconTrailing}
+    helper=${helper}
+    ?labelInside=${labelInside}
+  ></fds-textfield>`;
 };
 
-const ValidationTemplate: Story<TextField> = ({ label, icon, helper, type, validationMessage, pattern}) => {
-  return html`<fds-textfield label=${label} icon=${icon} type=${type} validationMessage=${validationMessage} ?helper=${helper} pattern=${pattern}></fds-textfield>`;
+const ValidationTemplate: Story<TextField> = ({ label, icon, helper, type, validationMessage, pattern }) => {
+  return html`<fds-textfield
+    label=${label}
+    icon=${icon}
+    type=${type}
+    validationMessage=${validationMessage}
+    ?helper=${helper}
+    pattern=${pattern}
+  ></fds-textfield>`;
 };
 
-const ActionButtonTemplate: Story<TextField> = ({ label, icon, type, helper, showActionButton}) => {
+const ActionButtonTemplate: Story<TextField> = ({ label, icon, type, helper, showActionButton }) => {
   return html`
     <fds-textfield icon="lock_outline" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
-  <fds-icon-button slot="actionButton" icon=${icon}></fds-icon-button>
-</fds-textfield>
-   `;
+      <fds-icon-button slot="actionButton" icon=${icon}></fds-icon-button>
+    </fds-textfield>
+  `;
 };
 
-const NativeDatePickerTemplate: Story<TextField> = ({ value, label, placeholder, icon, type, disabled, dense, required, iconTrailing, helper, labelInside}) => {
-  return html`<fds-textfield value=${value} label=${label} placeholder=${placeholder} icon=${icon} type=${type} ?disabled=${disabled} ?dense=${dense} ?required=${required} iconTrailing=${iconTrailing} helper=${helper} ?labelInside=${labelInside}></fds-textfield>`;
+const NativeDatePickerTemplate: Story<TextField> = ({
+  value,
+  label,
+  placeholder,
+  icon,
+  type,
+  disabled,
+  dense,
+  required,
+  iconTrailing,
+  helper,
+  labelInside
+}) => {
+  return html`<fds-textfield
+    value=${value}
+    label=${label}
+    placeholder=${placeholder}
+    icon=${icon}
+    type=${type}
+    ?disabled=${disabled}
+    ?dense=${dense}
+    ?required=${required}
+    iconTrailing=${iconTrailing}
+    helper=${helper}
+    ?labelInside=${labelInside}
+  ></fds-textfield>`;
 };
 
 export const Default: Story<TextField> = Template.bind({});
@@ -48,7 +89,7 @@ Default.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   icon: 'person_outline',
-  helper: "Helper text"
+  helper: 'Helper text'
 };
 
 export const Dense: Story<TextField> = Default.bind({});
@@ -61,7 +102,7 @@ export const Password: Story<TextField> = ActionButtonTemplate.bind({});
 Password.args = {
   label: 'Enter your password',
   type: 'password',
-  helper: "Helper text",
+  helper: 'Helper text',
   showActionButton: true,
   icon: 'visibility_off'
 };
@@ -69,19 +110,18 @@ Password.args = {
 export const IconTrailing: Story<TextField> = Template.bind({});
 IconTrailing.args = {
   label: 'Icon trailing',
-  helper: "helper text",
+  helper: 'helper text',
   icon: 'event',
-  iconTrailing: "favorite_outline"
+  iconTrailing: 'favorite_outline'
 };
 
 export const Required: Story<TextField> = Template.bind({});
 Required.args = {
   label: 'Required',
   icon: 'event',
-  helper: "helper text",
+  helper: 'helper text',
   required: true
 };
-
 
 export const ErrorMessage: Story<TextField> = ValidationTemplate.bind({});
 ErrorMessage.args = {
@@ -96,7 +136,7 @@ Regex.args = {
   label: 'Enter a number',
   icon: 'event',
   validationMessage: 'Should only be numbers',
-  pattern:"[0-9]+"
+  pattern: '[0-9]+'
 };
 
 export const Disabled: Story<TextField> = Template.bind({});
@@ -112,8 +152,8 @@ LabelInside.args = {
   labelInside: true,
   placeholder: 'Placeholder',
   icon: 'person_outline',
-  helper: "Helper text"
-}
+  helper: 'Helper text'
+};
 
 export const NativeDatePicker: Story<TextField> = NativeDatePickerTemplate.bind({});
 NativeDatePicker.args = {

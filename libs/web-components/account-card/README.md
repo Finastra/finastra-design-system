@@ -22,27 +22,29 @@ import '@finastra/account-card';
 <fds-account-card name="France" balance="50000" currency="EUR" number="DE89 3704 0044 0532 0130 00"></fds-account-card>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property        | Attribute       | Type      | Default                       | Description                                      |
-|-----------------|-----------------|-----------|-------------------------------|--------------------------------------------------|
-| `balance`       | `balance`       | `number`  | 0                             | Account balance.                                 |
-| `currency`      | `currency`      | `string`  | "USD"                         | Account currency ISO format.                     |
-| `disabled`      | `disabled`      | `boolean` | false                         | Disabled style of the card.                      |
-| `icon`          | `icon`          | `string`  | "credit_card"                 | Change card icon.                                |
-| `iconAriaLabel` | `iconAriaLabel` | `boolean` | "Credit Card"                 | Change the card icon aria label.                 |
-| `name`          | `name`          | `string`  | "Account"                     | Account Name.                                    |
-| `number`        | `number`        | `string`  | "XXXX XXXX XXXX XXXX XXXX XX" | Account number.                                  |
+| Property        | Attribute       | Type      | Default                       | Description                                                   |
+| --------------- | --------------- | --------- | ----------------------------- | ------------------------------------------------------------- |
+| `balance`       | `balance`       | `number`  | 0                             | Account balance.                                              |
+| `currency`      | `currency`      | `string`  | "USD"                         | Account currency ISO format.                                  |
+| `disabled`      | `disabled`      | `boolean` | false                         | Disabled style of the card.                                   |
+| `icon`          | `icon`          | `string`  | "credit_card"                 | Change card icon.                                             |
+| `iconAriaLabel` | `iconAriaLabel` | `boolean` | "Credit Card"                 | Change the card icon aria label.                              |
+| `name`          | `name`          | `string`  | "Account"                     | Account Name.                                                 |
+| `number`        | `number`        | `string`  | "XXXX XXXX XXXX XXXX XXXX XX" | Account number.                                               |
 | `outlined`      | `outlined`      | `boolean` | false                         | Change the card style to outlined, default style is elevated. |
-| `selectable`    | `selectable`    | `boolean` | false                         | Change the card style to an action card.         |
+| `selectable`    | `selectable`    | `boolean` | false                         | Change the card style to an action card.                      |
 
 #### Methods
 
 | Method              | Type                    |
-|---------------------|-------------------------|
+| ------------------- | ----------------------- |
 | `renderBalance`     | `(): string`            |
 | `renderCardContent` | `(): TemplateResult<1>` |
+
 <!-- /DOC -->

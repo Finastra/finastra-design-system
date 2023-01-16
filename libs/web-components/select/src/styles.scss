@@ -1,5 +1,5 @@
-@use "@material/select/mdc-select.scss";
-@use "@finastra/fds-theme" as fds;
+@use '@material/select/mdc-select.scss';
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -114,7 +114,7 @@
   @include fds.property(color, error);
 }
 
-.mdc-select:not(.mdc-select--disabled)+.mdc-select-helper-text {
+.mdc-select:not(.mdc-select--disabled) + .mdc-select-helper-text {
   @include fds.property(color, on-surface-medium);
 }
 
@@ -150,6 +150,6 @@
   @include fds.property(color, on-surface-disabled);
 }
 
-.mdc-select.mdc-select--disabled+.mdc-select-helper-text {
+.mdc-select.mdc-select--disabled + .mdc-select-helper-text {
   @include fds.property(color, on-surface-disabled);
 }

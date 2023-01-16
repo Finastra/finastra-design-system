@@ -1,4 +1,5 @@
 # Card
+
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/card?style=for-the-badge)](https://www.npmjs.com/package/@finastra/card)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/card?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/card)
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/data-display-cards-card--default)
@@ -55,92 +56,87 @@ import '@finastra/card';
 </fds-card>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property     | Attribute    | Type      | Default | Description                                      |
-|--------------|--------------|-----------|---------|--------------------------------------------------|
-| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| Property     | Attribute    | Type      | Default | Description                                                   |
+| ------------ | ------------ | --------- | ------- | ------------------------------------------------------------- |
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                                   |
 | `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
-| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
-
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.                      |
 
 # fds-card-actions
 
 #### Properties
 
 | Property   | Attribute  | Type       | Default |
-|------------|------------|------------|---------|
+| ---------- | ---------- | ---------- | ------- |
 | `align`    | `align`    | `Position` | "start" |
 | `disabled` | `disabled` | `boolean`  | false   |
-
 
 # fds-card-content
 
 #### Properties
 
 | Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
+| ---------- | ---------- | --------- | ------- |
 | `disabled` | `disabled` | `boolean` | false   |
-
 
 # fds-card-footer
 
 #### Properties
 
 | Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
+| ---------- | ---------- | --------- | ------- |
 | `disabled` | `disabled` | `boolean` | false   |
-
 
 # fds-card-header
 
 #### Properties
 
 | Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
+| ---------- | ---------- | --------- | ------- |
 | `disabled` | `disabled` | `boolean` | false   |
-
 
 # fds-card-subtitle
 
 #### Properties
 
 | Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
+| ---------- | ---------- | --------- | ------- |
 | `disabled` | `disabled` | `boolean` | false   |
-
 
 # fds-card-title
 
 #### Properties
 
 | Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
+| ---------- | ---------- | --------- | ------- |
 | `disabled` | `disabled` | `boolean` | false   |
-
 
 # fds-card
 
 #### Properties
 
-| Property     | Attribute    | Type      | Default | Description                                      |
-|--------------|--------------|-----------|---------|--------------------------------------------------|
-| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                      |
+| Property     | Attribute    | Type      | Default | Description                                                   |
+| ------------ | ------------ | --------- | ------- | ------------------------------------------------------------- |
+| `disabled`   | `disabled`   | `boolean` | false   | Disabled style of the card.                                   |
 | `outlined`   | `outlined`   | `boolean` | false   | Change the card style to outlined, default style is elevated. |
-| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.         |
+| `selectable` | `selectable` | `boolean` | false   | Change the card style to an action card.                      |
 
 #### Methods
 
 | Method              | Type                    |
-|---------------------|-------------------------|
+| ------------------- | ----------------------- |
 | `renderCardContent` | `(): TemplateResult<1>` |
 
 #### Slots
 
-| Name      | Description                                      |
-|-----------|--------------------------------------------------|
+| Name      | Description                                                              |
+| --------- | ------------------------------------------------------------------------ |
 | `default` | Slot to add content to the card, see the documentation for more details. |
+
 <!-- /DOC -->

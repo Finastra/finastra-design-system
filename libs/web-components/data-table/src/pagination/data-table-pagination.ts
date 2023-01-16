@@ -1,6 +1,6 @@
 import { customElement } from 'lit/decorators.js';
-import { DataTablePaginationBase } from "./data-table-pagination-base";
-import { styles } from "./data-table-pagination-styles.css";
+import { DataTablePaginationBase } from './data-table-pagination-base';
+import { styles } from './data-table-pagination-styles.css';
 
 /**
  * @attr [length=0] - Total number of items in the data source.
@@ -13,11 +13,11 @@ import { styles } from "./data-table-pagination-styles.css";
 
 @customElement('fds-data-table-pagination')
 export class DataTablePagination extends DataTablePaginationBase {
-    static override styles = [styles];
+  static override styles = [styles];
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'fds-data-table-pagination': DataTablePagination;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-data-table-pagination': DataTablePagination;
+  }
 }

@@ -1,6 +1,6 @@
-import { ListItem } from "@finastra/list";
+import { ListItem } from '@finastra/list';
 import '@finastra/menu';
-import { Menu } from "@finastra/menu";
+import { Menu } from '@finastra/menu';
 import '@finastra/search-input';
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
@@ -96,7 +96,10 @@ export class Autocomplete extends LitElement {
     let count = 0;
     listItems.forEach((item) => {
       const listItem = item as ListItem;
-      if (!listItem.getAttribute("value") || listItem.getAttribute("value")?.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1) {
+      if (
+        !listItem.getAttribute('value') ||
+        listItem.getAttribute('value')?.toLocaleLowerCase().indexOf(this.value.toLocaleLowerCase()) === -1
+      ) {
         listItem.classList.add('fds-list-item__hide');
       } else {
         listItem.classList.remove('fds-list-item__hide');

@@ -51,13 +51,14 @@ import '@finastra/button';
 </fds-wizard>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property       | Attribute      | Type      | Default |
-|----------------|----------------|-----------|---------|
+| -------------- | -------------- | --------- | ------- |
 | `completed`    | `completed`    | `boolean` | false   |
 | `current`      | `current`      | `boolean` | false   |
 | `description`  | `description`  | `string`  | ""      |
@@ -70,27 +71,26 @@ import '@finastra/button';
 #### Methods
 
 | Method               | Type                    |
-|----------------------|-------------------------|
+| -------------------- | ----------------------- |
 | `renderIcon`         | `(): TemplateResult<1>` |
 | `renderStepsCounter` | `(): TemplateResult<1>` |
-
 
 # fds-wizard
 
 #### Properties
 
-| Property           | Attribute          | Type              | Default | Description                                      |
-|--------------------|--------------------|-------------------|---------|--------------------------------------------------|
-| `currentStepIndex` | `currentStepIndex` | `number`          | 0       | Index of current active step.                    |
+| Property           | Attribute          | Type              | Default | Description                                                                                                                                                                                                     |
+| ------------------ | ------------------ | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `currentStepIndex` | `currentStepIndex` | `number`          | 0       | Index of current active step.                                                                                                                                                                                   |
 | `linear`           | `linear`           | `boolean`         | false   | Used to create a linear stepper that requires the user to complete previous steps before proceeding to following steps. Note that a wizard page is considered as completed when its property completed is true. |
-| `stepperOnDark`    | `stepperOnDark`    | `boolean`         | false   | Stepper on dark                                  |
-| `stepperPosition`  | `stepperPosition`  | `"left"\|"right"` | "left"  | Stepper position                                 |
-| `stepsCounter`     | `stepsCounter`     | `boolean`         | false   | make the step counter visible in the stepper.    |
+| `stepperOnDark`    | `stepperOnDark`    | `boolean`         | false   | Stepper on dark                                                                                                                                                                                                 |
+| `stepperPosition`  | `stepperPosition`  | `"left"\|"right"` | "left"  | Stepper position                                                                                                                                                                                                |
+| `stepsCounter`     | `stepsCounter`     | `boolean`         | false   | make the step counter visible in the stepper.                                                                                                                                                                   |
 
 #### Methods
 
 | Method                        | Type                                            |
-|-------------------------------|-------------------------------------------------|
+| ----------------------------- | ----------------------------------------------- |
 | `CheckIfAllBackStepsDisabled` | `(current: number): boolean`                    |
 | `CheckIfAllNextStepsDisabled` | `(current: number): boolean`                    |
 | `UpdatePage`                  | `(): void`                                      |
@@ -118,21 +118,22 @@ import '@finastra/button';
 
 #### Slots
 
-| Name          | Description                                      |
-|---------------|--------------------------------------------------|
-| `left-action` | Slot to place an element in the left side of the wizard actions bar. |
-| `next`        | Slot to place an element that manages the transition to the next step. |
+| Name          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `left-action` | Slot to place an element in the left side of the wizard actions bar.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `next`        | Slot to place an element that manages the transition to the next step.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `page`        | Defines a new page inside the wizard that generates a new step automatically.<br />It is Used with the fds-wizard-page web component that could contain: <br />- title: to define a title to the step<br />- icon: to define a link to your hosted icon to be displayed next to the title<br />- description: to define a description to your step<br />- disabled : to disable the step<br />- header: to enable the header display (default is false)<br />- current: to set the step to current<br />- completed: used when linear mode is on to indicate that the step is valid and the next one is unlocked. |
-| `previous`    | Slot to place an element that manages the transition to the previous step. |
-| `save`        | Slot to place an element that appears in the last step. The developer could add his own logic in the onClick Event. |
+| `previous`    | Slot to place an element that manages the transition to the previous step.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `save`        | Slot to place an element that appears in the last step. The developer could add his own logic in the onClick Event.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 #### CSS Custom Properties
 
 | Property                  | Type  | Default   | Description                  |
-|---------------------------|-------|-----------|------------------------------|
+| ------------------------- | ----- | --------- | ---------------------------- |
 | `--fds-header-bg`         | color | "#f3f1fc" | Header background color      |
 | `--fds-icon-bg`           | color | "#fafafa" | Header icon background color |
 | `--fds-icon-border-color` | color | "#f3f1fc" | Header icon border color     |
 | `--fds-stepper-bg`        | color | "#fafafa" | Stepper background color     |
 | `--fds-title-color`       | color | "#694ed5" | Header title color           |
+
 <!-- /DOC -->

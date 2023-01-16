@@ -4,10 +4,10 @@ import { Launchpad } from '../src/launchpad.js';
 
 const TEST_DATA = [
   {
-    "name": "App",
-    "shortName": "App",
-    "sso-initiation-urls": {
-      "web": "https://app1.com"
+    name: 'App',
+    shortName: 'App',
+    'sso-initiation-urls': {
+      web: 'https://app1.com'
     }
   }
 ];
@@ -28,16 +28,21 @@ describe('Launchpad', () => {
   });
 
   it('should dispatch selected event', async () => {
-    const el: Launchpad = await fixture(html`<fds-launchpad .apps=${TEST_DATA}></fds-launchpad>`);await elementUpdated(el);
+    const el: Launchpad = await fixture(html`<fds-launchpad .apps=${TEST_DATA}></fds-launchpad>`);
+    await elementUpdated(el);
     setTimeout(() => {
-      el.shadowRoot?.querySelector('fds-brand-card')?.dispatchEvent(new Event('click'))
+      el.shadowRoot?.querySelector('fds-brand-card')?.dispatchEvent(new Event('click'));
     });
-    const {detail} = await oneEvent(el, 'selected');
+    const { detail } = await oneEvent(el, 'selected');
     expect(detail).to.exist;
   });
 
   it('should contain the tools', async () => {
-    const el: Launchpad = await fixture(html`<fds-launchpad><div slot="tools"><h3>test</h3></div></fds-launchpad>`);
+    const el: Launchpad = await fixture(
+      html`<fds-launchpad
+        ><div slot="tools"><h3>test</h3></div></fds-launchpad
+      >`
+    );
     await elementUpdated(el);
     const triggerButton = el.getElementsByTagName('#trigger')[0] as HTMLElement;
     await triggerButton?.click();

@@ -6,7 +6,6 @@
 
 The `<fds-menu-trigger>` is a toggle button used for menu.
 
-
 ## Usage
 
 ### Import
@@ -21,26 +20,28 @@ import '@finastra/menu-trigger';
 <fds-menu-trigger label="Develop"></fds-menu-trigger>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property       | Attribute   | Type      | Default  | Description                                      |
-|----------------|-------------|-----------|----------|--------------------------------------------------|
-| `dense`        |             | `boolean` |          | Use the smaller button size                      |
-| `disabled`     |             | `boolean` |          | Is the button disabled or not                    |
-| `fullwidth`    |             | `boolean` |          | Use the full width of its parent                 |
+| Property       | Attribute   | Type      | Default  | Description                                                                                                        |
+| -------------- | ----------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `dense`        |             | `boolean` |          | Use the smaller button size                                                                                        |
+| `disabled`     |             | `boolean` |          | Is the button disabled or not                                                                                      |
+| `fullwidth`    |             | `boolean` |          | Use the full width of its parent                                                                                   |
 | `icon`         |             | `string`  | "apps"   | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
-| `label`        |             | `string`  | "Launch" | The label displayed inside the button            |
-| `large`        |             | `boolean` |          | Use the larger button size                       |
-| `on`           | `on`        | `boolean` | false    | Whether the toggle is activated.                 |
-| `secondary`    | `secondary` | `boolean` | false    | Whether the toggle button should be using secondary. |
-| `trailingIcon` |             | `boolean` |          | Display the icon after the label instead of before |
+| `label`        |             | `string`  | "Launch" | The label displayed inside the button                                                                              |
+| `large`        |             | `boolean` |          | Use the larger button size                                                                                         |
+| `on`           | `on`        | `boolean` | false    | Whether the toggle is activated.                                                                                   |
+| `secondary`    | `secondary` | `boolean` | false    | Whether the toggle button should be using secondary.                                                               |
+| `trailingIcon` |             | `boolean` |          | Display the icon after the label instead of before                                                                 |
 
 #### Methods
 
 | Method   | Type       |
-|----------|------------|
+| -------- | ---------- |
 | `toggle` | `(): void` |
+
 <!-- /DOC -->

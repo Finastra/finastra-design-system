@@ -22,7 +22,7 @@ export default {
   decorators: [
     (story) => html`${story()}<style>
         fds-tab-group {
-          width: 700px; 
+          width: 700px;
           height: 300px;
         }
         .content {
@@ -32,25 +32,23 @@ export default {
   ]
 } as Meta;
 
-
 const Template: Story = ({ selectedIndex, separator, headerPosition, headerDisplayType }) => {
-  return html`<fds-tab-group selectedIndex=${selectedIndex} ?separator=${separator} headerPosition=${headerPosition} headerDisplayType=${headerDisplayType}>
-  <fds-tab-item label="Dashboard">
-    <div class="content">
-      Content for the <b>Dashboard</b> tab
-    </div>
-  </fds-tab-item>
-  <fds-tab-item label="Evolution">
-    <div class="content">
-    Content for the <b>Evolution</b> tab
-    </div>
-  </fds-tab-item>
-  <fds-tab-item label="Trend">
-    <div class="content">
-    Content for the <b>Trend</b> tab
-    </div>
-  </fds-tab-item>
-</fds-tab-group>`;
+  return html`<fds-tab-group
+    selectedIndex=${selectedIndex}
+    ?separator=${separator}
+    headerPosition=${headerPosition}
+    headerDisplayType=${headerDisplayType}
+  >
+    <fds-tab-item label="Dashboard">
+      <div class="content">Content for the <b>Dashboard</b> tab</div>
+    </fds-tab-item>
+    <fds-tab-item label="Evolution">
+      <div class="content">Content for the <b>Evolution</b> tab</div>
+    </fds-tab-item>
+    <fds-tab-item label="Trend">
+      <div class="content">Content for the <b>Trend</b> tab</div>
+    </fds-tab-item>
+  </fds-tab-group>`;
 };
 
 export const Default: Story = Template.bind({});
@@ -81,7 +79,6 @@ Center.args = {
   selectedIndex: 0,
   headerPosition: 'center'
 };
-
 
 export const End: Story = Template.bind({});
 End.args = {

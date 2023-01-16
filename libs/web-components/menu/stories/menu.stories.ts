@@ -28,38 +28,38 @@ export default {
         const menu = document.getElementById('basicMenu');
         const button = document.getElementById('basicButton');
 
-        menu.anchor = button;  
-        button.addEventListener('click', function() {
+        menu.anchor = button;
+        button.addEventListener('click', function () {
           menu.open = !menu.open;
         });
-      </script>
-      `
+      </script> `
   ]
 } as unknown as Meta;
 
 const Template: Story<Menu> = (args) => {
   return html`
     <div style="position: relative;">
-        <fds-button id="basicButton" raised label="Open Basic Menu"></fds-button>
-        <fds-menu id="basicMenu" 
-          ?open=${args.open} 
-          corner=${args.corner}  
-          menuCorner=${args.menuCorner} 
-          ?quick=${args.quick} 
-          ?absolute=${args.absolute} 
-          ?fixed=${args.fixed}
-          x=${ifDefined(args.x === null ? undefined : args.x)}
-          y=${ifDefined(args.y === null ? undefined : args.y)}
-          ?forceGroupSelection=${args.forceGroupSelection}
-          ?fullwidth=${args.fullwidth}
-          ?stayOpenOnBodyClick=${args.stayOpenOnBodyClick}          
-          >
-          <fds-list-item>Preview</fds-list-item>
-          <fds-list-item disabled><div>Share</div></fds-list-item>
-          <fds-list-item disabled><div>Get Link</div></fds-list-item>
-          <li divider></li>
-          <fds-list-item>Download</fds-list-item>
-        </fds-menu>
+      <fds-button id="basicButton" raised label="Open Basic Menu"></fds-button>
+      <fds-menu
+        id="basicMenu"
+        ?open=${args.open}
+        corner=${args.corner}
+        menuCorner=${args.menuCorner}
+        ?quick=${args.quick}
+        ?absolute=${args.absolute}
+        ?fixed=${args.fixed}
+        x=${ifDefined(args.x === null ? undefined : args.x)}
+        y=${ifDefined(args.y === null ? undefined : args.y)}
+        ?forceGroupSelection=${args.forceGroupSelection}
+        ?fullwidth=${args.fullwidth}
+        ?stayOpenOnBodyClick=${args.stayOpenOnBodyClick}
+      >
+        <fds-list-item>Preview</fds-list-item>
+        <fds-list-item disabled><div>Share</div></fds-list-item>
+        <fds-list-item disabled><div>Get Link</div></fds-list-item>
+        <li divider></li>
+        <fds-list-item>Download</fds-list-item>
+      </fds-menu>
     </div>
   `;
 };

@@ -1,5 +1,7 @@
-@use "@finastra/fds-theme" as fds;
-@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme/dark' with (
+  $class: 'dark-theme'
+);
 
 $stepper-bg: transparent;
 
@@ -55,9 +57,9 @@ $stepper-bg: transparent;
     flex-direction: row;
     align-items: center;
 
-    slot[name="right-action"]::slotted(*),
-    slot[name="left-action"]::slotted(*),
-    slot[name="previous"]::slotted(*) {
+    slot[name='right-action']::slotted(*),
+    slot[name='left-action']::slotted(*),
+    slot[name='previous']::slotted(*) {
       margin-right: var(--fds-spacing-3, 16px);
     }
   }

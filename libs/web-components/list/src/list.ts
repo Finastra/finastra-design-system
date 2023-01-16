@@ -1,4 +1,4 @@
-import { ListBase } from "@material/mwc-list/mwc-list-base";
+import { ListBase } from '@material/mwc-list/mwc-list-base';
 import { customElement } from 'lit/decorators.js';
 import { styles } from './list-styles.css';
 

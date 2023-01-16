@@ -22,13 +22,14 @@ import '@finastra/icon';
 <fds-icon>bolt</fds-icon>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property      | Attribute     | Type          | Default    | Description                    |
-|---------------|---------------|---------------|------------|--------------------------------|
+| ------------- | ------------- | ------------- | ---------- | ------------------------------ |
 | `dense`       | `dense`       | `boolean`     | false      | Dense size of the icon `18px`. |
 | `disabled`    | `disabled`    | `boolean`     | false      |                                |
 | `error`       | `error`       | `boolean`     | false      | Use error color.               |
@@ -44,13 +45,14 @@ import '@finastra/icon';
 
 #### Slots
 
-| Name      | Description                                      |
-|-----------|--------------------------------------------------|
+| Name      | Description                                                                                                 |
+| --------- | ----------------------------------------------------------------------------------------------------------- |
 | `default` | The name of the icon to display (e.g. credit_card). See Material Icons for an index of all available icons. |
 
 #### CSS Custom Properties
 
 | Property          | Default | Description                       |
-|-------------------|---------|-----------------------------------|
+| ----------------- | ------- | --------------------------------- |
 | `--fds-icon-size` | "24px"  | Size of the icon, default `24px`. |
+
 <!-- /DOC -->

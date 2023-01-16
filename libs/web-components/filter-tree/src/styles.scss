@@ -1,16 +1,16 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
 }
 
 ul {
-  list-style:none;
+  list-style: none;
   display: grid;
 }
 
 li {
-  list-style:none;
+  list-style: none;
 }
 
 .show {

@@ -4,8 +4,8 @@ import { BaseCard } from './base-card';
 import { styles } from './card-styles.css';
 
 /**
-  * @slot default - Slot to add content to the card, see the documentation for more details.
-*/
+ * @slot default - Slot to add content to the card, see the documentation for more details.
+ */
 
 @customElement('fds-card')
 export class Card extends BaseCard {

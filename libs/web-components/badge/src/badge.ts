@@ -26,14 +26,12 @@ export class Badge extends LitElement {
 
   render() {
     return html`
-    <div class="container">
-      <slot></slot>
-      <div class="badge" position=${this.position}>
-        <span class="badge-value ${this.color?.toLowerCase()}">
-            ${!this.type ? this.value : ''}
-        </span>
+      <div class="container">
+        <slot></slot>
+        <div class="badge" position=${this.position}>
+          <span class="badge-value ${this.color?.toLowerCase()}"> ${!this.type ? this.value : ''} </span>
+        </div>
       </div>
-    </div>
     `;
   }
 }

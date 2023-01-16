@@ -1,12 +1,11 @@
 @use '@finastra/fds-theme' as fds;
-@use "@material/data-table/data-table";
+@use '@material/data-table/data-table';
 
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 @include data-table.table-styles;
 
 :host {
-
   display: block;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(text-field-fill-color, surface-selected);
@@ -29,7 +28,6 @@
     @include fds.property('border-color', outline);
 
     .mdc-data-table__table {
-
       @include fds.bg-color(surface);
 
       .mdc-data-table__header-row,
@@ -128,8 +126,6 @@
               float: center;
               text-align: initial;
             }
-
-
           }
 
           fds-icon-button {
@@ -161,8 +157,6 @@
         overflow-y: auto;
 
         .mdc-data-table__row {
-
-
           /* even columns width , fix width of table too*/
           .mdc-data-table__cell {
             @include fds.typography(body-1);
@@ -215,7 +209,6 @@
     }
 
     .mdc-data-table__table {
-
       .mdc-data-table__header-row,
       .mdc-data-table__row {
         height: 40px;

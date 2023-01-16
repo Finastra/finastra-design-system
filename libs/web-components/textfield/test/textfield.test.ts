@@ -4,7 +4,7 @@ import '../src/textfield.js';
 
 describe('TextField', () => {
   it('loads accessibly', async () => {
-    const el: TextField = await fixture(html`<fds-textfield label='test'></fds-textfield>`);
+    const el: TextField = await fixture(html`<fds-textfield label="test"></fds-textfield>`);
 
     await elementUpdated(el);
     await expect(el).to.be.accessible();

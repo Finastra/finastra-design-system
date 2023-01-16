@@ -8,10 +8,10 @@ export const parameters = {
   backgrounds: { disable: true },
   layout: 'centered',
   previewTabs: {
-    "storybook/docs/panel": {
+    'storybook/docs/panel': {
       index: -1
     },
-    canvas: { title: "Sandbox" }
+    canvas: { title: 'Sandbox' }
   },
   options: {
     storySort: {

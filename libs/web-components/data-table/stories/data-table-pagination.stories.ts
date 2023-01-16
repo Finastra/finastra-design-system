@@ -18,12 +18,12 @@ export default {
   argTypes: {
     length: {
       type: 'number',
-      description: "the length of data",
+      description: 'the length of data',
       table: {
         defaultValue: {
           summary: 0
         }
-      },
+      }
     },
     pageIndex: {
       type: 'number',
@@ -44,22 +44,22 @@ export default {
       }
     },
     pageSizeOptions: {
-        type: 'array',
-        description: 'an arry of page size',
-        table: {
-            defaultValue: {
-              summary: "[]"
-            }
+      type: 'array',
+      description: 'an arry of page size',
+      table: {
+        defaultValue: {
+          summary: '[]'
         }
+      }
     },
     showFirstLastButtons: {
-        type: 'boolean',
-        description: 'show first and last buttons',
-        table: {
-            defaultValue: {
-              summary: false
-            }
+      type: 'boolean',
+      description: 'show first and last buttons',
+      table: {
+        defaultValue: {
+          summary: false
         }
+      }
     },
     dense: {
       type: 'boolean',
@@ -77,7 +77,7 @@ export default {
     pageSize: demoPageSize,
     pageSizeOptions: demoPageSizeOptions,
     showFirstLastButtons: showFirstLastButtons,
-    dense:false
+    dense: false
   },
   parameters: {
     actions: {
@@ -90,9 +90,8 @@ export default {
       type: 'figma',
       url: ' https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48606%3A19621'
     }
-  },
+  }
 } as Meta;
-
 
 const templatePagination: Story<DataTablePagination> = ({
   length = demoLength,
@@ -102,15 +101,15 @@ const templatePagination: Story<DataTablePagination> = ({
   showFirstLastButtons = true,
   dense = false
 }) => {
-  return html`<fds-data-table-pagination 
-                ?dense='${dense}'
-                length=${length} 
-                pageIndex=${pageIndex} 
-                pageSize=${pageSize} 
-                .pageSizeOptions=${pageSizeOptions} 
-                .showFirstLastButtons=${showFirstLastButtons}
-              ></fds-data-table-pagination>`
-} 
+  return html`<fds-data-table-pagination
+    ?dense="${dense}"
+    length=${length}
+    pageIndex=${pageIndex}
+    pageSize=${pageSize}
+    .pageSizeOptions=${pageSizeOptions}
+    .showFirstLastButtons=${showFirstLastButtons}
+  ></fds-data-table-pagination>`;
+};
 
 export const Default: Story<DataTablePagination> = templatePagination.bind({});
 export const Dense: Story<DataTablePagination> = templatePagination.bind({});

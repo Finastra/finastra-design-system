@@ -27,51 +27,53 @@ import '@finastra/button';
 ### Button
 
 <!-- DOC:fds-button -->
+
 #### Properties
 
-| Property       | Attribute      | Type      | Default  | Description                                      |
-|----------------|----------------|-----------|----------|--------------------------------------------------|
-| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                      |
-| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                    |
-| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                 |
+| Property       | Attribute      | Type      | Default  | Description                                                                                                        |
+| -------------- | -------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                                                                                        |
+| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                                                                                      |
+| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                                                                                   |
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
-| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
-| `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
-
+| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button                                                                              |
+| `large`        | `large`        | `boolean` | false    | Use the larger button size                                                                                         |
+| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before                                                                 |
 
 <!-- /DOC:fds-button -->
 
 ### Outlined Button
 
 <!-- DOC:fds-outlined-button -->
+
 #### Properties
 
-| Property       | Attribute      | Type      | Default  | Description                                      |
-|----------------|----------------|-----------|----------|--------------------------------------------------|
-| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                      |
-| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                    |
-| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                 |
+| Property       | Attribute      | Type      | Default  | Description                                                                                                        |
+| -------------- | -------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                                                                                        |
+| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                                                                                      |
+| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                                                                                   |
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
-| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
-| `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
-
+| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button                                                                              |
+| `large`        | `large`        | `boolean` | false    | Use the larger button size                                                                                         |
+| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before                                                                 |
 
 <!-- /DOC:fds-outlined-button -->
 
 ### Text Button
 
 <!-- DOC:fds-text-button -->
+
 #### Properties
 
-| Property       | Attribute      | Type      | Default  | Description                                      |
-|----------------|----------------|-----------|----------|--------------------------------------------------|
-| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                      |
-| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                    |
-| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                 |
+| Property       | Attribute      | Type      | Default  | Description                                                                                                        |
+| -------------- | -------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `dense`        | `dense`        | `boolean` | false    | Use the smaller button size                                                                                        |
+| `disabled`     | `disabled`     | `boolean` | false    | Is the button disabled or not                                                                                      |
+| `fullwidth`    | `fullwidth`    | `boolean` | false    | Use the full width of its parent                                                                                   |
 | `icon`         | `icon`         | `string`  | ""       | The name of the icon displayed before the label<br />Use trailingIcon to true to display this icon after the label |
-| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button            |
-| `large`        | `large`        | `boolean` | false    | Use the larger button size                       |
-| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before |
+| `label`        | `label`        | `string`  | "Button" | The label displayed inside the button                                                                              |
+| `large`        | `large`        | `boolean` | false    | Use the larger button size                                                                                         |
+| `trailingIcon` | `trailingIcon` | `boolean` | false    | Display the icon after the label instead of before                                                                 |
+
 <!-- /DOC:fds-text-button -->

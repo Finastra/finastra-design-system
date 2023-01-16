@@ -6,25 +6,14 @@
 <fds-button label="open" onclick="openDialog()"></fds-button>
 <fds-dialog id="myDropdown" heading="Title">
   <span class="body">Add dialog content here </span>
-  <fds-button
-      secondary
-      label="Yes"
-      slot="primaryAction"
-      dialogAction="ok">
-  </fds-button>
-  <fds-text-button
-      label="No"
-      slot="secondaryAction"
-      dialogAction="cancel">
-  </fds-text-button>
+  <fds-button secondary label="Yes" slot="primaryAction" dialogAction="ok"> </fds-button>
+  <fds-text-button label="No" slot="secondaryAction" dialogAction="cancel"> </fds-text-button>
 </fds-dialog>
-
 
 <script>
   function openDialog() {
-    document.getElementById("myDropdown").show();
+    document.getElementById('myDropdown').show();
   }
 </script>
 
-  <style>
-  </style>
+<style></style>

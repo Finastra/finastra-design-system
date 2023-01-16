@@ -13,9 +13,9 @@
 ///      padding: var(--fds-spacing-1);
 ///   }
 @mixin custom-properties() {
-    @each $key, $value in variables.$properties {
-      --fds-#{$key}: #{$value};
-    }
+  @each $key, $value in variables.$properties {
+    --fds-#{$key}: #{$value};
+  }
 }
 
 /// Loads the spacing's helper classes using following format:
@@ -74,8 +74,7 @@
 @function _check-side($side) {
   @if (list.index(variables.$sides, $side)) {
     @return $side;
-  }
-  @else {
+  } @else {
     @error "$side must be one of #{variables.$sides}, but received #{$side}";
   }
 }
@@ -86,16 +85,15 @@
 /// @param {Number} $value - The spacing between 0 and 7
 /// @param {String} $sides - The sides where to apply spacing
 @mixin spacing($prop, $value, $sides) {
-  $spacing-name: 'spacing-'+$value;
+  $spacing-name: 'spacing-' + $value;
   $spacing-value: map.get(variables.$properties, $spacing-name);
 
   @if length($sides) == 0 {
     #{$prop}: var(--fds-#{$spacing-name}, #{$spacing-value});
-  }
-  @else {
+  } @else {
     @each $side in $sides {
       $side: _check-side($side);
-      #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)},#{$spacing-value});
+      #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)}, #{$spacing-value});
     }
   }
 }

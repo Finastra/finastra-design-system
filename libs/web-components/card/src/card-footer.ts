@@ -20,7 +20,7 @@ export class CardFooter extends LitElement {
     super.updated(changedProperties);
     for (const child of Array.from(this.children)) {
       if (this.disabled) {
-        child.setAttribute("disabled", `${this.disabled}`);
+        child.setAttribute('disabled', `${this.disabled}`);
       } else {
         child.removeAttribute('disabled');
       }

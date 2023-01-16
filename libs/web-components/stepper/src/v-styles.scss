@@ -76,7 +76,7 @@
   flex: 1;
 }
 
-:host([label-mode="center"]) {
+:host([label-mode='center']) {
   .text-wrapper {
     grid-row: -1/1;
     grid-column: 2/3;
@@ -85,7 +85,7 @@
   }
 }
 
-:host([label-mode="background"]) {
+:host([label-mode='background']) {
   .text-wrapper {
     grid-row: 2/4;
     grid-column: 2/3;

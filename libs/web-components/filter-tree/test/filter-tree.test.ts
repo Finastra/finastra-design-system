@@ -4,12 +4,12 @@ import { FilterTree } from '../src/filter-tree.js';
 
 const testBasic = [
   {
-    label: 'item 1',
+    label: 'item 1'
   },
   {
     label: 'item 2'
   }
-]
+];
 
 const testChildren = [
   {
@@ -24,7 +24,7 @@ const testChildren = [
       }
     ]
   }
-]
+];
 
 describe('FilterTree', () => {
   it('loads accessibility', async () => {
@@ -46,7 +46,7 @@ describe('FilterTree', () => {
   it('updates children', async () => {
     const el: FilterTree = await fixture(html`<fds-filter-tree></fds-filter-tree>`);
     el.items = testChildren;
-    
+
     await elementUpdated(el);
     const treeItems = el.shadowRoot!.querySelectorAll('fds-tree-item')!;
     const checkboxParent = treeItems[0].shadowRoot!.querySelector('fds-checkbox')!;
@@ -63,7 +63,7 @@ describe('FilterTree', () => {
   it('expands', async () => {
     const el: FilterTree = await fixture(html`<fds-filter-tree></fds-filter-tree>`);
     el.items = testChildren;
-    
+
     await elementUpdated(el);
     const treeItem = el.shadowRoot!.querySelector('fds-tree-item')!;
     const expand = treeItem.shadowRoot!.querySelector('fds-icon-button')!;

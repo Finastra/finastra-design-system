@@ -1,4 +1,3 @@
 export const EVENTS = {
-    STEPCLICK: 'step-click'
+  STEPCLICK: 'step-click'
 };
-  

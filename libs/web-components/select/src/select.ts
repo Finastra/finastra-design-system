@@ -35,13 +35,9 @@ export class Select extends SelectBase {
       return nothing;
     }
 
-    return html`
-      <mwc-notched-outline
-          .width=${this.outlineWidth}
-          .open=${false}
-          class="mdc-notched-outline">
-        ${this.renderLabel()}
-      </mwc-notched-outline>`;
+    return html` <mwc-notched-outline .width=${this.outlineWidth} .open=${false} class="mdc-notched-outline">
+      ${this.renderLabel()}
+    </mwc-notched-outline>`;
   }
 }
 

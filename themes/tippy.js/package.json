@@ -7,7 +7,7 @@
     "directory": "themes/tippy.js"
   },
   "devDependencies": {
-    "@finastra/fds-theme":"latest",
+    "@finastra/fds-theme": "latest",
     "sass": "1.51.0"
   },
   "scripts": {

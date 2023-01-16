@@ -22,19 +22,19 @@ export default {
   },
   decorators: [
     (story) => html`${story()}
-    <style>
-      fds-card {
-        max-width: 400px;
-      }
-      .example-header-image {
-        background-image: url('https://cdn2.thecatapi.com/images/zvfTwDY54.jpg');
-        background-size: cover;
-      }
-    </style>`
+      <style>
+        fds-card {
+          max-width: 400px;
+        }
+        .example-header-image {
+          background-image: url('https://cdn2.thecatapi.com/images/zvfTwDY54.jpg');
+          background-size: cover;
+        }
+      </style>`
   ]
 } as Meta;
 
-const Template: Story<Card> = ({outlined, selectable, disabled}) => {
+const Template: Story<Card> = ({ outlined, selectable, disabled }) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
     <fds-card-header>
       <div class="example-header-image"></div>
@@ -43,10 +43,8 @@ const Template: Story<Card> = ({outlined, selectable, disabled}) => {
         <fds-card-subtitle>Subhead</fds-card-subtitle>
       </div>
     </fds-card-header>
-    <img src="https://cdn2.thecatapi.com/images/jb.jpg">
-    <fds-card-content>
-    Add your card content here
-    </fds-card-content>
+    <img src="https://cdn2.thecatapi.com/images/jb.jpg" />
+    <fds-card-content> Add your card content here </fds-card-content>
     <fds-card-actions>
       <fds-text-button label="Button"></fds-text-button>
       <fds-text-button label="Button"></fds-text-button>
@@ -57,9 +55,9 @@ const Template: Story<Card> = ({outlined, selectable, disabled}) => {
 export const Default: Story<Card> = Template.bind({});
 Default.args = {};
 
-const TemplateOutlined: Story<Card> = ({outlined, selectable, disabled}) => {
+const TemplateOutlined: Story<Card> = ({ outlined, selectable, disabled }) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
-    <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657130406/Top_npiwin.png">
+    <img src="https://res.cloudinary.com/dwhxhykbv/image/upload/v1657130406/Top_npiwin.png" />
     <fds-card-title>Header</fds-card-title>
     <fds-card-content>Add your card content here</fds-card-content>
     <fds-divider></fds-divider>
@@ -75,7 +73,7 @@ Outlined.args = {
   outlined: true
 };
 
-const TemplateSelectable: Story<Card> = ({outlined, selectable, disabled}) => {
+const TemplateSelectable: Story<Card> = ({ outlined, selectable, disabled }) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
     <fds-card-header>
       <div class="example-header-image"></div>
@@ -93,7 +91,7 @@ Selectable.args = {
   selectable: true
 };
 
-const TemplateDisabled: Story<Card> = ({outlined, selectable, disabled}) => {
+const TemplateDisabled: Story<Card> = ({ outlined, selectable, disabled }) => {
   return html`<fds-card ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}>
     <fds-card-title>Header</fds-card-title>
     <fds-card-subtitle>Subhead</fds-card-subtitle>

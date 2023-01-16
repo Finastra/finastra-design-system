@@ -1,7 +1,7 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 @media (prefers-reduced-motion: no-preference) {
-  :host>div::before {
+  :host > div::before {
     transition-property: transform, width;
     transition-duration: 0.2s;
     transition-timing-function: ease;
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-:host>div {
+:host > div {
   @include fds.property(border-color, outline);
   @include fds.padding-x(1);
 
@@ -27,7 +27,7 @@
   border-radius: 20px;
 }
 
-:host>div::before {
+:host > div::before {
   @include fds.property(border-color, primary);
   @include fds.bg-color(surface-selected);
 
@@ -45,11 +45,11 @@
   margin: 4px 0;
 }
 
-:host([dense])>div {
+:host([dense]) > div {
   height: 38px;
 }
 
-:host([dense])>div::before {
+:host([dense]) > div::before {
   height: 30px;
 }
 

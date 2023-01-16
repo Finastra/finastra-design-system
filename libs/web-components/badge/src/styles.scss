@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -57,7 +57,7 @@
   @include fds.property(color, on-success);
 }
 
-:host([position="topLeft"]) {
+:host([position='topLeft']) {
   .badge {
     position: absolute;
     transform: translate(50%, -50%);
@@ -66,7 +66,7 @@
   }
 }
 
-:host([position="topRight"]) {
+:host([position='topRight']) {
   .badge {
     position: absolute;
     transform: translate(50%, -50%);
@@ -75,7 +75,7 @@
   }
 }
 
-:host([type="indicator"]) {
+:host([type='indicator']) {
   .badge-value {
     height: 6px;
     width: 6px;
@@ -86,14 +86,14 @@
   }
 }
 
-:host([type="indicator"][position="topRight"]) {
+:host([type='indicator'][position='topRight']) {
   .badge {
     top: 6px;
     right: 7px;
   }
 }
 
-:host([type="indicator"][position="topLeft"]) {
+:host([type='indicator'][position='topLeft']) {
   .badge {
     top: 6px;
     left: -14px;

@@ -1,4 +1,4 @@
-import { RadioListItemBase } from "@material/mwc-list/mwc-radio-list-item-base";
+import { RadioListItemBase } from '@material/mwc-list/mwc-radio-list-item-base';
 import { customElement } from 'lit/decorators.js';
 import { styles as controlStyle } from './control-list-item-styles.css';
 import { styles } from './list-item-styles.css';

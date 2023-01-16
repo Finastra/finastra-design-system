@@ -1,6 +1,6 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
-:host>button {
+:host > button {
   @include fds.typography(subtitle-2);
   @include fds.text-color(on-surface-medium);
   @include fds.padding-x(3);
@@ -34,12 +34,12 @@
   }
 }
 
-:host(.selected)>button,
+:host(.selected) > button,
 :host(.selected) fds-icon {
   @include fds.text-color(primary);
 }
 
-:host([dense])>button {
+:host([dense]) > button {
   @include fds.typography(subtitle-3);
 
   height: 30px;
@@ -54,7 +54,7 @@
   width: 16px;
 }
 
-:host(:not(.selected))>button:hover,
-:host(:not(.selected))>button:focus {
+:host(:not(.selected)) > button:hover,
+:host(:not(.selected)) > button:focus {
   @include fds.bg-color(surface-hover);
 }

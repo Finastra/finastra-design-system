@@ -10,7 +10,7 @@ export interface Crumb {
 
 /**
  * @attr {Array} [items=[]] - A list of items to display
- * 
+ *
  * @cssprop [--fds-breadcrumb-divider=''/''] - Set the character used as divider between items
  * @cssprop {color} [--fds-breadcrumb-divider-color=auto] - Set the character used as divider between items
  */
@@ -21,12 +21,11 @@ export class Breadcrumb extends LitElement {
   @property({ type: Array })
   items: Crumb[] = [];
 
-   render() {
-    return html`
-    <nav class="breadcrumbs" role="navigation">
+  render() {
+    return html` <nav class="breadcrumbs" role="navigation">
       <ul>
         ${this.items.map((item, index) => {
-          return html`<li>${this.renderCrumb(item, index === this.items.length - 1)}</li>`
+          return html`<li>${this.renderCrumb(item, index === this.items.length - 1)}</li>`;
         })}
       </ul>
     </nav>`;
@@ -38,20 +37,22 @@ export class Breadcrumb extends LitElement {
       : html`<a href="${this.escapeUrl(item.link)}" part="a" @click=${(event) => this.handleItemClick(item, event)}>${item.label}</a>`;
   }
 
-  private escapeUrl (text) {
-		return text.replace(/"/g, '%22');
-	}
+  private escapeUrl(text) {
+    return text.replace(/"/g, '%22');
+  }
 
-  private handleItemClick(item: Crumb, event: PointerEvent):void {
-    if(!event.ctrlKey && !event.metaKey) {
+  private handleItemClick(item: Crumb, event: PointerEvent): void {
+    if (!event.ctrlKey && !event.metaKey) {
       event.preventDefault();
-      this.dispatchEvent(new CustomEvent('selected', {
-        bubbles: true,
-        cancelable: true,
-        detail: {
-          item,
-        }
-      }));
+      this.dispatchEvent(
+        new CustomEvent('selected', {
+          bubbles: true,
+          cancelable: true,
+          detail: {
+            item
+          }
+        })
+      );
     }
   }
 }

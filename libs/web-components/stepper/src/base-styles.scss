@@ -1,4 +1,4 @@
-@use '@finastra/fds-theme'as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -22,7 +22,8 @@
   cursor: pointer;
 }
 
-.disabled.step-item, .readonly.step-item {
+.disabled.step-item,
+.readonly.step-item {
   pointer-events: none;
 }
 
@@ -121,8 +122,8 @@
   visibility: hidden;
 }
 
-.step-item.current.error, .step-item.done.error {
-
+.step-item.current.error,
+.step-item.done.error {
   .circle.step-item-icon {
     @include fds.property(border-color, error);
     @include fds.bg-color(error);
@@ -140,9 +141,9 @@
   }
 }
 
-.step-item.current, .step-item.done {
+.step-item.current,
+.step-item.done {
   .line.start-line.error {
     @include fds.bg-color(error);
   }
 }
-

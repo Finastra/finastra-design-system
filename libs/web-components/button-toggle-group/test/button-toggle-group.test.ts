@@ -37,7 +37,6 @@ describe('ButtonToggleGroup', () => {
       </fds-button-toggle-group>
     `);
 
-
     const button1: ButtonToggle = el.children[0] as ButtonToggle;
     const button2: ButtonToggle = el.children[1] as ButtonToggle;
     await elementUpdated(el);

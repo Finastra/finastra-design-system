@@ -62,15 +62,14 @@
 ///
 /// @param {Map} $typo-style - Map that includes font-related properties
 @function typo-fallback($typo-style) {
-    $style: map.get(variables.$properties, $typo-style);
-    $font-weight: map.get($style, 'font-weight');
-    $font-size: map.get($style, 'font-size');
-    $line-height: map.get($style, 'line-height');
-    $font-family: map.get($style, 'font-family');
+  $style: map.get(variables.$properties, $typo-style);
+  $font-weight: map.get($style, 'font-weight');
+  $font-size: map.get($style, 'font-size');
+  $line-height: map.get($style, 'line-height');
+  $font-family: map.get($style, 'font-family');
 
-     @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) 
-    var(--fds-#{$typo-style}-font-size, #{$font-size}) / var(--fds-#{$typo-style}-line-height, #{$line-height})
-    var(--fds-#{$typo-style}-font-family, #{$font-family});
+  @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) var(--fds-#{$typo-style}-font-size, #{$font-size}) /
+    var(--fds-#{$typo-style}-line-height, #{$line-height}) var(--fds-#{$typo-style}-font-family, #{$font-family});
 }
 
 // Replace `$search` with `$replace` in `$string`
@@ -80,11 +79,10 @@
 /// @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
-  
+
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
-  
+
   @return $string;
 }

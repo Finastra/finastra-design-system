@@ -26,32 +26,31 @@ export default {
   decorators: [
     (story) => html`${story()}
 
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script>
-  tippy('[data-tippy-content]', {
-  touch: false,
-  theme: 'finastra',
-  placement: 'right',
-  });
-</script>
-<style>
-  fds-icon-bar {
-    min-height: 300px;
-  }
-</style>
-`
+      <script src="https://unpkg.com/@popperjs/core@2"></script>
+      <script src="https://unpkg.com/tippy.js@6"></script>
+      <script>
+        tippy('[data-tippy-content]', {
+          touch: false,
+          theme: 'finastra',
+          placement: 'right'
+        });
+      </script>
+      <style>
+        fds-icon-bar {
+          min-height: 300px;
+        }
+      </style> `
   ],
   cssprops
 } as Meta;
 
-const Template: Story<IconBar> = ({ showLabels, hideNotification}) => {
+const Template: Story<IconBar> = ({ showLabels, hideNotification }) => {
   return html`<fds-icon-bar ?showLabels=${showLabels} ?hideNotification=${hideNotification}>
-  <fds-icon-bar-item label="Home" data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
-  <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
-  <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
-  <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings" dense></fds-icon-bar-item>
-</fds-icon-bar>`;
+    <fds-icon-bar-item label="Home" data-tippy-content="Home" current icon="home" notification="2"></fds-icon-bar-item>
+    <fds-icon-bar-item label="Account" data-tippy-content="Account" icon="credit_card"></fds-icon-bar-item>
+    <fds-icon-bar-item label="Calendar" data-tippy-content="Calendar" icon="event" notification="1"></fds-icon-bar-item>
+    <fds-icon-bar-item data-tippy-content="Settings" slot="footer" icon="settings" dense></fds-icon-bar-item>
+  </fds-icon-bar>`;
 };
 
 export const Default: Story<IconBar> = Template.bind({});

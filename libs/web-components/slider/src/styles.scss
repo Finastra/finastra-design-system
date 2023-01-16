@@ -2,16 +2,15 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
-    @include fds.mdc(theme-primary, primary);
-    @include fds.mdc(theme-on-primary, on-primary);
-    width: 200px;
+  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(theme-on-primary, on-primary);
+  width: 200px;
 }
 
 .mdc-slider {
-    width: 100%;
-
+  width: 100%;
 }
 
 .mdc-slider__value-indicator-text {
-    @include fds.text-color(on-dark);
+  @include fds.text-color(on-dark);
 }

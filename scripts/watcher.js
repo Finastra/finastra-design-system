@@ -48,7 +48,7 @@ async function addToQueue(fileName) {
     spinner.color = 'magenta';
     spinner.text = chalk.magenta('Building Styles and Typescript');
     spinner.start();
-    var wcFolder = fileName.split('/').slice(0,3).join('/');
+    var wcFolder = fileName.split('/').slice(0, 3).join('/');
     execPromise = exec(`npm run build:style -w ${wcFolder}`);
   } else {
     spinner.color = 'blue';

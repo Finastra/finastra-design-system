@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -14,7 +14,7 @@
 
   .close-btn {
     position: absolute;
-    cursor:pointer;
+    cursor: pointer;
     right: 20px;
     top: 20px;
     @include fds.property(color, on-surface-medium);
@@ -50,8 +50,8 @@
     display: flex;
     flex-direction: row-reverse;
     margin-top: 12px;
-  
-    ::slotted([slot="secondaryAction"]) {
+
+    ::slotted([slot='secondaryAction']) {
       margin-right: var(--fds-spacing-2, 8px);
     }
   }
@@ -63,7 +63,7 @@
     align-items: center;
   }
   .title {
-    padding-bottom: 0px
+    padding-bottom: 0px;
   }
   .subtitle {
     margin-left: var(--fds-spacing-3, 16px);
@@ -81,34 +81,34 @@
   .icon-container {
     align-self: center;
   }
-  .actions  {
+  .actions {
     align-self: center;
     margin-top: 0px;
   }
 }
 
-:host([type="success"]) {
+:host([type='success']) {
   .container {
     @include fds.property(background, surface-success);
     @include fds.property(border-color, outline-success);
   }
 }
 
-:host([type="error"]) {
+:host([type='error']) {
   .container {
     @include fds.property(background, surface-error);
     @include fds.property(border-color, outline-error);
   }
 }
 
-:host([type="warning"]) {
+:host([type='warning']) {
   .container {
     @include fds.property(background, surface-warning);
     @include fds.property(border-color, outline-warning);
   }
 }
 
-:host([type="info"]) {
+:host([type='info']) {
   .container {
     @include fds.property(background, surface-info);
     @include fds.property(border-color, outline-info);

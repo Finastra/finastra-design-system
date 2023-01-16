@@ -15,8 +15,7 @@ export class BaseTextField extends TextFieldBase {
 
   override render(): TemplateResult {
     const shouldRenderCharCounter = this.charCounter && this.maxLength !== -1;
-    const shouldRenderHelperText =
-        !!this.helper || !!this.validationMessage || shouldRenderCharCounter;
+    const shouldRenderHelperText = !!this.helper || !!this.validationMessage || shouldRenderCharCounter;
 
     /** @classMap */
     const classes = {
@@ -33,23 +32,17 @@ export class BaseTextField extends TextFieldBase {
     return html`
       ${!this.labelInside ? this.renderLabelOutside() : ''}
       <label class="mdc-text-field ${classMap(classes)}" @click="${this._handleClick}">
-        ${this.renderRipple()}
-        ${this.renderOutline()}
-        ${this.renderLeadingIcon()}
-        ${this.renderPrefix()}
-        ${this.renderInput(shouldRenderHelperText)}
-        ${this.renderSuffix()}
-        ${this.renderTrailingIcon()}
-        ${this.renderLineRipple()}
+        ${this.renderRipple()} ${this.renderOutline()} ${this.renderLeadingIcon()} ${this.renderPrefix()}
+        ${this.renderInput(shouldRenderHelperText)} ${this.renderSuffix()} ${this.renderTrailingIcon()} ${this.renderLineRipple()}
       </label>
       ${this.renderHelperText(shouldRenderHelperText, shouldRenderCharCounter)}
     `;
   }
 
   protected _handleClick(e) {
-    if (!this.disabled && (this.type === "date" || "datetime-local" || "month" || "week" || "time")) {
-      e.path.forEach(p => {
-        if (p.nodeName === "INPUT") {
+    if (!this.disabled && (this.type === 'date' || 'datetime-local' || 'month' || 'week' || 'time')) {
+      e.path.forEach((p) => {
+        if (p.nodeName === 'INPUT') {
           p.showPicker();
         }
       });
@@ -58,41 +51,29 @@ export class BaseTextField extends TextFieldBase {
 
   protected renderTrailingIcon(): TemplateResult | string {
     return this.showActionButton
-      ? html`
-      <slot name="actionButton"></slot>`
+      ? html` <slot name="actionButton"></slot>`
       : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
   }
 
   protected renderLabelOutside(): TemplateResult | string {
-      return this.label? html`
-        <span id="label" class="fds-text-field__label">
-          ${this.label}
-          ${this.renderRequired()}
-        </span>
-      ` : ``;
+    return this.label ? html` <span id="label" class="fds-text-field__label"> ${this.label} ${this.renderRequired()} </span> ` : ``;
   }
 
-  protected override renderOutline(): TemplateResult|string {
-    return !this.outlined ? '' : html`
-      <div class="fds-text-field__outline">
-        ${this.labelInside ? this.renderLabel() : ''}
-      </div>`;
+  protected override renderOutline(): TemplateResult | string {
+    return !this.outlined ? '' : html` <div class="fds-text-field__outline">${this.labelInside ? this.renderLabel() : ''}</div>`;
   }
 
   protected renderRequired(): TemplateResult | string {
-    return !this.required ?
-    '' :
-    '*';
+    return !this.required ? '' : '*';
   }
 
   updated(changedProperties) {
     super.updated(changedProperties);
-    for(const child of Array.from(this.children)) {
-      if(child.slot === "actionButton" && this.disabled) {
-        child.setAttribute("disabled", "true");
-      }
-      else if(child.slot === "actionButton") {
-        child.removeAttribute("disabled");
+    for (const child of Array.from(this.children)) {
+      if (child.slot === 'actionButton' && this.disabled) {
+        child.setAttribute('disabled', 'true');
+      } else if (child.slot === 'actionButton') {
+        child.removeAttribute('disabled');
       }
     }
   }

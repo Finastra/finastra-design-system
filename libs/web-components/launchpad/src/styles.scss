@@ -55,7 +55,7 @@
       .menu-tools {
         @include fds.padding(5, right, left);
 
-        slot[name="tools"]::slotted(*) {
+        slot[name='tools']::slotted(*) {
           @include fds.padding(3, right, bottom, left);
         }
       }

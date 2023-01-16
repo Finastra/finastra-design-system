@@ -29,9 +29,9 @@ describe('Breadcrumb', () => {
     const el: Breadcrumb = await fixture(html`<fds-breadcrumb .items=${items}></fds-breadcrumb>`);
     await elementUpdated(el);
     setTimeout(() => {
-      el.shadowRoot?.querySelector('a')?.dispatchEvent(new Event('click'))
+      el.shadowRoot?.querySelector('a')?.dispatchEvent(new Event('click'));
     });
-    const {detail} = await oneEvent(el, 'selected');
+    const { detail } = await oneEvent(el, 'selected');
     expect(detail).to.exist;
   });
 });

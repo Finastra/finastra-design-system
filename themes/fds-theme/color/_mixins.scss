@@ -15,7 +15,7 @@
   $properties: if(scheme.isLight($scheme), light.$properties, dark.$properties);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
-    --mdc-theme-#{$style}: var(--fds-#{$style},#{$variable});
+    --mdc-theme-#{$style}: var(--fds-#{$style}, #{$variable});
   }
 }
 
@@ -28,7 +28,7 @@
 @mixin helper-classes() {
   @each $style, $value in light.$properties {
     $bg-color: map.get(light.$properties, $style);
-    @if $style != "background" and $style != "surface" and $style != "outline" {
+    @if $style != 'background' and $style != 'surface' and $style != 'outline' {
       .fds-#{$style} {
         color: var(--fds-#{$style}, #{$bg-color});
       }
@@ -76,8 +76,7 @@
     background: var(--fds-#{$style}, #{$bg-color});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  @else {
+  } @else {
     color: var(--fds-#{$style}, #{$bg-color});
   }
 }
@@ -93,7 +92,6 @@
 @mixin fill($style) {
   @include property(fill, $style);
 }
-
 
 /// Maps mdc's css properties to fds ones.
 ///

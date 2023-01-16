@@ -1,5 +1,5 @@
 @use '@material/mwc-tab/mwc-tab';
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -18,7 +18,7 @@
 }
 
 .mdc-tab__content::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 0;
@@ -73,7 +73,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 0;

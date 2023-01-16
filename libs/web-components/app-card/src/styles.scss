@@ -1,9 +1,9 @@
-@use "@finastra/fds-theme" as fds;
-@use "@finastra/card/src" as base-card;
-@use "./cover";
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/card/src' as base-card;
+@use './cover';
 
-$fds-gray: #C7C8CA;
-$fds-blue: #009CBD;
+$fds-gray: #c7c8ca;
+$fds-blue: #009cbd;
 
 :host {
   @include base-card.core-styles();
@@ -31,7 +31,7 @@ $fds-blue: #009CBD;
       @include fds.typography(subtitle-3);
       min-width: 61px;
       text-align: center;
-      transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       position: absolute;
       top: -11px;
       left: 0;
@@ -167,12 +167,12 @@ $fds-blue: #009CBD;
     width: inherit;
     height: inherit;
     .app-card-label {
-        @include fds.typography(headline-1);
+      @include fds.typography(headline-1);
     }
   }
 }
 
-:host([extraDense]){
+:host([extraDense]) {
   width: 292px;
   .app-card {
     width: inherit;

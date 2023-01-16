@@ -23,7 +23,14 @@ export default {
 } as Meta;
 
 const Template: Story<Radio> = ({ checked, disabled, global, name, reducedTouchTarget, value }) => {
-  return html`<fds-radio ?checked=${checked} ?disabled=${disabled} ?global=${global} ?name=${name} ?reducedTouchTarget=${reducedTouchTarget} ?value=${value}></fds-radio>`;
+  return html`<fds-radio
+    ?checked=${checked}
+    ?disabled=${disabled}
+    ?global=${global}
+    ?name=${name}
+    ?reducedTouchTarget=${reducedTouchTarget}
+    ?value=${value}
+  ></fds-radio>`;
 };
 
 export const Default: Story<Radio> = Template.bind({});

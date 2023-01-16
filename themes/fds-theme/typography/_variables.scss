@@ -18,7 +18,7 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   headline-2: (
     font-family: $headline-font-family,
@@ -27,8 +27,8 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
-    ),
+    text-transform: inherit
+  ),
   headline-3: (
     font-family: $headline-font-family,
     font-size: px-to-rem(28px),
@@ -36,7 +36,7 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   headline-4: (
     font-family: $headline-font-family,
@@ -45,7 +45,7 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   headline-5: (
     font-family: $headline-font-family,
@@ -54,7 +54,7 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   headline-6: (
     font-family: $headline-font-family,
@@ -63,7 +63,7 @@ $properties: (
     font-weight: 800,
     letter-spacing: 0,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   subtitle-1: (
     font-family: $font-family,
@@ -72,7 +72,7 @@ $properties: (
     font-weight: 500,
     letter-spacing: 0.15px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   subtitle-2: (
     font-family: $font-family,
@@ -81,7 +81,7 @@ $properties: (
     font-weight: 500,
     letter-spacing: 0.1px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   subtitle-3: (
     font-family: $font-family,
@@ -90,7 +90,7 @@ $properties: (
     font-weight: 500,
     letter-spacing: 0.1px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   subtitle-4: (
     font-family: $font-family,
@@ -99,7 +99,7 @@ $properties: (
     font-weight: 500,
     letter-spacing: 0.1px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   body-1: (
     font-family: $font-family,
@@ -108,7 +108,7 @@ $properties: (
     font-weight: 300,
     letter-spacing: 0.5px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   body-2: (
     font-family: $font-family,
@@ -117,7 +117,7 @@ $properties: (
     font-weight: 300,
     letter-spacing: 0.25px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   body-3: (
     font-family: $font-family,
@@ -126,7 +126,7 @@ $properties: (
     font-weight: 300,
     letter-spacing: 0.25px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   body-4: (
     font-family: $font-family,
@@ -135,7 +135,7 @@ $properties: (
     font-weight: 300,
     letter-spacing: 0.25px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   button-1: (
     font-family: $font-family,
@@ -144,7 +144,7 @@ $properties: (
     font-weight: 700,
     letter-spacing: 1.25px,
     text-decoration: inherit,
-    text-transform: none,
+    text-transform: none
   ),
   button-2: (
     font-family: $font-family,
@@ -153,7 +153,7 @@ $properties: (
     font-weight: 700,
     letter-spacing: 1.25px,
     text-decoration: inherit,
-    text-transform: none,
+    text-transform: none
   ),
   button-3: (
     font-family: $font-family,
@@ -162,7 +162,7 @@ $properties: (
     font-weight: 700,
     letter-spacing: 1.25px,
     text-decoration: inherit,
-    text-transform: none,
+    text-transform: none
   ),
   caption: (
     font-family: $font-family,
@@ -171,7 +171,7 @@ $properties: (
     font-weight: 400,
     letter-spacing: 0.4px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   ),
   overline: (
     font-family: $font-family,
@@ -180,6 +180,6 @@ $properties: (
     font-weight: 500,
     letter-spacing: 1.5px,
     text-decoration: inherit,
-    text-transform: inherit,
+    text-transform: inherit
   )
-)
+);

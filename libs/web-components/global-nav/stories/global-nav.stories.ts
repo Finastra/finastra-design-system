@@ -55,11 +55,12 @@ export default {
           font: var(--fds-body-1);
         }
         .icon-bar-content {
-          display: flex;flex-direction: row;
+          display: flex;
+          flex-direction: row;
         }
         fds-icon-bar {
-            margin-right: 32px;
-            margin-left: -16px;
+          margin-right: 32px;
+          margin-left: -16px;
         }
         fds-button {
           padding-left: var(--fds-spacing-3);
@@ -95,40 +96,36 @@ export default {
 
 const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
-  <div slot="sidenavContent">
-    <div class="fds-sidenav-header">
-      <fds-logo></fds-logo>
+    <div slot="sidenavContent">
+      <div class="fds-sidenav-header">
+        <fds-logo></fds-logo>
+      </div>
+      <div class="fds-sidenav-list">
+        <fds-list activatable>
+          <fds-list-item selected activated graphic="icon">
+            <span>Home</span>
+            <fds-icon slot="graphic">home</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Applications</span>
+            <fds-icon slot="graphic">dashboard</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Tools</span>
+            <fds-icon slot="graphic">extension</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Settings</span>
+            <fds-icon slot="graphic">settings</fds-icon>
+          </fds-list-item>
+        </fds-list>
+      </div>
     </div>
-    <div class="fds-sidenav-list">
-      <fds-list activatable>
-        <fds-list-item selected activated graphic="icon">
-          <span>Home</span>
-          <fds-icon slot="graphic">home</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Applications</span>
-          <fds-icon slot="graphic">dashboard</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Tools</span>
-          <fds-icon slot="graphic">extension</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Settings</span>
-          <fds-icon slot="graphic">settings</fds-icon>
-        </fds-list-item>
-      </fds-list>
-    </div>
-  </div>
-  <div slot="appContent">
+    <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-        <fds-launchpad
-          .apps=${apps}
-          slot="actions"
-        >
-        </fds-launchpad>
+        <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
         <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
@@ -169,7 +166,7 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
         </p>
       </div>
     </div>
-</fds-sidenav>`;
+  </fds-sidenav>`;
 };
 
 export const Default: Story = Template.bind({});
@@ -192,47 +189,43 @@ TransparentAppBar.decorators = [
 
 const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
-  <div slot="sidenavContent">
-    <div class="fds-sidenav-header">
-      <fds-logo></fds-logo>
+    <div slot="sidenavContent">
+      <div class="fds-sidenav-header">
+        <fds-logo></fds-logo>
+      </div>
+      <div class="fds-sidenav-list">
+        <fds-list activatable>
+          <fds-list-item selected activated graphic="icon">
+            <span>Home</span>
+            <fds-icon slot="graphic">home</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Applications</span>
+            <fds-icon slot="graphic">dashboard</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Tools</span>
+            <fds-icon slot="graphic">extension</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Settings</span>
+            <fds-icon slot="graphic">settings</fds-icon>
+          </fds-list-item>
+        </fds-list>
+      </div>
     </div>
-    <div class="fds-sidenav-list">
-      <fds-list activatable>
-        <fds-list-item selected activated graphic="icon">
-          <span>Home</span>
-          <fds-icon slot="graphic">home</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Applications</span>
-          <fds-icon slot="graphic">dashboard</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Tools</span>
-          <fds-icon slot="graphic">extension</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Settings</span>
-          <fds-icon slot="graphic">settings</fds-icon>
-        </fds-list-item>
-      </fds-list>
+    <div slot="navigation">
+      <fds-button text label="Tab 1"></fds-button>
+      <fds-button text label="Tab 2"></fds-button>
     </div>
-  </div>
-  <div slot="navigation">
-    <fds-button text label="Tab 1"></fds-button>
-    <fds-button text label="Tab 2"></fds-button>
-  </div>
-  <div slot="appContent">
+    <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
         <fds-button text label="Tab 1" slot="navigation"></fds-button>
         <fds-button text label="Tab 2" slot="navigation"></fds-button>
 
-        <fds-launchpad
-          .apps=${apps}
-          slot="actions"
-        >
-        </fds-launchpad>
+        <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
         <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
@@ -273,7 +266,7 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
         </p>
       </div>
     </div>
-</fds-sidenav>`;
+  </fds-sidenav>`;
 };
 
 export const WithTabs: Story = WithTabsTemplate.bind({});
@@ -289,40 +282,36 @@ ProminentAppBar.args = {
 
 const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
-  <div slot="sidenavContent">
-    <div class="fds-sidenav-header">
-      <fds-logo></fds-logo>
+    <div slot="sidenavContent">
+      <div class="fds-sidenav-header">
+        <fds-logo></fds-logo>
+      </div>
+      <div class="fds-sidenav-list">
+        <fds-list activatable>
+          <fds-list-item selected activated graphic="icon">
+            <span>Home</span>
+            <fds-icon slot="graphic">home</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Applications</span>
+            <fds-icon slot="graphic">dashboard</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Tools</span>
+            <fds-icon slot="graphic">extension</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Settings</span>
+            <fds-icon slot="graphic">settings</fds-icon>
+          </fds-list-item>
+        </fds-list>
+      </div>
     </div>
-    <div class="fds-sidenav-list">
-      <fds-list activatable>
-        <fds-list-item selected activated graphic="icon">
-          <span>Home</span>
-          <fds-icon slot="graphic">home</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Applications</span>
-          <fds-icon slot="graphic">dashboard</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Tools</span>
-          <fds-icon slot="graphic">extension</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Settings</span>
-          <fds-icon slot="graphic">settings</fds-icon>
-        </fds-list-item>
-      </fds-list>
-    </div>
-  </div>
-  <div slot="appContent">
+    <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-        <fds-launchpad
-          .apps=${apps}
-          slot="actions"
-        >
-        </fds-launchpad>
+        <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
         <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
@@ -364,7 +353,7 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         </p>
       </div>
     </div>
-</fds-sidenav>`;
+  </fds-sidenav>`;
 };
 
 export const WithButtons: Story = WithButtonsTemplate.bind({});
@@ -374,40 +363,36 @@ WithButtons.args = {
 
 const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', prominent = false, transparent = false, apps }) => {
   return html`<fds-sidenav type="modal">
-  <div slot="sidenavContent">
-    <div class="fds-sidenav-header">
-      <fds-logo></fds-logo>
+    <div slot="sidenavContent">
+      <div class="fds-sidenav-header">
+        <fds-logo></fds-logo>
+      </div>
+      <div class="fds-sidenav-list">
+        <fds-list activatable>
+          <fds-list-item selected activated graphic="icon">
+            <span>Home</span>
+            <fds-icon slot="graphic">home</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Applications</span>
+            <fds-icon slot="graphic">dashboard</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Tools</span>
+            <fds-icon slot="graphic">extension</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Settings</span>
+            <fds-icon slot="graphic">settings</fds-icon>
+          </fds-list-item>
+        </fds-list>
+      </div>
     </div>
-    <div class="fds-sidenav-list">
-      <fds-list activatable>
-        <fds-list-item selected activated graphic="icon">
-          <span>Home</span>
-          <fds-icon slot="graphic">home</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Applications</span>
-          <fds-icon slot="graphic">dashboard</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Tools</span>
-          <fds-icon slot="graphic">extension</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Settings</span>
-          <fds-icon slot="graphic">settings</fds-icon>
-        </fds-list-item>
-      </fds-list>
-    </div>
-  </div>
-  <div slot="appContent">
+    <div slot="appContent">
       <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
         <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-        <fds-launchpad
-          .apps=${apps}
-          slot="actions"
-        >
-        </fds-launchpad>
+        <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
         <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
@@ -432,36 +417,35 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
             <fds-icon-bar-item data-tippy-content="This is a tooltip" slot="footer" icon="add"></fds-icon-bar-item>
           </fds-icon-bar>
           <div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </div>
         </div>
       </div>
-  </div>
-</fds-sidenav>`;
-
+    </div>
+  </fds-sidenav>`;
 };
 
 export const WithIconBar: Story = WithIconBarTemplate.bind({});

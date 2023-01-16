@@ -19,11 +19,11 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A1264'
     },
     cssprops
-  },
+  }
 } as Meta;
 
 const Template: Story<CircularProgress> = ({ progress, indeterminate = false }) => {
-  return html`<fds-circular-progress  progress=${progress} ?indeterminate=${indeterminate}></fds-circular-progress>`;
+  return html`<fds-circular-progress progress=${progress} ?indeterminate=${indeterminate}></fds-circular-progress>`;
 };
 
 export const Default: Story<CircularProgress> = Template.bind({});
@@ -37,5 +37,5 @@ Indeterminate.args = {
   indeterminate: true
 };
 Indeterminate.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };

@@ -14,31 +14,30 @@
   ],
   "scripts": {
     "build:fds-theme": "npm run build -w themes/fds-theme",
-    "build:tippy-theme": "npm run build -w themes/tippy.js",
     "build:scripts": "tsc --project scripts/tsconfig.json",
-    "build": "npm run build:style && npm run build:ts -- --verbose",
-    "build:style": "npm run build:style -w libs/web-components",
-    "build:ts": "tsc --build libs/web-components/list libs/web-components/menu libs/web-components/textfield libs/web-components",
-    "prebuild:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run build",
     "build:storybook": "build-storybook -o storybook-static",
-    "compliance:check": "node ./scripts/compliance-check.js",
-    "format": "",
-    "start": "npm run build:fds-theme && concurrently npm:wc:watch wds --open",
-    "prestorybook": "npm run wca",
-    "storybook": "start-storybook -p 8080",
-    "test": "web-test-runner --coverage",
-    "test:watch": "npm run wc:test -- --watch",
-    "watch": "npm run build --watch && node scripts/watcher.js",
-    "clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
+    "build:style": "npm run build:style -w libs/web-components",
+    "build:tippy-theme": "npm run build -w themes/tippy.js",
+    "build:ts": "tsc --build libs/web-components/list libs/web-components/menu libs/web-components/textfield libs/web-components",
+    "build": "npm run build:style && npm run build:ts -- --verbose",
     "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
-    "postwca": "node ./scripts/wca-to-storybook.js",
-    "wca:md": "wca analyze 'libs/web-components/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
-    "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes",
+    "clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
+    "compliance:check": "node ./scripts/compliance-check.js",
+    "format": "prettier . --write --ignore-path .gitignore",
+    "lint": "eslint . --ext .ts --fix",
+    "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
+    "postwca": "node ./scripts/wca-to-storybook.js",
+    "prebuild:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run build",
     "prepare": "husky install",
-    "lint": "eslint . --ext .ts --fix"
-
+    "prestorybook": "npm run wca",
+    "start": "npm run build:fds-theme && concurrently npm:wc:watch wds --open",
+    "storybook": "start-storybook -p 8080",
+    "test:watch": "npm run wc:test -- --watch",
+    "test": "web-test-runner --coverage",
+    "watch": "npm run build --watch && node scripts/watcher.js",
+    "wca:md": "wca analyze 'libs/web-components/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
+    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json"
   },
   "husky": {
     "hooks": {
@@ -46,7 +45,8 @@
     }
   },
   "lint-staged": {
-    "*.ts": "npm run lint"    
+    "**/*.{html,js,json,md,ts}": "prettier --write",
+    "**/*.ts": "npm run lint"
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
@@ -96,7 +96,7 @@
     "cpx": "^1.5.0",
     "css-loader": "^6.5.0",
     "dotenv": "10.0.0",
-    "eslint": "8.31.0",    
+    "eslint": "8.31.0",
     "fs-extra": "^10.0.0",
     "git-config-path": "^2.0.0",
     "globby": "^11.1.0",
@@ -117,7 +117,7 @@
     "postcss-import": "14.1.0",
     "postcss-preset-env": "7.5.0",
     "postcss-url": "10.1.3",
-    "prettier": "2.7.1",
+    "prettier": "2.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-syntax-highlighter": "^15.4.5",

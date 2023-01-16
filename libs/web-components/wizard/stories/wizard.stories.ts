@@ -63,7 +63,14 @@ const Template: Story<Wizard> = ({ stepperPosition, stepperOnDark, currentStepIn
     <fds-text-button slot="previous" label="Back" icon="chevron_left" secondary> </fds-text-button>
     <fds-button slot="done" label="Save" secondary> </fds-button>
 
-    <fds-wizard-page slot="page" page-title="Welcome" icon="https://i.imgur.com/cEP8lXE.png" description="Welcome page" next-label="Set up preferences" header>
+    <fds-wizard-page
+      slot="page"
+      page-title="Welcome"
+      icon="https://i.imgur.com/cEP8lXE.png"
+      description="Welcome page"
+      next-label="Set up preferences"
+      header
+    >
       <div class="page-content">
         <div class="textfields">
           <fds-textfield required label="Username" icon="person" helper="Please enter your username"></fds-textfield>

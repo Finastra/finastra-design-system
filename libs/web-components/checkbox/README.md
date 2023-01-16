@@ -20,35 +20,37 @@ import '@finastra/checkbox';
 <fds-checkbox checked></fds-checkbox>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property             | Attribute       | Modifiers | Type                      | Default    | Description                                      |
-|----------------------|-----------------|-----------|---------------------------|------------|--------------------------------------------------|
-| `ariaDescribedBy`    |                 |           | `string`                  |            |                                                  |
-| `ariaLabel`          |                 |           | `string`                  |            |                                                  |
-| `ariaLabelledBy`     |                 |           | `string`                  |            |                                                  |
-| `checked`            | `checked`       |           | `boolean`                 | true       | Whether the checkbox is checked.                 |
-| `disabled`           | `disabled`      |           | `boolean`                 | false      | Disabled state for the component. When `disabled` is set to `true`, the<br />component will not be added to form submission. |
-| `indeterminate`      | `indeterminate` |           | `boolean`                 | false      | It is used on the parent to indicate that some but not all of its children are checked. |
-| `isRippleActive`     |                 | readonly  |                           |            |                                                  |
-| `name`               |                 |           | `string`                  |            |                                                  |
+| Property             | Attribute       | Modifiers | Type                      | Default    | Description                                                                                                                              |
+| -------------------- | --------------- | --------- | ------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `ariaDescribedBy`    |                 |           | `string`                  |            |                                                                                                                                          |
+| `ariaLabel`          |                 |           | `string`                  |            |                                                                                                                                          |
+| `ariaLabelledBy`     |                 |           | `string`                  |            |                                                                                                                                          |
+| `checked`            | `checked`       |           | `boolean`                 | true       | Whether the checkbox is checked.                                                                                                         |
+| `disabled`           | `disabled`      |           | `boolean`                 | false      | Disabled state for the component. When `disabled` is set to `true`, the<br />component will not be added to form submission.             |
+| `indeterminate`      | `indeterminate` |           | `boolean`                 | false      | It is used on the parent to indicate that some but not all of its children are checked.                                                  |
+| `isRippleActive`     |                 | readonly  |                           |            |                                                                                                                                          |
+| `name`               |                 |           | `string`                  |            |                                                                                                                                          |
 | `reducedTouchTarget` |                 |           | `boolean`                 |            | Touch target extends beyond visual boundary of a component by default.<br />Set to `true` to remove touch target added to the component. |
-| `ripple`             |                 |           | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield |
-| `styles`             |                 |           | `CSSResult[]`             | ["styles"] |                                                  |
-| `value`              |                 |           | `string`                  |            |                                                  |
+| `ripple`             |                 |           | `Promise<Ripple \| null>` |            | Implement ripple getter for Ripple integration with mwc-formfield                                                                        |
+| `styles`             |                 |           | `CSSResult[]`             | ["styles"] |                                                                                                                                          |
+| `value`              |                 |           | `string`                  |            |                                                                                                                                          |
 
 #### Methods
 
 | Method  | Type       |
-|---------|------------|
+| ------- | ---------- |
 | `click` | `(): void` |
 
 #### CSS Custom Properties
 
 | Property        | Type  | Default   | Description    |
-|-----------------|-------|-----------|----------------|
+| --------------- | ----- | --------- | -------------- |
 | `--fds-primary` | color | "#694ED6" | Checkbox color |
+
 <!-- /DOC -->

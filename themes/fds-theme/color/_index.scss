@@ -1,21 +1,3 @@
-@forward './light' show
-  $primary,
-  $secondary,
-  $background,
-  $surface,
-  $success,
-  $error,
-  $gradient,
-  $on-primary,
-  $on-secondary,
-  $on-background,
-  $on-surface,
-  $on-error,
-  $on-success,
-  $on-gradient;
-@forward './mixins' show
-  bg-color,
-  text-color,
-  mdc,
-  property,
-  fill;
+@forward './light' show $primary, $secondary, $background, $surface, $success, $error, $gradient, $on-primary, $on-secondary, $on-background,
+  $on-surface, $on-error, $on-success, $on-gradient;
+@forward './mixins' show bg-color, text-color, mdc, property, fill;

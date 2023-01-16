@@ -15,13 +15,13 @@
   tippy('[data-tippy-content]', {
     touch: false,
     theme: 'finastra',
-    placement: 'right-end',
-    });
+    placement: 'right-end'
+  });
 
-    const iconbar = document.getElementById('icon');
-    iconbar.addEventListener('selected', (event) =>  {
-      console.log("Selected index "+event.detail.index);
-    });
+  const iconbar = document.getElementById('icon');
+  iconbar.addEventListener('selected', (event) => {
+    console.log('Selected index ' + event.detail.index);
+  });
 </script>
 
 <style>
