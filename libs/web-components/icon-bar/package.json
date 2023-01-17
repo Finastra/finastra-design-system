@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@finastra/icon-button": "1.2.17",
+    "@finastra/badge": "1.2.17",
+    "@finastra/divider": "1.2.17",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
