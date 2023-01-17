@@ -4,6 +4,14 @@ import { ApexChartsWrapper } from './apexcharts';
 import { styles as apexchartsStyle } from './apexcharts-styles.css';
 import { styles } from './line-chart-styles.css';
 
+/**
+ *
+ * @attr {Object} [xaxis] - Defines axis X and its properties
+ * @attr {Object} [yaxis] - Defines axis Y and its properties
+ * @attr {boolean} [hide-toolbar=false] - Hide toolbar from the top right corner
+ * @attr {Object} [stroke] - Defines stroke and its properties
+ * @attr {string} [strokeCurve='straight'] - Define curve type
+ */
 @customElement('fds-line-chart')
 export class LineChart extends ApexChartsWrapper {
   static styles = [styles, apexchartsStyle]
@@ -70,6 +78,7 @@ export class LineChart extends ApexChartsWrapper {
   
    /**
    * In line charts, whether to draw smooth, straight or step lines
+   * @attr {straight|smooth|stepline} [strokeCurve=bottom]
    */
   private _strokeCurve: any = 'straight';
   @property({ type: String, attribute: 'stroke-curve' })

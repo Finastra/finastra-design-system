@@ -189,24 +189,21 @@ import '@finastra/charts';
 | `$el`                   |                         | `HTMLElement \| null`                            | null          |                                           |
 | `chart`                 |                         | `ApexCharts \| null`                             | null          |                                           |
 | `chartTheme`            |                         | `ChartTheme`                                     |               |                                           |
-| `color`                 | `color`                 | `semantic-1\|semantic-2\|semantic-3\|categorical\|focus-1\|focus-2\|focus-1-angular\|focus-2-angular \|sequential-1\|sequential-2` | "categorical" | Define palette used by the chart          |
-| `data`                  |                         | `number[]`                                       |               |                                           |
+| `color`                 | `color`                 | `categorical`                                    | "categorical" | Define palette used by the chart          |
+| `series`                |                         | `Object`                                         | [name, data]  | Set of data                               |
 | `height`                | `height`                | `string`                                         | "100%"        | Height of the chart                       |
-| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide labels                               |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                                        | false         | Hide data labels                          |
 | `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`                            | "center"      | Define the horizontal alignment of legend |
 | `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left`                       | "bottom"      | Define the position of the legend         |
 | `options`               |                         | `ApexOptions`                                    |               |                                           |
 | `override`              |                         |                                                  |               |                                           |
-| `lineSeries`            |                         | `ApexAxisChartSeries \| ApexNonAxisChartSeries`  |               |                                           |
 | `type`                  |                         | `string`                                         | "pie"         |                                           |
 | `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
-| `xaxis`                 | `xaxis`                 | `number[]`                                       |               |                                           |
-| `yaxis`                 | `yaxis`                 | `number[]`                                       |               |                                           |
-| `hideToolbar`           | `hide-toolbar`          | `boolean`                                        | false         | Hide toolbar                              |
-| `stroke`                | `stroke`                | `Object`                                         |               |                                           |
+| `xaxis`                 | `xaxis`                 | `Object`                                         |               | Define axis X and its properties          |
+| `yaxis`                 | `yaxis`                 | `Object`                                         |               | Define axis X and its properties          |
+| `hideToolbar`           | `hide-toolbar`          | `boolean`                                        | true          | Hide toolbar from the top right corner    |
+| `stroke`                | `stroke`                | `Object`                                         |               | Define stroke and its properties          |
 | `strokeCurve`           | `stroke-curve`          | `string`                                         |               | Define curve type                         |
-| `tooltip`               | `tooltip`               | `Object`                                         |               | Define chart's tooltip                    |
-| `markers`               | `markers`               | `Object`                                         |               | Define chart's markers                    |
 
 #### Methods
 
@@ -222,7 +219,6 @@ import '@finastra/charts';
 | `isObject`                       | `(item: any): boolean`                   |
 | `loadChartThemeFromCssVariables` | `(): void`                               |
 | `refresh`                        | `(): Promise<void> \| undefined`         |
-| `toggleSelected`                 | `(): void`                               |
 
 #### CSS Custom Properties
 
