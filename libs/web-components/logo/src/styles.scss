@@ -9,6 +9,7 @@ $logo-height: 60px;
   height: var(--fds-logo-height, $logo-height);
   background: center / contain no-repeat var(--fds-logo, $logo);
 }
+
 :host([dense]) {
   width: calc(var(--fds-logo-width, #{$logo-width}) / 2);
   min-width: calc(var(--fds-logo-height, #{$logo-height}) / 2);

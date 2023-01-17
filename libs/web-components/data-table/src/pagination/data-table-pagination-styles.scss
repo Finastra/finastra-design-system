@@ -11,11 +11,13 @@
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(ripple-color, surface-selected);
   @include fds.mdc(theme-text-disabled-on-light, surface-disabled);
+
   fds-icon-button {
     @include fds.text-color(on-background);
   }
+
   .fds-data-table-pagination.mdc-data-table__pagination {
-    border: 0px;
+    border: 0;
 
     .mdc-data-table__pagination-trailing {
       flex-wrap: nowrap !important;

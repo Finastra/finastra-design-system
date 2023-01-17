@@ -3,6 +3,7 @@
 
 :host {
   display: block;
+
   --mdc-shape-small: 16px;
   @include fds.property(--mdc-theme-primary, primary);
   @include fds.property(--mdc-button-outline-color, on-surface-disabled);
@@ -11,6 +12,7 @@
   .mdc-button {
     height: 24px;
   }
+
   .mdc-button:hover {
     .mdc-button__label {
       @include fds.property(color, primary);
@@ -24,10 +26,12 @@
 
   .mdc-button--outlined:not(:disabled) {
     @include fds.property(color, on-surface-medium);
+
     &:hover {
       @include fds.property(color, primary);
     }
   }
+
   .leading-icon .mdc-button__icon {
     width: 18px;
     height: 18px;
@@ -41,6 +45,7 @@
   .mdc-button {
     @include fds.property(background, surface-selected);
   }
+
   .mdc-button__label {
     @include fds.property(color, primary);
   }
@@ -54,11 +59,13 @@
   .mdc-button {
     height: 32px;
   }
+
   .leading-icon .mdc-button__icon {
     width: 24px;
     height: 24px;
     font-size: 24px;
   }
+
   .mdc-button__label {
     @include fds.typography(body-2);
   }
@@ -72,6 +79,7 @@
   .leading-icon {
     height: 14px;
   }
+
   .leading-icon .mdc-button__icon {
     width: 14px;
     height: 14px;
@@ -81,8 +89,10 @@
 
 :host([secondary]) {
   @include fds.property(--mdc-ripple-color, secondary);
+
   .mdc-button:hover {
     @include fds.property(background, secondary-lighter);
+
     .mdc-button__label {
       @include fds.property(color, secondary);
     }
@@ -90,6 +100,7 @@
 
   .mdc-button--outlined:not(:disabled) {
     @include fds.property(color, on-surface-medium);
+
     &:hover {
       @include fds.property(color, secondary);
     }
@@ -114,6 +125,7 @@
 
 :host([disabled]) {
   @include fds.property(--mdc-button-disabled-ink-color, on-surface-disabled);
+
   .mdc-button {
     @include fds.property(background, surface-disabled);
   }

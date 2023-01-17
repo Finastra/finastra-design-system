@@ -5,13 +5,15 @@
   :host {
     display: block;
     height: fit-content;
-    @include card.core-styles();
+    @include card.core-styles;
+
     --mdc-card-border-radius: 4px;
   }
 
   .mdc-card {
     flex: 1;
     @include fds.bg-color(surface);
+
     height: 100%;
     overflow: hidden;
     @include fds.padding(3);
@@ -42,4 +44,4 @@
   }
 }
 
-@include core-styles();
+@include core-styles;

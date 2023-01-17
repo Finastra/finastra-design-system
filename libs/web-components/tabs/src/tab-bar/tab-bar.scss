@@ -6,7 +6,7 @@
 
 :host([seperator]) {
   .mdc-tab-bar mwc-tab-scroller {
-    ::slotted(fds-tab:not([active]):not(:first-child))::before {
+    ::slotted(fds-tab:not([active], :first-child))::before {
       content: '';
       display: block;
       position: absolute;

@@ -2,7 +2,8 @@
 @use '@finastra/card/src' as base-card;
 
 :host {
-  @include base-card.core-styles();
+  @include base-card.core-styles;
+
   width: 160px;
   height: 120px;
 
@@ -14,6 +15,7 @@
     width: 160px;
     height: 120px;
   }
+
   .brand-card-decoration {
     &.pattern {
       top: -32px;
@@ -32,12 +34,15 @@
 :host([large]) {
   width: 320px;
   height: 240px;
+
   .brand-card {
     width: 320px;
     height: 240px;
+
     .brand-card-label {
       @include fds.typography(headline-1);
     }
+
     .brand-card-decoration {
       &.pattern {
         top: -63px;
@@ -53,12 +58,15 @@
 :host([dense]) {
   width: 120px;
   height: 90px;
+
   .brand-card {
     width: 120px;
     height: 90px;
+
     .brand-card-label {
       @include fds.typography(headline-5);
     }
+
     .brand-card-decoration {
       &.pattern {
         top: -24px;
@@ -74,12 +82,15 @@
 :host([extraDense]) {
   width: 100px;
   height: 70px;
+
   .brand-card {
     width: 100px;
     height: 70px;
+
     .brand-card-label {
       @include fds.typography(headline-5);
     }
+
     .brand-card-decoration {
       &.pattern {
         top: -17px;
@@ -95,13 +106,16 @@
 :host([large][dense]),
 :host([dense][extraDense]),
 :host([large][extraDense]) {
-  @include base-card.core-styles();
+  @include base-card.core-styles;
+
   width: 160px;
   height: 120px;
+
   .brand-card {
     width: 160px;
     height: 120px;
   }
+
   .brand-card-decoration {
     &.pattern {
       top: -32px;
@@ -115,6 +129,7 @@
 
 .brand-card-label {
   @include fds.typography(headline-3);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +145,7 @@
   .ribbon-primary {
     @include fds.fill(primary);
   }
+
   .ribbon-secondary {
     @include fds.fill(secondary);
   }

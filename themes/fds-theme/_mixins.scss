@@ -12,9 +12,9 @@
 @mixin custom-properties($scheme) {
   @include color.custom-properties($scheme);
   @include logo.custom-properties($scheme);
-  @include elevation.custom-properties();
-  @include typography.custom-properties();
-  @include spacing.custom-properties();
+  @include elevation.custom-properties;
+  @include typography.custom-properties;
+  @include spacing.custom-properties;
 }
 
 /// Loads the light theme custom properties inside your container.

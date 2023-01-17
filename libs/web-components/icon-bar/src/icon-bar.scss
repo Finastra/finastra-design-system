@@ -6,17 +6,21 @@
   margin: 0;
   @include fds.padding-x(3);
   @include fds.padding(2, bottom);
+
   padding-top: 32px;
   background: var(--fds-surface);
   @include fds.elevation(2);
+
   border-radius: var(--fds-spacing-2, 8px);
   height: auto;
   min-height: 100%;
+
   --fds-icon-button-size: 32px;
 }
 
 slot[name='footer']::slotted(*) {
   @include fds.margin(3, top);
+
   fds-icon-bar-item {
     @include fds.margin(0, bottom);
   }

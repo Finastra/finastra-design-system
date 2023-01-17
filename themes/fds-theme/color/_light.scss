@@ -3,26 +3,24 @@
 
 $_black: black;
 $_white: white;
-
 $primary: #694ed6 !default;
 $secondary: #c137a2 !default;
 $background: #fafafa !default;
-$surface: #ffffff !default;
+$surface: #fff !default;
 $outline: color.change($_black, $alpha: 0.12) !default;
 $success: #008744 !default;
 $error: #d60040 !default;
 $warning: #ff600a !default;
 $gradient: linear-gradient(var(--fds-primary, #694ed6), var(--fds-secondary, #c137a2)) !default;
-$on-primary: #ffffff !default;
-$on-secondary: #ffffff !default;
+$on-primary: #fff !default;
+$on-secondary: #fff !default;
 $on-background: color.change($_black, $alpha: 0.75) !default;
-$on-surface: #000000 !default;
-$on-error: #ffffff !default;
-$on-success: #ffffff !default;
-$on-gradient: #ffffff !default;
+$on-surface: #000 !default;
+$on-error: #fff !default;
+$on-success: #fff !default;
+$on-gradient: #fff !default;
 $on-light: color.change($_black, $alpha: 0.75);
 $on-dark: $_white;
-
 $properties: (
   primary: $primary,
   primary-lighter: color.change($primary, $alpha: 0.08),

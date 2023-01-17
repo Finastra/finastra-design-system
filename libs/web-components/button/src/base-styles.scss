@@ -3,6 +3,7 @@
 :host {
   display: inline-flex;
   outline: none;
+
   --fds-icon-size: 18px;
   --fds-icon-size-large: 24px;
   --fds-button-radius: 18px;
@@ -19,6 +20,7 @@
   @include fds.padding-y(2);
 
   --fds-icon-color: var(--fds-on-primary, #694ed6);
+
   position: relative;
   width: 100%;
   display: inline-flex;
@@ -80,6 +82,7 @@
 
   --fds-icon-size: var(--fds-icon-size-large);
   --fds-button-radius: var(--fds-button-radius-large);
+
   padding-top: var(--fds-button-large-padding-y);
   padding-bottom: var(--fds-button-large-padding-y);
 }

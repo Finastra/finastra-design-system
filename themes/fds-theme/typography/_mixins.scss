@@ -11,12 +11,13 @@
 ///   }
 @mixin custom-properties() {
   @each $key, $value in variables.$properties {
-    @if (meta.type-of($value) == 'map') {
+    @if meta.type-of($value) == 'map' {
       $mdc-typo-style: str-replace($key, '-', '');
       @each $typo-style, $typo-style-value in $value {
         --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
         --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style}, #{$typo-style-value});
       }
+
       --fds-#{$key}: #{typo-fallback($key)};
     } @else {
       --fds-#{$key}: #{$value};
@@ -31,7 +32,7 @@
 ///   <p class="fds-body-2">Hello</p>
 @mixin helper-classes() {
   @each $key, $value in variables.$properties {
-    @if (meta.type-of($value) == 'map') {
+    @if meta.type-of($value) == 'map' {
       $letter-spacing: map.get($value, 'letter-spacing');
 
       .fds-#{$key} {

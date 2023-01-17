@@ -15,6 +15,7 @@
 
   .fds-search-item:hover {
     @include fds.bg-color(surface-hover);
+
     border-radius: var(--fds-spacing-1);
 
     .fds-global-search-group-remove-btn {

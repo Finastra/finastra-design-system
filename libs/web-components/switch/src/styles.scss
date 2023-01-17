@@ -36,6 +36,7 @@ $track-color-opacity: 0.54;
   /* disabled state */
   @include fds.mdc(switch-disabled-unselected-handle-color, surface);
   @include fds.mdc(switch-disabled-unselected-track-color, on-surface-medium);
+
   --mdc-switch-disabled-track-opacity: 0.3;
 }
 

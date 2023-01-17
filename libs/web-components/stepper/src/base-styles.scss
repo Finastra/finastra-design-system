@@ -2,12 +2,14 @@
 
 :host {
   display: block;
+
   --fds-icon-size: 18px;
 }
 
 .circle {
   @include fds.text-color(on-background);
   @include fds.typography(subtitle-3);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +61,7 @@
   .circle {
     @include fds.bg-color(surface-disabled);
     @include fds.text-color(on-surface-disabled);
+
     pointer-events: none;
   }
 

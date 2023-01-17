@@ -8,6 +8,7 @@
     .fds-global-search-wrapper {
       @include fds.property(background, background);
       @include fds.property(border-color, primary);
+
       position: absolute;
       height: var(--fds-spacing-5);
 

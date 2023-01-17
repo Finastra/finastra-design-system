@@ -1,10 +1,12 @@
 @use '@finastra/fds-theme' as fds;
+
 :host {
   display: block;
 }
 
 .fds-tab-group-wrapper {
   @include fds.property(background-color, background);
+
   display: flex;
   flex-direction: column;
 

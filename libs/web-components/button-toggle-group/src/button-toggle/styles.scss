@@ -26,6 +26,7 @@
   @include fds.text-color(on-surface-disabled);
 
   --fds-icon-size: 18px;
+
   width: 18px;
   transition: color 0.2s ease;
 
@@ -51,6 +52,7 @@
   @include fds.margin(1, right);
 
   --fds-icon-size: 16px;
+
   width: 16px;
 }
 

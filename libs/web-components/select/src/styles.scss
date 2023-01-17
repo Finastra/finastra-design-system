@@ -31,6 +31,7 @@
 :host([dense]) {
   --mdc-icon-size: 18px;
   --mdc-menu-item-height: 40px;
+
   .mdc-select--outlined .mdc-select__anchor {
     height: 40px !important;
 
@@ -45,7 +46,7 @@
   @include fds.mdc(notched-outline-border-color, outline);
 }
 
-:host(:not([disabled]):hover) .mdc-select:not(.mdc-select--invalid):not(.mdc-select--focused) .mdc-notched-outline {
+:host(:not([disabled]):hover) .mdc-select:not(.mdc-select--invalid, .mdc-select--focused) .mdc-notched-outline {
   @include fds.mdc(notched-outline-border-color, on-surface-medium);
 }
 
@@ -70,7 +71,7 @@
   @include fds.bg-color(surface-disabled);
 }
 
-.mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
+.mdc-select:not(.mdc-select--disabled, .mdc-select--invalid).mdc-select--focused .mdc-floating-label {
   @include fds.property(color, primary);
 }
 
@@ -126,7 +127,7 @@
   @include fds.property(color, error);
 }
 
-.mdc-select--filled:not(.mdc-select--disabled):not(.mdc-select--invalid) .mdc-line-ripple::before {
+.mdc-select--filled:not(.mdc-select--disabled, .mdc-select--invalid) .mdc-line-ripple::before {
   @include fds.property(border-bottom-color, primary);
 }
 

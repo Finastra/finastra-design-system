@@ -9,8 +9,9 @@
 }
 
 :host {
-  --fds-toggle-selection-x: 0px;
+  --fds-toggle-selection-x: 0;
   --fds-toggle-selection-width: 50px;
+
   position: relative;
 }
 

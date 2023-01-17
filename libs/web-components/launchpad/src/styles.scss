@@ -2,6 +2,7 @@
 
 :host {
   display: inline-block;
+
   --fds-menu-min-width: 562px;
 
   #launchpad {
@@ -46,6 +47,7 @@
               @include fds.typography(subtitle-3);
               @include fds.text-color(on-surface);
               @include fds.padding(2, top);
+
               text-align: center;
             }
           }
@@ -67,6 +69,7 @@
       align-items: center;
       justify-content: center;
       @include fds.margin(4, top, bottom);
+
       fds-button {
         line-height: 0px;
       }

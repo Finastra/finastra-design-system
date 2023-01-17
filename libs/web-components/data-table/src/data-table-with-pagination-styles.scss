@@ -7,9 +7,11 @@
     justify-content: center;
     place-content: flex-end flex-start;
     align-items: flex-end;
+
     fds-data-table {
       width: 100%;
     }
+
     fds-data-table-pagination {
       margin-top: var(--fds-spacing-2, 8px);
     }

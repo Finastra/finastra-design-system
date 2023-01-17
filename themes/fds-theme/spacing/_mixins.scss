@@ -72,7 +72,7 @@
 /// @param {*} $side - The side to validate
 /// @return The same side passed in parameter if value is correct
 @function _check-side($side) {
-  @if (list.index(variables.$sides, $side)) {
+  @if list.index(variables.$sides, $side) {
     @return $side;
   } @else {
     @error "$side must be one of #{variables.$sides}, but received #{$side}";
@@ -93,6 +93,7 @@
   } @else {
     @each $side in $sides {
       $side: _check-side($side);
+
       #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)}, #{$spacing-value});
     }
   }
