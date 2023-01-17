@@ -149,4 +149,10 @@ describe('Charts', () => {
     await elementUpdated(lineChart);    
     await expect(lineChart.hideToolbar).to.be.true
   });
+
+  it('should set smooth stroke - LineChart', async () => {
+    const lineChart: LineChart = await fixture(html`<fds-line-chart stroke-curve="smooth" .series=${demoSeries} .xaxis=${demoXaxis} .yaxis=${demoYaxis} ></fds-line-chart>`);
+    await elementUpdated(lineChart);    
+    await expect(lineChart.strokeCurve).to.be.string
+  });
 });
