@@ -26,6 +26,7 @@
     "compliance:check": "node ./scripts/compliance-check.js",
     "format": "prettier . --write --ignore-path .gitignore",
     "lint": "eslint . --ext .ts --fix",
+    "stylelint": "stylelint **/*.scss --fix",
     "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "postwca": "node ./scripts/wca-to-storybook.js",
     "prebuild:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run build",
@@ -46,7 +47,7 @@
   },
   "lint-staged": {
     "*.{html,json}": "prettier --write",
-    "**/*.ts": "npm run lint",
+    "**/*.ts": "eslint --fix",
     "*.{css,scss}": "stylelint --fix"
   },
   "devDependencies": {
