@@ -10,7 +10,8 @@ import { styles } from './line-chart-styles.css';
  * @attr {Object} [yaxis] - Defines axis Y and its properties
  * @attr {boolean} [hide-toolbar=false] - Hide toolbar from the top right corner
  * @attr {Object} [stroke] - Defines stroke and its properties
- * @attr {string} [strokeCurve='straight'] - Define curve type
+ * @attr {string} [strokeCurve='straight'] - Defines curve type
+ * @attr {Object} [tooltip] - Defines tooltip and its properties
  */
 @customElement('fds-line-chart')
 export class LineChart extends ApexChartsWrapper {
@@ -43,7 +44,7 @@ export class LineChart extends ApexChartsWrapper {
     this.options = { ...this.options, yaxis: value }
     this.refresh();
   }
-  
+
   /**
    * Display the toolbar/menu in the top right corner
    */
@@ -75,21 +76,35 @@ export class LineChart extends ApexChartsWrapper {
     this.options = { ...this.options, stroke: value }
     this.refresh();
   }
-  
-   /**
-   * In line charts, whether to draw smooth, straight or step lines
-   * @attr {straight|smooth|stepline} [strokeCurve=bottom]
-   */
-  private _strokeCurve: any = 'straight';
+
+  /**
+  * In line charts, whether to draw smooth, straight or step lines
+  * @attr {straight|smooth|stepline} [strokeCurve=bottom]
+  */
+  private _strokeCurve: 'straight' | 'smooth' | 'stepline' = 'straight';
   @property({ type: String, attribute: 'stroke-curve' })
   public get strokeCurve() {
     return this._strokeCurve;
   }
-  public set strokeCurve(value: any) {
+  public set strokeCurve(value: 'straight' | 'smooth' | 'stepline') {
     this._strokeCurve = value;
     if (value && value.length) {
       this._defaultOptions.stroke.curve = value;
     }
+    this.refresh();
+  }
+
+  /**
+   * Defines tooltip and its properties
+   */
+  private _tooltip: any;
+  @property({ type: String, attribute: false })
+  public get tooltip(): any {
+    return this._tooltip;
+  }
+  public set tooltip(value: any) {
+    this._tooltip = value;
+    this.options = { ...this.options, tooltip: value }
     this.refresh();
   }
 
@@ -103,6 +118,7 @@ export class LineChart extends ApexChartsWrapper {
       width: 3,
       curve: this.strokeCurve
     },
+    tooltip: this.tooltip
   }
 
   constructor() {

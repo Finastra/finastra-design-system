@@ -49,11 +49,20 @@ export default {
     hideDataLabel: argTypes['hide-data-label'],
     color: argTypes.color,
     width: argTypes.width,
-    height: argTypes.height
+    height: argTypes.height,
+    strokeCurve: {
+      description: "In line charts, whether to draw smooth, straight or step lines",
+      type: "select",
+      table: {
+        defaultValue: {
+          summary: 'straight'
+        }
+      },
+      options: ['straight', 'smooth', 'stepline']
+    }
   },
   args: {
     legendPosition: 'bottom',
-    strokeCurve: 'straight',
     hideToolbar: false,
     legendHorizontalAlign: 'left',
     hideDataLabel: false,
@@ -78,7 +87,10 @@ export default {
 };
 
 const Template: Story<LineChart> = (args) => {
-  return html`<fds-line-chart ?stroke-curve=${args.strokeCurve} ?hide-data-label=${args.hideDataLabel} .legendHorizontalAlign=${args.legendHorizontalAlign}  .legendPosition=${args.legendPosition} ?hide-toolbar=${args.hideToolbar} color=${args.color} width=${args.width} height=${args.height} .series=${args.series} .xaxis=${args.xaxis} .yaxis=${args.yaxis}>
+  return html`<fds-line-chart stroke-curve=${args.strokeCurve} ?hide-data-label=${args.hideDataLabel}
+  .legendHorizontalAlign=${args.legendHorizontalAlign} .legendPosition=${args.legendPosition}
+  ?hide-toolbar=${args.hideToolbar} color=${args.color} width=${args.width} height=${args.height} .series=${args.series}
+  .xaxis=${args.xaxis} .yaxis=${args.yaxis}>
 </fds-line-chart>`;
 };
 

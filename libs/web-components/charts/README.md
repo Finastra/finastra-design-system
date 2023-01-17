@@ -199,11 +199,12 @@ import '@finastra/charts';
 | `override`              |                         |                                                  |               |                                           |
 | `type`                  |                         | `string`                                         | "pie"         |                                           |
 | `width`                 | `width`                 | `string`                                         | "100%"        | Width of the chart                        |
-| `xaxis`                 | `xaxis`                 | `Object`                                         |               | Define axis X and its properties          |
-| `yaxis`                 | `yaxis`                 | `Object`                                         |               | Define axis X and its properties          |
+| `xaxis`                 |                         | `Object`                                         |               | Define axis X and its properties          |
+| `yaxis`                 |                         | `Object`                                         |               | Define axis X and its properties          |
 | `hideToolbar`           | `hide-toolbar`          | `boolean`                                        | true          | Hide toolbar from the top right corner    |
 | `stroke`                | `stroke`                | `Object`                                         |               | Define stroke and its properties          |
 | `strokeCurve`           | `stroke-curve`          | `string`                                         |               | Define curve type                         |
+| `tooltip`               | `tooltip`               | `Object`                                         |               | Define tooltip and its properties         |
 
 #### Methods
 
