@@ -1,5 +1,7 @@
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
+import '../src/line-chart.js';
 import { LineChart } from '../src/line-chart.js';
+import '../src/pie-chart.js';
 import { PieChart } from '../src/pie-chart.js';
 
 const demoData = [44, 55, 13, 43, 22];
@@ -143,8 +145,8 @@ describe('Charts', () => {
   });
 
   it('should disable toolbar - LineChart', async () => {
-    const lineChart: LineChart = await fixture(html`<fds-line-chart hide-toolbar="false" .series=${demoSeries} .xaxis=${demoXaxis} .yaxis=${demoYaxis} ></fds-line-chart>`);
+    const lineChart: LineChart = await fixture(html`<fds-line-chart hide-toolbar .series=${demoSeries} .xaxis=${demoXaxis} .yaxis=${demoYaxis} ></fds-line-chart>`);
     await elementUpdated(lineChart);    
-    await expect(lineChart.hideToolbar).to.be.false
+    await expect(lineChart.hideToolbar).to.be.true
   });
 });

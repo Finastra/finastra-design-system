@@ -29,7 +29,10 @@ export class LineChart extends ApexChartsWrapper {
     this.options = { ...this.options, yaxis: value }
     this.refresh();
   }
-
+  
+  /**
+   * Display the toolbar/menu in the top right corner
+   */
   private _hideToolbar = true;
   @property({ type: Boolean, attribute: 'hide-toolbar' })
   public get hideToolbar(): boolean {

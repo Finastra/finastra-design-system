@@ -58,7 +58,7 @@ export default {
     legendHorizontalAlign: 'left',
     hideDataLabel: false,
     color: 'categorical',
-    width: '300px',
+    width: '450px',
     height: '300px',
     series: demoSeries,
     xaxis: demoXaxis,
