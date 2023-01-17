@@ -4,9 +4,11 @@ import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
 export class BaseTextField extends TextFieldBase {
+
   @property({ type: Boolean }) showActionButton = false;
   @property({ type: Boolean }) dense = false;
   @property({ type: Boolean }) labelInside = false;
+
   constructor() {
     super();
     this.outlined = true;
@@ -46,13 +48,16 @@ export class BaseTextField extends TextFieldBase {
     `;
   }
 
-  protected _handleClick(e) {
-    if (!this.disabled && (this.type === "date" || "datetime-local" || "month" || "week" || "time")) {
-      e.path.forEach(p => {
-        if (p.nodeName === "INPUT") {
-          p.showPicker();
-        }
-      });
+  protected _handleClick() {
+    if (!this.disabled && (
+      this.type === "date" ||
+      this.type === "datetime-local" ||
+      this.type === "month" || 
+      this.type === "week" || 
+      this.type === "time"
+    )) {
+      let input = this.formElement as any;
+      input.showPicker();
     }
   }
 
