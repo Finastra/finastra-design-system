@@ -8,6 +8,9 @@ import { styles } from './line-chart-styles.css';
 export class LineChart extends ApexChartsWrapper {
   static styles = [styles, apexchartsStyle]
 
+  /**
+   * Defines axis X and its properties
+   */
   private _xaxis: ApexXAxis | undefined;
   @property({ attribute: false })
   public get xaxis(): any {
@@ -19,6 +22,9 @@ export class LineChart extends ApexChartsWrapper {
     this.refresh();
   }
 
+  /**
+   * Defines axis Y and its properties
+   */
   private _yaxis: ApexYAxis | undefined;
   @property({ attribute: false })
   public get yaxis(): any {
@@ -48,6 +54,9 @@ export class LineChart extends ApexChartsWrapper {
     this.refresh();
   }
 
+  /**
+   * Defines stroke and its properties
+   */
   private _stroke: any;
   @property({ type: String, attribute: false })
   public get stroke(): any {
@@ -58,7 +67,10 @@ export class LineChart extends ApexChartsWrapper {
     this.options = { ...this.options, stroke: value }
     this.refresh();
   }
-
+  
+   /**
+   * In line charts, whether to draw smooth, straight or step lines
+   */
   private _strokeCurve: any = 'straight';
   @property({ type: String, attribute: 'stroke-curve' })
   public get strokeCurve() {

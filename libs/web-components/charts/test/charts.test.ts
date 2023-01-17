@@ -1,5 +1,8 @@
-import type { LineChart, PieChart } from '@finastra/charts/';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
+import '../src/line-chart';
+import type { LineChart } from '../src/line-chart';
+import '../src/pie-chart';
+import type { PieChart } from '../src/pie-chart';
 
 const demoData = [44, 55, 13, 43, 22];
 const demoLabels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki'];
