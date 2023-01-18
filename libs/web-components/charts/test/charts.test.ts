@@ -144,10 +144,10 @@ describe('Charts', () => {
     await expect(lineChart.hideDataLabel).to.be.true
   });
 
-  it('should disable toolbar - LineChart', async () => {
-    const lineChart: LineChart = await fixture(html`<fds-line-chart hide-toolbar .series=${demoSeries} .xaxis=${demoXaxis} .yaxis=${demoYaxis} ></fds-line-chart>`);
+  it('should display toolbar - LineChart', async () => {
+    const lineChart: LineChart = await fixture(html`<fds-line-chart show-toolbar .series=${demoSeries} .xaxis=${demoXaxis} .yaxis=${demoYaxis} ></fds-line-chart>`);
     await elementUpdated(lineChart);    
-    await expect(lineChart.hideToolbar).to.be.true
+    await expect(lineChart.showToolbar).to.be.true
   });
 
   it('should set smooth stroke - LineChart', async () => {

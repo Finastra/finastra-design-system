@@ -186,7 +186,7 @@ export class ApexChartsWrapper extends LitElement {
     semanticPalette2: '#D60040',
     semanticPalette3: '#FF600A',
     categoricalPalette: ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5'],
-    categoricalLabelColor: ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'], 
+    categoricalLabelColor: ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
     focus1: {
       start: '#1379C4',
       end: '#694ED6',
@@ -333,9 +333,8 @@ export class ApexChartsWrapper extends LitElement {
     }
 
     if (strokeColor) {
-        cssChartTheme.strokeColor = strokeColor.trim();
+      cssChartTheme.strokeColor = strokeColor.trim();
     }
-    
     this.chartTheme = this.extend(this.defaultTheme, cssChartTheme);
   }
 
@@ -417,12 +416,12 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   getStrokeColor() {
-    if(this.type === 'line'){
+    if (this.type === 'line') {
       return {
         stroke: {
           color: this.chartTheme.categoricalPalette
         }
-      };  
+      };
     } else return {
       stroke: {
         colors: [this.chartTheme.strokeColor]
@@ -433,15 +432,15 @@ export class ApexChartsWrapper extends LitElement {
   getDataLabelColor(): string[] {
     switch (this.color) {
       case 'sequential-1':
-        if(this.type === 'line') {
-          return  this.chartTheme.sequential1LineLabelColor;
+        if (this.type === 'line') {
+          return this.chartTheme.sequential1LineLabelColor;
         } else return this.chartTheme.sequential1LabelColor;
       case 'sequential-2':
-        if(this.type === 'line') {
-          return  this.chartTheme.sequential2LineLabelColor;
+        if (this.type === 'line') {
+          return this.chartTheme.sequential2LineLabelColor;
         } else return this.chartTheme.sequential2LabelColor;
     }
-    if(this.type === 'line'){
+    if (this.type === 'line') {
       return this.chartTheme.categoricalPalette;
     } else return this.chartTheme.categoricalLabelColor;
   }

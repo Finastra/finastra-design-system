@@ -8,7 +8,7 @@ import { styles } from './line-chart-styles.css';
  *
  * @attr {Object} [xaxis] - Defines axis X and its properties
  * @attr {Object} [yaxis] - Defines axis Y and its properties
- * @attr {boolean} [hide-toolbar=false] - Hide toolbar from the top right corner
+ * @attr {boolean} [show-toolbar=false] - Displays toolbar from the top right corner
  * @attr {Object} [stroke] - Defines stroke and its properties
  * @attr {string} [strokeCurve='straight'] - Defines curve type
  * @attr {Object} [tooltip] - Defines tooltip and its properties
@@ -48,17 +48,17 @@ export class LineChart extends ApexChartsWrapper {
   /**
    * Display the toolbar/menu in the top right corner
    */
-  private _hideToolbar = true;
-  @property({ type: Boolean, attribute: 'hide-toolbar' })
-  public get hideToolbar(): boolean {
-    return this._hideToolbar;
+  private _showToolbar = false;
+  @property({ type: Boolean, attribute: 'show-toolbar' })
+  public get showToolbar(): boolean {
+    return this._showToolbar;
   }
-  public set hideToolbar(value: boolean) {
-    this._hideToolbar = value;
+  public set showToolbar(value: boolean) {
+    this._showToolbar = value;
     if (value) {
-      this._defaultOptions.chart.toolbar.show = false;
-    } else {
       this._defaultOptions.chart.toolbar.show = true;
+    } else {
+      this._defaultOptions.chart.toolbar.show = false;
     }
     this.refresh();
   }
@@ -111,7 +111,7 @@ export class LineChart extends ApexChartsWrapper {
   _defaultOptions = {
     chart: {
       toolbar: {
-        show: this.hideToolbar
+        show: this.showToolbar
       },
     },
     stroke: {

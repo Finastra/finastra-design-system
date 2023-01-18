@@ -44,7 +44,7 @@ export default {
   component: 'fds-line-chart',
   argTypes: {
     legendPosition: argTypes.legendPosition,
-    hideToolbar: argTypes['hide-toolbar'],
+    showToolbar: argTypes['show-toolbar'],
     legendHorizontalAlign: argTypes.legendHorizontalAlign,
     hideDataLabel: argTypes['hide-data-label'],
     color: argTypes.color,
@@ -62,9 +62,6 @@ export default {
     }
   },
   args: {
-    legendPosition: 'bottom',
-    hideToolbar: false,
-    legendHorizontalAlign: 'left',
     hideDataLabel: false,
     color: 'categorical',
     width: '450px',
@@ -89,9 +86,14 @@ export default {
 const Template: Story<LineChart> = (args) => {
   return html`<fds-line-chart stroke-curve=${args.strokeCurve} ?hide-data-label=${args.hideDataLabel}
   .legendHorizontalAlign=${args.legendHorizontalAlign} .legendPosition=${args.legendPosition}
-  ?hide-toolbar=${args.hideToolbar} color=${args.color} width=${args.width} height=${args.height} .series=${args.series}
+  ?show-toolbar=${args.showToolbar} color=${args.color} width=${args.width} height=${args.height} .series=${args.series}
   .xaxis=${args.xaxis} .yaxis=${args.yaxis}>
 </fds-line-chart>`;
 };
 
 export const Default: Story<LineChart> = Template.bind({});
+export const Customized: Story<LineChart> = Template.bind({});
+Customized.args = {
+  showToolbar: true,
+  legendPosition: 'top'
+};
