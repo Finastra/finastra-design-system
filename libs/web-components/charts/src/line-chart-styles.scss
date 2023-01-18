@@ -1,34 +1,11 @@
+@use 'sass:map';
 @use '@finastra/fds-theme' as fds;
 
 .fds-line-chart {
 
-    .apexcharts-tooltip {
-        border-radius: 12px;
-
-        .apexcharts-tooltip-title {
-            @include fds.typography(headline-2);
-            background-color: rgba(0, 0, 0, 0.12);
-            opacity: 0.5;
-            border-bottom: 0;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-
-        .apexcharts-tooltip-marker {
-            width: 12px;
-            height: 12px;
-            position: relative;
-            top: 0;
-            margin-right: 10px;
-            border-radius: 50%
-        }
-
-    }
-
     .apexcharts-menu {
-
         .apexcharts-menu-item {
-            @include fds.typography(body-2);
+            @include fds.typography(body-3);
             margin-right: 10px;
         }
     }
