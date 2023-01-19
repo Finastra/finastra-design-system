@@ -39,7 +39,8 @@ import '@finastra/select';
 | `icon`                    | `icon`              |           | `string`                                         | ""         | Leading icon to display in input. See `mwc-icon`. |
 | `index`                   | `index`             |           | `number`                                         | -1         | Index of selected list item.                     |
 | `items`                   | `items`             |           | `ListItemBase[]`                                 | "[]"       | List of selectable items.                        |
-| `label`                   | `label`             |           | `string`                                         | ""         | Sets floating label value.                       |
+| `label`                   | `label`             |           | `string`                                         | ""         | Sets label value.                                |
+| `labelInside`             | `labelInside`       |           | `boolean`                                        | false      | Keep the label in the input.                     |
 | `name`                    |                     |           | `string`                                         |            |                                                  |
 | `naturalMenuWidth`        |                     |           | `boolean`                                        |            |                                                  |
 | `outlined`                | `outlined`          |           | `boolean`                                        | true       | Whether or not to show the material outlined variant. |
