@@ -23,7 +23,8 @@ const demoXaxis = {
   },
   labels: {
     show: true
-  }
+  },
+  tickPlacement: 'between'
 };
 const demoYaxis = {
   min: 5,
