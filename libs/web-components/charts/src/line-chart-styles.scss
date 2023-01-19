@@ -27,4 +27,8 @@
         @include fds.property(stroke, surface-disabled)
     }
 
+    .apexcharts-datalabel {
+        @include fds.fill(on-surface-medium);
+    }
+
 }

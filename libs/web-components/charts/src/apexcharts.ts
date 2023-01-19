@@ -213,10 +213,8 @@ export class ApexChartsWrapper extends LitElement {
     },
     sequential1: ['#2A285C', '#3A327B', '#4A3B99', '#5945B8', '#694ED6', '#8A72E0', '#AB96EB', '#CCB9F5', '#EDDDFF'],
     sequential1LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000'],
-    sequential1LineLabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
     sequential2: ['#571235', '#7D214E', '#A43067', '#CA3F7F', '#F04E98', '#F470B2', '#F891CC', '#FBB3E5', '#FFD4FF'],
     sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
-    sequential2LineLabelColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
   };
 
   private _chartTheme = this.defaultTheme;
@@ -432,17 +430,11 @@ export class ApexChartsWrapper extends LitElement {
   getDataLabelColor(): string[] {
     switch (this.color) {
       case 'sequential-1':
-        if (this.type === 'line') {
-          return this.chartTheme.sequential1LineLabelColor;
-        } else return this.chartTheme.sequential1LabelColor;
+        return this.chartTheme.sequential1LabelColor;
       case 'sequential-2':
-        if (this.type === 'line') {
-          return this.chartTheme.sequential2LineLabelColor;
-        } else return this.chartTheme.sequential2LabelColor;
+        return this.chartTheme.sequential2LabelColor;
     }
-    if (this.type === 'line') {
-      return this.chartTheme.categoricalPalette;
-    } else return this.chartTheme.categoricalLabelColor;
+    return this.chartTheme.categoricalLabelColor;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
