@@ -10,4 +10,21 @@
         }
     }
 
+    .apexcharts-text {
+        @include fds.fill(on-surface);
+        
+        &.apexcharts-yaxis-label,
+        &.apexcharts-xaxis-label {
+            @include fds.fill(on-surface-medium);
+        }
+    }
+    
+    .apexcharts-legend-text {
+        color: var(--fds-on-background) !important;
+    }
+
+    .apexcharts-gridline {
+        @include fds.property(stroke, surface-disabled)
+    }
+
 }
