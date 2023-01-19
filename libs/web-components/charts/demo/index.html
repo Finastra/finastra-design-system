@@ -1,4 +1,5 @@
 <script type="module" src="node_modules/@finastra/charts/dist/src/index.js"></script>
+
 <div>PieChart</div>
 <div class="main-content">
     <div>Default</div>
@@ -67,10 +68,25 @@
     <fds-radial-bar-chart id="radialBarChart" width="380"></fds-radial-bar-chart>
   </div>
 </div>
+
+<div>LineChart</div>
+<div class="main-content">
+    <div>Default</div>
+
+    <div class="card">
+        <fds-line-chart id="lineChart" width="380"></fds-line-chart>
+    </div>
+
+    <div>Smooth stroke with enabled data labels and toolbar</div>
+    <div class="card">
+        <fds-line-chart id="lineChart" hide-data-label show-toolbar stroke-curve="smooth" legendPosition="top" legendHorizontalAlign="left" width="380"></fds-line-chart>
+    </div>
+</div>
 <script>
     const pieCharts = document.querySelectorAll('#pieChart');
     const pieChartsFocus = document.querySelectorAll('#pieChartFocus');
     const radialBarCharts = document.querySelectorAll('#radialBarChart');
+    const lineCharts = document.querySelectorAll('#lineChart');
 
     pieCharts.forEach((pieChart) => {
         pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28];
@@ -85,6 +101,43 @@
       radialBarChart.data = [80];
       radialBarChart.labels = ['Confidence Score'];
     })
+
+    lineCharts.forEach((lineChart) => {
+    lineChart.series = [
+    {
+      name: "High - 2022",
+      data: [28, 29, 33, 36, 32, 32, 33]
+    },
+    {
+      name: "Low - 2022",
+      data: [12, 11, 14, 18, 17, 13, 13]
+    }
+    ];
+    lineChart.xaxis = {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        tickPlacement: 'between',
+        title: {
+            text: 'Month',
+            offsetY: 80
+        },
+        labels: {
+            show: true
+        }
+    }
+    lineChart.yaxis = {
+        min: 5,
+        max: 40,
+        title: {
+            text: 'Temperature'
+        },
+        axisTicks: {
+        show: true
+      },
+      axisBorder: {
+        show: false,
+      },
+    }
+})
 </script>
 <style>
     .card {

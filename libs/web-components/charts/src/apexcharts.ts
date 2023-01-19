@@ -165,7 +165,6 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private _options: ApexCharts.ApexOptions = {};
-
   @property({ attribute: false })
   public get options(): ApexCharts.ApexOptions {
     return this._options;
@@ -213,7 +212,7 @@ export class ApexChartsWrapper extends LitElement {
     sequential1: ['#2A285C', '#3A327B', '#4A3B99', '#5945B8', '#694ED6', '#8A72E0', '#AB96EB', '#CCB9F5', '#EDDDFF'],
     sequential1LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000'],
     sequential2: ['#571235', '#7D214E', '#A43067', '#CA3F7F', '#F04E98', '#F470B2', '#F891CC', '#FBB3E5', '#FFD4FF'],
-    sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000']
+    sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
   };
 
   private _chartTheme = this.defaultTheme;
@@ -269,7 +268,7 @@ export class ApexChartsWrapper extends LitElement {
     const focus2AngularPalette = styles.getPropertyValue('--fds-chart-focus2-angular-palette');
     const sequential1 = styles.getPropertyValue('--fds-chart-sequential-1');
     const sequential2 = styles.getPropertyValue('--fds-chart-sequential-2');
-    const categoricalLabelCcolor = styles.getPropertyValue('--fds-chart-categorical-label-color');
+    const categoricalLabelColor = styles.getPropertyValue('--fds-chart-categorical-label-color');
 
     if (semanticPalette1) {
       cssChartTheme.semanticPalette1 = semanticPalette1.trim();
@@ -325,14 +324,13 @@ export class ApexChartsWrapper extends LitElement {
       cssChartTheme.sequential2 = sequential2.trim().split(',');
     }
 
-    if (categoricalLabelCcolor) {
-      cssChartTheme.categoricalLabelColor = categoricalLabelCcolor.trim().split(',');
+    if (categoricalLabelColor) {
+      cssChartTheme.categoricalLabelColor = categoricalLabelColor.trim().split(',');
     }
 
     if (strokeColor) {
       cssChartTheme.strokeColor = strokeColor.trim();
     }
-
     this.chartTheme = this.extend(this.defaultTheme, cssChartTheme);
   }
 
@@ -358,6 +356,7 @@ export class ApexChartsWrapper extends LitElement {
       },
       dataLabels: {
         enabled: !this.hideDataLabel,
+        offsetY: 10,
         style: {
           fontSize: '12px',
           fontFamily: 'Roboto, sans-serif',
@@ -390,10 +389,6 @@ export class ApexChartsWrapper extends LitElement {
       series: this.series
     });
 
-    if (this.type !== 'radialBar') {
-      newOptions.chart!.foreColor = '#fffff';
-    }
-
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
     this.initWatchers();
@@ -417,7 +412,13 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   getStrokeColor() {
-    return {
+    if (this.type === 'line') {
+      return {
+        stroke: {
+          color: this.chartTheme.categoricalPalette
+        }
+      };
+    } else return {
       stroke: {
         colors: [this.chartTheme.strokeColor]
       }
