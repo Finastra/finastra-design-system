@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@finastra/icon-button": "1.2.17",
-    "@material/mwc-formfield": "0.27.0",
+    "@finastra/formfield": "1.2.17",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
