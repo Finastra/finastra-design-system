@@ -30,4 +30,24 @@ import '@finastra/checkbox';
 ### API
 
 <!-- DOC -->
+#### Properties
+
+| Property       | Attribute      | Type      | Default | Description                                      |
+|----------------|----------------|-----------|---------|--------------------------------------------------|
+| `alignEnd`     | `alignEnd`     | `boolean` | false   | Align the component at the end of the label..    |
+| `label`        | `label`        | `string`  | ""      | The text to display for the label and sets a11y label on input. (visually overriden by slotted label). |
+| `nowrap`       | `nowrap`       | `boolean` | false   | Prevents the label from wrapping and overflow text is ellipsed. |
+| `spaceBetween` | `spaceBetween` | `boolean` | false   | Add space between the component and the label as the formfield grows. |
+
+#### Methods
+
+| Method  | Type       |
+|---------|------------|
+| `click` | `(): void` |
+
+#### CSS Custom Properties
+
+| Property           | Default   | Description  |
+|--------------------|-----------|--------------|
+| `--fds-label-font` | "#694ED6" | Switch color |
 <!-- /DOC -->
