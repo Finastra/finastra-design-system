@@ -65,10 +65,8 @@ export interface ChartTheme {
   };
   sequential1: string[];
   sequential1LabelColor: string[];
-  sequential1LineLabelColor: string[];
   sequential2: string[];
   sequential2LabelColor: string[];
-  sequential2LineLabelColor: string[];
 }
 
 /**
