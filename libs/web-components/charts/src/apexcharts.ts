@@ -184,7 +184,7 @@ export class ApexChartsWrapper extends LitElement {
     semanticPalette1: '#008744',
     semanticPalette2: '#D60040',
     semanticPalette3: '#FF600A',
-    categoricalPalette: ['#694ED6', '#F04E98', '#ED8B00', '#FFD100', '#7FCDDE', '#E5E5E5'],
+    categoricalPalette: ['#694ED6', '#F04E98', '#FFD100', '#ED8B00', '#7FCDDE', '#E5E5E5'],
     categoricalLabelColor: ['#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
     focus1: {
       start: '#1379C4',
@@ -609,7 +609,6 @@ export class ApexChartsWrapper extends LitElement {
         return {
           colors: this.chartTheme.sequential2
         };
-        
     }
   }
 

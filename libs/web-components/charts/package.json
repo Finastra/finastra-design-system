@@ -13,7 +13,7 @@
   "module": "dist/src/index.js",
   "scripts": {
     "build": "",
-    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/apexcharts-styles.scss src/pie-chart-styles.scss src/radial-bar-chart-styles.scss src/bar-chart/bar-chart-styles.scss"
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/apexcharts-styles.scss src/pie-chart-styles.scss src/radial-bar-chart-styles.scss src/bar-chart-styles.scss"
   },
   "dependencies": {
     "apexcharts": "^3.35.0",

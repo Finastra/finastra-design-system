@@ -1,15 +1,15 @@
 import { customElement, property } from 'lit/decorators.js';
-import { ApexChartsWrapper } from '../apexcharts';
-import { styles as apexchartsStyle } from '../apexcharts-styles.css';
+import { ApexChartsWrapper } from './apexcharts';
+import { styles as apexchartsStyle } from './apexcharts-styles.css';
 import { styles } from './bar-chart-styles.css';
 
 @customElement('fds-bar-chart')
 export class BarChart extends ApexChartsWrapper {
   static styles = [styles, apexchartsStyle];
 
-  @property({attribute:false})
-  public set xGrid(xGrid:boolean){
-    if (this. options){
+  @property({ attribute: false })
+  public set xGrid(xGrid: boolean) {
+    if (this.options) {
       this.options = {
         ...this.options,
         grid: {
@@ -18,15 +18,15 @@ export class BarChart extends ApexChartsWrapper {
             lines: {
               show: xGrid
             }
-          },
-        },
-      }
+          }
+        }
+      };
     }
   }
 
-  @property({attribute:false})
-  public set yGrid(yGrid:boolean){
-    if (this. options){
+  @property({ attribute: false })
+  public set yGrid(yGrid: boolean) {
+    if (this.options) {
       this.options = {
         ...this.options,
         grid: {
@@ -35,12 +35,11 @@ export class BarChart extends ApexChartsWrapper {
             lines: {
               show: yGrid
             }
-          },
-        },
-      }
+          }
+        }
+      };
     }
   }
-
 
   @property({ attribute: false })
   public set barTitle(title: string) {
@@ -51,15 +50,15 @@ export class BarChart extends ApexChartsWrapper {
           ...this.options.title,
           text: title
         }
-      }//.title = { ...this.options.title, text: title };
+      };
     }
     this.refresh();
   }
 
-  @property({ attribute: false})
+  @property({ attribute: false })
   public set legend(legend: boolean) {
     legend;
-    const default_legend  = {
+    const default_legend = {
       show: true,
       offsetX: 100,
       offsetY: -30,
@@ -67,17 +66,10 @@ export class BarChart extends ApexChartsWrapper {
       markers: {
         width: 12,
         height: 12,
-        // strokeWidth: 0,
-        // strokeColor: '#fff',
-        // fillColors: undefined,
-        radius: 12,
-        // customHTML: undefined,
-        // onClick: undefined,
-        // offsetX: 0,
-        // offsetY: 0
+        radius: 12
       }
     };
-    this.options.legend = {...this.options.legend, ...default_legend};
+    this.options.legend = { ...this.options.legend, ...default_legend };
     this.refresh();
   }
 
@@ -115,27 +107,6 @@ export class BarChart extends ApexChartsWrapper {
     if (this.options && this.options.xaxis) {
       this.options.xaxis.categories = this._categories;
     }
-    // this.options = {
-    //   ...this.options, 
-    //   legend: {
-    //     show: true,
-    //     offsetX: 100,
-    //     offsetY: -30,
-    //     inverseOrder: false,
-    //     markers: {
-    //       width: 12,
-    //       height: 12,
-    //       // strokeWidth: 0,
-    //       // strokeColor: '#fff',
-    //       // fillColors: undefined,
-    //       radius: 12,
-    //       // customHTML: undefined,
-    //       // onClick: undefined,
-    //       // offsetX: 0,
-    //       // offsetY: 0
-    //     }
-    //   }
-    // };
     this.refresh();
   }
 
@@ -145,6 +116,8 @@ export class BarChart extends ApexChartsWrapper {
     return this._horizontal;
   }
   public set horizontal(value: boolean) {
+    console.log('horizontal=' + value);
+
     this._horizontal = value;
     if (this.options && this.options.plotOptions && this.options.plotOptions.bar) {
       this.options.plotOptions.bar.horizontal = this._horizontal;
@@ -175,23 +148,13 @@ export class BarChart extends ApexChartsWrapper {
           }
         }
       },
-      legend:{
-        // position: 'bottom',
-        // show: true,
+      legend: {
         offsetX: 100,
         offsetY: -30,
-        // inverseOrder: false,
         markers: {
           width: 12,
           height: 12,
-          // strokeWidth: 0,
-          // strokeColor: '#fff',
-          // fillColors: undefined,
-          radius: 12,
-          // customHTML: undefined,
-          // onClick: undefined,
-          // offsetX: 0,
-          // offsetY: 0
+          radius: 12
         }
       },
       dataLabels: {
@@ -210,13 +173,7 @@ export class BarChart extends ApexChartsWrapper {
         enabled: true,
         followCursor: true,
         intersect: false,
-        shared: true,
-        // x: {
-        //   show: true
-        // },
-        // y: {
-        //   formatter: (value) => value.toString()
-        // }
+        shared: true
       },
 
       xaxis: {
@@ -272,7 +229,7 @@ export class BarChart extends ApexChartsWrapper {
         },
         yaxis: {
           lines: {
-            show:true
+            show: true
           }
         }
       },
