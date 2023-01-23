@@ -82,3 +82,4 @@
 - [01/03/2023] Request release v1.2.17 by dorsaffrigui 
 - [01/19/2023] Request release v1.3.0 by ttalbot 
 - [01/23/2023] Request release v1.4.0 by ttalbot 
+- [01/23/2023] Request release v1.4.1 by ttalbot 
