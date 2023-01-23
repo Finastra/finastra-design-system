@@ -31,7 +31,7 @@
 }
 
 .mdc-select--outlined:not(.mdc-select--disabled) .mdc-select__anchor {
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
@@ -52,7 +52,7 @@
 }
 
 .mdc-select--outlined {
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
   @include fds.mdc(notched-outline-border-color, outline);
 }
 
@@ -65,13 +65,13 @@
 }
 
 .mdc-select--focused:not(.mdc-select--invalid) .mdc-notched-outline {
-  @include fds.bg-color(surface-selected);
+  @include fds.background(surface-selected);
   @include fds.mdc(notched-outline-border-color, primary);
   --mdc-notched-outline-stroke-width: 2px;
 }
 
 .mdc-select.mdc-select--focused.mdc-select--invalid {
-  @include fds.bg-color(surface-error);
+  @include fds.background(surface-error);
 }
 
 .mdc-select--invalid .mdc-notched-outline {
@@ -79,7 +79,7 @@
 }
 
 .mdc-select.mdc-select--disabled .mdc-notched-outline {
-  @include fds.bg-color(surface-disabled);
+  @include fds.background(surface-disabled);
 }
 
 .mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
@@ -107,7 +107,7 @@
 }
 
 :host([disabled]) .fds-select__label {
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 }
 
 .mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor {
@@ -171,7 +171,7 @@
 }
 
 .fds-select__label {
-  @include fds.text-color(on-surface-medium);
+  @include fds.color(on-surface-medium);
   @include fds.typography(body-2);
   @include fds.margin(1, bottom);
   display: block;

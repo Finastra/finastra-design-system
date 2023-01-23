@@ -2,7 +2,7 @@
 
 :host>button {
   @include fds.typography(subtitle-2);
-  @include fds.text-color(on-surface-medium);
+  @include fds.color(on-surface-medium);
   @include fds.padding-x(3);
 
   display: inline-flex;
@@ -23,7 +23,7 @@
 
 :host fds-icon {
   @include fds.margin(2, right);
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 
   --fds-icon-size: 18px;
   width: 18px;
@@ -36,7 +36,7 @@
 
 :host(.selected)>button,
 :host(.selected) fds-icon {
-  @include fds.text-color(primary);
+  @include fds.color(primary);
 }
 
 :host([dense])>button {
@@ -56,5 +56,5 @@
 
 :host(:not(.selected))>button:hover,
 :host(:not(.selected))>button:focus {
-  @include fds.bg-color(surface-hover);
+  @include fds.background(surface-hover);
 }

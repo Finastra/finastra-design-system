@@ -5,7 +5,7 @@
   @include base-card.core-styles();
 
   .mdc-card--disabled ::slotted(*) {
-    @include fds.text-color(on-surface-disabled);
+    @include fds.color(on-surface-disabled);
   }
 
   slot::slotted(img) {

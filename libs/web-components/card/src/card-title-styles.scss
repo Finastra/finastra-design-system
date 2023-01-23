@@ -2,11 +2,11 @@
 
 :host {
   @include fds.typography(headline-6);
-  @include fds.text-color(on-surface);
+  @include fds.color(on-surface);
   @include fds.margin(1, top, bottom);
   @include fds.margin(0, right, left);
 }
 
 .mdc-card-title--disabled {
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 }
