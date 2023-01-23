@@ -14,8 +14,8 @@
   $on-success,
   $on-gradient;
 @forward './mixins' show
-  bg-color,
-  text-color,
+  background,
+  color,
   mdc,
   property,
   fill;

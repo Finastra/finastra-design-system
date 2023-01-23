@@ -22,7 +22,7 @@ $fds-blue: #009CBD;
     flex-direction: column;
     box-sizing: border-box;
     text-decoration: none;
-    @include fds.text-color(on-background);
+    @include fds.color(on-background);
     transform-style: preserve-3d;
     transition-property: box-shadow, transform;
     will-change: box-shadow, transform;
@@ -46,23 +46,23 @@ $fds-blue: #009CBD;
     }
 
     .published {
-      @include fds.text-color(on-success);
-      @include fds.bg-color(success);
+      @include fds.color(on-success);
+      @include fds.background(success);
     }
 
     .draft {
-      @include fds.text-color(on-light);
+      @include fds.color(on-light);
       background: var(--fds-gray, $fds-gray);
     }
 
     .in_review {
-      @include fds.text-color(on-dark);
+      @include fds.color(on-dark);
       background: var(--fds-blue, $fds-blue);
     }
 
     .coming_soon {
-      @include fds.text-color(on-gradient);
-      @include fds.bg-color(gradient-horizontal);
+      @include fds.color(on-gradient);
+      @include fds.background(gradient-horizontal);
     }
 
     .app-card-cover {
@@ -94,7 +94,7 @@ $fds-blue: #009CBD;
         position: absolute;
         top: var(--fds-spacing-3, 16px);
         right: var(--fds-spacing-4, 24px);
-        @include fds.bg-color(surface);
+        @include fds.background(surface);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -118,7 +118,7 @@ $fds-blue: #009CBD;
 
     .app-card-name {
       @include fds.typography(subtitle-1);
-      @include fds.text-color(on-background);
+      @include fds.color(on-background);
       @include fds.padding(4, right, left);
       @include fds.padding(2, bottom);
       font-size: 16px;
@@ -129,7 +129,7 @@ $fds-blue: #009CBD;
 
     .app-card-author {
       @include fds.typography(body-2);
-      @include fds.text-color(on-background);
+      @include fds.color(on-background);
       @include fds.padding(4, right, left);
       white-space: nowrap;
       overflow: hidden;
@@ -149,7 +149,7 @@ $fds-blue: #009CBD;
     .app-card-description {
       flex: 1 1 auto;
       @include fds.typography(body-2);
-      @include fds.text-color(on-surface);
+      @include fds.color(on-surface);
       @include fds.padding(4, right, bottom, left);
       @include fds.padding(2, top);
       text-align: left;
@@ -208,7 +208,7 @@ $fds-blue: #009CBD;
 
   .app-card-author {
     @include fds.typography(body-3);
-    @include fds.text-color(on-surface-medium);
+    @include fds.color(on-surface-medium);
     @include fds.padding(2, right, left);
     width: fit-content;
     max-width: 180px;

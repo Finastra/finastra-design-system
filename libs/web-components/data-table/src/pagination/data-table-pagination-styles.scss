@@ -13,7 +13,7 @@
     @include fds.mdc(ripple-color, surface-selected);
     @include fds.mdc(theme-text-disabled-on-light, surface-disabled);
     fds-icon-button{
-        @include fds.text-color(on-background);
+        @include fds.color(on-background);
     }
     .fds-data-table-pagination.mdc-data-table__pagination {
         border: 0px;
@@ -29,7 +29,7 @@
     
             .fds-pagination-text{
                 @include fds.typography(subtitle-1);
-                @include fds.text-color(on-surface);
+                @include fds.color(on-surface);
             }
     
             .mdc-data-table__pagination-total {

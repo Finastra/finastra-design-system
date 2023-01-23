@@ -98,7 +98,7 @@
                         height: 100%;
                         font-size: calc(2 * var(--fds-spacing-2)) !important;
                         background: transparent;
-                        @include fds.text-color(on-background);
+                        @include fds.color(on-background);
 
                     }
 
@@ -120,7 +120,7 @@
                     }
 
                     .fds-global-search-clear-btn {
-                        @include fds.text-color(on-background);
+                        @include fds.color(on-background);
                     }
                 }
             }
