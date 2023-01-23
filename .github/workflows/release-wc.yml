@@ -73,9 +73,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.RELEASE_VERSION }}
+          tag_name: wc${{ env.RELEASE_VERSION }}
           # Copy Pull Request's tile and body to Release Note
-          release_name: v${{ env.RELEASE_VERSION }}
+          release_name: wc@${{ env.RELEASE_VERSION }}
           body: ''
           draft: false
           prerelease: false
