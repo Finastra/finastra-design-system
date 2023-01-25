@@ -109,7 +109,7 @@
 | ----------------- | ------------------------------------------------------------------------------ | ------- | ----- |
 | **Alert Message** | [`@finastra/alert-message`](https://npmjs.com/package/@finastra/alert-message)     | [![latest](https://img.shields.io/npm/v/@finastra/alert-message.svg)](https://npmjs.com/package/@finastra/alert-message)     | [![README](https://img.shields.io/badge/README--56C271.svg)](./alert-message/README.md)   |
 | **Banner**        | [`@finastra/banner`](https://npmjs.com/package/@finastra/banner)               | N/A     | TBD   |
-| **dialog** | [`@finastra/dialog`](https://npmjs.com/package/@finastra/dialog)     | [![latest](https://img.shields.io/npm/v/@finastra/dialog.svg)](https://npmjs.com/package/@finastra/dialog)     | [![README](https://img.shields.io/badge/README--56C271.svg)](./dialog/README.md)   |
+| **Dialog** | [`@finastra/dialog`](https://npmjs.com/package/@finastra/dialog)     | [![latest](https://img.shields.io/npm/v/@finastra/dialog.svg)](https://npmjs.com/package/@finastra/dialog)     | [![README](https://img.shields.io/badge/README--56C271.svg)](./dialog/README.md)   |
 
 <br/>
 <br/>
