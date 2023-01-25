@@ -63,7 +63,7 @@ export default {
     }
   },
   args: {
-    hideDataLabel: false,
+    hideDataLabel: true,
     color: 'categorical',
     width: '450px',
     height: '300px',
@@ -96,5 +96,8 @@ export const Default: Story<LineChart> = Template.bind({});
 export const Customized: Story<LineChart> = Template.bind({});
 Customized.args = {
   showToolbar: true,
-  legendPosition: 'top'
+  legendPosition: 'top',
+  strokeCurve: 'smooth',
+  color: 'focus-2-angular',
+  hideDataLabel: false
 };
