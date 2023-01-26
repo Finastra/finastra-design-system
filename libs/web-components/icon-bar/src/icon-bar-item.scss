@@ -33,7 +33,7 @@
   }
 }
 
-.iconButton {
+.icon-button {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -50,8 +50,8 @@
   @include fds.property(color, on-surface-medium);
 }
 
-.showLabels {
-  .label {
-    margin-bottom: 0;
-  }
-}
+// .showLabels {
+//   .label {
+//     margin-bottom: 0;
+//   }
+// }
