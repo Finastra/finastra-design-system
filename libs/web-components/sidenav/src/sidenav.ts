@@ -1,4 +1,4 @@
-import { EVENTS as APP_BAR_EVENTS } from '@finastra/app-bar/dist/src/constants';
+import { events as APP_BAR_EVENTS } from '@finastra/app-bar/dist/src/constants';
 import '@material/mwc-drawer';
 import { Drawer } from '@material/mwc-drawer';
 import { html, LitElement } from 'lit';

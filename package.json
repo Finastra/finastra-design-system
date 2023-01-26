@@ -32,7 +32,7 @@
     "prebuild:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run build",
     "prepare": "husky install",
     "prestorybook": "npm run wca",
-    "start": "npm run build:fds-theme && concurrently npm:wc:watch wds --open",
+    "start": "npm run build:fds-theme && concurrently npm:watch wds --open",
     "storybook": "start-storybook -p 8080",
     "test:watch": "npm run wc:test -- --watch",
     "test": "web-test-runner --coverage",
