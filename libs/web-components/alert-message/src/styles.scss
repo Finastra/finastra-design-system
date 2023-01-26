@@ -41,12 +41,12 @@
 
   .title {
     padding-bottom: var(--fds-spacing-1, 4px);
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
     @include fds.typography(subtitle-2);
   }
 
   .subtitle {
-    @include fds.text-color(on-surface-medium);
+    @include fds.color(on-surface-medium);
     @include fds.typography(body-2);
   }
 
@@ -61,7 +61,7 @@
   }
 }
 
-.singleLine {
+.single-line {
   .description {
     display: flex;
     align-items: center;

@@ -96,12 +96,55 @@
             height: 100%;
             font-size: calc(2 * var(--fds-spacing-2)) !important;
             background: transparent;
-            @include fds.text-color(on-background);
+            @include fds.color(on-background);
           }
 
-          input:focus-visible,
-          input:focus {
-            outline: none;
+          .fds-global-search-text-field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            place-content: space-between;
+            height: 100%;
+            @include fds.padding-x(4);
+
+            .fds-global-search-text-input {
+              height: 100%;
+              width: 100%;
+
+              input {
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size: calc(2 * var(--fds-spacing-2)) !important;
+                background: transparent;
+                @include fds.color(on-background);
+              }
+
+              input:focus-visible,
+              input:focus {
+                outline: none;
+              }
+
+              input::placeholder {
+                @include fds.typography(body-2);
+              }
+            }
+
+            .fds-global-search-text-action {
+              display: flex;
+
+              .fds-global-search-action-hide {
+                display: none;
+              }
+
+              .fds-global-search-clear-btn {
+                @include fds.color(on-background);
+              }
+            }
+          }
+
+          fds-divider {
+            visibility: hidden;
           }
 
           input::placeholder {
@@ -117,7 +160,7 @@
           }
 
           .fds-global-search-clear-btn {
-            @include fds.text-color(on-background);
+            @include fds.color(on-background);
           }
         }
       }

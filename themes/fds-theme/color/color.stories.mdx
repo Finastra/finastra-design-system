@@ -99,12 +99,12 @@ Mixins are the recommended way of using colors, as it will generate the given cu
 
 It's the ideal way to use theme's colors when writing components for example.
 
-There are 3 use cases where you would use colors:
+There are 4 use cases where you would use colors:
 
 | Mixin        | Description                                               |
 | ------------ | --------------------------------------------------------- |
-| `bg-color`   | when applying background color to a container of any kind |
-| `text-color` | when applying text color                                  |
+| `background` | when applying background color to a container of any kind |
+| `color`      | when applying text color                                  |
 | `fill`       | when filling an SVG                                       |
 
 ### Examples
@@ -113,10 +113,10 @@ There are 3 use cases where you would use colors:
 @use '@finastra/fds-theme' as fds;
 
 .my-container {
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
 
   &.title {
-    @include fds.text-color(primary);
+    @include fds.color(primary);
   }
 
   &svg {

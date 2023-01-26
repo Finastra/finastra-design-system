@@ -14,7 +14,7 @@
   }
 
   .fds-search-item:hover {
-    @include fds.bg-color(surface-hover);
+    @include fds.background(surface-hover);
 
     border-radius: var(--fds-spacing-1);
 

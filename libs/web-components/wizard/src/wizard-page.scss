@@ -41,7 +41,7 @@ $icon-border-color: var(--fds-surface-selected);
 
 .title {
   @include fds.typography(headline-5);
-  @include fds.text-color(primary);
+  @include fds.color(primary);
 
   color: var(--fds-title-color, $title-color);
   margin-left: var(--fds-spacing-3, 16px);

@@ -19,23 +19,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include fds.bg-color(primary-lighter);
+    @include fds.background(primary-lighter);
   }
 
   .account-name {
     @include fds.typography(body-1);
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
   }
 
   .account-balance {
     @include fds.typography(headline-5);
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
     @include fds.margin(4, top);
   }
 
   .account-number {
     @include fds.typography(body-3);
-    @include fds.text-color(on-surface-medium);
+    @include fds.color(on-surface-medium);
     @include fds.padding(2, top, bottom);
     @include fds.padding(3, right, left);
   }
@@ -43,10 +43,10 @@
   .mdc-card--disabled .account-name,
   .mdc-card--disabled .account-balance,
   .mdc-card--disabled .account-number {
-    @include fds.text-color(on-surface-disabled);
+    @include fds.color(on-surface-disabled);
   }
 
   .mdc-card--disabled .account-icon {
-    @include fds.bg-color(surface-disabled);
+    @include fds.background(surface-disabled);
   }
 }

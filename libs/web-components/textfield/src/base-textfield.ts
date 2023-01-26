@@ -7,6 +7,7 @@ export class BaseTextField extends TextFieldBase {
   @property({ type: Boolean }) showActionButton = false;
   @property({ type: Boolean }) dense = false;
   @property({ type: Boolean }) labelInside = false;
+
   constructor() {
     super();
     this.outlined = true;
@@ -39,13 +40,13 @@ export class BaseTextField extends TextFieldBase {
     `;
   }
 
-  protected _handleClick(e) {
-    if (!this.disabled && (this.type === 'date' || 'datetime-local' || 'month' || 'week' || 'time')) {
-      e.path.forEach((p) => {
-        if (p.nodeName === 'INPUT') {
-          p.showPicker();
-        }
-      });
+  protected _handleClick() {
+    if (
+      !this.disabled &&
+      (this.type === 'date' || this.type === 'datetime-local' || this.type === 'month' || this.type === 'week' || this.type === 'time')
+    ) {
+      const input = this.formElement as HTMLInputElement;
+      input.showPicker();
     }
   }
 

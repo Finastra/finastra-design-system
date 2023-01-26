@@ -6,6 +6,6 @@
   @return 'dark';
 }
 
-@function isLight($scheme) {
+@function is-light($scheme) {
   @return $scheme == light();
 }

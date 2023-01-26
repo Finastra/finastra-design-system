@@ -12,7 +12,7 @@
 ///      color: var(--fds-on-surface);
 ///   }
 @mixin custom-properties($scheme: scheme.light()) {
-  $properties: if(scheme.islight($scheme), light.$properties, dark.$properties);
+  $properties: if(scheme.is-light($scheme), light.$properties, dark.$properties);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
     --mdc-theme-#{$style}: var(--fds-#{$style}, #{$variable});
@@ -57,11 +57,11 @@
 ///
 /// @example
 ///   .my-primary-container {
-///     @include fds.bg-color(primary);
+///     @include fds.background(primary);
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin bg-color($style) {
+@mixin background($style) {
   @include property(background, $style);
 }
 
@@ -69,11 +69,11 @@
 ///
 /// @example
 ///   .my-error-text {
-///     @include fds.text-color(error);
+///     @include fds.color(error);
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin text-color($style) {
+@mixin color($style) {
   $bg-color: map.get(light.$properties, $style);
   @if string.index($style, 'gradient') == 1 {
     background: var(--fds-#{$style}, #{$bg-color});

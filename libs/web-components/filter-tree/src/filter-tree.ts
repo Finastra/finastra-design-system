@@ -1,7 +1,7 @@
 import '@finastra/list';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { FlatTreeNode, TreeNode, TreeState } from './interfaces';
+import { flattreenode, treenode, treestate } from './interfaces';
 import { styles } from './styles.css';
 import './tree-item/tree-item';
 
@@ -16,11 +16,11 @@ export class FilterTree extends LitElement {
   /**
    * List of items.
    */
-  @property({ type: Array }) items: TreeNode[] = [];
+  @property({ type: Array }) items: treenode[] = [];
 
-  private flatTree: FlatTreeNode[] = [];
-  private flatTreeTransf: FlatTreeNode[] = [];
-  private tabState: TreeState = { added: [], removed: [] };
+  private flatTree: flattreenode[] = [];
+  private flatTreeTransf: flattreenode[] = [];
+  private tabState: treestate = { added: [], removed: [] };
   private indeterminate = false;
 
   render() {
@@ -29,7 +29,7 @@ export class FilterTree extends LitElement {
     return html` ${this.renderChildren(this.items)} `;
   }
 
-  renderChildren(items: TreeNode[]) {
+  renderChildren(items: treenode[]) {
     return html` <ul>
       ${items.map((item, index) => {
         return html`
@@ -57,25 +57,25 @@ export class FilterTree extends LitElement {
     this.init(this.items);
   }
 
-  haveChildren(item: TreeNode) {
+  haveChildren(item: treenode) {
     if (item.children) {
       return true;
     }
     return false;
   }
 
-  init(items: TreeNode[]) {
+  init(items: treenode[]) {
     items.forEach((child, index) => {
       if (child.isSelected) {
         this.initSelection(child, index);
       }
       if (child.children) {
-        this.init(child.children as TreeNode[]);
+        this.init(child.children as treenode[]);
       }
     });
   }
 
-  onRequestSelected(item: TreeNode, index: number, event: CustomEvent) {
+  onRequestSelected(item: treenode, index: number, event: CustomEvent) {
     const eventType = event.detail.source;
     if (eventType === 'interaction') {
       this.tabState.added = [];
@@ -84,7 +84,7 @@ export class FilterTree extends LitElement {
     }
   }
 
-  onExpandClick(item: TreeNode, index: number, event: CustomEvent) {
+  onExpandClick(item: treenode, index: number, event: CustomEvent) {
     if (event.detail) {
       this.getNodeElementById(item.level + '-' + index).setAttribute('expanded', event.detail);
       this.getNodeElementById(item.level + '-' + index).nextElementSibling.className = 'show';
@@ -94,7 +94,7 @@ export class FilterTree extends LitElement {
     }
   }
 
-  selectChildren(items: TreeNode[]) {
+  selectChildren(items: treenode[]) {
     items.forEach((itemChild, index) => {
       this.getNodeElementById(itemChild.level + '-' + index).removeAttribute('indeterminate');
       this.getNodeElementById(itemChild.level + '-' + index).setAttribute('selected', 'true');
@@ -107,7 +107,7 @@ export class FilterTree extends LitElement {
     });
   }
 
-  deselectChildren(items: TreeNode[]) {
+  deselectChildren(items: treenode[]) {
     items.forEach((itemChild, index) => {
       this.getNodeElementById(itemChild.level + '-' + index).removeAttribute('selected');
       this.flatTree[this.findIndex(this.toFlatTreeNode(itemChild, index))].selected = false;
@@ -129,7 +129,7 @@ export class FilterTree extends LitElement {
     return selected;
   }
 
-  flatTreeTransformer(items: TreeNode[], level = 0, flatTreeTransf: FlatTreeNode[]) {
+  flatTreeTransformer(items: treenode[], level = 0, flatTreeTransf: flattreenode[]) {
     items.forEach((element, index) => {
       element.level = level;
       element.expandable = false;
@@ -146,13 +146,13 @@ export class FilterTree extends LitElement {
         expandable: element.expandable,
         id: element.level + '-' + index
       };
-      flatTreeTransf.push(flatItem as FlatTreeNode);
+      flatTreeTransf.push(flatItem as flattreenode);
       if (element.children) this.flatTreeTransformer(element.children, level + 1, flatTreeTransf);
     });
     return flatTreeTransf;
   }
 
-  getParentNode(node: FlatTreeNode): FlatTreeNode | null {
+  getParentNode(node: flattreenode): flattreenode | null {
     const currentLevel = node.level;
 
     if (currentLevel < 1) {
@@ -170,7 +170,7 @@ export class FilterTree extends LitElement {
     return null;
   }
 
-  toFlatTreeNode(item: TreeNode, index): FlatTreeNode {
+  toFlatTreeNode(item: treenode, index): flattreenode {
     let selected;
     this.flatTreeTransf.forEach((node) => {
       if (node.id == item.level + '-' + index) {
@@ -180,9 +180,9 @@ export class FilterTree extends LitElement {
     return selected;
   }
 
-  getDescendants(node: FlatTreeNode) {
+  getDescendants(node: flattreenode) {
     let nodeIndex = 0;
-    const descendants: FlatTreeNode[] = [];
+    const descendants: flattreenode[] = [];
 
     this.flatTree.forEach((data, index) => {
       if (data.id === node.id) {
@@ -208,7 +208,7 @@ export class FilterTree extends LitElement {
     return descendants;
   }
 
-  checkDescendants(item: TreeNode, indexInTreeNode) {
+  checkDescendants(item: treenode, indexInTreeNode) {
     const nodeElement = this.getNodeElementById(item.level + '-' + indexInTreeNode);
     const indexInFlatTree = this.findIndex(this.toFlatTreeNode(item, indexInTreeNode));
 
@@ -222,7 +222,7 @@ export class FilterTree extends LitElement {
     this.requestUpdate();
   }
 
-  onSelect(item: TreeNode, nodeEl: HTMLElement, indexInTreeNode: number, indexInFlatTreeNode: number, eventType: string) {
+  onSelect(item: treenode, nodeEl: HTMLElement, indexInTreeNode: number, indexInFlatTreeNode: number, eventType: string) {
     switch (eventType) {
       case 'select': {
         this.flatTree[indexInFlatTreeNode].selected = true;
@@ -251,7 +251,7 @@ export class FilterTree extends LitElement {
     }
 
     if (this.getParentNode(this.toFlatTreeNode(item, indexInTreeNode))) {
-      this.notifyParent(this.getParentNode(this.toFlatTreeNode(item, indexInTreeNode)) as FlatTreeNode);
+      this.notifyParent(this.getParentNode(this.toFlatTreeNode(item, indexInTreeNode)) as flattreenode);
     }
 
     this.dispatchEvent(
@@ -269,13 +269,13 @@ export class FilterTree extends LitElement {
     }
   }
 
-  initSelection(item: TreeNode, indexInTreeNode) {
+  initSelection(item: treenode, indexInTreeNode) {
     const nodeEl = this.getNodeElementById(item.level + '-' + indexInTreeNode);
     const indexInFlatTreeNode = this.findIndex(this.toFlatTreeNode(item, indexInTreeNode));
     this.onSelect(item, nodeEl, indexInTreeNode, indexInFlatTreeNode, 'select');
   }
 
-  notifyParent(node: FlatTreeNode) {
+  notifyParent(node: flattreenode) {
     const indexInFlatTree = this.findIndex(node);
     if (this.descendantsAllSelected(node)) {
       if (this.getNodeElementById(node.id).getAttribute('indeterminate')) {
@@ -293,28 +293,28 @@ export class FilterTree extends LitElement {
       this.flatTree[indexInFlatTree].selected = false;
     }
     if (this.getParentNode(node)) {
-      this.notifyParent(this.getParentNode(node) as FlatTreeNode);
+      this.notifyParent(this.getParentNode(node) as flattreenode);
     }
   }
 
-  isSelected(node: FlatTreeNode): boolean {
+  isSelected(node: flattreenode): boolean {
     return node.selected;
   }
 
-  descendantsAllSelected(node: FlatTreeNode) {
+  descendantsAllSelected(node: flattreenode) {
     const descendantsLev = this.getDescendants(node);
     const descAllSelected = descendantsLev.length > 0 && descendantsLev.every(this.isSelected);
     return descAllSelected;
   }
 
-  descendantsPartiallySelected(node: FlatTreeNode) {
+  descendantsPartiallySelected(node: flattreenode) {
     const descendantsLev = this.getDescendants(node);
     const result = descendantsLev.some(this.isSelected);
 
     return result && !this.descendantsAllSelected(node);
   }
 
-  findIndex(node: FlatTreeNode) {
+  findIndex(node: flattreenode) {
     let i;
     this.flatTree.forEach((data, index) => {
       if (data.id === node.id) {

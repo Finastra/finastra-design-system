@@ -74,19 +74,19 @@
   }
 
   .step-info {
-    @include fds.text-color(secondary);
+    @include fds.color(secondary);
     @include fds.typography(body-3);
 
     margin-bottom: var(--fds-spacing-2, 8px);
   }
 
   .step-title {
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
     @include fds.typography(headline-5);
   }
 
   .step-description {
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
     @include fds.typography(body-3);
   }
 

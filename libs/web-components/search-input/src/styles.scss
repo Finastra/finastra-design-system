@@ -3,7 +3,7 @@
 
 :host {
   .clear-icon {
-    @include fds.text-color(on-surface-medium);
+    @include fds.color(on-surface-medium);
 
     margin-right: -14px;
     align-self: center;

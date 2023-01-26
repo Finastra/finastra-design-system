@@ -12,7 +12,7 @@
 
   .mdc-card {
     flex: 1;
-    @include fds.bg-color(surface);
+    @include fds.background(surface);
 
     height: 100%;
     overflow: hidden;

@@ -24,7 +24,7 @@ ul {
     }
 
     a {
-      @include fds.text-color(on-surface);
+      @include fds.color(on-surface);
 
       text-decoration: none;
     }

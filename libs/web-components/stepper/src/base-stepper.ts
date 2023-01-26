@@ -2,7 +2,7 @@ import '@finastra/icon';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { EVENTS } from './constants';
+import { events } from './constants';
 
 export interface Step {
   label: string;
@@ -95,7 +95,7 @@ export class BaseStepper extends LitElement {
     if (!this.steps[index]?.disabled && !this.readonly) {
       this.currentStepIndex = index;
       this.dispatchEvent(
-        new CustomEvent(EVENTS.STEPCLICK, {
+        new CustomEvent(events.STEPCLICK, {
           bubbles: true,
           composed: true,
           detail: {

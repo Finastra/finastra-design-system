@@ -19,7 +19,7 @@
 
         .app-title {
           @include fds.typography(headline-4);
-          @include fds.text-color(on-surface);
+          @include fds.color(on-surface);
           @include fds.padding(3, right, left, bottom);
         }
 
@@ -45,7 +45,7 @@
 
             .brandcard-name {
               @include fds.typography(subtitle-3);
-              @include fds.text-color(on-surface);
+              @include fds.color(on-surface);
               @include fds.padding(2, top);
 
               text-align: center;

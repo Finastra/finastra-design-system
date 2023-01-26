@@ -22,7 +22,7 @@
   }
 
   .fds-global-search-summary-result:hover {
-    @include fds.bg-color(surface-hover);
+    @include fds.background(surface-hover);
 
     border-radius: var(--fds-spacing-1);
     margin-left: calc(0px - var(--fds-spacing-2));

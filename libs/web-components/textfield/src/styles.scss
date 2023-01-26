@@ -55,7 +55,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 
   .fds-text-field__label,
   .mdc-floating-label {
-    @include fds.text-color(on-surface-medium);
+    @include fds.color(on-surface-medium);
     @include fds.typography(body-2);
     @include fds.margin(1, bottom);
 
@@ -67,7 +67,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   }
 
   &:disabled .fds-text-field__label {
-    @include fds.text-color(on-surface-disabled);
+    @include fds.color(on-surface-disabled);
   }
 
   .mdc-floating-label--float-above {
@@ -78,14 +78,14 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   }
 
   .mdc-text-field--outlined {
-    @include fds.bg-color(surface);
+    @include fds.background(surface);
 
     border-radius: var(--fds-text-field-radius, 4px);
     height: 48px;
   }
 
   .mdc-text-field.mdc-text-field--focused.mdc-text-field--invalid {
-    @include fds.bg-color(surface-error);
+    @include fds.background(surface-error);
   }
 
   .mdc-text-field__input {
@@ -109,11 +109,11 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   }
 
   .mdc-text-field--disabled {
-    @include fds.bg-color(surface-disabled);
+    @include fds.background(surface-disabled);
   }
 
   .mdc-text-field.mdc-text-field--focused {
-    @include fds.bg-color(surface-selected);
+    @include fds.background(surface-selected);
   }
 
   .mdc-text-field-character-counter,
@@ -139,11 +139,11 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 }
 
 :host([disabled]) .fds-text-field__label {
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 }
 
 slot[name='actionButton']::slotted(*) {
-  @include fds.text-color(on-surface-medium);
+  @include fds.color(on-surface-medium);
 
   margin-right: -14px;
   align-self: center;

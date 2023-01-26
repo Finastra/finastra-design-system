@@ -2,9 +2,9 @@
 
 :host {
   @include fds.typography(body-2);
-  @include fds.text-color(on-surface);
+  @include fds.color(on-surface);
 }
 
 .mdc-card-subtitle--disabled {
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 }

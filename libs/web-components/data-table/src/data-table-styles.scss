@@ -28,7 +28,7 @@
     @include fds.property('border-color', outline);
 
     .mdc-data-table__table {
-      @include fds.bg-color(surface);
+      @include fds.background(surface);
 
       .mdc-data-table__header-row,
       .mdc-data-table__row {
@@ -41,7 +41,7 @@
         z-index: 1;
 
         tr {
-          @include fds.bg-color(surface-hover);
+          @include fds.background(surface-hover);
 
           &.right div {
             display: flex;
@@ -65,7 +65,7 @@
       }
 
       tbody tr:hover {
-        @include fds.bg-color(surface-hover);
+        @include fds.background(surface-hover);
       }
 
       thead,
@@ -79,7 +79,7 @@
 
         // width: calc(100% - 1em);
         tr:nth-child(even) {
-          @include fds.bg-color(surface-hover);
+          @include fds.background(surface-hover);
         }
 
         /* scrollbar is average 1em/16px width, remove it from thead width */
@@ -130,7 +130,7 @@
           }
 
           fds-icon-button {
-            @include fds.text-color(on-background);
+            @include fds.color(on-background);
           }
 
           .mdc-data-table__cell--checkbox,
@@ -149,7 +149,7 @@
           }
 
           &.mdc-data-table__row--selected {
-            @include fds.bg-color(surface-selected);
+            @include fds.background(surface-selected);
           }
         }
       }
@@ -161,7 +161,7 @@
           /* even columns width , fix width of table too */
           .mdc-data-table__cell {
             @include fds.typography(body-1);
-            @include fds.text-color(on-surface);
+            @include fds.color(on-surface);
 
             //customzied column css should be centralized here
             .fds-data-table-linear-progress {
@@ -186,7 +186,7 @@
 
       .mdc-data-table__header-cell {
         @include fds.typography(subtitle-1);
-        @include fds.text-color(on-surface);
+        @include fds.color(on-surface);
 
         .fds-data-table-sort-icon {
           --mdc-icon-button-size: 24px;

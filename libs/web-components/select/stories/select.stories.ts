@@ -34,7 +34,8 @@ const Template: Story<Select> = ({
   validationMessage,
   selected,
   items,
-  index
+  index,
+  labelInside = false
 }) => {
   return html`<fds-select
     .value=${value}
@@ -42,6 +43,7 @@ const Template: Story<Select> = ({
     .icon=${icon}
     ?disabled=${disabled}
     ?dense=${dense}
+    ?labelInside=${labelInside}
     .helper=${helper}
     ?required=${required}
     ?validationMessage=${validationMessage}
@@ -62,6 +64,18 @@ Default.args = {
   label: 'Position'
 };
 
+export const Dense: Story<Select> = Template.bind({});
+Dense.args = {
+  label: 'Position',
+  dense: true
+};
+
+export const LabelInside: Story<Select> = Template.bind({});
+LabelInside.args = {
+  label: 'Position',
+  labelInside: true
+};
+
 const GraphicTemplate: Story<Select> = ({
   value,
   label,
@@ -73,7 +87,8 @@ const GraphicTemplate: Story<Select> = ({
   validationMessage,
   selected,
   items,
-  index
+  index,
+  labelInside = false
 }) => {
   return html`<fds-select
     .value=${value}
@@ -81,6 +96,7 @@ const GraphicTemplate: Story<Select> = ({
     .icon=${icon}
     ?disabled=${disabled}
     ?dense=${dense}
+    ?labelInside=${labelInside}
     .helper=${helper}
     ?required=${required}
     ?validationMessage=${validationMessage}
@@ -88,16 +104,31 @@ const GraphicTemplate: Story<Select> = ({
     ?items=${items}
     ?index=${index}
   >
-    <fds-list-item graphic="icon" value="0">HR Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="1">IT Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="2">CEO</fds-list-item>
-    <fds-list-item graphic="icon" value="3">Sales Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="4">Support Manager</fds-list-item>
+    <fds-list-item graphic="icon" value="0">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      HR Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="1">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      IT Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="2">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      CEO
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="3">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Sales Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="4">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Support Manager
+    </fds-list-item>
   </fds-select>`;
 };
 
-export const Graphic: Story<Select> = GraphicTemplate.bind({});
-Graphic.args = {
+export const Icon: Story<Select> = GraphicTemplate.bind({});
+Icon.args = {
   label: 'Position',
   icon: 'apps'
 };
@@ -120,7 +151,8 @@ const ValidationTemplate: Story<Select> = ({
   validationMessage,
   selected,
   items,
-  index
+  index,
+  labelInside = false
 }) => {
   return html`<fds-select
     .value=${value}
@@ -128,6 +160,7 @@ const ValidationTemplate: Story<Select> = ({
     .icon=${icon}
     ?disabled=${disabled}
     ?dense=${dense}
+    ?labelInside=${labelInside}
     .helper=${helper}
     ?required=${required}
     ?validationMessage=${validationMessage}
@@ -136,17 +169,32 @@ const ValidationTemplate: Story<Select> = ({
     ?index=${index}
   >
     <fds-list-item selected></fds-list-item>
-    <fds-list-item graphic="icon" value="0">HR Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="1">IT Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="2">CEO</fds-list-item>
-    <fds-list-item graphic="icon" value="3">Sales Manager</fds-list-item>
-    <fds-list-item graphic="icon" value="4">Support Manager</fds-list-item>
+    <fds-list-item graphic="icon" value="0">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      HR Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="1">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      IT Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="2">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      CEO
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="3">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Sales Manager
+    </fds-list-item>
+    <fds-list-item graphic="icon" value="4">
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+      Support Manager
+    </fds-list-item>
   </fds-select>`;
 };
 
-export const Validation: Story<Select> = ValidationTemplate.bind({});
-Validation.args = {
-  label: 'required (error)',
+export const Required: Story<Select> = ValidationTemplate.bind({});
+Required.args = {
+  label: 'required',
   icon: 'apps',
   required: true,
   validationMessage: 'This Field is Required'

@@ -30,7 +30,7 @@
 
 :host > div::before {
   @include fds.property(border-color, primary);
-  @include fds.bg-color(surface-selected);
+  @include fds.background(surface-selected);
 
   content: '';
   z-index: 0;

@@ -35,7 +35,7 @@
   }
 
   .mdc-tab--active {
-    @include fds.bg-color(surface-selected);
+    @include fds.background(surface-selected);
 
     border-radius: var(--fds-spacing-3, 16px);
   }
@@ -67,7 +67,7 @@
     padding: 0 16px;
     margin: 0 6px;
     @include fds.property(border-color, primary);
-    @include fds.bg-color(surface);
+    @include fds.background(surface);
 
     &::before {
       content: '';

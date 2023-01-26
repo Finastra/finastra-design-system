@@ -6,7 +6,7 @@
   .bar {
     @include fds.padding(3, right, left);
     @include fds.padding(1, top, bottom);
-    @include fds.bg-color(surface);
+    @include fds.background(surface);
     @include fds.elevation(4);
 
     min-height: 56px;
@@ -25,7 +25,7 @@
 
     .app-name {
       @include fds.typography(headline-6);
-      @include fds.text-color(on-background);
+      @include fds.color(on-background);
       @include fds.padding(3, right, left);
       @include fds.padding(1, top);
     }
@@ -49,11 +49,11 @@
 
   slot[name='navigationIcon']::slotted(*) {
     @include fds.padding(2, right);
-    @include fds.text-color(primary);
+    @include fds.color(primary);
   }
 
   slot[name='actions']::slotted(*) {
-    @include fds.text-color(primary);
+    @include fds.color(primary);
   }
 }
 

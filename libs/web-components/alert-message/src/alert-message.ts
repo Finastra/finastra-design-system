@@ -54,7 +54,7 @@ export class AlertMessage extends LitElement {
   render() {
     const startLineClass = {
       multiLines: this.layout === ALERT_LAYOUT.multiLines,
-      singleLine: this.layout === ALERT_LAYOUT.singleLine
+      'single-line': this.layout === ALERT_LAYOUT.singleLine
     };
 
     return html`

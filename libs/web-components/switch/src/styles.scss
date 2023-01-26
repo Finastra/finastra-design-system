@@ -13,7 +13,7 @@ $track-color-opacity: 0.54;
   @include fds.mdc(switch-selected-hover-handle-color, primary);
   @include fds.mdc(switch-selected-pressed-handle-color, primary);
 
-  //track color
+  // track color
   @include fds.mdc(switch-selected-track-color, primary);
   @include fds.mdc(switch-selected-focus-track-color, primary);
   @include fds.mdc(switch-selected-hover-track-color, primary);
@@ -26,7 +26,7 @@ $track-color-opacity: 0.54;
   @include fds.mdc(switch-unselected-hover-handle-color, background);
   @include fds.mdc(switch-unselected-pressed-handle-color, background);
 
-  //track color
+  // track color
   @include fds.mdc(switch-unselected-hover-track-color, on-surface-medium);
   @include fds.mdc(switch-unselected-track-color, on-background);
   @include fds.mdc(switch-unselected-focus-track-color, on-background);
@@ -37,6 +37,7 @@ $track-color-opacity: 0.54;
   @include fds.mdc(switch-disabled-unselected-handle-color, surface);
   @include fds.mdc(switch-disabled-unselected-track-color, on-surface-medium);
 
+  --mdc-typography-body2-line-height: 0;
   --mdc-switch-disabled-track-opacity: 0.3;
 }
 

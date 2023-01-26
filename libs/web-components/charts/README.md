@@ -178,6 +178,47 @@ import '@finastra/charts';
 | `loadChartThemeFromCssVariables` | `(): void`                               |
 | `refresh`                        | `(): Promise<void> \| undefined`         |
 
+# fds-line-chart
+
+#### Properties
+
+| Property                | Attribute               | Type                       | Default       | Description                               |
+| ----------------------- | ----------------------- | -------------------------- | ------------- | ----------------------------------------- |
+| `$el`                   |                         | `HTMLElement \| null`      | null          |                                           |
+| `chart`                 |                         | `ApexCharts \| null`       | null          |                                           |
+| `chartTheme`            |                         | `ChartTheme`               |               |                                           |
+| `color`                 | `color`                 | `categorical`              | "categorical" | Define palette used by the chart          |
+| `series`                |                         | `Object`                   | [name, data]  | Set of data                               |
+| `height`                | `height`                | `string`                   | "100%"        | Height of the chart                       |
+| `hideDataLabel`         | `hide-data-label`       | `boolean`                  | false         | Hide data labels                          |
+| `legendHorizontalAlign` | `legendHorizontalAlign` | `left\|center\|right`      | "center"      | Define the horizontal alignment of legend |
+| `legendPosition`        | `legendPosition`        | `top\|right\|bottom\|left` | "bottom"      | Define the position of the legend         |
+| `options`               |                         | `ApexOptions`              |               |                                           |
+| `override`              |                         |                            |               |                                           |
+| `type`                  |                         | `string`                   | "pie"         |                                           |
+| `width`                 | `width`                 | `string`                   | "100%"        | Width of the chart                        |
+| `xaxis`                 |                         | `Object`                   |               | Define axis X and its properties          |
+| `yaxis`                 |                         | `Object`                   |               | Define axis X and its properties          |
+| `showToolbar`           | `show-toolbar`          | `boolean`                  | true          | Display toolbar from the top right corner |
+| `stroke`                | `stroke`                | `Object`                   |               | Define stroke and its properties          |
+| `strokeCurve`           | `stroke-curve`          | `string`                   |               | Define curve type                         |
+| `tooltip`               | `tooltip`               | `Object`                   |               | Define tooltip and its properties         |
+
+#### Methods
+
+| Method                           | Type                                     |
+| -------------------------------- | ---------------------------------------- |
+| `createChartEl`                  | `(): HTMLElement`                        |
+| `extend`                         | `<T>(target: T, source: Partial<T>): T`  |
+| `getColor`                       | `(): any`                                |
+| `getDataLabelColor`              | `(): string[]`                           |
+| `getStrokeColor`                 | `(): { stroke: { colors: string[]; }; }` |
+| `init`                           | `(): Promise<void> \| undefined`         |
+| `initWatchers`                   | `(): void`                               |
+| `isObject`                       | `(item: any): boolean`                   |
+| `loadChartThemeFromCssVariables` | `(): void`                               |
+| `refresh`                        | `(): Promise<void> \| undefined`         |
+
 #### CSS Custom Properties
 
 | Property              | Default                  | Description |

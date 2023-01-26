@@ -2,7 +2,7 @@ import '@finastra/logo';
 import '@material/mwc-top-app-bar';
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { EVENTS } from './constants';
+import { events } from './constants';
 import { styles } from './styles.css';
 
 /**
@@ -60,7 +60,7 @@ export class AppBar extends LitElement {
   }
 
   private handleNavigationClick() {
-    this.dispatchEvent(new Event(EVENTS.NAVIGATION, { bubbles: true, cancelable: true }));
+    this.dispatchEvent(new Event(events.NAVIGATION, { bubbles: true, cancelable: true }));
   }
 
   private navigateToLogoUri() {

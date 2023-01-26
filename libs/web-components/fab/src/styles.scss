@@ -3,8 +3,13 @@
 
 :host {
   .mdc-fab {
-    @include fds.bg-color(primary);
-    @include fds.text-color(on-primary);
+    @include fds.background(primary);
+    @include fds.color(on-primary);
+  }
+
+  .mdc-fab__icon {
+    width: 14px;
+    height: 14px;
   }
 
   .mdc-fab__icon {
@@ -36,7 +41,7 @@
 
 :host([gradient]) {
   .mdc-fab {
-    @include fds.bg-color(gradient);
-    @include fds.text-color(on-gradient);
+    @include fds.background(gradient);
+    @include fds.color(on-gradient);
   }
 }
