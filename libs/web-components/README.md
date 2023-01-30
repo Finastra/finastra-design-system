@@ -122,7 +122,6 @@
 2. Fork [Finastra Design System](https://github.com/Finastra/finastra-design-system) repo on Github.
 3. Clone your fork to your machine with `git clone`
 4. From the root of the project, run `npm install` to install the dependencies.
-5. Run `npm run build:devkit` to build devkit library.
 
 > Alternatively, you can use [Gitpod](https://gitpod.io/#https://github.com/Finastra/finastra-design-system) to code in your browser !
 
@@ -133,7 +132,7 @@
 First run the following commands to build all components
 
 ```bash
-npm run wc:build:storybook
+npm run build:storybook
 ```
 
 > Note that you need to build the storybook only the first time you clone the repository or if you have modified any file inside the .storybook folder.
@@ -149,7 +148,7 @@ npm run wc:serve
 - Storybook (for the documentation and demo)
 
 ```
-npm run wc:storybook
+npm run storybook
 ```
 
 > You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)
@@ -159,19 +158,19 @@ For `local developement`, we recommend using build in watch mode:
 - Watch mode
 
 ```
-npm run wc:watch
+npm run watch
 ```
 
 ### Running tests
 
 ```
-npm run wc:test
+npm run test
 ```
 
 Or in watch mode
 
 ```
-npm run wc:test:watch
+npm run test:watch
 ```
 
 in watch mode you can focus on a specific test by pressing `f`
