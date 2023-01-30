@@ -393,7 +393,7 @@ export class ApexChartsWrapper extends LitElement {
     // if (this.type !== 'radialBar') {
     //   newOptions.chart!.foreColor = '#fffff';
     // }
-    newOptions.chart!.foreColor = '##373d3f';
+    //newOptions.chart!.foreColor = '##373d3f';
 
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);

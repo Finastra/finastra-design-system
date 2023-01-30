@@ -79,9 +79,8 @@ Horizontal.args = {
 };
 
 export const MultipleVertical: Story<BarChart> = Template.bind({});
-export const MultipleHorizontal: Story<BarChart> = Template.bind(
-  {},
-  {
+export const MultipleHorizontal: Story<BarChart> = Template.bind({});
+  MultipleHorizontal.args = {
     width: '500px',
     height: '500px',
     barTitle: 'Number of Calls',
@@ -100,11 +99,10 @@ export const MultipleHorizontal: Story<BarChart> = Template.bind(
     ],
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   }
-);
 
-export const Stacked: Story<BarChart> = Template.bind(
-  {},
-  {
+
+export const Stacked: Story<BarChart> = Template.bind({})
+  Stacked.args = {
     width: '500px',
     height: '500px',
     barTitle: 'Number of Calls',
@@ -132,4 +130,4 @@ export const Stacked: Story<BarChart> = Template.bind(
     ],
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
   }
-);
+

@@ -116,7 +116,6 @@ export class BarChart extends ApexChartsWrapper {
     return this._horizontal;
   }
   public set horizontal(value: boolean) {
-    console.log('horizontal=' + value);
 
     this._horizontal = value;
     if (this.options && this.options.plotOptions && this.options.plotOptions.bar) {
@@ -167,7 +166,6 @@ export class BarChart extends ApexChartsWrapper {
         colors: ['transparent']
       },
 
-      colors: ['#43ad7f7f'],
 
       tooltip: {
         enabled: true,
@@ -185,7 +183,6 @@ export class BarChart extends ApexChartsWrapper {
             fontSize: '10px',
             fontFamily: 'Roboto, sans-serif',
             fontWeight: 400,
-            colors: '#626262'
           }
         },
 
@@ -201,13 +198,11 @@ export class BarChart extends ApexChartsWrapper {
           show: false,
           opacity: 0.1,
           stroke: {
-            color: '#b6b6b6',
             width: 2,
             dashArray: 2
           },
           fill: {
             type: 'solid',
-            color: '#694ED6'
           }
         }
       },
@@ -216,8 +211,7 @@ export class BarChart extends ApexChartsWrapper {
           show: true,
           style: {
             fontSize: '10px',
-            fontFamily: 'Roboto, sans-serif',
-            colors: ['#626262']
+            fontFamily: 'Roboto, sans-serif'
           }
         }
       },
@@ -239,8 +233,7 @@ export class BarChart extends ApexChartsWrapper {
         style: {
           fontSize: '13px',
           fontWeight: 'ExtraBold',
-          fontFamily: 'Spartan',
-          color: '#363636'
+          fontFamily: 'Spartan'
         }
       }
     };
