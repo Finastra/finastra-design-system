@@ -14,7 +14,7 @@
 
 :host>button {
   @include fds.typography('button-2');
-  @include fds.text-color('on-primary');
+  @include fds.color('on-primary');
   @include fds.padding-x(3);
   @include fds.padding-y(2);
 
@@ -58,8 +58,8 @@
 }
 
 :host([gradient])>button {
-  @include fds.bg-color('gradient');
-  @include fds.text-color('on-gradient');
+  @include fds.background('gradient');
+  @include fds.color('on-gradient');
 }
 
 :host([fullWidth]) {

@@ -684,45 +684,6 @@
         "web-components"
       ]
     },
-    "fds-test-app": {
-      "$schema": "../../node_modules/nx/schemas/project-schema.json",
-      "root": "apps/fds-test-app",
-      "sourceRoot": "apps/fds-test-app/src",
-      "projectType": "application",
-      "architect": {
-        "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
-          "options": {
-            "outputPath": "dist/apps/fds-test-app",
-            "baseHref": "/fds-theme/",
-            "index": "apps/fds-test-app/src/index.html",
-            "main": "apps/fds-test-app/src/index.ts",
-            "tsConfig": "apps/fds-test-app/tsconfig.app.json",
-            "styles": [
-              "apps/fds-test-app/src/styles.scss"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "optimization": false,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "options": {
-            "browserTarget": "fds-test-app:build"
-          }
-        }
-      },
-      "tags": []
-    },
     "fds-theme": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
@@ -894,6 +855,18 @@
         }
       },
       "tags": []
+    },
+    "formfield": {
+      "root": "libs/web-components/formfield",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-components/formfield/src/**/*.ts"]
+          }
+        }
+      },
+      "tags": ["web-components"]
     },
     "global-nav": {
       "$schema": "../../../node_modules/nx/schemas/project-schema.json",

@@ -20,7 +20,7 @@
 
 .mdc-text-field--filled .mdc-text-field__ripple::before,
 .mdc-text-field--filled .mdc-text-field__ripple::after {
-  @include fds.bg-color(surface-selected);
+  @include fds.background(surface-selected);
 }
 
 .mdc-floating-label {
@@ -32,20 +32,20 @@ mwc-notched-outline {
 }
 
 .mdc-text-field--outlined {
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
 .mdc-text-field.mdc-text-field--focused {
-  @include fds.bg-color(surface-selected);
+  @include fds.background(surface-selected);
 }
 
 .mdc-text-field.mdc-text-field--focused.mdc-text-field--invalid {
-  @include fds.bg-color(surface-error);
+  @include fds.background(surface-error);
 }
 
 .mdc-text-field--disabled {
-  @include fds.bg-color(surface-disabled);
+  @include fds.background(surface-disabled);
 }
 
 :host(:not([disabled]):hover) .mdc-text-field:not(.mdc-text-field--invalid):not(.mdc-text-field--focused) mwc-notched-outline {

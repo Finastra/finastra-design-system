@@ -6,7 +6,7 @@
 }
 
 .circle {
-  @include fds.text-color(on-background);
+  @include fds.color(on-background);
   @include fds.typography(subtitle-3);
   display: flex;
   justify-content: center;
@@ -27,59 +27,59 @@
 }
 
 .step-item-label {
-  @include fds.text-color(on-background);
+  @include fds.color(on-background);
 }
 
 .step-item-description {
-  @include fds.text-color(on-surface-medium);
+  @include fds.color(on-surface-medium);
 }
 
 .done {
   .circle {
     @include fds.property(border-color, success);
-    @include fds.bg-color(success);
-    @include fds.text-color(on-success);
+    @include fds.background(success);
+    @include fds.color(on-success);
   }
 
   .line {
-    @include fds.bg-color(success);
+    @include fds.background(success);
   }
 }
 
 .disabled.done {
   .circle {
     @include fds.property(border-color, success);
-    @include fds.bg-color(success);
-    @include fds.text-color(on-success);
+    @include fds.background(success);
+    @include fds.color(on-success);
   }
 }
 
 .disabled {
   .circle {
-    @include fds.bg-color(surface-disabled);
-    @include fds.text-color(on-surface-disabled);
+    @include fds.background(surface-disabled);
+    @include fds.color(on-surface-disabled);
     pointer-events: none;
   }
 
   .step-item-label,
   .step-item-description {
-    @include fds.text-color(on-surface-disabled);
+    @include fds.color(on-surface-disabled);
   }
 }
 
 .current {
   .circle {
     @include fds.property(border-color, primary);
-    @include fds.bg-color(primary);
-    @include fds.text-color(on-primary);
+    @include fds.background(primary);
+    @include fds.color(on-primary);
   }
 
   .line.start-line {
-    @include fds.bg-color(success);
+    @include fds.background(success);
   }
 
   .line.end-line {
-    @include fds.bg-color(primary);
+    @include fds.background(primary);
   }
 
   .step-item-label {
@@ -88,33 +88,33 @@
 }
 
 .line.start-line.current {
-  @include fds.bg-color(primary);
+  @include fds.background(primary);
 }
 
 :host([secondary]) {
   .current {
     .circle {
       @include fds.property(border-color, secondary);
-      @include fds.bg-color(secondary);
-      @include fds.text-color(on-secondary);
+      @include fds.background(secondary);
+      @include fds.color(on-secondary);
     }
 
     .line.start-line {
-      @include fds.bg-color(success);
+      @include fds.background(success);
     }
 
     .line.end-line {
-      @include fds.bg-color(secondary);
+      @include fds.background(secondary);
     }
   }
 
   .line.start-line.current {
-    @include fds.bg-color(secondary);
+    @include fds.background(secondary);
   }
 }
 
 .line {
-  @include fds.bg-color(outline);
+  @include fds.background(outline);
 }
 
 .line.hidden {
@@ -125,24 +125,24 @@
 
   .circle.step-item-icon {
     @include fds.property(border-color, error);
-    @include fds.bg-color(error);
-    @include fds.text-color(on-error);
+    @include fds.background(error);
+    @include fds.color(on-error);
   }
 
   .line.end-line {
-    @include fds.bg-color(error);
+    @include fds.background(error);
   }
 }
 
 .step-item {
   .line.start-line.current.error {
-    @include fds.bg-color(error);
+    @include fds.background(error);
   }
 }
 
 .step-item.current, .step-item.done {
   .line.start-line.error {
-    @include fds.bg-color(error);
+    @include fds.background(error);
   }
 }
 

@@ -29,6 +29,12 @@ const Template: Story = ({ selected, disabled }) => {
   return html`<fds-switch ?selected=${selected} ?disabled=${disabled}></fds-switch>`;
 };
 
+const WithLabelTemplate: Story = ({ selected }) => {
+  return html`
+    <fds-formfield label="On">
+      <fds-switch selected=${selected}></fds-switch>
+    </fds-formfield>`;
+};
 export const Default: Story = Template.bind({});
 
 export const Selected: Story = Template.bind({});
@@ -39,4 +45,9 @@ Selected.args = {
 export const Disabled: Story = Template.bind({});
 Disabled.args = {
   disabled: true
+};
+
+export const WithLabel: Story = WithLabelTemplate.bind({});
+WithLabel.args = {
+  selected: true
 };

@@ -35,8 +35,10 @@ $track-color-opacity: 0.54;
 
   /* disabled state */
   @include fds.mdc(switch-disabled-unselected-handle-color, surface);
-   @include fds.mdc(switch-disabled-unselected-track-color, on-surface-medium);
-   --mdc-switch-disabled-track-opacity: 0.3;
+  @include fds.mdc(switch-disabled-unselected-track-color, on-surface-medium);
+
+  --mdc-typography-body2-line-height: 0px;
+  --mdc-switch-disabled-track-opacity: 0.3;
 }
 
 .mdc-switch__handle::before,
@@ -54,3 +56,4 @@ $track-color-opacity: 0.54;
 .mdc-switch.mdc-switch--selected:disabled .mdc-switch__icon {
   fill: none;
 }
+

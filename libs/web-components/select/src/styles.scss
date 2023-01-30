@@ -7,6 +7,10 @@
   @include fds.mdc(theme-text-primary-on-background, on-background);
 }
 
+.mdc-select.mdc-select--outlined {
+  background: none;
+}
+
 .mdc-select {
   width: 100%;
   border-radius: var(--fds-text-field-radius, 4px);
@@ -14,18 +18,25 @@
 
 .mdc-select--outlined .mdc-select__anchor {
   height: 48px;
+}
 
+.fds-select--label-inside {
   .mdc-floating-label--float-above {
-    transform: translateY(-48px) translateX(-16px) scale(1);
+    transform: translateY(-16px) !important;
+  }
+
+  .mdc-select__selected-text-container {
+    padding-top: 15px;
   }
 }
 
-:host([dense]) .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
-  transform: translateY(-44px) translateX(-48px) scale(1) !important;
+.mdc-select--outlined:not(.mdc-select--disabled) .mdc-select__anchor {
+  @include fds.background(surface);
+  border-radius: var(--fds-text-field-radius, 4px);
 }
 
-:host(:not([dense])) .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
-  transform: translateY(-48px) translateX(-48px) scale(1) !important;
+:host .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
+  transform: translateY(-16px) !important;
 }
 
 :host([dense]) {
@@ -41,7 +52,7 @@
 }
 
 .mdc-select--outlined {
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
   @include fds.mdc(notched-outline-border-color, outline);
 }
 
@@ -54,12 +65,13 @@
 }
 
 .mdc-select--focused:not(.mdc-select--invalid) .mdc-notched-outline {
-  @include fds.bg-color(surface-selected);
+  @include fds.background(surface-selected);
   @include fds.mdc(notched-outline-border-color, primary);
+  --mdc-notched-outline-stroke-width: 2px;
 }
 
 .mdc-select.mdc-select--focused.mdc-select--invalid {
-  @include fds.bg-color(surface-error);
+  @include fds.background(surface-error);
 }
 
 .mdc-select--invalid .mdc-notched-outline {
@@ -67,7 +79,7 @@
 }
 
 .mdc-select.mdc-select--disabled .mdc-notched-outline {
-  @include fds.bg-color(surface-disabled);
+  @include fds.background(surface-disabled);
 }
 
 .mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
@@ -83,7 +95,7 @@
 }
 
 .mdc-select .mdc-select__selected-text {
-  @include fds.typography(subtitle-1);
+  @include fds.typography(subtitle-2);
 }
 
 :host([dense]) .mdc-floating-label {
@@ -91,7 +103,11 @@
 }
 
 :host([dense]) .mdc-select .mdc-select__selected-text {
-  @include fds.typography(subtitle-2);
+  @include fds.typography(subtitle-3);
+}
+
+:host([disabled]) .fds-select__label {
+  @include fds.color(on-surface-disabled);
 }
 
 .mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor {
@@ -152,4 +168,17 @@
 
 .mdc-select.mdc-select--disabled+.mdc-select-helper-text {
   @include fds.property(color, on-surface-disabled);
+}
+
+.fds-select__label {
+  @include fds.color(on-surface-medium);
+  @include fds.typography(body-2);
+  @include fds.margin(1, bottom);
+  display: block;
+}
+
+:host([dense]) {
+  .fds-select__label {
+    @include fds.typography(body-3);
+  }
 }

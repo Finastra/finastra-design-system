@@ -1,0 +1,7 @@
+@use '@material/mwc-formfield/mwc-formfield';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+  @include fds.mdc(theme-text-primary-on-background, on-background);
+}

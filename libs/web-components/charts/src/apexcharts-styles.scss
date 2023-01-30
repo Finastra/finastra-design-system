@@ -12,6 +12,6 @@
   align-items: center;
 
   .apexcharts-legend-text {
-    @include fds.text-color(on-surface);
+    @include fds.color(on-surface);
   }
 }
