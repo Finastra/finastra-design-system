@@ -26,8 +26,7 @@
         .brandcard-list {
           display: grid;
           grid-template-columns: auto auto auto;
-          grid-row-gap: 32px;
-          grid-column-gap: 56px;
+          grid-gap: 32px 56px;
           @include fds.padding(3);
 
           .brandcard-item {

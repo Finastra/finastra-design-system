@@ -3,9 +3,8 @@
 
 .container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: stretch;
-  flex-direction: column;
+  flex-flow: column nowrap;
   height: 100%;
 }
 

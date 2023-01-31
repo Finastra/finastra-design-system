@@ -1,8 +1,10 @@
 @use 'sass:color';
 @use 'sass:string';
 
+/* stylelint-disable scss/dollar-variable-pattern */
 $_black: black;
 $_white: white;
+/* stylelint-enable scss/dollar-variable-pattern */
 $primary: #694ed6 !default;
 $secondary: #c137a2 !default;
 $background: #fafafa !default;
