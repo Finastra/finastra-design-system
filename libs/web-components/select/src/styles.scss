@@ -44,6 +44,10 @@
   --mdc-icon-size: 18px;
   --mdc-menu-item-height: 40px;
 
+  .fds-select__label {
+    @include fds.typography(body-3);
+  }
+
   .mdc-select--outlined .mdc-select__anchor {
     height: 40px !important;
 
@@ -63,6 +67,8 @@
 }
 
 .mdc-select.mdc-select--disabled .mdc-notched-outline {
+  @include fds.background(surface-disabled);
+
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
@@ -79,10 +85,6 @@
 
 .mdc-select--invalid .mdc-notched-outline {
   @include fds.mdc(notched-outline-border-color, error);
-}
-
-.mdc-select.mdc-select--disabled .mdc-notched-outline {
-  @include fds.background(surface-disabled);
 }
 
 .mdc-select:not(.mdc-select--disabled, .mdc-select--invalid).mdc-select--focused .mdc-floating-label {
@@ -179,10 +181,4 @@
   @include fds.margin(1, bottom);
 
   display: block;
-}
-
-:host([dense]) {
-  .fds-select__label {
-    @include fds.typography(body-3);
-  }
 }
