@@ -3,6 +3,7 @@
 
 :host {
   @extend %material-icons;
+  @include fds.color(on-surface);
 }
 
 :host([dense]) {
