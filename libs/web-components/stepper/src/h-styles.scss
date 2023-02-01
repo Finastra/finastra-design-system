@@ -16,6 +16,8 @@
 }
 
 .step-item-label {
+  @include fds.typography(body-3);
+
   padding: var(--fds-spacing-3, 16px);
   text-align: center;
   justify-self: center;
@@ -45,20 +47,14 @@
 }
 
 .step-item-description {
+  @include fds.typography(body-3);
+
   display: none;
 }
 
 .line {
   height: 2px;
   flex: 1;
-}
-
-.step-item-description {
-  @include fds.typography(body-3);
-}
-
-.step-item-label {
-  @include fds.typography(body-3);
 }
 
 .text-wrapper {

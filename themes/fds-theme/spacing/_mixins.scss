@@ -51,6 +51,7 @@
   }
 }
 
+/* stylelint-disable scss/at-function-pattern */
 /// Check if spacing is a unitless number between 0 and 7.
 ///
 /// @param {*} $spacing - The value to validate
@@ -78,6 +79,7 @@
     @error "$side must be one of #{variables.$sides}, but received #{$side}";
   }
 }
+/* stylelint-enable scss/at-function-pattern */
 
 /// Generates CSS to apply proper spacing
 ///
@@ -94,6 +96,7 @@
     @each $side in $sides {
       $side: _check-side($side);
 
+      /* stylelint-disable-next-line custom-property-pattern */
       #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)}, #{$spacing-value});
     }
   }

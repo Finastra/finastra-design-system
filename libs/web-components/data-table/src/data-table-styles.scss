@@ -163,7 +163,7 @@
             @include fds.typography(body-1);
             @include fds.color(on-surface);
 
-            //customzied column css should be centralized here
+            // customzied column css should be centralized here
             .fds-data-table-linear-progress {
               display: flex;
               flex-direction: column;

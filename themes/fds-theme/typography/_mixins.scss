@@ -69,6 +69,7 @@
   $line-height: map.get($style, 'line-height');
   $font-family: map.get($style, 'font-family');
 
+  /* stylelint-disable-next-line scss/operator-no-newline-after */
   @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) var(--fds-#{$typo-style}-font-size, #{$font-size}) /
     var(--fds-#{$typo-style}-line-height, #{$line-height}) var(--fds-#{$typo-style}-font-family, #{$font-family});
 }
@@ -79,7 +80,7 @@
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);

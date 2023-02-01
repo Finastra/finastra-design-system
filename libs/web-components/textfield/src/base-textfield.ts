@@ -45,7 +45,8 @@ export class BaseTextField extends TextFieldBase {
       !this.disabled &&
       (this.type === 'date' || this.type === 'datetime-local' || this.type === 'month' || this.type === 'week' || this.type === 'time')
     ) {
-      const input = this.formElement as HTMLInputElement;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const input = this.formElement as any;
       input.showPicker();
     }
   }
