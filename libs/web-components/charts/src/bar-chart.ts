@@ -237,6 +237,7 @@ export class BarChart extends ApexChartsWrapper {
         }
       }
     };
+    
     this.type = 'bar';
     this.hideDataLabel = true;
     this.color = 'categorical';
