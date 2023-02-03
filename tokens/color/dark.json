@@ -22,7 +22,7 @@
     "info": { "value": "{color.primary.value}" },
     "gradient": {
       "horizontal": { "value": ["90deg", "{color.primary.value}", "{color.secondary.value}"] },
-      "vertical": { "value": ["0deg", "{color.primary.value}", "{color.secondary.value}"] }
+      "vertical": { "value": ["180deg", "{color.primary.value}", "{color.secondary.value}"] }
     },
     "on-primary": { "value": "#000000" },
     "on-secondary": { "value": "#000000" },
