@@ -1,0 +1,180 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 02 Feb 2023 16:16:34 GMT
+ */
+
+:root {
+  --fds-overline-text-transform: inherit;
+  --fds-overline-text-decoration: inherit;
+  --fds-overline-letter-spacing: 1.5;
+  --fds-overline-font-weight: 500;
+  --fds-overline-line-height: 15;
+  --fds-overline-font-size: 10;
+  --fds-caption-text-transform: inherit;
+  --fds-caption-text-decoration: inherit;
+  --fds-caption-letter-spacing: 0.4;
+  --fds-caption-font-weight: 400;
+  --fds-caption-line-height: 18;
+  --fds-caption-font-size: 12;
+  --fds-button-3-text-transform: inherit;
+  --fds-button-3-text-decoration: inherit;
+  --fds-button-3-letter-spacing: 1.25;
+  --fds-button-3-font-weight: 700;
+  --fds-button-3-line-height: 18;
+  --fds-button-3-font-size: 12;
+  --fds-button-2-text-transform: inherit;
+  --fds-button-2-text-decoration: inherit;
+  --fds-button-2-letter-spacing: 1.25;
+  --fds-button-2-font-weight: 700;
+  --fds-button-2-line-height: 20;
+  --fds-button-2-font-size: 14;
+  --fds-button-1-text-transform: inherit;
+  --fds-button-1-text-decoration: inherit;
+  --fds-button-1-letter-spacing: 1.25;
+  --fds-button-1-font-weight: 700;
+  --fds-button-1-line-height: 20;
+  --fds-button-1-font-size: 16;
+  --fds-body-4-text-transform: inherit;
+  --fds-body-4-text-decoration: inherit;
+  --fds-body-4-letter-spacing: 0.25;
+  --fds-body-4-font-weight: 300;
+  --fds-body-4-line-height: 15;
+  --fds-body-4-font-size: 10;
+  --fds-body-3-text-transform: inherit;
+  --fds-body-3-text-decoration: inherit;
+  --fds-body-3-letter-spacing: 0.25;
+  --fds-body-3-font-weight: 300;
+  --fds-body-3-line-height: 18;
+  --fds-body-3-font-size: 12;
+  --fds-body-2-text-transform: inherit;
+  --fds-body-2-text-decoration: inherit;
+  --fds-body-2-letter-spacing: 0.25;
+  --fds-body-2-font-weight: 300;
+  --fds-body-2-line-height: 21;
+  --fds-body-2-font-size: 14;
+  --fds-body-1-text-transform: inherit;
+  --fds-body-1-text-decoration: inherit;
+  --fds-body-1-letter-spacing: 0.5;
+  --fds-body-1-font-weight: 300;
+  --fds-body-1-line-height: 24;
+  --fds-body-1-font-size: 16;
+  --fds-subtitle-4-text-transform: inherit;
+  --fds-subtitle-4-text-decoration: inherit;
+  --fds-subtitle-4-letter-spacing: 0.1;
+  --fds-subtitle-4-font-weight: 500;
+  --fds-subtitle-4-line-height: 15;
+  --fds-subtitle-4-font-size: 10;
+  --fds-subtitle-3-text-transform: inherit;
+  --fds-subtitle-3-text-decoration: inherit;
+  --fds-subtitle-3-letter-spacing: 0.1;
+  --fds-subtitle-3-font-weight: 500;
+  --fds-subtitle-3-line-height: 18;
+  --fds-subtitle-3-font-size: 12;
+  --fds-subtitle-2-text-transform: inherit;
+  --fds-subtitle-2-text-decoration: inherit;
+  --fds-subtitle-2-letter-spacing: 0.1;
+  --fds-subtitle-2-font-weight: 500;
+  --fds-subtitle-2-line-height: 21;
+  --fds-subtitle-2-font-size: 14;
+  --fds-subtitle-1-text-transform: inherit;
+  --fds-subtitle-1-text-decoration: inherit;
+  --fds-subtitle-1-letter-spacing: 0.15;
+  --fds-subtitle-1-font-weight: 500;
+  --fds-subtitle-1-line-height: 24;
+  --fds-subtitle-1-font-size: 16;
+  --fds-headline-6-text-transform: inherit;
+  --fds-headline-6-text-decoration: inherit;
+  --fds-headline-6-letter-spacing: 0;
+  --fds-headline-6-font-weight: 800;
+  --fds-headline-6-line-height: 18;
+  --fds-headline-6-font-size: 13;
+  --fds-headline-5-text-transform: inherit;
+  --fds-headline-5-text-decoration: inherit;
+  --fds-headline-5-letter-spacing: 0;
+  --fds-headline-5-font-weight: 800;
+  --fds-headline-5-line-height: 22;
+  --fds-headline-5-font-size: 16;
+  --fds-headline-4-text-transform: inherit;
+  --fds-headline-4-text-decoration: inherit;
+  --fds-headline-4-letter-spacing: 0;
+  --fds-headline-4-font-weight: 800;
+  --fds-headline-4-line-height: 29;
+  --fds-headline-4-font-size: 21;
+  --fds-headline-3-text-transform: inherit;
+  --fds-headline-3-text-decoration: inherit;
+  --fds-headline-3-letter-spacing: 0;
+  --fds-headline-3-font-weight: 800;
+  --fds-headline-3-line-height: 39;
+  --fds-headline-3-font-size: 28;
+  --fds-headline-2-text-transform: inherit;
+  --fds-headline-2-text-decoration: inherit;
+  --fds-headline-2-letter-spacing: 0;
+  --fds-headline-2-font-weight: 800;
+  --fds-headline-2-line-height: 57;
+  --fds-headline-2-font-size: 41;
+  --fds-headline-1-text-transform: inherit;
+  --fds-headline-1-text-decoration: inherit;
+  --fds-headline-1-letter-spacing: 0;
+  --fds-headline-1-font-weight: 800;
+  --fds-headline-1-line-height: 71;
+  --fds-headline-1-font-size: 51;
+  --fds-font-family-headline: spartan;
+  --fds-font-family: roboto;
+  --fds-overline: normal normal var(--fds-overline-font-weight) var(--fds-overline-font-size) / var(--fds-overline-line-height)
+    var(--fds-overline-font-family);
+  --fds-overline-font-family: var(--fds-font-family);
+  --fds-caption: normal normal var(--fds-caption-font-weight) var(--fds-caption-font-size) / var(--fds-caption-line-height)
+    var(--fds-caption-font-family);
+  --fds-caption-font-family: var(--fds-font-family);
+  --fds-button-3: normal normal var(--fds-button-3-font-weight) var(--fds-button-3-font-size) / var(--fds-button-3-line-height)
+    var(--fds-button-3-font-family);
+  --fds-button-3-font-family: var(--fds-font-family);
+  --fds-button-2: normal normal var(--fds-button-2-font-weight) var(--fds-button-2-font-size) / var(--fds-button-2-line-height)
+    var(--fds-button-2-font-family);
+  --fds-button-2-font-family: var(--fds-font-family);
+  --fds-button-1: normal normal var(--fds-button-1-font-weight) var(--fds-button-1-font-size) / var(--fds-button-1-line-height)
+    var(--fds-button-1-font-family);
+  --fds-button-1-font-family: var(--fds-font-family);
+  --fds-body-4: normal normal var(--fds-body-4-font-weight) var(--fds-body-4-font-size) / var(--fds-body-4-line-height)
+    var(--fds-body-4-font-family);
+  --fds-body-4-font-family: var(--fds-font-family);
+  --fds-body-3: normal normal var(--fds-body-3-font-weight) var(--fds-body-3-font-size) / var(--fds-body-3-line-height)
+    var(--fds-body-3-font-family);
+  --fds-body-3-font-family: var(--fds-font-family);
+  --fds-body-2: normal normal var(--fds-body-2-font-weight) var(--fds-body-2-font-size) / var(--fds-body-2-line-height)
+    var(--fds-body-2-font-family);
+  --fds-body-2-font-family: var(--fds-font-family);
+  --fds-body-1: normal normal var(--fds-body-1-font-weight) var(--fds-body-1-font-size) / var(--fds-body-1-line-height)
+    var(--fds-body-1-font-family);
+  --fds-body-1-font-family: var(--fds-font-family);
+  --fds-subtitle-4: normal normal var(--fds-subtitle-4-font-weight) var(--fds-subtitle-4-font-size) / var(--fds-subtitle-4-line-height)
+    var(--fds-subtitle-4-font-family);
+  --fds-subtitle-4-font-family: var(--fds-font-family);
+  --fds-subtitle-3: normal normal var(--fds-subtitle-3-font-weight) var(--fds-subtitle-3-font-size) / var(--fds-subtitle-3-line-height)
+    var(--fds-subtitle-3-font-family);
+  --fds-subtitle-3-font-family: var(--fds-font-family);
+  --fds-subtitle-2: normal normal var(--fds-subtitle-2-font-weight) var(--fds-subtitle-2-font-size) / var(--fds-subtitle-2-line-height)
+    var(--fds-subtitle-2-font-family);
+  --fds-subtitle-2-font-family: var(--fds-font-family);
+  --fds-subtitle-1: normal normal var(--fds-subtitle-1-font-weight) var(--fds-subtitle-1-font-size) / var(--fds-subtitle-1-line-height)
+    var(--fds-subtitle-1-font-family);
+  --fds-subtitle-1-font-family: var(--fds-font-family);
+  --fds-headline-6: normal normal var(--fds-headline-6-font-weight) var(--fds-headline-6-font-size) / var(--fds-headline-6-line-height)
+    var(--fds-headline-6-font-family);
+  --fds-headline-6-font-family: var(--fds-font-family-headline);
+  --fds-headline-5: normal normal var(--fds-headline-5-font-weight) var(--fds-headline-5-font-size) / var(--fds-headline-5-line-height)
+    var(--fds-headline-5-font-family);
+  --fds-headline-5-font-family: var(--fds-font-family-headline);
+  --fds-headline-4: normal normal var(--fds-headline-4-font-weight) var(--fds-headline-4-font-size) / var(--fds-headline-4-line-height)
+    var(--fds-headline-4-font-family);
+  --fds-headline-4-font-family: var(--fds-font-family-headline);
+  --fds-headline-3: normal normal var(--fds-headline-3-font-weight) var(--fds-headline-3-font-size) / var(--fds-headline-3-line-height)
+    var(--fds-headline-3-font-family);
+  --fds-headline-3-font-family: var(--fds-font-family-headline);
+  --fds-headline-2: normal normal var(--fds-headline-2-font-weight) var(--fds-headline-2-font-size) / var(--fds-headline-2-line-height)
+    var(--fds-headline-2-font-family);
+  --fds-headline-2-font-family: var(--fds-font-family-headline);
+  --fds-headline-1: normal normal var(--fds-headline-1-font-weight) var(--fds-headline-1-font-size) / var(--fds-headline-1-line-height)
+    var(--fds-headline-1-font-family);
+  --fds-headline-1-font-family: var(--fds-font-family-headline);
+}

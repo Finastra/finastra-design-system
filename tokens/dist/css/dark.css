@@ -1,0 +1,39 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 02 Feb 2023 16:16:34 GMT
+ */
+
+:root {
+  --fds-on-dark: #fff;
+  --fds-on-light: #000;
+  --fds-on-gradient: #000;
+  --fds-on-success: #000;
+  --fds-on-error: #000;
+  --fds-on-surface-disabled: rgb(255 255 255 / 29%);
+  --fds-on-surface-medium: rgb(255 255 255 / 54%);
+  --fds-on-surface: #fff;
+  --fds-on-background: #fff;
+  --fds-on-secondary: #000;
+  --fds-on-primary: #000;
+  --fds-warning: #ff880a;
+  --fds-error: #ff4f5c;
+  --fds-success: #26d07c;
+  --fds-outline-warning: rgb(255 136 10 / 30%);
+  --fds-outline-info: rgb(175 160 226 / 80%);
+  --fds-outline-error: rgb(255 79 92 / 70%);
+  --fds-outline-success: rgb(38 208 124 / 50%);
+  --fds-outline: rgb(255 255 255 / 12%);
+  --fds-surface-warning: rgb(255 136 10 / 2%);
+  --fds-surface-info: rgb(175 160 226 / 2%);
+  --fds-surface-error: rgb(255 79 92 / 3%);
+  --fds-surface-success: rgb(38 208 124 / 3%);
+  --fds-surface-disabled: rgb(255 255 255 / 12%);
+  --fds-surface-selected: rgb(175 160 226 / 8%);
+  --fds-surface-hover: #fff;
+  --fds-surface: #242424;
+  --fds-background: #191919;
+  --fds-secondary: #e453bf;
+  --fds-primary: #afa0e2;
+  --fds-gradient: linear-gradient(var(--fds-primary), var(--fds-secondary));
+  --fds-info: var(--fds-primary);
+}

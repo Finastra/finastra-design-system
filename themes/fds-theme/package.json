@@ -15,7 +15,6 @@
     "@material/elevation": "^13.0.0"
   },
   "scripts": {
-    "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
     "build": "(sass _all-themes.scss prebuilt/all-themes.css --load-path=../../node_modules) & (sass _light.scss prebuilt/light.css --load-path=../../node_modules) & (sass _dark.scss prebuilt/dark.css --load-path=../../node_modules)"
   },
   "publishConfig": {
