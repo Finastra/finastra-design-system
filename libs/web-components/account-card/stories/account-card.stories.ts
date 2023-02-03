@@ -13,8 +13,8 @@ export default {
   args: {
     name: 'France',
     balance: 50000,
-    currency: "EUR",
-    number: "DE89 3704 0044 0532 0130 00"
+    currency: 'EUR',
+    number: 'DE89 3704 0044 0532 0130 00'
   },
   parameters: {
     docs: {
@@ -29,8 +29,18 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story<AccountCard> = ({ name, balance, currency, number, icon, iconAriaLabel, outlined, selectable, disabled}) => {
-  return html`<fds-account-card name=${name} balance=${balance} currency=${currency} number=${number} icon=${icon} iconAriaLabel=${iconAriaLabel} ?outlined=${outlined} ?selectable=${selectable} ?disabled=${disabled}></fds-account-card>`;
+const Template: Story<AccountCard> = ({ name, balance, currency, number, icon, iconAriaLabel, outlined, selectable, disabled }) => {
+  return html`<fds-account-card
+    name=${name}
+    balance=${balance}
+    currency=${currency}
+    number=${number}
+    icon=${icon}
+    iconAriaLabel=${iconAriaLabel}
+    ?outlined=${outlined}
+    ?selectable=${selectable}
+    ?disabled=${disabled}
+  ></fds-account-card>`;
 };
 
 export const Default: Story<AccountCard> = Template.bind({});

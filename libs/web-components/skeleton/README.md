@@ -19,13 +19,14 @@ import '@finastra/skeleton';
 <fds-skeleton></fds-skeleton>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property   | Attribute | Type                               | Default | Description                 |
-|------------|-----------|------------------------------------|---------|-----------------------------|
+| ---------- | --------- | ---------------------------------- | ------- | --------------------------- |
 | `height`   | `height`  | `string`                           |         | Height of the skeleton      |
 | `override` |           |                                    |         |                             |
 | `size`     | `size`    | `h1\|h2\|h3\|h4\|h5\|h6\|small\|p` | "p"     | Define the size of skeleton |
@@ -34,18 +35,19 @@ import '@finastra/skeleton';
 
 #### Methods
 
-| Method         | Type                                             |
-|----------------|--------------------------------------------------|
-| `updateHeight` | `(): void`                                       |
-| `updateWidth`  | `(): void`                                       |
+| Method         | Type                                                                                            |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| `updateHeight` | `(): void`                                                                                      |
+| `updateWidth`  | `(): void`                                                                                      |
 | `willUpdate`   | `(_changedProperties: Map<string \| number \| symbol, unknown> \| PropertyValueMap<any>): void` |
 
 #### CSS Custom Properties
 
 | Property                           | Default                        | Description                       |
-|------------------------------------|--------------------------------|-----------------------------------|
+| ---------------------------------- | ------------------------------ | --------------------------------- |
 | `--fds-skeleton-background`        | "var(--fds-surface-selected)"  | Background color of the skeleton. |
 | `--fds-skeleton-height`            | "162px"                        | Width of the skeleton             |
 | `--fds-skeleton-placeholder-color` | "var(--fds-on-surface-medium)" | Color of placeholder.             |
 | `--fds-skeleton-width`             | "162px"                        | Height of the skeleton            |
+
 <!-- /DOC -->

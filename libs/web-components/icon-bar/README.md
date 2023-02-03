@@ -1,4 +1,5 @@
 # Icon Bar
+
 The icon bar comprises a series of tabs that each link to a different content area or view.
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/icon-bar?style=for-the-badge)](https://www.npmjs.com/package/@finastra/icon-bar)
@@ -24,13 +25,14 @@ import '@finastra/icon-bar';
 </fds-icon-bar>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property        | Attribute      | Type                      | Default | Description               |
-|-----------------|----------------|---------------------------|---------|---------------------------|
+| --------------- | -------------- | ------------------------- | ------- | ------------------------- |
 | `ariaHasPopup`  |                | `AriaHasPopup`            |         |                           |
 | `ariaLabel`     |                | `string`                  |         |                           |
 | `buttonElement` |                | `HTMLElement`             |         |                           |
@@ -47,7 +49,7 @@ import '@finastra/icon-bar';
 #### Methods
 
 | Method              | Type                    |
-|---------------------|-------------------------|
+| ------------------- | ----------------------- |
 | `blur`              | `(): void`              |
 | `focus`             | `(): void`              |
 | `getParent`         | `(): IconBar`           |
@@ -56,20 +58,19 @@ import '@finastra/icon-bar';
 | `renderLabel`       | `(): TemplateResult<1>` |
 | `showLabels`        | `(): boolean`           |
 
-
 # fds-icon-bar
 
 #### Properties
 
 | Property           | Attribute          | Type      | Default | Description                             |
-|--------------------|--------------------|-----------|---------|-----------------------------------------|
+| ------------------ | ------------------ | --------- | ------- | --------------------------------------- |
 | `hideNotification` | `hideNotification` | `boolean` | false   | Removes the notification on item click. |
 | `showLabels`       | `showLabels`       | `boolean` | false   | Show or hide the items labels.          |
 
 #### Methods
 
 | Method                  | Type                    |
-|-------------------------|-------------------------|
+| ----------------------- | ----------------------- |
 | `deselectOthers`        | `(current: Node): void` |
 | `dispatchSelectedEvent` | `(index: any): void`    |
 | `getItems`              | `(): Node[]`            |
@@ -79,6 +80,7 @@ import '@finastra/icon-bar';
 #### Events
 
 | Event      | Type                           |
-|------------|--------------------------------|
+| ---------- | ------------------------------ |
 | `selected` | `CustomEvent<{ index: any; }>` |
+
 <!-- /DOC -->

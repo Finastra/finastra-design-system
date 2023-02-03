@@ -39,24 +39,23 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
 };
 
 const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
-  return html`
-  <style>
-    .demo-container {
-      width: 300px;
-    }
-  </style>
-  <div class="demo-container">
-    <fds-button
-      label=${label}
-      icon=${ifDefined(icon)}
-      ?secondary=${secondary}
-      ?dense=${dense}
-      ?large=${large}
-      ?disabled=${disabled}
-      ?fullwidth=${fullwidth}
-      ?trailingIcon=${trailingIcon}
-    ></fds-button>
-  </div>`;
+  return html` <style>
+      .demo-container {
+        width: 300px;
+      }
+    </style>
+    <div class="demo-container">
+      <fds-button
+        label=${label}
+        icon=${ifDefined(icon)}
+        ?secondary=${secondary}
+        ?dense=${dense}
+        ?large=${large}
+        ?disabled=${disabled}
+        ?fullwidth=${fullwidth}
+        ?trailingIcon=${trailingIcon}
+      ></fds-button>
+    </div>`;
 };
 
 export const Default: Story<ContainedButton> = Template.bind({});

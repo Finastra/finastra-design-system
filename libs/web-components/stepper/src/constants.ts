@@ -1,4 +1,3 @@
-export const EVENTS = {
-    STEPCLICK: 'step-click'
+export const events = {
+  STEPCLICK: 'step-click'
 };
-  

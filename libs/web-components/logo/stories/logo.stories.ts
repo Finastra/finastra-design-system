@@ -25,7 +25,7 @@ export default {
 } as Meta;
 
 const Template: Story = ({ dense = false }) => {
-  return html`<fds-logo  ?dense=${dense}></fds-logo>`;
+  return html`<fds-logo ?dense=${dense}></fds-logo>`;
 };
 
 export const Default: Story = Template.bind({});

@@ -24,7 +24,7 @@ jobs:
         run: npm ci
       - name: Build tippy theme
         run: npm run build:tippy-theme
-      
+
       # Publish
       - name: Publish package
         uses: JS-DevTools/npm-publish@v1

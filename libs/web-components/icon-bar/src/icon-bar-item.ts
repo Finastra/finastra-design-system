@@ -26,13 +26,12 @@ export class IconBarItem extends IconButton {
 
   render() {
     if (this.notification) {
-      return html`
-        <fds-badge data-tippy-content="This is a tooltip" value="${this.notification}" position="topRight" color="secondary">
-          ${this.renderIconButtons()}
-        </fds-badge>`
+      return html` <fds-badge data-tippy-content="This is a tooltip" value="${this.notification}" position="topRight" color="secondary">
+        ${this.renderIconButtons()}
+      </fds-badge>`;
     }
 
-    return html`${this.renderIconButtons()}`
+    return html`${this.renderIconButtons()}`;
   }
 
   renderIconButtons() {
@@ -42,17 +41,12 @@ export class IconBarItem extends IconButton {
     };
 
     return html`
-        <div @click="${this.handleIconClick}" class="iconButton ${classMap(classes)}">
-          <fds-icon-button
-            icon='${this.icon}'
-            ?dense='${this.dense}'
-            ?primary='${this.primary}'
-            ?secondary='${this.secondary}'
-          >
-          </fds-icon-button>
-          ${this.showLabels() ? this.renderLabel() : ''}
-        </div>
-      `
+      <div @click="${this.handleIconClick}" class="icon-button ${classMap(classes)}">
+        <fds-icon-button icon="${this.icon}" ?dense="${this.dense}" ?primary="${this.primary}" ?secondary="${this.secondary}">
+        </fds-icon-button>
+        ${this.showLabels() ? this.renderLabel() : ''}
+      </div>
+    `;
   }
 
   handleIconClick() {
@@ -60,7 +54,7 @@ export class IconBarItem extends IconButton {
       return;
     }
     if (this.getParent().hideNotification) {
-      this.removeAttribute("notification");
+      this.removeAttribute('notification');
     }
     this.current = !this.current;
     this.getParent().deselectOthers(this);
@@ -68,7 +62,7 @@ export class IconBarItem extends IconButton {
   }
 
   getParent(): IconBar {
-    return this.parentElement as IconBar
+    return this.parentElement as IconBar;
   }
 
   showLabels() {
@@ -76,7 +70,7 @@ export class IconBarItem extends IconButton {
   }
 
   renderLabel() {
-    return html`<span class="label">${this.label}</span>`
+    return html`<span class="label">${this.label}</span>`;
   }
 }
 

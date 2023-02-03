@@ -13,10 +13,13 @@
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
+
   /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
+
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
+
   /* Support for IE. */
   font-feature-settings: 'liga';
 }

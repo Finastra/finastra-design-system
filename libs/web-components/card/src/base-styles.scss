@@ -1,17 +1,19 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 @use '@material/card' as card;
 
 @mixin core-styles() {
   :host {
     display: block;
     height: fit-content;
-    @include card.core-styles();
+    @include card.core-styles;
+
     --mdc-card-border-radius: 4px;
   }
 
   .mdc-card {
     flex: 1;
     @include fds.background(surface);
+
     height: 100%;
     overflow: hidden;
     @include fds.padding(3);
@@ -42,4 +44,4 @@
   }
 }
 
-@include core-styles();
+@include core-styles;

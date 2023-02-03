@@ -26,7 +26,8 @@
 }
 
 :host([activated]) {
-  slot[name="graphic"]::slotted(*), slot[name="meta"]::slotted(*) {
+  slot[name='graphic']::slotted(*),
+  slot[name='meta']::slotted(*) {
     @include fds.color(primary);
   }
 }

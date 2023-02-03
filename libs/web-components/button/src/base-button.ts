@@ -5,7 +5,7 @@ import { styles } from './base-styles.css';
 
 export class BaseButton extends LitElement {
   static styles: CSSResultGroup = [styles];
-  
+
   /**
    * The label displayed inside the button
    */
@@ -50,15 +50,11 @@ export class BaseButton extends LitElement {
   trailingIcon = false;
 
   render() {
-    return html`<button
-      aria-label="${this.label || this.icon}"
-      ?disabled="${this.disabled}"
-    >
-      ${this.icon && !this.trailingIcon ? this.renderIcon() : ''}
-      ${this.label}
+    return html`<button aria-label="${this.label || this.icon}" ?disabled="${this.disabled}">
+      ${this.icon && !this.trailingIcon ? this.renderIcon() : ''} ${this.label}
       <slot></slot>
       ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
-    </button>`
+    </button>`;
   }
 
   protected renderIcon() {

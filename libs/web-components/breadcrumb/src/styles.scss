@@ -20,11 +20,12 @@ ul {
     &:not(:last-child)::after {
       content: var(--fds-breadcrumb-divider, '/');
       padding-left: var(--fds-spacing-2, 8px);
-			color: var(--fds-breadcrumb-divider-color, inherit);
+      color: var(--fds-breadcrumb-divider-color, inherit);
     }
 
     a {
       @include fds.color(on-surface);
+
       text-decoration: none;
     }
   }

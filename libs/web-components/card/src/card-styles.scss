@@ -1,8 +1,8 @@
-@use "@finastra/card/src" as base-card;
+@use '@finastra/card/src' as base-card;
 @use '@finastra/fds-theme' as fds;
 
 :host {
-  @include base-card.core-styles();
+  @include base-card.core-styles;
 
   .mdc-card--disabled ::slotted(*) {
     @include fds.color(on-surface-disabled);

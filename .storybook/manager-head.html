@@ -7,16 +7,21 @@
     background: var(--fds-primary-lighter);
   }
 
-  .dark-theme .sidebar-item[data-selected="true"] {
+  .dark-theme .sidebar-item[data-selected='true'] {
     color: var(--fds-on-primary);
   }
 
-  .dark-theme .sidebar-item[data-selected="true"] svg {
+  .dark-theme .sidebar-item[data-selected='true'] svg {
     color: var(--fds-on-primary);
   }
 
-  #storybook-explorer-tree a, #storybook-explorer-tree div:not(.sidebar-subheading) button {
-    font: var(--fds-caption, normal normal var(--fds-caption-font-weight, 400) var(--fds-caption-font-size, 0.75rem)/var(--fds-caption-line-height, 1.125rem) var(--fds-caption-font-family, Roboto)) !important;
+  #storybook-explorer-tree a,
+  #storybook-explorer-tree div:not(.sidebar-subheading) button {
+    font: var(
+      --fds-caption,
+      normal normal var(--fds-caption-font-weight, 400) var(--fds-caption-font-size, 0.75rem) / var(--fds-caption-line-height, 1.125rem)
+        var(--fds-caption-font-family, Roboto)
+    ) !important;
   }
 
   #storybook-explorer-tree div.sidebar-subheading button {
@@ -28,7 +33,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6WMSWY8TYH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
 
   gtag('config', 'G-6WMSWY8TYH');

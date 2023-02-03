@@ -6,7 +6,6 @@
 
 This component is an IT representation of a user. It can be used to figures users or to enable an access to a [user profile menu](https://github.com/Finastra/finastra-design-system/blob/master/libs/web-components/user-profile/README.md).
 
-
 ## Usage
 
 ### Import
@@ -21,33 +20,35 @@ import '@finastra/avatar';
 <fds-avatar large name="Adnen Manai"></fds-avatar>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property    | Attribute   | Type      | Default | Description                                      |
-|-------------|-------------|-----------|---------|--------------------------------------------------|
-| `dense`     | `dense`     | `boolean` | false   | Make the avatar smaller                          |
-| `large`     | `large`     | `boolean` | false   | Make the avatar bigger                           |
+| Property    | Attribute   | Type      | Default | Description                                                            |
+| ----------- | ----------- | --------- | ------- | ---------------------------------------------------------------------- |
+| `dense`     | `dense`     | `boolean` | false   | Make the avatar smaller                                                |
+| `large`     | `large`     | `boolean` | false   | Make the avatar bigger                                                 |
 | `name`      | `name`      | `string`  | ""      | Name of the avatar, used to generate the initials (Displayed on hover) |
-| `primary`   | `primary`   | `boolean` | false   | Use theme's primary color as background          |
-| `secondary` | `secondary` | `boolean` | false   | Use theme's secondary color as background        |
-| `shortName` | `shortName` | `string`  | ""      | Use this property to override the initials       |
+| `primary`   | `primary`   | `boolean` | false   | Use theme's primary color as background                                |
+| `secondary` | `secondary` | `boolean` | false   | Use theme's secondary color as background                              |
+| `shortName` | `shortName` | `string`  | ""      | Use this property to override the initials                             |
 
 #### Methods
 
 | Method               | Type                                       |
-|----------------------|--------------------------------------------|
+| -------------------- | ------------------------------------------ |
 | `transformName`      | `(fullName: string, dense?: any): string`  |
 | `transformShortName` | `(shortName: string, dense?: any): string` |
 
 #### CSS Custom Properties
 
 | Property                 | Type  | Default   | Description                        |
-|--------------------------|-------|-----------|------------------------------------|
+| ------------------------ | ----- | --------- | ---------------------------------- |
 | `--fds-avatar-font-size` |       | "16px"    | Font size of the avatar            |
 | `--fds-avatar-size`      |       | "48px"    | Size of the avatar                 |
 | `--fds-primary`          | color | "#694ED6" | Color of the start of the gradient |
 | `--fds-secondary`        | color | "#C137A2" | Color of the end of the gradient   |
+
 <!-- /DOC -->

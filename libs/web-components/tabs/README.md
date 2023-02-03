@@ -21,38 +21,39 @@ import '@finastra/tabs';
 </fds-tab-group>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property            | Attribute           | Type      | Default | Description                                      |
-|---------------------|---------------------|-----------|---------|--------------------------------------------------|
-| `headerDisplayType` | `headerDisplayType` | `string`  | ""      | Display type for tab button:  Accepts one of values : `classic \| segmented \| ''` |
-| `headerPosition`    | `headerPosition`    | `string`  | "start" | Position of header. Accepts one of values : `start \| center \| end` |
-| `override`          |                     |           |         |                                                  |
-| `selectedIndex`     | `selectedIndex`     | `number`  | 0       | Index of tab that is active.                     |
-| `separator`         | `separator`         | `boolean` | false   | Add dividers between tabs                        |
+| Property            | Attribute           | Type      | Default | Description                                                                       |
+| ------------------- | ------------------- | --------- | ------- | --------------------------------------------------------------------------------- |
+| `headerDisplayType` | `headerDisplayType` | `string`  | ""      | Display type for tab button: Accepts one of values : `classic \| segmented \| ''` |
+| `headerPosition`    | `headerPosition`    | `string`  | "start" | Position of header. Accepts one of values : `start \| center \| end`              |
+| `override`          |                     |           |         |                                                                                   |
+| `selectedIndex`     | `selectedIndex`     | `number`  | 0       | Index of tab that is active.                                                      |
+| `separator`         | `separator`         | `boolean` | false   | Add dividers between tabs                                                         |
 
 #### Methods
 
 | Method             | Type       |
-|--------------------|------------|
+| ------------------ | ---------- |
 | `observeChildList` | `(): void` |
 | `updateTabInfo`    | `(): void` |
 
 #### Events
 
 | Event                 | Type                              |
-|-----------------------|-----------------------------------|
+| --------------------- | --------------------------------- |
 | `selectedIndexChange` | `CustomEvent<{ index: number; }>` |
-
 
 # fds-tab-item
 
 #### Properties
 
 | Property | Attribute | Type     | Default |
-|----------|-----------|----------|---------|
+| -------- | --------- | -------- | ------- |
 | `label`  | `label`   | `string` | ""      |
+
 <!-- /DOC -->

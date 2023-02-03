@@ -12,7 +12,7 @@ describe('AppCard', () => {
 
   it('should have default options', async () => {
     const el: AppCard = await fixture(html`<fds-app-card></fds-app-card>`);
-    expect(el.name).to.deep.equal("");
+    expect(el.name).to.deep.equal('');
     expect(el.extraDense).to.equal(false);
     expect(el.large).to.equal(false);
   });
@@ -23,7 +23,16 @@ describe('AppCard', () => {
   });
 
   it('should display application', async () => {
-    const el: AppCard = await fixture(html`<fds-app-card name="Test App" author="Test" flag="PUBLISHED" icon="https://test-logo.png" description="description test" large></fds-app-card>`);
+    const el: AppCard = await fixture(
+      html`<fds-app-card
+        name="Test App"
+        author="Test"
+        flag="PUBLISHED"
+        icon="https://test-logo.png"
+        description="description test"
+        large
+      ></fds-app-card>`
+    );
     expect(el.name).to.equal('Test App');
     expect(el.author).to.equal('Test');
     expect(el.flag).to.equal('PUBLISHED');

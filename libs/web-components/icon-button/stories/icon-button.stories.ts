@@ -23,7 +23,13 @@ export default {
 } as Meta;
 
 const Template: Story<IconButton> = ({ icon = 'code', dense, disabled, primary, secondary }) => {
-  return html`<fds-icon-button  .icon=${icon} ?dense=${dense} ?disabled=${disabled} ?primary=${primary} ?secondary=${secondary}></fds-icon-button>`;
+  return html`<fds-icon-button
+    .icon=${icon}
+    ?dense=${dense}
+    ?disabled=${disabled}
+    ?primary=${primary}
+    ?secondary=${secondary}
+  ></fds-icon-button>`;
 };
 
 export const Default: Story<IconButton> = Template.bind({});
@@ -32,24 +38,24 @@ Default.args = {
   primary: false,
   dense: false,
   secondary: false
-}
+};
 
 export const Primary: Story<IconButton> = Default.bind({});
 Primary.args = {
   primary: true
-}
+};
 
 export const Secondary: Story<IconButton> = Default.bind({});
 Secondary.args = {
   secondary: true
-}
+};
 
 export const Disabled: Story<IconButton> = Default.bind({});
 Disabled.args = {
   disabled: true
-}
+};
 
 export const Dense: Story<IconButton> = Default.bind({});
 Dense.args = {
   dense: true
-}
+};

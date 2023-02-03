@@ -57,13 +57,14 @@ export interface Tour {
 
 - `stepInfo` property is a string template. Its default value is : `Step ${currentStep} of ${totalSteps}`
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property               | Attribute          | Type                           | Default      | Description                           |
-|------------------------|--------------------|--------------------------------|--------------|---------------------------------------|
+| ---------------------- | ------------------ | ------------------------------ | ------------ | ------------------------------------- |
 | `arrowPosition`        |                    | `StyleInfo`                    | {}           |                                       |
 | `cardPosition`         |                    | `StyleInfo`                    | {}           |                                       |
 | `currentStepElement`   |                    | `Element \| null \| undefined` | "undefined"  |                                       |
@@ -79,7 +80,7 @@ export interface Tour {
 #### Methods
 
 | Method  | Type                                |
-|---------|-------------------------------------|
+| ------- | ----------------------------------- |
 | `back`  | `(): void`                          |
 | `next`  | `(): void`                          |
 | `start` | `(currentTourIndex?: number): void` |
@@ -88,7 +89,7 @@ export interface Tour {
 #### Slots
 
 | Name          | Description              |
-|---------------|--------------------------|
+| ------------- | ------------------------ |
 | `back-button` | Content for back button. |
 | `done-button` | Content for done button. |
 | `next-button` | Content for next button. |
@@ -97,6 +98,7 @@ export interface Tour {
 #### CSS Custom Properties
 
 | Property                           | Default | Description                     |
-|------------------------------------|---------|---------------------------------|
+| ---------------------------------- | ------- | ------------------------------- |
 | `--fds-guided-tour-card-max-width` | "500px" | Max width of panel information. |
+
 <!-- /DOC -->

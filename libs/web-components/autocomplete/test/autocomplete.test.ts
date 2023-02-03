@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Menu } from "@finastra/menu";
+import { Menu } from '@finastra/menu';
 import { SearchInput } from '@finastra/search-input';
 import { elementUpdated, expect, fixture, html, oneEvent, triggerBlurFor, triggerFocusFor } from '@open-wc/testing';
 import '../src/autocomplete.js';

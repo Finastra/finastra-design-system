@@ -11,35 +11,35 @@ export class Chip extends LitElement {
 
   /**
    * Chip label
-  */
+   */
   @property({ type: String }) label = '';
   /**
    * Material design icon name to display in the left side of the label
-  */
+   */
   @property({ type: String }) icon = '';
   /**
    * Material design trailing icon name to display in the right side of the label
-  */
+   */
   @property({ type: String }) trailingIcon = '';
   /**
    * Disable a chip.
-  */
+   */
   @property({ type: Boolean }) disabled = false;
   /**
    * Select a chip
-  */
+   */
   @property({ type: Boolean }) selected = false;
   /**
    * Use Secondary color.
-  */
+   */
   @property({ type: Boolean }) secondary = false;
   /**
    * Make the chip smaller.
-  */
+   */
   @property({ type: Boolean }) dense = false;
   /**
    * Make the chip bigger.
-  */
+   */
   @property({ type: Boolean }) large = false;
 
   @queryAsync('mwc-ripple') ripple!: Promise<Ripple | null>;
@@ -49,12 +49,12 @@ export class Chip extends LitElement {
   /**
    * Override this callback with what you want to happen whenever there's a click on the trailing icon
    */
-  trailingIconAction: any;
+  trailingIconAction?: () => void;
 
   protected getRenderClasses(): ClassInfo {
     return {
       'mdc-button--outlined': true,
-      'mdc-button--dense': this.dense,
+      'mdc-button--dense': this.dense
     };
   }
 
@@ -64,39 +64,43 @@ export class Chip extends LitElement {
   });
 
   render() {
-    return html`
-      <button id="button" class="mdc-button ${classMap(this.getRenderClasses())}" ?disabled="${this.disabled}"
-        ?selected="${this.selected}" @focus="${this.handleRippleFocus}" @blur="${this.handleRippleBlur}"
-        @mousedown="${this.handleRippleActivate}" @mouseenter="${this.handleRippleMouseEnter}"
-        @mouseleave="${this.handleRippleMouseLeave}" @touchstart="${this.handleRippleActivate}"
-        @touchend="${this.handleRippleDeactivate}" @touchcancel="${this.handleRippleDeactivate}">
-        ${this.renderRipple()}
-        <span class="leading-icon">
-          <slot name="icon">
-            ${this.icon ? this.renderIcon(this.icon) : ''}
-          </slot>
-        </span>
-        <span class="mdc-button__label">${this.label}</span>
-        <span class="trailing-icon">
-          <slot name="trailingIcon" @click="${this._handleClick}">
-            ${this.trailingIcon ? this.renderIcon(this.trailingIcon) : ''}
-          </slot>
-        </span>
-      </button>`;
+    return html` <button
+      id="button"
+      class="mdc-button ${classMap(this.getRenderClasses())}"
+      ?disabled="${this.disabled}"
+      ?selected="${this.selected}"
+      @focus="${this.handleRippleFocus}"
+      @blur="${this.handleRippleBlur}"
+      @mousedown="${this.handleRippleActivate}"
+      @mouseenter="${this.handleRippleMouseEnter}"
+      @mouseleave="${this.handleRippleMouseLeave}"
+      @touchstart="${this.handleRippleActivate}"
+      @touchend="${this.handleRippleDeactivate}"
+      @touchcancel="${this.handleRippleDeactivate}"
+    >
+      ${this.renderRipple()}
+      <span class="leading-icon">
+        <slot name="icon"> ${this.icon ? this.renderIcon(this.icon) : ''} </slot>
+      </span>
+      <span class="mdc-button__label">${this.label}</span>
+      <span class="trailing-icon">
+        <slot name="trailingIcon" @click="${this._handleClick}"> ${this.trailingIcon ? this.renderIcon(this.trailingIcon) : ''} </slot>
+      </span>
+    </button>`;
   }
 
   _handleClick() {
     try {
-      this.trailingIconAction();
+      if (this.trailingIconAction) {
+        this.trailingIconAction();
+      }
     } catch (error) {
+      console.debug(error);
     }
   }
 
   private renderIcon(icon: string) {
-    return html`
-    <fds-icon class="mdc-button__icon">
-      ${icon}
-    </fds-icon>`;
+    return html` <fds-icon class="mdc-button__icon"> ${icon} </fds-icon>`;
   }
 
   private renderRipple() {
@@ -135,7 +139,6 @@ export class Chip extends LitElement {
     this.rippleHandlers.endFocus();
   }
 }
-
 
 declare global {
   interface HTMLElementTagNameMap {

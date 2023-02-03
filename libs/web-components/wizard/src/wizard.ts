@@ -74,7 +74,7 @@ export class Wizard extends LitElement {
   protected disabled: Boolean | null = null;
   protected allNextDisabled = true;
   protected allBackDisabled = true;
-  protected initialNextLabel= '';
+  protected initialNextLabel = '';
 
   @state()
   protected arrayPages: Page[] = [];
@@ -157,7 +157,7 @@ export class Wizard extends LitElement {
   onPagesSlotChanged() {
     this._pages[this.currentStepIndex].setAttribute('current', 'true');
     this.updateActionsState(this.currentStepIndex);
-    if(this._nextBtn[0]) {
+    if (this._nextBtn[0]) {
       this.initialNextLabel = this._nextBtn[0].label;
     }
     this.initAllPages();
@@ -362,12 +362,11 @@ export class Wizard extends LitElement {
   }
 
   updated() {
-    if( this._nextBtn[0] && this.initialNextLabel) {
-      if(this._pages[this.currentStepIndex].getAttribute('next-label') !== null) {
+    if (this._nextBtn[0] && this.initialNextLabel) {
+      if (this._pages[this.currentStepIndex].getAttribute('next-label') !== null) {
         this._nextBtn[0].label = this._pages[this.currentStepIndex].getAttribute('next-label');
-      }
-      else {
-        this._nextBtn[0].label= this.initialNextLabel
+      } else {
+        this._nextBtn[0].label = this.initialNextLabel;
       }
     }
   }

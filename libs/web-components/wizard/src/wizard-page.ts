@@ -1,4 +1,3 @@
-
 import '@finastra/chip';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -36,31 +35,28 @@ export class WizardPage extends LitElement {
   nextBtnLabel = '';
 
   render() {
-    return html`
-      ${this.header ?
-        html`
-        <div class="header">
-          ${this.renderIcon()}
-          <div class="title ${this.icon ? 'title-with-icon' : ''}">${this.pageTitle}</div>
-          ${this.renderStepsCounter()}
-        </div>` : ''}
-        <div class="page-container">
-          <slot></slot>
-        </div>`;
+    return html` ${this.header
+        ? html` <div class="header">
+            ${this.renderIcon()}
+            <div class="title ${this.icon ? 'title-with-icon' : ''}">${this.pageTitle}</div>
+            ${this.renderStepsCounter()}
+          </div>`
+        : ''}
+      <div class="page-container">
+        <slot></slot>
+      </div>`;
   }
 
   renderIcon() {
-    return html`${this.icon ?
-      html`
-      <div class="icon">
-        <img loading="lazy" src="${this.icon}">
-      </div>` : ''}`;
+    return html`${this.icon
+      ? html` <div class="icon">
+          <img loading="lazy" src="${this.icon}" />
+        </div>`
+      : ''}`;
   }
 
   renderStepsCounter() {
-    return html`${this.stepsCounter ?
-      html`
-      <fds-chip label=${this.stepsCounter}></fds-chip>` : ''}`;
+    return html`${this.stepsCounter ? html` <fds-chip label=${this.stepsCounter}></fds-chip>` : ''}`;
   }
 }
 

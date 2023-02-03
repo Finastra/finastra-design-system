@@ -4,10 +4,10 @@ import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './base-styles.css';
 
 /**
-  * @attr {boolean} [outlined=false] - Change the card style to outlined, default style is elevated.
-  * @attr {boolean} [selectable=false] - Change the card style to an action card.
-  * @attr {boolean} [disabled=false] - Disabled style of the card.
-*/
+ * @attr {boolean} [outlined=false] - Change the card style to outlined, default style is elevated.
+ * @attr {boolean} [selectable=false] - Change the card style to an action card.
+ * @attr {boolean} [disabled=false] - Disabled style of the card.
+ */
 
 export class BaseCard extends LitElement {
   static styles = styles;
@@ -17,7 +17,6 @@ export class BaseCard extends LitElement {
   @property({ type: Boolean }) disabled = false;
 
   protected render(): TemplateResult {
-
     if (this.disabled && this.selectable) {
       this.selectable = false;
     }
@@ -25,7 +24,7 @@ export class BaseCard extends LitElement {
     const classes = {
       'mdc-card--outlined': this.outlined,
       'mdc-card--selectable': this.selectable,
-      'mdc-card--disabled': this.disabled,
+      'mdc-card--disabled': this.disabled
     };
     return html`<div class="mdc-card ${classMap(classes)}">${this.renderCardContent()}</div>`;
   }
@@ -38,7 +37,7 @@ export class BaseCard extends LitElement {
     super.updated(changedProperties);
     for (const child of Array.from(this.children)) {
       if (this.disabled) {
-        child.setAttribute("disabled", `${this.disabled}`);
+        child.setAttribute('disabled', `${this.disabled}`);
       } else {
         child.removeAttribute('disabled');
       }

@@ -33,14 +33,12 @@ jobs:
         run: npm ci --loglevel=error
         env:
           SKIP_POST_INSTALL: true
-      - name: Build DevKit
-        run: npm run build:devkit
       - name: Build web components
-        run: npm run wc:build
+        run: npm run build
 
       # Test
       - name: Unit tests
-        run: npm run wc:test
+        run: npm run test
       - name: Codecov
         uses: codecov/codecov-action@v2
         with:

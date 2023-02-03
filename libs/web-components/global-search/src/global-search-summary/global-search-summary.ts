@@ -1,7 +1,6 @@
-import { customElement } from "lit/decorators.js";
-import { GlobalSearchSummaryBase } from "./global-search-summary-base";
-import { styles } from "./global-search-summary.css";
-
+import { customElement } from 'lit/decorators.js';
+import { GlobalSearchSummaryBase } from './global-search-summary-base';
+import { styles } from './global-search-summary.css';
 
 /**
  * @attr [searchText=""] - the search text to summary.
@@ -10,11 +9,11 @@ import { styles } from "./global-search-summary.css";
 
 @customElement('fds-global-search-summary')
 export class GlobalSearchSummary extends GlobalSearchSummaryBase {
-    static override styles = [styles];
+  static override styles = [styles];
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'fds-global-search-summary': GlobalSearchSummary;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-global-search-summary': GlobalSearchSummary;
+  }
 }

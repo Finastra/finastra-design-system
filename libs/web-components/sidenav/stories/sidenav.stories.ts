@@ -37,7 +37,8 @@ export default {
           justify-content: center;
           align-items: center;
         }
-        .fds-sidenav-list, .navigation {
+        .fds-sidenav-list,
+        .navigation {
           --mdc-theme-text-primary-on-background: var(--fds-on-background);
           width: 100%;
         }
@@ -52,52 +53,71 @@ export default {
 } as Meta;
 
 const Template: Story<Sidenav> = ({ type }) => {
-  return html`<fds-sidenav  .type=${type}>
-  <div slot="sidenavContent">
-    <div class="fds-sidenav-header">
-      <fds-logo></fds-logo>
+  return html`<fds-sidenav .type=${type}>
+    <div slot="sidenavContent">
+      <div class="fds-sidenav-header">
+        <fds-logo></fds-logo>
+      </div>
+      <div class="fds-sidenav-list">
+        <fds-list activatable>
+          <fds-list-item selected activated graphic="icon">
+            <span>Home</span>
+            <fds-icon slot="graphic">home</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Applications</span>
+            <fds-icon slot="graphic">dashboard</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Tools</span>
+            <fds-icon slot="graphic">extension</fds-icon>
+          </fds-list-item>
+          <fds-list-item graphic="icon">
+            <span>Settings</span>
+            <fds-icon slot="graphic">settings</fds-icon>
+          </fds-list-item>
+        </fds-list>
+      </div>
     </div>
-    <div class="fds-sidenav-list">
+    <div slot="navigation" class="navigation">
       <fds-list activatable>
-        <fds-list-item selected activated graphic="icon">
-          <span>Home</span>
-          <fds-icon slot="graphic">home</fds-icon>
+        <fds-list-item graphic="icon">
+          <span>Tab 1</span>
         </fds-list-item>
         <fds-list-item graphic="icon">
-          <span>Applications</span>
-          <fds-icon slot="graphic">dashboard</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Tools</span>
-          <fds-icon slot="graphic">extension</fds-icon>
-        </fds-list-item>
-        <fds-list-item graphic="icon">
-          <span>Settings</span>
-          <fds-icon slot="graphic">settings</fds-icon>
+          <span>Tab 2</span>
         </fds-list-item>
       </fds-list>
     </div>
-  </div>
-  <div slot="navigation" class="navigation">
-    <fds-list activatable>
-      <fds-list-item graphic="icon">
-        <span>Tab 1</span>
-      </fds-list-item>
-      <fds-list-item graphic="icon">
-        <span>Tab 2</span>
-      </fds-list-item>
-    </fds-list>
-  </div>
-  <div slot="appContent">
-    <div class="main-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+    <div slot="appContent">
+      <div class="main-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+          in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
     </div>
-  </div>
-</fds-sidenav>`;
+  </fds-sidenav>`;
 };
 
 export const Default: Story<Sidenav> = Template.bind({});

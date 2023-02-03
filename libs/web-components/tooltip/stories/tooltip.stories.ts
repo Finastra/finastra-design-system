@@ -14,8 +14,7 @@ export default {
       description: { component: allSanitizers(README) }
     }
   },
-  args: {
-  },
+  args: {},
   decorators: [
     (story) => html`${story()}
       <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -24,19 +23,14 @@ export default {
         tippy('[data-tippy-content]', {
           touch: false,
           theme: 'finastra'
-          });
+        });
       </script>
-      <style>
-
-      </style>`
+      <style></style>`
   ]
 } as Meta;
 
-const Template: Story = ({ }) => {
-  return html`<fds-button
-  data-tippy-content="This is a tooltip 🤌"
-  label="Hover me"
-></fds-button>`;
+const Template: Story = ({}) => {
+  return html`<fds-button data-tippy-content="This is a tooltip 🤌" label="Hover me"></fds-button>`;
 };
 
 export const Default: Story = Template.bind({});

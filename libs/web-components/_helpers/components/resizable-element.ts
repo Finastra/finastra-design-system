@@ -3,8 +3,8 @@ import { LitElement } from 'lit-element';
 const BREAKPOINTS = { sm: 600, md: 720, lg: 960, xl: 1280, xxl: 1440 };
 
 export class ResizeElement extends LitElement {
-  width: number = 0;
-  height: number = 0;
+  width = 0;
+  height = 0;
   resizeObserver;
 
   connectedCallback() {

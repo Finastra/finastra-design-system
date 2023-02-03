@@ -1,12 +1,12 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { styles } from './styles.css';
-import "./tab-bar/tab-bar";
+import './tab-bar/tab-bar';
 import { TabItem } from './tab-item';
-import "./tab/tab";
+import './tab/tab';
 
 interface TabInfo {
-  label: string
+  label: string;
 }
 
 /**
@@ -22,89 +22,102 @@ export class TabGroup extends LitElement {
 
   @property({ type: Number })
   selectedIndex = 0;
-  
+
   @property({ type: Boolean }) separator = false;
-  
 
   @property({ type: String }) headerPosition = 'start';
 
-  @property({ type: String }) headerDisplayType = '' ;
-  
+  @property({ type: String }) headerDisplayType = '';
+
   @state()
-  private tabs: TabInfo[] = []
+  private tabs: TabInfo[] = [];
 
   @query('slot[name="selected"]', true)
   private selectedSlot!: HTMLSlotElement;
 
-  private childListObserver: MutationObserver | null = null 
+  private childListObserver: MutationObserver | null = null;
 
   override connectedCallback(): void {
     super.connectedCallback();
-    this.observeChildList()
-    this.updateTabInfo()
+    this.observeChildList();
+    this.updateTabInfo();
   }
 
   override disconnectedCallback(): void {
-    super.disconnectedCallback()
+    super.disconnectedCallback();
     if (this.childListObserver) {
-      this.childListObserver.disconnect()
+      this.childListObserver.disconnect();
     }
   }
-  
+
   render() {
     return html`
-    <div class="fds-tab-group-wrapper">
-      <fds-tab-bar class="fds-tab-group-tab-bar" position="${this.headerPosition}" ?seperator=${this.separator} .activeIndex=${this.selectedIndex} @MDCTabBar:activated=${this.handleSelectedTab}>
-        ${this.tabs.map(tab => html`<fds-tab ?classic=${this.headerDisplayType === 'classic'}  ?segmented=${this.headerDisplayType === 'segmented'} .label=${tab.label}></fds-tab>`)}
-      </fds-tab-bar>
-      <div class="fds-tab-content-wrapper">
-        <slot name="selected"></slot>
+      <div class="fds-tab-group-wrapper">
+        <fds-tab-bar
+          class="fds-tab-group-tab-bar"
+          position="${this.headerPosition}"
+          ?seperator=${this.separator}
+          .activeIndex=${this.selectedIndex}
+          @MDCTabBar:activated=${this.handleSelectedTab}
+        >
+          ${this.tabs.map(
+            (tab) =>
+              html`<fds-tab
+                ?classic=${this.headerDisplayType === 'classic'}
+                ?segmented=${this.headerDisplayType === 'segmented'}
+                .label=${tab.label}
+              ></fds-tab>`
+          )}
+        </fds-tab-bar>
+        <div class="fds-tab-content-wrapper">
+          <slot name="selected"></slot>
+        </div>
       </div>
-    </div>
     `;
   }
 
   private handleSelectedTab(event: CustomEvent) {
-    const index: number =  event.detail.index;
-    this.selectedIndex = index
+    const index: number = event.detail.index;
+    this.selectedIndex = index;
   }
-  
+
   protected override async updated(changedProperties: PropertyValues) {
     if (changedProperties.has('selectedIndex')) {
-      this.updateSlots();   
-      this.dispatchSelectedIndexChange()         
+      this.updateSlots();
+      this.dispatchSelectedIndexChange();
     }
   }
 
   private dispatchSelectedIndexChange() {
-    this.dispatchEvent(new CustomEvent('selectedIndexChange', {
-      detail: {index: this.selectedIndex},
-      bubbles: true,
-      cancelable: true
-    }))
+    this.dispatchEvent(
+      new CustomEvent('selectedIndexChange', {
+        detail: { index: this.selectedIndex },
+        bubbles: true,
+        cancelable: true
+      })
+    );
   }
   protected override async firstUpdated() {
-    this.updateSlots();      
-  }   
-    
+    this.updateSlots();
+  }
 
   updateTabInfo() {
-    const _tabs: TabInfo[] = []
+    const _tabs: TabInfo[] = [];
     for (const item of this.children) {
       if (item instanceof TabItem) {
         _tabs.push({
           label: item.label
-        })
+        });
       }
     }
-    this.tabs = _tabs
+    this.tabs = _tabs;
   }
 
   observeChildList() {
     this.childListObserver = new MutationObserver(() => {
-      this.updateTabInfo()
-    })
-    this.childListObserver.observe(this, {subtree: false, childList: true});
+      this.updateTabInfo();
+    });
+    this.childListObserver.observe(this, { subtree: false, childList: true });
   }
 
   private updateSlots() {
@@ -113,9 +126,6 @@ export class TabGroup extends LitElement {
     // set slots
     this.children[this.selectedIndex]?.setAttribute('slot', 'selected');
   }
-
-  
-
 }
 
 declare global {

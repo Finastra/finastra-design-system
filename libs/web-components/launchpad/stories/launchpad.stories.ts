@@ -6,9 +6,13 @@ import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-launchpad.json';
 
-
 const README = require('../README.md');
-const demoApps = [ { "name": "Cash & Liquidity Management", "sso-initiation-urls": { "web": "https://app1.com" } }, { "name": "Corporate Payments", "sso-initiation-urls": { "web": "https://app2.com" } }, { "name": "Treasury Management", "sso-initiation-urls": { "web": "https://app3.com" } }, { "name": "Risk & Compliance", "sso-initiation-urls": { "web": "https://app4.com" } } ];
+const demoApps = [
+  { name: 'Cash & Liquidity Management', 'sso-initiation-urls': { web: 'https://app1.com' } },
+  { name: 'Corporate Payments', 'sso-initiation-urls': { web: 'https://app2.com' } },
+  { name: 'Treasury Management', 'sso-initiation-urls': { web: 'https://app3.com' } },
+  { name: 'Risk & Compliance', 'sso-initiation-urls': { web: 'https://app4.com' } }
+];
 
 export default {
   title: 'NAVIGATION/Launchpad',
@@ -30,91 +34,80 @@ export default {
   },
   decorators: [
     (story) =>
-      html`
-<style>
-  .sb-show-main.sb-main-centered #root {
-    padding: 16px;
-  }
-  body.sb-main-centered #root-inner {
-    padding: 64px;
-    height: 600px;
-  }
-</style>
-${story()}`
+      html` <style>
+          .sb-show-main.sb-main-centered #root {
+            padding: 16px;
+          }
+          body.sb-main-centered #root-inner {
+            padding: 64px;
+            height: 600px;
+          }
+        </style>
+        ${story()}`
   ]
 } as Meta;
 
 const Template: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title }) => {
   return html`
-<fds-launchpad
-  .apps=${apps}
-  .appNameProperty=${appNameProperty}
-  .shortAppNameProperty=${shortAppNameProperty}
-  .title=${title}
->
-  <div slot='tools'></div>
-</fds-launchpad>
+    <fds-launchpad .apps=${apps} .appNameProperty=${appNameProperty} .shortAppNameProperty=${shortAppNameProperty} .title=${title}>
+      <div slot="tools"></div>
+    </fds-launchpad>
   `;
 };
 
 const ComplexTemplate: Story<Launchpad> = ({ apps, appNameProperty, shortAppNameProperty, title }) => {
   return html`
-<style>
-  .tools-title {
-    font: var(--fds-headline-4);
-    padding-bottom: var(--fds-spacing-3);
-  }
-  .tools-list {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-row-gap: 32px;
-    grid-column-gap: 56px;
-    padding-top: var(--fds-spacing-3);
-    padding-bottom: var(--fds-spacing-3);
-  }
-  .tools-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .tools {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  .tools-name {
-    font: var(--fds-subtitle-3);
-    color: var(--fds-on-surface);
-    padding-top: var(--fds-spacing-2);
-    text-align: center;
-  }
-</style>
-<fds-launchpad
-  .apps=${apps}
-  .appNameProperty=${appNameProperty}
-  .shortAppNameProperty=${shortAppNameProperty}
-  .title=${title}
->
-  <div slot='tools'>
-    <div class='tools-title'>Tools</div>
-    <div class='tools-list'>
-      <div class="tools-item">
-        <fds-brand-card class='tools' label='Designer' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Designer</div>
+    <style>
+      .tools-title {
+        font: var(--fds-headline-4);
+        padding-bottom: var(--fds-spacing-3);
+      }
+      .tools-list {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-row-gap: 32px;
+        grid-column-gap: 56px;
+        padding-top: var(--fds-spacing-3);
+        padding-bottom: var(--fds-spacing-3);
+      }
+      .tools-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .tools {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .tools-name {
+        font: var(--fds-subtitle-3);
+        color: var(--fds-on-surface);
+        padding-top: var(--fds-spacing-2);
+        text-align: center;
+      }
+    </style>
+    <fds-launchpad .apps=${apps} .appNameProperty=${appNameProperty} .shortAppNameProperty=${shortAppNameProperty} .title=${title}>
+      <div slot="tools">
+        <div class="tools-title">Tools</div>
+        <div class="tools-list">
+          <div class="tools-item">
+            <fds-brand-card class="tools" label="Designer" extraDense primary></fds-brand-card>
+            <div class="tools-name">Designer</div>
+          </div>
+          <div class="tools-item">
+            <fds-brand-card class="tools" label="Link editor" extraDense primary></fds-brand-card>
+            <div class="tools-name">Link editor</div>
+          </div>
+          <div class="tools-item">
+            <fds-brand-card class="tools" label="Flow editor" extraDense primary></fds-brand-card>
+            <div class="tools-name">Flow editor</div>
+          </div>
+        </div>
       </div>
-      <div class="tools-item">
-        <fds-brand-card class='tools' label='Link editor' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Link editor</div>
-      </div>
-      <div class="tools-item">
-        <fds-brand-card class='tools' label='Flow editor' extraDense primary></fds-brand-card>
-        <div class='tools-name'>Flow editor</div>
-      </div>
-    </div>
-  </div>
-</fds-launchpad>
+    </fds-launchpad>
   `;
 };
 

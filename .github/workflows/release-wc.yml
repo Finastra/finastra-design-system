@@ -27,7 +27,7 @@ jobs:
       - name: Build fds theme
         run: npm run build:fds-theme
       - name: Build web components
-        run: npm run wc:build
+        run: npm run build
       - name: Get Release Version
         run: |
           RELEASE_VERSION=$(node -p 'require("./lerna.json").version')

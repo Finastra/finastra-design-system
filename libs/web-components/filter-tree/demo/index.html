@@ -1,10 +1,8 @@
 <script type="module" src="node_modules/@finastra/filter-tree/dist/src/filter-tree.js"></script>
 <script type="module" src="node_modules/@finastra/list/dist/src/list.js"></script>
 
-
 <fds-filter-tree id="filter"></fds-filter-tree>
 <script>
-
   const test = [
     {
       label: 'Consumer Banking',
@@ -24,9 +22,7 @@
     {
       label: 'Financial Toolbox'
     }
-  ]
-
-
+  ];
 
   const filter = document.getElementById('filter');
   filter.items = test;
@@ -34,5 +30,4 @@
   filter.addEventListener('filter-tree-check', (event) => {
     console.log(event.detail);
   });
-
 </script>

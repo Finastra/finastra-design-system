@@ -4,15 +4,15 @@ import { styles } from './contained-styles.css';
 
 @customElement('fds-button')
 export class ContainedButton extends BaseButton {
-    static styles = [BaseButton.styles, styles];
+  static styles = [BaseButton.styles, styles];
 
-    constructor() {
-      super();
-    }
+  constructor() {
+    super();
+  }
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-      'fds-button': ContainedButton;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-button': ContainedButton;
+  }
 }

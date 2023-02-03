@@ -212,7 +212,7 @@ export class ApexChartsWrapper extends LitElement {
     sequential1: ['#2A285C', '#3A327B', '#4A3B99', '#5945B8', '#694ED6', '#8A72E0', '#AB96EB', '#CCB9F5', '#EDDDFF'],
     sequential1LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000'],
     sequential2: ['#571235', '#7D214E', '#A43067', '#CA3F7F', '#F04E98', '#F470B2', '#F891CC', '#FBB3E5', '#FFD4FF'],
-    sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000'],
+    sequential2LabelColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#000000', '#000000', '#000000', '#000000', '#000000']
   };
 
   private _chartTheme = this.defaultTheme;
@@ -337,7 +337,7 @@ export class ApexChartsWrapper extends LitElement {
   init() {
     if (!this.$el) return;
     this.loadChartThemeFromCssVariables();
-    let newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
+    const newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
       chart: {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
@@ -418,11 +418,12 @@ export class ApexChartsWrapper extends LitElement {
           color: this.chartTheme.categoricalPalette
         }
       };
-    } else return {
-      stroke: {
-        colors: [this.chartTheme.strokeColor]
-      }
-    };
+    } else
+      return {
+        stroke: {
+          colors: [this.chartTheme.strokeColor]
+        }
+      };
   }
 
   getDataLabelColor(): string[] {

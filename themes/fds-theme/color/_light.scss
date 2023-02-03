@@ -1,28 +1,28 @@
 @use 'sass:color';
 @use 'sass:string';
 
+/* stylelint-disable scss/dollar-variable-pattern */
 $_black: black;
 $_white: white;
-
-$primary: #694ED6 !default;
-$secondary: #C137A2 !default;
-$background: #FAFAFA !default;
-$surface: #FFFFFF !default;
+/* stylelint-enable scss/dollar-variable-pattern */
+$primary: #694ed6 !default;
+$secondary: #c137a2 !default;
+$background: #fafafa !default;
+$surface: #fff !default;
 $outline: color.change($_black, $alpha: 0.12) !default;
 $success: #008744 !default;
-$error: #D60040 !default;
-$warning: #FF600A !default;
-$gradient: linear-gradient(var(--fds-primary, #694ED6), var(--fds-secondary, #C137A2)) !default;
-$on-primary: #FFFFFF !default;
-$on-secondary: #FFFFFF !default;
+$error: #d60040 !default;
+$warning: #ff600a !default;
+$gradient: linear-gradient(var(--fds-primary, #694ed6), var(--fds-secondary, #c137a2)) !default;
+$on-primary: #fff !default;
+$on-secondary: #fff !default;
 $on-background: color.change($_black, $alpha: 0.75) !default;
-$on-surface: #000000 !default;
-$on-error: #FFFFFF !default;
-$on-success: #FFFFFF !default;
-$on-gradient: #FFFFFF !default;
+$on-surface: #000 !default;
+$on-error: #fff !default;
+$on-success: #fff !default;
+$on-gradient: #fff !default;
 $on-light: color.change($_black, $alpha: 0.75);
 $on-dark: $_white;
-
 $properties: (
   primary: $primary,
   primary-lighter: color.change($primary, $alpha: 0.08),
@@ -60,4 +60,4 @@ $properties: (
   on-gradient: $on-gradient,
   on-light: $on-light,
   on-dark: $on-dark
-)
+);

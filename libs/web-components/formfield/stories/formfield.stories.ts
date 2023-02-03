@@ -18,43 +18,40 @@ export default {
   cssprops
 } as Meta;
 
-const Checkbox: Story<Formfield> = ({label, alignEnd, spaceBetween, nowrap }) => {
+const Checkbox: Story<Formfield> = ({ label, alignEnd, spaceBetween, nowrap }) => {
   return html`<fds-formfield label=${label} ?alignEnd=${alignEnd} ?spaceBetween=${spaceBetween} ?nowrap=${nowrap}>
-      <fds-checkbox></fds-checkbox>
-</fds-formfield>`;
+    <fds-checkbox></fds-checkbox>
+  </fds-formfield>`;
 };
 
-const Radio: Story<Formfield> = ({label, alignEnd, spaceBetween, nowrap }) => {
+const Radio: Story<Formfield> = ({ label, alignEnd, spaceBetween, nowrap }) => {
   return html`<fds-formfield label=${label} ?alignEnd=${alignEnd} ?spaceBetween=${spaceBetween} ?nowrap=${nowrap}>
-      <fds-radio checked></fds-radio>
-</fds-formfield>`;
+    <fds-radio checked></fds-radio>
+  </fds-formfield>`;
 };
 
-
-const Switch: Story<Formfield> = ({label, alignEnd, spaceBetween, nowrap }) => {
+const Switch: Story<Formfield> = ({ label, alignEnd, spaceBetween, nowrap }) => {
   return html`<fds-formfield label=${label} ?alignEnd=${alignEnd} ?spaceBetween=${spaceBetween} ?nowrap=${nowrap}>
-      <fds-switch selected></fds-switch>
-</fds-formfield>`;
+    <fds-switch selected></fds-switch>
+  </fds-formfield>`;
 };
 
 export const CheckboxTemplate: Story<Formfield> = Checkbox.bind({});
 CheckboxTemplate.args = {
-  label: "Accept terms and conditions"
+  label: 'Accept terms and conditions'
 };
 
 export const AlignEnd: Story = CheckboxTemplate.bind({});
 AlignEnd.args = {
-  label: "Accept terms and conditions",
+  label: 'Accept terms and conditions',
   alignEnd: true
 };
 
 export const RadioTemplate: Story<Formfield> = Radio.bind({});
 RadioTemplate.args = {
-  label: "Option"
+  label: 'Option'
 };
 export const SwitchTemplate: Story<Formfield> = Switch.bind({});
 SwitchTemplate.args = {
-  label: "On"
+  label: 'On'
 };
-
-

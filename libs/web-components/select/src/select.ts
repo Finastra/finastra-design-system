@@ -46,57 +46,43 @@ export class Select extends SelectBase {
       'fds-select--label-inside': this.labelInside
     };
 
-    const labelledby = !!this.label ? 'label' : undefined;
+    const labelledby = this.label ? 'label' : undefined;
     const describedby = this.shouldRenderHelperText ? 'helper-text' : undefined;
 
-    return html`
-      ${!this.labelInside ? this.renderLabelOutside() : ''}
-      <div
-          class="mdc-select ${classMap(classes)}">
+    return html` ${!this.labelInside ? this.renderLabelOutside() : ''}
+      <div class="mdc-select ${classMap(classes)}">
         <input
-            class="formElement"
-            name="${this.name}"
-            .value="${this.value}"
-            hidden
-            ?disabled="${this.disabled}"
-            ?required=${this.required}>
+          class="formElement"
+          name="${this.name}"
+          .value="${this.value}"
+          hidden
+          ?disabled="${this.disabled}"
+          ?required=${this.required}
+        />
         <!-- @ts-ignore -->
-        <div class="mdc-select__anchor"
-            aria-autocomplete="none"
-            role="combobox"
-            aria-expanded=${this.menuOpen}
-            aria-invalid=${!this.isUiValid}
-            aria-haspopup="listbox"
-            aria-labelledby=${ifDefined(labelledby)}
-            aria-required=${this.required}
-            aria-describedby=${ifDefined(describedby)}
-            @click=${this.onClick}
-            @focus=${this.onFocus}
-            @blur=${this.onBlur}
-            @keydown=${this.onKeydown}>
-          ${this.renderRipple()}
-          ${this.outlined ? this.renderOutline() : this.renderLabel()}
-          ${this.renderLeadingIcon()}
+        <div
+          class="mdc-select__anchor"
+          aria-autocomplete="none"
+          role="combobox"
+          aria-expanded=${this.menuOpen}
+          aria-invalid=${!this.isUiValid}
+          aria-haspopup="listbox"
+          aria-labelledby=${ifDefined(labelledby)}
+          aria-required=${this.required}
+          aria-describedby=${ifDefined(describedby)}
+          @click=${this.onClick}
+          @focus=${this.onFocus}
+          @blur=${this.onBlur}
+          @keydown=${this.onKeydown}
+        >
+          ${this.renderRipple()} ${this.outlined ? this.renderOutline() : this.renderLabel()} ${this.renderLeadingIcon()}
           <span class="mdc-select__selected-text-container">
             <span class="mdc-select__selected-text">${this.selectedText}</span>
           </span>
           <span class="mdc-select__dropdown-icon">
-            <svg
-                class="mdc-select__dropdown-icon-graphic"
-                viewBox="7 10 10 5"
-                focusable="false">
-              <polygon
-                  class="mdc-select__dropdown-icon-inactive"
-                  stroke="none"
-                  fill-rule="evenodd"
-                  points="7 10 12 15 17 10">
-              </polygon>
-              <polygon
-                  class="mdc-select__dropdown-icon-active"
-                  stroke="none"
-                  fill-rule="evenodd"
-                  points="7 15 12 10 17 15">
-              </polygon>
+            <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+              <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+              <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
             </svg>
           </span>
           ${this.renderLineRipple()}
@@ -111,13 +97,9 @@ export class Select extends SelectBase {
       return nothing;
     }
 
-    return html`
-      <mwc-notched-outline
-          .width=${this.outlineWidth}
-          .open=${false}
-          class="mdc-notched-outline">
-          ${this.labelInside ? this.renderLabel() : ''}
-      </mwc-notched-outline>`;
+    return html` <mwc-notched-outline .width=${this.outlineWidth} .open=${false} class="mdc-notched-outline">
+      ${this.labelInside ? this.renderLabel() : ''}
+    </mwc-notched-outline>`;
   }
 
   protected renderLabelOutside() {
@@ -125,12 +107,7 @@ export class Select extends SelectBase {
       return nothing;
     }
 
-    return html`
-      <span class="fds-select__label" id="label">
-        ${this.label}
-        ${this.renderRequired()}
-      </span>
-    `;
+    return html` <span class="fds-select__label" id="label"> ${this.label} ${this.renderRequired()} </span> `;
   }
 
   protected renderRequired() {

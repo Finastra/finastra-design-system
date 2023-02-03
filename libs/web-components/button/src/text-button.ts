@@ -4,15 +4,15 @@ import { styles } from './text-styles.css';
 
 @customElement('fds-text-button')
 export class TextButton extends BaseButton {
-    static styles = [BaseButton.styles, styles];
+  static styles = [BaseButton.styles, styles];
 
-    constructor() {
-      super();
-    }
+  constructor() {
+    super();
+  }
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-      'fds-text-button': TextButton;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-text-button': TextButton;
+  }
 }

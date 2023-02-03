@@ -39,13 +39,21 @@ export default {
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=93523%3A25288'
     },
     cssprops
-  },
+  }
 };
 
 const Template: Story<RadialBarChart> = (args) => {
-  return html`<fds-radial-bar-chart ?extra-dense=${args.extraDense} ?dense=${args.dense} ?large=${args.large} total-label=${args.totalLabel} color=${args.color} .data=${args.data} .labels=${args.labels} ?hide-labels=${args.hideLabels}></fds-radial-bar-chart>`;
+  return html`<fds-radial-bar-chart
+    ?extra-dense=${args.extraDense}
+    ?dense=${args.dense}
+    ?large=${args.large}
+    total-label=${args.totalLabel}
+    color=${args.color}
+    .data=${args.data}
+    .labels=${args.labels}
+    ?hide-labels=${args.hideLabels}
+  ></fds-radial-bar-chart>`;
 };
-
 
 export const Default: Story<RadialBarChart> = Template.bind({});
 

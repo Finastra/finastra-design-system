@@ -8,7 +8,6 @@ export const enum Position {
 
 @customElement('fds-card-actions')
 export class CardActions extends LitElement {
-
   @property() align = Position.START;
   @property({ type: Boolean }) disabled = false;
 
@@ -28,14 +27,14 @@ export class CardActions extends LitElement {
   `;
 
   protected render() {
-    return html`<div class="${'mdc-card__actions-align-'+this.align}"><slot></slot></div>`;
+    return html`<div class="${'mdc-card__actions-align-' + this.align}"><slot></slot></div>`;
   }
 
   protected updated(changedProperties) {
     super.updated(changedProperties);
     for (const child of Array.from(this.children)) {
       if (this.disabled) {
-        child.setAttribute("disabled", `${this.disabled}`);
+        child.setAttribute('disabled', `${this.disabled}`);
       } else {
         child.removeAttribute('disabled');
       }

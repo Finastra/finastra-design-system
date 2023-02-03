@@ -31,12 +31,10 @@ const Template: Story = ({ checked, indeterminate, disabled }) => {
 };
 
 const WithLabelTemplate: Story = ({ checked }) => {
-  return html`
-    <fds-formfield label="Accept terms and conditions">
-      <fds-checkbox ?checked=${checked} ></fds-checkbox>
-    </fds-formfield>`;
+  return html` <fds-formfield label="Accept terms and conditions">
+    <fds-checkbox ?checked=${checked}></fds-checkbox>
+  </fds-formfield>`;
 };
-
 
 export const Default: Story = Template.bind({});
 Default.args = {

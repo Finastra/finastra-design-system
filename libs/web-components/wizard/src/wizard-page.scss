@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 $header-bg: var(--fds-surface-selected);
 $title-color: var(--fds-primary);
@@ -13,10 +13,11 @@ $icon-border-color: var(--fds-surface-selected);
   display: flex;
   position: relative;
   background: var(--fds-header-bg, $header-bg);
-  margin: 40px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0px) var(--fds-spacing-3, 16px);
+  margin: 40px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0) var(--fds-spacing-3, 16px);
   border-radius: var(--fds-spacing-1, 8px);
   padding: var(--fds-spacing-3, 16px);
 }
+
 .icon {
   position: absolute;
   display: flex;
@@ -26,7 +27,7 @@ $icon-border-color: var(--fds-surface-selected);
   width: 72px;
   border-radius: 50%;
   border: solid var(--fds-icon-border-color, $icon-border-color);
-  margin: 0px;
+  margin: 0;
   background: center center no-repeat var(--fds-icon-bg, $icon-bg);
   top: -16%;
 
@@ -41,6 +42,7 @@ $icon-border-color: var(--fds-surface-selected);
 .title {
   @include fds.typography(headline-5);
   @include fds.color(primary);
+
   color: var(--fds-title-color, $title-color);
   margin-left: var(--fds-spacing-3, 16px);
 }
@@ -53,8 +55,10 @@ fds-chip {
   position: absolute;
   right: var(--fds-spacing-3, 16px);
 }
+
 .page-container {
   @include fds.property(color, on-background);
+
   padding: 72px var(--fds-spacing-5, 48px) 32px var(--fds-spacing-5, 48px);
 }
 

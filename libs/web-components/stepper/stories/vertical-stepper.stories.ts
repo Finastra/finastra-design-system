@@ -49,14 +49,10 @@ export default {
         }
       },
       defaultValue: 'none',
-      options: [
-        "none",
-        "center",
-        "background"
-      ]
+      options: ['none', 'center', 'background']
     },
     steps: {
-      description: "An array of step (label + optional description).",
+      description: 'An array of step (label + optional description).',
       table: {
         defaultValue: {
           summary: '[]'
@@ -83,8 +79,22 @@ export default {
   cssprops
 } as Meta;
 
-const VTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, readonly = false, hideIndex= false, labelMode = '' }) => {
-  return html`<fds-vertical-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} ?readonly=${readonly} ?hideIndex=${hideIndex} .labelMode=${labelMode}></fds-vertical-stepper>`;
+const VTemplate: Story = ({
+  currentStepIndex,
+  steps = demoData,
+  secondary = false,
+  readonly = false,
+  hideIndex = false,
+  labelMode = ''
+}) => {
+  return html`<fds-vertical-stepper
+    .steps=${steps}
+    .currentStepIndex=${currentStepIndex}
+    ?secondary=${secondary}
+    ?readonly=${readonly}
+    ?hideIndex=${hideIndex}
+    .labelMode=${labelMode}
+  ></fds-vertical-stepper>`;
 };
 
 export const Default: Story<VerticalStepper> = VTemplate.bind({});

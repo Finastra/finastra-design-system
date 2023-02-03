@@ -11,7 +11,7 @@ export default {
   argTypes,
   args: {
     selected: false,
-    disabled: false,
+    disabled: false
   },
   parameters: {
     docs: {
@@ -30,10 +30,9 @@ const Template: Story = ({ selected, disabled }) => {
 };
 
 const WithLabelTemplate: Story = ({ selected }) => {
-  return html`
-    <fds-formfield label="On">
-      <fds-switch selected=${selected}></fds-switch>
-    </fds-formfield>`;
+  return html` <fds-formfield label="On">
+    <fds-switch selected=${selected}></fds-switch>
+  </fds-formfield>`;
 };
 export const Default: Story = Template.bind({});
 

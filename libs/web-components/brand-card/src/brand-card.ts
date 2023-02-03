@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js';
 import { renderPrimarySVG, renderSecondarySVG } from './brand-card-decorations';
 import { styles } from './styles.css';
 
-
 /**
  * @cssprop {color} [--fds-primary=#694ED6] - Color of the default ribbon
  * @cssprop {color} [--fds-secondary=#C137A2] - Color of the secondary ribbon

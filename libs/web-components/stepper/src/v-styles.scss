@@ -3,9 +3,8 @@
 
 .container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: stretch;
-  flex-direction: column;
+  flex-flow: column nowrap;
   height: 100%;
 }
 
@@ -76,7 +75,7 @@
   flex: 1;
 }
 
-:host([label-mode="center"]) {
+:host([label-mode='center']) {
   .text-wrapper {
     grid-row: -1/1;
     grid-column: 2/3;
@@ -85,12 +84,12 @@
   }
 }
 
-:host([label-mode="background"]) {
+:host([label-mode='background']) {
   .text-wrapper {
     grid-row: 2/4;
     grid-column: 2/3;
     align-self: start;
-    margin: var(--fds-spacing-0, 0px) var(--fds-spacing-2, 8px) var(--fds-spacing-3, 16px);
+    margin: var(--fds-spacing-0, 0) var(--fds-spacing-2, 8px) var(--fds-spacing-3, 16px);
     padding: var(--fds-spacing-4, 24px) var(--fds-spacing-3, 16px);
     border-radius: var(--fds-spacing-1, 4px);
     @include fds.background(surface-selected);

@@ -1,5 +1,5 @@
-@use "@material/select/mdc-select.scss";
-@use "@finastra/fds-theme" as fds;
+@use '@material/select/mdc-select.scss';
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -32,6 +32,7 @@
 
 .mdc-select--outlined:not(.mdc-select--disabled) .mdc-select__anchor {
   @include fds.background(surface);
+
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
@@ -42,6 +43,11 @@
 :host([dense]) {
   --mdc-icon-size: 18px;
   --mdc-menu-item-height: 40px;
+
+  .fds-select__label {
+    @include fds.typography(body-3);
+  }
+
   .mdc-select--outlined .mdc-select__anchor {
     height: 40px !important;
 
@@ -56,17 +62,20 @@
   @include fds.mdc(notched-outline-border-color, outline);
 }
 
-:host(:not([disabled]):hover) .mdc-select:not(.mdc-select--invalid):not(.mdc-select--focused) .mdc-notched-outline {
+:host(:not([disabled]):hover) .mdc-select:not(.mdc-select--invalid, .mdc-select--focused) .mdc-notched-outline {
   @include fds.mdc(notched-outline-border-color, on-surface-medium);
 }
 
 .mdc-select.mdc-select--disabled .mdc-notched-outline {
+  @include fds.background(surface-disabled);
+
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
 .mdc-select--focused:not(.mdc-select--invalid) .mdc-notched-outline {
   @include fds.background(surface-selected);
   @include fds.mdc(notched-outline-border-color, primary);
+
   --mdc-notched-outline-stroke-width: 2px;
 }
 
@@ -78,11 +87,7 @@
   @include fds.mdc(notched-outline-border-color, error);
 }
 
-.mdc-select.mdc-select--disabled .mdc-notched-outline {
-  @include fds.background(surface-disabled);
-}
-
-.mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused .mdc-floating-label {
+.mdc-select:not(.mdc-select--disabled, .mdc-select--invalid).mdc-select--focused .mdc-floating-label {
   @include fds.property(color, primary);
 }
 
@@ -130,7 +135,7 @@
   @include fds.property(color, error);
 }
 
-.mdc-select:not(.mdc-select--disabled)+.mdc-select-helper-text {
+.mdc-select:not(.mdc-select--disabled) + .mdc-select-helper-text {
   @include fds.property(color, on-surface-medium);
 }
 
@@ -142,7 +147,7 @@
   @include fds.property(color, error);
 }
 
-.mdc-select--filled:not(.mdc-select--disabled):not(.mdc-select--invalid) .mdc-line-ripple::before {
+.mdc-select--filled:not(.mdc-select--disabled, .mdc-select--invalid) .mdc-line-ripple::before {
   @include fds.property(border-bottom-color, primary);
 }
 
@@ -166,7 +171,7 @@
   @include fds.property(color, on-surface-disabled);
 }
 
-.mdc-select.mdc-select--disabled+.mdc-select-helper-text {
+.mdc-select.mdc-select--disabled + .mdc-select-helper-text {
   @include fds.property(color, on-surface-disabled);
 }
 
@@ -174,11 +179,6 @@
   @include fds.color(on-surface-medium);
   @include fds.typography(body-2);
   @include fds.margin(1, bottom);
-  display: block;
-}
 
-:host([dense]) {
-  .fds-select__label {
-    @include fds.typography(body-3);
-  }
+  display: block;
 }

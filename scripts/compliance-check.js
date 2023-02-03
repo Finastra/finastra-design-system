@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const { join } = require('path');
 const globby = require('globby');
-const glob = require("glob");
+const glob = require('glob');
 
 async function main() {
   const paths = await getPaths('../libs/web-components/*/src/*.ts');
@@ -31,7 +31,7 @@ async function main() {
           core.setFailed(`Compliance check failed! ${wcName} must have a test 🔬!`);
         }
       }
-    })
+    });
   });
 }
 

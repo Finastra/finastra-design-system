@@ -22,8 +22,34 @@ export default {
   }
 } as Meta;
 
-const Template: Story<SearchInput> = ({loading, showClearButton, label, placeholder, required, icon, type, validationMessage, disabled, dense, helper, labelInside}) => {
-  return html`<fds-search-input ?loading=${loading} ?showClearButton=${showClearButton} label=${label} placeholder=${placeholder} ?required=${required} icon=${icon} type=${type} validationMessage=${validationMessage} ?disabled=${disabled} ?dense=${dense} helper=${helper} ?labelInside=${labelInside}></fds-search-input>`;
+const Template: Story<SearchInput> = ({
+  loading,
+  showClearButton,
+  label,
+  placeholder,
+  required,
+  icon,
+  type,
+  validationMessage,
+  disabled,
+  dense,
+  helper,
+  labelInside
+}) => {
+  return html`<fds-search-input
+    ?loading=${loading}
+    ?showClearButton=${showClearButton}
+    label=${label}
+    placeholder=${placeholder}
+    ?required=${required}
+    icon=${icon}
+    type=${type}
+    validationMessage=${validationMessage}
+    ?disabled=${disabled}
+    ?dense=${dense}
+    helper=${helper}
+    ?labelInside=${labelInside}
+  ></fds-search-input>`;
 };
 
 export const Default: Story<SearchInput> = Template.bind({});
@@ -32,7 +58,7 @@ Default.args = {
   value: 'Banking',
   icon: 'search',
   showClearButton: true
-}
+};
 
 export const Loading: Story<SearchInput> = Template.bind({});
 Loading.args = {
@@ -42,7 +68,7 @@ Loading.args = {
   loading: true
 };
 Loading.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 export const Disabled: Story<SearchInput> = Template.bind({});

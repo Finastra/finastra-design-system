@@ -15,7 +15,7 @@ import { styles } from './line-chart-styles.css';
  */
 @customElement('fds-line-chart')
 export class LineChart extends ApexChartsWrapper {
-  static styles = [styles, apexchartsStyle]
+  static styles = [styles, apexchartsStyle];
 
   /**
    * Defines axis X and its properties
@@ -27,7 +27,7 @@ export class LineChart extends ApexChartsWrapper {
   }
   public set xaxis(value: ApexXAxis) {
     this._xaxis = value;
-    this.options = { ...this.options, xaxis: value }
+    this.options = { ...this.options, xaxis: value };
     this.refresh();
   }
 
@@ -41,7 +41,7 @@ export class LineChart extends ApexChartsWrapper {
   }
   public set yaxis(value: ApexYAxis) {
     this._yaxis = value;
-    this.options = { ...this.options, yaxis: value }
+    this.options = { ...this.options, yaxis: value };
     this.refresh();
   }
 
@@ -73,14 +73,14 @@ export class LineChart extends ApexChartsWrapper {
   }
   public set stroke(value: any) {
     this._stroke = value;
-    this.options = { ...this.options, stroke: value }
+    this.options = { ...this.options, stroke: value };
     this.refresh();
   }
 
   /**
-  * In line charts, whether to draw smooth, straight or step lines
-  * @attr {straight|smooth|stepline} [strokeCurve=bottom]
-  */
+   * In line charts, whether to draw smooth, straight or step lines
+   * @attr {straight|smooth|stepline} [strokeCurve=bottom]
+   */
   private _strokeCurve: 'straight' | 'smooth' | 'stepline' = 'straight';
   @property({ type: String, attribute: 'stroke-curve' })
   public get strokeCurve() {
@@ -104,7 +104,7 @@ export class LineChart extends ApexChartsWrapper {
   }
   public set tooltip(value: any) {
     this._tooltip = value;
-    this.options = { ...this.options, tooltip: value }
+    this.options = { ...this.options, tooltip: value };
     this.refresh();
   }
 
@@ -112,18 +112,17 @@ export class LineChart extends ApexChartsWrapper {
     chart: {
       toolbar: {
         show: this.showToolbar
-      },
+      }
     },
     stroke: {
       width: 3,
       curve: this.strokeCurve
     },
     tooltip: this.tooltip
-  }
+  };
 
   constructor() {
-    super()
+    super();
     this.type = 'line';
   }
-
 }

@@ -12,10 +12,10 @@
 ///      color: var(--fds-on-surface);
 ///   }
 @mixin custom-properties($scheme: scheme.light()) {
-  $properties: if(scheme.isLight($scheme), light.$properties, dark.$properties);
+  $properties: if(scheme.is-light($scheme), light.$properties, dark.$properties);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
-    --mdc-theme-#{$style}: var(--fds-#{$style},#{$variable});
+    --mdc-theme-#{$style}: var(--fds-#{$style}, #{$variable});
   }
 }
 
@@ -28,7 +28,7 @@
 @mixin helper-classes() {
   @each $style, $value in light.$properties {
     $bg-color: map.get(light.$properties, $style);
-    @if $style != "background" and $style != "surface" and $style != "outline" {
+    @if $style != 'background' and $style != 'surface' and $style != 'outline' {
       .fds-#{$style} {
         color: var(--fds-#{$style}, #{$bg-color});
       }
@@ -37,12 +37,15 @@
       }
     }
   }
+
   .fds-background {
     @include property(background, background);
   }
+
   .fds-surface {
     @include property(background, surface);
   }
+
   .fds-outline {
     border-width: 1px;
     border-style: solid;
@@ -74,10 +77,10 @@
   $bg-color: map.get(light.$properties, $style);
   @if string.index($style, 'gradient') == 1 {
     background: var(--fds-#{$style}, #{$bg-color});
-    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-background-clip: text; /* stylelint-disable-line */
     -webkit-text-fill-color: transparent;
-  }
-  @else {
+  } @else {
     color: var(--fds-#{$style}, #{$bg-color});
   }
 }
@@ -94,7 +97,6 @@
   @include property(fill, $style);
 }
 
-
 /// Maps mdc's css properties to fds ones.
 ///
 /// @example
@@ -105,6 +107,7 @@
 /// @param {String} $style - The name of the style to apply
 @mixin mdc($mdc, $style) {
   $variable: map.get(light.$properties, $style);
+
   --mdc-#{$mdc}: var(--fds-#{$style}, #{$variable});
 }
 
@@ -118,5 +121,6 @@
 /// @param {String} $style - The name of the style to apply
 @mixin property($property, $style) {
   $variable: map.get(light.$properties, $style);
+
   #{$property}: var(--fds-#{$style}, #{$variable});
 }

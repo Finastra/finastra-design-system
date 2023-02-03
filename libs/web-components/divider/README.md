@@ -20,20 +20,22 @@ import '@finastra/divider';
 <fds-divider inset="both"></fds-divider>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property   | Attribute  | Type                                   | Default     | Description                                      |
-|------------|------------|----------------------------------------|-------------|--------------------------------------------------|
-| `inset`    | `inset`    | `"both"\|"left"\|"right"\|"undefined"` | "undefined" | Type of inset                                    |
+| Property   | Attribute  | Type                                   | Default     | Description                                               |
+| ---------- | ---------- | -------------------------------------- | ----------- | --------------------------------------------------------- |
+| `inset`    | `inset`    | `"both"\|"left"\|"right"\|"undefined"` | "undefined" | Type of inset                                             |
 | `vertical` | `vertical` | `boolean`                              | false       | Displays the divider vertically instead of horizontically |
 
 #### CSS Custom Properties
 
 | Property                     | Type  | Default   | Description                   |
-|------------------------------|-------|-----------|-------------------------------|
+| ---------------------------- | ----- | --------- | ----------------------------- |
 | `--fds-divider-inset-margin` | text  | "80px"    | Border radius of the outline. |
 | `--fds-primary`              | color | "#694ED6" | TextField color               |
+
 <!-- /DOC -->

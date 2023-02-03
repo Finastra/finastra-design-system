@@ -43,7 +43,7 @@ export class AlertMessage extends LitElement {
   description = '';
 
   @property({ type: Boolean }) withoutIcon = false;
- 
+
   @property({ type: Boolean }) showCloseButton = false;
 
   @property({ type: Boolean }) dense = false;
@@ -54,24 +54,24 @@ export class AlertMessage extends LitElement {
   render() {
     const startLineClass = {
       multiLines: this.layout === ALERT_LAYOUT.multiLines,
-      singleLine: this.layout === ALERT_LAYOUT.singleLine
+      'single-line': this.layout === ALERT_LAYOUT.singleLine
     };
 
     return html`
       <div class="container ${classMap(startLineClass)}">
-      ${this.showCloseButton ? html`<fds-icon class="close-btn" @click="${this._handleCloseClick}">close</fds-icon> ` : ''}
-      <div class="alert">
-        <div class="message">
-          ${!this.withoutIcon ? html`<div class="icon-container"> ${this.renderIcon()} </div>` : ''}
-          <div class="description">
-            <div class="title">${this.title}</div>
-            <div class="subtitle">${this.description}</div>
+        ${this.showCloseButton ? html`<fds-icon class="close-btn" @click="${this._handleCloseClick}">close</fds-icon> ` : ''}
+        <div class="alert">
+          <div class="message">
+            ${!this.withoutIcon ? html`<div class="icon-container">${this.renderIcon()}</div>` : ''}
+            <div class="description">
+              <div class="title">${this.title}</div>
+              <div class="subtitle">${this.description}</div>
+            </div>
           </div>
-        </div>
-        <div class="actions">
-          <slot name="primaryAction"></slot>
-          <slot name="secondaryAction"></slot>
-        </div>
+          <div class="actions">
+            <slot name="primaryAction"></slot>
+            <slot name="secondaryAction"></slot>
+          </div>
         </div>
       </div>
     `;
@@ -95,7 +95,6 @@ export class AlertMessage extends LitElement {
   _handleCloseClick() {
     this.remove();
   }
-
 }
 
 declare global {

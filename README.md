@@ -18,24 +18,6 @@ This implementation of the Finastra design system is framework agnostic (i.e can
 
 [Learn more](./libs/web-components/README.md)
 
-# 🅰️ For Angular
-
-## Angular theme
-
-`@finastra/angular-theme`
-
-A CSS implementation of our foundations specifically made for Angular.
-
-[Learn more](./themes/angular-theme/README.md)
-
-## Angular components
-
-`@finastra/angular-components`
-
-An angular implementation of the Finastra design system components. It provides all [the necessary components](https://lucid-bassi-bfa8cc.netlify.app/) to make fast and cohesive financial apps.
-
-[Learn more](./libs/angular-components/README.md)
-
 # 📦 Other ressources
 
 ## UI kit on Figma

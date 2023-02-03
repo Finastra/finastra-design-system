@@ -42,7 +42,7 @@ export class RadialBarChart extends ApexChartsWrapper {
     this.options = { ...this.options, labels: value };
   }
 
-  private _totalLabel: string = 'Total';
+  private _totalLabel = 'Total';
   @property({ type: String, attribute: 'total-label' })
   public get totalLabel(): string {
     return this._totalLabel;

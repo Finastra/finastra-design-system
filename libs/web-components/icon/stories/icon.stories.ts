@@ -23,7 +23,17 @@ export default {
 } as Meta;
 
 const Template: Story<Icon> = ({ dense, large, extra_large, primary, secondary, success, error, gradient }) => {
-  return html`<fds-icon ?dense=${dense} ?large=${large} ?extra_large=${extra_large} ?primary=${primary} ?secondary=${secondary} ?success=${success} ?error=${error} ?gradient=${gradient}>home</fds-icon>`;
+  return html`<fds-icon
+    ?dense=${dense}
+    ?large=${large}
+    ?extra_large=${extra_large}
+    ?primary=${primary}
+    ?secondary=${secondary}
+    ?success=${success}
+    ?error=${error}
+    ?gradient=${gradient}
+    >home</fds-icon
+  >`;
 };
 
 export const Default: Story<Icon> = Template.bind({});
@@ -31,39 +41,39 @@ export const Default: Story<Icon> = Template.bind({});
 export const Dense: Story<Icon> = Template.bind({});
 Dense.args = {
   dense: true
-}
+};
 
 export const Large: Story<Icon> = Template.bind({});
 Large.args = {
   large: true
-}
+};
 
 export const ExtraLarge: Story<Icon> = Template.bind({});
 ExtraLarge.args = {
   extra_large: true
-}
+};
 
 export const Primary: Story<Icon> = Template.bind({});
 Primary.args = {
   primary: true
-}
+};
 
 export const Secondary: Story<Icon> = Template.bind({});
 Secondary.args = {
   secondary: true
-}
+};
 
 export const success: Story<Icon> = Template.bind({});
 success.args = {
   success: true
-}
+};
 
 export const error: Story<Icon> = Template.bind({});
 error.args = {
   error: true
-}
+};
 
 export const gradient: Story<Icon> = Template.bind({});
 gradient.args = {
   gradient: true
-}
+};

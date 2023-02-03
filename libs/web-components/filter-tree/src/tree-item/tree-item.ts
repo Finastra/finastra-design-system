@@ -1,6 +1,6 @@
-import "@finastra/checkbox";
-import "@finastra/icon-button";
-import "@finastra/formfield";
+import '@finastra/checkbox';
+import '@finastra/formfield';
+import '@finastra/icon-button';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './tree-item.css';
@@ -25,17 +25,18 @@ export class TreeItem extends LitElement {
 
   protected expandIcon = 'expand_more';
 
-
   render() {
     return html`
-    <div class="filter-item">
-    <fds-formfield label=${this.label}>
-      <fds-checkbox @change=${this.onChange} ?checked=${this.selected} ?indeterminate=${this.indeterminate}></fds-checkbox>
-    </fds-formfield>
-    ${this.hideExpandIcon ? 
-      html`<fds-icon-button icon=${this.expandIcon} @click="${this.toggleList}"></fds-icon-button>
-      </div>` : ''}
-    `
+      <div class="filter-item">
+        <fds-formfield label=${this.label}>
+          <fds-checkbox @change=${this.onChange} ?checked=${this.selected} ?indeterminate=${this.indeterminate}></fds-checkbox>
+        </fds-formfield>
+        ${this.hideExpandIcon
+          ? html`<fds-icon-button icon=${this.expandIcon} @click="${this.toggleList}"></fds-icon-button>
+      </div>`
+          : ''}
+      </div>
+    `;
   }
 
   onChange(evt) {
@@ -48,19 +49,19 @@ export class TreeItem extends LitElement {
   }
 
   protected fireRequestSelected(selected: boolean, source: SelectionSource) {
-    const customEv = new CustomEvent<RequestSelectedDetail>(
-      'request-selected',
-      { bubbles: true, composed: true, detail: { source, selected } });
+    const customEv = new CustomEvent<RequestSelectedDetail>('request-selected', {
+      bubbles: true,
+      composed: true,
+      detail: { source, selected }
+    });
 
     this.dispatchEvent(customEv);
   }
 
   toggleList() {
-    this.expanded= !this.expanded;
+    this.expanded = !this.expanded;
 
-    const customEv = new CustomEvent(
-      'expand-click',
-      { bubbles: true, composed: true, detail: this.expanded});
+    const customEv = new CustomEvent('expand-click', { bubbles: true, composed: true, detail: this.expanded });
 
     this.dispatchEvent(customEv);
   }
@@ -80,6 +81,3 @@ declare global {
     'fds-tree-item': TreeItem;
   }
 }
-
-
-

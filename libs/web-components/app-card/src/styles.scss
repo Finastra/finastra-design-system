@@ -1,12 +1,13 @@
-@use "@finastra/fds-theme" as fds;
-@use "@finastra/card/src" as base-card;
-@use "./cover";
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/card/src' as base-card;
+@use './cover';
 
-$fds-gray: #C7C8CA;
-$fds-blue: #009CBD;
+$fds-gray: #c7c8ca;
+$fds-blue: #009cbd;
 
 :host {
-  @include base-card.core-styles();
+  @include base-card.core-styles;
+
   width: 270px;
   border-radius: 4px;
 
@@ -23,15 +24,17 @@ $fds-blue: #009CBD;
     box-sizing: border-box;
     text-decoration: none;
     @include fds.color(on-background);
+
     transform-style: preserve-3d;
     transition-property: box-shadow, transform;
     will-change: box-shadow, transform;
 
     .app-flag {
       @include fds.typography(subtitle-3);
+
       min-width: 61px;
       text-align: center;
-      transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       position: absolute;
       top: -11px;
       left: 0;
@@ -52,11 +55,13 @@ $fds-blue: #009CBD;
 
     .draft {
       @include fds.color(on-light);
+
       background: var(--fds-gray, $fds-gray);
     }
 
     .in_review {
       @include fds.color(on-dark);
+
       background: var(--fds-blue, $fds-blue);
     }
 
@@ -67,6 +72,7 @@ $fds-blue: #009CBD;
 
     .app-card-cover {
       @include cover.background-cover;
+
       background-size: 110%;
       background-position-y: -10%;
       border-top-left-radius: 6px;
@@ -95,6 +101,7 @@ $fds-blue: #009CBD;
         top: var(--fds-spacing-3, 16px);
         right: var(--fds-spacing-4, 24px);
         @include fds.background(surface);
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,6 +115,7 @@ $fds-blue: #009CBD;
 
         .app-card-logo-fallback {
           @include fds.property(background-image, logo);
+
           width: 70px;
           height: 70px;
           background-repeat: no-repeat;
@@ -121,6 +129,7 @@ $fds-blue: #009CBD;
       @include fds.color(on-background);
       @include fds.padding(4, right, left);
       @include fds.padding(2, bottom);
+
       font-size: 16px;
       text-align: left;
       word-break: break-word;
@@ -131,6 +140,7 @@ $fds-blue: #009CBD;
       @include fds.typography(body-2);
       @include fds.color(on-background);
       @include fds.padding(4, right, left);
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -152,6 +162,7 @@ $fds-blue: #009CBD;
       @include fds.color(on-surface);
       @include fds.padding(4, right, bottom, left);
       @include fds.padding(2, top);
+
       text-align: left;
       word-break: break-word;
       overflow-wrap: anywhere;
@@ -163,17 +174,20 @@ $fds-blue: #009CBD;
 :host([large]) {
   width: 320px;
   height: 344px;
+
   .app-card {
     width: inherit;
     height: inherit;
+
     .app-card-label {
-        @include fds.typography(headline-1);
+      @include fds.typography(headline-1);
     }
   }
 }
 
-:host([extraDense]){
+:host([extraDense]) {
   width: 292px;
+
   .app-card {
     width: inherit;
     min-height: fit-content;
@@ -210,6 +224,7 @@ $fds-blue: #009CBD;
     @include fds.typography(body-3);
     @include fds.color(on-surface-medium);
     @include fds.padding(2, right, left);
+
     width: fit-content;
     max-width: 180px;
   }

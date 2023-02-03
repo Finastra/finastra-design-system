@@ -11,7 +11,7 @@ export class CardSubTitle extends LitElement {
 
   render() {
     const classes = {
-      'mdc-card-subtitle--disabled': this.disabled,
+      'mdc-card-subtitle--disabled': this.disabled
     };
 
     return html`<span class="${classMap(classes)}"><slot></slot></span>`;

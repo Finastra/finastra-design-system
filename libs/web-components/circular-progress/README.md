@@ -20,31 +20,33 @@ import '@finastra/circular-progress';
 <fds-circular-progress indeterminate="true"></fds-circular-progress>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property        | Attribute       | Type      | Default                                          | Description                                      |
-|-----------------|-----------------|-----------|--------------------------------------------------|--------------------------------------------------|
-| `ariaLabel`     |                 | `string`  |                                                  |                                                  |
-| `closed`        |                 | `boolean` |                                                  |                                                  |
-| `density`       |                 | `number`  |                                                  |                                                  |
-| `indeterminate` | `indeterminate` | `boolean` | false                                            | Sets the linear-progress into its indeterminate state. |
-| `progress`      | `progress`      | `number`  | "0] - Sets the primary progress bar's value. Value should be between [0, 1" | .                                                |
-| `styles`        |                 | `array`   | ["styles"]                                       |                                                  |
+| Property        | Attribute       | Type          | Default                                                                     | Description                                            |
+| --------------- | --------------- | ------------- | --------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `ariaLabel`     |                 | `string`      |                                                                             |                                                        |
+| `closed`        |                 | `boolean`     |                                                                             |                                                        |
+| `density`       |                 | `number`      |                                                                             |                                                        |
+| `indeterminate` | `indeterminate` | `boolean`     | false                                                                       | Sets the linear-progress into its indeterminate state. |
+| `progress`      | `progress`      | `number`      | "0] - Sets the primary progress bar's value. Value should be between [0, 1" | .                                                      |
+| `styles`        |                 | `CSSResult[]` | ["styles"]                                                                  |                                                        |
 
 #### Methods
 
 | Method  | Type       |
-|---------|------------|
+| ------- | ---------- |
 | `close` | `(): void` |
 | `open`  | `(): void` |
 
 #### CSS Custom Properties
 
 | Property            | Type  | Default                    | Description                                |
-|---------------------|-------|----------------------------|--------------------------------------------|
+| ------------------- | ----- | -------------------------- | ------------------------------------------ |
 | `--fds-primary`     | color | "#694ED6"                  | Sets the color of primary progress bar.    |
 | `--primary-lighter` | color | "rgba(105, 78, 214, 0.08)" | Sets the color of the buffer progress bar. |
+
 <!-- /DOC -->

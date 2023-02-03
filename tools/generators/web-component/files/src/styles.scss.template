@@ -1,5 +1,0 @@
-:host {
-  display: block;
-}
-
-p { color: var(--fds-<%= fileName %>-text-color, blue) }

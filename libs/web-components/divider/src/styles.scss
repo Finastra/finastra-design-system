@@ -13,6 +13,7 @@ $inset-margin: 80px;
 
 :host([inset='left']) {
   margin-left: var(--fds-divider-inset-margin, $inset-margin);
+
   [dir='rtl'] & {
     margin-left: auto;
     margin-right: var(--fds-divider-inset-margin, $inset-margin);
@@ -21,6 +22,7 @@ $inset-margin: 80px;
 
 :host([inset='right']) {
   margin-right: var(--fds-divider-inset-margin, $inset-margin);
+
   [dir='rtl'] & {
     margin-right: auto;
     margin-left: var(--fds-divider-inset-margin, $inset-margin);

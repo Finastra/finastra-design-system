@@ -24,48 +24,47 @@ export class ExpansionPanel extends LitElement {
 
   /**
    * Whether the expansion indicator should be hidden.
-   */  
+   */
   @property({ type: Boolean })
   hideToggleIcon = false;
 
   /**
    * Whether the expansion should allow multiple expanded items
-   */    
+   */
   @property({ type: Boolean })
   multi = false;
 
   /**
    * The position of toggle indicator for all expansion items
-   */    
+   */
   @property({ type: String })
   toggleIconPosition: 'before' | 'after' = 'after';
-
 
   getExpansionItems() {
     const slotSelector = 'slot:not([name]';
     const slotEl = this.renderRoot?.querySelector<HTMLSlotElement>(slotSelector);
-    return slotEl?.assignedNodes().filter(node => node instanceof LitElement) ?? [];
+    return slotEl?.assignedNodes().filter((node) => node instanceof LitElement) ?? [];
   }
 
   closeOtherExpansionItems(current: Node) {
-    if (this.multi) return
-    const nodes = this.getExpansionItems()
+    if (this.multi) return;
+    const nodes = this.getExpansionItems();
 
-    nodes.forEach(node => {
-      if (node === current) return
-      node['expanded'] = false
-    })  
+    nodes.forEach((node) => {
+      if (node === current) return;
+      node['expanded'] = false;
+    });
   }
 
   render() {
-    const nodes = this.getExpansionItems()
-    nodes.forEach(node => {
+    const nodes = this.getExpansionItems();
+    nodes.forEach((node) => {
       if (node instanceof LitElement) {
-        node.requestUpdate()
-      }      
-    })
+        node.requestUpdate();
+      }
+    });
     return html`<slot></slot>`;
-  } 
+  }
 }
 
 declare global {

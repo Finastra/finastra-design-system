@@ -23,34 +23,34 @@ export default {
   }
 } as Meta;
 
-const Template: Story = ({dense=false, selectedIndex=0}) => {
+const Template: Story = ({ dense = false, selectedIndex = 0 }) => {
   return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
-  <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
-  <fds-button-toggle icon="mail_outline" label="Messages" ></fds-button-toggle>
-  <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
-</fds-button-toggle-group>`;
+    <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
+    <fds-button-toggle icon="mail_outline" label="Messages"></fds-button-toggle>
+    <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
+  </fds-button-toggle-group>`;
 };
 
-const LabelTemplate: Story = ({dense=false, selectedIndex=0}) => {
+const LabelTemplate: Story = ({ dense = false, selectedIndex = 0 }) => {
   return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
-  <fds-button-toggle label="5D"></fds-button-toggle>
-  <fds-button-toggle label="1M"></fds-button-toggle>
-  <fds-button-toggle label="1Y"></fds-button-toggle>
-</fds-button-toggle-group>`;
+    <fds-button-toggle label="5D"></fds-button-toggle>
+    <fds-button-toggle label="1M"></fds-button-toggle>
+    <fds-button-toggle label="1Y"></fds-button-toggle>
+  </fds-button-toggle-group>`;
 };
 
-const IconsTemplate: Story = ({dense=false, selectedIndex=0}) => {
+const IconsTemplate: Story = ({ dense = false, selectedIndex = 0 }) => {
   return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
-  <fds-button-toggle icon="grid_view" value="grid"></fds-button-toggle>
-  <fds-button-toggle icon="format_list_bulleted" value="list" ></fds-button-toggle>
-</fds-button-toggle-group>`;
+    <fds-button-toggle icon="grid_view" value="grid"></fds-button-toggle>
+    <fds-button-toggle icon="format_list_bulleted" value="list"></fds-button-toggle>
+  </fds-button-toggle-group>`;
 };
 
 export const Default: Story = Template.bind({});
 
 export const Dense: Story = Template.bind({});
 Dense.args = {
-  dense: true,
+  dense: true
 };
 
 export const Labels: Story = LabelTemplate.bind({});

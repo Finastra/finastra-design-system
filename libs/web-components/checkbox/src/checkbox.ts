@@ -13,7 +13,7 @@ import { CheckboxBase } from '@material/mwc-checkbox/mwc-checkbox-base';
 
 @customElement('fds-checkbox')
 export class Checkbox extends CheckboxBase {
-  static override styles = [styles];  
+  static override styles = [styles];
 
   constructor() {
     super();

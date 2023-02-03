@@ -2,13 +2,17 @@
 
 <style>
   .demo-title {
-    font: var(--fds-headline-5, #FFFFFF);
-    color: var(--fds-on-surface, normal normal var(--fds-headline-5-font-weight, 800) var(--fds-headline-5-font-size, 1rem)/var(--fds-headline-5-line-height, 1.375rem) var(--fds-headline-5-font-family, Spartan));
+    font: var(--fds-headline-5, #ffffff);
+    color: var(
+      --fds-on-surface,
+      normal normal var(--fds-headline-5-font-weight, 800) var(--fds-headline-5-font-size, 1rem) /
+        var(--fds-headline-5-line-height, 1.375rem) var(--fds-headline-5-font-family, Spartan)
+    );
     margin: var(--fds-spacing-2, 8px) var(--fds-spacing-0, 0px);
   }
 </style>
 
-<div style="display: flex; flex-direction: column; gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 24px">
   <div>
     <div class="demo-title">Search</div>
     <fds-search-input showClearButton placeholder="Search ..." value="Banking"></fds-search-input>

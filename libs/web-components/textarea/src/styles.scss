@@ -1,5 +1,5 @@
-@use "@material/mwc-textfield/mwc-textfield";
-@use "@finastra/fds-theme" as fds;
+@use '@material/mwc-textfield/mwc-textfield';
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -33,6 +33,7 @@ mwc-notched-outline {
 
 .mdc-text-field--outlined {
   @include fds.background(surface);
+
   border-radius: var(--fds-text-field-radius, 4px);
 }
 
@@ -48,6 +49,6 @@ mwc-notched-outline {
   @include fds.background(surface-disabled);
 }
 
-:host(:not([disabled]):hover) .mdc-text-field:not(.mdc-text-field--invalid):not(.mdc-text-field--focused) mwc-notched-outline {
+:host(:not([disabled]):hover) .mdc-text-field:not(.mdc-text-field--invalid, .mdc-text-field--focused) mwc-notched-outline {
   @include fds.mdc(notched-outline-border-color, on-surface-medium);
 }
