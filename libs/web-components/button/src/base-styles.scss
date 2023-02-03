@@ -60,8 +60,8 @@
 }
 
 :host([gradient]) > button {
-  @include fds.background('gradient');
-  @include fds.color('on-gradient');
+  @include fds.background(gradient-vertical);
+  @include fds.color(on-gradient);
 }
 
 :host([fullWidth]) {

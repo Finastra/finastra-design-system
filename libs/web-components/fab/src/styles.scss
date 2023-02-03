@@ -36,7 +36,7 @@
 
 :host([gradient]) {
   .mdc-fab {
-    @include fds.background(gradient);
+    @include fds.background(gradient-vertical);
     @include fds.color(on-gradient);
   }
 }

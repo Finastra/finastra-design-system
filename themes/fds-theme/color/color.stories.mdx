@@ -57,9 +57,7 @@ export const TemplateCustomProp = (args) => {
 | Custom property             | Description                                            |
 | --------------------------- | ------------------------------------------------------ |
 | `--fds-primary`             | Primary color (default #694ED6)                        |
-| `--fds-primary-lighter`     | Primary lighter color (default 8% opacity)             |
 | `--fds-secondary`           | Secondary color (default #C137A2)                      |
-| `--fds-secondary-lighter`   | Secondary lighter color (default 8% opacity)           |
 | `--fds-background`          | Background color (default #FAFAFA)                     |
 | `--fds-surface`             | Surface color (default #FFFFFF)                        |
 | `--fds-surface-hover`       | Surface hover color (default primary 4% opacity)       |
@@ -78,7 +76,6 @@ export const TemplateCustomProp = (args) => {
 | `--fds-error`               | Error color (default #E40046)                          |
 | `--fds-info`                | Info color (default primary)                           |
 | `--fds-warning`             | Warning color (default #FF600A)                        |
-| `--fds-gradient`            | Linear gradient of primary and secondary               |
 | `--fds-gradient-vertical`   | Linear gradient of primary and secondary               |
 | `--fds-gradient-horizontal` | 90 degree linear gradient of primary and secondary     |
 | `--fds-on-primary`          | On primary text color (default #FFFFFF)                |
@@ -174,9 +171,7 @@ will generate
 | Custom property       | Description                                            |
 | --------------------- | ------------------------------------------------------ |
 | `primary`             | Primary color (default #694ED6)                        |
-| `primary-lighter`     | Primary lighter color (default 8% opacity)             |
 | `secondary`           | Secondary color (default #C137A2)                      |
-| `secondary-lighter`   | Secondary lighter color (default 8% opacity)           |
 | `background`          | Background color (default #FAFAFA)                     |
 | `surface`             | Surface color (default #FFFFFF)                        |
 | `surface-hover`       | Surface hover color (default primary 4% opacity)       |
@@ -195,7 +190,6 @@ will generate
 | `error`               | Error color (default #E40046)                          |
 | `info`                | Info color (default primary)                           |
 | `warning`             | Warning color (default #FF600A)                        |
-| `gradient`            | Linear gradient of primary and secondary               |
 | `gradient-vertical`   | Linear gradient of primary and secondary               |
 | `gradient-horizontal` | 90 degree linear gradient of primary and secondary     |
 | `on-primary`          | On primary text color (default #FFFFFF)                |
@@ -263,12 +257,8 @@ export const TemplateHelper = (args) => {
 | ----------------------------- | ---------------------------------------------------------- |
 | `.fds-primary`                | Used for text written in primary color                     |
 | `.fds-primary-bg`             | Used for container's background in primary color           |
-| `.fds-primary-lighter`        | Used for text written in primary lighter color             |
-| `.fds-primary-lighter-bg`     | Used for container's background in primary lighter color   |
 | `.fds-secondary`              | Used for text written in secondary color                   |
 | `.fds-secondary-bg`           | Used for container's background in secondary color         |
-| `.fds-secondary-lighter`      | Used for text written in secondary lighter color           |
-| `.fds-secondary-lighter-bg`   | Used for container's background in secondary lighter color |
 | `.fds-background`             | Used for application background color                      |
 | `.fds-surface`                | Used for content surface color (i.e. card background)      |
 | `.fds-surface-hover`          | Surface hover color (default primary 4% opacity)           |
@@ -291,8 +281,6 @@ export const TemplateHelper = (args) => {
 | `.fds-info-bg`                | Used for container's background info feedback              |
 | `.fds-warning`                | Used for text warning feedback                             |
 | `.fds-warning-bg`             | Used for container's background warning feedback           |
-| `.fds-gradient`               | Used for text written in gradient                          |
-| `.fds-gradient-bg`            | Used for container's background in gradient                |
 | `.fds-gradient-vertical`      | Used for text written in gradient                          |
 | `.fds-gradient-vertical-bg`   | Used for container's background in gradient                |
 | `.fds-gradient-horizontal`    | Used for text written in horizontal gradient               |

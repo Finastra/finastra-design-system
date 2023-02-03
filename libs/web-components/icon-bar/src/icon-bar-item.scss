@@ -20,7 +20,7 @@
 
 .current {
   fds-icon-button {
-    @include fds.property(background, gradient);
+    @include fds.background(gradient-vertical);
 
     color: var(--fds-on-primary);
     border-radius: 50%;

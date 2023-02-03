@@ -21,7 +21,8 @@
     "warning": { "value": "#FF600A" },
     "info": { "value": "{color.primary.value}" },
     "gradient": {
-      "value": ["{color.primary.value}", "{color.secondary.value}"]
+      "horizontal": { "value": ["90deg", "{color.primary.value}", "{color.secondary.value}"] },
+      "vertical": { "value": ["0deg", "{color.primary.value}", "{color.secondary.value}"] }
     },
     "on-primary": { "value": "#FFFFFF" },
     "on-secondary": { "value": "#FFFFFF" },
