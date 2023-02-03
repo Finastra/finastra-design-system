@@ -5,7 +5,7 @@
     "background": { "value": "#FAFAFA" },
     "surface": { "value": "#FFFFFF" },
     "surface-hover": { "value": "#FFFFFF" },
-    "surface-selected": { "value": "#694ED6CC" },
+    "surface-selected": { "value": "#694ED614" },
     "surface-disabled": { "value": "#0000001F" },
     "surface-success": { "value": "#0087444C" },
     "surface-error": { "value": "#D600404C" },
