@@ -67,7 +67,7 @@ $fds-blue: #009cbd;
 
     .coming_soon {
       @include fds.color(on-gradient);
-      @include fds.background(gradient-horizontal);
+      @include fds.background(gradient);
     }
 
     .app-card-cover {
