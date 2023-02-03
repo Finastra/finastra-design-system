@@ -343,7 +343,7 @@ export type FdsTableLinearProgress = number | string;
 ```
 
 You can set the value as number between [0, 1] or you can give the value with string in a percentage format for example: '80%';
-
+We highly recommand you use the string format to get the best result.
 ### Customized Cell with simple template
 
 `cell_template` cell is used when none of our predefined cell can meet your requriements. However it is an **experimental feature**. As web component is stand alone to any framework, so if you want to use the component from any other framework like angular or react. There may be issues if you use a framework component as cell template. So far cell template doesn't support complex user case. But you can create any template which native html can support.

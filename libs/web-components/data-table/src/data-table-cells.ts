@@ -98,16 +98,28 @@ export class FdsTableCellStore {
     let percentage: string;
     let number: number;
     if (typeof progress === 'string') {
-      percentage = progress;
-      number = parseFloat(progress) / 100;
+        percentage = progress;
+        number = parseFloat(progress) / 100;
     } else {
-      percentage = (progress * 100).toString() + '%';
-      number = progress;
+        percentage = (Math.round(progress * 10000) / 100).toString() + '%';
+        number = progress;
     }
 
-    return {
-      number: number,
-      percentage: percentage
-    };
-  }
+    if (number > 1) {
+        return {
+            number: 1,
+            percentage: '100%'
+        };
+    } else if (number < 0) {
+        return {
+            number: 0,
+            percentage: '0%',
+        }
+    } else {
+        return {
+            number: number,
+            percentage: percentage
+        };
+    }
+}
 }
