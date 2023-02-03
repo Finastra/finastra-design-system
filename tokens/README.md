@@ -1,4 +1,4 @@
-![](./.github/assets/banner.jpg)
+![](../.github/assets/banner-tokens.jpg)
 
 Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) tokens repository. You will find here all the tokens that are used to create themes for various technologies.
 
