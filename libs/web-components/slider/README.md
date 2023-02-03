@@ -6,7 +6,7 @@
 
 Sliders allow users to make selections from a range of values.
 
-The `fds-slider` extends [Material web's mwc-slider](https://github.com/material-components/material-web/tree/master/packages/slider).
+The `fds-slider` extends [Material web's mwc-slider](https://github.com/material-components/material-web/tree/main/packages/slider).
 
 ## Usage
 

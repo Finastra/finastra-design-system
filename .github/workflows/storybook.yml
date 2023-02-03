@@ -2,7 +2,7 @@ name: Publish Storybook
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'libs/**'
       - 'themes/fds-theme/**'
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
       - name: Setup node
         uses: actions/setup-node@v2

@@ -8,7 +8,7 @@ Progress indicators express an ongoing process.
 
 ## Usage
 
-For usage please see [mwc-linear-progress](https://github.com/material-components/material-web/tree/master/packages/linear-progress)
+For usage please see [mwc-linear-progress](https://github.com/material-components/material-web/tree/main/packages/linear-progress)
 
 ### Import
 

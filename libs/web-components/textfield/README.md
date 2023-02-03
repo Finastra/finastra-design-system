@@ -6,7 +6,7 @@
 
 Text fields let users enter and edit text.
 
-The `fds-textfield` extends [Material web's mwc-textfield-base](https://github.com/material-components/material-web/tree/master/packages/textfield).
+The `fds-textfield` extends [Material web's mwc-textfield-base](https://github.com/material-components/material-web/tree/main/packages/textfield).
 
 ## Usage
 

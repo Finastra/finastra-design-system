@@ -6,7 +6,7 @@
         <img src="https://github.com/Finastra/finastra-design-system/actions/workflows/pr-build-wc.yml/badge.svg" alt="Build status" />
     </a>
     <a href="https://codecov.io/gh/Finastra/finastra-design-system">
-        <img src="https://codecov.io/gh/Finastra/finastra-design-system/branch/master/graph/badge.svg?token=7jzYffsaRg"/>
+        <img src="https://codecov.io/gh/Finastra/finastra-design-system/branch/main/graph/badge.svg?token=7jzYffsaRg"/>
     </a>
     <a href="https://www.npmjs.com/~nestjscore">
         <img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" />
