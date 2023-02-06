@@ -1,5 +1,5 @@
-import { TextAreaBase } from '@material/mwc-textarea/mwc-textarea-base';
 import { customElement } from 'lit/decorators.js';
+import { BaseTextarea } from './base-textarea';
 import { styles } from './styles.css';
 
 /**
@@ -13,12 +13,11 @@ import { styles } from './styles.css';
  */
 
 @customElement('fds-textarea')
-export class Textarea extends TextAreaBase {
+export class Textarea extends BaseTextarea {
   static styles = styles;
 
   constructor() {
     super();
-    this.outlined = true;
   }
 }
 

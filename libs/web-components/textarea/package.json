@@ -17,7 +17,8 @@
   "dependencies": {
     "@material/mwc-textarea": "0.27.0",
     "lit": "^2.0.0",
-    "tslib": "^2.0.1"
+    "tslib": "^2.0.1",
+    "@finastra/icon": "1.4.2"
   },
   "publishConfig": {
     "access": "public"
