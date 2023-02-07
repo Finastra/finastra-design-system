@@ -44,7 +44,7 @@
 }
 
 :host([gradient]) {
-  @include fds.color(gradient);
+  @include fds.color(gradient-vertical);
 }
 
 :host([disabled]) {

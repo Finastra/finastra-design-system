@@ -9,13 +9,13 @@
     "directory": "themes/fds-theme"
   },
   "devDependencies": {
-    "sass": "1.33.0"
+    "sass": "1.58.0"
   },
   "dependencies": {
+    "@finastra/fds-tokens": "1.4.2",
     "@material/elevation": "^13.0.0"
   },
   "scripts": {
-    "release": "standard-version --prerelease alpha --tag-prefix '@finastra/fds-theme@'",
     "build": "(sass _all-themes.scss prebuilt/all-themes.css --load-path=../../node_modules) & (sass _light.scss prebuilt/light.css --load-path=../../node_modules) & (sass _dark.scss prebuilt/dark.css --load-path=../../node_modules)"
   },
   "publishConfig": {

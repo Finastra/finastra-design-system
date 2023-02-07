@@ -6,7 +6,7 @@
 
 `fds-switch` toggles the state of a single setting on or off.
 
-It extends [Material web's mwc-switch-base](https://github.com/material-components/material-web/tree/master/packages/switch)
+It extends [Material web's mwc-switch-base](https://github.com/material-components/material-web/tree/main/packages/switch)
 
 ## Usage
 

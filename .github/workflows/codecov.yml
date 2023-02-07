@@ -2,7 +2,7 @@ name: 'Codecov'
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     path:
       - 'libs/web-components/**'
 

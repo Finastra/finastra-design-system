@@ -16,7 +16,7 @@ function githubReadme(link) {
 }
 
 function getLinkToReadme(componentPath) {
-  return `https://github.com/Finastra/finastra-design-system/blob/master/libs/web-components/${componentPath}/README.md`;
+  return `https://github.com/Finastra/finastra-design-system/blob/main/libs/web-components/${componentPath}/README.md`;
 }
 
 function getPathToComponent(markdown) {

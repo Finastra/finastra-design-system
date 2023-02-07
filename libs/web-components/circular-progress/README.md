@@ -6,7 +6,7 @@
 
 ## Usage
 
-For usage please see [mwc-circular-progress](https://github.com/material-components/material-web/tree/master/packages/circular-progress)
+For usage please see [mwc-circular-progress](https://github.com/material-components/material-web/tree/main/packages/circular-progress)
 
 ### Import
 
