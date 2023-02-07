@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Build tokens
-        run: npm run build:tokens
+        run: npm run build:fds-tokens
       - name: Build fds-theme
         run: npm run build:fds-theme
       - name: Build web components
