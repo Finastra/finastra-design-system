@@ -4,7 +4,7 @@ import type { BarChart } from '@finastra/charts/';
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-import { argTypes } from './sb-generated/fds-donut-chart.json';
+import { argTypes } from './sb-generated/fds-bar-chart.json';
 
 export default {
   title: 'DATA DISPLAY/Charts/Bar Chart',
