@@ -26,8 +26,8 @@ export default {
   }
 } as Meta;
 
-const Template: Story<Textarea> = ({ label, helper, required, disabled, labelInside }) => {
-  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?disabled=${disabled} ?labelInside=${labelInside}></fds-textarea>`;
+const Template: Story<Textarea> = ({ label, helper, required, disabled, labelInside, dense }) => {
+  return html`<fds-textarea ?required=${required} label=${label} helper=${helper} ?disabled=${disabled} ?labelInside=${labelInside} ?dense=${dense}></fds-textarea>`;
 };
 
 const CounterTemplate: Story<Textarea> = ({ label, helper, maxLength, charCounter, required, disabled }) => {
@@ -51,6 +51,11 @@ Required.args = {
 export const labelInside: Story<Textarea> = Template.bind({});
 labelInside.args = {
   labelInside: true
+};
+
+export const dense: Story<Textarea> = Template.bind({});
+dense.args = {
+  dense: true
 };
 
 export const CharacterCounter: Story<Textarea> = CounterTemplate.bind({});
