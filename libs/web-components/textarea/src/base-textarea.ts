@@ -4,7 +4,6 @@ import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
 export class BaseTextarea extends TextAreaBase {
-  @property({ type: Boolean }) showActionButton = false;
   @property({ type: Boolean }) dense = false;
   @property({ type: Boolean }) labelInside = false;
 
