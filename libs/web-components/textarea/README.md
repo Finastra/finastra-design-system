@@ -19,7 +19,7 @@ npm i @finastra/textarea
 ```ts
 import '@finastra/textarea';
 ...
-<fds-textarea name="World"></fds-textarea>
+<fds-textarea label="description"></fds-textarea>
 ```
 
 ### API

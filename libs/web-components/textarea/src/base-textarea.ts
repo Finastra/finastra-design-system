@@ -1,4 +1,3 @@
-import '@finastra/icon';
 import { TextAreaBase } from '@material/mwc-textarea/mwc-textarea-base';
 import { html, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -25,66 +24,28 @@ export class BaseTextarea extends TextAreaBase {
       'mdc-text-field--no-label': !this.label,
       'mdc-text-field--filled': !this.outlined,
       'mdc-text-field--outlined': this.outlined,
-      'mdc-text-field--with-leading-icon': this.icon,
-      'mdc-text-field--with-trailing-icon': this.iconTrailing,
-      'mdc-text-field--end-aligned': this.endAligned,
-      'fds-text-field--label-inside': this.labelInside
+      'fds-textarea--label-inside': this.labelInside
     };
 
     return html`
       ${!this.labelInside ? this.renderLabelOutside() : ''}
-      <label class="mdc-text-field mdc-text-field--textarea ${classMap(classes)}" @click="${this._handleClick}">
-        ${this.renderRipple()} ${this.renderOutline()} ${this.renderLeadingIcon()} ${this.renderPrefix()} ${this.renderInput()}
-        ${this.renderSuffix()} ${this.renderTrailingIcon()}
+      <label class="mdc-text-field mdc-text-field--textarea ${classMap(classes)}">
+        ${this.renderRipple()} ${this.renderOutline()} ${this.renderInput()}
       </label>
       ${this.renderHelperText(shouldRenderHelperText, shouldRenderCharCounter)}
     `;
   }
 
-  protected _handleClick() {
-    if (
-      !this.disabled &&
-      (this.type === 'date' || this.type === 'datetime-local' || this.type === 'month' || this.type === 'week' || this.type === 'time')
-    ) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const input = this.formElement as any;
-      input.showPicker();
-    }
-  }
-
-  protected renderTrailingIcon(): TemplateResult | string {
-    return this.showActionButton
-      ? html` <slot name="actionButton"></slot>`
-      : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--trailing">${this.iconTrailing}</i> `;
-  }
-
-  // protected renderLeadingIcon(): TemplateResult | string {
-  //   return this.showActionButton
-  //     ? html` <slot name="actionButton"></slot>`
-  //     : html`<i class="material-icons mdc-text-field__icon  mdc-text-field__icon--leading ">${this.icon}</i> `;
-  // }
-
   protected renderLabelOutside(): TemplateResult | string {
-    return this.label ? html` <span id="label" class="fds-text-field__label"> ${this.label} ${this.renderRequired()} </span> ` : ``;
+    return this.label ? html` <span id="label" class="fds-textarea__label"> ${this.label} ${this.renderRequired()} </span> ` : ``;
   }
 
   protected override renderOutline(): TemplateResult | string {
-    return !this.outlined ? '' : html` <div class="fds-text-field__outline">${this.labelInside ? this.renderLabel() : ''}</div>`;
+    return !this.outlined ? '' : html` <div class="fds-textarea__outline">${this.labelInside ? this.renderLabel() : ''}</div>`;
   }
 
   protected renderRequired(): TemplateResult | string {
     return !this.required ? '' : '*';
-  }
-
-  updated(changedProperties) {
-    super.updated(changedProperties);
-    for (const child of Array.from(this.children)) {
-      if (child.slot === 'actionButton' && this.disabled) {
-        child.setAttribute('disabled', 'true');
-      } else if (child.slot === 'actionButton') {
-        child.removeAttribute('disabled');
-      }
-    }
   }
 }
 

@@ -13,7 +13,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
   @include fds.mdc(text-field-label-ink-color, on-surface-medium);
   @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
 
-  .fds-text-field__outline {
+  .fds-textarea__outline {
     @include fds.property(border-color, outline);
 
     box-sizing: border-box;
@@ -30,7 +30,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     pointer-events: none;
   }
 
-  .fds-text-field__outline .mdc-floating-label {
+  .fds-textarea__outline .mdc-floating-label {
     position: relative;
     display: inline-block;
   }
@@ -39,31 +39,31 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     height: auto;
   }
 
-  .mdc-text-field.fds-text-field--label-inside {
+  .mdc-text-field.fds-textarea--label-inside {
     .mdc-text-field__input {
       @include fds.margin(4, top);
     }
   }
 
-  .mdc-text-field:hover:not(.mdc-text-field--focused, .mdc-text-field--disabled, .mdc-text-field--invalid) .fds-text-field__outline {
+  .mdc-text-field:hover:not(.mdc-text-field--focused, .mdc-text-field--disabled, .mdc-text-field--invalid) .fds-textarea__outline {
     @include fds.property(border-color, on-surface-medium);
   }
 
-  .fds-text-field__outline:disabled {
+  .fds-textarea__outline:disabled {
     @include fds.property(border-color, outline);
   }
 
-  .mdc-text-field--focused .fds-text-field__outline {
+  .mdc-text-field--focused .fds-textarea__outline {
     @include fds.property(border-color, primary);
 
     border-width: 2px;
   }
 
-  .mdc-text-field--invalid .fds-text-field__outline {
-    @include fds.property(border-color, error);
-  }
+  // .mdc-text-field--invalid .fds-textarea__outline {
+  //   @include fds.property(border-color, error);
+  // }
 
-  .fds-text-field__label,
+  .fds-textarea__label,
   .mdc-floating-label {
     @include fds.color(on-surface-medium);
     @include fds.typography(body-2);
@@ -76,7 +76,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     margin-left: 10px;
   }
 
-  &:disabled .fds-text-field__label {
+  &:disabled .fds-textarea__label {
     @include fds.color(on-surface-disabled);
   }
 
@@ -89,7 +89,6 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
 
   .mdc-text-field--outlined {
     @include fds.background(surface);
-    // border-radius: var(--fds-text-field-radius, 4px);
   }
 
   .mdc-text-field.mdc-text-field--focused.mdc-text-field--invalid {
@@ -104,7 +103,7 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     }
   }
 
-  .mdc-text-field:not(.fds-text-field--label-inside) {
+  .mdc-text-field:not(.fds-textarea--label-inside) {
     .mdc-text-field__input::placeholder {
       opacity: 1 !important;
     }
@@ -131,20 +130,13 @@ $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, 
     @include fds.typography(subtitle-3);
   }
 
-  .fds-text-field__label {
+  .fds-textarea__label {
     @include fds.typography(body-3);
   }
 }
 
-:host([disabled]) .fds-text-field__label {
+:host([disabled]) .fds-textarea__label {
   @include fds.color(on-surface-disabled);
-}
-
-slot[name='actionButton']::slotted(*) {
-  @include fds.color(on-surface-medium);
-
-  margin-right: -14px;
-  align-self: center;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon--leading {
