@@ -68,3 +68,4 @@ storybook-static
 libs/web-components/**/stories/custom-element.json
 libs/web-components/**/stories/sb-generated
 build-storybook.log
+tokens/dist
