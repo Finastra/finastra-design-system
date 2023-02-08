@@ -21,14 +21,14 @@
     <!-- Theme -->
     <script type="module" src="node_modules/@finastra/app-bar/dist/src/app-bar.js"></script>
     <script type="module" src="node_modules/@finastra/logo/dist/src/logo.js"></script>
-    <script type="module" src="node_modules/@finastra/list/dist/src/list.js"></script>
+    <script type="module" src="node_modules/@finastra/list/dist/src/index.js"></script>
     <script type="module" src="node_modules/@finastra/icon/dist/src/icon.js"></script>
     <script type="module" src="node_modules/@material/mwc-top-app-bar-fixed/mwc-top-app-bar-fixed.js"></script>
   </head>
   <body>
-    <% include header.html %>
+    <%- include('./header.html') %>
     <div class="main">
-      <% include list-components.html %>
+      <%- include('./list-components.html') %>
       <section class="main-content"><%- body %></section>
     </div>
   </body>
