@@ -54,7 +54,7 @@ async function addToQueue(fileName) {
     spinner.color = 'blue';
     spinner.text = chalk.blue('Building Typescript');
     spinner.start();
-    execPromise = exec('npm run wc:build:ts');
+    execPromise = exec('npm run build:ts');
   }
 
   try {
