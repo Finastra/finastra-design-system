@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.0
+
+### Minor Changes
+
+- 2711cdc4: Using fds-token package to store and share color and spacing tokens
+
+### Patch Changes
+
+- 516ecbbe: Managing releases with changesets
+- Updated dependencies [2711cdc4]
+  - @finastra/fds-tokens@1.5.0
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ### [0.0.1-alpha.4](https://github.com/finastra/finastra-design-system/compare/@finastra/fds-theme@0.0.1-alpha.3...@finastra/fds-theme@0.0.1-alpha.4) (2021-07-28)

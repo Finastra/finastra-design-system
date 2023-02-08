@@ -1,5 +1,11 @@
 # fds-tokens
 
+## 1.5.0
+
+### Minor Changes
+
+- 2711cdc4: Using fds-token package to store and share color and spacing tokens
+
 ## 0.0.5
 
 ### Patch Changes

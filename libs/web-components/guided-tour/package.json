@@ -1,7 +1,7 @@
 {
   "name": "@finastra/guided-tour",
   "displayName": "GuidedTour",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "GuidedTour Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,8 +15,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "1.4.2",
-    "@finastra/card": "1.4.2",
+    "@finastra/button": "1.5.0",
+    "@finastra/card": "1.5.0",
     "@floating-ui/dom": "1.0.2",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
