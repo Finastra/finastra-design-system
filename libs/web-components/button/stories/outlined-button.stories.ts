@@ -25,11 +25,14 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-outlined-button
     .label=${label}
     .icon=${ifDefined(icon)}
     ?secondary=${secondary}
+    ?gradient=${gradient}
+    ?success=${success}
+    ?error=${error}
     ?dense=${dense}
     ?large=${large}
     ?disabled=${disabled}
@@ -38,7 +41,7 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
   ></fds-outlined-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, fullwidth = false, trailingIcon = false }) => {
   return html` <style>
       .demo-container {
         width: 300px;
@@ -49,6 +52,9 @@ const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, seconda
         .label=${label}
         .icon=${ifDefined(icon)}
         ?secondary=${secondary}
+        ?gradient=${gradient}
+        ?success=${success}
+        ?error=${error}
         ?dense=${dense}
         ?large=${large}
         ?disabled=${disabled}
@@ -69,6 +75,27 @@ Secondary.args = {
   label: 'Secondary',
   icon: 'bolt',
   secondary: true
+};
+
+export const Success: Story<OutlinedButton> = Template.bind({});
+Success.args = {
+  label: 'Success',
+  icon: 'check',
+  success: true
+};
+
+export const Gradient: Story<OutlinedButton> = Template.bind({});
+Gradient.args = {
+  label: 'Gradient',
+  icon: 'add',
+  gradient: true
+};
+
+export const Error: Story<OutlinedButton> = Template.bind({});
+Error.args = {
+  label: 'Error',
+  icon: 'close',
+  error: true
 };
 
 export const TrailingIcon: Story<OutlinedButton> = Template.bind({});

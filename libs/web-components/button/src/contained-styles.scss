@@ -10,6 +10,21 @@
   @include fds.color('on-secondary');
 }
 
+:host([gradient]) > button {
+  @include fds.background('gradient-horizontal');
+  @include fds.color('on-gradient');
+}
+
+:host([success]) > button {
+  @include fds.background('success');
+  @include fds.color('on-success');
+}
+
+:host([error]) > button {
+  @include fds.background('error');
+  @include fds.color('on-error');
+}
+
 :host([disabled]) > button {
   @include fds.background('surface-disabled');
   @include fds.color('on-surface-disabled');

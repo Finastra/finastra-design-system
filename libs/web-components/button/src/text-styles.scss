@@ -16,6 +16,27 @@
   --fds-button-overlay: var(--fds-secondary);
 }
 
+:host([gradient]) > button {
+  @include fds.color('gradient-horizontal');
+
+  --fds-icon-color: var(--fds-gradient-horizontal);
+  --fds-button-overlay: var(--fds-gradient-horizontal);
+}
+
+:host([success]) > button {
+  @include fds.color('success');
+
+  --fds-icon-color: var(--fds-success);
+  --fds-button-overlay: var(--fds-success);
+}
+
+:host([error]) > button {
+  @include fds.color('error');
+
+  --fds-icon-color: var(--fds-error);
+  --fds-button-overlay: var(--fds-error);
+}
+
 :host([disabled]) > button {
   @include fds.color('on-surface-disabled');
 }
