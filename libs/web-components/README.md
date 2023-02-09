@@ -148,7 +148,7 @@ npm run wc:serve
 - Storybook (for the documentation and demo)
 
 ```
-npm run storybook
+npm run storybook:watch
 ```
 
 > You can also see the storybook in the browser ➡️ [Go to Storybook](https://finastra.github.io/finastra-design-system/?path=/story/welcome--page)

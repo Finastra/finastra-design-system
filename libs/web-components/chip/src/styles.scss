@@ -22,6 +22,8 @@
   .mdc-button__label {
     @include fds.typography(body-3);
     @include fds.property(color, on-surface);
+
+    text-transform: capitalize;
   }
 
   .mdc-button--outlined:not(:disabled) {
