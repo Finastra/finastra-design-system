@@ -11,6 +11,7 @@
 
   .mdc-button {
     height: 24px;
+    @include fds.padding-x(2);
   }
 
   .mdc-button:hover {
@@ -34,7 +35,7 @@
     }
   }
 
-  .leading-icon .mdc-button__icon {
+  .mdc-button__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
@@ -62,7 +63,7 @@
     height: 32px;
   }
 
-  .leading-icon .mdc-button__icon {
+  .mdc-button__icon {
     width: 24px;
     height: 24px;
     font-size: 24px;
@@ -76,16 +77,18 @@
 :host([dense]) {
   .mdc-button {
     height: 18px;
+    padding: 0 6px;
   }
 
-  .leading-icon {
-    height: 14px;
+  .leading-icon,
+  .trailing-icon {
+    height: 12px;
   }
 
-  .leading-icon .mdc-button__icon {
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
+  .mdc-button__icon {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
   }
 }
 
