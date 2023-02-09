@@ -13,10 +13,8 @@ export default {
   args: {
     width: '500px',
     height: '300px',
-    barTitle: 'Number of Calls',
-    horizontal: false,
-    xGrid: false,
-    yGrid: true,
+    chartTitle: 'Number of Calls',   
+    stacked: false,
     series: [
       {
         name: 'Legend 1',
@@ -43,7 +41,7 @@ export default {
 
 const Template: Story<BarChart> = (args) => {
   return html`<fds-bar-chart
-    .barTitle=${args.barTitle}
+    .chartTitle=${args.chartTitle}
     .horizontal=${args.horizontal}
     width=${args.width}
     height=${args.height}
@@ -68,8 +66,6 @@ Vertical.args = {
 export const Horizontal: Story<BarChart> = Template.bind({});
 Horizontal.args = {
   horizontal: true,
-  xGrid: true,
-  yGrid: false,
   series: [
     {
       name: 'Legend 1',
@@ -83,10 +79,7 @@ export const MultipleHorizontal: Story<BarChart> = Template.bind({});
   MultipleHorizontal.args = {
     width: '500px',
     height: '500px',
-    barTitle: 'Number of Calls',
     horizontal: true,
-    xGrid: true,
-    yGrid: false,
     series: [
       {
         name: 'Legend 1',
@@ -109,11 +102,7 @@ export const Stacked: Story<BarChart> = Template.bind({})
     horizontal: true,
     xGrid: true,
     yGrid: false,
-    stacked: true,
-    stroke: {
-      width: 1,
-      colors: ['#fff']
-    },
+    stacked: true,    
     series: [
       {
         name: 'Legend 1',
