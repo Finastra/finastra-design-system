@@ -49,6 +49,10 @@
   &:focus::after {
     opacity: 0.12;
   }
+
+  .fds-button__label::first-letter {
+    text-transform: capitalize;
+  }
 }
 
 :host > button > fds-icon:last-child {

@@ -51,7 +51,7 @@ export class BaseButton extends LitElement {
 
   render() {
     return html`<button aria-label="${this.label || this.icon}" ?disabled="${this.disabled}">
-      ${this.icon && !this.trailingIcon ? this.renderIcon() : ''} ${this.label}
+      ${this.icon && !this.trailingIcon ? this.renderIcon() : ''} <span class="fds-button__label">${this.label}</span>
       <slot></slot>
       ${this.icon && this.trailingIcon ? this.renderIcon() : ''}
     </button>`;
