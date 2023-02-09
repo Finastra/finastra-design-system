@@ -14,8 +14,23 @@
   @include fds.property('border-color', secondary);
 }
 
-:host([gradient]) > button {
-  @include fds.property('border-color', success);
+:host([gradient]) {
+  border: none;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--fds-button-radius);
+    background: linear-gradient(var(--fds-background), var(--fds-background)) padding-box,
+      linear-gradient(to left, var(--fds-primary), var(--fds-secondary)) border-box;
+    border: 1px solid transparent;
+  }
+
+  & > button {
+    border: none;
+  }
 }
 
 :host([success]) > button {
