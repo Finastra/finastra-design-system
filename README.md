@@ -18,7 +18,7 @@ This implementation of the Finastra design system is framework agnostic (i.e can
 
 [Learn more](./libs/web-components/README.md)
 
-# 📦 Other ressources
+# 📦 Other resources
 
 ## UI kit on Figma
 
