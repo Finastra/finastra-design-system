@@ -11,6 +11,7 @@
 
   .mdc-button {
     height: 24px;
+    text-transform: none;
   }
 
   .mdc-button:hover {
@@ -23,7 +24,9 @@
     @include fds.typography(body-3);
     @include fds.property(color, on-surface);
 
-    text-transform: capitalize;
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   .mdc-button--outlined:not(:disabled) {
