@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:string';
-@use './light';
-@use './dark';
+@use '@finastra/fds-tokens/dist/scss/light';
+@use '@finastra/fds-tokens/dist/scss/dark';
 @use '../scheme';
 
 /// Loads the colors' custom properties.
@@ -12,7 +12,7 @@
 ///      color: var(--fds-on-surface);
 ///   }
 @mixin custom-properties($scheme: scheme.light()) {
-  $properties: if(scheme.is-light($scheme), light.$properties, dark.$properties);
+  $properties: if(scheme.is-light($scheme), light.$tokens, dark.$tokens);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
     --mdc-theme-#{$style}: var(--fds-#{$style}, #{$variable});
@@ -26,8 +26,8 @@
 ///      <p class="fds-on-primary">Hello</p>
 ///   </div>
 @mixin helper-classes() {
-  @each $style, $value in light.$properties {
-    $bg-color: map.get(light.$properties, $style);
+  @each $style, $value in light.$tokens {
+    $bg-color: map.get(light.$tokens, $style);
     @if $style != 'background' and $style != 'surface' and $style != 'outline' {
       .fds-#{$style} {
         color: var(--fds-#{$style}, #{$bg-color});
@@ -74,7 +74,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin color($style) {
-  $bg-color: map.get(light.$properties, $style);
+  $bg-color: map.get(light.$tokens, $style);
   @if string.index($style, 'gradient') == 1 {
     background: var(--fds-#{$style}, #{$bg-color});
     background-clip: text;
@@ -106,7 +106,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin mdc($mdc, $style) {
-  $variable: map.get(light.$properties, $style);
+  $variable: map.get(light.$tokens, $style);
 
   --mdc-#{$mdc}: var(--fds-#{$style}, #{$variable});
 }
@@ -120,7 +120,7 @@
 ///
 /// @param {String} $style - The name of the style to apply
 @mixin property($property, $style) {
-  $variable: map.get(light.$properties, $style);
+  $variable: map.get(light.$tokens, $style);
 
   #{$property}: var(--fds-#{$style}, #{$variable});
 }

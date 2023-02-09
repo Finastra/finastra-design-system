@@ -6,7 +6,7 @@
 
 Text areas let users enter and edit text.
 
-It extends [Material web's mwc-textarea-base](https://github.com/material-components/material-web/tree/master/packages/textarea).
+It extends [Material web's mwc-textarea-base](https://github.com/material-components/material-web/tree/main/packages/textarea).
 
 ## Usage
 
@@ -19,7 +19,7 @@ npm i @finastra/textarea
 ```ts
 import '@finastra/textarea';
 ...
-<fds-textarea name="World"></fds-textarea>
+<fds-textarea label="description"></fds-textarea>
 ```
 
 ### API

@@ -1,4 +1,4 @@
-import koaEjs from 'koa-ejs';
+import koaEjs from '@koa/ejs';
 import { scanPackages } from './scan-packages.mjs';
 
 export async function devIndex(ctx, next) {
@@ -23,7 +23,7 @@ export async function esjRender(context, next) {
     root: '.',
     layout: 'tools/dev-server/view/layout',
     viewExt: 'html',
-    async: true,
+    async: false,
     cache: false,
     debug: false,
     writeResp: false

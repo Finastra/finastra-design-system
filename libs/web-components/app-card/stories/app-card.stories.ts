@@ -9,7 +9,7 @@ import { argTypes, cssprops } from './sb-generated/fds-app-card.json';
 const dummyApp = {
   name: 'Business Economics',
   author: 'Finastra',
-  tags: '["Account Information", "Api", "Banking"]',
+  tags: '["Account Information", "API", "Banking"]',
   icon: 'https://www.finastra.com/themes/custom/themekit/dist/logo.svg',
   description: 'Application Description goes here. This can vary in length from short to pretty long, so you’ll want to watch that.'
 };

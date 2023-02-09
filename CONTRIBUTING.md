@@ -3,10 +3,11 @@
 Want to file a bug, contribute some code, or improve documentation? Excellent! 🤗❤️
 Here are some guidelines to make the most out of your help.
 
-- [Asking Questions](#questions)
-- [Issues and Bugs](#issues)
-- [Feature Requests](#features)
-- [Submission Guidelines](#submit)
+- [Contributing to Finastra Design System](#contributing-to-finastra-design-system)
+  - [ Asking Questions](#-asking-questions)
+  - [ Issues and Bugs](#-issues-and-bugs)
+  - [ Feature Requests](#-feature-requests)
+  - [ Submission Guidelines](#-submission-guidelines)
 
 ## <a name="questions"></a> Asking Questions
 
@@ -95,6 +96,6 @@ When your issue is validated and you are assigned to it, you can start with thos
 > git push -u origin bugfix/meaningful-name
 ```
 
-- In GitHub send a pull request to master
+- In GitHub send a pull request to main
 
 That's it, thank you for your contribution!
