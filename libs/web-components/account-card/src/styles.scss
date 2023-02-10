@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include fds.background(primary-lighter);
+    @include fds.background(surface-selected);
   }
 
   .account-name {
