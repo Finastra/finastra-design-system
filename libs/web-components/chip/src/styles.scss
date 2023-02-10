@@ -75,7 +75,7 @@
   }
 }
 
-:host([icon]) {
+:host([icon]:not([icon=''])) {
   .mdc-button {
     padding-left: 8px;
 
@@ -85,7 +85,7 @@
   }
 }
 
-:host([trailingicon]) {
+:host([trailingicon]:not([trailingicon=''])) {
   .mdc-button {
     padding-right: 8px;
 
