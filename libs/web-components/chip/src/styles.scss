@@ -11,7 +11,8 @@
 
   .mdc-button {
     height: 24px;
-    @include fds.padding-x(2);
+    min-width: auto;
+    padding: 0 12px;
   }
 
   .mdc-button:hover {
@@ -74,10 +75,29 @@
   }
 }
 
+:host([icon]) {
+  .mdc-button {
+    padding-left: 8px;
+
+    &.mdc-button--dense {
+      padding-left: 6px;
+    }
+  }
+}
+
+:host([trailingicon]) {
+  .mdc-button {
+    padding-right: 8px;
+
+    &.mdc-button--dense {
+      padding-right: 6px;
+    }
+  }
+}
+
 :host([dense]) {
   .mdc-button {
     height: 18px;
-    padding: 0 6px;
   }
 
   .leading-icon,
