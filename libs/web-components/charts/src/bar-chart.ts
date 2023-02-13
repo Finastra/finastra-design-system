@@ -5,7 +5,7 @@ import { styles } from './bar-chart-styles.css';
 
 /**
  *
- * @attr {strings} [chartTitle=""] - Defines title of chart
+ * @attr {string} [chartTitle=""] - Defines title of chart
  * @attr {boolean} [xGrid=false] - Defines x grid visibility
  * @attr {boolean} [yGrid=false] - Defines y grid visibility
  * @attr {boolean} [horizontal=false] - Display chart as horizontal bar chart
@@ -14,7 +14,6 @@ import { styles } from './bar-chart-styles.css';
 @customElement('fds-bar-chart')
 export class BarChart extends ApexChartsWrapper {
   static styles = [styles, apexchartsStyle];
-
   private _xGrid = false;
   @property({ attribute: false })
   public set xGrid(value: boolean) {
@@ -33,10 +32,10 @@ export class BarChart extends ApexChartsWrapper {
       };
     }
   }
-  public get xGrid(): boolean{
-    return this._xGrid
+  public get xGrid(): boolean {
+    return this._xGrid;
   }
-  
+
   @property({ attribute: false })
   public set yGrid(yGrid: boolean) {
     if (this.options) {
@@ -123,13 +122,12 @@ export class BarChart extends ApexChartsWrapper {
     this.refresh();
   }
 
-  private _horizontal: boolean = false;
+  private _horizontal = false;
   @property({ attribute: false })
   public get horizontal(): boolean {
     return this._horizontal;
   }
   public set horizontal(value: boolean) {
-
     this._horizontal = value;
     if (this.options && this.options.plotOptions && this.options.plotOptions.bar) {
       this.options.plotOptions.bar.horizontal = this._horizontal;
@@ -179,7 +177,6 @@ export class BarChart extends ApexChartsWrapper {
         colors: ['transparent']
       },
 
-
       tooltip: {
         enabled: true,
         followCursor: true,
@@ -195,7 +192,7 @@ export class BarChart extends ApexChartsWrapper {
           style: {
             fontSize: '10px',
             fontFamily: 'Roboto, sans-serif',
-            fontWeight: 400,
+            fontWeight: 400
           }
         },
 
@@ -215,7 +212,7 @@ export class BarChart extends ApexChartsWrapper {
             dashArray: 2
           },
           fill: {
-            type: 'solid',
+            type: 'solid'
           }
         }
       },
@@ -250,7 +247,7 @@ export class BarChart extends ApexChartsWrapper {
         }
       }
     };
-    
+
     this.type = 'bar';
     this.hideDataLabel = true;
     this.color = 'categorical';
