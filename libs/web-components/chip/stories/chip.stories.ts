@@ -48,15 +48,15 @@ Default.args = {
 
 export const Icon: Story<Chip> = Template.bind({});
 Icon.args = {
-  label: 'Standard',
-  icon: 'event'
+  label: 'Public',
+  icon: 'public'
 };
 
 export const Dense: Story<Chip> = Template.bind({});
 Dense.args = {
-  label: 'Dense',
+  label: 'Locked',
   dense: true,
-  icon: 'event'
+  icon: 'lock'
 };
 
 export const Large: Story<Chip> = Template.bind({});
@@ -69,7 +69,7 @@ export const Selected: Story<Chip> = Template.bind({});
 Selected.args = {
   label: 'Selected',
   selected: true,
-  icon: 'event'
+  icon: 'check'
 };
 
 export const Secondary: Story<Chip> = Template.bind({});
@@ -77,8 +77,8 @@ Secondary.args = {
   label: 'Selected',
   selected: true,
   secondary: true,
-  icon: 'event',
-  trailingIcon: 'cancel'
+  icon: 'check',
+  trailingIcon: 'cancel_outlined'
 };
 
 export const Icons: Story<Chip> = Template.bind({});
