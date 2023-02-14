@@ -3,5 +3,5 @@
   "printWidth": 140,
   "trailingComma": "none",
   "arrowParens": "always",
-  "endOfLine": "lf"
+  "endOfLine": "auto"
 }

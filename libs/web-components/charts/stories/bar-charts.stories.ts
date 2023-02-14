@@ -15,6 +15,10 @@ export default {
     height: '300px',
     chartTitle: 'Number of Calls',   
     stacked: false,
+    stroke: {
+      width: 1,
+      colors: ['#fff']
+    },
     series: [
       {
         name: 'Legend 1',
@@ -56,6 +60,7 @@ const Template: Story<BarChart> = (args) => {
 
 export const Vertical: Story<BarChart> = Template.bind({});
 Vertical.args = {
+  yGrid:true,
   series: [
     {
       name: 'Legend 1',
@@ -66,6 +71,7 @@ Vertical.args = {
 export const Horizontal: Story<BarChart> = Template.bind({});
 Horizontal.args = {
   horizontal: true,
+  xGrid:true,
   series: [
     {
       name: 'Legend 1',
@@ -75,11 +81,15 @@ Horizontal.args = {
 };
 
 export const MultipleVertical: Story<BarChart> = Template.bind({});
+MultipleVertical.args = {
+  yGrid:true
+}
 export const MultipleHorizontal: Story<BarChart> = Template.bind({});
   MultipleHorizontal.args = {
     width: '500px',
     height: '500px',
     horizontal: true,
+    xGrid:true,
     series: [
       {
         name: 'Legend 1',
