@@ -1,2 +1,2 @@
-export * from './expansion-panel'
-export * from './expansion-panel-item'
+export * from './expansion-panel';
+export * from './expansion-panel-item';

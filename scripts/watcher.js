@@ -3,6 +3,7 @@ const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 const ora = require('ora');
 const chalk = require('chalk');
+const { sep } = require('path');
 
 const watchOptions = {
   recursive: true,
@@ -48,13 +49,13 @@ async function addToQueue(fileName) {
     spinner.color = 'magenta';
     spinner.text = chalk.magenta('Building Styles and Typescript');
     spinner.start();
-    var wcFolder = fileName.split('/').slice(0,3).join('/');
+    var wcFolder = fileName.split(sep).slice(0, 3).join('/');
     execPromise = exec(`npm run build:style -w ${wcFolder}`);
   } else {
     spinner.color = 'blue';
     spinner.text = chalk.blue('Building Typescript');
     spinner.start();
-    execPromise = exec('npm run wc:build:ts');
+    execPromise = exec('npm run build:ts');
   }
 
   try {

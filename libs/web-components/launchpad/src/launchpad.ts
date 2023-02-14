@@ -10,7 +10,7 @@ import { styles } from './styles.css';
 export interface UxApp {
   name: string;
   shortName?: string;
-  "sso-initiation-urls"?: SsoUrl;
+  'sso-initiation-urls'?: SsoUrl;
 }
 
 export interface SsoUrl {
@@ -59,23 +59,23 @@ export class Launchpad extends LitElement {
             <div class="app-title">${this.title}</div>
             <div class="brandcard-list">
               ${this.apps && this.apps.length > 0
-                ? this.apps.map((app: any) =>
-                  html`
-                    <div class="brandcard-item">
-                      <fds-brand-card
-                        @click="${() => this._handleItemClick(app)}"
-                        label="${app[this.appNameProperty]}"
-                        shortLabel="${app[this.shortAppNameProperty]}"
-                        class="brandcard"
-                        extraDense
-                        secondary
-                      ></fds-brand-card>
-                      <div class="brandcard-name">${app[this.appNameProperty]}</div>
-                    </div>
-                  `
-                )
-                : ''
-              }
+                ? this.apps.map(
+                    (app) =>
+                      html`
+                        <div class="brandcard-item">
+                          <fds-brand-card
+                            @click="${() => this._handleItemClick(app)}"
+                            label="${app[this.appNameProperty]}"
+                            shortLabel="${app[this.shortAppNameProperty]}"
+                            class="brandcard"
+                            extraDense
+                            secondary
+                          ></fds-brand-card>
+                          <div class="brandcard-name">${app[this.appNameProperty]}</div>
+                        </div>
+                      `
+                  )
+                : ''}
             </div>
           </div>
           <div class="menu-tools">
@@ -96,20 +96,24 @@ export class Launchpad extends LitElement {
   }
 
   private _handleItemClick(app: UxApp) {
-    this.dispatchEvent(new CustomEvent('selected', {
-      bubbles: true,
-      cancelable: true,
+    this.dispatchEvent(
+      new CustomEvent('selected', {
+        bubbles: true,
+        cancelable: true,
         detail: {
           app
         }
-    }))
+      })
+    );
   }
 
   private _handleLaunchpageClick() {
-    this.dispatchEvent(new CustomEvent('launchpage', {
-      bubbles: true,
-      cancelable: true
-    }))
+    this.dispatchEvent(
+      new CustomEvent('launchpage', {
+        bubbles: true,
+        cancelable: true
+      })
+    );
   }
 
   private _onClosed() {

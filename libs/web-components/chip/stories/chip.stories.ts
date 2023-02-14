@@ -12,7 +12,8 @@ export default {
   argTypes: {
     ...argTypes,
     trailingIconAction: {
-      description: "Callback called after clicking on the trailingIcon, Example: `<fds-chip id='example' label='World' trailingIcon='cancel'></fds-chip>` `<script> example.trailingIconAction = () => { console.log('this a trailing icon action') } </script>`"
+      description:
+        "Callback called after clicking on the trailingIcon, Example: `<fds-chip id='example' label='World' trailingIcon='cancel'></fds-chip>` `<script> example.trailingIconAction = () => { console.log('this a trailing icon action') } </script>`"
     }
   },
   parameters: {
@@ -27,8 +28,17 @@ export default {
   }
 } as Meta;
 
-const Template: Story<Chip> = ({ label, icon, selected, disabled, secondary,dense, large,trailingIcon  }) => {
-  return html`<fds-chip  .label=${label} icon=${icon} trailingIcon=${trailingIcon} ?selected=${selected} ?disabled=${disabled} ?secondary=${secondary} ?dense=${dense} ?large=${large}></fds-chip>`;
+const Template: Story<Chip> = ({ label, icon, selected, disabled, secondary, dense, large, trailingIcon }) => {
+  return html`<fds-chip
+    .label=${label}
+    icon=${icon}
+    trailingIcon=${trailingIcon}
+    ?selected=${selected}
+    ?disabled=${disabled}
+    ?secondary=${secondary}
+    ?dense=${dense}
+    ?large=${large}
+  ></fds-chip>`;
 };
 
 export const Default: Story<Chip> = Template.bind({});
@@ -38,15 +48,15 @@ Default.args = {
 
 export const Icon: Story<Chip> = Template.bind({});
 Icon.args = {
-  label: 'Standard',
-  icon: "event",
+  label: 'Public',
+  icon: 'public'
 };
 
 export const Dense: Story<Chip> = Template.bind({});
 Dense.args = {
-  label: 'Dense',
+  label: 'Locked',
   dense: true,
-  icon: "event"
+  icon: 'lock'
 };
 
 export const Large: Story<Chip> = Template.bind({});
@@ -55,12 +65,11 @@ Large.args = {
   large: true
 };
 
-
 export const Selected: Story<Chip> = Template.bind({});
 Selected.args = {
   label: 'Selected',
   selected: true,
-  icon: "event"
+  icon: 'check'
 };
 
 export const Secondary: Story<Chip> = Template.bind({});
@@ -68,8 +77,8 @@ Secondary.args = {
   label: 'Selected',
   selected: true,
   secondary: true,
-  icon: "event",
-  trailingIcon: "cancel"
+  icon: 'check',
+  trailingIcon: 'cancel_outlined'
 };
 
 export const Icons: Story<Chip> = Template.bind({});
@@ -77,7 +86,7 @@ Icons.args = {
   label: 'Selected',
   selected: true,
   secondary: true,
-  large:true,
-  icon: "check",
-  trailingIcon: "cancel"
+  large: true,
+  icon: 'check',
+  trailingIcon: 'cancel'
 };

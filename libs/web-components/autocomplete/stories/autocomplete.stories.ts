@@ -34,15 +34,21 @@ const Template: Story = ({
   useInnerFilter,
   placeholder
 }) => {
-  return html`<fds-autocomplete .value=${ifDefined(value)} ?ariaLabel=${ifDefined(ariaLabel)} ?required=${ifDefined(
-    required
-  )} ?disabled=${ifDefined(disabled)} ?minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)} icon=${ifDefined(
-    icon
-  )} ?showClearButton=${ifDefined(showClearButton)} .useInnerFilter=${useInnerFilter} .placeholder=${ifDefined(placeholder)}>
- <fds-list-item value="One">One</fds-list-item>
- <fds-list-item value="Two">Two</fds-list-item>
- <fds-list-item value="Three">Three</fds-list-item>
-</fds-autocomplete>`;
+  return html`<fds-autocomplete
+    .value=${ifDefined(value)}
+    ?ariaLabel=${ifDefined(ariaLabel)}
+    ?required=${ifDefined(required)}
+    ?disabled=${ifDefined(disabled)}
+    ?minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)}
+    icon=${ifDefined(icon)}
+    ?showClearButton=${ifDefined(showClearButton)}
+    .useInnerFilter=${useInnerFilter}
+    .placeholder=${ifDefined(placeholder)}
+  >
+    <fds-list-item value="One">One</fds-list-item>
+    <fds-list-item value="Two">Two</fds-list-item>
+    <fds-list-item value="Three">Three</fds-list-item>
+  </fds-autocomplete>`;
 };
 
 export const Default: Story = Template.bind({});

@@ -4,15 +4,15 @@ import { TextButton } from './text-button';
 
 @customElement('fds-outlined-button')
 export class OutlinedButton extends TextButton {
-    static styles = [TextButton.styles, styles];
+  static styles = [TextButton.styles, styles];
 
-    constructor() {
-      super();
-    }
+  constructor() {
+    super();
+  }
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-      'fds-outlined-button': OutlinedButton;
-    }
+  interface HTMLElementTagNameMap {
+    'fds-outlined-button': OutlinedButton;
+  }
 }

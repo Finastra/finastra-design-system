@@ -1,4 +1,4 @@
-import { CheckListItemBase } from "@material/mwc-list/mwc-check-list-item-base";
+import { CheckListItemBase } from '@material/mwc-list/mwc-check-list-item-base';
 import { customElement } from 'lit/decorators.js';
 import { styles as controlStyle } from './control-list-item-styles.css';
 import { styles } from './list-item-styles.css';
@@ -13,4 +13,3 @@ declare global {
     'fds-check-list-item': CheckListItem;
   }
 }
-

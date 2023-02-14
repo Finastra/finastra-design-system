@@ -4,8 +4,7 @@ Because of the nature of Web Components, we will not provide any tooltip web-com
 
 However, we're using [Tippy.js](https://atomiks.github.io/tippyjs/), and recommend using the same.
 
-
-## Usage 
+## Usage
 
 ```bash
 npm i tippy.js
@@ -27,7 +26,7 @@ Once loaded, declare it like any other theme:
 
 ```js
 tippy('button', {
-  theme: 'finastra',
+  theme: 'finastra'
 });
 ```
 

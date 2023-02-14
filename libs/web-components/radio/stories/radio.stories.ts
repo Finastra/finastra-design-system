@@ -23,7 +23,20 @@ export default {
 } as Meta;
 
 const Template: Story<Radio> = ({ checked, disabled, global, name, reducedTouchTarget, value }) => {
-  return html`<fds-radio ?checked=${checked} ?disabled=${disabled} ?global=${global} ?name=${name} ?reducedTouchTarget=${reducedTouchTarget} ?value=${value}></fds-radio>`;
+  return html`<fds-radio
+    ?checked=${checked}
+    ?disabled=${disabled}
+    ?global=${global}
+    ?name=${name}
+    ?reducedTouchTarget=${reducedTouchTarget}
+    ?value=${value}
+  ></fds-radio>`;
+};
+
+const WithLabelTemplate: Story = ({ checked }) => {
+  return html` <fds-formfield label="Option">
+    <fds-radio checked=${checked}></fds-radio>
+  </fds-formfield>`;
 };
 
 export const Default: Story<Radio> = Template.bind({});
@@ -35,4 +48,9 @@ export const Disabled: Story<Radio> = Template.bind({});
 Disabled.args = {
   checked: true,
   disabled: true
+};
+
+export const WithLabel: Story = WithLabelTemplate.bind({});
+WithLabel.args = {
+  checked: true
 };

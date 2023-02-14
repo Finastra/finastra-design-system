@@ -2,7 +2,7 @@ import '@finastra/icon';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { EVENTS } from './constants';
+import { events } from './constants';
 
 export interface Step {
   label: string;
@@ -42,23 +42,20 @@ export class BaseStepper extends LitElement {
     const endLineClass = { hidden: index === this.steps.length - 1, last: index === this.steps.length - 1 };
     return html`
       <div class="line start-line ${classMap(startLineClass)}"></div>
-      <div class="circle step-item-icon">
-        ${this.renderIcon(step, index)}
-      </div>
+      <div class="circle step-item-icon">${this.renderIcon(step, index)}</div>
       <div class="line end-line ${classMap(endLineClass)}"></div>
     `;
   }
 
   renderIcon(step: Step, index: number) {
-
     if (index >= this.currentStepIndex) {
       const activeStepIcon = this.steps[this.currentStepIndex]?.activeStepIcon;
       if (index === this.currentStepIndex && this.steps[this.currentStepIndex]?.error) {
         return html`<fds-icon>error_outline</fds-icon>`;
-      } else if(index === this.currentStepIndex && activeStepIcon) {
+      } else if (index === this.currentStepIndex && activeStepIcon) {
         return html`<fds-icon>${activeStepIcon}</fds-icon>`;
       } else {
-        return this.hideIndex ? null:index + 1;
+        return this.hideIndex ? null : index + 1;
       }
     } else {
       if (step?.error) {
@@ -85,8 +82,7 @@ export class BaseStepper extends LitElement {
             ${this.renderIconAndLine(step, idx)}
             <div class="text-wrapper">
               ${step.description
-                ? html`
-                    <div class="step-item-label">${step.label}</div>
+                ? html` <div class="step-item-label">${step.label}</div>
                     <div class="step-item-description">${step.description}</div>`
                 : html` <div class="step-item-label">${step.label}</div> `}
             </div>
@@ -99,7 +95,7 @@ export class BaseStepper extends LitElement {
     if (!this.steps[index]?.disabled && !this.readonly) {
       this.currentStepIndex = index;
       this.dispatchEvent(
-        new CustomEvent(EVENTS.STEPCLICK, {
+        new CustomEvent(events.STEPCLICK, {
           bubbles: true,
           composed: true,
           detail: {

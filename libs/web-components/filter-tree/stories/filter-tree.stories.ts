@@ -17,7 +17,7 @@ const demoData = [
       {
         label: 'Customer Management'
       }
-    ],
+    ]
   },
   {
     label: 'Money Movement'
@@ -44,35 +44,35 @@ export default {
   },
   decorators: [
     (story) => html`${story()}
-<script>
-  const demoData = [
-  {
-    label: 'Consumer Banking',
-    children: [
-      {
-        label: 'Alerts',
-        isSelected: true
-      },
-      {
-        label: 'Customer Management'
-      }
-    ],
-  },
-  {
-    label: 'Money Movement'
-  },
-  {
-    label: 'Financial Toolbox'
-  }
-];
-      const filter = document.getElementById('filter');
-       filter.items = demoData;
-</script>`
+      <script>
+        const demoData = [
+          {
+            label: 'Consumer Banking',
+            children: [
+              {
+                label: 'Alerts',
+                isSelected: true
+              },
+              {
+                label: 'Customer Management'
+              }
+            ]
+          },
+          {
+            label: 'Money Movement'
+          },
+          {
+            label: 'Financial Toolbox'
+          }
+        ];
+        const filter = document.getElementById('filter');
+        filter.items = demoData;
+      </script>`
   ],
   cssprops
 } as Meta;
 
-const Template: Story<FilterTree> = ({ }) => {
+const Template: Story<FilterTree> = ({}) => {
   return html`<fds-filter-tree id="filter" .items=${demoData}></fds-filter-tree>`;
 };
 

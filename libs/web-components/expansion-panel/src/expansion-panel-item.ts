@@ -12,21 +12,21 @@ export class ExpansionPanelItem extends LitElement {
   /**
    * Whether the expansion item should be disabled
    */
-  @property({ type: Boolean }) 
+  @property({ type: Boolean })
   disabled = false;
 
   /**
    * Whether the expansion item is expaned
-   */  
-  @property({ type: Boolean }) 
+   */
+  @property({ type: Boolean })
   expanded = false;
 
   private _hideToggleIcon = false;
-  
+
   @property({ type: Boolean })
   /**
    * Whether the expension indicator is hidden
-   */  
+   */
   public get hideToggleIcon() {
     return this._hideToggleIcon || this.getParent().hideToggleIcon;
   }
@@ -40,39 +40,38 @@ export class ExpansionPanelItem extends LitElement {
   @property({ type: String })
   /**
    * The position of toggle indicator
-   */  
+   */
   public get toggleIconPosition(): 'before' | 'after' {
     return this._toggleIconPosition || this.getParent().toggleIconPosition;
   }
-  
+
   public set toggleIconPosition(value: 'before' | 'after') {
     this._toggleIconPosition = value;
   }
 
   handleHeaderClick() {
-    if (this.disabled) return 
-    this.expanded = !this.expanded
+    if (this.disabled) return;
+    this.expanded = !this.expanded;
     if (this.expanded) {
-      this.getParent().closeOtherExpansionItems(this)
+      this.getParent().closeOtherExpansionItems(this);
     }
-   this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', {bubbles: true, cancelable: true}))
+    this.dispatchEvent(new CustomEvent(this.expanded ? 'opened' : 'closed', { bubbles: true, cancelable: true }));
   }
-  
+
   render() {
-    const classes = { 
-      expanded: this.expanded, 
-      disabled: this.disabled, 
-      'toggle-icon-before': this.toggleIconPosition === 'before', 
+    const classes = {
+      expanded: this.expanded,
+      disabled: this.disabled,
+      'toggle-icon-before': this.toggleIconPosition === 'before',
       'display-mode-default': this.getParent().displayMode === 'default'
     };
-    return html`
-    <div class="expansion-panel-item ${classMap(classes)}" aria-disabled="${this.disabled}" >
+    return html` <div class="expansion-panel-item ${classMap(classes)}" aria-disabled="${this.disabled}">
       <div class="expansion-panel-item-header" @click=${this.handleHeaderClick} aria-disabled="${this.disabled}">
         <div class="expansion-panel-item-header__content">
           <span class="expansion-panel-item-header__title"><slot name="title"></slot></span>
           <span class="expansion-panel-item-header__description"><slot name="description"></slot></span>
         </div>
-        ${this.hideToggleIcon ? '': html`<div class="expansion-panel-item-expansion-indicator"></div>`}
+        ${this.hideToggleIcon ? '' : html`<div class="expansion-panel-item-expansion-indicator"></div>`}
       </div>
       <div class="expansion-panel-item-body">
         <slot></slot>
@@ -80,11 +79,9 @@ export class ExpansionPanelItem extends LitElement {
     </div>`;
   }
 
-  getParent() : ExpansionPanel {
-    return this.parentElement as ExpansionPanel
+  getParent(): ExpansionPanel {
+    return this.parentElement as ExpansionPanel;
   }
-
-
 }
 
 declare global {

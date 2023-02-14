@@ -1,12 +1,11 @@
 @use '@finastra/fds-theme' as fds;
-@use "@material/data-table/data-table";
+@use '@material/data-table/data-table';
 
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 @include data-table.table-styles;
 
 :host {
-
   display: block;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(text-field-fill-color, surface-selected);
@@ -29,8 +28,7 @@
     @include fds.property('border-color', outline);
 
     .mdc-data-table__table {
-
-      @include fds.bg-color(surface);
+      @include fds.background(surface);
 
       .mdc-data-table__header-row,
       .mdc-data-table__row {
@@ -39,11 +37,11 @@
 
       thead {
         position: sticky;
-        top: 0px;
+        top: 0;
         z-index: 1;
 
         tr {
-          @include fds.bg-color(surface-hover);
+          @include fds.background(surface-hover);
 
           &.right div {
             display: flex;
@@ -67,7 +65,7 @@
       }
 
       tbody tr:hover {
-        @include fds.bg-color(surface-hover);
+        @include fds.background(surface-hover);
       }
 
       thead,
@@ -75,12 +73,13 @@
         fds-icon {
           vertical-align: middle;
           max-width: 18px;
+
           --fds-icon-size: 18px;
         }
 
         // width: calc(100% - 1em);
         tr:nth-child(even) {
-          @include fds.bg-color(surface-hover);
+          @include fds.background(surface-hover);
         }
 
         /* scrollbar is average 1em/16px width, remove it from thead width */
@@ -94,6 +93,7 @@
             white-space: nowrap;
             text-align: center;
             height: 1px;
+
             &.fds-table__cell--date {
               text-align: left;
             }
@@ -128,12 +128,10 @@
               float: center;
               text-align: initial;
             }
-
-
           }
 
           fds-icon-button {
-            @include fds.text-color(on-background);
+            @include fds.color(on-background);
           }
 
           .mdc-data-table__cell--checkbox,
@@ -152,7 +150,7 @@
           }
 
           &.mdc-data-table__row--selected {
-            @include fds.bg-color(surface-selected);
+            @include fds.background(surface-selected);
           }
         }
       }
@@ -161,14 +159,12 @@
         overflow-y: auto;
 
         .mdc-data-table__row {
-
-
-          /* even columns width , fix width of table too*/
+          /* even columns width , fix width of table too */
           .mdc-data-table__cell {
             @include fds.typography(body-1);
-            @include fds.text-color(on-surface);
+            @include fds.color(on-surface);
 
-            //customzied column css should be centralized here
+            // customzied column css should be centralized here
             .fds-data-table-linear-progress {
               display: flex;
               flex-direction: column;
@@ -191,7 +187,7 @@
 
       .mdc-data-table__header-cell {
         @include fds.typography(subtitle-1);
-        @include fds.text-color(on-surface);
+        @include fds.color(on-surface);
 
         .fds-data-table-sort-icon {
           --mdc-icon-button-size: 24px;
@@ -215,7 +211,6 @@
     }
 
     .mdc-data-table__table {
-
       .mdc-data-table__header-row,
       .mdc-data-table__row {
         height: 40px;
@@ -225,6 +220,7 @@
       tbody {
         fds-icon {
           max-width: 15px;
+
           --fds-icon-size: 13.5px;
         }
       }

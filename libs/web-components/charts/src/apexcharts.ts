@@ -165,7 +165,6 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   private _options: ApexCharts.ApexOptions = {};
-
   @property({ attribute: false })
   public get options(): ApexCharts.ApexOptions {
     return this._options;
@@ -269,7 +268,7 @@ export class ApexChartsWrapper extends LitElement {
     const focus2AngularPalette = styles.getPropertyValue('--fds-chart-focus2-angular-palette');
     const sequential1 = styles.getPropertyValue('--fds-chart-sequential-1');
     const sequential2 = styles.getPropertyValue('--fds-chart-sequential-2');
-    const categoricalLabelCcolor = styles.getPropertyValue('--fds-chart-categorical-label-color');
+    const categoricalLabelColor = styles.getPropertyValue('--fds-chart-categorical-label-color');
 
     if (semanticPalette1) {
       cssChartTheme.semanticPalette1 = semanticPalette1.trim();
@@ -325,21 +324,20 @@ export class ApexChartsWrapper extends LitElement {
       cssChartTheme.sequential2 = sequential2.trim().split(',');
     }
 
-    if (categoricalLabelCcolor) {
-      cssChartTheme.categoricalLabelColor = categoricalLabelCcolor.trim().split(',');
+    if (categoricalLabelColor) {
+      cssChartTheme.categoricalLabelColor = categoricalLabelColor.trim().split(',');
     }
 
     if (strokeColor) {
       cssChartTheme.strokeColor = strokeColor.trim();
     }
-
     this.chartTheme = this.extend(this.defaultTheme, cssChartTheme);
   }
 
   init() {
     if (!this.$el) return;
     this.loadChartThemeFromCssVariables();
-    let newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
+    const newOptions: ApexCharts.ApexOptions = this.extend(this._defaultOptions, {
       chart: {
         type: this.type || this.options.chart?.type || 'line',
         height: this.height,
@@ -358,6 +356,7 @@ export class ApexChartsWrapper extends LitElement {
       },
       dataLabels: {
         enabled: !this.hideDataLabel,
+        offsetY: 10,
         style: {
           fontSize: '12px',
           fontFamily: 'Roboto, sans-serif',
@@ -390,10 +389,6 @@ export class ApexChartsWrapper extends LitElement {
       series: this.series
     });
 
-    if (this.type !== 'radialBar') {
-      newOptions.chart!.foreColor = '#fffff';
-    }
-
     const config = this.extend(this.options, newOptions);
     this.chart = new ApexCharts(this.$el, config);
     this.initWatchers();
@@ -417,11 +412,18 @@ export class ApexChartsWrapper extends LitElement {
   }
 
   getStrokeColor() {
-    return {
-      stroke: {
-        colors: [this.chartTheme.strokeColor]
-      }
-    };
+    if (this.type === 'line') {
+      return {
+        stroke: {
+          color: this.chartTheme.categoricalPalette
+        }
+      };
+    } else
+      return {
+        stroke: {
+          colors: [this.chartTheme.strokeColor]
+        }
+      };
   }
 
   getDataLabelColor(): string[] {

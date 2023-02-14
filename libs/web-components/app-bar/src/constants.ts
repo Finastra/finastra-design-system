@@ -1,3 +1,3 @@
-export const EVENTS = {
+export const events = {
   NAVIGATION: 'MDCTopAppBar:nav'
 };

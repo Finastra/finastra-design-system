@@ -20,13 +20,14 @@ import '@finastra/fab';
 <fds-fab extended gradient label="Edit" icon="edit"></fds-fab>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property             | Attribute  | Type                      | Default    | Description                |
-|----------------------|------------|---------------------------|------------|----------------------------|
+| -------------------- | ---------- | ------------------------- | ---------- | -------------------------- |
 | `dense`              | `dense`    | `boolean`                 | false      | Make the fab smaller.      |
 | `disabled`           |            | `boolean`                 |            |                            |
 | `exited`             |            | `boolean`                 |            |                            |
@@ -38,12 +39,13 @@ import '@finastra/fab';
 | `reducedTouchTarget` |            | `boolean`                 |            |                            |
 | `ripple`             |            | `Promise<Ripple \| null>` |            |                            |
 | `showIconAtEnd`      |            | `boolean`                 |            |                            |
-| `styles`             |            | `array`                   | ["styles"] |                            |
+| `styles`             |            | `CSSResult[]`             | ["styles"] |                            |
 
 #### CSS Custom Properties
 
 | Property          | Type  | Default   | Description      |
-|-------------------|-------|-----------|------------------|
+| ----------------- | ----- | --------- | ---------------- |
 | `--fds-primary`   | color | "#694ED6" | Primary color.   |
 | `--fds-secondary` | color | "#C137A2" | Secondary color. |
+
 <!-- /DOC -->

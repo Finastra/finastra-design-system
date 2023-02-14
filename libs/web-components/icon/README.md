@@ -22,35 +22,37 @@ import '@finastra/icon';
 <fds-icon>bolt</fds-icon>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
-| Property      | Attribute     | Type      | Default    | Description                    |
-|---------------|---------------|-----------|------------|--------------------------------|
-| `dense`       | `dense`       | `boolean` | false      | Dense size of the icon `18px`. |
-| `disabled`    | `disabled`    | `boolean` | false      |                                |
-| `error`       | `error`       | `boolean` | false      | Use error color.               |
-| `extra_large` | `extra_large` | `boolean` | false      | Dense size of the icon `48px`. |
-| `gradient`    | `gradient`    | `boolean` | false      | Use gradient color.            |
-| `info`        | `info`        | `boolean` | false      |                                |
-| `large`       | `large`       | `boolean` | false      | Large size of the icon `36px`. |
-| `primary`     | `primary`     | `boolean` | false      | Use primary color.             |
-| `secondary`   | `secondary`   | `boolean` | false      | Use secondary color.           |
-| `styles`      |               | `array`   | ["styles"] |                                |
-| `success`     | `success`     | `boolean` | false      | Use success color.             |
-| `warning`     | `warning`     | `boolean` | false      |                                |
+| Property      | Attribute     | Type          | Default    | Description                    |
+| ------------- | ------------- | ------------- | ---------- | ------------------------------ |
+| `dense`       | `dense`       | `boolean`     | false      | Dense size of the icon `18px`. |
+| `disabled`    | `disabled`    | `boolean`     | false      |                                |
+| `error`       | `error`       | `boolean`     | false      | Use error color.               |
+| `extra_large` | `extra_large` | `boolean`     | false      | Dense size of the icon `48px`. |
+| `gradient`    | `gradient`    | `boolean`     | false      | Use gradient color.            |
+| `info`        | `info`        | `boolean`     | false      |                                |
+| `large`       | `large`       | `boolean`     | false      | Large size of the icon `36px`. |
+| `primary`     | `primary`     | `boolean`     | false      | Use primary color.             |
+| `secondary`   | `secondary`   | `boolean`     | false      | Use secondary color.           |
+| `styles`      |               | `CSSResult[]` | ["styles"] |                                |
+| `success`     | `success`     | `boolean`     | false      | Use success color.             |
+| `warning`     | `warning`     | `boolean`     | false      |                                |
 
 #### Slots
 
-| Name      | Description                                      |
-|-----------|--------------------------------------------------|
+| Name      | Description                                                                                                 |
+| --------- | ----------------------------------------------------------------------------------------------------------- |
 | `default` | The name of the icon to display (e.g. credit_card). See Material Icons for an index of all available icons. |
 
 #### CSS Custom Properties
 
 | Property          | Default | Description                       |
-|-------------------|---------|-----------------------------------|
+| ----------------- | ------- | --------------------------------- |
 | `--fds-icon-size` | "24px"  | Size of the icon, default `24px`. |
+
 <!-- /DOC -->

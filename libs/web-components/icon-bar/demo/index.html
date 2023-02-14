@@ -1,6 +1,5 @@
 <script type="module" src="node_modules/@finastra/icon-bar/dist/src/icon-bar.js"></script>
 <script type="module" src="node_modules/@finastra/icon-bar/dist/src/icon-bar-item.js"></script>
-<script type="module" src="node_modules/@finastra/badge/dist/src/badge.js"></script>
 
 <fds-icon-bar id="icon">
   <fds-icon-bar-item data-tippy-content="This is a tooltip" current icon="home" notification="2"></fds-icon-bar-item>
@@ -15,13 +14,13 @@
   tippy('[data-tippy-content]', {
     touch: false,
     theme: 'finastra',
-    placement: 'right-end',
-    });
+    placement: 'right-end'
+  });
 
-    const iconbar = document.getElementById('icon');
-    iconbar.addEventListener('selected', (event) =>  {
-      console.log("Selected index "+event.detail.index);
-    });
+  const iconbar = document.getElementById('icon');
+  iconbar.addEventListener('selected', (event) => {
+    console.log('Selected index ' + event.detail.index);
+  });
 </script>
 
 <style>

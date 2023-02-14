@@ -1,22 +1,20 @@
+export interface treenode {
+  label: string;
+  children?: treenode[];
+  isSelected?: boolean;
+  level?: number;
+  expandable?: boolean;
+}
 
-export interface TreeNode {
-    label: string;
-    children?: TreeNode[];
-    isSelected?: boolean;
-    level?: number,
-    expandable?: Boolean;
-  }
-  
-  export interface FlatTreeNode {
-    item: string;
-    level: number;
-    selected: boolean;
-    expandable?: Boolean;
-    id: string
-  }
-  
-  export interface TreeState {
-    added: TreeNode[],
-    removed: TreeNode[]
-  }
-  
+export interface flattreenode {
+  item: string;
+  level: number;
+  selected: boolean;
+  expandable?: boolean;
+  id: string;
+}
+
+export interface treestate {
+  added: treenode[];
+  removed: treenode[];
+}

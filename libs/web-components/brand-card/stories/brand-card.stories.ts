@@ -11,8 +11,8 @@ export default {
   component: 'fds-brand-card',
   argTypes,
   args: {
-    shortLabel : '',
-    dense: false, 
+    shortLabel: '',
+    dense: false,
     extraDense: false,
     large: false,
     secondary: false
@@ -30,7 +30,7 @@ export default {
   decorators: []
 } as any as Meta;
 
-const Template: Story<BrandCard> = ({ label, shortLabel,  dense , extraDense , large , secondary, outlined, selectable, disabled  }) => {
+const Template: Story<BrandCard> = ({ label, shortLabel, dense, extraDense, large, secondary, outlined, selectable, disabled }) => {
   return html` <fds-brand-card
     label=${label}
     shortLabel=${shortLabel}
@@ -39,7 +39,7 @@ const Template: Story<BrandCard> = ({ label, shortLabel,  dense , extraDense , l
     ?large=${large}
     ?secondary=${secondary}
     ?outlined=${outlined}
-    ?selectable=${selectable} 
+    ?selectable=${selectable}
     ?disabled=${disabled}
   >
   </fds-brand-card>`;

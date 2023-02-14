@@ -33,16 +33,16 @@ export class MenuTrigger extends OutlinedButton {
 
   render() {
     return html`
-    <fds-outlined-button
-      label='${this.label}'
-      icon='${this.icon}'
-      ?dense='${this.dense}'
-      ?disabled='${this.disabled}'
-      ?fullwidth='${this.fullwidth}'
-      ?secondary='${this.secondary}'
-    >
-      <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
-    </fds-outlined-button>
+      <fds-outlined-button
+        label="${this.label}"
+        icon="${this.icon}"
+        ?dense="${this.dense}"
+        ?disabled="${this.disabled}"
+        ?fullwidth="${this.fullwidth}"
+        ?secondary="${this.secondary}"
+      >
+        <fds-icon class="menu-trigger-icon">${this.menuTrailingIcon}</fds-icon>
+      </fds-outlined-button>
     `;
   }
 

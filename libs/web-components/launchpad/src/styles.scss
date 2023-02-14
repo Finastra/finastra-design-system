@@ -2,6 +2,7 @@
 
 :host {
   display: inline-block;
+
   --fds-menu-min-width: 562px;
 
   #launchpad {
@@ -18,15 +19,14 @@
 
         .app-title {
           @include fds.typography(headline-4);
-          @include fds.text-color(on-surface);
+          @include fds.color(on-surface);
           @include fds.padding(3, right, left, bottom);
         }
 
         .brandcard-list {
           display: grid;
           grid-template-columns: auto auto auto;
-          grid-row-gap: 32px;
-          grid-column-gap: 56px;
+          grid-gap: 32px 56px;
           @include fds.padding(3);
 
           .brandcard-item {
@@ -44,8 +44,9 @@
 
             .brandcard-name {
               @include fds.typography(subtitle-3);
-              @include fds.text-color(on-surface);
+              @include fds.color(on-surface);
               @include fds.padding(2, top);
+
               text-align: center;
             }
           }
@@ -55,7 +56,7 @@
       .menu-tools {
         @include fds.padding(5, right, left);
 
-        slot[name="tools"]::slotted(*) {
+        slot[name='tools']::slotted(*) {
           @include fds.padding(3, right, bottom, left);
         }
       }
@@ -67,6 +68,7 @@
       align-items: center;
       justify-content: center;
       @include fds.margin(4, top, bottom);
+
       fds-button {
         line-height: 0px;
       }

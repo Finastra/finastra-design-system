@@ -4,12 +4,12 @@ import { FilterTree } from '../src/filter-tree.js';
 
 const testBasic = [
   {
-    label: 'item 1',
+    label: 'item 1'
   },
   {
     label: 'item 2'
   }
-]
+];
 
 const testChildren = [
   {
@@ -24,7 +24,7 @@ const testChildren = [
       }
     ]
   }
-]
+];
 
 describe('FilterTree', () => {
   it('loads accessibility', async () => {
@@ -46,11 +46,11 @@ describe('FilterTree', () => {
   it('updates children', async () => {
     const el: FilterTree = await fixture(html`<fds-filter-tree></fds-filter-tree>`);
     el.items = testChildren;
-    
+
     await elementUpdated(el);
-    let treeItems = el.shadowRoot!.querySelectorAll('fds-tree-item')!;
-    let checkboxParent = treeItems[0].shadowRoot!.querySelector('fds-checkbox')!;
-    let checkboxChild = treeItems[1].shadowRoot!.querySelector('fds-checkbox')!;
+    const treeItems = el.shadowRoot!.querySelectorAll('fds-tree-item')!;
+    const checkboxParent = treeItems[0].shadowRoot!.querySelector('fds-checkbox')!;
+    const checkboxChild = treeItems[1].shadowRoot!.querySelector('fds-checkbox')!;
     checkboxParent.click();
     await elementUpdated(el);
     await expect(el).to.be.accessible();
@@ -63,10 +63,10 @@ describe('FilterTree', () => {
   it('expands', async () => {
     const el: FilterTree = await fixture(html`<fds-filter-tree></fds-filter-tree>`);
     el.items = testChildren;
-    
+
     await elementUpdated(el);
-    let treeItem = el.shadowRoot!.querySelector('fds-tree-item')!;
-    let expand = treeItem.shadowRoot!.querySelector('fds-icon-button')!;
+    const treeItem = el.shadowRoot!.querySelector('fds-tree-item')!;
+    const expand = treeItem.shadowRoot!.querySelector('fds-icon-button')!;
     expand.click();
     await expect(el).to.be.accessible();
   });

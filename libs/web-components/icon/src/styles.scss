@@ -3,6 +3,8 @@
 
 :host {
   @extend %material-icons;
+
+  // @include fds.color(on-surface);
 }
 
 :host([dense]) {
@@ -18,33 +20,33 @@
 }
 
 :host([primary]) {
-  @include fds.text-color(primary);
+  @include fds.color(primary);
 }
 
 :host([secondary]) {
-  @include fds.text-color(secondary);
+  @include fds.color(secondary);
 }
 
 :host([success]) {
-  @include fds.text-color(success);
+  @include fds.color(success);
 }
 
 :host([error]) {
-  @include fds.text-color(error);
+  @include fds.color(error);
 }
 
 :host([warning]) {
-  @include fds.text-color(warning);
+  @include fds.color(warning);
 }
 
 :host([info]) {
-  @include fds.text-color(surface-info);
+  @include fds.color(surface-info);
 }
 
 :host([gradient]) {
-  @include fds.text-color(gradient);
+  @include fds.color(gradient-vertical);
 }
 
 :host([disabled]) {
-  @include fds.text-color(on-surface-disabled);
+  @include fds.color(on-surface-disabled);
 }

@@ -1,4 +1,5 @@
 # Breadcrumb
+
 The Breadcrumb component is a navigational helper. It accepts a list of labels (strings) as an input and dispatches a `selected` event each time the user clicks on a label.
 
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/breadcrumb?style=for-the-badge)](https://www.npmjs.com/package/@finastra/breadcrumb)
@@ -32,25 +33,27 @@ import '@finastra/breadcrumb';
 ]"></fds-breadcrumb>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property | Attribute | Type    | Default | Description                |
-|----------|-----------|---------|---------|----------------------------|
+| -------- | --------- | ------- | ------- | -------------------------- |
 | `items`  | `items`   | `Array` | []      | A list of items to display |
 
 #### Events
 
 | Event      | Type                            |
-|------------|---------------------------------|
+| ---------- | ------------------------------- |
 | `selected` | `CustomEvent<{ item: Crumb; }>` |
 
 #### CSS Custom Properties
 
 | Property                         | Type  | Default | Description                                     |
-|----------------------------------|-------|---------|-------------------------------------------------|
+| -------------------------------- | ----- | ------- | ----------------------------------------------- |
 | `--fds-breadcrumb-divider`       |       | "'/'"   | Set the character used as divider between items |
 | `--fds-breadcrumb-divider-color` | color | "auto"  | Set the character used as divider between items |
+
 <!-- /DOC -->

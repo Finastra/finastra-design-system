@@ -3,6 +3,7 @@
 :host {
   display: inline-flex;
   outline: none;
+
   --fds-icon-size: 18px;
   --fds-icon-size-large: 24px;
   --fds-button-radius: 18px;
@@ -12,13 +13,14 @@
   --fds-button-overlay: white;
 }
 
-:host>button {
+:host > button {
   @include fds.typography('button-2');
-  @include fds.text-color('on-primary');
+  @include fds.color('on-primary');
   @include fds.padding-x(3);
   @include fds.padding-y(2);
 
-  --fds-icon-color: var(--fds-on-primary, #694ED6);
+  --fds-icon-color: var(--fds-on-primary, #694ed6);
+
   position: relative;
   width: 100%;
   display: inline-flex;
@@ -49,24 +51,24 @@
   }
 }
 
-:host>button>fds-icon:last-child {
+:host > button > fds-icon:last-child {
   @include fds.margin(2, left);
 }
 
-:host>button>fds-icon:first-child {
+:host > button > fds-icon:first-child {
   @include fds.margin(2, right);
 }
 
-:host([gradient])>button {
-  @include fds.bg-color('gradient');
-  @include fds.text-color('on-gradient');
+:host([gradient]) > button {
+  @include fds.background(gradient-vertical);
+  @include fds.color(on-gradient);
 }
 
 :host([fullWidth]) {
   width: 100%;
 }
 
-:host([dense])>button {
+:host([dense]) > button {
   @include fds.typography('button-3');
   @include fds.padding-x(3);
 
@@ -74,12 +76,13 @@
   padding-bottom: var(--fds-button-dense-padding-y);
 }
 
-:host([large])>button {
+:host([large]) > button {
   @include fds.typography('button-1');
   @include fds.padding-x(4);
 
   --fds-icon-size: var(--fds-icon-size-large);
   --fds-button-radius: var(--fds-button-radius-large);
+
   padding-top: var(--fds-button-large-padding-y);
   padding-bottom: var(--fds-button-large-padding-y);
 }
@@ -87,7 +90,7 @@
 :host([disabled]) {
   pointer-events: none;
 
-  >button {
+  > button {
     &:hover::after {
       opacity: 0;
     }

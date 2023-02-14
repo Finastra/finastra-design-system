@@ -39,11 +39,11 @@ export class SearchInput extends BaseTextField {
   }
 
   protected override renderTrailingIcon(): TemplateResult | string {
-    return this.loading ? this.renderLoadingButton() : this.renderClearButton()
+    return this.loading ? this.renderLoadingButton() : this.renderClearButton();
   }
 
   protected renderLoadingButton(): TemplateResult {
-    return html`<fds-circular-progress class="circular-loader" indeterminate density="-6"></fds-circular-progress>`
+    return html`<fds-circular-progress class="circular-loader" indeterminate density="-6"></fds-circular-progress>`;
   }
 
   protected renderClearButton(): TemplateResult | string {
@@ -53,8 +53,13 @@ export class SearchInput extends BaseTextField {
       'fds-search-input-clear-button--hide': !showClearButton
     };
     return this.disabled
-        ? html`<fds-icon-button class="clear-icon ${classMap(clearButtonclasses)}" icon="close" @click="${this.clear}" disabled></fds-icon-button>`
-        : html`<fds-icon-button class="clear-icon ${classMap(clearButtonclasses)}" icon="close" @click="${this.clear}"></fds-icon-button>`
+      ? html`<fds-icon-button
+          class="clear-icon ${classMap(clearButtonclasses)}"
+          icon="close"
+          @click="${this.clear}"
+          disabled
+        ></fds-icon-button>`
+      : html`<fds-icon-button class="clear-icon ${classMap(clearButtonclasses)}" icon="close" @click="${this.clear}"></fds-icon-button>`;
   }
 
   private clear() {

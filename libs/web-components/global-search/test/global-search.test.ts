@@ -1,8 +1,6 @@
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import { GlobalSearch } from '../src';
 
-
-
 describe('Global Search', () => {
   describe(' - Accessibility', () => {
     it('loads accessibly', async () => {
@@ -12,5 +10,4 @@ describe('Global Search', () => {
       await expect(el).to.be.accessible();
     });
   });
-  
 });

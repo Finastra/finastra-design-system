@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './styles.css';
 
@@ -67,7 +67,7 @@ export class Avatar extends LitElement {
     </div>`;
   }
 
-  transformName(fullName: string, dense?: any): string {
+  transformName(fullName: string, dense?: boolean): string {
     const [name, surname] = fullName.split(' ');
     let initials = name.charAt(0).toUpperCase();
     if (!dense) {
@@ -80,7 +80,7 @@ export class Avatar extends LitElement {
     return initials;
   }
 
-  transformShortName(shortName: string, dense?: any): string {
+  transformShortName(shortName: string, dense?: boolean): string {
     if (!dense) {
       if (shortName.length > 2) {
         return shortName.substring(0, 2);

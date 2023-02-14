@@ -2,7 +2,7 @@ import '@finastra/logo';
 import '@material/mwc-top-app-bar';
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { EVENTS } from './constants';
+import { events } from './constants';
 import { styles } from './styles.css';
 
 /**
@@ -10,7 +10,7 @@ import { styles } from './styles.css';
  * @slot navigation - Slot to add content in the left of the app bar, just after the app name or in the second line in prominent app bar
  * @slot content - Slot to add content in the center of the app bar
  * @slot actions - Slot to add content in the right side of the app bar
- * 
+ *
  * @fires MDCTopAppBar:nav - Fired when clicking on burger button
  *
  * @cssprop --fds-logo - String representing an image encoded in base64
@@ -60,7 +60,7 @@ export class AppBar extends LitElement {
   }
 
   private handleNavigationClick() {
-    this.dispatchEvent(new Event(EVENTS.NAVIGATION, { bubbles: true, cancelable: true }));
+    this.dispatchEvent(new Event(events.NAVIGATION, { bubbles: true, cancelable: true }));
   }
 
   private navigateToLogoUri() {

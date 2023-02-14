@@ -18,13 +18,13 @@ export class ButtonToggleGroup extends LitElement {
    * Index of current selection, starts at 0
    */
   @property({ type: Number, attribute: 'selected-index' })
-  selectedIndex: number = 0;
+  selectedIndex = 0;
 
   /**
    * Current selected value
    */
-  value: string = '';
-  
+  value = '';
+
   /**
    * Make the button toggle smaller
    */
@@ -37,21 +37,21 @@ export class ButtonToggleGroup extends LitElement {
       this._updateSelection();
     });
   }
-  
+
   render() {
     return html`<div role="radiogroup">
       <slot @FDSToggle:click="${this._handleClick}"></slot>
-    </div>`
+    </div>`;
   }
 
-  async updated(changedProperties: Map<string, any>) {
+  async updated(changedProperties: Map<string, unknown>) {
     super.updated(changedProperties);
     const selectedButton = this.toggleButtons[this.selectedIndex] as ButtonToggle;
-    
+
     if (!selectedButton) {
       return;
     }
-    
+
     if (changedProperties.has('selectedIndex')) {
       await this.updateComplete;
       this._select(selectedButton);
@@ -73,17 +73,17 @@ export class ButtonToggleGroup extends LitElement {
   }
 
   private _resetSelection() {
-    this.toggleButtons.forEach(button => {
+    this.toggleButtons.forEach((button) => {
       button.classList.remove('selected');
     });
   }
 
   private _updateSelection() {
     const selection = this.toggleButtons[this.selectedIndex] as ButtonToggle;
-    const rect:DOMRect = selection?.getBoundingClientRect();
-    
-    this.style.setProperty('--fds-toggle-selection-x', (selection?.offsetLeft - 5) + 'px');
-    this.style.setProperty('--fds-toggle-selection-width', (rect?.width) + 'px');
+    const rect: DOMRect = selection?.getBoundingClientRect();
+
+    this.style.setProperty('--fds-toggle-selection-x', selection?.offsetLeft - 5 + 'px');
+    this.style.setProperty('--fds-toggle-selection-width', rect?.width + 'px');
   }
 
   private _handleClick(e: Event) {
@@ -92,7 +92,7 @@ export class ButtonToggleGroup extends LitElement {
       bubbles: true,
       composed: true
     };
-    
+
     this.selectedIndex = this.toggleButtons.indexOf(button);
     this._select(button);
     this.dispatchEvent(new Event('change', options));

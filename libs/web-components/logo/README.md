@@ -1,10 +1,10 @@
 # Logo
+
 [![See it on NPM!](https://img.shields.io/npm/v/@finastra/logo?style=for-the-badge)](https://www.npmjs.com/package/@finastra/logo)
 [![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@finastra/logo?style=for-the-badge)](https://bundlephobia.com/result?p=@finastra/logo)
 [![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://finastra.github.io/finastra-design-system/?path=/story/graphic-elements-logo--default)
 
 The `<fds-logo>` component displays an image encoded in Base64 from the `--fds-logo` CSS variable.
-
 
 ## Usage
 
@@ -40,20 +40,22 @@ url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdm
 
 <br/>
 
-
 ### API
+
 <!-- DOC -->
+
 #### Attributes
 
 | Attribute | Type      | Default | Description            |
-|-----------|-----------|---------|------------------------|
+| --------- | --------- | ------- | ---------------------- |
 | `dense`   | `boolean` | false   | Logo in a smaller size |
 
 #### CSS Custom Properties
 
 | Property            | Default | Description                                    |
-|---------------------|---------|------------------------------------------------|
+| ------------------- | ------- | ---------------------------------------------- |
 | `--fds-logo`        |         | String representing an image encoded in base64 |
 | `--fds-logo-height` | "60px"  |                                                |
 | `--fds-logo-width`  | "122px" |                                                |
+
 <!-- /DOC -->

@@ -2,8 +2,8 @@
 
 :host {
   --mdc-drawer-width: 300px;
-  @include fds.bg-color(surface);
-  @include fds.text-color(on-surface);
+  @include fds.background(surface);
+  @include fds.color(on-surface);
   @include fds.mdc(theme-text-icon-on-background, on-surface-medium);
 
   .navigation {
@@ -11,8 +11,8 @@
   }
 }
 
-@media (min-width:960px) {
+@media (min-width: 960px) {
   .navigation {
-    display: none!important;
+    display: none !important;
   }
 }

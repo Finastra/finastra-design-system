@@ -5,7 +5,6 @@ import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes } from './sb-generated/fds-menu-trigger.json';
 
-
 const README = require('../README.md');
 
 export default {

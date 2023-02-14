@@ -5,9 +5,9 @@ function randomIntFromInterval(min: number, max: number) {
 
 function getPerfData() {
   let year = 0;
-  const historic = [] as any[];
+  const historic = [] as { x: number; y: number }[];
   for (let i = 0; i < 10; i++) {
-    historic.push({ x: year, y: randomIntFromInterval(0, 9999) });
+    historic.push({ x: year, y: parseFloat(randomIntFromInterval(0, 9999)) });
     year++;
   }
   return historic;

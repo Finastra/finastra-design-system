@@ -1,9 +1,0 @@
-<div class="scroll-to-top-container" (click)="onClick()" [@scrollAnimation]="state$ | async">
-  <ng-container *ngTemplateOutlet="customTemplate || defaultTemplate"> </ng-container>
-</div>
-
-<ng-template #defaultTemplate>
-  <button mat-fab color="gradient" aria-label="Scroll to top">
-    <mat-icon>keyboard_arrow_up</mat-icon>
-  </button>
-</ng-template>

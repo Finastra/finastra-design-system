@@ -16,19 +16,19 @@ export default {
   argTypes: {
     dataSource: {
       type: 'array',
-      description: "a set of data",
+      description: 'a set of data',
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: '[]'
         }
-      },
+      }
     },
     columns: {
       type: 'array',
       description: 'a set of columns settings',
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: '[]'
         }
       }
     },
@@ -37,7 +37,7 @@ export default {
       description: 'a set of columns id to display',
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: '[]'
         }
       }
     },
@@ -106,7 +106,7 @@ export default {
       type: 'figma',
       url: ' https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=48606%3A19621'
     }
-  },
+  }
 };
 
 const Template: Story<DataTable> = ({
@@ -120,22 +120,24 @@ const Template: Story<DataTable> = ({
   dense = false
 }) => {
   return html`
-  <fds-data-table 
-    ?dense='${dense}'
-    .dataSource=${dataSource} .columns=${columns} .columnsToDisplay=${columnsToDisplay}
-    .selectable=${selectable} .showSingleSelectRadioBox=${showSingleSelectRadioBox} .multiSelect=${multiSelect}
-    .showMultiSelectCheckBox=${showMultiSelectCheckBox}>
-    <template id="fds-table-customized">
-      <div style="width: fit-content">
-          <span>
-              {path} | {type}
-          </span>
-      </div>
-    </template>
-  </fds-data-table>
-  `
+    <fds-data-table
+      ?dense="${dense}"
+      .dataSource=${dataSource}
+      .columns=${columns}
+      .columnsToDisplay=${columnsToDisplay}
+      .selectable=${selectable}
+      .showSingleSelectRadioBox=${showSingleSelectRadioBox}
+      .multiSelect=${multiSelect}
+      .showMultiSelectCheckBox=${showMultiSelectCheckBox}
+    >
+      <template id="fds-table-customized">
+        <div style="width: fit-content">
+          <span> {path} | {type} </span>
+        </div>
+      </template>
+    </fds-data-table>
+  `;
 };
-
 
 export const DataTableDefault: Story<DataTable> = Template.bind({});
 export const DataTableDense: Story<DataTable> = Template.bind({});
@@ -147,8 +149,7 @@ export const DataTableSingleSelectRadioBox: Story<DataTable> = Template.bind({})
 DataTableSingleSelectRadioBox.args = {
   dense: true,
   showSingleSelectRadioBox: true
-}
-
+};
 
 export const DataTableMultiSelectNormal: Story<DataTable> = Template.bind({});
 DataTableMultiSelectNormal.args = {
@@ -156,10 +157,10 @@ DataTableMultiSelectNormal.args = {
   selectable: true,
   multiSelect: true,
   showMultiSelectCheckBox: false
-}
+};
 
 export const DataTableMultipleSelectCheckBox: Story<DataTable> = Template.bind({});
 DataTableMultipleSelectCheckBox.args = {
   dense: true,
   showMultiSelectCheckBox: true
-}
+};

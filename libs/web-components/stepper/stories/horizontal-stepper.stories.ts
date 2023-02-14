@@ -34,12 +34,12 @@ export default {
   argTypes: {
     ...argTypes,
     steps: {
-      description: "An array of step (label + optional description).",
+      description: 'An array of step (label + optional description).',
       table: {
         defaultValue: {
           summary: '[]'
         }
-      },
+      }
     }
   },
   args: {
@@ -61,8 +61,14 @@ export default {
   cssprops
 } as Meta;
 
-const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, readonly = false, hideIndex= false, }) => {
-  return html`<fds-horizontal-stepper .steps=${steps} .currentStepIndex=${currentStepIndex} ?secondary=${secondary} ?readonly=${readonly} ?hideIndex=${hideIndex}></fds-horizontal-stepper>`;
+const HTemplate: Story = ({ currentStepIndex, steps = demoData, secondary = false, readonly = false, hideIndex = false }) => {
+  return html`<fds-horizontal-stepper
+    .steps=${steps}
+    .currentStepIndex=${currentStepIndex}
+    ?secondary=${secondary}
+    ?readonly=${readonly}
+    ?hideIndex=${hideIndex}
+  ></fds-horizontal-stepper>`;
 };
 
 export const Default: Story<HorizontalStepper> = HTemplate.bind({});

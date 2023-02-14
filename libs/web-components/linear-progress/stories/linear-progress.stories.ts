@@ -22,17 +22,17 @@ export default {
   },
   decorators: [
     (story) =>
-    html`${story()}
-    <style>
-      fds-linear-progress {
-        width: 300px;
-      }
-    </style>`
+      html`${story()}
+        <style>
+          fds-linear-progress {
+            width: 300px;
+          }
+        </style>`
   ]
 } as Meta;
 
 const Template: Story<LinearProgress> = ({ progress, indeterminate = false }) => {
-  return html`<fds-linear-progress  progress=${progress} ?indeterminate=${indeterminate}></fds-linear-progress>`;
+  return html`<fds-linear-progress progress=${progress} ?indeterminate=${indeterminate}></fds-linear-progress>`;
 };
 
 export const Default: Story<LinearProgress> = Template.bind({});
@@ -46,5 +46,5 @@ Indeterminate.args = {
   indeterminate: true
 };
 Indeterminate.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };

@@ -4,9 +4,9 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { styles } from './icon-bar.css';
 
 /**
-  * @attr [showLabels=false] - Show or hide the items labels.
-  * @attr [hideNotification=false] - Removes the notification on item click.
-*/
+ * @attr [showLabels=false] - Show or hide the items labels.
+ * @attr [hideNotification=false] - Removes the notification on item click.
+ */
 
 @customElement('fds-icon-bar')
 export class IconBar extends LitElement {
@@ -24,15 +24,15 @@ export class IconBar extends LitElement {
 
   render() {
     const nodes = this.getItems();
-    nodes.forEach(node => {
+    nodes.forEach((node) => {
       if (node instanceof LitElement) {
         node.requestUpdate();
       }
-    })
+    });
     return html`
       <slot></slot>
       <div class="footer">
-         ${this.footer ? html` <fds-divider></fds-divider>` : ''}
+        ${this.footer ? html` <fds-divider></fds-divider>` : ''}
         <slot name="footer" @slotchange=${this.onFooterSlotChanged}></slot>
       </div>
     `;
@@ -44,7 +44,7 @@ export class IconBar extends LitElement {
         <fds-divider></fds-divider>
         <slot name="footer"></slot>
       </div>
-    `
+    `;
   }
 
   onFooterSlotChanged() {
@@ -61,22 +61,22 @@ export class IconBar extends LitElement {
       if (node === current) {
         this.dispatchSelectedEvent(index);
         return;
-      }
-      else {
+      } else {
         node['current'] = false;
       }
-    })
+    });
   }
 
   dispatchSelectedEvent(index) {
-    this.dispatchEvent(new CustomEvent('selected', {
-      bubbles: true,
-      cancelable: true,
-      detail: {
-        index
-      }
-    }
-    ));
+    this.dispatchEvent(
+      new CustomEvent('selected', {
+        bubbles: true,
+        cancelable: true,
+        detail: {
+          index
+        }
+      })
+    );
   }
 
   getItems() {
@@ -84,11 +84,11 @@ export class IconBar extends LitElement {
     const slotSelector = 'slot';
     const slotEl = this.renderRoot?.querySelectorAll<HTMLSlotElement>(slotSelector);
     slotEl.forEach((node) => {
-      node?.assignedNodes().filter(node => {
+      node?.assignedNodes().filter((node) => {
         slotArray.push(node);
       });
-    })
-    return slotArray.filter(node => node instanceof LitElement) ?? [];;
+    });
+    return slotArray.filter((node) => node instanceof LitElement) ?? [];
   }
 }
 

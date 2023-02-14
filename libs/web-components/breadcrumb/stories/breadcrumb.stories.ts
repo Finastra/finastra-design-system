@@ -80,4 +80,4 @@ WithStyle.args = {
       link: '/datasets/customer-data'
     }
   ]
-}
+};

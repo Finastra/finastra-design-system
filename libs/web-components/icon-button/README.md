@@ -20,13 +20,14 @@ import '@finastra/icon-button';
 <fds-icon-button icon="code"></fds-icon-button>
 ```
 
-
 ### API
+
 <!-- DOC -->
+
 #### Properties
 
 | Property        | Attribute   | Type                      | Default | Description               |
-|-----------------|-------------|---------------------------|---------|---------------------------|
+| --------------- | ----------- | ------------------------- | ------- | ------------------------- |
 | `ariaHasPopup`  |             | `AriaHasPopup`            |         |                           |
 | `ariaLabel`     |             | `string`                  |         |                           |
 | `buttonElement` |             | `HTMLElement`             |         |                           |
@@ -40,7 +41,8 @@ import '@finastra/icon-button';
 #### Methods
 
 | Method  | Type       |
-|---------|------------|
+| ------- | ---------- |
 | `blur`  | `(): void` |
 | `focus` | `(): void` |
+
 <!-- /DOC -->

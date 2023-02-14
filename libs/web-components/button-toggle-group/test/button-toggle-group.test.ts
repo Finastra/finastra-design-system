@@ -37,7 +37,6 @@ describe('ButtonToggleGroup', () => {
       </fds-button-toggle-group>
     `);
 
-
     const button1: ButtonToggle = el.children[0] as ButtonToggle;
     const button2: ButtonToggle = el.children[1] as ButtonToggle;
     await elementUpdated(el);
@@ -48,14 +47,14 @@ describe('ButtonToggleGroup', () => {
   });
 
   xit('should change selection', async () => {
-    let el = await fixture(html`
+    const el = await fixture(html`
       <fds-button-toggle-group>
         <fds-button-toggle label="test1"></fds-button-toggle>
         <fds-button-toggle value="success"></fds-button-toggle>
       </fds-button-toggle-group>
     `);
 
-    let toggle: ButtonToggleGroup = shadowRoot(el);
+    const toggle: ButtonToggleGroup = shadowRoot(el);
     await elementUpdated(toggle);
     const button: ButtonToggle = el.children[1] as ButtonToggle;
     button.click(); // this is not dispatching 'change' event

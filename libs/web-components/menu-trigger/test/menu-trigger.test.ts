@@ -14,7 +14,7 @@ describe('MenuTrigger', () => {
     const el: MenuTrigger = await fixture(html`<fds-menu-trigger></fds-menu-trigger>`);
     await elementUpdated(el);
     await shadowRoot(el).querySelector('fds-outlined-button')?.click();
-    await expect(el.on && el._menuTrailingIcon === "expand_less").to.be.true;
+    await expect(el.on && el._menuTrailingIcon === 'expand_less').to.be.true;
   });
 });
 

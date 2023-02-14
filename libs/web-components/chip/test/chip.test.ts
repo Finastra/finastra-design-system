@@ -10,7 +10,6 @@ describe('Chip', () => {
     await expect(el).to.be.accessible();
   });
 
-
   it('displays icons', async () => {
     const el: Chip = await fixture(html`<fds-chip label="Test" icon="event" TrailingIcon="cancel"></fds-chip>`);
 

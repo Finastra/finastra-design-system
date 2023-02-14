@@ -37,16 +37,14 @@ jobs:
         run: npm ci --loglevel=error
         env:
           SKIP_POST_INSTALL: true
-      - name: Build DevKit
-        run: npm run build:devkit
       - name: Build web components
-        run: npm run wc:build
+        run: npm run build
       - name: Build tippy theme
         run: npm run build:tippy-theme
 
       # Test
       - name: Unit tests
-        run: npm run wc:test
+        run: npm run test
       - name: Codecov
         uses: codecov/codecov-action@v2
         with:
@@ -62,7 +60,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          buildScriptName: wc:build:storybook
+          buildScriptName: build:storybook
 
       - name: Compliance Check
-        run: npm run wc:compliance:check
+        run: npm run compliance:check

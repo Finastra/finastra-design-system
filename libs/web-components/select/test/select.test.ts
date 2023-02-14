@@ -4,7 +4,7 @@ import { Select } from '../src/select.js';
 
 describe('Select', () => {
   it('loads accessibly', async () => {
-    const el: Select = await fixture(html`<fds-select label='test'></fds-select>`);
+    const el: Select = await fixture(html`<fds-select label="test"></fds-select>`);
     await elementUpdated(el);
     await expect(el).to.be.accessible();
   });

@@ -1,8 +1,0 @@
-@mixin theme($theme) {
-  $foreground: map-get($theme, foreground);
-
-  .uxg-logo,
-  .uxg-logo[dense] {
-    background: center / contain no-repeat map-get($foreground, logo);
-  }
-}

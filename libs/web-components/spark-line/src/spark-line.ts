@@ -32,22 +32,22 @@ export class SparkLine extends LitElement {
     this.updateChart(this.renderRoot);
   }
   updateChart(element) {
-    let maxX = Math.max(...this.data.map((o) => o['x']));
-    let svg = d3.select(element).select('svg').attr('width', this.width).attr('height', this.height);
-    let x = d3.scaleLinear().domain([0, maxX]).range([0, this.width]);
-    let y = d3
+    const maxX = Math.max(...this.data.map((o) => o['x']));
+    const svg = d3.select(element).select('svg').attr('width', this.width).attr('height', this.height);
+    const x = d3.scaleLinear().domain([0, maxX]).range([0, this.width]);
+    const y = d3
       .scaleLinear()
       .domain([0, 9999])
       .range([this.height - 5, 0]);
 
-    let line = d3
-      .line()
-      .x((d: any) => {
+    const line = d3
+      .line<FdsSparkLineData>()
+      .x((d: FdsSparkLineData) => {
         return x(d.x);
       })
-      .y((d: any) => y(d.y));
+      .y((d: FdsSparkLineData) => y(d.y));
 
-    let dataNum1 = this.data.filter((d) => d['x'] !== undefined);
+    const dataNum1 = this.data.filter((d) => d['x'] !== undefined);
 
     svg
       .append('g')
@@ -58,7 +58,7 @@ export class SparkLine extends LitElement {
       .attr('class', 'line1')
       .attr('fill', 'rgba(0,0,0,0')
       .attr('stroke-width', 1.5)
-      .attr('d', <any>line)
+      .attr('d', line)
       .transition()
       .duration(2000);
   }

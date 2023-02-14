@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -6,14 +6,15 @@
 
 .expansion-panel-item {
   border-radius: inherit;
-  @include fds.bg-color(surface);
+  @include fds.background(surface);
   @include fds.elevation(2);
 
-  transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
   .expansion-panel-item-header {
     @include fds.property(color, on-surface);
     @include fds.typography(body-1);
+
     height: var(--fds-expansion-panel-item-header, 48px);
     display: flex;
     flex-direction: row;
@@ -23,20 +24,21 @@
     border-radius: inherit;
     transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:not([aria-disabled="true"]) {
+    &:not([aria-disabled='true']) {
       cursor: pointer;
+
       &:hover {
         @include fds.property(background, surface-hover);
       }
     }
 
-    &[aria-disabled="true"] {
+    &[aria-disabled='true'] {
       @include fds.property(color, on-surface-disabled);
-      .expansion-panel-item-expansion-indicator {  
+
+      .expansion-panel-item-expansion-indicator {
         @include fds.property(color, on-surface-disabled);
       }
     }
-
 
     .expansion-panel-item-header__content {
       display: flex;
@@ -47,24 +49,26 @@
 
     .expansion-panel-item-header__title {
       @include fds.typography(subtitle-1);
-      flex-grow: 1
+
+      flex-grow: 1;
     }
 
     .expansion-panel-item-header__description {
       @include fds.typography(body-1);
-      flex-grow: 2
+
+      flex-grow: 2;
     }
 
-
-    .expansion-panel-item-expansion-indicator {  
-      transition: transform 225ms cubic-bezier(0.4,0.0,0.2,1);
+    .expansion-panel-item-expansion-indicator {
+      transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
       transform: rotate(0deg);
       @include fds.property(color, on-surface-medium);
+
       &::after {
-        color: inherit;    
+        color: inherit;
         border-style: solid;
         border-width: 0 2px 2px 0;
-        content: "";
+        content: '';
         display: inline-block;
         padding: 3px;
         transform: rotate(45deg);
@@ -75,7 +79,7 @@
 
   &.toggle-icon-before {
     .expansion-panel-item-header {
-      flex-direction: row-reverse
+      flex-direction: row-reverse;
     }
   }
 
@@ -83,6 +87,7 @@
     box-sizing: border-box;
     @include fds.property(color, on-background);
     @include fds.typography(body-1);
+
     padding: 0 var(--fds-spacing-4, 24px);
   }
 
@@ -92,19 +97,23 @@
       visibility: hidden;
     }
   }
+
   &.expanded {
     &.display-mode-default {
       margin-bottom: var(--fds-spacing-3, 16px);
       margin-top: var(--fds-spacing-3, 16px);
-    }    
+    }
+
     .expansion-panel-item-header {
       height: var(--fds-expansion-panel-item-header-expanded, 64px);
-      .expansion-panel-item-expansion-indicator {  
+
+      .expansion-panel-item-expansion-indicator {
         transform: rotate(180deg);
       }
     }
+
     .expansion-panel-item-body {
-      padding-bottom: var(--fds-spacing-3, 16px);  
+      padding-bottom: var(--fds-spacing-3, 16px);
     }
   }
 }

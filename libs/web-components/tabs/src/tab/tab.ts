@@ -2,7 +2,6 @@ import { TabBase } from '@material/mwc-tab/mwc-tab-base';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './tab.css';
 
-
 /**
  * @attr [label=''] - Text label to display in tab.
  * @attr [icon=''] - Material design icon name to display.
@@ -18,7 +17,7 @@ export class Tab extends TabBase {
   @property({ type: Boolean }) classic = false;
   @property({ type: Boolean }) segmented = false;
   @property({ type: Boolean }) stacked = false;
-  
+
   constructor() {
     super();
   }

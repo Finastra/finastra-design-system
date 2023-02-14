@@ -23,6 +23,7 @@ export class FdsTableCellStore {
 
   getTableDataCellTemplate() {
     const cellType = getCellClassByType(this._column);
+
     return html` <td class="mdc-data-table__cell ${cellType} ${this._column.align}" style=${this._column._style ? this._column._style : ''}>
       ${this._getCellTemplateByType()}
     </td>`;
@@ -44,18 +45,18 @@ export class FdsTableCellStore {
         return this._getLinkTemplate(this._row[this._column.id]);
       case FdsColumnType.cell_template:
         return this._getCustomizedCellTemplate(this._row[this._column.id]);
-
       default:
         return this._row[this._column.id];
     }
   }
-  private _getDateTemplate(date: string) {
-    return html` <fds-icon>date_range_outline</fds-icon> ${date} `;
-  }
-  private _getSparkLineTemplate(data: any) {
+
+  private _getSparkLineTemplate(data: Array<{ x: number; y: number }>) {
     return html` <fds-spark-line .data=${data}></fds-spark-line> `;
   }
 
+  private _getDateTemplate(date: string) {
+    return html` <fds-icon>date_range_outline</fds-icon> ${date} `;
+  }
   private _getTypeDoubleTemplate(data: FdsTableTypeDouble) {
     return html` <div>${data.amount} <span style="font-weight: bold">${data.currency}</span></div>`;
   }
@@ -82,8 +83,10 @@ export class FdsTableCellStore {
     `;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private _getCustomizedCellTemplate(customized: any) {
     if (this._column.cellTemplateId) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const element = (document.getElementById(this._column?.cellTemplateId) as any).cloneNode(true);
       if (element) {
         for (const key in customized) {

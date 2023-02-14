@@ -1,4 +1,3 @@
-
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './card-header-styles.css';
@@ -17,17 +16,17 @@ export class CardHeader extends LitElement {
     super.updated(changedProperties);
     for (const child of Array.from(this.children)) {
       if (this.disabled) {
-        child.setAttribute("disabled", `${this.disabled}`);
-        if(child.children.length > 1) {
+        child.setAttribute('disabled', `${this.disabled}`);
+        if (child.children.length > 1) {
           for (const subchild of Array.from(child.children)) {
-            subchild.setAttribute("disabled", `${this.disabled}`);
+            subchild.setAttribute('disabled', `${this.disabled}`);
           }
         }
       } else {
         child.removeAttribute('disabled');
-        if(child.children.length > 1) {
+        if (child.children.length > 1) {
           for (const subchild of Array.from(child.children)) {
-            subchild.removeAttribute("disabled");
+            subchild.removeAttribute('disabled');
           }
         }
       }

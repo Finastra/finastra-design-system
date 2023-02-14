@@ -1,5 +1,7 @@
-@use "@finastra/fds-theme" as fds;
-@use '@finastra/fds-theme/dark' with ($class: 'dark-theme');
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme/dark' with (
+  $class: 'dark-theme'
+);
 
 $stepper-bg: transparent;
 
@@ -10,16 +12,19 @@ $stepper-bg: transparent;
   min-height: 100%;
   min-width: 100%;
 }
+
 .wizard {
   display: flex;
   width: 100%;
   height: 100%;
   flex-direction: column;
 }
+
 .pages {
   overflow-y: auto;
   height: 100%;
 }
+
 .content {
   flex: 1 1 90%;
   box-sizing: border-box;
@@ -40,6 +45,7 @@ $stepper-bg: transparent;
   .steps-counter {
     @include fds.typography(headline-5);
     @include fds.property(color, on-background);
+
     padding-bottom: var(--fds-spacing-3, 16px);
   }
 }
@@ -48,6 +54,7 @@ $stepper-bg: transparent;
   display: flex;
   justify-content: space-between;
   padding: var(--fds-spacing-4, 24px);
+
   .left,
   .right,
   .center {
@@ -55,9 +62,9 @@ $stepper-bg: transparent;
     flex-direction: row;
     align-items: center;
 
-    slot[name="right-action"]::slotted(*),
-    slot[name="left-action"]::slotted(*),
-    slot[name="previous"]::slotted(*) {
+    slot[name='right-action']::slotted(*),
+    slot[name='left-action']::slotted(*),
+    slot[name='previous']::slotted(*) {
       margin-right: var(--fds-spacing-3, 16px);
     }
   }

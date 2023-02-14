@@ -1,4 +1,4 @@
-@use "@finastra/fds-theme" as fds;
+@use '@finastra/fds-theme' as fds;
 
 :host {
   display: block;
@@ -6,8 +6,8 @@
 
 :host([seperator]) {
   .mdc-tab-bar mwc-tab-scroller {
-    ::slotted(fds-tab:not([active]):not(:first-child))::before {
-      content: "";
+    ::slotted(fds-tab:not([active], :first-child))::before {
+      content: '';
       display: block;
       position: absolute;
       top: 12px;

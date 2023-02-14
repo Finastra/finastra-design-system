@@ -20,19 +20,17 @@ export default {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=56471%3A19066'
-     },
+    }
   },
   decorators: []
 } as Meta;
 
-
 const Template: Story = ({ inset = undefined, vertical = false }) => {
-  return html`<fds-divider style='flex: 1; height: 50px; width: 700px' inset=${ifDefined(inset)} ?vertical=${vertical}></fds-divider>`;
+  return html`<fds-divider style="flex: 1; height: 50px; width: 700px" inset=${ifDefined(inset)} ?vertical=${vertical}></fds-divider>`;
 };
 
 export const Default: Story<Divider> = Template.bind({});
-Default.args = {
-};
+Default.args = {};
 
 export const InsetLeft: Story<Divider> = Template.bind({});
 InsetLeft.args = {

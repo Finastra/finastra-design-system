@@ -2,7 +2,7 @@ name: Release WC
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [closed]
     paths:
       - '.release_wc.txt'
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -27,7 +27,7 @@ jobs:
       - name: Build fds theme
         run: npm run build:fds-theme
       - name: Build web components
-        run: npm run wc:build
+        run: npm run build
       - name: Get Release Version
         run: |
           RELEASE_VERSION=$(node -p 'require("./lerna.json").version')
@@ -47,7 +47,7 @@ jobs:
       - name: Tag Check
         id: tag_check
         run: |
-          GET_API_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/git/ref/tags/v${RELEASE_VERSION}"
+          GET_API_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/git/ref/tags/wc${RELEASE_VERSION}"
           http_status_code=$(curl -LI $GET_API_URL -o /dev/null -w '%{http_code}\n' -s \
             -H "Authorization: token ${GITHUB_TOKEN}")
           if [ "$http_status_code" -ne "404" ] ; then
@@ -73,9 +73,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.RELEASE_VERSION }}
+          tag_name: wc${{ env.RELEASE_VERSION }}
           # Copy Pull Request's tile and body to Release Note
-          release_name: v${{ env.RELEASE_VERSION }}
+          release_name: wc@${{ env.RELEASE_VERSION }}
           body: ''
           draft: false
           prerelease: false
