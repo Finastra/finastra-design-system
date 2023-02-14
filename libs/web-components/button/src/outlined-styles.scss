@@ -18,7 +18,7 @@
 :host([gradient]) > button {
   // Todo: border color using gradient token
   // with border-radius and bg transparency.
-  border-color: color.mix(#694ed6, #c137a2, 50%);
+  @include fds.property('border-color', primary);
 }
 
 :host([success]) > button {
