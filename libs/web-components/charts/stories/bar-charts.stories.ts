@@ -14,11 +14,7 @@ export default {
     width: '500px',
     height: '300px',
     chartTitle: 'Number of Calls',   
-    stacked: false,
-    stroke: {
-      width: 1,
-      colors: ['#fff']
-    },
+    stacked: false,  
     series: [
       {
         name: 'Legend 1',
@@ -113,6 +109,10 @@ export const Stacked: Story<BarChart> = Template.bind({})
     xGrid: true,
     yGrid: false,
     stacked: true,    
+    stroke: {
+      width: 1,
+      colors: ['#fff']
+    },
     series: [
       {
         name: 'Legend 1',
