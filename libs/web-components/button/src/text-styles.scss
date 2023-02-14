@@ -37,6 +37,13 @@
   --fds-button-overlay: var(--fds-error);
 }
 
+:host([on-dark]) > button {
+  @include fds.color('on-dark');
+
+  --fds-icon-color: var(--fds-on-dark);
+  --fds-button-overlay: var(--fds-on-dark);
+}
+
 :host([disabled]) > button {
   @include fds.color('on-surface-disabled');
 }

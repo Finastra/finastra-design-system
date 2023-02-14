@@ -25,6 +25,11 @@
   @include fds.color('on-error');
 }
 
+:host([on-dark]) > button {
+  @include fds.background('on-dark');
+  @include fds.color('on-light');
+}
+
 :host([disabled]) > button {
   @include fds.background('surface-disabled');
   @include fds.color('on-surface-disabled');

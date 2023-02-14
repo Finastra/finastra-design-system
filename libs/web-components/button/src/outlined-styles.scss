@@ -29,6 +29,10 @@
   @include fds.property('border-color', error);
 }
 
+:host([on-dark]) > button {
+  @include fds.property('border-color', on-dark);
+}
+
 :host([dense]) > button {
   padding-top: calc(var(--fds-button-dense-padding-y) - 1px);
   padding-bottom: calc(var(--fds-button-dense-padding-y) - 1px);

@@ -25,7 +25,7 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-outlined-button
     .label=${label}
     .icon=${ifDefined(icon)}
@@ -33,6 +33,7 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
     ?gradient=${gradient}
     ?success=${success}
     ?error=${error}
+    ?on-dark=${onDark}
     ?dense=${dense}
     ?large=${large}
     ?disabled=${disabled}
@@ -41,7 +42,7 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
   ></fds-outlined-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
   return html` <style>
       .demo-container {
         width: 300px;
@@ -55,6 +56,36 @@ const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, seconda
         ?gradient=${gradient}
         ?success=${success}
         ?error=${error}
+        ?on-dark=${onDark}
+        ?dense=${dense}
+        ?large=${large}
+        ?disabled=${disabled}
+        ?fullwidth=${fullwidth}
+        ?trailingIcon=${trailingIcon}
+      ></fds-outlined-button>
+    </div>`;
+};
+
+const DarkTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
+  return html` <style>
+      .demo-container {
+        background: linear-gradient(to right, #0A0014, #4B0254);
+        width: 300px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <div class="demo-container">
+      <fds-outlined-button
+        .label=${label}
+        .icon=${ifDefined(icon)}
+        ?secondary=${secondary}
+        ?gradient=${gradient}
+        ?success=${success}
+        ?error=${error}
+        ?on-dark=${onDark}
         ?dense=${dense}
         ?large=${large}
         ?disabled=${disabled}
@@ -96,6 +127,13 @@ Error.args = {
   label: 'Error',
   icon: 'close',
   error: true
+};
+
+export const OnDark: Story<OutlinedButton> = DarkTemplate.bind({});
+OnDark.args = {
+  label: 'On dark',
+  icon: 'dark_mode',
+  onDark: true
 };
 
 export const TrailingIcon: Story<OutlinedButton> = Template.bind({});
