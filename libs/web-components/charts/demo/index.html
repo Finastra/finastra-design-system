@@ -61,10 +61,10 @@
 </div>
 <div>Radial Bar Chart</div>
 <div class="main-content">
-    <div>Default</div>
-    <div class="card">
-        <fds-radial-bar-chart id="radialBarChart" width="380"></fds-radial-bar-chart>
-    </div>
+  <div>Default</div>
+  <div class="card">
+    <fds-radial-bar-chart id="radialBarChart" width="380"></fds-radial-bar-chart>
+  </div>
 </div>
 
 <div>LineChart</div>
@@ -88,135 +88,138 @@
     ></fds-line-chart>
   </div>
 </div>
-<div> Bar Chart</div>
+<div>Bar Chart</div>
 <div class="main-content">
-    <div>vertical bar chart</div>
+  <div>vertical bar chart</div>
 
-    <div class="card bar">
-        <fds-bar-chart id="barChart"></fds-bar-chart>
-    </div>
-    <div>horizontal bar chart </div>
+  <div class="card bar">
+    <fds-bar-chart id="barChart"></fds-bar-chart>
+  </div>
+  <div>horizontal bar chart</div>
 
-    <div class="card bar">
-        <fds-bar-chart id="horizontalBarChart"></fds-bar-chart>
-    </div>
-    <script>
-        const pieCharts = document.querySelectorAll('#pieChart');
-        const pieChartsFocus = document.querySelectorAll('#pieChartFocus');
-        const radialBarCharts = document.querySelectorAll('#radialBarChart');
-        const barChart = document.querySelector('#barChart');
-        const horizontalBarChart = document.querySelector('#horizontalBarChart');
-        const lineCharts = document.querySelectorAll('#lineChart');
+  <div class="card bar">
+    <fds-bar-chart id="horizontalBarChart"></fds-bar-chart>
+  </div>
+  <script>
+    const pieCharts = document.querySelectorAll('#pieChart');
+    const pieChartsFocus = document.querySelectorAll('#pieChartFocus');
+    const radialBarCharts = document.querySelectorAll('#radialBarChart');
+    const barChart = document.querySelector('#barChart');
+    const horizontalBarChart = document.querySelector('#horizontalBarChart');
+    const lineCharts = document.querySelectorAll('#lineChart');
 
-        pieCharts.forEach((pieChart) => {
-            pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28];
-            pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon'];
-        })
-        pieChartsFocus.forEach((pieChart) => {
-            pieChart.data = [44, 55];
-            pieChart.labels = ['Apple', 'Mango'];
-        })
+    pieCharts.forEach((pieChart) => {
+      pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28];
+      pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon'];
+    });
+    pieChartsFocus.forEach((pieChart) => {
+      pieChart.data = [44, 55];
+      pieChart.labels = ['Apple', 'Mango'];
+    });
 
-        radialBarCharts.forEach((radialBarChart) => {
-            radialBarChart.data = [80];
-            radialBarChart.labels = ['Confidence Score'];
-        })
+    radialBarCharts.forEach((radialBarChart) => {
+      radialBarChart.data = [80];
+      radialBarChart.labels = ['Confidence Score'];
+    });
 
-        barChart.barTitle = "Number of Calls";
-        barChart.horizontal = false;
-        barChart.xGrid = false;
-        barChart.yGrid = true;
-        // barChart.legend = true;
-        // barChart.toolbar=  true;
-        barChart.series = [{
-            name: 'Legend 1',
-            data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
-        }, {
-            name: 'Legend 2',
-            data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
-        }];
-        barChart.categories = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        horizontalBarChart.barTitle = "Number of calls";
-        horizontalBarChart.horizontal = true;
-        horizontalBarChart.legend = false;
-        horizontalBarChart.stacked = true;
-        horizontalBarChart.stroke = false;
-        horizontalBarChart.xGrid = true;
-        horizontalBarChart.yGrid = false;
-        // horizontalBarChart.toolbar = true;
-        horizontalBarChart.series = [
-            {
-            name: 'Legend 1',
-            data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
-        }, 
-        {
-            name: 'Legend 2',
-            data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
-        }];
-        horizontalBarChart.categories = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        lineCharts.forEach((lineChart) => {
-    lineChart.series = [
+    barChart.barTitle = 'Number of Calls';
+    barChart.horizontal = false;
+    barChart.xGrid = false;
+    barChart.yGrid = true;
+    barChart.series = [
       {
-        name: 'High - 2022',
-        data: [28, 29, 33, 36, 32, 32, 33]
+        name: 'Legend 1',
+        data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
       },
       {
-        name: 'Low - 2022',
-        data: [12, 11, 14, 18, 17, 13, 13]
+        name: 'Legend 2',
+        data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
       }
     ];
-    lineChart.xaxis = {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-      tickPlacement: 'between',
-      title: {
-        text: 'Month',
-        offsetY: 80
-      },
-      labels: {
-        show: true
-      }
-    };
-    lineChart.yaxis = {
-      min: 5,
-      max: 40,
-      title: {
-        text: 'Temperature'
-      },
-      axisTicks: {
-        show: true
-      },
-      axisBorder: {
-        show: false
-      }
-    };
-  });
-    </script>
-    <style>
-        .card {
-            background-color: var(--fds-surface);
-            padding: 24px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 500px;
-            width: 440px;
-        }
+    barChart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-        .card.bar {
-            width: 668px;
-            height: 416px;
-        }
+    horizontalBarChart.barTitle = 'Number of calls';
+    horizontalBarChart.horizontal = true;
+    horizontalBarChart.legend = false;
+    horizontalBarChart.stacked = true;
+    horizontalBarChart.stroke = false;
+    horizontalBarChart.xGrid = true;
+    horizontalBarChart.yGrid = false;
+    horizontalBarChart.series = [
+      {
+        name: 'Legend 1',
+        data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
+      },
+      {
+        name: 'Legend 2',
+        data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
+      }
+    ];
+    horizontalBarChart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-        #barChart {
-            width: 100%;
-            height: 100%;
+    lineCharts.forEach((lineChart) => {
+      lineChart.series = [
+        {
+          name: 'High - 2022',
+          data: [28, 29, 33, 36, 32, 32, 33]
+        },
+        {
+          name: 'Low - 2022',
+          data: [12, 11, 14, 18, 17, 13, 13]
         }
-        #horizontalBarChart {
-            width: 100%;
-            height: 100%;
+      ];
+      lineChart.xaxis = {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        tickPlacement: 'between',
+        title: {
+          text: 'Month',
+          offsetY: 80
+        },
+        labels: {
+          show: true
         }
-    </style>
+      };
+      lineChart.yaxis = {
+        min: 5,
+        max: 40,
+        title: {
+          text: 'Temperature'
+        },
+        axisTicks: {
+          show: true
+        },
+        axisBorder: {
+          show: false
+        }
+      };
+    });
+  </script>
+  <style>
+    .card {
+      background-color: var(--fds-surface);
+      padding: 24px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 440px;
+    }
+
+    .card.bar {
+      width: 668px;
+      height: 416px;
+    }
+
+    #barChart {
+      width: 100%;
+      height: 100%;
+    }
+
+    #horizontalBarChart {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</div>
