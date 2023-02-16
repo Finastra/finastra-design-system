@@ -25,11 +25,15 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
   return html`<fds-button
     label=${label}
     icon=${ifDefined(icon)}
     ?secondary=${secondary}
+    ?gradient=${gradient}
+    ?success=${success}
+    ?error=${error}
+    ?on-dark=${onDark}
     ?dense=${dense}
     ?large=${large}
     ?disabled=${disabled}
@@ -38,7 +42,7 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
   ></fds-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
   return html` <style>
       .demo-container {
         width: 300px;
@@ -49,6 +53,39 @@ const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, seconda
         label=${label}
         icon=${ifDefined(icon)}
         ?secondary=${secondary}
+        ?gradient=${gradient}
+        ?success=${success}
+        ?error=${error}
+        ?on-dark=${onDark}
+        ?dense=${dense}
+        ?large=${large}
+        ?disabled=${disabled}
+        ?fullwidth=${fullwidth}
+        ?trailingIcon=${trailingIcon}
+      ></fds-button>
+    </div>`;
+};
+
+const darkTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
+  return html` <style>
+      .demo-container {
+        background: linear-gradient(to right, #0A0014, #4B0254);
+        width: 300px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <div class="demo-container">
+      <fds-button
+        label=${label}
+        icon=${ifDefined(icon)}
+        ?secondary=${secondary}
+        ?gradient=${gradient}
+        ?success=${success}
+        ?error=${error}
+        ?on-dark=${onDark}
         ?dense=${dense}
         ?large=${large}
         ?disabled=${disabled}
@@ -69,6 +106,34 @@ Secondary.args = {
   label: 'Secondary',
   icon: 'bolt',
   secondary: true
+};
+
+export const Gradient: Story<ContainedButton> = Template.bind({});
+Gradient.args = {
+  label: 'Gradient',
+  icon: 'add',
+  gradient: true
+};
+
+export const Success: Story<ContainedButton> = Template.bind({});
+Success.args = {
+  label: 'Success',
+  icon: 'check',
+  success: true
+};
+
+export const Error: Story<ContainedButton> = Template.bind({});
+Error.args = {
+  label: 'Error',
+  icon: 'close',
+  error: true
+};
+
+export const OnDark: Story<ContainedButton> = darkTemplate.bind({});
+OnDark.args = {
+  label: 'On dark',
+  icon: 'dark_mode',
+  onDark: true
 };
 
 export const TrailingIcon: Story<ContainedButton> = Template.bind({});

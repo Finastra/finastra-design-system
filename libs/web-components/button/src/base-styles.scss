@@ -49,6 +49,10 @@
   &:focus::after {
     opacity: 0.12;
   }
+
+  .fds-button__label::first-letter {
+    text-transform: capitalize;
+  }
 }
 
 :host > button > fds-icon:last-child {
@@ -85,6 +89,10 @@
 
   padding-top: var(--fds-button-large-padding-y);
   padding-bottom: var(--fds-button-large-padding-y);
+}
+
+:host([on-dark]) > button {
+  --fds-button-overlay: black;
 }
 
 :host([disabled]) {
