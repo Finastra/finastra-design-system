@@ -1,10 +1,15 @@
-name: 'Codecov'
-
+name: Web Components PR
 on:
-  push:
-    branches: [main]
+  pull_request:
     paths:
       - 'libs/web-components/**'
+      - '.storybook/**'
+      - 'themes/fds-theme/**'
+      - 'package.json'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -12,11 +17,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: '16'
       - name: Get npm cache directory
         id: npm-cache-dir
         run: |
@@ -28,6 +35,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       # Setup
       - name: Install Dependencies
         run: npm ci --loglevel=error
@@ -35,14 +43,28 @@ jobs:
           SKIP_POST_INSTALL: true
       - name: Build web components
         run: npm run build
+      - name: Build tippy theme
+        run: npm run build:tippy-theme
 
       # Test
       - name: Unit tests
         run: npm run test
       - name: Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./wc-coverage/lcov.info
           fail_ci_if_error: true
           verbose: true
+
+      # Storybook
+      - name: Build Storybook & deploy to Chromatic
+        if: github.event.pull_request.draft == false
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build:storybook
+
+      - name: Compliance Check
+        run: npm run compliance:check

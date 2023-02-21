@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "3.10.0",
+  "version": "1.5.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "watch": "npm run build --watch && node scripts/watcher.js",
     "wca:md": "wca analyze 'libs/web-components/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
     "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
-    "release": "changeset publish"
+    "publish": "npm publish --workspaces"
   },
   "husky": {
     "hooks": {
