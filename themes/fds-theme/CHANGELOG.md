@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0
+
+### Patch Changes
+
+- @finastra/fds-tokens@1.6.0
+
 ## 1.5.0
 
 ### Minor Changes
