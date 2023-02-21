@@ -55,11 +55,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
 
+      - name: get-current-version
+        id: version
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        uses: martinbeentjes/npm-get-version-action@main
+
       - name: GitHub release
         uses: release-drafter/release-drafter@v5
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.changesets.outputs.hasChangesets == 'false'
         with:
-          version: ${{ steps.changesets.outputs.publishedPackages[0].version }}
+          version: ${{ steps.version.outputs.current-version }}
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
