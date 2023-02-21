@@ -57,7 +57,7 @@ jobs:
 
       - name: GitHub release
         uses: release-drafter/release-drafter@v5
-        if: steps.changesets.outputs.published
+        if: steps.changesets.outputs.publishedPackages
         with:
           version: ${{ steps.changesets.outputs.publishedPackages[0].version }}
           publish: true
