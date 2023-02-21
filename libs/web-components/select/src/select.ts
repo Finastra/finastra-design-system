@@ -21,6 +21,7 @@ import { styles } from './styles.css';
  * @attr [index=-1] - Index of selected list item.
  * @attr [dense=false] - Smaller select field size.
  * @attr [labelInside=false] - Keep the label in the input.
+ * @attr [fixedMenuPosition=false] - Sets the dropdown menu's position to fixed. This is useful when the select is inside of a stacking context e.g. inside of an fds-dialog.
  * @slot default - Content to display in the selects internal <mwc-menu> element.
  */
 
@@ -29,6 +30,7 @@ export class Select extends SelectBase {
   static override styles = [styles];
   @property({ type: Boolean }) dense = false;
   @property({ type: Boolean }) labelInside = false;
+  @property({ type: Boolean }) fixedMenuPosition = false;
   constructor() {
     super();
     this.outlined = true;
