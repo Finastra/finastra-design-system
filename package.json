@@ -1,6 +1,6 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "workspaces": [
+    ".",
     "tokens",
     "themes/fds-theme",
     "themes/tippy.js",
