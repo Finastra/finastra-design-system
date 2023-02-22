@@ -220,7 +220,7 @@ const DialogTemplate: Story<Select> = ({
   fixedMenuPosition,
 }) => {
   return html`<fds-button label="Open dialog" onclick="openDialog()"></fds-button>
-  <fds-dialog id="dialog">
+  <fds-dialog id="dialog" heading="Example for select">
     <fds-select
       .value=${value}
       .label=${label}
