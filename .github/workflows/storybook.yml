@@ -11,6 +11,10 @@ on:
       - '!themes/fds-theme/package.json'
       - 'package.json'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write # for checkout and commit
 jobs:

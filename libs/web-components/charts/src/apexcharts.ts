@@ -347,7 +347,7 @@ export class ApexChartsWrapper extends LitElement {
       tooltip: {
         fillSeriesColor: false,
         marker: {
-          show: false
+          show: true
         },
         style: {
           fontSize: '12px',

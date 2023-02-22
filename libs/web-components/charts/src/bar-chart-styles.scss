@@ -1,0 +1,37 @@
+@use '@finastra/fds-theme' as fds;
+
+.fds-bar-chart {
+  .apexcharts-toolbar {
+    display: none;
+  }
+
+  .apexcharts-menu {
+    .apexcharts-menu-item {
+      @include fds.typography(body-3);
+
+      margin-right: 10px;
+    }
+  }
+
+  .apexcharts-text,
+  .apexcharts-title-text {
+    @include fds.fill(on-surface);
+
+    &.apexcharts-yaxis-label,
+    &.apexcharts-xaxis-label {
+      @include fds.fill(on-surface-medium);
+    }
+  }
+
+  .apexcharts-legend-text {
+    color: var(--fds-on-background) !important;
+  }
+
+  .apexcharts-gridline {
+    @include fds.property(stroke, surface-disabled);
+  }
+
+  .apexcharts-datalabel {
+    @include fds.fill(on-surface-medium);
+  }
+}

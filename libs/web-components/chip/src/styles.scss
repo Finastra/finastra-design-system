@@ -11,6 +11,8 @@
 
   .mdc-button {
     height: 24px;
+    min-width: auto;
+    padding: 0 12px;
     text-transform: none;
   }
 
@@ -37,7 +39,7 @@
     }
   }
 
-  .leading-icon .mdc-button__icon {
+  .mdc-button__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
@@ -65,7 +67,7 @@
     height: 32px;
   }
 
-  .leading-icon .mdc-button__icon {
+  .mdc-button__icon {
     width: 24px;
     height: 24px;
     font-size: 24px;
@@ -76,19 +78,40 @@
   }
 }
 
+:host([icon]:not([icon=''])) {
+  .mdc-button {
+    padding-left: 8px;
+
+    &.mdc-button--dense {
+      padding-left: 6px;
+    }
+  }
+}
+
+:host([trailingicon]:not([trailingicon=''])) {
+  .mdc-button {
+    padding-right: 8px;
+
+    &.mdc-button--dense {
+      padding-right: 6px;
+    }
+  }
+}
+
 :host([dense]) {
   .mdc-button {
     height: 18px;
   }
 
-  .leading-icon {
-    height: 14px;
+  .leading-icon,
+  .trailing-icon {
+    height: 12px;
   }
 
-  .leading-icon .mdc-button__icon {
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
+  .mdc-button__icon {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
   }
 }
 
