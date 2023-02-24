@@ -8,14 +8,10 @@
   },
   "license": "MIT",
   "workspaces": [
-    ".",
-    "tokens",
-    "themes/fds-theme",
-    "themes/tippy.js",
-    "libs/web-components/*"
+    "packages/*"
   ],
   "scripts": {
-    "build:fds-tokens": "npm run build -w tokens",
+    "build:fds-tokens": "npm run build -w packages/fds-tokens",
     "build:fds-theme": "npm run build -w themes/fds-theme",
     "build:scripts": "tsc --project scripts/tsconfig.json",
     "build:storybook": "build-storybook -o storybook-static",

@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "node ../scripts/build-tokens.mjs"
+    "build": "node ../../scripts/build-tokens.mjs"
   },
   "license": "MIT",
   "devDependencies": {

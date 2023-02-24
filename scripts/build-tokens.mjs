@@ -55,11 +55,11 @@ StyleDictionary.registerTransform({
 const themes = [
   {
     filename: "light",
-    source: ["../tokens/color/light.json"],
+    source: ["../packages/fds-tokens/color/light.json"],
   },
   {
     filename: "dark",
-    source: ["../tokens/color/dark.json"],
+    source: ["../packages/fds-tokens/color/dark.json"],
   },
 ];
 
@@ -117,8 +117,7 @@ for (const { filename, source } of themes) {
 }
 
 // Building sizes
-const sizeFiles = await globby("../tokens/size/*");
-// const sizeFiles = glob.sync("tokens/size/*");
+const sizeFiles = await globby("../packages/fds-tokens/size/*");
 for (const file of sizeFiles) {
   StyleDictionary.extend(
     getStyleDictionaryConfig("spacing", [file], undefined)
@@ -126,8 +125,7 @@ for (const file of sizeFiles) {
 }
 
 // Building typography
-const typoFiles = await globby("../tokens/typography/*");
-// const typoFiles = glob.sync("tokens/typography/*");
+const typoFiles = await globby("../packages/fds-tokens/typography/*");
 for (const file of typoFiles) {
   StyleDictionary.extend(
     getStyleDictionaryConfig("typography", [file], undefined)
