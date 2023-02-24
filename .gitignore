@@ -58,7 +58,7 @@ Thumbs.db
 /packages/fds-components-web/**/dist
 /packages/fds-components-web/**/package-lock.json
 **/*.tsbuildinfo*
-packages/fds-theme/prebuilt/**
+packages/fds-theme-web/prebuilt/**
 packages/fds-theme-tippy/dist
 compile
 storybook-static
