@@ -1,6 +1,5 @@
 {
-  "version": "1.4.2",
-  "packages": ["themes/fds-theme", "packages/fds-components-web/*"],
+  "version": "1.6.0",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": true
 }
