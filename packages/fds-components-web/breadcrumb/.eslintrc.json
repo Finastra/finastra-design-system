@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/breadcrumb1/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/breadcrumb/tsconfig.*?.json"]
       },
       "rules": {}
     },

@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/brand-card/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/brand-card/tsconfig.*?.json"]
       },
       "rules": {}
     },

@@ -279,7 +279,7 @@ Say we want to use the `@finastra/avatar` component inside the `@finastra/user-p
 We'd be running:
 
 ```bash
-npm run add -- libs/web-components/user-profile ./libs/web-components/avatar
+npm run add -- packages/fds-components-web/user-profile ./packages/fds-components-web/avatar
 ```
 
 > Version of the package will be automatically updated during release.

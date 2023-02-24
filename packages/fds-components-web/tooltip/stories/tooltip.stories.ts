@@ -2,8 +2,8 @@ import '@finastra/button';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import 'tippy.js/dist/tippy.css';
+import '../../../../packages/fds-theme-tippy/dist/theme.css';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-import '../../../../themes/tippy.js/dist/theme.css';
 
 const README = require('../README.md');
 

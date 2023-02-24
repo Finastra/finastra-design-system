@@ -36,11 +36,11 @@ jobs:
         run: npm ci
 
       - name: Build tokens
-        run: npm run build:fds-tokens
+        run: npm run build:tokens
       - name: Build fds-theme
-        run: npm run build:fds-theme
+        run: npm run build:theme-web
       - name: Build tippy-theme
-        run: npm run build:tippy-theme
+        run: npm run build:theme-tippy
       - name: Build web components
         run: npm run build
 

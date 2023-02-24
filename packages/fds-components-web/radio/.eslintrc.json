@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/radio/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/radio/tsconfig.*?.json"]
       },
       "rules": {}
     },

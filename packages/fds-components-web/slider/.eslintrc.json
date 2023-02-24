@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/slider/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/slider/tsconfig.*?.json"]
       },
       "rules": {}
     },

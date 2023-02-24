@@ -6,7 +6,7 @@
 
 `<fds-search-input>` delivers a single input field with a "reset" button as well as a loader and a mangifying glass icon with which to power search interactions.
 
-Search Input Component extends `fds-base-textfield` component, so it inherits all capacity of [fds-textfield](https://github.com/Finastra/finastra-design-system/blob/main/libs/web-components/textfield/README.md)
+Search Input Component extends `fds-base-textfield` component, so it inherits all capacity of [fds-textfield](https://github.com/Finastra/finastra-design-system/blob/main/packages/fds-components-web/textfield/README.md)
 
 ## Usage
 

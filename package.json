@@ -11,7 +11,7 @@
     "packages/fds-tokens",
     "packages/fds-theme-web",
     "packages/fds-theme-tippy",
-    "packages/fds-components-web"
+    "packages/fds-components-web/*"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -26,7 +26,7 @@
     "build:storybook": "build-storybook -o storybook-static",
     "build:style": "npm run build:style -w packages/fds-components-web",
     "build:ts": "tsc --build packages/fds-components-web/list packages/fds-components-web/menu packages/fds-components-web/textfield packages/fds-components-web",
-    "start": "npm run build:fds-theme && concurrently npm:watch wds --open",
+    "start": "npm run build:theme-web && concurrently npm:watch wds --open",
     "format": "prettier . --write --ignore-path .gitignore",
     "lint": "eslint . --ext .ts --fix",
     "stylelint": "stylelint **/*.scss --fix",

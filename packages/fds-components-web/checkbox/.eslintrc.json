@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/checkbox/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/checkbox/tsconfig.*?.json"]
       },
       "rules": {}
     },

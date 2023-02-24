@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/icon-button/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/icon-button/tsconfig.*?.json"]
       },
       "rules": {}
     },

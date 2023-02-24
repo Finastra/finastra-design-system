@@ -4,11 +4,11 @@ on:
     branches:
       - main
     paths:
-      - 'libs/**'
-      - 'themes/fds-theme/**'
+      - 'packages/fds-components-web/**'
+      - 'packages/fds-theme-web/**'
       - '.storybook/**'
-      - '!libs/**/package.json'
-      - '!themes/fds-theme/package.json'
+      - '!packages/fds-components-web/**/package.json'
+      - '!packages/fds-theme-web/package.json'
       - 'package.json'
 
 concurrency:
@@ -35,9 +35,9 @@ jobs:
         env:
           SKIP_POST_INSTALL: true
       - name: Build fds-tokens
-        run: npm run build:fds-tokens
+        run: npm run build:tokens
       - name: Build tippy theme
-        run: npm run build:tippy-theme
+        run: npm run build:theme-tippy
       - name: Build Storybook
         run: npm run build:storybook
       - name: Publish to Chromatic and auto accept changes

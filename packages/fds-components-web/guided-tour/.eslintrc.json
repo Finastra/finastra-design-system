@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/guided-tour/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/guided-tour/tsconfig.*?.json"]
       },
       "rules": {}
     },

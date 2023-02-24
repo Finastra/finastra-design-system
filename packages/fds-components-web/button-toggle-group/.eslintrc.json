@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/button-toggle-group/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/button-toggle-group/tsconfig.*?.json"]
       },
       "rules": {}
     },

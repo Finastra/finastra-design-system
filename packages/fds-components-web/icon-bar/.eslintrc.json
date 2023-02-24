@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/icon-bar/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/icon-bar/tsconfig.*?.json"]
       },
       "rules": {}
     },

@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/circular-progress/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/circular-progress/tsconfig.*?.json"]
       },
       "rules": {}
     },

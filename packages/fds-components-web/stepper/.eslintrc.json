@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/stepper/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/stepper/tsconfig.*?.json"]
       },
       "rules": {}
     },

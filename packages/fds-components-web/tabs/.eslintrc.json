@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/tabs/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/tabs/tsconfig.*?.json"]
       },
       "rules": {}
     },

@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/textfield/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/textfield/tsconfig.*?.json"]
       },
       "rules": {}
     },

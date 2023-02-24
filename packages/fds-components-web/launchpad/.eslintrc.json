@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/launchpad/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/launchpad/tsconfig.*?.json"]
       },
       "rules": {}
     },

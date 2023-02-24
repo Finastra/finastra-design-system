@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/autocomplete/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/autocomplete/tsconfig.*?.json"]
       },
       "rules": {}
     },

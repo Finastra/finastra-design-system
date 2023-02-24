@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/search-input/tsconfig.*?.json"]
+        "project": ["packages/fds-components-web/search-input/tsconfig.*?.json"]
       },
       "rules": {}
     },

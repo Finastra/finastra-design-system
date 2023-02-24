@@ -16,7 +16,7 @@ Our web theme is built over modern CSS standards and provides all foundations (c
 
 This implementation of the Finastra design system is framework agnostic (i.e can be used with any major framework: React, Vue, Angular, Svelte...). It's our futureproof solution for adopting [Finastra branded components](https://finastra.github.io/finastra-design-system/) in your financial app. It uses the web theme.
 
-[Learn more](./libs/web-components/README.md)
+[Learn more](./packages/fds-components-web/README.md)
 
 # 📦 Other resources
 
