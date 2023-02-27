@@ -54,41 +54,42 @@ export const TemplateCustomProp = (args) => {
 
 ### Available custom properties
 
-| Custom property             | Description                                            |
-| --------------------------- | ------------------------------------------------------ |
-| `--fds-primary`             | Primary color (default #694ED6)                        |
-| `--fds-secondary`           | Secondary color (default #C137A2)                      |
-| `--fds-background`          | Background color (default #FAFAFA)                     |
-| `--fds-surface`             | Surface color (default #FFFFFF)                        |
-| `--fds-surface-hover`       | Surface hover color (default primary 4% opacity)       |
-| `--fds-surface-selected`    | Surface selected color (default primary 8% opacity)    |
-| `--fds-surface-disabled`    | Surface disabled color (default #000000 12% opacity)   |
-| `--fds-surface-success`     | Surface success color (default success 3% opacity)     |
-| `--fds-surface-error`       | Surface error color (default error 3% opacity)         |
-| `--fds-surface-info`        | Surface info color (default primary 3% opacity)        |
-| `--fds-surface-warning`     | Surface warning color (default warning 2% opacity)     |
-| `--fds-outline`             | Outline color (default #000000 12% opacity)            |
-| `--fds-outline-success`     | Outline success color (default success 50% opacity)    |
-| `--fds-outline-error`       | Outline error color (default error 50% opacity)        |
-| `--fds-outline-info`        | Outline info color (default primary 40% opacity)       |
-| `--fds-outline-warning`     | Outline warning color (default warning 30% opacity)    |
-| `--fds-success`             | Success color (default #008744)                        |
-| `--fds-error`               | Error color (default #E40046)                          |
-| `--fds-info`                | Info color (default primary)                           |
-| `--fds-warning`             | Warning color (default #FF600A)                        |
-| `--fds-gradient-vertical`   | Linear gradient of primary and secondary               |
-| `--fds-gradient-horizontal` | 90 degree linear gradient of primary and secondary     |
-| `--fds-on-primary`          | On primary text color (default #FFFFFF)                |
-| `--fds-on-secondary`        | On secondary text color (default #FFFFFF)              |
-| `--fds-on-background`       | on background text color (default #000000 75% opacity) |
-| `--fds-on-surface`          | On surface text color (default #000000)                |
-| `--fds-on-surface-medium`   | Medium emphasis text color (default #000 54% opacity)  |
-| `--fds-on-surface-disabled` | Disabled text color (default #000000 29% opacity)      |
-| `--fds-on-success`          | On success text color (default #FFFFFF)                |
-| `--fds-on-error`            | On error text color (default #FFFFFF)                  |
-| `--fds-on-gradient`         | On gradient text color (default #FFFFFF)               |
-| `--fds-on-light`            | On light background (default #000000)                  |
-| `--fds-on-dark`             | On dark background (default #FFFFFF)                   |
+| Custom property                    | Description                                                     |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `--fds-primary`                    | Primary color (default #694ED6)                                 |
+| `--fds-secondary`                  | Secondary color (default #C137A2)                               |
+| `--fds-background`                 | Background color (default #FAFAFA)                              |
+| `--fds-surface`                    | Surface color (default #FFFFFF)                                 |
+| `--fds-surface-hover`              | Surface hover color (default primary 4% opacity)                |
+| `--fds-surface-selected`           | Surface selected color (default primary 8% opacity)             |
+| `--fds-surface-selected-secondary` | Surface selected secondary color (default secondary 8% opacity) |
+| `--fds-surface-disabled`           | Surface disabled color (default #000000 12% opacity)            |
+| `--fds-surface-success`            | Surface success color (default success 3% opacity)              |
+| `--fds-surface-error`              | Surface error color (default error 3% opacity)                  |
+| `--fds-surface-info`               | Surface info color (default primary 3% opacity)                 |
+| `--fds-surface-warning`            | Surface warning color (default warning 2% opacity)              |
+| `--fds-outline`                    | Outline color (default #000000 12% opacity)                     |
+| `--fds-outline-success`            | Outline success color (default success 50% opacity)             |
+| `--fds-outline-error`              | Outline error color (default error 50% opacity)                 |
+| `--fds-outline-info`               | Outline info color (default primary 40% opacity)                |
+| `--fds-outline-warning`            | Outline warning color (default warning 30% opacity)             |
+| `--fds-success`                    | Success color (default #008744)                                 |
+| `--fds-error`                      | Error color (default #E40046)                                   |
+| `--fds-info`                       | Info color (default primary)                                    |
+| `--fds-warning`                    | Warning color (default #FF600A)                                 |
+| `--fds-gradient-vertical`          | Linear gradient of primary and secondary                        |
+| `--fds-gradient-horizontal`        | 90 degree linear gradient of primary and secondary              |
+| `--fds-on-primary`                 | On primary text color (default #FFFFFF)                         |
+| `--fds-on-secondary`               | On secondary text color (default #FFFFFF)                       |
+| `--fds-on-background`              | on background text color (default #000000 75% opacity)          |
+| `--fds-on-surface`                 | On surface text color (default #000000)                         |
+| `--fds-on-surface-medium`          | Medium emphasis text color (default #000 54% opacity)           |
+| `--fds-on-surface-disabled`        | Disabled text color (default #000000 29% opacity)               |
+| `--fds-on-success`                 | On success text color (default #FFFFFF)                         |
+| `--fds-on-error`                   | On error text color (default #FFFFFF)                           |
+| `--fds-on-gradient`                | On gradient text color (default #FFFFFF)                        |
+| `--fds-on-light`                   | On light background (default #000000)                           |
+| `--fds-on-dark`                    | On dark background (default #FFFFFF)                            |
 
 ## Mixins
 
@@ -253,49 +254,50 @@ export const TemplateHelper = (args) => {
 
 ### Available classes
 
-| class name                    | Description                                                |
-| ----------------------------- | ---------------------------------------------------------- |
-| `.fds-primary`                | Used for text written in primary color                     |
-| `.fds-primary-bg`             | Used for container's background in primary color           |
-| `.fds-secondary`              | Used for text written in secondary color                   |
-| `.fds-secondary-bg`           | Used for container's background in secondary color         |
-| `.fds-background`             | Used for application background color                      |
-| `.fds-surface`                | Used for content surface color (i.e. card background)      |
-| `.fds-surface-hover`          | Surface hover color (default primary 4% opacity)           |
-| `.fds-surface-selected`       | Surface selected color (default primary 8% opacity)        |
-| `.fds-surface-disabled`       | Surface disabled color (default #000000 12% opacity)       |
-| `.fds-surface-success`        | Surface success color (default success 3% opacity)         |
-| `.fds-surface-error`          | Surface error color (default error 3% opacity)             |
-| `.fds-surface-info`           | Surface info color (default primary 3% opacity)            |
-| `.fds-surface-warning`        | Surface warning color (default warning 2% opacity)         |
-| `.fds-outline`                | Used for border-color                                      |
-| `.fds-outline-success`        | Outline success color (default success 50% opacity)        |
-| `.fds-outline-error`          | Outline error color (default error 50% opacity)            |
-| `.fds-outline-info`           | Outline info color (default primary 40% opacity)           |
-| `.fds-outline-warning`        | Outline warning color (default warning 30% opacity)        |
-| `.fds-success`                | Used for text success feedback                             |
-| `.fds-success-bg`             | Used for container's background success feedback           |
-| `.fds-error`                  | Used for text error feedback                               |
-| `.fds-error-bg`               | Used for container's background error feedback             |
-| `.fds-info`                   | Used for text info feedback                                |
-| `.fds-info-bg`                | Used for container's background info feedback              |
-| `.fds-warning`                | Used for text warning feedback                             |
-| `.fds-warning-bg`             | Used for container's background warning feedback           |
-| `.fds-gradient-vertical`      | Used for text written in gradient                          |
-| `.fds-gradient-vertical-bg`   | Used for container's background in gradient                |
-| `.fds-gradient-horizontal`    | Used for text written in horizontal gradient               |
-| `.fds-gradient-horizontal-bg` | Used for container's background in horizontal gradient     |
-| `.fds-on-primary`             | Used for text written on primary background                |
-| `.fds-on-secondary`           | Used for text written on secondary background              |
-| `.fds-on-background`          | Used for text written on background                        |
-| `.fds-on-surface`             | Used for text written on surface                           |
-| `.fds-on-surface-medium`      | Medium emphasis text color (default #000 54% opacity)      |
-| `.fds-on-surface-disabled`    | Disabled text color (default #000000 29% opacity)          |
-| `.fds-on-success`             | Used for text written on success background                |
-| `.fds-on-error`               | Used for text written on error background                  |
-| `.fds-on-gradient`            | Used for text written on gradient background               |
-| `.fds-on-light`               | On light background (default #000000)                      |
-| `.fds-on-dark`                | On dark background (default #FFFFFF)                       |
+| class name                        | Description                                                     |
+| --------------------------------- | --------------------------------------------------------------- |
+| `.fds-primary`                    | Used for text written in primary color                          |
+| `.fds-primary-bg`                 | Used for container's background in primary color                |
+| `.fds-secondary`                  | Used for text written in secondary color                        |
+| `.fds-secondary-bg`               | Used for container's background in secondary color              |
+| `.fds-background`                 | Used for application background color                           |
+| `.fds-surface`                    | Used for content surface color (i.e. card background)           |
+| `.fds-surface-hover`              | Surface hover color (default primary 4% opacity)                |
+| `.fds-surface-selected`           | Surface selected color (default primary 8% opacity)             |
+| `.fds-surface-selected-secondary` | Surface selected secondary color (default secondary 8% opacity) |
+| `.fds-surface-disabled`           | Surface disabled color (default #000000 12% opacity)            |
+| `.fds-surface-success`            | Surface success color (default success 3% opacity)              |
+| `.fds-surface-error`              | Surface error color (default error 3% opacity)                  |
+| `.fds-surface-info`               | Surface info color (default primary 3% opacity)                 |
+| `.fds-surface-warning`            | Surface warning color (default warning 2% opacity)              |
+| `.fds-outline`                    | Used for border-color                                           |
+| `.fds-outline-success`            | Outline success color (default success 50% opacity)             |
+| `.fds-outline-error`              | Outline error color (default error 50% opacity)                 |
+| `.fds-outline-info`               | Outline info color (default primary 40% opacity)                |
+| `.fds-outline-warning`            | Outline warning color (default warning 30% opacity)             |
+| `.fds-success`                    | Used for text success feedback                                  |
+| `.fds-success-bg`                 | Used for container's background success feedback                |
+| `.fds-error`                      | Used for text error feedback                                    |
+| `.fds-error-bg`                   | Used for container's background error feedback                  |
+| `.fds-info`                       | Used for text info feedback                                     |
+| `.fds-info-bg`                    | Used for container's background info feedback                   |
+| `.fds-warning`                    | Used for text warning feedback                                  |
+| `.fds-warning-bg`                 | Used for container's background warning feedback                |
+| `.fds-gradient-vertical`          | Used for text written in gradient                               |
+| `.fds-gradient-vertical-bg`       | Used for container's background in gradient                     |
+| `.fds-gradient-horizontal`        | Used for text written in horizontal gradient                    |
+| `.fds-gradient-horizontal-bg`     | Used for container's background in horizontal gradient          |
+| `.fds-on-primary`                 | Used for text written on primary background                     |
+| `.fds-on-secondary`               | Used for text written on secondary background                   |
+| `.fds-on-background`              | Used for text written on background                             |
+| `.fds-on-surface`                 | Used for text written on surface                                |
+| `.fds-on-surface-medium`          | Medium emphasis text color (default #000 54% opacity)           |
+| `.fds-on-surface-disabled`        | Disabled text color (default #000000 29% opacity)               |
+| `.fds-on-success`                 | Used for text written on success background                     |
+| `.fds-on-error`                   | Used for text written on error background                       |
+| `.fds-on-gradient`                | Used for text written on gradient background                    |
+| `.fds-on-light`                   | On light background (default #000000)                           |
+| `.fds-on-dark`                    | On dark background (default #FFFFFF)                            |
 
 ### Design
 
