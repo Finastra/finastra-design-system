@@ -15,8 +15,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/wizard-page.scss"
   },
   "dependencies": {
-    "@finastra/divider": "1.6.0",
-    "@finastra/stepper": "1.6.0",
+    "@finastra/divider": "*",
+    "@finastra/stepper": "*",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

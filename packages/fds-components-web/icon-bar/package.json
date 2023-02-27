@@ -15,9 +15,9 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/icon-bar.scss src/icon-bar-item.scss"
   },
   "dependencies": {
-    "@finastra/badge": "1.6.0",
-    "@finastra/divider": "1.6.0",
-    "@finastra/icon-button": "1.6.0",
+    "@finastra/badge": "*",
+    "@finastra/divider": "*",
+    "@finastra/icon-button": "*",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

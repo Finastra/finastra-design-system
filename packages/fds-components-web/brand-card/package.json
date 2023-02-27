@@ -16,7 +16,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/card": "1.6.0",
+    "@finastra/card": "*",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },

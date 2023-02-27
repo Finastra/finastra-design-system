@@ -7,7 +7,7 @@
     "directory": "packages/fds-theme-tippy"
   },
   "devDependencies": {
-    "@finastra/fds-theme": "1.6.0",
+    "@finastra/fds-theme": "*",
     "sass": "1.51.0"
   },
   "scripts": {
