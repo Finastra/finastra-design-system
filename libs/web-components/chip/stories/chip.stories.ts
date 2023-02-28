@@ -80,6 +80,10 @@ Secondary.args = {
   icon: 'check',
   trailingIcon: 'cancel_outlined'
 };
+Secondary.parameters = {
+  // Sets the diffThreshold for 0.2 for this specific story.
+  chromatic: { diffThreshold: 0.02 },
+};
 
 export const Icons: Story<Chip> = Template.bind({});
 Icons.args = {
