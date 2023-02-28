@@ -19,8 +19,5 @@
     "module": "es2020",
     "lib": ["es2018", "dom"]
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
