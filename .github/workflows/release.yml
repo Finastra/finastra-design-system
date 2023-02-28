@@ -1,70 +1,49 @@
-name: Release
-
+name: Create release
 on:
-  push:
-    branches:
-      - main
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+  workflow_dispatch
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Node.js 16.x
+        with:
+          ref: main
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
+          node-version: 18
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci --loglevel=error
+        env:
+          SKIP_POST_INSTALL: true
 
       - name: Build tokens
         run: npm run build:tokens
-      - name: Build fds-theme
+      - name: Build theme web
         run: npm run build:theme-web
-      - name: Build tippy-theme
+      - name: Build theme tippy
         run: npm run build:theme-tippy
-      - name: Build web components
+      - name: Build components web
         run: npm run build
+      - name: Generate WC Documentation
+        run: npm run wca:md
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          title: Release PR
-          publish: npm run publish
-          createGithubReleases: false
+      - name: publish to NPM
+        run: npx lerna publish --conventional-commits --no-git-tag-version --yes --exact
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
-
-      - name: get-current-version
-        id: version
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        uses: martinbeentjes/npm-get-version-action@main
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      - name: Get Release Version
+        run: |
+          RELEASE_VERSION=$(node -p 'require("./lerna.json").version')
+          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
 
       - name: GitHub release
         uses: release-drafter/release-drafter@v5
-        if: steps.changesets.outputs.hasChangesets == 'false'
         with:
-          version: ${{ steps.version.outputs.current-version }}
+          version: ${{ env.RELEASE_VERSION }}
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

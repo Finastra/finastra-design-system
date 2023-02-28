@@ -41,8 +41,7 @@
     "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "wca": "wca analyze 'packages/fds-components-web/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
-    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "publish": "npm publish --workspaces"
+    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js"
   },
   "husky": {
     "hooks": {

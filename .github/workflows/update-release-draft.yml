@@ -1,0 +1,19 @@
+name: Update release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: update-gh-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          name: 'fds@next'
+          tag: 'fds@next'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
