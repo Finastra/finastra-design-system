@@ -10,7 +10,7 @@ Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) repo
 
 Our web theme is built over modern CSS standards and provides all foundations (colors, typography, elevations, spacings) to apply Finastra branding. It provides light/dark mode support out of the box and target WCAG AA accessibility rating.
 
-[Learn more](./themes/fds-theme/README.md)
+[Learn more](./packages/fds-theme-web/README.md)
 
 ## Web components
 
@@ -30,7 +30,7 @@ It all starts here for designers. The source of thruth for foundations and compo
 
 A Microsoft Power BI theme specified in JSON.
 
-[Learn more](./themes/power-bi-theme/README.md)
+[Learn more](./packages/fds-theme-powerbi/README.md)
 
 # 💌 Want to help?
 
