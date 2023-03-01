@@ -6,6 +6,7 @@
     "surface": { "value": "#FFFFFF" },
     "surface-hover": { "value": "#FFFFFF" },
     "surface-selected": { "value": "#694ED614" },
+    "surface-selected-secondary": { "value": "#C137A214" },
     "surface-disabled": { "value": "#0000001F" },
     "surface-success": { "value": "#00874408" },
     "surface-error": { "value": "#D6004008" },
