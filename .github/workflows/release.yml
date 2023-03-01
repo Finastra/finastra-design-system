@@ -1,4 +1,4 @@
-name: Create release
+name: Release
 on:
   workflow_dispatch
 
@@ -19,6 +19,19 @@ jobs:
         env:
           SKIP_POST_INSTALL: true
 
+      - name: Get latest draft release
+        id: last_release
+        uses: InsonusK/get-latest-release@v1.0.1
+        with:
+          myToken: ${{ github.token }}
+          exclude_types: "prerelease|release"
+      - name: Extract version number
+        run: |
+          string="${{ steps.last_release.outputs.tag_name }}"
+          version=$(echo "$string" | grep -oP '(?<=@)[\d\.]+')
+          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+          echo "Version number is: $version"
+
       - name: Build tokens
         run: npm run build:tokens
       - name: Build theme web
@@ -30,17 +43,16 @@ jobs:
       - name: Generate WC Documentation
         run: npm run wca:md
 
-      - name: publish to NPM
-        run: npx lerna publish --conventional-commits --no-git-tag-version --yes --exact
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
+
+      - name: Publish to NPM
+        run: |
+          npx lerna publish ${{ env.RELEASE_VERSION }} --force-publish --no-commit-hooks --yes --exact --tag-version-prefix='fds@'
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
-      - name: Get Release Version
-        run: |
-          RELEASE_VERSION=$(node -p 'require("./lerna.json").version')
-          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
 
-      - name: GitHub release
+      - name: Publish GH release
         uses: release-drafter/release-drafter@v5
         with:
           version: ${{ env.RELEASE_VERSION }}

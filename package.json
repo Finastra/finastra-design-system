@@ -41,7 +41,8 @@
     "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
     "wca": "wca analyze 'packages/fds-components-web/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
     "postwca": "node ./scripts/wca-to-storybook.js",
-    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js"
+    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
+    "version": "npm install --package-lock-only && git add package-lock.json"
   },
   "husky": {
     "hooks": {
@@ -55,7 +56,6 @@
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
-    "@changesets/cli": "^2.26.0",
     "@koa/ejs": "5.0.0",
     "@ljcl/storybook-addon-cssprops": "file:ljcl-storybook-addon-cssprops-1.0.1.tgz",
     "@material/mwc-drawer": "0.27.0",
