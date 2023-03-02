@@ -60,11 +60,10 @@ When your issue is validated and you are assigned to it, you can start with thos
 > git checkout -b bugfix/meaningful-name
 ```
 
-- Install dependencies and build:devkit
+- Install dependencies
 
 ```sh
 > npm install
-> npm run build:devkit
 ```
 
 - In case you are adding a new feature as a component, use our schematic. Also add a demo of your component in the angular-test-app
@@ -78,9 +77,9 @@ When your issue is validated and you are assigned to it, you can start with thos
 - Test your code, run linter
 
 ```sh
-> npm run format:check
-> npm run affected:test
-> npm run affected:e2e
+> npm run format
+> npm run lint
+> npm run stylelint
 ```
 
 - fix the presented errors / problems if any

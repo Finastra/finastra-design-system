@@ -1,70 +1,61 @@
 name: Release
-
 on:
-  push:
-    branches:
-      - main
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+  workflow_dispatch
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Node.js 16.x
+        with:
+          ref: main
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
+          node-version: 18
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci --loglevel=error
+        env:
+          SKIP_POST_INSTALL: true
+
+      - name: Get latest draft release
+        id: last_release
+        uses: InsonusK/get-latest-release@v1.0.1
+        with:
+          myToken: ${{ github.token }}
+          exclude_types: "prerelease|release"
+      - name: Extract version number
+        run: |
+          string="${{ steps.last_release.outputs.tag_name }}"
+          version=$(echo "$string" | grep -oP '(?<=@)[\d\.]+')
+          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+          echo "Version number is: $version"
 
       - name: Build tokens
-        run: npm run build:fds-tokens
-      - name: Build fds-theme
-        run: npm run build:fds-theme
-      - name: Build tippy-theme
-        run: npm run build:tippy-theme
-      - name: Build web components
+        run: npm run build:tokens
+      - name: Build theme web
+        run: npm run build:theme-web
+      - name: Build theme tippy
+        run: npm run build:theme-tippy
+      - name: Build components web
         run: npm run build
+      - name: Generate WC Documentation
+        run: npm run wca:md
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          title: Release PR
-          publish: npm run publish
-          createGithubReleases: false
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
+
+      - name: Publish to NPM
+        run: |
+          npx lerna publish ${{ env.RELEASE_VERSION }} --force-publish --no-commit-hooks --yes --exact --tag-version-prefix='fds@'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: get-current-version
-        id: version
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        uses: martinbeentjes/npm-get-version-action@main
-
-      - name: GitHub release
+      - name: Publish GH release
         uses: release-drafter/release-drafter@v5
-        if: steps.changesets.outputs.hasChangesets == 'false'
         with:
-          version: ${{ steps.version.outputs.current-version }}
+          version: ${{ env.RELEASE_VERSION }}
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -15,7 +15,7 @@ const watchOptions = {
   }
 };
 
-watch('libs/web-components', watchOptions, function (_event, fileName) {
+watch('packages/fds-components-web', watchOptions, function (_event, fileName) {
   addToQueue(fileName);
 });
 

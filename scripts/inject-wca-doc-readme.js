@@ -4,7 +4,7 @@ const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
 async function main() {
-  const paths = await getPaths('../libs/web-components/*/src/*.ts');
+  const paths = await getPaths('../packages/fds-components-web/*/src/*.ts');
   paths.forEach((path) => {
     const md = getContent(path);
     const dir = path.replace('/stories/sb-generated/custom-element.md', '');

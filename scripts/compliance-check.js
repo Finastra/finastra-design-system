@@ -4,7 +4,7 @@ const globby = require('globby');
 const glob = require('glob');
 
 async function main() {
-  const paths = await getPaths('../libs/web-components/*/src/*.ts');
+  const paths = await getPaths('../packages/fds-components-web/*/src/*.ts');
   paths.forEach((path) => {
     const splitedPath = path.split('/');
     const wcName = splitedPath[splitedPath.length - 1];
