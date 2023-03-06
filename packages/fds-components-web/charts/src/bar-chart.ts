@@ -94,9 +94,9 @@ export class BarChart extends ApexChartsWrapper {
   }
 
   @property({ attribute: false })
-  public set stroke(stroke: boolean) {
+  public set stroke(stroke: ApexStroke) {
     if (this.options && this.options.stroke) {
-      this.options.stroke.show = stroke;
+      this.options.stroke = { ...this.options.stroke, ...stroke };
     }
     this.refresh();
   }
