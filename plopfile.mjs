@@ -16,7 +16,7 @@ export default function (plop) {
         }],
         actions: [{
             type: 'addMany',
-            destination: 'packages/fds-components-web/{{name}}',
+            destination: 'packages/fds-components-web/{{dashCase name}}',
             templateFiles: 'tools/plop-templates/create-wc/**/*',
             base: 'tools/plop-templates/create-wc/',
             data: { 'version': packageJson.version},
@@ -25,7 +25,7 @@ export default function (plop) {
             type: 'append',
             path: 'packages/fds-components-web/tsconfig.json',
             pattern: '"references": [',
-            template: '{"path": "{{name}}"},',
+            template: '{"path": "{{dashCase name}}"},',
         }]
     });
 };

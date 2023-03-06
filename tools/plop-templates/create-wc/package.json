@@ -1,16 +1,16 @@
 {
-  "name": "@finastra/{{ name }}",
-  "displayName": "{{ name }}",
+  "name": "@finastra/{{ dashCase name }}",
+  "displayName": "{{ properCase name }}",
   "version": "{{ version }}",
-  "description": "{{ sentenceCase name }} Web Component",
+  "description": "{{ dashCase name }} Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "{{ name }}"
+    "{{ dashCase name }}"
   ],
   "license": "MIT",
-  "main": "dist/src/{{ name }}.js",
-  "module": "dist/src/{{ name }}.js",
+  "main": "dist/src/{{ dashCase name }}.js",
+  "module": "dist/src/{{ dashCase name }}.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

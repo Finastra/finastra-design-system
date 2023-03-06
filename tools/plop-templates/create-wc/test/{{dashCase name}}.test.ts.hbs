@@ -1,0 +1,13 @@
+
+import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
+import { {{ properCase name }} } from '../src/{{ dashCase name }}.js';
+import '../src/{{ dashCase name }}.js';
+
+describe('{{ dashCase name }}', () => {
+    it('loads accessibly', async () => {
+        const el: {{ properCase name }} = await fixture(html`<fds-{{ dashCase name }}></fds-{{ dashCase name }}>`);
+
+        await elementUpdated(el);
+        await expect(el).to.be.accessible();
+    });
+});
