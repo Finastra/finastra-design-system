@@ -1,0 +1,29 @@
+{
+  "name": "@finastra/user-profile",
+  "displayName": "User Profile",
+  "version": "1.6.0",
+  "icon": "badge",
+  "description": "UserProfile Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "UserProfile"
+  ],
+  "license": "MIT",
+  "main": "dist/src/user-profile.js",
+  "module": "dist/src/user-profile.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/avatar": "*",
+    "@finastra/divider": "*",
+    "@finastra/icon-button": "*",
+    "@finastra/menu": "*",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

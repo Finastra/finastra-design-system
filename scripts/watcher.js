@@ -15,7 +15,7 @@ const watchOptions = {
   }
 };
 
-watch('libs/web-components', watchOptions, function (_event, fileName) {
+watch('packages/fds-components-web', watchOptions, function (_event, fileName) {
   addToQueue(fileName);
 });
 
@@ -45,17 +45,17 @@ async function addToQueue(fileName) {
   const buildSass = fileName.endsWith('scss');
   let execPromise;
 
+  var wcFolder = fileName.split(sep).slice(0, 3).join('/');
   if (buildSass) {
     spinner.color = 'magenta';
     spinner.text = chalk.magenta('Building Styles and Typescript');
     spinner.start();
-    var wcFolder = fileName.split(sep).slice(0, 3).join('/');
     execPromise = exec(`npm run build:style -w ${wcFolder}`);
   } else {
     spinner.color = 'blue';
     spinner.text = chalk.blue('Building Typescript');
     spinner.start();
-    execPromise = exec('npm run build:ts');
+    execPromise = exec(`npm run build:ts | npm run wca`);
   }
 
   try {

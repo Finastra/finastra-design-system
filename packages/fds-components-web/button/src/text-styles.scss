@@ -1,0 +1,49 @@
+@use '@finastra/fds-theme' as fds;
+
+:host > button {
+  @include fds.color('primary');
+
+  --fds-icon-color: var(--fds-primary);
+  --fds-button-overlay: var(--fds-primary);
+
+  background-color: transparent;
+}
+
+:host([secondary]) > button {
+  @include fds.color('secondary');
+
+  --fds-icon-color: var(--fds-secondary);
+  --fds-button-overlay: var(--fds-secondary);
+}
+
+:host([gradient]) > button {
+  @include fds.color('gradient-horizontal');
+
+  --fds-icon-color: var(--fds-gradient-horizontal);
+  --fds-button-overlay: var(--fds-gradient-horizontal);
+}
+
+:host([success]) > button {
+  @include fds.color('success');
+
+  --fds-icon-color: var(--fds-success);
+  --fds-button-overlay: var(--fds-success);
+}
+
+:host([error]) > button {
+  @include fds.color('error');
+
+  --fds-icon-color: var(--fds-error);
+  --fds-button-overlay: var(--fds-error);
+}
+
+:host([on-dark]) > button {
+  @include fds.color('on-dark');
+
+  --fds-icon-color: var(--fds-on-dark);
+  --fds-button-overlay: var(--fds-on-dark);
+}
+
+:host([disabled]) > button {
+  @include fds.color('on-surface-disabled');
+}

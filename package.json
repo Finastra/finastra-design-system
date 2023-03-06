@@ -1,49 +1,48 @@
 {
   "name": "@finastra/finastra-design-system",
-  "version": "3.10.0",
-  "private": true,
+  "version": "1.6.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/finastra/finastra-design-system.git"
   },
   "license": "MIT",
   "workspaces": [
-    "tokens",
-    "themes/fds-theme",
-    "themes/tippy.js",
-    "libs/web-components/*"
+    "packages/fds-tokens",
+    "packages/fds-theme-web",
+    "packages/fds-theme-tippy",
+    "packages/fds-components-web/*"
   ],
   "scripts": {
-    "build:fds-tokens": "npm run build -w tokens",
-    "build:fds-theme": "npm run build -w themes/fds-theme",
-    "build:scripts": "tsc --project scripts/tsconfig.json",
-    "build:storybook": "build-storybook -o storybook-static",
-    "build:style": "npm run build:style -w libs/web-components",
-    "build:tippy-theme": "npm run build -w themes/tippy.js",
-    "build:ts": "tsc --build libs/web-components/list libs/web-components/menu libs/web-components/textfield libs/web-components",
-    "prebuild": "npm run build:fds-tokens",
+    "prepare": "husky install",
+    "clean": "rimraf packages/fds-components-web/**/dist packages/fds-components-web/**/*.css.ts packages/fds-components-web/**/node_modules",
+    "prebuild": "npm run build:tokens",
+    "prebuild:storybook": "npm run wca && npm run build:theme-web && npm run build:theme-tippy && npm run build",
     "build": "npm run build:style && npm run build:ts -- --verbose",
-    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
-    "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes",
-    "clean": "rimraf libs/web-components/**/dist libs/web-components/**/*.css.ts libs/web-components/**/node_modules",
-    "compliance:check": "node ./scripts/compliance-check.js",
+    "build:scripts": "tsc --project scripts/tsconfig.json",
+    "build:tokens": "npm run build -w packages/fds-tokens",
+    "build:theme-web": "npm run build -w packages/fds-theme-web",
+    "build:theme-tippy": "npm run build -w packages/fds-theme-tippy",
+    "build:storybook": "build-storybook -o storybook-static",
+    "build:style": "npm run build:style -w packages/fds-components-web",
+    "build:ts": "tsc --build packages/fds-components-web/list packages/fds-components-web/menu packages/fds-components-web/textfield packages/fds-components-web",
+    "start": "npm run build:theme-web && concurrently npm:watch wds --open",
     "format": "prettier . --write --ignore-path .gitignore",
     "lint": "eslint . --ext .ts --fix",
     "stylelint": "stylelint **/*.scss --fix",
-    "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
-    "postwca": "node ./scripts/wca-to-storybook.js",
-    "prebuild:storybook": "npm run wca && npm run build:fds-theme && npm run build:tippy-theme && npm run build",
-    "prepare": "husky install",
+    "compliance:check": "node ./scripts/compliance-check.js",
+    "chromatic": "npx chromatic --build-script-name=wc:build:storybook --exit-zero-on-changes",
     "prestorybook": "npm run wca",
-    "start": "npm run build:fds-theme && concurrently npm:watch wds --open",
     "storybook": "start-storybook -p 8080",
     "storybook:watch": "concurrently npm:watch npm:storybook",
     "test:watch": "npm run test -- --watch",
     "test": "web-test-runner --coverage",
     "watch": "npm run build --watch && node scripts/watcher.js",
-    "wca:md": "wca analyze 'libs/web-components/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
-    "wca": "wca analyze 'libs/web-components/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
-    "release": "changeset publish"
+    "wca:md": "wca analyze 'packages/fds-components-web/*/src/*.ts' --format markdown --outFiles {dir}/../stories/sb-generated/custom-element.md",
+    "postwca:md": "node ./scripts/inject-wca-doc-readme.js",
+    "wca": "wca analyze 'packages/fds-components-web/*/src/*.ts' --outFiles {dir}/../stories/sb-generated/custom-element.json",
+    "postwca": "node ./scripts/wca-to-storybook.js",
+    "bump-all-wc-deps": "npm run build:scripts && node scripts/tsc-out/bump-all-wc-deps.js",
+    "version": "npm install --package-lock-only && git add package-lock.json"
   },
   "husky": {
     "hooks": {
@@ -57,7 +56,7 @@
   },
   "devDependencies": {
     "@actions/core": "^1.6.0",
-    "@changesets/cli": "^2.26.0",
+    "@koa/ejs": "5.0.0",
     "@ljcl/storybook-addon-cssprops": "file:ljcl-storybook-addon-cssprops-1.0.1.tgz",
     "@material/mwc-drawer": "0.27.0",
     "@material/mwc-icon": "0.27.0",
@@ -105,7 +104,7 @@
     "istanbul-api": "^3.0.0",
     "istanbul-lib-coverage": "^3.0.0",
     "js-yaml": "^4.1.0",
-    "@koa/ejs": "5.0.0",
+    "lerna": "^6.5.1",
     "lint-staged": "^11.0.0",
     "lit-html": "2.0.2",
     "lodash-es": "^4.17.21",
@@ -136,7 +135,11 @@
     "webpack": "^5.64.1"
   },
   "engines": {
-    "node": "^16",
-    "npm": "^8"
+    "node": "^18",
+    "npm": "^9"
+  },
+  "volta": {
+    "node": "18.14.2",
+    "npm": "9.5.0"
   }
 }

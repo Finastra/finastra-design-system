@@ -16,6 +16,6 @@
 *.svg       @dorsaffrigui @ttalbot
 
 # Web components owners
-/libs/web-components    @bcldvd @ttalbot
+/packages/fds-components-web    @bcldvd @ttalbot
 /.storybook             @bcldvd @ttalbot
 
