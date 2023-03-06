@@ -12,6 +12,11 @@ export default function (plop) {
             templateFiles: 'tools/plop-templates/fds-components-web/**/*',
             base: 'tools/plop-templates/fds-components-web/',
             globOptions: {dot: true}
+        }, {
+            type: 'append',
+            path: 'packages/fds-components-web/tsconfig.json',
+            pattern: '"references": [',
+            template: '{"path": "{{name}}"},',
         }]
     });
 };
