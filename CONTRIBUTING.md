@@ -69,7 +69,7 @@ When your issue is validated and you are assigned to it, you can start with thos
 - In case you are adding a new feature as a component, use our generator:
 
 ```sh
-> npm run component:generate
+> npm run generate:component
 ```
 
 - Write your code
