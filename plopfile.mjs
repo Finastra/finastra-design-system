@@ -7,7 +7,7 @@ const packageJson = JSON.parse(
 );
 
 export default function (plop) {
-    plop.setGenerator('web component generator', {
+    plop.setGenerator('wc', {
         description: 'Create a new FDS web component',
         prompts: [{
             type: 'input',
