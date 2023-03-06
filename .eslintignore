@@ -5,4 +5,5 @@ node_modules/
 .vscode/
 *.stories.*
 **/dist/*
+tools/plop-templates/*
 *.css.ts
