@@ -1,5 +1,13 @@
+import { readFile } from 'fs/promises';
+
+const packageJson = JSON.parse(
+  await readFile(
+    new URL('./package.json', import.meta.url)
+  )
+);
+
 export default function (plop) {
-    plop.setGenerator('web component', {
+    plop.setGenerator('web component generator', {
         description: 'Create a new FDS web component',
         prompts: [{
             type: 'input',
@@ -9,8 +17,9 @@ export default function (plop) {
         actions: [{
             type: 'addMany',
             destination: 'packages/fds-components-web/{{name}}',
-            templateFiles: 'tools/plop-templates/fds-components-web/**/*',
-            base: 'tools/plop-templates/fds-components-web/',
+            templateFiles: 'tools/plop-templates/create-wc/**/*',
+            base: 'tools/plop-templates/create-wc/',
+            data: { 'version': packageJson.version},
             globOptions: {dot: true}
         }, {
             type: 'append',
