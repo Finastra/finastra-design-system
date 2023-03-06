@@ -2,7 +2,7 @@
   "name": "@finastra/{{ name }}",
   "displayName": "{{ name }}",
   "version": "{{ version }}",
-  "description": "{{ name }} Web Component",
+  "description": "{{ sentenceCase name }} Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
