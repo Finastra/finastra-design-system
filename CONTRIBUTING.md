@@ -66,11 +66,10 @@ When your issue is validated and you are assigned to it, you can start with thos
 > npm install
 ```
 
-- In case you are adding a new feature as a component, use our schematic. Also add a demo of your component in the angular-test-app
+- In case you are adding a new feature as a component, use our generator:
 
 ```sh
-> npm run add:component [your_component_name]
-> ng generate component [your_component_name]-demo -m app.module.ts --style=scss
+> npm run plop
 ```
 
 - Write your code
