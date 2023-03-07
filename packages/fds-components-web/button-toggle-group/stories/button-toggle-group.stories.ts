@@ -8,7 +8,10 @@ import { actions, argTypes, cssprops } from './sb-generated/fds-button-toggle-gr
 export default {
   title: 'ACTIONS/Toggle',
   component: 'fds-button-toggle-group',
-  argTypes,
+  argTypes: {
+    selectedIndex: argTypes['selected-index'],
+    dense: argTypes.dense
+  },
   parameters: {
     chromatic: { delay: 1000 },
     actions,
