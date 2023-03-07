@@ -9,7 +9,12 @@ import { argTypes, cssprops } from './sb-generated/fds-credit-card.json';
 export default {
   title: 'DATA DISPLAY/Credit-card',
   component: 'fds-credit-card',
-  argTypes,
+  argTypes: {
+    name: argTypes.name,
+    date: argTypes.date,
+    lastDigits: argTypes['last-digits'],
+    hiddenDigits: argTypes['hidden-digits']
+  },
   parameters: {
     docs: {
       description: { component: allSanitizers(README) }
