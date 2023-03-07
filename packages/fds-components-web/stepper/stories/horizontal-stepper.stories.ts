@@ -4,7 +4,7 @@ import type { HorizontalStepper } from '@finastra/stepper';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-import { EVENTS } from '../src/constants';
+import { events } from '../src/constants';
 import { argTypes, cssprops } from './sb-generated/fds-horizontal-stepper.json';
 
 const demoData = [
@@ -48,7 +48,7 @@ export default {
   },
   parameters: {
     actions: {
-      handles: [EVENTS.STEPCLICK]
+      handles: [events.STEPCLICK]
     },
     docs: {
       description: { component: allSanitizers(README) }
