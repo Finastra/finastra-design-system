@@ -33,7 +33,7 @@ export class DebitCard extends LitElement {
 
   render() {
     return html`
-      <svg width="548" viewBox="0 0 248 152" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 248 152" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#shadow)">
           <rect width="220" height="123" rx="8" transform="matrix(-1 0 0 1 234 11)" fill="url(#bg)" />
         </g>
