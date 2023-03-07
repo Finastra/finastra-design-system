@@ -1,16 +1,16 @@
 {
-  "name": "@finastra/debit-card",
-  "displayName": "DebitCard",
+  "name": "@finastra/credit-card",
+  "displayName": "CreditCard",
   "version": "1.6.0",
-  "description": "debit-card Web Component",
+  "description": "credit-card Web Component",
   "keywords": [
     "Finastra Design System",
     "Web Components",
-    "debit-card"
+    "credit-card"
   ],
   "license": "MIT",
-  "main": "dist/src/debit-card.js",
-  "module": "dist/src/debit-card.js",
+  "main": "dist/src/credit-card.js",
+  "module": "dist/src/credit-card.js",
   "scripts": {
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },

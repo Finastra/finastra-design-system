@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/debit-card/tsconfig.*?.json"]
+        "project": ["libs/web-components/credit-card/tsconfig.*?.json"]
       },
       "rules": {}
     },

@@ -3,8 +3,8 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { styles } from './styles.css';
 
-@customElement('fds-debit-card')
-export class DebitCard extends LitElement {
+@customElement('fds-credit-card')
+export class CreditCard extends LitElement {
   static styles = styles;
 
   /**
@@ -103,6 +103,6 @@ export class DebitCard extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fds-debit-card': DebitCard;
+    'fds-credit-card': CreditCard;
   }
 }

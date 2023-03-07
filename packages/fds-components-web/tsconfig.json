@@ -28,7 +28,7 @@
   },
   "file": [],
   "references": [
-    { "path": "debit-card" },
+    { "path": "credit-card" },
     {
       "path": "logo"
     },
