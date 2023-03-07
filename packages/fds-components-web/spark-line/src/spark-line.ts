@@ -18,6 +18,7 @@ export class SparkLine extends LitElement {
   @property({ type: Number }) width = 0;
 
   render() {
+    console.log('render');
     if (this.width === 0) {
       this.width = this.getBoundingClientRect().width;
     }
@@ -28,10 +29,17 @@ export class SparkLine extends LitElement {
   }
 
   firstUpdated(_changedProperties: PropertyValues) {
+    console.log('firstUpdated');
+
     super.firstUpdated(_changedProperties);
     this.updateChart(this.renderRoot);
   }
   updateChart(element) {
+    console.log('updateChart');
+    console.log(this.data);
+    console.log(this.width);
+    console.log(this.height);
+
     const maxX = Math.max(...this.data.map((o) => o['x']));
     const svg = d3.select(element).select('svg').attr('width', this.width).attr('height', this.height);
     const x = d3.scaleLinear().domain([0, maxX]).range([0, this.width]);

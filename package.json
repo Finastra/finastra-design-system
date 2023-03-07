@@ -15,6 +15,8 @@
   "scripts": {
     "prepare": "husky install",
     "clean": "rimraf packages/fds-components-web/**/dist packages/fds-components-web/**/*.css.ts packages/fds-components-web/**/node_modules",
+    "generate:component": "plop wc",
+    "postgenerate:component": "npm i",
     "prebuild": "npm run build:tokens",
     "prebuild:storybook": "npm run wca && npm run build:theme-web && npm run build:theme-tippy && npm run build",
     "build": "npm run build:style && npm run build:ts -- --verbose",
@@ -111,6 +113,7 @@
     "node-sass-import": "^2.0.1",
     "node-watch": "0.7.1",
     "ora": "^5.4.1",
+    "plop": "^3.1.2",
     "prettier": "2.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

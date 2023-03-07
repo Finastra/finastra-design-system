@@ -25,7 +25,20 @@ export default {
   decorators: []
 } as Meta;
 
-const Template: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
+const Template: Story = ({
+  icon,
+  label,
+  dense,
+  large,
+  disabled,
+  secondary = false,
+  gradient = false,
+  success = false,
+  error = false,
+  onDark = false,
+  fullwidth = false,
+  trailingIcon = false
+}) => {
   return html`<fds-outlined-button
     .label=${label}
     .icon=${ifDefined(icon)}
@@ -42,7 +55,20 @@ const Template: Story = ({ icon, label, dense, large, disabled, secondary = fals
   ></fds-outlined-button>`;
 };
 
-const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
+const FullWidthTemplate: Story = ({
+  icon,
+  label,
+  dense,
+  large,
+  disabled,
+  secondary = false,
+  gradient = false,
+  success = false,
+  error = false,
+  onDark = false,
+  fullwidth = false,
+  trailingIcon = false
+}) => {
   return html` <style>
       .demo-container {
         width: 300px;
@@ -66,10 +92,23 @@ const FullWidthTemplate: Story = ({ icon, label, dense, large, disabled, seconda
     </div>`;
 };
 
-const DarkTemplate: Story = ({ icon, label, dense, large, disabled, secondary = false, gradient = false, success = false, error = false, onDark = false, fullwidth = false, trailingIcon = false }) => {
+const DarkTemplate: Story = ({
+  icon,
+  label,
+  dense,
+  large,
+  disabled,
+  secondary = false,
+  gradient = false,
+  success = false,
+  error = false,
+  onDark = false,
+  fullwidth = false,
+  trailingIcon = false
+}) => {
   return html` <style>
       .demo-container {
-        background: linear-gradient(to right, #0A0014, #4B0254);
+        background: linear-gradient(to right, #0a0014, #4b0254);
         width: 300px;
         height: 80px;
         display: flex;

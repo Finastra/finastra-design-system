@@ -217,38 +217,38 @@ const DialogTemplate: Story<Select> = ({
   items,
   index,
   labelInside = false,
-  fixedMenuPosition,
+  fixedMenuPosition
 }) => {
   return html`<fds-button label="Open dialog" onclick="openDialog()"></fds-button>
-  <fds-dialog id="dialog" heading="Example for select">
-    <fds-select
-      .value=${value}
-      .label=${label}
-      .icon=${icon}
-      ?disabled=${disabled}
-      ?dense=${dense}
-      ?labelInside=${labelInside}
-      .helper=${helper}
-      ?required=${required}
-      ?validationMessage=${validationMessage}
-      ?selected=${selected}
-      ?items=${items}
-      ?index=${index}
-      ?fixedMenuPosition=${fixedMenuPosition}
-    >
-      <fds-list-item value="0">HR Manager</fds-list-item>
-      <fds-list-item value="1">IT Manager</fds-list-item>
-      <fds-list-item value="2">CEO</fds-list-item>
-      <fds-list-item value="3">Sales Manager</fds-list-item>
-      <fds-list-item value="4">Support Manager</fds-list-item>
-    </fds-select>
-  </fds-dialog>
-  <script>
-    openDialog = () => {
-      let dialog = document.querySelector('#dialog');
-      dialog.open = true;
-    }
-  </script>`;
+    <fds-dialog id="dialog" heading="Example for select">
+      <fds-select
+        .value=${value}
+        .label=${label}
+        .icon=${icon}
+        ?disabled=${disabled}
+        ?dense=${dense}
+        ?labelInside=${labelInside}
+        .helper=${helper}
+        ?required=${required}
+        ?validationMessage=${validationMessage}
+        ?selected=${selected}
+        ?items=${items}
+        ?index=${index}
+        ?fixedMenuPosition=${fixedMenuPosition}
+      >
+        <fds-list-item value="0">HR Manager</fds-list-item>
+        <fds-list-item value="1">IT Manager</fds-list-item>
+        <fds-list-item value="2">CEO</fds-list-item>
+        <fds-list-item value="3">Sales Manager</fds-list-item>
+        <fds-list-item value="4">Support Manager</fds-list-item>
+      </fds-select>
+    </fds-dialog>
+    <script>
+      openDialog = () => {
+        let dialog = document.querySelector('#dialog');
+        dialog.open = true;
+      };
+    </script>`;
 };
 
 export const SelectInsideDialog: Story<Select> = DialogTemplate.bind({});

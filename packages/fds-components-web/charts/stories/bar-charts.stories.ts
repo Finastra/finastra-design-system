@@ -13,8 +13,8 @@ export default {
   args: {
     width: '500px',
     height: '300px',
-    chartTitle: 'Number of Calls',   
-    stacked: false,  
+    chartTitle: 'Number of Calls',
+    stacked: false,
     series: [
       {
         name: 'Legend 1',
@@ -56,7 +56,7 @@ const Template: Story<BarChart> = (args) => {
 
 export const Vertical: Story<BarChart> = Template.bind({});
 Vertical.args = {
-  yGrid:true,
+  yGrid: true,
   series: [
     {
       name: 'Legend 1',
@@ -67,7 +67,7 @@ Vertical.args = {
 export const Horizontal: Story<BarChart> = Template.bind({});
 Horizontal.args = {
   horizontal: true,
-  xGrid:true,
+  xGrid: true,
   series: [
     {
       name: 'Legend 1',
@@ -78,55 +78,53 @@ Horizontal.args = {
 
 export const MultipleVertical: Story<BarChart> = Template.bind({});
 MultipleVertical.args = {
-  yGrid:true
-}
+  yGrid: true
+};
 export const MultipleHorizontal: Story<BarChart> = Template.bind({});
-  MultipleHorizontal.args = {
-    width: '500px',
-    height: '500px',
-    horizontal: true,
-    xGrid:true,
-    series: [
-      {
-        name: 'Legend 1',
-        data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
-      },
-      {
-        name: 'Legend 2',
-        data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
-      }
-    ],
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  }
-
-
-export const Stacked: Story<BarChart> = Template.bind({})
-  Stacked.args = {
-    width: '500px',
-    height: '500px',
-    barTitle: 'Number of Calls',
-    horizontal: true,
-    xGrid: true,
-    yGrid: false,
-    stacked: true,    
-    stroke: {
-      width: 1,
-      colors: ['#fff']
+MultipleHorizontal.args = {
+  width: '500px',
+  height: '500px',
+  horizontal: true,
+  xGrid: true,
+  series: [
+    {
+      name: 'Legend 1',
+      data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
     },
-    series: [
-      {
-        name: 'Legend 1',
-        data: [2, 1, 1, 5, 3]
-      },
-      {
-        name: 'Legend 2',
-        data: [6, 1, 5, 3, 2]
-      },
-      {
-        name: 'Legend 3',
-        data: [6, 1, 5, 3, 2]
-      }
-    ],
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
-  }
+    {
+      name: 'Legend 2',
+      data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
+    }
+  ],
+  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+};
 
+export const Stacked: Story<BarChart> = Template.bind({});
+Stacked.args = {
+  width: '500px',
+  height: '500px',
+  barTitle: 'Number of Calls',
+  horizontal: true,
+  xGrid: true,
+  yGrid: false,
+  stacked: true,
+  stroke: {
+    width: 1,
+    colors: ['#fff']
+  },
+  series: [
+    {
+      name: 'Legend 1',
+      data: [2, 1, 1, 5, 3]
+    },
+    {
+      name: 'Legend 2',
+      data: [6, 1, 5, 3, 2]
+    },
+    {
+      name: 'Legend 3',
+      data: [6, 1, 5, 3, 2]
+    }
+  ],
+  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+};

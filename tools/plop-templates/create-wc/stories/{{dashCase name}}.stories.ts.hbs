@@ -1,0 +1,34 @@
+const README = require('../README.md');
+import '@finastra/{{ dashCase name }}';
+import type { {{ properCase name }} } from '@finastra/{{ dashCase name }}';
+import { Meta, Story } from '@storybook/web-components';
+import { html } from 'lit-html';
+import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
+import { argTypes, cssprops } from './sb-generated/fds-{{ dashCase name }}.json';
+
+export default {
+  title: 'Components/{{ dashCase name }}',
+  component: 'fds-{{ dashCase name }}',
+  argTypes,
+  args: {
+    name: 'World'
+  }, 
+  parameters: {
+    docs: {
+      description: { component: allSanitizers(README) }
+    },
+  },
+  decorators: [
+    (story) => html`${story()}
+<style>
+  /* Add you styles here */ 
+</style>`
+  ],
+  cssprops
+} as Meta;
+
+const Template: Story<{{ properCase name }}> = ({ name = 'World' }) => {
+  return html`<fds-{{ dashCase name }}  .name=${name}></fds-{{ dashCase name }}>`;
+};
+
+export const Default: Story<{{ properCase name }}> = Template.bind({});

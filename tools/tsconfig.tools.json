@@ -11,5 +11,6 @@
     "skipDefaultLibCheck": true,
     "strict": false
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "exclude": ["plop-templates/*"]
 }
