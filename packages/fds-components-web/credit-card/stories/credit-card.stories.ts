@@ -7,7 +7,7 @@ import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { argTypes, cssprops } from './sb-generated/fds-credit-card.json';
 
 export default {
-  title: 'DATA DISPLAY/Credit-card',
+  title: 'DATA DISPLAY/Credit Card',
   component: 'fds-credit-card',
   argTypes: {
     name: argTypes.name,
