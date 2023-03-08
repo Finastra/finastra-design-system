@@ -418,12 +418,16 @@ export class ApexChartsWrapper extends LitElement {
           color: this.chartTheme.categoricalPalette
         }
       };
-    } else
-      return {
-        stroke: {
-          colors: [this.chartTheme.strokeColor]
-        }
-      };
+    } else {
+      if (this.options.stroke && this.options.stroke.colors) {
+        return { stroke: { colors: [...this.options.stroke.colors] } };
+      } else
+        return {
+          stroke: {
+            colors: [this.chartTheme.strokeColor]
+          }
+        };
+    }
   }
 
   getDataLabelColor(): string[] {

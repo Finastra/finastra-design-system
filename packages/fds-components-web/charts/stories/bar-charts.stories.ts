@@ -13,8 +13,8 @@ export default {
   args: {
     width: '500px',
     height: '300px',
-    chartTitle: 'Number of Calls',   
-    stacked: false,  
+    chartTitle: 'Number of Calls',
+    stacked: false,
     series: [
       {
         name: 'Legend 1',
@@ -51,6 +51,7 @@ const Template: Story<BarChart> = (args) => {
     .stacked=${args.stacked}
     .stroke=${args.stroke}
     .categories=${args.categories}
+    color=${args.color}
   ></fds-bar-chart>`;
 };
 
@@ -108,7 +109,7 @@ export const Stacked: Story<BarChart> = Template.bind({})
     horizontal: true,
     xGrid: true,
     yGrid: false,
-    stacked: true,    
+    stacked: true,
     stroke: {
       width: 1,
       colors: ['#fff']
