@@ -15,7 +15,7 @@ export function strTemplate(template: string, context: { [key: string]: string |
   const templateRegex = /(\\)?\$\{([^{}\\]+)\}/g;
 
   return template.replace(templateRegex, (matched) => {
-    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.{0,25})\}/)![1];
+    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.{0,35})\}/)![1];
 
     return context.hasOwnProperty(exp) ? String(context[exp]) : matched;
   });
