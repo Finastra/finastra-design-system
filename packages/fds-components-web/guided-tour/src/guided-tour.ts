@@ -12,7 +12,7 @@ import { styles } from './styles.css';
 const STEP_INFO_TEMPLATE = 'Step ${currentStep} of ${totalSteps}';
 
 export function strTemplate(template: string, context: { [key: string]: string | number }): string {
-  const templateRegex = /(\\)?\$\{([^{}\\]+){1,20}\}/g;
+  const templateRegex = /(\\)?\$\{([^{}\\]+){1,15}\}/g;
 
   return template.replace(templateRegex, (matched) => {
     const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.*)\}/)![1];
