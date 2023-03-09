@@ -15,7 +15,7 @@ export function strTemplate(template: string, context: { [key: string]: string |
   const templateRegex = /(\\)?\$\{([^{}\\]+)\}/g;
 
   return template.replace(templateRegex, (matched) => {
-    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.*)\}/)![1];
+    const exp = matched[0] === '\\' ? matched.slice(1) : matched.match(/\{(.{0,35})\}/)![1];
 
     return context.hasOwnProperty(exp) ? String(context[exp]) : matched;
   });
@@ -89,7 +89,7 @@ export class GuidedTour extends LitElement {
     return svg`
         <path class="backdrop" d=" M ${vw}, ${vh} V ${-vh} H ${-vw} V ${vh} H ${vw} z
         M ${x + r} ${y}\
-        h ${Math.max(w - 2 * r, 0)} 
+        h ${Math.max(w - 2 * r, 0)}
         a ${r} ${r} 0, 0, 1 ${r} ${r}\
         v ${h - r * 2}
         a ${r} ${r} 0, 0, 1 ${-r} ${r}\
@@ -97,7 +97,7 @@ export class GuidedTour extends LitElement {
         a ${r} ${r} 0, 0, 1 ${-r} ${-r}\
         v ${-h + r * 2}
         a ${r} ${r} 0, 0, 1 ${r} ${-r}\
-        z" 
+        z"
         />
     `;
   }
