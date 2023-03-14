@@ -4,7 +4,6 @@ import { styles as apexchartsStyle } from './apexcharts-styles.css';
 import { styles } from './bar-chart-styles.css';
 
 /**
- *
  * @attr {string} [chartTitle=""] - Defines title of chart
  * @attr {boolean} [xGrid=false] - Defines x grid visibility
  * @attr {boolean} [yGrid=false] - Defines y grid visibility
