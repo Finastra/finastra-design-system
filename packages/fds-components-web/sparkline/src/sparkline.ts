@@ -5,15 +5,20 @@ import { styles } from './styles.css';
 
 const amplitude = 25;
 
+/**
+ * @attr {boolean} [success=false] - Set color to success
+ * @attr {boolean} [error=false] - Set color to error
+ */
 @customElement('fds-sparkline')
 export class Sparkline extends LitElement {
   static styles = styles;
 
   /**
    * An array of numbers
+   * @type {Array}
    */
-  @property({ type: Object })
-  data = [];
+  @property({ type: Array })
+  data: number[] = [];
 
   render() {
     return html`<svg

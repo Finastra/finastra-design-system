@@ -7,6 +7,8 @@
 
 ## Usage
 
+A `Sparkline` is like a tiny line-chart to visualize trends at a glance.
+
 ### Import
 
 ```
