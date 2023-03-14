@@ -1,0 +1,35 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+  width: 100px;
+  height: 35px;
+}
+
+.sparkline {
+  @include fds.property(stroke, primary);
+}
+
+.gradient-color {
+  @include fds.property(stop-color, primary);
+}
+
+:host([success]) {
+  .sparkline {
+    @include fds.property(stroke, success);
+  }
+
+  .gradient-color {
+    @include fds.property(stop-color, success);
+  }
+}
+
+:host([error]) {
+  .sparkline {
+    @include fds.property(stroke, error);
+  }
+
+  .gradient-color {
+    @include fds.property(stop-color, error);
+  }
+}
