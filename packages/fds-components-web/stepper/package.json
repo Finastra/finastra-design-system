@@ -1,7 +1,7 @@
 {
   "name": "@finastra/stepper",
   "displayName": "Stepper",
-  "version": "1.7.0",
+  "version": "1.6.0",
   "description": "Stepper Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,7 +15,7 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/h-styles.scss src/v-styles.scss"
   },
   "dependencies": {
-    "@finastra/icon": "1.7.0",
+    "@finastra/icon": "*",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
