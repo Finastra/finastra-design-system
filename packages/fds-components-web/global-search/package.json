@@ -1,7 +1,7 @@
 {
   "name": "@finastra/global-search",
   "displayName": "Global Search",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Global Search Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,8 +15,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/global-search.scss src/global-search-group/global-search-group.scss src/global-search-page/global-search-page.scss src/global-search-summary/global-search-summary.scss"
   },
   "dependencies": {
-    "@finastra/divider": "*",
-    "@finastra/icon-button": "*",
+    "@finastra/divider": "1.7.0",
+    "@finastra/icon-button": "1.7.0",
     "lit": "2.0.2",
     "tslib": "^2.0.1"
   },

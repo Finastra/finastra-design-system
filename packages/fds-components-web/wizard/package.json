@@ -1,7 +1,7 @@
 {
   "name": "@finastra/wizard",
   "displayName": "Wizard",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Wizard Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,8 +15,8 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/wizard-page.scss"
   },
   "dependencies": {
-    "@finastra/divider": "*",
-    "@finastra/stepper": "*",
+    "@finastra/divider": "1.7.0",
+    "@finastra/stepper": "1.7.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
   },
