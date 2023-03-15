@@ -1,8 +1,0 @@
-@use '@finastra/fds-theme' as fds;
-@use "@material/select/mdc-select.scss";
-
-:host {
-  .mdc-deprecated-list {
-    padding: 0;
-  }
-}

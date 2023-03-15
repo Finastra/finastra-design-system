@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/formfield",
+  "displayName": "Formfield",
+  "version": "1.7.0",
+  "description": "Formfield Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Formfield"
+  ],
+  "license": "MIT",
+  "main": "dist/src/formfield.js",
+  "module": "dist/src/formfield.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-formfield": "0.27.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

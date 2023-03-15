@@ -7,14 +7,17 @@ body {
   height: 100%;
   background: var(--mdc-theme-background);
 }
+
 .top-app-bar__title {
   display: flex;
   align-items: end;
 }
+
 .main {
   display: flex;
   height: calc(100vh - 64px);
 }
+
 .main-content {
   display: grid;
   padding: 16px;
@@ -32,14 +35,16 @@ fds-logo {
 
 .list-components {
   width: 240px;
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid rgb(0 0 0 / 15%);
 }
+
 .intro {
   flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .intro h1,
 h2,
 h3 {
@@ -51,6 +56,7 @@ h3 {
   line-height: 3rem;
   margin: 32px;
 }
+
 .intro h3 {
   color: var(--mdc-theme-primary);
   margin: 16px;

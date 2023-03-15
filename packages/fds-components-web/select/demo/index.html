@@ -1,0 +1,54 @@
+<script type="module" src="node_modules/@finastra/select/dist/src/select.js"></script>
+<script type="module" src="node_modules/@finastra/list/dist/src/index.js"></script>
+
+<div style="display: flex; flex-direction: column; gap: 48px; width: 100%; min-width: 242px">
+  <fds-select label="Select">
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select label="Select" dense>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select label="Select" labelInside>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select label="Select" labelInside dense>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select icon="apps" label="Select" dense>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select icon="apps" disabled>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1" selected>Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+
+  <fds-select required validationMessage="This Field is Required" label="required (error)" icon="apps">
+    <fds-list-item selected></fds-list-item>
+    <fds-list-item value="0">Item 0</fds-list-item>
+    <fds-list-item value="1">Item 1</fds-list-item>
+    <fds-list-item value="2">Item 2</fds-list-item>
+    <fds-list-item value="3">Item 3</fds-list-item>
+  </fds-select>
+</div>

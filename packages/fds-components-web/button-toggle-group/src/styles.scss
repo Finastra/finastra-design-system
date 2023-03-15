@@ -1,0 +1,59 @@
+@use '@finastra/fds-theme' as fds;
+
+@media (prefers-reduced-motion: no-preference) {
+  :host > div::before {
+    transition-property: transform, width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+}
+
+:host {
+  --fds-toggle-selection-x: 0;
+  --fds-toggle-selection-width: 50px;
+
+  position: relative;
+}
+
+:host > div {
+  @include fds.property(border-color, outline);
+  @include fds.padding-x(1);
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 44px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+:host > div::before {
+  @include fds.property(border-color, primary);
+  @include fds.background(surface-selected);
+
+  content: '';
+  z-index: 0;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  height: 36px;
+  width: var(--fds-toggle-selection-width);
+  transform: translateX(var(--fds-toggle-selection-x));
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 4px 0;
+}
+
+:host([dense]) > div {
+  height: 38px;
+}
+
+:host([dense]) > div::before {
+  height: 30px;
+}
+
+::slotted(*) {
+  z-index: 1;
+}

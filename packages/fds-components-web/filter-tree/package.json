@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/filter-tree",
+  "displayName": "FilterTree",
+  "version": "1.7.0",
+  "description": "FilterTree Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "FilterTree"
+  ],
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss src/tree-item/tree-item.scss"
+  },
+  "dependencies": {
+    "@finastra/formfield": "1.7.0",
+    "@finastra/icon-button": "1.7.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

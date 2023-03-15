@@ -1,2 +1,0 @@
-@mixin uxg-<%= filename %>-theme($theme) {
-}

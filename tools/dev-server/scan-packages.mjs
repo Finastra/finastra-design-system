@@ -2,7 +2,7 @@ import path from 'path';
 import globby from 'globby';
 import fs from 'fs';
 
-const ROOT_FOLDER = path.resolve('./libs/web-components');
+const ROOT_FOLDER = path.resolve('./packages/fds-components-web');
 
 export async function scanPackages() {
   let demoPkgs = await globby(['**/package.json', '!**/node_modules/**'], {

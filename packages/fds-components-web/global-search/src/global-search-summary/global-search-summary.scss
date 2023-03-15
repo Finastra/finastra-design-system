@@ -1,0 +1,40 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  .fds-global-search-summary-result {
+    @include fds.typography(subtitle-2);
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    place-content: space-between;
+    align-items: center;
+    @include fds.padding-y(1);
+  }
+
+  .fds-global-search-summray-no-result {
+    @include fds.typography(subtitle-2);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include fds.padding-y(1);
+  }
+
+  .fds-global-search-summary-result:hover {
+    @include fds.background(surface-hover);
+
+    border-radius: var(--fds-spacing-1);
+    margin-left: calc(0px - var(--fds-spacing-2));
+    margin-right: calc(0px - var(--fds-spacing-2));
+    @include fds.padding-x(2);
+
+    cursor: pointer;
+  }
+
+  .fds-global-search-summary-search-text {
+    @include fds.property(color, primary);
+
+    padding-left: var(--fds-spacing-1);
+  }
+}

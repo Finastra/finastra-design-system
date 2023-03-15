@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/textarea",
+  "displayName": "Textarea",
+  "version": "1.7.0",
+  "description": "Textarea Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Textarea"
+  ],
+  "license": "MIT",
+  "main": "dist/src/textarea.js",
+  "module": "dist/src/textarea.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-textarea": "0.27.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,11 @@
+@function light() {
+  @return 'light';
+}
+
+@function dark() {
+  @return 'dark';
+}
+
+@function is-light($scheme) {
+  @return $scheme == light();
+}

@@ -1,0 +1,57 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+  @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+
+  .fds-search-item:hover {
+    @include fds.background(surface-hover);
+
+    border-radius: var(--fds-spacing-1);
+
+    .fds-global-search-group-remove-btn {
+      visibility: visible;
+    }
+  }
+}
+
+.fds-global-search-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .fds-global-search-group-title {
+    @include fds.typography(subtitle-2);
+    @include fds.property(color, on-background);
+    @include fds.margin(0);
+    @include fds.padding-y(2);
+  }
+
+  .fds-search-item {
+    display: flex;
+    place-content: space-between;
+    cursor: pointer;
+    @include fds.typography(body-2);
+    @include fds.property(color, on-background);
+    @include fds.padding(1);
+
+    .fds-search-item-detail {
+      display: flex;
+      align-items: center;
+    }
+
+    .fds-global-search-group-remove-btn {
+      visibility: hidden;
+    }
+  }
+}

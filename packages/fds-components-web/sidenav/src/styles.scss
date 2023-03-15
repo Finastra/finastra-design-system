@@ -1,0 +1,18 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  --mdc-drawer-width: 300px;
+  @include fds.background(surface);
+  @include fds.color(on-surface);
+  @include fds.mdc(theme-text-icon-on-background, on-surface-medium);
+
+  .navigation {
+    display: inline;
+  }
+}
+
+@media (min-width: 960px) {
+  .navigation {
+    display: none !important;
+  }
+}

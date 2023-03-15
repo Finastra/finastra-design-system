@@ -1,0 +1,164 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-button/styles';
+
+:host {
+  display: block;
+
+  --mdc-shape-small: 16px;
+  @include fds.property(--mdc-theme-primary, primary);
+  @include fds.property(--mdc-button-outline-color, on-surface-disabled);
+  @include fds.property(--mdc-ripple-color, primary);
+
+  .mdc-button {
+    height: 24px;
+    min-width: auto;
+    padding: 0 12px;
+    text-transform: none;
+  }
+
+  .mdc-button:hover {
+    .mdc-button__label {
+      @include fds.property(color, primary);
+    }
+  }
+
+  .mdc-button__label {
+    @include fds.typography(body-3);
+    @include fds.property(color, on-surface);
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, on-surface-medium);
+
+    &:hover {
+      @include fds.property(color, primary);
+    }
+  }
+
+  .mdc-button__icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+:host([selected]) {
+  @include fds.property(--mdc-button-outline-color, primary);
+
+  .mdc-button {
+    @include fds.property(background, surface-selected);
+  }
+
+  .mdc-button__label {
+    @include fds.property(color, primary);
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, primary);
+  }
+}
+
+:host([large]) {
+  .mdc-button {
+    height: 32px;
+  }
+
+  .mdc-button__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+  }
+
+  .mdc-button__label {
+    @include fds.typography(body-2);
+  }
+}
+
+:host([icon]:not([icon=''])) {
+  .mdc-button {
+    padding-left: 8px;
+
+    &.mdc-button--dense {
+      padding-left: 6px;
+    }
+  }
+}
+
+:host([trailingicon]:not([trailingicon=''])) {
+  .mdc-button {
+    padding-right: 8px;
+
+    &.mdc-button--dense {
+      padding-right: 6px;
+    }
+  }
+}
+
+:host([dense]) {
+  .mdc-button {
+    height: 18px;
+  }
+
+  .leading-icon,
+  .trailing-icon {
+    height: 12px;
+  }
+
+  .mdc-button__icon {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+  }
+}
+
+:host([secondary]) {
+  @include fds.property(--mdc-ripple-color, secondary);
+
+  .mdc-button:hover {
+    @include fds.property(background, surface-selected-secondary);
+
+    .mdc-button__label {
+      @include fds.property(color, secondary);
+    }
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, on-surface-medium);
+
+    &:hover {
+      @include fds.property(color, secondary);
+    }
+  }
+}
+
+:host([secondary][selected]) {
+  .mdc-button {
+    @include fds.property(background, surface-selected-secondary);
+    @include fds.property(--mdc-button-outline-color, secondary);
+    @include fds.property(--mdc-ripple-color, secondary);
+  }
+
+  .mdc-button__label {
+    @include fds.property(color, secondary);
+  }
+
+  .mdc-button--outlined:not(:disabled) {
+    @include fds.property(color, secondary);
+  }
+}
+
+:host([disabled]) {
+  @include fds.property(--mdc-button-disabled-ink-color, on-surface-disabled);
+
+  .mdc-button {
+    @include fds.property(background, surface-disabled);
+  }
+
+  .mdc-button__label {
+    @include fds.property(color, on-surface-medium);
+  }
+}

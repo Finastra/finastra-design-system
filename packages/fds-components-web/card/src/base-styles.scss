@@ -1,0 +1,47 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/card' as card;
+
+@mixin core-styles() {
+  :host {
+    display: block;
+    height: fit-content;
+    @include card.core-styles;
+
+    --mdc-card-border-radius: 4px;
+  }
+
+  .mdc-card {
+    flex: 1;
+    @include fds.background(surface);
+
+    height: 100%;
+    overflow: hidden;
+    @include fds.padding(3);
+  }
+
+  .mdc-card--selectable {
+    &:hover {
+      cursor: pointer;
+      @include fds.property(background, surface-hover);
+    }
+
+    &:active {
+      @include fds.property(background, surface-selected);
+    }
+  }
+
+  .mdc-card--disabled {
+    cursor: not-allowed;
+    @include fds.property(background, surface-disabled);
+  }
+
+  .mdc-card--outlined {
+    @include fds.property(border-color, outline);
+  }
+
+  slot {
+    border-radius: inherit;
+  }
+}
+
+@include core-styles;

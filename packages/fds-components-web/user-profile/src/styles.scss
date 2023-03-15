@@ -1,0 +1,73 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: inline-block;
+
+  --fds-menu-min-width: 300px;
+  @include fds.property(--svg-gradient-stop-1, primary);
+  @include fds.property(--svg-gradient-stop-2, secondary);
+
+  fds-icon-button {
+    display: block;
+    @include fds.mdc(ripple-color, surface-selected);
+  }
+
+  #menu {
+    position: absolute;
+
+    .header {
+      text-align: center;
+      @include fds.padding(3);
+
+      fds-avatar {
+        display: inline-block;
+        margin: auto;
+      }
+
+      .title {
+        @include fds.typography(headline-6);
+        @include fds.color(on-background);
+        @include fds.margin(3, top);
+      }
+
+      slot[name='userInfo']::slotted(*) {
+        @include fds.typography(body-3);
+        @include fds.color(on-background);
+        @include fds.margin(0);
+      }
+    }
+
+    slot[name='actions']::slotted(*) {
+      @include fds.padding(3);
+      @include fds.padding(0, bottom);
+      @include fds.color(on-background);
+    }
+
+    .header-dense {
+      @include fds.padding(4);
+
+      fds-avatar {
+        --fds-avatar-size: var(--fds-spacing-5, 48px);
+        --fds-avatar-font-size: var(--fds-spacing-3, 16px);
+
+        float: left;
+        @include fds.margin(0);
+        @include fds.margin(2, right);
+      }
+
+      .title {
+        display: inline-block;
+        @include fds.margin(0);
+        @include fds.padding(2, top);
+        @include fds.typography(headline-6);
+        @include fds.color(on-background);
+      }
+
+      slot[name='userInfo']::slotted(*) {
+        @include fds.margin(0);
+        @include fds.typography(body-3);
+        @include fds.color(on-background);
+      }
+    }
+  }
+}

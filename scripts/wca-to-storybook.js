@@ -4,9 +4,9 @@ const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
 async function main() {
-  const paths = await getPaths('../libs/web-components/*/src/*.ts');
+  const paths = await getPaths('../packages/fds-components-web/*/src/*.ts');
   paths.forEach((path) => {
-    getContent(path).forEach(tag => {
+    getContent(path).forEach((tag) => {
       const { attributes, slots, cssProperties, name, events } = tag;
       const argTypes = mapArgTypes(attributes, slots);
       const cssprops = mapCssProps(cssProperties);
@@ -15,7 +15,7 @@ async function main() {
       const dir = dirname(path).split(path.sep).pop();
       const namedPath = join(dir, `${name}.json`);
       writeFileSync(namedPath, newFile, READ_WRITE_OPTS);
-    })
+    });
   });
 }
 
@@ -92,7 +92,7 @@ function mapCssProps(cssProperties) {
 function mapEvents(events) {
   if (!events) return {};
   return {
-    handles: events.map(event => event.name)
+    handles: events.map((event) => event.name)
   };
 }
 

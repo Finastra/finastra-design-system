@@ -1,90 +1,41 @@
 {
   "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "module",
-    "project": "./tsconfig.*?.json"
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@typescript-eslint", "@nrwl/nx"],
+  "plugins": ["@typescript-eslint"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-prototype-builtins": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
+      "files": ["web-dev-server.config.js", "web-test-runner.config.js"],
+      "env": {
+        "node": true
       }
-    },
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@angular-eslint/recommended",
-        "plugin:@nrwl/nx/angular",
-        "prettier"
-      ],
-      "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": ["ffdc", "uxg"],
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": ["ffdc", "uxg"],
-            "style": "kebab-case"
-          }
-        ],
-        "no-prototype-builtins": "off",
-        "arrow-body-style": "off",
-        "no-case-declarations": "off",
-
-        "@angular-eslint/no-empty-lifecycle-method": "off",
-        "@angular-eslint/no-host-metadata-property": "off",
-        "@angular-eslint/directive-class-suffix": "off",
-        "@angular-eslint/no-input-rename": "off",
-        "@angular-eslint/no-output-rename": "off",
-        "@angular-eslint/no-output-native": "off",
-
-        "@typescript-eslint/no-unused-expressions": "off",
-        "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-parameter-properties": "off",
-        "@typescript-eslint/no-empty-function": "off"
-      },
-      "plugins": ["@angular-eslint/eslint-plugin", "@typescript-eslint"]
-    },
-    {
-      "files": ["*.html"],
-      "extends": ["plugin:@nrwl/nx/angular-template"],
-      "rules": {
-        "@angular-eslint/template/banana-in-box": "error",
-        "@angular-eslint/template/eqeqeq": "error",
-        "@angular-eslint/template/no-negated-async": "error"
-      },
-      "plugins": ["@angular-eslint/eslint-plugin-template"]
     }
   ]
 }

@@ -1,0 +1,59 @@
+<script type="module" src="node_modules/@finastra/textfield/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/icon-button/dist/src/icon-button.js"></script>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+  <fds-textfield type="password" showActionButton id="my-textfield-dense" dense>
+    <fds-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this)"></fds-icon-button>
+  </fds-textfield>
+  -->
+  <fds-textfield required name="label" label="Label" placeholder="Placeholder" labelInside dense> </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" icon="person_outline" helper="fill it like this" dense> </fds-textfield>
+  <fds-textfield label="Label" placeholder="Placeholder" labelInside dense> </fds-textfield>
+
+  <fds-textfield type="password" icon="favorite_outline" label="favorite thing" labelInside showActionButton id="my-textfield">
+    <fds-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this)"></fds-icon-button>
+  </fds-textfield>
+  <fds-textfield
+    label="Label"
+    placeholder="Placeholder"
+    icon="person_outline"
+    helper="limited char num"
+    validationMessage="this field is required"
+    labelInside
+    maxLength="15"
+    charCounter
+    required
+  >
+  </fds-textfield>
+  <fds-textfield label="Label" showActionButton placeholder="Placeholder" icon="lock_outline" disabled>
+    <fds-icon-button slot="actionButton" icon="visibility_off" onclick="myFunction(this)"></fds-icon-button>
+  </fds-textfield>
+
+  <fds-textfield type="date" iconTrailing="calendar_today" dense></fds-textfield>
+
+  <fds-textfield type="datetime-local" iconTrailing="calendar_today" dense></fds-textfield>
+
+  <fds-textfield type="date" iconTrailing="calendar_today" dense disabled></fds-textfield>
+</div>
+
+<script>
+  // function myFunction(e) {
+  //   const textfield = e.parentNode;
+  //   if (e.getAttribute('icon') == 'visibility_off') {
+  //     e.setAttribute('icon', 'visibility_on');
+  //     textfield.setAttribute('type', 'text');
+  //   } else {
+  //     e.setAttribute('icon', 'visibility_off');
+  //     textfield.setAttribute('type', 'password');
+  //   }
+  // }
+
+  const form = document.getElementById('myForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    for (let nv of data.entries()) {
+      console.log(`  ${nv[0]}: ${nv[1]}`);
+    }
+  });
+</script>

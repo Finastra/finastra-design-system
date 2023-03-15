@@ -4,7 +4,6 @@
 
 # Repository management
 /scripts/   @bcldvd @ttalbot
-/tools/generators/angular-component    @rbordeanu
 /tools/generators/web-component        @bcldvd @dorsaffrigui
 
 # Themes and style files
@@ -16,20 +15,7 @@
 *.jpg       @dorsaffrigui @ttalbot
 *.svg       @dorsaffrigui @ttalbot
 
-# Palette service
-/libs/angular-components/core/src/palette/palette.defaults.ts   @dorsaffrigui @ttalbot
-
-# Per components owners
-/libs/angular-components/global-search/            @rbordeanu
-/libs/angular-components/scroll-to-top/            @rbordeanu
-/libs/angular-components/table/                    @Ping-YUAN
-/libs/angular-components/popover/                  @rbordeanu
-/libs/angular-components/repeater/                 @xmonvoisin
-/libs/angular-components/filter/filter-tree/       @Pi5rr5
-/libs/angular-components/vector-map/               @rbordeanu
-/libs/angular-components/wizard/                   @rbordeanu
-
 # Web components owners
-/libs/web-components    @bcldvd @ttalbot
+/packages/fds-components-web    @bcldvd @ttalbot
 /.storybook             @bcldvd @ttalbot
 

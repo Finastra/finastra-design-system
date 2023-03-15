@@ -1,0 +1,57 @@
+<script type="module" src="node_modules/@finastra/expansion-panel/dist/src/index.js"></script>
+<style>
+  .content {
+    padding-top: 24px;
+  }
+</style>
+<div style="display: flex; flex-direction: column; gap: 64px">
+  <fds-expansion-panel>
+    <fds-expansion-panel-item expanded>
+      <div slot="title">Setting</div>
+      <div slot="description">Global setting</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+    <fds-expansion-panel-item>
+      <div slot="title">Security</div>
+      <div slot="description">Security parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+
+    <fds-expansion-panel-item disabled>
+      <div slot="title">Private</div>
+      <div slot="description">Security parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+
+    <fds-expansion-panel-item>
+      <div slot="title">Hobbies</div>
+      <div slot="description">Hobbies parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+  </fds-expansion-panel>
+
+  <fds-expansion-panel toggleIconPosition="before" displayMode="flat" multi>
+    <fds-expansion-panel-item hideToggleIcon>
+      <div slot="title">Setting</div>
+      <div slot="description">Global setting</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+    <fds-expansion-panel-item toggleIconPosition="ater">
+      <div slot="title">Security</div>
+      <div slot="description">Security parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+
+    <fds-expansion-panel-item disabled>
+      <div slot="title">Private</div>
+      <div slot="description">Security parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+
+    <fds-expansion-panel-item>
+      <div slot="title">Hobbies</div>
+      <div slot="description">Hobbies parametre</div>
+      <div class="content">content</div>
+    </fds-expansion-panel-item>
+  </fds-expansion-panel>
+</div>

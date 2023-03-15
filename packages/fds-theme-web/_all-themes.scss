@@ -1,0 +1,5 @@
+@use './mixins';
+
+$class: ':root' !default;
+
+@include mixins.use-all-themes($class);

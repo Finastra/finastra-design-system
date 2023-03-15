@@ -1,0 +1,184 @@
+@use '@material/select/mdc-select.scss';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+  @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(theme-text-primary-on-background, on-background);
+}
+
+.mdc-select.mdc-select--outlined {
+  background: none;
+}
+
+.mdc-select {
+  width: 100%;
+  border-radius: var(--fds-text-field-radius, 4px);
+}
+
+.mdc-select--outlined .mdc-select__anchor {
+  height: 48px;
+}
+
+.fds-select--label-inside {
+  .mdc-floating-label--float-above {
+    transform: translateY(-16px) !important;
+  }
+
+  .mdc-select__selected-text-container {
+    padding-top: 15px;
+  }
+}
+
+.mdc-select--outlined:not(.mdc-select--disabled) .mdc-select__anchor {
+  @include fds.background(surface);
+
+  border-radius: var(--fds-text-field-radius, 4px);
+}
+
+:host .mdc-select--outlined.mdc-select--with-leading-icon .mdc-floating-label--float-above {
+  transform: translateY(-16px) !important;
+}
+
+:host([dense]) {
+  --mdc-icon-size: 18px;
+  --mdc-menu-item-height: 40px;
+
+  .fds-select__label {
+    @include fds.typography(body-3);
+  }
+
+  .mdc-select--outlined .mdc-select__anchor {
+    height: 40px !important;
+
+    .mdc-floating-label--float-above {
+      transform: translateY(-33.5px) scale(1);
+    }
+  }
+}
+
+.mdc-select--outlined {
+  @include fds.background(surface);
+  @include fds.mdc(notched-outline-border-color, outline);
+}
+
+:host(:not([disabled]):hover) .mdc-select:not(.mdc-select--invalid, .mdc-select--focused) .mdc-notched-outline {
+  @include fds.mdc(notched-outline-border-color, on-surface-medium);
+}
+
+.mdc-select.mdc-select--disabled .mdc-notched-outline {
+  @include fds.background(surface-disabled);
+
+  border-radius: var(--fds-text-field-radius, 4px);
+}
+
+.mdc-select--focused:not(.mdc-select--invalid) .mdc-notched-outline {
+  @include fds.background(surface-selected);
+  @include fds.mdc(notched-outline-border-color, primary);
+
+  --mdc-notched-outline-stroke-width: 2px;
+}
+
+.mdc-select.mdc-select--focused.mdc-select--invalid {
+  @include fds.background(surface-error);
+}
+
+.mdc-select--invalid .mdc-notched-outline {
+  @include fds.mdc(notched-outline-border-color, error);
+}
+
+.mdc-select:not(.mdc-select--disabled, .mdc-select--invalid).mdc-select--focused .mdc-floating-label {
+  @include fds.property(color, primary);
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
+  @include fds.property(color, on-surface-medium);
+}
+
+.mdc-floating-label {
+  @include fds.typography(body-2);
+}
+
+.mdc-select .mdc-select__selected-text {
+  @include fds.typography(subtitle-2);
+}
+
+:host([dense]) .mdc-floating-label {
+  @include fds.typography(body-3);
+}
+
+:host([dense]) .mdc-select .mdc-select__selected-text {
+  @include fds.typography(subtitle-3);
+}
+
+:host([disabled]) .fds-select__label {
+  @include fds.color(on-surface-disabled);
+}
+
+.mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor {
+  @include fds.property(background-color, surface-selected);
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-select__dropdown-icon {
+  @include fds.property(fill, on-surface-medium);
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
+  @include fds.property(color, on-background);
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-select__icon {
+  @include fds.property(color, primary);
+}
+
+.mdc-select--invalid:not(.mdc-select--disabled) .mdc-select__icon {
+  @include fds.property(color, error);
+}
+
+.mdc-select:not(.mdc-select--disabled) + .mdc-select-helper-text {
+  @include fds.property(color, on-surface-medium);
+}
+
+.mdc-select--invalid:not(.mdc-select--disabled) .mdc-line-ripple::after {
+  @include fds.property(border-color, error);
+}
+
+.mdc-select--invalid:not(.mdc-select--disabled) .mdc-floating-label {
+  @include fds.property(color, error);
+}
+
+.mdc-select--filled:not(.mdc-select--disabled, .mdc-select--invalid) .mdc-line-ripple::before {
+  @include fds.property(border-bottom-color, primary);
+}
+
+.mdc-select--filled.mdc-select--disabled .mdc-select__anchor {
+  @include fds.property(background-color, surface-disabled);
+}
+
+.mdc-select.mdc-select--disabled .mdc-floating-label {
+  @include fds.property(color, on-surface-disabled);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__icon {
+  @include fds.property(color, on-surface-disabled);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__dropdown-icon {
+  @include fds.property(fill, on-surface-disabled);
+}
+
+.mdc-select.mdc-select--disabled .mdc-select__selected-text {
+  @include fds.property(color, on-surface-disabled);
+}
+
+.mdc-select.mdc-select--disabled + .mdc-select-helper-text {
+  @include fds.property(color, on-surface-disabled);
+}
+
+.fds-select__label {
+  @include fds.color(on-surface-medium);
+  @include fds.typography(body-2);
+  @include fds.margin(1, bottom);
+
+  display: block;
+}

@@ -1,0 +1,21 @@
+@use '@finastra/fds-theme' as fds;
+
+$color: rgb(0 0 0 / 54%);
+
+.tippy-box[data-theme~='finastra'] {
+  background-color: $color;
+  @include fds.color(on-dark);
+  @include fds.typography(body-3);
+
+  .tippy-arrow::before {
+    display: none;
+  }
+
+  > .tippy-box-backdrop {
+    background-color: $color;
+  }
+
+  > .tippy-box-svg-arrow {
+    fill: transparent;
+  }
+}

@@ -1,0 +1,145 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+}
+
+.container {
+  align-self: center;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: var(--fds-spacing-4, 24px);
+  align-items: center;
+  position: relative;
+
+  .close-btn {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 20px;
+    @include fds.property(color, on-surface-medium);
+
+    --fds-icon-size: 16px;
+  }
+
+  .message {
+    flex-direction: row;
+    display: flex;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      @include fds.property(background, surface);
+
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: var(--fds-spacing-3, 16px);
+    }
+  }
+
+  .title {
+    padding-bottom: var(--fds-spacing-1, 4px);
+    @include fds.color(on-surface);
+    @include fds.typography(subtitle-2);
+  }
+
+  .subtitle {
+    @include fds.color(on-surface-medium);
+    @include fds.typography(body-2);
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 12px;
+
+    ::slotted([slot='secondaryAction']) {
+      margin-right: var(--fds-spacing-2, 8px);
+    }
+  }
+}
+
+.single-line {
+  .description {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    padding-bottom: 0;
+  }
+
+  .subtitle {
+    margin-left: var(--fds-spacing-3, 16px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+  }
+
+  .alert {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-container {
+    align-self: center;
+  }
+
+  .actions {
+    align-self: center;
+    margin-top: 0;
+  }
+}
+
+:host([type='success']) {
+  .container {
+    @include fds.property(background, surface-success);
+    @include fds.property(border-color, outline-success);
+  }
+}
+
+:host([type='error']) {
+  .container {
+    @include fds.property(background, surface-error);
+    @include fds.property(border-color, outline-error);
+  }
+}
+
+:host([type='warning']) {
+  .container {
+    @include fds.property(background, surface-warning);
+    @include fds.property(border-color, outline-warning);
+  }
+}
+
+:host([type='info']) {
+  .container {
+    @include fds.property(background, surface-info);
+    @include fds.property(border-color, outline-info);
+  }
+}
+
+:host([dense]) {
+  .container {
+    padding: var(--fds-spacing-3, 16px);
+
+    --fds-icon-size: 20px;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .title {
+      @include fds.typography(subtitle-3);
+    }
+
+    .subtitle {
+      @include fds.typography(body-3);
+    }
+  }
+}

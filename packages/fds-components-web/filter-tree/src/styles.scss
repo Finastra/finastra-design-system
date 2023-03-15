@@ -1,0 +1,32 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+}
+
+li {
+  list-style: none;
+}
+
+.show {
+  height: inherit;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s ease;
+}
+
+.hide {
+  height: 0;
+  opacity: 0;
+  visibility: visible;
+  animation: 0.1s ease;
+}
+
+mwc-formfield {
+  @include fds.typography(body-2);
+}

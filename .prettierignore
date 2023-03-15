@@ -1,12 +1,1 @@
-# Add files here to ignore them from prettier formatting
-**/*.scss
-**/package-lock.json
-**/package.json
-# libs/web-components/**
-.storybook/**
-tools/generators/web-component/**
-
-# additional ignores
-.history
-dist
-coverage
+tools/plop-templates/*

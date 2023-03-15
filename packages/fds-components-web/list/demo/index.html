@@ -1,0 +1,142 @@
+<script type="module" src="node_modules/@finastra/icon/dist/src/icon.js"></script>
+<script type="module" src="node_modules/@finastra/list/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/divider/dist/src/divider.js"></script>
+
+<style>
+  .list-container {
+    width: 340px;
+  }
+
+  h4 {
+    color: var(--fds-on-background);
+    font: var(--fds-headline-4);
+    margin: 8px 0;
+  }
+
+  .body2 {
+    font: var(--fds-body-2);
+  }
+</style>
+
+<div class="list-container">
+  <h4>Basic List</h4>
+
+  <fds-list id="basic">
+    <fds-list-item><span class="body2">Body 2</span></fds-list-item>
+    <fds-list-item>Subtitle 1</fds-list-item>
+  </fds-list>
+
+  <h4>Advanced List</h4>
+
+  <fds-list id="advanced">
+    <fds-list-item twoline graphic="avatar" noninteractive>
+      <span>User Name</span>
+      <span slot="secondary">user@domain.tld</span>
+      <fds-icon slot="graphic" class="inverted">tag_faces</fds-icon>
+    </fds-list-item>
+    <fds-divider></fds-divider>
+    <fds-list-item graphic="icon">
+      <slot>FAQ</slot>
+      <fds-icon slot="graphic">help_outline</fds-icon>
+    </fds-list-item>
+    <fds-list-item graphic="icon">
+      <slot>Sign out</slot>
+      <fds-icon slot="graphic">exit_to_app</fds-icon>
+    </fds-list-item>
+  </fds-list>
+
+  <h4>Noninteractive List</h4>
+
+  <fds-list id="basic">
+    <fds-list-item selected noninteractive>Item 0</fds-list-item>
+    <fds-list-item noninteractive>Item 1</fds-list-item>
+    <fds-list-item noninteractive>Item 2</fds-list-item>
+    <fds-list-item noninteractive>Item 3</fds-list-item>
+  </fds-list>
+
+  <h4>Activatable List</h4>
+
+  <fds-list activatable id="activatable">
+    <fds-list-item>Item 0</fds-list-item>
+    <fds-list-item selected activated>Item 1</fds-list-item>
+    <fds-list-item>Item 2</fds-list-item>
+    <fds-list-item>Item 3</fds-list-item>
+  </fds-list>
+
+  <h4>Activatable Multi List</h4>
+
+  <fds-list activatable multi id="activatable-multi">
+    <fds-list-item selected activated>Item 0</fds-list-item>
+    <fds-list-item selected activated>Item 1</fds-list-item>
+    <fds-list-item>Item 2</fds-list-item>
+    <fds-list-item>Item 3</fds-list-item>
+  </fds-list>
+
+  <h4>Graphic List</h4>
+
+  <fds-list>
+    <fds-list-item graphic="avatar">
+      <span>Avatar graphic</span>
+      <fds-icon slot="graphic">folder</fds-icon>
+    </fds-list-item>
+    <fds-list-item graphic="avatar">
+      <span>Avatar graphic</span>
+      <fds-icon slot="graphic">folder</fds-icon>
+    </fds-list-item>
+    <fds-list-item graphic="avatar">
+      <span>Avatar graphic</span>
+      <fds-icon slot="graphic">folder</fds-icon>
+    </fds-list-item>
+  </fds-list>
+
+  <h4>Two Line List</h4>
+
+  <fds-list multi>
+    <fds-list-item twoline>
+      <span>Item 0</span>
+      <span slot="secondary">Secondary line</span>
+    </fds-list-item>
+    <fds-divider></fds-divider>
+    <fds-list-item twoline disabled>
+      <span>Item 1</span>
+      <span slot="secondary">Secondary line</span>
+    </fds-list-item>
+    <fds-divider></fds-divider>
+    <fds-list-item twoline>
+      <span>Item 2</span>
+      <span slot="secondary">Secondary line</span>
+    </fds-list-item>
+    <fds-divider></fds-divider>
+    <fds-list-item twoline>
+      <span>Item 3</span>
+      <span slot="secondary">Secondary line</span>
+    </fds-list-item>
+  </fds-list>
+
+  <h4>Check List</h4>
+
+  <fds-list multi id="list">
+    <fds-check-list-item selected>Item 0</fds-check-list-item>
+    <fds-check-list-item selected>Item 1</fds-check-list-item>
+    <fds-divider></fds-divider>
+    <fds-check-list-item inderterminate left>Item 2 (left)</fds-check-list-item>
+    <fds-check-list-item left>Item 3 (left)</fds-check-list-item>
+  </fds-list>
+
+  <h4>Radio List</h4>
+
+  <fds-list>
+    <fds-radio-list-item group="a" selected>Item 0</fds-radio-list-item>
+    <fds-radio-list-item group="a">Item 1</fds-radio-list-item>
+    <fds-divider></fds-divider>
+    <fds-radio-list-item left group="a">Item 2 (left)</fds-radio-list-item>
+    <fds-radio-list-item left group="a">Item 3 (left)</fds-radio-list-item>
+  </fds-list>
+</div>
+
+<script>
+  const list = document.querySelector('#list');
+  list.addEventListener('selected', (event) => {
+    console.log(event.detail);
+  });
+</script>

@@ -1,0 +1,52 @@
+@use './_fds-icon';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @extend %material-icons;
+
+  // @include fds.color(on-surface);
+}
+
+:host([dense]) {
+  --fds-icon-size: 18px;
+}
+
+:host([large]) {
+  --fds-icon-size: 32px;
+}
+
+:host([extra_large]) {
+  --fds-icon-size: 48px;
+}
+
+:host([primary]) {
+  @include fds.color(primary);
+}
+
+:host([secondary]) {
+  @include fds.color(secondary);
+}
+
+:host([success]) {
+  @include fds.color(success);
+}
+
+:host([error]) {
+  @include fds.color(error);
+}
+
+:host([warning]) {
+  @include fds.color(warning);
+}
+
+:host([info]) {
+  @include fds.color(surface-info);
+}
+
+:host([gradient]) {
+  @include fds.color(gradient-vertical);
+}
+
+:host([disabled]) {
+  @include fds.color(on-surface-disabled);
+}

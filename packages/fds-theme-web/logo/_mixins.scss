@@ -1,0 +1,9 @@
+@use './light';
+@use './dark';
+@use '../scheme';
+
+@mixin custom-properties($scheme) {
+  $property: if(scheme.is-light($scheme), light.$logo, dark.$logo);
+
+  --fds-logo: #{$property};
+}

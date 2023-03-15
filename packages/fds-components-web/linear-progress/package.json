@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/linear-progress",
+  "displayName": "LinearProgress",
+  "version": "1.7.0",
+  "description": "LinearProgress Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "LinearProgress"
+  ],
+  "license": "MIT",
+  "main": "dist/src/linear-progress.js",
+  "module": "dist/src/linear-progress.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-linear-progress": "0.27.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

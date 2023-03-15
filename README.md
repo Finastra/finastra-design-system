@@ -10,33 +10,15 @@ Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) repo
 
 Our web theme is built over modern CSS standards and provides all foundations (colors, typography, elevations, spacings) to apply Finastra branding. It provides light/dark mode support out of the box and target WCAG AA accessibility rating.
 
-[Learn more](./themes/fds-theme/README.md)
+[Learn more](./packages/fds-theme-web/README.md)
 
 ## Web components
 
 This implementation of the Finastra design system is framework agnostic (i.e can be used with any major framework: React, Vue, Angular, Svelte...). It's our futureproof solution for adopting [Finastra branded components](https://finastra.github.io/finastra-design-system/) in your financial app. It uses the web theme.
 
-[Learn more](./libs/web-components/README.md)
+[Learn more](./packages/fds-components-web/README.md)
 
-# 🅰️ For Angular
-
-## Angular theme
-
-`@finastra/angular-theme`
-
-A CSS implementation of our foundations specifically made for Angular.
-
-[Learn more](./themes/angular-theme/README.md)
-
-## Angular components
-
-`@finastra/angular-components`
-
-An angular implementation of the Finastra design system components. It provides all [the necessary components](https://lucid-bassi-bfa8cc.netlify.app/) to make fast and cohesive financial apps.
-
-[Learn more](./libs/angular-components/README.md)
-
-# 📦 Other ressources
+# 📦 Other resources
 
 ## UI kit on Figma
 
@@ -48,7 +30,7 @@ It all starts here for designers. The source of thruth for foundations and compo
 
 A Microsoft Power BI theme specified in JSON.
 
-[Learn more](./themes/power-bi-theme/README.md)
+[Learn more](./packages/fds-theme-powerbi/README.md)
 
 # 💌 Want to help?
 

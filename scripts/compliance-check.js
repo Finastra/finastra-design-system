@@ -1,10 +1,10 @@
 const core = require('@actions/core');
 const { join } = require('path');
 const globby = require('globby');
-const glob = require("glob");
+const glob = require('glob');
 
 async function main() {
-  const paths = await getPaths('../libs/web-components/*/src/*.ts');
+  const paths = await getPaths('../packages/fds-components-web/*/src/*.ts');
   paths.forEach((path) => {
     const splitedPath = path.split('/');
     const wcName = splitedPath[splitedPath.length - 1];
@@ -31,7 +31,7 @@ async function main() {
           core.setFailed(`Compliance check failed! ${wcName} must have a test 🔬!`);
         }
       }
-    })
+    });
   });
 }
 

@@ -1,0 +1,104 @@
+<script type="module" src="node_modules/@finastra/app-bar/dist/src/app-bar.js"></script>
+<script type="module" src="node_modules/@finastra/search-input/dist/src/search-input.js"></script>
+<script type="module" src="node_modules/@finastra/user-profile/dist/src/user-profile.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/button.js"></script>
+<style>
+  p {
+    color: var(--fds-on-background);
+    font: var(--fds-body-1);
+  }
+  fds-button {
+    padding-left: 16px;
+  }
+  fds-user-profile fds-button {
+    padding-right: 16px;
+  }
+  fds-user-profile fds-button + fds-button {
+    margin-top: var(--fds-spacing-2);
+  }
+</style>
+
+<div style="width: 800px">
+  <p>App bar with content</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
+    <fds-search-input label="Search" slot="content"></fds-search-input>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="info" slot="actions"></fds-icon-button>
+    <fds-user-profile slot="actions" userName="Raya Hristova">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
+  </fds-app-bar>
+
+  <p>App bar with navigation</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
+    <fds-button text label="Tab 1" slot="navigation"></fds-button>
+    <fds-button text label="Tab 2" slot="navigation"></fds-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="info" slot="actions"></fds-icon-button>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
+  </fds-app-bar>
+
+  <p>Transparent app bar</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png" transparent>
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
+    <fds-search-input label="Search" slot="content"></fds-search-input>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="info" slot="actions"></fds-icon-button>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
+  </fds-app-bar>
+
+  <p>App bar with buttons</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png">
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="info" slot="actions"></fds-icon-button>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
+    <fds-button secondary label="Sign in" slot="actions"></fds-button>
+    <fds-button outlined label="Sign up" slot="actions"></fds-button>
+  </fds-app-bar>
+
+  <p>Prominent app bar</p>
+  <fds-app-bar appName="Example" logo="https://upload.wikimedia.org/wikipedia/fr/2/2f/Finastra.png" prominent>
+    <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
+    <fds-button text label="Tab 1" slot="navigation"></fds-button>
+    <fds-button text label="Tab 2" slot="navigation"></fds-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="info" slot="actions"></fds-icon-button>
+    <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
+      <div slot="userInfo">raya.hristova@finastra.com</div>
+      <div slot="actions">
+        <fds-button fullwidth label="Logout" icon="logout"></fds-button>
+        <fds-button text fullwidth label="View profile"></fds-button>
+      </div>
+    </fds-user-profile>
+    <fds-icon-button icon="more_vert" slot="actions"></fds-icon-button>
+  </fds-app-bar>
+</div>

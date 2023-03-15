@@ -1,0 +1,19 @@
+.fds-pie-chart {
+  [class*='apexcharts-pie-slice-'] {
+    transition: opacity 0.3s ease-out;
+  }
+
+  .legend-mouseover-inactive {
+    opacity: unset;
+  }
+
+  &.selected {
+    [class*='apexcharts-pie-slice-'] {
+      opacity: 0.3;
+    }
+
+    [class*='apexcharts-pie-slice-'][selected='true'] {
+      opacity: 1;
+    }
+  }
+}

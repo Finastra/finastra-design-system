@@ -4,7 +4,7 @@ const globby = require('globby');
 const READ_WRITE_OPTS = { encoding: 'utf-8' };
 
 async function main() {
-  const paths = await getPaths('../libs/web-components/*/src/*.ts');
+  const paths = await getPaths('../packages/fds-components-web/*/src/*.ts');
   paths.forEach((path) => {
     const md = getContent(path);
     const dir = path.replace('/stories/sb-generated/custom-element.md', '');
@@ -31,10 +31,10 @@ function getContent(path) {
   parts.shift();
   const contents = new Map();
   parts.forEach((part, index) => {
-    if (index%2 === 0) {
+    if (index % 2 === 0) {
       contents.set(part, '');
     } else {
-      contents.set(parts[index - 1], part)
+      contents.set(parts[index - 1], part);
     }
   });
   return contents;
@@ -44,16 +44,16 @@ function injectInReadme(path, content) {
   try {
     let README = readFileSync(path, READ_WRITE_OPTS);
     if (content.size === 1) {
-      README = injectAtPosition(README, content.entries().next().value[1])
+      README = injectAtPosition(README, content.entries().next().value[1]);
     } else {
       content.forEach((item, key) => {
-        README = injectAtPosition(README, item, key)
-      })
+        README = injectAtPosition(README, item, key);
+      });
     }
     writeFileSync(path, README, READ_WRITE_OPTS);
   } catch (err) {
     console.log(`Error injecting readme for path ${path}`);
-    console.log(err)
+    console.log(err);
   }
 }
 
@@ -71,6 +71,6 @@ function sanitizeMd(content) {
 }
 
 function tag(end, key) {
-  const variant = key ? `:${key}` : ''
-  return `<!-- ${end ? '/': ''}DOC${variant} -->`;
+  const variant = key ? `:${key}` : '';
+  return `<!-- ${end ? '/' : ''}DOC${variant} -->`;
 }

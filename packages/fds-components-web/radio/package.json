@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/radio",
+  "displayName": "Radio",
+  "version": "1.7.0",
+  "description": "Radio Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Radio"
+  ],
+  "license": "MIT",
+  "main": "dist/src/radio.js",
+  "module": "dist/src/radio.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-radio": "0.27.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

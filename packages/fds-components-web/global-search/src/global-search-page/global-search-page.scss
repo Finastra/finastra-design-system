@@ -1,0 +1,77 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+  width: 100%;
+  @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+  @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+
+  ::slotted(.mwc-list-item__hide) {
+    display: none;
+  }
+
+  .fds-global-search-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--fds-spacing-2);
+
+    .fds-global-search-page-title {
+      @include fds.typography(subtitle-2);
+      @include fds.property(color, on-background);
+
+      margin: var(--fds-spacing-0);
+      padding-top: var(--fds-spacing-2);
+      padding-bottom: var(--fds-spacing-2);
+    }
+
+    .fds-global-search-page-list {
+      display: flex;
+      flex-direction: row;
+
+      .fds-global-search-page-item {
+        cursor: pointer;
+        text-decoration: none !important;
+        color: unset;
+        display: flex;
+        flex-direction: column;
+        place-content: column;
+        align-items: center;
+        width: var(--fds-spacing-6);
+        @include fds.padding-y(2);
+        @include fds.padding-x(4);
+
+        .fds-global-search-page-logo-container {
+          width: var(--fds-spacing-5);
+          height: var(--fds-spacing-5);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: var(--fds-spacing-1);
+          @include fds.elevation(4);
+
+          .fds-global-search-page-logo {
+            border-radius: 50%;
+            width: var(--fds-spacing-5);
+            height: var(--fds-spacing-5);
+          }
+        }
+
+        .fds-global-search-page-name {
+          @include fds.typography(caption);
+          @include fds.property(color, on-background);
+          @include fds.padding(1, top);
+        }
+      }
+
+      .fds-global-search-page-item:hover {
+        @include fds.background(surface-hover);
+
+        border-radius: var(--fds-spacing-1);
+      }
+    }
+  }
+}

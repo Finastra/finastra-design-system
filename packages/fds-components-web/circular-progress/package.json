@@ -1,0 +1,25 @@
+{
+  "name": "@finastra/circular-progress",
+  "displayName": "CircularProgress",
+  "version": "1.7.0",
+  "description": "CircularProgress Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "CircularProgress"
+  ],
+  "license": "MIT",
+  "main": "dist/src/circular-progress.js",
+  "module": "dist/src/circular-progress.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@material/mwc-circular-progress": "0.27.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

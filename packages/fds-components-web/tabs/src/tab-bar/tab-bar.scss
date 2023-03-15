@@ -1,0 +1,20 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+}
+
+:host([seperator]) {
+  .mdc-tab-bar mwc-tab-scroller {
+    ::slotted(fds-tab:not([active], :first-child))::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      margin-left: 4px;
+      @include fds.property(background, outline);
+    }
+  }
+}

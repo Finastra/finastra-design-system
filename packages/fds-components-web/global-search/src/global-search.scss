@@ -1,0 +1,173 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  .fds-global-search {
+    width: var(--fds-global-search-width, 400px);
+    height: var(--fds-spacing-5);
+
+    .fds-global-search-wrapper {
+      @include fds.property(background, background);
+      @include fds.property(border-color, primary);
+
+      position: absolute;
+      height: var(--fds-spacing-5);
+
+      &.open {
+        z-index: 1000;
+        height: unset;
+
+        &.fds-global-search-input-focus {
+          border-width: 1px;
+        }
+
+        .fds-global-search-text-field {
+          border: none;
+        }
+
+        fds-divider {
+          visibility: visible;
+          @include fds.margin-x(4);
+        }
+      }
+
+      .fds-global-search-container {
+        display: none;
+
+        .fds-global-search-block {
+          @include fds.margin-y(2);
+          @include fds.padding-x(4);
+        }
+
+        &.fds-global-search-container-open {
+          display: flex !important;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+    }
+
+    fds-linear-progress {
+      width: 100%;
+    }
+  }
+}
+
+.fds-global-search {
+  display: inline-flex;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .fds-global-search-wrapper {
+    width: var(--fds-global-search-width, 400px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    border-color: var(--fds-primary, #694ed6);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: var(--fds-spacing-4);
+    pointer-events: auto;
+    @include fds.property(background, background);
+
+    .fds-global-search-text-container {
+      width: 100%;
+      height: var(--fds-spacing-5);
+
+      .fds-global-search-text-field {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        place-content: space-between;
+        height: 100%;
+        @include fds.padding-x(4);
+
+        .fds-global-search-text-input {
+          height: 100%;
+          width: 100%;
+
+          input {
+            border: none;
+            width: 100%;
+            height: 100%;
+            font-size: calc(2 * var(--fds-spacing-2)) !important;
+            background: transparent;
+            @include fds.color(on-background);
+          }
+
+          .fds-global-search-text-field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            place-content: space-between;
+            height: 100%;
+            @include fds.padding-x(4);
+
+            .fds-global-search-text-input {
+              height: 100%;
+              width: 100%;
+
+              input {
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size: calc(2 * var(--fds-spacing-2)) !important;
+                background: transparent;
+                @include fds.color(on-background);
+              }
+
+              input:focus-visible,
+              input:focus {
+                outline: none;
+              }
+
+              input::placeholder {
+                @include fds.typography(body-2);
+              }
+            }
+
+            .fds-global-search-text-action {
+              display: flex;
+
+              .fds-global-search-action-hide {
+                display: none;
+              }
+
+              .fds-global-search-clear-btn {
+                @include fds.color(on-background);
+              }
+            }
+          }
+
+          fds-divider {
+            visibility: hidden;
+          }
+
+          input::placeholder {
+            @include fds.typography(body-2);
+          }
+        }
+
+        .fds-global-search-text-action {
+          display: flex;
+
+          .fds-global-search-action-hide {
+            display: none;
+          }
+
+          .fds-global-search-clear-btn {
+            @include fds.color(on-background);
+          }
+        }
+      }
+
+      fds-divider {
+        visibility: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use './base-styles.scss';
+@use '@finastra/fds-theme' as fds;
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  width: 100%;
+}
+
+.step-item {
+  display: grid;
+  grid-template-rows: var(--fds-spacing-4, 24px) 1fr;
+  grid-template-columns: 1fr var(--fds-spacing-4, 24px) 1fr;
+  flex: 1;
+}
+
+.step-item-label {
+  @include fds.typography(body-3);
+
+  padding: var(--fds-spacing-3, 16px);
+  text-align: center;
+  justify-self: center;
+  align-self: start;
+  grid-row: 2/3;
+  grid-column: -1/1;
+}
+
+.line.start-line {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-self: center;
+  margin-right: var(--fds-stepper-line-space, 8px);
+}
+
+.line.end-line {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  align-self: center;
+  margin-left: var(--fds-stepper-line-space, 8px);
+}
+
+.circle {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  align-self: center;
+}
+
+.step-item-description {
+  @include fds.typography(body-3);
+
+  display: none;
+}
+
+.line {
+  height: 2px;
+  flex: 1;
+}
+
+.text-wrapper {
+  display: contents;
+}

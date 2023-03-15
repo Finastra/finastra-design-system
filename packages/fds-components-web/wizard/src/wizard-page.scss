@@ -1,0 +1,67 @@
+@use '@finastra/fds-theme' as fds;
+
+$header-bg: var(--fds-surface-selected);
+$title-color: var(--fds-primary);
+$icon-bg: var(--fds-background);
+$icon-border-color: var(--fds-surface-selected);
+
+:host {
+  display: none;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  background: var(--fds-header-bg, $header-bg);
+  margin: 40px var(--fds-spacing-3, 16px) var(--fds-spacing-0, 0) var(--fds-spacing-3, 16px);
+  border-radius: var(--fds-spacing-1, 8px);
+  padding: var(--fds-spacing-3, 16px);
+}
+
+.icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  width: 72px;
+  border-radius: 50%;
+  border: solid var(--fds-icon-border-color, $icon-border-color);
+  margin: 0;
+  background: center center no-repeat var(--fds-icon-bg, $icon-bg);
+  top: -16%;
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+
+.title {
+  @include fds.typography(headline-5);
+  @include fds.color(primary);
+
+  color: var(--fds-title-color, $title-color);
+  margin-left: var(--fds-spacing-3, 16px);
+}
+
+.title-with-icon {
+  margin-left: var(--fds-spacing-6, 96px);
+}
+
+fds-chip {
+  position: absolute;
+  right: var(--fds-spacing-3, 16px);
+}
+
+.page-container {
+  @include fds.property(color, on-background);
+
+  padding: 72px var(--fds-spacing-5, 48px) 32px var(--fds-spacing-5, 48px);
+}
+
+:host([current]) {
+  display: block;
+}

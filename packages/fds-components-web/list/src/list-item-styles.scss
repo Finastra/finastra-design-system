@@ -1,0 +1,33 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-list/mwc-list-item';
+
+:host {
+  @include fds.typography(subtitle-1);
+  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(theme-on-surface, on-surface-disabled);
+  @include fds.mdc(theme-text-icon-on-background, on-background);
+  @include fds.mdc(theme-text-hint-on-background, on-background);
+  @include fds.mdc(theme-text-primary-on-background, on-background);
+  @include fds.mdc(theme-text-secondary-on-background, on-background);
+
+  // Checkbox theme
+  @include fds.mdc(theme-secondary, primary);
+  @include fds.mdc(ripple-color, primary);
+  @include fds.mdc(checkbox-checked-color, primary);
+  @include fds.mdc(checkbox-unchecked-color, on-surface-medium);
+  @include fds.mdc(checkbox-disabled-color, on-surface-disabled);
+  @include fds.mdc(checkbox-ink-color, on-primary);
+
+  .mdc-deprecated-list-item__meta {
+    width: auto;
+    height: auto;
+    display: flex;
+  }
+}
+
+:host([activated]) {
+  slot[name='graphic']::slotted(*),
+  slot[name='meta']::slotted(*) {
+    @include fds.color(primary);
+  }
+}

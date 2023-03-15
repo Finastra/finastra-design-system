@@ -1,0 +1,19 @@
+<script type="module" src="node_modules/@finastra/dialog/dist/src/dialog.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/text-button.js"></script>
+<script type="module" src="node_modules/@finastra/radio/dist/src/radio.js"></script>
+
+<fds-button label="open" onclick="openDialog()"></fds-button>
+<fds-dialog id="myDropdown" heading="Title">
+  <span class="body">Add dialog content here </span>
+  <fds-button secondary label="Yes" slot="primaryAction" dialogAction="ok"> </fds-button>
+  <fds-text-button label="No" slot="secondaryAction" dialogAction="cancel"> </fds-text-button>
+</fds-dialog>
+
+<script>
+  function openDialog() {
+    document.getElementById('myDropdown').show();
+  }
+</script>
+
+<style></style>

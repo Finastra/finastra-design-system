@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+*.tsbuildinfo
+.DS_Store
+.vscode/
+*.stories.*
+**/dist/*
+tools/plop-templates/*
+*.css.ts

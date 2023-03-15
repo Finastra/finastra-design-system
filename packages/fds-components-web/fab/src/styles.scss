@@ -1,0 +1,42 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/mwc-fab/mwc-fab';
+
+:host {
+  .mdc-fab {
+    @include fds.background(primary);
+    @include fds.color(on-primary);
+  }
+
+  .mdc-fab__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .mdc-fab--extended {
+    min-width: 120px;
+    width: auto;
+  }
+
+  .mdc-fab__label {
+    @include fds.typography(button-1);
+  }
+}
+
+:host([dense]) {
+  .mdc-fab {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mdc-fab--extended {
+    min-width: 120px;
+    width: auto;
+  }
+}
+
+:host([gradient]) {
+  .mdc-fab {
+    @include fds.background(gradient-vertical);
+    @include fds.color(on-gradient);
+  }
+}

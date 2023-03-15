@@ -1,0 +1,30 @@
+<script type="module" src="node_modules/@finastra/alert-message/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/text-button.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
+<script type="module" src="node_modules/@finastra/icon/dist/src/icon.js"></script>
+
+<div style="width: 600px">
+  <fds-alert-message layout="singleLine" type="success" title="Success" description="A banner displays an important">
+    <fds-button slot="primaryAction" label="Button"></fds-button>
+  </fds-alert-message>
+
+  <fds-alert-message
+    id="example"
+    type="error"
+    title="Error"
+    description="A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner."
+  >
+  </fds-alert-message>
+
+  <fds-alert-message
+    type="warning"
+    title="Warning"
+    description="A banner displays an important, succinct message, and provides actions for users to address or dismiss the banner."
+  >
+  </fds-alert-message>
+
+  <fds-alert-message type="info" title="hey" description="ffdf">
+    <fds-button slot="primaryAction" label="Button"></fds-button>
+    <fds-text-button slot="secondaryAction" label="hey"></fds-text-button>
+  </fds-alert-message>
+</div>

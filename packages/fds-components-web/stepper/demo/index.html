@@ -1,0 +1,77 @@
+<script type="module" src="node_modules/@finastra/stepper/dist/src/horizontal-stepper.js"></script>
+<script type="module" src="node_modules/@finastra/stepper/dist/src/vertical-stepper.js"></script>
+<style>
+  .title {
+    color: var(--fds-on-background, #000000);
+  }
+</style>
+
+<div class="title">Horizontal stepper</div>
+<div class="main-content">
+  <label class="title">Step 2</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="1"></fds-horizontal-stepper>
+
+  <label class="title">Step 3</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="2"></fds-horizontal-stepper>
+
+  <label class="title">Secondary</label>
+  <fds-horizontal-stepper style="width: 700px" id="hStepper" secondary currentStepIndex="1"></fds-horizontal-stepper>
+
+  <label class="title">Step 5</label>
+  <fds-horizontal-stepper id="hStepper" currentStepIndex="3"></fds-horizontal-stepper>
+</div>
+<br />
+<div class="title">Vertical stepper</div>
+<label class="title">Step 2</label>
+<fds-vertical-stepper id="hStepper" currentStepIndex="1"></fds-vertical-stepper>
+
+<label class="title">Step 3</label>
+<fds-vertical-stepper label-mode="center" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
+
+<label class="title">secondary</label>
+<fds-vertical-stepper style="width: 250px" id="hStepper" secondary currentStepIndex="2"></fds-vertical-stepper>
+
+<label class="title">Step 5</label>
+<fds-vertical-stepper label-mode="background" style="width: 300px" id="hStepper" currentStepIndex="2"></fds-vertical-stepper>
+
+<div class="title">Stepper properties</div>
+
+<label class="title">Readonly</label>
+<fds-horizontal-stepper id="hStepper" currentStepIndex="1" readonly></fds-horizontal-stepper>
+
+<label class="title">Hide Index</label>
+<fds-horizontal-stepper id="hStepper" currentStepIndex="4" hideIndex></fds-horizontal-stepper>
+
+<label class="title">Cutom Active Icon</label>
+<fds-horizontal-stepper id="hStepper" currentStepIndex="4"></fds-horizontal-stepper>
+
+<script>
+  const hSteppers = document.querySelectorAll('#hStepper');
+  hSteppers.forEach((stepper) => {
+    stepper.steps = [
+      {
+        label: 'Step Success',
+        description: 'Content of success step'
+      },
+      {
+        label: 'Step Active',
+        description: 'Content of active step'
+      },
+      {
+        label: 'Step Disabled',
+        description: 'Content of disabled step',
+        disabled: true
+      },
+      {
+        label: 'Step Error',
+        description: 'Content of inactive step',
+        error: true
+      },
+      {
+        label: 'Step Inactive',
+        description: 'Content of inactive step',
+        activeStepIcon: 'sync'
+      }
+    ];
+  });
+</script>

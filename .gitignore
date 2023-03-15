@@ -25,7 +25,6 @@
 !.vscode/extensions.json
 
 # misc
-/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -44,29 +43,29 @@ finastra-design-system.iml
 .DS_Store
 Thumbs.db
 
-themes/angular-theme/prebuilt-theme
 
 # build
 /_site/
-/libs/web-components/**/*.js
-/libs/web-components/**/*.js.map
-/libs/web-components/**/*.d.ts
-/libs/web-components/**/*.css
-/libs/web-components/**/*.css.map
-/libs/web-components/**/*.js
-/libs/web-components/**/*.js.map
-/libs/web-components/**/*.tgz
-/libs/web-components/**/*.css.ts
-/libs/web-components/**/dist
-/libs/web-components/**/package-lock.json
+/packages/fds-components-web/**/*.js
+/packages/fds-components-web/**/*.js.map
+/packages/fds-components-web/**/*.d.ts
+/packages/fds-components-web/**/*.css
+/packages/fds-components-web/**/*.css.map
+/packages/fds-components-web/**/*.js
+/packages/fds-components-web/**/*.js.map
+/packages/fds-components-web/**/*.tgz
+/packages/fds-components-web/**/*.css.ts
+/packages/fds-components-web/**/dist
+/packages/fds-components-web/**/package-lock.json
 **/*.tsbuildinfo*
-/themes/fds-theme/prebuilt/**
-/themes/tippy.js/dist
+packages/fds-theme-web/prebuilt/**
+packages/fds-theme-tippy/dist
 compile
 storybook-static
 **/coverage
 **/tsc-out
-!/libs/web-components/**/*.stories.js
-libs/web-components/**/stories/custom-element.json
-libs/web-components/**/stories/sb-generated
+!/packages/fds-components-web/**/*.stories.js
+/packages/fds-components-web/**/stories/custom-element.json
+/packages/fds-components-web/**/stories/sb-generated
 build-storybook.log
+packages/fds-tokens/dist

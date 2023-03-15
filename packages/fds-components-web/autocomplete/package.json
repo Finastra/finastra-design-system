@@ -1,0 +1,28 @@
+{
+  "name": "@finastra/autocomplete",
+  "displayName": "Autocomplete",
+  "version": "1.7.0",
+  "description": "Autocomplete Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Autocomplete"
+  ],
+  "license": "MIT",
+  "main": "dist/src/autocomplete.js",
+  "module": "dist/src/autocomplete.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/icon": "1.7.0",
+    "@finastra/list": "1.7.0",
+    "@finastra/menu": "1.7.0",
+    "@finastra/search-input": "1.7.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

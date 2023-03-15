@@ -1,0 +1,77 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: inline-block;
+
+  --fds-menu-min-width: 562px;
+
+  #launchpad {
+    position: absolute;
+    @include fds.margin(2, top);
+
+    .menu-body {
+      max-height: 462px;
+      overflow-y: auto;
+
+      .app-content {
+        @include fds.padding(5, right, left);
+        @include fds.padding(3, top, bottom);
+
+        .app-title {
+          @include fds.typography(headline-4);
+          @include fds.color(on-surface);
+          @include fds.padding(3, right, left, bottom);
+        }
+
+        .brandcard-list {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          grid-gap: 32px 56px;
+          @include fds.padding(3);
+
+          .brandcard-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .brandcard {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+
+            .brandcard-name {
+              @include fds.typography(subtitle-3);
+              @include fds.color(on-surface);
+              @include fds.padding(2, top);
+
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .menu-tools {
+        @include fds.padding(5, right, left);
+
+        slot[name='tools']::slotted(*) {
+          @include fds.padding(3, right, bottom, left);
+        }
+      }
+    }
+
+    .bottom-action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      @include fds.margin(4, top, bottom);
+
+      fds-button {
+        line-height: 0px;
+      }
+    }
+  }
+}

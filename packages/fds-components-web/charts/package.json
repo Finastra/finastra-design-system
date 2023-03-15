@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/charts",
+  "displayName": "Charts",
+  "version": "1.7.0",
+  "description": "Charts Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Charts"
+  ],
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "scripts": {
+    "build": "",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/apexcharts-styles.scss src/pie-chart-styles.scss src/radial-bar-chart-styles.scss src/line-chart-styles.scss src/bar-chart-styles.scss"
+  },
+  "dependencies": {
+    "apexcharts": "^3.35.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

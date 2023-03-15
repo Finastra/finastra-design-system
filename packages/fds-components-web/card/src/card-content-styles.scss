@@ -1,0 +1,7 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @include fds.typography(body-2);
+  @include fds.color(on-surface-medium);
+  @include fds.margin(3, bottom);
+}

@@ -1,0 +1,106 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+
+  --fds-icon-button-size: 24px;
+}
+
+.container {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.badge-value {
+  display: inline-block;
+  @include fds.typography(subtitle-3);
+
+  text-align: center;
+  width: 100%;
+  border-radius: var(--fds-spacing-3, 16px);
+  border: 2px solid;
+  @include fds.property(border-color, surface);
+  @include fds.elevation(4);
+
+  margin: 5px;
+}
+
+.outlined {
+  @include fds.property(background, background);
+  @include fds.property(color, on-surface-medium);
+
+  border: 1px solid;
+  @include fds.property(border-color, outline);
+}
+
+.white {
+  @include fds.property(background, surface);
+  @include fds.property(color, on-surface-medium);
+
+  border: none;
+}
+
+.primary {
+  @include fds.property(background, primary);
+  @include fds.property(color, on-primary);
+}
+
+.secondary {
+  @include fds.property(background, secondary);
+  @include fds.property(color, on-secondary);
+}
+
+.error {
+  @include fds.property(background, error);
+  @include fds.property(color, on-error);
+}
+
+.success {
+  @include fds.property(background, success);
+  @include fds.property(color, on-success);
+}
+
+:host([position='topLeft']) {
+  .badge {
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 0;
+    left: -25px;
+  }
+}
+
+:host([position='topRight']) {
+  .badge {
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 0;
+    right: 10px;
+  }
+}
+
+:host([type='indicator']) {
+  .badge-value {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid;
+    @include fds.property(border-color, surface);
+  }
+}
+
+:host([type='indicator'][position='topRight']) {
+  .badge {
+    top: 6px;
+    right: 7px;
+  }
+}
+
+:host([type='indicator'][position='topLeft']) {
+  .badge {
+    top: 6px;
+    left: -14px;
+  }
+}

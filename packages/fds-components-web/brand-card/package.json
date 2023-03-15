@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/brand-card",
+  "displayName": "Brand Card",
+  "version": "1.7.0",
+  "description": "Brand Card Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "Brand Card",
+    "Card"
+  ],
+  "license": "MIT",
+  "main": "dist/src/brand-card.js",
+  "module": "dist/src/brand-card.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/card": "1.7.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

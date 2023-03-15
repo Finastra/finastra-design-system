@@ -1,0 +1,24 @@
+{
+  "name": "@finastra/logo",
+  "displayName": "Logo",
+  "version": "1.7.0",
+  "description": "Logo Web Component",
+  "keywords": [
+    "finastra design system",
+    "web components",
+    "logo"
+  ],
+  "license": "MIT",
+  "main": "dist/src/logo.js",
+  "module": "dist/src/logo.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

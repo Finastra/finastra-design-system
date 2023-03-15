@@ -1,0 +1,153 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
+@use 'sass:map';
+@use '@finastra/fds-tokens/dist/scss/spacing';
+
+$all-sides: top, bottom, right, left;
+
+/// Loads the spacing's custom properties on root.
+///
+/// @example
+///   .my-container {
+///      margin: var(--fds-spacing-2);
+///      padding: var(--fds-spacing-1);
+///   }
+@mixin custom-properties() {
+  @each $key, $value in spacing.$tokens {
+    --fds-#{$key}: #{$value};
+  }
+}
+
+/// Loads the spacing's helper classes using following format:
+/// fds-{m|p}{t|b|r|l}-{spacing}
+/// where
+/// {m|p} is used respectively for margin or padding.
+/// {t|b|r|l} is used for top, bottom, right or left.
+/// Can be dismissed if spacing apply to all 4 sides.
+/// {spacing} is the spacing value between 0 and 7.
+///
+/// @example
+///   <div class="fds-mt-6">
+///      <p>Hello</p>
+///   </div>
+///
+/// @example
+///   <div class="fds-p-2">
+///      <span>some content</span>
+///   </div>
+@mixin helper-classes() {
+  @each $key, $value in spacing.$tokens {
+    @each $prop in 'margin', 'padding' {
+      $length: string.length($key);
+      .fds-#{string.slice($prop, 0, 1)}-#{string.slice($key, $length, $length + 1)} {
+        #{$prop}: var(--fds-#{$key}, #{$value});
+      }
+      @each $side in $all-sides {
+        .fds-#{string.slice($prop, 0, 1)}#{string.slice($side, 0, 1)}-#{string.slice($key, $length, $length + 1)} {
+          #{$prop}-#{$side}: var(--fds-#{$key}, #{$value});
+        }
+      }
+    }
+  }
+}
+
+/* stylelint-disable scss/at-function-pattern */
+/// Check if spacing is a unitless number between 0 and 7.
+///
+/// @param {*} $spacing - The value to validate
+/// @return The same spacing passed in parameter if value is correct
+@function _check-spacing($spacing) {
+  @if meta.type-of($spacing) != number or not math.is-unitless($spacing) {
+    @error "$spacing must be a unitless number, but received '#{$spacing}'";
+  }
+
+  @if $spacing < 0 or $spacing > 7 {
+    @error "$spacing must be between 0 and 7, but received '#{$spacing}'";
+  }
+
+  @return $spacing;
+}
+
+/// Check that side is one of top, bottom, right or left.
+///
+/// @param {*} $side - The side to validate
+/// @return The same side passed in parameter if value is correct
+@function _check-side($side) {
+  @if list.index($all-sides, $side) {
+    @return $side;
+  } @else {
+    @error "$side must be one of #{$all-sides}, but received #{$side}";
+  }
+}
+/* stylelint-enable scss/at-function-pattern */
+
+/// Generates CSS to apply proper spacing
+///
+/// @param {String} $prop - The margin or the padding
+/// @param {Number} $value - The spacing between 0 and 7
+/// @param {String} $sides - The sides where to apply spacing
+@mixin spacing($prop, $value, $sides) {
+  $spacing-name: 'spacing-' + $value;
+  $spacing-value: map.get(spacing.$tokens, $spacing-name);
+
+  @if length($sides) == 0 {
+    #{$prop}: var(--fds-#{$spacing-name}, #{$spacing-value});
+  } @else {
+    @each $side in $sides {
+      $side: _check-side($side);
+
+      /* stylelint-disable-next-line custom-property-pattern */
+      #{$prop}-#{$side}: var(--fds-spacing-#{_check-spacing($value)}, #{$spacing-value});
+    }
+  }
+}
+
+/// Generates CSS to apply proper margin
+///
+/// @param {Number} $value - The spacing between 0 and 7
+/// @param {String} $side - The side where to apply margin (may be null)
+@mixin margin($value, $sides...) {
+  @include spacing(margin, $value, $sides);
+}
+
+/// Generates CSS to apply proper horizontal margin
+///
+/// @param {Number} $value - The spacing between 0 and 7
+@mixin margin-x($value) {
+  @include margin($value, left);
+  @include margin($value, right);
+}
+
+/// Generates CSS to apply proper vertical margin
+///
+/// @param {Number} $value - The spacing between 0 and 7
+@mixin margin-y($value) {
+  @include margin($value, top);
+  @include margin($value, bottom);
+}
+
+/// Generates CSS to apply proper padding
+///
+/// @param {Number} $value - The spacing between 0 and 7
+/// @param {String} $side - The side where to apply padding (may be null)
+@mixin padding($value, $sides...) {
+  @include spacing(padding, $value, $sides);
+}
+
+/// Generates CSS to apply proper horizontal padding
+///
+/// @param {Number} $value - The spacing between 0 and 7
+@mixin padding-x($value) {
+  @include padding($value, left);
+  @include padding($value, right);
+}
+
+/// Generates CSS to apply proper vertical padding
+///
+/// @param {Number} $value - The spacing between 0 and 7
+@mixin padding-y($value) {
+  @include padding($value, top);
+  @include padding($value, bottom);
+}

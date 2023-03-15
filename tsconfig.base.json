@@ -17,45 +17,7 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": ["es2018", "dom"],
-    "paths": {
-      "@finastra/angular-components": ["libs/angular-components"],
-      "@finastra/angular-components/avatar": ["libs/angular-components/avatar"],
-      "@finastra/angular-components/banner": ["libs/angular-components/banner"],
-      "@finastra/angular-components/breadcrumb": ["libs/angular-components/breadcrumb"],
-      "@finastra/angular-components/cards/account-card": ["libs/angular-components/cards/account-card"],
-      "@finastra/angular-components/changelog": ["libs/angular-components/changelog"],
-      "@finastra/angular-components/chart": ["libs/angular-components/chart"],
-      "@finastra/angular-components/core": ["libs/angular-components/core"],
-      "@finastra/angular-components/entity-menu": ["libs/angular-components/entity-menu"],
-      "@finastra/angular-components/expandable-table": ["libs/angular-components/expandable-table/src/index.ts"],
-      "@finastra/angular-components/filter/filter-group": ["libs/angular-components/filter/filter-group"],
-      "@finastra/angular-components/filter/filter-tags": ["libs/angular-components/filter/filter-tags"],
-      "@finastra/angular-components/filter/filter-toggle": ["libs/angular-components/filter/filter-toggle"],
-      "@finastra/angular-components/filter/filter-tree": ["libs/angular-components/filter/filter-tree"],
-      "@finastra/angular-components/filter/multiselect-tags": ["libs/angular-components/filter/multiselect-tags"],
-      "@finastra/angular-components/global-nav": ["libs/angular-components/global-nav"],
-      "@finastra/angular-components/global-search": ["libs/angular-components/global-search"],
-      "@finastra/angular-components/popover": ["libs/angular-components/popover"],
-      "@finastra/angular-components/repeater": ["libs/angular-components/repeater"],
-      "@finastra/angular-components/scroll-to-top": ["libs/angular-components/scroll-to-top"],
-      "@finastra/angular-components/search-input": ["libs/angular-components/search-input"],
-      "@finastra/angular-components/skeleton-text": ["libs/angular-components/skeleton-text"],
-      "@finastra/angular-components/status-stepper": ["libs/angular-components/status-steps"],
-      "@finastra/angular-components/table": ["libs/angular-components/table"],
-      "@finastra/angular-components/toaster": ["libs/angular-components/toaster"],
-      "@finastra/angular-components/user-profile-menu": ["libs/angular-components/user-profile-menu"],
-      "@finastra/angular-components/vector-map": ["libs/angular-components/vector-map"],
-      "@finastra/angular-components/video-thumbnail": ["libs/angular-components/video-thumbnail"],
-      "@finastra/angular-components/wizard": ["libs/angular-components/wizard"],
-      "@finastra/devkit": ["dist/devkit/"]
-    }
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": true,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "lib": ["es2018", "dom"]
   },
   "exclude": ["node_modules", "tmp"]
 }

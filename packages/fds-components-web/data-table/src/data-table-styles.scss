@@ -1,0 +1,240 @@
+@use '@finastra/fds-theme' as fds;
+@use '@material/data-table/data-table';
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include data-table.table-styles;
+
+:host {
+  display: block;
+  @include fds.mdc(theme-primary, primary);
+  @include fds.mdc(text-field-fill-color, surface-selected);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-label-ink-color, on-surface-medium);
+  @include fds.mdc(text-field-idle-line-color, primary);
+  @include fds.mdc(text-field-hover-line-color, primary);
+  @include fds.mdc(text-field-ink-color, on-background);
+  @include fds.mdc(text-field-outlined-idle-border-color, primary);
+  @include fds.mdc(text-field-outlined-hover-border-color, primary);
+  @include fds.mdc(ripple-color, surface-selected);
+  @include fds.mdc(text-field-disabled-fill-color, surface-disabled);
+  @include fds.mdc(text-field-disabled-ink-color, on-surface-disabled);
+  @include fds.mdc(text-field-disabled-line-color, on-surface-disabled);
+  @include fds.mdc(text-field-error-color, error);
+
+  .fds-data-table {
+    max-height: var(--fds-data-table-max-height, 615px);
+    border: var(--fds-data-table-border-width, 1px) solid;
+    @include fds.property('border-color', outline);
+
+    .mdc-data-table__table {
+      @include fds.background(surface);
+
+      .mdc-data-table__header-row,
+      .mdc-data-table__row {
+        height: 56px;
+      }
+
+      thead {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        tr {
+          @include fds.background(surface-hover);
+
+          &.right div {
+            display: flex;
+            flex-direction: row-reverse;
+            place-content: center flex-start;
+            align-items: center;
+          }
+
+          &.left div {
+            display: flex;
+            place-content: center flex-start;
+            align-items: center;
+          }
+
+          &.center div {
+            display: flex;
+            place-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      tbody tr:hover {
+        @include fds.background(surface-hover);
+      }
+
+      thead,
+      tbody {
+        fds-icon {
+          vertical-align: middle;
+          max-width: 18px;
+
+          --fds-icon-size: 18px;
+        }
+
+        // width: calc(100% - 1em);
+        tr:nth-child(even) {
+          @include fds.background(surface-hover);
+        }
+
+        /* scrollbar is average 1em/16px width, remove it from thead width */
+        tr {
+          width: 100%;
+
+          th,
+          td {
+            text-overflow: unset;
+            max-width: 100%;
+            white-space: nowrap;
+            text-align: center;
+
+            &.fds-table__cell--date {
+              text-align: left;
+            }
+
+            &.mdc-data-table__cell--numeric {
+              text-align: right;
+            }
+
+            &.left {
+              text-align: left;
+            }
+
+            &.right {
+              text-align: right;
+            }
+
+            &.center {
+              text-align: center;
+            }
+
+            &.right div {
+              float: right;
+              text-align: initial;
+            }
+
+            &.left div {
+              float: left;
+              text-align: initial;
+            }
+
+            &.center div {
+              float: center;
+              text-align: initial;
+            }
+          }
+
+          fds-icon-button {
+            @include fds.color(on-background);
+          }
+
+          .mdc-data-table__cell--checkbox,
+          .mdc-data-table__header-cell--checkbox,
+          .mdc-data-table__header-cell--radiobox,
+          .mdc-data-table__cell--radiobox {
+            min-width: var(--fds-spacing-5, 48px);
+            width: var(--fds-spacing-5, 48px);
+          }
+
+          .mdc-data-table__cell--radiobox {
+            .mdc-data-table__cell--radiobox-container {
+              display: flex;
+              place-content: center;
+            }
+          }
+
+          &.mdc-data-table__row--selected {
+            @include fds.background(surface-selected);
+          }
+        }
+      }
+
+      .mdc-data-table__content {
+        overflow-y: auto;
+
+        .mdc-data-table__row {
+          /* even columns width , fix width of table too */
+          .mdc-data-table__cell {
+            @include fds.typography(body-1);
+            @include fds.color(on-surface);
+
+            // customzied column css should be centralized here
+            .fds-data-table-linear-progress {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              fds-linear-progress {
+                width: 100%;
+              }
+            }
+
+            .fds-data-table-link {
+              color: var(--fds-primary, --webkit-link);
+              cursor: pointer;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .mdc-data-table__header-cell {
+        @include fds.typography(subtitle-1);
+        @include fds.color(on-surface);
+
+        .fds-data-table-sort-icon {
+          --mdc-icon-button-size: 24px;
+          --mdc-ripple-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+:host([dense]) {
+  fds-icon {
+    --fds-icon-size: 13.5px;
+  }
+
+  .fds-data-table {
+    max-height: var(--fds-data-table-max-height, 439px);
+
+    &.fds-data-table-select-enabled {
+      max-height: var(--fds-data-table-max-height, 538px);
+    }
+
+    .mdc-data-table__table {
+      .mdc-data-table__header-row,
+      .mdc-data-table__row {
+        height: 40px;
+      }
+
+      thead,
+      tbody {
+        fds-icon {
+          max-width: 15px;
+
+          --fds-icon-size: 13.5px;
+        }
+      }
+
+      .mdc-data-table__header-cell {
+        @include fds.typography(subtitle-3);
+      }
+
+      .mdc-data-table__content {
+        .mdc-data-table__row {
+          .mdc-data-table__cell {
+            @include fds.typography(body-3);
+          }
+        }
+      }
+    }
+  }
+}

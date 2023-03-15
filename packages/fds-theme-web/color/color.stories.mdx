@@ -1,0 +1,309 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { html } from 'lit-html';
+import { Figma } from 'storybook-addon-designs/blocks';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+
+# FDS Theme Color
+
+<Meta
+  title="Design Tokens/Color"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+/>
+
+There's 3 ways to use colors in the Finastra design system theme depending on your needs:
+
+- [Custom properties](#custom-properties)
+- [Mixins](#mixins)
+- [Helper classes](#helper-classes)
+
+## Custom properties
+
+This theme is built around custom properties. You can use them directly in your CSS files, however we recommend the use of [Sass mixins](#mixins) for a better developer experience.
+
+### Examples
+
+export const TemplateCustomProp = (args) => {
+  return html`
+    <style>
+      .my-primary-container {
+        background-color: var(--fds-primary);
+        color: var(--fds-on-primary);
+      }
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+    <div class="my-primary-container demo-layout fds-body-1">Hello World!</div>
+  `;
+};
+
+<Canvas withSource="open">
+  <Story name="Custom properties" args={{}}>
+    {TemplateCustomProp.bind({})}
+  </Story>
+</Canvas>
+
+### Available custom properties
+
+| Custom property                    | Description                                                     |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `--fds-primary`                    | Primary color (default #694ED6)                                 |
+| `--fds-secondary`                  | Secondary color (default #C137A2)                               |
+| `--fds-background`                 | Background color (default #FAFAFA)                              |
+| `--fds-surface`                    | Surface color (default #FFFFFF)                                 |
+| `--fds-surface-hover`              | Surface hover color (default primary 4% opacity)                |
+| `--fds-surface-selected`           | Surface selected color (default primary 8% opacity)             |
+| `--fds-surface-selected-secondary` | Surface selected secondary color (default secondary 8% opacity) |
+| `--fds-surface-disabled`           | Surface disabled color (default #000000 12% opacity)            |
+| `--fds-surface-success`            | Surface success color (default success 3% opacity)              |
+| `--fds-surface-error`              | Surface error color (default error 3% opacity)                  |
+| `--fds-surface-info`               | Surface info color (default primary 3% opacity)                 |
+| `--fds-surface-warning`            | Surface warning color (default warning 2% opacity)              |
+| `--fds-outline`                    | Outline color (default #000000 12% opacity)                     |
+| `--fds-outline-success`            | Outline success color (default success 50% opacity)             |
+| `--fds-outline-error`              | Outline error color (default error 50% opacity)                 |
+| `--fds-outline-info`               | Outline info color (default primary 40% opacity)                |
+| `--fds-outline-warning`            | Outline warning color (default warning 30% opacity)             |
+| `--fds-success`                    | Success color (default #008744)                                 |
+| `--fds-error`                      | Error color (default #E40046)                                   |
+| `--fds-info`                       | Info color (default primary)                                    |
+| `--fds-warning`                    | Warning color (default #FF600A)                                 |
+| `--fds-gradient-vertical`          | Linear gradient of primary and secondary                        |
+| `--fds-gradient-horizontal`        | 90 degree linear gradient of primary and secondary              |
+| `--fds-on-primary`                 | On primary text color (default #FFFFFF)                         |
+| `--fds-on-secondary`               | On secondary text color (default #FFFFFF)                       |
+| `--fds-on-background`              | on background text color (default #000000 75% opacity)          |
+| `--fds-on-surface`                 | On surface text color (default #000000)                         |
+| `--fds-on-surface-medium`          | Medium emphasis text color (default #000 54% opacity)           |
+| `--fds-on-surface-disabled`        | Disabled text color (default #000000 29% opacity)               |
+| `--fds-on-success`                 | On success text color (default #FFFFFF)                         |
+| `--fds-on-error`                   | On error text color (default #FFFFFF)                           |
+| `--fds-on-gradient`                | On gradient text color (default #FFFFFF)                        |
+| `--fds-on-light`                   | On light background (default #000000)                           |
+| `--fds-on-dark`                    | On dark background (default #FFFFFF)                            |
+
+## Mixins
+
+Mixins are the recommended way of using colors, as it will generate the given custom property while adding a fallback for when the custom property is not set on app level.
+
+It's the ideal way to use theme's colors when writing components for example.
+
+There are 4 use cases where you would use colors:
+
+| Mixin        | Description                                               |
+| ------------ | --------------------------------------------------------- |
+| `background` | when applying background color to a container of any kind |
+| `color`      | when applying text color                                  |
+| `fill`       | when filling an SVG                                       |
+
+### Examples
+
+```scss
+@use '@finastra/fds-theme' as fds;
+
+.my-container {
+  @include fds.background(surface);
+
+  &.title {
+    @include fds.color(primary);
+  }
+
+  &svg {
+    @include fds.fill(primary);
+  }
+}
+```
+
+will generate:
+
+```scss
+.my-container {
+  background: var(--fds-background, #fafafa);
+}
+
+.my-container.title {
+  color: var(--fds-primary, #694ed6);
+}
+```
+
+#### Other mixins available
+
+If you want to use another property than those, you can use the generic `property` mixin.
+
+```scss
+.my-image {
+  @include fds.property(background-image, card-media-background-image);
+}
+
+.my-border {
+  @include fds.property(border-color, outline);
+}
+```
+
+Also available is the `mdc` mixin, which will map the given property to the MDC one.
+
+```scss
+.my-container {
+  @include fds.mdc(theme-primary, primary);
+}
+```
+
+will generate
+
+```scss
+.my-container {
+  --mdc-theme-primary: var(--fds-primary, #694ed6);
+}
+```
+
+### Available styles
+
+> i.e. what you can use inside the mixins
+
+| Custom property              | Description                                                     |
+| ---------------------------- | --------------------------------------------------------------- |
+| `primary`                    | Primary color (default #694ED6)                                 |
+| `secondary`                  | Secondary color (default #C137A2)                               |
+| `background`                 | Background color (default #FAFAFA)                              |
+| `surface`                    | Surface color (default #FFFFFF)                                 |
+| `surface-hover`              | Surface hover color (default primary 4% opacity)                |
+| `surface-selected`           | Surface selected color (default primary 8% opacity)             |
+| `surface-selected-secondary` | Surface selected secondary color (default secondary 8% opacity) |
+| `surface-disabled`           | Surface disabled color (default #000000 12% opacity)            |
+| `surface-success`            | Surface success color (default success 3% opacity)              |
+| `surface-error`              | Surface error color (default error 3% opacity)                  |
+| `surface-info`               | Surface info color (default primary 3% opacity)                 |
+| `surface-warning`            | Surface warning color (default warning 2% opacity)              |
+| `outline`                    | Outline color (default #000000 12% opacity)                     |
+| `outline-success`            | Outline success color (default success 50% opacity)             |
+| `outline-error`              | Outline error color (default error 50% opacity)                 |
+| `outline-info`               | Outline info color (default primary 40% opacity)                |
+| `outline-warning`            | Outline warning color (default warning 30% opacity)             |
+| `success`                    | Success color (default #008744)                                 |
+| `error`                      | Error color (default #E40046)                                   |
+| `info`                       | Info color (default primary)                                    |
+| `warning`                    | Warning color (default #FF600A)                                 |
+| `gradient-vertical`          | Linear gradient of primary and secondary                        |
+| `gradient-horizontal`        | 90 degree linear gradient of primary and secondary              |
+| `on-primary`                 | On primary text color (default #FFFFFF)                         |
+| `on-secondary`               | On secondary text color (default #FFFFFF)                       |
+| `on-background`              | on background text color (default #000000 75% opacity)          |
+| `on-surface`                 | On surface text color (default #000000)                         |
+| `on-surface-medium`          | Medium emphasis text color (default #000 54% opacity)           |
+| `on-surface-disabled`        | Disabled text color (default #000000 29% opacity)               |
+| `on-success`                 | On success text color (default #FFFFFF)                         |
+| `on-error`                   | On error text color (default #FFFFFF)                           |
+| `on-gradient`                | On gradient text color (default #FFFFFF)                        |
+| `on-light`                   | On light background (default #000000)                           |
+| `on-dark`                    | On dark background (default #FFFFFF)                            |
+
+## Helper classes
+
+The helper classes are the fastest way to use colors directly in the HTML.
+
+```scss
+@use '@finastra/fds-theme/helpers';
+```
+
+Be aware that some classes are meant to be used on containers as their background color (such as `.fds-primary-bg`, `.fds-background`, `.fds-surface`...) some are meant to be used on texts (such as `.fds-primary`, `.fds-error`, `.fds-on-surface`...).
+
+### Examples
+
+export const TemplateHelper = (args) => {
+  return html`
+    <style>
+      .demo-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+    <div class="fds-surface fds-outline demo-layout">
+      <p class="fds-on-surface">Hello World!</p>
+    </div>
+  `;
+};
+
+<Canvas withSource="open">
+  <Story name="Helper classes" args={{}}>
+    {TemplateHelper.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<div class="fds-primary-bg">
+  <p class="fds-on-primary">Accessible text</p>
+</div>
+```
+
+```html
+<div class="fds-background">
+  <p class="fds-primary">Text using primary color</p>
+</div>
+```
+
+### Available classes
+
+| class name                        | Description                                                     |
+| --------------------------------- | --------------------------------------------------------------- |
+| `.fds-primary`                    | Used for text written in primary color                          |
+| `.fds-primary-bg`                 | Used for container's background in primary color                |
+| `.fds-secondary`                  | Used for text written in secondary color                        |
+| `.fds-secondary-bg`               | Used for container's background in secondary color              |
+| `.fds-background`                 | Used for application background color                           |
+| `.fds-surface`                    | Used for content surface color (i.e. card background)           |
+| `.fds-surface-hover`              | Surface hover color (default primary 4% opacity)                |
+| `.fds-surface-selected`           | Surface selected color (default primary 8% opacity)             |
+| `.fds-surface-selected-secondary` | Surface selected secondary color (default secondary 8% opacity) |
+| `.fds-surface-disabled`           | Surface disabled color (default #000000 12% opacity)            |
+| `.fds-surface-success`            | Surface success color (default success 3% opacity)              |
+| `.fds-surface-error`              | Surface error color (default error 3% opacity)                  |
+| `.fds-surface-info`               | Surface info color (default primary 3% opacity)                 |
+| `.fds-surface-warning`            | Surface warning color (default warning 2% opacity)              |
+| `.fds-outline`                    | Used for border-color                                           |
+| `.fds-outline-success`            | Outline success color (default success 50% opacity)             |
+| `.fds-outline-error`              | Outline error color (default error 50% opacity)                 |
+| `.fds-outline-info`               | Outline info color (default primary 40% opacity)                |
+| `.fds-outline-warning`            | Outline warning color (default warning 30% opacity)             |
+| `.fds-success`                    | Used for text success feedback                                  |
+| `.fds-success-bg`                 | Used for container's background success feedback                |
+| `.fds-error`                      | Used for text error feedback                                    |
+| `.fds-error-bg`                   | Used for container's background error feedback                  |
+| `.fds-info`                       | Used for text info feedback                                     |
+| `.fds-info-bg`                    | Used for container's background info feedback                   |
+| `.fds-warning`                    | Used for text warning feedback                                  |
+| `.fds-warning-bg`                 | Used for container's background warning feedback                |
+| `.fds-gradient-vertical`          | Used for text written in gradient                               |
+| `.fds-gradient-vertical-bg`       | Used for container's background in gradient                     |
+| `.fds-gradient-horizontal`        | Used for text written in horizontal gradient                    |
+| `.fds-gradient-horizontal-bg`     | Used for container's background in horizontal gradient          |
+| `.fds-on-primary`                 | Used for text written on primary background                     |
+| `.fds-on-secondary`               | Used for text written on secondary background                   |
+| `.fds-on-background`              | Used for text written on background                             |
+| `.fds-on-surface`                 | Used for text written on surface                                |
+| `.fds-on-surface-medium`          | Medium emphasis text color (default #000 54% opacity)           |
+| `.fds-on-surface-disabled`        | Disabled text color (default #000000 29% opacity)               |
+| `.fds-on-success`                 | Used for text written on success background                     |
+| `.fds-on-error`                   | Used for text written on error background                       |
+| `.fds-on-gradient`                | Used for text written on gradient background                    |
+| `.fds-on-light`                   | On light background (default #000000)                           |
+| `.fds-on-dark`                    | On dark background (default #FFFFFF)                            |
+
+### Design
+
+<Figma url="https://www.figma.com/file/E1Mb1556RT3HbAUVu2Q0LV/Finastra-design-system?node-id=0%3A3005" />
+
+export const Component = () => {
+  return <SyntaxHighlighter />;
+};

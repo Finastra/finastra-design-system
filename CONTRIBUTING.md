@@ -3,10 +3,11 @@
 Want to file a bug, contribute some code, or improve documentation? Excellent! 🤗❤️
 Here are some guidelines to make the most out of your help.
 
-- [Asking Questions](#questions)
-- [Issues and Bugs](#issues)
-- [Feature Requests](#features)
-- [Submission Guidelines](#submit)
+- [Contributing to Finastra Design System](#contributing-to-finastra-design-system)
+  - [ Asking Questions](#-asking-questions)
+  - [ Issues and Bugs](#-issues-and-bugs)
+  - [ Feature Requests](#-feature-requests)
+  - [ Submission Guidelines](#-submission-guidelines)
 
 ## <a name="questions"></a> Asking Questions
 
@@ -59,27 +60,25 @@ When your issue is validated and you are assigned to it, you can start with thos
 > git checkout -b bugfix/meaningful-name
 ```
 
-- Install dependencies and build:devkit
+- Install dependencies
 
 ```sh
 > npm install
-> npm run build:devkit
 ```
 
-- In case you are adding a new feature as a component, use our schematic. Also add a demo of your component in the angular-test-app
+- In case you are adding a new feature as a component, use our generator:
 
 ```sh
-> npm run add:component [your_component_name]
-> ng generate component [your_component_name]-demo -m app.module.ts --style=scss
+> npm run generate:component
 ```
 
 - Write your code
 - Test your code, run linter
 
 ```sh
-> npm run format:check
-> npm run affected:test
-> npm run affected:e2e
+> npm run format
+> npm run lint
+> npm run stylelint
 ```
 
 - fix the presented errors / problems if any
@@ -95,6 +94,6 @@ When your issue is validated and you are assigned to it, you can start with thos
 > git push -u origin bugfix/meaningful-name
 ```
 
-- In GitHub send a pull request to master
+- In GitHub send a pull request to main
 
 That's it, thank you for your contribution!

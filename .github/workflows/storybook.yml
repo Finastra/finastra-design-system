@@ -2,14 +2,18 @@ name: Publish Storybook
 on:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'libs/**'
-      - 'themes/fds-theme/**'
+      - 'packages/fds-components-web/**'
+      - 'packages/fds-theme-web/**'
       - '.storybook/**'
-      - '!libs/**/package.json'
-      - '!themes/fds-theme/package.json'
+      - '!packages/fds-components-web/**/package.json'
+      - '!packages/fds-theme-web/package.json'
       - 'package.json'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write # for checkout and commit
@@ -20,29 +24,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+          node-version: 18
       - name: Install Dependencies
         run: npm ci --loglevel=error
         env:
           SKIP_POST_INSTALL: true
+      - name: Build fds-tokens
+        run: npm run build:tokens
       - name: Build tippy theme
-        run: npm run build:tippy-theme
+        run: npm run build:theme-tippy
       - name: Build Storybook
-        run: npm run wc:build:storybook
+        run: npm run build:storybook
       - name: Publish to Chromatic and auto accept changes
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           autoAcceptChanges: true
-          buildScriptName: wc:build:storybook
+          buildScriptName: build:storybook
       - name: Deploy Storybook 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: storybook
           folder: storybook-static

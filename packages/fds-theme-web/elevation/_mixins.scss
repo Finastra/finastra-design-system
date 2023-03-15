@@ -1,0 +1,30 @@
+@use '@material/elevation' with (
+  $umbra-opacity: 0.16,
+  $penumbra-opacity: 0.11,
+  $ambient-opacity: 0.09
+);
+
+@mixin custom-properties() {
+  // ToDo: make fds custom properties??
+}
+
+/// Loads the elevations' helper classes.
+///
+/// @example
+///   <div class="fds-elevation-2">
+///      <p>content here</p>
+///   </div>
+@mixin helper-classes() {
+  @for $i from 0 through 24 {
+    .fds-elevation-#{$i} {
+      @include elevation.elevation($i);
+    }
+  }
+}
+
+/// Applies CSS box-shadow to an element to apply requested z-index elevation.
+///
+/// @param {Number} $z-value - The elevation between in 0 and 24.
+@mixin elevation($z-value) {
+  @include elevation.elevation($z-value);
+}

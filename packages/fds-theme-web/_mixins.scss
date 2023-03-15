@@ -1,0 +1,95 @@
+@use 'sass:string';
+@use './scheme';
+@use './color/mixins' as color;
+@use './logo/mixins' as logo;
+@use './elevation/mixins' as elevation;
+@use './typography/mixins' as typography;
+@use './spacing/mixins' as spacing;
+
+/// Loads all custom properties
+///
+/// @param {map} $properties - Map with your theme colors
+@mixin custom-properties($scheme) {
+  @include color.custom-properties($scheme);
+  @include logo.custom-properties($scheme);
+  @include elevation.custom-properties;
+  @include typography.custom-properties;
+  @include spacing.custom-properties;
+}
+
+/// Loads the light theme custom properties inside your container.
+///
+/// @example
+///   @use '@finastra/fds-theme' as fds;
+///     .my-container {
+///        @include fds.use-theme-light();
+///     }
+@mixin use-light-theme($class: null) {
+  @include wrap($class) {
+    @include custom-properties(scheme.light());
+  }
+}
+
+/// Loads the dark theme custom properties inside your container.
+///
+/// @example
+///   @use '@finastra/fds-theme' as fds;
+///     .my-container {
+///        @include fds.use-theme-dark();
+///     }
+@mixin use-dark-theme($class: null) {
+  @include wrap($class) {
+    @include custom-properties(scheme.dark());
+  }
+}
+
+/// Loads the light and dark theme custom properties inside your container.
+///
+/// @example
+///   @use '@finastra/fds-theme' as fds;
+///     .my-container {
+///        @include fds.use-all-themes();
+///     }
+@mixin use-all-themes($class: null) {
+  @include wrap($class) {
+    @include custom-properties(scheme.light());
+    @media (prefers-color-scheme: dark) {
+      @include custom-properties(scheme.dark());
+    }
+  }
+}
+
+/// Use this mixin to include any content block inside your class or root.
+///
+/// @param {string} $class - The class name to validate
+@mixin wrap($class: null) {
+  @if $class and $class != 'root' and $class != ':root' {
+    $class: -validate-class($class);
+    #{$class} {
+      @content;
+    }
+  } @else {
+    #{if(&, '&', ':root')} {
+      @content;
+    }
+  }
+}
+
+/// Check if the class name is valid
+///
+/// @param {string} $class - The class name to validate
+@function -validate-class($class) {
+  @if $class == '' or $class == ' ' {
+    @error 'Theme class should not be empty. If you want your theme applied on root do not specify $class.';
+  }
+
+  @if string.index($class, '.') == 1 and string.length($class) <= 1 {
+    @error 'You must specify a name to your class';
+  }
+
+  @if string.index($class, '.') != 1 and string.index($class, ':') != 1 {
+    $class: '.' + $class;
+  }
+
+  @return $class;
+}

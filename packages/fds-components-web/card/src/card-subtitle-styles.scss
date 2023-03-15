@@ -1,0 +1,10 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  @include fds.typography(body-2);
+  @include fds.color(on-surface);
+}
+
+.mdc-card-subtitle--disabled {
+  @include fds.color(on-surface-disabled);
+}

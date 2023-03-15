@@ -1,0 +1,22 @@
+name-template: 'fds@$RESOLVED_VERSION'
+tag-template: 'fds@$RESOLVED_VERSION'
+tag-prefix: 'fds@'
+template: |
+  ## What’s Changed
+
+  $CHANGES
+  
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
+  exclude-labels:
+  - 'skip-changelog'

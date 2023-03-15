@@ -1,0 +1,23 @@
+@use '@finastra/textfield/src/styles';
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  .clear-icon {
+    @include fds.color(on-surface-medium);
+
+    margin-right: -14px;
+    align-self: center;
+
+    &.fds-search-input-clear-button--show {
+      visibility: visible;
+    }
+
+    &.fds-search-input-clear-button--hide {
+      visibility: hidden;
+    }
+  }
+
+  .circular-loader {
+    align-self: center;
+  }
+}

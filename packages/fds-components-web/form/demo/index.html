@@ -1,0 +1,104 @@
+<script type="module" src="node_modules/@finastra/form/dist/src/form.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/contained-button.js"></script>
+<script type="module" src="node_modules/@finastra/textfield/dist/src/textfield.js"></script>
+<script type="module" src="node_modules/@finastra/select/dist/src/select.js"></script>
+<script type="module" src="node_modules/@finastra/checkbox/dist/src/checkbox.js"></script>
+<script type="module" src="node_modules/@finastra/list/dist/src/index.js"></script>
+<script type="module" src="node_modules/@finastra/radio/dist/src/radio.js"></script>
+<script type="module" src="node_modules/@finastra/switch/dist/src/switch.js"></script>
+<script type="module" src="node_modules/@finastra/formfield/dist/src/formfield.js"></script>
+<script type="module" src="node_modules/@finastra/textarea/dist/src/textarea.js"></script>
+<script type="module" src="node_modules/@finastra/slider/dist/src/slider.js"></script>
+<script type="module" src="node_modules/@finastra/autocomplete/dist/src/autocomplete.js"></script>
+
+<fds-form id="myForm">
+  <fds-textfield
+    required
+    validationMessage="required"
+    name="first name"
+    label="First name"
+    placeholder="First name"
+    icon="person_outline"
+    helper="fill it like this"
+    dense
+  >
+  </fds-textfield>
+
+  <fds-textfield name="last name" label="Last name" placeholder="Last name" labelInside dense> </fds-textfield>
+
+  <fds-textarea required name="Bio" label="Bio"></fds-textarea>
+
+  <fds-textfield
+    name="email"
+    label="Email"
+    placeholder="Email"
+    icon="mail_outline"
+    required
+    (blur)="checkField()"
+    validationmessage="Invalid email adress"
+    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+  ></fds-textfield>
+
+  <p>Gender:</p>
+  <div style="display: flex">
+    <fds-formfield name="gender" required label="Female" icon="schedule">
+      <fds-radio checked name="gender" value="Female"></fds-radio>
+    </fds-formfield>
+
+    <fds-formfield name="gender" required label="Male" icon="schedule">
+      <fds-radio name="gender" value="Male"></fds-radio>
+    </fds-formfield>
+  </div>
+
+  <fds-select name="position" required validationMessage="required field" (change)="checkField()" label="Position" icon="work_outline">
+    <fds-list-item></fds-list-item>
+    <fds-list-item value="0">Frontend developer</fds-list-item>
+    <fds-list-item value="1">Backend developer</fds-list-item>
+    <fds-list-item value="2">IT Manager</fds-list-item>
+  </fds-select>
+
+  <fds-select name="country" required validationMessage="required field" (change)="checkField()" label="Country" icon="work_outline">
+    <fds-list-item></fds-list-item>
+    <fds-list-item value="0"> France</fds-list-item>
+    <fds-list-item value="1">USA </fds-list-item>
+    <fds-list-item value="2"> UK</fds-list-item>
+  </fds-select>
+
+  <fds-formfield required label="Accept terms and conditions" icon="schedule">
+    <fds-checkbox name="terms and conditions" (change)="checkField()"></fds-checkbox> </fds-formfield
+  ><br />
+
+  <fds-autocomplete required label="number" name="Number">
+    <fds-list-item value="One">One</fds-list-item>
+    <fds-list-item value="Two">Two</fds-list-item>
+    <fds-list-item value="Three">Three</fds-list-item>
+  </fds-autocomplete>
+
+  <p>Age :</p>
+  <fds-slider discrete withtickmarks name="age" value="25" min="0" max="150"></fds-slider>
+
+  <fds-formfield required label="Receive adds" icon="schedule">
+    <fds-switch name="adds" selected></fds-switch> </fds-formfield
+  ><br />
+
+  <fds-button type="submit" label="submit"></fds-button>
+  <fds-button type="reset" label="reset"></fds-button>
+</fds-form>
+
+<script>
+  const form = document.getElementById('myForm');
+  form.addEventListener('formSubmit', (e) => {
+    e.preventDefault();
+    for (var pair of e.detail.entries()) {
+      console.log(pair[0] + ': ' + pair[1]);
+    }
+  });
+</script>
+
+<style>
+  fds-textfield,
+  fds-select,
+  fds-formfield {
+    padding-bottom: 16px;
+  }
+</style>

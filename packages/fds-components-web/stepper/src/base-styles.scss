@@ -1,0 +1,150 @@
+@use '@finastra/fds-theme' as fds;
+
+:host {
+  display: block;
+
+  --fds-icon-size: 18px;
+}
+
+.circle {
+  @include fds.color(on-background);
+  @include fds.typography(subtitle-3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: var(--fds-spacing-4, 24px);
+  height: var(--fds-spacing-4, 24px);
+  border: 1px solid;
+  @include fds.property(border-color, outline);
+}
+
+.step-item {
+  cursor: pointer;
+
+  .line.start-line.current.error {
+    @include fds.background(error);
+  }
+}
+
+.disabled.step-item,
+.readonly.step-item {
+  pointer-events: none;
+}
+
+.step-item-label {
+  @include fds.color(on-background);
+}
+
+.step-item-description {
+  @include fds.color(on-surface-medium);
+}
+
+.done {
+  .circle {
+    @include fds.property(border-color, success);
+    @include fds.background(success);
+    @include fds.color(on-success);
+  }
+
+  .line {
+    @include fds.background(success);
+  }
+}
+
+.disabled.done {
+  .circle {
+    @include fds.property(border-color, success);
+    @include fds.background(success);
+    @include fds.color(on-success);
+  }
+}
+
+.disabled {
+  .circle {
+    @include fds.background(surface-disabled);
+    @include fds.color(on-surface-disabled);
+
+    pointer-events: none;
+  }
+
+  .step-item-label,
+  .step-item-description {
+    @include fds.color(on-surface-disabled);
+  }
+}
+
+.current {
+  .circle {
+    @include fds.property(border-color, primary);
+    @include fds.background(primary);
+    @include fds.color(on-primary);
+  }
+
+  .line.start-line {
+    @include fds.background(success);
+  }
+
+  .line.end-line {
+    @include fds.background(primary);
+  }
+
+  .step-item-label {
+    @include fds.typography(subtitle-3);
+  }
+}
+
+.line.start-line.current {
+  @include fds.background(primary);
+}
+
+:host([secondary]) {
+  .current {
+    .circle {
+      @include fds.property(border-color, secondary);
+      @include fds.background(secondary);
+      @include fds.color(on-secondary);
+    }
+
+    .line.start-line {
+      @include fds.background(success);
+    }
+
+    .line.end-line {
+      @include fds.background(secondary);
+    }
+  }
+
+  .line.start-line.current {
+    @include fds.background(secondary);
+  }
+}
+
+.line {
+  @include fds.background(outline);
+}
+
+.line.hidden {
+  visibility: hidden;
+}
+
+.step-item.current.error,
+.step-item.done.error {
+  .circle.step-item-icon {
+    @include fds.property(border-color, error);
+    @include fds.background(error);
+    @include fds.color(on-error);
+  }
+
+  .line.end-line {
+    @include fds.background(error);
+  }
+}
+
+.step-item.current,
+.step-item.done {
+  .line.start-line.error {
+    @include fds.background(error);
+  }
+}

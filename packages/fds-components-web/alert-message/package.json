@@ -1,0 +1,26 @@
+{
+  "name": "@finastra/alert-message",
+  "displayName": "AlertMessage",
+  "version": "1.7.0",
+  "description": "AlertMessage Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "AlertMessage"
+  ],
+  "license": "MIT",
+  "main": "dist/src/alert-message.js",
+  "module": "dist/src/alert-message.js",
+  "scripts": {
+    "build": "webpack",
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/icon": "1.7.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

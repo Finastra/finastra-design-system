@@ -1,0 +1,105 @@
+@use '@finastra/fds-theme' as fds;
+
+:host([show]) {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+
+  .guided-tour-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+
+    .backdrop {
+      fill: var(--fds-on-background);
+      opacity: 0.2;
+    }
+  }
+
+  .step-card {
+    position: absolute;
+    width: auto;
+    max-width: var(--fds-guided-tour-card-max-width, 500px);
+    min-width: 250px;
+    transition: all 0.1s cubic-bezier(0.4, 0, 1, 1), height 0s 0s, opacity 0.3s 0s;
+  }
+
+  .step-card__arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 16px 16px;
+    border-color: transparent transparent var(--fds-surface, #fff) transparent;
+  }
+
+  .step-card__arrow-right {
+    transform: rotate(-90deg);
+    left: -24px;
+  }
+
+  .step-card__arrow-bottom {
+    top: -16px;
+  }
+
+  .step-card__arrow-top {
+    bottom: -16px;
+    transform: rotate(180deg);
+  }
+
+  .step-card__arrow-left {
+    right: -24px;
+    transform: rotate(90deg);
+  }
+
+  .step-card--hide {
+    opacity: 0;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fds-spacing-2, 8px);
+  }
+
+  .step-info {
+    @include fds.color(secondary);
+    @include fds.typography(body-3);
+
+    margin-bottom: var(--fds-spacing-2, 8px);
+  }
+
+  .step-title {
+    @include fds.color(on-surface);
+    @include fds.typography(headline-5);
+  }
+
+  .step-description {
+    @include fds.color(on-surface);
+    @include fds.typography(body-3);
+  }
+
+  .step-button-container {
+    margin-top: var(--fds-spacing-2, 8px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--fds-spacing-3, 16px);
+
+    ::slotted([slot='skip-button']),
+    .skip-button {
+      margin-right: auto;
+    }
+  }
+}

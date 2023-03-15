@@ -1,0 +1,225 @@
+<script type="module" src="node_modules/@finastra/charts/dist/src/index.js"></script>
+
+<div>PieChart</div>
+<div class="main-content">
+  <div>Default</div>
+
+  <div class="card">
+    <fds-pie-chart id="pieChart" width="380"></fds-pie-chart>
+  </div>
+  <div>Disable selection</div>
+  <div class="card">
+    <fds-pie-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-pie-chart>
+  </div>
+
+  <div>sequential-1'</div>
+  <div class="card">
+    <fds-pie-chart color="sequential-1'" id="pieChart" width="380"></fds-pie-chart>
+  </div>
+
+  <div>sequential-2'</div>
+  <div class="card">
+    <fds-pie-chart color="sequential-2'" id="pieChart" width="380"></fds-pie-chart>
+  </div>
+
+  <div>Focus</div>
+  <div class="card">
+    <fds-pie-chart color="focus-1" id="pieChartFocus" width="380"></fds-pie-chart>
+  </div>
+
+  <div>dark</div>
+  <div class="card">
+    <fds-pie-chart theme="dark" id="pieChart" width="380"></fds-pie-chart>
+  </div>
+</div>
+<div>Donut Chart</div>
+<div class="main-content">
+  <div>Default</div>
+
+  <div class="card">
+    <fds-donut-chart id="pieChart" width="380"></fds-donut-chart>
+  </div>
+  <div>Disable selection</div>
+  <div class="card">
+    <fds-donut-chart id="pieChart" hide-data-label disable-selection="false" width="380"></fds-donut-chart>
+  </div>
+
+  <div>sequential-1'</div>
+  <div class="card">
+    <fds-donut-chart color="sequential-1'" id="pieChart" width="380"></fds-donut-chart>
+  </div>
+
+  <div>sequential-2'</div>
+  <div class="card">
+    <fds-donut-chart color="sequential-2'" id="pieChart" width="380"></fds-donut-chart>
+  </div>
+
+  <div>dark</div>
+  <div class="card">
+    <fds-donut-chart theme="dark" id="pieChart" width="380"></fds-donut-chart>
+  </div>
+</div>
+<div>Radial Bar Chart</div>
+<div class="main-content">
+  <div>Default</div>
+  <div class="card">
+    <fds-radial-bar-chart id="radialBarChart" width="380"></fds-radial-bar-chart>
+  </div>
+</div>
+
+<div>LineChart</div>
+<div class="main-content">
+  <div>Default</div>
+
+  <div class="card">
+    <fds-line-chart id="lineChart" width="380"></fds-line-chart>
+  </div>
+
+  <div>Smooth stroke with enabled data labels and toolbar</div>
+  <div class="card">
+    <fds-line-chart
+      id="lineChart"
+      hide-data-label
+      show-toolbar
+      stroke-curve="smooth"
+      legendPosition="top"
+      legendHorizontalAlign="left"
+      width="380"
+    ></fds-line-chart>
+  </div>
+</div>
+<div>Bar Chart</div>
+<div class="main-content">
+  <div>vertical bar chart</div>
+
+  <div class="card bar">
+    <fds-bar-chart id="barChart"></fds-bar-chart>
+  </div>
+  <div>horizontal bar chart</div>
+
+  <div class="card bar">
+    <fds-bar-chart id="horizontalBarChart"></fds-bar-chart>
+  </div>
+  <script>
+    const pieCharts = document.querySelectorAll('#pieChart');
+    const pieChartsFocus = document.querySelectorAll('#pieChartFocus');
+    const radialBarCharts = document.querySelectorAll('#radialBarChart');
+    const barChart = document.querySelector('#barChart');
+    const horizontalBarChart = document.querySelector('#horizontalBarChart');
+    const lineCharts = document.querySelectorAll('#lineChart');
+
+    pieCharts.forEach((pieChart) => {
+      pieChart.data = [44, 55, 13, 43, 22, 12, 14, 28];
+      pieChart.labels = ['Apple', 'Mango', 'Orange', 'Watermelon', 'Wiki', 'Strawberry', 'Banana', 'Lemon'];
+    });
+    pieChartsFocus.forEach((pieChart) => {
+      pieChart.data = [44, 55];
+      pieChart.labels = ['Apple', 'Mango'];
+    });
+
+    radialBarCharts.forEach((radialBarChart) => {
+      radialBarChart.data = [80];
+      radialBarChart.labels = ['Confidence Score'];
+    });
+
+    barChart.barTitle = 'Number of Calls';
+    barChart.horizontal = false;
+    barChart.xGrid = false;
+    barChart.yGrid = true;
+    barChart.series = [
+      {
+        name: 'Legend 1',
+        data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
+      },
+      {
+        name: 'Legend 2',
+        data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
+      }
+    ];
+    barChart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    horizontalBarChart.barTitle = 'Number of calls';
+    horizontalBarChart.horizontal = true;
+    horizontalBarChart.legend = false;
+    horizontalBarChart.stacked = true;
+    horizontalBarChart.stroke = false;
+    horizontalBarChart.xGrid = true;
+    horizontalBarChart.yGrid = false;
+    horizontalBarChart.series = [
+      {
+        name: 'Legend 1',
+        data: [2, 1, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0]
+      },
+      {
+        name: 'Legend 2',
+        data: [6, 1, 5, 3, 2, 3, 4, 2, 6, 2, 0, 4]
+      }
+    ];
+    horizontalBarChart.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    lineCharts.forEach((lineChart) => {
+      lineChart.series = [
+        {
+          name: 'High - 2022',
+          data: [28, 29, 33, 36, 32, 32, 33]
+        },
+        {
+          name: 'Low - 2022',
+          data: [12, 11, 14, 18, 17, 13, 13]
+        }
+      ];
+      lineChart.xaxis = {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        tickPlacement: 'between',
+        title: {
+          text: 'Month',
+          offsetY: 80
+        },
+        labels: {
+          show: true
+        }
+      };
+      lineChart.yaxis = {
+        min: 5,
+        max: 40,
+        title: {
+          text: 'Temperature'
+        },
+        axisTicks: {
+          show: true
+        },
+        axisBorder: {
+          show: false
+        }
+      };
+    });
+  </script>
+  <style>
+    .card {
+      background-color: var(--fds-surface);
+      padding: 24px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 440px;
+    }
+
+    .card.bar {
+      width: 668px;
+      height: 416px;
+    }
+
+    #barChart {
+      width: 100%;
+      height: 100%;
+    }
+
+    #horizontalBarChart {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</div>

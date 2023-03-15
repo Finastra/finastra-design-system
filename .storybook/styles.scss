@@ -1,3 +1,7 @@
-@use '../themes/fds-theme/light' with ($class: 'light-theme');
-@use '../themes/fds-theme/dark' with ($class: 'dark-theme');
-@use '../themes/fds-theme/helpers';
+@use '@finastra/fds-theme/light' with (
+  $class: 'light-theme'
+);
+@use '@finastra/fds-theme/dark' with (
+  $class: 'dark-theme'
+);
+@use '@finastra/fds-theme/helpers';

@@ -2,7 +2,7 @@ import fs from 'fs';
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { apexchart } from './tools/dev-server/middlewares.mjs';
 
-const packagesPath = 'libs/web-components';
+const packagesPath = 'packages/fds-components-web';
 const excludedPackages = ['_helpers'];
 const packages = fs
   .readdirSync(packagesPath)
