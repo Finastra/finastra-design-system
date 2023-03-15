@@ -17,3 +17,6 @@ version-resolver:
     labels:
       - 'patch'
   default: patch
+
+  exclude-labels:
+  - 'skip-changelog'
