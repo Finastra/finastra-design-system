@@ -1,0 +1,70 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "fds-credit-card",
+      "path": "./../../src/credit-card.ts",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "The name of the card owner",
+          "type": "string",
+          "default": "\"Jane Cooper\""
+        },
+        {
+          "name": "last-digits",
+          "description": "The disclosed card numbers",
+          "type": "number",
+          "default": "9067"
+        },
+        {
+          "name": "date",
+          "description": "The card validity date",
+          "type": "string",
+          "default": "\"03/24\""
+        },
+        {
+          "name": "hidden-digits",
+          "description": "Hidden digits format",
+          "type": "string",
+          "default": "\"**** **** ****\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"styles\""
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "The name of the card owner",
+          "type": "string",
+          "default": "\"Jane Cooper\""
+        },
+        {
+          "name": "lastDigits",
+          "attribute": "last-digits",
+          "description": "The disclosed card numbers",
+          "type": "number",
+          "default": "9067"
+        },
+        {
+          "name": "date",
+          "attribute": "date",
+          "description": "The card validity date",
+          "type": "string",
+          "default": "\"03/24\""
+        },
+        {
+          "name": "hiddenDigits",
+          "attribute": "hidden-digits",
+          "description": "Hidden digits format",
+          "type": "string",
+          "default": "\"**** **** ****\""
+        }
+      ]
+    }
+  ]
+}

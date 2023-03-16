@@ -28,8 +28,6 @@
   },
   "file": [],
   "references": [
-    { "path": "sparkline" },
-    { "path": "credit-card" },
     {
       "path": "logo"
     },

@@ -1,11 +1,11 @@
 {
-  "extends": ["../../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["libs/web-components/credit-card/tsconfig.*?.json"]
+        "project": ["libs/web-components/sparkline/tsconfig.*?.json"]
       },
       "rules": {}
     },

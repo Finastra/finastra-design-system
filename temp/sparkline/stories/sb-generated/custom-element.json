@@ -1,0 +1,43 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "fds-sparkline",
+      "path": "./../../src/sparkline.ts",
+      "attributes": [
+        {
+          "name": "data",
+          "description": "An array of numbers",
+          "type": "Array",
+          "default": "[]"
+        },
+        {
+          "name": "success",
+          "description": "Set color to success",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "error",
+          "description": "Set color to error",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"styles\""
+        },
+        {
+          "name": "data",
+          "attribute": "data",
+          "description": "An array of numbers",
+          "type": "Array",
+          "default": "[]"
+        }
+      ]
+    }
+  ]
+}
