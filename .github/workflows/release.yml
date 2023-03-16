@@ -51,7 +51,7 @@ jobs:
         run: |
           npx lerna publish ${{ env.RELEASE_VERSION }} --force-publish --no-commit-hooks --yes --exact --tag-version-prefix='fds@'
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.FINASTRA_BOT_NPM_AUTH_TOKEN }}
 
       - name: Publish GH release
         uses: release-drafter/release-drafter@v5
