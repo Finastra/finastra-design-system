@@ -1,13 +1,13 @@
 {
   "name": "@finastra/tippy.js-theme",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/finastra/finastra-design-system.git",
     "directory": "packages/fds-theme-tippy"
   },
   "devDependencies": {
-    "@finastra/fds-theme": "*",
+    "@finastra/fds-theme": "1.7.0",
     "sass": "1.51.0"
   },
   "scripts": {
