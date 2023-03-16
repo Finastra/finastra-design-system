@@ -1,5 +1,5 @@
 {
-  "extends": "../../packages/fds-components-web/tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "rootDir": "./",
