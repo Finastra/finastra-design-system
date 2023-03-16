@@ -1,0 +1,36 @@
+{
+  "argTypes": {
+    "data": {
+      "control": "array",
+      "description": "An array of numbers",
+      "table": {
+        "defaultValue": {
+          "summary": "[]"
+        }
+      },
+      "defaultValue": "[]"
+    },
+    "success": {
+      "control": "boolean",
+      "description": "Set color to success",
+      "table": {
+        "defaultValue": {
+          "summary": false
+        }
+      },
+      "defaultValue": false
+    },
+    "error": {
+      "control": "boolean",
+      "description": "Set color to error",
+      "table": {
+        "defaultValue": {
+          "summary": false
+        }
+      },
+      "defaultValue": false
+    }
+  },
+  "cssprops": {},
+  "actions": {}
+}
