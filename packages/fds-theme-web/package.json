@@ -1,6 +1,6 @@
 {
   "name": "@finastra/fds-theme",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "author": "Talbot, Thomas <thomas.talbot@finastra.com>",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,7 @@
     "sass": "1.58.0"
   },
   "dependencies": {
-    "@finastra/fds-tokens": "*",
+    "@finastra/fds-tokens": "1.7.0",
     "@material/elevation": "^13.0.0"
   },
   "scripts": {
