@@ -1,7 +1,7 @@
 {
   "name": "@finastra/data-table",
   "displayName": "Data Table",
-  "version": "1.7.0",
+  "version": "1.6.0",
   "description": "Data Table Web Component",
   "keywords": [
     "Finastra Design System",
@@ -16,13 +16,13 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/data-table-styles.scss  src/data-table-with-pagination-styles.scss src/pagination/data-table-pagination-styles.scss"
   },
   "dependencies": {
-    "@finastra/button": "1.7.0",
-    "@finastra/checkbox": "1.7.0",
-    "@finastra/chip": "1.7.0",
-    "@finastra/icon": "1.7.0",
-    "@finastra/icon-button": "1.7.0",
-    "@finastra/linear-progress": "1.7.0",
-    "@finastra/radio": "1.7.0",
+    "@finastra/button": "*",
+    "@finastra/checkbox": "*",
+    "@finastra/chip": "*",
+    "@finastra/icon": "*",
+    "@finastra/icon-button": "*",
+    "@finastra/linear-progress": "*",
+    "@finastra/radio": "*",
     "@material/data-table": "14.0.0",
     "lit": "^2.0.0",
     "tslib": "^2.0.1"
