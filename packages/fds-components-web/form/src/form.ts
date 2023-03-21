@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 import { html } from 'lit';
 
@@ -9,8 +9,6 @@ import { styles } from './styles.css';
 @customElement('fds-form')
 export class Form extends LitElement {
   static styles = styles;
-
-  @property({ type: Boolean, reflect: true }) public novalidate = false;
 
   private _controlsThatSubmit = ['fds-button'];
 
@@ -34,8 +32,14 @@ export class Form extends LitElement {
 
   submit() {
     const formData = this.getFormData();
+    const formElements = this.getFormElements();
 
-    if (!this.novalidate && !this.reportValidity()) {
+    if (!this.reportValidity()) {
+      formElements.forEach((e) => {
+        if (typeof e.reportValidity === 'function') {
+          e.reportValidity();
+        }
+      });
       return false;
     }
     this.dispatchEvent(
@@ -50,7 +54,6 @@ export class Form extends LitElement {
 
   reportValidity(): boolean {
     const formElements = this.getFormElements();
-
     return !formElements.some((e) => typeof e.reportValidity === 'function' && e.reportValidity() === false);
   }
 
@@ -75,7 +78,7 @@ export class Form extends LitElement {
 
     formElements.forEach((element) => {
       const tagName = element.tagName.toLowerCase();
-      if (tagName === 'fds-select') {
+      if (tagName === 'fds-select' || tagName === 'fds-autocomplete') {
         for (let i = 0; i < (element as HTMLElement).children.length; i++) {
           const option = element.children[i];
           if (option.selected) {

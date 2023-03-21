@@ -50,7 +50,7 @@
     </fds-formfield>
   </div>
 
-  <fds-select name="position" required validationMessage="required field" (change)="checkField()" label="Position" icon="work_outline">
+  <!-- <fds-select name="position" required validationMessage="required field" (change)="checkField()" label="Position" icon="work_outline">
     <fds-list-item></fds-list-item>
     <fds-list-item value="0">Frontend developer</fds-list-item>
     <fds-list-item value="1">Backend developer</fds-list-item>
@@ -62,13 +62,15 @@
     <fds-list-item value="0"> France</fds-list-item>
     <fds-list-item value="1">USA </fds-list-item>
     <fds-list-item value="2"> UK</fds-list-item>
-  </fds-select>
+  </fds-select> -->
+
+  <fds-search-input required validationMessage="required field"></fds-search-input>
 
   <fds-formfield required label="Accept terms and conditions" icon="schedule">
     <fds-checkbox name="terms and conditions" (change)="checkField()"></fds-checkbox> </fds-formfield
   ><br />
 
-  <fds-autocomplete required label="number" name="Number">
+  <fds-autocomplete required validationMessage="required field" label="number" name="Number">
     <fds-list-item value="One">One</fds-list-item>
     <fds-list-item value="Two">Two</fds-list-item>
     <fds-list-item value="Three">Three</fds-list-item>
@@ -77,9 +79,7 @@
   <p>Age :</p>
   <fds-slider discrete withtickmarks name="age" value="25" min="0" max="150"></fds-slider>
 
-  <fds-formfield required label="Receive adds" icon="schedule">
-    <fds-switch name="adds" selected></fds-switch> </fds-formfield
-  ><br />
+  <fds-formfield required label="Receive adds" icon="schedule"> <fds-switch name="adds" selected></fds-switch> </fds-formfield><br />
 
   <fds-button type="submit" label="submit"></fds-button>
   <fds-button type="reset" label="reset"></fds-button>
