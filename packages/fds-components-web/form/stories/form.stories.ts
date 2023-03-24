@@ -20,68 +20,68 @@ export default {
     }
   },
   decorators: [
-    (story) => html`${story()}<style>
-        fds-card {
-          width: 500px;
-        }
-        
-        fds-textfield,
-        fds-textarea,
-        fds-select,
-        fds-formfield {
-          padding-bottom: 16px;
-        }
-        
-        img {
-          width: 200px;
-          align-self: center;
-          margin-top: var(--fds-spacing-4, 24px);
-        }
-        .actions {
-          display: flex;
-          flex-direction: row-reverse;
-        }
-        .actions fds-outlined-button {
-          margin-right: 8px;
-        }
+    (story) => html`${story()}
+  <style>
+    fds-card {
+      width: 500px;
+    }
+    
+    fds-textfield,
+    fds-textarea,
+    fds-select,
+    fds-formfield {
+      padding-bottom: 16px;
+    }
+    
+    img {
+      width: 200px;
+      align-self: center;
+      margin-top: var(--fds-spacing-4, 24px);
+    }
+    .actions {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .actions fds-outlined-button {
+      margin-right: 8px;
+    }
 
-        fds-icon {
-          color: var(--fds-success);
-        }
+    fds-icon {
+      color: var(--fds-success);
+    }
 
-        .message-icon-container {
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-        }
+    .message-icon-container {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
 
-        .message-icon-container.success {
-          background: #26d07c1a;
-        }
+    .message-icon-container.success {
+      background: #26d07c1a;
+    }
 
-        .message {
-          text-align: center;
-        }
-        .message-body {
-          font: var(--fds-body-1);
-          margin-top: 8px;
-        }
+    .message {
+      text-align: center;
+    }
+    .message-body {
+      font: var(--fds-body-1);
+      margin-top: 8px;
+    }
+  </style>
 
-      </style>
-
-      <script>
-        const form = document.getElementById('myForm');
-        form.addEventListener('formSubmit', (e) => {
-          e.preventDefault();
-          for (var pair of e.detail.entries()) {
-            console.log(pair[0] + ': ' + pair[1]);
-            document.getElementById("confirmation").show();
-          }
-        });
-      </script> `
+  <script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('formSubmit', (e) => {
+      e.preventDefault();
+      for (var pair of e.detail.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+        document.getElementById("confirmation").show();
+      }
+    });
+  </script> `
   ],
   cssprops
 } as Meta;

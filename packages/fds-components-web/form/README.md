@@ -1,6 +1,6 @@
 # Form
 
-fds-form is a component used to collect user input from fds interactive controls such as : [fds-textfield](https://finastra.github.io/finastra-design-system/?path=/docs/forms-textfield--default) , [fds-select](https://finastra.github.io/finastra-design-system/?path=/docs/forms-select--default), [fds-checkbox](https://finastra.github.io/finastra-design-system/?path=/docs/forms-checkbox--default) ...
+fds-form is a component used to collect user input from fds interactive controls such as : [fds-textfield](https://finastra.github.io/finastra-design-system/?path=/docs/forms-textfield--default), [fds-select](https://finastra.github.io/finastra-design-system/?path=/docs/forms-select--default), [fds-checkbox](https://finastra.github.io/finastra-design-system/?path=/docs/forms-checkbox--default) ...
 
 The form fields that have constraints defined will be automatically validated when the fds form is submitted and a default error message will be shown for any invalid form field.
 
