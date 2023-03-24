@@ -22,10 +22,6 @@ export class Form extends LitElement {
 
   private _controlsWithValue = ['fds-textfield', 'fds-textarea', 'fds-select', 'fds-autocomplete', 'fds-slider'];
 
-  static get formAssociated() {
-    return true;
-  }
-
   handleClick(event: MouseEvent) {
     const targetElement: any = event.target as HTMLElement;
     if (this._controlsThatSubmit.includes(targetElement.tagName.toLowerCase()) && targetElement.type?.toLowerCase() === 'submit') {
