@@ -3,8 +3,14 @@ import { LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 import { html } from 'lit';
+import { FORM_EVENTS } from './constants';
 
 import { styles } from './styles.css';
+
+/**
+ * @fires formSubmit - Emitted when the form is submitted.
+ * @fires formReset - Emitted when the form is reset.
+ */
 
 @customElement('fds-form')
 export class Form extends LitElement {
@@ -43,7 +49,7 @@ export class Form extends LitElement {
       return false;
     }
     this.dispatchEvent(
-      new CustomEvent('formSubmit', {
+      new CustomEvent(FORM_EVENTS.FORM_SUBMIT, {
         bubbles: true,
         composed: true,
         detail: formData
@@ -78,18 +84,19 @@ export class Form extends LitElement {
 
     formElements.forEach((element) => {
       const tagName = element.tagName.toLowerCase();
+      const keyName = element.name ? element.name : element.label;
       if (tagName === 'fds-select' || tagName === 'fds-autocomplete') {
         for (let i = 0; i < (element as HTMLElement).children.length; i++) {
           const option = element.children[i];
           if (option.selected) {
-            formData.append(element.name, option.value);
+            formData.append(keyName, option.value);
           }
         }
       } else if (this._controlsWithChecked.includes(tagName)) {
         if (element.checked || element.selected) {
-          formData.append(element.name, element.value || 'on');
+          formData.append(keyName, element.value || 'on');
         } else {
-          formData.append(element.name, 'off');
+          formData.append(keyName, 'off');
         }
       } else if (
         this._controlsWithValue.includes(tagName) &&
@@ -97,7 +104,7 @@ export class Form extends LitElement {
         element.type !== 'radio' &&
         element.type !== 'submit'
       ) {
-        formData.append(element.name, element.value);
+        formData.append(keyName, element.value);
       }
     });
     return formData;
@@ -122,7 +129,7 @@ export class Form extends LitElement {
     });
 
     this.dispatchEvent(
-      new CustomEvent('formReset', {
+      new CustomEvent(FORM_EVENTS.FORM_RESET, {
         bubbles: true,
         composed: true
       })

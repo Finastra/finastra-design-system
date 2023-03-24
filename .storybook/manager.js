@@ -3,5 +3,6 @@ import '!style-loader!css-loader!sass-loader!./styles.scss';
 
 addons.setConfig({
   showPanel: true,
-  isToolshown: true
+  isToolshown: true,
+  enableShortcuts: false
 });

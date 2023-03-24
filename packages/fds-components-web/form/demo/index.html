@@ -10,79 +10,62 @@
 <script type="module" src="node_modules/@finastra/textarea/dist/src/textarea.js"></script>
 <script type="module" src="node_modules/@finastra/slider/dist/src/slider.js"></script>
 <script type="module" src="node_modules/@finastra/autocomplete/dist/src/autocomplete.js"></script>
+<script type="module" src="node_modules/@finastra/card/dist/src/card.js"></script>
+<script type="module" src="node_modules/@finastra/button/dist/src/outlined-button.js"></script>
 
 <fds-form id="myForm">
-  <fds-textfield
-    required
-    validationMessage="required"
-    name="first name"
-    label="First name"
-    placeholder="First name"
-    icon="person_outline"
-    helper="fill it like this"
-    dense
-  >
-  </fds-textfield>
+  <fds-card outlined>
+    <img src="https://i.ibb.co/7NvQTfQ/image-17.png" />
+    <fds-textfield required label="Name" placeholder="Name" validationMessage="required field"></fds-textfield>
+    <fds-textarea
+      required
+      label="Bio"
+      helper="You can @mention other users and organizations to link to them."
+      charcounter="true"
+      maxlength="18"
+      validationMessage="required field"
+      helperPersistent
+    ></fds-textarea>
 
-  <fds-textfield name="last name" label="Last name" placeholder="Last name" labelInside dense> </fds-textfield>
+    <fds-textfield required placeholder="Company" icon="apartment" label="Company" validationMessage="required field"></fds-textfield>
+    <fds-textfield required placeholder="Location" icon="location_on" label="Location" validationMessage="required field"></fds-textfield>
 
-  <fds-textarea required name="Bio" label="Bio"></fds-textarea>
+    <div class="checkbox">
+      <fds-formfield required label="Display current local time" icon="schedule">
+        <fds-checkbox name="time"></fds-checkbox>
+      </fds-formfield>
+    </div>
 
-  <fds-textfield
-    name="email"
-    label="Email"
-    placeholder="Email"
-    icon="mail_outline"
-    required
-    (blur)="checkField()"
-    validationmessage="Invalid email adress"
-    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-  ></fds-textfield>
+    <fds-select required validationMessage="required field" label="Position" icon="work_outline">
+      <fds-list-item></fds-list-item>
+      <fds-list-item value="0">Frontend developer</fds-list-item>
+      <fds-list-item value="1">Backend developer</fds-list-item>
+      <fds-list-item value="1">IT Manager</fds-list-item>
+    </fds-select>
 
-  <p>Gender:</p>
-  <div style="display: flex">
-    <fds-formfield name="gender" required label="Female" icon="schedule">
-      <fds-radio checked name="gender" value="Female"></fds-radio>
-    </fds-formfield>
+    <fds-textfield
+      label="Email"
+      placeholder="Email"
+      icon="mail_outline"
+      required
+      validationmessage="Invalid email adress"
+      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+    ></fds-textfield>
 
-    <fds-formfield name="gender" required label="Male" icon="schedule">
-      <fds-radio name="gender" value="Male"></fds-radio>
-    </fds-formfield>
-  </div>
+    <fds-textfield required label="Website" placeholder="Website" icon="link" validationMessage="required field"></fds-textfield>
+    <fds-textfield
+      required
+      label="Twitter Username"
+      placeholder="Twitter username"
+      icon="share"
+      validationMessage="required field"
+    ></fds-textfield>
 
-  <!-- <fds-select name="position" required validationMessage="required field" (change)="checkField()" label="Position" icon="work_outline">
-    <fds-list-item></fds-list-item>
-    <fds-list-item value="0">Frontend developer</fds-list-item>
-    <fds-list-item value="1">Backend developer</fds-list-item>
-    <fds-list-item value="2">IT Manager</fds-list-item>
-  </fds-select>
-
-  <fds-select name="country" required validationMessage="required field" (change)="checkField()" label="Country" icon="work_outline">
-    <fds-list-item></fds-list-item>
-    <fds-list-item value="0"> France</fds-list-item>
-    <fds-list-item value="1">USA </fds-list-item>
-    <fds-list-item value="2"> UK</fds-list-item>
-  </fds-select> -->
-
-  <fds-search-input required validationMessage="required field"></fds-search-input>
-
-  <fds-formfield required label="Accept terms and conditions" icon="schedule">
-    <fds-checkbox name="terms and conditions" (change)="checkField()"></fds-checkbox> </fds-formfield
-  ><br />
-
-  <fds-autocomplete required validationMessage="required field" label="number" name="Number">
-    <fds-list-item value="One">One</fds-list-item>
-    <fds-list-item value="Two">Two</fds-list-item>
-    <fds-list-item value="Three">Three</fds-list-item>
-  </fds-autocomplete>
-
-  <p>Age :</p>
-  <fds-slider discrete withtickmarks name="age" value="25" min="0" max="150"></fds-slider>
-
-  <fds-formfield required label="Receive adds" icon="schedule"> <fds-switch name="adds" selected></fds-switch> </fds-formfield><br />
-
-  <fds-button type="submit" label="submit"></fds-button>
-  <fds-button type="reset" label="reset"></fds-button>
+    <div class="actions">
+      <fds-button type="submit" label="submit"></fds-button>
+      <fds-outlined-button type="reset" label="reset"></fds-outlined-button>
+    </div>
+  </fds-card>
 </fds-form>
 
 <script>
@@ -96,9 +79,27 @@
 </script>
 
 <style>
+  fds-card {
+    width: 500px;
+  }
   fds-textfield,
+  fds-textarea,
   fds-select,
   fds-formfield {
     padding-bottom: 16px;
+  }
+
+  img {
+    width: 200px;
+    align-self: center;
+    margin-top: var(--fds-spacing-4, 24px);
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .actions fds-outlined-button {
+    margin-right: 8px;
   }
 </style>
