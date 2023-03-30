@@ -32,7 +32,7 @@ export class Autocomplete extends LitElement {
   @property({ type: Boolean }) disabled = false;
   @property({ type: String }) placeholder = '';
   @property({ type: String }) name = '';
-  @property({ type: String }) validationmessage = '';
+  @property({ type: String }) validationMessage = '';
 
   @property({ type: String, attribute: 'aria-label' })
   ariaLabel = '';
@@ -219,7 +219,7 @@ export class Autocomplete extends LitElement {
           ?disabled="${this.disabled}"
           ?required=${this.required}
           label="${ifDefined(this.ariaLabel)}"
-          validationMessage="${this.validationmessage}"
+          validationMessage="${this.validationMessage}"
           placeholder="${ifDefined(this.placeholder)}"
           @keydown=${this.handleKeyDown}
           @focus=${this.onInputFocus}
