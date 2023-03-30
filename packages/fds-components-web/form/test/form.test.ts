@@ -37,6 +37,7 @@ describe('Form', () => {
 
     const textfield = (await el.querySelector('#textfield')) as HTMLInputElement;
     textfield.value = 'Lucy';
+    expect(textfield).value('Lucy');
     el.reset();
     expect(textfield).value('');
   });
