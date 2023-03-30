@@ -90,7 +90,7 @@ const Template: Story<Form> = ({}) => {
   return html`
   <fds-form id="myForm">
     <fds-card outlined>
-      <img src="https://i.ibb.co/7NvQTfQ/image-17.png" />
+      <img src="https://i.imgur.com/3Uki2C5.png" />
       <fds-textfield required label="Name" placeholder="Name" validationMessage="required field"></fds-textfield>
       <fds-textarea
         required
