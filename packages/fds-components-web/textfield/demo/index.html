@@ -35,3 +35,16 @@
 
   <fds-textfield type="date" iconTrailing="calendar_today" dense disabled></fds-textfield>
 </div>
+
+<script>
+  function myFunction(e) {
+    const textfield = e.parentNode;
+    if (e.getAttribute('icon') == 'visibility_off') {
+      e.setAttribute('icon', 'visibility_on');
+      textfield.setAttribute('type', 'text');
+    } else {
+      e.setAttribute('icon', 'visibility_off');
+      textfield.setAttribute('type', 'password');
+    }
+  }
+</script>
