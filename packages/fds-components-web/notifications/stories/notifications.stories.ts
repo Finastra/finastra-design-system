@@ -5,7 +5,7 @@ import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
 import { UserNotificationType } from '../dist/src/notifications.models';
-import { argTypes, cssprops } from './sb-generated/fds-notifications.json';
+import { actions, argTypes, cssprops } from './sb-generated/fds-notifications.json';
 
 const notifications = [
   {
@@ -59,6 +59,7 @@ export default {
     // ]
   },
   parameters: {
+    actions,
     docs: {
       description: { component: allSanitizers(README) }
     }
@@ -71,6 +72,8 @@ export default {
           flex-direction: column;
           height: 30vh;
           align-items: center;
+          color: var(--fds-on-surface);
+          font-family: var(--fds-font-family);
         }
         #notification-emitted-action {
           margin-bottom: 16px;
@@ -84,9 +87,10 @@ export default {
         });
         container.addEventListener('deleteallnotifications', (ev) => {
           actionDisplay.innerText = 'Delete all notifications';
+          notifications = [];
         });
         container.addEventListener('markonenotificationread', (ev) => {
-          actionDisplay.innerText += ' Mark notification with id as read ' + ev.detail.notificationId;
+          actionDisplay.innerText = 'Mark notification with id as read ' + ev.detail.notificationId;
         });
         container.addEventListener('markallnotificationsread', (ev) => {
           actionDisplay.innerText = 'Mark all notifications as read';
@@ -101,7 +105,7 @@ export default {
 
 const Template: Story<Notifications> = ({ notifications }) => {
   return html`<div id="notifications-container">
-    <div id="notification-emitted-action">Emitted event is: <span></span></div>
+    <div id="notification-emitted-action">Last emitted event is: <span></span>. You can see all of them in the 'Actions' tab 👇</div>
     <fds-notifications .notifications=${notifications}></fds-notifications>
   </div>`;
 };
