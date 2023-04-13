@@ -23,7 +23,8 @@
     "@finastra/list": "1.7.0",
     "@finastra/menu": "1.7.0",
     "lit": "^2.0.0",
-    "tslib": "^2.0.1"
+    "tslib": "^2.0.1",
+    "tippy.js": "^6.3.7"
   },
   "publishConfig": {
     "access": "public"

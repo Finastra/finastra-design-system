@@ -27,6 +27,13 @@ export default {
       timeout: '3000'
     }
   },
+  testRunnerHtml: (testFramework) =>
+    `<html>
+      <body>
+        <script>window.process = { env: { NODE_ENV: "development" } }</script>
+        <script type="module" src="${testFramework}"></script>
+      </body>
+    </html>`,
   middleware: [apexchart],
   browsers: [
     //playwrightLauncher({ product: 'firefox', concurrency: 1 }),
