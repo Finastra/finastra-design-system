@@ -42,21 +42,7 @@ export default {
   component: 'fds-notifications',
   argTypes,
   args: {
-    // notifications: [
-    //   { id: '1', type: 'success', state: 'new', message: 'New success message', source: 'all', createdOn: '2023-04-05T12:58:32.710Z' },
-    //   { id: '2', type: 'warning', state: 'read', message: 'New warning message', source: 'all', createdOn: '2023-04-05T13:12:32.710Z' },
-    //   { id: '3', type: 'error', state: 'new', message: 'New error message', source: 'all' },
-    //   { id: '4', type: 'info', state: 'read', message: 'New info message', source: 'all' },
-    //   {
-    //     id: '5',
-    //     type: 'success',
-    //     state: 'new',
-    //     message: 'complex notification and very loooooooooooooooooooooooooooooooooooooooooooooooooooong',
-    //     source: 'all',
-    //     link: 'https://google.com/tenants',
-    //     createdOn: '2023-04-05T16:19:25.442Z'
-    //   }
-    // ]
+
   },
   parameters: {
     actions,
@@ -87,7 +73,6 @@ export default {
         });
         container.addEventListener('deleteallnotifications', (ev) => {
           actionDisplay.innerText = 'Delete all notifications';
-          notifications = [];
         });
         container.addEventListener('markonenotificationread', (ev) => {
           actionDisplay.innerText = 'Mark notification with id as read ' + ev.detail.notificationId;
