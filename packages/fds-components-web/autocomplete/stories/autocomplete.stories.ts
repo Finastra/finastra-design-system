@@ -32,7 +32,8 @@ const Template: Story = ({
   required,
   disabled,
   useInnerFilter,
-  placeholder
+  placeholder,
+  validationMessage
 }) => {
   return html`<fds-autocomplete
     .value=${ifDefined(value)}
@@ -40,6 +41,7 @@ const Template: Story = ({
     ?required=${ifDefined(required)}
     ?disabled=${ifDefined(disabled)}
     ?minLengthToOpenMenu=${ifDefined(minLengthToOpenMenu)}
+    validationMessage=${validationMessage}
     icon=${ifDefined(icon)}
     ?showClearButton=${ifDefined(showClearButton)}
     .useInnerFilter=${useInnerFilter}
