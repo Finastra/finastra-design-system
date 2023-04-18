@@ -49,6 +49,9 @@ export class BaseButton extends LitElement {
   @property({ type: Boolean })
   trailingIcon = false;
 
+  @property({ type: String })
+  type: 'button' | 'reset' | 'submit' = 'button';
+
   render() {
     return html`<button aria-label="${this.label || this.icon}" ?disabled="${this.disabled}">
       ${this.icon && !this.trailingIcon ? this.renderIcon() : ''} <span class="fds-button__label">${this.label}</span>
