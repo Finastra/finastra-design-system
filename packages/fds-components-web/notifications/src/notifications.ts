@@ -191,10 +191,6 @@ export class Notifications extends LitElement {
     tippy(this.renderRoot.querySelectorAll('[label]'), this.tippyOptions);
   }
 
-  // private renderNotificationList(notifications): TemplateResult<1> {
-  //   return html``;
-  // }
-
   private markNotificationAsRead($event: Event) {
     const notification = this.findNotification($event);
     $event.stopPropagation();
