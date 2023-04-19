@@ -4,17 +4,17 @@ import type { Notifications } from '@finastra/notifications';
 import { Meta, Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import { allSanitizers } from '../../../../scripts/markdown-sanitizers';
-import { UserNotificationType } from '../dist/src/notifications.models';
+import { UserNotification, UserNotificationType } from '../dist/src/notifications.models';
 import { actions, argTypes, cssprops } from './sb-generated/fds-notifications.json';
 
-const notifications = [
+const notifications: UserNotification[] = [
   {
     id: '1',
     type: UserNotificationType.SUCCESS,
     state: 'new',
     message: 'New success message',
     source: 'all',
-    createdOn: '2023-04-05T12:58:32.710Z'
+    createdOn: new Date('2023-04-05T12:58:32.710Z')
   },
   {
     id: '2',
@@ -22,7 +22,7 @@ const notifications = [
     state: 'read',
     message: 'New warning message',
     source: 'all',
-    createdOn: '2023-04-05T13:12:32.710Z'
+    createdOn: new Date('2023-04-05T13:12:32.710Z')
   },
   { id: '3', type: UserNotificationType.ERROR, state: 'new', message: 'New error message', source: 'all' },
   { id: '4', type: UserNotificationType.INFO, state: 'read', message: 'New info message', source: 'all' },
@@ -33,17 +33,27 @@ const notifications = [
     message: 'complex notification and very loooooooooooooooooooooooooooooooooooooooooooooooooooong',
     source: 'all',
     link: 'https://google.com/tenants',
-    createdOn: '2023-04-05T16:19:25.442Z'
+    createdOn: new Date('2023-04-05T16:19:25.442Z')
   }
 ];
+
+const markOneReadHandler = (ev) => {
+  ev.target.notifications = ev.target.notifications.map((notif) => ({...notif, state: notif.id === ev.detail.notificationId ? 'read' : notif.state}))
+};
+const markAllReadHandler = (ev) => {
+  ev.target.notifications = ev.target.notifications.map((notif) => ({...notif, state: 'read' }))
+};
+const deleteOneHandler = (ev) => {
+  ev.target.notifications = ev.target.notifications.filter((notif) => notif.id !== ev.detail.notificationId);
+};
+const deleteAllHandler = (ev) => {
+  ev.target.notifications = [];
+};
 
 export default {
   title: 'NAVIGATION/Notifications',
   component: 'fds-notifications',
   argTypes,
-  args: {
-
-  },
   parameters: {
     actions,
     docs: {
@@ -64,32 +74,19 @@ export default {
         #notification-emitted-action {
           margin-bottom: 16px;
         }
-      </style>
-      <script>
-        let container = document.querySelector('#notifications-container');
-        let actionDisplay = document.querySelector('#notification-emitted-action span');
-        container.addEventListener('deleteonenotification', (ev) => {
-          actionDisplay.innerText = 'Delete notification with id ' + ev.detail.notificationId;
-        });
-        container.addEventListener('deleteallnotifications', (ev) => {
-          actionDisplay.innerText = 'Delete all notifications';
-        });
-        container.addEventListener('markonenotificationread', (ev) => {
-          actionDisplay.innerText = 'Mark notification with id as read ' + ev.detail.notificationId;
-        });
-        container.addEventListener('markallnotificationsread', (ev) => {
-          actionDisplay.innerText = 'Mark all notifications as read';
-        });
-        container.addEventListener('navigateto', (ev) => {
-          actionDisplay.innerText = 'Navigate to path ' + ev.detail.path;
-        });
-      </script>`
+      </style>`
   ],
   cssprops
 } as Meta;
 
 const Template: Story<Notifications> = ({ notifications }) => {
-  return html`<div id="notifications-container">
+  return html`<div
+    id="notifications-container"
+    @markonenotificationread=${markOneReadHandler}
+    @markallnotificationsread=${markAllReadHandler}
+    @deleteonenotification=${deleteOneHandler}
+    @deleteallnotifications=${deleteAllHandler}
+  >
     <div id="notification-emitted-action">Last emitted event is: <span></span>. You can see all of them in the 'Actions' tab 👇</div>
     <fds-notifications .notifications=${notifications}></fds-notifications>
   </div>`;

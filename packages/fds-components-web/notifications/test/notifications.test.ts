@@ -50,25 +50,11 @@ describe('Notifications', () => {
     const el: Notifications = container.querySelector('fds-notifications')!;
 
     const deleteOneListener = oneEvent(container, 'deleteonenotification');
-    // container.addEventListener('deleteonenotification', (ev) => {
-    //   notifications = notifications.filter((notif) => notif.id !== (ev as CustomEvent).detail.notificationId);
-    // });
     const deleteAllListener = oneEvent(container, 'deleteallnotifications');
-    // container.addEventListener('deleteallnotifications', () => {
-    //   notifications = new Array(0);
-    // });
     const readOneListener = oneEvent(container, 'markonenotificationread');
-    // container.addEventListener('markonenotificationread', (ev) => {
-    //   // console.log('Mark notification with id as read ' + (ev as CustomEvent).detail.notificationId);
-    // });
     const readAllListener = oneEvent(container, 'markallnotificationsread');
-    // container.addEventListener('markallnotificationsread', (ev) => {
-    //   // actionDisplay.innerText = 'Mark all notifications as read';
-    // });
     const navigateListener = oneEvent(container, 'navigateto');
-    // container.addEventListener('navigateto', (ev) => {
-    //   // actionDisplay.innerText = 'Navigate to path ' + ev.detail.path;
-    // });
+
     const trigger: HTMLElement = el.renderRoot.querySelector('#notifications-button')!;
     trigger!.click();
     await elementUpdated(el);
@@ -81,17 +67,13 @@ describe('Notifications', () => {
     let event: CustomEvent;
 
     copyOneBtn.click();
-    // await elementUpdated(el);
     event = await readOneListener;
     expect(event.detail.notificationId).to.equal('1');
 
     deleteOneBtn.click();
     event = await deleteOneListener;
-    // await elementUpdated(container);
-    // await elementUpdated(el);
     expect(event.detail.notificationId).to.equal('1');
-    // console.log(event.detail);
-    // console.log('fgh');
+
     readAllBtn.click();
     event = await readAllListener;
     expect(event.type).to.equal('markallnotificationsread');
@@ -102,8 +84,6 @@ describe('Notifications', () => {
 
     deleteAllBtn.click();
     event = await deleteAllListener;
-    // await elementUpdated(container);
-    // await elementUpdated(el);
     expect(event.type).to.equal('deleteallnotifications');
   });
 });

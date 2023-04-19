@@ -16,8 +16,7 @@ import { UserNotification } from './notifications.models';
 import { styles } from './styles.css';
 
 /**
- * @attr [notifications=[]] - An array of @UserNotification items to populate the component
- * @event [deleteNotification] - Delete notification event listener
+ * @fires [deleteNotification] - Delete notification event listener
  */
 
 @customElement('fds-notifications')
@@ -28,6 +27,10 @@ export class Notifications extends LitElement {
 
   @query('#notifications-button') protected anchor;
 
+  /**
+   * An array of @UserNotification items to populate the component
+   * @type {Array}
+   */
   @property({ type: Array<UserNotification> })
   notifications: UserNotification[] = [];
 
@@ -163,7 +166,6 @@ export class Notifications extends LitElement {
     document.body.appendChild(textarea);
 
     //set component properties
-    // tippy(document.querySelectorAll('[label]'), this.tippyOptions);
     setTimeout(() => {
       this.menu.anchor = this.anchor;
       this.menu.corner = 'BOTTOM_START';
@@ -198,9 +200,6 @@ export class Notifications extends LitElement {
       this.dispatchEvent(
         new CustomEvent('markonenotificationread', { detail: { notificationId: notification.id }, composed: true, bubbles: true })
       );
-      console.log(`emit mark as read ${notification.id}`);
-      console.log($event);
-      console.log(notification);
     }
   }
 
@@ -210,17 +209,14 @@ export class Notifications extends LitElement {
     this.dispatchEvent(
       new CustomEvent('deleteonenotification', { detail: { notificationId: notification.id }, composed: true, bubbles: true })
     );
-    console.log(`emit delete ${notification.id}`);
   }
 
   private markAllNotificationsAsRead() {
     this.dispatchEvent(new CustomEvent('markallnotificationsread', { composed: true, bubbles: true }));
-    console.log('emit mark all as read');
   }
 
   private deleteAllNotifications() {
     this.dispatchEvent(new CustomEvent('deleteallnotifications', { composed: true, bubbles: true }));
-    console.log('emit delete all notifs');
   }
 
   private copyToClipboard($event: Event) {
@@ -242,7 +238,6 @@ export class Notifications extends LitElement {
   private goToLocation($event) {
     const notification = this.findNotification($event);
     const url = new URL(notification.link!);
-    console.log(`emit navigate to url.pathname ${url.pathname}`);
     this.dispatchEvent(new CustomEvent('navigateto', { detail: { path: url.pathname }, composed: true, bubbles: true }));
   }
 

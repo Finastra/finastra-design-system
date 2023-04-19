@@ -60,7 +60,7 @@
               flex: 1;
               word-break: break-word;
               margin: 0 var(--fds-spacing-3);
-              white-space: pre-line;
+              white-space: normal;
 
               &.new {
                 @include fds.typography(subtitle-2);
