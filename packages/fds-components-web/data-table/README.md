@@ -66,9 +66,9 @@ const columnsToDisplay = ['API', 'End Point', 'Hour of Day', 'Status Code', 'Err
 
 ### Events
 
-| Event                       | Description                                                        |
-| --------------------------- | ------------------------------------------------------------------ |
-| `onFdsDataTableRowSelected` | Selected data can be founded from `event.detail` with array format |
+| Event                       | Description                                                      |
+| --------------------------- | ---------------------------------------------------------------- |
+| `onFdsDataTableRowSelected` | Selected data can be found from `event.detail` with array format |
 
 <!-- DOC:fds-data-table -->
 

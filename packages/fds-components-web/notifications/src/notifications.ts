@@ -16,7 +16,11 @@ import { UserNotification } from './notifications.models';
 import { styles } from './styles.css';
 
 /**
- * @fires [deleteNotification] - Delete notification event listener
+ * @fires markonenotificationread - emitted as a @CustomEvent when one notification should be marked as read, with ```event.detail.notificationId``` set
+ * @fires markallnotificationsread - emitted as a @CustomEvent when all notifications should be marked as read
+ * @fires deleteonenotification - emitted as a @CustomEvent when one notification should be deleted, with ```event.detail.notificationId``` set
+ * @fires deleteallnotifications - emitted as a @CustomEvent when all notifications should be deleted
+ * @fires navigateto - emitted as a @CustomEvent when one notification should redirect the user to an url, with ```event.detail.path``` set
  */
 
 @customElement('fds-notifications')
