@@ -37,8 +37,8 @@
           flex-direction: column;
           height: 100%;
           align-items: stretch;
-          padding-top: var(--fds-spacing-1);
-          padding-bottom: var(--fds-spacing-3);
+          @include fds.padding(1, top);
+          @include fds.padding(3, bottom);
 
           &.read {
             color: var(--fds-on-surface-medium);
@@ -59,7 +59,9 @@
               display: flex;
               flex: 1;
               word-break: break-word;
-              margin: 0 var(--fds-spacing-3);
+              @include fds.margin-y(0);
+              @include fds.margin-x(3);
+
               white-space: normal;
 
               &.new {

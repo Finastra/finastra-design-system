@@ -197,6 +197,19 @@ export class Notifications extends LitElement {
     tippy(this.renderRoot.querySelectorAll('[label]'), this.tippyOptions);
   }
 
+  protected createRenderRoot() {
+    const root = super.createRenderRoot();
+    root.addEventListener('opened', () =>
+      this.renderRoot.querySelectorAll('[label]').forEach((element) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (!(element as any)._tippy) {
+          tippy(element, this.tippyOptions);
+        }
+      })
+    );
+    return root;
+  }
+
   private markNotificationAsRead($event: Event) {
     const notification = this.findNotification($event);
     $event.stopPropagation();
@@ -244,24 +257,6 @@ export class Notifications extends LitElement {
     const url = new URL(notification.link!);
     this.dispatchEvent(new CustomEvent('navigateto', { detail: { path: url.pathname }, composed: true, bubbles: true }));
   }
-
-  // checkTooltips($event: Event) {
-  //   const listItem: HTMLElement = this.findListItemElement($event.target as HTMLElement);
-  //   const bttns = listItem.querySelectorAll('fds-icon-button[type=button]');
-  //   bttns.forEach(btn => {
-  //     if (!(btn as any)._tippy) {
-  //       tippy(btn, this.tippyOptions);
-  //     }
-  //   });
-  // }
-
-  // findListItemElement(el: HTMLElement): HTMLElement {
-  //   let notificationElement: HTMLElement = el;
-  //   while (notificationElement.tagName !== 'fds-list-item'.toUpperCase()) {
-  //     notificationElement = notificationElement.parentElement;
-  //   }
-  //   return notificationElement;
-  // }
 
   private findNotification($event: Event): UserNotification {
     const id = ($event.currentTarget as HTMLElement).getAttribute('key')!;
