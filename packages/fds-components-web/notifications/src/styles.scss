@@ -4,8 +4,7 @@
 :host {
   --fds-menu-min-width: 400px; // needed to specify menus' widths
   --fds-menu-max-width: 500px;
-
-  // --fds-icon-font: 'Material Symbols Outlined';
+  --fds-icon-font: 'Material Symbols Outlined';
 
   #notifications-menu {
     --mdc-icon-font: var(--fds-icon-font);

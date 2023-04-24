@@ -12,6 +12,15 @@
 npm i @finastra/notifications
 ```
 
+In order to use the outlined versions of the Material Icons, for a better look, make sure to include
+
+```
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+```
+
 ```ts
 import '@finastra/notifications';
 import { UserNotification, UserNotificationType } from '@finastra/notifications/dist/src/notifications.models';
