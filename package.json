@@ -82,7 +82,6 @@
     "@types/command-line-args": "^5.0.0",
     "@types/d3": "6.7.0",
     "@types/fs-extra": "^9.0.11",
-    "@types/jest": "27.4.1",
     "@types/lodash-es": "^4.17.4",
     "@types/node": "15.6.1",
     "@types/sass": "^1.16.0",
