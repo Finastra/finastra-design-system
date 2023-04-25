@@ -52,8 +52,8 @@ const Template: Story<AppBar> = ({ appName, logoRedirectUri = '', prominent = fa
   return html` <fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
     <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
@@ -84,8 +84,8 @@ const NavigationalTemplate: Story<AppBar> = ({ appName, logoRedirectUri = '', pr
     <fds-button text label="Tab 1" slot="navigation"></fds-button>
     <fds-button text label="Tab 2" slot="navigation"></fds-button>
 
-    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">
@@ -108,8 +108,8 @@ const ButtonTemplate: Story<AppBar> = ({ appName = 'Finastra', logoRedirectUri =
   return html`<fds-app-bar appName=${appName} logoRedirectUri=${logoRedirectUri} ?prominent=${prominent} ?transparent=${transparent}>
     <fds-icon-button icon="menu" slot="navigationIcon"></fds-icon-button>
 
-    <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-    <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+    <fds-icon-button icon="help" slot="actions"></fds-icon-button>
     <fds-user-profile slot="actions" userName="Raya Hristova" shortName="R">
       <div slot="userInfo">raya.hristova@finastra.com</div>
       <div slot="actions">

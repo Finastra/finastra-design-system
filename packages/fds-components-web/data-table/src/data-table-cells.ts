@@ -48,7 +48,7 @@ export class FdsTableCellStore {
     }
   }
   private _getDateTemplate(date: string) {
-    return html` <fds-icon>date_range_outline</fds-icon> ${date} `;
+    return html` <fds-icon>date_range</fds-icon> ${date} `;
   }
   private _getTypeDoubleTemplate(data: FdsTableTypeDouble) {
     return html` <div>${data.amount} <span style="font-weight: bold">${data.currency}</span></div>`;

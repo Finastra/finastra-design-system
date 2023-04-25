@@ -2,6 +2,8 @@
 @use '@finastra/fds-theme' as fds;
 
 :host {
+  --mdc-icon-font: 'Material Symbols Outlined';
+
   .clear-icon {
     @include fds.color(on-surface-medium);
 

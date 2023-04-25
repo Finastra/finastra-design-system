@@ -4,6 +4,8 @@
 $icon-button-size: var(--fds-spacing-5);
 
 :host {
+  --mdc-icon-font: 'Material Symbols Outlined';
+
   @include fds.color(on-surface);
   @include fds.mdc(theme-text-disabled-on-light, on-surface-disabled);
 

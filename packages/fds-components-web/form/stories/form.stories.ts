@@ -25,14 +25,14 @@ export default {
     fds-card {
       width: 500px;
     }
-    
+
     fds-textfield,
     fds-textarea,
     fds-select,
     fds-formfield {
       padding-bottom: 16px;
     }
-    
+
     img {
       width: 200px;
       align-self: center;
@@ -102,7 +102,7 @@ const Template: Story<Form> = ({}) => {
         helperPersistent
       ></fds-textarea>
 
-      <fds-textfield required placeholder="Company" icon="apartment" label="Company" validationMessage="required field"></fds-textfield>
+      <fds-textfield required placeholder="Company" icon="domain" label="Company" validationMessage="required field"></fds-textfield>
       <fds-textfield required placeholder="Location" icon="location_on" label="Location" validationMessage="required field"></fds-textfield>
 
       <div class="checkbox">
@@ -111,7 +111,7 @@ const Template: Story<Form> = ({}) => {
         </fds-formfield>
       </div>
 
-      <fds-select required validationMessage="required field" label="Position" icon="work_outline" labelInside>
+      <fds-select required validationMessage="required field" label="Position" icon="work" labelInside>
         <fds-list-item></fds-list-item>
         <fds-list-item value="0">Frontend developer</fds-list-item>
         <fds-list-item value="1">Backend developer</fds-list-item>
@@ -121,7 +121,7 @@ const Template: Story<Form> = ({}) => {
       <fds-textfield
         label="Email"
         placeholder="Email"
-        icon="mail_outline"
+        icon="mail"
         validationmessage="Invalid email adress"
         type="email"
       ></fds-textfield>

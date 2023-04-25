@@ -164,7 +164,7 @@ LinkSent.args = {
 export const FailedLogin: Story = Template.bind({});
 FailedLogin.args = {
   status: Status.Error,
-  statusIcon: 'error_outline',
+  statusIcon: 'error',
   title: 'We failed to log you.',
   label: 'Retry',
   icon: 'refresh',
@@ -174,7 +174,7 @@ FailedLogin.args = {
 export const PageNotFound: Story = Template.bind({});
 PageNotFound.args = {
   status: Status.Error,
-  statusIcon: 'error_outline',
+  statusIcon: 'error',
   title: 'Page not found',
   hasAction: false,
   image: 'https://res.cloudinary.com/ffdc/image/upload/v1660131969/ILLUSTRATION_notfound_seulkw.svg'
@@ -187,7 +187,7 @@ const InputTemplate: Story = ({ title, description, image, hasMedia, hasInput })
       <div class="message-title">${title}</div>
       <div class="message-description">${description}</div>
       <div class="message-input">
-        <fds-textfield type="email" label="Your e-mail" icon="person_outline" labelinside></fds-textfield>
+        <fds-textfield type="email" label="Your e-mail" icon="person" labelinside></fds-textfield>
         <fds-button label="Send"></fds-button>
       </div>
     </section>

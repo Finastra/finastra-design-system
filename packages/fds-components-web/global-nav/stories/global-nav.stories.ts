@@ -128,8 +128,8 @@ const Template: Story = ({ appName, logoRedirectUri = '', prominent = false, tra
         <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -228,8 +228,8 @@ const WithTabsTemplate: Story = ({ appName, logoRedirectUri = '', prominent = fa
         <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -314,8 +314,8 @@ const WithButtonsTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">
@@ -395,8 +395,8 @@ const WithIconBarTemplate: Story = ({ appName = '', logoRedirectUri = '', promin
         <fds-launchpad .apps=${apps} slot="actions"> </fds-launchpad>
 
         <fds-icon-button icon="search" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="notifications_none" slot="actions"></fds-icon-button>
-        <fds-icon-button icon="help_outline" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="notifications" slot="actions"></fds-icon-button>
+        <fds-icon-button icon="help" slot="actions"></fds-icon-button>
         <fds-user-profile slot="actions" userName="Raya Hristova">
           <div slot="userInfo">raya.hristova@finastra.com</div>
           <div slot="actions">

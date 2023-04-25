@@ -187,7 +187,7 @@ export abstract class DataTableBase extends LitElement {
       data-column-id=${column.id}
       style=${column._style}
     >
-      ${column.type === FdsColumnType.date ? html` <fds-icon>date_range_outline</fds-icon> ` : ''}
+      ${column.type === FdsColumnType.date ? html` <fds-icon>date_range</fds-icon> ` : ''}
       ${column.sortable ? this._getDataTableSortableHeaderCell(column) : column.displayName ? column.displayName : column.name}
     </th>`;
   }

@@ -6,6 +6,8 @@ $textfield-icon-color: var(--fds-primary, #694ed6);
 $textfield-icon-trailing-color: var(--fds-on-surface-medium, color.change(#000, $alpha: 0.54));
 
 :host {
+  --mdc-icon-font: 'Material Symbols Outlined';
+
   display: block;
   @include fds.mdc(theme-primary, primary);
   @include fds.mdc(theme-error, error);

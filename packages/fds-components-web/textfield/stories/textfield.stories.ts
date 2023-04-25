@@ -50,7 +50,7 @@ const ValidationTemplate: Story<TextField> = ({ label, icon, helper, type, valid
 
 const ActionButtonTemplate: Story<TextField> = ({ label, icon, type, helper, showActionButton }) => {
   return html`
-    <fds-textfield icon="lock_outline" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
+    <fds-textfield icon="lock" showActionButton=${showActionButton} label=${label} type=${type} helper=${helper}>
       <fds-icon-button slot="actionButton" icon=${icon}></fds-icon-button>
     </fds-textfield>
   `;
@@ -88,14 +88,14 @@ export const Default: Story<TextField> = Template.bind({});
 Default.args = {
   label: 'Label',
   placeholder: 'Placeholder',
-  icon: 'person_outline',
+  icon: 'person',
   helper: 'Helper text'
 };
 
 export const Dense: Story<TextField> = Default.bind({});
 Dense.args = {
   dense: true,
-  icon: 'person_outline'
+  icon: 'person'
 };
 
 export const Password: Story<TextField> = ActionButtonTemplate.bind({});
@@ -112,7 +112,7 @@ IconTrailing.args = {
   label: 'Icon trailing',
   helper: 'helper text',
   icon: 'event',
-  iconTrailing: 'favorite_outline'
+  iconTrailing: 'favorite'
 };
 
 export const Required: Story<TextField> = Template.bind({});
@@ -128,7 +128,7 @@ ErrorMessage.args = {
   type: 'email',
   validationMessage: 'Not a valid email',
   label: 'Enter your email',
-  icon: 'mail_outline'
+  icon: 'mail'
 };
 
 export const Regex: Story<TextField> = ValidationTemplate.bind({});
@@ -151,7 +151,7 @@ LabelInside.args = {
   label: 'Label',
   labelInside: true,
   placeholder: 'Placeholder',
-  icon: 'person_outline',
+  icon: 'person',
   helper: 'Helper text'
 };
 

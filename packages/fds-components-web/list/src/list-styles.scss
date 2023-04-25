@@ -2,6 +2,8 @@
 @use '@material/select/mdc-select.scss';
 
 :host {
+  --mdc-icon-font: 'Material Symbols Outlined';
+
   .mdc-deprecated-list {
     padding: 0;
   }

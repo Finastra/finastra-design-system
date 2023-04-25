@@ -127,8 +127,8 @@ const Template: Story<GuidedTour> = ({ data, show, currentStepIndex, showStepInf
     <fds-app-bar appName="FDS">
       <fds-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></fds-icon-button>
 
-      <fds-icon-button data-tour="notification" icon="notifications_none" slot="actions"></fds-icon-button>
-      <fds-icon-button data-tour="help" icon="help_outline" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="notification" icon="notifications" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="help" icon="help" slot="actions"></fds-icon-button>
       <fds-user-profile data-tour="user-profile" slot="actions" userName="Raya Hristova" shortName="R">
         <div slot="userInfo">raya.hristova@finastra.com</div>
         <div slot="actions">
@@ -155,8 +155,8 @@ const TemplateWidthSlotButton: Story<GuidedTour> = ({ data, show, currentStepInd
     <fds-app-bar appName="FDS">
       <fds-icon-button data-tour="menu" icon="menu" slot="navigationIcon"></fds-icon-button>
 
-      <fds-icon-button data-tour="notification" icon="notifications_none" slot="actions"></fds-icon-button>
-      <fds-icon-button data-tour="help" icon="help_outline" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="notification" icon="notifications" slot="actions"></fds-icon-button>
+      <fds-icon-button data-tour="help" icon="help" slot="actions"></fds-icon-button>
       <fds-user-profile data-tour="user-profile" slot="actions" userName="Raya Hristova" shortName="R">
         <div slot="userInfo">raya.hristova@finastra.com</div>
         <div slot="actions">

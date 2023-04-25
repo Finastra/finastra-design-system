@@ -51,7 +51,7 @@ export class BaseStepper extends LitElement {
     if (index >= this.currentStepIndex) {
       const activeStepIcon = this.steps[this.currentStepIndex]?.activeStepIcon;
       if (index === this.currentStepIndex && this.steps[this.currentStepIndex]?.error) {
-        return html`<fds-icon>error_outline</fds-icon>`;
+        return html`<fds-icon>error</fds-icon>`;
       } else if (index === this.currentStepIndex && activeStepIcon) {
         return html`<fds-icon>${activeStepIcon}</fds-icon>`;
       } else {
@@ -59,7 +59,7 @@ export class BaseStepper extends LitElement {
       }
     } else {
       if (step?.error) {
-        return html`<fds-icon>error_outline</fds-icon>`;
+        return html`<fds-icon>error</fds-icon>`;
       } else {
         return html`<fds-icon>done</fds-icon>`;
       }

@@ -2,6 +2,8 @@
 @use '@material/mwc-fab/mwc-fab';
 
 :host {
+  --mdc-icon-font: 'Material Symbols Outlined';
+
   .mdc-fab {
     @include fds.background(primary);
     @include fds.color(on-primary);

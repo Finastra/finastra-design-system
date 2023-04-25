@@ -29,8 +29,8 @@ export default {
 const Template: Story = ({ dense = false, selectedIndex = 0 }) => {
   return html`<fds-button-toggle-group ?dense=${dense} selected-index=${selectedIndex}>
     <fds-button-toggle icon="event" label="Agenda"></fds-button-toggle>
-    <fds-button-toggle icon="mail_outline" label="Messages"></fds-button-toggle>
-    <fds-button-toggle icon="people_outline" label="People"></fds-button-toggle>
+    <fds-button-toggle icon="mail" label="Messages"></fds-button-toggle>
+    <fds-button-toggle icon="people" label="People"></fds-button-toggle>
   </fds-button-toggle-group>`;
 };
 

@@ -83,11 +83,11 @@ export class AlertMessage extends LitElement {
         this.type,
         [
           ['success', () => html`<fds-icon class="icon" success> ${this.icon ? this.icon : 'done'}</fds-icon>`],
-          ['error', () => html`<fds-icon class="icon" error>${this.icon ? this.icon : 'error_outline'}</fds-icon>`],
-          ['info', () => html`<fds-icon class="icon" primary> ${this.icon ? this.icon : 'info_outline'} </fds-icon>`],
+          ['error', () => html`<fds-icon class="icon" error>${this.icon ? this.icon : 'error'}</fds-icon>`],
+          ['info', () => html`<fds-icon class="icon" primary>${this.icon ? this.icon : 'info'}</fds-icon>`],
           ['warning', () => html`<fds-icon class="icon" warning>${this.icon ? this.icon : 'warning'} </fds-icon>`]
         ],
-        () => html`<fds-icon class="icon" primary>${this.icon ? this.icon : 'info_outline'}</fds-icon>`
+        () => html`<fds-icon class="icon" primary>${this.icon ? this.icon : 'info'}</fds-icon>`
       )}
     `;
   }
