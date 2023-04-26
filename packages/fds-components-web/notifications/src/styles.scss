@@ -1,0 +1,92 @@
+@use '@finastra/fds-theme' as fds;
+@use '@finastra/fds-theme/helpers';
+
+:host {
+  --fds-menu-min-width: 400px; // needed to specify menus' widths
+  --fds-menu-max-width: 500px;
+  --fds-icon-font: 'Material Symbols Outlined';
+
+  #notifications-menu {
+    --mdc-icon-font: var(--fds-icon-font);
+
+    position: absolute;
+
+    .notifications-container {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 96px);
+
+      .notifications-header {
+        @include fds.padding(3);
+        @include fds.typography(body-2);
+
+        .headline {
+          @include fds.typography(headline-5);
+          @include fds.padding(2, bottom);
+        }
+      }
+
+      .notifications-list {
+        width: 100%;
+        overflow: auto;
+
+        .notification {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          align-items: stretch;
+          @include fds.padding(1, top);
+          @include fds.padding(3, bottom);
+
+          &.read {
+            color: var(--fds-on-surface-medium);
+          }
+
+          .date {
+            @include fds.typography(body-3);
+
+            text-align: end;
+          }
+
+          .message-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .message {
+              display: flex;
+              flex: 1;
+              word-break: break-word;
+              @include fds.margin-y(0);
+              @include fds.margin-x(3);
+
+              white-space: normal;
+
+              &.new {
+                @include fds.typography(subtitle-2);
+              }
+
+              &.read {
+                @include fds.typography(body-2);
+              }
+            }
+
+            .actions {
+              display: flex;
+            }
+          }
+        }
+      }
+
+      .notifications-footer {
+        @include fds.padding(3);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@finastra/notifications",
+  "displayName": "Notifications",
+  "version": "1.7.0",
+  "description": "Notifications Web Component",
+  "keywords": [
+    "Finastra Design System",
+    "Web Components",
+    "notifications"
+  ],
+  "license": "MIT",
+  "main": "dist/src/notifications.js",
+  "module": "dist/src/notifications.js",
+  "scripts": {
+    "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
+  },
+  "dependencies": {
+    "@finastra/badge": "1.7.0",
+    "@finastra/button": "1.7.0",
+    "@finastra/divider": "1.7.0",
+    "@finastra/icon": "1.7.0",
+    "@finastra/icon-button": "1.7.0",
+    "@finastra/list": "1.7.0",
+    "@finastra/menu": "1.7.0",
+    "lit": "^2.0.0",
+    "tslib": "^2.0.1",
+    "tippy.js": "^6.3.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

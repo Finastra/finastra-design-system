@@ -178,7 +178,7 @@ in watch mode you can focus on a specific test by pressing `f`
 ### Generating new web components
 
 ```
-npm run wc:generate MY_COMPONENT_NAME
+npm run generate:component MY_COMPONENT_NAME
 ```
 
 > To see a demo of the generated web component, run the commands mentioned in the
