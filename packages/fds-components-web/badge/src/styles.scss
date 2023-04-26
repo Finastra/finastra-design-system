@@ -25,6 +25,10 @@
   @include fds.elevation(4);
 
   margin: 5px;
+
+  &.empty {
+    display: none;
+  }
 }
 
 .outlined {
