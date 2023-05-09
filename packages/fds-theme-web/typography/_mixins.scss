@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:string';
-@use './variables';
+@use '@finastra/fds-tokens/dist/scss/typography';
 
 /// Loads the typography's custom properties.
 ///
@@ -10,19 +10,19 @@
 ///      font: var(--fds-headline-1);
 ///   }
 @mixin custom-properties() {
-  @each $key, $value in variables.$properties {
-    @if meta.type-of($value) == 'map' {
-      $mdc-typo-style: str-replace($key, '-', '');
-      @each $typo-style, $typo-style-value in $value {
-        --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
-        --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style}, #{$typo-style-value});
-      }
+  @each $key, $value in typography.$tokens {
+    // @if meta.type-of($value) == 'map' {
+    //   $mdc-typo-style: str-replace($key, '-', '');
+    //   @each $typo-style, $typo-style-value in $value {
+    //     --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
+    //     --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style}, #{$typo-style-value});
+    //   }
 
-      --fds-#{$key}: #{typo-fallback($key)};
-    } @else {
-      --fds-#{$key}: #{$value};
-      --mdc-typography-#{$key}: #{$value};
-    }
+    //   --fds-#{$key}: #{typo-fallback($key)};
+    // } @else {
+    --fds-#{$key}: #{$value};
+    // --mdc-typography-#{$key}: #{$value};
+    // }
   }
 }
 
@@ -31,16 +31,16 @@
 /// @example
 ///   <p class="fds-body-2">Hello</p>
 @mixin helper-classes() {
-  @each $key, $value in variables.$properties {
-    @if meta.type-of($value) == 'map' {
-      $letter-spacing: map.get($value, 'letter-spacing');
+  @each $key, $value in typography.$tokens {
+    // @if meta.type-of($value) == 'map' {
+    //   $letter-spacing: map.get($value, 'letter-spacing');
 
-      .fds-#{$key} {
-        font: var(--fds-#{$key}, #{typo-fallback($key)});
-        letter-spacing: #{$letter-spacing};
-      }
+    .fds-#{$key} {
+      font: var(--fds-#{$key}, #{typo-fallback($key)});
+      // letter-spacing: #{$letter-spacing};
     }
   }
+  // }
 }
 
 /// Apply typography style to a text
@@ -52,22 +52,21 @@
 ///
 /// @param {String} $style - any of the predefined style in Finastra's typo scale
 @mixin typography($style) {
-  $typo-style: map.get(variables.$properties, $style);
-  $letter-spacing: map.get($typo-style, 'letter-spacing');
+  $typo-style: map.get(typography.$tokens, $style);
+  // $letter-spacing: map.get($typo-style, 'letter-spacing');
 
   font: var(--fds-#{$style}, #{typo-fallback($style)});
-  letter-spacing: #{$letter-spacing};
+  // letter-spacing: #{$letter-spacing};
 }
 
 /// Returns a value for font
 ///
 /// @param {Map} $typo-style - Map that includes font-related properties
 @function typo-fallback($typo-style) {
-  $style: map.get(variables.$properties, $typo-style);
-  $font-weight: map.get($style, 'font-weight');
-  $font-size: map.get($style, 'font-size');
-  $line-height: map.get($style, 'line-height');
-  $font-family: map.get($style, 'font-family');
+  $font-weight: map.get(typography.$tokens, #{$typo-style}-font-weight);
+  $font-size: map.get(typography.$tokens, #{$typo-style}-font-size);
+  $line-height: map.get(typography.$tokens, #{$typo-style}-line-height);
+  $font-family: map.get(typography.$tokens, #{$typo-style}-font-family);
 
   /* stylelint-disable-next-line scss/operator-no-newline-after */
   @return normal normal var(--fds-#{$typo-style}-font-weight, #{$font-weight}) var(--fds-#{$typo-style}-font-size, #{$font-size}) /

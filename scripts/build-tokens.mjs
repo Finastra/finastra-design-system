@@ -52,6 +52,34 @@ StyleDictionary.registerTransform({
   },
 });
 
+StyleDictionary.registerTransform({
+  name: "font/line-height/css",
+  transitive: true,
+  type: "value",
+  matcher: function (token) {
+    const isFont = token.attributes?.category === "font";
+    const isPxToRem = token.path.includes("line-height") || token.path.includes("font-size");
+    return isFont && isPxToRem;
+  },
+  transformer: function (token) {
+    return `${(token.original.value/16).toString()}rem`;
+  },
+});
+
+StyleDictionary.registerTransform({
+  name: "font/letter-spacing/css",
+  transitive: true,
+  type: "value",
+  matcher: function (token) {
+    const isFont = token.attributes?.category === "font";
+    const isLetterSpacing = token.path.includes("letter-spacing");
+    return isFont && isLetterSpacing;
+  },
+  transformer: function (token) {
+    return `${token.original.value.toString()}px`;
+  },
+});
+
 const themes = [
   {
     filename: "light",
@@ -78,6 +106,8 @@ const getStyleDictionaryConfig = (
         "size/px",
         "color/css",
         "color/gradient/css",
+        "font/letter-spacing/css",
+        "font/line-height/css"
       ],
       buildPath: "dist/css/",
       files: [
@@ -97,6 +127,8 @@ const getStyleDictionaryConfig = (
         "size/px",
         "color/css",
         "color/gradient/css",
+        "font/letter-spacing/css",
+        "font/line-height/css"
       ],
       buildPath: "dist/scss/",
       files: [

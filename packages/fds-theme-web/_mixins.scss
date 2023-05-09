@@ -9,12 +9,14 @@
 /// Loads all custom properties
 ///
 /// @param {map} $properties - Map with your theme colors
-@mixin custom-properties($scheme) {
+@mixin custom-properties($scheme, $includeAll: true) {
   @include color.custom-properties($scheme);
   @include logo.custom-properties($scheme);
-  @include elevation.custom-properties;
-  @include typography.custom-properties;
-  @include spacing.custom-properties;
+  @if  $includeAll {
+    @include elevation.custom-properties;
+    @include typography.custom-properties;
+    @include spacing.custom-properties;
+  }
 }
 
 /// Loads the light theme custom properties inside your container.
@@ -54,7 +56,7 @@
   @include wrap($class) {
     @include custom-properties(scheme.light());
     @media (prefers-color-scheme: dark) {
-      @include custom-properties(scheme.dark());
+      @include custom-properties(scheme.dark(), false);
     }
   }
 }
