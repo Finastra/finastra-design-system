@@ -57,12 +57,13 @@
 ///
 /// @example
 ///   .my-primary-container {
-///     @include fds.background(primary);
+///     @include fds.background(primary, $important: true);
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin background($style) {
-  @include property(background, $style);
+/// @param {Boolean} $important - Flag this rule as !important
+@mixin background($style, $important: false) {
+  @include property(background, $style, $important);
 }
 
 /// Generates CSS to apply color to a text.
@@ -73,15 +74,16 @@
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin color($style) {
-  $bg-color: map.get(light.$tokens, $style);
+/// @param {Boolean} $important - Flag this rule as !important
+@mixin color($style, $important: false) {
   @if string.index($style, 'gradient') == 1 {
-    background: var(--fds-#{$style}, #{$bg-color});
+    @include property(background, $style, $important);
+    
     background-clip: text;
     -webkit-background-clip: text; /* stylelint-disable-line */
     -webkit-text-fill-color: transparent;
   } @else {
-    color: var(--fds-#{$style}, #{$bg-color});
+    @include property(color, $style, $important);
   }
 }
 
@@ -93,8 +95,9 @@
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin fill($style) {
-  @include property(fill, $style);
+/// @param {Boolean} $important - Flag this rule as !important
+@mixin fill($style, $important: false) {
+  @include property(fill, $style, $important);
 }
 
 /// Maps mdc's css properties to fds ones.
@@ -119,8 +122,11 @@
 ///   }
 ///
 /// @param {String} $style - The name of the style to apply
-@mixin property($property, $style) {
+/// @param {Boolean} $important - Flag this rule as !important
+@mixin property($property, $style, $important: false) {
   $variable: map.get(light.$tokens, $style);
+  $important-rule: if($important, ' !important', '');
 
-  #{$property}: var(--fds-#{$style}, #{$variable});
+  /* stylelint-disable-next-line function-whitespace-after */
+  #{$property}: var(--fds-#{$style}, #{$variable})#{$important-rule};
 }
