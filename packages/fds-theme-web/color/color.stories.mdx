@@ -114,7 +114,7 @@ There are 4 use cases where you would use colors:
   @include fds.background(surface);
 
   &.title {
-    @include fds.color(primary);
+    @include fds.color(primary, $important: true);
   }
 
   &svg {
@@ -131,7 +131,7 @@ will generate:
 }
 
 .my-container.title {
-  color: var(--fds-primary, #694ed6);
+  color: var(--fds-primary, #694ed6) !important;
 }
 ```
 
@@ -145,7 +145,7 @@ If you want to use another property than those, you can use the generic `propert
 }
 
 .my-border {
-  @include fds.property(border-color, outline);
+  @include fds.property(border-color, outline, $important: true);
 }
 ```
 
