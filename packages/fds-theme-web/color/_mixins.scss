@@ -15,7 +15,6 @@
   $properties: if(scheme.is-light($scheme), light.$tokens, dark.$tokens);
   @each $style, $variable in $properties {
     --fds-#{$style}: #{$variable};
-    --mdc-theme-#{$style}: var(--fds-#{$style}, #{$variable});
   }
 }
 

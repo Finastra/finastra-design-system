@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'sass:string';
+@use 'sass:meta';
 @use '@finastra/fds-tokens/dist/scss/typography';
 
 /// Loads the typography's custom properties.
@@ -10,19 +11,9 @@
 ///   }
 @mixin custom-properties() {
   @each $key, $value in typography.$tokens {
-    // @if meta.type-of($value) == 'map' {
-    //   $mdc-typo-style: str-replace($key, '-', '');
-    //   @each $typo-style, $typo-style-value in $value {
-    //     --fds-#{$key}-#{$typo-style}: #{$typo-style-value};
-    //     --mdc-typography-#{$mdc-typo-style}-#{$typo-style}: var(--fds-#{$key}-#{$typo-style}, #{$typo-style-value});
-    //   }
-
-    //   --fds-#{$key}: #{typo-fallback($key)};
-    // } @else {
-    --fds-#{$key}: #{$value};
-    --mdc-typography-#{$key}: #{$value};
-
-    // }
+    @if $key != 'scale' {
+      --fds-#{$key}: #{$value};
+    }
   }
 }
 
@@ -31,7 +22,7 @@
 /// @example
 ///   <p class="fds-body-2">Hello</p>
 @mixin helper-classes() {
-  @each $key, $value in typography.$tokens {
+  @each $key in map.get(typography.$tokens, scale) {
     $letter-spacing: map.get(typography.$tokens, #{$key}-letter-spacing);
 
     .fds-#{$key} {
@@ -50,11 +41,8 @@
 ///
 /// @param {String} $style - any of the predefined style in Finastra's typo scale
 @mixin typography($style) {
-  // $typo-style: map.get(typography.$tokens, $style);
-  $letter-spacing: map.get(typography.$tokens, #{$style}-letter-spacing);
-
   font: var(--fds-#{$style}, #{typo-fallback($style)});
-  letter-spacing: #{$letter-spacing};
+  letter-spacing: map.get(typography.$tokens, #{$style}-letter-spacing);
 }
 
 /// Returns a value for font

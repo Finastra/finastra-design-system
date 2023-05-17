@@ -53,6 +53,20 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
+  name: "font/scale/css",
+  transitive: true,
+  type: "value",
+  matcher: function (token) {
+    const isFont = token.attributes?.category === "font";
+    const isArray = Array.isArray(token.original.value);
+    return isFont && isArray;
+  },
+  transformer: function (token) {
+    return `(${token.original.value.toString()})`;
+  },
+});
+
+StyleDictionary.registerTransform({
   name: "font/line-height/css",
   transitive: true,
   type: "value",
@@ -107,7 +121,8 @@ const getStyleDictionaryConfig = (
         "color/css",
         "color/gradient/css",
         "font/letter-spacing/css",
-        "font/line-height/css"
+        "font/line-height/css",
+        "font/scale/css"
       ],
       buildPath: "dist/css/",
       files: [
@@ -128,7 +143,8 @@ const getStyleDictionaryConfig = (
         "color/css",
         "color/gradient/css",
         "font/letter-spacing/css",
-        "font/line-height/css"
+        "font/line-height/css",
+        "font/scale/css"
       ],
       buildPath: "dist/scss/",
       files: [

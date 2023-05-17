@@ -2,6 +2,27 @@
   "font": {
     "font-family": { "value": "Roboto" },
     "font-family-headline": { "value": "Spartan" },
+    "scale": {
+      "value": [
+        "headline-1",
+        "headline-2",
+        "headline-3",
+        "headline-4",
+        "headline-5",
+        "headline-6",
+        "subtitle-1",
+        "subtitle-2",
+        "subtitle-3",
+        "body-1",
+        "body-2",
+        "body-3",
+        "button-1",
+        "button-2",
+        "button-3",
+        "caption",
+        "overline"
+      ]
+    },
     "headline-1": {
       "font-family": { "value": "{font.font-family-headline.value}" },
       "font-size": { "value": "51" },
