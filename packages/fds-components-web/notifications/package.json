@@ -1,7 +1,7 @@
 {
   "name": "@finastra/notifications",
   "displayName": "Notifications",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Notifications Web Component",
   "keywords": [
     "Finastra Design System",
@@ -15,16 +15,16 @@
     "build:style": "node ../../../scripts/sass-to-lit-css/index.js src/styles.scss"
   },
   "dependencies": {
-    "@finastra/badge": "1.7.0",
-    "@finastra/button": "1.7.0",
-    "@finastra/divider": "1.7.0",
-    "@finastra/icon": "1.7.0",
-    "@finastra/icon-button": "1.7.0",
-    "@finastra/list": "1.7.0",
-    "@finastra/menu": "1.7.0",
+    "@finastra/badge": "1.8.0",
+    "@finastra/button": "1.8.0",
+    "@finastra/divider": "1.8.0",
+    "@finastra/icon": "1.8.0",
+    "@finastra/icon-button": "1.8.0",
+    "@finastra/list": "1.8.0",
+    "@finastra/menu": "1.8.0",
     "lit": "^2.0.0",
-    "tslib": "^2.0.1",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "tslib": "^2.0.1"
   },
   "publishConfig": {
     "access": "public"

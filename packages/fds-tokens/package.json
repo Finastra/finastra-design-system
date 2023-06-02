@@ -1,6 +1,6 @@
 {
   "name": "@finastra/fds-tokens",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Hosting all the tokens that define the Finastra design system",
   "files": [
     "dist"
