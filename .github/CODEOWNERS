@@ -1,21 +1,25 @@
 # These owners will be the default owners for everything in
+
 # the repo. Unless a later match takes precedence.
-*   @rbordeanu @bcldvd @ttalbot
+
+- @bcldvd @ttalbot @BeataKr @JakubRumpca @dagmaradolasinska
 
 # Repository management
-/scripts/   @bcldvd @ttalbot
-/tools/generators/web-component        @bcldvd @dorsaffrigui
+
+/scripts/ @bcldvd @ttalbot
+/tools/generators/web-component @bcldvd @dorsaffrigui
 
 # Themes and style files
-/themes/    @dorsaffrigui @ttalbot
-*.scss      @dorsaffrigui @ttalbot
-*.css       @dorsaffrigui @ttalbot
-*.png       @dorsaffrigui @ttalbot
-*.jpeg      @dorsaffrigui @ttalbot
-*.jpg       @dorsaffrigui @ttalbot
-*.svg       @dorsaffrigui @ttalbot
+
+/themes/ @dorsaffrigui @ttalbot
+_.scss @dorsaffrigui @ttalbot
+_.css @dorsaffrigui @ttalbot
+_.png @dorsaffrigui @ttalbot
+_.jpeg @dorsaffrigui @ttalbot
+_.jpg @dorsaffrigui @ttalbot
+_.svg @dorsaffrigui @ttalbot
 
 # Web components owners
-/packages/fds-components-web    @bcldvd @ttalbot
-/.storybook             @bcldvd @ttalbot
 
+/packages/fds-components-web @bcldvd @ttalbot
+/.storybook @bcldvd @ttalbot
