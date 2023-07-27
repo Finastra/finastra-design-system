@@ -1,7 +1,7 @@
 {
   "name": "@finastra/credit-card",
   "displayName": "CreditCard",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "credit-card Web Component",
   "keywords": [
     "Finastra Design System",
