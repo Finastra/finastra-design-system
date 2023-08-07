@@ -39,11 +39,16 @@ export class AppBar extends LitElement {
    */
   @property({ type: Boolean }) transparent = false;
 
+  /**
+   * Set custom logo
+   */
+  @property({ type: String }) customLogo = '';
+
   render(): TemplateResult {
     return html`<div class="bar">
       <div class="top-bar">
         <slot name="navigationIcon" @click=${this.handleNavigationClick}></slot>
-        <fds-logo dense @click=${this.navigateToLogoUri}></fds-logo>
+        ${this.customLogo === '' ? html`<fds-logo @click=${this.navigateToLogoUri}></fds-logo>` : this.useCustomLogo()}
         <span class="app-name">${this.appName}</span>
         <div class="app-bar-content">
           ${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}
@@ -65,6 +70,10 @@ export class AppBar extends LitElement {
 
   private navigateToLogoUri() {
     location.href = this.logoRedirectUri;
+  }
+
+  private useCustomLogo() {
+    return html`<img src="${this.customLogo}" class="custom-logo" @click=${this.navigateToLogoUri} />`;
   }
 }
 
