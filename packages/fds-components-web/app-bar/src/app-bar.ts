@@ -48,7 +48,7 @@ export class AppBar extends LitElement {
     return html`<div class="bar">
       <div class="top-bar">
         <slot name="navigationIcon" @click=${this.handleNavigationClick}></slot>
-        ${this.customLogo === '' ? html`<fds-logo @click=${this.navigateToLogoUri}></fds-logo>` : this.useCustomLogo()}
+        ${this.customLogo === '' ? html`<fds-logo dense @click=${this.navigateToLogoUri}></fds-logo>` : this.useCustomLogo()}
         <span class="app-name">${this.appName}</span>
         <div class="app-bar-content">
           ${!this.prominent ? this.renderNavigationSlot() : html`<div></div>`}
