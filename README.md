@@ -38,4 +38,4 @@ Want to file a bug, contribute some code, or improve documentation?
 Excellent! Consider reading our [contribution guidelines](./CONTRIBUTING.md).
 
 # Finastra Design System page
-Please note that the [Finastra design system](https://design.fusionfabric.cloud/) web site will be closed down. 
+Please note that due to dissolving the UXG team the [Finastra design system](https://design.fusionfabric.cloud/) web site will be closed down by the end of October 2023. 
