@@ -1,9 +1,7 @@
 # Contributing to Finastra Design System
 
-Want to file a bug, contribute some code, or improve documentation? Excellent! 🤗❤️
-Here are some guidelines to make the most out of your help.
+Contribution to Finastra Design System is based on a community support model. This means you’re welcome not only to submit and discuss ideas but also deliver new features and bug fixes. If you’re willing to contribute, please have a look at the below guidelines.
 
-- [Contributing to Finastra Design System](#contributing-to-finastra-design-system)
   - [ Asking Questions](#-asking-questions)
   - [ Issues and Bugs](#-issues-and-bugs)
   - [ Feature Requests](#-feature-requests)
@@ -11,37 +9,28 @@ Here are some guidelines to make the most out of your help.
 
 ## <a name="questions"></a> Asking Questions
 
-At the moment we only have a Microsoft Teams' channel dedicated to questions. If you're not part of the organization, you can still send your questions by mail to [UXG - Questions](206630c8.finastra.com@emea.teams.ms).
+Should you have any questions or concerns, just submit a new GitHub Discussion. Before doing so, review the already answered topics to minimize duplicates.
 
 ## <a name="issues"></a> Issues and Bugs
 
-If you discover a bug along your way, you can help by filling a Github issue.
-Before submitting it, please consider the following steps:
+If you discover a bug along your way, start by filling a GitHub Issue. Before submitting it, please consider the following steps:
 
-- Check you are using the latest version
+- Check you are using the latest version of the repository
 - Make sure the bug is not already covered in the list of open issues
 - Reproduce the issue in a live editor like [StackBlitz](https://stackblitz.com/) or [CodePen](https://codepen.io/)
 - Take screenshots if it's a UI issue
 - Provide the informations requested in the [bug report template](https://github.com/finastra/finastra-design-system/issues/new?template=bug_report.md)
 
-Then the process of reviewing, planning and hopefully fixing your issue will start.
-
 ## <a name="features"></a> Feature Requests
 
-You experienced frustation when trying to achieve some design using the theme?
-You identified some components that could help other developpers?
+Have you experienced frustration when trying to achieve a design using the theme? Have you identified components that could help other developers?
 Open a GitHub [feature request](https://github.com/finastra/finastra-design-system/issues/new?template=feature_request.md)
-
-You will be requested to fill a form, describing clearly and concisely your problem. We will discuss your suggestion to understand the need and optimize the solution.
 
 ## <a name="submit"></a> Submission Guidelines
 
-Before creating a new pull request please make sure there is no related ongoing work by searching the [GitHub issues](https://github.com/finastra/finastra-design-system/issues) and [Github PRs](https://github.com/finastra/finastra-design-system/pulls) as well.
-If you find something similar, join the discussion and consider contributing to it.
-If nothing match your search, then create a new issue accordingly ([Issues and Bugs](#issues), [Feature Requests](#features)).
-When your issue is validated and you are assigned to it, you can start with those simple steps:
+All code submissions require review, this is done through GitHub Pull Requests. Before creating a new pull request please make sure there is no related ongoing work by searching the [GitHub issues](https://github.com/finastra/finastra-design-system/issues) and [Github PRs](https://github.com/finastra/finastra-design-system/pulls) as well. If you find something similar, join the discussion and consider contributing to it.
 
-- Fork the repository by cliking the Fork button in the top right corner.
+- Fork the repository by clicking the Fork button in the top right corner.
 - Go to your repository and clone your fork
 
 ```sh

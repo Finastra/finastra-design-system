@@ -1,6 +1,6 @@
 ![](./.github/assets/banner_home.png)
 
-Welcome to the [Finastra design system](https://design.fusionfabric.cloud/) repository. You will find here all the assets and ressources to **build applications quickly and consistently**. It will also help you easily applying **Finastra branding and UX best practices**.
+Welcome to the Finastra Design System repository. You will find here all the assets and ressources to **build applications quickly and consistently**. It will also help you easily applying **Finastra branding and UX best practices**. 
 
 # 🌍 For web
 
@@ -36,3 +36,6 @@ A Microsoft Power BI theme specified in JSON.
 
 Want to file a bug, contribute some code, or improve documentation?
 Excellent! Consider reading our [contribution guidelines](./CONTRIBUTING.md).
+
+# Finastra Design System page
+Please note that the [Finastra design system](https://design.fusionfabric.cloud/) web site will be closed down. 
